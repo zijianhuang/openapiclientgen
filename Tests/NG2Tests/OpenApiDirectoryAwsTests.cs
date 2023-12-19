@@ -9,7 +9,7 @@ namespace SwagTests
 		readonly NG2OpenApiDirTestHelper helper;
 		public OpenapiDirectoryAwsTests(ITestOutputHelper output)
 		{
-			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output);
 		}
 
 		[Fact]

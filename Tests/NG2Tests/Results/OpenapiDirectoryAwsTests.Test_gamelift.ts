@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptMatchOutput {
+	}
+	export interface AcceptMatchOutputFormProperties {
+	}
+	export function CreateAcceptMatchOutputFormGroup() {
+		return new FormGroup<AcceptMatchOutputFormProperties>({
+		});
+
 	}
 
 
@@ -13,24 +21,72 @@ export namespace MyNS {
 		AcceptanceType: AcceptMatchInputAcceptanceType;
 	}
 
+	/** Represents the input for a request action. */
+	export interface AcceptMatchInputFormProperties {
+		TicketId: FormControl<string | null | undefined>,
+		AcceptanceType: FormControl<AcceptMatchInputAcceptanceType | null | undefined>,
+	}
+	export function CreateAcceptMatchInputFormGroup() {
+		return new FormGroup<AcceptMatchInputFormProperties>({
+			TicketId: new FormControl<string | null | undefined>(undefined),
+			AcceptanceType: new FormControl<AcceptMatchInputAcceptanceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AcceptMatchInputAcceptanceType { ACCEPT = 0, REJECT = 1 }
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServiceException {
 	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedRegionException {
+	}
+	export interface UnsupportedRegionExceptionFormProperties {
+	}
+	export function CreateUnsupportedRegionExceptionFormGroup() {
+		return new FormGroup<UnsupportedRegionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ClaimGameServerOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server resource. </p> <p>A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>. </p> */
-		GameServer?: GameServer | null;
+		GameServer?: GameServer;
+	}
+	export interface ClaimGameServerOutputFormProperties {
+	}
+	export function CreateClaimGameServerOutputFormGroup() {
+		return new FormGroup<ClaimGameServerOutputFormProperties>({
+		});
+
 	}
 
 
@@ -50,6 +106,39 @@ export namespace MyNS {
 		LastHealthCheckTime?: Date | null;
 	}
 
+	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server resource. </p> <p>A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>. </p> */
+	export interface GameServerFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerGroupArn: FormControl<string | null | undefined>,
+		GameServerId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+		ConnectionInfo: FormControl<string | null | undefined>,
+		GameServerData: FormControl<string | null | undefined>,
+		CustomSortKey: FormControl<string | null | undefined>,
+		ClaimStatus: FormControl<GameServerClaimStatus | null | undefined>,
+		UtilizationStatus: FormControl<GameServerUtilizationStatus | null | undefined>,
+		RegistrationTime: FormControl<Date | null | undefined>,
+		LastClaimTime: FormControl<Date | null | undefined>,
+		LastHealthCheckTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGameServerFormGroup() {
+		return new FormGroup<GameServerFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerGroupArn: new FormControl<string | null | undefined>(undefined),
+			GameServerId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			ConnectionInfo: new FormControl<string | null | undefined>(undefined),
+			GameServerData: new FormControl<string | null | undefined>(undefined),
+			CustomSortKey: new FormControl<string | null | undefined>(undefined),
+			ClaimStatus: new FormControl<GameServerClaimStatus | null | undefined>(undefined),
+			UtilizationStatus: new FormControl<GameServerUtilizationStatus | null | undefined>(undefined),
+			RegistrationTime: new FormControl<Date | null | undefined>(undefined),
+			LastClaimTime: new FormControl<Date | null | undefined>(undefined),
+			LastHealthCheckTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GameServerClaimStatus { CLAIMED = 0 }
 
 	export enum GameServerUtilizationStatus { AVAILABLE = 0, UTILIZED = 1 }
@@ -59,14 +148,48 @@ export namespace MyNS {
 		GameServerId?: string | null;
 		GameServerData?: string | null;
 	}
+	export interface ClaimGameServerInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerId: FormControl<string | null | undefined>,
+		GameServerData: FormControl<string | null | undefined>,
+	}
+	export function CreateClaimGameServerInputFormGroup() {
+		return new FormGroup<ClaimGameServerInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerId: new FormControl<string | null | undefined>(undefined),
+			GameServerData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OutOfCapacityException {
 	}
+	export interface OutOfCapacityExceptionFormProperties {
+	}
+	export function CreateOutOfCapacityExceptionFormGroup() {
+		return new FormGroup<OutOfCapacityExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnauthorizedException {
+	}
+	export interface UnauthorizedExceptionFormProperties {
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -74,7 +197,16 @@ export namespace MyNS {
 	export interface CreateAliasOutput {
 
 		/** <p>Properties that describe an alias resource.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
-		Alias?: Alias | null;
+		Alias?: Alias;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateAliasOutputFormProperties {
+	}
+	export function CreateCreateAliasOutputFormGroup() {
+		return new FormGroup<CreateAliasOutputFormProperties>({
+		});
+
 	}
 
 
@@ -86,9 +218,30 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** <p>The routing configuration for a fleet alias.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
-		RoutingStrategy?: RoutingStrategy | null;
+		RoutingStrategy?: RoutingStrategy;
 		CreationTime?: Date | null;
 		LastUpdatedTime?: Date | null;
+	}
+
+	/** <p>Properties that describe an alias resource.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
+	export interface AliasFormProperties {
+		AliasId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		AliasArn: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateAliasFormGroup() {
+		return new FormGroup<AliasFormProperties>({
+			AliasId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			AliasArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -97,6 +250,21 @@ export namespace MyNS {
 		Type?: RoutingStrategyType | null;
 		FleetId?: string | null;
 		Message?: string | null;
+	}
+
+	/** <p>The routing configuration for a fleet alias.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
+	export interface RoutingStrategyFormProperties {
+		Type: FormControl<RoutingStrategyType | null | undefined>,
+		FleetId: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateRoutingStrategyFormGroup() {
+		return new FormGroup<RoutingStrategyFormProperties>({
+			Type: new FormControl<RoutingStrategyType | null | undefined>(undefined),
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RoutingStrategyType { SIMPLE = 0, TERMINAL = 1 }
@@ -112,7 +280,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		RoutingStrategy: RoutingStrategy;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreateAliasInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAliasInputFormGroup() {
+		return new FormGroup<CreateAliasInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -122,10 +303,37 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p> A label that can be assigned to a GameLift resource. </p> <p> <b>Learn more</b> </p> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p> <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>TagResource</a> </p> </li> <li> <p> <a>UntagResource</a> </p> </li> <li> <p> <a>ListTagsForResource</a> </p> </li> </ul> */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TaggingFailedException {
+	}
+	export interface TaggingFailedExceptionFormProperties {
+	}
+	export function CreateTaggingFailedExceptionFormGroup() {
+		return new FormGroup<TaggingFailedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -133,13 +341,22 @@ export namespace MyNS {
 	export interface CreateBuildOutput {
 
 		/** <p>Properties describing a custom game build.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul> */
-		Build?: Build | null;
+		Build?: Build;
 
 		/** Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>. */
-		UploadCredentials?: AwsCredentials | null;
+		UploadCredentials?: AwsCredentials;
 
 		/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests. */
-		StorageLocation?: S3Location | null;
+		StorageLocation?: S3Location;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateBuildOutputFormProperties {
+	}
+	export function CreateCreateBuildOutputFormGroup() {
+		return new FormGroup<CreateBuildOutputFormProperties>({
+		});
+
 	}
 
 
@@ -155,6 +372,31 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 	}
 
+	/** <p>Properties describing a custom game build.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul> */
+	export interface BuildFormProperties {
+		BuildId: FormControl<string | null | undefined>,
+		BuildArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		Status: FormControl<BuildStatus | null | undefined>,
+		SizeOnDisk: FormControl<number | null | undefined>,
+		OperatingSystem: FormControl<BuildOperatingSystem | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateBuildFormGroup() {
+		return new FormGroup<BuildFormProperties>({
+			BuildId: new FormControl<string | null | undefined>(undefined),
+			BuildArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BuildStatus | null | undefined>(undefined),
+			SizeOnDisk: new FormControl<number | null | undefined>(undefined),
+			OperatingSystem: new FormControl<BuildOperatingSystem | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BuildStatus { INITIALIZED = 0, READY = 1, FAILED = 2 }
 
 	export enum BuildOperatingSystem { WINDOWS_2012 = 0, AMAZON_LINUX = 1, AMAZON_LINUX_2 = 2 }
@@ -167,6 +409,21 @@ export namespace MyNS {
 		SessionToken?: string | null;
 	}
 
+	/** Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>. */
+	export interface AwsCredentialsFormProperties {
+		AccessKeyId: FormControl<string | null | undefined>,
+		SecretAccessKey: FormControl<string | null | undefined>,
+		SessionToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAwsCredentialsFormGroup() {
+		return new FormGroup<AwsCredentialsFormProperties>({
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			SecretAccessKey: new FormControl<string | null | undefined>(undefined),
+			SessionToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.  */
 	export interface S3Location {
@@ -176,6 +433,23 @@ export namespace MyNS {
 		ObjectVersion?: string | null;
 	}
 
+	/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.  */
+	export interface S3LocationFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ObjectVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ObjectVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface CreateBuildInput {
@@ -183,9 +457,24 @@ export namespace MyNS {
 		Version?: string | null;
 
 		/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests. */
-		StorageLocation?: S3Location | null;
+		StorageLocation?: S3Location;
 		OperatingSystem?: BuildOperatingSystem | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreateBuildInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		OperatingSystem: FormControl<BuildOperatingSystem | null | undefined>,
+	}
+	export function CreateCreateBuildInputFormGroup() {
+		return new FormGroup<CreateBuildInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			OperatingSystem: new FormControl<BuildOperatingSystem | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -193,7 +482,16 @@ export namespace MyNS {
 	export interface CreateFleetOutput {
 
 		/** <p>General properties describing a fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
-		FleetAttributes?: FleetAttributes | null;
+		FleetAttributes?: FleetAttributes;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateFleetOutputFormProperties {
+	}
+	export function CreateCreateFleetOutputFormGroup() {
+		return new FormGroup<CreateFleetOutputFormProperties>({
+		});
+
 	}
 
 
@@ -214,18 +512,63 @@ export namespace MyNS {
 		ScriptArn?: string | null;
 		ServerLaunchPath?: string | null;
 		ServerLaunchParameters?: string | null;
-		LogPaths?: Array<string> | null;
+		LogPaths?: Array<string>;
 		NewGameSessionProtectionPolicy?: FleetAttributesNewGameSessionProtectionPolicy | null;
 		OperatingSystem?: BuildOperatingSystem | null;
 
 		/** <p>A policy that limits the number of game sessions a player can create on the same fleet. This optional policy gives game owners control over how players can consume available game server resources. A resource creation policy makes the following statement: "An individual player can create a maximum number of new game sessions within a specified time period".</p> <p>The policy is evaluated when a player tries to create a new game session. For example: Assume you have a policy of 10 new game sessions and a time period of 60 minutes. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60 minutes.</p> */
-		ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy | null;
-		MetricGroups?: Array<string> | null;
-		StoppedActions?: Array<FleetAction> | null;
+		ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy;
+		MetricGroups?: Array<string>;
+		StoppedActions?: Array<FleetAction>;
 		InstanceRoleArn?: string | null;
 
 		/** Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet share the same certificate. */
-		CertificateConfiguration?: CertificateConfiguration | null;
+		CertificateConfiguration?: CertificateConfiguration;
+	}
+
+	/** <p>General properties describing a fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
+	export interface FleetAttributesFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		FleetArn: FormControl<string | null | undefined>,
+		FleetType: FormControl<FleetAttributesFleetType | null | undefined>,
+		InstanceType: FormControl<FleetAttributesInstanceType | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TerminationTime: FormControl<Date | null | undefined>,
+		Status: FormControl<FleetAttributesStatus | null | undefined>,
+		BuildId: FormControl<string | null | undefined>,
+		BuildArn: FormControl<string | null | undefined>,
+		ScriptId: FormControl<string | null | undefined>,
+		ScriptArn: FormControl<string | null | undefined>,
+		ServerLaunchPath: FormControl<string | null | undefined>,
+		ServerLaunchParameters: FormControl<string | null | undefined>,
+		NewGameSessionProtectionPolicy: FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>,
+		OperatingSystem: FormControl<BuildOperatingSystem | null | undefined>,
+		InstanceRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateFleetAttributesFormGroup() {
+		return new FormGroup<FleetAttributesFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			FleetType: new FormControl<FleetAttributesFleetType | null | undefined>(undefined),
+			InstanceType: new FormControl<FleetAttributesInstanceType | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TerminationTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<FleetAttributesStatus | null | undefined>(undefined),
+			BuildId: new FormControl<string | null | undefined>(undefined),
+			BuildArn: new FormControl<string | null | undefined>(undefined),
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+			ScriptArn: new FormControl<string | null | undefined>(undefined),
+			ServerLaunchPath: new FormControl<string | null | undefined>(undefined),
+			ServerLaunchParameters: new FormControl<string | null | undefined>(undefined),
+			NewGameSessionProtectionPolicy: new FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>(undefined),
+			OperatingSystem: new FormControl<BuildOperatingSystem | null | undefined>(undefined),
+			InstanceRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FleetAttributesFleetType { ON_DEMAND = 0, SPOT = 1 }
@@ -243,12 +586,36 @@ export namespace MyNS {
 		PolicyPeriodInMinutes?: number | null;
 	}
 
+	/** <p>A policy that limits the number of game sessions a player can create on the same fleet. This optional policy gives game owners control over how players can consume available game server resources. A resource creation policy makes the following statement: "An individual player can create a maximum number of new game sessions within a specified time period".</p> <p>The policy is evaluated when a player tries to create a new game session. For example: Assume you have a policy of 10 new game sessions and a time period of 60 minutes. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60 minutes.</p> */
+	export interface ResourceCreationLimitPolicyFormProperties {
+		NewGameSessionsPerCreator: FormControl<number | null | undefined>,
+		PolicyPeriodInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateResourceCreationLimitPolicyFormGroup() {
+		return new FormGroup<ResourceCreationLimitPolicyFormProperties>({
+			NewGameSessionsPerCreator: new FormControl<number | null | undefined>(undefined),
+			PolicyPeriodInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FleetAction { AUTO_SCALING = 0 }
 
 
 	/** Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet share the same certificate. */
 	export interface CertificateConfiguration {
 		CertificateType: CertificateConfigurationCertificateType;
+	}
+
+	/** Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet share the same certificate. */
+	export interface CertificateConfigurationFormProperties {
+		CertificateType: FormControl<CertificateConfigurationCertificateType | null | undefined>,
+	}
+	export function CreateCertificateConfigurationFormGroup() {
+		return new FormGroup<CertificateConfigurationFormProperties>({
+			CertificateType: new FormControl<CertificateConfigurationCertificateType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CertificateConfigurationCertificateType { DISABLED = 0, GENERATED = 1 }
@@ -262,25 +629,58 @@ export namespace MyNS {
 		ScriptId?: string | null;
 		ServerLaunchPath?: string | null;
 		ServerLaunchParameters?: string | null;
-		LogPaths?: Array<string> | null;
+		LogPaths?: Array<string>;
 		EC2InstanceType: CreateFleetInputEC2InstanceType;
-		EC2InboundPermissions?: Array<IpPermission> | null;
+		EC2InboundPermissions?: Array<IpPermission>;
 		NewGameSessionProtectionPolicy?: FleetAttributesNewGameSessionProtectionPolicy | null;
 
 		/** <p>A collection of server process configurations that describe what processes to run on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts the specified server processes and continues to start new processes as existing processes end. Each instance regularly checks for an updated runtime configuration. </p> <p>The runtime configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet </a>.</p> <p>A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a> object.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
-		RuntimeConfiguration?: RuntimeConfiguration | null;
+		RuntimeConfiguration?: RuntimeConfiguration;
 
 		/** <p>A policy that limits the number of game sessions a player can create on the same fleet. This optional policy gives game owners control over how players can consume available game server resources. A resource creation policy makes the following statement: "An individual player can create a maximum number of new game sessions within a specified time period".</p> <p>The policy is evaluated when a player tries to create a new game session. For example: Assume you have a policy of 10 new game sessions and a time period of 60 minutes. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60 minutes.</p> */
-		ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy | null;
-		MetricGroups?: Array<string> | null;
+		ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy;
+		MetricGroups?: Array<string>;
 		PeerVpcAwsAccountId?: string | null;
 		PeerVpcId?: string | null;
 		FleetType?: FleetAttributesFleetType | null;
 		InstanceRoleArn?: string | null;
 
 		/** Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet share the same certificate. */
-		CertificateConfiguration?: CertificateConfiguration | null;
-		Tags?: Array<Tag> | null;
+		CertificateConfiguration?: CertificateConfiguration;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreateFleetInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		BuildId: FormControl<string | null | undefined>,
+		ScriptId: FormControl<string | null | undefined>,
+		ServerLaunchPath: FormControl<string | null | undefined>,
+		ServerLaunchParameters: FormControl<string | null | undefined>,
+		EC2InstanceType: FormControl<CreateFleetInputEC2InstanceType | null | undefined>,
+		NewGameSessionProtectionPolicy: FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>,
+		PeerVpcAwsAccountId: FormControl<string | null | undefined>,
+		PeerVpcId: FormControl<string | null | undefined>,
+		FleetType: FormControl<FleetAttributesFleetType | null | undefined>,
+		InstanceRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFleetInputFormGroup() {
+		return new FormGroup<CreateFleetInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			BuildId: new FormControl<string | null | undefined>(undefined),
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+			ServerLaunchPath: new FormControl<string | null | undefined>(undefined),
+			ServerLaunchParameters: new FormControl<string | null | undefined>(undefined),
+			EC2InstanceType: new FormControl<CreateFleetInputEC2InstanceType | null | undefined>(undefined),
+			NewGameSessionProtectionPolicy: new FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>(undefined),
+			PeerVpcAwsAccountId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcId: new FormControl<string | null | undefined>(undefined),
+			FleetType: new FormControl<FleetAttributesFleetType | null | undefined>(undefined),
+			InstanceRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateFleetInputEC2InstanceType { t2_micro = 0, t2_small = 1, t2_medium = 2, t2_large = 3, c3_large = 4, c3_xlarge = 5, c3_2xlarge = 6, c3_4xlarge = 7, c3_8xlarge = 8, c4_large = 9, c4_xlarge = 10, c4_2xlarge = 11, c4_4xlarge = 12, c4_8xlarge = 13, c5_large = 14, c5_xlarge = 15, c5_2xlarge = 16, c5_4xlarge = 17, c5_9xlarge = 18, c5_12xlarge = 19, c5_18xlarge = 20, c5_24xlarge = 21, r3_large = 22, r3_xlarge = 23, r3_2xlarge = 24, r3_4xlarge = 25, r3_8xlarge = 26, r4_large = 27, r4_xlarge = 28, r4_2xlarge = 29, r4_4xlarge = 30, r4_8xlarge = 31, r4_16xlarge = 32, r5_large = 33, r5_xlarge = 34, r5_2xlarge = 35, r5_4xlarge = 36, r5_8xlarge = 37, r5_12xlarge = 38, r5_16xlarge = 39, r5_24xlarge = 40, m3_medium = 41, m3_large = 42, m3_xlarge = 43, m3_2xlarge = 44, m4_large = 45, m4_xlarge = 46, m4_2xlarge = 47, m4_4xlarge = 48, m4_10xlarge = 49, m5_large = 50, m5_xlarge = 51, m5_2xlarge = 52, m5_4xlarge = 53, m5_8xlarge = 54, m5_12xlarge = 55, m5_16xlarge = 56, m5_24xlarge = 57 }
@@ -294,14 +694,44 @@ export namespace MyNS {
 		Protocol: IpPermissionProtocol;
 	}
 
+	/** A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon GameLift hosting resource. New game sessions that are started on the fleet are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. For fleets created with a custom game server, the ranges reflect the server's game session assignments. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP for use by the Realtime servers. */
+	export interface IpPermissionFormProperties {
+		FromPort: FormControl<number | null | undefined>,
+		ToPort: FormControl<number | null | undefined>,
+		IpRange: FormControl<string | null | undefined>,
+		Protocol: FormControl<IpPermissionProtocol | null | undefined>,
+	}
+	export function CreateIpPermissionFormGroup() {
+		return new FormGroup<IpPermissionFormProperties>({
+			FromPort: new FormControl<number | null | undefined>(undefined),
+			ToPort: new FormControl<number | null | undefined>(undefined),
+			IpRange: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<IpPermissionProtocol | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum IpPermissionProtocol { TCP = 0, UDP = 1 }
 
 
 	/** <p>A collection of server process configurations that describe what processes to run on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts the specified server processes and continues to start new processes as existing processes end. Each instance regularly checks for an updated runtime configuration. </p> <p>The runtime configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet </a>.</p> <p>A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a> object.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface RuntimeConfiguration {
-		ServerProcesses?: Array<ServerProcess> | null;
+		ServerProcesses?: Array<ServerProcess>;
 		MaxConcurrentGameSessionActivations?: number | null;
 		GameSessionActivationTimeoutSeconds?: number | null;
+	}
+
+	/** <p>A collection of server process configurations that describe what processes to run on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts the specified server processes and continues to start new processes as existing processes end. Each instance regularly checks for an updated runtime configuration. </p> <p>The runtime configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet </a>.</p> <p>A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a> object.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
+	export interface RuntimeConfigurationFormProperties {
+		MaxConcurrentGameSessionActivations: FormControl<number | null | undefined>,
+		GameSessionActivationTimeoutSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateRuntimeConfigurationFormGroup() {
+		return new FormGroup<RuntimeConfigurationFormProperties>({
+			MaxConcurrentGameSessionActivations: new FormControl<number | null | undefined>(undefined),
+			GameSessionActivationTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -312,10 +742,32 @@ export namespace MyNS {
 		ConcurrentExecutions: number;
 	}
 
+	/** A set of instructions for launching server processes on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instruction set identifies the location of the custom game build executable or Realtime launch script, optional launch parameters, and the number of server processes with this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>. */
+	export interface ServerProcessFormProperties {
+		LaunchPath: FormControl<string | null | undefined>,
+		Parameters: FormControl<string | null | undefined>,
+		ConcurrentExecutions: FormControl<number | null | undefined>,
+	}
+	export function CreateServerProcessFormGroup() {
+		return new FormGroup<ServerProcessFormProperties>({
+			LaunchPath: new FormControl<string | null | undefined>(undefined),
+			Parameters: new FormControl<string | null | undefined>(undefined),
+			ConcurrentExecutions: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateGameServerGroupOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
-		GameServerGroup?: GameServerGroup | null;
+		GameServerGroup?: GameServerGroup;
+	}
+	export interface CreateGameServerGroupOutputFormProperties {
+	}
+	export function CreateCreateGameServerGroupOutputFormGroup() {
+		return new FormGroup<CreateGameServerGroupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -324,15 +776,44 @@ export namespace MyNS {
 		GameServerGroupName?: string | null;
 		GameServerGroupArn?: string | null;
 		RoleArn?: string | null;
-		InstanceDefinitions?: Array<InstanceDefinition> | null;
+		InstanceDefinitions?: Array<InstanceDefinition>;
 		BalancingStrategy?: GameServerGroupBalancingStrategy | null;
 		GameServerProtectionPolicy?: GameServerGroupGameServerProtectionPolicy | null;
 		AutoScalingGroupArn?: string | null;
 		Status?: GameServerGroupStatus | null;
 		StatusReason?: string | null;
-		SuspendedActions?: Array<GameServerGroupAction> | null;
+		SuspendedActions?: Array<GameServerGroupAction>;
 		CreationTime?: Date | null;
 		LastUpdatedTime?: Date | null;
+	}
+
+	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
+	export interface GameServerGroupFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerGroupArn: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		BalancingStrategy: FormControl<GameServerGroupBalancingStrategy | null | undefined>,
+		GameServerProtectionPolicy: FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>,
+		AutoScalingGroupArn: FormControl<string | null | undefined>,
+		Status: FormControl<GameServerGroupStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGameServerGroupFormGroup() {
+		return new FormGroup<GameServerGroupFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerGroupArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			BalancingStrategy: new FormControl<GameServerGroupBalancingStrategy | null | undefined>(undefined),
+			GameServerProtectionPolicy: new FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>(undefined),
+			AutoScalingGroupArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GameServerGroupStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -340,6 +821,19 @@ export namespace MyNS {
 	export interface InstanceDefinition {
 		InstanceType: InstanceDefinitionInstanceType;
 		WeightedCapacity?: string | null;
+	}
+
+	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>An allowed instance type for your game server group. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.</p> */
+	export interface InstanceDefinitionFormProperties {
+		InstanceType: FormControl<InstanceDefinitionInstanceType | null | undefined>,
+		WeightedCapacity: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceDefinitionFormGroup() {
+		return new FormGroup<InstanceDefinitionFormProperties>({
+			InstanceType: new FormControl<InstanceDefinitionInstanceType | null | undefined>(undefined),
+			WeightedCapacity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InstanceDefinitionInstanceType { c4_large = 0, c4_xlarge = 1, c4_2xlarge = 2, c4_4xlarge = 3, c4_8xlarge = 4, c5_large = 5, c5_xlarge = 6, c5_2xlarge = 7, c5_4xlarge = 8, c5_9xlarge = 9, c5_12xlarge = 10, c5_18xlarge = 11, c5_24xlarge = 12, r4_large = 13, r4_xlarge = 14, r4_2xlarge = 15, r4_4xlarge = 16, r4_8xlarge = 17, r4_16xlarge = 18, r5_large = 19, r5_xlarge = 20, r5_2xlarge = 21, r5_4xlarge = 22, r5_8xlarge = 23, r5_12xlarge = 24, r5_16xlarge = 25, r5_24xlarge = 26, m4_large = 27, m4_xlarge = 28, m4_2xlarge = 29, m4_4xlarge = 30, m4_10xlarge = 31, m5_large = 32, m5_xlarge = 33, m5_2xlarge = 34, m5_4xlarge = 35, m5_8xlarge = 36, m5_12xlarge = 37, m5_16xlarge = 38, m5_24xlarge = 39 }
@@ -366,11 +860,30 @@ export namespace MyNS {
 		InstanceDefinitions: Array<InstanceDefinition>;
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Configuration settings for intelligent autoscaling that uses target tracking. An autoscaling policy can be specified when a new game server group is created with <a>CreateGameServerGroup</a>. If a group has an autoscaling policy, the Auto Scaling group takes action based on this policy, in addition to (and potentially in conflict with) any other autoscaling policies that are separately applied to the Auto Scaling group. </p> */
-		AutoScalingPolicy?: GameServerGroupAutoScalingPolicy | null;
+		AutoScalingPolicy?: GameServerGroupAutoScalingPolicy;
 		BalancingStrategy?: GameServerGroupBalancingStrategy | null;
 		GameServerProtectionPolicy?: GameServerGroupGameServerProtectionPolicy | null;
-		VpcSubnets?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		VpcSubnets?: Array<string>;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateGameServerGroupInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		MinSize: FormControl<number | null | undefined>,
+		MaxSize: FormControl<number | null | undefined>,
+		BalancingStrategy: FormControl<GameServerGroupBalancingStrategy | null | undefined>,
+		GameServerProtectionPolicy: FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>,
+	}
+	export function CreateCreateGameServerGroupInputFormGroup() {
+		return new FormGroup<CreateGameServerGroupInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			MinSize: new FormControl<number | null | undefined>(undefined),
+			MaxSize: new FormControl<number | null | undefined>(undefined),
+			BalancingStrategy: new FormControl<GameServerGroupBalancingStrategy | null | undefined>(undefined),
+			GameServerProtectionPolicy: new FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -379,6 +892,21 @@ export namespace MyNS {
 		LaunchTemplateId?: string | null;
 		LaunchTemplateName?: string | null;
 		Version?: string | null;
+	}
+
+	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. </p> */
+	export interface LaunchTemplateSpecificationFormProperties {
+		LaunchTemplateId: FormControl<string | null | undefined>,
+		LaunchTemplateName: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateLaunchTemplateSpecificationFormGroup() {
+		return new FormGroup<LaunchTemplateSpecificationFormProperties>({
+			LaunchTemplateId: new FormControl<string | null | undefined>(undefined),
+			LaunchTemplateName: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -393,10 +921,32 @@ export namespace MyNS {
 		TargetTrackingConfiguration: TargetTrackingConfiguration;
 	}
 
+	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Configuration settings for intelligent autoscaling that uses target tracking. An autoscaling policy can be specified when a new game server group is created with <a>CreateGameServerGroup</a>. If a group has an autoscaling policy, the Auto Scaling group takes action based on this policy, in addition to (and potentially in conflict with) any other autoscaling policies that are separately applied to the Auto Scaling group. </p> */
+	export interface GameServerGroupAutoScalingPolicyFormProperties {
+		EstimatedInstanceWarmup: FormControl<number | null | undefined>,
+	}
+	export function CreateGameServerGroupAutoScalingPolicyFormGroup() {
+		return new FormGroup<GameServerGroupAutoScalingPolicyFormProperties>({
+			EstimatedInstanceWarmup: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p> */
 	export interface TargetTrackingConfiguration {
 		TargetValue: number;
+	}
+
+	/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p> */
+	export interface TargetTrackingConfigurationFormProperties {
+		TargetValue: FormControl<number | null | undefined>,
+	}
+	export function CreateTargetTrackingConfigurationFormGroup() {
+		return new FormGroup<TargetTrackingConfigurationFormProperties>({
+			TargetValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -404,7 +954,16 @@ export namespace MyNS {
 	export interface CreateGameSessionOutput {
 
 		/** <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
-		GameSession?: GameSession | null;
+		GameSession?: GameSession;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateGameSessionOutputFormProperties {
+	}
+	export function CreateCreateGameSessionOutputFormGroup() {
+		return new FormGroup<CreateGameSessionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -420,7 +979,7 @@ export namespace MyNS {
 		MaximumPlayerSessionCount?: number | null;
 		Status?: GameSessionStatus | null;
 		StatusReason?: GameSessionStatusReason | null;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		IpAddress?: string | null;
 		DnsName?: string | null;
 		Port?: number | null;
@@ -428,6 +987,49 @@ export namespace MyNS {
 		CreatorId?: string | null;
 		GameSessionData?: string | null;
 		MatchmakerData?: string | null;
+	}
+
+	/** <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
+	export interface GameSessionFormProperties {
+		GameSessionId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		FleetId: FormControl<string | null | undefined>,
+		FleetArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TerminationTime: FormControl<Date | null | undefined>,
+		CurrentPlayerSessionCount: FormControl<number | null | undefined>,
+		MaximumPlayerSessionCount: FormControl<number | null | undefined>,
+		Status: FormControl<GameSessionStatus | null | undefined>,
+		StatusReason: FormControl<GameSessionStatusReason | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		DnsName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		PlayerSessionCreationPolicy: FormControl<GameSessionPlayerSessionCreationPolicy | null | undefined>,
+		CreatorId: FormControl<string | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+		MatchmakerData: FormControl<string | null | undefined>,
+	}
+	export function CreateGameSessionFormGroup() {
+		return new FormGroup<GameSessionFormProperties>({
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TerminationTime: new FormControl<Date | null | undefined>(undefined),
+			CurrentPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<GameSessionStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<GameSessionStatusReason | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			PlayerSessionCreationPolicy: new FormControl<GameSessionPlayerSessionCreationPolicy | null | undefined>(undefined),
+			CreatorId: new FormControl<string | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+			MatchmakerData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GameSessionStatus { ACTIVE = 0, ACTIVATING = 1, TERMINATED = 2, TERMINATING = 3, ERROR = 4 }
@@ -441,6 +1043,19 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"> Amazon GameLift Developer Guide</a>. */
+	export interface GamePropertyFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateGamePropertyFormGroup() {
+		return new FormGroup<GamePropertyFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GameSessionPlayerSessionCreationPolicy { ACCEPT_ALL = 0, DENY_ALL = 1 }
 
 
@@ -450,23 +1065,76 @@ export namespace MyNS {
 		AliasId?: string | null;
 		MaximumPlayerSessionCount: number;
 		Name?: string | null;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		CreatorId?: string | null;
 		GameSessionId?: string | null;
 		IdempotencyToken?: string | null;
 		GameSessionData?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface CreateGameSessionInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		AliasId: FormControl<string | null | undefined>,
+		MaximumPlayerSessionCount: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreatorId: FormControl<string | null | undefined>,
+		GameSessionId: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGameSessionInputFormGroup() {
+		return new FormGroup<CreateGameSessionInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			AliasId: new FormControl<string | null | undefined>(undefined),
+			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatorId: new FormControl<string | null | undefined>(undefined),
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidFleetStatusException {
+	}
+	export interface InvalidFleetStatusExceptionFormProperties {
+	}
+	export function CreateInvalidFleetStatusExceptionFormGroup() {
+		return new FormGroup<InvalidFleetStatusExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TerminalRoutingStrategyException {
 	}
+	export interface TerminalRoutingStrategyExceptionFormProperties {
+	}
+	export function CreateTerminalRoutingStrategyExceptionFormGroup() {
+		return new FormGroup<TerminalRoutingStrategyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface FleetCapacityExceededException {
 	}
+	export interface FleetCapacityExceededExceptionFormProperties {
+	}
+	export function CreateFleetCapacityExceededExceptionFormGroup() {
+		return new FormGroup<FleetCapacityExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IdempotentParameterMismatchException {
+	}
+	export interface IdempotentParameterMismatchExceptionFormProperties {
+	}
+	export function CreateIdempotentParameterMismatchExceptionFormGroup() {
+		return new FormGroup<IdempotentParameterMismatchExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -474,7 +1142,16 @@ export namespace MyNS {
 	export interface CreateGameSessionQueueOutput {
 
 		/** <p>Configuration of a queue that is used to process game session placement requests. The queue configuration identifies several game features:</p> <ul> <li> <p>The destinations where a new game session can potentially be hosted. Amazon GameLift tries these destinations in an order based on either the queue's default order or player latency information, if provided in a placement request. With latency information, Amazon GameLift can place game sessions where the majority of players are reporting the lowest possible latency. </p> </li> <li> <p>The length of time that placement requests can wait in the queue before timing out. </p> </li> <li> <p>A set of optional latency policies that protect individual players from high latencies, preventing game sessions from being placed where any individual player is reporting latency higher than a policy's maximum.</p> </li> </ul> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p> <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a> </p> </li> </ul> */
-		GameSessionQueue?: GameSessionQueue | null;
+		GameSessionQueue?: GameSessionQueue;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateGameSessionQueueOutputFormProperties {
+	}
+	export function CreateCreateGameSessionQueueOutputFormGroup() {
+		return new FormGroup<CreateGameSessionQueueOutputFormProperties>({
+		});
+
 	}
 
 
@@ -483,8 +1160,23 @@ export namespace MyNS {
 		Name?: string | null;
 		GameSessionQueueArn?: string | null;
 		TimeoutInSeconds?: number | null;
-		PlayerLatencyPolicies?: Array<PlayerLatencyPolicy> | null;
-		Destinations?: Array<GameSessionQueueDestination> | null;
+		PlayerLatencyPolicies?: Array<PlayerLatencyPolicy>;
+		Destinations?: Array<GameSessionQueueDestination>;
+	}
+
+	/** <p>Configuration of a queue that is used to process game session placement requests. The queue configuration identifies several game features:</p> <ul> <li> <p>The destinations where a new game session can potentially be hosted. Amazon GameLift tries these destinations in an order based on either the queue's default order or player latency information, if provided in a placement request. With latency information, Amazon GameLift can place game sessions where the majority of players are reporting the lowest possible latency. </p> </li> <li> <p>The length of time that placement requests can wait in the queue before timing out. </p> </li> <li> <p>A set of optional latency policies that protect individual players from high latencies, preventing game sessions from being placed where any individual player is reporting latency higher than a policy's maximum.</p> </li> </ul> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p> <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a> </p> </li> </ul> */
+	export interface GameSessionQueueFormProperties {
+		Name: FormControl<string | null | undefined>,
+		GameSessionQueueArn: FormControl<string | null | undefined>,
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateGameSessionQueueFormGroup() {
+		return new FormGroup<GameSessionQueueFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			GameSessionQueueArn: new FormControl<string | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -494,10 +1186,34 @@ export namespace MyNS {
 		PolicyDurationSeconds?: number | null;
 	}
 
+	/** <p>Queue setting that determines the highest latency allowed for individual players when placing a game session. When a latency policy is in force, a game session cannot be placed with any fleet in a Region where a player reports latency higher than the cap. Latency policies are only enforced when the placement request contains player latency information.</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p> <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a> </p> </li> </ul> */
+	export interface PlayerLatencyPolicyFormProperties {
+		MaximumIndividualPlayerLatencyMilliseconds: FormControl<number | null | undefined>,
+		PolicyDurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreatePlayerLatencyPolicyFormGroup() {
+		return new FormGroup<PlayerLatencyPolicyFormProperties>({
+			MaximumIndividualPlayerLatencyMilliseconds: new FormControl<number | null | undefined>(undefined),
+			PolicyDurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new game session on any destination that is configured for a queue. </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p> <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a> </p> </li> </ul> */
 	export interface GameSessionQueueDestination {
 		DestinationArn?: string | null;
+	}
+
+	/** <p>Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new game session on any destination that is configured for a queue. </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p> <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a> </p> </li> </ul> */
+	export interface GameSessionQueueDestinationFormProperties {
+		DestinationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGameSessionQueueDestinationFormGroup() {
+		return new FormGroup<GameSessionQueueDestinationFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -505,9 +1221,22 @@ export namespace MyNS {
 	export interface CreateGameSessionQueueInput {
 		Name: string;
 		TimeoutInSeconds?: number | null;
-		PlayerLatencyPolicies?: Array<PlayerLatencyPolicy> | null;
-		Destinations?: Array<GameSessionQueueDestination> | null;
-		Tags?: Array<Tag> | null;
+		PlayerLatencyPolicies?: Array<PlayerLatencyPolicy>;
+		Destinations?: Array<GameSessionQueueDestination>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreateGameSessionQueueInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateGameSessionQueueInputFormGroup() {
+		return new FormGroup<CreateGameSessionQueueInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -515,7 +1244,16 @@ export namespace MyNS {
 	export interface CreateMatchmakingConfigurationOutput {
 
 		/** Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration. */
-		Configuration?: MatchmakingConfiguration | null;
+		Configuration?: MatchmakingConfiguration;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateMatchmakingConfigurationOutputFormProperties {
+	}
+	export function CreateCreateMatchmakingConfigurationOutputFormGroup() {
+		return new FormGroup<CreateMatchmakingConfigurationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -529,7 +1267,7 @@ export namespace MyNS {
 		 */
 		ConfigurationArn?: string | null;
 		Description?: string | null;
-		GameSessionQueueArns?: Array<string> | null;
+		GameSessionQueueArns?: Array<string>;
 		RequestTimeoutSeconds?: number | null;
 		AcceptanceTimeoutSeconds?: number | null;
 		AcceptanceRequired?: boolean | null;
@@ -544,9 +1282,56 @@ export namespace MyNS {
 		AdditionalPlayerCount?: number | null;
 		CustomEventData?: string | null;
 		CreationTime?: Date | null;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		GameSessionData?: string | null;
 		BackfillMode?: MatchmakingConfigurationBackfillMode | null;
+	}
+
+	/** Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration. */
+	export interface MatchmakingConfigurationFormProperties {
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Data type used for Matchmaking Configuration ARN.
+		 * Pattern: ^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
+		 */
+		ConfigurationArn: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RequestTimeoutSeconds: FormControl<number | null | undefined>,
+		AcceptanceTimeoutSeconds: FormControl<number | null | undefined>,
+		AcceptanceRequired: FormControl<boolean | null | undefined>,
+		RuleSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Data type used for Matchmaking RuleSet ARN.
+		 * Pattern: ^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
+		 */
+		RuleSetArn: FormControl<string | null | undefined>,
+		NotificationTarget: FormControl<string | null | undefined>,
+		AdditionalPlayerCount: FormControl<number | null | undefined>,
+		CustomEventData: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+		BackfillMode: FormControl<MatchmakingConfigurationBackfillMode | null | undefined>,
+	}
+	export function CreateMatchmakingConfigurationFormGroup() {
+		return new FormGroup<MatchmakingConfigurationFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RequestTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			AcceptanceTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			AcceptanceRequired: new FormControl<boolean | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetArn: new FormControl<string | null | undefined>(undefined),
+			NotificationTarget: new FormControl<string | null | undefined>(undefined),
+			AdditionalPlayerCount: new FormControl<number | null | undefined>(undefined),
+			CustomEventData: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+			BackfillMode: new FormControl<MatchmakingConfigurationBackfillMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MatchmakingConfigurationBackfillMode { AUTOMATIC = 0, MANUAL = 1 }
@@ -564,10 +1349,41 @@ export namespace MyNS {
 		NotificationTarget?: string | null;
 		AdditionalPlayerCount?: number | null;
 		CustomEventData?: string | null;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		GameSessionData?: string | null;
 		BackfillMode?: MatchmakingConfigurationBackfillMode | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreateMatchmakingConfigurationInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RequestTimeoutSeconds: FormControl<number | null | undefined>,
+		AcceptanceTimeoutSeconds: FormControl<number | null | undefined>,
+		AcceptanceRequired: FormControl<boolean | null | undefined>,
+		RuleSetName: FormControl<string | null | undefined>,
+		NotificationTarget: FormControl<string | null | undefined>,
+		AdditionalPlayerCount: FormControl<number | null | undefined>,
+		CustomEventData: FormControl<string | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+		BackfillMode: FormControl<MatchmakingConfigurationBackfillMode | null | undefined>,
+	}
+	export function CreateCreateMatchmakingConfigurationInputFormGroup() {
+		return new FormGroup<CreateMatchmakingConfigurationInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RequestTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			AcceptanceTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			AcceptanceRequired: new FormControl<boolean | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			NotificationTarget: new FormControl<string | null | undefined>(undefined),
+			AdditionalPlayerCount: new FormControl<number | null | undefined>(undefined),
+			CustomEventData: new FormControl<string | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+			BackfillMode: new FormControl<MatchmakingConfigurationBackfillMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -579,6 +1395,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		RuleSet: MatchmakingRuleSet;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateMatchmakingRuleSetOutputFormProperties {
+	}
+	export function CreateCreateMatchmakingRuleSetOutputFormGroup() {
+		return new FormGroup<CreateMatchmakingRuleSetOutputFormProperties>({
+		});
+
 	}
 
 
@@ -595,12 +1420,47 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 	}
 
+	/** <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. </p> </li> <li> <p>Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.</p> </li> <li> <p>Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. </p> </li> <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li> </ul> */
+	export interface MatchmakingRuleSetFormProperties {
+		RuleSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Data type used for Matchmaking RuleSet ARN.
+		 * Pattern: ^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
+		 */
+		RuleSetArn: FormControl<string | null | undefined>,
+		RuleSetBody: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateMatchmakingRuleSetFormGroup() {
+		return new FormGroup<MatchmakingRuleSetFormProperties>({
+			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			RuleSetArn: new FormControl<string | null | undefined>(undefined),
+			RuleSetBody: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface CreateMatchmakingRuleSetInput {
 		Name: string;
 		RuleSetBody: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreateMatchmakingRuleSetInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RuleSetBody: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMatchmakingRuleSetInputFormGroup() {
+		return new FormGroup<CreateMatchmakingRuleSetInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RuleSetBody: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -608,7 +1468,16 @@ export namespace MyNS {
 	export interface CreatePlayerSessionOutput {
 
 		/** <p>Properties describing a player session. Player session objects are created either by creating a player session for a specific game session, or as part of a game session placement. A player session represents either a player reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when the player connects to the game session and is validated.</p> <p>When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the player session object is retained for 30 days and then removed.</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
-		PlayerSession?: PlayerSession | null;
+		PlayerSession?: PlayerSession;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreatePlayerSessionOutputFormProperties {
+	}
+	export function CreateCreatePlayerSessionOutputFormGroup() {
+		return new FormGroup<CreatePlayerSessionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -628,6 +1497,39 @@ export namespace MyNS {
 		PlayerData?: string | null;
 	}
 
+	/** <p>Properties describing a player session. Player session objects are created either by creating a player session for a specific game session, or as part of a game session placement. A player session represents either a player reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when the player connects to the game session and is validated.</p> <p>When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the player session object is retained for 30 days and then removed.</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
+	export interface PlayerSessionFormProperties {
+		PlayerSessionId: FormControl<string | null | undefined>,
+		PlayerId: FormControl<string | null | undefined>,
+		GameSessionId: FormControl<string | null | undefined>,
+		FleetId: FormControl<string | null | undefined>,
+		FleetArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TerminationTime: FormControl<Date | null | undefined>,
+		Status: FormControl<PlayerSessionStatus | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		DnsName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		PlayerData: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayerSessionFormGroup() {
+		return new FormGroup<PlayerSessionFormProperties>({
+			PlayerSessionId: new FormControl<string | null | undefined>(undefined),
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TerminationTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<PlayerSessionStatus | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			PlayerData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PlayerSessionStatus { RESERVED = 0, ACTIVE = 1, COMPLETED = 2, TIMEDOUT = 3 }
 
 
@@ -638,16 +1540,54 @@ export namespace MyNS {
 		PlayerData?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface CreatePlayerSessionInputFormProperties {
+		GameSessionId: FormControl<string | null | undefined>,
+		PlayerId: FormControl<string | null | undefined>,
+		PlayerData: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlayerSessionInputFormGroup() {
+		return new FormGroup<CreatePlayerSessionInputFormProperties>({
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			PlayerData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidGameSessionStatusException {
+	}
+	export interface InvalidGameSessionStatusExceptionFormProperties {
+	}
+	export function CreateInvalidGameSessionStatusExceptionFormGroup() {
+		return new FormGroup<InvalidGameSessionStatusExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GameSessionFullException {
+	}
+	export interface GameSessionFullExceptionFormProperties {
+	}
+	export function CreateGameSessionFullExceptionFormGroup() {
+		return new FormGroup<GameSessionFullExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface CreatePlayerSessionsOutput {
-		PlayerSessions?: Array<PlayerSession> | null;
+		PlayerSessions?: Array<PlayerSession>;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreatePlayerSessionsOutputFormProperties {
+	}
+	export function CreateCreatePlayerSessionsOutputFormGroup() {
+		return new FormGroup<CreatePlayerSessionsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -655,16 +1595,41 @@ export namespace MyNS {
 	export interface CreatePlayerSessionsInput {
 		GameSessionId: string;
 		PlayerIds: Array<string>;
-		PlayerDataMap?: PlayerDataMap | null;
+		PlayerDataMap?: PlayerDataMap;
+	}
+
+	/** Represents the input for a request action. */
+	export interface CreatePlayerSessionsInputFormProperties {
+		GameSessionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlayerSessionsInputFormGroup() {
+		return new FormGroup<CreatePlayerSessionsInputFormProperties>({
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PlayerDataMap {
+	}
+	export interface PlayerDataMapFormProperties {
+	}
+	export function CreatePlayerDataMapFormGroup() {
+		return new FormGroup<PlayerDataMapFormProperties>({
+		});
+
 	}
 
 	export interface CreateScriptOutput {
 
 		/** <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a> </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p> <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li> </ul> */
-		Script?: Script | null;
+		Script?: Script;
+	}
+	export interface CreateScriptOutputFormProperties {
+	}
+	export function CreateCreateScriptOutputFormGroup() {
+		return new FormGroup<CreateScriptOutputFormProperties>({
+		});
+
 	}
 
 
@@ -678,7 +1643,28 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 
 		/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests. */
-		StorageLocation?: S3Location | null;
+		StorageLocation?: S3Location;
+	}
+
+	/** <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a> </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p> <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li> </ul> */
+	export interface ScriptFormProperties {
+		ScriptId: FormControl<string | null | undefined>,
+		ScriptArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		SizeOnDisk: FormControl<number | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateScriptFormGroup() {
+		return new FormGroup<ScriptFormProperties>({
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+			ScriptArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			SizeOnDisk: new FormControl<number | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateScriptInput {
@@ -686,9 +1672,22 @@ export namespace MyNS {
 		Version?: string | null;
 
 		/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests. */
-		StorageLocation?: S3Location | null;
+		StorageLocation?: S3Location;
 		ZipFile?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateScriptInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		ZipFile: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateScriptInputFormGroup() {
+		return new FormGroup<CreateScriptInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			ZipFile: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -696,7 +1695,16 @@ export namespace MyNS {
 	export interface CreateVpcPeeringAuthorizationOutput {
 
 		/** <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> </p> </li> </ul> */
-		VpcPeeringAuthorization?: VpcPeeringAuthorization | null;
+		VpcPeeringAuthorization?: VpcPeeringAuthorization;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface CreateVpcPeeringAuthorizationOutputFormProperties {
+	}
+	export function CreateCreateVpcPeeringAuthorizationOutputFormGroup() {
+		return new FormGroup<CreateVpcPeeringAuthorizationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -709,6 +1717,25 @@ export namespace MyNS {
 		ExpirationTime?: Date | null;
 	}
 
+	/** <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> </p> </li> </ul> */
+	export interface VpcPeeringAuthorizationFormProperties {
+		GameLiftAwsAccountId: FormControl<string | null | undefined>,
+		PeerVpcAwsAccountId: FormControl<string | null | undefined>,
+		PeerVpcId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ExpirationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateVpcPeeringAuthorizationFormGroup() {
+		return new FormGroup<VpcPeeringAuthorizationFormProperties>({
+			GameLiftAwsAccountId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcAwsAccountId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface CreateVpcPeeringAuthorizationInput {
@@ -716,7 +1743,27 @@ export namespace MyNS {
 		PeerVpcId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface CreateVpcPeeringAuthorizationInputFormProperties {
+		GameLiftAwsAccountId: FormControl<string | null | undefined>,
+		PeerVpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVpcPeeringAuthorizationInputFormGroup() {
+		return new FormGroup<CreateVpcPeeringAuthorizationInputFormProperties>({
+			GameLiftAwsAccountId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateVpcPeeringConnectionOutput {
+	}
+	export interface CreateVpcPeeringConnectionOutputFormProperties {
+	}
+	export function CreateCreateVpcPeeringConnectionOutputFormGroup() {
+		return new FormGroup<CreateVpcPeeringConnectionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -727,10 +1774,36 @@ export namespace MyNS {
 		PeerVpcId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface CreateVpcPeeringConnectionInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		PeerVpcAwsAccountId: FormControl<string | null | undefined>,
+		PeerVpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVpcPeeringConnectionInputFormGroup() {
+		return new FormGroup<CreateVpcPeeringConnectionInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcAwsAccountId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DeleteAliasInput {
 		AliasId: string;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DeleteAliasInputFormProperties {
+		AliasId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAliasInputFormGroup() {
+		return new FormGroup<DeleteAliasInputFormProperties>({
+			AliasId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -739,26 +1812,73 @@ export namespace MyNS {
 		BuildId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DeleteBuildInputFormProperties {
+		BuildId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBuildInputFormGroup() {
+		return new FormGroup<DeleteBuildInputFormProperties>({
+			BuildId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DeleteFleetInput {
 		FleetId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DeleteFleetInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFleetInputFormGroup() {
+		return new FormGroup<DeleteFleetInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteGameServerGroupOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
-		GameServerGroup?: GameServerGroup | null;
+		GameServerGroup?: GameServerGroup;
+	}
+	export interface DeleteGameServerGroupOutputFormProperties {
+	}
+	export function CreateDeleteGameServerGroupOutputFormGroup() {
+		return new FormGroup<DeleteGameServerGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteGameServerGroupInput {
 		GameServerGroupName: string;
 		DeleteOption?: DeleteGameServerGroupInputDeleteOption | null;
 	}
+	export interface DeleteGameServerGroupInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		DeleteOption: FormControl<DeleteGameServerGroupInputDeleteOption | null | undefined>,
+	}
+	export function CreateDeleteGameServerGroupInputFormGroup() {
+		return new FormGroup<DeleteGameServerGroupInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			DeleteOption: new FormControl<DeleteGameServerGroupInputDeleteOption | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DeleteGameServerGroupInputDeleteOption { SAFE_DELETE = 0, FORCE_DELETE = 1, RETAIN = 2 }
 
 	export interface DeleteGameSessionQueueOutput {
+	}
+	export interface DeleteGameSessionQueueOutputFormProperties {
+	}
+	export function CreateDeleteGameSessionQueueOutputFormGroup() {
+		return new FormGroup<DeleteGameSessionQueueOutputFormProperties>({
+		});
+
 	}
 
 
@@ -767,7 +1887,25 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/** Represents the input for a request action.  */
+	export interface DeleteGameSessionQueueInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGameSessionQueueInputFormGroup() {
+		return new FormGroup<DeleteGameSessionQueueInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteMatchmakingConfigurationOutput {
+	}
+	export interface DeleteMatchmakingConfigurationOutputFormProperties {
+	}
+	export function CreateDeleteMatchmakingConfigurationOutputFormGroup() {
+		return new FormGroup<DeleteMatchmakingConfigurationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -776,15 +1914,46 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DeleteMatchmakingConfigurationInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMatchmakingConfigurationInputFormGroup() {
+		return new FormGroup<DeleteMatchmakingConfigurationInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DeleteMatchmakingRuleSetOutput {
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DeleteMatchmakingRuleSetOutputFormProperties {
+	}
+	export function CreateDeleteMatchmakingRuleSetOutputFormGroup() {
+		return new FormGroup<DeleteMatchmakingRuleSetOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the input for a request action. */
 	export interface DeleteMatchmakingRuleSetInput {
 		Name: string;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DeleteMatchmakingRuleSetInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMatchmakingRuleSetInputFormGroup() {
+		return new FormGroup<DeleteMatchmakingRuleSetInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -794,11 +1963,40 @@ export namespace MyNS {
 		FleetId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DeleteScalingPolicyInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteScalingPolicyInputFormGroup() {
+		return new FormGroup<DeleteScalingPolicyInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteScriptInput {
 		ScriptId: string;
 	}
+	export interface DeleteScriptInputFormProperties {
+		ScriptId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteScriptInputFormGroup() {
+		return new FormGroup<DeleteScriptInputFormProperties>({
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteVpcPeeringAuthorizationOutput {
+	}
+	export interface DeleteVpcPeeringAuthorizationOutputFormProperties {
+	}
+	export function CreateDeleteVpcPeeringAuthorizationOutputFormGroup() {
+		return new FormGroup<DeleteVpcPeeringAuthorizationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -808,7 +2006,27 @@ export namespace MyNS {
 		PeerVpcId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DeleteVpcPeeringAuthorizationInputFormProperties {
+		GameLiftAwsAccountId: FormControl<string | null | undefined>,
+		PeerVpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVpcPeeringAuthorizationInputFormGroup() {
+		return new FormGroup<DeleteVpcPeeringAuthorizationInputFormProperties>({
+			GameLiftAwsAccountId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteVpcPeeringConnectionOutput {
+	}
+	export interface DeleteVpcPeeringConnectionOutputFormProperties {
+	}
+	export function CreateDeleteVpcPeeringConnectionOutputFormGroup() {
+		return new FormGroup<DeleteVpcPeeringConnectionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -818,9 +2036,33 @@ export namespace MyNS {
 		VpcPeeringConnectionId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DeleteVpcPeeringConnectionInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		VpcPeeringConnectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVpcPeeringConnectionInputFormGroup() {
+		return new FormGroup<DeleteVpcPeeringConnectionInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			VpcPeeringConnectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeregisterGameServerInput {
 		GameServerGroupName: string;
 		GameServerId: string;
+	}
+	export interface DeregisterGameServerInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterGameServerInputFormGroup() {
+		return new FormGroup<DeregisterGameServerInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -828,7 +2070,16 @@ export namespace MyNS {
 	export interface DescribeAliasOutput {
 
 		/** <p>Properties that describe an alias resource.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
-		Alias?: Alias | null;
+		Alias?: Alias;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeAliasOutputFormProperties {
+	}
+	export function CreateDescribeAliasOutputFormGroup() {
+		return new FormGroup<DescribeAliasOutputFormProperties>({
+		});
+
 	}
 
 
@@ -837,12 +2088,32 @@ export namespace MyNS {
 		AliasId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeAliasInputFormProperties {
+		AliasId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAliasInputFormGroup() {
+		return new FormGroup<DescribeAliasInputFormProperties>({
+			AliasId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeBuildOutput {
 
 		/** <p>Properties describing a custom game build.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul> */
-		Build?: Build | null;
+		Build?: Build;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeBuildOutputFormProperties {
+	}
+	export function CreateDescribeBuildOutputFormGroup() {
+		return new FormGroup<DescribeBuildOutputFormProperties>({
+		});
+
 	}
 
 
@@ -851,10 +2122,30 @@ export namespace MyNS {
 		BuildId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeBuildInputFormProperties {
+		BuildId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBuildInputFormGroup() {
+		return new FormGroup<DescribeBuildInputFormProperties>({
+			BuildId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeEC2InstanceLimitsOutput {
-		EC2InstanceLimits?: Array<EC2InstanceLimit> | null;
+		EC2InstanceLimits?: Array<EC2InstanceLimit>;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeEC2InstanceLimitsOutputFormProperties {
+	}
+	export function CreateDescribeEC2InstanceLimitsOutputFormGroup() {
+		return new FormGroup<DescribeEC2InstanceLimitsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -865,6 +2156,21 @@ export namespace MyNS {
 		InstanceLimit?: number | null;
 	}
 
+	/** The maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type. Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>. */
+	export interface EC2InstanceLimitFormProperties {
+		EC2InstanceType: FormControl<EC2InstanceLimitEC2InstanceType | null | undefined>,
+		CurrentInstances: FormControl<number | null | undefined>,
+		InstanceLimit: FormControl<number | null | undefined>,
+	}
+	export function CreateEC2InstanceLimitFormGroup() {
+		return new FormGroup<EC2InstanceLimitFormProperties>({
+			EC2InstanceType: new FormControl<EC2InstanceLimitEC2InstanceType | null | undefined>(undefined),
+			CurrentInstances: new FormControl<number | null | undefined>(undefined),
+			InstanceLimit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EC2InstanceLimitEC2InstanceType { t2_micro = 0, t2_small = 1, t2_medium = 2, t2_large = 3, c3_large = 4, c3_xlarge = 5, c3_2xlarge = 6, c3_4xlarge = 7, c3_8xlarge = 8, c4_large = 9, c4_xlarge = 10, c4_2xlarge = 11, c4_4xlarge = 12, c4_8xlarge = 13, c5_large = 14, c5_xlarge = 15, c5_2xlarge = 16, c5_4xlarge = 17, c5_9xlarge = 18, c5_12xlarge = 19, c5_18xlarge = 20, c5_24xlarge = 21, r3_large = 22, r3_xlarge = 23, r3_2xlarge = 24, r3_4xlarge = 25, r3_8xlarge = 26, r4_large = 27, r4_xlarge = 28, r4_2xlarge = 29, r4_4xlarge = 30, r4_8xlarge = 31, r4_16xlarge = 32, r5_large = 33, r5_xlarge = 34, r5_2xlarge = 35, r5_4xlarge = 36, r5_8xlarge = 37, r5_12xlarge = 38, r5_16xlarge = 39, r5_24xlarge = 40, m3_medium = 41, m3_large = 42, m3_xlarge = 43, m3_2xlarge = 44, m4_large = 45, m4_xlarge = 46, m4_2xlarge = 47, m4_4xlarge = 48, m4_10xlarge = 49, m5_large = 50, m5_xlarge = 51, m5_2xlarge = 52, m5_4xlarge = 53, m5_8xlarge = 54, m5_12xlarge = 55, m5_16xlarge = 56, m5_24xlarge = 57 }
 
 
@@ -873,28 +2179,74 @@ export namespace MyNS {
 		EC2InstanceType?: DescribeEC2InstanceLimitsInputEC2InstanceType | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeEC2InstanceLimitsInputFormProperties {
+		EC2InstanceType: FormControl<DescribeEC2InstanceLimitsInputEC2InstanceType | null | undefined>,
+	}
+	export function CreateDescribeEC2InstanceLimitsInputFormGroup() {
+		return new FormGroup<DescribeEC2InstanceLimitsInputFormProperties>({
+			EC2InstanceType: new FormControl<DescribeEC2InstanceLimitsInputEC2InstanceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DescribeEC2InstanceLimitsInputEC2InstanceType { t2_micro = 0, t2_small = 1, t2_medium = 2, t2_large = 3, c3_large = 4, c3_xlarge = 5, c3_2xlarge = 6, c3_4xlarge = 7, c3_8xlarge = 8, c4_large = 9, c4_xlarge = 10, c4_2xlarge = 11, c4_4xlarge = 12, c4_8xlarge = 13, c5_large = 14, c5_xlarge = 15, c5_2xlarge = 16, c5_4xlarge = 17, c5_9xlarge = 18, c5_12xlarge = 19, c5_18xlarge = 20, c5_24xlarge = 21, r3_large = 22, r3_xlarge = 23, r3_2xlarge = 24, r3_4xlarge = 25, r3_8xlarge = 26, r4_large = 27, r4_xlarge = 28, r4_2xlarge = 29, r4_4xlarge = 30, r4_8xlarge = 31, r4_16xlarge = 32, r5_large = 33, r5_xlarge = 34, r5_2xlarge = 35, r5_4xlarge = 36, r5_8xlarge = 37, r5_12xlarge = 38, r5_16xlarge = 39, r5_24xlarge = 40, m3_medium = 41, m3_large = 42, m3_xlarge = 43, m3_2xlarge = 44, m4_large = 45, m4_xlarge = 46, m4_2xlarge = 47, m4_4xlarge = 48, m4_10xlarge = 49, m5_large = 50, m5_xlarge = 51, m5_2xlarge = 52, m5_4xlarge = 53, m5_8xlarge = 54, m5_12xlarge = 55, m5_16xlarge = 56, m5_24xlarge = 57 }
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeFleetAttributesOutput {
-		FleetAttributes?: Array<FleetAttributes> | null;
+		FleetAttributes?: Array<FleetAttributes>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeFleetAttributesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetAttributesOutputFormGroup() {
+		return new FormGroup<DescribeFleetAttributesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the input for a request action. */
 	export interface DescribeFleetAttributesInput {
-		FleetIds?: Array<string> | null;
+		FleetIds?: Array<string>;
 		Limit?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeFleetAttributesInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetAttributesInputFormGroup() {
+		return new FormGroup<DescribeFleetAttributesInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeFleetCapacityOutput {
-		FleetCapacity?: Array<FleetCapacity> | null;
+		FleetCapacity?: Array<FleetCapacity>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeFleetCapacityOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetCapacityOutputFormGroup() {
+		return new FormGroup<DescribeFleetCapacityOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -904,7 +2256,20 @@ export namespace MyNS {
 		InstanceType?: FleetCapacityInstanceType | null;
 
 		/** <p>Current status of fleet capacity. The number of active instances should match or be in the process of matching the number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
-		InstanceCounts?: EC2InstanceCounts | null;
+		InstanceCounts?: EC2InstanceCounts;
+	}
+
+	/** <p>Information about the fleet's capacity. Fleet capacity is measured in EC2 instances. By default, new fleets have a capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by the fleet's instance type.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
+	export interface FleetCapacityFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		InstanceType: FormControl<FleetCapacityInstanceType | null | undefined>,
+	}
+	export function CreateFleetCapacityFormGroup() {
+		return new FormGroup<FleetCapacityFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<FleetCapacityInstanceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FleetCapacityInstanceType { t2_micro = 0, t2_small = 1, t2_medium = 2, t2_large = 3, c3_large = 4, c3_xlarge = 5, c3_2xlarge = 6, c3_4xlarge = 7, c3_8xlarge = 8, c4_large = 9, c4_xlarge = 10, c4_2xlarge = 11, c4_4xlarge = 12, c4_8xlarge = 13, c5_large = 14, c5_xlarge = 15, c5_2xlarge = 16, c5_4xlarge = 17, c5_9xlarge = 18, c5_12xlarge = 19, c5_18xlarge = 20, c5_24xlarge = 21, r3_large = 22, r3_xlarge = 23, r3_2xlarge = 24, r3_4xlarge = 25, r3_8xlarge = 26, r4_large = 27, r4_xlarge = 28, r4_2xlarge = 29, r4_4xlarge = 30, r4_8xlarge = 31, r4_16xlarge = 32, r5_large = 33, r5_xlarge = 34, r5_2xlarge = 35, r5_4xlarge = 36, r5_8xlarge = 37, r5_12xlarge = 38, r5_16xlarge = 39, r5_24xlarge = 40, m3_medium = 41, m3_large = 42, m3_xlarge = 43, m3_2xlarge = 44, m4_large = 45, m4_xlarge = 46, m4_2xlarge = 47, m4_4xlarge = 48, m4_10xlarge = 49, m5_large = 50, m5_xlarge = 51, m5_2xlarge = 52, m5_4xlarge = 53, m5_8xlarge = 54, m5_12xlarge = 55, m5_16xlarge = 56, m5_24xlarge = 57 }
@@ -921,19 +2286,66 @@ export namespace MyNS {
 		TERMINATING?: number | null;
 	}
 
+	/** <p>Current status of fleet capacity. The number of active instances should match or be in the process of matching the number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
+	export interface EC2InstanceCountsFormProperties {
+		DESIRED: FormControl<number | null | undefined>,
+		MINIMUM: FormControl<number | null | undefined>,
+		MAXIMUM: FormControl<number | null | undefined>,
+		PENDING: FormControl<number | null | undefined>,
+		ACTIVE: FormControl<number | null | undefined>,
+		IDLE: FormControl<number | null | undefined>,
+		TERMINATING: FormControl<number | null | undefined>,
+	}
+	export function CreateEC2InstanceCountsFormGroup() {
+		return new FormGroup<EC2InstanceCountsFormProperties>({
+			DESIRED: new FormControl<number | null | undefined>(undefined),
+			MINIMUM: new FormControl<number | null | undefined>(undefined),
+			MAXIMUM: new FormControl<number | null | undefined>(undefined),
+			PENDING: new FormControl<number | null | undefined>(undefined),
+			ACTIVE: new FormControl<number | null | undefined>(undefined),
+			IDLE: new FormControl<number | null | undefined>(undefined),
+			TERMINATING: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DescribeFleetCapacityInput {
-		FleetIds?: Array<string> | null;
+		FleetIds?: Array<string>;
 		Limit?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeFleetCapacityInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetCapacityInputFormGroup() {
+		return new FormGroup<DescribeFleetCapacityInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeFleetEventsOutput {
-		Events?: Array<Event> | null;
+		Events?: Array<Event>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeFleetEventsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetEventsOutputFormGroup() {
+		return new FormGroup<DescribeFleetEventsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -945,6 +2357,27 @@ export namespace MyNS {
 		Message?: string | null;
 		EventTime?: Date | null;
 		PreSignedLogUrl?: string | null;
+	}
+
+	/** Log entry describing an event that involves Amazon GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems. */
+	export interface EventFormProperties {
+		EventId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		EventCode: FormControl<EventEventCode | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		EventTime: FormControl<Date | null | undefined>,
+		PreSignedLogUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			EventId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			EventCode: new FormControl<EventEventCode | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			EventTime: new FormControl<Date | null | undefined>(undefined),
+			PreSignedLogUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventEventCode { GENERIC_EVENT = 0, FLEET_CREATED = 1, FLEET_DELETED = 2, FLEET_SCALING_EVENT = 3, FLEET_STATE_DOWNLOADING = 4, FLEET_STATE_VALIDATING = 5, FLEET_STATE_BUILDING = 6, FLEET_STATE_ACTIVATING = 7, FLEET_STATE_ACTIVE = 8, FLEET_STATE_ERROR = 9, FLEET_INITIALIZATION_FAILED = 10, FLEET_BINARY_DOWNLOAD_FAILED = 11, FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = 12, FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = 13, FLEET_VALIDATION_TIMED_OUT = 14, FLEET_ACTIVATION_FAILED = 15, FLEET_ACTIVATION_FAILED_NO_INSTANCES = 16, FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = 17, SERVER_PROCESS_INVALID_PATH = 18, SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = 19, SERVER_PROCESS_PROCESS_READY_TIMEOUT = 20, SERVER_PROCESS_CRASHED = 21, SERVER_PROCESS_TERMINATED_UNHEALTHY = 22, SERVER_PROCESS_FORCE_TERMINATED = 23, SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = 24, GAME_SESSION_ACTIVATION_TIMEOUT = 25, FLEET_CREATION_EXTRACTING_BUILD = 26, FLEET_CREATION_RUNNING_INSTALLER = 27, FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = 28, FLEET_VPC_PEERING_SUCCEEDED = 29, FLEET_VPC_PEERING_FAILED = 30, FLEET_VPC_PEERING_DELETED = 31, INSTANCE_INTERRUPTED = 32 }
@@ -959,10 +2392,38 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeFleetEventsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetEventsInputFormGroup() {
+		return new FormGroup<DescribeFleetEventsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeFleetPortSettingsOutput {
-		InboundPermissions?: Array<IpPermission> | null;
+		InboundPermissions?: Array<IpPermission>;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeFleetPortSettingsOutputFormProperties {
+	}
+	export function CreateDescribeFleetPortSettingsOutputFormGroup() {
+		return new FormGroup<DescribeFleetPortSettingsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -971,11 +2432,33 @@ export namespace MyNS {
 		FleetId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeFleetPortSettingsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetPortSettingsInputFormGroup() {
+		return new FormGroup<DescribeFleetPortSettingsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeFleetUtilizationOutput {
-		FleetUtilization?: Array<FleetUtilization> | null;
+		FleetUtilization?: Array<FleetUtilization>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeFleetUtilizationOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetUtilizationOutputFormGroup() {
+		return new FormGroup<DescribeFleetUtilizationOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -988,40 +2471,117 @@ export namespace MyNS {
 		MaximumPlayerSessionCount?: number | null;
 	}
 
+	/** <p>Current status of fleet utilization, including the number of game and player sessions being hosted.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
+	export interface FleetUtilizationFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		ActiveServerProcessCount: FormControl<number | null | undefined>,
+		ActiveGameSessionCount: FormControl<number | null | undefined>,
+		CurrentPlayerSessionCount: FormControl<number | null | undefined>,
+		MaximumPlayerSessionCount: FormControl<number | null | undefined>,
+	}
+	export function CreateFleetUtilizationFormGroup() {
+		return new FormGroup<FleetUtilizationFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			ActiveServerProcessCount: new FormControl<number | null | undefined>(undefined),
+			ActiveGameSessionCount: new FormControl<number | null | undefined>(undefined),
+			CurrentPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DescribeFleetUtilizationInput {
-		FleetIds?: Array<string> | null;
+		FleetIds?: Array<string>;
 		Limit?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeFleetUtilizationInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetUtilizationInputFormGroup() {
+		return new FormGroup<DescribeFleetUtilizationInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeGameServerOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server resource. </p> <p>A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>. </p> */
-		GameServer?: GameServer | null;
+		GameServer?: GameServer;
+	}
+	export interface DescribeGameServerOutputFormProperties {
+	}
+	export function CreateDescribeGameServerOutputFormGroup() {
+		return new FormGroup<DescribeGameServerOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGameServerInput {
 		GameServerGroupName: string;
 		GameServerId: string;
 	}
+	export interface DescribeGameServerInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameServerInputFormGroup() {
+		return new FormGroup<DescribeGameServerInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeGameServerGroupOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
-		GameServerGroup?: GameServerGroup | null;
+		GameServerGroup?: GameServerGroup;
+	}
+	export interface DescribeGameServerGroupOutputFormProperties {
+	}
+	export function CreateDescribeGameServerGroupOutputFormGroup() {
+		return new FormGroup<DescribeGameServerGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGameServerGroupInput {
 		GameServerGroupName: string;
 	}
+	export interface DescribeGameServerGroupInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameServerGroupInputFormGroup() {
+		return new FormGroup<DescribeGameServerGroupInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeGameSessionDetailsOutput {
-		GameSessionDetails?: Array<GameSessionDetail> | null;
+		GameSessionDetails?: Array<GameSessionDetail>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeGameSessionDetailsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionDetailsOutputFormGroup() {
+		return new FormGroup<DescribeGameSessionDetailsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1029,8 +2589,19 @@ export namespace MyNS {
 	export interface GameSessionDetail {
 
 		/** <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
-		GameSession?: GameSession | null;
+		GameSession?: GameSession;
 		ProtectionPolicy?: FleetAttributesNewGameSessionProtectionPolicy | null;
+	}
+
+	/** A game session's properties plus the protection policy currently in force. */
+	export interface GameSessionDetailFormProperties {
+		ProtectionPolicy: FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>,
+	}
+	export function CreateGameSessionDetailFormGroup() {
+		return new FormGroup<GameSessionDetailFormProperties>({
+			ProtectionPolicy: new FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1044,12 +2615,42 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeGameSessionDetailsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		GameSessionId: FormControl<string | null | undefined>,
+		AliasId: FormControl<string | null | undefined>,
+		StatusFilter: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionDetailsInputFormGroup() {
+		return new FormGroup<DescribeGameSessionDetailsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			AliasId: new FormControl<string | null | undefined>(undefined),
+			StatusFilter: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeGameSessionPlacementOutput {
 
 		/** <p>Object that describes a <a>StartGameSessionPlacement</a> request. This object includes the full details of the original request plus the current status and start/end time stamps.</p> <p>Game session placement-related operations include:</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> */
-		GameSessionPlacement?: GameSessionPlacement | null;
+		GameSessionPlacement?: GameSessionPlacement;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeGameSessionPlacementOutputFormProperties {
+	}
+	export function CreateDescribeGameSessionPlacementOutputFormGroup() {
+		return new FormGroup<DescribeGameSessionPlacementOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1058,21 +2659,60 @@ export namespace MyNS {
 		PlacementId?: string | null;
 		GameSessionQueueName?: string | null;
 		Status?: GameSessionPlacementStatus | null;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		MaximumPlayerSessionCount?: number | null;
 		GameSessionName?: string | null;
 		GameSessionId?: string | null;
 		GameSessionArn?: string | null;
 		GameSessionRegion?: string | null;
-		PlayerLatencies?: Array<PlayerLatency> | null;
+		PlayerLatencies?: Array<PlayerLatency>;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		IpAddress?: string | null;
 		DnsName?: string | null;
 		Port?: number | null;
-		PlacedPlayerSessions?: Array<PlacedPlayerSession> | null;
+		PlacedPlayerSessions?: Array<PlacedPlayerSession>;
 		GameSessionData?: string | null;
 		MatchmakerData?: string | null;
+	}
+
+	/** <p>Object that describes a <a>StartGameSessionPlacement</a> request. This object includes the full details of the original request plus the current status and start/end time stamps.</p> <p>Game session placement-related operations include:</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> */
+	export interface GameSessionPlacementFormProperties {
+		PlacementId: FormControl<string | null | undefined>,
+		GameSessionQueueName: FormControl<string | null | undefined>,
+		Status: FormControl<GameSessionPlacementStatus | null | undefined>,
+		MaximumPlayerSessionCount: FormControl<number | null | undefined>,
+		GameSessionName: FormControl<string | null | undefined>,
+		GameSessionId: FormControl<string | null | undefined>,
+		GameSessionArn: FormControl<string | null | undefined>,
+		GameSessionRegion: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		DnsName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+		MatchmakerData: FormControl<string | null | undefined>,
+	}
+	export function CreateGameSessionPlacementFormGroup() {
+		return new FormGroup<GameSessionPlacementFormProperties>({
+			PlacementId: new FormControl<string | null | undefined>(undefined),
+			GameSessionQueueName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GameSessionPlacementStatus | null | undefined>(undefined),
+			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			GameSessionName: new FormControl<string | null | undefined>(undefined),
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			GameSessionArn: new FormControl<string | null | undefined>(undefined),
+			GameSessionRegion: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+			MatchmakerData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GameSessionPlacementStatus { PENDING = 0, FULFILLED = 1, CANCELLED = 2, TIMED_OUT = 3, FAILED = 4 }
@@ -1085,11 +2725,39 @@ export namespace MyNS {
 		LatencyInMilliseconds?: number | null;
 	}
 
+	/** Regional latency information for a player, used when requesting a new game session with <a>StartGameSessionPlacement</a>. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player.  */
+	export interface PlayerLatencyFormProperties {
+		PlayerId: FormControl<string | null | undefined>,
+		RegionIdentifier: FormControl<string | null | undefined>,
+		LatencyInMilliseconds: FormControl<number | null | undefined>,
+	}
+	export function CreatePlayerLatencyFormGroup() {
+		return new FormGroup<PlayerLatencyFormProperties>({
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			RegionIdentifier: new FormControl<string | null | undefined>(undefined),
+			LatencyInMilliseconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a>DescribePlayerSessions</a> with the player session ID.</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
 	export interface PlacedPlayerSession {
 		PlayerId?: string | null;
 		PlayerSessionId?: string | null;
+	}
+
+	/** <p>Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a>DescribePlayerSessions</a> with the player session ID.</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
+	export interface PlacedPlayerSessionFormProperties {
+		PlayerId: FormControl<string | null | undefined>,
+		PlayerSessionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacedPlayerSessionFormGroup() {
+		return new FormGroup<PlacedPlayerSessionFormProperties>({
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			PlayerSessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1098,26 +2766,72 @@ export namespace MyNS {
 		PlacementId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeGameSessionPlacementInputFormProperties {
+		PlacementId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionPlacementInputFormGroup() {
+		return new FormGroup<DescribeGameSessionPlacementInputFormProperties>({
+			PlacementId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeGameSessionQueuesOutput {
-		GameSessionQueues?: Array<GameSessionQueue> | null;
+		GameSessionQueues?: Array<GameSessionQueue>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeGameSessionQueuesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionQueuesOutputFormGroup() {
+		return new FormGroup<DescribeGameSessionQueuesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the input for a request action. */
 	export interface DescribeGameSessionQueuesInput {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		Limit?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeGameSessionQueuesInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionQueuesInputFormGroup() {
+		return new FormGroup<DescribeGameSessionQueuesInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeGameSessionsOutput {
-		GameSessions?: Array<GameSession> | null;
+		GameSessions?: Array<GameSession>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeGameSessionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionsOutputFormGroup() {
+		return new FormGroup<DescribeGameSessionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1131,11 +2845,43 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeGameSessionsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		GameSessionId: FormControl<string | null | undefined>,
+		AliasId: FormControl<string | null | undefined>,
+		StatusFilter: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGameSessionsInputFormGroup() {
+		return new FormGroup<DescribeGameSessionsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			AliasId: new FormControl<string | null | undefined>(undefined),
+			StatusFilter: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeInstancesOutput {
-		Instances?: Array<Instance> | null;
+		Instances?: Array<Instance>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeInstancesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInstancesOutputFormGroup() {
+		return new FormGroup<DescribeInstancesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1151,6 +2897,31 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 	}
 
+	/** Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet may contain zero or more instances. */
+	export interface InstanceFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		DnsName: FormControl<string | null | undefined>,
+		OperatingSystem: FormControl<BuildOperatingSystem | null | undefined>,
+		Type: FormControl<InstanceType | null | undefined>,
+		Status: FormControl<InstanceStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateInstanceFormGroup() {
+		return new FormGroup<InstanceFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined),
+			OperatingSystem: new FormControl<BuildOperatingSystem | null | undefined>(undefined),
+			Type: new FormControl<InstanceType | null | undefined>(undefined),
+			Status: new FormControl<InstanceStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InstanceType { t2_micro = 0, t2_small = 1, t2_medium = 2, t2_large = 3, c3_large = 4, c3_xlarge = 5, c3_2xlarge = 6, c3_4xlarge = 7, c3_8xlarge = 8, c4_large = 9, c4_xlarge = 10, c4_2xlarge = 11, c4_4xlarge = 12, c4_8xlarge = 13, c5_large = 14, c5_xlarge = 15, c5_2xlarge = 16, c5_4xlarge = 17, c5_9xlarge = 18, c5_12xlarge = 19, c5_18xlarge = 20, c5_24xlarge = 21, r3_large = 22, r3_xlarge = 23, r3_2xlarge = 24, r3_4xlarge = 25, r3_8xlarge = 26, r4_large = 27, r4_xlarge = 28, r4_2xlarge = 29, r4_4xlarge = 30, r4_8xlarge = 31, r4_16xlarge = 32, r5_large = 33, r5_xlarge = 34, r5_2xlarge = 35, r5_4xlarge = 36, r5_8xlarge = 37, r5_12xlarge = 38, r5_16xlarge = 39, r5_24xlarge = 40, m3_medium = 41, m3_large = 42, m3_xlarge = 43, m3_2xlarge = 44, m4_large = 45, m4_xlarge = 46, m4_2xlarge = 47, m4_4xlarge = 48, m4_10xlarge = 49, m5_large = 50, m5_xlarge = 51, m5_2xlarge = 52, m5_4xlarge = 53, m5_8xlarge = 54, m5_12xlarge = 55, m5_16xlarge = 56, m5_24xlarge = 57 }
 
 	export enum InstanceStatus { PENDING = 0, ACTIVE = 1, TERMINATING = 2 }
@@ -1164,10 +2935,36 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeInstancesInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInstancesInputFormGroup() {
+		return new FormGroup<DescribeInstancesInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeMatchmakingOutput {
-		TicketList?: Array<MatchmakingTicket> | null;
+		TicketList?: Array<MatchmakingTicket>;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeMatchmakingOutputFormProperties {
+	}
+	export function CreateDescribeMatchmakingOutputFormGroup() {
+		return new FormGroup<DescribeMatchmakingOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1186,11 +2983,43 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
-		Players?: Array<Player> | null;
+		Players?: Array<Player>;
 
 		/** Connection information for the new game session that is created with matchmaking. (with <a>StartMatchmaking</a>). Once a match is set, the FlexMatch engine places the match and creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>. */
-		GameSessionConnectionInfo?: GameSessionConnectionInfo | null;
+		GameSessionConnectionInfo?: GameSessionConnectionInfo;
 		EstimatedWaitTime?: number | null;
+	}
+
+	/** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID. */
+	export interface MatchmakingTicketFormProperties {
+		TicketId: FormControl<string | null | undefined>,
+		ConfigurationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Data type used for Matchmaking Configuration ARN.
+		 * Pattern: ^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
+		 */
+		ConfigurationArn: FormControl<string | null | undefined>,
+		Status: FormControl<MatchmakingTicketStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		EstimatedWaitTime: FormControl<number | null | undefined>,
+	}
+	export function CreateMatchmakingTicketFormGroup() {
+		return new FormGroup<MatchmakingTicketFormProperties>({
+			TicketId: new FormControl<string | null | undefined>(undefined),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<MatchmakingTicketStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			EstimatedWaitTime: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MatchmakingTicketStatus { CANCELLED = 0, COMPLETED = 1, FAILED = 2, PLACING = 3, QUEUED = 4, REQUIRES_ACCEPTANCE = 5, SEARCHING = 6, TIMED_OUT = 7 }
@@ -1199,15 +3028,42 @@ export namespace MyNS {
 	/** Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed. */
 	export interface Player {
 		PlayerId?: string | null;
-		PlayerAttributes?: PlayerAttributeMap | null;
+		PlayerAttributes?: PlayerAttributeMap;
 		Team?: string | null;
-		LatencyInMs?: LatencyMap | null;
+		LatencyInMs?: LatencyMap;
+	}
+
+	/** Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed. */
+	export interface PlayerFormProperties {
+		PlayerId: FormControl<string | null | undefined>,
+		Team: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayerFormGroup() {
+		return new FormGroup<PlayerFormProperties>({
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			Team: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PlayerAttributeMap {
 	}
+	export interface PlayerAttributeMapFormProperties {
+	}
+	export function CreatePlayerAttributeMapFormGroup() {
+		return new FormGroup<PlayerAttributeMapFormProperties>({
+		});
+
+	}
 
 	export interface LatencyMap {
+	}
+	export interface LatencyMapFormProperties {
+	}
+	export function CreateLatencyMapFormGroup() {
+		return new FormGroup<LatencyMapFormProperties>({
+		});
+
 	}
 
 
@@ -1217,7 +3073,24 @@ export namespace MyNS {
 		IpAddress?: string | null;
 		DnsName?: string | null;
 		Port?: number | null;
-		MatchedPlayerSessions?: Array<MatchedPlayerSession> | null;
+		MatchedPlayerSessions?: Array<MatchedPlayerSession>;
+	}
+
+	/** Connection information for the new game session that is created with matchmaking. (with <a>StartMatchmaking</a>). Once a match is set, the FlexMatch engine places the match and creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>. */
+	export interface GameSessionConnectionInfoFormProperties {
+		GameSessionArn: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		DnsName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateGameSessionConnectionInfoFormGroup() {
+		return new FormGroup<GameSessionConnectionInfoFormProperties>({
+			GameSessionArn: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1227,26 +3100,74 @@ export namespace MyNS {
 		PlayerSessionId?: string | null;
 	}
 
+	/** <p>Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. </p> <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p> */
+	export interface MatchedPlayerSessionFormProperties {
+		PlayerId: FormControl<string | null | undefined>,
+		PlayerSessionId: FormControl<string | null | undefined>,
+	}
+	export function CreateMatchedPlayerSessionFormGroup() {
+		return new FormGroup<MatchedPlayerSessionFormProperties>({
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			PlayerSessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DescribeMatchmakingInput {
 		TicketIds: Array<string>;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeMatchmakingInputFormProperties {
+	}
+	export function CreateDescribeMatchmakingInputFormGroup() {
+		return new FormGroup<DescribeMatchmakingInputFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeMatchmakingConfigurationsOutput {
-		Configurations?: Array<MatchmakingConfiguration> | null;
+		Configurations?: Array<MatchmakingConfiguration>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeMatchmakingConfigurationsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMatchmakingConfigurationsOutputFormGroup() {
+		return new FormGroup<DescribeMatchmakingConfigurationsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the input for a request action. */
 	export interface DescribeMatchmakingConfigurationsInput {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		RuleSetName?: string | null;
 		Limit?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeMatchmakingConfigurationsInputFormProperties {
+		RuleSetName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMatchmakingConfigurationsInputFormGroup() {
+		return new FormGroup<DescribeMatchmakingConfigurationsInputFormProperties>({
+			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1256,19 +3177,54 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeMatchmakingRuleSetsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMatchmakingRuleSetsOutputFormGroup() {
+		return new FormGroup<DescribeMatchmakingRuleSetsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DescribeMatchmakingRuleSetsInput {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		Limit?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeMatchmakingRuleSetsInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMatchmakingRuleSetsInputFormGroup() {
+		return new FormGroup<DescribeMatchmakingRuleSetsInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribePlayerSessionsOutput {
-		PlayerSessions?: Array<PlayerSession> | null;
+		PlayerSessions?: Array<PlayerSession>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribePlayerSessionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePlayerSessionsOutputFormGroup() {
+		return new FormGroup<DescribePlayerSessionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1282,12 +3238,42 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribePlayerSessionsInputFormProperties {
+		GameSessionId: FormControl<string | null | undefined>,
+		PlayerId: FormControl<string | null | undefined>,
+		PlayerSessionId: FormControl<string | null | undefined>,
+		PlayerSessionStatusFilter: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePlayerSessionsInputFormGroup() {
+		return new FormGroup<DescribePlayerSessionsInputFormProperties>({
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			PlayerSessionId: new FormControl<string | null | undefined>(undefined),
+			PlayerSessionStatusFilter: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeRuntimeConfigurationOutput {
 
 		/** <p>A collection of server process configurations that describe what processes to run on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts the specified server processes and continues to start new processes as existing processes end. Each instance regularly checks for an updated runtime configuration. </p> <p>The runtime configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet </a>.</p> <p>A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a> object.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
-		RuntimeConfiguration?: RuntimeConfiguration | null;
+		RuntimeConfiguration?: RuntimeConfiguration;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeRuntimeConfigurationOutputFormProperties {
+	}
+	export function CreateDescribeRuntimeConfigurationOutputFormGroup() {
+		return new FormGroup<DescribeRuntimeConfigurationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1296,11 +3282,33 @@ export namespace MyNS {
 		FleetId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeRuntimeConfigurationInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRuntimeConfigurationInputFormGroup() {
+		return new FormGroup<DescribeRuntimeConfigurationInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeScalingPoliciesOutput {
-		ScalingPolicies?: Array<ScalingPolicy> | null;
+		ScalingPolicies?: Array<ScalingPolicy>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeScalingPoliciesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingPoliciesOutputFormGroup() {
+		return new FormGroup<DescribeScalingPoliciesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1318,7 +3326,36 @@ export namespace MyNS {
 		PolicyType?: ScalingPolicyPolicyType | null;
 
 		/** <p>Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p> <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul> */
-		TargetConfiguration?: TargetConfiguration | null;
+		TargetConfiguration?: TargetConfiguration;
+	}
+
+	/** <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p> <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul> */
+	export interface ScalingPolicyFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<ScalingPolicyStatus | null | undefined>,
+		ScalingAdjustment: FormControl<number | null | undefined>,
+		ScalingAdjustmentType: FormControl<ScalingPolicyScalingAdjustmentType | null | undefined>,
+		ComparisonOperator: FormControl<ScalingPolicyComparisonOperator | null | undefined>,
+		Threshold: FormControl<number | null | undefined>,
+		EvaluationPeriods: FormControl<number | null | undefined>,
+		MetricName: FormControl<ScalingPolicyMetricName | null | undefined>,
+		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
+	}
+	export function CreateScalingPolicyFormGroup() {
+		return new FormGroup<ScalingPolicyFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ScalingPolicyStatus | null | undefined>(undefined),
+			ScalingAdjustment: new FormControl<number | null | undefined>(undefined),
+			ScalingAdjustmentType: new FormControl<ScalingPolicyScalingAdjustmentType | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<ScalingPolicyComparisonOperator | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined),
+			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
+			MetricName: new FormControl<ScalingPolicyMetricName | null | undefined>(undefined),
+			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScalingPolicyStatus { ACTIVE = 0, UPDATE_REQUESTED = 1, UPDATING = 2, DELETE_REQUESTED = 3, DELETING = 4, DELETED = 5, ERROR = 6 }
@@ -1337,6 +3374,17 @@ export namespace MyNS {
 		TargetValue: number;
 	}
 
+	/** <p>Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p> <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul> */
+	export interface TargetConfigurationFormProperties {
+		TargetValue: FormControl<number | null | undefined>,
+	}
+	export function CreateTargetConfigurationFormGroup() {
+		return new FormGroup<TargetConfigurationFormProperties>({
+			TargetValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DescribeScalingPoliciesInput {
@@ -1346,27 +3394,83 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface DescribeScalingPoliciesInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		StatusFilter: FormControl<ScalingPolicyStatus | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingPoliciesInputFormGroup() {
+		return new FormGroup<DescribeScalingPoliciesInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			StatusFilter: new FormControl<ScalingPolicyStatus | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeScriptOutput {
 
 		/** <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a> </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p> <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li> </ul> */
-		Script?: Script | null;
+		Script?: Script;
+	}
+	export interface DescribeScriptOutputFormProperties {
+	}
+	export function CreateDescribeScriptOutputFormGroup() {
+		return new FormGroup<DescribeScriptOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeScriptInput {
 		ScriptId: string;
 	}
+	export interface DescribeScriptInputFormProperties {
+		ScriptId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScriptInputFormGroup() {
+		return new FormGroup<DescribeScriptInputFormProperties>({
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeVpcPeeringAuthorizationsOutput {
-		VpcPeeringAuthorizations?: Array<VpcPeeringAuthorization> | null;
+		VpcPeeringAuthorizations?: Array<VpcPeeringAuthorization>;
+	}
+	export interface DescribeVpcPeeringAuthorizationsOutputFormProperties {
+	}
+	export function CreateDescribeVpcPeeringAuthorizationsOutputFormGroup() {
+		return new FormGroup<DescribeVpcPeeringAuthorizationsOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeVpcPeeringAuthorizationsInput {
+	}
+	export interface DescribeVpcPeeringAuthorizationsInputFormProperties {
+	}
+	export function CreateDescribeVpcPeeringAuthorizationsInputFormGroup() {
+		return new FormGroup<DescribeVpcPeeringAuthorizationsInputFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface DescribeVpcPeeringConnectionsOutput {
-		VpcPeeringConnections?: Array<VpcPeeringConnection> | null;
+		VpcPeeringConnections?: Array<VpcPeeringConnection>;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface DescribeVpcPeeringConnectionsOutputFormProperties {
+	}
+	export function CreateDescribeVpcPeeringConnectionsOutputFormGroup() {
+		return new FormGroup<DescribeVpcPeeringConnectionsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1378,9 +3482,30 @@ export namespace MyNS {
 		VpcPeeringConnectionId?: string | null;
 
 		/** Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a> object. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet <a>Event</a>. */
-		Status?: VpcPeeringConnectionStatus | null;
+		Status?: VpcPeeringConnectionStatus;
 		PeerVpcId?: string | null;
 		GameLiftVpcId?: string | null;
+	}
+
+	/** <p>Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> </p> </li> </ul> */
+	export interface VpcPeeringConnectionFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		FleetArn: FormControl<string | null | undefined>,
+		IpV4CidrBlock: FormControl<string | null | undefined>,
+		VpcPeeringConnectionId: FormControl<string | null | undefined>,
+		PeerVpcId: FormControl<string | null | undefined>,
+		GameLiftVpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcPeeringConnectionFormGroup() {
+		return new FormGroup<VpcPeeringConnectionFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			IpV4CidrBlock: new FormControl<string | null | undefined>(undefined),
+			VpcPeeringConnectionId: new FormControl<string | null | undefined>(undefined),
+			PeerVpcId: new FormControl<string | null | undefined>(undefined),
+			GameLiftVpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1390,10 +3515,34 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a> object. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet <a>Event</a>. */
+	export interface VpcPeeringConnectionStatusFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcPeeringConnectionStatusFormGroup() {
+		return new FormGroup<VpcPeeringConnectionStatusFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface DescribeVpcPeeringConnectionsInput {
 		FleetId?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface DescribeVpcPeeringConnectionsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeVpcPeeringConnectionsInputFormGroup() {
+		return new FormGroup<DescribeVpcPeeringConnectionsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1402,10 +3551,32 @@ export namespace MyNS {
 		PreSignedUrl?: string | null;
 	}
 
+	/** Represents the returned data in response to a request action. */
+	export interface GetGameSessionLogUrlOutputFormProperties {
+		PreSignedUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGameSessionLogUrlOutputFormGroup() {
+		return new FormGroup<GetGameSessionLogUrlOutputFormProperties>({
+			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface GetGameSessionLogUrlInput {
 		GameSessionId: string;
+	}
+
+	/** Represents the input for a request action. */
+	export interface GetGameSessionLogUrlInputFormProperties {
+		GameSessionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGameSessionLogUrlInputFormGroup() {
+		return new FormGroup<GetGameSessionLogUrlInputFormProperties>({
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1413,7 +3584,16 @@ export namespace MyNS {
 	export interface GetInstanceAccessOutput {
 
 		/** Information required to remotely connect to a fleet instance. Access is requested by calling <a>GetInstanceAccess</a>. */
-		InstanceAccess?: InstanceAccess | null;
+		InstanceAccess?: InstanceAccess;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface GetInstanceAccessOutputFormProperties {
+	}
+	export function CreateGetInstanceAccessOutputFormGroup() {
+		return new FormGroup<GetInstanceAccessOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1425,7 +3605,24 @@ export namespace MyNS {
 		OperatingSystem?: BuildOperatingSystem | null;
 
 		/** Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling <a>GetInstanceAccess</a> and returned in an <a>InstanceAccess</a> object. */
-		Credentials?: InstanceCredentials | null;
+		Credentials?: InstanceCredentials;
+	}
+
+	/** Information required to remotely connect to a fleet instance. Access is requested by calling <a>GetInstanceAccess</a>.  */
+	export interface InstanceAccessFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		OperatingSystem: FormControl<BuildOperatingSystem | null | undefined>,
+	}
+	export function CreateInstanceAccessFormGroup() {
+		return new FormGroup<InstanceAccessFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			OperatingSystem: new FormControl<BuildOperatingSystem | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1435,6 +3632,19 @@ export namespace MyNS {
 		Secret?: string | null;
 	}
 
+	/** Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling <a>GetInstanceAccess</a> and returned in an <a>InstanceAccess</a> object. */
+	export interface InstanceCredentialsFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Secret: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceCredentialsFormGroup() {
+		return new FormGroup<InstanceCredentialsFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Secret: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface GetInstanceAccessInput {
@@ -1442,11 +3652,35 @@ export namespace MyNS {
 		InstanceId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface GetInstanceAccessInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetInstanceAccessInputFormGroup() {
+		return new FormGroup<GetInstanceAccessInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface ListAliasesOutput {
-		Aliases?: Array<Alias> | null;
+		Aliases?: Array<Alias>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface ListAliasesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAliasesOutputFormGroup() {
+		return new FormGroup<ListAliasesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1458,11 +3692,39 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface ListAliasesInputFormProperties {
+		RoutingStrategyType: FormControl<RoutingStrategyType | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAliasesInputFormGroup() {
+		return new FormGroup<ListAliasesInputFormProperties>({
+			RoutingStrategyType: new FormControl<RoutingStrategyType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface ListBuildsOutput {
-		Builds?: Array<Build> | null;
+		Builds?: Array<Build>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface ListBuildsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBuildsOutputFormGroup() {
+		return new FormGroup<ListBuildsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1473,11 +3735,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface ListBuildsInputFormProperties {
+		Status: FormControl<BuildStatus | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBuildsInputFormGroup() {
+		return new FormGroup<ListBuildsInputFormProperties>({
+			Status: new FormControl<BuildStatus | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface ListFleetsOutput {
-		FleetIds?: Array<string> | null;
+		FleetIds?: Array<string>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface ListFleetsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFleetsOutputFormGroup() {
+		return new FormGroup<ListFleetsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1489,19 +3777,65 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface ListFleetsInputFormProperties {
+		BuildId: FormControl<string | null | undefined>,
+		ScriptId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFleetsInputFormGroup() {
+		return new FormGroup<ListFleetsInputFormProperties>({
+			BuildId: new FormControl<string | null | undefined>(undefined),
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListGameServerGroupsOutput {
-		GameServerGroups?: Array<GameServerGroup> | null;
+		GameServerGroups?: Array<GameServerGroup>;
 		NextToken?: string | null;
+	}
+	export interface ListGameServerGroupsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGameServerGroupsOutputFormGroup() {
+		return new FormGroup<ListGameServerGroupsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGameServerGroupsInput {
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListGameServerGroupsInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGameServerGroupsInputFormGroup() {
+		return new FormGroup<ListGameServerGroupsInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGameServersOutput {
-		GameServers?: Array<GameServer> | null;
+		GameServers?: Array<GameServer>;
 		NextToken?: string | null;
+	}
+	export interface ListGameServersOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGameServersOutputFormGroup() {
+		return new FormGroup<ListGameServersOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGameServersInput {
@@ -1510,31 +3844,93 @@ export namespace MyNS {
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListGameServersInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		SortOrder: FormControl<ListGameServersInputSortOrder | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGameServersInputFormGroup() {
+		return new FormGroup<ListGameServersInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<ListGameServersInputSortOrder | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListGameServersInputSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface ListScriptsOutput {
-		Scripts?: Array<Script> | null;
+		Scripts?: Array<Script>;
 		NextToken?: string | null;
+	}
+	export interface ListScriptsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListScriptsOutputFormGroup() {
+		return new FormGroup<ListScriptsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListScriptsInput {
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListScriptsInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListScriptsInputFormGroup() {
+		return new FormGroup<ListScriptsInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceARN: string;
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface PutScalingPolicyOutput {
 		Name?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface PutScalingPolicyOutputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreatePutScalingPolicyOutputFormGroup() {
+		return new FormGroup<PutScalingPolicyOutputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1551,13 +3947,47 @@ export namespace MyNS {
 		PolicyType?: ScalingPolicyPolicyType | null;
 
 		/** <p>Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. </p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p> <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul> */
-		TargetConfiguration?: TargetConfiguration | null;
+		TargetConfiguration?: TargetConfiguration;
+	}
+
+	/** Represents the input for a request action. */
+	export interface PutScalingPolicyInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		FleetId: FormControl<string | null | undefined>,
+		ScalingAdjustment: FormControl<number | null | undefined>,
+		ScalingAdjustmentType: FormControl<ScalingPolicyScalingAdjustmentType | null | undefined>,
+		Threshold: FormControl<number | null | undefined>,
+		ComparisonOperator: FormControl<ScalingPolicyComparisonOperator | null | undefined>,
+		EvaluationPeriods: FormControl<number | null | undefined>,
+		MetricName: FormControl<ScalingPolicyMetricName | null | undefined>,
+		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
+	}
+	export function CreatePutScalingPolicyInputFormGroup() {
+		return new FormGroup<PutScalingPolicyInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			ScalingAdjustment: new FormControl<number | null | undefined>(undefined),
+			ScalingAdjustmentType: new FormControl<ScalingPolicyScalingAdjustmentType | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<ScalingPolicyComparisonOperator | null | undefined>(undefined),
+			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
+			MetricName: new FormControl<ScalingPolicyMetricName | null | undefined>(undefined),
+			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterGameServerOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server resource. </p> <p>A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>. </p> */
-		GameServer?: GameServer | null;
+		GameServer?: GameServer;
+	}
+	export interface RegisterGameServerOutputFormProperties {
+	}
+	export function CreateRegisterGameServerOutputFormGroup() {
+		return new FormGroup<RegisterGameServerOutputFormProperties>({
+		});
+
 	}
 
 	export interface RegisterGameServerInput {
@@ -1567,7 +3997,26 @@ export namespace MyNS {
 		ConnectionInfo?: string | null;
 		GameServerData?: string | null;
 		CustomSortKey?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface RegisterGameServerInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+		ConnectionInfo: FormControl<string | null | undefined>,
+		GameServerData: FormControl<string | null | undefined>,
+		CustomSortKey: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterGameServerInputFormGroup() {
+		return new FormGroup<RegisterGameServerInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			ConnectionInfo: new FormControl<string | null | undefined>(undefined),
+			GameServerData: new FormControl<string | null | undefined>(undefined),
+			CustomSortKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1575,16 +4024,36 @@ export namespace MyNS {
 	export interface RequestUploadCredentialsOutput {
 
 		/** Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>. */
-		UploadCredentials?: AwsCredentials | null;
+		UploadCredentials?: AwsCredentials;
 
 		/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests. */
-		StorageLocation?: S3Location | null;
+		StorageLocation?: S3Location;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface RequestUploadCredentialsOutputFormProperties {
+	}
+	export function CreateRequestUploadCredentialsOutputFormGroup() {
+		return new FormGroup<RequestUploadCredentialsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the input for a request action. */
 	export interface RequestUploadCredentialsInput {
 		BuildId: string;
+	}
+
+	/** Represents the input for a request action. */
+	export interface RequestUploadCredentialsInputFormProperties {
+		BuildId: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestUploadCredentialsInputFormGroup() {
+		return new FormGroup<RequestUploadCredentialsInputFormProperties>({
+			BuildId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1594,28 +4063,79 @@ export namespace MyNS {
 		FleetArn?: string | null;
 	}
 
+	/** Represents the returned data in response to a request action. */
+	export interface ResolveAliasOutputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateResolveAliasOutputFormGroup() {
+		return new FormGroup<ResolveAliasOutputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface ResolveAliasInput {
 		AliasId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface ResolveAliasInputFormProperties {
+		AliasId: FormControl<string | null | undefined>,
+	}
+	export function CreateResolveAliasInputFormGroup() {
+		return new FormGroup<ResolveAliasInputFormProperties>({
+			AliasId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResumeGameServerGroupOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
-		GameServerGroup?: GameServerGroup | null;
+		GameServerGroup?: GameServerGroup;
+	}
+	export interface ResumeGameServerGroupOutputFormProperties {
+	}
+	export function CreateResumeGameServerGroupOutputFormGroup() {
+		return new FormGroup<ResumeGameServerGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface ResumeGameServerGroupInput {
 		GameServerGroupName: string;
 		ResumeActions: Array<GameServerGroupAction>;
 	}
+	export interface ResumeGameServerGroupInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateResumeGameServerGroupInputFormGroup() {
+		return new FormGroup<ResumeGameServerGroupInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface SearchGameSessionsOutput {
-		GameSessions?: Array<GameSession> | null;
+		GameSessions?: Array<GameSession>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface SearchGameSessionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchGameSessionsOutputFormGroup() {
+		return new FormGroup<SearchGameSessionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1629,12 +4149,49 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface SearchGameSessionsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		AliasId: FormControl<string | null | undefined>,
+		FilterExpression: FormControl<string | null | undefined>,
+		SortExpression: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchGameSessionsInputFormGroup() {
+		return new FormGroup<SearchGameSessionsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			AliasId: new FormControl<string | null | undefined>(undefined),
+			FilterExpression: new FormControl<string | null | undefined>(undefined),
+			SortExpression: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StartFleetActionsOutput {
+	}
+	export interface StartFleetActionsOutputFormProperties {
+	}
+	export function CreateStartFleetActionsOutputFormGroup() {
+		return new FormGroup<StartFleetActionsOutputFormProperties>({
+		});
+
 	}
 
 	export interface StartFleetActionsInput {
 		FleetId: string;
 		Actions: Array<FleetAction>;
+	}
+	export interface StartFleetActionsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartFleetActionsInputFormGroup() {
+		return new FormGroup<StartFleetActionsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1642,7 +4199,16 @@ export namespace MyNS {
 	export interface StartGameSessionPlacementOutput {
 
 		/** <p>Object that describes a <a>StartGameSessionPlacement</a> request. This object includes the full details of the original request plus the current status and start/end time stamps.</p> <p>Game session placement-related operations include:</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> */
-		GameSessionPlacement?: GameSessionPlacement | null;
+		GameSessionPlacement?: GameSessionPlacement;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface StartGameSessionPlacementOutputFormProperties {
+	}
+	export function CreateStartGameSessionPlacementOutputFormGroup() {
+		return new FormGroup<StartGameSessionPlacementOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1650,12 +4216,31 @@ export namespace MyNS {
 	export interface StartGameSessionPlacementInput {
 		PlacementId: string;
 		GameSessionQueueName: string;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		MaximumPlayerSessionCount: number;
 		GameSessionName?: string | null;
-		PlayerLatencies?: Array<PlayerLatency> | null;
-		DesiredPlayerSessions?: Array<DesiredPlayerSession> | null;
+		PlayerLatencies?: Array<PlayerLatency>;
+		DesiredPlayerSessions?: Array<DesiredPlayerSession>;
 		GameSessionData?: string | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface StartGameSessionPlacementInputFormProperties {
+		PlacementId: FormControl<string | null | undefined>,
+		GameSessionQueueName: FormControl<string | null | undefined>,
+		MaximumPlayerSessionCount: FormControl<number | null | undefined>,
+		GameSessionName: FormControl<string | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+	}
+	export function CreateStartGameSessionPlacementInputFormGroup() {
+		return new FormGroup<StartGameSessionPlacementInputFormProperties>({
+			PlacementId: new FormControl<string | null | undefined>(undefined),
+			GameSessionQueueName: new FormControl<string | null | undefined>(undefined),
+			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			GameSessionName: new FormControl<string | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1665,12 +4250,34 @@ export namespace MyNS {
 		PlayerData?: string | null;
 	}
 
+	/** Player information for use when creating player sessions using a game session placement request with <a>StartGameSessionPlacement</a>. */
+	export interface DesiredPlayerSessionFormProperties {
+		PlayerId: FormControl<string | null | undefined>,
+		PlayerData: FormControl<string | null | undefined>,
+	}
+	export function CreateDesiredPlayerSessionFormGroup() {
+		return new FormGroup<DesiredPlayerSessionFormProperties>({
+			PlayerId: new FormControl<string | null | undefined>(undefined),
+			PlayerData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface StartMatchBackfillOutput {
 
 		/** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID. */
-		MatchmakingTicket?: MatchmakingTicket | null;
+		MatchmakingTicket?: MatchmakingTicket;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface StartMatchBackfillOutputFormProperties {
+	}
+	export function CreateStartMatchBackfillOutputFormGroup() {
+		return new FormGroup<StartMatchBackfillOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1682,12 +4289,36 @@ export namespace MyNS {
 		Players: Array<Player>;
 	}
 
+	/** Represents the input for a request action. */
+	export interface StartMatchBackfillInputFormProperties {
+		TicketId: FormControl<string | null | undefined>,
+		ConfigurationName: FormControl<string | null | undefined>,
+		GameSessionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMatchBackfillInputFormGroup() {
+		return new FormGroup<StartMatchBackfillInputFormProperties>({
+			TicketId: new FormControl<string | null | undefined>(undefined),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined),
+			GameSessionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface StartMatchmakingOutput {
 
 		/** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID. */
-		MatchmakingTicket?: MatchmakingTicket | null;
+		MatchmakingTicket?: MatchmakingTicket;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface StartMatchmakingOutputFormProperties {
+	}
+	export function CreateStartMatchmakingOutputFormGroup() {
+		return new FormGroup<StartMatchmakingOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1698,12 +4329,41 @@ export namespace MyNS {
 		Players: Array<Player>;
 	}
 
+	/** Represents the input for a request action. */
+	export interface StartMatchmakingInputFormProperties {
+		TicketId: FormControl<string | null | undefined>,
+		ConfigurationName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMatchmakingInputFormGroup() {
+		return new FormGroup<StartMatchmakingInputFormProperties>({
+			TicketId: new FormControl<string | null | undefined>(undefined),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StopFleetActionsOutput {
+	}
+	export interface StopFleetActionsOutputFormProperties {
+	}
+	export function CreateStopFleetActionsOutputFormGroup() {
+		return new FormGroup<StopFleetActionsOutputFormProperties>({
+		});
+
 	}
 
 	export interface StopFleetActionsInput {
 		FleetId: string;
 		Actions: Array<FleetAction>;
+	}
+	export interface StopFleetActionsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopFleetActionsInputFormGroup() {
+		return new FormGroup<StopFleetActionsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1711,7 +4371,16 @@ export namespace MyNS {
 	export interface StopGameSessionPlacementOutput {
 
 		/** <p>Object that describes a <a>StartGameSessionPlacement</a> request. This object includes the full details of the original request plus the current status and start/end time stamps.</p> <p>Game session placement-related operations include:</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> */
-		GameSessionPlacement?: GameSessionPlacement | null;
+		GameSessionPlacement?: GameSessionPlacement;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface StopGameSessionPlacementOutputFormProperties {
+	}
+	export function CreateStopGameSessionPlacementOutputFormGroup() {
+		return new FormGroup<StopGameSessionPlacementOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1720,7 +4389,25 @@ export namespace MyNS {
 		PlacementId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface StopGameSessionPlacementInputFormProperties {
+		PlacementId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopGameSessionPlacementInputFormGroup() {
+		return new FormGroup<StopGameSessionPlacementInputFormProperties>({
+			PlacementId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StopMatchmakingOutput {
+	}
+	export interface StopMatchmakingOutputFormProperties {
+	}
+	export function CreateStopMatchmakingOutputFormGroup() {
+		return new FormGroup<StopMatchmakingOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1729,31 +4416,90 @@ export namespace MyNS {
 		TicketId: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface StopMatchmakingInputFormProperties {
+		TicketId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopMatchmakingInputFormGroup() {
+		return new FormGroup<StopMatchmakingInputFormProperties>({
+			TicketId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SuspendGameServerGroupOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
-		GameServerGroup?: GameServerGroup | null;
+		GameServerGroup?: GameServerGroup;
+	}
+	export interface SuspendGameServerGroupOutputFormProperties {
+	}
+	export function CreateSuspendGameServerGroupOutputFormGroup() {
+		return new FormGroup<SuspendGameServerGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface SuspendGameServerGroupInput {
 		GameServerGroupName: string;
 		SuspendActions: Array<GameServerGroupAction>;
 	}
+	export interface SuspendGameServerGroupInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateSuspendGameServerGroupInputFormGroup() {
+		return new FormGroup<SuspendGameServerGroupInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceARN: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1761,7 +4507,16 @@ export namespace MyNS {
 	export interface UpdateAliasOutput {
 
 		/** <p>Properties that describe an alias resource.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
-		Alias?: Alias | null;
+		Alias?: Alias;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateAliasOutputFormProperties {
+	}
+	export function CreateUpdateAliasOutputFormGroup() {
+		return new FormGroup<UpdateAliasOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1772,7 +4527,22 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** <p>The routing configuration for a fleet alias.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
-		RoutingStrategy?: RoutingStrategy | null;
+		RoutingStrategy?: RoutingStrategy;
+	}
+
+	/** Represents the input for a request action. */
+	export interface UpdateAliasInputFormProperties {
+		AliasId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAliasInputFormGroup() {
+		return new FormGroup<UpdateAliasInputFormProperties>({
+			AliasId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1780,7 +4550,16 @@ export namespace MyNS {
 	export interface UpdateBuildOutput {
 
 		/** <p>Properties describing a custom game build.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul> */
-		Build?: Build | null;
+		Build?: Build;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateBuildOutputFormProperties {
+	}
+	export function CreateUpdateBuildOutputFormGroup() {
+		return new FormGroup<UpdateBuildOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1791,10 +4570,36 @@ export namespace MyNS {
 		Version?: string | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface UpdateBuildInputFormProperties {
+		BuildId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBuildInputFormGroup() {
+		return new FormGroup<UpdateBuildInputFormProperties>({
+			BuildId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetAttributesOutput {
 		FleetId?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateFleetAttributesOutputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFleetAttributesOutputFormGroup() {
+		return new FormGroup<UpdateFleetAttributesOutputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1806,14 +4611,42 @@ export namespace MyNS {
 		NewGameSessionProtectionPolicy?: FleetAttributesNewGameSessionProtectionPolicy | null;
 
 		/** <p>A policy that limits the number of game sessions a player can create on the same fleet. This optional policy gives game owners control over how players can consume available game server resources. A resource creation policy makes the following statement: "An individual player can create a maximum number of new game sessions within a specified time period".</p> <p>The policy is evaluated when a player tries to create a new game session. For example: Assume you have a policy of 10 new game sessions and a time period of 60 minutes. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60 minutes.</p> */
-		ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy | null;
-		MetricGroups?: Array<string> | null;
+		ResourceCreationLimitPolicy?: ResourceCreationLimitPolicy;
+		MetricGroups?: Array<string>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface UpdateFleetAttributesInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		NewGameSessionProtectionPolicy: FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>,
+	}
+	export function CreateUpdateFleetAttributesInputFormGroup() {
+		return new FormGroup<UpdateFleetAttributesInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			NewGameSessionProtectionPolicy: new FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetCapacityOutput {
 		FleetId?: string | null;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateFleetCapacityOutputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFleetCapacityOutputFormGroup() {
+		return new FormGroup<UpdateFleetCapacityOutputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1825,24 +4658,70 @@ export namespace MyNS {
 		MaxSize?: number | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface UpdateFleetCapacityInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+		DesiredInstances: FormControl<number | null | undefined>,
+		MinSize: FormControl<number | null | undefined>,
+		MaxSize: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFleetCapacityInputFormGroup() {
+		return new FormGroup<UpdateFleetCapacityInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+			DesiredInstances: new FormControl<number | null | undefined>(undefined),
+			MinSize: new FormControl<number | null | undefined>(undefined),
+			MaxSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetPortSettingsOutput {
 		FleetId?: string | null;
 	}
 
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateFleetPortSettingsOutputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFleetPortSettingsOutputFormGroup() {
+		return new FormGroup<UpdateFleetPortSettingsOutputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface UpdateFleetPortSettingsInput {
 		FleetId: string;
-		InboundPermissionAuthorizations?: Array<IpPermission> | null;
-		InboundPermissionRevocations?: Array<IpPermission> | null;
+		InboundPermissionAuthorizations?: Array<IpPermission>;
+		InboundPermissionRevocations?: Array<IpPermission>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface UpdateFleetPortSettingsInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFleetPortSettingsInputFormGroup() {
+		return new FormGroup<UpdateFleetPortSettingsInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGameServerOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server resource. </p> <p>A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>. </p> */
-		GameServer?: GameServer | null;
+		GameServer?: GameServer;
+	}
+	export interface UpdateGameServerOutputFormProperties {
+	}
+	export function CreateUpdateGameServerOutputFormGroup() {
+		return new FormGroup<UpdateGameServerOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGameServerInput {
@@ -1853,21 +4732,62 @@ export namespace MyNS {
 		UtilizationStatus?: GameServerUtilizationStatus | null;
 		HealthCheck?: UpdateGameServerInputHealthCheck | null;
 	}
+	export interface UpdateGameServerInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		GameServerId: FormControl<string | null | undefined>,
+		GameServerData: FormControl<string | null | undefined>,
+		CustomSortKey: FormControl<string | null | undefined>,
+		UtilizationStatus: FormControl<GameServerUtilizationStatus | null | undefined>,
+		HealthCheck: FormControl<UpdateGameServerInputHealthCheck | null | undefined>,
+	}
+	export function CreateUpdateGameServerInputFormGroup() {
+		return new FormGroup<UpdateGameServerInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			GameServerId: new FormControl<string | null | undefined>(undefined),
+			GameServerData: new FormControl<string | null | undefined>(undefined),
+			CustomSortKey: new FormControl<string | null | undefined>(undefined),
+			UtilizationStatus: new FormControl<GameServerUtilizationStatus | null | undefined>(undefined),
+			HealthCheck: new FormControl<UpdateGameServerInputHealthCheck | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateGameServerInputHealthCheck { HEALTHY = 0 }
 
 	export interface UpdateGameServerGroupOutput {
 
 		/** <p> <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.</b> </p> <p>Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group. </p> <p>A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>. </p> */
-		GameServerGroup?: GameServerGroup | null;
+		GameServerGroup?: GameServerGroup;
+	}
+	export interface UpdateGameServerGroupOutputFormProperties {
+	}
+	export function CreateUpdateGameServerGroupOutputFormGroup() {
+		return new FormGroup<UpdateGameServerGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGameServerGroupInput {
 		GameServerGroupName: string;
 		RoleArn?: string | null;
-		InstanceDefinitions?: Array<InstanceDefinition> | null;
+		InstanceDefinitions?: Array<InstanceDefinition>;
 		GameServerProtectionPolicy?: GameServerGroupGameServerProtectionPolicy | null;
 		BalancingStrategy?: GameServerGroupBalancingStrategy | null;
+	}
+	export interface UpdateGameServerGroupInputFormProperties {
+		GameServerGroupName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		GameServerProtectionPolicy: FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>,
+		BalancingStrategy: FormControl<GameServerGroupBalancingStrategy | null | undefined>,
+	}
+	export function CreateUpdateGameServerGroupInputFormGroup() {
+		return new FormGroup<UpdateGameServerGroupInputFormProperties>({
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			GameServerProtectionPolicy: new FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>(undefined),
+			BalancingStrategy: new FormControl<GameServerGroupBalancingStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1875,7 +4795,16 @@ export namespace MyNS {
 	export interface UpdateGameSessionOutput {
 
 		/** <p>Properties describing a game session.</p> <p>A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
-		GameSession?: GameSession | null;
+		GameSession?: GameSession;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateGameSessionOutputFormProperties {
+	}
+	export function CreateUpdateGameSessionOutputFormGroup() {
+		return new FormGroup<UpdateGameSessionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1888,12 +4817,40 @@ export namespace MyNS {
 		ProtectionPolicy?: FleetAttributesNewGameSessionProtectionPolicy | null;
 	}
 
+	/** Represents the input for a request action. */
+	export interface UpdateGameSessionInputFormProperties {
+		GameSessionId: FormControl<string | null | undefined>,
+		MaximumPlayerSessionCount: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		PlayerSessionCreationPolicy: FormControl<GameSessionPlayerSessionCreationPolicy | null | undefined>,
+		ProtectionPolicy: FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>,
+	}
+	export function CreateUpdateGameSessionInputFormGroup() {
+		return new FormGroup<UpdateGameSessionInputFormProperties>({
+			GameSessionId: new FormControl<string | null | undefined>(undefined),
+			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			PlayerSessionCreationPolicy: new FormControl<GameSessionPlayerSessionCreationPolicy | null | undefined>(undefined),
+			ProtectionPolicy: new FormControl<FleetAttributesNewGameSessionProtectionPolicy | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateGameSessionQueueOutput {
 
 		/** <p>Configuration of a queue that is used to process game session placement requests. The queue configuration identifies several game features:</p> <ul> <li> <p>The destinations where a new game session can potentially be hosted. Amazon GameLift tries these destinations in an order based on either the queue's default order or player latency information, if provided in a placement request. With latency information, Amazon GameLift can place game sessions where the majority of players are reporting the lowest possible latency. </p> </li> <li> <p>The length of time that placement requests can wait in the queue before timing out. </p> </li> <li> <p>A set of optional latency policies that protect individual players from high latencies, preventing game sessions from being placed where any individual player is reporting latency higher than a policy's maximum.</p> </li> </ul> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p> <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a> </p> </li> </ul> */
-		GameSessionQueue?: GameSessionQueue | null;
+		GameSessionQueue?: GameSessionQueue;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateGameSessionQueueOutputFormProperties {
+	}
+	export function CreateUpdateGameSessionQueueOutputFormGroup() {
+		return new FormGroup<UpdateGameSessionQueueOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1901,8 +4858,21 @@ export namespace MyNS {
 	export interface UpdateGameSessionQueueInput {
 		Name: string;
 		TimeoutInSeconds?: number | null;
-		PlayerLatencyPolicies?: Array<PlayerLatencyPolicy> | null;
-		Destinations?: Array<GameSessionQueueDestination> | null;
+		PlayerLatencyPolicies?: Array<PlayerLatencyPolicy>;
+		Destinations?: Array<GameSessionQueueDestination>;
+	}
+
+	/** Represents the input for a request action. */
+	export interface UpdateGameSessionQueueInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateGameSessionQueueInputFormGroup() {
+		return new FormGroup<UpdateGameSessionQueueInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1910,7 +4880,16 @@ export namespace MyNS {
 	export interface UpdateMatchmakingConfigurationOutput {
 
 		/** Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration. */
-		Configuration?: MatchmakingConfiguration | null;
+		Configuration?: MatchmakingConfiguration;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateMatchmakingConfigurationOutputFormProperties {
+	}
+	export function CreateUpdateMatchmakingConfigurationOutputFormGroup() {
+		return new FormGroup<UpdateMatchmakingConfigurationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1918,7 +4897,7 @@ export namespace MyNS {
 	export interface UpdateMatchmakingConfigurationInput {
 		Name: string;
 		Description?: string | null;
-		GameSessionQueueArns?: Array<string> | null;
+		GameSessionQueueArns?: Array<string>;
 		RequestTimeoutSeconds?: number | null;
 		AcceptanceTimeoutSeconds?: number | null;
 		AcceptanceRequired?: boolean | null;
@@ -1926,9 +4905,40 @@ export namespace MyNS {
 		NotificationTarget?: string | null;
 		AdditionalPlayerCount?: number | null;
 		CustomEventData?: string | null;
-		GameProperties?: Array<GameProperty> | null;
+		GameProperties?: Array<GameProperty>;
 		GameSessionData?: string | null;
 		BackfillMode?: MatchmakingConfigurationBackfillMode | null;
+	}
+
+	/** Represents the input for a request action. */
+	export interface UpdateMatchmakingConfigurationInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RequestTimeoutSeconds: FormControl<number | null | undefined>,
+		AcceptanceTimeoutSeconds: FormControl<number | null | undefined>,
+		AcceptanceRequired: FormControl<boolean | null | undefined>,
+		RuleSetName: FormControl<string | null | undefined>,
+		NotificationTarget: FormControl<string | null | undefined>,
+		AdditionalPlayerCount: FormControl<number | null | undefined>,
+		CustomEventData: FormControl<string | null | undefined>,
+		GameSessionData: FormControl<string | null | undefined>,
+		BackfillMode: FormControl<MatchmakingConfigurationBackfillMode | null | undefined>,
+	}
+	export function CreateUpdateMatchmakingConfigurationInputFormGroup() {
+		return new FormGroup<UpdateMatchmakingConfigurationInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RequestTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			AcceptanceTimeoutSeconds: new FormControl<number | null | undefined>(undefined),
+			AcceptanceRequired: new FormControl<boolean | null | undefined>(undefined),
+			RuleSetName: new FormControl<string | null | undefined>(undefined),
+			NotificationTarget: new FormControl<string | null | undefined>(undefined),
+			AdditionalPlayerCount: new FormControl<number | null | undefined>(undefined),
+			CustomEventData: new FormControl<string | null | undefined>(undefined),
+			GameSessionData: new FormControl<string | null | undefined>(undefined),
+			BackfillMode: new FormControl<MatchmakingConfigurationBackfillMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1936,7 +4946,16 @@ export namespace MyNS {
 	export interface UpdateRuntimeConfigurationOutput {
 
 		/** <p>A collection of server process configurations that describe what processes to run on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts the specified server processes and continues to start new processes as existing processes end. Each instance regularly checks for an updated runtime configuration. </p> <p>The runtime configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet </a>.</p> <p>A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a> object.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
-		RuntimeConfiguration?: RuntimeConfiguration | null;
+		RuntimeConfiguration?: RuntimeConfiguration;
+	}
+
+	/** Represents the returned data in response to a request action. */
+	export interface UpdateRuntimeConfigurationOutputFormProperties {
+	}
+	export function CreateUpdateRuntimeConfigurationOutputFormGroup() {
+		return new FormGroup<UpdateRuntimeConfigurationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1951,10 +4970,28 @@ export namespace MyNS {
 		RuntimeConfiguration: RuntimeConfiguration;
 	}
 
+	/** Represents the input for a request action. */
+	export interface UpdateRuntimeConfigurationInputFormProperties {
+		FleetId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRuntimeConfigurationInputFormGroup() {
+		return new FormGroup<UpdateRuntimeConfigurationInputFormProperties>({
+			FleetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateScriptOutput {
 
 		/** <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a> </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p> <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li> </ul> */
-		Script?: Script | null;
+		Script?: Script;
+	}
+	export interface UpdateScriptOutputFormProperties {
+	}
+	export function CreateUpdateScriptOutputFormGroup() {
+		return new FormGroup<UpdateScriptOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateScriptInput {
@@ -1963,8 +5000,23 @@ export namespace MyNS {
 		Version?: string | null;
 
 		/** The location in S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests. */
-		StorageLocation?: S3Location | null;
+		StorageLocation?: S3Location;
 		ZipFile?: string | null;
+	}
+	export interface UpdateScriptInputFormProperties {
+		ScriptId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		ZipFile: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateScriptInputFormGroup() {
+		return new FormGroup<UpdateScriptInputFormProperties>({
+			ScriptId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			ZipFile: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1973,15 +5025,44 @@ export namespace MyNS {
 		Valid?: boolean | null;
 	}
 
+	/** Represents the returned data in response to a request action. */
+	export interface ValidateMatchmakingRuleSetOutputFormProperties {
+		Valid: FormControl<boolean | null | undefined>,
+	}
+	export function CreateValidateMatchmakingRuleSetOutputFormGroup() {
+		return new FormGroup<ValidateMatchmakingRuleSetOutputFormProperties>({
+			Valid: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for a request action. */
 	export interface ValidateMatchmakingRuleSetInput {
 		RuleSetBody: string;
 	}
 
+	/** Represents the input for a request action. */
+	export interface ValidateMatchmakingRuleSetInputFormProperties {
+		RuleSetBody: FormControl<string | null | undefined>,
+	}
+	export function CreateValidateMatchmakingRuleSetInputFormGroup() {
+		return new FormGroup<ValidateMatchmakingRuleSetInputFormProperties>({
+			RuleSetBody: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AcceptanceType { ACCEPT = 0, REJECT = 1 }
 
 	export interface StringDoubleMap {
+	}
+	export interface StringDoubleMapFormProperties {
+	}
+	export function CreateStringDoubleMapFormGroup() {
+		return new FormGroup<StringDoubleMapFormProperties>({
+		});
+
 	}
 
 
@@ -1989,8 +5070,21 @@ export namespace MyNS {
 	export interface AttributeValue {
 		S?: string | null;
 		N?: number | null;
-		SL?: Array<string> | null;
-		SDM?: StringDoubleMap | null;
+		SL?: Array<string>;
+		SDM?: StringDoubleMap;
+	}
+
+	/** Values for use in <a>Player</a> attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties. */
+	export interface AttributeValueFormProperties {
+		S: FormControl<string | null | undefined>,
+		N: FormControl<number | null | undefined>,
+	}
+	export function CreateAttributeValueFormGroup() {
+		return new FormGroup<AttributeValueFormProperties>({
+			S: new FormControl<string | null | undefined>(undefined),
+			N: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackfillMode { AUTOMATIC = 0, MANUAL = 1 }

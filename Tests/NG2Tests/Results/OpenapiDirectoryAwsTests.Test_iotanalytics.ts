@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchPutMessageResponse {
-		batchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry> | null;
+		batchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry>;
+	}
+	export interface BatchPutMessageResponseFormProperties {
+	}
+	export function CreateBatchPutMessageResponseFormGroup() {
+		return new FormGroup<BatchPutMessageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -14,6 +22,21 @@ export namespace MyNS {
 		errorMessage?: string | null;
 	}
 
+	/** Contains informations about errors. */
+	export interface BatchPutMessageErrorEntryFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		errorCode: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPutMessageErrorEntryFormGroup() {
+		return new FormGroup<BatchPutMessageErrorEntryFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			errorCode: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a message. */
 	export interface Message {
@@ -21,22 +44,77 @@ export namespace MyNS {
 		payload: string;
 	}
 
+	/** Information about a message. */
+	export interface MessageFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateMessageFormGroup() {
+		return new FormGroup<MessageFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalFailureException {
+	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CancelPipelineReprocessingResponse {
+	}
+	export interface CancelPipelineReprocessingResponseFormProperties {
+	}
+	export function CreateCancelPipelineReprocessingResponseFormGroup() {
+		return new FormGroup<CancelPipelineReprocessingResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateChannelResponse {
@@ -44,7 +122,18 @@ export namespace MyNS {
 		channelArn?: string | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
+	}
+	export interface CreateChannelResponseFormProperties {
+		channelName: FormControl<string | null | undefined>,
+		channelArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateChannelResponseFormGroup() {
+		return new FormGroup<CreateChannelResponseFormProperties>({
+			channelName: new FormControl<string | null | undefined>(undefined),
+			channelArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -54,9 +143,31 @@ export namespace MyNS {
 		numberOfDays?: number | null;
 	}
 
+	/** How long, in days, message data is kept. */
+	export interface RetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateRetentionPeriodFormGroup() {
+		return new FormGroup<RetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
 	export interface ServiceManagedChannelS3Storage {
+	}
+
+	/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
+	export interface ServiceManagedChannelS3StorageFormProperties {
+	}
+	export function CreateServiceManagedChannelS3StorageFormGroup() {
+		return new FormGroup<ServiceManagedChannelS3StorageFormProperties>({
+		});
+
 	}
 
 
@@ -67,6 +178,21 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
+	export interface CustomerManagedChannelS3StorageFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		keyPrefix: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomerManagedChannelS3StorageFormGroup() {
+		return new FormGroup<CustomerManagedChannelS3StorageFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			keyPrefix: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A set of key/value pairs which are used to manage the resource. */
 	export interface Tag {
@@ -74,10 +200,37 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** A set of key/value pairs which are used to manage the resource. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDatasetResponse {
@@ -85,7 +238,18 @@ export namespace MyNS {
 		datasetArn?: string | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
+	}
+	export interface CreateDatasetResponseFormProperties {
+		datasetName: FormControl<string | null | undefined>,
+		datasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetResponseFormGroup() {
+		return new FormGroup<CreateDatasetResponseFormProperties>({
+			datasetName: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -94,17 +258,39 @@ export namespace MyNS {
 		actionName?: string | null;
 
 		/** The SQL query to modify the message. */
-		queryAction?: SqlQueryDatasetAction | null;
+		queryAction?: SqlQueryDatasetAction;
 
 		/** Information needed to run the "containerAction" to produce data set contents. */
-		containerAction?: ContainerDatasetAction | null;
+		containerAction?: ContainerDatasetAction;
+	}
+
+	/** A "DatasetAction" object that specifies how data set contents are automatically created. */
+	export interface DatasetActionFormProperties {
+		actionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetActionFormGroup() {
+		return new FormGroup<DatasetActionFormProperties>({
+			actionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The SQL query to modify the message. */
 	export interface SqlQueryDatasetAction {
 		sqlQuery: string;
-		filters?: Array<QueryFilter> | null;
+		filters?: Array<QueryFilter>;
+	}
+
+	/** The SQL query to modify the message. */
+	export interface SqlQueryDatasetActionFormProperties {
+		sqlQuery: FormControl<string | null | undefined>,
+	}
+	export function CreateSqlQueryDatasetActionFormGroup() {
+		return new FormGroup<SqlQueryDatasetActionFormProperties>({
+			sqlQuery: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -112,7 +298,16 @@ export namespace MyNS {
 	export interface QueryFilter {
 
 		/** Used to limit data to that which has arrived since the last execution of the action. */
-		deltaTime?: DeltaTime | null;
+		deltaTime?: DeltaTime;
+	}
+
+	/** Information which is used to filter message data, to segregate it according to the time frame in which it arrives. */
+	export interface QueryFilterFormProperties {
+	}
+	export function CreateQueryFilterFormGroup() {
+		return new FormGroup<QueryFilterFormProperties>({
+		});
+
 	}
 
 
@@ -120,6 +315,19 @@ export namespace MyNS {
 	export interface DeltaTime {
 		offsetSeconds: number;
 		timeExpression: string;
+	}
+
+	/** Used to limit data to that which has arrived since the last execution of the action. */
+	export interface DeltaTimeFormProperties {
+		offsetSeconds: FormControl<number | null | undefined>,
+		timeExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateDeltaTimeFormGroup() {
+		return new FormGroup<DeltaTimeFormProperties>({
+			offsetSeconds: new FormControl<number | null | undefined>(undefined),
+			timeExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,7 +341,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		resourceConfiguration: ResourceConfiguration;
-		variables?: Array<Variable> | null;
+		variables?: Array<Variable>;
+	}
+
+	/** Information needed to run the "containerAction" to produce data set contents. */
+	export interface ContainerDatasetActionFormProperties {
+		image: FormControl<string | null | undefined>,
+		executionRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateContainerDatasetActionFormGroup() {
+		return new FormGroup<ContainerDatasetActionFormProperties>({
+			image: new FormControl<string | null | undefined>(undefined),
+			executionRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -141,6 +362,19 @@ export namespace MyNS {
 	export interface ResourceConfiguration {
 		computeType: ResourceConfigurationComputeType;
 		volumeSizeInGB: number;
+	}
+
+	/** The configuration of the resource used to execute the "containerAction". */
+	export interface ResourceConfigurationFormProperties {
+		computeType: FormControl<ResourceConfigurationComputeType | null | undefined>,
+		volumeSizeInGB: FormControl<number | null | undefined>,
+	}
+	export function CreateResourceConfigurationFormGroup() {
+		return new FormGroup<ResourceConfigurationFormProperties>({
+			computeType: new FormControl<ResourceConfigurationComputeType | null | undefined>(undefined),
+			volumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceConfigurationComputeType { ACU_1 = 0, ACU_2 = 1 }
@@ -153,10 +387,25 @@ export namespace MyNS {
 		doubleValue?: number | null;
 
 		/** The data set whose latest contents are used as input to the notebook or application. */
-		datasetContentVersionValue?: DatasetContentVersionValue | null;
+		datasetContentVersionValue?: DatasetContentVersionValue;
 
 		/** The value of the variable as a structure that specifies an output file URI. */
-		outputFileUriValue?: OutputFileUriValue | null;
+		outputFileUriValue?: OutputFileUriValue;
+	}
+
+	/** An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue". */
+	export interface VariableFormProperties {
+		name: FormControl<string | null | undefined>,
+		stringValue: FormControl<string | null | undefined>,
+		doubleValue: FormControl<number | null | undefined>,
+	}
+	export function CreateVariableFormGroup() {
+		return new FormGroup<VariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+			doubleValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -165,10 +414,32 @@ export namespace MyNS {
 		datasetName: string;
 	}
 
+	/** The data set whose latest contents are used as input to the notebook or application. */
+	export interface DatasetContentVersionValueFormProperties {
+		datasetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetContentVersionValueFormGroup() {
+		return new FormGroup<DatasetContentVersionValueFormProperties>({
+			datasetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The value of the variable as a structure that specifies an output file URI. */
 	export interface OutputFileUriValue {
 		fileName: string;
+	}
+
+	/** The value of the variable as a structure that specifies an output file URI. */
+	export interface OutputFileUriValueFormProperties {
+		fileName: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputFileUriValueFormGroup() {
+		return new FormGroup<OutputFileUriValueFormProperties>({
+			fileName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -176,10 +447,19 @@ export namespace MyNS {
 	export interface DatasetTrigger {
 
 		/** The schedule for when to trigger an update. */
-		schedule?: Schedule | null;
+		schedule?: Schedule;
 
 		/** Information about the data set whose content generation triggers the new data set content generation. */
-		dataset?: TriggeringDataset | null;
+		dataset?: TriggeringDataset;
+	}
+
+	/** The "DatasetTrigger" that specifies when the data set is automatically updated. */
+	export interface DatasetTriggerFormProperties {
+	}
+	export function CreateDatasetTriggerFormGroup() {
+		return new FormGroup<DatasetTriggerFormProperties>({
+		});
+
 	}
 
 
@@ -188,10 +468,32 @@ export namespace MyNS {
 		expression?: string | null;
 	}
 
+	/** The schedule for when to trigger an update. */
+	export interface ScheduleFormProperties {
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduleFormGroup() {
+		return new FormGroup<ScheduleFormProperties>({
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the data set whose content generation triggers the new data set content generation. */
 	export interface TriggeringDataset {
 		name: string;
+	}
+
+	/** Information about the data set whose content generation triggers the new data set content generation. */
+	export interface TriggeringDatasetFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateTriggeringDatasetFormGroup() {
+		return new FormGroup<TriggeringDatasetFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -206,15 +508,35 @@ export namespace MyNS {
 		destination: DatasetContentDeliveryDestination;
 	}
 
+	/** When data set contents are created they are delivered to destination specified here. */
+	export interface DatasetContentDeliveryRuleFormProperties {
+		entryName: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetContentDeliveryRuleFormGroup() {
+		return new FormGroup<DatasetContentDeliveryRuleFormProperties>({
+			entryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The destination to which data set contents are delivered. */
 	export interface DatasetContentDeliveryDestination {
 
 		/** Configuration information for delivery of data set contents to AWS IoT Events. */
-		iotEventsDestinationConfiguration?: IotEventsDestinationConfiguration | null;
+		iotEventsDestinationConfiguration?: IotEventsDestinationConfiguration;
 
 		/** Configuration information for delivery of data set contents to Amazon S3. */
-		s3DestinationConfiguration?: S3DestinationConfiguration | null;
+		s3DestinationConfiguration?: S3DestinationConfiguration;
+	}
+
+	/** The destination to which data set contents are delivered. */
+	export interface DatasetContentDeliveryDestinationFormProperties {
+	}
+	export function CreateDatasetContentDeliveryDestinationFormGroup() {
+		return new FormGroup<DatasetContentDeliveryDestinationFormProperties>({
+		});
+
 	}
 
 
@@ -224,6 +546,19 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** Configuration information for delivery of data set contents to AWS IoT Events. */
+	export interface IotEventsDestinationConfigurationFormProperties {
+		inputName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateIotEventsDestinationConfigurationFormGroup() {
+		return new FormGroup<IotEventsDestinationConfigurationFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configuration information for delivery of data set contents to Amazon S3. */
 	export interface S3DestinationConfiguration {
@@ -231,8 +566,23 @@ export namespace MyNS {
 		key: string;
 
 		/** Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service. */
-		glueConfiguration?: GlueConfiguration | null;
+		glueConfiguration?: GlueConfiguration;
 		roleArn: string;
+	}
+
+	/** Configuration information for delivery of data set contents to Amazon S3. */
+	export interface S3DestinationConfigurationFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3DestinationConfigurationFormGroup() {
+		return new FormGroup<S3DestinationConfigurationFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -242,8 +592,30 @@ export namespace MyNS {
 		databaseName: string;
 	}
 
+	/** Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service. */
+	export interface GlueConfigurationFormProperties {
+		tableName: FormControl<string | null | undefined>,
+		databaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlueConfigurationFormGroup() {
+		return new FormGroup<GlueConfigurationFormProperties>({
+			tableName: new FormControl<string | null | undefined>(undefined),
+			databaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateDatasetContentResponse {
 		versionId?: string | null;
+	}
+	export interface CreateDatasetContentResponseFormProperties {
+		versionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetContentResponseFormGroup() {
+		return new FormGroup<CreateDatasetContentResponseFormProperties>({
+			versionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatastoreResponse {
@@ -251,12 +623,32 @@ export namespace MyNS {
 		datastoreArn?: string | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
+	}
+	export interface CreateDatastoreResponseFormProperties {
+		datastoreName: FormControl<string | null | undefined>,
+		datastoreArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatastoreResponseFormGroup() {
+		return new FormGroup<CreateDatastoreResponseFormProperties>({
+			datastoreName: new FormControl<string | null | undefined>(undefined),
+			datastoreArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
 	export interface ServiceManagedDatastoreS3Storage {
+	}
+
+	/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
+	export interface ServiceManagedDatastoreS3StorageFormProperties {
+	}
+	export function CreateServiceManagedDatastoreS3StorageFormGroup() {
+		return new FormGroup<ServiceManagedDatastoreS3StorageFormProperties>({
+		});
+
 	}
 
 
@@ -267,9 +659,35 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
+	export interface CustomerManagedDatastoreS3StorageFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		keyPrefix: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomerManagedDatastoreS3StorageFormGroup() {
+		return new FormGroup<CustomerManagedDatastoreS3StorageFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			keyPrefix: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreatePipelineResponse {
 		pipelineName?: string | null;
 		pipelineArn?: string | null;
+	}
+	export interface CreatePipelineResponseFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		pipelineArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelineResponseFormGroup() {
+		return new FormGroup<CreatePipelineResponseFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			pipelineArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -277,34 +695,43 @@ export namespace MyNS {
 	export interface PipelineActivity {
 
 		/** The activity that determines the source of the messages to be processed. */
-		channel?: ChannelActivity | null;
+		channel?: ChannelActivity;
 
 		/** An activity that runs a Lambda function to modify the message. */
-		lambda?: LambdaActivity | null;
+		lambda?: LambdaActivity;
 
 		/** The 'datastore' activity that specifies where to store the processed data. */
-		datastore?: DatastoreActivity | null;
+		datastore?: DatastoreActivity;
 
 		/** An activity that adds other attributes based on existing attributes in the message. */
-		addAttributes?: AddAttributesActivity | null;
+		addAttributes?: AddAttributesActivity;
 
 		/** An activity that removes attributes from a message. */
-		removeAttributes?: RemoveAttributesActivity | null;
+		removeAttributes?: RemoveAttributesActivity;
 
 		/** Creates a new message using only the specified attributes from the original message. */
-		selectAttributes?: SelectAttributesActivity | null;
+		selectAttributes?: SelectAttributesActivity;
 
 		/** An activity that filters a message based on its attributes. */
-		filter?: FilterActivity | null;
+		filter?: FilterActivity;
 
 		/** An activity that computes an arithmetic expression using the message's attributes. */
-		math?: MathActivity | null;
+		math?: MathActivity;
 
 		/** An activity that adds data from the AWS IoT device registry to your message. */
-		deviceRegistryEnrich?: DeviceRegistryEnrichActivity | null;
+		deviceRegistryEnrich?: DeviceRegistryEnrichActivity;
 
 		/** An activity that adds information from the AWS IoT Device Shadows service to a message. */
-		deviceShadowEnrich?: DeviceShadowEnrichActivity | null;
+		deviceShadowEnrich?: DeviceShadowEnrichActivity;
+	}
+
+	/** An activity that performs a transformation on a message. */
+	export interface PipelineActivityFormProperties {
+	}
+	export function CreatePipelineActivityFormGroup() {
+		return new FormGroup<PipelineActivityFormProperties>({
+		});
+
 	}
 
 
@@ -313,6 +740,21 @@ export namespace MyNS {
 		name: string;
 		channelName: string;
 		next?: string | null;
+	}
+
+	/** The activity that determines the source of the messages to be processed. */
+	export interface ChannelActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		channelName: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelActivityFormGroup() {
+		return new FormGroup<ChannelActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			channelName: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -324,11 +766,41 @@ export namespace MyNS {
 		next?: string | null;
 	}
 
+	/** An activity that runs a Lambda function to modify the message. */
+	export interface LambdaActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		lambdaName: FormControl<string | null | undefined>,
+		batchSize: FormControl<number | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaActivityFormGroup() {
+		return new FormGroup<LambdaActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			lambdaName: new FormControl<string | null | undefined>(undefined),
+			batchSize: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The 'datastore' activity that specifies where to store the processed data. */
 	export interface DatastoreActivity {
 		name: string;
 		datastoreName: string;
+	}
+
+	/** The 'datastore' activity that specifies where to store the processed data. */
+	export interface DatastoreActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		datastoreName: FormControl<string | null | undefined>,
+	}
+	export function CreateDatastoreActivityFormGroup() {
+		return new FormGroup<DatastoreActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datastoreName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -339,7 +811,27 @@ export namespace MyNS {
 		next?: string | null;
 	}
 
+	/** An activity that adds other attributes based on existing attributes in the message. */
+	export interface AddAttributesActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateAddAttributesActivityFormGroup() {
+		return new FormGroup<AddAttributesActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AttributeNameMapping {
+	}
+	export interface AttributeNameMappingFormProperties {
+	}
+	export function CreateAttributeNameMappingFormGroup() {
+		return new FormGroup<AttributeNameMappingFormProperties>({
+		});
+
 	}
 
 
@@ -350,12 +842,38 @@ export namespace MyNS {
 		next?: string | null;
 	}
 
+	/** An activity that removes attributes from a message. */
+	export interface RemoveAttributesActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveAttributesActivityFormGroup() {
+		return new FormGroup<RemoveAttributesActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creates a new message using only the specified attributes from the original message. */
 	export interface SelectAttributesActivity {
 		name: string;
 		attributes: Array<string>;
 		next?: string | null;
+	}
+
+	/** Creates a new message using only the specified attributes from the original message. */
+	export interface SelectAttributesActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateSelectAttributesActivityFormGroup() {
+		return new FormGroup<SelectAttributesActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,6 +884,21 @@ export namespace MyNS {
 		next?: string | null;
 	}
 
+	/** An activity that filters a message based on its attributes. */
+	export interface FilterActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		filter: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterActivityFormGroup() {
+		return new FormGroup<FilterActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An activity that computes an arithmetic expression using the message's attributes. */
 	export interface MathActivity {
@@ -373,6 +906,23 @@ export namespace MyNS {
 		attribute: string;
 		math: string;
 		next?: string | null;
+	}
+
+	/** An activity that computes an arithmetic expression using the message's attributes. */
+	export interface MathActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		attribute: FormControl<string | null | undefined>,
+		math: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateMathActivityFormGroup() {
+		return new FormGroup<MathActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			attribute: new FormControl<string | null | undefined>(undefined),
+			math: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -385,6 +935,25 @@ export namespace MyNS {
 		next?: string | null;
 	}
 
+	/** An activity that adds data from the AWS IoT device registry to your message. */
+	export interface DeviceRegistryEnrichActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		attribute: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceRegistryEnrichActivityFormGroup() {
+		return new FormGroup<DeviceRegistryEnrichActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			attribute: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An activity that adds information from the AWS IoT Device Shadows service to a message. */
 	export interface DeviceShadowEnrichActivity {
@@ -395,13 +964,39 @@ export namespace MyNS {
 		next?: string | null;
 	}
 
+	/** An activity that adds information from the AWS IoT Device Shadows service to a message. */
+	export interface DeviceShadowEnrichActivityFormProperties {
+		name: FormControl<string | null | undefined>,
+		attribute: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		next: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceShadowEnrichActivityFormGroup() {
+		return new FormGroup<DeviceShadowEnrichActivityFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			attribute: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeChannelResponse {
 
 		/** A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline. */
-		channel?: Channel | null;
+		channel?: Channel;
 
 		/** Statistics information about the channel. */
-		statistics?: ChannelStatistics | null;
+		statistics?: ChannelStatistics;
+	}
+	export interface DescribeChannelResponseFormProperties {
+	}
+	export function CreateDescribeChannelResponseFormGroup() {
+		return new FormGroup<DescribeChannelResponseFormProperties>({
+		});
+
 	}
 
 
@@ -410,14 +1005,33 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		storage?: ChannelStorage | null;
+		storage?: ChannelStorage;
 		arn?: string | null;
 		status?: ChannelStatus | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline. */
+	export interface ChannelFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<ChannelStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateChannelFormGroup() {
+		return new FormGroup<ChannelFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ChannelStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -425,10 +1039,19 @@ export namespace MyNS {
 	export interface ChannelStorage {
 
 		/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		serviceManagedS3?: ServiceManagedChannelS3Storage | null;
+		serviceManagedS3?: ServiceManagedChannelS3Storage;
 
 		/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		customerManagedS3?: CustomerManagedChannelS3Storage | null;
+		customerManagedS3?: CustomerManagedChannelS3Storage;
+	}
+
+	/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
+	export interface ChannelStorageFormProperties {
+	}
+	export function CreateChannelStorageFormGroup() {
+		return new FormGroup<ChannelStorageFormProperties>({
+		});
+
 	}
 
 	export enum ChannelStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
@@ -438,7 +1061,16 @@ export namespace MyNS {
 	export interface ChannelStatistics {
 
 		/** The estimated size of the resource. */
-		size?: EstimatedResourceSize | null;
+		size?: EstimatedResourceSize;
+	}
+
+	/** Statistics information about the channel. */
+	export interface ChannelStatisticsFormProperties {
+	}
+	export function CreateChannelStatisticsFormGroup() {
+		return new FormGroup<ChannelStatisticsFormProperties>({
+		});
+
 	}
 
 
@@ -448,10 +1080,30 @@ export namespace MyNS {
 		estimatedOn?: Date | null;
 	}
 
+	/** The estimated size of the resource. */
+	export interface EstimatedResourceSizeFormProperties {
+		estimatedSizeInBytes: FormControl<number | null | undefined>,
+		estimatedOn: FormControl<Date | null | undefined>,
+	}
+	export function CreateEstimatedResourceSizeFormGroup() {
+		return new FormGroup<EstimatedResourceSizeFormProperties>({
+			estimatedSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			estimatedOn: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDatasetResponse {
 
 		/** Information about a data set. */
-		dataset?: Dataset | null;
+		dataset?: Dataset;
+	}
+	export interface DescribeDatasetResponseFormProperties {
+	}
+	export function CreateDescribeDatasetResponseFormGroup() {
+		return new FormGroup<DescribeDatasetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -459,18 +1111,37 @@ export namespace MyNS {
 	export interface Dataset {
 		name?: string | null;
 		arn?: string | null;
-		actions?: Array<DatasetAction> | null;
-		triggers?: Array<DatasetTrigger> | null;
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
+		actions?: Array<DatasetAction>;
+		triggers?: Array<DatasetTrigger>;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
 		status?: ChannelStatus | null;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: VersioningConfiguration | null;
+		versioningConfiguration?: VersioningConfiguration;
+	}
+
+	/** Information about a data set. */
+	export interface DatasetFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<ChannelStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetFormGroup() {
+		return new FormGroup<DatasetFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ChannelStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -480,13 +1151,33 @@ export namespace MyNS {
 		maxVersions?: number | null;
 	}
 
+	/** Information about the versioning of data set contents. */
+	export interface VersioningConfigurationFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		maxVersions: FormControl<number | null | undefined>,
+	}
+	export function CreateVersioningConfigurationFormGroup() {
+		return new FormGroup<VersioningConfigurationFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			maxVersions: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDatastoreResponse {
 
 		/** Information about a data store. */
-		datastore?: Datastore | null;
+		datastore?: Datastore;
 
 		/** Statistical information about the data store. */
-		statistics?: DatastoreStatistics | null;
+		statistics?: DatastoreStatistics;
+	}
+	export interface DescribeDatastoreResponseFormProperties {
+	}
+	export function CreateDescribeDatastoreResponseFormGroup() {
+		return new FormGroup<DescribeDatastoreResponseFormProperties>({
+		});
+
 	}
 
 
@@ -495,14 +1186,33 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		storage?: DatastoreStorage | null;
+		storage?: DatastoreStorage;
 		arn?: string | null;
 		status?: ChannelStatus | null;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** Information about a data store. */
+	export interface DatastoreFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<ChannelStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatastoreFormGroup() {
+		return new FormGroup<DatastoreFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ChannelStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -510,10 +1220,19 @@ export namespace MyNS {
 	export interface DatastoreStorage {
 
 		/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		serviceManagedS3?: ServiceManagedDatastoreS3Storage | null;
+		serviceManagedS3?: ServiceManagedDatastoreS3Storage;
 
 		/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		customerManagedS3?: CustomerManagedDatastoreS3Storage | null;
+		customerManagedS3?: CustomerManagedDatastoreS3Storage;
+	}
+
+	/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
+	export interface DatastoreStorageFormProperties {
+	}
+	export function CreateDatastoreStorageFormGroup() {
+		return new FormGroup<DatastoreStorageFormProperties>({
+		});
+
 	}
 
 
@@ -521,13 +1240,29 @@ export namespace MyNS {
 	export interface DatastoreStatistics {
 
 		/** The estimated size of the resource. */
-		size?: EstimatedResourceSize | null;
+		size?: EstimatedResourceSize;
+	}
+
+	/** Statistical information about the data store. */
+	export interface DatastoreStatisticsFormProperties {
+	}
+	export function CreateDatastoreStatisticsFormGroup() {
+		return new FormGroup<DatastoreStatisticsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeLoggingOptionsResponse {
 
 		/** Information about logging options. */
-		loggingOptions?: LoggingOptions | null;
+		loggingOptions?: LoggingOptions;
+	}
+	export interface DescribeLoggingOptionsResponseFormProperties {
+	}
+	export function CreateDescribeLoggingOptionsResponseFormGroup() {
+		return new FormGroup<DescribeLoggingOptionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -538,12 +1273,34 @@ export namespace MyNS {
 		enabled: boolean;
 	}
 
+	/** Information about logging options. */
+	export interface LoggingOptionsFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		level: FormControl<LoggingOptionsLevel | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLoggingOptionsFormGroup() {
+		return new FormGroup<LoggingOptionsFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LoggingOptionsLevel { ERROR = 0 }
 
 	export interface DescribePipelineResponse {
 
 		/** Contains information about a pipeline. */
-		pipeline?: Pipeline | null;
+		pipeline?: Pipeline;
+	}
+	export interface DescribePipelineResponseFormProperties {
+	}
+	export function CreateDescribePipelineResponseFormGroup() {
+		return new FormGroup<DescribePipelineResponseFormProperties>({
+		});
+
 	}
 
 
@@ -551,10 +1308,27 @@ export namespace MyNS {
 	export interface Pipeline {
 		name?: string | null;
 		arn?: string | null;
-		activities?: Array<PipelineActivity> | null;
-		reprocessingSummaries?: Array<ReprocessingSummary> | null;
+		activities?: Array<PipelineActivity>;
+		reprocessingSummaries?: Array<ReprocessingSummary>;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** Contains information about a pipeline. */
+	export interface PipelineFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePipelineFormGroup() {
+		return new FormGroup<PipelineFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -565,14 +1339,38 @@ export namespace MyNS {
 		creationTime?: Date | null;
 	}
 
+	/** Information about pipeline reprocessing. */
+	export interface ReprocessingSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		status: FormControl<ReprocessingSummaryStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateReprocessingSummaryFormGroup() {
+		return new FormGroup<ReprocessingSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ReprocessingSummaryStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ReprocessingSummaryStatus { RUNNING = 0, SUCCEEDED = 1, CANCELLED = 2, FAILED = 3 }
 
 	export interface GetDatasetContentResponse {
-		entries?: Array<DatasetEntry> | null;
+		entries?: Array<DatasetEntry>;
 		timestamp?: Date | null;
 
 		/** The state of the data set contents and the reason they are in this state. */
-		status?: DatasetContentStatus | null;
+		status?: DatasetContentStatus;
+	}
+	export interface GetDatasetContentResponseFormProperties {
+		timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetDatasetContentResponseFormGroup() {
+		return new FormGroup<GetDatasetContentResponseFormProperties>({
+			timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -582,6 +1380,19 @@ export namespace MyNS {
 		dataURI?: string | null;
 	}
 
+	/** The reference to a data set entry. */
+	export interface DatasetEntryFormProperties {
+		entryName: FormControl<string | null | undefined>,
+		dataURI: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetEntryFormGroup() {
+		return new FormGroup<DatasetEntryFormProperties>({
+			entryName: new FormControl<string | null | undefined>(undefined),
+			dataURI: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The state of the data set contents and the reason they are in this state. */
 	export interface DatasetContentStatus {
@@ -589,11 +1400,33 @@ export namespace MyNS {
 		reason?: string | null;
 	}
 
+	/** The state of the data set contents and the reason they are in this state. */
+	export interface DatasetContentStatusFormProperties {
+		state: FormControl<DatasetContentStatusState | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetContentStatusFormGroup() {
+		return new FormGroup<DatasetContentStatusFormProperties>({
+			state: new FormControl<DatasetContentStatusState | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DatasetContentStatusState { CREATING = 0, SUCCEEDED = 1, FAILED = 2 }
 
 	export interface ListChannelsResponse {
-		channelSummaries?: Array<ChannelSummary> | null;
+		channelSummaries?: Array<ChannelSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListChannelsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListChannelsResponseFormGroup() {
+		return new FormGroup<ListChannelsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -602,10 +1435,27 @@ export namespace MyNS {
 		channelName?: string | null;
 
 		/** Where channel data is stored. */
-		channelStorage?: ChannelStorageSummary | null;
+		channelStorage?: ChannelStorageSummary;
 		status?: ChannelStatus | null;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** A summary of information about a channel. */
+	export interface ChannelSummaryFormProperties {
+		channelName: FormControl<string | null | undefined>,
+		status: FormControl<ChannelStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateChannelSummaryFormGroup() {
+		return new FormGroup<ChannelSummaryFormProperties>({
+			channelName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ChannelStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -613,15 +1463,33 @@ export namespace MyNS {
 	export interface ChannelStorageSummary {
 
 		/** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service. */
-		serviceManagedS3?: ServiceManagedChannelS3StorageSummary | null;
+		serviceManagedS3?: ServiceManagedChannelS3StorageSummary;
 
 		/** Used to store channel data in an S3 bucket that you manage. */
-		customerManagedS3?: CustomerManagedChannelS3StorageSummary | null;
+		customerManagedS3?: CustomerManagedChannelS3StorageSummary;
+	}
+
+	/** Where channel data is stored. */
+	export interface ChannelStorageSummaryFormProperties {
+	}
+	export function CreateChannelStorageSummaryFormGroup() {
+		return new FormGroup<ChannelStorageSummaryFormProperties>({
+		});
+
 	}
 
 
 	/** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service. */
 	export interface ServiceManagedChannelS3StorageSummary {
+	}
+
+	/** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service. */
+	export interface ServiceManagedChannelS3StorageSummaryFormProperties {
+	}
+	export function CreateServiceManagedChannelS3StorageSummaryFormGroup() {
+		return new FormGroup<ServiceManagedChannelS3StorageSummaryFormProperties>({
+		});
+
 	}
 
 
@@ -632,9 +1500,33 @@ export namespace MyNS {
 		roleArn?: string | null;
 	}
 
+	/** Used to store channel data in an S3 bucket that you manage. */
+	export interface CustomerManagedChannelS3StorageSummaryFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		keyPrefix: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomerManagedChannelS3StorageSummaryFormGroup() {
+		return new FormGroup<CustomerManagedChannelS3StorageSummaryFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			keyPrefix: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetContentsResponse {
-		datasetContentSummaries?: Array<DatasetContentSummary> | null;
+		datasetContentSummaries?: Array<DatasetContentSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDatasetContentsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetContentsResponseFormGroup() {
+		return new FormGroup<ListDatasetContentsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -643,15 +1535,41 @@ export namespace MyNS {
 		version?: string | null;
 
 		/** The state of the data set contents and the reason they are in this state. */
-		status?: DatasetContentStatus | null;
+		status?: DatasetContentStatus;
 		creationTime?: Date | null;
 		scheduleTime?: Date | null;
 		completionTime?: Date | null;
 	}
 
+	/** Summary information about data set contents. */
+	export interface DatasetContentSummaryFormProperties {
+		version: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		scheduleTime: FormControl<Date | null | undefined>,
+		completionTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetContentSummaryFormGroup() {
+		return new FormGroup<DatasetContentSummaryFormProperties>({
+			version: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			scheduleTime: new FormControl<Date | null | undefined>(undefined),
+			completionTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetsResponse {
-		datasetSummaries?: Array<DatasetSummary> | null;
+		datasetSummaries?: Array<DatasetSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDatasetsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetsResponseFormGroup() {
+		return new FormGroup<ListDatasetsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -661,8 +1579,25 @@ export namespace MyNS {
 		status?: ChannelStatus | null;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
-		triggers?: Array<DatasetTrigger> | null;
-		actions?: Array<DatasetActionSummary> | null;
+		triggers?: Array<DatasetTrigger>;
+		actions?: Array<DatasetActionSummary>;
+	}
+
+	/** A summary of information about a data set. */
+	export interface DatasetSummaryFormProperties {
+		datasetName: FormControl<string | null | undefined>,
+		status: FormControl<ChannelStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetSummaryFormGroup() {
+		return new FormGroup<DatasetSummaryFormProperties>({
+			datasetName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ChannelStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -672,11 +1607,33 @@ export namespace MyNS {
 		actionType?: DatasetActionSummaryActionType | null;
 	}
 
+	/** Information about the action which automatically creates the data set's contents. */
+	export interface DatasetActionSummaryFormProperties {
+		actionName: FormControl<string | null | undefined>,
+		actionType: FormControl<DatasetActionSummaryActionType | null | undefined>,
+	}
+	export function CreateDatasetActionSummaryFormGroup() {
+		return new FormGroup<DatasetActionSummaryFormProperties>({
+			actionName: new FormControl<string | null | undefined>(undefined),
+			actionType: new FormControl<DatasetActionSummaryActionType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DatasetActionSummaryActionType { QUERY = 0, CONTAINER = 1 }
 
 	export interface ListDatastoresResponse {
-		datastoreSummaries?: Array<DatastoreSummary> | null;
+		datastoreSummaries?: Array<DatastoreSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDatastoresResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatastoresResponseFormGroup() {
+		return new FormGroup<ListDatastoresResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -685,10 +1642,27 @@ export namespace MyNS {
 		datastoreName?: string | null;
 
 		/** Where data store data is stored. */
-		datastoreStorage?: DatastoreStorageSummary | null;
+		datastoreStorage?: DatastoreStorageSummary;
 		status?: ChannelStatus | null;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** A summary of information about a data store. */
+	export interface DatastoreSummaryFormProperties {
+		datastoreName: FormControl<string | null | undefined>,
+		status: FormControl<ChannelStatus | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatastoreSummaryFormGroup() {
+		return new FormGroup<DatastoreSummaryFormProperties>({
+			datastoreName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ChannelStatus | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -696,15 +1670,33 @@ export namespace MyNS {
 	export interface DatastoreStorageSummary {
 
 		/** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service. */
-		serviceManagedS3?: ServiceManagedDatastoreS3StorageSummary | null;
+		serviceManagedS3?: ServiceManagedDatastoreS3StorageSummary;
 
 		/** Used to store data store data in an S3 bucket that you manage. */
-		customerManagedS3?: CustomerManagedDatastoreS3StorageSummary | null;
+		customerManagedS3?: CustomerManagedDatastoreS3StorageSummary;
+	}
+
+	/** Where data store data is stored. */
+	export interface DatastoreStorageSummaryFormProperties {
+	}
+	export function CreateDatastoreStorageSummaryFormGroup() {
+		return new FormGroup<DatastoreStorageSummaryFormProperties>({
+		});
+
 	}
 
 
 	/** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service. */
 	export interface ServiceManagedDatastoreS3StorageSummary {
+	}
+
+	/** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service. */
+	export interface ServiceManagedDatastoreS3StorageSummaryFormProperties {
+	}
+	export function CreateServiceManagedDatastoreS3StorageSummaryFormGroup() {
+		return new FormGroup<ServiceManagedDatastoreS3StorageSummaryFormProperties>({
+		});
+
 	}
 
 
@@ -715,51 +1707,152 @@ export namespace MyNS {
 		roleArn?: string | null;
 	}
 
+	/** Used to store data store data in an S3 bucket that you manage. */
+	export interface CustomerManagedDatastoreS3StorageSummaryFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		keyPrefix: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomerManagedDatastoreS3StorageSummaryFormGroup() {
+		return new FormGroup<CustomerManagedDatastoreS3StorageSummaryFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			keyPrefix: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPipelinesResponse {
-		pipelineSummaries?: Array<PipelineSummary> | null;
+		pipelineSummaries?: Array<PipelineSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListPipelinesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelinesResponseFormGroup() {
+		return new FormGroup<ListPipelinesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A summary of information about a pipeline. */
 	export interface PipelineSummary {
 		pipelineName?: string | null;
-		reprocessingSummaries?: Array<ReprocessingSummary> | null;
+		reprocessingSummaries?: Array<ReprocessingSummary>;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
 	}
 
+	/** A summary of information about a pipeline. */
+	export interface PipelineSummaryFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePipelineSummaryFormGroup() {
+		return new FormGroup<PipelineSummaryFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export enum LoggingLevel { ERROR = 0 }
 
 	export interface RunPipelineActivityResponse {
-		payloads?: Array<string> | null;
+		payloads?: Array<string>;
 		logResult?: string | null;
+	}
+	export interface RunPipelineActivityResponseFormProperties {
+		logResult: FormControl<string | null | undefined>,
+	}
+	export function CreateRunPipelineActivityResponseFormGroup() {
+		return new FormGroup<RunPipelineActivityResponseFormProperties>({
+			logResult: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SampleChannelDataResponse {
-		payloads?: Array<string> | null;
+		payloads?: Array<string>;
+	}
+	export interface SampleChannelDataResponseFormProperties {
+	}
+	export function CreateSampleChannelDataResponseFormGroup() {
+		return new FormGroup<SampleChannelDataResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartPipelineReprocessingResponse {
 		reprocessingId?: string | null;
 	}
+	export interface StartPipelineReprocessingResponseFormProperties {
+		reprocessingId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartPipelineReprocessingResponseFormGroup() {
+		return new FormGroup<StartPipelineReprocessingResponseFormProperties>({
+			reprocessingId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface BatchPutMessageRequest {
 		channelName: string;
 		messages: Array<Message>;
 	}
+	export interface BatchPutMessageRequestFormProperties {
+		channelName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPutMessageRequestFormGroup() {
+		return new FormGroup<BatchPutMessageRequestFormProperties>({
+			channelName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelPipelineReprocessingRequest {
+	}
+	export interface CancelPipelineReprocessingRequestFormProperties {
+	}
+	export function CreateCancelPipelineReprocessingRequestFormGroup() {
+		return new FormGroup<CancelPipelineReprocessingRequestFormProperties>({
+		});
+
 	}
 
 	export enum ComputeType { ACU_1 = 0, ACU_2 = 1 }
@@ -768,45 +1861,88 @@ export namespace MyNS {
 		channelName: string;
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: ChannelStorage | null;
+		channelStorage?: ChannelStorage;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
-		tags?: Array<Tag> | null;
+		retentionPeriod?: RetentionPeriod;
+		tags?: Array<Tag>;
+	}
+	export interface CreateChannelRequestFormProperties {
+		channelName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateChannelRequestFormGroup() {
+		return new FormGroup<CreateChannelRequestFormProperties>({
+			channelName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetContentRequest {
+	}
+	export interface CreateDatasetContentRequestFormProperties {
+	}
+	export function CreateCreateDatasetContentRequestFormGroup() {
+		return new FormGroup<CreateDatasetContentRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateDatasetRequest {
 		datasetName: string;
 		actions: Array<DatasetAction>;
-		triggers?: Array<DatasetTrigger> | null;
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
+		triggers?: Array<DatasetTrigger>;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: VersioningConfiguration | null;
-		tags?: Array<Tag> | null;
+		versioningConfiguration?: VersioningConfiguration;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDatasetRequestFormProperties {
+		datasetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetRequestFormGroup() {
+		return new FormGroup<CreateDatasetRequestFormProperties>({
+			datasetName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatastoreRequest {
 		datastoreName: string;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: DatastoreStorage | null;
+		datastoreStorage?: DatastoreStorage;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
-		tags?: Array<Tag> | null;
+		retentionPeriod?: RetentionPeriod;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDatastoreRequestFormProperties {
+		datastoreName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatastoreRequestFormGroup() {
+		return new FormGroup<CreateDatastoreRequestFormProperties>({
+			datastoreName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePipelineRequest {
 		pipelineName: string;
 		pipelineActivities: Array<PipelineActivity>;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreatePipelineRequestFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelineRequestFormGroup() {
+		return new FormGroup<CreatePipelineRequestFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DatasetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2 }
@@ -819,53 +1955,172 @@ export namespace MyNS {
 
 	export interface DeleteChannelRequest {
 	}
+	export interface DeleteChannelRequestFormProperties {
+	}
+	export function CreateDeleteChannelRequestFormGroup() {
+		return new FormGroup<DeleteChannelRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDatasetContentRequest {
+	}
+	export interface DeleteDatasetContentRequestFormProperties {
+	}
+	export function CreateDeleteDatasetContentRequestFormGroup() {
+		return new FormGroup<DeleteDatasetContentRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDatasetRequest {
 	}
+	export interface DeleteDatasetRequestFormProperties {
+	}
+	export function CreateDeleteDatasetRequestFormGroup() {
+		return new FormGroup<DeleteDatasetRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDatastoreRequest {
+	}
+	export interface DeleteDatastoreRequestFormProperties {
+	}
+	export function CreateDeleteDatastoreRequestFormGroup() {
+		return new FormGroup<DeleteDatastoreRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeletePipelineRequest {
 	}
+	export interface DeletePipelineRequestFormProperties {
+	}
+	export function CreateDeletePipelineRequestFormGroup() {
+		return new FormGroup<DeletePipelineRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeChannelRequest {
+	}
+	export interface DescribeChannelRequestFormProperties {
+	}
+	export function CreateDescribeChannelRequestFormGroup() {
+		return new FormGroup<DescribeChannelRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDatasetRequest {
 	}
+	export interface DescribeDatasetRequestFormProperties {
+	}
+	export function CreateDescribeDatasetRequestFormGroup() {
+		return new FormGroup<DescribeDatasetRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDatastoreRequest {
+	}
+	export interface DescribeDatastoreRequestFormProperties {
+	}
+	export function CreateDescribeDatastoreRequestFormGroup() {
+		return new FormGroup<DescribeDatastoreRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeLoggingOptionsRequest {
 	}
+	export interface DescribeLoggingOptionsRequestFormProperties {
+	}
+	export function CreateDescribeLoggingOptionsRequestFormGroup() {
+		return new FormGroup<DescribeLoggingOptionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribePipelineRequest {
+	}
+	export interface DescribePipelineRequestFormProperties {
+	}
+	export function CreateDescribePipelineRequestFormGroup() {
+		return new FormGroup<DescribePipelineRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDatasetContentRequest {
 	}
+	export interface GetDatasetContentRequestFormProperties {
+	}
+	export function CreateGetDatasetContentRequestFormGroup() {
+		return new FormGroup<GetDatasetContentRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListChannelsRequest {
+	}
+	export interface ListChannelsRequestFormProperties {
+	}
+	export function CreateListChannelsRequestFormGroup() {
+		return new FormGroup<ListChannelsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDatasetContentsRequest {
 	}
+	export interface ListDatasetContentsRequestFormProperties {
+	}
+	export function CreateListDatasetContentsRequestFormGroup() {
+		return new FormGroup<ListDatasetContentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDatasetsRequest {
+	}
+	export interface ListDatasetsRequestFormProperties {
+	}
+	export function CreateListDatasetsRequestFormGroup() {
+		return new FormGroup<ListDatasetsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDatastoresRequest {
 	}
+	export interface ListDatastoresRequestFormProperties {
+	}
+	export function CreateListDatastoresRequestFormGroup() {
+		return new FormGroup<ListDatastoresRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListPipelinesRequest {
 	}
+	export interface ListPipelinesRequestFormProperties {
+	}
+	export function CreateListPipelinesRequestFormGroup() {
+		return new FormGroup<ListPipelinesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutLoggingOptionsRequest {
@@ -875,6 +2130,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		loggingOptions: LoggingOptions;
+	}
+	export interface PutLoggingOptionsRequestFormProperties {
+	}
+	export function CreatePutLoggingOptionsRequestFormGroup() {
+		return new FormGroup<PutLoggingOptionsRequestFormProperties>({
+		});
+
 	}
 
 	export enum ReprocessingStatus { RUNNING = 0, SUCCEEDED = 1, CANCELLED = 2, FAILED = 3 }
@@ -888,54 +2150,121 @@ export namespace MyNS {
 		pipelineActivity: PipelineActivity;
 		payloads: Array<string>;
 	}
+	export interface RunPipelineActivityRequestFormProperties {
+	}
+	export function CreateRunPipelineActivityRequestFormGroup() {
+		return new FormGroup<RunPipelineActivityRequestFormProperties>({
+		});
+
+	}
 
 	export interface SampleChannelDataRequest {
+	}
+	export interface SampleChannelDataRequestFormProperties {
+	}
+	export function CreateSampleChannelDataRequestFormGroup() {
+		return new FormGroup<SampleChannelDataRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartPipelineReprocessingRequest {
 		startTime?: Date | null;
 		endTime?: Date | null;
 	}
+	export interface StartPipelineReprocessingRequestFormProperties {
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartPipelineReprocessingRequestFormGroup() {
+		return new FormGroup<StartPipelineReprocessingRequestFormProperties>({
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateChannelRequest {
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: ChannelStorage | null;
+		channelStorage?: ChannelStorage;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
+	}
+	export interface UpdateChannelRequestFormProperties {
+	}
+	export function CreateUpdateChannelRequestFormGroup() {
+		return new FormGroup<UpdateChannelRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDatasetRequest {
 		actions: Array<DatasetAction>;
-		triggers?: Array<DatasetTrigger> | null;
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
+		triggers?: Array<DatasetTrigger>;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: VersioningConfiguration | null;
+		versioningConfiguration?: VersioningConfiguration;
+	}
+	export interface UpdateDatasetRequestFormProperties {
+	}
+	export function CreateUpdateDatasetRequestFormGroup() {
+		return new FormGroup<UpdateDatasetRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDatastoreRequest {
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: RetentionPeriod | null;
+		retentionPeriod?: RetentionPeriod;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: DatastoreStorage | null;
+		datastoreStorage?: DatastoreStorage;
+	}
+	export interface UpdateDatastoreRequestFormProperties {
+	}
+	export function CreateUpdateDatastoreRequestFormGroup() {
+		return new FormGroup<UpdateDatastoreRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePipelineRequest {
 		pipelineActivities: Array<PipelineActivity>;
+	}
+	export interface UpdatePipelineRequestFormProperties {
+	}
+	export function CreateUpdatePipelineRequestFormGroup() {
+		return new FormGroup<UpdatePipelineRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -1226,7 +2555,7 @@ export namespace MyNS {
 		 * @return {ListDatasetContentsResponse} Success
 		 */
 		ListDatasetContents(datasetName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, scheduledOnOrAfter: Date | null | undefined, scheduledBefore: Date | null | undefined): Observable<ListDatasetContentsResponse> {
-			return this.http.get<ListDatasetContentsResponse>(this.baseUri + 'datasets/' + (datasetName == null ? '' : encodeURIComponent(datasetName)) + '/contents&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&scheduledOnOrAfter=' + scheduledOnOrAfter.toISOString() + '&scheduledBefore=' + scheduledBefore.toISOString(), {});
+			return this.http.get<ListDatasetContentsResponse>(this.baseUri + 'datasets/' + (datasetName == null ? '' : encodeURIComponent(datasetName)) + '/contents&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&scheduledOnOrAfter=' + scheduledOnOrAfter?.toISOString() + '&scheduledBefore=' + scheduledBefore?.toISOString(), {});
 		}
 
 		/**
@@ -1268,7 +2597,7 @@ export namespace MyNS {
 		 * @return {SampleChannelDataResponse} Success
 		 */
 		SampleChannelData(channelName: string, maxMessages: number | null | undefined, startTime: Date | null | undefined, endTime: Date | null | undefined): Observable<SampleChannelDataResponse> {
-			return this.http.get<SampleChannelDataResponse>(this.baseUri + 'channels/' + (channelName == null ? '' : encodeURIComponent(channelName)) + '/sample&maxMessages=' + maxMessages + '&startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString(), {});
+			return this.http.get<SampleChannelDataResponse>(this.baseUri + 'channels/' + (channelName == null ? '' : encodeURIComponent(channelName)) + '/sample&maxMessages=' + maxMessages + '&startTime=' + startTime?.toISOString() + '&endTime=' + endTime?.toISOString(), {});
 		}
 
 		/**
@@ -1310,6 +2639,23 @@ export namespace MyNS {
 		 */
 		messages: Array<Message>;
 	}
+	export interface BatchPutMessagePostBodyFormProperties {
+
+		/**
+		 * The name of the channel where the messages are sent.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_]+$
+		 */
+		channelName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPutMessagePostBodyFormGroup() {
+		return new FormGroup<BatchPutMessagePostBodyFormProperties>({
+			channelName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateChannelPostBody {
 
@@ -1323,31 +2669,66 @@ export namespace MyNS {
 		channelName: string;
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: CreateChannelPostBodyChannelStorage | null;
+		channelStorage?: CreateChannelPostBodyChannelStorage;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: CreateChannelPostBodyRetentionPeriod | null;
+		retentionPeriod?: CreateChannelPostBodyRetentionPeriod;
 
 		/**
 		 * Metadata which can be used to manage the channel.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateChannelPostBodyFormProperties {
+
+		/**
+		 * The name of the channel.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_]+$
+		 */
+		channelName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateChannelPostBodyFormGroup() {
+		return new FormGroup<CreateChannelPostBodyFormProperties>({
+			channelName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateChannelPostBodyChannelStorage {
 
 		/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		serviceManagedS3?: ServiceManagedChannelS3Storage | null;
+		serviceManagedS3?: ServiceManagedChannelS3Storage;
 
 		/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		customerManagedS3?: CustomerManagedChannelS3Storage | null;
+		customerManagedS3?: CustomerManagedChannelS3Storage;
+	}
+	export interface CreateChannelPostBodyChannelStorageFormProperties {
+	}
+	export function CreateCreateChannelPostBodyChannelStorageFormGroup() {
+		return new FormGroup<CreateChannelPostBodyChannelStorageFormProperties>({
+		});
+
 	}
 
 	export interface CreateChannelPostBodyRetentionPeriod {
 		unlimited?: boolean | null;
 		numberOfDays?: number | null;
+	}
+	export interface CreateChannelPostBodyRetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateChannelPostBodyRetentionPeriodFormGroup() {
+		return new FormGroup<CreateChannelPostBodyRetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetPostBody {
@@ -1374,37 +2755,76 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 5
 		 */
-		triggers?: Array<DatasetTrigger> | null;
+		triggers?: Array<DatasetTrigger>;
 
 		/**
 		 * When data set contents are created they are delivered to destinations specified here.
 		 * Minimum items: 0
 		 * Maximum items: 20
 		 */
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: CreateDatasetPostBodyRetentionPeriod | null;
+		retentionPeriod?: CreateDatasetPostBodyRetentionPeriod;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: CreateDatasetPostBodyVersioningConfiguration | null;
+		versioningConfiguration?: CreateDatasetPostBodyVersioningConfiguration;
 
 		/**
 		 * Metadata which can be used to manage the data set.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDatasetPostBodyFormProperties {
+
+		/**
+		 * The name of the data set.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_]+$
+		 */
+		datasetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetPostBodyFormGroup() {
+		return new FormGroup<CreateDatasetPostBodyFormProperties>({
+			datasetName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetPostBodyRetentionPeriod {
 		unlimited?: boolean | null;
 		numberOfDays?: number | null;
 	}
+	export interface CreateDatasetPostBodyRetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDatasetPostBodyRetentionPeriodFormGroup() {
+		return new FormGroup<CreateDatasetPostBodyRetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDatasetPostBodyVersioningConfiguration {
 		unlimited?: boolean | null;
 		maxVersions?: number | null;
+	}
+	export interface CreateDatasetPostBodyVersioningConfigurationFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		maxVersions: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDatasetPostBodyVersioningConfigurationFormGroup() {
+		return new FormGroup<CreateDatasetPostBodyVersioningConfigurationFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			maxVersions: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatastorePostBody {
@@ -1419,31 +2839,66 @@ export namespace MyNS {
 		datastoreName: string;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: CreateDatastorePostBodyDatastoreStorage | null;
+		datastoreStorage?: CreateDatastorePostBodyDatastoreStorage;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: CreateDatastorePostBodyRetentionPeriod | null;
+		retentionPeriod?: CreateDatastorePostBodyRetentionPeriod;
 
 		/**
 		 * Metadata which can be used to manage the data store.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDatastorePostBodyFormProperties {
+
+		/**
+		 * The name of the data store.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_]+$
+		 */
+		datastoreName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatastorePostBodyFormGroup() {
+		return new FormGroup<CreateDatastorePostBodyFormProperties>({
+			datastoreName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatastorePostBodyDatastoreStorage {
 
 		/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		serviceManagedS3?: ServiceManagedDatastoreS3Storage | null;
+		serviceManagedS3?: ServiceManagedDatastoreS3Storage;
 
 		/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		customerManagedS3?: CustomerManagedDatastoreS3Storage | null;
+		customerManagedS3?: CustomerManagedDatastoreS3Storage;
+	}
+	export interface CreateDatastorePostBodyDatastoreStorageFormProperties {
+	}
+	export function CreateCreateDatastorePostBodyDatastoreStorageFormGroup() {
+		return new FormGroup<CreateDatastorePostBodyDatastoreStorageFormProperties>({
+		});
+
 	}
 
 	export interface CreateDatastorePostBodyRetentionPeriod {
 		unlimited?: boolean | null;
 		numberOfDays?: number | null;
+	}
+	export interface CreateDatastorePostBodyRetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDatastorePostBodyRetentionPeriodFormGroup() {
+		return new FormGroup<CreateDatastorePostBodyRetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePipelinePostBody {
@@ -1470,30 +2925,72 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreatePipelinePostBodyFormProperties {
+
+		/**
+		 * The name of the pipeline.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_]+$
+		 */
+		pipelineName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelinePostBodyFormGroup() {
+		return new FormGroup<CreatePipelinePostBodyFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateChannelPutBody {
 
 		/** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel. */
-		channelStorage?: UpdateChannelPutBodyChannelStorage | null;
+		channelStorage?: UpdateChannelPutBodyChannelStorage;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: UpdateChannelPutBodyRetentionPeriod | null;
+		retentionPeriod?: UpdateChannelPutBodyRetentionPeriod;
+	}
+	export interface UpdateChannelPutBodyFormProperties {
+	}
+	export function CreateUpdateChannelPutBodyFormGroup() {
+		return new FormGroup<UpdateChannelPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateChannelPutBodyChannelStorage {
 
 		/** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		serviceManagedS3?: ServiceManagedChannelS3Storage | null;
+		serviceManagedS3?: ServiceManagedChannelS3Storage;
 
 		/** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel. */
-		customerManagedS3?: CustomerManagedChannelS3Storage | null;
+		customerManagedS3?: CustomerManagedChannelS3Storage;
+	}
+	export interface UpdateChannelPutBodyChannelStorageFormProperties {
+	}
+	export function CreateUpdateChannelPutBodyChannelStorageFormGroup() {
+		return new FormGroup<UpdateChannelPutBodyChannelStorageFormProperties>({
+		});
+
 	}
 
 	export interface UpdateChannelPutBodyRetentionPeriod {
 		unlimited?: boolean | null;
 		numberOfDays?: number | null;
+	}
+	export interface UpdateChannelPutBodyRetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateChannelPutBodyRetentionPeriodFormGroup() {
+		return new FormGroup<UpdateChannelPutBodyRetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDatasetPutBody {
@@ -1511,53 +3008,107 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 5
 		 */
-		triggers?: Array<DatasetTrigger> | null;
+		triggers?: Array<DatasetTrigger>;
 
 		/**
 		 * When data set contents are created they are delivered to destinations specified here.
 		 * Minimum items: 0
 		 * Maximum items: 20
 		 */
-		contentDeliveryRules?: Array<DatasetContentDeliveryRule> | null;
+		contentDeliveryRules?: Array<DatasetContentDeliveryRule>;
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: UpdateDatasetPutBodyRetentionPeriod | null;
+		retentionPeriod?: UpdateDatasetPutBodyRetentionPeriod;
 
 		/** Information about the versioning of data set contents. */
-		versioningConfiguration?: UpdateDatasetPutBodyVersioningConfiguration | null;
+		versioningConfiguration?: UpdateDatasetPutBodyVersioningConfiguration;
+	}
+	export interface UpdateDatasetPutBodyFormProperties {
+	}
+	export function CreateUpdateDatasetPutBodyFormGroup() {
+		return new FormGroup<UpdateDatasetPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDatasetPutBodyRetentionPeriod {
 		unlimited?: boolean | null;
 		numberOfDays?: number | null;
 	}
+	export interface UpdateDatasetPutBodyRetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDatasetPutBodyRetentionPeriodFormGroup() {
+		return new FormGroup<UpdateDatasetPutBodyRetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDatasetPutBodyVersioningConfiguration {
 		unlimited?: boolean | null;
 		maxVersions?: number | null;
 	}
+	export interface UpdateDatasetPutBodyVersioningConfigurationFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		maxVersions: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDatasetPutBodyVersioningConfigurationFormGroup() {
+		return new FormGroup<UpdateDatasetPutBodyVersioningConfigurationFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			maxVersions: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDatastorePutBody {
 
 		/** How long, in days, message data is kept. */
-		retentionPeriod?: UpdateDatastorePutBodyRetentionPeriod | null;
+		retentionPeriod?: UpdateDatastorePutBodyRetentionPeriod;
 
 		/** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created. */
-		datastoreStorage?: UpdateDatastorePutBodyDatastoreStorage | null;
+		datastoreStorage?: UpdateDatastorePutBodyDatastoreStorage;
+	}
+	export interface UpdateDatastorePutBodyFormProperties {
+	}
+	export function CreateUpdateDatastorePutBodyFormGroup() {
+		return new FormGroup<UpdateDatastorePutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDatastorePutBodyRetentionPeriod {
 		unlimited?: boolean | null;
 		numberOfDays?: number | null;
 	}
+	export interface UpdateDatastorePutBodyRetentionPeriodFormProperties {
+		unlimited: FormControl<boolean | null | undefined>,
+		numberOfDays: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDatastorePutBodyRetentionPeriodFormGroup() {
+		return new FormGroup<UpdateDatastorePutBodyRetentionPeriodFormProperties>({
+			unlimited: new FormControl<boolean | null | undefined>(undefined),
+			numberOfDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDatastorePutBodyDatastoreStorage {
 
 		/** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		serviceManagedS3?: ServiceManagedDatastoreS3Storage | null;
+		serviceManagedS3?: ServiceManagedDatastoreS3Storage;
 
 		/** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store. */
-		customerManagedS3?: CustomerManagedDatastoreS3Storage | null;
+		customerManagedS3?: CustomerManagedDatastoreS3Storage;
+	}
+	export interface UpdateDatastorePutBodyDatastoreStorageFormProperties {
+	}
+	export function CreateUpdateDatastorePutBodyDatastoreStorageFormGroup() {
+		return new FormGroup<UpdateDatastorePutBodyDatastoreStorageFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePipelinePutBody {
@@ -1570,6 +3121,13 @@ export namespace MyNS {
 		 */
 		pipelineActivities: Array<PipelineActivity>;
 	}
+	export interface UpdatePipelinePutBodyFormProperties {
+	}
+	export function CreateUpdatePipelinePutBodyFormGroup() {
+		return new FormGroup<UpdatePipelinePutBodyFormProperties>({
+		});
+
+	}
 
 	export interface PutLoggingOptionsPutBody {
 
@@ -1579,11 +3137,31 @@ export namespace MyNS {
 		 */
 		loggingOptions: PutLoggingOptionsPutBodyLoggingOptions;
 	}
+	export interface PutLoggingOptionsPutBodyFormProperties {
+	}
+	export function CreatePutLoggingOptionsPutBodyFormGroup() {
+		return new FormGroup<PutLoggingOptionsPutBodyFormProperties>({
+		});
+
+	}
 
 	export interface PutLoggingOptionsPutBodyLoggingOptions {
 		roleArn?: string | null;
 		level?: LoggingOptionsLevel | null;
 		enabled?: boolean | null;
+	}
+	export interface PutLoggingOptionsPutBodyLoggingOptionsFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		level: FormControl<LoggingOptionsLevel | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutLoggingOptionsPutBodyLoggingOptionsFormGroup() {
+		return new FormGroup<PutLoggingOptionsPutBodyLoggingOptionsFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -1595,6 +3173,13 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		tags: Array<Tag>;
+	}
+	export interface TagResourcePostBodyFormProperties {
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+		});
+
 	}
 
 	export interface RunPipelineActivityPostBody {
@@ -1613,38 +3198,52 @@ export namespace MyNS {
 		 */
 		payloads: Array<string>;
 	}
+	export interface RunPipelineActivityPostBodyFormProperties {
+	}
+	export function CreateRunPipelineActivityPostBodyFormGroup() {
+		return new FormGroup<RunPipelineActivityPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface RunPipelineActivityPostBodyPipelineActivity {
 
 		/** The activity that determines the source of the messages to be processed. */
-		channel?: ChannelActivity | null;
+		channel?: ChannelActivity;
 
 		/** An activity that runs a Lambda function to modify the message. */
-		lambda?: LambdaActivity | null;
+		lambda?: LambdaActivity;
 
 		/** The 'datastore' activity that specifies where to store the processed data. */
-		datastore?: DatastoreActivity | null;
+		datastore?: DatastoreActivity;
 
 		/** An activity that adds other attributes based on existing attributes in the message. */
-		addAttributes?: AddAttributesActivity | null;
+		addAttributes?: AddAttributesActivity;
 
 		/** An activity that removes attributes from a message. */
-		removeAttributes?: RemoveAttributesActivity | null;
+		removeAttributes?: RemoveAttributesActivity;
 
 		/** Creates a new message using only the specified attributes from the original message. */
-		selectAttributes?: SelectAttributesActivity | null;
+		selectAttributes?: SelectAttributesActivity;
 
 		/** An activity that filters a message based on its attributes. */
-		filter?: FilterActivity | null;
+		filter?: FilterActivity;
 
 		/** An activity that computes an arithmetic expression using the message's attributes. */
-		math?: MathActivity | null;
+		math?: MathActivity;
 
 		/** An activity that adds data from the AWS IoT device registry to your message. */
-		deviceRegistryEnrich?: DeviceRegistryEnrichActivity | null;
+		deviceRegistryEnrich?: DeviceRegistryEnrichActivity;
 
 		/** An activity that adds information from the AWS IoT Device Shadows service to a message. */
-		deviceShadowEnrich?: DeviceShadowEnrichActivity | null;
+		deviceShadowEnrich?: DeviceShadowEnrichActivity;
+	}
+	export interface RunPipelineActivityPostBodyPipelineActivityFormProperties {
+	}
+	export function CreateRunPipelineActivityPostBodyPipelineActivityFormGroup() {
+		return new FormGroup<RunPipelineActivityPostBodyPipelineActivityFormProperties>({
+		});
+
 	}
 
 	export interface StartPipelineReprocessingPostBody {
@@ -1654,6 +3253,21 @@ export namespace MyNS {
 
 		/** The end time (exclusive) of raw message data that is reprocessed. */
 		endTime?: Date | null;
+	}
+	export interface StartPipelineReprocessingPostBodyFormProperties {
+
+		/** The start time (inclusive) of raw message data that is reprocessed. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** The end time (exclusive) of raw message data that is reprocessed. */
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartPipelineReprocessingPostBodyFormGroup() {
+		return new FormGroup<StartPipelineReprocessingPostBodyFormProperties>({
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 }

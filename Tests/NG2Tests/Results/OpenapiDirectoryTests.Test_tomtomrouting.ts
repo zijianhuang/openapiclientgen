@@ -1,61 +1,159 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CalculateReachableRangePostDataParameters {
-		allowVignette?: Array<string> | null;
-		avoidAreas?: CalculateReachableRangePostDataParametersAvoidAreas | null;
-		avoidVignette?: Array<string> | null;
+		allowVignette?: Array<string>;
+		avoidAreas?: CalculateReachableRangePostDataParametersAvoidAreas;
+		avoidVignette?: Array<string>;
+	}
+	export interface CalculateReachableRangePostDataParametersFormProperties {
+	}
+	export function CreateCalculateReachableRangePostDataParametersFormGroup() {
+		return new FormGroup<CalculateReachableRangePostDataParametersFormProperties>({
+		});
+
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreas {
-		CalculateReachableRangePostDataParametersAvoidAreasRectangles?: Array<CalculateReachableRangePostDataParametersAvoidAreasRectangles> | null;
+		CalculateReachableRangePostDataParametersAvoidAreasRectangles?: Array<CalculateReachableRangePostDataParametersAvoidAreasRectangles>;
+	}
+	export interface CalculateReachableRangePostDataParametersAvoidAreasFormProperties {
+	}
+	export function CreateCalculateReachableRangePostDataParametersAvoidAreasFormGroup() {
+		return new FormGroup<CalculateReachableRangePostDataParametersAvoidAreasFormProperties>({
+		});
+
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreasRectangles {
-		northEastCorner?: CalculateReachableRangePostDataParametersAvoidAreasNorthEastCorner | null;
-		southWestCorner?: CalculateReachableRangePostDataParametersAvoidAreasSouthWestCorner | null;
+		northEastCorner?: CalculateReachableRangePostDataParametersAvoidAreasNorthEastCorner;
+		southWestCorner?: CalculateReachableRangePostDataParametersAvoidAreasSouthWestCorner;
+	}
+	export interface CalculateReachableRangePostDataParametersAvoidAreasRectanglesFormProperties {
+	}
+	export function CreateCalculateReachableRangePostDataParametersAvoidAreasRectanglesFormGroup() {
+		return new FormGroup<CalculateReachableRangePostDataParametersAvoidAreasRectanglesFormProperties>({
+		});
+
 	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreasNorthEastCorner {
 		latitude?: string | null;
 		longitude?: string | null;
 	}
+	export interface CalculateReachableRangePostDataParametersAvoidAreasNorthEastCornerFormProperties {
+		latitude: FormControl<string | null | undefined>,
+		longitude: FormControl<string | null | undefined>,
+	}
+	export function CreateCalculateReachableRangePostDataParametersAvoidAreasNorthEastCornerFormGroup() {
+		return new FormGroup<CalculateReachableRangePostDataParametersAvoidAreasNorthEastCornerFormProperties>({
+			latitude: new FormControl<string | null | undefined>(undefined),
+			longitude: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CalculateReachableRangePostDataParametersAvoidAreasSouthWestCorner {
 		latitude?: string | null;
 		longitude?: string | null;
 	}
+	export interface CalculateReachableRangePostDataParametersAvoidAreasSouthWestCornerFormProperties {
+		latitude: FormControl<string | null | undefined>,
+		longitude: FormControl<string | null | undefined>,
+	}
+	export function CreateCalculateReachableRangePostDataParametersAvoidAreasSouthWestCornerFormGroup() {
+		return new FormGroup<CalculateReachableRangePostDataParametersAvoidAreasSouthWestCornerFormProperties>({
+			latitude: new FormControl<string | null | undefined>(undefined),
+			longitude: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CalculateRoutePostDataParameters {
-		allowVignette?: Array<string> | null;
-		avoidAreas?: CalculateRoutePostDataParametersAvoidAreas | null;
-		avoidVignette?: Array<string> | null;
-		CalculateRoutePostDataParametersSupportingPoints?: Array<CalculateRoutePostDataParametersSupportingPoints> | null;
+		allowVignette?: Array<string>;
+		avoidAreas?: CalculateRoutePostDataParametersAvoidAreas;
+		avoidVignette?: Array<string>;
+		CalculateRoutePostDataParametersSupportingPoints?: Array<CalculateRoutePostDataParametersSupportingPoints>;
+	}
+	export interface CalculateRoutePostDataParametersFormProperties {
+	}
+	export function CreateCalculateRoutePostDataParametersFormGroup() {
+		return new FormGroup<CalculateRoutePostDataParametersFormProperties>({
+		});
+
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreas {
-		CalculateRoutePostDataParametersAvoidAreasRectangles?: Array<CalculateRoutePostDataParametersAvoidAreasRectangles> | null;
+		CalculateRoutePostDataParametersAvoidAreasRectangles?: Array<CalculateRoutePostDataParametersAvoidAreasRectangles>;
+	}
+	export interface CalculateRoutePostDataParametersAvoidAreasFormProperties {
+	}
+	export function CreateCalculateRoutePostDataParametersAvoidAreasFormGroup() {
+		return new FormGroup<CalculateRoutePostDataParametersAvoidAreasFormProperties>({
+		});
+
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreasRectangles {
-		northEastCorner?: CalculateRoutePostDataParametersAvoidAreasNorthEastCorner | null;
-		southWestCorner?: CalculateRoutePostDataParametersAvoidAreasSouthWestCorner | null;
+		northEastCorner?: CalculateRoutePostDataParametersAvoidAreasNorthEastCorner;
+		southWestCorner?: CalculateRoutePostDataParametersAvoidAreasSouthWestCorner;
+	}
+	export interface CalculateRoutePostDataParametersAvoidAreasRectanglesFormProperties {
+	}
+	export function CreateCalculateRoutePostDataParametersAvoidAreasRectanglesFormGroup() {
+		return new FormGroup<CalculateRoutePostDataParametersAvoidAreasRectanglesFormProperties>({
+		});
+
 	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreasNorthEastCorner {
 		latitude?: string | null;
 		longitude?: string | null;
 	}
+	export interface CalculateRoutePostDataParametersAvoidAreasNorthEastCornerFormProperties {
+		latitude: FormControl<string | null | undefined>,
+		longitude: FormControl<string | null | undefined>,
+	}
+	export function CreateCalculateRoutePostDataParametersAvoidAreasNorthEastCornerFormGroup() {
+		return new FormGroup<CalculateRoutePostDataParametersAvoidAreasNorthEastCornerFormProperties>({
+			latitude: new FormControl<string | null | undefined>(undefined),
+			longitude: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CalculateRoutePostDataParametersAvoidAreasSouthWestCorner {
 		latitude?: string | null;
 		longitude?: string | null;
 	}
+	export interface CalculateRoutePostDataParametersAvoidAreasSouthWestCornerFormProperties {
+		latitude: FormControl<string | null | undefined>,
+		longitude: FormControl<string | null | undefined>,
+	}
+	export function CreateCalculateRoutePostDataParametersAvoidAreasSouthWestCornerFormGroup() {
+		return new FormGroup<CalculateRoutePostDataParametersAvoidAreasSouthWestCornerFormProperties>({
+			latitude: new FormControl<string | null | undefined>(undefined),
+			longitude: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CalculateRoutePostDataParametersSupportingPoints {
 		latitude?: string | null;
 		longitude?: string | null;
+	}
+	export interface CalculateRoutePostDataParametersSupportingPointsFormProperties {
+		latitude: FormControl<string | null | undefined>,
+		longitude: FormControl<string | null | undefined>,
+	}
+	export function CreateCalculateRoutePostDataParametersSupportingPointsFormGroup() {
+		return new FormGroup<CalculateRoutePostDataParametersSupportingPointsFormProperties>({
+			latitude: new FormControl<string | null | undefined>(undefined),
+			longitude: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

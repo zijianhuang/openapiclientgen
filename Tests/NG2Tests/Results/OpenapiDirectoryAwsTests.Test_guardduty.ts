@@ -1,36 +1,106 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptInvitationResponse {
+	}
+	export interface AcceptInvitationResponseFormProperties {
+	}
+	export function CreateAcceptInvitationResponseFormGroup() {
+		return new FormGroup<AcceptInvitationResponseFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerErrorException {
 	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ArchiveFindingsResponse {
+	}
+	export interface ArchiveFindingsResponseFormProperties {
+	}
+	export function CreateArchiveFindingsResponseFormGroup() {
+		return new FormGroup<ArchiveFindingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateDetectorResponse {
 		DetectorId?: string | null;
 	}
+	export interface CreateDetectorResponseFormProperties {
+		DetectorId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDetectorResponseFormGroup() {
+		return new FormGroup<CreateDetectorResponseFormProperties>({
+			DetectorId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateFilterResponse {
 		Name: string;
 	}
+	export interface CreateFilterResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFilterResponseFormGroup() {
+		return new FormGroup<CreateFilterResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Criterion {
+	}
+	export interface CriterionFormProperties {
+	}
+	export function CreateCriterionFormGroup() {
+		return new FormGroup<CriterionFormProperties>({
+		});
+
 	}
 
 	export interface CreateIPSetResponse {
 		IpSetId: string;
 	}
+	export interface CreateIPSetResponseFormProperties {
+		IpSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIPSetResponseFormGroup() {
+		return new FormGroup<CreateIPSetResponseFormProperties>({
+			IpSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateMembersResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
+	}
+	export interface CreateMembersResponseFormProperties {
+	}
+	export function CreateCreateMembersResponseFormGroup() {
+		return new FormGroup<CreateMembersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -40,6 +110,19 @@ export namespace MyNS {
 		Result: string;
 	}
 
+	/** Contains information about the accounts that weren't processed. */
+	export interface UnprocessedAccountFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		Result: FormControl<string | null | undefined>,
+	}
+	export function CreateUnprocessedAccountFormGroup() {
+		return new FormGroup<UnprocessedAccountFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			Result: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the account. */
 	export interface AccountDetail {
@@ -47,47 +130,152 @@ export namespace MyNS {
 		Email: string;
 	}
 
+	/** Contains information about the account. */
+	export interface AccountDetailFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountDetailFormGroup() {
+		return new FormGroup<AccountDetailFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreatePublishingDestinationResponse {
 		DestinationId: string;
 	}
+	export interface CreatePublishingDestinationResponseFormProperties {
+		DestinationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePublishingDestinationResponseFormGroup() {
+		return new FormGroup<CreatePublishingDestinationResponseFormProperties>({
+			DestinationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSampleFindingsResponse {
+	}
+	export interface CreateSampleFindingsResponseFormProperties {
+	}
+	export function CreateCreateSampleFindingsResponseFormGroup() {
+		return new FormGroup<CreateSampleFindingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateThreatIntelSetResponse {
 		ThreatIntelSetId: string;
 	}
+	export interface CreateThreatIntelSetResponseFormProperties {
+		ThreatIntelSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThreatIntelSetResponseFormGroup() {
+		return new FormGroup<CreateThreatIntelSetResponseFormProperties>({
+			ThreatIntelSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeclineInvitationsResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
+	export interface DeclineInvitationsResponseFormProperties {
+	}
+	export function CreateDeclineInvitationsResponseFormGroup() {
+		return new FormGroup<DeclineInvitationsResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDetectorResponse {
+	}
+	export interface DeleteDetectorResponseFormProperties {
+	}
+	export function CreateDeleteDetectorResponseFormGroup() {
+		return new FormGroup<DeleteDetectorResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFilterResponse {
 	}
+	export interface DeleteFilterResponseFormProperties {
+	}
+	export function CreateDeleteFilterResponseFormGroup() {
+		return new FormGroup<DeleteFilterResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteIPSetResponse {
+	}
+	export interface DeleteIPSetResponseFormProperties {
+	}
+	export function CreateDeleteIPSetResponseFormGroup() {
+		return new FormGroup<DeleteIPSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteInvitationsResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
+	export interface DeleteInvitationsResponseFormProperties {
+	}
+	export function CreateDeleteInvitationsResponseFormGroup() {
+		return new FormGroup<DeleteInvitationsResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteMembersResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
+	export interface DeleteMembersResponseFormProperties {
+	}
+	export function CreateDeleteMembersResponseFormGroup() {
+		return new FormGroup<DeleteMembersResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeletePublishingDestinationResponse {
 	}
+	export interface DeletePublishingDestinationResponseFormProperties {
+	}
+	export function CreateDeletePublishingDestinationResponseFormGroup() {
+		return new FormGroup<DeletePublishingDestinationResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteThreatIntelSetResponse {
+	}
+	export interface DeleteThreatIntelSetResponseFormProperties {
+	}
+	export function CreateDeleteThreatIntelSetResponseFormGroup() {
+		return new FormGroup<DeleteThreatIntelSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeOrganizationConfigurationResponse {
 		AutoEnable: boolean;
 		MemberAccountLimitReached: boolean;
+	}
+	export interface DescribeOrganizationConfigurationResponseFormProperties {
+		AutoEnable: FormControl<boolean | null | undefined>,
+		MemberAccountLimitReached: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeOrganizationConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeOrganizationConfigurationResponseFormProperties>({
+			AutoEnable: new FormControl<boolean | null | undefined>(undefined),
+			MemberAccountLimitReached: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribePublishingDestinationResponse {
@@ -102,6 +290,21 @@ export namespace MyNS {
 		 */
 		DestinationProperties: DestinationProperties;
 	}
+	export interface DescribePublishingDestinationResponseFormProperties {
+		DestinationId: FormControl<string | null | undefined>,
+		DestinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+		Status: FormControl<DescribePublishingDestinationResponseStatus | null | undefined>,
+		PublishingFailureStartTimestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribePublishingDestinationResponseFormGroup() {
+		return new FormGroup<DescribePublishingDestinationResponseFormProperties>({
+			DestinationId: new FormControl<string | null | undefined>(undefined),
+			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
+			Status: new FormControl<DescribePublishingDestinationResponseStatus | null | undefined>(undefined),
+			PublishingFailureStartTimestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribePublishingDestinationResponseDestinationType { S3 = 0 }
 
@@ -114,17 +317,58 @@ export namespace MyNS {
 		KmsKeyArn?: string | null;
 	}
 
+	/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
+	export interface DestinationPropertiesFormProperties {
+		DestinationArn: FormControl<string | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDestinationPropertiesFormGroup() {
+		return new FormGroup<DestinationPropertiesFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisableOrganizationAdminAccountResponse {
+	}
+	export interface DisableOrganizationAdminAccountResponseFormProperties {
+	}
+	export function CreateDisableOrganizationAdminAccountResponseFormGroup() {
+		return new FormGroup<DisableOrganizationAdminAccountResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateFromMasterAccountResponse {
+	}
+	export interface DisassociateFromMasterAccountResponseFormProperties {
+	}
+	export function CreateDisassociateFromMasterAccountResponseFormGroup() {
+		return new FormGroup<DisassociateFromMasterAccountResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateMembersResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
+	export interface DisassociateMembersResponseFormProperties {
+	}
+	export function CreateDisassociateMembersResponseFormGroup() {
+		return new FormGroup<DisassociateMembersResponseFormProperties>({
+		});
+
+	}
 
 	export interface EnableOrganizationAdminAccountResponse {
+	}
+	export interface EnableOrganizationAdminAccountResponseFormProperties {
+	}
+	export function CreateEnableOrganizationAdminAccountResponseFormGroup() {
+		return new FormGroup<EnableOrganizationAdminAccountResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetDetectorResponse {
@@ -133,7 +377,24 @@ export namespace MyNS {
 		ServiceRole: string;
 		Status: GetDetectorResponseStatus;
 		UpdatedAt?: string | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface GetDetectorResponseFormProperties {
+		CreatedAt: FormControl<string | null | undefined>,
+		FindingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
+		ServiceRole: FormControl<string | null | undefined>,
+		Status: FormControl<GetDetectorResponseStatus | null | undefined>,
+		UpdatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDetectorResponseFormGroup() {
+		return new FormGroup<GetDetectorResponseFormProperties>({
+			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			FindingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
+			ServiceRole: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetDetectorResponseStatus | null | undefined>(undefined),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetDetectorResponseFindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
@@ -141,6 +402,13 @@ export namespace MyNS {
 	export enum GetDetectorResponseStatus { ENABLED = 0, DISABLED = 1 }
 
 	export interface TagMap {
+	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
 	}
 
 	export interface GetFilterResponse {
@@ -154,7 +422,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		FindingCriteria: FindingCriteria;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface GetFilterResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Action: FormControl<GetFilterResponseAction | null | undefined>,
+		Rank: FormControl<number | null | undefined>,
+	}
+	export function CreateGetFilterResponseFormGroup() {
+		return new FormGroup<GetFilterResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
+			Rank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetFilterResponseAction { NOOP = 0, ARCHIVE = 1 }
@@ -162,11 +445,27 @@ export namespace MyNS {
 
 	/** Contains information about the criteria used for querying findings. */
 	export interface FindingCriteria {
-		Criterion?: Criterion | null;
+		Criterion?: Criterion;
+	}
+
+	/** Contains information about the criteria used for querying findings. */
+	export interface FindingCriteriaFormProperties {
+	}
+	export function CreateFindingCriteriaFormGroup() {
+		return new FormGroup<FindingCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface GetFindingsResponse {
 		Findings: Array<Finding>;
+	}
+	export interface GetFindingsResponseFormProperties {
+	}
+	export function CreateGetFindingsResponseFormGroup() {
+		return new FormGroup<GetFindingsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -189,11 +488,46 @@ export namespace MyNS {
 		SchemaVersion: string;
 
 		/** Contains additional information about the generated finding. */
-		Service?: Service | null;
+		Service?: Service;
 		Severity: number;
 		Title?: string | null;
 		Type: string;
 		UpdatedAt: string;
+	}
+
+	/** Contains information about the finding, which is generated when abnormal or suspicious activity is detected. */
+	export interface FindingFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+		CreatedAt: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Partition: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+		Severity: FormControl<number | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		UpdatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateFindingFormGroup() {
+		return new FormGroup<FindingFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Partition: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<number | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -201,14 +535,25 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** Contains information about the access keys. */
-		AccessKeyDetails?: AccessKeyDetails | null;
+		AccessKeyDetails?: AccessKeyDetails;
 
 		/** Contains information on the S3 bucket. */
-		S3BucketDetails?: Array<S3BucketDetail> | null;
+		S3BucketDetails?: Array<S3BucketDetail>;
 
 		/** Contains information about the details of an instance. */
-		InstanceDetails?: InstanceDetails | null;
+		InstanceDetails?: InstanceDetails;
 		ResourceType?: string | null;
+	}
+
+	/** Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding. */
+	export interface ResourceFormProperties {
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -220,6 +565,23 @@ export namespace MyNS {
 		UserType?: string | null;
 	}
 
+	/** Contains information about the access keys. */
+	export interface AccessKeyDetailsFormProperties {
+		AccessKeyId: FormControl<string | null | undefined>,
+		PrincipalId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		UserType: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessKeyDetailsFormGroup() {
+		return new FormGroup<AccessKeyDetailsFormProperties>({
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			PrincipalId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			UserType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface S3BucketDetail {
 		Arn?: string | null;
 		Name?: string | null;
@@ -227,20 +589,46 @@ export namespace MyNS {
 		CreatedAt?: Date | null;
 
 		/** Contains information on the owner of the bucket. */
-		Owner?: Owner | null;
-		Tags?: Array<Tag> | null;
+		Owner?: Owner;
+		Tags?: Array<Tag>;
 
 		/** Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information. */
-		DefaultServerSideEncryption?: DefaultServerSideEncryption | null;
+		DefaultServerSideEncryption?: DefaultServerSideEncryption;
 
 		/** Describes the public access policies that apply to the S3 bucket. */
-		PublicAccess?: PublicAccess | null;
+		PublicAccess?: PublicAccess;
+	}
+	export interface S3BucketDetailFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateS3BucketDetailFormGroup() {
+		return new FormGroup<S3BucketDetailFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains information on the owner of the bucket. */
 	export interface Owner {
 		Id?: string | null;
+	}
+
+	/** Contains information on the owner of the bucket. */
+	export interface OwnerFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateOwnerFormGroup() {
+		return new FormGroup<OwnerFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -250,6 +638,19 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Contains information about a tag associated with the EC2 instance. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information. */
 	export interface DefaultServerSideEncryption {
@@ -257,13 +658,37 @@ export namespace MyNS {
 		KmsMasterKeyArn?: string | null;
 	}
 
+	/** Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information. */
+	export interface DefaultServerSideEncryptionFormProperties {
+		EncryptionType: FormControl<string | null | undefined>,
+		KmsMasterKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDefaultServerSideEncryptionFormGroup() {
+		return new FormGroup<DefaultServerSideEncryptionFormProperties>({
+			EncryptionType: new FormControl<string | null | undefined>(undefined),
+			KmsMasterKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the public access policies that apply to the S3 bucket. */
 	export interface PublicAccess {
 
 		/** Contains information about how permissions are configured for the S3 bucket. */
-		PermissionConfiguration?: PermissionConfiguration | null;
+		PermissionConfiguration?: PermissionConfiguration;
 		EffectivePermission?: string | null;
+	}
+
+	/** Describes the public access policies that apply to the S3 bucket. */
+	export interface PublicAccessFormProperties {
+		EffectivePermission: FormControl<string | null | undefined>,
+	}
+	export function CreatePublicAccessFormGroup() {
+		return new FormGroup<PublicAccessFormProperties>({
+			EffectivePermission: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,10 +696,19 @@ export namespace MyNS {
 	export interface PermissionConfiguration {
 
 		/** Contains information about the bucket level permissions for the S3 bucket. */
-		BucketLevelPermissions?: BucketLevelPermissions | null;
+		BucketLevelPermissions?: BucketLevelPermissions;
 
 		/** Contains information about the account level permissions on the S3 bucket. */
-		AccountLevelPermissions?: AccountLevelPermissions | null;
+		AccountLevelPermissions?: AccountLevelPermissions;
+	}
+
+	/** Contains information about how permissions are configured for the S3 bucket. */
+	export interface PermissionConfigurationFormProperties {
+	}
+	export function CreatePermissionConfigurationFormGroup() {
+		return new FormGroup<PermissionConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -282,13 +716,22 @@ export namespace MyNS {
 	export interface BucketLevelPermissions {
 
 		/** Contains information on the current access control policies for the bucket. */
-		AccessControlList?: AccessControlList | null;
+		AccessControlList?: AccessControlList;
 
 		/** Contains information on the current bucket policies for the S3 bucket. */
-		BucketPolicy?: BucketPolicy | null;
+		BucketPolicy?: BucketPolicy;
 
 		/** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information. */
-		BlockPublicAccess?: BlockPublicAccess | null;
+		BlockPublicAccess?: BlockPublicAccess;
+	}
+
+	/** Contains information about the bucket level permissions for the S3 bucket. */
+	export interface BucketLevelPermissionsFormProperties {
+	}
+	export function CreateBucketLevelPermissionsFormGroup() {
+		return new FormGroup<BucketLevelPermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -298,11 +741,37 @@ export namespace MyNS {
 		AllowsPublicWriteAccess?: boolean | null;
 	}
 
+	/** Contains information on the current access control policies for the bucket. */
+	export interface AccessControlListFormProperties {
+		AllowsPublicReadAccess: FormControl<boolean | null | undefined>,
+		AllowsPublicWriteAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAccessControlListFormGroup() {
+		return new FormGroup<AccessControlListFormProperties>({
+			AllowsPublicReadAccess: new FormControl<boolean | null | undefined>(undefined),
+			AllowsPublicWriteAccess: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information on the current bucket policies for the S3 bucket. */
 	export interface BucketPolicy {
 		AllowsPublicReadAccess?: boolean | null;
 		AllowsPublicWriteAccess?: boolean | null;
+	}
+
+	/** Contains information on the current bucket policies for the S3 bucket. */
+	export interface BucketPolicyFormProperties {
+		AllowsPublicReadAccess: FormControl<boolean | null | undefined>,
+		AllowsPublicWriteAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateBucketPolicyFormGroup() {
+		return new FormGroup<BucketPolicyFormProperties>({
+			AllowsPublicReadAccess: new FormControl<boolean | null | undefined>(undefined),
+			AllowsPublicWriteAccess: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -314,12 +783,38 @@ export namespace MyNS {
 		BlockPublicPolicy?: boolean | null;
 	}
 
+	/** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information.  */
+	export interface BlockPublicAccessFormProperties {
+		IgnorePublicAcls: FormControl<boolean | null | undefined>,
+		RestrictPublicBuckets: FormControl<boolean | null | undefined>,
+		BlockPublicAcls: FormControl<boolean | null | undefined>,
+		BlockPublicPolicy: FormControl<boolean | null | undefined>,
+	}
+	export function CreateBlockPublicAccessFormGroup() {
+		return new FormGroup<BlockPublicAccessFormProperties>({
+			IgnorePublicAcls: new FormControl<boolean | null | undefined>(undefined),
+			RestrictPublicBuckets: new FormControl<boolean | null | undefined>(undefined),
+			BlockPublicAcls: new FormControl<boolean | null | undefined>(undefined),
+			BlockPublicPolicy: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the account level permissions on the S3 bucket. */
 	export interface AccountLevelPermissions {
 
 		/** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information. */
-		BlockPublicAccess?: BlockPublicAccess | null;
+		BlockPublicAccess?: BlockPublicAccess;
+	}
+
+	/** Contains information about the account level permissions on the S3 bucket. */
+	export interface AccountLevelPermissionsFormProperties {
+	}
+	export function CreateAccountLevelPermissionsFormGroup() {
+		return new FormGroup<AccountLevelPermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -328,7 +823,7 @@ export namespace MyNS {
 		AvailabilityZone?: string | null;
 
 		/** Contains information about the EC2 instance profile. */
-		IamInstanceProfile?: IamInstanceProfile | null;
+		IamInstanceProfile?: IamInstanceProfile;
 		ImageDescription?: string | null;
 		ImageId?: string | null;
 		InstanceId?: string | null;
@@ -336,10 +831,37 @@ export namespace MyNS {
 		InstanceType?: string | null;
 		OutpostArn?: string | null;
 		LaunchTime?: string | null;
-		NetworkInterfaces?: Array<NetworkInterface> | null;
+		NetworkInterfaces?: Array<NetworkInterface>;
 		Platform?: string | null;
-		ProductCodes?: Array<ProductCode> | null;
-		Tags?: Array<Tag> | null;
+		ProductCodes?: Array<ProductCode>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Contains information about the details of an instance. */
+	export interface InstanceDetailsFormProperties {
+		AvailabilityZone: FormControl<string | null | undefined>,
+		ImageDescription: FormControl<string | null | undefined>,
+		ImageId: FormControl<string | null | undefined>,
+		InstanceId: FormControl<string | null | undefined>,
+		InstanceState: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		OutpostArn: FormControl<string | null | undefined>,
+		LaunchTime: FormControl<string | null | undefined>,
+		Platform: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceDetailsFormGroup() {
+		return new FormGroup<InstanceDetailsFormProperties>({
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			ImageDescription: new FormControl<string | null | undefined>(undefined),
+			ImageId: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			InstanceState: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			OutpostArn: new FormControl<string | null | undefined>(undefined),
+			LaunchTime: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -349,19 +871,55 @@ export namespace MyNS {
 		Id?: string | null;
 	}
 
+	/** Contains information about the EC2 instance profile. */
+	export interface IamInstanceProfileFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateIamInstanceProfileFormGroup() {
+		return new FormGroup<IamInstanceProfileFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the elastic network interface of the EC2 instance. */
 	export interface NetworkInterface {
-		Ipv6Addresses?: Array<string> | null;
+		Ipv6Addresses?: Array<string>;
 		NetworkInterfaceId?: string | null;
 		PrivateDnsName?: string | null;
 		PrivateIpAddress?: string | null;
-		PrivateIpAddresses?: Array<PrivateIpAddressDetails> | null;
+		PrivateIpAddresses?: Array<PrivateIpAddressDetails>;
 		PublicDnsName?: string | null;
 		PublicIp?: string | null;
-		SecurityGroups?: Array<SecurityGroup> | null;
+		SecurityGroups?: Array<SecurityGroup>;
 		SubnetId?: string | null;
 		VpcId?: string | null;
+	}
+
+	/** Contains information about the elastic network interface of the EC2 instance. */
+	export interface NetworkInterfaceFormProperties {
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		PrivateDnsName: FormControl<string | null | undefined>,
+		PrivateIpAddress: FormControl<string | null | undefined>,
+		PublicDnsName: FormControl<string | null | undefined>,
+		PublicIp: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateNetworkInterfaceFormGroup() {
+		return new FormGroup<NetworkInterfaceFormProperties>({
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			PrivateDnsName: new FormControl<string | null | undefined>(undefined),
+			PrivateIpAddress: new FormControl<string | null | undefined>(undefined),
+			PublicDnsName: new FormControl<string | null | undefined>(undefined),
+			PublicIp: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -371,11 +929,37 @@ export namespace MyNS {
 		PrivateIpAddress?: string | null;
 	}
 
+	/** Contains other private IP address information of the EC2 instance. */
+	export interface PrivateIpAddressDetailsFormProperties {
+		PrivateDnsName: FormControl<string | null | undefined>,
+		PrivateIpAddress: FormControl<string | null | undefined>,
+	}
+	export function CreatePrivateIpAddressDetailsFormGroup() {
+		return new FormGroup<PrivateIpAddressDetailsFormProperties>({
+			PrivateDnsName: new FormControl<string | null | undefined>(undefined),
+			PrivateIpAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the security groups associated with the EC2 instance. */
 	export interface SecurityGroup {
 		GroupId?: string | null;
 		GroupName?: string | null;
+	}
+
+	/** Contains information about the security groups associated with the EC2 instance. */
+	export interface SecurityGroupFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateSecurityGroupFormGroup() {
+		return new FormGroup<SecurityGroupFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -385,15 +969,28 @@ export namespace MyNS {
 		ProductType?: string | null;
 	}
 
+	/** Contains information about the product code for the EC2 instance. */
+	export interface ProductCodeFormProperties {
+		Code: FormControl<string | null | undefined>,
+		ProductType: FormControl<string | null | undefined>,
+	}
+	export function CreateProductCodeFormGroup() {
+		return new FormGroup<ProductCodeFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			ProductType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains additional information about the generated finding. */
 	export interface Service {
 
 		/** Contains information about actions. */
-		Action?: Action | null;
+		Action?: Action;
 
 		/** Contains information about the reason that the finding was generated. */
-		Evidence?: Evidence | null;
+		Evidence?: Evidence;
 		Archived?: boolean | null;
 		Count?: number | null;
 		DetectorId?: string | null;
@@ -404,22 +1001,58 @@ export namespace MyNS {
 		UserFeedback?: string | null;
 	}
 
+	/** Contains additional information about the generated finding. */
+	export interface ServiceFormProperties {
+		Archived: FormControl<boolean | null | undefined>,
+		Count: FormControl<number | null | undefined>,
+		DetectorId: FormControl<string | null | undefined>,
+		EventFirstSeen: FormControl<string | null | undefined>,
+		EventLastSeen: FormControl<string | null | undefined>,
+		ResourceRole: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		UserFeedback: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceFormGroup() {
+		return new FormGroup<ServiceFormProperties>({
+			Archived: new FormControl<boolean | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined),
+			DetectorId: new FormControl<string | null | undefined>(undefined),
+			EventFirstSeen: new FormControl<string | null | undefined>(undefined),
+			EventLastSeen: new FormControl<string | null | undefined>(undefined),
+			ResourceRole: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			UserFeedback: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about actions. */
 	export interface Action {
 		ActionType?: string | null;
 
 		/** Contains information about the API operation. */
-		AwsApiCallAction?: AwsApiCallAction | null;
+		AwsApiCallAction?: AwsApiCallAction;
 
 		/** Contains information about the DNS_REQUEST action described in this finding. */
-		DnsRequestAction?: DnsRequestAction | null;
+		DnsRequestAction?: DnsRequestAction;
 
 		/** Contains information about the NETWORK_CONNECTION action described in the finding. */
-		NetworkConnectionAction?: NetworkConnectionAction | null;
+		NetworkConnectionAction?: NetworkConnectionAction;
 
 		/** Contains information about the PORT_PROBE action described in the finding. */
-		PortProbeAction?: PortProbeAction | null;
+		PortProbeAction?: PortProbeAction;
+	}
+
+	/** Contains information about actions. */
+	export interface ActionFormProperties {
+		ActionType: FormControl<string | null | undefined>,
+	}
+	export function CreateActionFormGroup() {
+		return new FormGroup<ActionFormProperties>({
+			ActionType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -429,11 +1062,26 @@ export namespace MyNS {
 		CallerType?: string | null;
 
 		/** Contains information about the domain. */
-		DomainDetails?: DomainDetails | null;
+		DomainDetails?: DomainDetails;
 
 		/** Contains information about the remote IP address of the connection. */
-		RemoteIpDetails?: RemoteIpDetails | null;
+		RemoteIpDetails?: RemoteIpDetails;
 		ServiceName?: string | null;
+	}
+
+	/** Contains information about the API operation. */
+	export interface AwsApiCallActionFormProperties {
+		Api: FormControl<string | null | undefined>,
+		CallerType: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreateAwsApiCallActionFormGroup() {
+		return new FormGroup<AwsApiCallActionFormProperties>({
+			Api: new FormControl<string | null | undefined>(undefined),
+			CallerType: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -442,28 +1090,61 @@ export namespace MyNS {
 		Domain?: string | null;
 	}
 
+	/** Contains information about the domain. */
+	export interface DomainDetailsFormProperties {
+		Domain: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainDetailsFormGroup() {
+		return new FormGroup<DomainDetailsFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the remote IP address of the connection. */
 	export interface RemoteIpDetails {
 
 		/** Contains information about the city associated with the IP address. */
-		City?: City | null;
+		City?: City;
 
 		/** Contains information about the country where the remote IP address is located. */
-		Country?: Country | null;
+		Country?: Country;
 
 		/** Contains information about the location of the remote IP address. */
-		GeoLocation?: GeoLocation | null;
+		GeoLocation?: GeoLocation;
 		IpAddressV4?: string | null;
 
 		/** Contains information about the ISP organization of the remote IP address. */
-		Organization?: Organization | null;
+		Organization?: Organization;
+	}
+
+	/** Contains information about the remote IP address of the connection. */
+	export interface RemoteIpDetailsFormProperties {
+		IpAddressV4: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoteIpDetailsFormGroup() {
+		return new FormGroup<RemoteIpDetailsFormProperties>({
+			IpAddressV4: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains information about the city associated with the IP address. */
 	export interface City {
 		CityName?: string | null;
+	}
+
+	/** Contains information about the city associated with the IP address. */
+	export interface CityFormProperties {
+		CityName: FormControl<string | null | undefined>,
+	}
+	export function CreateCityFormGroup() {
+		return new FormGroup<CityFormProperties>({
+			CityName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -473,11 +1154,37 @@ export namespace MyNS {
 		CountryName?: string | null;
 	}
 
+	/** Contains information about the country where the remote IP address is located. */
+	export interface CountryFormProperties {
+		CountryCode: FormControl<string | null | undefined>,
+		CountryName: FormControl<string | null | undefined>,
+	}
+	export function CreateCountryFormGroup() {
+		return new FormGroup<CountryFormProperties>({
+			CountryCode: new FormControl<string | null | undefined>(undefined),
+			CountryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the location of the remote IP address. */
 	export interface GeoLocation {
 		Lat?: number | null;
 		Lon?: number | null;
+	}
+
+	/** Contains information about the location of the remote IP address. */
+	export interface GeoLocationFormProperties {
+		Lat: FormControl<number | null | undefined>,
+		Lon: FormControl<number | null | undefined>,
+	}
+	export function CreateGeoLocationFormGroup() {
+		return new FormGroup<GeoLocationFormProperties>({
+			Lat: new FormControl<number | null | undefined>(undefined),
+			Lon: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -489,10 +1196,38 @@ export namespace MyNS {
 		Org?: string | null;
 	}
 
+	/** Contains information about the ISP organization of the remote IP address. */
+	export interface OrganizationFormProperties {
+		Asn: FormControl<string | null | undefined>,
+		AsnOrg: FormControl<string | null | undefined>,
+		Isp: FormControl<string | null | undefined>,
+		Org: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationFormGroup() {
+		return new FormGroup<OrganizationFormProperties>({
+			Asn: new FormControl<string | null | undefined>(undefined),
+			AsnOrg: new FormControl<string | null | undefined>(undefined),
+			Isp: new FormControl<string | null | undefined>(undefined),
+			Org: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the DNS_REQUEST action described in this finding. */
 	export interface DnsRequestAction {
 		Domain?: string | null;
+	}
+
+	/** Contains information about the DNS_REQUEST action described in this finding. */
+	export interface DnsRequestActionFormProperties {
+		Domain: FormControl<string | null | undefined>,
+	}
+	export function CreateDnsRequestActionFormGroup() {
+		return new FormGroup<DnsRequestActionFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -502,17 +1237,32 @@ export namespace MyNS {
 		ConnectionDirection?: string | null;
 
 		/** Contains information about the port for the local connection. */
-		LocalPortDetails?: LocalPortDetails | null;
+		LocalPortDetails?: LocalPortDetails;
 		Protocol?: string | null;
 
 		/** Contains information about the local IP address of the connection. */
-		LocalIpDetails?: LocalIpDetails | null;
+		LocalIpDetails?: LocalIpDetails;
 
 		/** Contains information about the remote IP address of the connection. */
-		RemoteIpDetails?: RemoteIpDetails | null;
+		RemoteIpDetails?: RemoteIpDetails;
 
 		/** Contains information about the remote port. */
-		RemotePortDetails?: RemotePortDetails | null;
+		RemotePortDetails?: RemotePortDetails;
+	}
+
+	/** Contains information about the NETWORK_CONNECTION action described in the finding. */
+	export interface NetworkConnectionActionFormProperties {
+		Blocked: FormControl<boolean | null | undefined>,
+		ConnectionDirection: FormControl<string | null | undefined>,
+		Protocol: FormControl<string | null | undefined>,
+	}
+	export function CreateNetworkConnectionActionFormGroup() {
+		return new FormGroup<NetworkConnectionActionFormProperties>({
+			Blocked: new FormControl<boolean | null | undefined>(undefined),
+			ConnectionDirection: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -522,10 +1272,34 @@ export namespace MyNS {
 		PortName?: string | null;
 	}
 
+	/** Contains information about the port for the local connection. */
+	export interface LocalPortDetailsFormProperties {
+		Port: FormControl<number | null | undefined>,
+		PortName: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalPortDetailsFormGroup() {
+		return new FormGroup<LocalPortDetailsFormProperties>({
+			Port: new FormControl<number | null | undefined>(undefined),
+			PortName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the local IP address of the connection. */
 	export interface LocalIpDetails {
 		IpAddressV4?: string | null;
+	}
+
+	/** Contains information about the local IP address of the connection. */
+	export interface LocalIpDetailsFormProperties {
+		IpAddressV4: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalIpDetailsFormGroup() {
+		return new FormGroup<LocalIpDetailsFormProperties>({
+			IpAddressV4: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -535,11 +1309,35 @@ export namespace MyNS {
 		PortName?: string | null;
 	}
 
+	/** Contains information about the remote port. */
+	export interface RemotePortDetailsFormProperties {
+		Port: FormControl<number | null | undefined>,
+		PortName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemotePortDetailsFormGroup() {
+		return new FormGroup<RemotePortDetailsFormProperties>({
+			Port: new FormControl<number | null | undefined>(undefined),
+			PortName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the PORT_PROBE action described in the finding. */
 	export interface PortProbeAction {
 		Blocked?: boolean | null;
-		PortProbeDetails?: Array<PortProbeDetail> | null;
+		PortProbeDetails?: Array<PortProbeDetail>;
+	}
+
+	/** Contains information about the PORT_PROBE action described in the finding. */
+	export interface PortProbeActionFormProperties {
+		Blocked: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePortProbeActionFormGroup() {
+		return new FormGroup<PortProbeActionFormProperties>({
+			Blocked: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -547,26 +1345,55 @@ export namespace MyNS {
 	export interface PortProbeDetail {
 
 		/** Contains information about the port for the local connection. */
-		LocalPortDetails?: LocalPortDetails | null;
+		LocalPortDetails?: LocalPortDetails;
 
 		/** Contains information about the local IP address of the connection. */
-		LocalIpDetails?: LocalIpDetails | null;
+		LocalIpDetails?: LocalIpDetails;
 
 		/** Contains information about the remote IP address of the connection. */
-		RemoteIpDetails?: RemoteIpDetails | null;
+		RemoteIpDetails?: RemoteIpDetails;
+	}
+
+	/** Contains information about the port probe details. */
+	export interface PortProbeDetailFormProperties {
+	}
+	export function CreatePortProbeDetailFormGroup() {
+		return new FormGroup<PortProbeDetailFormProperties>({
+		});
+
 	}
 
 
 	/** Contains information about the reason that the finding was generated. */
 	export interface Evidence {
-		ThreatIntelligenceDetails?: Array<ThreatIntelligenceDetail> | null;
+		ThreatIntelligenceDetails?: Array<ThreatIntelligenceDetail>;
+	}
+
+	/** Contains information about the reason that the finding was generated. */
+	export interface EvidenceFormProperties {
+	}
+	export function CreateEvidenceFormGroup() {
+		return new FormGroup<EvidenceFormProperties>({
+		});
+
 	}
 
 
 	/** An instance of a threat intelligence detail that constitutes evidence for the finding. */
 	export interface ThreatIntelligenceDetail {
 		ThreatListName?: string | null;
-		ThreatNames?: Array<string> | null;
+		ThreatNames?: Array<string>;
+	}
+
+	/** An instance of a threat intelligence detail that constitutes evidence for the finding. */
+	export interface ThreatIntelligenceDetailFormProperties {
+		ThreatListName: FormControl<string | null | undefined>,
+	}
+	export function CreateThreatIntelligenceDetailFormGroup() {
+		return new FormGroup<ThreatIntelligenceDetailFormProperties>({
+			ThreatListName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OrderBy { ASC = 0, DESC = 1 }
@@ -579,14 +1406,37 @@ export namespace MyNS {
 		 */
 		FindingStatistics: FindingStatistics;
 	}
+	export interface GetFindingsStatisticsResponseFormProperties {
+	}
+	export function CreateGetFindingsStatisticsResponseFormGroup() {
+		return new FormGroup<GetFindingsStatisticsResponseFormProperties>({
+		});
+
+	}
 
 
 	/** Contains information about finding statistics. */
 	export interface FindingStatistics {
-		CountBySeverity?: CountBySeverity | null;
+		CountBySeverity?: CountBySeverity;
+	}
+
+	/** Contains information about finding statistics. */
+	export interface FindingStatisticsFormProperties {
+	}
+	export function CreateFindingStatisticsFormGroup() {
+		return new FormGroup<FindingStatisticsFormProperties>({
+		});
+
 	}
 
 	export interface CountBySeverity {
+	}
+	export interface CountBySeverityFormProperties {
+	}
+	export function CreateCountBySeverityFormGroup() {
+		return new FormGroup<CountBySeverityFormProperties>({
+		});
+
 	}
 
 	export enum FindingStatisticType { COUNT_BY_SEVERITY = 0 }
@@ -596,7 +1446,22 @@ export namespace MyNS {
 		Format: GetIPSetResponseFormat;
 		Location: string;
 		Status: GetIPSetResponseStatus;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface GetIPSetResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+		Status: FormControl<GetIPSetResponseStatus | null | undefined>,
+	}
+	export function CreateGetIPSetResponseFormGroup() {
+		return new FormGroup<GetIPSetResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetIPSetResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetIPSetResponseFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
@@ -606,6 +1471,15 @@ export namespace MyNS {
 	export interface GetInvitationsCountResponse {
 		InvitationsCount?: number | null;
 	}
+	export interface GetInvitationsCountResponseFormProperties {
+		InvitationsCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGetInvitationsCountResponseFormGroup() {
+		return new FormGroup<GetInvitationsCountResponseFormProperties>({
+			InvitationsCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMasterAccountResponse {
 
@@ -614,6 +1488,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Master: Master;
+	}
+	export interface GetMasterAccountResponseFormProperties {
+	}
+	export function CreateGetMasterAccountResponseFormGroup() {
+		return new FormGroup<GetMasterAccountResponseFormProperties>({
+		});
+
 	}
 
 
@@ -625,9 +1506,33 @@ export namespace MyNS {
 		InvitedAt?: string | null;
 	}
 
+	/** Contains information about the master account and invitation. */
+	export interface MasterFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		InvitationId: FormControl<string | null | undefined>,
+		RelationshipStatus: FormControl<string | null | undefined>,
+		InvitedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateMasterFormGroup() {
+		return new FormGroup<MasterFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			InvitationId: new FormControl<string | null | undefined>(undefined),
+			RelationshipStatus: new FormControl<string | null | undefined>(undefined),
+			InvitedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMembersResponse {
 		Members: Array<Member>;
 		UnprocessedAccounts: Array<UnprocessedAccount>;
+	}
+	export interface GetMembersResponseFormProperties {
+	}
+	export function CreateGetMembersResponseFormGroup() {
+		return new FormGroup<GetMembersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -642,41 +1547,131 @@ export namespace MyNS {
 		UpdatedAt: string;
 	}
 
+	/** Contains information about the member account.  */
+	export interface MemberFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		DetectorId: FormControl<string | null | undefined>,
+		MasterId: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		RelationshipStatus: FormControl<string | null | undefined>,
+		InvitedAt: FormControl<string | null | undefined>,
+		UpdatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateMemberFormGroup() {
+		return new FormGroup<MemberFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			DetectorId: new FormControl<string | null | undefined>(undefined),
+			MasterId: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			RelationshipStatus: new FormControl<string | null | undefined>(undefined),
+			InvitedAt: new FormControl<string | null | undefined>(undefined),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetThreatIntelSetResponse {
 		Name: string;
 		Format: GetIPSetResponseFormat;
 		Location: string;
 		Status: GetIPSetResponseStatus;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface GetThreatIntelSetResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+		Status: FormControl<GetIPSetResponseStatus | null | undefined>,
+	}
+	export function CreateGetThreatIntelSetResponseFormGroup() {
+		return new FormGroup<GetThreatIntelSetResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetIPSetResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InviteMembersResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
+	}
+	export interface InviteMembersResponseFormProperties {
+	}
+	export function CreateInviteMembersResponseFormGroup() {
+		return new FormGroup<InviteMembersResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListDetectorsResponse {
 		DetectorIds: Array<string>;
 		NextToken?: string | null;
 	}
+	export interface ListDetectorsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDetectorsResponseFormGroup() {
+		return new FormGroup<ListDetectorsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFiltersResponse {
 		FilterNames: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListFiltersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFiltersResponseFormGroup() {
+		return new FormGroup<ListFiltersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFindingsResponse {
 		FindingIds: Array<string>;
 		NextToken?: string | null;
 	}
+	export interface ListFindingsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFindingsResponseFormGroup() {
+		return new FormGroup<ListFindingsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListIPSetsResponse {
 		IpSetIds: Array<string>;
 		NextToken?: string | null;
 	}
+	export interface ListIPSetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIPSetsResponseFormGroup() {
+		return new FormGroup<ListIPSetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListInvitationsResponse {
-		Invitations?: Array<Invitation> | null;
+		Invitations?: Array<Invitation>;
 		NextToken?: string | null;
+	}
+	export interface ListInvitationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInvitationsResponseFormGroup() {
+		return new FormGroup<ListInvitationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -688,14 +1683,49 @@ export namespace MyNS {
 		InvitedAt?: string | null;
 	}
 
+	/** Contains information about the invitation to become a member account. */
+	export interface InvitationFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		InvitationId: FormControl<string | null | undefined>,
+		RelationshipStatus: FormControl<string | null | undefined>,
+		InvitedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateInvitationFormGroup() {
+		return new FormGroup<InvitationFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			InvitationId: new FormControl<string | null | undefined>(undefined),
+			RelationshipStatus: new FormControl<string | null | undefined>(undefined),
+			InvitedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListMembersResponse {
-		Members?: Array<Member> | null;
+		Members?: Array<Member>;
 		NextToken?: string | null;
+	}
+	export interface ListMembersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMembersResponseFormGroup() {
+		return new FormGroup<ListMembersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListOrganizationAdminAccountsResponse {
-		AdminAccounts?: Array<AdminAccount> | null;
+		AdminAccounts?: Array<AdminAccount>;
 		NextToken?: string | null;
+	}
+	export interface ListOrganizationAdminAccountsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOrganizationAdminAccountsResponseFormGroup() {
+		return new FormGroup<ListOrganizationAdminAccountsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -705,11 +1735,33 @@ export namespace MyNS {
 		AdminStatus?: AdminAccountAdminStatus | null;
 	}
 
+	/** The account within the organization specified as the GuardDuty delegated administrator. */
+	export interface AdminAccountFormProperties {
+		AdminAccountId: FormControl<string | null | undefined>,
+		AdminStatus: FormControl<AdminAccountAdminStatus | null | undefined>,
+	}
+	export function CreateAdminAccountFormGroup() {
+		return new FormGroup<AdminAccountFormProperties>({
+			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+			AdminStatus: new FormControl<AdminAccountAdminStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AdminAccountAdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
 
 	export interface ListPublishingDestinationsResponse {
 		Destinations: Array<Destination>;
 		NextToken?: string | null;
+	}
+	export interface ListPublishingDestinationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPublishingDestinationsResponseFormGroup() {
+		return new FormGroup<ListPublishingDestinationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -720,57 +1772,185 @@ export namespace MyNS {
 		Status: DescribePublishingDestinationResponseStatus;
 	}
 
+	/** Contains information about the publishing destination, including the ID, type, and status. */
+	export interface DestinationFormProperties {
+		DestinationId: FormControl<string | null | undefined>,
+		DestinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+		Status: FormControl<DescribePublishingDestinationResponseStatus | null | undefined>,
+	}
+	export function CreateDestinationFormGroup() {
+		return new FormGroup<DestinationFormProperties>({
+			DestinationId: new FormControl<string | null | undefined>(undefined),
+			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
+			Status: new FormControl<DescribePublishingDestinationResponseStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListThreatIntelSetsResponse {
 		ThreatIntelSetIds: Array<string>;
 		NextToken?: string | null;
 	}
+	export interface ListThreatIntelSetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThreatIntelSetsResponseFormGroup() {
+		return new FormGroup<ListThreatIntelSetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartMonitoringMembersResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
+	}
+	export interface StartMonitoringMembersResponseFormProperties {
+	}
+	export function CreateStartMonitoringMembersResponseFormGroup() {
+		return new FormGroup<StartMonitoringMembersResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopMonitoringMembersResponse {
 		UnprocessedAccounts: Array<UnprocessedAccount>;
 	}
+	export interface StopMonitoringMembersResponseFormProperties {
+	}
+	export function CreateStopMonitoringMembersResponseFormGroup() {
+		return new FormGroup<StopMonitoringMembersResponseFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UnarchiveFindingsResponse {
 	}
+	export interface UnarchiveFindingsResponseFormProperties {
+	}
+	export function CreateUnarchiveFindingsResponseFormGroup() {
+		return new FormGroup<UnarchiveFindingsResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
 	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDetectorResponse {
+	}
+	export interface UpdateDetectorResponseFormProperties {
+	}
+	export function CreateUpdateDetectorResponseFormGroup() {
+		return new FormGroup<UpdateDetectorResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFilterResponse {
 		Name: string;
 	}
+	export interface UpdateFilterResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFilterResponseFormGroup() {
+		return new FormGroup<UpdateFilterResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFindingsFeedbackResponse {
+	}
+	export interface UpdateFindingsFeedbackResponseFormProperties {
+	}
+	export function CreateUpdateFindingsFeedbackResponseFormGroup() {
+		return new FormGroup<UpdateFindingsFeedbackResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateIPSetResponse {
 	}
+	export interface UpdateIPSetResponseFormProperties {
+	}
+	export function CreateUpdateIPSetResponseFormGroup() {
+		return new FormGroup<UpdateIPSetResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateOrganizationConfigurationResponse {
+	}
+	export interface UpdateOrganizationConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateOrganizationConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateOrganizationConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePublishingDestinationResponse {
 	}
+	export interface UpdatePublishingDestinationResponseFormProperties {
+	}
+	export function CreateUpdatePublishingDestinationResponseFormGroup() {
+		return new FormGroup<UpdatePublishingDestinationResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateThreatIntelSetResponse {
+	}
+	export interface UpdateThreatIntelSetResponseFormProperties {
+	}
+	export function CreateUpdateThreatIntelSetResponseFormGroup() {
+		return new FormGroup<UpdateThreatIntelSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface AcceptInvitationRequest {
 		MasterId: string;
 		InvitationId: string;
+	}
+	export interface AcceptInvitationRequestFormProperties {
+		MasterId: FormControl<string | null | undefined>,
+		InvitationId: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptInvitationRequestFormGroup() {
+		return new FormGroup<AcceptInvitationRequestFormProperties>({
+			MasterId: new FormControl<string | null | undefined>(undefined),
+			InvitationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdminStatus { ENABLED = 0, DISABLE_IN_PROGRESS = 1 }
@@ -778,22 +1958,54 @@ export namespace MyNS {
 	export interface ArchiveFindingsRequest {
 		FindingIds: Array<string>;
 	}
+	export interface ArchiveFindingsRequestFormProperties {
+	}
+	export function CreateArchiveFindingsRequestFormGroup() {
+		return new FormGroup<ArchiveFindingsRequestFormProperties>({
+		});
+
+	}
 
 
 	/** Contains information about the condition. */
 	export interface Condition {
-		Eq?: Array<string> | null;
-		Neq?: Array<string> | null;
+		Eq?: Array<string>;
+		Neq?: Array<string>;
 		Gt?: number | null;
 		Gte?: number | null;
 		Lt?: number | null;
 		Lte?: number | null;
-		Equals?: Array<string> | null;
-		NotEquals?: Array<string> | null;
+		Equals?: Array<string>;
+		NotEquals?: Array<string>;
 		GreaterThan?: number | null;
 		GreaterThanOrEqual?: number | null;
 		LessThan?: number | null;
 		LessThanOrEqual?: number | null;
+	}
+
+	/** Contains information about the condition. */
+	export interface ConditionFormProperties {
+		Gt: FormControl<number | null | undefined>,
+		Gte: FormControl<number | null | undefined>,
+		Lt: FormControl<number | null | undefined>,
+		Lte: FormControl<number | null | undefined>,
+		GreaterThan: FormControl<number | null | undefined>,
+		GreaterThanOrEqual: FormControl<number | null | undefined>,
+		LessThan: FormControl<number | null | undefined>,
+		LessThanOrEqual: FormControl<number | null | undefined>,
+	}
+	export function CreateConditionFormGroup() {
+		return new FormGroup<ConditionFormProperties>({
+			Gt: new FormControl<number | null | undefined>(undefined),
+			Gte: new FormControl<number | null | undefined>(undefined),
+			Lt: new FormControl<number | null | undefined>(undefined),
+			Lte: new FormControl<number | null | undefined>(undefined),
+			GreaterThan: new FormControl<number | null | undefined>(undefined),
+			GreaterThanOrEqual: new FormControl<number | null | undefined>(undefined),
+			LessThan: new FormControl<number | null | undefined>(undefined),
+			LessThanOrEqual: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FindingPublishingFrequency { FIFTEEN_MINUTES = 0, ONE_HOUR = 1, SIX_HOURS = 2 }
@@ -802,7 +2014,20 @@ export namespace MyNS {
 		Enable: boolean;
 		ClientToken?: string | null;
 		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface CreateDetectorRequestFormProperties {
+		Enable: FormControl<boolean | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+		FindingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
+	}
+	export function CreateCreateDetectorRequestFormGroup() {
+		return new FormGroup<CreateDetectorRequestFormProperties>({
+			Enable: new FormControl<boolean | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			FindingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterAction { NOOP = 0, ARCHIVE = 1 }
@@ -819,7 +2044,24 @@ export namespace MyNS {
 		 */
 		FindingCriteria: FindingCriteria;
 		ClientToken?: string | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface CreateFilterRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Action: FormControl<GetFilterResponseAction | null | undefined>,
+		Rank: FormControl<number | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFilterRequestFormGroup() {
+		return new FormGroup<CreateFilterRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
+			Rank: new FormControl<number | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IpSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
@@ -830,11 +2072,35 @@ export namespace MyNS {
 		Location: string;
 		Activate: boolean;
 		ClientToken?: string | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface CreateIPSetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+		Activate: FormControl<boolean | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIPSetRequestFormGroup() {
+		return new FormGroup<CreateIPSetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+			Activate: new FormControl<boolean | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMembersRequest {
 		AccountDetails: Array<AccountDetail>;
+	}
+	export interface CreateMembersRequestFormProperties {
+	}
+	export function CreateCreateMembersRequestFormGroup() {
+		return new FormGroup<CreateMembersRequestFormProperties>({
+		});
+
 	}
 
 	export enum DestinationType { S3 = 0 }
@@ -849,9 +2115,27 @@ export namespace MyNS {
 		DestinationProperties: DestinationProperties;
 		ClientToken?: string | null;
 	}
+	export interface CreatePublishingDestinationRequestFormProperties {
+		DestinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePublishingDestinationRequestFormGroup() {
+		return new FormGroup<CreatePublishingDestinationRequestFormProperties>({
+			DestinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSampleFindingsRequest {
-		FindingTypes?: Array<string> | null;
+		FindingTypes?: Array<string>;
+	}
+	export interface CreateSampleFindingsRequestFormProperties {
+	}
+	export function CreateCreateSampleFindingsRequestFormGroup() {
+		return new FormGroup<CreateSampleFindingsRequestFormProperties>({
+		});
+
 	}
 
 	export enum ThreatIntelSetFormat { TXT = 0, STIX = 1, OTX_CSV = 2, ALIEN_VAULT = 3, PROOF_POINT = 4, FIRE_EYE = 5 }
@@ -862,40 +2146,127 @@ export namespace MyNS {
 		Location: string;
 		Activate: boolean;
 		ClientToken?: string | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface CreateThreatIntelSetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Format: FormControl<GetIPSetResponseFormat | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+		Activate: FormControl<boolean | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThreatIntelSetRequestFormGroup() {
+		return new FormGroup<CreateThreatIntelSetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+			Activate: new FormControl<boolean | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeclineInvitationsRequest {
 		AccountIds: Array<string>;
 	}
+	export interface DeclineInvitationsRequestFormProperties {
+	}
+	export function CreateDeclineInvitationsRequestFormGroup() {
+		return new FormGroup<DeclineInvitationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDetectorRequest {
+	}
+	export interface DeleteDetectorRequestFormProperties {
+	}
+	export function CreateDeleteDetectorRequestFormGroup() {
+		return new FormGroup<DeleteDetectorRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFilterRequest {
 	}
+	export interface DeleteFilterRequestFormProperties {
+	}
+	export function CreateDeleteFilterRequestFormGroup() {
+		return new FormGroup<DeleteFilterRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteIPSetRequest {
+	}
+	export interface DeleteIPSetRequestFormProperties {
+	}
+	export function CreateDeleteIPSetRequestFormGroup() {
+		return new FormGroup<DeleteIPSetRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteInvitationsRequest {
 		AccountIds: Array<string>;
 	}
+	export interface DeleteInvitationsRequestFormProperties {
+	}
+	export function CreateDeleteInvitationsRequestFormGroup() {
+		return new FormGroup<DeleteInvitationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteMembersRequest {
 		AccountIds: Array<string>;
 	}
+	export interface DeleteMembersRequestFormProperties {
+	}
+	export function CreateDeleteMembersRequestFormGroup() {
+		return new FormGroup<DeleteMembersRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeletePublishingDestinationRequest {
+	}
+	export interface DeletePublishingDestinationRequestFormProperties {
+	}
+	export function CreateDeletePublishingDestinationRequestFormGroup() {
+		return new FormGroup<DeletePublishingDestinationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteThreatIntelSetRequest {
 	}
+	export interface DeleteThreatIntelSetRequestFormProperties {
+	}
+	export function CreateDeleteThreatIntelSetRequestFormGroup() {
+		return new FormGroup<DeleteThreatIntelSetRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeOrganizationConfigurationRequest {
 	}
+	export interface DescribeOrganizationConfigurationRequestFormProperties {
+	}
+	export function CreateDescribeOrganizationConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeOrganizationConfigurationRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribePublishingDestinationRequest {
+	}
+	export interface DescribePublishingDestinationRequestFormProperties {
+	}
+	export function CreateDescribePublishingDestinationRequestFormGroup() {
+		return new FormGroup<DescribePublishingDestinationRequestFormProperties>({
+		});
+
 	}
 
 	export enum PublishingStatus { PENDING_VERIFICATION = 0, PUBLISHING = 1, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = 2, STOPPED = 3 }
@@ -905,24 +2276,70 @@ export namespace MyNS {
 	export interface DisableOrganizationAdminAccountRequest {
 		AdminAccountId: string;
 	}
+	export interface DisableOrganizationAdminAccountRequestFormProperties {
+		AdminAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableOrganizationAdminAccountRequestFormGroup() {
+		return new FormGroup<DisableOrganizationAdminAccountRequestFormProperties>({
+			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateFromMasterAccountRequest {
+	}
+	export interface DisassociateFromMasterAccountRequestFormProperties {
+	}
+	export function CreateDisassociateFromMasterAccountRequestFormGroup() {
+		return new FormGroup<DisassociateFromMasterAccountRequestFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateMembersRequest {
 		AccountIds: Array<string>;
 	}
+	export interface DisassociateMembersRequestFormProperties {
+	}
+	export function CreateDisassociateMembersRequestFormGroup() {
+		return new FormGroup<DisassociateMembersRequestFormProperties>({
+		});
+
+	}
 
 	export interface EnableOrganizationAdminAccountRequest {
 		AdminAccountId: string;
+	}
+	export interface EnableOrganizationAdminAccountRequestFormProperties {
+		AdminAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableOrganizationAdminAccountRequestFormGroup() {
+		return new FormGroup<EnableOrganizationAdminAccountRequestFormProperties>({
+			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Feedback { USEFUL = 0, NOT_USEFUL = 1 }
 
 	export interface GetDetectorRequest {
 	}
+	export interface GetDetectorRequestFormProperties {
+	}
+	export function CreateGetDetectorRequestFormGroup() {
+		return new FormGroup<GetDetectorRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetFilterRequest {
+	}
+	export interface GetFilterRequestFormProperties {
+	}
+	export function CreateGetFilterRequestFormGroup() {
+		return new FormGroup<GetFilterRequestFormProperties>({
+		});
+
 	}
 
 
@@ -932,36 +2349,98 @@ export namespace MyNS {
 		OrderBy?: OrderBy | null;
 	}
 
+	/** Contains information about the criteria used for sorting findings. */
+	export interface SortCriteriaFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		OrderBy: FormControl<OrderBy | null | undefined>,
+	}
+	export function CreateSortCriteriaFormGroup() {
+		return new FormGroup<SortCriteriaFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			OrderBy: new FormControl<OrderBy | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetFindingsRequest {
 		FindingIds: Array<string>;
 
 		/** Contains information about the criteria used for sorting findings. */
-		SortCriteria?: SortCriteria | null;
+		SortCriteria?: SortCriteria;
+	}
+	export interface GetFindingsRequestFormProperties {
+	}
+	export function CreateGetFindingsRequestFormGroup() {
+		return new FormGroup<GetFindingsRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetFindingsStatisticsRequest {
 		FindingStatisticTypes: Array<FindingStatisticType>;
 
 		/** Contains information about the criteria used for querying findings. */
-		FindingCriteria?: FindingCriteria | null;
+		FindingCriteria?: FindingCriteria;
+	}
+	export interface GetFindingsStatisticsRequestFormProperties {
+	}
+	export function CreateGetFindingsStatisticsRequestFormGroup() {
+		return new FormGroup<GetFindingsStatisticsRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetIPSetRequest {
+	}
+	export interface GetIPSetRequestFormProperties {
+	}
+	export function CreateGetIPSetRequestFormGroup() {
+		return new FormGroup<GetIPSetRequestFormProperties>({
+		});
+
 	}
 
 	export enum IpSetStatus { INACTIVE = 0, ACTIVATING = 1, ACTIVE = 2, DEACTIVATING = 3, ERROR = 4, DELETE_PENDING = 5, DELETED = 6 }
 
 	export interface GetInvitationsCountRequest {
 	}
+	export interface GetInvitationsCountRequestFormProperties {
+	}
+	export function CreateGetInvitationsCountRequestFormGroup() {
+		return new FormGroup<GetInvitationsCountRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetMasterAccountRequest {
+	}
+	export interface GetMasterAccountRequestFormProperties {
+	}
+	export function CreateGetMasterAccountRequestFormGroup() {
+		return new FormGroup<GetMasterAccountRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetMembersRequest {
 		AccountIds: Array<string>;
 	}
+	export interface GetMembersRequestFormProperties {
+	}
+	export function CreateGetMembersRequestFormGroup() {
+		return new FormGroup<GetMembersRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetThreatIntelSetRequest {
+	}
+	export interface GetThreatIntelSetRequestFormProperties {
+	}
+	export function CreateGetThreatIntelSetRequestFormGroup() {
+		return new FormGroup<GetThreatIntelSetRequestFormProperties>({
+		});
+
 	}
 
 	export enum ThreatIntelSetStatus { INACTIVE = 0, ACTIVATING = 1, ACTIVE = 2, DEACTIVATING = 3, ERROR = 4, DELETE_PENDING = 5, DELETED = 6 }
@@ -971,67 +2450,198 @@ export namespace MyNS {
 		DisableEmailNotification?: boolean | null;
 		Message?: string | null;
 	}
+	export interface InviteMembersRequestFormProperties {
+		DisableEmailNotification: FormControl<boolean | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateInviteMembersRequestFormGroup() {
+		return new FormGroup<InviteMembersRequestFormProperties>({
+			DisableEmailNotification: new FormControl<boolean | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDetectorsRequest {
 	}
+	export interface ListDetectorsRequestFormProperties {
+	}
+	export function CreateListDetectorsRequestFormGroup() {
+		return new FormGroup<ListDetectorsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListFiltersRequest {
+	}
+	export interface ListFiltersRequestFormProperties {
+	}
+	export function CreateListFiltersRequestFormGroup() {
+		return new FormGroup<ListFiltersRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListFindingsRequest {
 
 		/** Contains information about the criteria used for querying findings. */
-		FindingCriteria?: FindingCriteria | null;
+		FindingCriteria?: FindingCriteria;
 
 		/** Contains information about the criteria used for sorting findings. */
-		SortCriteria?: SortCriteria | null;
+		SortCriteria?: SortCriteria;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListFindingsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFindingsRequestFormGroup() {
+		return new FormGroup<ListFindingsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListIPSetsRequest {
 	}
+	export interface ListIPSetsRequestFormProperties {
+	}
+	export function CreateListIPSetsRequestFormGroup() {
+		return new FormGroup<ListIPSetsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListInvitationsRequest {
+	}
+	export interface ListInvitationsRequestFormProperties {
+	}
+	export function CreateListInvitationsRequestFormGroup() {
+		return new FormGroup<ListInvitationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListMembersRequest {
 	}
+	export interface ListMembersRequestFormProperties {
+	}
+	export function CreateListMembersRequestFormGroup() {
+		return new FormGroup<ListMembersRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListOrganizationAdminAccountsRequest {
+	}
+	export interface ListOrganizationAdminAccountsRequestFormProperties {
+	}
+	export function CreateListOrganizationAdminAccountsRequestFormGroup() {
+		return new FormGroup<ListOrganizationAdminAccountsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListPublishingDestinationsRequest {
 	}
+	export interface ListPublishingDestinationsRequestFormProperties {
+	}
+	export function CreateListPublishingDestinationsRequestFormGroup() {
+		return new FormGroup<ListPublishingDestinationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListThreatIntelSetsRequest {
+	}
+	export interface ListThreatIntelSetsRequestFormProperties {
+	}
+	export function CreateListThreatIntelSetsRequestFormGroup() {
+		return new FormGroup<ListThreatIntelSetsRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartMonitoringMembersRequest {
 		AccountIds: Array<string>;
 	}
+	export interface StartMonitoringMembersRequestFormProperties {
+	}
+	export function CreateStartMonitoringMembersRequestFormGroup() {
+		return new FormGroup<StartMonitoringMembersRequestFormProperties>({
+		});
+
+	}
 
 	export interface StopMonitoringMembersRequest {
 		AccountIds: Array<string>;
+	}
+	export interface StopMonitoringMembersRequestFormProperties {
+	}
+	export function CreateStopMonitoringMembersRequestFormGroup() {
+		return new FormGroup<StopMonitoringMembersRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		Tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UnarchiveFindingsRequest {
 		FindingIds: Array<string>;
 	}
+	export interface UnarchiveFindingsRequestFormProperties {
+	}
+	export function CreateUnarchiveFindingsRequestFormGroup() {
+		return new FormGroup<UnarchiveFindingsRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorRequest {
 		Enable?: boolean | null;
 		FindingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
+	}
+	export interface UpdateDetectorRequestFormProperties {
+		Enable: FormControl<boolean | null | undefined>,
+		FindingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
+	}
+	export function CreateUpdateDetectorRequestFormGroup() {
+		return new FormGroup<UpdateDetectorRequestFormProperties>({
+			Enable: new FormControl<boolean | null | undefined>(undefined),
+			FindingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFilterRequest {
@@ -1040,7 +2650,20 @@ export namespace MyNS {
 		Rank?: number | null;
 
 		/** Contains information about the criteria used for querying findings. */
-		FindingCriteria?: FindingCriteria | null;
+		FindingCriteria?: FindingCriteria;
+	}
+	export interface UpdateFilterRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		Action: FormControl<GetFilterResponseAction | null | undefined>,
+		Rank: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFilterRequestFormGroup() {
+		return new FormGroup<UpdateFilterRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
+			Rank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFindingsFeedbackRequest {
@@ -1048,27 +2671,80 @@ export namespace MyNS {
 		Feedback: Feedback;
 		Comments?: string | null;
 	}
+	export interface UpdateFindingsFeedbackRequestFormProperties {
+		Feedback: FormControl<Feedback | null | undefined>,
+		Comments: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFindingsFeedbackRequestFormGroup() {
+		return new FormGroup<UpdateFindingsFeedbackRequestFormProperties>({
+			Feedback: new FormControl<Feedback | null | undefined>(undefined),
+			Comments: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateIPSetRequest {
 		Name?: string | null;
 		Location?: string | null;
 		Activate?: boolean | null;
 	}
+	export interface UpdateIPSetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+		Activate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateIPSetRequestFormGroup() {
+		return new FormGroup<UpdateIPSetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+			Activate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateOrganizationConfigurationRequest {
 		AutoEnable: boolean;
+	}
+	export interface UpdateOrganizationConfigurationRequestFormProperties {
+		AutoEnable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateOrganizationConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateOrganizationConfigurationRequestFormProperties>({
+			AutoEnable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePublishingDestinationRequest {
 
 		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
-		DestinationProperties?: DestinationProperties | null;
+		DestinationProperties?: DestinationProperties;
+	}
+	export interface UpdatePublishingDestinationRequestFormProperties {
+	}
+	export function CreateUpdatePublishingDestinationRequestFormGroup() {
+		return new FormGroup<UpdatePublishingDestinationRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateThreatIntelSetRequest {
 		Name?: string | null;
 		Location?: string | null;
 		Activate?: boolean | null;
+	}
+	export interface UpdateThreatIntelSetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+		Activate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThreatIntelSetRequestFormGroup() {
+		return new FormGroup<UpdateThreatIntelSetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+			Activate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1680,6 +3356,27 @@ export namespace MyNS {
 		 */
 		invitationId: string;
 	}
+	export interface AcceptInvitationPostBodyFormProperties {
+
+		/**
+		 * The account ID of the master GuardDuty account whose invitation you're accepting.
+		 * Required
+		 */
+		masterId: FormControl<string | null | undefined>,
+
+		/**
+		 * The value that is used to validate the master account to the member account.
+		 * Required
+		 */
+		invitationId: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptInvitationPostBodyFormGroup() {
+		return new FormGroup<AcceptInvitationPostBodyFormProperties>({
+			masterId: new FormControl<string | null | undefined>(undefined),
+			invitationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ArchiveFindingsPostBody {
 
@@ -1690,6 +3387,13 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		findingIds: Array<string>;
+	}
+	export interface ArchiveFindingsPostBodyFormProperties {
+	}
+	export function CreateArchiveFindingsPostBodyFormGroup() {
+		return new FormGroup<ArchiveFindingsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateDetectorPostBody {
@@ -1711,7 +3415,37 @@ export namespace MyNS {
 		findingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
 
 		/** The tags to be added to a new detector resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateDetectorPostBodyFormProperties {
+
+		/**
+		 * A Boolean value that specifies whether the detector is to be enabled.
+		 * Required
+		 */
+		enable: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The idempotency token for the create request.
+		 * Max length: 64
+		 * Min length: 0
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** An enum value that specifies how frequently updated findings are exported. */
+		findingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
+
+		/** The tags to be added to a new detector resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateDetectorPostBodyFormGroup() {
+		return new FormGroup<CreateDetectorPostBodyFormProperties>({
+			enable: new FormControl<boolean | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			findingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFilterPostBody {
@@ -1759,11 +3493,70 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** The tags to be added to a new filter resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateFilterPostBodyFormProperties {
+
+		/**
+		 * The name of the filter.
+		 * Required
+		 * Max length: 64
+		 * Min length: 3
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The description of the filter.
+		 * Max length: 512
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the action that is to be applied to the findings that match the filter.
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		action: FormControl<GetFilterResponseAction | null | undefined>,
+
+		/**
+		 * Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		rank: FormControl<number | null | undefined>,
+
+		/**
+		 * The idempotency token for the create request.
+		 * Max length: 64
+		 * Min length: 0
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** The tags to be added to a new filter resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateFilterPostBodyFormGroup() {
+		return new FormGroup<CreateFilterPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
+			rank: new FormControl<number | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFilterPostBodyFindingCriteria {
-		Criterion?: Criterion | null;
+		Criterion?: Criterion;
+	}
+	export interface CreateFilterPostBodyFindingCriteriaFormProperties {
+	}
+	export function CreateCreateFilterPostBodyFindingCriteriaFormGroup() {
+		return new FormGroup<CreateFilterPostBodyFindingCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface CreateIPSetPostBody {
@@ -1806,7 +3599,60 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** The tags to be added to a new IP set resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateIPSetPostBodyFormProperties {
+
+		/**
+		 * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The format of the file that contains the IPSet.
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		format: FormControl<GetIPSetResponseFormat | null | undefined>,
+
+		/**
+		 * The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+		 * Required
+		 */
+		activate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The idempotency token for the create request.
+		 * Max length: 64
+		 * Min length: 0
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** The tags to be added to a new IP set resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateIPSetPostBodyFormGroup() {
+		return new FormGroup<CreateIPSetPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			activate: new FormControl<boolean | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMembersPostBody {
@@ -1818,6 +3664,13 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		accountDetails: Array<AccountDetail>;
+	}
+	export interface CreateMembersPostBodyFormProperties {
+	}
+	export function CreateCreateMembersPostBodyFormGroup() {
+		return new FormGroup<CreateMembersPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreatePublishingDestinationPostBody {
@@ -1843,10 +3696,45 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface CreatePublishingDestinationPostBodyFormProperties {
+
+		/**
+		 * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		destinationType: FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>,
+
+		/**
+		 * The idempotency token for the request.
+		 * Max length: 64
+		 * Min length: 0
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePublishingDestinationPostBodyFormGroup() {
+		return new FormGroup<CreatePublishingDestinationPostBodyFormProperties>({
+			destinationType: new FormControl<DescribePublishingDestinationResponseDestinationType | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePublishingDestinationPostBodyDestinationProperties {
 		DestinationArn?: string | null;
 		KmsKeyArn?: string | null;
+	}
+	export interface CreatePublishingDestinationPostBodyDestinationPropertiesFormProperties {
+		DestinationArn: FormControl<string | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePublishingDestinationPostBodyDestinationPropertiesFormGroup() {
+		return new FormGroup<CreatePublishingDestinationPostBodyDestinationPropertiesFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSampleFindingsPostBody {
@@ -1856,7 +3744,14 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		findingTypes?: Array<string> | null;
+		findingTypes?: Array<string>;
+	}
+	export interface CreateSampleFindingsPostBodyFormProperties {
+	}
+	export function CreateCreateSampleFindingsPostBodyFormGroup() {
+		return new FormGroup<CreateSampleFindingsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateThreatIntelSetPostBody {
@@ -1899,7 +3794,60 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** The tags to be added to a new threat list resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateThreatIntelSetPostBodyFormProperties {
+
+		/**
+		 * A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The format of the file that contains the ThreatIntelSet.
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		format: FormControl<GetIPSetResponseFormat | null | undefined>,
+
+		/**
+		 * The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+		 * Required
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.
+		 * Required
+		 */
+		activate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The idempotency token for the create request.
+		 * Max length: 64
+		 * Min length: 0
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** The tags to be added to a new threat list resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateThreatIntelSetPostBodyFormGroup() {
+		return new FormGroup<CreateThreatIntelSetPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<GetIPSetResponseFormat | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			activate: new FormControl<boolean | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeclineInvitationsPostBody {
@@ -1912,6 +3860,13 @@ export namespace MyNS {
 		 */
 		accountIds: Array<string>;
 	}
+	export interface DeclineInvitationsPostBodyFormProperties {
+	}
+	export function CreateDeclineInvitationsPostBodyFormGroup() {
+		return new FormGroup<DeclineInvitationsPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDetectorPostBody {
 
@@ -1920,6 +3875,21 @@ export namespace MyNS {
 
 		/** An enum value that specifies how frequently findings are exported, such as to CloudWatch Events. */
 		findingPublishingFrequency?: GetDetectorResponseFindingPublishingFrequency | null;
+	}
+	export interface UpdateDetectorPostBodyFormProperties {
+
+		/** Specifies whether the detector is enabled or not enabled. */
+		enable: FormControl<boolean | null | undefined>,
+
+		/** An enum value that specifies how frequently findings are exported, such as to CloudWatch Events. */
+		findingPublishingFrequency: FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>,
+	}
+	export function CreateUpdateDetectorPostBodyFormGroup() {
+		return new FormGroup<UpdateDetectorPostBodyFormProperties>({
+			enable: new FormControl<boolean | null | undefined>(undefined),
+			findingPublishingFrequency: new FormControl<GetDetectorResponseFindingPublishingFrequency | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFilterPostBody {
@@ -1946,11 +3916,49 @@ export namespace MyNS {
 		rank?: number | null;
 
 		/** Contains information about the criteria used for querying findings. */
-		findingCriteria?: UpdateFilterPostBodyFindingCriteria | null;
+		findingCriteria?: UpdateFilterPostBodyFindingCriteria;
+	}
+	export interface UpdateFilterPostBodyFormProperties {
+
+		/**
+		 * The description of the filter.
+		 * Max length: 512
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the action that is to be applied to the findings that match the filter.
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		action: FormControl<GetFilterResponseAction | null | undefined>,
+
+		/**
+		 * Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		rank: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFilterPostBodyFormGroup() {
+		return new FormGroup<UpdateFilterPostBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			action: new FormControl<GetFilterResponseAction | null | undefined>(undefined),
+			rank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFilterPostBodyFindingCriteria {
-		Criterion?: Criterion | null;
+		Criterion?: Criterion;
+	}
+	export interface UpdateFilterPostBodyFindingCriteriaFormProperties {
+	}
+	export function CreateUpdateFilterPostBodyFindingCriteriaFormGroup() {
+		return new FormGroup<UpdateFilterPostBodyFindingCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface UpdateIPSetPostBody {
@@ -1972,6 +3980,33 @@ export namespace MyNS {
 		/** The updated Boolean value that specifies whether the IPSet is active or not. */
 		activate?: boolean | null;
 	}
+	export interface UpdateIPSetPostBodyFormProperties {
+
+		/**
+		 * The unique ID that specifies the IPSet that you want to update.
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/** The updated Boolean value that specifies whether the IPSet is active or not. */
+		activate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateIPSetPostBodyFormGroup() {
+		return new FormGroup<UpdateIPSetPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			activate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteInvitationsPostBody {
 
@@ -1982,6 +4017,13 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		accountIds: Array<string>;
+	}
+	export interface DeleteInvitationsPostBodyFormProperties {
+	}
+	export function CreateDeleteInvitationsPostBodyFormGroup() {
+		return new FormGroup<DeleteInvitationsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface DeleteMembersPostBody {
@@ -1994,16 +4036,41 @@ export namespace MyNS {
 		 */
 		accountIds: Array<string>;
 	}
+	export interface DeleteMembersPostBodyFormProperties {
+	}
+	export function CreateDeleteMembersPostBodyFormGroup() {
+		return new FormGroup<DeleteMembersPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface UpdatePublishingDestinationPostBody {
 
 		/** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings. */
-		destinationProperties?: UpdatePublishingDestinationPostBodyDestinationProperties | null;
+		destinationProperties?: UpdatePublishingDestinationPostBodyDestinationProperties;
+	}
+	export interface UpdatePublishingDestinationPostBodyFormProperties {
+	}
+	export function CreateUpdatePublishingDestinationPostBodyFormGroup() {
+		return new FormGroup<UpdatePublishingDestinationPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePublishingDestinationPostBodyDestinationProperties {
 		DestinationArn?: string | null;
 		KmsKeyArn?: string | null;
+	}
+	export interface UpdatePublishingDestinationPostBodyDestinationPropertiesFormProperties {
+		DestinationArn: FormControl<string | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePublishingDestinationPostBodyDestinationPropertiesFormGroup() {
+		return new FormGroup<UpdatePublishingDestinationPostBodyDestinationPropertiesFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateThreatIntelSetPostBody {
@@ -2025,6 +4092,33 @@ export namespace MyNS {
 		/** The updated Boolean value that specifies whether the ThreateIntelSet is active or not. */
 		activate?: boolean | null;
 	}
+	export interface UpdateThreatIntelSetPostBodyFormProperties {
+
+		/**
+		 * The unique ID that specifies the ThreatIntelSet that you want to update.
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The updated URI of the file that contains the ThreateIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+		 * Max length: 300
+		 * Min length: 1
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/** The updated Boolean value that specifies whether the ThreateIntelSet is active or not. */
+		activate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThreatIntelSetPostBodyFormGroup() {
+		return new FormGroup<UpdateThreatIntelSetPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			activate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateOrganizationConfigurationPostBody {
 
@@ -2034,6 +4128,20 @@ export namespace MyNS {
 		 */
 		autoEnable: boolean;
 	}
+	export interface UpdateOrganizationConfigurationPostBodyFormProperties {
+
+		/**
+		 * Indicates whether to automatically enable member accounts in the organization.
+		 * Required
+		 */
+		autoEnable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateOrganizationConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateOrganizationConfigurationPostBodyFormProperties>({
+			autoEnable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisableOrganizationAdminAccountPostBody {
 
@@ -2042,6 +4150,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		adminAccountId: string;
+	}
+	export interface DisableOrganizationAdminAccountPostBodyFormProperties {
+
+		/**
+		 * The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.
+		 * Required
+		 */
+		adminAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableOrganizationAdminAccountPostBodyFormGroup() {
+		return new FormGroup<DisableOrganizationAdminAccountPostBodyFormProperties>({
+			adminAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateMembersPostBody {
@@ -2054,6 +4176,13 @@ export namespace MyNS {
 		 */
 		accountIds: Array<string>;
 	}
+	export interface DisassociateMembersPostBodyFormProperties {
+	}
+	export function CreateDisassociateMembersPostBodyFormGroup() {
+		return new FormGroup<DisassociateMembersPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface EnableOrganizationAdminAccountPostBody {
 
@@ -2062,6 +4191,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		adminAccountId: string;
+	}
+	export interface EnableOrganizationAdminAccountPostBodyFormProperties {
+
+		/**
+		 * The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.
+		 * Required
+		 */
+		adminAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableOrganizationAdminAccountPostBodyFormGroup() {
+		return new FormGroup<EnableOrganizationAdminAccountPostBodyFormProperties>({
+			adminAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFindingsPostBody {
@@ -2075,12 +4218,30 @@ export namespace MyNS {
 		findingIds: Array<string>;
 
 		/** Contains information about the criteria used for sorting findings. */
-		sortCriteria?: GetFindingsPostBodySortCriteria | null;
+		sortCriteria?: GetFindingsPostBodySortCriteria;
+	}
+	export interface GetFindingsPostBodyFormProperties {
+	}
+	export function CreateGetFindingsPostBodyFormGroup() {
+		return new FormGroup<GetFindingsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface GetFindingsPostBodySortCriteria {
 		AttributeName?: string | null;
 		OrderBy?: OrderBy | null;
+	}
+	export interface GetFindingsPostBodySortCriteriaFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		OrderBy: FormControl<OrderBy | null | undefined>,
+	}
+	export function CreateGetFindingsPostBodySortCriteriaFormGroup() {
+		return new FormGroup<GetFindingsPostBodySortCriteriaFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			OrderBy: new FormControl<OrderBy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFindingsStatisticsPostBody {
@@ -2094,11 +4255,25 @@ export namespace MyNS {
 		findingStatisticTypes: Array<FindingStatisticType>;
 
 		/** Contains information about the criteria used for querying findings. */
-		findingCriteria?: GetFindingsStatisticsPostBodyFindingCriteria | null;
+		findingCriteria?: GetFindingsStatisticsPostBodyFindingCriteria;
+	}
+	export interface GetFindingsStatisticsPostBodyFormProperties {
+	}
+	export function CreateGetFindingsStatisticsPostBodyFormGroup() {
+		return new FormGroup<GetFindingsStatisticsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface GetFindingsStatisticsPostBodyFindingCriteria {
-		Criterion?: Criterion | null;
+		Criterion?: Criterion;
+	}
+	export interface GetFindingsStatisticsPostBodyFindingCriteriaFormProperties {
+	}
+	export function CreateGetFindingsStatisticsPostBodyFindingCriteriaFormGroup() {
+		return new FormGroup<GetFindingsStatisticsPostBodyFindingCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface GetMembersPostBody {
@@ -2110,6 +4285,13 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		accountIds: Array<string>;
+	}
+	export interface GetMembersPostBodyFormProperties {
+	}
+	export function CreateGetMembersPostBodyFormGroup() {
+		return new FormGroup<GetMembersPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface InviteMembersPostBody {
@@ -2128,14 +4310,29 @@ export namespace MyNS {
 		/** The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members. */
 		message?: string | null;
 	}
+	export interface InviteMembersPostBodyFormProperties {
+
+		/** A Boolean value that specifies whether you want to disable email notification to the accounts that you’re inviting to GuardDuty as members. */
+		disableEmailNotification: FormControl<boolean | null | undefined>,
+
+		/** The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInviteMembersPostBodyFormGroup() {
+		return new FormGroup<InviteMembersPostBodyFormProperties>({
+			disableEmailNotification: new FormControl<boolean | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFindingsPostBody {
 
 		/** Contains information about the criteria used for querying findings. */
-		findingCriteria?: ListFindingsPostBodyFindingCriteria | null;
+		findingCriteria?: ListFindingsPostBodyFindingCriteria;
 
 		/** Contains information about the criteria used for sorting findings. */
-		sortCriteria?: ListFindingsPostBodySortCriteria | null;
+		sortCriteria?: ListFindingsPostBodySortCriteria;
 
 		/**
 		 * You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
@@ -2147,14 +4344,51 @@ export namespace MyNS {
 		/** You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data. */
 		nextToken?: string | null;
 	}
+	export interface ListFindingsPostBodyFormProperties {
+
+		/**
+		 * You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+		 * Minimum: 1
+		 * Maximum: 50
+		 */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data. */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFindingsPostBodyFormGroup() {
+		return new FormGroup<ListFindingsPostBodyFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFindingsPostBodyFindingCriteria {
-		Criterion?: Criterion | null;
+		Criterion?: Criterion;
+	}
+	export interface ListFindingsPostBodyFindingCriteriaFormProperties {
+	}
+	export function CreateListFindingsPostBodyFindingCriteriaFormGroup() {
+		return new FormGroup<ListFindingsPostBodyFindingCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface ListFindingsPostBodySortCriteria {
 		AttributeName?: string | null;
 		OrderBy?: OrderBy | null;
+	}
+	export interface ListFindingsPostBodySortCriteriaFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		OrderBy: FormControl<OrderBy | null | undefined>,
+	}
+	export function CreateListFindingsPostBodySortCriteriaFormGroup() {
+		return new FormGroup<ListFindingsPostBodySortCriteriaFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			OrderBy: new FormControl<OrderBy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -2164,6 +4398,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The tags to be added to a resource.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartMonitoringMembersPostBody {
@@ -2176,6 +4424,13 @@ export namespace MyNS {
 		 */
 		accountIds: Array<string>;
 	}
+	export interface StartMonitoringMembersPostBodyFormProperties {
+	}
+	export function CreateStartMonitoringMembersPostBodyFormGroup() {
+		return new FormGroup<StartMonitoringMembersPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface StopMonitoringMembersPostBody {
 
@@ -2187,6 +4442,13 @@ export namespace MyNS {
 		 */
 		accountIds: Array<string>;
 	}
+	export interface StopMonitoringMembersPostBodyFormProperties {
+	}
+	export function CreateStopMonitoringMembersPostBodyFormGroup() {
+		return new FormGroup<StopMonitoringMembersPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface UnarchiveFindingsPostBody {
 
@@ -2197,6 +4459,13 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		findingIds: Array<string>;
+	}
+	export interface UnarchiveFindingsPostBodyFormProperties {
+	}
+	export function CreateUnarchiveFindingsPostBodyFormGroup() {
+		return new FormGroup<UnarchiveFindingsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFindingsFeedbackPostBody {
@@ -2217,6 +4486,24 @@ export namespace MyNS {
 
 		/** Additional feedback about the GuardDuty findings. */
 		comments?: string | null;
+	}
+	export interface UpdateFindingsFeedbackPostBodyFormProperties {
+
+		/**
+		 * The feedback for the finding.
+		 * Required
+		 */
+		feedback: FormControl<Feedback | null | undefined>,
+
+		/** Additional feedback about the GuardDuty findings. */
+		comments: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFindingsFeedbackPostBodyFormGroup() {
+		return new FormGroup<UpdateFindingsFeedbackPostBodyFormProperties>({
+			feedback: new FormControl<Feedback | null | undefined>(undefined),
+			comments: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

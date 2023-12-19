@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelTaskExecutionResponse {
+	}
+	export interface CancelTaskExecutionResponseFormProperties {
+	}
+	export function CreateCancelTaskExecutionResponseFormGroup() {
+		return new FormGroup<CancelTaskExecutionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -11,10 +19,35 @@ export namespace MyNS {
 		TaskExecutionArn: string;
 	}
 
+	/** CancelTaskExecutionRequest */
+	export interface CancelTaskExecutionRequestFormProperties {
+		TaskExecutionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelTaskExecutionRequestFormGroup() {
+		return new FormGroup<CancelTaskExecutionRequestFormProperties>({
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalException {
+	}
+	export interface InternalExceptionFormProperties {
+	}
+	export function CreateInternalExceptionFormGroup() {
+		return new FormGroup<InternalExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -23,15 +56,41 @@ export namespace MyNS {
 		AgentArn?: string | null;
 	}
 
+	/** CreateAgentResponse */
+	export interface CreateAgentResponseFormProperties {
+		AgentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAgentResponseFormGroup() {
+		return new FormGroup<CreateAgentResponseFormProperties>({
+			AgentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** CreateAgentRequest */
 	export interface CreateAgentRequest {
 		ActivationKey: string;
 		AgentName?: string | null;
-		Tags?: Array<TagListEntry> | null;
+		Tags?: Array<TagListEntry>;
 		VpcEndpointId?: string | null;
-		SubnetArns?: Array<string> | null;
-		SecurityGroupArns?: Array<string> | null;
+		SubnetArns?: Array<string>;
+		SecurityGroupArns?: Array<string>;
+	}
+
+	/** CreateAgentRequest */
+	export interface CreateAgentRequestFormProperties {
+		ActivationKey: FormControl<string | null | undefined>,
+		AgentName: FormControl<string | null | undefined>,
+		VpcEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAgentRequestFormGroup() {
+		return new FormGroup<CreateAgentRequestFormProperties>({
+			ActivationKey: new FormControl<string | null | undefined>(undefined),
+			AgentName: new FormControl<string | null | undefined>(undefined),
+			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -41,10 +100,34 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called. */
+	export interface TagListEntryFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagListEntryFormGroup() {
+		return new FormGroup<TagListEntryFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** CreateLocationEfs */
 	export interface CreateLocationEfsResponse {
 		LocationArn?: string | null;
+	}
+
+	/** CreateLocationEfs */
+	export interface CreateLocationEfsResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationEfsResponseFormGroup() {
+		return new FormGroup<CreateLocationEfsResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -58,7 +141,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Ec2Config: Ec2Config;
-		Tags?: Array<TagListEntry> | null;
+		Tags?: Array<TagListEntry>;
+	}
+
+	/** CreateLocationEfsRequest */
+	export interface CreateLocationEfsRequestFormProperties {
+		Subdirectory: FormControl<string | null | undefined>,
+		EfsFilesystemArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationEfsRequestFormGroup() {
+		return new FormGroup<CreateLocationEfsRequestFormProperties>({
+			Subdirectory: new FormControl<string | null | undefined>(undefined),
+			EfsFilesystemArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -68,24 +164,72 @@ export namespace MyNS {
 		SecurityGroupArns: Array<string>;
 	}
 
+	/** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.  */
+	export interface Ec2ConfigFormProperties {
+		SubnetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEc2ConfigFormGroup() {
+		return new FormGroup<Ec2ConfigFormProperties>({
+			SubnetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateLocationFsxWindowsResponse {
 		LocationArn?: string | null;
+	}
+	export interface CreateLocationFsxWindowsResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationFsxWindowsResponseFormGroup() {
+		return new FormGroup<CreateLocationFsxWindowsResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLocationFsxWindowsRequest {
 		Subdirectory?: string | null;
 		FsxFilesystemArn: string;
 		SecurityGroupArns: Array<string>;
-		Tags?: Array<TagListEntry> | null;
+		Tags?: Array<TagListEntry>;
 		User: string;
 		Domain?: string | null;
 		Password: string;
+	}
+	export interface CreateLocationFsxWindowsRequestFormProperties {
+		Subdirectory: FormControl<string | null | undefined>,
+		FsxFilesystemArn: FormControl<string | null | undefined>,
+		User: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationFsxWindowsRequestFormGroup() {
+		return new FormGroup<CreateLocationFsxWindowsRequestFormProperties>({
+			Subdirectory: new FormControl<string | null | undefined>(undefined),
+			FsxFilesystemArn: new FormControl<string | null | undefined>(undefined),
+			User: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** CreateLocationNfsResponse */
 	export interface CreateLocationNfsResponse {
 		LocationArn?: string | null;
+	}
+
+	/** CreateLocationNfsResponse */
+	export interface CreateLocationNfsResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationNfsResponseFormGroup() {
+		return new FormGroup<CreateLocationNfsResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -101,8 +245,21 @@ export namespace MyNS {
 		OnPremConfig: OnPremConfig;
 
 		/** Represents the mount options that are available for DataSync to access an NFS location. */
-		MountOptions?: NfsMountOptions | null;
-		Tags?: Array<TagListEntry> | null;
+		MountOptions?: NfsMountOptions;
+		Tags?: Array<TagListEntry>;
+	}
+
+	/** CreateLocationNfsRequest */
+	export interface CreateLocationNfsRequestFormProperties {
+		Subdirectory: FormControl<string | null | undefined>,
+		ServerHostname: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationNfsRequestFormGroup() {
+		return new FormGroup<CreateLocationNfsRequestFormProperties>({
+			Subdirectory: new FormControl<string | null | undefined>(undefined),
+			ServerHostname: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -111,10 +268,30 @@ export namespace MyNS {
 		AgentArns: Array<string>;
 	}
 
+	/** A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location. */
+	export interface OnPremConfigFormProperties {
+	}
+	export function CreateOnPremConfigFormGroup() {
+		return new FormGroup<OnPremConfigFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the mount options that are available for DataSync to access an NFS location. */
 	export interface NfsMountOptions {
 		Version?: NfsMountOptionsVersion | null;
+	}
+
+	/** Represents the mount options that are available for DataSync to access an NFS location. */
+	export interface NfsMountOptionsFormProperties {
+		Version: FormControl<NfsMountOptionsVersion | null | undefined>,
+	}
+	export function CreateNfsMountOptionsFormGroup() {
+		return new FormGroup<NfsMountOptionsFormProperties>({
+			Version: new FormControl<NfsMountOptionsVersion | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NfsMountOptionsVersion { AUTOMATIC = 0, NFS3 = 1, NFS4_0 = 2, NFS4_1 = 3 }
@@ -123,6 +300,17 @@ export namespace MyNS {
 	/** CreateLocationS3Response */
 	export interface CreateLocationS3Response {
 		LocationArn?: string | null;
+	}
+
+	/** CreateLocationS3Response */
+	export interface CreateLocationS3ResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationS3ResponseFormGroup() {
+		return new FormGroup<CreateLocationS3ResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -137,7 +325,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		S3Config: S3Config;
-		Tags?: Array<TagListEntry> | null;
+		Tags?: Array<TagListEntry>;
+	}
+
+	/** CreateLocationS3Request */
+	export interface CreateLocationS3RequestFormProperties {
+		Subdirectory: FormControl<string | null | undefined>,
+		S3BucketArn: FormControl<string | null | undefined>,
+		S3StorageClass: FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>,
+	}
+	export function CreateCreateLocationS3RequestFormGroup() {
+		return new FormGroup<CreateLocationS3RequestFormProperties>({
+			Subdirectory: new FormControl<string | null | undefined>(undefined),
+			S3BucketArn: new FormControl<string | null | undefined>(undefined),
+			S3StorageClass: new FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateLocationS3RequestS3StorageClass { STANDARD = 0, STANDARD_IA = 1, ONEZONE_IA = 2, INTELLIGENT_TIERING = 3, GLACIER = 4, DEEP_ARCHIVE = 5 }
@@ -148,10 +351,32 @@ export namespace MyNS {
 		BucketAccessRoleArn: string;
 	}
 
+	/** <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.</p> */
+	export interface S3ConfigFormProperties {
+		BucketAccessRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ConfigFormGroup() {
+		return new FormGroup<S3ConfigFormProperties>({
+			BucketAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** CreateLocationSmbResponse */
 	export interface CreateLocationSmbResponse {
 		LocationArn?: string | null;
+	}
+
+	/** CreateLocationSmbResponse */
+	export interface CreateLocationSmbResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationSmbResponseFormGroup() {
+		return new FormGroup<CreateLocationSmbResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -165,8 +390,27 @@ export namespace MyNS {
 		AgentArns: Array<string>;
 
 		/** Represents the mount options that are available for DataSync to access an SMB location. */
-		MountOptions?: SmbMountOptions | null;
-		Tags?: Array<TagListEntry> | null;
+		MountOptions?: SmbMountOptions;
+		Tags?: Array<TagListEntry>;
+	}
+
+	/** CreateLocationSmbRequest */
+	export interface CreateLocationSmbRequestFormProperties {
+		Subdirectory: FormControl<string | null | undefined>,
+		ServerHostname: FormControl<string | null | undefined>,
+		User: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLocationSmbRequestFormGroup() {
+		return new FormGroup<CreateLocationSmbRequestFormProperties>({
+			Subdirectory: new FormControl<string | null | undefined>(undefined),
+			ServerHostname: new FormControl<string | null | undefined>(undefined),
+			User: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -175,12 +419,34 @@ export namespace MyNS {
 		Version?: SmbMountOptionsVersion | null;
 	}
 
+	/** Represents the mount options that are available for DataSync to access an SMB location. */
+	export interface SmbMountOptionsFormProperties {
+		Version: FormControl<SmbMountOptionsVersion | null | undefined>,
+	}
+	export function CreateSmbMountOptionsFormGroup() {
+		return new FormGroup<SmbMountOptionsFormProperties>({
+			Version: new FormControl<SmbMountOptionsVersion | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SmbMountOptionsVersion { AUTOMATIC = 0, SMB2 = 1, SMB3 = 2 }
 
 
 	/** CreateTaskResponse */
 	export interface CreateTaskResponse {
 		TaskArn?: string | null;
+	}
+
+	/** CreateTaskResponse */
+	export interface CreateTaskResponseFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTaskResponseFormGroup() {
+		return new FormGroup<CreateTaskResponseFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -192,12 +458,29 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options | null;
-		Excludes?: Array<FilterRule> | null;
+		Options?: Options;
+		Excludes?: Array<FilterRule>;
 
 		/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
-		Schedule?: TaskSchedule | null;
-		Tags?: Array<TagListEntry> | null;
+		Schedule?: TaskSchedule;
+		Tags?: Array<TagListEntry>;
+	}
+
+	/** CreateTaskRequest */
+	export interface CreateTaskRequestFormProperties {
+		SourceLocationArn: FormControl<string | null | undefined>,
+		DestinationLocationArn: FormControl<string | null | undefined>,
+		CloudWatchLogGroupArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTaskRequestFormGroup() {
+		return new FormGroup<CreateTaskRequestFormProperties>({
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined),
+			DestinationLocationArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -215,6 +498,39 @@ export namespace MyNS {
 		BytesPerSecond?: number | null;
 		TaskQueueing?: OptionsTaskQueueing | null;
 		LogLevel?: OptionsLogLevel | null;
+	}
+
+	/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
+	export interface OptionsFormProperties {
+		VerifyMode: FormControl<OptionsVerifyMode | null | undefined>,
+		OverwriteMode: FormControl<OptionsOverwriteMode | null | undefined>,
+		Atime: FormControl<OptionsAtime | null | undefined>,
+		Mtime: FormControl<OptionsMtime | null | undefined>,
+		Uid: FormControl<OptionsUid | null | undefined>,
+		Gid: FormControl<OptionsUid | null | undefined>,
+		PreserveDeletedFiles: FormControl<OptionsPreserveDeletedFiles | null | undefined>,
+		PreserveDevices: FormControl<OptionsMtime | null | undefined>,
+		PosixPermissions: FormControl<OptionsMtime | null | undefined>,
+		BytesPerSecond: FormControl<number | null | undefined>,
+		TaskQueueing: FormControl<OptionsTaskQueueing | null | undefined>,
+		LogLevel: FormControl<OptionsLogLevel | null | undefined>,
+	}
+	export function CreateOptionsFormGroup() {
+		return new FormGroup<OptionsFormProperties>({
+			VerifyMode: new FormControl<OptionsVerifyMode | null | undefined>(undefined),
+			OverwriteMode: new FormControl<OptionsOverwriteMode | null | undefined>(undefined),
+			Atime: new FormControl<OptionsAtime | null | undefined>(undefined),
+			Mtime: new FormControl<OptionsMtime | null | undefined>(undefined),
+			Uid: new FormControl<OptionsUid | null | undefined>(undefined),
+			Gid: new FormControl<OptionsUid | null | undefined>(undefined),
+			PreserveDeletedFiles: new FormControl<OptionsPreserveDeletedFiles | null | undefined>(undefined),
+			PreserveDevices: new FormControl<OptionsMtime | null | undefined>(undefined),
+			PosixPermissions: new FormControl<OptionsMtime | null | undefined>(undefined),
+			BytesPerSecond: new FormControl<number | null | undefined>(undefined),
+			TaskQueueing: new FormControl<OptionsTaskQueueing | null | undefined>(undefined),
+			LogLevel: new FormControl<OptionsLogLevel | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OptionsVerifyMode { POINT_IN_TIME_CONSISTENT = 0, ONLY_FILES_TRANSFERRED = 1, NONE = 2 }
@@ -240,6 +556,19 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Specifies which files, folders and objects to include or exclude when transferring files from source to destination. */
+	export interface FilterRuleFormProperties {
+		FilterType: FormControl<FilterRuleFilterType | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterRuleFormGroup() {
+		return new FormGroup<FilterRuleFormProperties>({
+			FilterType: new FormControl<FilterRuleFilterType | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FilterRuleFilterType { SIMPLE_PATTERN = 0 }
 
 
@@ -248,7 +577,25 @@ export namespace MyNS {
 		ScheduleExpression: string;
 	}
 
+	/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
+	export interface TaskScheduleFormProperties {
+		ScheduleExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskScheduleFormGroup() {
+		return new FormGroup<TaskScheduleFormProperties>({
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteAgentResponse {
+	}
+	export interface DeleteAgentResponseFormProperties {
+	}
+	export function CreateDeleteAgentResponseFormGroup() {
+		return new FormGroup<DeleteAgentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -257,7 +604,25 @@ export namespace MyNS {
 		AgentArn: string;
 	}
 
+	/** DeleteAgentRequest */
+	export interface DeleteAgentRequestFormProperties {
+		AgentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAgentRequestFormGroup() {
+		return new FormGroup<DeleteAgentRequestFormProperties>({
+			AgentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteLocationResponse {
+	}
+	export interface DeleteLocationResponseFormProperties {
+	}
+	export function CreateDeleteLocationResponseFormGroup() {
+		return new FormGroup<DeleteLocationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -266,13 +631,42 @@ export namespace MyNS {
 		LocationArn: string;
 	}
 
+	/** DeleteLocation */
+	export interface DeleteLocationRequestFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLocationRequestFormGroup() {
+		return new FormGroup<DeleteLocationRequestFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteTaskResponse {
+	}
+	export interface DeleteTaskResponseFormProperties {
+	}
+	export function CreateDeleteTaskResponseFormGroup() {
+		return new FormGroup<DeleteTaskResponseFormProperties>({
+		});
+
 	}
 
 
 	/** DeleteTask */
 	export interface DeleteTaskRequest {
 		TaskArn: string;
+	}
+
+	/** DeleteTask */
+	export interface DeleteTaskRequestFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTaskRequestFormGroup() {
+		return new FormGroup<DeleteTaskRequestFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -286,7 +680,28 @@ export namespace MyNS {
 		EndpointType?: DescribeAgentResponseEndpointType | null;
 
 		/** The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud). */
-		PrivateLinkConfig?: PrivateLinkConfig | null;
+		PrivateLinkConfig?: PrivateLinkConfig;
+	}
+
+	/** DescribeAgentResponse */
+	export interface DescribeAgentResponseFormProperties {
+		AgentArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeAgentResponseStatus | null | undefined>,
+		LastConnectionTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		EndpointType: FormControl<DescribeAgentResponseEndpointType | null | undefined>,
+	}
+	export function CreateDescribeAgentResponseFormGroup() {
+		return new FormGroup<DescribeAgentResponseFormProperties>({
+			AgentArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeAgentResponseStatus | null | undefined>(undefined),
+			LastConnectionTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			EndpointType: new FormControl<DescribeAgentResponseEndpointType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAgentResponseStatus { ONLINE = 0, OFFLINE = 1 }
@@ -298,14 +713,38 @@ export namespace MyNS {
 	export interface PrivateLinkConfig {
 		VpcEndpointId?: string | null;
 		PrivateLinkEndpoint?: string | null;
-		SubnetArns?: Array<string> | null;
-		SecurityGroupArns?: Array<string> | null;
+		SubnetArns?: Array<string>;
+		SecurityGroupArns?: Array<string>;
+	}
+
+	/** The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud). */
+	export interface PrivateLinkConfigFormProperties {
+		VpcEndpointId: FormControl<string | null | undefined>,
+		PrivateLinkEndpoint: FormControl<string | null | undefined>,
+	}
+	export function CreatePrivateLinkConfigFormGroup() {
+		return new FormGroup<PrivateLinkConfigFormProperties>({
+			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
+			PrivateLinkEndpoint: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** DescribeAgent */
 	export interface DescribeAgentRequest {
 		AgentArn: string;
+	}
+
+	/** DescribeAgent */
+	export interface DescribeAgentRequestFormProperties {
+		AgentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAgentRequestFormGroup() {
+		return new FormGroup<DescribeAgentRequestFormProperties>({
+			AgentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -315,8 +754,23 @@ export namespace MyNS {
 		LocationUri?: string | null;
 
 		/** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. */
-		Ec2Config?: Ec2Config | null;
+		Ec2Config?: Ec2Config;
 		CreationTime?: Date | null;
+	}
+
+	/** DescribeLocationEfsResponse */
+	export interface DescribeLocationEfsResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeLocationEfsResponseFormGroup() {
+		return new FormGroup<DescribeLocationEfsResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -325,17 +779,54 @@ export namespace MyNS {
 		LocationArn: string;
 	}
 
+	/** DescribeLocationEfsRequest */
+	export interface DescribeLocationEfsRequestFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLocationEfsRequestFormGroup() {
+		return new FormGroup<DescribeLocationEfsRequestFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeLocationFsxWindowsResponse {
 		LocationArn?: string | null;
 		LocationUri?: string | null;
-		SecurityGroupArns?: Array<string> | null;
+		SecurityGroupArns?: Array<string>;
 		CreationTime?: Date | null;
 		User?: string | null;
 		Domain?: string | null;
 	}
+	export interface DescribeLocationFsxWindowsResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		User: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLocationFsxWindowsResponseFormGroup() {
+		return new FormGroup<DescribeLocationFsxWindowsResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			User: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeLocationFsxWindowsRequest {
 		LocationArn: string;
+	}
+	export interface DescribeLocationFsxWindowsRequestFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLocationFsxWindowsRequestFormGroup() {
+		return new FormGroup<DescribeLocationFsxWindowsRequestFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -345,17 +836,43 @@ export namespace MyNS {
 		LocationUri?: string | null;
 
 		/** A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location. */
-		OnPremConfig?: OnPremConfig | null;
+		OnPremConfig?: OnPremConfig;
 
 		/** Represents the mount options that are available for DataSync to access an NFS location. */
-		MountOptions?: NfsMountOptions | null;
+		MountOptions?: NfsMountOptions;
 		CreationTime?: Date | null;
+	}
+
+	/** DescribeLocationNfsResponse */
+	export interface DescribeLocationNfsResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeLocationNfsResponseFormGroup() {
+		return new FormGroup<DescribeLocationNfsResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** DescribeLocationNfsRequest */
 	export interface DescribeLocationNfsRequest {
 		LocationArn: string;
+	}
+
+	/** DescribeLocationNfsRequest */
+	export interface DescribeLocationNfsRequestFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLocationNfsRequestFormGroup() {
+		return new FormGroup<DescribeLocationNfsRequestFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,8 +883,25 @@ export namespace MyNS {
 		S3StorageClass?: CreateLocationS3RequestS3StorageClass | null;
 
 		/** <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.</p> */
-		S3Config?: S3Config | null;
+		S3Config?: S3Config;
 		CreationTime?: Date | null;
+	}
+
+	/** DescribeLocationS3Response */
+	export interface DescribeLocationS3ResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+		S3StorageClass: FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeLocationS3ResponseFormGroup() {
+		return new FormGroup<DescribeLocationS3ResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+			S3StorageClass: new FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -376,24 +910,65 @@ export namespace MyNS {
 		LocationArn: string;
 	}
 
+	/** DescribeLocationS3Request */
+	export interface DescribeLocationS3RequestFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLocationS3RequestFormGroup() {
+		return new FormGroup<DescribeLocationS3RequestFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DescribeLocationSmbResponse */
 	export interface DescribeLocationSmbResponse {
 		LocationArn?: string | null;
 		LocationUri?: string | null;
-		AgentArns?: Array<string> | null;
+		AgentArns?: Array<string>;
 		User?: string | null;
 		Domain?: string | null;
 
 		/** Represents the mount options that are available for DataSync to access an SMB location. */
-		MountOptions?: SmbMountOptions | null;
+		MountOptions?: SmbMountOptions;
 		CreationTime?: Date | null;
+	}
+
+	/** DescribeLocationSmbResponse */
+	export interface DescribeLocationSmbResponseFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+		User: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeLocationSmbResponseFormGroup() {
+		return new FormGroup<DescribeLocationSmbResponseFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+			User: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** DescribeLocationSmbRequest */
 	export interface DescribeLocationSmbRequest {
 		LocationArn: string;
+	}
+
+	/** DescribeLocationSmbRequest */
+	export interface DescribeLocationSmbRequestFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLocationSmbRequestFormGroup() {
+		return new FormGroup<DescribeLocationSmbRequestFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -406,18 +981,47 @@ export namespace MyNS {
 		SourceLocationArn?: string | null;
 		DestinationLocationArn?: string | null;
 		CloudWatchLogGroupArn?: string | null;
-		SourceNetworkInterfaceArns?: Array<string> | null;
-		DestinationNetworkInterfaceArns?: Array<string> | null;
+		SourceNetworkInterfaceArns?: Array<string>;
+		DestinationNetworkInterfaceArns?: Array<string>;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options | null;
-		Excludes?: Array<FilterRule> | null;
+		Options?: Options;
+		Excludes?: Array<FilterRule>;
 
 		/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
-		Schedule?: TaskSchedule | null;
+		Schedule?: TaskSchedule;
 		ErrorCode?: string | null;
 		ErrorDetail?: string | null;
 		CreationTime?: Date | null;
+	}
+
+	/** DescribeTaskResponse */
+	export interface DescribeTaskResponseFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeTaskResponseStatus | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CurrentTaskExecutionArn: FormControl<string | null | undefined>,
+		SourceLocationArn: FormControl<string | null | undefined>,
+		DestinationLocationArn: FormControl<string | null | undefined>,
+		CloudWatchLogGroupArn: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorDetail: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeTaskResponseFormGroup() {
+		return new FormGroup<DescribeTaskResponseFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeTaskResponseStatus | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CurrentTaskExecutionArn: new FormControl<string | null | undefined>(undefined),
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined),
+			DestinationLocationArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorDetail: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeTaskResponseStatus { AVAILABLE = 0, CREATING = 1, QUEUED = 2, RUNNING = 3, UNAVAILABLE = 4 }
@@ -428,6 +1032,17 @@ export namespace MyNS {
 		TaskArn: string;
 	}
 
+	/** DescribeTaskRequest */
+	export interface DescribeTaskRequestFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTaskRequestFormGroup() {
+		return new FormGroup<DescribeTaskRequestFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DescribeTaskExecutionResponse */
 	export interface DescribeTaskExecutionResponse {
@@ -435,9 +1050,9 @@ export namespace MyNS {
 		Status?: DescribeTaskExecutionResponseStatus | null;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options | null;
-		Excludes?: Array<FilterRule> | null;
-		Includes?: Array<FilterRule> | null;
+		Options?: Options;
+		Excludes?: Array<FilterRule>;
+		Includes?: Array<FilterRule>;
 		StartTime?: Date | null;
 		EstimatedFilesToTransfer?: number | null;
 		EstimatedBytesToTransfer?: number | null;
@@ -446,7 +1061,32 @@ export namespace MyNS {
 		BytesTransferred?: number | null;
 
 		/** Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered. */
-		Result?: TaskExecutionResultDetail | null;
+		Result?: TaskExecutionResultDetail;
+	}
+
+	/** DescribeTaskExecutionResponse */
+	export interface DescribeTaskExecutionResponseFormProperties {
+		TaskExecutionArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeTaskExecutionResponseStatus | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EstimatedFilesToTransfer: FormControl<number | null | undefined>,
+		EstimatedBytesToTransfer: FormControl<number | null | undefined>,
+		FilesTransferred: FormControl<number | null | undefined>,
+		BytesWritten: FormControl<number | null | undefined>,
+		BytesTransferred: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTaskExecutionResponseFormGroup() {
+		return new FormGroup<DescribeTaskExecutionResponseFormProperties>({
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeTaskExecutionResponseStatus | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EstimatedFilesToTransfer: new FormControl<number | null | undefined>(undefined),
+			EstimatedBytesToTransfer: new FormControl<number | null | undefined>(undefined),
+			FilesTransferred: new FormControl<number | null | undefined>(undefined),
+			BytesWritten: new FormControl<number | null | undefined>(undefined),
+			BytesTransferred: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeTaskExecutionResponseStatus { QUEUED = 0, LAUNCHING = 1, PREPARING = 2, TRANSFERRING = 3, VERIFYING = 4, SUCCESS = 5, ERROR = 6 }
@@ -465,6 +1105,33 @@ export namespace MyNS {
 		ErrorDetail?: string | null;
 	}
 
+	/** Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered. */
+	export interface TaskExecutionResultDetailFormProperties {
+		PrepareDuration: FormControl<number | null | undefined>,
+		PrepareStatus: FormControl<TaskExecutionResultDetailPrepareStatus | null | undefined>,
+		TotalDuration: FormControl<number | null | undefined>,
+		TransferDuration: FormControl<number | null | undefined>,
+		TransferStatus: FormControl<TaskExecutionResultDetailPrepareStatus | null | undefined>,
+		VerifyDuration: FormControl<number | null | undefined>,
+		VerifyStatus: FormControl<TaskExecutionResultDetailPrepareStatus | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorDetail: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskExecutionResultDetailFormGroup() {
+		return new FormGroup<TaskExecutionResultDetailFormProperties>({
+			PrepareDuration: new FormControl<number | null | undefined>(undefined),
+			PrepareStatus: new FormControl<TaskExecutionResultDetailPrepareStatus | null | undefined>(undefined),
+			TotalDuration: new FormControl<number | null | undefined>(undefined),
+			TransferDuration: new FormControl<number | null | undefined>(undefined),
+			TransferStatus: new FormControl<TaskExecutionResultDetailPrepareStatus | null | undefined>(undefined),
+			VerifyDuration: new FormControl<number | null | undefined>(undefined),
+			VerifyStatus: new FormControl<TaskExecutionResultDetailPrepareStatus | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorDetail: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TaskExecutionResultDetailPrepareStatus { PENDING = 0, SUCCESS = 1, ERROR = 2 }
 
 
@@ -473,11 +1140,33 @@ export namespace MyNS {
 		TaskExecutionArn: string;
 	}
 
+	/** DescribeTaskExecutionRequest */
+	export interface DescribeTaskExecutionRequestFormProperties {
+		TaskExecutionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTaskExecutionRequestFormGroup() {
+		return new FormGroup<DescribeTaskExecutionRequestFormProperties>({
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListAgentsResponse */
 	export interface ListAgentsResponse {
-		Agents?: Array<AgentListEntry> | null;
+		Agents?: Array<AgentListEntry>;
 		NextToken?: string | null;
+	}
+
+	/** ListAgentsResponse */
+	export interface ListAgentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAgentsResponseFormGroup() {
+		return new FormGroup<ListAgentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -488,6 +1177,21 @@ export namespace MyNS {
 		Status?: DescribeAgentResponseStatus | null;
 	}
 
+	/** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called. */
+	export interface AgentListEntryFormProperties {
+		AgentArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeAgentResponseStatus | null | undefined>,
+	}
+	export function CreateAgentListEntryFormGroup() {
+		return new FormGroup<AgentListEntryFormProperties>({
+			AgentArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeAgentResponseStatus | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListAgentsRequest */
 	export interface ListAgentsRequest {
@@ -495,11 +1199,35 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** ListAgentsRequest */
+	export interface ListAgentsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAgentsRequestFormGroup() {
+		return new FormGroup<ListAgentsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListLocationsResponse */
 	export interface ListLocationsResponse {
-		Locations?: Array<LocationListEntry> | null;
+		Locations?: Array<LocationListEntry>;
 		NextToken?: string | null;
+	}
+
+	/** ListLocationsResponse */
+	export interface ListLocationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocationsResponseFormGroup() {
+		return new FormGroup<ListLocationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -509,6 +1237,19 @@ export namespace MyNS {
 		LocationUri?: string | null;
 	}
 
+	/** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called. */
+	export interface LocationListEntryFormProperties {
+		LocationArn: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationListEntryFormGroup() {
+		return new FormGroup<LocationListEntryFormProperties>({
+			LocationArn: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListLocationsRequest */
 	export interface ListLocationsRequest {
@@ -516,11 +1257,35 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** ListLocationsRequest */
+	export interface ListLocationsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocationsRequestFormGroup() {
+		return new FormGroup<ListLocationsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListTagsForResourceResponse */
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<TagListEntry> | null;
+		Tags?: Array<TagListEntry>;
 		NextToken?: string | null;
+	}
+
+	/** ListTagsForResourceResponse */
+	export interface ListTagsForResourceResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -531,11 +1296,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** ListTagsForResourceRequest */
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListTaskExecutionsResponse */
 	export interface ListTaskExecutionsResponse {
-		TaskExecutions?: Array<TaskExecutionListEntry> | null;
+		TaskExecutions?: Array<TaskExecutionListEntry>;
 		NextToken?: string | null;
+	}
+
+	/** ListTaskExecutionsResponse */
+	export interface ListTaskExecutionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTaskExecutionsResponseFormGroup() {
+		return new FormGroup<ListTaskExecutionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -543,6 +1334,19 @@ export namespace MyNS {
 	export interface TaskExecutionListEntry {
 		TaskExecutionArn?: string | null;
 		Status?: DescribeTaskExecutionResponseStatus | null;
+	}
+
+	/** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called. */
+	export interface TaskExecutionListEntryFormProperties {
+		TaskExecutionArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeTaskExecutionResponseStatus | null | undefined>,
+	}
+	export function CreateTaskExecutionListEntryFormGroup() {
+		return new FormGroup<TaskExecutionListEntryFormProperties>({
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeTaskExecutionResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -553,11 +1357,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** ListTaskExecutions */
+	export interface ListTaskExecutionsRequestFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTaskExecutionsRequestFormGroup() {
+		return new FormGroup<ListTaskExecutionsRequestFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListTasksResponse */
 	export interface ListTasksResponse {
-		Tasks?: Array<TaskListEntry> | null;
+		Tasks?: Array<TaskListEntry>;
 		NextToken?: string | null;
+	}
+
+	/** ListTasksResponse */
+	export interface ListTasksResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTasksResponseFormGroup() {
+		return new FormGroup<ListTasksResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -568,11 +1398,39 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks. */
+	export interface TaskListEntryFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeTaskResponseStatus | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskListEntryFormGroup() {
+		return new FormGroup<TaskListEntryFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeTaskResponseStatus | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListTasksRequest */
 	export interface ListTasksRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** ListTasksRequest */
+	export interface ListTasksRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTasksRequestFormGroup() {
+		return new FormGroup<ListTasksRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -581,17 +1439,46 @@ export namespace MyNS {
 		TaskExecutionArn?: string | null;
 	}
 
+	/** StartTaskExecutionResponse */
+	export interface StartTaskExecutionResponseFormProperties {
+		TaskExecutionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTaskExecutionResponseFormGroup() {
+		return new FormGroup<StartTaskExecutionResponseFormProperties>({
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** StartTaskExecutionRequest */
 	export interface StartTaskExecutionRequest {
 		TaskArn: string;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		OverrideOptions?: Options | null;
-		Includes?: Array<FilterRule> | null;
+		OverrideOptions?: Options;
+		Includes?: Array<FilterRule>;
+	}
+
+	/** StartTaskExecutionRequest */
+	export interface StartTaskExecutionRequestFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTaskExecutionRequestFormGroup() {
+		return new FormGroup<StartTaskExecutionRequestFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -601,7 +1488,25 @@ export namespace MyNS {
 		Tags: Array<TagListEntry>;
 	}
 
+	/** TagResourceRequest */
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -611,7 +1516,25 @@ export namespace MyNS {
 		Keys: Array<string>;
 	}
 
+	/** UntagResourceRequest */
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateAgentResponse {
+	}
+	export interface UpdateAgentResponseFormProperties {
+	}
+	export function CreateUpdateAgentResponseFormGroup() {
+		return new FormGroup<UpdateAgentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -621,7 +1544,27 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** UpdateAgentRequest */
+	export interface UpdateAgentRequestFormProperties {
+		AgentArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAgentRequestFormGroup() {
+		return new FormGroup<UpdateAgentRequestFormProperties>({
+			AgentArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateTaskResponse {
+	}
+	export interface UpdateTaskResponseFormProperties {
+	}
+	export function CreateUpdateTaskResponseFormGroup() {
+		return new FormGroup<UpdateTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -630,13 +1573,28 @@ export namespace MyNS {
 		TaskArn: string;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options | null;
-		Excludes?: Array<FilterRule> | null;
+		Options?: Options;
+		Excludes?: Array<FilterRule>;
 
 		/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
-		Schedule?: TaskSchedule | null;
+		Schedule?: TaskSchedule;
 		Name?: string | null;
 		CloudWatchLogGroupArn?: string | null;
+	}
+
+	/** UpdateTaskResponse */
+	export interface UpdateTaskRequestFormProperties {
+		TaskArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CloudWatchLogGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTaskRequestFormGroup() {
+		return new FormGroup<UpdateTaskRequestFormProperties>({
+			TaskArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AgentStatus { ONLINE = 0, OFFLINE = 1 }

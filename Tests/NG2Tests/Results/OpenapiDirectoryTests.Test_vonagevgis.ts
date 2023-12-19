@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Account {
 
@@ -15,22 +16,71 @@ export namespace MyNS {
 
 		/** Status of the account */
 		status?: AccountStatus | null;
-		AccountUcis?: Array<AccountUcis> | null;
+		AccountUcis?: Array<AccountUcis>;
+	}
+	export interface AccountFormProperties {
+
+		/** Unique identifier of the account */
+		id: FormControl<number | null | undefined>,
+
+		/** Name of the account */
+		name: FormControl<string | null | undefined>,
+
+		/** Organization of the account */
+		org: FormControl<string | null | undefined>,
+
+		/** Status of the account */
+		status: FormControl<AccountStatus | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			org: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AccountStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountStatus { PENDING = 0, ACTIVE = 1, DELETED = 2, ARCHIVED = 3 }
 
 	export interface AccountUcis {
-		health?: AccountHealth | null;
+		health?: AccountHealth;
 		id?: number | null;
 		type?: string | null;
 		ucpAccountId?: string | null;
 		ucpLabel?: string | null;
 	}
+	export interface AccountUcisFormProperties {
+		id: FormControl<number | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		ucpAccountId: FormControl<string | null | undefined>,
+		ucpLabel: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountUcisFormGroup() {
+		return new FormGroup<AccountUcisFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			ucpAccountId: new FormControl<string | null | undefined>(undefined),
+			ucpLabel: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountHealth {
 		message?: string | null;
 		status?: string | null;
+	}
+	export interface AccountHealthFormProperties {
+		message: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountHealthFormGroup() {
+		return new FormGroup<AccountHealthFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Call {
@@ -107,6 +157,99 @@ export namespace MyNS {
 		 */
 		userId: number;
 	}
+	export interface CallFormProperties {
+
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
+		accountId: FormControl<number | null | undefined>,
+
+		/** Time to answer the call */
+		answerTime: FormControl<Date | null | undefined>,
+
+		/** Remote caller ID */
+		callerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Direction of the call
+		 * Required
+		 */
+		direction: FormControl<CallDirection | null | undefined>,
+
+		/**
+		 * Duration of the call in milliseconds
+		 * Required
+		 */
+		duration: FormControl<number | null | undefined>,
+
+		/** End time of the call */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** External identifier of the call */
+		externalId: FormControl<string | null | undefined>,
+
+		/**
+		 * Unique identifier of the call
+		 * Required
+		 */
+		id: FormControl<number | null | undefined>,
+
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
+		phoneNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Start time of the call
+		 * Required
+		 */
+		startTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Status of the call
+		 * Required
+		 */
+		state: FormControl<CallState | null | undefined>,
+
+		/**
+		 * Record type
+		 * Required
+		 */
+		type: FormControl<CallType | null | undefined>,
+
+		/**
+		 * Unique identifier of communications provider
+		 * Required
+		 */
+		uciId: FormControl<number | null | undefined>,
+
+		/**
+		 * Unique identifier of the user
+		 * Required
+		 */
+		userId: FormControl<number | null | undefined>,
+	}
+	export function CreateCallFormGroup() {
+		return new FormGroup<CallFormProperties>({
+			accountId: new FormControl<number | null | undefined>(undefined),
+			answerTime: new FormControl<Date | null | undefined>(undefined),
+			callerId: new FormControl<string | null | undefined>(undefined),
+			direction: new FormControl<CallDirection | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			state: new FormControl<CallState | null | undefined>(undefined),
+			type: new FormControl<CallType | null | undefined>(undefined),
+			uciId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CallDirection { INBOUND = 0, OUTBOUND = 1 }
 
@@ -122,6 +265,20 @@ export namespace MyNS {
 		 */
 		phoneNumber: string;
 	}
+	export interface CallCreateFormProperties {
+
+		/**
+		 * Phone number to call
+		 * Required
+		 */
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateCallCreateFormGroup() {
+		return new FormGroup<CallCreateFormProperties>({
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CallTransfer {
 
@@ -131,16 +288,52 @@ export namespace MyNS {
 		 */
 		phoneNumber: string;
 	}
+	export interface CallTransferFormProperties {
+
+		/**
+		 * Phone number to transfer to
+		 * Required
+		 */
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateCallTransferFormGroup() {
+		return new FormGroup<CallTransferFormProperties>({
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Error {
 		field?: string | null;
 		message?: string | null;
 	}
+	export interface ErrorFormProperties {
+		field: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			field: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ErrorResponse {
 		errorCode?: string | null;
 		errorMessage?: string | null;
-		errors?: Array<Error> | null;
+		errors?: Array<Error>;
+	}
+	export interface ErrorResponseFormProperties {
+		errorCode: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorResponseFormGroup() {
+		return new FormGroup<ErrorResponseFormProperties>({
+			errorCode: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Event {
@@ -215,11 +408,114 @@ export namespace MyNS {
 		 */
 		userId: number;
 	}
+	export interface EventFormProperties {
+
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
+		accountId: FormControl<number | null | undefined>,
+
+		/** Time to answer the event */
+		answerTime: FormControl<Date | null | undefined>,
+
+		/** Remote caller ID */
+		callerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Direction of the event
+		 * Required
+		 */
+		direction: FormControl<CallDirection | null | undefined>,
+
+		/** Duration of the call in milliseconds */
+		duration: FormControl<number | null | undefined>,
+
+		/** End time of the event */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** External identifier of the event */
+		externalId: FormControl<string | null | undefined>,
+
+		/**
+		 * Unique identifier of the event
+		 * Required
+		 */
+		id: FormControl<number | null | undefined>,
+
+		/**
+		 * Unique identifier of the account
+		 * Required
+		 */
+		phoneNumber: FormControl<string | null | undefined>,
+		smsData: FormControl<string | null | undefined>,
+
+		/**
+		 * Start time of the event
+		 * Required
+		 */
+		startTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Status of the event
+		 * Required
+		 */
+		state: FormControl<CallState | null | undefined>,
+
+		/**
+		 * Record type
+		 * Required
+		 */
+		type: FormControl<CallType | null | undefined>,
+
+		/**
+		 * Unique identifier of communications provider
+		 * Required
+		 */
+		uciId: FormControl<number | null | undefined>,
+
+		/**
+		 * Unique identifier of the user
+		 * Required
+		 */
+		userId: FormControl<number | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			accountId: new FormControl<number | null | undefined>(undefined),
+			answerTime: new FormControl<Date | null | undefined>(undefined),
+			callerId: new FormControl<string | null | undefined>(undefined),
+			direction: new FormControl<CallDirection | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			smsData: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			state: new FormControl<CallState | null | undefined>(undefined),
+			type: new FormControl<CallType | null | undefined>(undefined),
+			uciId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EventsCount {
 
 		/** Number of events found */
 		count?: number | null;
+	}
+	export interface EventsCountFormProperties {
+
+		/** Number of events found */
+		count: FormControl<number | null | undefined>,
+	}
+	export function CreateEventsCountFormGroup() {
+		return new FormGroup<EventsCountFormProperties>({
+			count: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface User {
@@ -244,11 +540,50 @@ export namespace MyNS {
 
 		/** Last name of the user */
 		lastName?: string | null;
-		UserRoles?: Array<UserRoles> | null;
+		UserRoles?: Array<UserRoles>;
 
 		/** Status of the user */
 		status?: AccountStatus | null;
-		UserUcis?: Array<UserUcis> | null;
+		UserUcis?: Array<UserUcis>;
+	}
+	export interface UserFormProperties {
+
+		/** Unique identifier of the user's account */
+		accountId: FormControl<number | null | undefined>,
+
+		/** The name of the user's account */
+		acountLabel: FormControl<string | null | undefined>,
+
+		/** Contact number of the user */
+		contactNumber: FormControl<string | null | undefined>,
+
+		/** Email address of the user */
+		emailAddress: FormControl<string | null | undefined>,
+
+		/** First name of the user */
+		firstName: FormControl<string | null | undefined>,
+
+		/** Unique identifier of the user */
+		id: FormControl<number | null | undefined>,
+
+		/** Last name of the user */
+		lastName: FormControl<string | null | undefined>,
+
+		/** Status of the user */
+		status: FormControl<AccountStatus | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			accountId: new FormControl<number | null | undefined>(undefined),
+			acountLabel: new FormControl<string | null | undefined>(undefined),
+			contactNumber: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AccountStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserRoles {
@@ -259,17 +594,56 @@ export namespace MyNS {
 		/** Name for the role */
 		name?: string | null;
 	}
+	export interface UserRolesFormProperties {
+
+		/** Code for the role */
+		code: FormControl<string | null | undefined>,
+
+		/** Name for the role */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRolesFormGroup() {
+		return new FormGroup<UserRolesFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserUcis {
-		health?: UserHealth | null;
+		health?: UserHealth;
 		id?: number | null;
 		type?: string | null;
 		ucpLabel?: string | null;
+	}
+	export interface UserUcisFormProperties {
+		id: FormControl<number | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		ucpLabel: FormControl<string | null | undefined>,
+	}
+	export function CreateUserUcisFormGroup() {
+		return new FormGroup<UserUcisFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			ucpLabel: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserHealth {
 		message?: string | null;
 		status?: string | null;
+	}
+	export interface UserHealthFormProperties {
+		message: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateUserHealthFormGroup() {
+		return new FormGroup<UserHealthFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Webhook {
@@ -281,7 +655,7 @@ export namespace MyNS {
 		createdAt?: string | null;
 
 		/** Subscribed events for the webhook */
-		events?: Array<CallType> | null;
+		events?: Array<CallType>;
 
 		/** Expiration time for the webhook */
 		expireAt?: string | null;
@@ -303,7 +677,7 @@ export namespace MyNS {
 
 		/** Signing key for the webhook */
 		signingKey?: string | null;
-		statistics?: WebhookStatistics | null;
+		statistics?: WebhookStatistics;
 
 		/** Status for the webhook */
 		status?: WebhookStatus | null;
@@ -313,6 +687,61 @@ export namespace MyNS {
 
 		/** Unique identifier of the user */
 		userId?: string | null;
+	}
+	export interface WebhookFormProperties {
+
+		/** Unique identifier of the account */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Created time for the webhook */
+		createdAt: FormControl<string | null | undefined>,
+
+		/** Expiration time for the webhook */
+		expireAt: FormControl<string | null | undefined>,
+
+		/** Unique identifier for the webhook */
+		id: FormControl<string | null | undefined>,
+
+		/** Metadata policy for the webhook */
+		metadataPolicy: FormControl<WebhookMetadataPolicy | null | undefined>,
+
+		/** Scheduled purge time for the webhook */
+		purgeAt: FormControl<string | null | undefined>,
+
+		/** Last renewed time for the webhook */
+		renewedAt: FormControl<string | null | undefined>,
+
+		/** Signing algorithm for the webhook */
+		signingAlgo: FormControl<WebhookSigningAlgo | null | undefined>,
+
+		/** Signing key for the webhook */
+		signingKey: FormControl<string | null | undefined>,
+
+		/** Status for the webhook */
+		status: FormControl<WebhookStatus | null | undefined>,
+
+		/** Destination URL for events */
+		url: FormControl<string | null | undefined>,
+
+		/** Unique identifier of the user */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateWebhookFormGroup() {
+		return new FormGroup<WebhookFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined),
+			expireAt: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			metadataPolicy: new FormControl<WebhookMetadataPolicy | null | undefined>(undefined),
+			purgeAt: new FormControl<string | null | undefined>(undefined),
+			renewedAt: new FormControl<string | null | undefined>(undefined),
+			signingAlgo: new FormControl<WebhookSigningAlgo | null | undefined>(undefined),
+			signingKey: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<WebhookStatus | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WebhookMetadataPolicy { NONE = 0, HEADER = 1, BODY = 2 }
@@ -333,13 +762,36 @@ export namespace MyNS {
 		/** Total successful deliveries */
 		totalSuccesses?: number | null;
 	}
+	export interface WebhookStatisticsFormProperties {
+
+		/** Current delivery status */
+		failed: FormControl<boolean | null | undefined>,
+
+		/** Total delivery attempts */
+		totalAttempts: FormControl<number | null | undefined>,
+
+		/** Total failed deliveries */
+		totalFailures: FormControl<number | null | undefined>,
+
+		/** Total successful deliveries */
+		totalSuccesses: FormControl<number | null | undefined>,
+	}
+	export function CreateWebhookStatisticsFormGroup() {
+		return new FormGroup<WebhookStatisticsFormProperties>({
+			failed: new FormControl<boolean | null | undefined>(undefined),
+			totalAttempts: new FormControl<number | null | undefined>(undefined),
+			totalFailures: new FormControl<number | null | undefined>(undefined),
+			totalSuccesses: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum WebhookStatus { ACTIVE = 0, PAUSED = 1 }
 
 	export interface WebhookCreate {
 
 		/** Events to subscribe to the webhook */
-		events?: Array<CallType> | null;
+		events?: Array<CallType>;
 
 		/** Metadata policy for the webhook */
 		metadataPolicy?: WebhookMetadataPolicy | null;
@@ -352,6 +804,29 @@ export namespace MyNS {
 
 		/** Destination URL for events */
 		url?: string | null;
+	}
+	export interface WebhookCreateFormProperties {
+
+		/** Metadata policy for the webhook */
+		metadataPolicy: FormControl<WebhookMetadataPolicy | null | undefined>,
+
+		/** Signing algorithm for the webhook */
+		signingAlgo: FormControl<WebhookCreateSigningAlgo | null | undefined>,
+
+		/** Signing key for the webhook */
+		signingKey: FormControl<string | null | undefined>,
+
+		/** Destination URL for events */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateWebhookCreateFormGroup() {
+		return new FormGroup<WebhookCreateFormProperties>({
+			metadataPolicy: new FormControl<WebhookMetadataPolicy | null | undefined>(undefined),
+			signingAlgo: new FormControl<WebhookCreateSigningAlgo | null | undefined>(undefined),
+			signingKey: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WebhookCreateSigningAlgo { HMAC_SHA256 = 0 }

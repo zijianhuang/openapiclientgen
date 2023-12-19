@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request. */
@@ -13,6 +14,15 @@ export namespace MyNS {
 		ChangeInfo: ChangeInfo;
 	}
 
+	/** A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request. */
+	export interface AssociateVPCWithHostedZoneResponseFormProperties {
+	}
+	export function CreateAssociateVPCWithHostedZoneResponseFormGroup() {
+		return new FormGroup<AssociateVPCWithHostedZoneResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that describes change information about changes made to your hosted zone. */
 	export interface ChangeInfo {
@@ -22,29 +32,95 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** A complex type that describes change information about changes made to your hosted zone. */
+	export interface ChangeInfoFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Status: FormControl<ChangeInfoStatus | null | undefined>,
+		SubmittedAt: FormControl<Date | null | undefined>,
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateChangeInfoFormGroup() {
+		return new FormGroup<ChangeInfoFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ChangeInfoStatus | null | undefined>(undefined),
+			SubmittedAt: new FormControl<Date | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ChangeInfoStatus { PENDING = 0, INSYNC = 1 }
 
 	export enum VPCRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ap_east_1 = 8, me_south_1 = 9, us_gov_west_1 = 10, us_gov_east_1 = 11, us_iso_east_1 = 12, us_isob_east_1 = 13, ap_southeast_1 = 14, ap_southeast_2 = 15, ap_south_1 = 16, ap_northeast_1 = 17, ap_northeast_2 = 18, ap_northeast_3 = 19, eu_north_1 = 20, sa_east_1 = 21, ca_central_1 = 22, cn_north_1 = 23, af_south_1 = 24, eu_south_1 = 25 }
 
 	export interface NoSuchHostedZone {
 	}
+	export interface NoSuchHostedZoneFormProperties {
+	}
+	export function CreateNoSuchHostedZoneFormGroup() {
+		return new FormGroup<NoSuchHostedZoneFormProperties>({
+		});
+
+	}
 
 	export interface NotAuthorizedException {
+	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidVPCId {
 	}
+	export interface InvalidVPCIdFormProperties {
+	}
+	export function CreateInvalidVPCIdFormGroup() {
+		return new FormGroup<InvalidVPCIdFormProperties>({
+		});
+
+	}
 
 	export interface InvalidInput {
+	}
+	export interface InvalidInputFormProperties {
+	}
+	export function CreateInvalidInputFormGroup() {
+		return new FormGroup<InvalidInputFormProperties>({
+		});
+
 	}
 
 	export interface PublicZoneVPCAssociation {
 	}
+	export interface PublicZoneVPCAssociationFormProperties {
+	}
+	export function CreatePublicZoneVPCAssociationFormGroup() {
+		return new FormGroup<PublicZoneVPCAssociationFormProperties>({
+		});
+
+	}
 
 	export interface ConflictingDomainExists {
 	}
+	export interface ConflictingDomainExistsFormProperties {
+	}
+	export function CreateConflictingDomainExistsFormGroup() {
+		return new FormGroup<ConflictingDomainExistsFormProperties>({
+		});
+
+	}
 
 	export interface LimitsExceeded {
+	}
+	export interface LimitsExceededFormProperties {
+	}
+	export function CreateLimitsExceededFormGroup() {
+		return new FormGroup<LimitsExceededFormProperties>({
+		});
+
 	}
 
 
@@ -56,6 +132,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		ChangeInfo: ChangeInfo;
+	}
+
+	/** A complex type containing the response for the request. */
+	export interface ChangeResourceRecordSetsResponseFormProperties {
+	}
+	export function CreateChangeResourceRecordSetsResponseFormGroup() {
+		return new FormGroup<ChangeResourceRecordSetsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -70,6 +155,17 @@ export namespace MyNS {
 		ResourceRecordSet: ResourceRecordSet;
 	}
 
+	/** The information for each resource record set that you want to change. */
+	export interface ChangeFormProperties {
+		Action: FormControl<ChangeAction | null | undefined>,
+	}
+	export function CreateChangeFormGroup() {
+		return new FormGroup<ChangeFormProperties>({
+			Action: new FormControl<ChangeAction | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ChangeAction { CREATE = 0, DELETE = 1, UPSERT = 2 }
 
 
@@ -82,16 +178,45 @@ export namespace MyNS {
 		Region?: ResourceRecordSetRegion | null;
 
 		/** A complex type that contains information about a geographic location. */
-		GeoLocation?: GeoLocation | null;
+		GeoLocation?: GeoLocation;
 		Failover?: ResourceRecordSetFailover | null;
 		MultiValueAnswer?: boolean | null;
 		TTL?: number | null;
-		ResourceRecords?: Array<ResourceRecord> | null;
+		ResourceRecords?: Array<ResourceRecord>;
 
 		/** <p> <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul> */
-		AliasTarget?: AliasTarget | null;
+		AliasTarget?: AliasTarget;
 		HealthCheckId?: string | null;
 		TrafficPolicyInstanceId?: string | null;
+	}
+
+	/** Information about the resource record set to create or delete. */
+	export interface ResourceRecordSetFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<ResourceRecordSetType | null | undefined>,
+		SetIdentifier: FormControl<string | null | undefined>,
+		Weight: FormControl<number | null | undefined>,
+		Region: FormControl<ResourceRecordSetRegion | null | undefined>,
+		Failover: FormControl<ResourceRecordSetFailover | null | undefined>,
+		MultiValueAnswer: FormControl<boolean | null | undefined>,
+		TTL: FormControl<number | null | undefined>,
+		HealthCheckId: FormControl<string | null | undefined>,
+		TrafficPolicyInstanceId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceRecordSetFormGroup() {
+		return new FormGroup<ResourceRecordSetFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			SetIdentifier: new FormControl<string | null | undefined>(undefined),
+			Weight: new FormControl<number | null | undefined>(undefined),
+			Region: new FormControl<ResourceRecordSetRegion | null | undefined>(undefined),
+			Failover: new FormControl<ResourceRecordSetFailover | null | undefined>(undefined),
+			MultiValueAnswer: new FormControl<boolean | null | undefined>(undefined),
+			TTL: new FormControl<number | null | undefined>(undefined),
+			HealthCheckId: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceRecordSetType { SOA = 0, A = 1, TXT = 2, NS = 3, CNAME = 4, MX = 5, NAPTR = 6, PTR = 7, SRV = 8, SPF = 9, AAAA = 10, CAA = 11 }
@@ -106,12 +231,38 @@ export namespace MyNS {
 		SubdivisionCode?: string | null;
 	}
 
+	/** A complex type that contains information about a geographic location. */
+	export interface GeoLocationFormProperties {
+		ContinentCode: FormControl<string | null | undefined>,
+		CountryCode: FormControl<string | null | undefined>,
+		SubdivisionCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGeoLocationFormGroup() {
+		return new FormGroup<GeoLocationFormProperties>({
+			ContinentCode: new FormControl<string | null | undefined>(undefined),
+			CountryCode: new FormControl<string | null | undefined>(undefined),
+			SubdivisionCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceRecordSetFailover { PRIMARY = 0, SECONDARY = 1 }
 
 
 	/** <p>Information specific to the resource record.</p> <note> <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> </note> */
 	export interface ResourceRecord {
 		Value: string;
+	}
+
+	/** <p>Information specific to the resource record.</p> <note> <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> </note> */
+	export interface ResourceRecordFormProperties {
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceRecordFormGroup() {
+		return new FormGroup<ResourceRecordFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -122,18 +273,63 @@ export namespace MyNS {
 		EvaluateTargetHealth: boolean;
 	}
 
+	/** <p> <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul> */
+	export interface AliasTargetFormProperties {
+		HostedZoneId: FormControl<string | null | undefined>,
+		DNSName: FormControl<string | null | undefined>,
+		EvaluateTargetHealth: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAliasTargetFormGroup() {
+		return new FormGroup<AliasTargetFormProperties>({
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			DNSName: new FormControl<string | null | undefined>(undefined),
+			EvaluateTargetHealth: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface NoSuchHealthCheck {
+	}
+	export interface NoSuchHealthCheckFormProperties {
+	}
+	export function CreateNoSuchHealthCheckFormGroup() {
+		return new FormGroup<NoSuchHealthCheckFormProperties>({
+		});
+
 	}
 
 	export interface InvalidChangeBatch {
 	}
+	export interface InvalidChangeBatchFormProperties {
+	}
+	export function CreateInvalidChangeBatchFormGroup() {
+		return new FormGroup<InvalidChangeBatchFormProperties>({
+		});
+
+	}
 
 	export interface PriorRequestNotComplete {
+	}
+	export interface PriorRequestNotCompleteFormProperties {
+	}
+	export function CreatePriorRequestNotCompleteFormGroup() {
+		return new FormGroup<PriorRequestNotCompleteFormProperties>({
+		});
+
 	}
 
 
 	/** Empty response for the request. */
 	export interface ChangeTagsForResourceResponse {
+	}
+
+	/** Empty response for the request. */
+	export interface ChangeTagsForResourceResponseFormProperties {
+	}
+	export function CreateChangeTagsForResourceResponseFormGroup() {
+		return new FormGroup<ChangeTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -143,7 +339,27 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -157,6 +373,15 @@ export namespace MyNS {
 		HealthCheck: HealthCheck;
 	}
 
+	/** A complex type containing the response information for the new health check. */
+	export interface CreateHealthCheckResponseFormProperties {
+	}
+	export function CreateCreateHealthCheckResponseFormGroup() {
+		return new FormGroup<CreateHealthCheckResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains information about one health check that is associated with the current AWS account. */
 	export interface HealthCheck {
@@ -164,7 +389,7 @@ export namespace MyNS {
 		CallerReference: string;
 
 		/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. */
-		LinkedService?: LinkedService | null;
+		LinkedService?: LinkedService;
 
 		/**
 		 * A complex type that contains information about the health check.
@@ -174,7 +399,22 @@ export namespace MyNS {
 		HealthCheckVersion: number;
 
 		/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
-		CloudWatchAlarmConfiguration?: CloudWatchAlarmConfiguration | null;
+		CloudWatchAlarmConfiguration?: CloudWatchAlarmConfiguration;
+	}
+
+	/** A complex type that contains information about one health check that is associated with the current AWS account. */
+	export interface HealthCheckFormProperties {
+		Id: FormControl<string | null | undefined>,
+		CallerReference: FormControl<string | null | undefined>,
+		HealthCheckVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateHealthCheckFormGroup() {
+		return new FormGroup<HealthCheckFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined),
+			HealthCheckVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -182,6 +422,19 @@ export namespace MyNS {
 	export interface LinkedService {
 		ServicePrincipal?: string | null;
 		Description?: string | null;
+	}
+
+	/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.  */
+	export interface LinkedServiceFormProperties {
+		ServicePrincipal: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateLinkedServiceFormGroup() {
+		return new FormGroup<LinkedServiceFormProperties>({
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -199,13 +452,50 @@ export namespace MyNS {
 		Inverted?: boolean | null;
 		Disabled?: boolean | null;
 		HealthThreshold?: number | null;
-		ChildHealthChecks?: Array<string> | null;
+		ChildHealthChecks?: Array<string>;
 		EnableSNI?: boolean | null;
-		Regions?: Array<HealthCheckRegion> | null;
+		Regions?: Array<HealthCheckRegion>;
 
 		/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
-		AlarmIdentifier?: AlarmIdentifier | null;
+		AlarmIdentifier?: AlarmIdentifier;
 		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus | null;
+	}
+
+	/** A complex type that contains information about the health check. */
+	export interface HealthCheckConfigFormProperties {
+		IPAddress: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Type: FormControl<HealthCheckConfigType | null | undefined>,
+		ResourcePath: FormControl<string | null | undefined>,
+		FullyQualifiedDomainName: FormControl<string | null | undefined>,
+		SearchString: FormControl<string | null | undefined>,
+		RequestInterval: FormControl<number | null | undefined>,
+		FailureThreshold: FormControl<number | null | undefined>,
+		MeasureLatency: FormControl<boolean | null | undefined>,
+		Inverted: FormControl<boolean | null | undefined>,
+		Disabled: FormControl<boolean | null | undefined>,
+		HealthThreshold: FormControl<number | null | undefined>,
+		EnableSNI: FormControl<boolean | null | undefined>,
+		InsufficientDataHealthStatus: FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>,
+	}
+	export function CreateHealthCheckConfigFormGroup() {
+		return new FormGroup<HealthCheckConfigFormProperties>({
+			IPAddress: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<HealthCheckConfigType | null | undefined>(undefined),
+			ResourcePath: new FormControl<string | null | undefined>(undefined),
+			FullyQualifiedDomainName: new FormControl<string | null | undefined>(undefined),
+			SearchString: new FormControl<string | null | undefined>(undefined),
+			RequestInterval: new FormControl<number | null | undefined>(undefined),
+			FailureThreshold: new FormControl<number | null | undefined>(undefined),
+			MeasureLatency: new FormControl<boolean | null | undefined>(undefined),
+			Inverted: new FormControl<boolean | null | undefined>(undefined),
+			Disabled: new FormControl<boolean | null | undefined>(undefined),
+			HealthThreshold: new FormControl<number | null | undefined>(undefined),
+			EnableSNI: new FormControl<boolean | null | undefined>(undefined),
+			InsufficientDataHealthStatus: new FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HealthCheckConfigType { HTTP = 0, HTTPS = 1, HTTP_STR_MATCH = 2, HTTPS_STR_MATCH = 3, TCP = 4, CALCULATED = 5, CLOUDWATCH_METRIC = 6 }
@@ -217,6 +507,19 @@ export namespace MyNS {
 	export interface AlarmIdentifier {
 		Region: AlarmIdentifierRegion;
 		Name: string;
+	}
+
+	/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
+	export interface AlarmIdentifierFormProperties {
+		Region: FormControl<AlarmIdentifierRegion | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAlarmIdentifierFormGroup() {
+		return new FormGroup<AlarmIdentifierFormProperties>({
+			Region: new FormControl<AlarmIdentifierRegion | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AlarmIdentifierRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, ca_central_1 = 4, eu_central_1 = 5, eu_west_1 = 6, eu_west_2 = 7, eu_west_3 = 8, ap_east_1 = 9, me_south_1 = 10, ap_south_1 = 11, ap_southeast_1 = 12, ap_southeast_2 = 13, ap_northeast_1 = 14, ap_northeast_2 = 15, ap_northeast_3 = 16, eu_north_1 = 17, sa_east_1 = 18, cn_northwest_1 = 19, cn_north_1 = 20, af_south_1 = 21, eu_south_1 = 22, us_gov_west_1 = 23, us_gov_east_1 = 24, us_iso_east_1 = 25, us_isob_east_1 = 26 }
@@ -233,7 +536,30 @@ export namespace MyNS {
 		MetricName: string;
 		Namespace: string;
 		Statistic: CloudWatchAlarmConfigurationStatistic;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
+	}
+
+	/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
+	export interface CloudWatchAlarmConfigurationFormProperties {
+		EvaluationPeriods: FormControl<number | null | undefined>,
+		Threshold: FormControl<number | null | undefined>,
+		ComparisonOperator: FormControl<CloudWatchAlarmConfigurationComparisonOperator | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		Statistic: FormControl<CloudWatchAlarmConfigurationStatistic | null | undefined>,
+	}
+	export function CreateCloudWatchAlarmConfigurationFormGroup() {
+		return new FormGroup<CloudWatchAlarmConfigurationFormProperties>({
+			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<CloudWatchAlarmConfigurationComparisonOperator | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Statistic: new FormControl<CloudWatchAlarmConfigurationStatistic | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CloudWatchAlarmConfigurationComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
@@ -247,14 +573,41 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension. */
+	export interface DimensionFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionFormGroup() {
+		return new FormGroup<DimensionFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HealthCheckType { HTTP = 0, HTTPS = 1, HTTP_STR_MATCH = 2, HTTPS_STR_MATCH = 3, TCP = 4, CALCULATED = 5, CLOUDWATCH_METRIC = 6 }
 
 	export enum InsufficientDataHealthStatus { Healthy = 0, Unhealthy = 1, LastKnownStatus = 2 }
 
 	export interface TooManyHealthChecks {
 	}
+	export interface TooManyHealthChecksFormProperties {
+	}
+	export function CreateTooManyHealthChecksFormGroup() {
+		return new FormGroup<TooManyHealthChecksFormProperties>({
+		});
+
+	}
 
 	export interface HealthCheckAlreadyExists {
+	}
+	export interface HealthCheckAlreadyExistsFormProperties {
+	}
+	export function CreateHealthCheckAlreadyExistsFormGroup() {
+		return new FormGroup<HealthCheckAlreadyExistsFormProperties>({
+		});
+
 	}
 
 
@@ -280,7 +633,16 @@ export namespace MyNS {
 		DelegationSet: DelegationSet;
 
 		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
-		VPC?: VPC | null;
+		VPC?: VPC;
+	}
+
+	/** A complex type containing the response information for the hosted zone. */
+	export interface CreateHostedZoneResponseFormProperties {
+	}
+	export function CreateCreateHostedZoneResponseFormGroup() {
+		return new FormGroup<CreateHostedZoneResponseFormProperties>({
+		});
+
 	}
 
 
@@ -291,11 +653,28 @@ export namespace MyNS {
 		CallerReference: string;
 
 		/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
-		Config?: HostedZoneConfig | null;
+		Config?: HostedZoneConfig;
 		ResourceRecordSetCount?: number | null;
 
 		/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. */
-		LinkedService?: LinkedService | null;
+		LinkedService?: LinkedService;
+	}
+
+	/** A complex type that contains general information about the hosted zone. */
+	export interface HostedZoneFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CallerReference: FormControl<string | null | undefined>,
+		ResourceRecordSetCount: FormControl<number | null | undefined>,
+	}
+	export function CreateHostedZoneFormGroup() {
+		return new FormGroup<HostedZoneFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined),
+			ResourceRecordSetCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -305,12 +684,38 @@ export namespace MyNS {
 		PrivateZone?: boolean | null;
 	}
 
+	/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
+	export interface HostedZoneConfigFormProperties {
+		Comment: FormControl<string | null | undefined>,
+		PrivateZone: FormControl<boolean | null | undefined>,
+	}
+	export function CreateHostedZoneConfigFormGroup() {
+		return new FormGroup<HostedZoneConfigFormProperties>({
+			Comment: new FormControl<string | null | undefined>(undefined),
+			PrivateZone: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
 	export interface DelegationSet {
 		Id?: string | null;
 		CallerReference?: string | null;
 		NameServers: Array<string>;
+	}
+
+	/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
+	export interface DelegationSetFormProperties {
+		Id: FormControl<string | null | undefined>,
+		CallerReference: FormControl<string | null | undefined>,
+	}
+	export function CreateDelegationSetFormGroup() {
+		return new FormGroup<DelegationSetFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -325,24 +730,84 @@ export namespace MyNS {
 		VPCId?: string | null;
 	}
 
+	/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
+	export interface VPCFormProperties {
+		VPCRegion: FormControl<VPCVPCRegion | null | undefined>,
+
+		/**
+		 * (Private hosted zones only) The ID of an Amazon VPC.
+		 * Max length: 1024
+		 */
+		VPCId: FormControl<string | null | undefined>,
+	}
+	export function CreateVPCFormGroup() {
+		return new FormGroup<VPCFormProperties>({
+			VPCRegion: new FormControl<VPCVPCRegion | null | undefined>(undefined),
+			VPCId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VPCVPCRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ap_east_1 = 8, me_south_1 = 9, us_gov_west_1 = 10, us_gov_east_1 = 11, us_iso_east_1 = 12, us_isob_east_1 = 13, ap_southeast_1 = 14, ap_southeast_2 = 15, ap_south_1 = 16, ap_northeast_1 = 17, ap_northeast_2 = 18, ap_northeast_3 = 19, eu_north_1 = 20, sa_east_1 = 21, ca_central_1 = 22, cn_north_1 = 23, af_south_1 = 24, eu_south_1 = 25 }
 
 	export interface InvalidDomainName {
 	}
+	export interface InvalidDomainNameFormProperties {
+	}
+	export function CreateInvalidDomainNameFormGroup() {
+		return new FormGroup<InvalidDomainNameFormProperties>({
+		});
+
+	}
 
 	export interface HostedZoneAlreadyExists {
+	}
+	export interface HostedZoneAlreadyExistsFormProperties {
+	}
+	export function CreateHostedZoneAlreadyExistsFormGroup() {
+		return new FormGroup<HostedZoneAlreadyExistsFormProperties>({
+		});
+
 	}
 
 	export interface TooManyHostedZones {
 	}
+	export interface TooManyHostedZonesFormProperties {
+	}
+	export function CreateTooManyHostedZonesFormGroup() {
+		return new FormGroup<TooManyHostedZonesFormProperties>({
+		});
+
+	}
 
 	export interface DelegationSetNotAvailable {
+	}
+	export interface DelegationSetNotAvailableFormProperties {
+	}
+	export function CreateDelegationSetNotAvailableFormGroup() {
+		return new FormGroup<DelegationSetNotAvailableFormProperties>({
+		});
+
 	}
 
 	export interface NoSuchDelegationSet {
 	}
+	export interface NoSuchDelegationSetFormProperties {
+	}
+	export function CreateNoSuchDelegationSetFormGroup() {
+		return new FormGroup<NoSuchDelegationSetFormProperties>({
+		});
+
+	}
 
 	export interface DelegationSetNotReusable {
+	}
+	export interface DelegationSetNotReusableFormProperties {
+	}
+	export function CreateDelegationSetNotReusableFormGroup() {
+		return new FormGroup<DelegationSetNotReusableFormProperties>({
+		});
+
 	}
 
 	export interface CreateQueryLoggingConfigResponse {
@@ -353,6 +818,13 @@ export namespace MyNS {
 		 */
 		QueryLoggingConfig: QueryLoggingConfig;
 	}
+	export interface CreateQueryLoggingConfigResponseFormProperties {
+	}
+	export function CreateCreateQueryLoggingConfigResponseFormGroup() {
+		return new FormGroup<CreateQueryLoggingConfigResponseFormProperties>({
+		});
+
+	}
 
 
 	/** A complex type that contains information about a configuration for DNS query logging. */
@@ -362,16 +834,59 @@ export namespace MyNS {
 		CloudWatchLogsLogGroupArn: string;
 	}
 
+	/** A complex type that contains information about a configuration for DNS query logging. */
+	export interface QueryLoggingConfigFormProperties {
+		Id: FormControl<string | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryLoggingConfigFormGroup() {
+		return new FormGroup<QueryLoggingConfigFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ConcurrentModification {
+	}
+	export interface ConcurrentModificationFormProperties {
+	}
+	export function CreateConcurrentModificationFormGroup() {
+		return new FormGroup<ConcurrentModificationFormProperties>({
+		});
+
 	}
 
 	export interface NoSuchCloudWatchLogsLogGroup {
 	}
+	export interface NoSuchCloudWatchLogsLogGroupFormProperties {
+	}
+	export function CreateNoSuchCloudWatchLogsLogGroupFormGroup() {
+		return new FormGroup<NoSuchCloudWatchLogsLogGroupFormProperties>({
+		});
+
+	}
 
 	export interface QueryLoggingConfigAlreadyExists {
 	}
+	export interface QueryLoggingConfigAlreadyExistsFormProperties {
+	}
+	export function CreateQueryLoggingConfigAlreadyExistsFormGroup() {
+		return new FormGroup<QueryLoggingConfigAlreadyExistsFormProperties>({
+		});
+
+	}
 
 	export interface InsufficientCloudWatchLogsResourcePolicy {
+	}
+	export interface InsufficientCloudWatchLogsResourcePolicyFormProperties {
+	}
+	export function CreateInsufficientCloudWatchLogsResourcePolicyFormGroup() {
+		return new FormGroup<InsufficientCloudWatchLogsResourcePolicyFormProperties>({
+		});
+
 	}
 
 	export interface CreateReusableDelegationSetResponse {
@@ -382,17 +897,52 @@ export namespace MyNS {
 		 */
 		DelegationSet: DelegationSet;
 	}
+	export interface CreateReusableDelegationSetResponseFormProperties {
+	}
+	export function CreateCreateReusableDelegationSetResponseFormGroup() {
+		return new FormGroup<CreateReusableDelegationSetResponseFormProperties>({
+		});
+
+	}
 
 	export interface DelegationSetAlreadyCreated {
+	}
+	export interface DelegationSetAlreadyCreatedFormProperties {
+	}
+	export function CreateDelegationSetAlreadyCreatedFormGroup() {
+		return new FormGroup<DelegationSetAlreadyCreatedFormProperties>({
+		});
+
 	}
 
 	export interface HostedZoneNotFound {
 	}
+	export interface HostedZoneNotFoundFormProperties {
+	}
+	export function CreateHostedZoneNotFoundFormGroup() {
+		return new FormGroup<HostedZoneNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface InvalidArgument {
 	}
+	export interface InvalidArgumentFormProperties {
+	}
+	export function CreateInvalidArgumentFormGroup() {
+		return new FormGroup<InvalidArgumentFormProperties>({
+		});
+
+	}
 
 	export interface DelegationSetAlreadyReusable {
+	}
+	export interface DelegationSetAlreadyReusableFormProperties {
+	}
+	export function CreateDelegationSetAlreadyReusableFormGroup() {
+		return new FormGroup<DelegationSetAlreadyReusableFormProperties>({
+		});
+
 	}
 
 
@@ -406,6 +956,15 @@ export namespace MyNS {
 		TrafficPolicy: TrafficPolicy;
 	}
 
+	/** A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request. */
+	export interface CreateTrafficPolicyResponseFormProperties {
+	}
+	export function CreateCreateTrafficPolicyResponseFormGroup() {
+		return new FormGroup<CreateTrafficPolicyResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains settings for a traffic policy. */
 	export interface TrafficPolicy {
@@ -417,13 +976,55 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** A complex type that contains settings for a traffic policy. */
+	export interface TrafficPolicyFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<ResourceRecordSetType | null | undefined>,
+		Document: FormControl<string | null | undefined>,
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateTrafficPolicyFormGroup() {
+		return new FormGroup<TrafficPolicyFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyTrafficPolicies {
+	}
+	export interface TooManyTrafficPoliciesFormProperties {
+	}
+	export function CreateTooManyTrafficPoliciesFormGroup() {
+		return new FormGroup<TooManyTrafficPoliciesFormProperties>({
+		});
+
 	}
 
 	export interface TrafficPolicyAlreadyExists {
 	}
+	export interface TrafficPolicyAlreadyExistsFormProperties {
+	}
+	export function CreateTrafficPolicyAlreadyExistsFormGroup() {
+		return new FormGroup<TrafficPolicyAlreadyExistsFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTrafficPolicyDocument {
+	}
+	export interface InvalidTrafficPolicyDocumentFormProperties {
+	}
+	export function CreateInvalidTrafficPolicyDocumentFormGroup() {
+		return new FormGroup<InvalidTrafficPolicyDocumentFormProperties>({
+		});
+
 	}
 
 
@@ -435,6 +1036,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		TrafficPolicyInstance: TrafficPolicyInstance;
+	}
+
+	/** A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request. */
+	export interface CreateTrafficPolicyInstanceResponseFormProperties {
+	}
+	export function CreateCreateTrafficPolicyInstanceResponseFormGroup() {
+		return new FormGroup<CreateTrafficPolicyInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -451,13 +1061,61 @@ export namespace MyNS {
 		TrafficPolicyType: ResourceRecordSetType;
 	}
 
+	/** A complex type that contains settings for the new traffic policy instance. */
+	export interface TrafficPolicyInstanceFormProperties {
+		Id: FormControl<string | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		TTL: FormControl<number | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		TrafficPolicyId: FormControl<string | null | undefined>,
+		TrafficPolicyVersion: FormControl<number | null | undefined>,
+		TrafficPolicyType: FormControl<ResourceRecordSetType | null | undefined>,
+	}
+	export function CreateTrafficPolicyInstanceFormGroup() {
+		return new FormGroup<TrafficPolicyInstanceFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			TTL: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined),
+			TrafficPolicyType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyTrafficPolicyInstances {
+	}
+	export interface TooManyTrafficPolicyInstancesFormProperties {
+	}
+	export function CreateTooManyTrafficPolicyInstancesFormGroup() {
+		return new FormGroup<TooManyTrafficPolicyInstancesFormProperties>({
+		});
+
 	}
 
 	export interface NoSuchTrafficPolicy {
 	}
+	export interface NoSuchTrafficPolicyFormProperties {
+	}
+	export function CreateNoSuchTrafficPolicyFormGroup() {
+		return new FormGroup<NoSuchTrafficPolicyFormProperties>({
+		});
+
+	}
 
 	export interface TrafficPolicyInstanceAlreadyExists {
+	}
+	export interface TrafficPolicyInstanceAlreadyExistsFormProperties {
+	}
+	export function CreateTrafficPolicyInstanceAlreadyExistsFormGroup() {
+		return new FormGroup<TrafficPolicyInstanceAlreadyExistsFormProperties>({
+		});
+
 	}
 
 
@@ -471,7 +1129,23 @@ export namespace MyNS {
 		TrafficPolicy: TrafficPolicy;
 	}
 
+	/** A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request. */
+	export interface CreateTrafficPolicyVersionResponseFormProperties {
+	}
+	export function CreateCreateTrafficPolicyVersionResponseFormGroup() {
+		return new FormGroup<CreateTrafficPolicyVersionResponseFormProperties>({
+		});
+
+	}
+
 	export interface TooManyTrafficPolicyVersionsForCurrentPolicy {
+	}
+	export interface TooManyTrafficPolicyVersionsForCurrentPolicyFormProperties {
+	}
+	export function CreateTooManyTrafficPolicyVersionsForCurrentPolicyFormGroup() {
+		return new FormGroup<TooManyTrafficPolicyVersionsForCurrentPolicyFormProperties>({
+		});
+
 	}
 
 
@@ -486,7 +1160,25 @@ export namespace MyNS {
 		VPC: VPC;
 	}
 
+	/** A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request. */
+	export interface CreateVPCAssociationAuthorizationResponseFormProperties {
+		HostedZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVPCAssociationAuthorizationResponseFormGroup() {
+		return new FormGroup<CreateVPCAssociationAuthorizationResponseFormProperties>({
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyVPCAssociationAuthorizations {
+	}
+	export interface TooManyVPCAssociationAuthorizationsFormProperties {
+	}
+	export function CreateTooManyVPCAssociationAuthorizationsFormGroup() {
+		return new FormGroup<TooManyVPCAssociationAuthorizationsFormProperties>({
+		});
+
 	}
 
 
@@ -494,7 +1186,23 @@ export namespace MyNS {
 	export interface DeleteHealthCheckResponse {
 	}
 
+	/** An empty element. */
+	export interface DeleteHealthCheckResponseFormProperties {
+	}
+	export function CreateDeleteHealthCheckResponseFormGroup() {
+		return new FormGroup<DeleteHealthCheckResponseFormProperties>({
+		});
+
+	}
+
 	export interface HealthCheckInUse {
+	}
+	export interface HealthCheckInUseFormProperties {
+	}
+	export function CreateHealthCheckInUseFormGroup() {
+		return new FormGroup<HealthCheckInUseFormProperties>({
+		});
+
 	}
 
 
@@ -508,13 +1216,43 @@ export namespace MyNS {
 		ChangeInfo: ChangeInfo;
 	}
 
+	/** A complex type that contains the response to a <code>DeleteHostedZone</code> request. */
+	export interface DeleteHostedZoneResponseFormProperties {
+	}
+	export function CreateDeleteHostedZoneResponseFormGroup() {
+		return new FormGroup<DeleteHostedZoneResponseFormProperties>({
+		});
+
+	}
+
 	export interface HostedZoneNotEmpty {
+	}
+	export interface HostedZoneNotEmptyFormProperties {
+	}
+	export function CreateHostedZoneNotEmptyFormGroup() {
+		return new FormGroup<HostedZoneNotEmptyFormProperties>({
+		});
+
 	}
 
 	export interface DeleteQueryLoggingConfigResponse {
 	}
+	export interface DeleteQueryLoggingConfigResponseFormProperties {
+	}
+	export function CreateDeleteQueryLoggingConfigResponseFormGroup() {
+		return new FormGroup<DeleteQueryLoggingConfigResponseFormProperties>({
+		});
+
+	}
 
 	export interface NoSuchQueryLoggingConfig {
+	}
+	export interface NoSuchQueryLoggingConfigFormProperties {
+	}
+	export function CreateNoSuchQueryLoggingConfigFormGroup() {
+		return new FormGroup<NoSuchQueryLoggingConfigFormProperties>({
+		});
+
 	}
 
 
@@ -522,7 +1260,23 @@ export namespace MyNS {
 	export interface DeleteReusableDelegationSetResponse {
 	}
 
+	/** An empty element. */
+	export interface DeleteReusableDelegationSetResponseFormProperties {
+	}
+	export function CreateDeleteReusableDelegationSetResponseFormGroup() {
+		return new FormGroup<DeleteReusableDelegationSetResponseFormProperties>({
+		});
+
+	}
+
 	export interface DelegationSetInUse {
+	}
+	export interface DelegationSetInUseFormProperties {
+	}
+	export function CreateDelegationSetInUseFormGroup() {
+		return new FormGroup<DelegationSetInUseFormProperties>({
+		});
+
 	}
 
 
@@ -530,7 +1284,23 @@ export namespace MyNS {
 	export interface DeleteTrafficPolicyResponse {
 	}
 
+	/** An empty element. */
+	export interface DeleteTrafficPolicyResponseFormProperties {
+	}
+	export function CreateDeleteTrafficPolicyResponseFormGroup() {
+		return new FormGroup<DeleteTrafficPolicyResponseFormProperties>({
+		});
+
+	}
+
 	export interface TrafficPolicyInUse {
+	}
+	export interface TrafficPolicyInUseFormProperties {
+	}
+	export function CreateTrafficPolicyInUseFormGroup() {
+		return new FormGroup<TrafficPolicyInUseFormProperties>({
+		});
+
 	}
 
 
@@ -538,7 +1308,23 @@ export namespace MyNS {
 	export interface DeleteTrafficPolicyInstanceResponse {
 	}
 
+	/** An empty element. */
+	export interface DeleteTrafficPolicyInstanceResponseFormProperties {
+	}
+	export function CreateDeleteTrafficPolicyInstanceResponseFormGroup() {
+		return new FormGroup<DeleteTrafficPolicyInstanceResponseFormProperties>({
+		});
+
+	}
+
 	export interface NoSuchTrafficPolicyInstance {
+	}
+	export interface NoSuchTrafficPolicyInstanceFormProperties {
+	}
+	export function CreateNoSuchTrafficPolicyInstanceFormGroup() {
+		return new FormGroup<NoSuchTrafficPolicyInstanceFormProperties>({
+		});
+
 	}
 
 
@@ -546,7 +1332,23 @@ export namespace MyNS {
 	export interface DeleteVPCAssociationAuthorizationResponse {
 	}
 
+	/** Empty response for the request. */
+	export interface DeleteVPCAssociationAuthorizationResponseFormProperties {
+	}
+	export function CreateDeleteVPCAssociationAuthorizationResponseFormGroup() {
+		return new FormGroup<DeleteVPCAssociationAuthorizationResponseFormProperties>({
+		});
+
+	}
+
 	export interface VPCAssociationAuthorizationNotFound {
+	}
+	export interface VPCAssociationAuthorizationNotFoundFormProperties {
+	}
+	export function CreateVPCAssociationAuthorizationNotFoundFormGroup() {
+		return new FormGroup<VPCAssociationAuthorizationNotFoundFormProperties>({
+		});
+
 	}
 
 
@@ -560,10 +1362,33 @@ export namespace MyNS {
 		ChangeInfo: ChangeInfo;
 	}
 
+	/** A complex type that contains the response information for the disassociate request. */
+	export interface DisassociateVPCFromHostedZoneResponseFormProperties {
+	}
+	export function CreateDisassociateVPCFromHostedZoneResponseFormGroup() {
+		return new FormGroup<DisassociateVPCFromHostedZoneResponseFormProperties>({
+		});
+
+	}
+
 	export interface VPCAssociationNotFound {
+	}
+	export interface VPCAssociationNotFoundFormProperties {
+	}
+	export function CreateVPCAssociationNotFoundFormGroup() {
+		return new FormGroup<VPCAssociationNotFoundFormProperties>({
+		});
+
 	}
 
 	export interface LastVPCAssociation {
+	}
+	export interface LastVPCAssociationFormProperties {
+	}
+	export function CreateLastVPCAssociationFormGroup() {
+		return new FormGroup<LastVPCAssociationFormProperties>({
+		});
+
 	}
 
 
@@ -578,11 +1403,35 @@ export namespace MyNS {
 		Count: number;
 	}
 
+	/** A complex type that contains the requested limit.  */
+	export interface GetAccountLimitResponseFormProperties {
+		Count: FormControl<number | null | undefined>,
+	}
+	export function CreateGetAccountLimitResponseFormGroup() {
+		return new FormGroup<GetAccountLimitResponseFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface AccountLimit {
 		Type: AccountLimitType;
 		Value: number;
+	}
+
+	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
+	export interface AccountLimitFormProperties {
+		Type: FormControl<AccountLimitType | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountLimitFormGroup() {
+		return new FormGroup<AccountLimitFormProperties>({
+			Type: new FormControl<AccountLimitType | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountLimitType { MAX_HEALTH_CHECKS_BY_OWNER = 0, MAX_HOSTED_ZONES_BY_OWNER = 1, MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = 2, MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = 3, MAX_TRAFFIC_POLICIES_BY_OWNER = 4 }
@@ -598,13 +1447,38 @@ export namespace MyNS {
 		ChangeInfo: ChangeInfo;
 	}
 
+	/** A complex type that contains the <code>ChangeInfo</code> element. */
+	export interface GetChangeResponseFormProperties {
+	}
+	export function CreateGetChangeResponseFormGroup() {
+		return new FormGroup<GetChangeResponseFormProperties>({
+		});
+
+	}
+
 	export interface NoSuchChange {
+	}
+	export interface NoSuchChangeFormProperties {
+	}
+	export function CreateNoSuchChangeFormGroup() {
+		return new FormGroup<NoSuchChangeFormProperties>({
+		});
+
 	}
 
 
 	/** A complex type that contains the <code>CheckerIpRanges</code> element. */
 	export interface GetCheckerIpRangesResponse {
 		CheckerIpRanges: Array<string>;
+	}
+
+	/** A complex type that contains the <code>CheckerIpRanges</code> element. */
+	export interface GetCheckerIpRangesResponseFormProperties {
+	}
+	export function CreateGetCheckerIpRangesResponseFormGroup() {
+		return new FormGroup<GetCheckerIpRangesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -618,6 +1492,15 @@ export namespace MyNS {
 		GeoLocationDetails: GeoLocationDetails;
 	}
 
+	/** A complex type that contains the response information for the specified geolocation code. */
+	export interface GetGeoLocationResponseFormProperties {
+	}
+	export function CreateGetGeoLocationResponseFormGroup() {
+		return new FormGroup<GetGeoLocationResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code. */
 	export interface GeoLocationDetails {
@@ -629,7 +1512,35 @@ export namespace MyNS {
 		SubdivisionName?: string | null;
 	}
 
+	/** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code. */
+	export interface GeoLocationDetailsFormProperties {
+		ContinentCode: FormControl<string | null | undefined>,
+		ContinentName: FormControl<string | null | undefined>,
+		CountryCode: FormControl<string | null | undefined>,
+		CountryName: FormControl<string | null | undefined>,
+		SubdivisionCode: FormControl<string | null | undefined>,
+		SubdivisionName: FormControl<string | null | undefined>,
+	}
+	export function CreateGeoLocationDetailsFormGroup() {
+		return new FormGroup<GeoLocationDetailsFormProperties>({
+			ContinentCode: new FormControl<string | null | undefined>(undefined),
+			ContinentName: new FormControl<string | null | undefined>(undefined),
+			CountryCode: new FormControl<string | null | undefined>(undefined),
+			CountryName: new FormControl<string | null | undefined>(undefined),
+			SubdivisionCode: new FormControl<string | null | undefined>(undefined),
+			SubdivisionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface NoSuchGeoLocation {
+	}
+	export interface NoSuchGeoLocationFormProperties {
+	}
+	export function CreateNoSuchGeoLocationFormGroup() {
+		return new FormGroup<NoSuchGeoLocationFormProperties>({
+		});
+
 	}
 
 
@@ -643,7 +1554,23 @@ export namespace MyNS {
 		HealthCheck: HealthCheck;
 	}
 
+	/** A complex type that contains the response to a <code>GetHealthCheck</code> request. */
+	export interface GetHealthCheckResponseFormProperties {
+	}
+	export function CreateGetHealthCheckResponseFormGroup() {
+		return new FormGroup<GetHealthCheckResponseFormProperties>({
+		});
+
+	}
+
 	export interface IncompatibleVersion {
+	}
+	export interface IncompatibleVersionFormProperties {
+	}
+	export function CreateIncompatibleVersionFormGroup() {
+		return new FormGroup<IncompatibleVersionFormProperties>({
+		});
+
 	}
 
 
@@ -652,10 +1579,30 @@ export namespace MyNS {
 		HealthCheckCount: number;
 	}
 
+	/** A complex type that contains the response to a <code>GetHealthCheckCount</code> request. */
+	export interface GetHealthCheckCountResponseFormProperties {
+		HealthCheckCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGetHealthCheckCountResponseFormGroup() {
+		return new FormGroup<GetHealthCheckCountResponseFormProperties>({
+			HealthCheckCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request. */
 	export interface GetHealthCheckLastFailureReasonResponse {
 		HealthCheckObservations: Array<HealthCheckObservation>;
+	}
+
+	/** A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request. */
+	export interface GetHealthCheckLastFailureReasonResponseFormProperties {
+	}
+	export function CreateGetHealthCheckLastFailureReasonResponseFormGroup() {
+		return new FormGroup<GetHealthCheckLastFailureReasonResponseFormProperties>({
+		});
+
 	}
 
 
@@ -665,7 +1612,20 @@ export namespace MyNS {
 		IPAddress?: string | null;
 
 		/** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check. */
-		StatusReport?: StatusReport | null;
+		StatusReport?: StatusReport;
+	}
+
+	/** A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker. */
+	export interface HealthCheckObservationFormProperties {
+		Region: FormControl<HealthCheckObservationRegion | null | undefined>,
+		IPAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateHealthCheckObservationFormGroup() {
+		return new FormGroup<HealthCheckObservationFormProperties>({
+			Region: new FormControl<HealthCheckObservationRegion | null | undefined>(undefined),
+			IPAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HealthCheckObservationRegion { us_east_1 = 0, us_west_1 = 1, us_west_2 = 2, eu_west_1 = 3, ap_southeast_1 = 4, ap_southeast_2 = 5, ap_northeast_1 = 6, sa_east_1 = 7 }
@@ -677,10 +1637,32 @@ export namespace MyNS {
 		CheckedTime?: Date | null;
 	}
 
+	/** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check. */
+	export interface StatusReportFormProperties {
+		Status: FormControl<string | null | undefined>,
+		CheckedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateStatusReportFormGroup() {
+		return new FormGroup<StatusReportFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+			CheckedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the response to a <code>GetHealthCheck</code> request. */
 	export interface GetHealthCheckStatusResponse {
 		HealthCheckObservations: Array<HealthCheckObservation>;
+	}
+
+	/** A complex type that contains the response to a <code>GetHealthCheck</code> request. */
+	export interface GetHealthCheckStatusResponseFormProperties {
+	}
+	export function CreateGetHealthCheckStatusResponseFormGroup() {
+		return new FormGroup<GetHealthCheckStatusResponseFormProperties>({
+		});
+
 	}
 
 
@@ -694,19 +1676,39 @@ export namespace MyNS {
 		HostedZone: HostedZone;
 
 		/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
-		DelegationSet?: DelegationSet | null;
+		DelegationSet?: DelegationSet;
 
 		/**
 		 * (Private hosted zones only) A list of <code>VPC</code> elements.
 		 * Minimum items: 1
 		 */
-		VPCs?: Array<VPC> | null;
+		VPCs?: Array<VPC>;
+	}
+
+	/** A complex type that contain the response to a <code>GetHostedZone</code> request. */
+	export interface GetHostedZoneResponseFormProperties {
+	}
+	export function CreateGetHostedZoneResponseFormGroup() {
+		return new FormGroup<GetHostedZoneResponseFormProperties>({
+		});
+
 	}
 
 
 	/** A complex type that contains the response to a <code>GetHostedZoneCount</code> request. */
 	export interface GetHostedZoneCountResponse {
 		HostedZoneCount: number;
+	}
+
+	/** A complex type that contains the response to a <code>GetHostedZoneCount</code> request. */
+	export interface GetHostedZoneCountResponseFormProperties {
+		HostedZoneCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGetHostedZoneCountResponseFormGroup() {
+		return new FormGroup<GetHostedZoneCountResponseFormProperties>({
+			HostedZoneCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -721,6 +1723,17 @@ export namespace MyNS {
 		Count: number;
 	}
 
+	/** A complex type that contains the requested limit.  */
+	export interface GetHostedZoneLimitResponseFormProperties {
+		Count: FormControl<number | null | undefined>,
+	}
+	export function CreateGetHostedZoneLimitResponseFormGroup() {
+		return new FormGroup<GetHostedZoneLimitResponseFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface HostedZoneLimit {
@@ -728,9 +1741,29 @@ export namespace MyNS {
 		Value: number;
 	}
 
+	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
+	export interface HostedZoneLimitFormProperties {
+		Type: FormControl<HostedZoneLimitType | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateHostedZoneLimitFormGroup() {
+		return new FormGroup<HostedZoneLimitFormProperties>({
+			Type: new FormControl<HostedZoneLimitType | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HostedZoneLimitType { MAX_RRSETS_BY_ZONE = 0, MAX_VPCS_ASSOCIATED_BY_ZONE = 1 }
 
 	export interface HostedZoneNotPrivate {
+	}
+	export interface HostedZoneNotPrivateFormProperties {
+	}
+	export function CreateHostedZoneNotPrivateFormGroup() {
+		return new FormGroup<HostedZoneNotPrivateFormProperties>({
+		});
+
 	}
 
 	export interface GetQueryLoggingConfigResponse {
@@ -740,6 +1773,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		QueryLoggingConfig: QueryLoggingConfig;
+	}
+	export interface GetQueryLoggingConfigResponseFormProperties {
+	}
+	export function CreateGetQueryLoggingConfigResponseFormGroup() {
+		return new FormGroup<GetQueryLoggingConfigResponseFormProperties>({
+		});
+
 	}
 
 
@@ -751,6 +1791,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		DelegationSet: DelegationSet;
+	}
+
+	/** A complex type that contains the response to the <code>GetReusableDelegationSet</code> request. */
+	export interface GetReusableDelegationSetResponseFormProperties {
+	}
+	export function CreateGetReusableDelegationSetResponseFormGroup() {
+		return new FormGroup<GetReusableDelegationSetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -765,11 +1814,35 @@ export namespace MyNS {
 		Count: number;
 	}
 
+	/** A complex type that contains the requested limit.  */
+	export interface GetReusableDelegationSetLimitResponseFormProperties {
+		Count: FormControl<number | null | undefined>,
+	}
+	export function CreateGetReusableDelegationSetLimitResponseFormGroup() {
+		return new FormGroup<GetReusableDelegationSetLimitResponseFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
 	export interface ReusableDelegationSetLimit {
 		Type: ReusableDelegationSetLimitType;
 		Value: number;
+	}
+
+	/** A complex type that contains the type of limit that you specified in the request and the current value for that limit. */
+	export interface ReusableDelegationSetLimitFormProperties {
+		Type: FormControl<ReusableDelegationSetLimitType | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateReusableDelegationSetLimitFormGroup() {
+		return new FormGroup<ReusableDelegationSetLimitFormProperties>({
+			Type: new FormControl<ReusableDelegationSetLimitType | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReusableDelegationSetLimitType { MAX_ZONES_BY_REUSABLE_DELEGATION_SET = 0 }
@@ -785,6 +1858,15 @@ export namespace MyNS {
 		TrafficPolicy: TrafficPolicy;
 	}
 
+	/** A complex type that contains the response information for the request. */
+	export interface GetTrafficPolicyResponseFormProperties {
+	}
+	export function CreateGetTrafficPolicyResponseFormGroup() {
+		return new FormGroup<GetTrafficPolicyResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
 	export interface GetTrafficPolicyInstanceResponse {
@@ -796,10 +1878,30 @@ export namespace MyNS {
 		TrafficPolicyInstance: TrafficPolicyInstance;
 	}
 
+	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
+	export interface GetTrafficPolicyInstanceResponseFormProperties {
+	}
+	export function CreateGetTrafficPolicyInstanceResponseFormGroup() {
+		return new FormGroup<GetTrafficPolicyInstanceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
 	export interface GetTrafficPolicyInstanceCountResponse {
 		TrafficPolicyInstanceCount: number;
+	}
+
+	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
+	export interface GetTrafficPolicyInstanceCountResponseFormProperties {
+		TrafficPolicyInstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGetTrafficPolicyInstanceCountResponseFormGroup() {
+		return new FormGroup<GetTrafficPolicyInstanceCountResponseFormProperties>({
+			TrafficPolicyInstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -813,6 +1915,25 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type containing the response information for the request. */
+	export interface ListGeoLocationsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		NextContinentCode: FormControl<string | null | undefined>,
+		NextCountryCode: FormControl<string | null | undefined>,
+		NextSubdivisionCode: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListGeoLocationsResponseFormGroup() {
+		return new FormGroup<ListGeoLocationsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			NextContinentCode: new FormControl<string | null | undefined>(undefined),
+			NextCountryCode: new FormControl<string | null | undefined>(undefined),
+			NextSubdivisionCode: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the response to a <code>ListHealthChecks</code> request. */
 	export interface ListHealthChecksResponse {
@@ -823,12 +1944,44 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type that contains the response to a <code>ListHealthChecks</code> request. */
+	export interface ListHealthChecksResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListHealthChecksResponseFormGroup() {
+		return new FormGroup<ListHealthChecksResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListHostedZonesResponse {
 		HostedZones: Array<HostedZone>;
 		Marker: string;
 		IsTruncated: boolean;
 		NextMarker?: string | null;
 		MaxItems: string;
+	}
+	export interface ListHostedZonesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListHostedZonesResponseFormGroup() {
+		return new FormGroup<ListHostedZonesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -843,12 +1996,49 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type that contains the response information for the request. */
+	export interface ListHostedZonesByNameResponseFormProperties {
+		DNSName: FormControl<string | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		NextDNSName: FormControl<string | null | undefined>,
+		NextHostedZoneId: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListHostedZonesByNameResponseFormGroup() {
+		return new FormGroup<ListHostedZonesByNameResponseFormProperties>({
+			DNSName: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			NextDNSName: new FormControl<string | null | undefined>(undefined),
+			NextHostedZoneId: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListQueryLoggingConfigsResponse {
 		QueryLoggingConfigs: Array<QueryLoggingConfig>;
 		NextToken?: string | null;
 	}
+	export interface ListQueryLoggingConfigsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListQueryLoggingConfigsResponseFormGroup() {
+		return new FormGroup<ListQueryLoggingConfigsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPaginationToken {
+	}
+	export interface InvalidPaginationTokenFormProperties {
+	}
+	export function CreateInvalidPaginationTokenFormGroup() {
+		return new FormGroup<InvalidPaginationTokenFormProperties>({
+		});
+
 	}
 
 
@@ -862,6 +2052,25 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type that contains list information for the resource record set. */
+	export interface ListResourceRecordSetsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		NextRecordName: FormControl<string | null | undefined>,
+		NextRecordType: FormControl<ResourceRecordSetType | null | undefined>,
+		NextRecordIdentifier: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceRecordSetsResponseFormGroup() {
+		return new FormGroup<ListResourceRecordSetsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			NextRecordName: new FormControl<string | null | undefined>(undefined),
+			NextRecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			NextRecordIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the reusable delegation sets that are associated with the current AWS account. */
 	export interface ListReusableDelegationSetsResponse {
@@ -870,6 +2079,23 @@ export namespace MyNS {
 		IsTruncated: boolean;
 		NextMarker?: string | null;
 		MaxItems: string;
+	}
+
+	/** A complex type that contains information about the reusable delegation sets that are associated with the current AWS account. */
+	export interface ListReusableDelegationSetsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListReusableDelegationSetsResponseFormGroup() {
+		return new FormGroup<ListReusableDelegationSetsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -883,12 +2109,34 @@ export namespace MyNS {
 		ResourceTagSet: ResourceTagSet;
 	}
 
+	/** A complex type that contains information about the health checks or hosted zones for which you want to list tags. */
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type containing a resource and its associated tags. */
 	export interface ResourceTagSet {
 		ResourceType?: ResourceTagSetResourceType | null;
 		ResourceId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** A complex type containing a resource and its associated tags. */
+	export interface ResourceTagSetFormProperties {
+		ResourceType: FormControl<ResourceTagSetResourceType | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceTagSetFormGroup() {
+		return new FormGroup<ResourceTagSetFormProperties>({
+			ResourceType: new FormControl<ResourceTagSetResourceType | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceTagSetResourceType { healthcheck = 0, hostedzone = 1 }
@@ -897,6 +2145,15 @@ export namespace MyNS {
 	/** A complex type containing tags for the specified resources. */
 	export interface ListTagsForResourcesResponse {
 		ResourceTagSets: Array<ResourceTagSet>;
+	}
+
+	/** A complex type containing tags for the specified resources. */
+	export interface ListTagsForResourcesResponseFormProperties {
+	}
+	export function CreateListTagsForResourcesResponseFormGroup() {
+		return new FormGroup<ListTagsForResourcesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -908,6 +2165,21 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type that contains the response information for the request. */
+	export interface ListTrafficPoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		TrafficPolicyIdMarker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrafficPoliciesResponseFormGroup() {
+		return new FormGroup<ListTrafficPoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			TrafficPolicyIdMarker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account. */
 	export interface TrafficPolicySummary {
@@ -916,6 +2188,25 @@ export namespace MyNS {
 		Type: ResourceRecordSetType;
 		LatestVersion: number;
 		TrafficPolicyCount: number;
+	}
+
+	/** A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account. */
+	export interface TrafficPolicySummaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<ResourceRecordSetType | null | undefined>,
+		LatestVersion: FormControl<number | null | undefined>,
+		TrafficPolicyCount: FormControl<number | null | undefined>,
+	}
+	export function CreateTrafficPolicySummaryFormGroup() {
+		return new FormGroup<TrafficPolicySummaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			LatestVersion: new FormControl<number | null | undefined>(undefined),
+			TrafficPolicyCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -929,6 +2220,25 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type that contains the response information for the request. */
+	export interface ListTrafficPolicyInstancesResponseFormProperties {
+		HostedZoneIdMarker: FormControl<string | null | undefined>,
+		TrafficPolicyInstanceNameMarker: FormControl<string | null | undefined>,
+		TrafficPolicyInstanceTypeMarker: FormControl<ResourceRecordSetType | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrafficPolicyInstancesResponseFormGroup() {
+		return new FormGroup<ListTrafficPolicyInstancesResponseFormProperties>({
+			HostedZoneIdMarker: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceTypeMarker: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByHostedZoneResponse {
@@ -937,6 +2247,23 @@ export namespace MyNS {
 		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
 		IsTruncated: boolean;
 		MaxItems: string;
+	}
+
+	/** A complex type that contains the response information for the request. */
+	export interface ListTrafficPolicyInstancesByHostedZoneResponseFormProperties {
+		TrafficPolicyInstanceNameMarker: FormControl<string | null | undefined>,
+		TrafficPolicyInstanceTypeMarker: FormControl<ResourceRecordSetType | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrafficPolicyInstancesByHostedZoneResponseFormGroup() {
+		return new FormGroup<ListTrafficPolicyInstancesByHostedZoneResponseFormProperties>({
+			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceTypeMarker: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -950,6 +2277,25 @@ export namespace MyNS {
 		MaxItems: string;
 	}
 
+	/** A complex type that contains the response information for the request. */
+	export interface ListTrafficPolicyInstancesByPolicyResponseFormProperties {
+		HostedZoneIdMarker: FormControl<string | null | undefined>,
+		TrafficPolicyInstanceNameMarker: FormControl<string | null | undefined>,
+		TrafficPolicyInstanceTypeMarker: FormControl<ResourceRecordSetType | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrafficPolicyInstancesByPolicyResponseFormGroup() {
+		return new FormGroup<ListTrafficPolicyInstancesByPolicyResponseFormProperties>({
+			HostedZoneIdMarker: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceNameMarker: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyInstanceTypeMarker: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyVersionsResponse {
@@ -957,6 +2303,21 @@ export namespace MyNS {
 		IsTruncated: boolean;
 		TrafficPolicyVersionMarker: string;
 		MaxItems: string;
+	}
+
+	/** A complex type that contains the response information for the request. */
+	export interface ListTrafficPolicyVersionsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		TrafficPolicyVersionMarker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrafficPolicyVersionsResponseFormGroup() {
+		return new FormGroup<ListTrafficPolicyVersionsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			TrafficPolicyVersionMarker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -973,6 +2334,19 @@ export namespace MyNS {
 		VPCs: Array<VPC>;
 	}
 
+	/** A complex type that contains the response information for the request. */
+	export interface ListVPCAssociationAuthorizationsResponseFormProperties {
+		HostedZoneId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVPCAssociationAuthorizationsResponseFormGroup() {
+		return new FormGroup<ListVPCAssociationAuthorizationsResponseFormProperties>({
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains the response to a <code>TestDNSAnswer</code> request.  */
 	export interface TestDNSAnswerResponse {
@@ -982,6 +2356,25 @@ export namespace MyNS {
 		RecordData: Array<string>;
 		ResponseCode: string;
 		Protocol: string;
+	}
+
+	/** A complex type that contains the response to a <code>TestDNSAnswer</code> request.  */
+	export interface TestDNSAnswerResponseFormProperties {
+		Nameserver: FormControl<string | null | undefined>,
+		RecordName: FormControl<string | null | undefined>,
+		RecordType: FormControl<ResourceRecordSetType | null | undefined>,
+		ResponseCode: FormControl<string | null | undefined>,
+		Protocol: FormControl<string | null | undefined>,
+	}
+	export function CreateTestDNSAnswerResponseFormGroup() {
+		return new FormGroup<TestDNSAnswerResponseFormProperties>({
+			Nameserver: new FormControl<string | null | undefined>(undefined),
+			RecordName: new FormControl<string | null | undefined>(undefined),
+			RecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
+			ResponseCode: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -995,11 +2388,27 @@ export namespace MyNS {
 		HealthCheck: HealthCheck;
 	}
 
+	/** A complex type that contains the response to the <code>UpdateHealthCheck</code> request. */
+	export interface UpdateHealthCheckResponseFormProperties {
+	}
+	export function CreateUpdateHealthCheckResponseFormGroup() {
+		return new FormGroup<UpdateHealthCheckResponseFormProperties>({
+		});
+
+	}
+
 	export enum CloudWatchRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, ca_central_1 = 4, eu_central_1 = 5, eu_west_1 = 6, eu_west_2 = 7, eu_west_3 = 8, ap_east_1 = 9, me_south_1 = 10, ap_south_1 = 11, ap_southeast_1 = 12, ap_southeast_2 = 13, ap_northeast_1 = 14, ap_northeast_2 = 15, ap_northeast_3 = 16, eu_north_1 = 17, sa_east_1 = 18, cn_northwest_1 = 19, cn_north_1 = 20, af_south_1 = 21, eu_south_1 = 22, us_gov_west_1 = 23, us_gov_east_1 = 24, us_iso_east_1 = 25, us_isob_east_1 = 26 }
 
 	export enum ResettableElementName { FullyQualifiedDomainName = 0, Regions = 1, ResourcePath = 2, ChildHealthChecks = 3 }
 
 	export interface HealthCheckVersionMismatch {
+	}
+	export interface HealthCheckVersionMismatchFormProperties {
+	}
+	export function CreateHealthCheckVersionMismatchFormGroup() {
+		return new FormGroup<HealthCheckVersionMismatchFormProperties>({
+		});
+
 	}
 
 
@@ -1013,6 +2422,15 @@ export namespace MyNS {
 		HostedZone: HostedZone;
 	}
 
+	/** A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request. */
+	export interface UpdateHostedZoneCommentResponseFormProperties {
+	}
+	export function CreateUpdateHostedZoneCommentResponseFormGroup() {
+		return new FormGroup<UpdateHostedZoneCommentResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains the response information for the traffic policy. */
 	export interface UpdateTrafficPolicyCommentResponse {
@@ -1022,6 +2440,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		TrafficPolicy: TrafficPolicy;
+	}
+
+	/** A complex type that contains the response information for the traffic policy. */
+	export interface UpdateTrafficPolicyCommentResponseFormProperties {
+	}
+	export function CreateUpdateTrafficPolicyCommentResponseFormGroup() {
+		return new FormGroup<UpdateTrafficPolicyCommentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1035,7 +2462,23 @@ export namespace MyNS {
 		TrafficPolicyInstance: TrafficPolicyInstance;
 	}
 
+	/** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy. */
+	export interface UpdateTrafficPolicyInstanceResponseFormProperties {
+	}
+	export function CreateUpdateTrafficPolicyInstanceResponseFormGroup() {
+		return new FormGroup<UpdateTrafficPolicyInstanceResponseFormProperties>({
+		});
+
+	}
+
 	export interface ConflictingTypes {
+	}
+	export interface ConflictingTypesFormProperties {
+	}
+	export function CreateConflictingTypesFormGroup() {
+		return new FormGroup<ConflictingTypesFormProperties>({
+		});
+
 	}
 
 
@@ -1050,11 +2493,33 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** A complex type that contains information about the request to associate a VPC with a private hosted zone. */
+	export interface AssociateVPCWithHostedZoneRequestFormProperties {
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateVPCWithHostedZoneRequestFormGroup() {
+		return new FormGroup<AssociateVPCWithHostedZoneRequestFormProperties>({
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The information for a change request. */
 	export interface ChangeBatch {
 		Comment?: string | null;
 		Changes: Array<Change>;
+	}
+
+	/** The information for a change request. */
+	export interface ChangeBatchFormProperties {
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateChangeBatchFormGroup() {
+		return new FormGroup<ChangeBatchFormProperties>({
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChangeStatus { PENDING = 0, INSYNC = 1 }
@@ -1070,13 +2535,31 @@ export namespace MyNS {
 		ChangeBatch: ChangeBatch;
 	}
 
+	/** A complex type that contains change information for the resource record set. */
+	export interface ChangeResourceRecordSetsRequestFormProperties {
+	}
+	export function CreateChangeResourceRecordSetsRequestFormGroup() {
+		return new FormGroup<ChangeResourceRecordSetsRequestFormProperties>({
+		});
+
+	}
+
 	export enum TagResourceType { healthcheck = 0, hostedzone = 1 }
 
 
 	/** A complex type that contains information about the tags that you want to add, edit, or delete. */
 	export interface ChangeTagsForResourceRequest {
-		AddTags?: Array<Tag> | null;
-		RemoveTagKeys?: Array<string> | null;
+		AddTags?: Array<Tag>;
+		RemoveTagKeys?: Array<string>;
+	}
+
+	/** A complex type that contains information about the tags that you want to add, edit, or delete. */
+	export interface ChangeTagsForResourceRequestFormProperties {
+	}
+	export function CreateChangeTagsForResourceRequestFormGroup() {
+		return new FormGroup<ChangeTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
@@ -1095,28 +2578,76 @@ export namespace MyNS {
 		HealthCheckConfig: HealthCheckConfig;
 	}
 
+	/** A complex type that contains the health check request information. */
+	export interface CreateHealthCheckRequestFormProperties {
+		CallerReference: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHealthCheckRequestFormGroup() {
+		return new FormGroup<CreateHealthCheckRequestFormProperties>({
+			CallerReference: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the request to create a public or private hosted zone. */
 	export interface CreateHostedZoneRequest {
 		Name: string;
 
 		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
-		VPC?: VPC | null;
+		VPC?: VPC;
 		CallerReference: string;
 
 		/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
-		HostedZoneConfig?: HostedZoneConfig | null;
+		HostedZoneConfig?: HostedZoneConfig;
 		DelegationSetId?: string | null;
+	}
+
+	/** A complex type that contains information about the request to create a public or private hosted zone. */
+	export interface CreateHostedZoneRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CallerReference: FormControl<string | null | undefined>,
+		DelegationSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHostedZoneRequestFormGroup() {
+		return new FormGroup<CreateHostedZoneRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CallerReference: new FormControl<string | null | undefined>(undefined),
+			DelegationSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateQueryLoggingConfigRequest {
 		HostedZoneId: string;
 		CloudWatchLogsLogGroupArn: string;
 	}
+	export interface CreateQueryLoggingConfigRequestFormProperties {
+		HostedZoneId: FormControl<string | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateQueryLoggingConfigRequestFormGroup() {
+		return new FormGroup<CreateQueryLoggingConfigRequestFormProperties>({
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateReusableDelegationSetRequest {
 		CallerReference: string;
 		HostedZoneId?: string | null;
+	}
+	export interface CreateReusableDelegationSetRequestFormProperties {
+		CallerReference: FormControl<string | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateReusableDelegationSetRequestFormGroup() {
+		return new FormGroup<CreateReusableDelegationSetRequestFormProperties>({
+			CallerReference: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1129,6 +2660,25 @@ export namespace MyNS {
 		TrafficPolicyVersion: number;
 	}
 
+	/** A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy. */
+	export interface CreateTrafficPolicyInstanceRequestFormProperties {
+		HostedZoneId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		TTL: FormControl<number | null | undefined>,
+		TrafficPolicyId: FormControl<string | null | undefined>,
+		TrafficPolicyVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateTrafficPolicyInstanceRequestFormGroup() {
+		return new FormGroup<CreateTrafficPolicyInstanceRequestFormProperties>({
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			TTL: new FormControl<number | null | undefined>(undefined),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the traffic policy that you want to create. */
 	export interface CreateTrafficPolicyRequest {
@@ -1137,11 +2687,39 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** A complex type that contains information about the traffic policy that you want to create. */
+	export interface CreateTrafficPolicyRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Document: FormControl<string | null | undefined>,
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrafficPolicyRequestFormGroup() {
+		return new FormGroup<CreateTrafficPolicyRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Document: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the traffic policy that you want to create a new version for. */
 	export interface CreateTrafficPolicyVersionRequest {
 		Document: string;
 		Comment?: string | null;
+	}
+
+	/** A complex type that contains information about the traffic policy that you want to create a new version for. */
+	export interface CreateTrafficPolicyVersionRequestFormProperties {
+		Document: FormControl<string | null | undefined>,
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrafficPolicyVersionRequestFormGroup() {
+		return new FormGroup<CreateTrafficPolicyVersionRequestFormProperties>({
+			Document: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1155,9 +2733,27 @@ export namespace MyNS {
 		VPC: VPC;
 	}
 
+	/** A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts. */
+	export interface CreateVPCAssociationAuthorizationRequestFormProperties {
+	}
+	export function CreateCreateVPCAssociationAuthorizationRequestFormGroup() {
+		return new FormGroup<CreateVPCAssociationAuthorizationRequestFormProperties>({
+		});
+
+	}
+
 
 	/** This action deletes a health check. */
 	export interface DeleteHealthCheckRequest {
+	}
+
+	/** This action deletes a health check. */
+	export interface DeleteHealthCheckRequestFormProperties {
+	}
+	export function CreateDeleteHealthCheckRequestFormGroup() {
+		return new FormGroup<DeleteHealthCheckRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1165,7 +2761,23 @@ export namespace MyNS {
 	export interface DeleteHostedZoneRequest {
 	}
 
+	/** A request to delete a hosted zone. */
+	export interface DeleteHostedZoneRequestFormProperties {
+	}
+	export function CreateDeleteHostedZoneRequestFormGroup() {
+		return new FormGroup<DeleteHostedZoneRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteQueryLoggingConfigRequest {
+	}
+	export interface DeleteQueryLoggingConfigRequestFormProperties {
+	}
+	export function CreateDeleteQueryLoggingConfigRequestFormGroup() {
+		return new FormGroup<DeleteQueryLoggingConfigRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1173,14 +2785,41 @@ export namespace MyNS {
 	export interface DeleteReusableDelegationSetRequest {
 	}
 
+	/** A request to delete a reusable delegation set. */
+	export interface DeleteReusableDelegationSetRequestFormProperties {
+	}
+	export function CreateDeleteReusableDelegationSetRequestFormGroup() {
+		return new FormGroup<DeleteReusableDelegationSetRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to delete a specified traffic policy instance. */
 	export interface DeleteTrafficPolicyInstanceRequest {
 	}
 
+	/** A request to delete a specified traffic policy instance. */
+	export interface DeleteTrafficPolicyInstanceRequestFormProperties {
+	}
+	export function CreateDeleteTrafficPolicyInstanceRequestFormGroup() {
+		return new FormGroup<DeleteTrafficPolicyInstanceRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to delete a specified traffic policy version. */
 	export interface DeleteTrafficPolicyRequest {
+	}
+
+	/** A request to delete a specified traffic policy version. */
+	export interface DeleteTrafficPolicyRequestFormProperties {
+	}
+	export function CreateDeleteTrafficPolicyRequestFormGroup() {
+		return new FormGroup<DeleteTrafficPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1192,6 +2831,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		VPC: VPC;
+	}
+
+	/** A complex type that contains information about the request to remove authorization to associate a VPC that was created by one AWS account with a hosted zone that was created with a different AWS account.  */
+	export interface DeleteVPCAssociationAuthorizationRequestFormProperties {
+	}
+	export function CreateDeleteVPCAssociationAuthorizationRequestFormGroup() {
+		return new FormGroup<DeleteVPCAssociationAuthorizationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1206,9 +2854,29 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone. */
+	export interface DisassociateVPCFromHostedZoneRequestFormProperties {
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateVPCFromHostedZoneRequestFormGroup() {
+		return new FormGroup<DisassociateVPCFromHostedZoneRequestFormProperties>({
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the request to create a hosted zone. */
 	export interface GetAccountLimitRequest {
+	}
+
+	/** A complex type that contains information about the request to create a hosted zone. */
+	export interface GetAccountLimitRequestFormProperties {
+	}
+	export function CreateGetAccountLimitRequestFormGroup() {
+		return new FormGroup<GetAccountLimitRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1216,9 +2884,27 @@ export namespace MyNS {
 	export interface GetChangeRequest {
 	}
 
+	/** The input for a GetChange request. */
+	export interface GetChangeRequestFormProperties {
+	}
+	export function CreateGetChangeRequestFormGroup() {
+		return new FormGroup<GetChangeRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Empty request. */
 	export interface GetCheckerIpRangesRequest {
+	}
+
+	/** Empty request. */
+	export interface GetCheckerIpRangesRequestFormProperties {
+	}
+	export function CreateGetCheckerIpRangesRequestFormGroup() {
+		return new FormGroup<GetCheckerIpRangesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1226,9 +2912,27 @@ export namespace MyNS {
 	export interface GetGeoLocationRequest {
 	}
 
+	/** A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets. */
+	export interface GetGeoLocationRequestFormProperties {
+	}
+	export function CreateGetGeoLocationRequestFormGroup() {
+		return new FormGroup<GetGeoLocationRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request for the number of health checks that are associated with the current AWS account. */
 	export interface GetHealthCheckCountRequest {
+	}
+
+	/** A request for the number of health checks that are associated with the current AWS account. */
+	export interface GetHealthCheckCountRequestFormProperties {
+	}
+	export function CreateGetHealthCheckCountRequestFormGroup() {
+		return new FormGroup<GetHealthCheckCountRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1236,9 +2940,27 @@ export namespace MyNS {
 	export interface GetHealthCheckLastFailureReasonRequest {
 	}
 
+	/** A request for the reason that a health check failed most recently. */
+	export interface GetHealthCheckLastFailureReasonRequestFormProperties {
+	}
+	export function CreateGetHealthCheckLastFailureReasonRequestFormGroup() {
+		return new FormGroup<GetHealthCheckLastFailureReasonRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to get information about a specified health check.  */
 	export interface GetHealthCheckRequest {
+	}
+
+	/** A request to get information about a specified health check.  */
+	export interface GetHealthCheckRequestFormProperties {
+	}
+	export function CreateGetHealthCheckRequestFormGroup() {
+		return new FormGroup<GetHealthCheckRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1246,9 +2968,27 @@ export namespace MyNS {
 	export interface GetHealthCheckStatusRequest {
 	}
 
+	/** A request to get the status for a health check. */
+	export interface GetHealthCheckStatusRequestFormProperties {
+	}
+	export function CreateGetHealthCheckStatusRequestFormGroup() {
+		return new FormGroup<GetHealthCheckStatusRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to retrieve a count of all the hosted zones that are associated with the current AWS account. */
 	export interface GetHostedZoneCountRequest {
+	}
+
+	/** A request to retrieve a count of all the hosted zones that are associated with the current AWS account. */
+	export interface GetHostedZoneCountRequestFormProperties {
+	}
+	export function CreateGetHostedZoneCountRequestFormGroup() {
+		return new FormGroup<GetHostedZoneCountRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1256,12 +2996,37 @@ export namespace MyNS {
 	export interface GetHostedZoneLimitRequest {
 	}
 
+	/** A complex type that contains information about the request to create a hosted zone. */
+	export interface GetHostedZoneLimitRequestFormProperties {
+	}
+	export function CreateGetHostedZoneLimitRequestFormGroup() {
+		return new FormGroup<GetHostedZoneLimitRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to get information about a specified hosted zone.  */
 	export interface GetHostedZoneRequest {
 	}
 
+	/** A request to get information about a specified hosted zone.  */
+	export interface GetHostedZoneRequestFormProperties {
+	}
+	export function CreateGetHostedZoneRequestFormGroup() {
+		return new FormGroup<GetHostedZoneRequestFormProperties>({
+		});
+
+	}
+
 	export interface GetQueryLoggingConfigRequest {
+	}
+	export interface GetQueryLoggingConfigRequestFormProperties {
+	}
+	export function CreateGetQueryLoggingConfigRequestFormGroup() {
+		return new FormGroup<GetQueryLoggingConfigRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1269,9 +3034,27 @@ export namespace MyNS {
 	export interface GetReusableDelegationSetLimitRequest {
 	}
 
+	/** A complex type that contains information about the request to create a hosted zone. */
+	export interface GetReusableDelegationSetLimitRequestFormProperties {
+	}
+	export function CreateGetReusableDelegationSetLimitRequestFormGroup() {
+		return new FormGroup<GetReusableDelegationSetLimitRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to get information about a specified reusable delegation set. */
 	export interface GetReusableDelegationSetRequest {
+	}
+
+	/** A request to get information about a specified reusable delegation set. */
+	export interface GetReusableDelegationSetRequestFormProperties {
+	}
+	export function CreateGetReusableDelegationSetRequestFormGroup() {
+		return new FormGroup<GetReusableDelegationSetRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1279,9 +3062,27 @@ export namespace MyNS {
 	export interface GetTrafficPolicyInstanceCountRequest {
 	}
 
+	/** Request to get the number of traffic policy instances that are associated with the current AWS account. */
+	export interface GetTrafficPolicyInstanceCountRequestFormProperties {
+	}
+	export function CreateGetTrafficPolicyInstanceCountRequestFormGroup() {
+		return new FormGroup<GetTrafficPolicyInstanceCountRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Gets information about a specified traffic policy instance. */
 	export interface GetTrafficPolicyInstanceRequest {
+	}
+
+	/** Gets information about a specified traffic policy instance. */
+	export interface GetTrafficPolicyInstanceRequestFormProperties {
+	}
+	export function CreateGetTrafficPolicyInstanceRequestFormGroup() {
+		return new FormGroup<GetTrafficPolicyInstanceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1289,9 +3090,27 @@ export namespace MyNS {
 	export interface GetTrafficPolicyRequest {
 	}
 
+	/** Gets information about a specific traffic policy version. */
+	export interface GetTrafficPolicyRequestFormProperties {
+	}
+	export function CreateGetTrafficPolicyRequestFormGroup() {
+		return new FormGroup<GetTrafficPolicyRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets.  */
 	export interface ListGeoLocationsRequest {
+	}
+
+	/** A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets.  */
+	export interface ListGeoLocationsRequestFormProperties {
+	}
+	export function CreateListGeoLocationsRequestFormGroup() {
+		return new FormGroup<ListGeoLocationsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1299,9 +3118,27 @@ export namespace MyNS {
 	export interface ListHealthChecksRequest {
 	}
 
+	/** A request to retrieve a list of the health checks that are associated with the current AWS account. */
+	export interface ListHealthChecksRequestFormProperties {
+	}
+	export function CreateListHealthChecksRequestFormGroup() {
+		return new FormGroup<ListHealthChecksRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Retrieves a list of the public and private hosted zones that are associated with the current AWS account in ASCII order by domain name.  */
 	export interface ListHostedZonesByNameRequest {
+	}
+
+	/** Retrieves a list of the public and private hosted zones that are associated with the current AWS account in ASCII order by domain name.  */
+	export interface ListHostedZonesByNameRequestFormProperties {
+	}
+	export function CreateListHostedZonesByNameRequestFormGroup() {
+		return new FormGroup<ListHostedZonesByNameRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1309,7 +3146,23 @@ export namespace MyNS {
 	export interface ListHostedZonesRequest {
 	}
 
+	/** A request to retrieve a list of the public and private hosted zones that are associated with the current AWS account. */
+	export interface ListHostedZonesRequestFormProperties {
+	}
+	export function CreateListHostedZonesRequestFormGroup() {
+		return new FormGroup<ListHostedZonesRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListQueryLoggingConfigsRequest {
+	}
+	export interface ListQueryLoggingConfigsRequestFormProperties {
+	}
+	export function CreateListQueryLoggingConfigsRequestFormGroup() {
+		return new FormGroup<ListQueryLoggingConfigsRequestFormProperties>({
+		});
+
 	}
 
 	export enum RRType { SOA = 0, A = 1, TXT = 2, NS = 3, CNAME = 4, MX = 5, NAPTR = 6, PTR = 7, SRV = 8, SPF = 9, AAAA = 10, CAA = 11 }
@@ -1319,14 +3172,41 @@ export namespace MyNS {
 	export interface ListResourceRecordSetsRequest {
 	}
 
+	/** A request for the resource record sets that are associated with a specified hosted zone. */
+	export interface ListResourceRecordSetsRequestFormProperties {
+	}
+	export function CreateListResourceRecordSetsRequestFormGroup() {
+		return new FormGroup<ListResourceRecordSetsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to get a list of the reusable delegation sets that are associated with the current AWS account. */
 	export interface ListReusableDelegationSetsRequest {
 	}
 
+	/** A request to get a list of the reusable delegation sets that are associated with the current AWS account. */
+	export interface ListReusableDelegationSetsRequestFormProperties {
+	}
+	export function CreateListReusableDelegationSetsRequestFormGroup() {
+		return new FormGroup<ListReusableDelegationSetsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type containing information about a request for a list of the tags that are associated with an individual resource. */
 	export interface ListTagsForResourceRequest {
+	}
+
+	/** A complex type containing information about a request for a list of the tags that are associated with an individual resource. */
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1335,9 +3215,27 @@ export namespace MyNS {
 		ResourceIds: Array<string>;
 	}
 
+	/** A complex type that contains information about the health checks or hosted zones for which you want to list tags. */
+	export interface ListTagsForResourcesRequestFormProperties {
+	}
+	export function CreateListTagsForResourcesRequestFormGroup() {
+		return new FormGroup<ListTagsForResourcesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains the information about the request to list the traffic policies that are associated with the current AWS account. */
 	export interface ListTrafficPoliciesRequest {
+	}
+
+	/** A complex type that contains the information about the request to list the traffic policies that are associated with the current AWS account. */
+	export interface ListTrafficPoliciesRequestFormProperties {
+	}
+	export function CreateListTrafficPoliciesRequestFormGroup() {
+		return new FormGroup<ListTrafficPoliciesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1345,9 +3243,27 @@ export namespace MyNS {
 	export interface ListTrafficPolicyInstancesByHostedZoneRequest {
 	}
 
+	/** A request for the traffic policy instances that you created in a specified hosted zone. */
+	export interface ListTrafficPolicyInstancesByHostedZoneRequestFormProperties {
+	}
+	export function CreateListTrafficPolicyInstancesByHostedZoneRequestFormGroup() {
+		return new FormGroup<ListTrafficPolicyInstancesByHostedZoneRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains the information about the request to list your traffic policy instances. */
 	export interface ListTrafficPolicyInstancesByPolicyRequest {
+	}
+
+	/** A complex type that contains the information about the request to list your traffic policy instances. */
+	export interface ListTrafficPolicyInstancesByPolicyRequestFormProperties {
+	}
+	export function CreateListTrafficPolicyInstancesByPolicyRequestFormGroup() {
+		return new FormGroup<ListTrafficPolicyInstancesByPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1355,9 +3271,27 @@ export namespace MyNS {
 	export interface ListTrafficPolicyInstancesRequest {
 	}
 
+	/** A request to get information about the traffic policy instances that you created by using the current AWS account. */
+	export interface ListTrafficPolicyInstancesRequestFormProperties {
+	}
+	export function CreateListTrafficPolicyInstancesRequestFormGroup() {
+		return new FormGroup<ListTrafficPolicyInstancesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains the information about the request to list your traffic policies. */
 	export interface ListTrafficPolicyVersionsRequest {
+	}
+
+	/** A complex type that contains the information about the request to list your traffic policies. */
+	export interface ListTrafficPolicyVersionsRequestFormProperties {
+	}
+	export function CreateListTrafficPolicyVersionsRequestFormGroup() {
+		return new FormGroup<ListTrafficPolicyVersionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1365,9 +3299,27 @@ export namespace MyNS {
 	export interface ListVPCAssociationAuthorizationsRequest {
 	}
 
+	/** A complex type that contains information about that can be associated with your hosted zone. */
+	export interface ListVPCAssociationAuthorizationsRequestFormProperties {
+	}
+	export function CreateListVPCAssociationAuthorizationsRequestFormGroup() {
+		return new FormGroup<ListVPCAssociationAuthorizationsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.  */
 	export interface TestDNSAnswerRequest {
+	}
+
+	/** Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.  */
+	export interface TestDNSAnswerRequestFormProperties {
+	}
+	export function CreateTestDNSAnswerRequestFormGroup() {
+		return new FormGroup<TestDNSAnswerRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1383,14 +3335,47 @@ export namespace MyNS {
 		Inverted?: boolean | null;
 		Disabled?: boolean | null;
 		HealthThreshold?: number | null;
-		ChildHealthChecks?: Array<string> | null;
+		ChildHealthChecks?: Array<string>;
 		EnableSNI?: boolean | null;
-		Regions?: Array<HealthCheckRegion> | null;
+		Regions?: Array<HealthCheckRegion>;
 
 		/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
-		AlarmIdentifier?: AlarmIdentifier | null;
+		AlarmIdentifier?: AlarmIdentifier;
 		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus | null;
-		ResetElements?: Array<ResettableElementName> | null;
+		ResetElements?: Array<ResettableElementName>;
+	}
+
+	/** A complex type that contains information about a request to update a health check. */
+	export interface UpdateHealthCheckRequestFormProperties {
+		HealthCheckVersion: FormControl<number | null | undefined>,
+		IPAddress: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		ResourcePath: FormControl<string | null | undefined>,
+		FullyQualifiedDomainName: FormControl<string | null | undefined>,
+		SearchString: FormControl<string | null | undefined>,
+		FailureThreshold: FormControl<number | null | undefined>,
+		Inverted: FormControl<boolean | null | undefined>,
+		Disabled: FormControl<boolean | null | undefined>,
+		HealthThreshold: FormControl<number | null | undefined>,
+		EnableSNI: FormControl<boolean | null | undefined>,
+		InsufficientDataHealthStatus: FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>,
+	}
+	export function CreateUpdateHealthCheckRequestFormGroup() {
+		return new FormGroup<UpdateHealthCheckRequestFormProperties>({
+			HealthCheckVersion: new FormControl<number | null | undefined>(undefined),
+			IPAddress: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			ResourcePath: new FormControl<string | null | undefined>(undefined),
+			FullyQualifiedDomainName: new FormControl<string | null | undefined>(undefined),
+			SearchString: new FormControl<string | null | undefined>(undefined),
+			FailureThreshold: new FormControl<number | null | undefined>(undefined),
+			Inverted: new FormControl<boolean | null | undefined>(undefined),
+			Disabled: new FormControl<boolean | null | undefined>(undefined),
+			HealthThreshold: new FormControl<number | null | undefined>(undefined),
+			EnableSNI: new FormControl<boolean | null | undefined>(undefined),
+			InsufficientDataHealthStatus: new FormControl<HealthCheckConfigInsufficientDataHealthStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1399,10 +3384,32 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** A request to update the comment for a hosted zone. */
+	export interface UpdateHostedZoneCommentRequestFormProperties {
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateHostedZoneCommentRequestFormGroup() {
+		return new FormGroup<UpdateHostedZoneCommentRequestFormProperties>({
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A complex type that contains information about the traffic policy that you want to update the comment for. */
 	export interface UpdateTrafficPolicyCommentRequest {
 		Comment: string;
+	}
+
+	/** A complex type that contains information about the traffic policy that you want to update the comment for. */
+	export interface UpdateTrafficPolicyCommentRequestFormProperties {
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTrafficPolicyCommentRequestFormGroup() {
+		return new FormGroup<UpdateTrafficPolicyCommentRequestFormProperties>({
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1411,6 +3418,21 @@ export namespace MyNS {
 		TTL: number;
 		TrafficPolicyId: string;
 		TrafficPolicyVersion: number;
+	}
+
+	/** A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance. */
+	export interface UpdateTrafficPolicyInstanceRequestFormProperties {
+		TTL: FormControl<number | null | undefined>,
+		TrafficPolicyId: FormControl<string | null | undefined>,
+		TrafficPolicyVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateTrafficPolicyInstanceRequestFormGroup() {
+		return new FormGroup<UpdateTrafficPolicyInstanceRequestFormProperties>({
+			TTL: new FormControl<number | null | undefined>(undefined),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined),
+			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

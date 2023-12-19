@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DataSetList {
 		total?: number | null;
-		DataSetListApis?: Array<DataSetListApis> | null;
+		DataSetListApis?: Array<DataSetListApis>;
+	}
+	export interface DataSetListFormProperties {
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreateDataSetListFormGroup() {
+		return new FormGroup<DataSetListFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DataSetListApis {
@@ -20,6 +30,29 @@ export namespace MyNS {
 
 		/** A URL to the API console for each API */
 		apiDocumentationUrl?: string | null;
+	}
+	export interface DataSetListApisFormProperties {
+
+		/** To be used as a dataset parameter value */
+		apiKey: FormControl<string | null | undefined>,
+
+		/** To be used as a version parameter value */
+		apiVersionNumber: FormControl<string | null | undefined>,
+
+		/** The URL describing the dataset's fields */
+		apiUrl: FormControl<string | null | undefined>,
+
+		/** A URL to the API console for each API */
+		apiDocumentationUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateDataSetListApisFormGroup() {
+		return new FormGroup<DataSetListApisFormProperties>({
+			apiKey: new FormControl<string | null | undefined>(undefined),
+			apiVersionNumber: new FormControl<string | null | undefined>(undefined),
+			apiUrl: new FormControl<string | null | undefined>(undefined),
+			apiDocumentationUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

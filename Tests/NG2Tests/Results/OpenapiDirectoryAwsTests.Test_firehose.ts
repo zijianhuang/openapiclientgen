@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateDeliveryStreamOutput {
 		DeliveryStreamARN?: string | null;
+	}
+	export interface CreateDeliveryStreamOutputFormProperties {
+		DeliveryStreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeliveryStreamOutputFormGroup() {
+		return new FormGroup<CreateDeliveryStreamOutputFormProperties>({
+			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDeliveryStreamInput {
@@ -11,26 +21,37 @@ export namespace MyNS {
 		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType | null;
 
 		/** The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. */
-		KinesisStreamSourceConfiguration?: KinesisStreamSourceConfiguration | null;
+		KinesisStreamSourceConfiguration?: KinesisStreamSourceConfiguration;
 
 		/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). */
-		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput | null;
+		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		S3DestinationConfiguration?: S3DestinationConfiguration | null;
+		S3DestinationConfiguration?: S3DestinationConfiguration;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		ExtendedS3DestinationConfiguration?: ExtendedS3DestinationConfiguration | null;
+		ExtendedS3DestinationConfiguration?: ExtendedS3DestinationConfiguration;
 
 		/** Describes the configuration of a destination in Amazon Redshift. */
-		RedshiftDestinationConfiguration?: RedshiftDestinationConfiguration | null;
+		RedshiftDestinationConfiguration?: RedshiftDestinationConfiguration;
 
 		/** Describes the configuration of a destination in Amazon ES. */
-		ElasticsearchDestinationConfiguration?: ElasticsearchDestinationConfiguration | null;
+		ElasticsearchDestinationConfiguration?: ElasticsearchDestinationConfiguration;
 
 		/** Describes the configuration of a destination in Splunk. */
-		SplunkDestinationConfiguration?: SplunkDestinationConfiguration | null;
-		Tags?: Array<Tag> | null;
+		SplunkDestinationConfiguration?: SplunkDestinationConfiguration;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDeliveryStreamInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+		DeliveryStreamType: FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>,
+	}
+	export function CreateCreateDeliveryStreamInputFormGroup() {
+		return new FormGroup<CreateDeliveryStreamInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDeliveryStreamInputDeliveryStreamType { DirectPut = 0, KinesisStreamAsSource = 1 }
@@ -42,11 +63,37 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/** The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. */
+	export interface KinesisStreamSourceConfigurationFormProperties {
+		KinesisStreamARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamSourceConfigurationFormGroup() {
+		return new FormGroup<KinesisStreamSourceConfigurationFormProperties>({
+			KinesisStreamARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).  */
 	export interface DeliveryStreamEncryptionConfigurationInput {
 		KeyARN?: string | null;
 		KeyType: DeliveryStreamEncryptionConfigurationInputKeyType;
+	}
+
+	/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).  */
+	export interface DeliveryStreamEncryptionConfigurationInputFormProperties {
+		KeyARN: FormControl<string | null | undefined>,
+		KeyType: FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>,
+	}
+	export function CreateDeliveryStreamEncryptionConfigurationInputFormGroup() {
+		return new FormGroup<DeliveryStreamEncryptionConfigurationInputFormProperties>({
+			KeyARN: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeliveryStreamEncryptionConfigurationInputKeyType { AWS_OWNED_CMK = 0, CUSTOMER_MANAGED_CMK = 1 }
@@ -60,14 +107,33 @@ export namespace MyNS {
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints | null;
+		BufferingHints?: BufferingHints;
 		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes the configuration of a destination in Amazon S3. */
+	export interface S3DestinationConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ErrorOutputPrefix: FormControl<string | null | undefined>,
+		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
+	}
+	export function CreateS3DestinationConfigurationFormGroup() {
+		return new FormGroup<S3DestinationConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -75,6 +141,19 @@ export namespace MyNS {
 	export interface BufferingHints {
 		SizeInMBs?: number | null;
 		IntervalInSeconds?: number | null;
+	}
+
+	/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
+	export interface BufferingHintsFormProperties {
+		SizeInMBs: FormControl<number | null | undefined>,
+		IntervalInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateBufferingHintsFormGroup() {
+		return new FormGroup<BufferingHintsFormProperties>({
+			SizeInMBs: new FormControl<number | null | undefined>(undefined),
+			IntervalInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3DestinationConfigurationCompressionFormat { UNCOMPRESSED = 0, GZIP = 1, ZIP = 2, Snappy = 3, HADOOP_SNAPPY = 4 }
@@ -85,7 +164,18 @@ export namespace MyNS {
 		NoEncryptionConfig?: EncryptionConfigurationNoEncryptionConfig | null;
 
 		/** Describes an encryption key for a destination in Amazon S3. */
-		KMSEncryptionConfig?: KMSEncryptionConfig | null;
+		KMSEncryptionConfig?: KMSEncryptionConfig;
+	}
+
+	/** Describes the encryption for a destination in Amazon S3. */
+	export interface EncryptionConfigurationFormProperties {
+		NoEncryptionConfig: FormControl<EncryptionConfigurationNoEncryptionConfig | null | undefined>,
+	}
+	export function CreateEncryptionConfigurationFormGroup() {
+		return new FormGroup<EncryptionConfigurationFormProperties>({
+			NoEncryptionConfig: new FormControl<EncryptionConfigurationNoEncryptionConfig | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EncryptionConfigurationNoEncryptionConfig { NoEncryption = 0 }
@@ -96,12 +186,38 @@ export namespace MyNS {
 		AWSKMSKeyARN: string;
 	}
 
+	/** Describes an encryption key for a destination in Amazon S3. */
+	export interface KMSEncryptionConfigFormProperties {
+		AWSKMSKeyARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSEncryptionConfigFormGroup() {
+		return new FormGroup<KMSEncryptionConfigFormProperties>({
+			AWSKMSKeyARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the Amazon CloudWatch logging options for your delivery stream. */
 	export interface CloudWatchLoggingOptions {
 		Enabled?: boolean | null;
 		LogGroupName?: string | null;
 		LogStreamName?: string | null;
+	}
+
+	/** Describes the Amazon CloudWatch logging options for your delivery stream. */
+	export interface CloudWatchLoggingOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+		LogStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLoggingOptionsFormGroup() {
+		return new FormGroup<CloudWatchLoggingOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			LogStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -113,38 +229,81 @@ export namespace MyNS {
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints | null;
+		BufferingHints?: BufferingHints;
 		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		S3BackupConfiguration?: S3DestinationConfiguration | null;
+		S3BackupConfiguration?: S3DestinationConfiguration;
 
 		/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
-		DataFormatConversionConfiguration?: DataFormatConversionConfiguration | null;
+		DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
+	}
+
+	/** Describes the configuration of a destination in Amazon S3. */
+	export interface ExtendedS3DestinationConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ErrorOutputPrefix: FormControl<string | null | undefined>,
+		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
+		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateExtendedS3DestinationConfigurationFormGroup() {
+		return new FormGroup<ExtendedS3DestinationConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes a data processing configuration. */
 	export interface ProcessingConfiguration {
 		Enabled?: boolean | null;
-		Processors?: Array<Processor> | null;
+		Processors?: Array<Processor>;
+	}
+
+	/** Describes a data processing configuration. */
+	export interface ProcessingConfigurationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProcessingConfigurationFormGroup() {
+		return new FormGroup<ProcessingConfigurationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes a data processor. */
 	export interface Processor {
 		Type: ProcessorType;
-		Parameters?: Array<ProcessorParameter> | null;
+		Parameters?: Array<ProcessorParameter>;
+	}
+
+	/** Describes a data processor. */
+	export interface ProcessorFormProperties {
+		Type: FormControl<ProcessorType | null | undefined>,
+	}
+	export function CreateProcessorFormGroup() {
+		return new FormGroup<ProcessorFormProperties>({
+			Type: new FormControl<ProcessorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProcessorType { Lambda = 0 }
@@ -156,6 +315,19 @@ export namespace MyNS {
 		ParameterValue: string;
 	}
 
+	/** Describes the processor parameter. */
+	export interface ProcessorParameterFormProperties {
+		ParameterName: FormControl<ProcessorParameterParameterName | null | undefined>,
+		ParameterValue: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessorParameterFormGroup() {
+		return new FormGroup<ProcessorParameterFormProperties>({
+			ParameterName: new FormControl<ProcessorParameterParameterName | null | undefined>(undefined),
+			ParameterValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProcessorParameterParameterName { LambdaArn = 0, NumberOfRetries = 1, RoleArn = 2, BufferSizeInMBs = 3, BufferIntervalInSeconds = 4 }
 
 	export enum ExtendedS3DestinationConfigurationS3BackupMode { Disabled = 0, Enabled = 1 }
@@ -165,14 +337,25 @@ export namespace MyNS {
 	export interface DataFormatConversionConfiguration {
 
 		/** Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
-		SchemaConfiguration?: SchemaConfiguration | null;
+		SchemaConfiguration?: SchemaConfiguration;
 
 		/** Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true. */
-		InputFormatConfiguration?: InputFormatConfiguration | null;
+		InputFormatConfiguration?: InputFormatConfiguration;
 
 		/** Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
-		OutputFormatConfiguration?: OutputFormatConfiguration | null;
+		OutputFormatConfiguration?: OutputFormatConfiguration;
 		Enabled?: boolean | null;
+	}
+
+	/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
+	export interface DataFormatConversionConfigurationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDataFormatConversionConfigurationFormGroup() {
+		return new FormGroup<DataFormatConversionConfigurationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -186,12 +369,42 @@ export namespace MyNS {
 		VersionId?: string | null;
 	}
 
+	/** Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
+	export interface SchemaConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateSchemaConfigurationFormGroup() {
+		return new FormGroup<SchemaConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true. */
 	export interface InputFormatConfiguration {
 
 		/** The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>. */
-		Deserializer?: Deserializer | null;
+		Deserializer?: Deserializer;
+	}
+
+	/** Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true. */
+	export interface InputFormatConfigurationFormProperties {
+	}
+	export function CreateInputFormatConfigurationFormGroup() {
+		return new FormGroup<InputFormatConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -199,10 +412,19 @@ export namespace MyNS {
 	export interface Deserializer {
 
 		/** The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe. */
-		OpenXJsonSerDe?: OpenXJsonSerDe | null;
+		OpenXJsonSerDe?: OpenXJsonSerDe;
 
 		/** The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe. */
-		HiveJsonSerDe?: HiveJsonSerDe | null;
+		HiveJsonSerDe?: HiveJsonSerDe;
+	}
+
+	/** The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>. */
+	export interface DeserializerFormProperties {
+	}
+	export function CreateDeserializerFormGroup() {
+		return new FormGroup<DeserializerFormProperties>({
+		});
+
 	}
 
 
@@ -210,16 +432,45 @@ export namespace MyNS {
 	export interface OpenXJsonSerDe {
 		ConvertDotsInJsonKeysToUnderscores?: boolean | null;
 		CaseInsensitive?: boolean | null;
-		ColumnToJsonKeyMappings?: ColumnToJsonKeyMappings | null;
+		ColumnToJsonKeyMappings?: ColumnToJsonKeyMappings;
+	}
+
+	/** The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe. */
+	export interface OpenXJsonSerDeFormProperties {
+		ConvertDotsInJsonKeysToUnderscores: FormControl<boolean | null | undefined>,
+		CaseInsensitive: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOpenXJsonSerDeFormGroup() {
+		return new FormGroup<OpenXJsonSerDeFormProperties>({
+			ConvertDotsInJsonKeysToUnderscores: new FormControl<boolean | null | undefined>(undefined),
+			CaseInsensitive: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ColumnToJsonKeyMappings {
+	}
+	export interface ColumnToJsonKeyMappingsFormProperties {
+	}
+	export function CreateColumnToJsonKeyMappingsFormGroup() {
+		return new FormGroup<ColumnToJsonKeyMappingsFormProperties>({
+		});
+
 	}
 
 
 	/** The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe. */
 	export interface HiveJsonSerDe {
-		TimestampFormats?: Array<string> | null;
+		TimestampFormats?: Array<string>;
+	}
+
+	/** The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe. */
+	export interface HiveJsonSerDeFormProperties {
+	}
+	export function CreateHiveJsonSerDeFormGroup() {
+		return new FormGroup<HiveJsonSerDeFormProperties>({
+		});
+
 	}
 
 
@@ -227,7 +478,16 @@ export namespace MyNS {
 	export interface OutputFormatConfiguration {
 
 		/** The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>. */
-		Serializer?: Serializer | null;
+		Serializer?: Serializer;
+	}
+
+	/** Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
+	export interface OutputFormatConfigurationFormProperties {
+	}
+	export function CreateOutputFormatConfigurationFormGroup() {
+		return new FormGroup<OutputFormatConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -235,10 +495,19 @@ export namespace MyNS {
 	export interface Serializer {
 
 		/** A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>. */
-		ParquetSerDe?: ParquetSerDe | null;
+		ParquetSerDe?: ParquetSerDe;
 
 		/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
-		OrcSerDe?: OrcSerDe | null;
+		OrcSerDe?: OrcSerDe;
+	}
+
+	/** The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>. */
+	export interface SerializerFormProperties {
+	}
+	export function CreateSerializerFormGroup() {
+		return new FormGroup<SerializerFormProperties>({
+		});
+
 	}
 
 
@@ -250,6 +519,27 @@ export namespace MyNS {
 		EnableDictionaryCompression?: boolean | null;
 		MaxPaddingBytes?: number | null;
 		WriterVersion?: ParquetSerDeWriterVersion | null;
+	}
+
+	/** A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>. */
+	export interface ParquetSerDeFormProperties {
+		BlockSizeBytes: FormControl<number | null | undefined>,
+		PageSizeBytes: FormControl<number | null | undefined>,
+		Compression: FormControl<ParquetSerDeCompression | null | undefined>,
+		EnableDictionaryCompression: FormControl<boolean | null | undefined>,
+		MaxPaddingBytes: FormControl<number | null | undefined>,
+		WriterVersion: FormControl<ParquetSerDeWriterVersion | null | undefined>,
+	}
+	export function CreateParquetSerDeFormGroup() {
+		return new FormGroup<ParquetSerDeFormProperties>({
+			BlockSizeBytes: new FormControl<number | null | undefined>(undefined),
+			PageSizeBytes: new FormControl<number | null | undefined>(undefined),
+			Compression: new FormControl<ParquetSerDeCompression | null | undefined>(undefined),
+			EnableDictionaryCompression: new FormControl<boolean | null | undefined>(undefined),
+			MaxPaddingBytes: new FormControl<number | null | undefined>(undefined),
+			WriterVersion: new FormControl<ParquetSerDeWriterVersion | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ParquetSerDeCompression { UNCOMPRESSED = 0, GZIP = 1, SNAPPY = 2 }
@@ -265,10 +555,37 @@ export namespace MyNS {
 		EnablePadding?: boolean | null;
 		PaddingTolerance?: number | null;
 		Compression?: OrcSerDeCompression | null;
-		BloomFilterColumns?: Array<string> | null;
+		BloomFilterColumns?: Array<string>;
 		BloomFilterFalsePositiveProbability?: number | null;
 		DictionaryKeyThreshold?: number | null;
 		FormatVersion?: OrcSerDeFormatVersion | null;
+	}
+
+	/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
+	export interface OrcSerDeFormProperties {
+		StripeSizeBytes: FormControl<number | null | undefined>,
+		BlockSizeBytes: FormControl<number | null | undefined>,
+		RowIndexStride: FormControl<number | null | undefined>,
+		EnablePadding: FormControl<boolean | null | undefined>,
+		PaddingTolerance: FormControl<number | null | undefined>,
+		Compression: FormControl<OrcSerDeCompression | null | undefined>,
+		BloomFilterFalsePositiveProbability: FormControl<number | null | undefined>,
+		DictionaryKeyThreshold: FormControl<number | null | undefined>,
+		FormatVersion: FormControl<OrcSerDeFormatVersion | null | undefined>,
+	}
+	export function CreateOrcSerDeFormGroup() {
+		return new FormGroup<OrcSerDeFormProperties>({
+			StripeSizeBytes: new FormControl<number | null | undefined>(undefined),
+			BlockSizeBytes: new FormControl<number | null | undefined>(undefined),
+			RowIndexStride: new FormControl<number | null | undefined>(undefined),
+			EnablePadding: new FormControl<boolean | null | undefined>(undefined),
+			PaddingTolerance: new FormControl<number | null | undefined>(undefined),
+			Compression: new FormControl<OrcSerDeCompression | null | undefined>(undefined),
+			BloomFilterFalsePositiveProbability: new FormControl<number | null | undefined>(undefined),
+			DictionaryKeyThreshold: new FormControl<number | null | undefined>(undefined),
+			FormatVersion: new FormControl<OrcSerDeFormatVersion | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OrcSerDeCompression { NONE = 0, ZLIB = 1, SNAPPY = 2 }
@@ -290,7 +607,7 @@ export namespace MyNS {
 		Password: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
-		RetryOptions?: RedshiftRetryOptions | null;
+		RetryOptions?: RedshiftRetryOptions;
 
 		/**
 		 * Describes the configuration of a destination in Amazon S3.
@@ -299,14 +616,33 @@ export namespace MyNS {
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		S3BackupConfiguration?: S3DestinationConfiguration | null;
+		S3BackupConfiguration?: S3DestinationConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes the configuration of a destination in Amazon Redshift. */
+	export interface RedshiftDestinationConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		ClusterJDBCURL: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateRedshiftDestinationConfigurationFormGroup() {
+		return new FormGroup<RedshiftDestinationConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -317,10 +653,36 @@ export namespace MyNS {
 		CopyOptions?: string | null;
 	}
 
+	/** Describes a <code>COPY</code> command for Amazon Redshift. */
+	export interface CopyCommandFormProperties {
+		DataTableName: FormControl<string | null | undefined>,
+		DataTableColumns: FormControl<string | null | undefined>,
+		CopyOptions: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyCommandFormGroup() {
+		return new FormGroup<CopyCommandFormProperties>({
+			DataTableName: new FormControl<string | null | undefined>(undefined),
+			DataTableColumns: new FormControl<string | null | undefined>(undefined),
+			CopyOptions: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
 	export interface RedshiftRetryOptions {
 		DurationInSeconds?: number | null;
+	}
+
+	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
+	export interface RedshiftRetryOptionsFormProperties {
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateRedshiftRetryOptionsFormGroup() {
+		return new FormGroup<RedshiftRetryOptionsFormProperties>({
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -334,10 +696,10 @@ export namespace MyNS {
 		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
 		/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
-		BufferingHints?: ElasticsearchBufferingHints | null;
+		BufferingHints?: ElasticsearchBufferingHints;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
-		RetryOptions?: ElasticsearchRetryOptions | null;
+		RetryOptions?: ElasticsearchRetryOptions;
 		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode | null;
 
 		/**
@@ -347,13 +709,36 @@ export namespace MyNS {
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
 
 		/** The details of the VPC of the Amazon ES destination. */
-		VpcConfiguration?: VpcConfiguration | null;
+		VpcConfiguration?: VpcConfiguration;
+	}
+
+	/** Describes the configuration of a destination in Amazon ES. */
+	export interface ElasticsearchDestinationConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		DomainARN: FormControl<string | null | undefined>,
+		ClusterEndpoint: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		IndexRotationPeriod: FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>,
+		S3BackupMode: FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateElasticsearchDestinationConfigurationFormGroup() {
+		return new FormGroup<ElasticsearchDestinationConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			DomainARN: new FormControl<string | null | undefined>(undefined),
+			ClusterEndpoint: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			IndexRotationPeriod: new FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ElasticsearchDestinationConfigurationIndexRotationPeriod { NoRotation = 0, OneHour = 1, OneDay = 2, OneWeek = 3, OneMonth = 4 }
@@ -365,10 +750,34 @@ export namespace MyNS {
 		SizeInMBs?: number | null;
 	}
 
+	/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
+	export interface ElasticsearchBufferingHintsFormProperties {
+		IntervalInSeconds: FormControl<number | null | undefined>,
+		SizeInMBs: FormControl<number | null | undefined>,
+	}
+	export function CreateElasticsearchBufferingHintsFormGroup() {
+		return new FormGroup<ElasticsearchBufferingHintsFormProperties>({
+			IntervalInSeconds: new FormControl<number | null | undefined>(undefined),
+			SizeInMBs: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
 	export interface ElasticsearchRetryOptions {
 		DurationInSeconds?: number | null;
+	}
+
+	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
+	export interface ElasticsearchRetryOptionsFormProperties {
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateElasticsearchRetryOptionsFormGroup() {
+		return new FormGroup<ElasticsearchRetryOptionsFormProperties>({
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ElasticsearchDestinationConfigurationS3BackupMode { FailedDocumentsOnly = 0, AllDocuments = 1 }
@@ -381,6 +790,17 @@ export namespace MyNS {
 		SecurityGroupIds: Array<string>;
 	}
 
+	/** The details of the VPC of the Amazon ES destination. */
+	export interface VpcConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcConfigurationFormGroup() {
+		return new FormGroup<VpcConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the configuration of a destination in Splunk. */
 	export interface SplunkDestinationConfiguration {
@@ -390,7 +810,7 @@ export namespace MyNS {
 		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
-		RetryOptions?: SplunkRetryOptions | null;
+		RetryOptions?: SplunkRetryOptions;
 		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode | null;
 
 		/**
@@ -400,10 +820,29 @@ export namespace MyNS {
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes the configuration of a destination in Splunk. */
+	export interface SplunkDestinationConfigurationFormProperties {
+		HECEndpoint: FormControl<string | null | undefined>,
+		HECEndpointType: FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>,
+		HECToken: FormControl<string | null | undefined>,
+		HECAcknowledgmentTimeoutInSeconds: FormControl<number | null | undefined>,
+		S3BackupMode: FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateSplunkDestinationConfigurationFormGroup() {
+		return new FormGroup<SplunkDestinationConfigurationFormProperties>({
+			HECEndpoint: new FormControl<string | null | undefined>(undefined),
+			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined),
+			HECToken: new FormControl<string | null | undefined>(undefined),
+			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			S3BackupMode: new FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SplunkDestinationConfigurationHECEndpointType { Raw = 0, Event = 1 }
@@ -412,6 +851,17 @@ export namespace MyNS {
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
 	export interface SplunkRetryOptions {
 		DurationInSeconds?: number | null;
+	}
+
+	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
+	export interface SplunkRetryOptionsFormProperties {
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateSplunkRetryOptionsFormGroup() {
+		return new FormGroup<SplunkRetryOptionsFormProperties>({
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SplunkDestinationConfigurationS3BackupMode { FailedEventsOnly = 0, AllEvents = 1 }
@@ -423,27 +873,93 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Metadata that you can assign to a delivery stream, consisting of a key-value pair. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidKMSResourceException {
 	}
+	export interface InvalidKMSResourceExceptionFormProperties {
+	}
+	export function CreateInvalidKMSResourceExceptionFormGroup() {
+		return new FormGroup<InvalidKMSResourceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDeliveryStreamOutput {
+	}
+	export interface DeleteDeliveryStreamOutputFormProperties {
+	}
+	export function CreateDeleteDeliveryStreamOutputFormGroup() {
+		return new FormGroup<DeleteDeliveryStreamOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDeliveryStreamInput {
 		DeliveryStreamName: string;
 		AllowForceDelete?: boolean | null;
 	}
+	export interface DeleteDeliveryStreamInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+		AllowForceDelete: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteDeliveryStreamInputFormGroup() {
+		return new FormGroup<DeleteDeliveryStreamInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			AllowForceDelete: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDeliveryStreamOutput {
@@ -454,6 +970,13 @@ export namespace MyNS {
 		 */
 		DeliveryStreamDescription: DeliveryStreamDescription;
 	}
+	export interface DescribeDeliveryStreamOutputFormProperties {
+	}
+	export function CreateDescribeDeliveryStreamOutputFormGroup() {
+		return new FormGroup<DescribeDeliveryStreamOutputFormProperties>({
+		});
+
+	}
 
 
 	/** Contains information about a delivery stream. */
@@ -463,19 +986,44 @@ export namespace MyNS {
 		DeliveryStreamStatus: DeliveryStreamDescriptionDeliveryStreamStatus;
 
 		/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
-		FailureDescription?: FailureDescription | null;
+		FailureDescription?: FailureDescription;
 
 		/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation. */
-		DeliveryStreamEncryptionConfiguration?: DeliveryStreamEncryptionConfiguration | null;
+		DeliveryStreamEncryptionConfiguration?: DeliveryStreamEncryptionConfiguration;
 		DeliveryStreamType: CreateDeliveryStreamInputDeliveryStreamType;
 		VersionId: string;
 		CreateTimestamp?: Date | null;
 		LastUpdateTimestamp?: Date | null;
 
 		/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
-		Source?: SourceDescription | null;
+		Source?: SourceDescription;
 		Destinations: Array<DestinationDescription>;
 		HasMoreDestinations: boolean;
+	}
+
+	/** Contains information about a delivery stream. */
+	export interface DeliveryStreamDescriptionFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+		DeliveryStreamARN: FormControl<string | null | undefined>,
+		DeliveryStreamStatus: FormControl<DeliveryStreamDescriptionDeliveryStreamStatus | null | undefined>,
+		DeliveryStreamType: FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		CreateTimestamp: FormControl<Date | null | undefined>,
+		LastUpdateTimestamp: FormControl<Date | null | undefined>,
+		HasMoreDestinations: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeliveryStreamDescriptionFormGroup() {
+		return new FormGroup<DeliveryStreamDescriptionFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamARN: new FormControl<string | null | undefined>(undefined),
+			DeliveryStreamStatus: new FormControl<DeliveryStreamDescriptionDeliveryStreamStatus | null | undefined>(undefined),
+			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			LastUpdateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			HasMoreDestinations: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeliveryStreamDescriptionDeliveryStreamStatus { CREATING = 0, CREATING_FAILED = 1, DELETING = 2, DELETING_FAILED = 3, ACTIVE = 4 }
@@ -485,6 +1033,19 @@ export namespace MyNS {
 	export interface FailureDescription {
 		Type: FailureDescriptionType;
 		Details: string;
+	}
+
+	/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
+	export interface FailureDescriptionFormProperties {
+		Type: FormControl<FailureDescriptionType | null | undefined>,
+		Details: FormControl<string | null | undefined>,
+	}
+	export function CreateFailureDescriptionFormGroup() {
+		return new FormGroup<FailureDescriptionFormProperties>({
+			Type: new FormControl<FailureDescriptionType | null | undefined>(undefined),
+			Details: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FailureDescriptionType { RETIRE_KMS_GRANT_FAILED = 0, CREATE_KMS_GRANT_FAILED = 1, KMS_ACCESS_DENIED = 2, DISABLED_KMS_KEY = 3, INVALID_KMS_KEY = 4, KMS_KEY_NOT_FOUND = 5, KMS_OPT_IN_REQUIRED = 6, CREATE_ENI_FAILED = 7, DELETE_ENI_FAILED = 8, SUBNET_NOT_FOUND = 9, SECURITY_GROUP_NOT_FOUND = 10, ENI_ACCESS_DENIED = 11, SUBNET_ACCESS_DENIED = 12, SECURITY_GROUP_ACCESS_DENIED = 13, UNKNOWN_ERROR = 14 }
@@ -497,7 +1058,22 @@ export namespace MyNS {
 		Status?: DeliveryStreamEncryptionConfigurationStatus | null;
 
 		/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
-		FailureDescription?: FailureDescription | null;
+		FailureDescription?: FailureDescription;
+	}
+
+	/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation.  */
+	export interface DeliveryStreamEncryptionConfigurationFormProperties {
+		KeyARN: FormControl<string | null | undefined>,
+		KeyType: FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>,
+		Status: FormControl<DeliveryStreamEncryptionConfigurationStatus | null | undefined>,
+	}
+	export function CreateDeliveryStreamEncryptionConfigurationFormGroup() {
+		return new FormGroup<DeliveryStreamEncryptionConfigurationFormProperties>({
+			KeyARN: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<DeliveryStreamEncryptionConfigurationInputKeyType | null | undefined>(undefined),
+			Status: new FormControl<DeliveryStreamEncryptionConfigurationStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeliveryStreamEncryptionConfigurationStatus { ENABLED = 0, ENABLING = 1, ENABLING_FAILED = 2, DISABLED = 3, DISABLING = 4, DISABLING_FAILED = 5 }
@@ -507,7 +1083,16 @@ export namespace MyNS {
 	export interface SourceDescription {
 
 		/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
-		KinesisStreamSourceDescription?: KinesisStreamSourceDescription | null;
+		KinesisStreamSourceDescription?: KinesisStreamSourceDescription;
+	}
+
+	/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
+	export interface SourceDescriptionFormProperties {
+	}
+	export function CreateSourceDescriptionFormGroup() {
+		return new FormGroup<SourceDescriptionFormProperties>({
+		});
+
 	}
 
 
@@ -518,25 +1103,51 @@ export namespace MyNS {
 		DeliveryStartTimestamp?: Date | null;
 	}
 
+	/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
+	export interface KinesisStreamSourceDescriptionFormProperties {
+		KinesisStreamARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		DeliveryStartTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateKinesisStreamSourceDescriptionFormGroup() {
+		return new FormGroup<KinesisStreamSourceDescriptionFormProperties>({
+			KinesisStreamARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			DeliveryStartTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the destination for a delivery stream. */
 	export interface DestinationDescription {
 		DestinationId: string;
 
 		/** Describes a destination in Amazon S3. */
-		S3DestinationDescription?: S3DestinationDescription | null;
+		S3DestinationDescription?: S3DestinationDescription;
 
 		/** Describes a destination in Amazon S3. */
-		ExtendedS3DestinationDescription?: ExtendedS3DestinationDescription | null;
+		ExtendedS3DestinationDescription?: ExtendedS3DestinationDescription;
 
 		/** Describes a destination in Amazon Redshift. */
-		RedshiftDestinationDescription?: RedshiftDestinationDescription | null;
+		RedshiftDestinationDescription?: RedshiftDestinationDescription;
 
 		/** The destination description in Amazon ES. */
-		ElasticsearchDestinationDescription?: ElasticsearchDestinationDescription | null;
+		ElasticsearchDestinationDescription?: ElasticsearchDestinationDescription;
 
 		/** Describes a destination in Splunk. */
-		SplunkDestinationDescription?: SplunkDestinationDescription | null;
+		SplunkDestinationDescription?: SplunkDestinationDescription;
+	}
+
+	/** Describes the destination for a delivery stream. */
+	export interface DestinationDescriptionFormProperties {
+		DestinationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDestinationDescriptionFormGroup() {
+		return new FormGroup<DestinationDescriptionFormProperties>({
+			DestinationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -561,7 +1172,26 @@ export namespace MyNS {
 		EncryptionConfiguration: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes a destination in Amazon S3. */
+	export interface S3DestinationDescriptionFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ErrorOutputPrefix: FormControl<string | null | undefined>,
+		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
+	}
+	export function CreateS3DestinationDescriptionFormGroup() {
+		return new FormGroup<S3DestinationDescriptionFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -586,17 +1216,38 @@ export namespace MyNS {
 		EncryptionConfiguration: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3BackupDescription?: S3DestinationDescription | null;
+		S3BackupDescription?: S3DestinationDescription;
 
 		/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
-		DataFormatConversionConfiguration?: DataFormatConversionConfiguration | null;
+		DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
+	}
+
+	/** Describes a destination in Amazon S3. */
+	export interface ExtendedS3DestinationDescriptionFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ErrorOutputPrefix: FormControl<string | null | undefined>,
+		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
+		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateExtendedS3DestinationDescriptionFormGroup() {
+		return new FormGroup<ExtendedS3DestinationDescriptionFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -613,7 +1264,7 @@ export namespace MyNS {
 		Username: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
-		RetryOptions?: RedshiftRetryOptions | null;
+		RetryOptions?: RedshiftRetryOptions;
 
 		/**
 		 * Describes a destination in Amazon S3.
@@ -622,14 +1273,31 @@ export namespace MyNS {
 		S3DestinationDescription: S3DestinationDescription;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3BackupDescription?: S3DestinationDescription | null;
+		S3BackupDescription?: S3DestinationDescription;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes a destination in Amazon Redshift. */
+	export interface RedshiftDestinationDescriptionFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		ClusterJDBCURL: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateRedshiftDestinationDescriptionFormGroup() {
+		return new FormGroup<RedshiftDestinationDescriptionFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -643,23 +1311,46 @@ export namespace MyNS {
 		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
 		/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
-		BufferingHints?: ElasticsearchBufferingHints | null;
+		BufferingHints?: ElasticsearchBufferingHints;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
-		RetryOptions?: ElasticsearchRetryOptions | null;
+		RetryOptions?: ElasticsearchRetryOptions;
 		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3DestinationDescription?: S3DestinationDescription | null;
+		S3DestinationDescription?: S3DestinationDescription;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
 
 		/** The details of the VPC of the Amazon ES destination. */
-		VpcConfigurationDescription?: VpcConfigurationDescription | null;
+		VpcConfigurationDescription?: VpcConfigurationDescription;
+	}
+
+	/** The destination description in Amazon ES. */
+	export interface ElasticsearchDestinationDescriptionFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		DomainARN: FormControl<string | null | undefined>,
+		ClusterEndpoint: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		IndexRotationPeriod: FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>,
+		S3BackupMode: FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateElasticsearchDestinationDescriptionFormGroup() {
+		return new FormGroup<ElasticsearchDestinationDescriptionFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			DomainARN: new FormControl<string | null | undefined>(undefined),
+			ClusterEndpoint: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			IndexRotationPeriod: new FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ElasticsearchDestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -671,6 +1362,19 @@ export namespace MyNS {
 		VpcId: string;
 	}
 
+	/** The details of the VPC of the Amazon ES destination. */
+	export interface VpcConfigurationDescriptionFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcConfigurationDescriptionFormGroup() {
+		return new FormGroup<VpcConfigurationDescriptionFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a destination in Splunk. */
 	export interface SplunkDestinationDescription {
@@ -680,17 +1384,36 @@ export namespace MyNS {
 		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
-		RetryOptions?: SplunkRetryOptions | null;
+		RetryOptions?: SplunkRetryOptions;
 		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3DestinationDescription?: S3DestinationDescription | null;
+		S3DestinationDescription?: S3DestinationDescription;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes a destination in Splunk. */
+	export interface SplunkDestinationDescriptionFormProperties {
+		HECEndpoint: FormControl<string | null | undefined>,
+		HECEndpointType: FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>,
+		HECToken: FormControl<string | null | undefined>,
+		HECAcknowledgmentTimeoutInSeconds: FormControl<number | null | undefined>,
+		S3BackupMode: FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateSplunkDestinationDescriptionFormGroup() {
+		return new FormGroup<SplunkDestinationDescriptionFormProperties>({
+			HECEndpoint: new FormControl<string | null | undefined>(undefined),
+			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined),
+			HECToken: new FormControl<string | null | undefined>(undefined),
+			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			S3BackupMode: new FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDeliveryStreamInput {
@@ -698,10 +1421,32 @@ export namespace MyNS {
 		Limit?: number | null;
 		ExclusiveStartDestinationId?: string | null;
 	}
+	export interface DescribeDeliveryStreamInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		ExclusiveStartDestinationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDeliveryStreamInputFormGroup() {
+		return new FormGroup<DescribeDeliveryStreamInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			ExclusiveStartDestinationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDeliveryStreamsOutput {
 		DeliveryStreamNames: Array<string>;
 		HasMoreDeliveryStreams: boolean;
+	}
+	export interface ListDeliveryStreamsOutputFormProperties {
+		HasMoreDeliveryStreams: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListDeliveryStreamsOutputFormGroup() {
+		return new FormGroup<ListDeliveryStreamsOutputFormProperties>({
+			HasMoreDeliveryStreams: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDeliveryStreamsInput {
@@ -709,10 +1454,32 @@ export namespace MyNS {
 		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType | null;
 		ExclusiveStartDeliveryStreamName?: string | null;
 	}
+	export interface ListDeliveryStreamsInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		DeliveryStreamType: FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>,
+		ExclusiveStartDeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeliveryStreamsInputFormGroup() {
+		return new FormGroup<ListDeliveryStreamsInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			DeliveryStreamType: new FormControl<CreateDeliveryStreamInputDeliveryStreamType | null | undefined>(undefined),
+			ExclusiveStartDeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForDeliveryStreamOutput {
 		Tags: Array<Tag>;
 		HasMoreTags: boolean;
+	}
+	export interface ListTagsForDeliveryStreamOutputFormProperties {
+		HasMoreTags: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListTagsForDeliveryStreamOutputFormGroup() {
+		return new FormGroup<ListTagsForDeliveryStreamOutputFormProperties>({
+			HasMoreTags: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForDeliveryStreamInput {
@@ -720,10 +1487,34 @@ export namespace MyNS {
 		ExclusiveStartTagKey?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListTagsForDeliveryStreamInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+		ExclusiveStartTagKey: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForDeliveryStreamInputFormGroup() {
+		return new FormGroup<ListTagsForDeliveryStreamInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			ExclusiveStartTagKey: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutRecordOutput {
 		RecordId: string;
 		Encrypted?: boolean | null;
+	}
+	export interface PutRecordOutputFormProperties {
+		RecordId: FormControl<string | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutRecordOutputFormGroup() {
+		return new FormGroup<PutRecordOutputFormProperties>({
+			RecordId: new FormControl<string | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutRecordInput {
@@ -735,6 +1526,15 @@ export namespace MyNS {
 		 */
 		Record: Record;
 	}
+	export interface PutRecordInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordInputFormGroup() {
+		return new FormGroup<PutRecordInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The unit of data in a delivery stream. */
@@ -742,13 +1542,42 @@ export namespace MyNS {
 		Data: string;
 	}
 
+	/** The unit of data in a delivery stream. */
+	export interface RecordFormProperties {
+		Data: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordFormGroup() {
+		return new FormGroup<RecordFormProperties>({
+			Data: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutRecordBatchOutput {
 		FailedPutCount: number;
 		Encrypted?: boolean | null;
 		RequestResponses: Array<PutRecordBatchResponseEntry>;
+	}
+	export interface PutRecordBatchOutputFormProperties {
+		FailedPutCount: FormControl<number | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutRecordBatchOutputFormGroup() {
+		return new FormGroup<PutRecordBatchOutputFormProperties>({
+			FailedPutCount: new FormControl<number | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -759,45 +1588,140 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message. */
+	export interface PutRecordBatchResponseEntryFormProperties {
+		RecordId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordBatchResponseEntryFormGroup() {
+		return new FormGroup<PutRecordBatchResponseEntryFormProperties>({
+			RecordId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutRecordBatchInput {
 		DeliveryStreamName: string;
 		Records: Array<Record>;
 	}
+	export interface PutRecordBatchInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordBatchInputFormGroup() {
+		return new FormGroup<PutRecordBatchInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartDeliveryStreamEncryptionOutput {
+	}
+	export interface StartDeliveryStreamEncryptionOutputFormProperties {
+	}
+	export function CreateStartDeliveryStreamEncryptionOutputFormGroup() {
+		return new FormGroup<StartDeliveryStreamEncryptionOutputFormProperties>({
+		});
+
 	}
 
 	export interface StartDeliveryStreamEncryptionInput {
 		DeliveryStreamName: string;
 
 		/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). */
-		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput | null;
+		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
+	}
+	export interface StartDeliveryStreamEncryptionInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartDeliveryStreamEncryptionInputFormGroup() {
+		return new FormGroup<StartDeliveryStreamEncryptionInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopDeliveryStreamEncryptionOutput {
+	}
+	export interface StopDeliveryStreamEncryptionOutputFormProperties {
+	}
+	export function CreateStopDeliveryStreamEncryptionOutputFormGroup() {
+		return new FormGroup<StopDeliveryStreamEncryptionOutputFormProperties>({
+		});
+
 	}
 
 	export interface StopDeliveryStreamEncryptionInput {
 		DeliveryStreamName: string;
 	}
+	export interface StopDeliveryStreamEncryptionInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopDeliveryStreamEncryptionInputFormGroup() {
+		return new FormGroup<StopDeliveryStreamEncryptionInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagDeliveryStreamOutput {
+	}
+	export interface TagDeliveryStreamOutputFormProperties {
+	}
+	export function CreateTagDeliveryStreamOutputFormGroup() {
+		return new FormGroup<TagDeliveryStreamOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagDeliveryStreamInput {
 		DeliveryStreamName: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagDeliveryStreamInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagDeliveryStreamInputFormGroup() {
+		return new FormGroup<TagDeliveryStreamInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagDeliveryStreamOutput {
+	}
+	export interface UntagDeliveryStreamOutputFormProperties {
+	}
+	export function CreateUntagDeliveryStreamOutputFormGroup() {
+		return new FormGroup<UntagDeliveryStreamOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagDeliveryStreamInput {
 		DeliveryStreamName: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagDeliveryStreamInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagDeliveryStreamInputFormGroup() {
+		return new FormGroup<UntagDeliveryStreamInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDestinationOutput {
+	}
+	export interface UpdateDestinationOutputFormProperties {
+	}
+	export function CreateUpdateDestinationOutputFormGroup() {
+		return new FormGroup<UpdateDestinationOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDestinationInput {
@@ -806,19 +1730,32 @@ export namespace MyNS {
 		DestinationId: string;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3DestinationUpdate?: S3DestinationUpdate | null;
+		S3DestinationUpdate?: S3DestinationUpdate;
 
 		/** Describes an update for a destination in Amazon S3. */
-		ExtendedS3DestinationUpdate?: ExtendedS3DestinationUpdate | null;
+		ExtendedS3DestinationUpdate?: ExtendedS3DestinationUpdate;
 
 		/** Describes an update for a destination in Amazon Redshift. */
-		RedshiftDestinationUpdate?: RedshiftDestinationUpdate | null;
+		RedshiftDestinationUpdate?: RedshiftDestinationUpdate;
 
 		/** Describes an update for a destination in Amazon ES. */
-		ElasticsearchDestinationUpdate?: ElasticsearchDestinationUpdate | null;
+		ElasticsearchDestinationUpdate?: ElasticsearchDestinationUpdate;
 
 		/** Describes an update for a destination in Splunk. */
-		SplunkDestinationUpdate?: SplunkDestinationUpdate | null;
+		SplunkDestinationUpdate?: SplunkDestinationUpdate;
+	}
+	export interface UpdateDestinationInputFormProperties {
+		DeliveryStreamName: FormControl<string | null | undefined>,
+		CurrentDeliveryStreamVersionId: FormControl<string | null | undefined>,
+		DestinationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDestinationInputFormGroup() {
+		return new FormGroup<UpdateDestinationInputFormProperties>({
+			DeliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			CurrentDeliveryStreamVersionId: new FormControl<string | null | undefined>(undefined),
+			DestinationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -830,14 +1767,33 @@ export namespace MyNS {
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints | null;
+		BufferingHints?: BufferingHints;
 		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes an update for a destination in Amazon S3. */
+	export interface S3DestinationUpdateFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ErrorOutputPrefix: FormControl<string | null | undefined>,
+		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
+	}
+	export function CreateS3DestinationUpdateFormGroup() {
+		return new FormGroup<S3DestinationUpdateFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -849,24 +1805,45 @@ export namespace MyNS {
 		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints | null;
+		BufferingHints?: BufferingHints;
 		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3BackupUpdate?: S3DestinationUpdate | null;
+		S3BackupUpdate?: S3DestinationUpdate;
 
 		/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
-		DataFormatConversionConfiguration?: DataFormatConversionConfiguration | null;
+		DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
+	}
+
+	/** Describes an update for a destination in Amazon S3. */
+	export interface ExtendedS3DestinationUpdateFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ErrorOutputPrefix: FormControl<string | null | undefined>,
+		CompressionFormat: FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>,
+		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateExtendedS3DestinationUpdateFormGroup() {
+		return new FormGroup<ExtendedS3DestinationUpdateFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ErrorOutputPrefix: new FormControl<string | null | undefined>(undefined),
+			CompressionFormat: new FormControl<S3DestinationConfigurationCompressionFormat | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -876,25 +1853,44 @@ export namespace MyNS {
 		ClusterJDBCURL?: string | null;
 
 		/** Describes a <code>COPY</code> command for Amazon Redshift. */
-		CopyCommand?: CopyCommand | null;
+		CopyCommand?: CopyCommand;
 		Username?: string | null;
 		Password?: string | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
-		RetryOptions?: RedshiftRetryOptions | null;
+		RetryOptions?: RedshiftRetryOptions;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3Update?: S3DestinationUpdate | null;
+		S3Update?: S3DestinationUpdate;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3BackupUpdate?: S3DestinationUpdate | null;
+		S3BackupUpdate?: S3DestinationUpdate;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes an update for a destination in Amazon Redshift. */
+	export interface RedshiftDestinationUpdateFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		ClusterJDBCURL: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		S3BackupMode: FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateRedshiftDestinationUpdateFormGroup() {
+		return new FormGroup<RedshiftDestinationUpdateFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ClusterJDBCURL: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			S3BackupMode: new FormControl<ExtendedS3DestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -908,19 +1904,40 @@ export namespace MyNS {
 		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
 		/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
-		BufferingHints?: ElasticsearchBufferingHints | null;
+		BufferingHints?: ElasticsearchBufferingHints;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
-		RetryOptions?: ElasticsearchRetryOptions | null;
+		RetryOptions?: ElasticsearchRetryOptions;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3Update?: S3DestinationUpdate | null;
+		S3Update?: S3DestinationUpdate;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes an update for a destination in Amazon ES. */
+	export interface ElasticsearchDestinationUpdateFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		DomainARN: FormControl<string | null | undefined>,
+		ClusterEndpoint: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		IndexRotationPeriod: FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>,
+	}
+	export function CreateElasticsearchDestinationUpdateFormGroup() {
+		return new FormGroup<ElasticsearchDestinationUpdateFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			DomainARN: new FormControl<string | null | undefined>(undefined),
+			ClusterEndpoint: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			IndexRotationPeriod: new FormControl<ElasticsearchDestinationConfigurationIndexRotationPeriod | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -932,20 +1949,46 @@ export namespace MyNS {
 		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
-		RetryOptions?: SplunkRetryOptions | null;
+		RetryOptions?: SplunkRetryOptions;
 		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3Update?: S3DestinationUpdate | null;
+		S3Update?: S3DestinationUpdate;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration | null;
+		ProcessingConfiguration?: ProcessingConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+	}
+
+	/** Describes an update for a destination in Splunk. */
+	export interface SplunkDestinationUpdateFormProperties {
+		HECEndpoint: FormControl<string | null | undefined>,
+		HECEndpointType: FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>,
+		HECToken: FormControl<string | null | undefined>,
+		HECAcknowledgmentTimeoutInSeconds: FormControl<number | null | undefined>,
+		S3BackupMode: FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>,
+	}
+	export function CreateSplunkDestinationUpdateFormGroup() {
+		return new FormGroup<SplunkDestinationUpdateFormProperties>({
+			HECEndpoint: new FormControl<string | null | undefined>(undefined),
+			HECEndpointType: new FormControl<SplunkDestinationConfigurationHECEndpointType | null | undefined>(undefined),
+			HECToken: new FormControl<string | null | undefined>(undefined),
+			HECAcknowledgmentTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			S3BackupMode: new FormControl<SplunkDestinationConfigurationS3BackupMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 	export enum CompressionFormat { UNCOMPRESSED = 0, GZIP = 1, ZIP = 2, Snappy = 3, HADOOP_SNAPPY = 4 }

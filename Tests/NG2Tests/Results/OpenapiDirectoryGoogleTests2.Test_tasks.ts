@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Task_ {
 
@@ -26,7 +27,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Collection of links. This collection is read-only. */
-		Task_Links?: Array<Task_Links> | null;
+		Task_Links?: Array<Task_Links>;
 
 		/** Notes describing the task. Optional. */
 		notes?: string | null;
@@ -49,6 +50,69 @@ export namespace MyNS {
 		/** Last modification time of the task (as a RFC 3339 timestamp). */
 		updated?: Date | null;
 	}
+	export interface Task_FormProperties {
+
+		/** Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed. */
+		completed: FormControl<Date | null | undefined>,
+
+		/** Flag indicating whether the task has been deleted. The default if False. */
+		deleted: FormControl<boolean | null | undefined>,
+
+		/** Due date of the task (as a RFC 3339 timestamp). Optional. The due date only records date information; the time portion of the timestamp is discarded when setting the due date. It isn't possible to read or write the time that a task is due via the API. */
+		due: FormControl<Date | null | undefined>,
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Flag indicating whether the task is hidden. This is the case if the task had been marked completed when the task list was last cleared. The default is False. This field is read-only. */
+		hidden: FormControl<boolean | null | undefined>,
+
+		/** Task identifier. */
+		id: FormControl<string | null | undefined>,
+
+		/** Type of the resource. This is always "tasks#task". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Notes describing the task. Optional. */
+		notes: FormControl<string | null | undefined>,
+
+		/** Parent task identifier. This field is omitted if it is a top-level task. This field is read-only. Use the "move" method to move the task under a different parent or to the top level. */
+		parent: FormControl<string | null | undefined>,
+
+		/** String indicating the position of the task among its sibling tasks under the same parent task or at the top level. If this string is greater than another task's corresponding position string according to lexicographical ordering, the task is positioned after the other task under the same parent task (or at the top level). This field is read-only. Use the "move" method to move the task to another position. */
+		position: FormControl<string | null | undefined>,
+
+		/** URL pointing to this task. Used to retrieve, update, or delete this task. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Status of the task. This is either "needsAction" or "completed". */
+		status: FormControl<string | null | undefined>,
+
+		/** Title of the task. */
+		title: FormControl<string | null | undefined>,
+
+		/** Last modification time of the task (as a RFC 3339 timestamp). */
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateTask_FormGroup() {
+		return new FormGroup<Task_FormProperties>({
+			completed: new FormControl<Date | null | undefined>(undefined),
+			deleted: new FormControl<boolean | null | undefined>(undefined),
+			due: new FormControl<Date | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			hidden: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			notes: new FormControl<string | null | undefined>(undefined),
+			parent: new FormControl<string | null | undefined>(undefined),
+			position: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Task_Links {
 
@@ -60,6 +124,25 @@ export namespace MyNS {
 
 		/** Type of the link, e.g. "email". */
 		type?: string | null;
+	}
+	export interface Task_LinksFormProperties {
+
+		/** The description. In HTML speak: Everything between <a> and </a>. */
+		description: FormControl<string | null | undefined>,
+
+		/** The URL. */
+		link: FormControl<string | null | undefined>,
+
+		/** Type of the link, e.g. "email". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateTask_LinksFormGroup() {
+		return new FormGroup<Task_LinksFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TaskList {
@@ -82,6 +165,37 @@ export namespace MyNS {
 		/** Last modification time of the task list (as a RFC 3339 timestamp). */
 		updated?: Date | null;
 	}
+	export interface TaskListFormProperties {
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Task list identifier. */
+		id: FormControl<string | null | undefined>,
+
+		/** Type of the resource. This is always "tasks#taskList". */
+		kind: FormControl<string | null | undefined>,
+
+		/** URL pointing to this task list. Used to retrieve, update, or delete this task list. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Title of the task list. */
+		title: FormControl<string | null | undefined>,
+
+		/** Last modification time of the task list (as a RFC 3339 timestamp). */
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateTaskListFormGroup() {
+		return new FormGroup<TaskListFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaskLists {
 
@@ -89,13 +203,32 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** Collection of task lists. */
-		items?: Array<TaskList> | null;
+		items?: Array<TaskList>;
 
 		/** Type of the resource. This is always "tasks#taskLists". */
 		kind?: string | null;
 
 		/** Token that can be used to request the next page of this result. */
 		nextPageToken?: string | null;
+	}
+	export interface TaskListsFormProperties {
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Type of the resource. This is always "tasks#taskLists". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Token that can be used to request the next page of this result. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskListsFormGroup() {
+		return new FormGroup<TaskListsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Tasks {
@@ -104,13 +237,32 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** Collection of tasks. */
-		items?: Array<Task_> | null;
+		items?: Array<Task_>;
 
 		/** Type of the resource. This is always "tasks#tasks". */
 		kind?: string | null;
 
 		/** Token used to access the next page of this result. */
 		nextPageToken?: string | null;
+	}
+	export interface TasksFormProperties {
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Type of the resource. This is always "tasks#tasks". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Token used to access the next page of this result. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTasksFormGroup() {
+		return new FormGroup<TasksFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

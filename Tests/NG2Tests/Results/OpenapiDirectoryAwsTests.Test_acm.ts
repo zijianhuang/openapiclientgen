@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AddTagsToCertificateRequest {
 		CertificateArn: string;
 		Tags: Array<Tag>;
+	}
+	export interface AddTagsToCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToCertificateRequestFormGroup() {
+		return new FormGroup<AddTagsToCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -14,35 +24,113 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A key-value pair that identifies or specifies metadata about an ACM resource. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidArnException {
 	}
+	export interface InvalidArnExceptionFormProperties {
+	}
+	export function CreateInvalidArnExceptionFormGroup() {
+		return new FormGroup<InvalidArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTagException {
+	}
+	export interface InvalidTagExceptionFormProperties {
+	}
+	export function CreateInvalidTagExceptionFormGroup() {
+		return new FormGroup<InvalidTagExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyTagsException {
 	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagPolicyException {
 	}
+	export interface TagPolicyExceptionFormProperties {
+	}
+	export function CreateTagPolicyExceptionFormGroup() {
+		return new FormGroup<TagPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCertificateRequest {
 		CertificateArn: string;
 	}
+	export interface DeleteCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCertificateRequestFormGroup() {
+		return new FormGroup<DeleteCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCertificateResponse {
 
 		/** Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. */
-		Certificate?: CertificateDetail | null;
+		Certificate?: CertificateDetail;
+	}
+	export interface DescribeCertificateResponseFormProperties {
+	}
+	export function CreateDescribeCertificateResponseFormGroup() {
+		return new FormGroup<DescribeCertificateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -50,8 +138,8 @@ export namespace MyNS {
 	export interface CertificateDetail {
 		CertificateArn?: string | null;
 		DomainName?: string | null;
-		SubjectAlternativeNames?: Array<string> | null;
-		DomainValidationOptions?: Array<DomainValidation> | null;
+		SubjectAlternativeNames?: Array<string>;
+		DomainValidationOptions?: Array<DomainValidation>;
 		Serial?: string | null;
 		Subject?: string | null;
 		Issuer?: string | null;
@@ -65,32 +153,96 @@ export namespace MyNS {
 		NotAfter?: Date | null;
 		KeyAlgorithm?: CertificateDetailKeyAlgorithm | null;
 		SignatureAlgorithm?: string | null;
-		InUseBy?: Array<string> | null;
+		InUseBy?: Array<string>;
 		FailureReason?: CertificateDetailFailureReason | null;
 		Type?: CertificateDetailType | null;
 
 		/** Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>. */
-		RenewalSummary?: RenewalSummary | null;
-		KeyUsages?: Array<KeyUsage> | null;
-		ExtendedKeyUsages?: Array<ExtendedKeyUsage> | null;
+		RenewalSummary?: RenewalSummary;
+		KeyUsages?: Array<KeyUsage>;
+		ExtendedKeyUsages?: Array<ExtendedKeyUsage>;
 		CertificateAuthorityArn?: string | null;
 		RenewalEligibility?: CertificateDetailRenewalEligibility | null;
 
 		/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. */
-		Options?: CertificateOptions | null;
+		Options?: CertificateOptions;
+	}
+
+	/** Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request.  */
+	export interface CertificateDetailFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		Serial: FormControl<string | null | undefined>,
+		Subject: FormControl<string | null | undefined>,
+		Issuer: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		IssuedAt: FormControl<Date | null | undefined>,
+		ImportedAt: FormControl<Date | null | undefined>,
+		Status: FormControl<CertificateDetailStatus | null | undefined>,
+		RevokedAt: FormControl<Date | null | undefined>,
+		RevocationReason: FormControl<CertificateDetailRevocationReason | null | undefined>,
+		NotBefore: FormControl<Date | null | undefined>,
+		NotAfter: FormControl<Date | null | undefined>,
+		KeyAlgorithm: FormControl<CertificateDetailKeyAlgorithm | null | undefined>,
+		SignatureAlgorithm: FormControl<string | null | undefined>,
+		FailureReason: FormControl<CertificateDetailFailureReason | null | undefined>,
+		Type: FormControl<CertificateDetailType | null | undefined>,
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		RenewalEligibility: FormControl<CertificateDetailRenewalEligibility | null | undefined>,
+	}
+	export function CreateCertificateDetailFormGroup() {
+		return new FormGroup<CertificateDetailFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Serial: new FormControl<string | null | undefined>(undefined),
+			Subject: new FormControl<string | null | undefined>(undefined),
+			Issuer: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			IssuedAt: new FormControl<Date | null | undefined>(undefined),
+			ImportedAt: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<CertificateDetailStatus | null | undefined>(undefined),
+			RevokedAt: new FormControl<Date | null | undefined>(undefined),
+			RevocationReason: new FormControl<CertificateDetailRevocationReason | null | undefined>(undefined),
+			NotBefore: new FormControl<Date | null | undefined>(undefined),
+			NotAfter: new FormControl<Date | null | undefined>(undefined),
+			KeyAlgorithm: new FormControl<CertificateDetailKeyAlgorithm | null | undefined>(undefined),
+			SignatureAlgorithm: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<CertificateDetailFailureReason | null | undefined>(undefined),
+			Type: new FormControl<CertificateDetailType | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			RenewalEligibility: new FormControl<CertificateDetailRenewalEligibility | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains information about the validation of each domain name in the certificate. */
 	export interface DomainValidation {
 		DomainName: string;
-		ValidationEmails?: Array<string> | null;
+		ValidationEmails?: Array<string>;
 		ValidationDomain?: string | null;
 		ValidationStatus?: DomainValidationValidationStatus | null;
 
 		/** Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action. */
-		ResourceRecord?: ResourceRecord | null;
+		ResourceRecord?: ResourceRecord;
 		ValidationMethod?: DomainValidationValidationMethod | null;
+	}
+
+	/** Contains information about the validation of each domain name in the certificate. */
+	export interface DomainValidationFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		ValidationDomain: FormControl<string | null | undefined>,
+		ValidationStatus: FormControl<DomainValidationValidationStatus | null | undefined>,
+		ValidationMethod: FormControl<DomainValidationValidationMethod | null | undefined>,
+	}
+	export function CreateDomainValidationFormGroup() {
+		return new FormGroup<DomainValidationFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ValidationDomain: new FormControl<string | null | undefined>(undefined),
+			ValidationStatus: new FormControl<DomainValidationValidationStatus | null | undefined>(undefined),
+			ValidationMethod: new FormControl<DomainValidationValidationMethod | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DomainValidationValidationStatus { PENDING_VALIDATION = 0, SUCCESS = 1, FAILED = 2 }
@@ -101,6 +253,21 @@ export namespace MyNS {
 		Name: string;
 		Type: ResourceRecordType;
 		Value: string;
+	}
+
+	/** Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.  */
+	export interface ResourceRecordFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<ResourceRecordType | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceRecordFormGroup() {
+		return new FormGroup<ResourceRecordFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ResourceRecordType | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceRecordType { CNAME = 0 }
@@ -126,12 +293,38 @@ export namespace MyNS {
 		UpdatedAt: Date;
 	}
 
+	/** Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>. */
+	export interface RenewalSummaryFormProperties {
+		RenewalStatus: FormControl<RenewalSummaryRenewalStatus | null | undefined>,
+		RenewalStatusReason: FormControl<CertificateDetailFailureReason | null | undefined>,
+		UpdatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateRenewalSummaryFormGroup() {
+		return new FormGroup<RenewalSummaryFormProperties>({
+			RenewalStatus: new FormControl<RenewalSummaryRenewalStatus | null | undefined>(undefined),
+			RenewalStatusReason: new FormControl<CertificateDetailFailureReason | null | undefined>(undefined),
+			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RenewalSummaryRenewalStatus { PENDING_AUTO_RENEWAL = 0, PENDING_VALIDATION = 1, SUCCESS = 2, FAILED = 3 }
 
 
 	/** The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. */
 	export interface KeyUsage {
 		Name?: KeyUsageName | null;
+	}
+
+	/** The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. */
+	export interface KeyUsageFormProperties {
+		Name: FormControl<KeyUsageName | null | undefined>,
+	}
+	export function CreateKeyUsageFormGroup() {
+		return new FormGroup<KeyUsageFormProperties>({
+			Name: new FormControl<KeyUsageName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum KeyUsageName { DIGITAL_SIGNATURE = 0, NON_REPUDIATION = 1, KEY_ENCIPHERMENT = 2, DATA_ENCIPHERMENT = 3, KEY_AGREEMENT = 4, CERTIFICATE_SIGNING = 5, CRL_SIGNING = 6, ENCIPHER_ONLY = 7, DECIPHER_ONLY = 8, ANY = 9, CUSTOM = 10 }
@@ -141,6 +334,19 @@ export namespace MyNS {
 	export interface ExtendedKeyUsage {
 		Name?: ExtendedKeyUsageName | null;
 		OID?: string | null;
+	}
+
+	/** The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.  */
+	export interface ExtendedKeyUsageFormProperties {
+		Name: FormControl<ExtendedKeyUsageName | null | undefined>,
+		OID: FormControl<string | null | undefined>,
+	}
+	export function CreateExtendedKeyUsageFormGroup() {
+		return new FormGroup<ExtendedKeyUsageFormProperties>({
+			Name: new FormControl<ExtendedKeyUsageName | null | undefined>(undefined),
+			OID: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ExtendedKeyUsageName { TLS_WEB_SERVER_AUTHENTICATION = 0, TLS_WEB_CLIENT_AUTHENTICATION = 1, CODE_SIGNING = 2, EMAIL_PROTECTION = 3, TIME_STAMPING = 4, OCSP_SIGNING = 5, IPSEC_END_SYSTEM = 6, IPSEC_TUNNEL = 7, IPSEC_USER = 8, ANY = 9, NONE = 10, CUSTOM = 11 }
@@ -153,10 +359,30 @@ export namespace MyNS {
 		CertificateTransparencyLoggingPreference?: CertificateOptionsCertificateTransparencyLoggingPreference | null;
 	}
 
+	/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.  */
+	export interface CertificateOptionsFormProperties {
+		CertificateTransparencyLoggingPreference: FormControl<CertificateOptionsCertificateTransparencyLoggingPreference | null | undefined>,
+	}
+	export function CreateCertificateOptionsFormGroup() {
+		return new FormGroup<CertificateOptionsFormProperties>({
+			CertificateTransparencyLoggingPreference: new FormControl<CertificateOptionsCertificateTransparencyLoggingPreference | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CertificateOptionsCertificateTransparencyLoggingPreference { ENABLED = 0, DISABLED = 1 }
 
 	export interface DescribeCertificateRequest {
 		CertificateArn: string;
+	}
+	export interface DescribeCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCertificateRequestFormGroup() {
+		return new FormGroup<DescribeCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExportCertificateResponse {
@@ -164,26 +390,86 @@ export namespace MyNS {
 		CertificateChain?: string | null;
 		PrivateKey?: string | null;
 	}
+	export interface ExportCertificateResponseFormProperties {
+		Certificate: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+		PrivateKey: FormControl<string | null | undefined>,
+	}
+	export function CreateExportCertificateResponseFormGroup() {
+		return new FormGroup<ExportCertificateResponseFormProperties>({
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+			PrivateKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExportCertificateRequest {
 		CertificateArn: string;
 		Passphrase: string;
 	}
+	export interface ExportCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		Passphrase: FormControl<string | null | undefined>,
+	}
+	export function CreateExportCertificateRequestFormGroup() {
+		return new FormGroup<ExportCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			Passphrase: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RequestInProgressException {
+	}
+	export interface RequestInProgressExceptionFormProperties {
+	}
+	export function CreateRequestInProgressExceptionFormGroup() {
+		return new FormGroup<RequestInProgressExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetCertificateResponse {
 		Certificate?: string | null;
 		CertificateChain?: string | null;
 	}
+	export interface GetCertificateResponseFormProperties {
+		Certificate: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateResponseFormGroup() {
+		return new FormGroup<GetCertificateResponseFormProperties>({
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCertificateRequest {
 		CertificateArn: string;
 	}
+	export interface GetCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateRequestFormGroup() {
+		return new FormGroup<GetCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ImportCertificateResponse {
 		CertificateArn?: string | null;
+	}
+	export interface ImportCertificateResponseFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateImportCertificateResponseFormGroup() {
+		return new FormGroup<ImportCertificateResponseFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportCertificateRequest {
@@ -191,15 +477,46 @@ export namespace MyNS {
 		Certificate: string;
 		PrivateKey: string;
 		CertificateChain?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ImportCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		Certificate: FormControl<string | null | undefined>,
+		PrivateKey: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateImportCertificateRequestFormGroup() {
+		return new FormGroup<ImportCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			PrivateKey: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListCertificatesResponse {
 		NextToken?: string | null;
-		CertificateSummaryList?: Array<CertificateSummary> | null;
+		CertificateSummaryList?: Array<CertificateSummary>;
+	}
+	export interface ListCertificatesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCertificatesResponseFormGroup() {
+		return new FormGroup<ListCertificatesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -209,13 +526,37 @@ export namespace MyNS {
 		DomainName?: string | null;
 	}
 
+	/** This structure is returned in the response object of <a>ListCertificates</a> action.  */
+	export interface CertificateSummaryFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCertificateSummaryFormGroup() {
+		return new FormGroup<CertificateSummaryFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCertificatesRequest {
-		CertificateStatuses?: Array<CertificateStatus> | null;
+		CertificateStatuses?: Array<CertificateStatus>;
 
 		/** This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. */
-		Includes?: Filters | null;
+		Includes?: Filters;
 		NextToken?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListCertificatesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListCertificatesRequestFormGroup() {
+		return new FormGroup<ListCertificatesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CertificateStatus { PENDING_VALIDATION = 0, ISSUED = 1, INACTIVE = 2, EXPIRED = 3, VALIDATION_TIMED_OUT = 4, REVOKED = 5, FAILED = 6 }
@@ -223,48 +564,122 @@ export namespace MyNS {
 
 	/** This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.  */
 	export interface Filters {
-		extendedKeyUsage?: Array<ExtendedKeyUsageName> | null;
-		keyUsage?: Array<KeyUsageName> | null;
-		keyTypes?: Array<KeyAlgorithm> | null;
+		extendedKeyUsage?: Array<ExtendedKeyUsageName>;
+		keyUsage?: Array<KeyUsageName>;
+		keyTypes?: Array<KeyAlgorithm>;
+	}
+
+	/** This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.  */
+	export interface FiltersFormProperties {
+	}
+	export function CreateFiltersFormGroup() {
+		return new FormGroup<FiltersFormProperties>({
+		});
+
 	}
 
 	export enum KeyAlgorithm { RSA_2048 = 0, RSA_1024 = 1, RSA_4096 = 2, EC_prime256v1 = 3, EC_secp384r1 = 4, EC_secp521r1 = 5 }
 
 	export interface InvalidArgsException {
 	}
+	export interface InvalidArgsExceptionFormProperties {
+	}
+	export function CreateInvalidArgsExceptionFormGroup() {
+		return new FormGroup<InvalidArgsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForCertificateResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForCertificateResponseFormProperties {
+	}
+	export function CreateListTagsForCertificateResponseFormGroup() {
+		return new FormGroup<ListTagsForCertificateResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForCertificateRequest {
 		CertificateArn: string;
+	}
+	export interface ListTagsForCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForCertificateRequestFormGroup() {
+		return new FormGroup<ListTagsForCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemoveTagsFromCertificateRequest {
 		CertificateArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface RemoveTagsFromCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromCertificateRequestFormGroup() {
+		return new FormGroup<RemoveTagsFromCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RenewCertificateRequest {
 		CertificateArn: string;
+	}
+	export interface RenewCertificateRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRenewCertificateRequestFormGroup() {
+		return new FormGroup<RenewCertificateRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RequestCertificateResponse {
 		CertificateArn?: string | null;
 	}
+	export interface RequestCertificateResponseFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestCertificateResponseFormGroup() {
+		return new FormGroup<RequestCertificateResponseFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RequestCertificateRequest {
 		DomainName: string;
 		ValidationMethod?: DomainValidationValidationMethod | null;
-		SubjectAlternativeNames?: Array<string> | null;
+		SubjectAlternativeNames?: Array<string>;
 		IdempotencyToken?: string | null;
-		DomainValidationOptions?: Array<DomainValidationOption> | null;
+		DomainValidationOptions?: Array<DomainValidationOption>;
 
 		/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. */
-		Options?: CertificateOptions | null;
+		Options?: CertificateOptions;
 		CertificateAuthorityArn?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface RequestCertificateRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		ValidationMethod: FormControl<DomainValidationValidationMethod | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestCertificateRequestFormGroup() {
+		return new FormGroup<RequestCertificateRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ValidationMethod: new FormControl<DomainValidationValidationMethod | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -274,7 +689,27 @@ export namespace MyNS {
 		ValidationDomain: string;
 	}
 
+	/** Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership. */
+	export interface DomainValidationOptionFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		ValidationDomain: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainValidationOptionFormGroup() {
+		return new FormGroup<DomainValidationOptionFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ValidationDomain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidDomainValidationOptionsException {
+	}
+	export interface InvalidDomainValidationOptionsExceptionFormProperties {
+	}
+	export function CreateInvalidDomainValidationOptionsExceptionFormGroup() {
+		return new FormGroup<InvalidDomainValidationOptionsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResendValidationEmailRequest {
@@ -282,8 +717,28 @@ export namespace MyNS {
 		Domain: string;
 		ValidationDomain: string;
 	}
+	export interface ResendValidationEmailRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		ValidationDomain: FormControl<string | null | undefined>,
+	}
+	export function CreateResendValidationEmailRequestFormGroup() {
+		return new FormGroup<ResendValidationEmailRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			ValidationDomain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidStateException {
+	}
+	export interface InvalidStateExceptionFormProperties {
+	}
+	export function CreateInvalidStateExceptionFormGroup() {
+		return new FormGroup<InvalidStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCertificateOptionsRequest {
@@ -294,6 +749,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Options: CertificateOptions;
+	}
+	export interface UpdateCertificateOptionsRequestFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCertificateOptionsRequestFormGroup() {
+		return new FormGroup<UpdateCertificateOptionsRequestFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RevocationReason { UNSPECIFIED = 0, KEY_COMPROMISE = 1, CA_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERCEDED = 4, CESSATION_OF_OPERATION = 5, CERTIFICATE_HOLD = 6, REMOVE_FROM_CRL = 7, PRIVILEGE_WITHDRAWN = 8, A_A_COMPROMISE = 9 }

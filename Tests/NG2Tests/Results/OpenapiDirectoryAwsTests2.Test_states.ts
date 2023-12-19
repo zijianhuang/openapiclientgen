@@ -1,15 +1,36 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateActivityOutput {
 		activityArn: string;
 		creationDate: Date;
 	}
+	export interface CreateActivityOutputFormProperties {
+		activityArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateActivityOutputFormGroup() {
+		return new FormGroup<CreateActivityOutputFormProperties>({
+			activityArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateActivityInput {
 		name: string;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateActivityInputFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateActivityInputFormGroup() {
+		return new FormGroup<CreateActivityInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -19,18 +40,63 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** <p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p> <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p> */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ActivityLimitExceeded {
+	}
+	export interface ActivityLimitExceededFormProperties {
+	}
+	export function CreateActivityLimitExceededFormGroup() {
+		return new FormGroup<ActivityLimitExceededFormProperties>({
+		});
+
 	}
 
 	export interface InvalidName {
 	}
+	export interface InvalidNameFormProperties {
+	}
+	export function CreateInvalidNameFormGroup() {
+		return new FormGroup<InvalidNameFormProperties>({
+		});
+
+	}
 
 	export interface TooManyTags {
+	}
+	export interface TooManyTagsFormProperties {
+	}
+	export function CreateTooManyTagsFormGroup() {
+		return new FormGroup<TooManyTagsFormProperties>({
+		});
+
 	}
 
 	export interface CreateStateMachineOutput {
 		stateMachineArn: string;
 		creationDate: Date;
+	}
+	export interface CreateStateMachineOutputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateStateMachineOutputFormGroup() {
+		return new FormGroup<CreateStateMachineOutputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStateMachineInput {
@@ -40,8 +106,23 @@ export namespace MyNS {
 		type?: CreateStateMachineInputType | null;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration | null;
-		tags?: Array<Tag> | null;
+		loggingConfiguration?: LoggingConfiguration;
+		tags?: Array<Tag>;
+	}
+	export interface CreateStateMachineInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		definition: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		type: FormControl<CreateStateMachineInputType | null | undefined>,
+	}
+	export function CreateCreateStateMachineInputFormGroup() {
+		return new FormGroup<CreateStateMachineInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateStateMachineInputType { STANDARD = 0, EXPRESS = 1 }
@@ -51,7 +132,20 @@ export namespace MyNS {
 	export interface LoggingConfiguration {
 		level?: LoggingConfigurationLevel | null;
 		includeExecutionData?: boolean | null;
-		destinations?: Array<LogDestination> | null;
+		destinations?: Array<LogDestination>;
+	}
+
+	/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
+	export interface LoggingConfigurationFormProperties {
+		level: FormControl<LoggingConfigurationLevel | null | undefined>,
+		includeExecutionData: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLoggingConfigurationFormGroup() {
+		return new FormGroup<LoggingConfigurationFormProperties>({
+			level: new FormControl<LoggingConfigurationLevel | null | undefined>(undefined),
+			includeExecutionData: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LoggingConfigurationLevel { ALL = 0, ERROR = 1, FATAL = 2, OFF = 3 }
@@ -61,7 +155,16 @@ export namespace MyNS {
 	export interface LogDestination {
 
 		/** <p/> */
-		cloudWatchLogsLogGroup?: CloudWatchLogsLogGroup | null;
+		cloudWatchLogsLogGroup?: CloudWatchLogsLogGroup;
+	}
+
+	/** <p/> */
+	export interface LogDestinationFormProperties {
+	}
+	export function CreateLogDestinationFormGroup() {
+		return new FormGroup<LogDestinationFormProperties>({
+		});
+
 	}
 
 
@@ -70,39 +173,131 @@ export namespace MyNS {
 		logGroupArn?: string | null;
 	}
 
+	/** <p/> */
+	export interface CloudWatchLogsLogGroupFormProperties {
+		logGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLogsLogGroupFormGroup() {
+		return new FormGroup<CloudWatchLogsLogGroupFormProperties>({
+			logGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidArn {
+	}
+	export interface InvalidArnFormProperties {
+	}
+	export function CreateInvalidArnFormGroup() {
+		return new FormGroup<InvalidArnFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDefinition {
 	}
+	export interface InvalidDefinitionFormProperties {
+	}
+	export function CreateInvalidDefinitionFormGroup() {
+		return new FormGroup<InvalidDefinitionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidLoggingConfiguration {
+	}
+	export interface InvalidLoggingConfigurationFormProperties {
+	}
+	export function CreateInvalidLoggingConfigurationFormGroup() {
+		return new FormGroup<InvalidLoggingConfigurationFormProperties>({
+		});
+
 	}
 
 	export interface StateMachineAlreadyExists {
 	}
+	export interface StateMachineAlreadyExistsFormProperties {
+	}
+	export function CreateStateMachineAlreadyExistsFormGroup() {
+		return new FormGroup<StateMachineAlreadyExistsFormProperties>({
+		});
+
+	}
 
 	export interface StateMachineDeleting {
+	}
+	export interface StateMachineDeletingFormProperties {
+	}
+	export function CreateStateMachineDeletingFormGroup() {
+		return new FormGroup<StateMachineDeletingFormProperties>({
+		});
+
 	}
 
 	export interface StateMachineLimitExceeded {
 	}
+	export interface StateMachineLimitExceededFormProperties {
+	}
+	export function CreateStateMachineLimitExceededFormGroup() {
+		return new FormGroup<StateMachineLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface StateMachineTypeNotSupported {
 	}
+	export interface StateMachineTypeNotSupportedFormProperties {
+	}
+	export function CreateStateMachineTypeNotSupportedFormGroup() {
+		return new FormGroup<StateMachineTypeNotSupportedFormProperties>({
+		});
+
+	}
 
 	export interface DeleteActivityOutput {
+	}
+	export interface DeleteActivityOutputFormProperties {
+	}
+	export function CreateDeleteActivityOutputFormGroup() {
+		return new FormGroup<DeleteActivityOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteActivityInput {
 		activityArn: string;
 	}
+	export interface DeleteActivityInputFormProperties {
+		activityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteActivityInputFormGroup() {
+		return new FormGroup<DeleteActivityInputFormProperties>({
+			activityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteStateMachineOutput {
+	}
+	export interface DeleteStateMachineOutputFormProperties {
+	}
+	export function CreateDeleteStateMachineOutputFormGroup() {
+		return new FormGroup<DeleteStateMachineOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteStateMachineInput {
 		stateMachineArn: string;
+	}
+	export interface DeleteStateMachineInputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStateMachineInputFormGroup() {
+		return new FormGroup<DeleteStateMachineInputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeActivityOutput {
@@ -110,12 +305,41 @@ export namespace MyNS {
 		name: string;
 		creationDate: Date;
 	}
+	export interface DescribeActivityOutputFormProperties {
+		activityArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeActivityOutputFormGroup() {
+		return new FormGroup<DescribeActivityOutputFormProperties>({
+			activityArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeActivityInput {
 		activityArn: string;
 	}
+	export interface DescribeActivityInputFormProperties {
+		activityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeActivityInputFormGroup() {
+		return new FormGroup<DescribeActivityInputFormProperties>({
+			activityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ActivityDoesNotExist {
+	}
+	export interface ActivityDoesNotExistFormProperties {
+	}
+	export function CreateActivityDoesNotExistFormGroup() {
+		return new FormGroup<ActivityDoesNotExistFormProperties>({
+		});
+
 	}
 
 	export interface DescribeExecutionOutput {
@@ -128,14 +352,53 @@ export namespace MyNS {
 		input: string;
 		output?: string | null;
 	}
+	export interface DescribeExecutionOutputFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+		stateMachineArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		status: FormControl<DescribeExecutionOutputStatus | null | undefined>,
+		startDate: FormControl<Date | null | undefined>,
+		stopDate: FormControl<Date | null | undefined>,
+		input: FormControl<string | null | undefined>,
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeExecutionOutputFormGroup() {
+		return new FormGroup<DescribeExecutionOutputFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			stopDate: new FormControl<Date | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeExecutionOutputStatus { RUNNING = 0, SUCCEEDED = 1, FAILED = 2, TIMED_OUT = 3, ABORTED = 4 }
 
 	export interface DescribeExecutionInput {
 		executionArn: string;
 	}
+	export interface DescribeExecutionInputFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeExecutionInputFormGroup() {
+		return new FormGroup<DescribeExecutionInputFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExecutionDoesNotExist {
+	}
+	export interface ExecutionDoesNotExistFormProperties {
+	}
+	export function CreateExecutionDoesNotExistFormGroup() {
+		return new FormGroup<ExecutionDoesNotExistFormProperties>({
+		});
+
 	}
 
 	export interface DescribeStateMachineOutput {
@@ -148,7 +411,28 @@ export namespace MyNS {
 		creationDate: Date;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration | null;
+		loggingConfiguration?: LoggingConfiguration;
+	}
+	export interface DescribeStateMachineOutputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		status: FormControl<DescribeStateMachineOutputStatus | null | undefined>,
+		definition: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		type: FormControl<CreateStateMachineInputType | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeStateMachineOutputFormGroup() {
+		return new FormGroup<DescribeStateMachineOutputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DescribeStateMachineOutputStatus | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeStateMachineOutputStatus { ACTIVE = 0, DELETING = 1 }
@@ -156,8 +440,24 @@ export namespace MyNS {
 	export interface DescribeStateMachineInput {
 		stateMachineArn: string;
 	}
+	export interface DescribeStateMachineInputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStateMachineInputFormGroup() {
+		return new FormGroup<DescribeStateMachineInputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StateMachineDoesNotExist {
+	}
+	export interface StateMachineDoesNotExistFormProperties {
+	}
+	export function CreateStateMachineDoesNotExistFormGroup() {
+		return new FormGroup<StateMachineDoesNotExistFormProperties>({
+		});
+
 	}
 
 	export interface DescribeStateMachineForExecutionOutput {
@@ -168,24 +468,79 @@ export namespace MyNS {
 		updateDate: Date;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration | null;
+		loggingConfiguration?: LoggingConfiguration;
+	}
+	export interface DescribeStateMachineForExecutionOutputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		definition: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		updateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeStateMachineForExecutionOutputFormGroup() {
+		return new FormGroup<DescribeStateMachineForExecutionOutputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			updateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeStateMachineForExecutionInput {
 		executionArn: string;
+	}
+	export interface DescribeStateMachineForExecutionInputFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStateMachineForExecutionInputFormGroup() {
+		return new FormGroup<DescribeStateMachineForExecutionInputFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetActivityTaskOutput {
 		taskToken?: string | null;
 		input?: string | null;
 	}
+	export interface GetActivityTaskOutputFormProperties {
+		taskToken: FormControl<string | null | undefined>,
+		input: FormControl<string | null | undefined>,
+	}
+	export function CreateGetActivityTaskOutputFormGroup() {
+		return new FormGroup<GetActivityTaskOutputFormProperties>({
+			taskToken: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetActivityTaskInput {
 		activityArn: string;
 		workerName?: string | null;
 	}
+	export interface GetActivityTaskInputFormProperties {
+		activityArn: FormControl<string | null | undefined>,
+		workerName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetActivityTaskInputFormGroup() {
+		return new FormGroup<GetActivityTaskInputFormProperties>({
+			activityArn: new FormControl<string | null | undefined>(undefined),
+			workerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ActivityWorkerLimitExceeded {
+	}
+	export interface ActivityWorkerLimitExceededFormProperties {
+	}
+	export function CreateActivityWorkerLimitExceededFormGroup() {
+		return new FormGroup<ActivityWorkerLimitExceededFormProperties>({
+		});
+
 	}
 
 	export interface GetExecutionHistoryOutput {
@@ -197,6 +552,15 @@ export namespace MyNS {
 		events: Array<HistoryEvent>;
 		nextToken?: string | null;
 	}
+	export interface GetExecutionHistoryOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetExecutionHistoryOutputFormGroup() {
+		return new FormGroup<GetExecutionHistoryOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains details about the events of an execution. */
@@ -207,100 +571,117 @@ export namespace MyNS {
 		previousEventId?: number | null;
 
 		/** Contains details about an activity that failed during an execution. */
-		activityFailedEventDetails?: ActivityFailedEventDetails | null;
+		activityFailedEventDetails?: ActivityFailedEventDetails;
 
 		/** Contains details about an activity schedule failure that occurred during an execution. */
-		activityScheduleFailedEventDetails?: ActivityScheduleFailedEventDetails | null;
+		activityScheduleFailedEventDetails?: ActivityScheduleFailedEventDetails;
 
 		/** Contains details about an activity scheduled during an execution. */
-		activityScheduledEventDetails?: ActivityScheduledEventDetails | null;
+		activityScheduledEventDetails?: ActivityScheduledEventDetails;
 
 		/** Contains details about the start of an activity during an execution. */
-		activityStartedEventDetails?: ActivityStartedEventDetails | null;
+		activityStartedEventDetails?: ActivityStartedEventDetails;
 
 		/** Contains details about an activity that successfully terminated during an execution. */
-		activitySucceededEventDetails?: ActivitySucceededEventDetails | null;
+		activitySucceededEventDetails?: ActivitySucceededEventDetails;
 
 		/** Contains details about an activity timeout that occurred during an execution. */
-		activityTimedOutEventDetails?: ActivityTimedOutEventDetails | null;
+		activityTimedOutEventDetails?: ActivityTimedOutEventDetails;
 
 		/** Contains details about a task failure event. */
-		taskFailedEventDetails?: TaskFailedEventDetails | null;
+		taskFailedEventDetails?: TaskFailedEventDetails;
 
 		/** Contains details about a task scheduled during an execution. */
-		taskScheduledEventDetails?: TaskScheduledEventDetails | null;
+		taskScheduledEventDetails?: TaskScheduledEventDetails;
 
 		/** Contains details about a task that failed to start during an execution. */
-		taskStartFailedEventDetails?: TaskStartFailedEventDetails | null;
+		taskStartFailedEventDetails?: TaskStartFailedEventDetails;
 
 		/** Contains details about the start of a task during an execution. */
-		taskStartedEventDetails?: TaskStartedEventDetails | null;
+		taskStartedEventDetails?: TaskStartedEventDetails;
 
 		/** Contains details about a task that failed to submit during an execution. */
-		taskSubmitFailedEventDetails?: TaskSubmitFailedEventDetails | null;
+		taskSubmitFailedEventDetails?: TaskSubmitFailedEventDetails;
 
 		/** Contains details about a task submitted to a resource . */
-		taskSubmittedEventDetails?: TaskSubmittedEventDetails | null;
+		taskSubmittedEventDetails?: TaskSubmittedEventDetails;
 
 		/** Contains details about the successful completion of a task state. */
-		taskSucceededEventDetails?: TaskSucceededEventDetails | null;
+		taskSucceededEventDetails?: TaskSucceededEventDetails;
 
 		/** Contains details about a resource timeout that occurred during an execution. */
-		taskTimedOutEventDetails?: TaskTimedOutEventDetails | null;
+		taskTimedOutEventDetails?: TaskTimedOutEventDetails;
 
 		/** Contains details about an execution failure event. */
-		executionFailedEventDetails?: ExecutionFailedEventDetails | null;
+		executionFailedEventDetails?: ExecutionFailedEventDetails;
 
 		/** Contains details about the start of the execution. */
-		executionStartedEventDetails?: ExecutionStartedEventDetails | null;
+		executionStartedEventDetails?: ExecutionStartedEventDetails;
 
 		/** Contains details about the successful termination of the execution. */
-		executionSucceededEventDetails?: ExecutionSucceededEventDetails | null;
+		executionSucceededEventDetails?: ExecutionSucceededEventDetails;
 
 		/** Contains details about an abort of an execution. */
-		executionAbortedEventDetails?: ExecutionAbortedEventDetails | null;
+		executionAbortedEventDetails?: ExecutionAbortedEventDetails;
 
 		/** Contains details about the execution timeout that occurred during the execution. */
-		executionTimedOutEventDetails?: ExecutionTimedOutEventDetails | null;
+		executionTimedOutEventDetails?: ExecutionTimedOutEventDetails;
 
 		/** Details about a Map state that was started. */
-		mapStateStartedEventDetails?: MapStateStartedEventDetails | null;
+		mapStateStartedEventDetails?: MapStateStartedEventDetails;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationStartedEventDetails?: MapIterationEventDetails | null;
+		mapIterationStartedEventDetails?: MapIterationEventDetails;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationSucceededEventDetails?: MapIterationEventDetails | null;
+		mapIterationSucceededEventDetails?: MapIterationEventDetails;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationFailedEventDetails?: MapIterationEventDetails | null;
+		mapIterationFailedEventDetails?: MapIterationEventDetails;
 
 		/** Contains details about an iteration of a Map state. */
-		mapIterationAbortedEventDetails?: MapIterationEventDetails | null;
+		mapIterationAbortedEventDetails?: MapIterationEventDetails;
 
 		/** Contains details about a lambda function that failed during an execution. */
-		lambdaFunctionFailedEventDetails?: LambdaFunctionFailedEventDetails | null;
+		lambdaFunctionFailedEventDetails?: LambdaFunctionFailedEventDetails;
 
 		/** Contains details about a failed lambda function schedule event that occurred during an execution. */
-		lambdaFunctionScheduleFailedEventDetails?: LambdaFunctionScheduleFailedEventDetails | null;
+		lambdaFunctionScheduleFailedEventDetails?: LambdaFunctionScheduleFailedEventDetails;
 
 		/** Contains details about a lambda function scheduled during an execution. */
-		lambdaFunctionScheduledEventDetails?: LambdaFunctionScheduledEventDetails | null;
+		lambdaFunctionScheduledEventDetails?: LambdaFunctionScheduledEventDetails;
 
 		/** Contains details about a lambda function that failed to start during an execution. */
-		lambdaFunctionStartFailedEventDetails?: LambdaFunctionStartFailedEventDetails | null;
+		lambdaFunctionStartFailedEventDetails?: LambdaFunctionStartFailedEventDetails;
 
 		/** Contains details about a lambda function that successfully terminated during an execution. */
-		lambdaFunctionSucceededEventDetails?: LambdaFunctionSucceededEventDetails | null;
+		lambdaFunctionSucceededEventDetails?: LambdaFunctionSucceededEventDetails;
 
 		/** Contains details about a lambda function timeout that occurred during an execution. */
-		lambdaFunctionTimedOutEventDetails?: LambdaFunctionTimedOutEventDetails | null;
+		lambdaFunctionTimedOutEventDetails?: LambdaFunctionTimedOutEventDetails;
 
 		/** Contains details about a state entered during an execution. */
-		stateEnteredEventDetails?: StateEnteredEventDetails | null;
+		stateEnteredEventDetails?: StateEnteredEventDetails;
 
 		/** Contains details about an exit from a state during an execution. */
-		stateExitedEventDetails?: StateExitedEventDetails | null;
+		stateExitedEventDetails?: StateExitedEventDetails;
+	}
+
+	/** Contains details about the events of an execution. */
+	export interface HistoryEventFormProperties {
+		timestamp: FormControl<Date | null | undefined>,
+		type: FormControl<HistoryEventType | null | undefined>,
+		id: FormControl<number | null | undefined>,
+		previousEventId: FormControl<number | null | undefined>,
+	}
+	export function CreateHistoryEventFormGroup() {
+		return new FormGroup<HistoryEventFormProperties>({
+			timestamp: new FormControl<Date | null | undefined>(undefined),
+			type: new FormControl<HistoryEventType | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined),
+			previousEventId: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HistoryEventType { ActivityFailed = 0, ActivityScheduled = 1, ActivityScheduleFailed = 2, ActivityStarted = 3, ActivitySucceeded = 4, ActivityTimedOut = 5, ChoiceStateEntered = 6, ChoiceStateExited = 7, ExecutionAborted = 8, ExecutionFailed = 9, ExecutionStarted = 10, ExecutionSucceeded = 11, ExecutionTimedOut = 12, FailStateEntered = 13, LambdaFunctionFailed = 14, LambdaFunctionScheduled = 15, LambdaFunctionScheduleFailed = 16, LambdaFunctionStarted = 17, LambdaFunctionStartFailed = 18, LambdaFunctionSucceeded = 19, LambdaFunctionTimedOut = 20, MapIterationAborted = 21, MapIterationFailed = 22, MapIterationStarted = 23, MapIterationSucceeded = 24, MapStateAborted = 25, MapStateEntered = 26, MapStateExited = 27, MapStateFailed = 28, MapStateStarted = 29, MapStateSucceeded = 30, ParallelStateAborted = 31, ParallelStateEntered = 32, ParallelStateExited = 33, ParallelStateFailed = 34, ParallelStateStarted = 35, ParallelStateSucceeded = 36, PassStateEntered = 37, PassStateExited = 38, SucceedStateEntered = 39, SucceedStateExited = 40, TaskFailed = 41, TaskScheduled = 42, TaskStarted = 43, TaskStartFailed = 44, TaskStateAborted = 45, TaskStateEntered = 46, TaskStateExited = 47, TaskSubmitFailed = 48, TaskSubmitted = 49, TaskSucceeded = 50, TaskTimedOut = 51, WaitStateAborted = 52, WaitStateEntered = 53, WaitStateExited = 54 }
@@ -312,11 +693,37 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about an activity that failed during an execution. */
+	export interface ActivityFailedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityFailedEventDetailsFormGroup() {
+		return new FormGroup<ActivityFailedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about an activity schedule failure that occurred during an execution. */
 	export interface ActivityScheduleFailedEventDetails {
 		error?: string | null;
 		cause?: string | null;
+	}
+
+	/** Contains details about an activity schedule failure that occurred during an execution. */
+	export interface ActivityScheduleFailedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityScheduleFailedEventDetailsFormGroup() {
+		return new FormGroup<ActivityScheduleFailedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -328,16 +735,55 @@ export namespace MyNS {
 		heartbeatInSeconds?: number | null;
 	}
 
+	/** Contains details about an activity scheduled during an execution. */
+	export interface ActivityScheduledEventDetailsFormProperties {
+		resource: FormControl<string | null | undefined>,
+		input: FormControl<string | null | undefined>,
+		timeoutInSeconds: FormControl<number | null | undefined>,
+		heartbeatInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateActivityScheduledEventDetailsFormGroup() {
+		return new FormGroup<ActivityScheduledEventDetailsFormProperties>({
+			resource: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined),
+			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			heartbeatInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about the start of an activity during an execution. */
 	export interface ActivityStartedEventDetails {
 		workerName?: string | null;
 	}
 
+	/** Contains details about the start of an activity during an execution. */
+	export interface ActivityStartedEventDetailsFormProperties {
+		workerName: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityStartedEventDetailsFormGroup() {
+		return new FormGroup<ActivityStartedEventDetailsFormProperties>({
+			workerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about an activity that successfully terminated during an execution. */
 	export interface ActivitySucceededEventDetails {
 		output?: string | null;
+	}
+
+	/** Contains details about an activity that successfully terminated during an execution. */
+	export interface ActivitySucceededEventDetailsFormProperties {
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateActivitySucceededEventDetailsFormGroup() {
+		return new FormGroup<ActivitySucceededEventDetailsFormProperties>({
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -347,6 +793,19 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about an activity timeout that occurred during an execution. */
+	export interface ActivityTimedOutEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityTimedOutEventDetailsFormGroup() {
+		return new FormGroup<ActivityTimedOutEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a task failure event. */
 	export interface TaskFailedEventDetails {
@@ -354,6 +813,23 @@ export namespace MyNS {
 		resource: string;
 		error?: string | null;
 		cause?: string | null;
+	}
+
+	/** Contains details about a task failure event. */
+	export interface TaskFailedEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskFailedEventDetailsFormGroup() {
+		return new FormGroup<TaskFailedEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,6 +842,25 @@ export namespace MyNS {
 		timeoutInSeconds?: number | null;
 	}
 
+	/** Contains details about a task scheduled during an execution. */
+	export interface TaskScheduledEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		parameters: FormControl<string | null | undefined>,
+		timeoutInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTaskScheduledEventDetailsFormGroup() {
+		return new FormGroup<TaskScheduledEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			parameters: new FormControl<string | null | undefined>(undefined),
+			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a task that failed to start during an execution. */
 	export interface TaskStartFailedEventDetails {
@@ -375,11 +870,41 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about a task that failed to start during an execution. */
+	export interface TaskStartFailedEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskStartFailedEventDetailsFormGroup() {
+		return new FormGroup<TaskStartFailedEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about the start of a task during an execution. */
 	export interface TaskStartedEventDetails {
 		resourceType: string;
 		resource: string;
+	}
+
+	/** Contains details about the start of a task during an execution. */
+	export interface TaskStartedEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskStartedEventDetailsFormGroup() {
+		return new FormGroup<TaskStartedEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -391,6 +916,23 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about a task that failed to submit during an execution. */
+	export interface TaskSubmitFailedEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskSubmitFailedEventDetailsFormGroup() {
+		return new FormGroup<TaskSubmitFailedEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a task submitted to a resource . */
 	export interface TaskSubmittedEventDetails {
@@ -399,12 +941,42 @@ export namespace MyNS {
 		output?: string | null;
 	}
 
+	/** Contains details about a task submitted to a resource . */
+	export interface TaskSubmittedEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskSubmittedEventDetailsFormGroup() {
+		return new FormGroup<TaskSubmittedEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about the successful completion of a task state. */
 	export interface TaskSucceededEventDetails {
 		resourceType: string;
 		resource: string;
 		output?: string | null;
+	}
+
+	/** Contains details about the successful completion of a task state. */
+	export interface TaskSucceededEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskSucceededEventDetailsFormGroup() {
+		return new FormGroup<TaskSucceededEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -416,11 +988,41 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about a resource timeout that occurred during an execution. */
+	export interface TaskTimedOutEventDetailsFormProperties {
+		resourceType: FormControl<string | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskTimedOutEventDetailsFormGroup() {
+		return new FormGroup<TaskTimedOutEventDetailsFormProperties>({
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about an execution failure event. */
 	export interface ExecutionFailedEventDetails {
 		error?: string | null;
 		cause?: string | null;
+	}
+
+	/** Contains details about an execution failure event. */
+	export interface ExecutionFailedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionFailedEventDetailsFormGroup() {
+		return new FormGroup<ExecutionFailedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -430,10 +1032,34 @@ export namespace MyNS {
 		roleArn?: string | null;
 	}
 
+	/** Contains details about the start of the execution. */
+	export interface ExecutionStartedEventDetailsFormProperties {
+		input: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionStartedEventDetailsFormGroup() {
+		return new FormGroup<ExecutionStartedEventDetailsFormProperties>({
+			input: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about the successful termination of the execution. */
 	export interface ExecutionSucceededEventDetails {
 		output?: string | null;
+	}
+
+	/** Contains details about the successful termination of the execution. */
+	export interface ExecutionSucceededEventDetailsFormProperties {
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionSucceededEventDetailsFormGroup() {
+		return new FormGroup<ExecutionSucceededEventDetailsFormProperties>({
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -443,6 +1069,19 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about an abort of an execution. */
+	export interface ExecutionAbortedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionAbortedEventDetailsFormGroup() {
+		return new FormGroup<ExecutionAbortedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about the execution timeout that occurred during the execution. */
 	export interface ExecutionTimedOutEventDetails {
@@ -450,10 +1089,34 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about the execution timeout that occurred during the execution. */
+	export interface ExecutionTimedOutEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionTimedOutEventDetailsFormGroup() {
+		return new FormGroup<ExecutionTimedOutEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details about a Map state that was started. */
 	export interface MapStateStartedEventDetails {
 		length?: number | null;
+	}
+
+	/** Details about a Map state that was started. */
+	export interface MapStateStartedEventDetailsFormProperties {
+		length: FormControl<number | null | undefined>,
+	}
+	export function CreateMapStateStartedEventDetailsFormGroup() {
+		return new FormGroup<MapStateStartedEventDetailsFormProperties>({
+			length: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -463,6 +1126,19 @@ export namespace MyNS {
 		index?: number | null;
 	}
 
+	/** Contains details about an iteration of a Map state. */
+	export interface MapIterationEventDetailsFormProperties {
+		name: FormControl<string | null | undefined>,
+		index: FormControl<number | null | undefined>,
+	}
+	export function CreateMapIterationEventDetailsFormGroup() {
+		return new FormGroup<MapIterationEventDetailsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			index: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a lambda function that failed during an execution. */
 	export interface LambdaFunctionFailedEventDetails {
@@ -470,11 +1146,37 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about a lambda function that failed during an execution. */
+	export interface LambdaFunctionFailedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaFunctionFailedEventDetailsFormGroup() {
+		return new FormGroup<LambdaFunctionFailedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a failed lambda function schedule event that occurred during an execution. */
 	export interface LambdaFunctionScheduleFailedEventDetails {
 		error?: string | null;
 		cause?: string | null;
+	}
+
+	/** Contains details about a failed lambda function schedule event that occurred during an execution. */
+	export interface LambdaFunctionScheduleFailedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaFunctionScheduleFailedEventDetailsFormGroup() {
+		return new FormGroup<LambdaFunctionScheduleFailedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -485,6 +1187,21 @@ export namespace MyNS {
 		timeoutInSeconds?: number | null;
 	}
 
+	/** Contains details about a lambda function scheduled during an execution. */
+	export interface LambdaFunctionScheduledEventDetailsFormProperties {
+		resource: FormControl<string | null | undefined>,
+		input: FormControl<string | null | undefined>,
+		timeoutInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateLambdaFunctionScheduledEventDetailsFormGroup() {
+		return new FormGroup<LambdaFunctionScheduledEventDetailsFormProperties>({
+			resource: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined),
+			timeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a lambda function that failed to start during an execution. */
 	export interface LambdaFunctionStartFailedEventDetails {
@@ -492,10 +1209,34 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about a lambda function that failed to start during an execution. */
+	export interface LambdaFunctionStartFailedEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaFunctionStartFailedEventDetailsFormGroup() {
+		return new FormGroup<LambdaFunctionStartFailedEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a lambda function that successfully terminated during an execution. */
 	export interface LambdaFunctionSucceededEventDetails {
 		output?: string | null;
+	}
+
+	/** Contains details about a lambda function that successfully terminated during an execution. */
+	export interface LambdaFunctionSucceededEventDetailsFormProperties {
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaFunctionSucceededEventDetailsFormGroup() {
+		return new FormGroup<LambdaFunctionSucceededEventDetailsFormProperties>({
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -505,11 +1246,37 @@ export namespace MyNS {
 		cause?: string | null;
 	}
 
+	/** Contains details about a lambda function timeout that occurred during an execution. */
+	export interface LambdaFunctionTimedOutEventDetailsFormProperties {
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaFunctionTimedOutEventDetailsFormGroup() {
+		return new FormGroup<LambdaFunctionTimedOutEventDetailsFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains details about a state entered during an execution. */
 	export interface StateEnteredEventDetails {
 		name: string;
 		input?: string | null;
+	}
+
+	/** Contains details about a state entered during an execution. */
+	export interface StateEnteredEventDetailsFormProperties {
+		name: FormControl<string | null | undefined>,
+		input: FormControl<string | null | undefined>,
+	}
+	export function CreateStateEnteredEventDetailsFormGroup() {
+		return new FormGroup<StateEnteredEventDetailsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -519,19 +1286,63 @@ export namespace MyNS {
 		output?: string | null;
 	}
 
+	/** Contains details about an exit from a state during an execution. */
+	export interface StateExitedEventDetailsFormProperties {
+		name: FormControl<string | null | undefined>,
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateStateExitedEventDetailsFormGroup() {
+		return new FormGroup<StateExitedEventDetailsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetExecutionHistoryInput {
 		executionArn: string;
 		maxResults?: number | null;
 		reverseOrder?: boolean | null;
 		nextToken?: string | null;
 	}
+	export interface GetExecutionHistoryInputFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		reverseOrder: FormControl<boolean | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetExecutionHistoryInputFormGroup() {
+		return new FormGroup<GetExecutionHistoryInputFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidToken {
+	}
+	export interface InvalidTokenFormProperties {
+	}
+	export function CreateInvalidTokenFormGroup() {
+		return new FormGroup<InvalidTokenFormProperties>({
+		});
+
 	}
 
 	export interface ListActivitiesOutput {
 		activities: Array<ActivityListItem>;
 		nextToken?: string | null;
+	}
+	export interface ListActivitiesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActivitiesOutputFormGroup() {
+		return new FormGroup<ListActivitiesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -542,14 +1353,49 @@ export namespace MyNS {
 		creationDate: Date;
 	}
 
+	/** Contains details about an activity. */
+	export interface ActivityListItemFormProperties {
+		activityArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateActivityListItemFormGroup() {
+		return new FormGroup<ActivityListItemFormProperties>({
+			activityArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListActivitiesInput {
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface ListActivitiesInputFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActivitiesInputFormGroup() {
+		return new FormGroup<ListActivitiesInputFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListExecutionsOutput {
 		executions: Array<ExecutionListItem>;
 		nextToken?: string | null;
+	}
+	export interface ListExecutionsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListExecutionsOutputFormGroup() {
+		return new FormGroup<ListExecutionsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -563,16 +1409,61 @@ export namespace MyNS {
 		stopDate?: Date | null;
 	}
 
+	/** Contains details about an execution. */
+	export interface ExecutionListItemFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+		stateMachineArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		status: FormControl<DescribeExecutionOutputStatus | null | undefined>,
+		startDate: FormControl<Date | null | undefined>,
+		stopDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateExecutionListItemFormGroup() {
+		return new FormGroup<ExecutionListItemFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			stopDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListExecutionsInput {
 		stateMachineArn: string;
 		statusFilter?: DescribeExecutionOutputStatus | null;
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListExecutionsInputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		statusFilter: FormControl<DescribeExecutionOutputStatus | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListExecutionsInputFormGroup() {
+		return new FormGroup<ListExecutionsInputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			statusFilter: new FormControl<DescribeExecutionOutputStatus | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListStateMachinesOutput {
 		stateMachines: Array<StateMachineListItem>;
 		nextToken?: string | null;
+	}
+	export interface ListStateMachinesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStateMachinesOutputFormGroup() {
+		return new FormGroup<ListStateMachinesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -584,23 +1475,81 @@ export namespace MyNS {
 		creationDate: Date;
 	}
 
+	/** Contains details about the state machine. */
+	export interface StateMachineListItemFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<CreateStateMachineInputType | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateStateMachineListItemFormGroup() {
+		return new FormGroup<StateMachineListItemFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CreateStateMachineInputType | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStateMachinesInput {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListStateMachinesInputFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStateMachinesInputFormGroup() {
+		return new FormGroup<ListStateMachinesInputFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceOutput {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		resourceArn: string;
 	}
+	export interface ListTagsForResourceInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFound {
 	}
+	export interface ResourceNotFoundFormProperties {
+	}
+	export function CreateResourceNotFoundFormGroup() {
+		return new FormGroup<ResourceNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface SendTaskFailureOutput {
+	}
+	export interface SendTaskFailureOutputFormProperties {
+	}
+	export function CreateSendTaskFailureOutputFormGroup() {
+		return new FormGroup<SendTaskFailureOutputFormProperties>({
+		});
+
 	}
 
 	export interface SendTaskFailureInput {
@@ -608,34 +1557,113 @@ export namespace MyNS {
 		error?: string | null;
 		cause?: string | null;
 	}
+	export interface SendTaskFailureInputFormProperties {
+		taskToken: FormControl<string | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateSendTaskFailureInputFormGroup() {
+		return new FormGroup<SendTaskFailureInputFormProperties>({
+			taskToken: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaskDoesNotExist {
+	}
+	export interface TaskDoesNotExistFormProperties {
+	}
+	export function CreateTaskDoesNotExistFormGroup() {
+		return new FormGroup<TaskDoesNotExistFormProperties>({
+		});
+
 	}
 
 	export interface TaskTimedOut {
 	}
+	export interface TaskTimedOutFormProperties {
+	}
+	export function CreateTaskTimedOutFormGroup() {
+		return new FormGroup<TaskTimedOutFormProperties>({
+		});
+
+	}
 
 	export interface SendTaskHeartbeatOutput {
+	}
+	export interface SendTaskHeartbeatOutputFormProperties {
+	}
+	export function CreateSendTaskHeartbeatOutputFormGroup() {
+		return new FormGroup<SendTaskHeartbeatOutputFormProperties>({
+		});
+
 	}
 
 	export interface SendTaskHeartbeatInput {
 		taskToken: string;
 	}
+	export interface SendTaskHeartbeatInputFormProperties {
+		taskToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSendTaskHeartbeatInputFormGroup() {
+		return new FormGroup<SendTaskHeartbeatInputFormProperties>({
+			taskToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendTaskSuccessOutput {
+	}
+	export interface SendTaskSuccessOutputFormProperties {
+	}
+	export function CreateSendTaskSuccessOutputFormGroup() {
+		return new FormGroup<SendTaskSuccessOutputFormProperties>({
+		});
+
 	}
 
 	export interface SendTaskSuccessInput {
 		taskToken: string;
 		output: string;
 	}
+	export interface SendTaskSuccessInputFormProperties {
+		taskToken: FormControl<string | null | undefined>,
+		output: FormControl<string | null | undefined>,
+	}
+	export function CreateSendTaskSuccessInputFormGroup() {
+		return new FormGroup<SendTaskSuccessInputFormProperties>({
+			taskToken: new FormControl<string | null | undefined>(undefined),
+			output: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidOutput {
+	}
+	export interface InvalidOutputFormProperties {
+	}
+	export function CreateInvalidOutputFormGroup() {
+		return new FormGroup<InvalidOutputFormProperties>({
+		});
+
 	}
 
 	export interface StartExecutionOutput {
 		executionArn: string;
 		startDate: Date;
+	}
+	export interface StartExecutionOutputFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+		startDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartExecutionOutputFormGroup() {
+		return new FormGroup<StartExecutionOutputFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartExecutionInput {
@@ -643,18 +1671,61 @@ export namespace MyNS {
 		name?: string | null;
 		input?: string | null;
 	}
+	export interface StartExecutionInputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		input: FormControl<string | null | undefined>,
+	}
+	export function CreateStartExecutionInputFormGroup() {
+		return new FormGroup<StartExecutionInputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			input: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExecutionLimitExceeded {
+	}
+	export interface ExecutionLimitExceededFormProperties {
+	}
+	export function CreateExecutionLimitExceededFormGroup() {
+		return new FormGroup<ExecutionLimitExceededFormProperties>({
+		});
+
 	}
 
 	export interface ExecutionAlreadyExists {
 	}
+	export interface ExecutionAlreadyExistsFormProperties {
+	}
+	export function CreateExecutionAlreadyExistsFormGroup() {
+		return new FormGroup<ExecutionAlreadyExistsFormProperties>({
+		});
+
+	}
 
 	export interface InvalidExecutionInput {
+	}
+	export interface InvalidExecutionInputFormProperties {
+	}
+	export function CreateInvalidExecutionInputFormGroup() {
+		return new FormGroup<InvalidExecutionInputFormProperties>({
+		});
+
 	}
 
 	export interface StopExecutionOutput {
 		stopDate: Date;
+	}
+	export interface StopExecutionOutputFormProperties {
+		stopDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateStopExecutionOutputFormGroup() {
+		return new FormGroup<StopExecutionOutputFormProperties>({
+			stopDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopExecutionInput {
@@ -662,25 +1733,79 @@ export namespace MyNS {
 		error?: string | null;
 		cause?: string | null;
 	}
+	export interface StopExecutionInputFormProperties {
+		executionArn: FormControl<string | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		cause: FormControl<string | null | undefined>,
+	}
+	export function CreateStopExecutionInputFormGroup() {
+		return new FormGroup<StopExecutionInputFormProperties>({
+			executionArn: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			cause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		resourceArn: string;
 		tagKeys: Array<string>;
 	}
+	export interface UntagResourceInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateStateMachineOutput {
 		updateDate: Date;
+	}
+	export interface UpdateStateMachineOutputFormProperties {
+		updateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateStateMachineOutputFormGroup() {
+		return new FormGroup<UpdateStateMachineOutputFormProperties>({
+			updateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStateMachineInput {
@@ -689,10 +1814,30 @@ export namespace MyNS {
 		roleArn?: string | null;
 
 		/** The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options. */
-		loggingConfiguration?: LoggingConfiguration | null;
+		loggingConfiguration?: LoggingConfiguration;
+	}
+	export interface UpdateStateMachineInputFormProperties {
+		stateMachineArn: FormControl<string | null | undefined>,
+		definition: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStateMachineInputFormGroup() {
+		return new FormGroup<UpdateStateMachineInputFormProperties>({
+			stateMachineArn: new FormControl<string | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface MissingRequiredParameter {
+	}
+	export interface MissingRequiredParameterFormProperties {
+	}
+	export function CreateMissingRequiredParameterFormGroup() {
+		return new FormGroup<MissingRequiredParameterFormProperties>({
+		});
+
 	}
 
 	export enum StateMachineType { STANDARD = 0, EXPRESS = 1 }

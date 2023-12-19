@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Specifies the type and number of accelerator cards attached to the instances of an instance. See GPUs on Compute Engine (https://cloud.google.com/compute/docs/gpus/). */
@@ -18,6 +19,28 @@ export namespace MyNS {
 		acceleratorTypeUri?: string | null;
 	}
 
+	/** Specifies the type and number of accelerator cards attached to the instances of an instance. See GPUs on Compute Engine (https://cloud.google.com/compute/docs/gpus/). */
+	export interface AcceleratorConfigFormProperties {
+
+		/** The number of the accelerator cards of this type exposed to this instance. */
+		acceleratorCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Full URL, partial URI, or short name of the accelerator type resource to expose to this instance. See Compute Engine AcceleratorTypes (https://cloud.google.com/compute/docs/reference/beta/acceleratorTypes).Examples:
+		 * https://www.googleapis.com/compute/beta/projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80
+		 * projects/[project_id]/zones/us-east1-a/acceleratorTypes/nvidia-tesla-k80
+		 * nvidia-tesla-k80Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the accelerator type resource, for example, nvidia-tesla-k80.
+		 */
+		acceleratorTypeUri: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceleratorConfigFormGroup() {
+		return new FormGroup<AcceleratorConfigFormProperties>({
+			acceleratorCount: new FormControl<number | null | undefined>(undefined),
+			acceleratorTypeUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Autoscaling Policy config associated with the cluster. */
 	export interface AutoscalingConfig {
@@ -30,12 +53,29 @@ export namespace MyNS {
 		policyUri?: string | null;
 	}
 
+	/** Autoscaling Policy config associated with the cluster. */
+	export interface AutoscalingConfigFormProperties {
+
+		/**
+		 * Optional. The autoscaling policy used by the cluster.Only resource names including projectid and location (region) are valid. Examples:
+		 * https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]
+		 * projects/[project_id]/locations/[dataproc_region]/autoscalingPolicies/[policy_id]Note that the policy must be in the same project and Dataproc region.
+		 */
+		policyUri: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoscalingConfigFormGroup() {
+		return new FormGroup<AutoscalingConfigFormProperties>({
+			policyUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an autoscaling policy for Dataproc cluster autoscaler. */
 	export interface AutoscalingPolicy {
 
 		/** Basic algorithm for autoscaling. */
-		basicAlgorithm?: BasicAutoscalingAlgorithm | null;
+		basicAlgorithm?: BasicAutoscalingAlgorithm;
 
 		/** Required. The policy id.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters. */
 		id?: string | null;
@@ -48,10 +88,31 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Configuration for the size bounds of an instance group, including its proportional size to other groups. */
-		secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig | null;
+		secondaryWorkerConfig?: InstanceGroupAutoscalingPolicyConfig;
 
 		/** Configuration for the size bounds of an instance group, including its proportional size to other groups. */
-		workerConfig?: InstanceGroupAutoscalingPolicyConfig | null;
+		workerConfig?: InstanceGroupAutoscalingPolicyConfig;
+	}
+
+	/** Describes an autoscaling policy for Dataproc cluster autoscaler. */
+	export interface AutoscalingPolicyFormProperties {
+
+		/** Required. The policy id.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters. */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names.
+		 * For projects.regions.autoscalingPolicies, the resource name of the  policy has the following format:  projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}
+		 * For projects.locations.autoscalingPolicies, the resource name of the  policy has the following format:  projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoscalingPolicyFormGroup() {
+		return new FormGroup<AutoscalingPolicyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -62,7 +123,20 @@ export namespace MyNS {
 		cooldownPeriod?: string | null;
 
 		/** Basic autoscaling configurations for YARN. */
-		yarnConfig?: BasicYarnAutoscalingConfig | null;
+		yarnConfig?: BasicYarnAutoscalingConfig;
+	}
+
+	/** Basic algorithm for autoscaling. */
+	export interface BasicAutoscalingAlgorithmFormProperties {
+
+		/** Optional. Duration between scaling events. A scaling period starts after the update operation from the previous event has completed.Bounds: 2m, 1d. Default: 2m. */
+		cooldownPeriod: FormControl<string | null | undefined>,
+	}
+	export function CreateBasicAutoscalingAlgorithmFormGroup() {
+		return new FormGroup<BasicAutoscalingAlgorithmFormProperties>({
+			cooldownPeriod: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -85,6 +159,35 @@ export namespace MyNS {
 		scaleUpMinWorkerFraction?: number | null;
 	}
 
+	/** Basic autoscaling configurations for YARN. */
+	export interface BasicYarnAutoscalingConfigFormProperties {
+
+		/** Required. Timeout for YARN graceful decommissioning of Node Managers. Specifies the duration to wait for jobs to complete before forcefully removing workers (and potentially interrupting jobs). Only applicable to downscaling operations.Bounds: 0s, 1d. */
+		gracefulDecommissionTimeout: FormControl<string | null | undefined>,
+
+		/** Required. Fraction of average pending memory in the last cooldown period for which to remove workers. A scale-down factor of 1 will result in scaling down so that there is no available memory remaining after the update (more aggressive scaling). A scale-down factor of 0 disables removing workers, which can be beneficial for autoscaling a single job.Bounds: 0.0, 1.0. */
+		scaleDownFactor: FormControl<number | null | undefined>,
+
+		/** Optional. Minimum scale-down threshold as a fraction of total cluster size before scaling occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must recommend at least a 2 worker scale-down for the cluster to scale. A threshold of 0 means the autoscaler will scale down on any recommended change.Bounds: 0.0, 1.0. Default: 0.0. */
+		scaleDownMinWorkerFraction: FormControl<number | null | undefined>,
+
+		/** Required. Fraction of average pending memory in the last cooldown period for which to add workers. A scale-up factor of 1.0 will result in scaling up so that there is no pending memory remaining after the update (more aggressive scaling). A scale-up factor closer to 0 will result in a smaller magnitude of scaling up (less aggressive scaling).Bounds: 0.0, 1.0. */
+		scaleUpFactor: FormControl<number | null | undefined>,
+
+		/** Optional. Minimum scale-up threshold as a fraction of total cluster size before scaling occurs. For example, in a 20-worker cluster, a threshold of 0.1 means the autoscaler must recommend at least a 2-worker scale-up for the cluster to scale. A threshold of 0 means the autoscaler will scale up on any recommended change.Bounds: 0.0, 1.0. Default: 0.0. */
+		scaleUpMinWorkerFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateBasicYarnAutoscalingConfigFormGroup() {
+		return new FormGroup<BasicYarnAutoscalingConfigFormProperties>({
+			gracefulDecommissionTimeout: new FormControl<string | null | undefined>(undefined),
+			scaleDownFactor: new FormControl<number | null | undefined>(undefined),
+			scaleDownMinWorkerFraction: new FormControl<number | null | undefined>(undefined),
+			scaleUpFactor: new FormControl<number | null | undefined>(undefined),
+			scaleUpMinWorkerFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configuration for the size bounds of an instance group, including its proportional size to other groups. */
 	export interface InstanceGroupAutoscalingPolicyConfig {
@@ -97,6 +200,27 @@ export namespace MyNS {
 
 		/** Optional. Weight for the instance group, which is used to determine the fraction of total workers in the cluster from this instance group. For example, if primary workers have weight 2, and secondary workers have weight 1, the cluster will have approximately 2 primary workers for each secondary worker.The cluster may not reach the specified balance if constrained by min/max bounds or other autoscaling settings. For example, if max_instances for secondary workers is 0, then only primary workers will be added. The cluster can also be out of balance when created.If weight is not set on any instance group, the cluster will default to equal weight for all groups: the cluster will attempt to maintain an equal number of workers in each group within the configured size bounds for each group. If weight is set for one group only, the cluster will default to zero weight on the unset group. For example if weight is set only on primary workers, the cluster will use primary workers only and no secondary workers. */
 		weight?: number | null;
+	}
+
+	/** Configuration for the size bounds of an instance group, including its proportional size to other groups. */
+	export interface InstanceGroupAutoscalingPolicyConfigFormProperties {
+
+		/** Required. Maximum number of instances for this group. Required for primary workers. Note that by default, clusters will not use secondary workers. Required for secondary workers if the minimum secondary instances is set.Primary workers - Bounds: [min_instances, ). Secondary workers - Bounds: [min_instances, ). Default: 0. */
+		maxInstances: FormControl<number | null | undefined>,
+
+		/** Optional. Minimum number of instances for this group.Primary workers - Bounds: 2, max_instances. Default: 2. Secondary workers - Bounds: 0, max_instances. Default: 0. */
+		minInstances: FormControl<number | null | undefined>,
+
+		/** Optional. Weight for the instance group, which is used to determine the fraction of total workers in the cluster from this instance group. For example, if primary workers have weight 2, and secondary workers have weight 1, the cluster will have approximately 2 primary workers for each secondary worker.The cluster may not reach the specified balance if constrained by min/max bounds or other autoscaling settings. For example, if max_instances for secondary workers is 0, then only primary workers will be added. The cluster can also be out of balance when created.If weight is not set on any instance group, the cluster will default to equal weight for all groups: the cluster will attempt to maintain an equal number of workers in each group within the configured size bounds for each group. If weight is set for one group only, the cluster will default to zero weight on the unset group. For example if weight is set only on primary workers, the cluster will use primary workers only and no secondary workers. */
+		weight: FormControl<number | null | undefined>,
+	}
+	export function CreateInstanceGroupAutoscalingPolicyConfigFormGroup() {
+		return new FormGroup<InstanceGroupAutoscalingPolicyConfigFormProperties>({
+			maxInstances: new FormControl<number | null | undefined>(undefined),
+			minInstances: new FormControl<number | null | undefined>(undefined),
+			weight: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -122,7 +246,7 @@ export namespace MyNS {
 		 * expression: "'New message received at ' + string(document.create_time)"
 		 * The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource. members can have the following values:
@@ -136,10 +260,23 @@ export namespace MyNS {
 		 * deleted:group:{emailid}?uid={uniqueid}: An email address (plus unique  identifier) representing a Google group that has been recently  deleted. For example, admins@example.com?uid=123456789012345678901. If  the group is recovered, this value reverts to group:{emailid} and the  recovered group retains the role in the binding.
 		 * domain:{domain}: The G Suite domain (primary) that represents all the  users of that domain. For example, google.com or example.com.
 		 */
-		members?: Array<string> | null;
+		members?: Array<string>;
 
 		/** Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner. */
 		role?: string | null;
+	}
+
+	/** Associates members with a role. */
+	export interface BindingFormProperties {
+
+		/** Role that is assigned to members. For example, roles/viewer, roles/editor, or roles/owner. */
+		role: FormControl<string | null | undefined>,
+	}
+	export function CreateBindingFormGroup() {
+		return new FormGroup<BindingFormProperties>({
+			role: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -177,9 +314,61 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec.Example (Comparison):
+	 * title: "Summary size limit"
+	 * description: "Determines if a summary is less than 100 chars"
+	 * expression: "document.summary.size() < 100"
+	 * Example (Equality):
+	 * title: "Requestor is owner"
+	 * description: "Determines if requestor is the document owner"
+	 * expression: "document.owner == request.auth.claims.email"
+	 * Example (Logic):
+	 * title: "Public documents"
+	 * description: "Determine whether the document should be publicly visible"
+	 * expression: "document.type != 'private' && document.type != 'internal'"
+	 * Example (Data Manipulation):
+	 * title: "Notification string"
+	 * description: "Create a notification string with a timestamp."
+	 * expression: "'New message received at ' + string(document.create_time)"
+	 * The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
+	 */
+	export interface ExprFormProperties {
+
+		/** Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI. */
+		description: FormControl<string | null | undefined>,
+
+		/** Textual representation of an expression in Common Expression Language syntax. */
+		expression: FormControl<string | null | undefined>,
+
+		/** Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file. */
+		location: FormControl<string | null | undefined>,
+
+		/** Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateExprFormGroup() {
+		return new FormGroup<ExprFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to cancel a job. */
 	export interface CancelJobRequest {
+	}
+
+	/** A request to cancel a job. */
+	export interface CancelJobRequestFormProperties {
+	}
+	export function CreateCancelJobRequestFormGroup() {
+		return new FormGroup<CancelJobRequestFormProperties>({
+		});
+
 	}
 
 
@@ -193,22 +382,47 @@ export namespace MyNS {
 		clusterUuid?: string | null;
 
 		/** The cluster config. */
-		config?: ClusterConfig | null;
+		config?: ClusterConfig;
 
 		/** Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** Contains cluster daemon metrics, such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
-		metrics?: ClusterMetrics | null;
+		metrics?: ClusterMetrics;
 
 		/** Required. The Google Cloud Platform project ID that the cluster belongs to. */
 		projectId?: string | null;
 
 		/** The status of a cluster and its instances. */
-		status?: ClusterStatus | null;
+		status?: ClusterStatus;
 
 		/** Output only. The previous cluster status. */
-		statusHistory?: Array<ClusterStatus> | null;
+		statusHistory?: Array<ClusterStatus>;
+	}
+
+	/** Describes the identifying information, config, and status of a cluster of Compute Engine instances. */
+	export interface ClusterFormProperties {
+
+		/** Required. The cluster name. Cluster names within a project must be unique. Names of deleted clusters can be reused. */
+		clusterName: FormControl<string | null | undefined>,
+
+		/** Output only. A cluster UUID (Unique Universal Identifier). Dataproc generates this value when it creates the cluster. */
+		clusterUuid: FormControl<string | null | undefined>,
+
+		/** Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Required. The Google Cloud Platform project ID that the cluster belongs to. */
+		projectId: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterFormGroup() {
+		return new FormGroup<ClusterFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			clusterUuid: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -216,16 +430,16 @@ export namespace MyNS {
 	export interface ClusterConfig {
 
 		/** Autoscaling Policy config associated with the cluster. */
-		autoscalingConfig?: AutoscalingConfig | null;
+		autoscalingConfig?: AutoscalingConfig;
 
 		/** Optional. A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging bucket (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). */
 		configBucket?: string | null;
 
 		/** Encryption settings for the cluster. */
-		encryptionConfig?: EncryptionConfig | null;
+		encryptionConfig?: EncryptionConfig;
 
 		/** Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. */
-		gceClusterConfig?: GceClusterConfig | null;
+		gceClusterConfig?: GceClusterConfig;
 
 		/**
 		 * Optional. Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget):
@@ -237,25 +451,38 @@ export namespace MyNS {
 		 * ... worker specific actions ...
 		 * fi
 		 */
-		initializationActions?: Array<NodeInitializationAction> | null;
+		initializationActions?: Array<NodeInitializationAction>;
 
 		/** Specifies the cluster auto-delete schedule configuration. */
-		lifecycleConfig?: LifecycleConfig | null;
+		lifecycleConfig?: LifecycleConfig;
 
 		/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
-		masterConfig?: InstanceGroupConfig | null;
+		masterConfig?: InstanceGroupConfig;
 
 		/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
-		secondaryWorkerConfig?: InstanceGroupConfig | null;
+		secondaryWorkerConfig?: InstanceGroupConfig;
 
 		/** Security related configuration, including Kerberos. */
-		securityConfig?: SecurityConfig | null;
+		securityConfig?: SecurityConfig;
 
 		/** Specifies the selection and config of software inside the cluster. */
-		softwareConfig?: SoftwareConfig | null;
+		softwareConfig?: SoftwareConfig;
 
 		/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
-		workerConfig?: InstanceGroupConfig | null;
+		workerConfig?: InstanceGroupConfig;
+	}
+
+	/** The cluster config. */
+	export interface ClusterConfigFormProperties {
+
+		/** Optional. A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging bucket (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). */
+		configBucket: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterConfigFormGroup() {
+		return new FormGroup<ClusterConfigFormProperties>({
+			configBucket: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -266,6 +493,19 @@ export namespace MyNS {
 		gcePdKmsKeyName?: string | null;
 	}
 
+	/** Encryption settings for the cluster. */
+	export interface EncryptionConfigFormProperties {
+
+		/** Optional. The Cloud KMS key name to use for PD disk encryption for all instances in the cluster. */
+		gcePdKmsKeyName: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionConfigFormGroup() {
+		return new FormGroup<EncryptionConfigFormProperties>({
+			gcePdKmsKeyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. */
 	export interface GceClusterConfig {
@@ -274,7 +514,7 @@ export namespace MyNS {
 		internalIpOnly?: boolean | null;
 
 		/** The Compute Engine metadata entries to add to all instances (see Project and instance metadata (https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)). */
-		metadata?: {[id: string]: string } | null;
+		metadata?: {[id: string]: string };
 
 		/**
 		 * Optional. The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork_uri. If neither network_uri nor subnetwork_uri is specified, the "default" network of the project is used, if it exists. Cannot be a "Custom Subnet Network" (see Using Subnetworks (https://cloud.google.com/compute/docs/subnetworks) for more information).A full URL, partial URI, or short name are valid. Examples:
@@ -285,7 +525,7 @@ export namespace MyNS {
 		networkUri?: string | null;
 
 		/** Reservation Affinity for consuming Zonal reservation. */
-		reservationAffinity?: ReservationAffinity | null;
+		reservationAffinity?: ReservationAffinity;
 
 		/** Optional. The Dataproc service account (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc) (also see VM Data Plane identity (https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity)) used by Dataproc cluster VM instances to access Google Cloud Platform services.If not specified, the Compute Engine default service account (https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used. */
 		serviceAccount?: string | null;
@@ -300,7 +540,7 @@ export namespace MyNS {
 		 * https://www.googleapis.com/auth/bigtable.data
 		 * https://www.googleapis.com/auth/devstorage.full_control
 		 */
-		serviceAccountScopes?: Array<string> | null;
+		serviceAccountScopes?: Array<string>;
 
 		/**
 		 * Optional. The Compute Engine subnetwork to be used for machine communications. Cannot be specified with network_uri.A full URL, partial URI, or short name are valid. Examples:
@@ -311,7 +551,7 @@ export namespace MyNS {
 		subnetworkUri?: string | null;
 
 		/** The Compute Engine tags to add to all instances (see Tagging instances (https://cloud.google.com/compute/docs/label-or-tag-resources#tags)). */
-		tags?: Array<string> | null;
+		tags?: Array<string>;
 
 		/**
 		 * Optional. The zone where the Compute Engine cluster will be located. On a create request, it is required in the "global" region. If omitted in a non-global Dataproc region, the service will pick a zone in the corresponding Compute Engine region. On a get request, zone will always be present.A full URL, partial URI, or short name are valid. Examples:
@@ -320,6 +560,54 @@ export namespace MyNS {
 		 * us-central1-f
 		 */
 		zoneUri?: string | null;
+	}
+
+	/** Common config settings for resources of Compute Engine cluster instances, applicable to all instances in the cluster. */
+	export interface GceClusterConfigFormProperties {
+
+		/** Optional. If true, all instances in the cluster will only have internal IP addresses. By default, clusters are not restricted to internal IP addresses, and will have ephemeral external IP addresses assigned to each instance. This internal_ip_only restriction can only be enabled for subnetwork enabled networks, and all off-cluster dependencies must be configured to be accessible without external IP addresses. */
+		internalIpOnly: FormControl<boolean | null | undefined>,
+
+		/** The Compute Engine metadata entries to add to all instances (see Project and instance metadata (https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)). */
+		metadata: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine network to be used for machine communications. Cannot be specified with subnetwork_uri. If neither network_uri nor subnetwork_uri is specified, the "default" network of the project is used, if it exists. Cannot be a "Custom Subnet Network" (see Using Subnetworks (https://cloud.google.com/compute/docs/subnetworks) for more information).A full URL, partial URI, or short name are valid. Examples:
+		 * https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default
+		 * projects/[project_id]/regions/global/default
+		 * default
+		 */
+		networkUri: FormControl<string | null | undefined>,
+
+		/** Optional. The Dataproc service account (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/service-accounts#service_accounts_in_cloud_dataproc) (also see VM Data Plane identity (https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity)) used by Dataproc cluster VM instances to access Google Cloud Platform services.If not specified, the Compute Engine default service account (https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used. */
+		serviceAccount: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine subnetwork to be used for machine communications. Cannot be specified with network_uri.A full URL, partial URI, or short name are valid. Examples:
+		 * https://www.googleapis.com/compute/v1/projects/[project_id]/regions/us-east1/subnetworks/sub0
+		 * projects/[project_id]/regions/us-east1/subnetworks/sub0
+		 * sub0
+		 */
+		subnetworkUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The zone where the Compute Engine cluster will be located. On a create request, it is required in the "global" region. If omitted in a non-global Dataproc region, the service will pick a zone in the corresponding Compute Engine region. On a get request, zone will always be present.A full URL, partial URI, or short name are valid. Examples:
+		 * https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]
+		 * projects/[project_id]/zones/[zone]
+		 * us-central1-f
+		 */
+		zoneUri: FormControl<string | null | undefined>,
+	}
+	export function CreateGceClusterConfigFormGroup() {
+		return new FormGroup<GceClusterConfigFormProperties>({
+			internalIpOnly: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			networkUri: new FormControl<string | null | undefined>(undefined),
+			serviceAccount: new FormControl<string | null | undefined>(undefined),
+			subnetworkUri: new FormControl<string | null | undefined>(undefined),
+			zoneUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -333,7 +621,24 @@ export namespace MyNS {
 		key?: string | null;
 
 		/** Optional. Corresponds to the label values of reservation resource. */
-		values?: Array<string> | null;
+		values?: Array<string>;
+	}
+
+	/** Reservation Affinity for consuming Zonal reservation. */
+	export interface ReservationAffinityFormProperties {
+
+		/** Optional. Type of reservation to consume */
+		consumeReservationType: FormControl<ReservationAffinityConsumeReservationType | null | undefined>,
+
+		/** Optional. Corresponds to the label key of reservation resource. */
+		key: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationAffinityFormGroup() {
+		return new FormGroup<ReservationAffinityFormProperties>({
+			consumeReservationType: new FormControl<ReservationAffinityConsumeReservationType | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReservationAffinityConsumeReservationType { TYPE_UNSPECIFIED = 0, NO_RESERVATION = 1, ANY_RESERVATION = 2, SPECIFIC_RESERVATION = 3 }
@@ -347,6 +652,23 @@ export namespace MyNS {
 
 		/** Optional. Amount of time executable has to complete. Default is 10 minutes (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).Cluster creation fails with an explanatory error message (the name of the executable that caused the error and the exceeded timeout period) if the executable is not completed at end of the timeout period. */
 		executionTimeout?: string | null;
+	}
+
+	/** Specifies an executable to run on a fully configured node and a timeout period for executable completion. */
+	export interface NodeInitializationActionFormProperties {
+
+		/** Required. Cloud Storage URI of executable file. */
+		executableFile: FormControl<string | null | undefined>,
+
+		/** Optional. Amount of time executable has to complete. Default is 10 minutes (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).Cluster creation fails with an explanatory error message (the name of the executable that caused the error and the exceeded timeout period) if the executable is not completed at end of the timeout period. */
+		executionTimeout: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeInitializationActionFormGroup() {
+		return new FormGroup<NodeInitializationActionFormProperties>({
+			executableFile: new FormControl<string | null | undefined>(undefined),
+			executionTimeout: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,15 +688,40 @@ export namespace MyNS {
 		idleStartTime?: string | null;
 	}
 
+	/** Specifies the cluster auto-delete schedule configuration. */
+	export interface LifecycleConfigFormProperties {
+
+		/** Optional. The time when cluster will be auto-deleted (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
+		autoDeleteTime: FormControl<string | null | undefined>,
+
+		/** Optional. The lifetime duration of cluster. The cluster will be auto-deleted at the end of this period. Minimum value is 10 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
+		autoDeleteTtl: FormControl<string | null | undefined>,
+
+		/** Optional. The duration to keep the cluster alive while idling (when no jobs are running). Passing this threshold will cause the cluster to be deleted. Minimum value is 10 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json). */
+		idleDeleteTtl: FormControl<string | null | undefined>,
+
+		/** Output only. The time when cluster became idle (most recent job finished) and became eligible for deletion due to idleness (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
+		idleStartTime: FormControl<string | null | undefined>,
+	}
+	export function CreateLifecycleConfigFormGroup() {
+		return new FormGroup<LifecycleConfigFormProperties>({
+			autoDeleteTime: new FormControl<string | null | undefined>(undefined),
+			autoDeleteTtl: new FormControl<string | null | undefined>(undefined),
+			idleDeleteTtl: new FormControl<string | null | undefined>(undefined),
+			idleStartTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
 	export interface InstanceGroupConfig {
 
 		/** Optional. The Compute Engine accelerator configuration for these instances. */
-		accelerators?: Array<AcceleratorConfig> | null;
+		accelerators?: Array<AcceleratorConfig>;
 
 		/** Specifies the config of disk options for a group of VM instances. */
-		diskConfig?: DiskConfig | null;
+		diskConfig?: DiskConfig;
 
 		/**
 		 * Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples:
@@ -387,7 +734,7 @@ export namespace MyNS {
 		imageUri?: string | null;
 
 		/** Output only. The list of instance names. Dataproc derives the names from cluster_name, num_instances, and the instance group. */
-		instanceNames?: Array<string> | null;
+		instanceNames?: Array<string>;
 
 		/** Output only. Specifies that this instance group contains preemptible instances. */
 		isPreemptible?: boolean | null;
@@ -401,7 +748,7 @@ export namespace MyNS {
 		machineTypeUri?: string | null;
 
 		/** Specifies the resources used to actively manage an instance group. */
-		managedGroupConfig?: ManagedGroupConfig | null;
+		managedGroupConfig?: ManagedGroupConfig;
 
 		/** Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc -&gt; Minimum CPU Platform (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu). */
 		minCpuPlatform?: string | null;
@@ -411,6 +758,51 @@ export namespace MyNS {
 
 		/** Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE. */
 		preemptibility?: InstanceGroupConfigPreemptibility | null;
+	}
+
+	/** The config settings for Compute Engine resources in an instance group, such as a master or worker group. */
+	export interface InstanceGroupConfigFormProperties {
+
+		/**
+		 * Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples:
+		 * https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id]
+		 * projects/[project_id]/global/images/[image-id]
+		 * image-idImage family examples. Dataproc will use the most recent image from the family:
+		 * https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name]
+		 * projects/[project_id]/global/images/family/[custom-image-family-name]If the URI is unspecified, it will be inferred from SoftwareConfig.image_version or the system default.
+		 */
+		imageUri: FormControl<string | null | undefined>,
+
+		/** Output only. Specifies that this instance group contains preemptible instances. */
+		isPreemptible: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples:
+		 * https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
+		 * projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2
+		 * n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, n1-standard-2.
+		 */
+		machineTypeUri: FormControl<string | null | undefined>,
+
+		/** Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc -&gt; Minimum CPU Platform (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu). */
+		minCpuPlatform: FormControl<string | null | undefined>,
+
+		/** Optional. The number of VM instances in the instance group. For master instance groups, must be set to 1. */
+		numInstances: FormControl<number | null | undefined>,
+
+		/** Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE. */
+		preemptibility: FormControl<InstanceGroupConfigPreemptibility | null | undefined>,
+	}
+	export function CreateInstanceGroupConfigFormGroup() {
+		return new FormGroup<InstanceGroupConfigFormProperties>({
+			imageUri: new FormControl<string | null | undefined>(undefined),
+			isPreemptible: new FormControl<boolean | null | undefined>(undefined),
+			machineTypeUri: new FormControl<string | null | undefined>(undefined),
+			minCpuPlatform: new FormControl<string | null | undefined>(undefined),
+			numInstances: new FormControl<number | null | undefined>(undefined),
+			preemptibility: new FormControl<InstanceGroupConfigPreemptibility | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -427,6 +819,27 @@ export namespace MyNS {
 		numLocalSsds?: number | null;
 	}
 
+	/** Specifies the config of disk options for a group of VM instances. */
+	export interface DiskConfigFormProperties {
+
+		/** Optional. Size in GB of the boot disk (default is 500GB). */
+		bootDiskSizeGb: FormControl<number | null | undefined>,
+
+		/** Optional. Type of the boot disk (default is "pd-standard"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive). */
+		bootDiskType: FormControl<string | null | undefined>,
+
+		/** Optional. Number of attached SSDs, from 0 to 4 (default is 0). If SSDs are not attached, the boot disk is used to store runtime logs and HDFS (https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data. If one or more SSDs are attached, this runtime bulk data is spread across them, and the boot disk contains only basic config and installed binaries. */
+		numLocalSsds: FormControl<number | null | undefined>,
+	}
+	export function CreateDiskConfigFormGroup() {
+		return new FormGroup<DiskConfigFormProperties>({
+			bootDiskSizeGb: new FormControl<number | null | undefined>(undefined),
+			bootDiskType: new FormControl<string | null | undefined>(undefined),
+			numLocalSsds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the resources used to actively manage an instance group. */
 	export interface ManagedGroupConfig {
@@ -438,6 +851,23 @@ export namespace MyNS {
 		instanceTemplateName?: string | null;
 	}
 
+	/** Specifies the resources used to actively manage an instance group. */
+	export interface ManagedGroupConfigFormProperties {
+
+		/** Output only. The name of the Instance Group Manager for this group. */
+		instanceGroupManagerName: FormControl<string | null | undefined>,
+
+		/** Output only. The name of the Instance Template used for the Managed Instance Group. */
+		instanceTemplateName: FormControl<string | null | undefined>,
+	}
+	export function CreateManagedGroupConfigFormGroup() {
+		return new FormGroup<ManagedGroupConfigFormProperties>({
+			instanceGroupManagerName: new FormControl<string | null | undefined>(undefined),
+			instanceTemplateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InstanceGroupConfigPreemptibility { PREEMPTIBILITY_UNSPECIFIED = 0, NON_PREEMPTIBLE = 1, PREEMPTIBLE = 2 }
 
 
@@ -445,7 +875,16 @@ export namespace MyNS {
 	export interface SecurityConfig {
 
 		/** Specifies Kerberos related configuration. */
-		kerberosConfig?: KerberosConfig | null;
+		kerberosConfig?: KerberosConfig;
+	}
+
+	/** Security related configuration, including Kerberos. */
+	export interface SecurityConfigFormProperties {
+	}
+	export function CreateSecurityConfigFormGroup() {
+		return new FormGroup<SecurityConfigFormProperties>({
+		});
+
 	}
 
 
@@ -498,6 +937,75 @@ export namespace MyNS {
 		truststoreUri?: string | null;
 	}
 
+	/** Specifies Kerberos related configuration. */
+	export interface KerberosConfigFormProperties {
+
+		/** Optional. The admin server (IP or hostname) for the remote trusted realm in a cross realm trust relationship. */
+		crossRealmTrustAdminServer: FormControl<string | null | undefined>,
+
+		/** Optional. The KDC (IP or hostname) for the remote trusted realm in a cross realm trust relationship. */
+		crossRealmTrustKdc: FormControl<string | null | undefined>,
+
+		/** Optional. The remote realm the Dataproc on-cluster KDC will trust, should the user enable cross realm trust. */
+		crossRealmTrustRealm: FormControl<string | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the shared password between the on-cluster Kerberos realm and the remote trusted realm, in a cross realm trust relationship. */
+		crossRealmTrustSharedPasswordUri: FormControl<string | null | undefined>,
+
+		/** Optional. Flag to indicate whether to Kerberize the cluster (default: false). Set this field to true to enable Kerberos on a cluster. */
+		enableKerberos: FormControl<boolean | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the master key of the KDC database. */
+		kdcDbKeyUri: FormControl<string | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the password to the user provided key. For the self-signed certificate, this password is generated by Dataproc. */
+		keyPasswordUri: FormControl<string | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the password to the user provided keystore. For the self-signed certificate, this password is generated by Dataproc. */
+		keystorePasswordUri: FormControl<string | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of the keystore file used for SSL encryption. If not provided, Dataproc will provide a self-signed certificate. */
+		keystoreUri: FormControl<string | null | undefined>,
+
+		/** Required. The uri of the KMS key used to encrypt various sensitive files. */
+		kmsKeyUri: FormControl<string | null | undefined>,
+
+		/** Optional. The name of the on-cluster Kerberos realm. If not specified, the uppercased domain of hostnames will be the realm. */
+		realm: FormControl<string | null | undefined>,
+
+		/** Required. The Cloud Storage URI of a KMS encrypted file containing the root principal password. */
+		rootPrincipalPasswordUri: FormControl<string | null | undefined>,
+
+		/** Optional. The lifetime of the ticket granting ticket, in hours. If not specified, or user specifies 0, then default value 10 will be used. */
+		tgtLifetimeHours: FormControl<number | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of a KMS encrypted file containing the password to the user provided truststore. For the self-signed certificate, this password is generated by Dataproc. */
+		truststorePasswordUri: FormControl<string | null | undefined>,
+
+		/** Optional. The Cloud Storage URI of the truststore file used for SSL encryption. If not provided, Dataproc will provide a self-signed certificate. */
+		truststoreUri: FormControl<string | null | undefined>,
+	}
+	export function CreateKerberosConfigFormGroup() {
+		return new FormGroup<KerberosConfigFormProperties>({
+			crossRealmTrustAdminServer: new FormControl<string | null | undefined>(undefined),
+			crossRealmTrustKdc: new FormControl<string | null | undefined>(undefined),
+			crossRealmTrustRealm: new FormControl<string | null | undefined>(undefined),
+			crossRealmTrustSharedPasswordUri: new FormControl<string | null | undefined>(undefined),
+			enableKerberos: new FormControl<boolean | null | undefined>(undefined),
+			kdcDbKeyUri: new FormControl<string | null | undefined>(undefined),
+			keyPasswordUri: new FormControl<string | null | undefined>(undefined),
+			keystorePasswordUri: new FormControl<string | null | undefined>(undefined),
+			keystoreUri: new FormControl<string | null | undefined>(undefined),
+			kmsKeyUri: new FormControl<string | null | undefined>(undefined),
+			realm: new FormControl<string | null | undefined>(undefined),
+			rootPrincipalPasswordUri: new FormControl<string | null | undefined>(undefined),
+			tgtLifetimeHours: new FormControl<number | null | undefined>(undefined),
+			truststorePasswordUri: new FormControl<string | null | undefined>(undefined),
+			truststoreUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the selection and config of software inside the cluster. */
 	export interface SoftwareConfig {
@@ -506,7 +1014,7 @@ export namespace MyNS {
 		imageVersion?: string | null;
 
 		/** Optional. The set of components to activate on the cluster. */
-		optionalComponents?: Array<string> | null;
+		optionalComponents?: Array<string>;
 
 		/**
 		 * Optional. The properties to set on daemon config files.Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. The following are supported prefixes and their mappings:
@@ -520,7 +1028,35 @@ export namespace MyNS {
 		 * spark: spark-defaults.conf
 		 * yarn: yarn-site.xmlFor more information, see Cluster properties (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
 		 */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
+	}
+
+	/** Specifies the selection and config of software inside the cluster. */
+	export interface SoftwareConfigFormProperties {
+
+		/** Optional. The version of software inside the cluster. It must be one of the supported Dataproc Versions (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions), such as "1.2" (including a subminor version, such as "1.2.29"), or the "preview" version (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-versions#other_versions). If unspecified, it defaults to the latest Debian version. */
+		imageVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The properties to set on daemon config files.Property keys are specified in prefix:property format, for example core:hadoop.tmp.dir. The following are supported prefixes and their mappings:
+		 * capacity-scheduler: capacity-scheduler.xml
+		 * core: core-site.xml
+		 * distcp: distcp-default.xml
+		 * hdfs: hdfs-site.xml
+		 * hive: hive-site.xml
+		 * mapred: mapred-site.xml
+		 * pig: pig.properties
+		 * spark: spark-defaults.conf
+		 * yarn: yarn-site.xmlFor more information, see Cluster properties (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
+		 */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateSoftwareConfigFormGroup() {
+		return new FormGroup<SoftwareConfigFormProperties>({
+			imageVersion: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -528,10 +1064,27 @@ export namespace MyNS {
 	export interface ClusterMetrics {
 
 		/** The HDFS metrics. */
-		hdfsMetrics?: {[id: string]: string } | null;
+		hdfsMetrics?: {[id: string]: string };
 
 		/** The YARN metrics. */
-		yarnMetrics?: {[id: string]: string } | null;
+		yarnMetrics?: {[id: string]: string };
+	}
+
+	/** Contains cluster daemon metrics, such as HDFS and YARN stats.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
+	export interface ClusterMetricsFormProperties {
+
+		/** The HDFS metrics. */
+		hdfsMetrics: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The YARN metrics. */
+		yarnMetrics: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateClusterMetricsFormGroup() {
+		return new FormGroup<ClusterMetricsFormProperties>({
+			hdfsMetrics: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			yarnMetrics: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -549,6 +1102,31 @@ export namespace MyNS {
 
 		/** Output only. Additional state information that includes status reported by the agent. */
 		substate?: ClusterStatusSubstate | null;
+	}
+
+	/** The status of a cluster and its instances. */
+	export interface ClusterStatusFormProperties {
+
+		/** Optional. Output only. Details of cluster's state. */
+		detail: FormControl<string | null | undefined>,
+
+		/** Output only. The cluster's state. */
+		state: FormControl<ClusterStatusState | null | undefined>,
+
+		/** Output only. Time when this state was entered (see JSON representation of Timestamp (https://developers.google.com/protocol-buffers/docs/proto3#json)). */
+		stateStartTime: FormControl<string | null | undefined>,
+
+		/** Output only. Additional state information that includes status reported by the agent. */
+		substate: FormControl<ClusterStatusSubstate | null | undefined>,
+	}
+	export function CreateClusterStatusFormGroup() {
+		return new FormGroup<ClusterStatusFormProperties>({
+			detail: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<ClusterStatusState | null | undefined>(undefined),
+			stateStartTime: new FormControl<string | null | undefined>(undefined),
+			substate: new FormControl<ClusterStatusSubstate | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ClusterStatusState { UNKNOWN = 0, CREATING = 1, RUNNING = 2, ERROR = 3, DELETING = 4, UPDATING = 5 }
@@ -569,6 +1147,27 @@ export namespace MyNS {
 		operationId?: string | null;
 	}
 
+	/** The cluster operation triggered by a workflow. */
+	export interface ClusterOperationFormProperties {
+
+		/** Output only. Indicates the operation is done. */
+		done: FormControl<boolean | null | undefined>,
+
+		/** Output only. Error, if operation failed. */
+		error: FormControl<string | null | undefined>,
+
+		/** Output only. The id of the cluster operation. */
+		operationId: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterOperationFormGroup() {
+		return new FormGroup<ClusterOperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			operationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata describing the operation. */
 	export interface ClusterOperationMetadata {
@@ -583,19 +1182,48 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Output only. Labels associated with the operation */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** Output only. The operation type. */
 		operationType?: string | null;
 
 		/** The status of the operation. */
-		status?: ClusterOperationStatus | null;
+		status?: ClusterOperationStatus;
 
 		/** Output only. The previous operation status. */
-		statusHistory?: Array<ClusterOperationStatus> | null;
+		statusHistory?: Array<ClusterOperationStatus>;
 
 		/** Output only. Errors encountered during operation execution. */
-		warnings?: Array<string> | null;
+		warnings?: Array<string>;
+	}
+
+	/** Metadata describing the operation. */
+	export interface ClusterOperationMetadataFormProperties {
+
+		/** Output only. Name of the cluster for the operation. */
+		clusterName: FormControl<string | null | undefined>,
+
+		/** Output only. Cluster UUID for the operation. */
+		clusterUuid: FormControl<string | null | undefined>,
+
+		/** Output only. Short description of operation. */
+		description: FormControl<string | null | undefined>,
+
+		/** Output only. Labels associated with the operation */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Output only. The operation type. */
+		operationType: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterOperationMetadataFormGroup() {
+		return new FormGroup<ClusterOperationMetadataFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			clusterUuid: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			operationType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -615,6 +1243,31 @@ export namespace MyNS {
 		stateStartTime?: string | null;
 	}
 
+	/** The status of the operation. */
+	export interface ClusterOperationStatusFormProperties {
+
+		/** Output only. A message containing any operation metadata details. */
+		details: FormControl<string | null | undefined>,
+
+		/** Output only. A message containing the detailed operation state. */
+		innerState: FormControl<string | null | undefined>,
+
+		/** Output only. A message containing the operation state. */
+		state: FormControl<ClusterOperationStatusState | null | undefined>,
+
+		/** Output only. The time this state was entered. */
+		stateStartTime: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterOperationStatusFormGroup() {
+		return new FormGroup<ClusterOperationStatusFormProperties>({
+			details: new FormControl<string | null | undefined>(undefined),
+			innerState: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<ClusterOperationStatusState | null | undefined>(undefined),
+			stateStartTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ClusterOperationStatusState { UNKNOWN = 0, PENDING = 1, RUNNING = 2, DONE = 3 }
 
 
@@ -622,15 +1275,41 @@ export namespace MyNS {
 	export interface ClusterSelector {
 
 		/** Required. The cluster labels. Cluster must have all labels to match. */
-		clusterLabels?: {[id: string]: string } | null;
+		clusterLabels?: {[id: string]: string };
 
 		/** Optional. The zone where workflow process executes. This parameter does not affect the selection of the cluster.If unspecified, the zone of the first cluster matching the selector is used. */
 		zone?: string | null;
 	}
 
+	/** A selector that chooses target cluster for jobs based on metadata. */
+	export interface ClusterSelectorFormProperties {
+
+		/** Required. The cluster labels. Cluster must have all labels to match. */
+		clusterLabels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Optional. The zone where workflow process executes. This parameter does not affect the selection of the cluster.If unspecified, the zone of the first cluster matching the selector is used. */
+		zone: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSelectorFormGroup() {
+		return new FormGroup<ClusterSelectorFormProperties>({
+			clusterLabels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			zone: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to collect cluster diagnostic information. */
 	export interface DiagnoseClusterRequest {
+	}
+
+	/** A request to collect cluster diagnostic information. */
+	export interface DiagnoseClusterRequestFormProperties {
+	}
+	export function CreateDiagnoseClusterRequestFormGroup() {
+		return new FormGroup<DiagnoseClusterRequestFormProperties>({
+		});
+
 	}
 
 
@@ -639,6 +1318,19 @@ export namespace MyNS {
 
 		/** Output only. The Cloud Storage URI of the diagnostic output. The output report is a plain text file with a summary of collected diagnostics. */
 		outputUri?: string | null;
+	}
+
+	/** The location of diagnostic output. */
+	export interface DiagnoseClusterResultsFormProperties {
+
+		/** Output only. The Cloud Storage URI of the diagnostic output. The output report is a plain text file with a summary of collected diagnostics. */
+		outputUri: FormControl<string | null | undefined>,
+	}
+	export function CreateDiagnoseClusterResultsFormGroup() {
+		return new FormGroup<DiagnoseClusterResultsFormProperties>({
+			outputUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -652,12 +1344,36 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance:
+	 * service Foo {
+	 *   rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 * }
+	 * The JSON representation for Empty is empty JSON object {}.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** Request message for GetIamPolicy method. */
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions | null;
+		options?: GetPolicyOptions;
+	}
+
+	/** Request message for GetIamPolicy method. */
+	export interface GetIamPolicyRequestFormProperties {
+	}
+	export function CreateGetIamPolicyRequestFormGroup() {
+		return new FormGroup<GetIamPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -668,24 +1384,37 @@ export namespace MyNS {
 		requestedPolicyVersion?: number | null;
 	}
 
+	/** Encapsulates settings provided to GetIamPolicy. */
+	export interface GetPolicyOptionsFormProperties {
+
+		/** Optional. The policy format version to be returned.Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.Requests for policies with any conditional bindings must specify version 3. Policies without any conditional bindings may specify any valid value or leave the field unset. */
+		requestedPolicyVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateGetPolicyOptionsFormGroup() {
+		return new FormGroup<GetPolicyOptionsFormProperties>({
+			requestedPolicyVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html). */
 	export interface HadoopJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of Hadoop drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, or .zip. */
-		archiveUris?: Array<string> | null;
+		archiveUris?: Array<string>;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as -libjars or -Dfoo=bar, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string> | null;
+		args?: Array<string>;
 
 		/** Optional. HCFS (Hadoop Compatible Filesystem) URIs of files to be copied to the working directory of Hadoop drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string> | null;
+		fileUris?: Array<string>;
 
 		/** Optional. Jar file URIs to add to the CLASSPATHs of the Hadoop driver and tasks. */
-		jarFileUris?: Array<string> | null;
+		jarFileUris?: Array<string>;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** The name of the driver's main class. The jar file containing the class must be in the default CLASSPATH or specified in jar_file_uris. */
 		mainClass?: string | null;
@@ -694,7 +1423,28 @@ export namespace MyNS {
 		mainJarFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure Hadoop. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site and classes in user code. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
+	}
+
+	/** A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html). */
+	export interface HadoopJobFormProperties {
+
+		/** The name of the driver's main class. The jar file containing the class must be in the default CLASSPATH or specified in jar_file_uris. */
+		mainClass: FormControl<string | null | undefined>,
+
+		/** The HCFS URI of the jar file containing the main class. Examples:  'gs://foo-bucket/analytics-binaries/extract-useful-metrics-mr.jar'  'hdfs:/tmp/test-samples/custom-wordcount.jar'  'file:///home/usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar' */
+		mainJarFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. A mapping of property names to values, used to configure Hadoop. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site and classes in user code. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateHadoopJobFormGroup() {
+		return new FormGroup<HadoopJobFormProperties>({
+			mainClass: new FormControl<string | null | undefined>(undefined),
+			mainJarFileUri: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -702,7 +1452,20 @@ export namespace MyNS {
 	export interface LoggingConfig {
 
 		/** The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples:  'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG' */
-		driverLogLevels?: {[id: string]: LoggingConfigDriverLogLevels } | null;
+		driverLogLevels?: {[id: string]: LoggingConfigDriverLogLevels };
+	}
+
+	/** The runtime logging config of the job. */
+	export interface LoggingConfigFormProperties {
+
+		/** The per-package log levels for the driver. This may include "root" package name to configure rootLogger. Examples:  'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG' */
+		driverLogLevels: FormControl<{[id: string]: LoggingConfigDriverLogLevels } | null | undefined>,
+	}
+	export function CreateLoggingConfigFormGroup() {
+		return new FormGroup<LoggingConfigFormProperties>({
+			driverLogLevels: new FormControl<{[id: string]: LoggingConfigDriverLogLevels } | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LoggingConfigDriverLogLevels { LEVEL_UNSPECIFIED = 0, ALL = 1, TRACE = 2, DEBUG = 3, INFO = 4, WARN = 5, ERROR = 6, FATAL = 7, OFF = 8 }
@@ -715,19 +1478,44 @@ export namespace MyNS {
 		continueOnFailure?: boolean | null;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATH of the Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes and UDFs. */
-		jarFileUris?: Array<string> | null;
+		jarFileUris?: Array<string>;
 
 		/** Optional. A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains Hive queries. */
 		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList | null;
+		queryList?: QueryList;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Hive command: SET name="value";). */
-		scriptVariables?: {[id: string]: string } | null;
+		scriptVariables?: {[id: string]: string };
+	}
+
+	/** A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN. */
+	export interface HiveJobFormProperties {
+
+		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
+		continueOnFailure: FormControl<boolean | null | undefined>,
+
+		/** Optional. A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The HCFS URI of the script that contains Hive queries. */
+		queryFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. Mapping of query variable names to values (equivalent to the Hive command: SET name="value";). */
+		scriptVariables: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateHiveJobFormGroup() {
+		return new FormGroup<HiveJobFormProperties>({
+			continueOnFailure: new FormControl<boolean | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			queryFileUri: new FormControl<string | null | undefined>(undefined),
+			scriptVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -746,7 +1534,16 @@ export namespace MyNS {
 		 * }
 		 * }
 		 */
-		queries?: Array<string> | null;
+		queries?: Array<string>;
+	}
+
+	/** A list of queries to run on a cluster. */
+	export interface QueryListFormProperties {
+	}
+	export function CreateQueryListFormGroup() {
+		return new FormGroup<QueryListFormProperties>({
+		});
+
 	}
 
 
@@ -754,13 +1551,34 @@ export namespace MyNS {
 	export interface InstantiateWorkflowTemplateRequest {
 
 		/** Optional. Map from parameter names to values that should be used for those parameters. Values may not exceed 100 characters. */
-		parameters?: {[id: string]: string } | null;
+		parameters?: {[id: string]: string };
 
 		/** Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
 		requestId?: string | null;
 
 		/** Optional. The version of workflow template to instantiate. If specified, the workflow will be instantiated only if the current version of the workflow template has the supplied version.This option cannot be used to instantiate a previous version of workflow template. */
 		version?: number | null;
+	}
+
+	/** A request to instantiate a workflow template. */
+	export interface InstantiateWorkflowTemplateRequestFormProperties {
+
+		/** Optional. Map from parameter names to values that should be used for those parameters. Values may not exceed 100 characters. */
+		parameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Optional. A tag that prevents multiple concurrent workflow instances with the same tag from running. This mitigates risk of concurrent instances started due to retries.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The tag must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
+		requestId: FormControl<string | null | undefined>,
+
+		/** Optional. The version of workflow template to instantiate. If specified, the workflow will be instantiated only if the current version of the workflow template has the supplied version.This option cannot be used to instantiate a previous version of workflow template. */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateInstantiateWorkflowTemplateRequestFormGroup() {
+		return new FormGroup<InstantiateWorkflowTemplateRequestFormProperties>({
+			parameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -777,52 +1595,81 @@ export namespace MyNS {
 		driverOutputResourceUri?: string | null;
 
 		/** A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html). */
-		hadoopJob?: HadoopJob | null;
+		hadoopJob?: HadoopJob;
 
 		/** A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN. */
-		hiveJob?: HiveJob | null;
+		hiveJob?: HiveJob;
 
 		/** Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that may be reused over time. */
 		jobUuid?: string | null;
 
 		/** Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
-		pigJob?: PigJob | null;
+		pigJob?: PigJob;
 
 		/** Dataproc job config. */
-		placement?: JobPlacement | null;
+		placement?: JobPlacement;
 
 		/** A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster. */
-		prestoJob?: PrestoJob | null;
+		prestoJob?: PrestoJob;
 
 		/** A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN. */
-		pysparkJob?: PySparkJob | null;
+		pysparkJob?: PySparkJob;
 
 		/** Encapsulates the full scoping used to reference a job. */
-		reference?: JobReference | null;
+		reference?: JobReference;
 
 		/** Job scheduling options. */
-		scheduling?: JobScheduling | null;
+		scheduling?: JobScheduling;
 
 		/** A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN. */
-		sparkJob?: SparkJob | null;
+		sparkJob?: SparkJob;
 
 		/** A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN. */
-		sparkRJob?: SparkRJob | null;
+		sparkRJob?: SparkRJob;
 
 		/** A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries. */
-		sparkSqlJob?: SparkSqlJob | null;
+		sparkSqlJob?: SparkSqlJob;
 
 		/** Dataproc job status. */
-		status?: JobStatus | null;
+		status?: JobStatus;
 
 		/** Output only. The previous job status. */
-		statusHistory?: Array<JobStatus> | null;
+		statusHistory?: Array<JobStatus>;
 
 		/** Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
-		yarnApplications?: Array<YarnApplication> | null;
+		yarnApplications?: Array<YarnApplication>;
+	}
+
+	/** A Dataproc job resource. */
+	export interface JobFormProperties {
+
+		/** Output only. Indicates whether the job is completed. If the value is false, the job is still in progress. If true, the job is completed, and status.state field will indicate if it was successful, failed, or cancelled. */
+		done: FormControl<boolean | null | undefined>,
+
+		/** Output only. If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri. */
+		driverControlFilesUri: FormControl<string | null | undefined>,
+
+		/** Output only. A URI pointing to the location of the stdout of the job's driver program. */
+		driverOutputResourceUri: FormControl<string | null | undefined>,
+
+		/** Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that may be reused over time. */
+		jobUuid: FormControl<string | null | undefined>,
+
+		/** Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			driverControlFilesUri: new FormControl<string | null | undefined>(undefined),
+			driverOutputResourceUri: new FormControl<string | null | undefined>(undefined),
+			jobUuid: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -833,22 +1680,47 @@ export namespace MyNS {
 		continueOnFailure?: boolean | null;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATH of the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs. */
-		jarFileUris?: Array<string> | null;
+		jarFileUris?: Array<string>;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** Optional. A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains the Pig queries. */
 		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList | null;
+		queryList?: QueryList;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Pig command: name=[value]). */
-		scriptVariables?: {[id: string]: string } | null;
+		scriptVariables?: {[id: string]: string };
+	}
+
+	/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
+	export interface PigJobFormProperties {
+
+		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
+		continueOnFailure: FormControl<boolean | null | undefined>,
+
+		/** Optional. A mapping of property names to values, used to configure Pig. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/pig/conf/pig.properties, and classes in user code. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The HCFS URI of the script that contains the Pig queries. */
+		queryFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. Mapping of query variable names to values (equivalent to the Pig command: name=[value]). */
+		scriptVariables: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreatePigJobFormGroup() {
+		return new FormGroup<PigJobFormProperties>({
+			continueOnFailure: new FormControl<boolean | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			queryFileUri: new FormControl<string | null | undefined>(undefined),
+			scriptVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -862,30 +1734,72 @@ export namespace MyNS {
 		clusterUuid?: string | null;
 	}
 
+	/** Dataproc job config. */
+	export interface JobPlacementFormProperties {
+
+		/** Required. The name of the cluster where the job will be submitted. */
+		clusterName: FormControl<string | null | undefined>,
+
+		/** Output only. A cluster UUID generated by the Dataproc service when the job is submitted. */
+		clusterUuid: FormControl<string | null | undefined>,
+	}
+	export function CreateJobPlacementFormGroup() {
+		return new FormGroup<JobPlacementFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			clusterUuid: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster. */
 	export interface PrestoJob {
 
 		/** Optional. Presto client tags to attach to this query */
-		clientTags?: Array<string> | null;
+		clientTags?: Array<string>;
 
 		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
 		continueOnFailure?: boolean | null;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** Optional. The format in which query output will be displayed. See the Presto documentation for supported output formats */
 		outputFormat?: string | null;
 
 		/** Optional. A mapping of property names to values. Used to set Presto session properties (https://prestodb.io/docs/current/sql/set-session.html) Equivalent to using the --session flag in the Presto CLI */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains SQL queries. */
 		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList | null;
+		queryList?: QueryList;
+	}
+
+	/** A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster. */
+	export interface PrestoJobFormProperties {
+
+		/** Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries. */
+		continueOnFailure: FormControl<boolean | null | undefined>,
+
+		/** Optional. The format in which query output will be displayed. See the Presto documentation for supported output formats */
+		outputFormat: FormControl<string | null | undefined>,
+
+		/** Optional. A mapping of property names to values. Used to set Presto session properties (https://prestodb.io/docs/current/sql/set-session.html) Equivalent to using the --session flag in the Presto CLI */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The HCFS URI of the script that contains SQL queries. */
+		queryFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreatePrestoJobFormGroup() {
+		return new FormGroup<PrestoJobFormProperties>({
+			continueOnFailure: new FormControl<boolean | null | undefined>(undefined),
+			outputFormat: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			queryFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -893,28 +1807,45 @@ export namespace MyNS {
 	export interface PySparkJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of .jar, .tar, .tar.gz, .tgz, and .zip. */
-		archiveUris?: Array<string> | null;
+		archiveUris?: Array<string>;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string> | null;
+		args?: Array<string>;
 
 		/** Optional. HCFS URIs of files to be copied to the working directory of Python drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string> | null;
+		fileUris?: Array<string>;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Python driver and tasks. */
-		jarFileUris?: Array<string> | null;
+		jarFileUris?: Array<string>;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** Required. The HCFS URI of the main Python file to use as the driver. Must be a .py file. */
 		mainPythonFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
 
 		/** Optional. HCFS file URIs of Python files to pass to the PySpark framework. Supported file types: .py, .egg, and .zip. */
-		pythonFileUris?: Array<string> | null;
+		pythonFileUris?: Array<string>;
+	}
+
+	/** A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN. */
+	export interface PySparkJobFormProperties {
+
+		/** Required. The HCFS URI of the main Python file to use as the driver. Must be a .py file. */
+		mainPythonFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreatePySparkJobFormGroup() {
+		return new FormGroup<PySparkJobFormProperties>({
+			mainPythonFileUri: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -928,6 +1859,23 @@ export namespace MyNS {
 		projectId?: string | null;
 	}
 
+	/** Encapsulates the full scoping used to reference a job. */
+	export interface JobReferenceFormProperties {
+
+		/** Optional. The job ID, which must be unique within the project.The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or hyphens (-). The maximum length is 100 characters.If not specified by the caller, the job ID will be provided by the server. */
+		jobId: FormControl<string | null | undefined>,
+
+		/** Required. The ID of the Google Cloud Platform project that the job belongs to. */
+		projectId: FormControl<string | null | undefined>,
+	}
+	export function CreateJobReferenceFormGroup() {
+		return new FormGroup<JobReferenceFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Job scheduling options. */
 	export interface JobScheduling {
@@ -936,24 +1884,37 @@ export namespace MyNS {
 		maxFailuresPerHour?: number | null;
 	}
 
+	/** Job scheduling options. */
+	export interface JobSchedulingFormProperties {
+
+		/** Optional. Maximum number of times per hour a driver may be restarted as a result of driver terminating with non-zero code before job is reported failed.A job may be reported as thrashing if driver exits with non-zero code 4 times within 10 minute window.Maximum value is 10. */
+		maxFailuresPerHour: FormControl<number | null | undefined>,
+	}
+	export function CreateJobSchedulingFormGroup() {
+		return new FormGroup<JobSchedulingFormProperties>({
+			maxFailuresPerHour: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN. */
 	export interface SparkJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of Spark drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip. */
-		archiveUris?: Array<string> | null;
+		archiveUris?: Array<string>;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string> | null;
+		args?: Array<string>;
 
 		/** Optional. HCFS URIs of files to be copied to the working directory of Spark drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string> | null;
+		fileUris?: Array<string>;
 
 		/** Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Spark driver and tasks. */
-		jarFileUris?: Array<string> | null;
+		jarFileUris?: Array<string>;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris. */
 		mainClass?: string | null;
@@ -962,7 +1923,28 @@ export namespace MyNS {
 		mainJarFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
+	}
+
+	/** A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN. */
+	export interface SparkJobFormProperties {
+
+		/** The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris. */
+		mainClass: FormControl<string | null | undefined>,
+
+		/** The HCFS URI of the jar file that contains the main class. */
+		mainJarFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateSparkJobFormGroup() {
+		return new FormGroup<SparkJobFormProperties>({
+			mainClass: new FormControl<string | null | undefined>(undefined),
+			mainJarFileUri: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -970,22 +1952,39 @@ export namespace MyNS {
 	export interface SparkRJob {
 
 		/** Optional. HCFS URIs of archives to be extracted in the working directory of Spark drivers and tasks. Supported file types: .jar, .tar, .tar.gz, .tgz, and .zip. */
-		archiveUris?: Array<string> | null;
+		archiveUris?: Array<string>;
 
 		/** Optional. The arguments to pass to the driver. Do not include arguments, such as --conf, that can be set as job properties, since a collision may occur that causes an incorrect job submission. */
-		args?: Array<string> | null;
+		args?: Array<string>;
 
 		/** Optional. HCFS URIs of files to be copied to the working directory of R drivers and distributed tasks. Useful for naively parallel tasks. */
-		fileUris?: Array<string> | null;
+		fileUris?: Array<string>;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** Required. The HCFS URI of the main R file to use as the driver. Must be a .R file. */
 		mainRFileUri?: string | null;
 
 		/** Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
+	}
+
+	/** A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN. */
+	export interface SparkRJobFormProperties {
+
+		/** Required. The HCFS URI of the main R file to use as the driver. Must be a .R file. */
+		mainRFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. A mapping of property names to values, used to configure SparkR. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateSparkRJobFormGroup() {
+		return new FormGroup<SparkRJobFormProperties>({
+			mainRFileUri: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -993,22 +1992,43 @@ export namespace MyNS {
 	export interface SparkSqlJob {
 
 		/** Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH. */
-		jarFileUris?: Array<string> | null;
+		jarFileUris?: Array<string>;
 
 		/** The runtime logging config of the job. */
-		loggingConfig?: LoggingConfig | null;
+		loggingConfig?: LoggingConfig;
 
 		/** Optional. A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten. */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
 
 		/** The HCFS URI of the script that contains SQL queries. */
 		queryFileUri?: string | null;
 
 		/** A list of queries to run on a cluster. */
-		queryList?: QueryList | null;
+		queryList?: QueryList;
 
 		/** Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name="value";). */
-		scriptVariables?: {[id: string]: string } | null;
+		scriptVariables?: {[id: string]: string };
+	}
+
+	/** A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries. */
+	export interface SparkSqlJobFormProperties {
+
+		/** Optional. A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten. */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The HCFS URI of the script that contains SQL queries. */
+		queryFileUri: FormControl<string | null | undefined>,
+
+		/** Optional. Mapping of query variable names to values (equivalent to the Spark SQL command: SET name="value";). */
+		scriptVariables: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateSparkSqlJobFormGroup() {
+		return new FormGroup<SparkSqlJobFormProperties>({
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			queryFileUri: new FormControl<string | null | undefined>(undefined),
+			scriptVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1026,6 +2046,31 @@ export namespace MyNS {
 
 		/** Output only. Additional state information, which includes status reported by the agent. */
 		substate?: JobStatusSubstate | null;
+	}
+
+	/** Dataproc job status. */
+	export interface JobStatusFormProperties {
+
+		/** Optional. Output only. Job state details, such as an error description if the state is <code>ERROR</code>. */
+		details: FormControl<string | null | undefined>,
+
+		/** Output only. A state message specifying the overall job state. */
+		state: FormControl<JobStatusState | null | undefined>,
+
+		/** Output only. The time when this state was entered. */
+		stateStartTime: FormControl<string | null | undefined>,
+
+		/** Output only. Additional state information, which includes status reported by the agent. */
+		substate: FormControl<JobStatusSubstate | null | undefined>,
+	}
+	export function CreateJobStatusFormGroup() {
+		return new FormGroup<JobStatusFormProperties>({
+			details: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<JobStatusState | null | undefined>(undefined),
+			stateStartTime: new FormControl<string | null | undefined>(undefined),
+			substate: new FormControl<JobStatusSubstate | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobStatusState { STATE_UNSPECIFIED = 0, PENDING = 1, SETUP_DONE = 2, RUNNING = 3, CANCEL_PENDING = 4, CANCEL_STARTED = 5, CANCELLED = 6, DONE = 7, ERROR = 8, ATTEMPT_FAILURE = 9 }
@@ -1049,6 +2094,31 @@ export namespace MyNS {
 		trackingUrl?: string | null;
 	}
 
+	/** A YARN application created by a job. Application information is a subset of <code>org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto</code>.Beta Feature: This report is available for testing purposes only. It may be changed before final release. */
+	export interface YarnApplicationFormProperties {
+
+		/** Required. The application name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Required. The numerical progress of the application, from 1 to 100. */
+		progress: FormControl<number | null | undefined>,
+
+		/** Required. The application state. */
+		state: FormControl<YarnApplicationState | null | undefined>,
+
+		/** Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or TimelineServer that provides application-specific information. The URL uses the internal hostname, and requires a proxy server for resolution and, possibly, access. */
+		trackingUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateYarnApplicationFormGroup() {
+		return new FormGroup<YarnApplicationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			progress: new FormControl<number | null | undefined>(undefined),
+			state: new FormControl<YarnApplicationState | null | undefined>(undefined),
+			trackingUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum YarnApplicationState { STATE_UNSPECIFIED = 0, NEW = 1, NEW_SAVING = 2, SUBMITTED = 3, ACCEPTED = 4, RUNNING = 5, FINISHED = 6, FAILED = 7, KILLED = 8 }
 
 
@@ -1065,7 +2135,28 @@ export namespace MyNS {
 		startTime?: string | null;
 
 		/** Dataproc job status. */
-		status?: JobStatus | null;
+		status?: JobStatus;
+	}
+
+	/** Job Operation metadata. */
+	export interface JobMetadataFormProperties {
+
+		/** Output only. The job id. */
+		jobId: FormControl<string | null | undefined>,
+
+		/** Output only. Operation type. */
+		operationType: FormControl<string | null | undefined>,
+
+		/** Output only. Job submission time. */
+		startTime: FormControl<string | null | undefined>,
+	}
+	export function CreateJobMetadataFormGroup() {
+		return new FormGroup<JobMetadataFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			operationType: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1076,7 +2167,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Output only. Autoscaling policies list. */
-		policies?: Array<AutoscalingPolicy> | null;
+		policies?: Array<AutoscalingPolicy>;
+	}
+
+	/** A response to a request to list autoscaling policies in a project. */
+	export interface ListAutoscalingPoliciesResponseFormProperties {
+
+		/** Output only. This token is included in the response if there are more results to fetch. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAutoscalingPoliciesResponseFormGroup() {
+		return new FormGroup<ListAutoscalingPoliciesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1084,10 +2188,23 @@ export namespace MyNS {
 	export interface ListClustersResponse {
 
 		/** Output only. The clusters in the project. */
-		clusters?: Array<Cluster> | null;
+		clusters?: Array<Cluster>;
 
 		/** Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListClustersRequest. */
 		nextPageToken?: string | null;
+	}
+
+	/** The list of all clusters in a project. */
+	export interface ListClustersResponseFormProperties {
+
+		/** Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListClustersRequest. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListClustersResponseFormGroup() {
+		return new FormGroup<ListClustersResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1095,10 +2212,23 @@ export namespace MyNS {
 	export interface ListJobsResponse {
 
 		/** Output only. Jobs list. */
-		jobs?: Array<Job> | null;
+		jobs?: Array<Job>;
 
 		/** Optional. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListJobsRequest</code>. */
 		nextPageToken?: string | null;
+	}
+
+	/** A list of jobs in a project. */
+	export interface ListJobsResponseFormProperties {
+
+		/** Optional. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListJobsRequest</code>. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsResponseFormGroup() {
+		return new FormGroup<ListJobsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1109,7 +2239,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1120,16 +2263,41 @@ export namespace MyNS {
 		done?: boolean | null;
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		error?: Status | null;
+		error?: Status;
 
 		/** Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the name should be a resource name ending with operations/{unique_id}. */
 		name?: string | null;
 
 		/** The normal response of the operation in case of success. If the original method returns no data on success, such as Delete, the response is google.protobuf.Empty. If the original method is standard Get/Create/Update, the response should be the resource. For other methods, the response should have the type XxxResponse, where Xxx is the original method name. For example, if the original method name is TakeSnapshot(), the inferred response type is TakeSnapshotResponse. */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/** This resource represents a long-running operation that is the result of a network API call. */
+	export interface OperationFormProperties {
+
+		/** If the value is false, it means the operation is still in progress. If true, the operation is completed, and either error or response is available. */
+		done: FormControl<boolean | null | undefined>,
+
+		/** Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the name should be a resource name ending with operations/{unique_id}. */
+		name: FormControl<string | null | undefined>,
+
+		/** The normal response of the operation in case of success. If the original method returns no data on success, such as Delete, the response is google.protobuf.Empty. If the original method is standard Get/Create/Update, the response should be the resource. For other methods, the response should have the type XxxResponse, where Xxx is the original method name. For example, if the original method name is TakeSnapshot(), the inferred response type is TakeSnapshotResponse. */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1140,10 +2308,27 @@ export namespace MyNS {
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
 		message?: string | null;
+	}
+
+	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1154,7 +2339,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Output only. WorkflowTemplates list. */
-		templates?: Array<WorkflowTemplate> | null;
+		templates?: Array<WorkflowTemplate>;
+	}
+
+	/** A response to a request to list workflow templates in a project. */
+	export interface ListWorkflowTemplatesResponseFormProperties {
+
+		/** Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent <code>ListWorkflowTemplatesRequest</code>. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWorkflowTemplatesResponseFormGroup() {
+		return new FormGroup<ListWorkflowTemplatesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1166,10 +2364,10 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Required. The Directed Acyclic Graph of Jobs to submit. */
-		jobs?: Array<OrderedJob> | null;
+		jobs?: Array<OrderedJob>;
 
 		/** Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names.
@@ -1179,10 +2377,10 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Optional. emplate parameters whose values are substituted into the template. Values for parameters must be provided when the template is instantiated. */
-		parameters?: Array<TemplateParameter> | null;
+		parameters?: Array<TemplateParameter>;
 
 		/** Specifies workflow execution target.Either managed_cluster or cluster_selector is required. */
-		placement?: WorkflowTemplatePlacement | null;
+		placement?: WorkflowTemplatePlacement;
 
 		/** Output only. The time template was last updated. */
 		updateTime?: string | null;
@@ -1191,45 +2389,97 @@ export namespace MyNS {
 		version?: number | null;
 	}
 
+	/** A Dataproc workflow template resource. */
+	export interface WorkflowTemplateFormProperties {
+
+		/** Output only. The time template was created. */
+		createTime: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+
+		/** Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names.
+		 * For projects.regions.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+		 * For projects.locations.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Output only. The time template was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/** Optional. Used to perform a consistent read-modify-write.This field should be left blank for a CreateWorkflowTemplate request. It is required for an UpdateWorkflowTemplate request, and must match the current server version. A typical update template flow would fetch the current template with a GetWorkflowTemplate request, which will return the current template with the version field filled in with the current server version. The user updates other fields in the template, then returns it as part of the UpdateWorkflowTemplate request. */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateWorkflowTemplateFormGroup() {
+		return new FormGroup<WorkflowTemplateFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A job executed by the workflow. */
 	export interface OrderedJob {
 
 		/** A Dataproc job for running Apache Hadoop MapReduce (https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) jobs on Apache Hadoop YARN (https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html). */
-		hadoopJob?: HadoopJob | null;
+		hadoopJob?: HadoopJob;
 
 		/** A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN. */
-		hiveJob?: HiveJob | null;
+		hiveJob?: HiveJob;
 
 		/** Optional. The labels to associate with this job.Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given job. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** A Dataproc job for running Apache Pig (https://pig.apache.org/) queries on YARN. */
-		pigJob?: PigJob | null;
+		pigJob?: PigJob;
 
 		/** Optional. The optional list of prerequisite job step_ids. If not specified, the job will start at the beginning of workflow. */
-		prerequisiteStepIds?: Array<string> | null;
+		prerequisiteStepIds?: Array<string>;
 
 		/** A Dataproc job for running Presto (https://prestosql.io/) queries. IMPORTANT: The Dataproc Presto Optional Component (https://cloud.google.com/dataproc/docs/concepts/components/presto) must be enabled when the cluster is created to submit a Presto job to the cluster. */
-		prestoJob?: PrestoJob | null;
+		prestoJob?: PrestoJob;
 
 		/** A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN. */
-		pysparkJob?: PySparkJob | null;
+		pysparkJob?: PySparkJob;
 
 		/** Job scheduling options. */
-		scheduling?: JobScheduling | null;
+		scheduling?: JobScheduling;
 
 		/** A Dataproc job for running Apache Spark (http://spark.apache.org/) applications on YARN. */
-		sparkJob?: SparkJob | null;
+		sparkJob?: SparkJob;
 
 		/** A Dataproc job for running Apache SparkR (https://spark.apache.org/docs/latest/sparkr.html) applications on YARN. */
-		sparkRJob?: SparkRJob | null;
+		sparkRJob?: SparkRJob;
 
 		/** A Dataproc job for running Apache Spark SQL (http://spark.apache.org/sql/) queries. */
-		sparkSqlJob?: SparkSqlJob | null;
+		sparkSqlJob?: SparkSqlJob;
 
 		/** Required. The step id. The id must be unique among all jobs within the template.The step id is used as prefix for job id, as job goog-dataproc-workflow-step-id label, and in prerequisiteStepIds field from other steps.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters. */
 		stepId?: string | null;
+	}
+
+	/** A job executed by the workflow. */
+	export interface OrderedJobFormProperties {
+
+		/** Optional. The labels to associate with this job.Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given job. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Required. The step id. The id must be unique among all jobs within the template.The step id is used as prefix for job id, as job goog-dataproc-workflow-step-id label, and in prerequisiteStepIds field from other steps.The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). Cannot begin or end with underscore or hyphen. Must consist of between 3 and 50 characters. */
+		stepId: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderedJobFormGroup() {
+		return new FormGroup<OrderedJobFormProperties>({
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			stepId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1266,13 +2516,30 @@ export namespace MyNS {
 		 * placement.clusterSelector.clusterLabels
 		 * jobs'step-id'.sparkJob.args
 		 */
-		fields?: Array<string> | null;
+		fields?: Array<string>;
 
 		/** Required. Parameter name. The parameter name is used as the key, and paired with the parameter value, which are passed to the template when the template is instantiated. The name must contain only capital letters (A-Z), numbers (0-9), and underscores (_), and must not start with a number. The maximum length is 40 characters. */
 		name?: string | null;
 
 		/** Configuration for parameter validation. */
-		validation?: ParameterValidation | null;
+		validation?: ParameterValidation;
+	}
+
+	/** A configurable parameter that replaces one or more fields in the template. Parameterizable fields: - Labels - File uris - Job properties - Job arguments - Script variables - Main class (in HadoopJob and SparkJob) - Zone (in ClusterSelector) */
+	export interface TemplateParameterFormProperties {
+
+		/** Optional. Brief description of the parameter. Must not exceed 1024 characters. */
+		description: FormControl<string | null | undefined>,
+
+		/** Required. Parameter name. The parameter name is used as the key, and paired with the parameter value, which are passed to the template when the template is instantiated. The name must contain only capital letters (A-Z), numbers (0-9), and underscores (_), and must not start with a number. The maximum length is 40 characters. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateParameterFormGroup() {
+		return new FormGroup<TemplateParameterFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1280,10 +2547,19 @@ export namespace MyNS {
 	export interface ParameterValidation {
 
 		/** Validation based on regular expressions. */
-		regex?: RegexValidation | null;
+		regex?: RegexValidation;
 
 		/** Validation based on a list of allowed values. */
-		values?: ValueValidation | null;
+		values?: ValueValidation;
+	}
+
+	/** Configuration for parameter validation. */
+	export interface ParameterValidationFormProperties {
+	}
+	export function CreateParameterValidationFormGroup() {
+		return new FormGroup<ParameterValidationFormProperties>({
+		});
+
 	}
 
 
@@ -1291,7 +2567,16 @@ export namespace MyNS {
 	export interface RegexValidation {
 
 		/** Required. RE2 regular expressions used to validate the parameter's value. The value must match the regex in its entirety (substring matches are not sufficient). */
-		regexes?: Array<string> | null;
+		regexes?: Array<string>;
+	}
+
+	/** Validation based on regular expressions. */
+	export interface RegexValidationFormProperties {
+	}
+	export function CreateRegexValidationFormGroup() {
+		return new FormGroup<RegexValidationFormProperties>({
+		});
+
 	}
 
 
@@ -1299,7 +2584,16 @@ export namespace MyNS {
 	export interface ValueValidation {
 
 		/** Required. List of allowed values for the parameter. */
-		values?: Array<string> | null;
+		values?: Array<string>;
+	}
+
+	/** Validation based on a list of allowed values. */
+	export interface ValueValidationFormProperties {
+	}
+	export function CreateValueValidationFormGroup() {
+		return new FormGroup<ValueValidationFormProperties>({
+		});
+
 	}
 
 
@@ -1307,10 +2601,19 @@ export namespace MyNS {
 	export interface WorkflowTemplatePlacement {
 
 		/** A selector that chooses target cluster for jobs based on metadata. */
-		clusterSelector?: ClusterSelector | null;
+		clusterSelector?: ClusterSelector;
 
 		/** Cluster that is managed by the workflow. */
-		managedCluster?: ManagedCluster | null;
+		managedCluster?: ManagedCluster;
+	}
+
+	/** Specifies workflow execution target.Either managed_cluster or cluster_selector is required. */
+	export interface WorkflowTemplatePlacementFormProperties {
+	}
+	export function CreateWorkflowTemplatePlacementFormGroup() {
+		return new FormGroup<WorkflowTemplatePlacementFormProperties>({
+		});
+
 	}
 
 
@@ -1321,10 +2624,27 @@ export namespace MyNS {
 		clusterName?: string | null;
 
 		/** The cluster config. */
-		config?: ClusterConfig | null;
+		config?: ClusterConfig;
 
 		/** Optional. The labels to associate with this cluster.Label keys must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given cluster. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
+	}
+
+	/** Cluster that is managed by the workflow. */
+	export interface ManagedClusterFormProperties {
+
+		/** Required. The cluster name prefix. A unique cluster name will be formed by appending a random suffix.The name must contain only lower-case letters (a-z), numbers (0-9), and hyphens (-). Must begin with a letter. Cannot begin or end with hyphen. Must consist of between 2 and 35 characters. */
+		clusterName: FormControl<string | null | undefined>,
+
+		/** Optional. The labels to associate with this cluster.Label keys must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a given cluster. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateManagedClusterFormGroup() {
+		return new FormGroup<ManagedClusterFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1376,7 +2696,7 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Associates a list of members to a role. Optionally, may specify a condition that determines how and when the bindings are applied. Each of the bindings must contain at least one member. */
-		bindings?: Array<Binding> | null;
+		bindings?: Array<Binding>;
 
 		/** etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the etag in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An etag is returned in the response to getIamPolicy, and systems are expected to put that etag in the request to setIamPolicy to ensure that their change will be applied to the same version of the policy.Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost. */
 		etag?: string | null;
@@ -1389,6 +2709,73 @@ export namespace MyNS {
 		 * Removing any role binding, with or without a condition, from a policy  that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
 		 */
 		version?: number | null;
+	}
+
+	/**
+	 * An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.A Policy is a collection of bindings. A binding binds one or more members to a single role. Members can be user accounts, service accounts, Google groups, and domains (such as G Suite). A role is a named list of permissions; each role can be an IAM predefined role or a user-created custom role.Optionally, a binding can specify a condition, which is a logical expression that allows access to a resource only if the expression evaluates to true. A condition can add constraints based on attributes of the request, the resource, or both.JSON example:
+	 * {
+	 *   "bindings": [
+	 *     {
+	 *       "role": "roles/resourcemanager.organizationAdmin",
+	 *       "members": [
+	 *         "user:mike@example.com",
+	 *         "group:admins@example.com",
+	 *         "domain:google.com",
+	 *         "serviceAccount:my-project-id@appspot.gserviceaccount.com"
+	 *       ]
+	 *     },
+	 *     {
+	 *       "role": "roles/resourcemanager.organizationViewer",
+	 *       "members": ["user:eve@example.com"],
+	 *       "condition": {
+	 *         "title": "expirable access",
+	 *         "description": "Does not grant access after Sep 2020",
+	 *         "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')",
+	 *       }
+	 *     }
+	 *   ],
+	 *   "etag": "BwWWja0YfJA=",
+	 *   "version": 3
+	 * }
+	 * YAML example:
+	 * bindings:
+	 * - members:
+	 *   - user:mike@example.com
+	 *   - group:admins@example.com
+	 *   - domain:google.com
+	 *   - serviceAccount:my-project-id@appspot.gserviceaccount.com
+	 *   role: roles/resourcemanager.organizationAdmin
+	 * - members:
+	 *   - user:eve@example.com
+	 *   role: roles/resourcemanager.organizationViewer
+	 *   condition:
+	 *     title: expirable access
+	 *     description: Does not grant access after Sep 2020
+	 *     expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+	 * - etag: BwWWja0YfJA=
+	 * - version: 3
+	 * For a description of IAM and its features, see the IAM documentation (https://cloud.google.com/iam/docs/).
+	 */
+	export interface PolicyFormProperties {
+
+		/** etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the etag in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An etag is returned in the response to getIamPolicy, and systems are expected to put that etag in the request to setIamPolicy to ensure that their change will be applied to the same version of the policy.Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost. */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the format of the policy.Valid values are 0, 1, and 3. Requests that specify an invalid value are rejected.Any operation that affects conditional role bindings must specify version 3. This requirement applies to the following operations:
+		 * Getting a policy that includes a conditional role binding
+		 * Adding a conditional role binding to a policy
+		 * Changing a conditional role binding in a policy
+		 * Removing any role binding, with or without a condition, from a policy  that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.
+		 */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1440,7 +2827,16 @@ export namespace MyNS {
 		 * - version: 3
 		 * For a description of IAM and its features, see the IAM documentation (https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy | null;
+		policy?: Policy;
+	}
+
+	/** Request message for SetIamPolicy method. */
+	export interface SetIamPolicyRequestFormProperties {
+	}
+	export function CreateSetIamPolicyRequestFormGroup() {
+		return new FormGroup<SetIamPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1448,10 +2844,23 @@ export namespace MyNS {
 	export interface SubmitJobRequest {
 
 		/** A Dataproc job resource. */
-		job?: Job | null;
+		job?: Job;
 
 		/** Optional. A unique id used to identify the request. If the server receives two SubmitJobRequest requests with the same id, then the second request will be ignored and the first Job created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
 		requestId?: string | null;
+	}
+
+	/** A request to submit a job. */
+	export interface SubmitJobRequestFormProperties {
+
+		/** Optional. A unique id used to identify the request. If the server receives two SubmitJobRequest requests with the same id, then the second request will be ignored and the first Job created and stored in the backend is returned.It is recommended to always set this value to a UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens (-). The maximum length is 40 characters. */
+		requestId: FormControl<string | null | undefined>,
+	}
+	export function CreateSubmitJobRequestFormGroup() {
+		return new FormGroup<SubmitJobRequestFormProperties>({
+			requestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1459,7 +2868,16 @@ export namespace MyNS {
 	export interface TestIamPermissionsRequest {
 
 		/** The set of permissions to check for the resource. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see IAM Overview (https://cloud.google.com/iam/docs/overview#permissions). */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Request message for TestIamPermissions method. */
+	export interface TestIamPermissionsRequestFormProperties {
+	}
+	export function CreateTestIamPermissionsRequestFormGroup() {
+		return new FormGroup<TestIamPermissionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1467,7 +2885,16 @@ export namespace MyNS {
 	export interface TestIamPermissionsResponse {
 
 		/** A subset of TestPermissionsRequest.permissions that the caller is allowed. */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Response message for TestIamPermissions method. */
+	export interface TestIamPermissionsResponseFormProperties {
+	}
+	export function CreateTestIamPermissionsResponseFormGroup() {
+		return new FormGroup<TestIamPermissionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1475,7 +2902,16 @@ export namespace MyNS {
 	export interface WorkflowGraph {
 
 		/** Output only. The workflow nodes. */
-		nodes?: Array<WorkflowNode> | null;
+		nodes?: Array<WorkflowNode>;
+	}
+
+	/** The workflow graph. */
+	export interface WorkflowGraphFormProperties {
+	}
+	export function CreateWorkflowGraphFormGroup() {
+		return new FormGroup<WorkflowGraphFormProperties>({
+		});
+
 	}
 
 
@@ -1489,13 +2925,38 @@ export namespace MyNS {
 		jobId?: string | null;
 
 		/** Output only. Node's prerequisite nodes. */
-		prerequisiteStepIds?: Array<string> | null;
+		prerequisiteStepIds?: Array<string>;
 
 		/** Output only. The node state. */
 		state?: WorkflowNodeState | null;
 
 		/** Output only. The name of the node. */
 		stepId?: string | null;
+	}
+
+	/** The workflow node. */
+	export interface WorkflowNodeFormProperties {
+
+		/** Output only. The error detail. */
+		error: FormControl<string | null | undefined>,
+
+		/** Output only. The job id; populated after the node enters RUNNING state. */
+		jobId: FormControl<string | null | undefined>,
+
+		/** Output only. The node state. */
+		state: FormControl<WorkflowNodeState | null | undefined>,
+
+		/** Output only. The name of the node. */
+		stepId: FormControl<string | null | undefined>,
+	}
+	export function CreateWorkflowNodeFormGroup() {
+		return new FormGroup<WorkflowNodeFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<WorkflowNodeState | null | undefined>(undefined),
+			stepId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkflowNodeState { NODE_STATE_UNSPECIFIED = 0, BLOCKED = 1, RUNNABLE = 2, RUNNING = 3, COMPLETED = 4, FAILED = 5 }
@@ -1511,19 +2972,19 @@ export namespace MyNS {
 		clusterUuid?: string | null;
 
 		/** The cluster operation triggered by a workflow. */
-		createCluster?: ClusterOperation | null;
+		createCluster?: ClusterOperation;
 
 		/** The cluster operation triggered by a workflow. */
-		deleteCluster?: ClusterOperation | null;
+		deleteCluster?: ClusterOperation;
 
 		/** Output only. Workflow end time. */
 		endTime?: string | null;
 
 		/** The workflow graph. */
-		graph?: WorkflowGraph | null;
+		graph?: WorkflowGraph;
 
 		/** Map from parameter names to values that were used for those parameters. */
-		parameters?: {[id: string]: string } | null;
+		parameters?: {[id: string]: string };
 
 		/** Output only. Workflow start time. */
 		startTime?: string | null;
@@ -1540,6 +3001,51 @@ export namespace MyNS {
 
 		/** Output only. The version of template at the time of workflow instantiation. */
 		version?: number | null;
+	}
+
+	/** A Dataproc workflow template resource. */
+	export interface WorkflowMetadataFormProperties {
+
+		/** Output only. The name of the target cluster. */
+		clusterName: FormControl<string | null | undefined>,
+
+		/** Output only. The UUID of target cluster. */
+		clusterUuid: FormControl<string | null | undefined>,
+
+		/** Output only. Workflow end time. */
+		endTime: FormControl<string | null | undefined>,
+
+		/** Map from parameter names to values that were used for those parameters. */
+		parameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Output only. Workflow start time. */
+		startTime: FormControl<string | null | undefined>,
+
+		/** Output only. The workflow state. */
+		state: FormControl<ClusterOperationStatusState | null | undefined>,
+
+		/**
+		 * Output only. The resource name of the workflow template as described in https://cloud.google.com/apis/design/resource_names.
+		 * For projects.regions.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/regions/{region}/workflowTemplates/{template_id}
+		 * For projects.locations.workflowTemplates, the resource name of the  template has the following format:  projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
+		 */
+		template: FormControl<string | null | undefined>,
+
+		/** Output only. The version of template at the time of workflow instantiation. */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateWorkflowMetadataFormGroup() {
+		return new FormGroup<WorkflowMetadataFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			clusterUuid: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			parameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<ClusterOperationStatusState | null | undefined>(undefined),
+			template: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

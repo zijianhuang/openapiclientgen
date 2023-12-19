@@ -1,29 +1,81 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerException {
 	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateGraphResponse {
 		GraphArn?: string | null;
 	}
+	export interface CreateGraphResponseFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGraphResponseFormGroup() {
+		return new FormGroup<CreateGraphResponseFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ServiceQuotaExceededException {
 	}
+	export interface ServiceQuotaExceededExceptionFormProperties {
+	}
+	export function CreateServiceQuotaExceededExceptionFormGroup() {
+		return new FormGroup<ServiceQuotaExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateMembersResponse {
-		Members?: Array<MemberDetail> | null;
-		UnprocessedAccounts?: Array<UnprocessedAccount> | null;
+		Members?: Array<MemberDetail>;
+		UnprocessedAccounts?: Array<UnprocessedAccount>;
+	}
+	export interface CreateMembersResponseFormProperties {
+	}
+	export function CreateCreateMembersResponseFormGroup() {
+		return new FormGroup<CreateMembersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -41,6 +93,35 @@ export namespace MyNS {
 		PercentOfGraphUtilizationUpdatedTime?: Date | null;
 	}
 
+	/** Details about a member account that was invited to contribute to a behavior graph. */
+	export interface MemberDetailFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		EmailAddress: FormControl<string | null | undefined>,
+		GraphArn: FormControl<string | null | undefined>,
+		MasterId: FormControl<string | null | undefined>,
+		Status: FormControl<MemberDetailStatus | null | undefined>,
+		DisabledReason: FormControl<MemberDetailDisabledReason | null | undefined>,
+		InvitedTime: FormControl<Date | null | undefined>,
+		UpdatedTime: FormControl<Date | null | undefined>,
+		PercentOfGraphUtilization: FormControl<number | null | undefined>,
+		PercentOfGraphUtilizationUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateMemberDetailFormGroup() {
+		return new FormGroup<MemberDetailFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			MasterId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<MemberDetailStatus | null | undefined>(undefined),
+			DisabledReason: new FormControl<MemberDetailDisabledReason | null | undefined>(undefined),
+			InvitedTime: new FormControl<Date | null | undefined>(undefined),
+			UpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			PercentOfGraphUtilization: new FormControl<number | null | undefined>(undefined),
+			PercentOfGraphUtilizationUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MemberDetailStatus { INVITED = 0, VERIFICATION_IN_PROGRESS = 1, VERIFICATION_FAILED = 2, ENABLED = 3, ACCEPTED_BUT_DISABLED = 4 }
 
 	export enum MemberDetailDisabledReason { VOLUME_TOO_HIGH = 0, VOLUME_UNKNOWN = 1 }
@@ -52,6 +133,19 @@ export namespace MyNS {
 		Reason?: string | null;
 	}
 
+	/** A member account that was included in a request but for which the request could not be processed. */
+	export interface UnprocessedAccountFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateUnprocessedAccountFormGroup() {
+		return new FormGroup<UnprocessedAccountFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An AWS account that is the master of or a member of a behavior graph. */
 	export interface Account {
@@ -59,19 +153,55 @@ export namespace MyNS {
 		EmailAddress: string;
 	}
 
+	/** An AWS account that is the master of or a member of a behavior graph. */
+	export interface AccountFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		EmailAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteMembersResponse {
-		AccountIds?: Array<string> | null;
-		UnprocessedAccounts?: Array<UnprocessedAccount> | null;
+		AccountIds?: Array<string>;
+		UnprocessedAccounts?: Array<UnprocessedAccount>;
+	}
+	export interface DeleteMembersResponseFormProperties {
+	}
+	export function CreateDeleteMembersResponseFormGroup() {
+		return new FormGroup<DeleteMembersResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetMembersResponse {
-		MemberDetails?: Array<MemberDetail> | null;
-		UnprocessedAccounts?: Array<UnprocessedAccount> | null;
+		MemberDetails?: Array<MemberDetail>;
+		UnprocessedAccounts?: Array<UnprocessedAccount>;
+	}
+	export interface GetMembersResponseFormProperties {
+	}
+	export function CreateGetMembersResponseFormGroup() {
+		return new FormGroup<GetMembersResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListGraphsResponse {
-		GraphList?: Array<Graph> | null;
+		GraphList?: Array<Graph>;
 		NextToken?: string | null;
+	}
+	export interface ListGraphsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGraphsResponseFormGroup() {
+		return new FormGroup<ListGraphsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -81,18 +211,58 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 	}
 
+	/** A behavior graph in Detective. */
+	export interface GraphFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGraphFormGroup() {
+		return new FormGroup<GraphFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListInvitationsResponse {
-		Invitations?: Array<MemberDetail> | null;
+		Invitations?: Array<MemberDetail>;
 		NextToken?: string | null;
+	}
+	export interface ListInvitationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInvitationsResponseFormGroup() {
+		return new FormGroup<ListInvitationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMembersResponse {
-		MemberDetails?: Array<MemberDetail> | null;
+		MemberDetails?: Array<MemberDetail>;
 		NextToken?: string | null;
+	}
+	export interface ListMembersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMembersResponseFormGroup() {
+		return new FormGroup<ListMembersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AcceptInvitationRequest {
 		GraphArn: string;
+	}
+	export interface AcceptInvitationRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptInvitationRequestFormGroup() {
+		return new FormGroup<AcceptInvitationRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMembersRequest {
@@ -100,39 +270,121 @@ export namespace MyNS {
 		Message?: string | null;
 		Accounts: Array<Account>;
 	}
+	export interface CreateMembersRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMembersRequestFormGroup() {
+		return new FormGroup<CreateMembersRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteGraphRequest {
 		GraphArn: string;
+	}
+	export interface DeleteGraphRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGraphRequestFormGroup() {
+		return new FormGroup<DeleteGraphRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteMembersRequest {
 		GraphArn: string;
 		AccountIds: Array<string>;
 	}
+	export interface DeleteMembersRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMembersRequestFormGroup() {
+		return new FormGroup<DeleteMembersRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateMembershipRequest {
 		GraphArn: string;
+	}
+	export interface DisassociateMembershipRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateMembershipRequestFormGroup() {
+		return new FormGroup<DisassociateMembershipRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMembersRequest {
 		GraphArn: string;
 		AccountIds: Array<string>;
 	}
+	export interface GetMembersRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMembersRequestFormGroup() {
+		return new FormGroup<GetMembersRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGraphsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListGraphsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListGraphsRequestFormGroup() {
+		return new FormGroup<ListGraphsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListInvitationsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListInvitationsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListInvitationsRequestFormGroup() {
+		return new FormGroup<ListInvitationsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMembersRequest {
 		GraphArn: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListMembersRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListMembersRequestFormGroup() {
+		return new FormGroup<ListMembersRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MemberStatus { INVITED = 0, VERIFICATION_IN_PROGRESS = 1, VERIFICATION_FAILED = 2, ENABLED = 3, ACCEPTED_BUT_DISABLED = 4 }
@@ -142,10 +394,30 @@ export namespace MyNS {
 	export interface RejectInvitationRequest {
 		GraphArn: string;
 	}
+	export interface RejectInvitationRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectInvitationRequestFormGroup() {
+		return new FormGroup<RejectInvitationRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartMonitoringMemberRequest {
 		GraphArn: string;
 		AccountId: string;
+	}
+	export interface StartMonitoringMemberRequestFormProperties {
+		GraphArn: FormControl<string | null | undefined>,
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMonitoringMemberRequestFormGroup() {
+		return new FormGroup<StartMonitoringMemberRequestFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -277,6 +549,21 @@ export namespace MyNS {
 		 */
 		GraphArn: string;
 	}
+	export interface AcceptInvitationPutBodyFormProperties {
+
+		/**
+		 * <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptInvitationPutBodyFormGroup() {
+		return new FormGroup<AcceptInvitationPutBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateMembersPostBody {
 
@@ -302,6 +589,29 @@ export namespace MyNS {
 		 */
 		Accounts: Array<Account>;
 	}
+	export interface CreateMembersPostBodyFormProperties {
+
+		/**
+		 * The ARN of the behavior graph to invite the member accounts to contribute their data to.
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Customized message text to include in the invitation email message to the invited member accounts.
+		 * Max length: 1000
+		 * Min length: 1
+		 */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMembersPostBodyFormGroup() {
+		return new FormGroup<CreateMembersPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteGraphPostBody {
 
@@ -311,6 +621,21 @@ export namespace MyNS {
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
+	}
+	export interface DeleteGraphPostBodyFormProperties {
+
+		/**
+		 * The ARN of the behavior graph to disable.
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGraphPostBodyFormGroup() {
+		return new FormGroup<DeleteGraphPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteMembersPostBody {
@@ -330,6 +655,21 @@ export namespace MyNS {
 		 */
 		AccountIds: Array<string>;
 	}
+	export interface DeleteMembersPostBodyFormProperties {
+
+		/**
+		 * The ARN of the behavior graph to delete members from.
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMembersPostBodyFormGroup() {
+		return new FormGroup<DeleteMembersPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateMembershipPostBody {
 
@@ -339,6 +679,21 @@ export namespace MyNS {
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
+	}
+	export interface DisassociateMembershipPostBodyFormProperties {
+
+		/**
+		 * <p>The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateMembershipPostBodyFormGroup() {
+		return new FormGroup<DisassociateMembershipPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMembersPostBody {
@@ -358,6 +713,21 @@ export namespace MyNS {
 		 */
 		AccountIds: Array<string>;
 	}
+	export interface GetMembersPostBodyFormProperties {
+
+		/**
+		 * The ARN of the behavior graph for which to request the member details.
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMembersPostBodyFormGroup() {
+		return new FormGroup<GetMembersPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGraphsPostBody {
 
@@ -375,6 +745,29 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface ListGraphsPostBodyFormProperties {
+
+		/**
+		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListGraphsPostBodyFormGroup() {
+		return new FormGroup<ListGraphsPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListInvitationsPostBody {
 
@@ -391,6 +784,29 @@ export namespace MyNS {
 		 * Maximum: 200
 		 */
 		MaxResults?: number | null;
+	}
+	export interface ListInvitationsPostBodyFormProperties {
+
+		/**
+		 * For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListInvitationsPostBodyFormGroup() {
+		return new FormGroup<ListInvitationsPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMembersPostBody {
@@ -416,6 +832,37 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface ListMembersPostBodyFormProperties {
+
+		/**
+		 * The ARN of the behavior graph for which to retrieve the list of member accounts.
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.
+		 * Minimum: 1
+		 * Maximum: 200
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListMembersPostBodyFormGroup() {
+		return new FormGroup<ListMembersPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RejectInvitationPostBody {
 
@@ -425,6 +872,21 @@ export namespace MyNS {
 		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
+	}
+	export interface RejectInvitationPostBodyFormProperties {
+
+		/**
+		 * <p>The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectInvitationPostBodyFormGroup() {
+		return new FormGroup<RejectInvitationPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartMonitoringMemberPostBody {
@@ -444,6 +906,31 @@ export namespace MyNS {
 		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: string;
+	}
+	export interface StartMonitoringMemberPostBodyFormProperties {
+
+		/**
+		 * The ARN of the behavior graph.
+		 * Required
+		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
+		 */
+		GraphArn: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^[0-9]+$
+		 */
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMonitoringMemberPostBodyFormGroup() {
+		return new FormGroup<StartMonitoringMemberPostBodyFormProperties>({
+			GraphArn: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

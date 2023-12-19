@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateClusterResponse {
 
 		/** An object representing an Amazon EKS cluster. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface CreateClusterResponseFormProperties {
+	}
+	export function CreateCreateClusterResponseFormGroup() {
+		return new FormGroup<CreateClusterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -19,46 +27,110 @@ export namespace MyNS {
 		roleArn?: string | null;
 
 		/** An object representing an Amazon EKS cluster VPC configuration response. */
-		resourcesVpcConfig?: VpcConfigResponse | null;
+		resourcesVpcConfig?: VpcConfigResponse;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: Logging | null;
+		logging?: Logging;
 
 		/** An object representing an identity provider for authentication credentials. */
-		identity?: Identity | null;
+		identity?: Identity;
 		status?: ClusterStatus | null;
 
 		/** An object representing the <code>certificate-authority-data</code> for your cluster. */
-		certificateAuthority?: Certificate | null;
+		certificateAuthority?: Certificate;
 		clientRequestToken?: string | null;
 		platformVersion?: string | null;
-		tags?: TagMap | null;
-		encryptionConfig?: Array<EncryptionConfig> | null;
+		tags?: TagMap;
+		encryptionConfig?: Array<EncryptionConfig>;
+	}
+
+	/** An object representing an Amazon EKS cluster. */
+	export interface ClusterFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		endpoint: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		status: FormControl<ClusterStatus | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterFormGroup() {
+		return new FormGroup<ClusterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			endpoint: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ClusterStatus | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An object representing an Amazon EKS cluster VPC configuration response. */
 	export interface VpcConfigResponse {
-		subnetIds?: Array<string> | null;
-		securityGroupIds?: Array<string> | null;
+		subnetIds?: Array<string>;
+		securityGroupIds?: Array<string>;
 		clusterSecurityGroupId?: string | null;
 		vpcId?: string | null;
 		endpointPublicAccess?: boolean | null;
 		endpointPrivateAccess?: boolean | null;
-		publicAccessCidrs?: Array<string> | null;
+		publicAccessCidrs?: Array<string>;
+	}
+
+	/** An object representing an Amazon EKS cluster VPC configuration response. */
+	export interface VpcConfigResponseFormProperties {
+		clusterSecurityGroupId: FormControl<string | null | undefined>,
+		vpcId: FormControl<string | null | undefined>,
+		endpointPublicAccess: FormControl<boolean | null | undefined>,
+		endpointPrivateAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateVpcConfigResponseFormGroup() {
+		return new FormGroup<VpcConfigResponseFormProperties>({
+			clusterSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			vpcId: new FormControl<string | null | undefined>(undefined),
+			endpointPublicAccess: new FormControl<boolean | null | undefined>(undefined),
+			endpointPrivateAccess: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An object representing the logging configuration for resources in your cluster. */
 	export interface Logging {
-		clusterLogging?: Array<LogSetup> | null;
+		clusterLogging?: Array<LogSetup>;
+	}
+
+	/** An object representing the logging configuration for resources in your cluster. */
+	export interface LoggingFormProperties {
+	}
+	export function CreateLoggingFormGroup() {
+		return new FormGroup<LoggingFormProperties>({
+		});
+
 	}
 
 
 	/** An object representing the enabled or disabled Kubernetes control plane logs for your cluster. */
 	export interface LogSetup {
-		types?: Array<LogType> | null;
+		types?: Array<LogType>;
 		enabled?: boolean | null;
+	}
+
+	/** An object representing the enabled or disabled Kubernetes control plane logs for your cluster. */
+	export interface LogSetupFormProperties {
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLogSetupFormGroup() {
+		return new FormGroup<LogSetupFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LogType { api = 0, audit = 1, authenticator = 2, controllerManager = 3, scheduler = 4 }
@@ -68,13 +140,33 @@ export namespace MyNS {
 	export interface Identity {
 
 		/** An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster. */
-		oidc?: OIDC | null;
+		oidc?: OIDC;
+	}
+
+	/** An object representing an identity provider for authentication credentials. */
+	export interface IdentityFormProperties {
+	}
+	export function CreateIdentityFormGroup() {
+		return new FormGroup<IdentityFormProperties>({
+		});
+
 	}
 
 
 	/** An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster. */
 	export interface OIDC {
 		issuer?: string | null;
+	}
+
+	/** An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster. */
+	export interface OIDCFormProperties {
+		issuer: FormControl<string | null | undefined>,
+	}
+	export function CreateOIDCFormGroup() {
+		return new FormGroup<OIDCFormProperties>({
+			issuer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ClusterStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4 }
@@ -85,16 +177,43 @@ export namespace MyNS {
 		data?: string | null;
 	}
 
+	/** An object representing the <code>certificate-authority-data</code> for your cluster. */
+	export interface CertificateFormProperties {
+		data: FormControl<string | null | undefined>,
+	}
+	export function CreateCertificateFormGroup() {
+		return new FormGroup<CertificateFormProperties>({
+			data: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagMap {
+	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
 	}
 
 
 	/** The encryption configuration for the cluster. */
 	export interface EncryptionConfig {
-		resources?: Array<string> | null;
+		resources?: Array<string>;
 
 		/** Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets. */
-		provider?: Provider | null;
+		provider?: Provider;
+	}
+
+	/** The encryption configuration for the cluster. */
+	export interface EncryptionConfigFormProperties {
+	}
+	export function CreateEncryptionConfigFormGroup() {
+		return new FormGroup<EncryptionConfigFormProperties>({
+		});
+
 	}
 
 
@@ -103,31 +222,98 @@ export namespace MyNS {
 		keyArn?: string | null;
 	}
 
+	/** Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets. */
+	export interface ProviderFormProperties {
+		keyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateProviderFormGroup() {
+		return new FormGroup<ProviderFormProperties>({
+			keyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceLimitExceededException {
 	}
+	export interface ResourceLimitExceededExceptionFormProperties {
+	}
+	export function CreateResourceLimitExceededExceptionFormGroup() {
+		return new FormGroup<ResourceLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ClientException {
 	}
+	export interface ClientExceptionFormProperties {
+	}
+	export function CreateClientExceptionFormGroup() {
+		return new FormGroup<ClientExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServerException {
+	}
+	export interface ServerExceptionFormProperties {
+	}
+	export function CreateServerExceptionFormGroup() {
+		return new FormGroup<ServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedAvailabilityZoneException {
+	}
+	export interface UnsupportedAvailabilityZoneExceptionFormProperties {
+	}
+	export function CreateUnsupportedAvailabilityZoneExceptionFormGroup() {
+		return new FormGroup<UnsupportedAvailabilityZoneExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateFargateProfileResponse {
 
 		/** An object representing an AWS Fargate profile. */
-		fargateProfile?: FargateProfile | null;
+		fargateProfile?: FargateProfile;
+	}
+	export interface CreateFargateProfileResponseFormProperties {
+	}
+	export function CreateCreateFargateProfileResponseFormGroup() {
+		return new FormGroup<CreateFargateProfileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -138,31 +324,84 @@ export namespace MyNS {
 		clusterName?: string | null;
 		createdAt?: Date | null;
 		podExecutionRoleArn?: string | null;
-		subnets?: Array<string> | null;
-		selectors?: Array<FargateProfileSelector> | null;
+		subnets?: Array<string>;
+		selectors?: Array<FargateProfileSelector>;
 		status?: FargateProfileStatus | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+
+	/** An object representing an AWS Fargate profile. */
+	export interface FargateProfileFormProperties {
+		fargateProfileName: FormControl<string | null | undefined>,
+		fargateProfileArn: FormControl<string | null | undefined>,
+		clusterName: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		podExecutionRoleArn: FormControl<string | null | undefined>,
+		status: FormControl<FargateProfileStatus | null | undefined>,
+	}
+	export function CreateFargateProfileFormGroup() {
+		return new FormGroup<FargateProfileFormProperties>({
+			fargateProfileName: new FormControl<string | null | undefined>(undefined),
+			fargateProfileArn: new FormControl<string | null | undefined>(undefined),
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<FargateProfileStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An object representing an AWS Fargate profile selector. */
 	export interface FargateProfileSelector {
 		namespace?: string | null;
-		labels?: FargateProfileLabel | null;
+		labels?: FargateProfileLabel;
+	}
+
+	/** An object representing an AWS Fargate profile selector. */
+	export interface FargateProfileSelectorFormProperties {
+		namespace: FormControl<string | null | undefined>,
+	}
+	export function CreateFargateProfileSelectorFormGroup() {
+		return new FormGroup<FargateProfileSelectorFormProperties>({
+			namespace: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FargateProfileLabel {
+	}
+	export interface FargateProfileLabelFormProperties {
+	}
+	export function CreateFargateProfileLabelFormGroup() {
+		return new FormGroup<FargateProfileLabelFormProperties>({
+		});
+
 	}
 
 	export enum FargateProfileStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, CREATE_FAILED = 3, DELETE_FAILED = 4 }
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateNodegroupResponse {
 
 		/** An object representing an Amazon EKS managed node group. */
-		nodegroup?: Nodegroup | null;
+		nodegroup?: Nodegroup;
+	}
+	export interface CreateNodegroupResponseFormProperties {
+	}
+	export function CreateCreateNodegroupResponseFormGroup() {
+		return new FormGroup<CreateNodegroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -178,23 +417,54 @@ export namespace MyNS {
 		status?: NodegroupStatus | null;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: NodegroupScalingConfig | null;
-		instanceTypes?: Array<string> | null;
-		subnets?: Array<string> | null;
+		scalingConfig?: NodegroupScalingConfig;
+		instanceTypes?: Array<string>;
+		subnets?: Array<string>;
 
 		/** An object representing the remote access configuration for the managed node group. */
-		remoteAccess?: RemoteAccessConfig | null;
+		remoteAccess?: RemoteAccessConfig;
 		amiType?: NodegroupAmiType | null;
 		nodeRole?: string | null;
-		labels?: LabelsMap | null;
+		labels?: LabelsMap;
 
 		/** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access. */
-		resources?: NodegroupResources | null;
+		resources?: NodegroupResources;
 		diskSize?: number | null;
 
 		/** An object representing the health status of the node group. */
-		health?: NodegroupHealth | null;
-		tags?: TagMap | null;
+		health?: NodegroupHealth;
+		tags?: TagMap;
+	}
+
+	/** An object representing an Amazon EKS managed node group. */
+	export interface NodegroupFormProperties {
+		nodegroupName: FormControl<string | null | undefined>,
+		nodegroupArn: FormControl<string | null | undefined>,
+		clusterName: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		releaseVersion: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		modifiedAt: FormControl<Date | null | undefined>,
+		status: FormControl<NodegroupStatus | null | undefined>,
+		amiType: FormControl<NodegroupAmiType | null | undefined>,
+		nodeRole: FormControl<string | null | undefined>,
+		diskSize: FormControl<number | null | undefined>,
+	}
+	export function CreateNodegroupFormGroup() {
+		return new FormGroup<NodegroupFormProperties>({
+			nodegroupName: new FormControl<string | null | undefined>(undefined),
+			nodegroupArn: new FormControl<string | null | undefined>(undefined),
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			releaseVersion: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			modifiedAt: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<NodegroupStatus | null | undefined>(undefined),
+			amiType: new FormControl<NodegroupAmiType | null | undefined>(undefined),
+			nodeRole: new FormControl<string | null | undefined>(undefined),
+			diskSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NodegroupStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATE_FAILED = 4, DELETE_FAILED = 5, DEGRADED = 6 }
@@ -207,23 +477,67 @@ export namespace MyNS {
 		desiredSize?: number | null;
 	}
 
+	/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
+	export interface NodegroupScalingConfigFormProperties {
+		minSize: FormControl<number | null | undefined>,
+		maxSize: FormControl<number | null | undefined>,
+		desiredSize: FormControl<number | null | undefined>,
+	}
+	export function CreateNodegroupScalingConfigFormGroup() {
+		return new FormGroup<NodegroupScalingConfigFormProperties>({
+			minSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<number | null | undefined>(undefined),
+			desiredSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object representing the remote access configuration for the managed node group. */
 	export interface RemoteAccessConfig {
 		ec2SshKey?: string | null;
-		sourceSecurityGroups?: Array<string> | null;
+		sourceSecurityGroups?: Array<string>;
+	}
+
+	/** An object representing the remote access configuration for the managed node group. */
+	export interface RemoteAccessConfigFormProperties {
+		ec2SshKey: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoteAccessConfigFormGroup() {
+		return new FormGroup<RemoteAccessConfigFormProperties>({
+			ec2SshKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NodegroupAmiType { AL2_x86_64 = 0, AL2_x86_64_GPU = 1 }
 
 	export interface LabelsMap {
 	}
+	export interface LabelsMapFormProperties {
+	}
+	export function CreateLabelsMapFormGroup() {
+		return new FormGroup<LabelsMapFormProperties>({
+		});
+
+	}
 
 
 	/** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access. */
 	export interface NodegroupResources {
-		autoScalingGroups?: Array<AutoScalingGroup> | null;
+		autoScalingGroups?: Array<AutoScalingGroup>;
 		remoteAccessSecurityGroup?: string | null;
+	}
+
+	/** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access. */
+	export interface NodegroupResourcesFormProperties {
+		remoteAccessSecurityGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateNodegroupResourcesFormGroup() {
+		return new FormGroup<NodegroupResourcesFormProperties>({
+			remoteAccessSecurityGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -232,10 +546,30 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** An Auto Scaling group that is associated with an Amazon EKS managed node group. */
+	export interface AutoScalingGroupFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingGroupFormGroup() {
+		return new FormGroup<AutoScalingGroupFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object representing the health status of the node group. */
 	export interface NodegroupHealth {
-		issues?: Array<Issue> | null;
+		issues?: Array<Issue>;
+	}
+
+	/** An object representing the health status of the node group. */
+	export interface NodegroupHealthFormProperties {
+	}
+	export function CreateNodegroupHealthFormGroup() {
+		return new FormGroup<NodegroupHealthFormProperties>({
+		});
+
 	}
 
 
@@ -243,7 +577,20 @@ export namespace MyNS {
 	export interface Issue {
 		code?: IssueCode | null;
 		message?: string | null;
-		resourceIds?: Array<string> | null;
+		resourceIds?: Array<string>;
+	}
+
+	/** An object representing an issue with an Amazon EKS resource. */
+	export interface IssueFormProperties {
+		code: FormControl<IssueCode | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateIssueFormGroup() {
+		return new FormGroup<IssueFormProperties>({
+			code: new FormControl<IssueCode | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IssueCode { AutoScalingGroupNotFound = 0, AutoScalingGroupInvalidConfiguration = 1, Ec2SecurityGroupNotFound = 2, Ec2SecurityGroupDeletionFailure = 3, Ec2LaunchTemplateNotFound = 4, Ec2LaunchTemplateVersionMismatch = 5, Ec2SubnetNotFound = 6, Ec2SubnetInvalidConfiguration = 7, IamInstanceProfileNotFound = 8, IamLimitExceeded = 9, IamNodeRoleNotFound = 10, NodeCreationFailure = 11, AsgInstanceLaunchFailures = 12, InstanceLimitExceeded = 13, InsufficientFreeAddresses = 14, AccessDenied = 15, InternalFailure = 16 }
@@ -251,46 +598,102 @@ export namespace MyNS {
 	export interface DeleteClusterResponse {
 
 		/** An object representing an Amazon EKS cluster. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface DeleteClusterResponseFormProperties {
+	}
+	export function CreateDeleteClusterResponseFormGroup() {
+		return new FormGroup<DeleteClusterResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFargateProfileResponse {
 
 		/** An object representing an AWS Fargate profile. */
-		fargateProfile?: FargateProfile | null;
+		fargateProfile?: FargateProfile;
+	}
+	export interface DeleteFargateProfileResponseFormProperties {
+	}
+	export function CreateDeleteFargateProfileResponseFormGroup() {
+		return new FormGroup<DeleteFargateProfileResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteNodegroupResponse {
 
 		/** An object representing an Amazon EKS managed node group. */
-		nodegroup?: Nodegroup | null;
+		nodegroup?: Nodegroup;
+	}
+	export interface DeleteNodegroupResponseFormProperties {
+	}
+	export function CreateDeleteNodegroupResponseFormGroup() {
+		return new FormGroup<DeleteNodegroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClusterResponse {
 
 		/** An object representing an Amazon EKS cluster. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface DescribeClusterResponseFormProperties {
+	}
+	export function CreateDescribeClusterResponseFormGroup() {
+		return new FormGroup<DescribeClusterResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeFargateProfileResponse {
 
 		/** An object representing an AWS Fargate profile. */
-		fargateProfile?: FargateProfile | null;
+		fargateProfile?: FargateProfile;
+	}
+	export interface DescribeFargateProfileResponseFormProperties {
+	}
+	export function CreateDescribeFargateProfileResponseFormGroup() {
+		return new FormGroup<DescribeFargateProfileResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeNodegroupResponse {
 
 		/** An object representing an Amazon EKS managed node group. */
-		nodegroup?: Nodegroup | null;
+		nodegroup?: Nodegroup;
+	}
+	export interface DescribeNodegroupResponseFormProperties {
+	}
+	export function CreateDescribeNodegroupResponseFormGroup() {
+		return new FormGroup<DescribeNodegroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeUpdateResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update | null;
+		update?: Update;
+	}
+	export interface DescribeUpdateResponseFormProperties {
+	}
+	export function CreateDescribeUpdateResponseFormGroup() {
+		return new FormGroup<DescribeUpdateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -299,9 +702,26 @@ export namespace MyNS {
 		id?: string | null;
 		status?: UpdateStatus | null;
 		type?: UpdateType | null;
-		params?: Array<UpdateParam> | null;
+		params?: Array<UpdateParam>;
 		createdAt?: Date | null;
-		errors?: Array<ErrorDetail> | null;
+		errors?: Array<ErrorDetail>;
+	}
+
+	/** An object representing an asynchronous update. */
+	export interface UpdateFormProperties {
+		id: FormControl<string | null | undefined>,
+		status: FormControl<UpdateStatus | null | undefined>,
+		type: FormControl<UpdateType | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateFormGroup() {
+		return new FormGroup<UpdateFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<UpdateStatus | null | undefined>(undefined),
+			type: new FormControl<UpdateType | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateStatus { InProgress = 0, Failed = 1, Cancelled = 2, Successful = 3 }
@@ -315,6 +735,19 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** An object representing the details of an update request. */
+	export interface UpdateParamFormProperties {
+		type: FormControl<UpdateParamType | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateParamFormGroup() {
+		return new FormGroup<UpdateParamFormProperties>({
+			type: new FormControl<UpdateParamType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UpdateParamType { Version = 0, PlatformVersion = 1, EndpointPrivateAccess = 2, EndpointPublicAccess = 3, ClusterLogging = 4, DesiredSize = 5, LabelsToAdd = 6, LabelsToRemove = 7, MaxSize = 8, MinSize = 9, ReleaseVersion = 10, PublicAccessCidrs = 11 }
 
 
@@ -322,69 +755,181 @@ export namespace MyNS {
 	export interface ErrorDetail {
 		errorCode?: ErrorDetailErrorCode | null;
 		errorMessage?: string | null;
-		resourceIds?: Array<string> | null;
+		resourceIds?: Array<string>;
+	}
+
+	/** An object representing an error when an asynchronous operation fails. */
+	export interface ErrorDetailFormProperties {
+		errorCode: FormControl<ErrorDetailErrorCode | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailFormGroup() {
+		return new FormGroup<ErrorDetailFormProperties>({
+			errorCode: new FormControl<ErrorDetailErrorCode | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ErrorDetailErrorCode { SubnetNotFound = 0, SecurityGroupNotFound = 1, EniLimitReached = 2, IpNotAvailable = 3, AccessDenied = 4, OperationNotPermitted = 5, VpcIdNotFound = 6, Unknown = 7, NodeCreationFailure = 8, PodEvictionFailure = 9, InsufficientFreeAddresses = 10 }
 
 	export interface ListClustersResponse {
-		clusters?: Array<string> | null;
+		clusters?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListClustersResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListClustersResponseFormGroup() {
+		return new FormGroup<ListClustersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFargateProfilesResponse {
-		fargateProfileNames?: Array<string> | null;
+		fargateProfileNames?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListFargateProfilesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFargateProfilesResponseFormGroup() {
+		return new FormGroup<ListFargateProfilesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListNodegroupsResponse {
-		nodegroups?: Array<string> | null;
+		nodegroups?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListNodegroupsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNodegroupsResponseFormGroup() {
+		return new FormGroup<ListNodegroupsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
 	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListUpdatesResponse {
-		updateIds?: Array<string> | null;
+		updateIds?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListUpdatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUpdatesResponseFormGroup() {
+		return new FormGroup<ListUpdatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClusterConfigResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update | null;
+		update?: Update;
+	}
+	export interface UpdateClusterConfigResponseFormProperties {
+	}
+	export function CreateUpdateClusterConfigResponseFormGroup() {
+		return new FormGroup<UpdateClusterConfigResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClusterVersionResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update | null;
+		update?: Update;
+	}
+	export interface UpdateClusterVersionResponseFormProperties {
+	}
+	export function CreateUpdateClusterVersionResponseFormGroup() {
+		return new FormGroup<UpdateClusterVersionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNodegroupConfigResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update | null;
+		update?: Update;
+	}
+	export interface UpdateNodegroupConfigResponseFormProperties {
+	}
+	export function CreateUpdateNodegroupConfigResponseFormGroup() {
+		return new FormGroup<UpdateNodegroupConfigResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNodegroupVersionResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update | null;
+		update?: Update;
+	}
+	export interface UpdateNodegroupVersionResponseFormProperties {
+	}
+	export function CreateUpdateNodegroupVersionResponseFormGroup() {
+		return new FormGroup<UpdateNodegroupVersionResponseFormProperties>({
+		});
+
 	}
 
 	export enum AMITypes { AL2_x86_64 = 0, AL2_x86_64_GPU = 1 }
@@ -392,11 +937,24 @@ export namespace MyNS {
 
 	/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
 	export interface VpcConfigRequest {
-		subnetIds?: Array<string> | null;
-		securityGroupIds?: Array<string> | null;
+		subnetIds?: Array<string>;
+		securityGroupIds?: Array<string>;
 		endpointPublicAccess?: boolean | null;
 		endpointPrivateAccess?: boolean | null;
-		publicAccessCidrs?: Array<string> | null;
+		publicAccessCidrs?: Array<string>;
+	}
+
+	/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
+	export interface VpcConfigRequestFormProperties {
+		endpointPublicAccess: FormControl<boolean | null | undefined>,
+		endpointPrivateAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateVpcConfigRequestFormGroup() {
+		return new FormGroup<VpcConfigRequestFormProperties>({
+			endpointPublicAccess: new FormControl<boolean | null | undefined>(undefined),
+			endpointPrivateAccess: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterRequest {
@@ -411,60 +969,158 @@ export namespace MyNS {
 		resourcesVpcConfig: VpcConfigRequest;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: Logging | null;
+		logging?: Logging;
 		clientRequestToken?: string | null;
-		tags?: TagMap | null;
-		encryptionConfig?: Array<EncryptionConfig> | null;
+		tags?: TagMap;
+		encryptionConfig?: Array<EncryptionConfig>;
+	}
+	export interface CreateClusterRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterRequestFormGroup() {
+		return new FormGroup<CreateClusterRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFargateProfileRequest {
 		fargateProfileName: string;
 		podExecutionRoleArn: string;
-		subnets?: Array<string> | null;
-		selectors?: Array<FargateProfileSelector> | null;
+		subnets?: Array<string>;
+		selectors?: Array<FargateProfileSelector>;
 		clientRequestToken?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateFargateProfileRequestFormProperties {
+		fargateProfileName: FormControl<string | null | undefined>,
+		podExecutionRoleArn: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFargateProfileRequestFormGroup() {
+		return new FormGroup<CreateFargateProfileRequestFormProperties>({
+			fargateProfileName: new FormControl<string | null | undefined>(undefined),
+			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateNodegroupRequest {
 		nodegroupName: string;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: NodegroupScalingConfig | null;
+		scalingConfig?: NodegroupScalingConfig;
 		diskSize?: number | null;
 		subnets: Array<string>;
-		instanceTypes?: Array<string> | null;
+		instanceTypes?: Array<string>;
 		amiType?: NodegroupAmiType | null;
 
 		/** An object representing the remote access configuration for the managed node group. */
-		remoteAccess?: RemoteAccessConfig | null;
+		remoteAccess?: RemoteAccessConfig;
 		nodeRole: string;
-		labels?: LabelsMap | null;
-		tags?: TagMap | null;
+		labels?: LabelsMap;
+		tags?: TagMap;
 		clientRequestToken?: string | null;
 		version?: string | null;
 		releaseVersion?: string | null;
 	}
+	export interface CreateNodegroupRequestFormProperties {
+		nodegroupName: FormControl<string | null | undefined>,
+		diskSize: FormControl<number | null | undefined>,
+		amiType: FormControl<NodegroupAmiType | null | undefined>,
+		nodeRole: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		releaseVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNodegroupRequestFormGroup() {
+		return new FormGroup<CreateNodegroupRequestFormProperties>({
+			nodegroupName: new FormControl<string | null | undefined>(undefined),
+			diskSize: new FormControl<number | null | undefined>(undefined),
+			amiType: new FormControl<NodegroupAmiType | null | undefined>(undefined),
+			nodeRole: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			releaseVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteClusterRequest {
+	}
+	export interface DeleteClusterRequestFormProperties {
+	}
+	export function CreateDeleteClusterRequestFormGroup() {
+		return new FormGroup<DeleteClusterRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFargateProfileRequest {
 	}
+	export interface DeleteFargateProfileRequestFormProperties {
+	}
+	export function CreateDeleteFargateProfileRequestFormGroup() {
+		return new FormGroup<DeleteFargateProfileRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteNodegroupRequest {
+	}
+	export interface DeleteNodegroupRequestFormProperties {
+	}
+	export function CreateDeleteNodegroupRequestFormGroup() {
+		return new FormGroup<DeleteNodegroupRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClusterRequest {
 	}
+	export interface DescribeClusterRequestFormProperties {
+	}
+	export function CreateDescribeClusterRequestFormGroup() {
+		return new FormGroup<DescribeClusterRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeFargateProfileRequest {
+	}
+	export interface DescribeFargateProfileRequestFormProperties {
+	}
+	export function CreateDescribeFargateProfileRequestFormGroup() {
+		return new FormGroup<DescribeFargateProfileRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeNodegroupRequest {
 	}
+	export interface DescribeNodegroupRequestFormProperties {
+	}
+	export function CreateDescribeNodegroupRequestFormGroup() {
+		return new FormGroup<DescribeNodegroupRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeUpdateRequest {
+	}
+	export interface DescribeUpdateRequestFormProperties {
+	}
+	export function CreateDescribeUpdateRequestFormGroup() {
+		return new FormGroup<DescribeUpdateRequestFormProperties>({
+		});
+
 	}
 
 	export enum ErrorCode { SubnetNotFound = 0, SecurityGroupNotFound = 1, EniLimitReached = 2, IpNotAvailable = 3, AccessDenied = 4, OperationNotPermitted = 5, VpcIdNotFound = 6, Unknown = 7, NodeCreationFailure = 8, PodEvictionFailure = 9, InsufficientFreeAddresses = 10 }
@@ -473,56 +1129,143 @@ export namespace MyNS {
 
 	export interface ListClustersRequest {
 	}
+	export interface ListClustersRequestFormProperties {
+	}
+	export function CreateListClustersRequestFormGroup() {
+		return new FormGroup<ListClustersRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListFargateProfilesRequest {
+	}
+	export interface ListFargateProfilesRequestFormProperties {
+	}
+	export function CreateListFargateProfilesRequestFormGroup() {
+		return new FormGroup<ListFargateProfilesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListNodegroupsRequest {
 	}
+	export interface ListNodegroupsRequestFormProperties {
+	}
+	export function CreateListNodegroupsRequestFormGroup() {
+		return new FormGroup<ListNodegroupsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListUpdatesRequest {
+	}
+	export interface ListUpdatesRequestFormProperties {
+	}
+	export function CreateListUpdatesRequestFormGroup() {
+		return new FormGroup<ListUpdatesRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClusterConfigRequest {
 
 		/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
-		resourcesVpcConfig?: VpcConfigRequest | null;
+		resourcesVpcConfig?: VpcConfigRequest;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: Logging | null;
+		logging?: Logging;
 		clientRequestToken?: string | null;
+	}
+	export interface UpdateClusterConfigRequestFormProperties {
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigRequestFormGroup() {
+		return new FormGroup<UpdateClusterConfigRequestFormProperties>({
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterVersionRequest {
 		version: string;
 		clientRequestToken?: string | null;
 	}
+	export interface UpdateClusterVersionRequestFormProperties {
+		version: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterVersionRequestFormGroup() {
+		return new FormGroup<UpdateClusterVersionRequestFormProperties>({
+			version: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** An object representing a Kubernetes label change for a managed node group. */
 	export interface UpdateLabelsPayload {
-		addOrUpdateLabels?: LabelsMap | null;
-		removeLabels?: Array<string> | null;
+		addOrUpdateLabels?: LabelsMap;
+		removeLabels?: Array<string>;
+	}
+
+	/** An object representing a Kubernetes label change for a managed node group. */
+	export interface UpdateLabelsPayloadFormProperties {
+	}
+	export function CreateUpdateLabelsPayloadFormGroup() {
+		return new FormGroup<UpdateLabelsPayloadFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNodegroupConfigRequest {
 
 		/** An object representing a Kubernetes label change for a managed node group. */
-		labels?: UpdateLabelsPayload | null;
+		labels?: UpdateLabelsPayload;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: NodegroupScalingConfig | null;
+		scalingConfig?: NodegroupScalingConfig;
 		clientRequestToken?: string | null;
+	}
+	export interface UpdateNodegroupConfigRequestFormProperties {
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNodegroupConfigRequestFormGroup() {
+		return new FormGroup<UpdateNodegroupConfigRequestFormProperties>({
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateNodegroupVersionRequest {
@@ -530,6 +1273,21 @@ export namespace MyNS {
 		releaseVersion?: string | null;
 		force?: boolean | null;
 		clientRequestToken?: string | null;
+	}
+	export interface UpdateNodegroupVersionRequestFormProperties {
+		version: FormControl<string | null | undefined>,
+		releaseVersion: FormControl<string | null | undefined>,
+		force: FormControl<boolean | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNodegroupVersionRequestFormGroup() {
+		return new FormGroup<UpdateNodegroupVersionRequestFormProperties>({
+			version: new FormControl<string | null | undefined>(undefined),
+			releaseVersion: new FormControl<string | null | undefined>(undefined),
+			force: new FormControl<boolean | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -791,31 +1549,85 @@ export namespace MyNS {
 		resourcesVpcConfig: CreateClusterPostBodyResourcesVpcConfig;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: CreateClusterPostBodyLogging | null;
+		logging?: CreateClusterPostBodyLogging;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
 
 		/** The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/**
 		 * The encryption configuration for the cluster.
 		 * Maximum items: 1
 		 */
-		encryptionConfig?: Array<EncryptionConfig> | null;
+		encryptionConfig?: Array<EncryptionConfig>;
+	}
+	export interface CreateClusterPostBodyFormProperties {
+
+		/**
+		 * The unique name to give to your cluster.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used. */
+		version: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+		 * Required
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+
+		/** The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateClusterPostBodyFormGroup() {
+		return new FormGroup<CreateClusterPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterPostBodyResourcesVpcConfig {
-		subnetIds?: Array<string> | null;
-		securityGroupIds?: Array<string> | null;
+		subnetIds?: Array<string>;
+		securityGroupIds?: Array<string>;
 		endpointPublicAccess?: boolean | null;
 		endpointPrivateAccess?: boolean | null;
-		publicAccessCidrs?: Array<string> | null;
+		publicAccessCidrs?: Array<string>;
+	}
+	export interface CreateClusterPostBodyResourcesVpcConfigFormProperties {
+		endpointPublicAccess: FormControl<boolean | null | undefined>,
+		endpointPrivateAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateClusterPostBodyResourcesVpcConfigFormGroup() {
+		return new FormGroup<CreateClusterPostBodyResourcesVpcConfigFormProperties>({
+			endpointPublicAccess: new FormControl<boolean | null | undefined>(undefined),
+			endpointPrivateAccess: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterPostBodyLogging {
-		clusterLogging?: Array<LogSetup> | null;
+		clusterLogging?: Array<LogSetup>;
+	}
+	export interface CreateClusterPostBodyLoggingFormProperties {
+	}
+	export function CreateCreateClusterPostBodyLoggingFormGroup() {
+		return new FormGroup<CreateClusterPostBodyLoggingFormProperties>({
+		});
+
 	}
 
 	export interface CreateFargateProfilePostBody {
@@ -833,16 +1645,45 @@ export namespace MyNS {
 		podExecutionRoleArn: string;
 
 		/** The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter. */
-		subnets?: Array<string> | null;
+		subnets?: Array<string>;
 
 		/** The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile. */
-		selectors?: Array<FargateProfileSelector> | null;
+		selectors?: Array<FargateProfileSelector>;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
 
 		/** The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateFargateProfilePostBodyFormProperties {
+
+		/**
+		 * The name of the Fargate profile.
+		 * Required
+		 */
+		fargateProfileName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+		 * Required
+		 */
+		podExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+
+		/** The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateFargateProfilePostBodyFormGroup() {
+		return new FormGroup<CreateFargateProfilePostBodyFormProperties>({
+			fargateProfileName: new FormControl<string | null | undefined>(undefined),
+			podExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateNodegroupPostBody {
@@ -854,7 +1695,7 @@ export namespace MyNS {
 		nodegroupName: string;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: CreateNodegroupPostBodyScalingConfig | null;
+		scalingConfig?: CreateNodegroupPostBodyScalingConfig;
 
 		/** The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. */
 		diskSize?: number | null;
@@ -866,13 +1707,13 @@ export namespace MyNS {
 		subnets: Array<string>;
 
 		/** The instance type to use for your node group. Currently, you can specify a single instance type for a node group. The default value for this parameter is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify the <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. */
-		instanceTypes?: Array<string> | null;
+		instanceTypes?: Array<string>;
 
 		/** The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI. */
 		amiType?: NodegroupAmiType | null;
 
 		/** An object representing the remote access configuration for the managed node group. */
-		remoteAccess?: CreateNodegroupPostBodyRemoteAccess | null;
+		remoteAccess?: CreateNodegroupPostBodyRemoteAccess;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
@@ -881,10 +1722,10 @@ export namespace MyNS {
 		nodeRole: string;
 
 		/** The Kubernetes labels to be applied to the nodes in the node group when they are created. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
@@ -895,16 +1736,87 @@ export namespace MyNS {
 		/** The AMI version of the Amazon EKS-optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. */
 		releaseVersion?: string | null;
 	}
+	export interface CreateNodegroupPostBodyFormProperties {
+
+		/**
+		 * The unique name to give your node group.
+		 * Required
+		 */
+		nodegroupName: FormControl<string | null | undefined>,
+
+		/** The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. */
+		diskSize: FormControl<number | null | undefined>,
+
+		/** The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI. */
+		amiType: FormControl<NodegroupAmiType | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+		 * Required
+		 */
+		nodeRole: FormControl<string | null | undefined>,
+
+		/** The Kubernetes labels to be applied to the nodes in the node group when they are created. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+
+		/** The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. */
+		version: FormControl<string | null | undefined>,
+
+		/** The AMI version of the Amazon EKS-optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. */
+		releaseVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNodegroupPostBodyFormGroup() {
+		return new FormGroup<CreateNodegroupPostBodyFormProperties>({
+			nodegroupName: new FormControl<string | null | undefined>(undefined),
+			diskSize: new FormControl<number | null | undefined>(undefined),
+			amiType: new FormControl<NodegroupAmiType | null | undefined>(undefined),
+			nodeRole: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			releaseVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateNodegroupPostBodyScalingConfig {
 		minSize?: number | null;
 		maxSize?: number | null;
 		desiredSize?: number | null;
 	}
+	export interface CreateNodegroupPostBodyScalingConfigFormProperties {
+		minSize: FormControl<number | null | undefined>,
+		maxSize: FormControl<number | null | undefined>,
+		desiredSize: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateNodegroupPostBodyScalingConfigFormGroup() {
+		return new FormGroup<CreateNodegroupPostBodyScalingConfigFormProperties>({
+			minSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<number | null | undefined>(undefined),
+			desiredSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateNodegroupPostBodyRemoteAccess {
 		ec2SshKey?: string | null;
-		sourceSecurityGroups?: Array<string> | null;
+		sourceSecurityGroups?: Array<string>;
+	}
+	export interface CreateNodegroupPostBodyRemoteAccessFormProperties {
+		ec2SshKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNodegroupPostBodyRemoteAccessFormGroup() {
+		return new FormGroup<CreateNodegroupPostBodyRemoteAccessFormProperties>({
+			ec2SshKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -914,6 +1826,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The tags to add to the resource. A tag is an array of key-value pairs.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterVersionPostBody {
@@ -927,52 +1853,130 @@ export namespace MyNS {
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
 	}
+	export interface UpdateClusterVersionPostBodyFormProperties {
+
+		/**
+		 * The desired Kubernetes version following a successful update.
+		 * Required
+		 */
+		version: FormControl<string | null | undefined>,
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterVersionPostBodyFormGroup() {
+		return new FormGroup<UpdateClusterVersionPostBodyFormProperties>({
+			version: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterConfigPostBody {
 
 		/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
-		resourcesVpcConfig?: UpdateClusterConfigPostBodyResourcesVpcConfig | null;
+		resourcesVpcConfig?: UpdateClusterConfigPostBodyResourcesVpcConfig;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: UpdateClusterConfigPostBodyLogging | null;
+		logging?: UpdateClusterConfigPostBodyLogging;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
 	}
+	export interface UpdateClusterConfigPostBodyFormProperties {
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigPostBodyFormGroup() {
+		return new FormGroup<UpdateClusterConfigPostBodyFormProperties>({
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterConfigPostBodyResourcesVpcConfig {
-		subnetIds?: Array<string> | null;
-		securityGroupIds?: Array<string> | null;
+		subnetIds?: Array<string>;
+		securityGroupIds?: Array<string>;
 		endpointPublicAccess?: boolean | null;
 		endpointPrivateAccess?: boolean | null;
-		publicAccessCidrs?: Array<string> | null;
+		publicAccessCidrs?: Array<string>;
+	}
+	export interface UpdateClusterConfigPostBodyResourcesVpcConfigFormProperties {
+		endpointPublicAccess: FormControl<boolean | null | undefined>,
+		endpointPrivateAccess: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigPostBodyResourcesVpcConfigFormGroup() {
+		return new FormGroup<UpdateClusterConfigPostBodyResourcesVpcConfigFormProperties>({
+			endpointPublicAccess: new FormControl<boolean | null | undefined>(undefined),
+			endpointPrivateAccess: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterConfigPostBodyLogging {
-		clusterLogging?: Array<LogSetup> | null;
+		clusterLogging?: Array<LogSetup>;
+	}
+	export interface UpdateClusterConfigPostBodyLoggingFormProperties {
+	}
+	export function CreateUpdateClusterConfigPostBodyLoggingFormGroup() {
+		return new FormGroup<UpdateClusterConfigPostBodyLoggingFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNodegroupConfigPostBody {
 
 		/** An object representing a Kubernetes label change for a managed node group. */
-		labels?: UpdateNodegroupConfigPostBodyLabels | null;
+		labels?: UpdateNodegroupConfigPostBodyLabels;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: UpdateNodegroupConfigPostBodyScalingConfig | null;
+		scalingConfig?: UpdateNodegroupConfigPostBodyScalingConfig;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
 	}
+	export interface UpdateNodegroupConfigPostBodyFormProperties {
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNodegroupConfigPostBodyFormGroup() {
+		return new FormGroup<UpdateNodegroupConfigPostBodyFormProperties>({
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateNodegroupConfigPostBodyLabels {
-		addOrUpdateLabels?: LabelsMap | null;
-		removeLabels?: Array<string> | null;
+		addOrUpdateLabels?: LabelsMap;
+		removeLabels?: Array<string>;
+	}
+	export interface UpdateNodegroupConfigPostBodyLabelsFormProperties {
+	}
+	export function CreateUpdateNodegroupConfigPostBodyLabelsFormGroup() {
+		return new FormGroup<UpdateNodegroupConfigPostBodyLabelsFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNodegroupConfigPostBodyScalingConfig {
 		minSize?: number | null;
 		maxSize?: number | null;
 		desiredSize?: number | null;
+	}
+	export interface UpdateNodegroupConfigPostBodyScalingConfigFormProperties {
+		minSize: FormControl<number | null | undefined>,
+		maxSize: FormControl<number | null | undefined>,
+		desiredSize: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateNodegroupConfigPostBodyScalingConfigFormGroup() {
+		return new FormGroup<UpdateNodegroupConfigPostBodyScalingConfigFormProperties>({
+			minSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<number | null | undefined>(undefined),
+			desiredSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateNodegroupVersionPostBody {
@@ -988,6 +1992,29 @@ export namespace MyNS {
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
 		clientRequestToken?: string | null;
+	}
+	export interface UpdateNodegroupVersionPostBodyFormProperties {
+
+		/** The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. */
+		version: FormControl<string | null | undefined>,
+
+		/** The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. */
+		releaseVersion: FormControl<string | null | undefined>,
+
+		/** Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node. */
+		force: FormControl<boolean | null | undefined>,
+
+		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNodegroupVersionPostBodyFormGroup() {
+		return new FormGroup<UpdateNodegroupVersionPostBodyFormProperties>({
+			version: new FormControl<string | null | undefined>(undefined),
+			releaseVersion: new FormControl<string | null | undefined>(undefined),
+			force: new FormControl<boolean | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

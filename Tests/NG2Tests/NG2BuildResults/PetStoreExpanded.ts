@@ -1,19 +1,53 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Pet extends NewPet {
 		id: number;
+	}
+	export interface PetFormProperties extends NewPetFormProperties {
+		id: FormControl<number | null | undefined>,
+	}
+	export function CreatePetFormGroup() {
+		return new FormGroup<PetFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			tag: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface NewPet {
 		name: string;
 		tag?: string | null;
 	}
+	export interface NewPetFormProperties {
+		name: FormControl<string | null | undefined>,
+		tag: FormControl<string | null | undefined>,
+	}
+	export function CreateNewPetFormGroup() {
+		return new FormGroup<NewPetFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			tag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Error {
 		code: number;
 		message: string;
+	}
+	export interface ErrorFormProperties {
+		code: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -31,7 +65,7 @@ export namespace MyNS {
 		 * @return {Array<Pet>} pet response
 		 */
 		FindPets(tags: Array<string> | null | undefined, limit: number | null | undefined): Observable<Array<Pet>> {
-			return this.http.get<Array<Pet>>(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {});
+			return this.http.get<Array<Pet>>(this.baseUri + 'pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, {});
 		}
 
 		/**

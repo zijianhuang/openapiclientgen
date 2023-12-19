@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateApiResponse {
 		ApiEndpoint?: string | null;
@@ -12,13 +13,13 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 		DisableSchemaValidation?: boolean | null;
-		ImportInfo?: Array<string> | null;
+		ImportInfo?: Array<string>;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
@@ -30,11 +31,52 @@ export namespace MyNS {
 		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
-		Warnings?: Array<string> | null;
+		Warnings?: Array<string>;
+	}
+	export interface CreateApiResponseFormProperties {
+		ApiEndpoint: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** Represents a protocol type. */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApiResponseFormGroup() {
+		return new FormGroup<CreateApiResponseFormProperties>({
+			ApiEndpoint: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,16 +85,16 @@ export namespace MyNS {
 		AllowCredentials?: boolean | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		AllowHeaders?: Array<string> | null;
+		AllowHeaders?: Array<string>;
 
 		/** Represents a collection of methods. Supported only for HTTP APIs. */
-		AllowMethods?: Array<string> | null;
+		AllowMethods?: Array<string>;
 
 		/** Represents a collection of origins. Supported only for HTTP APIs. */
-		AllowOrigins?: Array<string> | null;
+		AllowOrigins?: Array<string>;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		ExposeHeaders?: Array<string> | null;
+		ExposeHeaders?: Array<string>;
 
 		/**
 		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
@@ -62,6 +104,25 @@ export namespace MyNS {
 		MaxAge?: number | null;
 	}
 
+	/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
+	export interface CorsFormProperties {
+		AllowCredentials: FormControl<boolean | null | undefined>,
+
+		/**
+		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
+		 * Minimum: -1
+		 * Maximum: 86400
+		 */
+		MaxAge: FormControl<number | null | undefined>,
+	}
+	export function CreateCorsFormGroup() {
+		return new FormGroup<CorsFormProperties>({
+			AllowCredentials: new FormControl<boolean | null | undefined>(undefined),
+			MaxAge: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateApiResponseProtocolType { WEBSOCKET = 0, HTTP = 1 }
 
 
@@ -69,16 +130,53 @@ export namespace MyNS {
 	export interface Tags {
 	}
 
+	/** Represents a collection of tags associated with the resource. */
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
+	}
+
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateApiMappingResponse {
@@ -94,6 +192,29 @@ export namespace MyNS {
 
 		/** A string with a length between [1-128]. */
 		Stage?: string | null;
+	}
+	export interface CreateApiMappingResponseFormProperties {
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiMappingId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		ApiMappingKey: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Stage: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApiMappingResponseFormGroup() {
+		return new FormGroup<CreateApiMappingResponseFormProperties>({
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAuthorizerResponse {
@@ -118,16 +239,55 @@ export namespace MyNS {
 		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string> | null;
+		IdentitySource?: Array<string>;
 
 		/** A string with a length between [0-1024]. */
 		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration | null;
+		JwtConfiguration?: JWTConfiguration;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
+	}
+	export interface CreateAuthorizerResponseFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		AuthorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		AuthorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		AuthorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		AuthorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		IdentityValidationExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAuthorizerResponseFormGroup() {
+		return new FormGroup<CreateAuthorizerResponseFormProperties>({
+			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
+			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateAuthorizerResponseAuthorizerType { REQUEST = 0, JWT = 1 }
@@ -135,10 +295,23 @@ export namespace MyNS {
 
 	/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
 	export interface JWTConfiguration {
-		Audience?: Array<string> | null;
+		Audience?: Array<string>;
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		Issuer?: string | null;
+	}
+
+	/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
+	export interface JWTConfigurationFormProperties {
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		Issuer: FormControl<string | null | undefined>,
+	}
+	export function CreateJWTConfigurationFormGroup() {
+		return new FormGroup<JWTConfigurationFormProperties>({
+			Issuer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDeploymentResponse {
@@ -155,6 +328,31 @@ export namespace MyNS {
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 	}
+	export interface CreateDeploymentResponseFormProperties {
+		AutoDeployed: FormControl<boolean | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** Represents a deployment status. */
+		DeploymentStatus: FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>,
+		DeploymentStatusMessage: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentResponseFormGroup() {
+		return new FormGroup<CreateDeploymentResponseFormProperties>({
+			AutoDeployed: new FormControl<boolean | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentStatus: new FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>(undefined),
+			DeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateDeploymentResponseDeploymentStatus { PENDING = 0, FAILED = 1, DEPLOYED = 2 }
 
@@ -167,10 +365,25 @@ export namespace MyNS {
 		DomainName?: string | null;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		DomainNameConfigurations?: Array<DomainNameConfiguration>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface CreateDomainNameResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiMappingSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-512]. */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDomainNameResponseFormGroup() {
+		return new FormGroup<CreateDomainNameResponseFormProperties>({
+			ApiMappingSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -197,6 +410,43 @@ export namespace MyNS {
 		SecurityPolicy?: DomainNameConfigurationSecurityPolicy | null;
 	}
 
+	/** The domain name configuration. */
+	export interface DomainNameConfigurationFormProperties {
+		ApiGatewayDomainName: FormControl<string | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CertificateArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		CertificateName: FormControl<string | null | undefined>,
+		CertificateUploadDate: FormControl<Date | null | undefined>,
+
+		/** The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated. */
+		DomainNameStatus: FormControl<DomainNameConfigurationDomainNameStatus | null | undefined>,
+		DomainNameStatusMessage: FormControl<string | null | undefined>,
+
+		/** Represents an endpoint type. */
+		EndpointType: FormControl<DomainNameConfigurationEndpointType | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+
+		/** The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2. */
+		SecurityPolicy: FormControl<DomainNameConfigurationSecurityPolicy | null | undefined>,
+	}
+	export function CreateDomainNameConfigurationFormGroup() {
+		return new FormGroup<DomainNameConfigurationFormProperties>({
+			ApiGatewayDomainName: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			CertificateName: new FormControl<string | null | undefined>(undefined),
+			CertificateUploadDate: new FormControl<Date | null | undefined>(undefined),
+			DomainNameStatus: new FormControl<DomainNameConfigurationDomainNameStatus | null | undefined>(undefined),
+			DomainNameStatusMessage: new FormControl<string | null | undefined>(undefined),
+			EndpointType: new FormControl<DomainNameConfigurationEndpointType | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			SecurityPolicy: new FormControl<DomainNameConfigurationSecurityPolicy | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DomainNameConfigurationDomainNameStatus { AVAILABLE = 0, UPDATING = 1 }
 
 	export enum DomainNameConfigurationEndpointType { REGIONAL = 0, EDGE = 1 }
@@ -204,6 +454,13 @@ export namespace MyNS {
 	export enum DomainNameConfigurationSecurityPolicy { TLS_1_0 = 0, TLS_1_2 = 1 }
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateIntegrationResult {
@@ -246,10 +503,10 @@ export namespace MyNS {
 		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters | null;
+		RequestParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap | null;
+		RequestTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
@@ -262,7 +519,76 @@ export namespace MyNS {
 		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig | null;
+		TlsConfig?: TlsConfig;
+	}
+	export interface CreateIntegrationResultFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		ConnectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		ConnectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		IntegrationId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		IntegrationMethod: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		IntegrationResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an API method integration type. */
+		IntegrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		IntegrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		PassthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		PayloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		TimeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateIntegrationResultFormGroup() {
+		return new FormGroup<CreateIntegrationResultFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IntegrationId: new FormControl<string | null | undefined>(undefined),
+			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationUri: new FormControl<string | null | undefined>(undefined),
+			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateIntegrationResultConnectionType { INTERNET = 0, VPC_LINK = 1 }
@@ -278,9 +604,27 @@ export namespace MyNS {
 	export interface IntegrationParameters {
 	}
 
+	/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
+	export interface IntegrationParametersFormProperties {
+	}
+	export function CreateIntegrationParametersFormGroup() {
+		return new FormGroup<IntegrationParametersFormProperties>({
+		});
+
+	}
+
 
 	/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
 	export interface TemplateMap {
+	}
+
+	/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
+	export interface TemplateMapFormProperties {
+	}
+	export function CreateTemplateMapFormGroup() {
+		return new FormGroup<TemplateMapFormProperties>({
+		});
+
 	}
 
 
@@ -289,6 +633,19 @@ export namespace MyNS {
 
 		/** A string with a length between [1-512]. */
 		ServerNameToVerify?: string | null;
+	}
+
+	/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
+	export interface TlsConfigFormProperties {
+
+		/** A string with a length between [1-512]. */
+		ServerNameToVerify: FormControl<string | null | undefined>,
+	}
+	export function CreateTlsConfigFormGroup() {
+		return new FormGroup<TlsConfigFormProperties>({
+			ServerNameToVerify: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIntegrationResponseResponse {
@@ -303,13 +660,36 @@ export namespace MyNS {
 		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters | null;
+		ResponseParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap | null;
+		ResponseTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
+	}
+	export interface CreateIntegrationResponseResponseFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** The identifier. */
+		IntegrationResponseId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		IntegrationResponseKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntegrationResponseResponseFormGroup() {
+		return new FormGroup<CreateIntegrationResponseResponseFormProperties>({
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			IntegrationResponseId: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateModelResponse {
@@ -329,13 +709,40 @@ export namespace MyNS {
 		/** A string with a length between [0-32768]. */
 		Schema?: string | null;
 	}
+	export interface CreateModelResponseFormProperties {
+
+		/** A string with a length between [1-256]. */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ModelId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-32768]. */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelResponseFormGroup() {
+		return new FormGroup<CreateModelResponseFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ModelId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateRouteResult {
 		ApiGatewayManaged?: boolean | null;
 		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string> | null;
+		AuthorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		AuthorizationType?: CreateRouteResultAuthorizationType | null;
@@ -350,10 +757,10 @@ export namespace MyNS {
 		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels | null;
+		RequestModels?: RouteModels;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters | null;
+		RequestParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteId?: string | null;
@@ -367,6 +774,49 @@ export namespace MyNS {
 		/** A string with a length between [1-128]. */
 		Target?: string | null;
 	}
+	export interface CreateRouteResultFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		ApiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		AuthorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		OperationName: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRouteResultFormGroup() {
+		return new FormGroup<CreateRouteResultFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ApiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			AuthorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			OperationName: new FormControl<string | null | undefined>(undefined),
+			RouteId: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateRouteResultAuthorizationType { NONE = 0, AWS_IAM = 1, CUSTOM = 2, JWT = 3 }
 
@@ -375,9 +825,27 @@ export namespace MyNS {
 	export interface RouteModels {
 	}
 
+	/** The route models. */
+	export interface RouteModelsFormProperties {
+	}
+	export function CreateRouteModelsFormGroup() {
+		return new FormGroup<RouteModelsFormProperties>({
+		});
+
+	}
+
 
 	/** The route parameters. */
 	export interface RouteParameters {
+	}
+
+	/** The route parameters. */
+	export interface RouteParametersFormProperties {
+	}
+	export function CreateRouteParametersFormGroup() {
+		return new FormGroup<RouteParametersFormProperties>({
+		});
+
 	}
 
 
@@ -386,16 +854,27 @@ export namespace MyNS {
 		Required?: boolean | null;
 	}
 
+	/** Validation constraints imposed on parameters of a request (path, query string, headers). */
+	export interface ParameterConstraintsFormProperties {
+		Required: FormControl<boolean | null | undefined>,
+	}
+	export function CreateParameterConstraintsFormGroup() {
+		return new FormGroup<ParameterConstraintsFormProperties>({
+			Required: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateRouteResponseResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels | null;
+		ResponseModels?: RouteModels;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters | null;
+		ResponseParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteResponseId?: string | null;
@@ -403,11 +882,30 @@ export namespace MyNS {
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		RouteResponseKey?: string | null;
 	}
+	export interface CreateRouteResponseResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteResponseId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRouteResponseResponseFormGroup() {
+		return new FormGroup<CreateRouteResponseResponseFormProperties>({
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			RouteResponseId: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateStageResponse {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings | null;
+		AccessLogSettings?: AccessLogSettings;
 		ApiGatewayManaged?: boolean | null;
 		AutoDeploy?: boolean | null;
 
@@ -416,7 +914,7 @@ export namespace MyNS {
 		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings | null;
+		DefaultRouteSettings?: RouteSettings;
 
 		/** The identifier. */
 		DeploymentId?: string | null;
@@ -427,16 +925,49 @@ export namespace MyNS {
 		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap | null;
+		RouteSettings?: RouteSettingsMap;
 
 		/** A string with a length between [1-128]. */
 		StageName?: string | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap | null;
+		StageVariables?: StageVariablesMap;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface CreateStageResponseFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		AutoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		ClientCertificateId: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		LastDeploymentStatusMessage: FormControl<string | null | undefined>,
+		LastUpdatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		StageName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStageResponseFormGroup() {
+		return new FormGroup<CreateStageResponseFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			AutoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastDeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -448,6 +979,23 @@ export namespace MyNS {
 
 		/** A string with a length between [1-1024]. */
 		Format?: string | null;
+	}
+
+	/** Settings for logging access in a stage. */
+	export interface AccessLogSettingsFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		DestinationArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		Format: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessLogSettingsFormGroup() {
+		return new FormGroup<AccessLogSettingsFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -462,6 +1010,27 @@ export namespace MyNS {
 		ThrottlingRateLimit?: number | null;
 	}
 
+	/** Represents a collection of route settings. */
+	export interface RouteSettingsFormProperties {
+		DataTraceEnabled: FormControl<boolean | null | undefined>,
+		DetailedMetricsEnabled: FormControl<boolean | null | undefined>,
+
+		/** The logging level. */
+		LoggingLevel: FormControl<RouteSettingsLoggingLevel | null | undefined>,
+		ThrottlingBurstLimit: FormControl<number | null | undefined>,
+		ThrottlingRateLimit: FormControl<number | null | undefined>,
+	}
+	export function CreateRouteSettingsFormGroup() {
+		return new FormGroup<RouteSettingsFormProperties>({
+			DataTraceEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DetailedMetricsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			LoggingLevel: new FormControl<RouteSettingsLoggingLevel | null | undefined>(undefined),
+			ThrottlingBurstLimit: new FormControl<number | null | undefined>(undefined),
+			ThrottlingRateLimit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RouteSettingsLoggingLevel { ERROR = 0, INFO = 1, OFF = 2 }
 
 
@@ -469,9 +1038,27 @@ export namespace MyNS {
 	export interface RouteSettingsMap {
 	}
 
+	/** The route settings map. */
+	export interface RouteSettingsMapFormProperties {
+	}
+	export function CreateRouteSettingsMapFormGroup() {
+		return new FormGroup<RouteSettingsMapFormProperties>({
+		});
+
+	}
+
 
 	/** The stage variable map. */
 	export interface StageVariablesMap {
+	}
+
+	/** The stage variable map. */
+	export interface StageVariablesMapFormProperties {
+	}
+	export function CreateStageVariablesMapFormGroup() {
+		return new FormGroup<StageVariablesMapFormProperties>({
+		});
+
 	}
 
 
@@ -485,13 +1072,13 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 
 		/** A list of subnet IDs to include in the VPC link. */
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** The identifier. */
 		VpcLinkId?: string | null;
@@ -505,6 +1092,35 @@ export namespace MyNS {
 		/** The version of the VPC link. */
 		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
+	export interface CreateVpcLinkResponseFormProperties {
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		VpcLinkId: FormControl<string | null | undefined>,
+
+		/** The status of the VPC link. */
+		VpcLinkStatus: FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		VpcLinkStatusMessage: FormControl<string | null | undefined>,
+
+		/** The version of the VPC link. */
+		VpcLinkVersion: FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>,
+	}
+	export function CreateCreateVpcLinkResponseFormGroup() {
+		return new FormGroup<CreateVpcLinkResponseFormProperties>({
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VpcLinkId: new FormControl<string | null | undefined>(undefined),
+			VpcLinkStatus: new FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>(undefined),
+			VpcLinkStatusMessage: new FormControl<string | null | undefined>(undefined),
+			VpcLinkVersion: new FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateVpcLinkResponseVpcLinkStatus { PENDING = 0, AVAILABLE = 1, DELETING = 2, FAILED = 3, INACTIVE = 4 }
 
@@ -512,11 +1128,29 @@ export namespace MyNS {
 
 	export interface DeleteVpcLinkResponse {
 	}
+	export interface DeleteVpcLinkResponseFormProperties {
+	}
+	export function CreateDeleteVpcLinkResponseFormGroup() {
+		return new FormGroup<DeleteVpcLinkResponseFormProperties>({
+		});
+
+	}
 
 	export interface ExportApiResponse {
 
 		/** Represents an exported definition of an API in a particular output format, for example, YAML. The API is serialized to the requested specification, for example, OpenAPI 3.0. */
 		body?: string | null;
+	}
+	export interface ExportApiResponseFormProperties {
+
+		/** Represents an exported definition of an API in a particular output format, for example, YAML. The API is serialized to the requested specification, for example, OpenAPI 3.0. */
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateExportApiResponseFormGroup() {
+		return new FormGroup<ExportApiResponseFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetApiResponse {
@@ -529,13 +1163,13 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 		DisableSchemaValidation?: boolean | null;
-		ImportInfo?: Array<string> | null;
+		ImportInfo?: Array<string>;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
@@ -547,11 +1181,52 @@ export namespace MyNS {
 		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
-		Warnings?: Array<string> | null;
+		Warnings?: Array<string>;
+	}
+	export interface GetApiResponseFormProperties {
+		ApiEndpoint: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** Represents a protocol type. */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApiResponseFormGroup() {
+		return new FormGroup<GetApiResponseFormProperties>({
+			ApiEndpoint: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetApiMappingResponse {
@@ -568,12 +1243,46 @@ export namespace MyNS {
 		/** A string with a length between [1-128]. */
 		Stage?: string | null;
 	}
+	export interface GetApiMappingResponseFormProperties {
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiMappingId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		ApiMappingKey: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Stage: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApiMappingResponseFormGroup() {
+		return new FormGroup<GetApiMappingResponseFormProperties>({
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetApiMappingsResponse {
-		Items?: Array<ApiMapping> | null;
+		Items?: Array<ApiMapping>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetApiMappingsResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApiMappingsResponseFormGroup() {
+		return new FormGroup<GetApiMappingsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -599,11 +1308,53 @@ export namespace MyNS {
 		Stage: string;
 	}
 
+	/** Represents an API mapping. */
+	export interface ApiMappingFormProperties {
+
+		/**
+		 * The identifier.
+		 * Required
+		 */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiMappingId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		ApiMappingKey: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Stage: FormControl<string | null | undefined>,
+	}
+	export function CreateApiMappingFormGroup() {
+		return new FormGroup<ApiMappingFormProperties>({
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetApisResponse {
-		Items?: Array<Api> | null;
+		Items?: Array<Api>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetApisResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApisResponseFormGroup() {
+		return new FormGroup<GetApisResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -618,13 +1369,13 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 		DisableSchemaValidation?: boolean | null;
-		ImportInfo?: Array<string> | null;
+		ImportInfo?: Array<string>;
 
 		/**
 		 * A string with a length between [1-128].
@@ -645,11 +1396,63 @@ export namespace MyNS {
 		RouteSelectionExpression: string;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
-		Warnings?: Array<string> | null;
+		Warnings?: Array<string>;
+	}
+
+	/** Represents an API. */
+	export interface ApiFormProperties {
+		ApiEndpoint: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Represents a protocol type.
+		 * Required
+		 */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/**
+		 * An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information.
+		 * Required
+		 */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateApiFormGroup() {
+		return new FormGroup<ApiFormProperties>({
+			ApiEndpoint: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetAuthorizerResponse {
@@ -674,23 +1477,73 @@ export namespace MyNS {
 		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string> | null;
+		IdentitySource?: Array<string>;
 
 		/** A string with a length between [0-1024]. */
 		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration | null;
+		JwtConfiguration?: JWTConfiguration;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
 	}
+	export interface GetAuthorizerResponseFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		AuthorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		AuthorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		AuthorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		AuthorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		IdentityValidationExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAuthorizerResponseFormGroup() {
+		return new FormGroup<GetAuthorizerResponseFormProperties>({
+			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
+			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAuthorizersResponse {
-		Items?: Array<Authorizer> | null;
+		Items?: Array<Authorizer>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetAuthorizersResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAuthorizersResponseFormGroup() {
+		return new FormGroup<GetAuthorizersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -717,19 +1570,63 @@ export namespace MyNS {
 		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string> | null;
+		IdentitySource?: Array<string>;
 
 		/** A string with a length between [0-1024]. */
 		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration | null;
+		JwtConfiguration?: JWTConfiguration;
 
 		/**
 		 * A string with a length between [1-128].
 		 * Required
 		 */
 		Name: string;
+	}
+
+	/** Represents an authorizer. */
+	export interface AuthorizerFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		AuthorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		AuthorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		AuthorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		AuthorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		IdentityValidationExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthorizerFormGroup() {
+		return new FormGroup<AuthorizerFormProperties>({
+			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
+			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDeploymentResponse {
@@ -746,12 +1643,48 @@ export namespace MyNS {
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 	}
+	export interface GetDeploymentResponseFormProperties {
+		AutoDeployed: FormControl<boolean | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** Represents a deployment status. */
+		DeploymentStatus: FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>,
+		DeploymentStatusMessage: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentResponseFormGroup() {
+		return new FormGroup<GetDeploymentResponseFormProperties>({
+			AutoDeployed: new FormControl<boolean | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentStatus: new FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>(undefined),
+			DeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDeploymentsResponse {
-		Items?: Array<Deployment> | null;
+		Items?: Array<Deployment>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetDeploymentsResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentsResponseFormGroup() {
+		return new FormGroup<GetDeploymentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -771,6 +1704,33 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet. */
+	export interface DeploymentFormProperties {
+		AutoDeployed: FormControl<boolean | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** Represents a deployment status. */
+		DeploymentStatus: FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>,
+		DeploymentStatusMessage: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploymentFormGroup() {
+		return new FormGroup<DeploymentFormProperties>({
+			AutoDeployed: new FormControl<boolean | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentStatus: new FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>(undefined),
+			DeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDomainNameResponse {
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
@@ -780,17 +1740,43 @@ export namespace MyNS {
 		DomainName?: string | null;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		DomainNameConfigurations?: Array<DomainNameConfiguration>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface GetDomainNameResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiMappingSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-512]. */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDomainNameResponseFormGroup() {
+		return new FormGroup<GetDomainNameResponseFormProperties>({
+			ApiMappingSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDomainNamesResponse {
-		Items?: Array<DomainName> | null;
+		Items?: Array<DomainName>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetDomainNamesResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDomainNamesResponseFormGroup() {
+		return new FormGroup<GetDomainNamesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -807,10 +1793,30 @@ export namespace MyNS {
 		DomainName1: string;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		DomainNameConfigurations?: Array<DomainNameConfiguration>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Represents a domain name. */
+	export interface DomainNameFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiMappingSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-512].
+		 * Required
+		 */
+		DomainName1: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainNameFormGroup() {
+		return new FormGroup<DomainNameFormProperties>({
+			ApiMappingSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			DomainName1: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetIntegrationResult {
@@ -853,10 +1859,10 @@ export namespace MyNS {
 		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters | null;
+		RequestParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap | null;
+		RequestTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
@@ -869,7 +1875,76 @@ export namespace MyNS {
 		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig | null;
+		TlsConfig?: TlsConfig;
+	}
+	export interface GetIntegrationResultFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		ConnectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		ConnectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		IntegrationId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		IntegrationMethod: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		IntegrationResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an API method integration type. */
+		IntegrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		IntegrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		PassthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		PayloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		TimeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateGetIntegrationResultFormGroup() {
+		return new FormGroup<GetIntegrationResultFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IntegrationId: new FormControl<string | null | undefined>(undefined),
+			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationUri: new FormControl<string | null | undefined>(undefined),
+			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetIntegrationResponseResponse {
@@ -884,20 +1959,54 @@ export namespace MyNS {
 		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters | null;
+		ResponseParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap | null;
+		ResponseTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
 	}
+	export interface GetIntegrationResponseResponseFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** The identifier. */
+		IntegrationResponseId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		IntegrationResponseKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIntegrationResponseResponseFormGroup() {
+		return new FormGroup<GetIntegrationResponseResponseFormProperties>({
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			IntegrationResponseId: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetIntegrationResponsesResponse {
-		Items?: Array<IntegrationResponse> | null;
+		Items?: Array<IntegrationResponse>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetIntegrationResponsesResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIntegrationResponsesResponseFormGroup() {
+		return new FormGroup<GetIntegrationResponsesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -917,20 +2026,59 @@ export namespace MyNS {
 		IntegrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters | null;
+		ResponseParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap | null;
+		ResponseTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
 	}
 
+	/** Represents an integration response. */
+	export interface IntegrationResponseFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** The identifier. */
+		IntegrationResponseId: FormControl<string | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		IntegrationResponseKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateIntegrationResponseFormGroup() {
+		return new FormGroup<IntegrationResponseFormProperties>({
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			IntegrationResponseId: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetIntegrationsResponse {
-		Items?: Array<Integration> | null;
+		Items?: Array<Integration>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetIntegrationsResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIntegrationsResponseFormGroup() {
+		return new FormGroup<GetIntegrationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -975,10 +2123,10 @@ export namespace MyNS {
 		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters | null;
+		RequestParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap | null;
+		RequestTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
@@ -991,7 +2139,78 @@ export namespace MyNS {
 		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig | null;
+		TlsConfig?: TlsConfig;
+	}
+
+	/** Represents an integration. */
+	export interface IntegrationFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		ConnectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		ConnectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		IntegrationId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		IntegrationMethod: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		IntegrationResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an API method integration type. */
+		IntegrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		IntegrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		PassthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		PayloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		TimeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateIntegrationFormGroup() {
+		return new FormGroup<IntegrationFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IntegrationId: new FormControl<string | null | undefined>(undefined),
+			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationUri: new FormControl<string | null | undefined>(undefined),
+			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetModelResponse {
@@ -1011,16 +2230,63 @@ export namespace MyNS {
 		/** A string with a length between [0-32768]. */
 		Schema?: string | null;
 	}
+	export interface GetModelResponseFormProperties {
+
+		/** A string with a length between [1-256]. */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ModelId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-32768]. */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateGetModelResponseFormGroup() {
+		return new FormGroup<GetModelResponseFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ModelId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetModelTemplateResponse {
 		Value?: string | null;
 	}
+	export interface GetModelTemplateResponseFormProperties {
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateGetModelTemplateResponseFormGroup() {
+		return new FormGroup<GetModelTemplateResponseFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetModelsResponse {
-		Items?: Array<Model> | null;
+		Items?: Array<Model>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetModelsResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetModelsResponseFormGroup() {
+		return new FormGroup<GetModelsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1046,12 +2312,44 @@ export namespace MyNS {
 		Schema?: string | null;
 	}
 
+	/** Represents a data model for an API. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Create Models and Mapping Templates for Request and Response Mappings</a>. */
+	export interface ModelFormProperties {
+
+		/** A string with a length between [1-256]. */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-32768]. */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateModelFormGroup() {
+		return new FormGroup<ModelFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ModelId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetRouteResult {
 		ApiGatewayManaged?: boolean | null;
 		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string> | null;
+		AuthorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		AuthorizationType?: CreateRouteResultAuthorizationType | null;
@@ -1066,10 +2364,10 @@ export namespace MyNS {
 		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels | null;
+		RequestModels?: RouteModels;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters | null;
+		RequestParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteId?: string | null;
@@ -1083,6 +2381,49 @@ export namespace MyNS {
 		/** A string with a length between [1-128]. */
 		Target?: string | null;
 	}
+	export interface GetRouteResultFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		ApiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		AuthorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		OperationName: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRouteResultFormGroup() {
+		return new FormGroup<GetRouteResultFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ApiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			AuthorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			OperationName: new FormControl<string | null | undefined>(undefined),
+			RouteId: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRouteResponseResponse {
 
@@ -1090,10 +2431,10 @@ export namespace MyNS {
 		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels | null;
+		ResponseModels?: RouteModels;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters | null;
+		ResponseParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteResponseId?: string | null;
@@ -1101,12 +2442,42 @@ export namespace MyNS {
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		RouteResponseKey?: string | null;
 	}
+	export interface GetRouteResponseResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteResponseId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRouteResponseResponseFormGroup() {
+		return new FormGroup<GetRouteResponseResponseFormProperties>({
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			RouteResponseId: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRouteResponsesResponse {
-		Items?: Array<RouteResponse> | null;
+		Items?: Array<RouteResponse>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetRouteResponsesResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRouteResponsesResponseFormGroup() {
+		return new FormGroup<GetRouteResponsesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1117,10 +2488,10 @@ export namespace MyNS {
 		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels | null;
+		ResponseModels?: RouteModels;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters | null;
+		ResponseParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteResponseId?: string | null;
@@ -1132,11 +2503,46 @@ export namespace MyNS {
 		RouteResponseKey: string;
 	}
 
+	/** Represents a route response. */
+	export interface RouteResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteResponseId: FormControl<string | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		RouteResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateRouteResponseFormGroup() {
+		return new FormGroup<RouteResponseFormProperties>({
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			RouteResponseId: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetRoutesResponse {
-		Items?: Array<Route> | null;
+		Items?: Array<Route>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetRoutesResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRoutesResponseFormGroup() {
+		return new FormGroup<GetRoutesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1146,7 +2552,7 @@ export namespace MyNS {
 		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string> | null;
+		AuthorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		AuthorizationType?: CreateRouteResultAuthorizationType | null;
@@ -1161,10 +2567,10 @@ export namespace MyNS {
 		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels | null;
+		RequestModels?: RouteModels;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters | null;
+		RequestParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteId?: string | null;
@@ -1182,10 +2588,58 @@ export namespace MyNS {
 		Target?: string | null;
 	}
 
+	/** Represents a route. */
+	export interface RouteFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		ApiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		AuthorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		OperationName: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteId: FormControl<string | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateRouteFormGroup() {
+		return new FormGroup<RouteFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ApiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			AuthorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			OperationName: new FormControl<string | null | undefined>(undefined),
+			RouteId: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetStageResponse {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings | null;
+		AccessLogSettings?: AccessLogSettings;
 		ApiGatewayManaged?: boolean | null;
 		AutoDeploy?: boolean | null;
 
@@ -1194,7 +2648,7 @@ export namespace MyNS {
 		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings | null;
+		DefaultRouteSettings?: RouteSettings;
 
 		/** The identifier. */
 		DeploymentId?: string | null;
@@ -1205,23 +2659,67 @@ export namespace MyNS {
 		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap | null;
+		RouteSettings?: RouteSettingsMap;
 
 		/** A string with a length between [1-128]. */
 		StageName?: string | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap | null;
+		StageVariables?: StageVariablesMap;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface GetStageResponseFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		AutoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		ClientCertificateId: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		LastDeploymentStatusMessage: FormControl<string | null | undefined>,
+		LastUpdatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		StageName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetStageResponseFormGroup() {
+		return new FormGroup<GetStageResponseFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			AutoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastDeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetStagesResponse {
-		Items?: Array<Stage> | null;
+		Items?: Array<Stage>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetStagesResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetStagesResponseFormGroup() {
+		return new FormGroup<GetStagesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1229,7 +2727,7 @@ export namespace MyNS {
 	export interface Stage {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings | null;
+		AccessLogSettings?: AccessLogSettings;
 		ApiGatewayManaged?: boolean | null;
 		AutoDeploy?: boolean | null;
 
@@ -1238,7 +2736,7 @@ export namespace MyNS {
 		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings | null;
+		DefaultRouteSettings?: RouteSettings;
 
 		/** The identifier. */
 		DeploymentId?: string | null;
@@ -1249,7 +2747,7 @@ export namespace MyNS {
 		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap | null;
+		RouteSettings?: RouteSettingsMap;
 
 		/**
 		 * A string with a length between [1-128].
@@ -1258,16 +2756,61 @@ export namespace MyNS {
 		StageName: string;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap | null;
+		StageVariables?: StageVariablesMap;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Represents an API stage. */
+	export interface StageFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		AutoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		ClientCertificateId: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		LastDeploymentStatusMessage: FormControl<string | null | undefined>,
+		LastUpdatedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		StageName: FormControl<string | null | undefined>,
+	}
+	export function CreateStageFormGroup() {
+		return new FormGroup<StageFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			AutoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastDeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTagsResponse {
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface GetTagsResponseFormProperties {
+	}
+	export function CreateGetTagsResponseFormGroup() {
+		return new FormGroup<GetTagsResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetVpcLinkResponse {
@@ -1277,13 +2820,13 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 
 		/** A list of subnet IDs to include in the VPC link. */
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** The identifier. */
 		VpcLinkId?: string | null;
@@ -1297,12 +2840,52 @@ export namespace MyNS {
 		/** The version of the VPC link. */
 		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
+	export interface GetVpcLinkResponseFormProperties {
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		VpcLinkId: FormControl<string | null | undefined>,
+
+		/** The status of the VPC link. */
+		VpcLinkStatus: FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		VpcLinkStatusMessage: FormControl<string | null | undefined>,
+
+		/** The version of the VPC link. */
+		VpcLinkVersion: FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>,
+	}
+	export function CreateGetVpcLinkResponseFormGroup() {
+		return new FormGroup<GetVpcLinkResponseFormProperties>({
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VpcLinkId: new FormControl<string | null | undefined>(undefined),
+			VpcLinkStatus: new FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>(undefined),
+			VpcLinkStatusMessage: new FormControl<string | null | undefined>(undefined),
+			VpcLinkVersion: new FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetVpcLinksResponse {
-		Items?: Array<VpcLink> | null;
+		Items?: Array<VpcLink>;
 
 		/** The next page of elements from this collection. Not valid for the last element of the collection. */
 		NextToken?: string | null;
+	}
+	export interface GetVpcLinksResponseFormProperties {
+
+		/** The next page of elements from this collection. Not valid for the last element of the collection. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVpcLinksResponseFormGroup() {
+		return new FormGroup<GetVpcLinksResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1329,7 +2912,7 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/**
 		 * The identifier.
@@ -1347,6 +2930,43 @@ export namespace MyNS {
 		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
 	}
 
+	/** Represents a VPC link. */
+	export interface VpcLinkFormProperties {
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The identifier.
+		 * Required
+		 */
+		VpcLinkId: FormControl<string | null | undefined>,
+
+		/** The status of the VPC link. */
+		VpcLinkStatus: FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		VpcLinkStatusMessage: FormControl<string | null | undefined>,
+
+		/** The version of the VPC link. */
+		VpcLinkVersion: FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>,
+	}
+	export function CreateVpcLinkFormGroup() {
+		return new FormGroup<VpcLinkFormProperties>({
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VpcLinkId: new FormControl<string | null | undefined>(undefined),
+			VpcLinkStatus: new FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>(undefined),
+			VpcLinkStatusMessage: new FormControl<string | null | undefined>(undefined),
+			VpcLinkVersion: new FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ImportApiResponse {
 		ApiEndpoint?: string | null;
 
@@ -1357,13 +2977,13 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 		DisableSchemaValidation?: boolean | null;
-		ImportInfo?: Array<string> | null;
+		ImportInfo?: Array<string>;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
@@ -1375,11 +2995,52 @@ export namespace MyNS {
 		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
-		Warnings?: Array<string> | null;
+		Warnings?: Array<string>;
+	}
+	export interface ImportApiResponseFormProperties {
+		ApiEndpoint: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** Represents a protocol type. */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateImportApiResponseFormGroup() {
+		return new FormGroup<ImportApiResponseFormProperties>({
+			ApiEndpoint: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReimportApiResponse {
@@ -1392,13 +3053,13 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 		DisableSchemaValidation?: boolean | null;
-		ImportInfo?: Array<string> | null;
+		ImportInfo?: Array<string>;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
@@ -1410,14 +3071,62 @@ export namespace MyNS {
 		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
-		Warnings?: Array<string> | null;
+		Warnings?: Array<string>;
+	}
+	export interface ReimportApiResponseFormProperties {
+		ApiEndpoint: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** Represents a protocol type. */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateReimportApiResponseFormGroup() {
+		return new FormGroup<ReimportApiResponseFormProperties>({
+			ApiEndpoint: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateApiResponse {
@@ -1430,13 +3139,13 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 		CreatedDate?: Date | null;
 
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 		DisableSchemaValidation?: boolean | null;
-		ImportInfo?: Array<string> | null;
+		ImportInfo?: Array<string>;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
@@ -1448,11 +3157,52 @@ export namespace MyNS {
 		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
-		Warnings?: Array<string> | null;
+		Warnings?: Array<string>;
+	}
+	export interface UpdateApiResponseFormProperties {
+		ApiEndpoint: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** Represents a protocol type. */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApiResponseFormGroup() {
+		return new FormGroup<UpdateApiResponseFormProperties>({
+			ApiEndpoint: new FormControl<string | null | undefined>(undefined),
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateApiMappingResponse {
@@ -1468,6 +3218,29 @@ export namespace MyNS {
 
 		/** A string with a length between [1-128]. */
 		Stage?: string | null;
+	}
+	export interface UpdateApiMappingResponseFormProperties {
+
+		/** The identifier. */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ApiMappingId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		ApiMappingKey: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Stage: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApiMappingResponseFormGroup() {
+		return new FormGroup<UpdateApiMappingResponseFormProperties>({
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAuthorizerResponse {
@@ -1492,16 +3265,55 @@ export namespace MyNS {
 		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string> | null;
+		IdentitySource?: Array<string>;
 
 		/** A string with a length between [0-1024]. */
 		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration | null;
+		JwtConfiguration?: JWTConfiguration;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
+	}
+	export interface UpdateAuthorizerResponseFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		AuthorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		AuthorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		AuthorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		AuthorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		IdentityValidationExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerResponseFormGroup() {
+		return new FormGroup<UpdateAuthorizerResponseFormProperties>({
+			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
+			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDeploymentResponse {
@@ -1518,6 +3330,31 @@ export namespace MyNS {
 		/** A string with a length between [0-1024]. */
 		Description?: string | null;
 	}
+	export interface UpdateDeploymentResponseFormProperties {
+		AutoDeployed: FormControl<boolean | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** Represents a deployment status. */
+		DeploymentStatus: FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>,
+		DeploymentStatusMessage: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeploymentResponseFormGroup() {
+		return new FormGroup<UpdateDeploymentResponseFormProperties>({
+			AutoDeployed: new FormControl<boolean | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentStatus: new FormControl<CreateDeploymentResponseDeploymentStatus | null | undefined>(undefined),
+			DeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDomainNameResponse {
 
@@ -1528,10 +3365,25 @@ export namespace MyNS {
 		DomainName?: string | null;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		DomainNameConfigurations?: Array<DomainNameConfiguration>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface UpdateDomainNameResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiMappingSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-512]. */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainNameResponseFormGroup() {
+		return new FormGroup<UpdateDomainNameResponseFormProperties>({
+			ApiMappingSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIntegrationResult {
@@ -1574,10 +3426,10 @@ export namespace MyNS {
 		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters | null;
+		RequestParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap | null;
+		RequestTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
@@ -1590,7 +3442,76 @@ export namespace MyNS {
 		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfig | null;
+		TlsConfig?: TlsConfig;
+	}
+	export interface UpdateIntegrationResultFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		ConnectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		ConnectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		IntegrationId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		IntegrationMethod: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		IntegrationResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an API method integration type. */
+		IntegrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		IntegrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		PassthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		PayloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		TimeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateIntegrationResultFormGroup() {
+		return new FormGroup<UpdateIntegrationResultFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IntegrationId: new FormControl<string | null | undefined>(undefined),
+			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationUri: new FormControl<string | null | undefined>(undefined),
+			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIntegrationResponseResponse {
@@ -1605,13 +3526,36 @@ export namespace MyNS {
 		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters | null;
+		ResponseParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap | null;
+		ResponseTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
+	}
+	export interface UpdateIntegrationResponseResponseFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** The identifier. */
+		IntegrationResponseId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		IntegrationResponseKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIntegrationResponseResponseFormGroup() {
+		return new FormGroup<UpdateIntegrationResponseResponseFormProperties>({
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			IntegrationResponseId: new FormControl<string | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateModelResponse {
@@ -1631,13 +3575,40 @@ export namespace MyNS {
 		/** A string with a length between [0-32768]. */
 		Schema?: string | null;
 	}
+	export interface UpdateModelResponseFormProperties {
+
+		/** A string with a length between [1-256]. */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		ModelId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-32768]. */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateModelResponseFormGroup() {
+		return new FormGroup<UpdateModelResponseFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ModelId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRouteResult {
 		ApiGatewayManaged?: boolean | null;
 		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string> | null;
+		AuthorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		AuthorizationType?: CreateRouteResultAuthorizationType | null;
@@ -1652,10 +3623,10 @@ export namespace MyNS {
 		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels | null;
+		RequestModels?: RouteModels;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters | null;
+		RequestParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteId?: string | null;
@@ -1669,6 +3640,49 @@ export namespace MyNS {
 		/** A string with a length between [1-128]. */
 		Target?: string | null;
 	}
+	export interface UpdateRouteResultFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		ApiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		AuthorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		OperationName: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRouteResultFormGroup() {
+		return new FormGroup<UpdateRouteResultFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			ApiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			AuthorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			OperationName: new FormControl<string | null | undefined>(undefined),
+			RouteId: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRouteResponseResponse {
 
@@ -1676,10 +3690,10 @@ export namespace MyNS {
 		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels | null;
+		ResponseModels?: RouteModels;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters | null;
+		ResponseParameters?: RouteParameters;
 
 		/** The identifier. */
 		RouteResponseId?: string | null;
@@ -1687,11 +3701,30 @@ export namespace MyNS {
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		RouteResponseKey?: string | null;
 	}
+	export interface UpdateRouteResponseResponseFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		RouteResponseId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRouteResponseResponseFormGroup() {
+		return new FormGroup<UpdateRouteResponseResponseFormProperties>({
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			RouteResponseId: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateStageResponse {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings | null;
+		AccessLogSettings?: AccessLogSettings;
 		ApiGatewayManaged?: boolean | null;
 		AutoDeploy?: boolean | null;
 
@@ -1700,7 +3733,7 @@ export namespace MyNS {
 		CreatedDate?: Date | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings | null;
+		DefaultRouteSettings?: RouteSettings;
 
 		/** The identifier. */
 		DeploymentId?: string | null;
@@ -1711,16 +3744,49 @@ export namespace MyNS {
 		LastUpdatedDate?: Date | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap | null;
+		RouteSettings?: RouteSettingsMap;
 
 		/** A string with a length between [1-128]. */
 		StageName?: string | null;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap | null;
+		StageVariables?: StageVariablesMap;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface UpdateStageResponseFormProperties {
+		ApiGatewayManaged: FormControl<boolean | null | undefined>,
+		AutoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		ClientCertificateId: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		LastDeploymentStatusMessage: FormControl<string | null | undefined>,
+		LastUpdatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		StageName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStageResponseFormGroup() {
+		return new FormGroup<UpdateStageResponseFormProperties>({
+			ApiGatewayManaged: new FormControl<boolean | null | undefined>(undefined),
+			AutoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastDeploymentStatusMessage: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateVpcLinkResponse {
@@ -1730,13 +3796,13 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 
 		/** A list of subnet IDs to include in the VPC link. */
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** The identifier. */
 		VpcLinkId?: string | null;
@@ -1749,6 +3815,35 @@ export namespace MyNS {
 
 		/** The version of the VPC link. */
 		VpcLinkVersion?: CreateVpcLinkResponseVpcLinkVersion | null;
+	}
+	export interface UpdateVpcLinkResponseFormProperties {
+		CreatedDate: FormControl<Date | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		VpcLinkId: FormControl<string | null | undefined>,
+
+		/** The status of the VPC link. */
+		VpcLinkStatus: FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		VpcLinkStatusMessage: FormControl<string | null | undefined>,
+
+		/** The version of the VPC link. */
+		VpcLinkVersion: FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>,
+	}
+	export function CreateUpdateVpcLinkResponseFormGroup() {
+		return new FormGroup<UpdateVpcLinkResponseFormProperties>({
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VpcLinkId: new FormControl<string | null | undefined>(undefined),
+			VpcLinkStatus: new FormControl<CreateVpcLinkResponseVpcLinkStatus | null | undefined>(undefined),
+			VpcLinkStatusMessage: new FormControl<string | null | undefined>(undefined),
+			VpcLinkVersion: new FormControl<CreateVpcLinkResponseVpcLinkVersion | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1791,6 +3886,33 @@ export namespace MyNS {
 		Stage: string;
 	}
 
+	/** Creates a new ApiMapping resource to represent an API mapping. */
+	export interface CreateApiMappingRequestFormProperties {
+
+		/**
+		 * The identifier.
+		 * Required
+		 */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		ApiMappingKey: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Stage: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApiMappingRequestFormGroup() {
+		return new FormGroup<CreateApiMappingRequestFormProperties>({
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creates a new Api resource to represent an API. */
 	export interface CreateApiRequest {
@@ -1799,7 +3921,7 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 
 		/** Represents an Amazon Resource Name (ARN). */
 		CredentialsArn?: string | null;
@@ -1827,13 +3949,66 @@ export namespace MyNS {
 		RouteSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		Target?: string | null;
 
 		/** A string with a length between [1-64]. */
 		Version?: string | null;
+	}
+
+	/** Creates a new Api resource to represent an API. */
+	export interface CreateApiRequestFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Represents a protocol type.
+		 * Required
+		 */
+		ProtocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		Target: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApiRequestFormGroup() {
+		return new FormGroup<CreateApiRequestFormProperties>({
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ProtocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1869,13 +4044,56 @@ export namespace MyNS {
 		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration | null;
+		JwtConfiguration?: JWTConfiguration;
 
 		/**
 		 * A string with a length between [1-128].
 		 * Required
 		 */
 		Name: string;
+	}
+
+	/** Creates a new Authorizer resource to represent an authorizer. */
+	export interface CreateAuthorizerRequestFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		AuthorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		AuthorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
+		 * Required
+		 */
+		AuthorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		AuthorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		IdentityValidationExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAuthorizerRequestFormGroup() {
+		return new FormGroup<CreateAuthorizerRequestFormProperties>({
+			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
+			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1887,6 +4105,23 @@ export namespace MyNS {
 
 		/** A string with a length between [1-128]. */
 		StageName?: string | null;
+	}
+
+	/** Creates a new Deployment resource to represent a deployment. */
+	export interface CreateDeploymentRequestFormProperties {
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		StageName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentRequestFormGroup() {
+		return new FormGroup<CreateDeploymentRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1904,10 +4139,26 @@ export namespace MyNS {
 		DomainName: string;
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		DomainNameConfigurations?: Array<DomainNameConfiguration>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Creates a new DomainName resource to represent a domain name. */
+	export interface CreateDomainNameRequestFormProperties {
+
+		/**
+		 * A string with a length between [1-512].
+		 * Required
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDomainNameRequestFormGroup() {
+		return new FormGroup<CreateDomainNameRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1924,6 +4175,19 @@ export namespace MyNS {
 
 		/** A string with a length between [1-512]. */
 		ServerNameToVerify?: string | null;
+	}
+
+	/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
+	export interface TlsConfigInputFormProperties {
+
+		/** A string with a length between [1-512]. */
+		ServerNameToVerify: FormControl<string | null | undefined>,
+	}
+	export function CreateTlsConfigInputFormGroup() {
+		return new FormGroup<TlsConfigInputFormProperties>({
+			ServerNameToVerify: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1964,10 +4228,10 @@ export namespace MyNS {
 		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters | null;
+		RequestParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap | null;
+		RequestTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
@@ -1980,7 +4244,71 @@ export namespace MyNS {
 		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfigInput | null;
+		TlsConfig?: TlsConfigInput;
+	}
+
+	/** Creates a new Integration resource to represent an integration. */
+	export interface CreateIntegrationRequestFormProperties {
+
+		/** A string with a length between [1-1024]. */
+		ConnectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		ConnectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		IntegrationMethod: FormControl<string | null | undefined>,
+
+		/**
+		 * Represents an API method integration type.
+		 * Required
+		 */
+		IntegrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		IntegrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		PassthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		PayloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		TimeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateIntegrationRequestFormGroup() {
+		return new FormGroup<CreateIntegrationRequestFormProperties>({
+			ConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationUri: new FormControl<string | null | undefined>(undefined),
+			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1997,13 +4325,37 @@ export namespace MyNS {
 		IntegrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters | null;
+		ResponseParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap | null;
+		ResponseTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
+	}
+
+	/** Creates a new IntegrationResponse resource to represent an integration response. */
+	export interface CreateIntegrationResponseRequestFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		IntegrationResponseKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntegrationResponseRequestFormGroup() {
+		return new FormGroup<CreateIntegrationResponseRequestFormProperties>({
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2029,13 +4381,44 @@ export namespace MyNS {
 		Schema: string;
 	}
 
+	/** Creates a new Model. */
+	export interface CreateModelRequestFormProperties {
+
+		/** A string with a length between [1-256]. */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [0-32768].
+		 * Required
+		 */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelRequestFormGroup() {
+		return new FormGroup<CreateModelRequestFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creates a new Route resource to represent a route. */
 	export interface CreateRouteRequest {
 		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string> | null;
+		AuthorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		AuthorizationType?: CreateRouteResultAuthorizationType | null;
@@ -2050,10 +4433,10 @@ export namespace MyNS {
 		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels | null;
+		RequestModels?: RouteModels;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters | null;
+		RequestParameters?: RouteParameters;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -2068,6 +4451,48 @@ export namespace MyNS {
 		Target?: string | null;
 	}
 
+	/** Creates a new Route resource to represent a route. */
+	export interface CreateRouteRequestFormProperties {
+		ApiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		AuthorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		OperationName: FormControl<string | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRouteRequestFormGroup() {
+		return new FormGroup<CreateRouteRequestFormProperties>({
+			ApiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			AuthorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			OperationName: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creates a new RouteResponse resource to represent a route response. */
 	export interface CreateRouteResponseRequest {
@@ -2076,10 +4501,10 @@ export namespace MyNS {
 		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels | null;
+		ResponseModels?: RouteModels;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters | null;
+		ResponseParameters?: RouteParameters;
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -2088,19 +4513,39 @@ export namespace MyNS {
 		RouteResponseKey: string;
 	}
 
+	/** Creates a new RouteResponse resource to represent a route response. */
+	export interface CreateRouteResponseRequestFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		RouteResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRouteResponseRequestFormGroup() {
+		return new FormGroup<CreateRouteResponseRequestFormProperties>({
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creates a new Stage resource to represent a stage. */
 	export interface CreateStageRequest {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings | null;
+		AccessLogSettings?: AccessLogSettings;
 		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
 		ClientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings | null;
+		DefaultRouteSettings?: RouteSettings;
 
 		/** The identifier. */
 		DeploymentId?: string | null;
@@ -2109,7 +4554,7 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap | null;
+		RouteSettings?: RouteSettingsMap;
 
 		/**
 		 * A string with a length between [1-128].
@@ -2118,10 +4563,40 @@ export namespace MyNS {
 		StageName: string;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap | null;
+		StageVariables?: StageVariablesMap;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Creates a new Stage resource to represent a stage. */
+	export interface CreateStageRequestFormProperties {
+		AutoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		ClientCertificateId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		StageName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStageRequestFormGroup() {
+		return new FormGroup<CreateStageRequestFormProperties>({
+			AutoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			StageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2135,7 +4610,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** A list of security group IDs for the VPC link. */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 
 		/**
 		 * A list of subnet IDs to include in the VPC link.
@@ -2144,7 +4619,23 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Creates a VPC link */
+	export interface CreateVpcLinkRequestFormProperties {
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVpcLinkRequestFormGroup() {
+		return new FormGroup<CreateVpcLinkRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2157,50 +4648,162 @@ export namespace MyNS {
 
 	export interface DeleteAccessLogSettingsRequest {
 	}
+	export interface DeleteAccessLogSettingsRequestFormProperties {
+	}
+	export function CreateDeleteAccessLogSettingsRequestFormGroup() {
+		return new FormGroup<DeleteAccessLogSettingsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteApiMappingRequest {
+	}
+	export interface DeleteApiMappingRequestFormProperties {
+	}
+	export function CreateDeleteApiMappingRequestFormGroup() {
+		return new FormGroup<DeleteApiMappingRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteApiRequest {
 	}
+	export interface DeleteApiRequestFormProperties {
+	}
+	export function CreateDeleteApiRequestFormGroup() {
+		return new FormGroup<DeleteApiRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAuthorizerRequest {
+	}
+	export interface DeleteAuthorizerRequestFormProperties {
+	}
+	export function CreateDeleteAuthorizerRequestFormGroup() {
+		return new FormGroup<DeleteAuthorizerRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCorsConfigurationRequest {
 	}
+	export interface DeleteCorsConfigurationRequestFormProperties {
+	}
+	export function CreateDeleteCorsConfigurationRequestFormGroup() {
+		return new FormGroup<DeleteCorsConfigurationRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDeploymentRequest {
+	}
+	export interface DeleteDeploymentRequestFormProperties {
+	}
+	export function CreateDeleteDeploymentRequestFormGroup() {
+		return new FormGroup<DeleteDeploymentRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDomainNameRequest {
 	}
+	export interface DeleteDomainNameRequestFormProperties {
+	}
+	export function CreateDeleteDomainNameRequestFormGroup() {
+		return new FormGroup<DeleteDomainNameRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteIntegrationRequest {
+	}
+	export interface DeleteIntegrationRequestFormProperties {
+	}
+	export function CreateDeleteIntegrationRequestFormGroup() {
+		return new FormGroup<DeleteIntegrationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteIntegrationResponseRequest {
 	}
+	export interface DeleteIntegrationResponseRequestFormProperties {
+	}
+	export function CreateDeleteIntegrationResponseRequestFormGroup() {
+		return new FormGroup<DeleteIntegrationResponseRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteModelRequest {
+	}
+	export interface DeleteModelRequestFormProperties {
+	}
+	export function CreateDeleteModelRequestFormGroup() {
+		return new FormGroup<DeleteModelRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteRouteRequest {
 	}
+	export interface DeleteRouteRequestFormProperties {
+	}
+	export function CreateDeleteRouteRequestFormGroup() {
+		return new FormGroup<DeleteRouteRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteRouteRequestParameterRequest {
+	}
+	export interface DeleteRouteRequestParameterRequestFormProperties {
+	}
+	export function CreateDeleteRouteRequestParameterRequestFormGroup() {
+		return new FormGroup<DeleteRouteRequestParameterRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteRouteResponseRequest {
 	}
+	export interface DeleteRouteResponseRequestFormProperties {
+	}
+	export function CreateDeleteRouteResponseRequestFormGroup() {
+		return new FormGroup<DeleteRouteResponseRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteRouteSettingsRequest {
+	}
+	export interface DeleteRouteSettingsRequestFormProperties {
+	}
+	export function CreateDeleteRouteSettingsRequestFormGroup() {
+		return new FormGroup<DeleteRouteSettingsRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteStageRequest {
 	}
+	export interface DeleteStageRequestFormProperties {
+	}
+	export function CreateDeleteStageRequestFormGroup() {
+		return new FormGroup<DeleteStageRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteVpcLinkRequest {
+	}
+	export interface DeleteVpcLinkRequestFormProperties {
+	}
+	export function CreateDeleteVpcLinkRequestFormGroup() {
+		return new FormGroup<DeleteVpcLinkRequestFormProperties>({
+		});
+
 	}
 
 
@@ -2217,91 +4820,298 @@ export namespace MyNS {
 
 	export interface ExportApiRequest {
 	}
+	export interface ExportApiRequestFormProperties {
+	}
+	export function CreateExportApiRequestFormGroup() {
+		return new FormGroup<ExportApiRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetApiMappingRequest {
+	}
+	export interface GetApiMappingRequestFormProperties {
+	}
+	export function CreateGetApiMappingRequestFormGroup() {
+		return new FormGroup<GetApiMappingRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetApiMappingsRequest {
 	}
+	export interface GetApiMappingsRequestFormProperties {
+	}
+	export function CreateGetApiMappingsRequestFormGroup() {
+		return new FormGroup<GetApiMappingsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetApiRequest {
+	}
+	export interface GetApiRequestFormProperties {
+	}
+	export function CreateGetApiRequestFormGroup() {
+		return new FormGroup<GetApiRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetApisRequest {
 	}
+	export interface GetApisRequestFormProperties {
+	}
+	export function CreateGetApisRequestFormGroup() {
+		return new FormGroup<GetApisRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetAuthorizerRequest {
+	}
+	export interface GetAuthorizerRequestFormProperties {
+	}
+	export function CreateGetAuthorizerRequestFormGroup() {
+		return new FormGroup<GetAuthorizerRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetAuthorizersRequest {
 	}
+	export interface GetAuthorizersRequestFormProperties {
+	}
+	export function CreateGetAuthorizersRequestFormGroup() {
+		return new FormGroup<GetAuthorizersRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDeploymentRequest {
+	}
+	export interface GetDeploymentRequestFormProperties {
+	}
+	export function CreateGetDeploymentRequestFormGroup() {
+		return new FormGroup<GetDeploymentRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDeploymentsRequest {
 	}
+	export interface GetDeploymentsRequestFormProperties {
+	}
+	export function CreateGetDeploymentsRequestFormGroup() {
+		return new FormGroup<GetDeploymentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDomainNameRequest {
+	}
+	export interface GetDomainNameRequestFormProperties {
+	}
+	export function CreateGetDomainNameRequestFormGroup() {
+		return new FormGroup<GetDomainNameRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDomainNamesRequest {
 	}
+	export interface GetDomainNamesRequestFormProperties {
+	}
+	export function CreateGetDomainNamesRequestFormGroup() {
+		return new FormGroup<GetDomainNamesRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetIntegrationRequest {
+	}
+	export interface GetIntegrationRequestFormProperties {
+	}
+	export function CreateGetIntegrationRequestFormGroup() {
+		return new FormGroup<GetIntegrationRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetIntegrationResponseRequest {
 	}
+	export interface GetIntegrationResponseRequestFormProperties {
+	}
+	export function CreateGetIntegrationResponseRequestFormGroup() {
+		return new FormGroup<GetIntegrationResponseRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetIntegrationResponsesRequest {
+	}
+	export interface GetIntegrationResponsesRequestFormProperties {
+	}
+	export function CreateGetIntegrationResponsesRequestFormGroup() {
+		return new FormGroup<GetIntegrationResponsesRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetIntegrationsRequest {
 	}
+	export interface GetIntegrationsRequestFormProperties {
+	}
+	export function CreateGetIntegrationsRequestFormGroup() {
+		return new FormGroup<GetIntegrationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetModelRequest {
+	}
+	export interface GetModelRequestFormProperties {
+	}
+	export function CreateGetModelRequestFormGroup() {
+		return new FormGroup<GetModelRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetModelTemplateRequest {
 	}
+	export interface GetModelTemplateRequestFormProperties {
+	}
+	export function CreateGetModelTemplateRequestFormGroup() {
+		return new FormGroup<GetModelTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetModelsRequest {
+	}
+	export interface GetModelsRequestFormProperties {
+	}
+	export function CreateGetModelsRequestFormGroup() {
+		return new FormGroup<GetModelsRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetRouteRequest {
 	}
+	export interface GetRouteRequestFormProperties {
+	}
+	export function CreateGetRouteRequestFormGroup() {
+		return new FormGroup<GetRouteRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetRouteResponseRequest {
+	}
+	export interface GetRouteResponseRequestFormProperties {
+	}
+	export function CreateGetRouteResponseRequestFormGroup() {
+		return new FormGroup<GetRouteResponseRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetRouteResponsesRequest {
 	}
+	export interface GetRouteResponsesRequestFormProperties {
+	}
+	export function CreateGetRouteResponsesRequestFormGroup() {
+		return new FormGroup<GetRouteResponsesRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetRoutesRequest {
+	}
+	export interface GetRoutesRequestFormProperties {
+	}
+	export function CreateGetRoutesRequestFormGroup() {
+		return new FormGroup<GetRoutesRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetStageRequest {
 	}
+	export interface GetStageRequestFormProperties {
+	}
+	export function CreateGetStageRequestFormGroup() {
+		return new FormGroup<GetStageRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetStagesRequest {
+	}
+	export interface GetStagesRequestFormProperties {
+	}
+	export function CreateGetStagesRequestFormGroup() {
+		return new FormGroup<GetStagesRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetTagsRequest {
 	}
+	export interface GetTagsRequestFormProperties {
+	}
+	export function CreateGetTagsRequestFormGroup() {
+		return new FormGroup<GetTagsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetVpcLinkRequest {
 	}
+	export interface GetVpcLinkRequestFormProperties {
+	}
+	export function CreateGetVpcLinkRequestFormGroup() {
+		return new FormGroup<GetVpcLinkRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetVpcLinksRequest {
+	}
+	export interface GetVpcLinksRequestFormProperties {
+	}
+	export function CreateGetVpcLinksRequestFormGroup() {
+		return new FormGroup<GetVpcLinksRequestFormProperties>({
+		});
+
 	}
 
 	export interface ImportApiRequest {
 		Body: string;
 	}
+	export interface ImportApiRequestFormProperties {
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreateImportApiRequestFormGroup() {
+		return new FormGroup<ImportApiRequestFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReimportApiRequest {
 		Body: string;
+	}
+	export interface ReimportApiRequestFormProperties {
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreateReimportApiRequestFormGroup() {
+		return new FormGroup<ReimportApiRequestFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2309,10 +5119,26 @@ export namespace MyNS {
 	export interface TagResourceRequest {
 
 		/** Represents a collection of tags associated with the resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Creates a new Tag resource to represent a tag. */
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -2332,6 +5158,30 @@ export namespace MyNS {
 		Stage?: string | null;
 	}
 
+	/** Updates an ApiMapping. */
+	export interface UpdateApiMappingRequestFormProperties {
+
+		/**
+		 * The identifier.
+		 * Required
+		 */
+		ApiId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		ApiMappingKey: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Stage: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApiMappingRequestFormGroup() {
+		return new FormGroup<UpdateApiMappingRequestFormProperties>({
+			ApiId: new FormControl<string | null | undefined>(undefined),
+			ApiMappingKey: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Updates an Api. */
 	export interface UpdateApiRequest {
@@ -2340,7 +5190,7 @@ export namespace MyNS {
 		ApiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		CorsConfiguration?: Cors | null;
+		CorsConfiguration?: Cors;
 
 		/** Represents an Amazon Resource Name (ARN). */
 		CredentialsArn?: string | null;
@@ -2365,6 +5215,49 @@ export namespace MyNS {
 		Version?: string | null;
 	}
 
+	/** Updates an Api. */
+	export interface UpdateApiRequestFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ApiKeySelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+		DisableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		Target: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApiRequestFormGroup() {
+		return new FormGroup<UpdateApiRequestFormProperties>({
+			ApiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Updates an Authorizer. */
 	export interface UpdateAuthorizerRequest {
@@ -2386,16 +5279,53 @@ export namespace MyNS {
 		AuthorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		IdentitySource?: Array<string> | null;
+		IdentitySource?: Array<string>;
 
 		/** A string with a length between [0-1024]. */
 		IdentityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		JwtConfiguration?: JWTConfiguration | null;
+		JwtConfiguration?: JWTConfiguration;
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
+	}
+
+	/** Updates an Authorizer. */
+	export interface UpdateAuthorizerRequestFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		AuthorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		AuthorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		AuthorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		AuthorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		IdentityValidationExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerRequestFormGroup() {
+		return new FormGroup<UpdateAuthorizerRequestFormProperties>({
+			AuthorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			AuthorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			AuthorizerUri: new FormControl<string | null | undefined>(undefined),
+			IdentityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2406,12 +5336,34 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Updates a Deployment. */
+	export interface UpdateDeploymentRequestFormProperties {
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeploymentRequestFormGroup() {
+		return new FormGroup<UpdateDeploymentRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Updates a DomainName. */
 	export interface UpdateDomainNameRequest {
 
 		/** The domain name configurations. */
-		DomainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		DomainNameConfigurations?: Array<DomainNameConfiguration>;
+	}
+
+	/** Updates a DomainName. */
+	export interface UpdateDomainNameRequestFormProperties {
+	}
+	export function CreateUpdateDomainNameRequestFormGroup() {
+		return new FormGroup<UpdateDomainNameRequestFormProperties>({
+		});
+
 	}
 
 
@@ -2449,10 +5401,10 @@ export namespace MyNS {
 		PayloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		RequestParameters?: IntegrationParameters | null;
+		RequestParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		RequestTemplates?: TemplateMap | null;
+		RequestTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
@@ -2465,7 +5417,68 @@ export namespace MyNS {
 		TimeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		TlsConfig?: TlsConfigInput | null;
+		TlsConfig?: TlsConfigInput;
+	}
+
+	/** Updates an Integration. */
+	export interface UpdateIntegrationRequestFormProperties {
+
+		/** A string with a length between [1-1024]. */
+		ConnectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		ConnectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		CredentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		IntegrationMethod: FormControl<string | null | undefined>,
+
+		/** Represents an API method integration type. */
+		IntegrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		IntegrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		PassthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		PayloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		TimeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateIntegrationRequestFormGroup() {
+		return new FormGroup<UpdateIntegrationRequestFormProperties>({
+			ConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			CredentialsArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IntegrationMethod: new FormControl<string | null | undefined>(undefined),
+			IntegrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			IntegrationUri: new FormControl<string | null | undefined>(undefined),
+			PassthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			PayloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2479,13 +5492,34 @@ export namespace MyNS {
 		IntegrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		ResponseParameters?: IntegrationParameters | null;
+		ResponseParameters?: IntegrationParameters;
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		ResponseTemplates?: TemplateMap | null;
+		ResponseTemplates?: TemplateMap;
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		TemplateSelectionExpression?: string | null;
+	}
+
+	/** Updates an IntegrationResponses. */
+	export interface UpdateIntegrationResponseRequestFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		ContentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		IntegrationResponseKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		TemplateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIntegrationResponseRequestFormGroup() {
+		return new FormGroup<UpdateIntegrationResponseRequestFormProperties>({
+			ContentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			IntegrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			TemplateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2505,13 +5539,38 @@ export namespace MyNS {
 		Schema?: string | null;
 	}
 
+	/** Updates a Model. */
+	export interface UpdateModelRequestFormProperties {
+
+		/** A string with a length between [1-256]. */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-32768]. */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateModelRequestFormGroup() {
+		return new FormGroup<UpdateModelRequestFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Updates a Route. */
 	export interface UpdateRouteRequest {
 		ApiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		AuthorizationScopes?: Array<string> | null;
+		AuthorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		AuthorizationType?: CreateRouteResultAuthorizationType | null;
@@ -2526,10 +5585,10 @@ export namespace MyNS {
 		OperationName?: string | null;
 
 		/** The route models. */
-		RequestModels?: RouteModels | null;
+		RequestModels?: RouteModels;
 
 		/** The route parameters. */
-		RequestParameters?: RouteParameters | null;
+		RequestParameters?: RouteParameters;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		RouteKey?: string | null;
@@ -2541,6 +5600,45 @@ export namespace MyNS {
 		Target?: string | null;
 	}
 
+	/** Updates a Route. */
+	export interface UpdateRouteRequestFormProperties {
+		ApiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		AuthorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		AuthorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		OperationName: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		RouteResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRouteRequestFormGroup() {
+		return new FormGroup<UpdateRouteRequestFormProperties>({
+			ApiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			AuthorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			AuthorizerId: new FormControl<string | null | undefined>(undefined),
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			OperationName: new FormControl<string | null | undefined>(undefined),
+			RouteKey: new FormControl<string | null | undefined>(undefined),
+			RouteResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Updates a RouteResponse. */
 	export interface UpdateRouteResponseRequest {
@@ -2549,13 +5647,30 @@ export namespace MyNS {
 		ModelSelectionExpression?: string | null;
 
 		/** The route models. */
-		ResponseModels?: RouteModels | null;
+		ResponseModels?: RouteModels;
 
 		/** The route parameters. */
-		ResponseParameters?: RouteParameters | null;
+		ResponseParameters?: RouteParameters;
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		RouteResponseKey?: string | null;
+	}
+
+	/** Updates a RouteResponse. */
+	export interface UpdateRouteResponseRequestFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		ModelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		RouteResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRouteResponseRequestFormGroup() {
+		return new FormGroup<UpdateRouteResponseRequestFormProperties>({
+			ModelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			RouteResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2563,14 +5678,14 @@ export namespace MyNS {
 	export interface UpdateStageRequest {
 
 		/** Settings for logging access in a stage. */
-		AccessLogSettings?: AccessLogSettings | null;
+		AccessLogSettings?: AccessLogSettings;
 		AutoDeploy?: boolean | null;
 
 		/** The identifier. */
 		ClientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		DefaultRouteSettings?: RouteSettings | null;
+		DefaultRouteSettings?: RouteSettings;
 
 		/** The identifier. */
 		DeploymentId?: string | null;
@@ -2579,10 +5694,33 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The route settings map. */
-		RouteSettings?: RouteSettingsMap | null;
+		RouteSettings?: RouteSettingsMap;
 
 		/** The stage variable map. */
-		StageVariables?: StageVariablesMap | null;
+		StageVariables?: StageVariablesMap;
+	}
+
+	/** Updates a Stage. */
+	export interface UpdateStageRequestFormProperties {
+		AutoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		ClientCertificateId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStageRequestFormGroup() {
+		return new FormGroup<UpdateStageRequestFormProperties>({
+			AutoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			ClientCertificateId: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2591,6 +5729,19 @@ export namespace MyNS {
 
 		/** A string with a length between [1-128]. */
 		Name?: string | null;
+	}
+
+	/** Updates a VPC link. */
+	export interface UpdateVpcLinkRequestFormProperties {
+
+		/** A string with a length between [1-128]. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVpcLinkRequestFormGroup() {
+		return new FormGroup<UpdateVpcLinkRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -3384,7 +6535,7 @@ export namespace MyNS {
 		apiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		corsConfiguration?: CreateApiPostBodyCorsConfiguration | null;
+		corsConfiguration?: CreateApiPostBodyCorsConfiguration;
 
 		/** Represents an Amazon Resource Name (ARN). */
 		credentialsArn?: string | null;
@@ -3414,7 +6565,7 @@ export namespace MyNS {
 		routeSelectionExpression?: string | null;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		target?: string | null;
@@ -3422,21 +6573,78 @@ export namespace MyNS {
 		/** A string with a length between [1-64]. */
 		version?: string | null;
 	}
+	export interface CreateApiPostBodyFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		apiKeySelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		credentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** Avoid validating models when creating a deployment. Supported only for WebSocket APIs. */
+		disableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Represents a protocol type.
+		 * Required
+		 */
+		protocolType: FormControl<CreateApiResponseProtocolType | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		routeKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		routeSelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents a collection of tags associated with the resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		target: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApiPostBodyFormGroup() {
+		return new FormGroup<CreateApiPostBodyFormProperties>({
+			apiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			credentialsArn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			disableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			protocolType: new FormControl<CreateApiResponseProtocolType | null | undefined>(undefined),
+			routeKey: new FormControl<string | null | undefined>(undefined),
+			routeSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateApiPostBodyCorsConfiguration {
 		AllowCredentials?: boolean | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		AllowHeaders?: Array<string> | null;
+		AllowHeaders?: Array<string>;
 
 		/** Represents a collection of methods. Supported only for HTTP APIs. */
-		AllowMethods?: Array<string> | null;
+		AllowMethods?: Array<string>;
 
 		/** Represents a collection of origins. Supported only for HTTP APIs. */
-		AllowOrigins?: Array<string> | null;
+		AllowOrigins?: Array<string>;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		ExposeHeaders?: Array<string> | null;
+		ExposeHeaders?: Array<string>;
 
 		/**
 		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
@@ -3444,6 +6652,23 @@ export namespace MyNS {
 		 * Maximum: 86400
 		 */
 		MaxAge?: number | null;
+	}
+	export interface CreateApiPostBodyCorsConfigurationFormProperties {
+		AllowCredentials: FormControl<boolean | null | undefined>,
+
+		/**
+		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
+		 * Minimum: -1
+		 * Maximum: 86400
+		 */
+		MaxAge: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateApiPostBodyCorsConfigurationFormGroup() {
+		return new FormGroup<CreateApiPostBodyCorsConfigurationFormProperties>({
+			AllowCredentials: new FormControl<boolean | null | undefined>(undefined),
+			MaxAge: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportApiPutBody {
@@ -3453,6 +6678,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		body: string;
+	}
+	export interface ImportApiPutBodyFormProperties {
+
+		/**
+		 * The OpenAPI definition. Supported only for HTTP APIs.
+		 * Required
+		 */
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateImportApiPutBodyFormGroup() {
+		return new FormGroup<ImportApiPutBodyFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateApiMappingPostBody {
@@ -3471,6 +6710,31 @@ export namespace MyNS {
 		 * Required
 		 */
 		stage: string;
+	}
+	export interface CreateApiMappingPostBodyFormProperties {
+
+		/**
+		 * The identifier.
+		 * Required
+		 */
+		apiId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		apiMappingKey: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		stage: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApiMappingPostBodyFormGroup() {
+		return new FormGroup<CreateApiMappingPostBodyFormProperties>({
+			apiId: new FormControl<string | null | undefined>(undefined),
+			apiMappingKey: new FormControl<string | null | undefined>(undefined),
+			stage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAuthorizerPostBody {
@@ -3504,7 +6768,7 @@ export namespace MyNS {
 		identityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		jwtConfiguration?: CreateAuthorizerPostBodyJwtConfiguration | null;
+		jwtConfiguration?: CreateAuthorizerPostBodyJwtConfiguration;
 
 		/**
 		 * A string with a length between [1-128].
@@ -3512,12 +6776,64 @@ export namespace MyNS {
 		 */
 		name: string;
 	}
+	export interface CreateAuthorizerPostBodyFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		authorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		authorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
+		 * Required
+		 */
+		authorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		authorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		identityValidationExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAuthorizerPostBodyFormGroup() {
+		return new FormGroup<CreateAuthorizerPostBodyFormProperties>({
+			authorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			authorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			authorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			authorizerUri: new FormControl<string | null | undefined>(undefined),
+			identityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateAuthorizerPostBodyJwtConfiguration {
-		Audience?: Array<string> | null;
+		Audience?: Array<string>;
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		Issuer?: string | null;
+	}
+	export interface CreateAuthorizerPostBodyJwtConfigurationFormProperties {
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		Issuer: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAuthorizerPostBodyJwtConfigurationFormGroup() {
+		return new FormGroup<CreateAuthorizerPostBodyJwtConfigurationFormProperties>({
+			Issuer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDeploymentPostBody {
@@ -3527,6 +6843,21 @@ export namespace MyNS {
 
 		/** A string with a length between [1-128]. */
 		stageName?: string | null;
+	}
+	export interface CreateDeploymentPostBodyFormProperties {
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		stageName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentPostBodyFormGroup() {
+		return new FormGroup<CreateDeploymentPostBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDomainNamePostBody {
@@ -3538,10 +6869,28 @@ export namespace MyNS {
 		domainName: string;
 
 		/** The domain name configurations. */
-		domainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		domainNameConfigurations?: Array<DomainNameConfiguration>;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateDomainNamePostBodyFormProperties {
+
+		/**
+		 * A string with a length between [1-512].
+		 * Required
+		 */
+		domainName: FormControl<string | null | undefined>,
+
+		/** Represents a collection of tags associated with the resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateDomainNamePostBodyFormGroup() {
+		return new FormGroup<CreateDomainNamePostBodyFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIntegrationPostBody {
@@ -3580,10 +6929,10 @@ export namespace MyNS {
 		payloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		requestParameters?: {[id: string]: string } | null;
+		requestParameters?: {[id: string]: string };
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		requestTemplates?: {[id: string]: string } | null;
+		requestTemplates?: {[id: string]: string };
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		templateSelectionExpression?: string | null;
@@ -3596,13 +6945,94 @@ export namespace MyNS {
 		timeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		tlsConfig?: CreateIntegrationPostBodyTlsConfig | null;
+		tlsConfig?: CreateIntegrationPostBodyTlsConfig;
+	}
+	export interface CreateIntegrationPostBodyFormProperties {
+
+		/** A string with a length between [1-1024]. */
+		connectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		connectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		contentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		credentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		integrationMethod: FormControl<string | null | undefined>,
+
+		/**
+		 * Represents an API method integration type.
+		 * Required
+		 */
+		integrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		integrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		passthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		payloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
+		requestParameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
+		requestTemplates: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		templateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		timeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateIntegrationPostBodyFormGroup() {
+		return new FormGroup<CreateIntegrationPostBodyFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			contentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			credentialsArn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			integrationMethod: new FormControl<string | null | undefined>(undefined),
+			integrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			integrationUri: new FormControl<string | null | undefined>(undefined),
+			passthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			payloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			requestParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			requestTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			timeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIntegrationPostBodyTlsConfig {
 
 		/** A string with a length between [1-512]. */
 		ServerNameToVerify?: string | null;
+	}
+	export interface CreateIntegrationPostBodyTlsConfigFormProperties {
+
+		/** A string with a length between [1-512]. */
+		ServerNameToVerify: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntegrationPostBodyTlsConfigFormGroup() {
+		return new FormGroup<CreateIntegrationPostBodyTlsConfigFormProperties>({
+			ServerNameToVerify: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIntegrationResponsePostBody {
@@ -3617,13 +7047,43 @@ export namespace MyNS {
 		integrationResponseKey: string;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		responseParameters?: {[id: string]: string } | null;
+		responseParameters?: {[id: string]: string };
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		responseTemplates?: {[id: string]: string } | null;
+		responseTemplates?: {[id: string]: string };
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		templateSelectionExpression?: string | null;
+	}
+	export interface CreateIntegrationResponsePostBodyFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		contentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		integrationResponseKey: FormControl<string | null | undefined>,
+
+		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
+		responseParameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
+		responseTemplates: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		templateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntegrationResponsePostBodyFormGroup() {
+		return new FormGroup<CreateIntegrationResponsePostBodyFormProperties>({
+			contentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			integrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			responseParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			responseTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateModelPostBody {
@@ -3646,6 +7106,35 @@ export namespace MyNS {
 		 */
 		schema: string;
 	}
+	export interface CreateModelPostBodyFormProperties {
+
+		/** A string with a length between [1-256]. */
+		contentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * A string with a length between [0-32768].
+		 * Required
+		 */
+		schema: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelPostBodyFormGroup() {
+		return new FormGroup<CreateModelPostBodyFormProperties>({
+			contentType: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateRoutePostBody {
 
@@ -3653,7 +7142,7 @@ export namespace MyNS {
 		apiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		authorizationScopes?: Array<string> | null;
+		authorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		authorizationType?: CreateRouteResultAuthorizationType | null;
@@ -3668,10 +7157,10 @@ export namespace MyNS {
 		operationName?: string | null;
 
 		/** The route models. */
-		requestModels?: {[id: string]: string } | null;
+		requestModels?: {[id: string]: string };
 
 		/** The route parameters. */
-		requestParameters?: {[id: string]: ParameterConstraints } | null;
+		requestParameters?: {[id: string]: ParameterConstraints };
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -3685,6 +7174,56 @@ export namespace MyNS {
 		/** A string with a length between [1-128]. */
 		target?: string | null;
 	}
+	export interface CreateRoutePostBodyFormProperties {
+
+		/** Specifies whether an API key is required for the route. Supported only for WebSocket APIs. */
+		apiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		authorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		authorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		modelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		operationName: FormControl<string | null | undefined>,
+
+		/** The route models. */
+		requestModels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The route parameters. */
+		requestParameters: FormControl<{[id: string]: ParameterConstraints } | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		routeKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		routeResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRoutePostBodyFormGroup() {
+		return new FormGroup<CreateRoutePostBodyFormProperties>({
+			apiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			authorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			authorizerId: new FormControl<string | null | undefined>(undefined),
+			modelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			operationName: new FormControl<string | null | undefined>(undefined),
+			requestModels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			requestParameters: new FormControl<{[id: string]: ParameterConstraints } | null | undefined>(undefined),
+			routeKey: new FormControl<string | null | undefined>(undefined),
+			routeResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateRouteResponsePostBody {
 
@@ -3692,10 +7231,10 @@ export namespace MyNS {
 		modelSelectionExpression?: string | null;
 
 		/** The route models. */
-		responseModels?: {[id: string]: string } | null;
+		responseModels?: {[id: string]: string };
 
 		/** The route parameters. */
-		responseParameters?: {[id: string]: ParameterConstraints } | null;
+		responseParameters?: {[id: string]: ParameterConstraints };
 
 		/**
 		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
@@ -3703,11 +7242,37 @@ export namespace MyNS {
 		 */
 		routeResponseKey: string;
 	}
+	export interface CreateRouteResponsePostBodyFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		modelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** The route models. */
+		responseModels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The route parameters. */
+		responseParameters: FormControl<{[id: string]: ParameterConstraints } | null | undefined>,
+
+		/**
+		 * After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type.
+		 * Required
+		 */
+		routeResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRouteResponsePostBodyFormGroup() {
+		return new FormGroup<CreateRouteResponsePostBodyFormProperties>({
+			modelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			responseModels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			responseParameters: new FormControl<{[id: string]: ParameterConstraints } | null | undefined>(undefined),
+			routeResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateStagePostBody {
 
 		/** Settings for logging access in a stage. */
-		accessLogSettings?: CreateStagePostBodyAccessLogSettings | null;
+		accessLogSettings?: CreateStagePostBodyAccessLogSettings;
 
 		/** Specifies whether updates to an API automatically trigger a new deployment. The default value is false. */
 		autoDeploy?: boolean | null;
@@ -3716,7 +7281,7 @@ export namespace MyNS {
 		clientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		defaultRouteSettings?: CreateStagePostBodyDefaultRouteSettings | null;
+		defaultRouteSettings?: CreateStagePostBodyDefaultRouteSettings;
 
 		/** The identifier. */
 		deploymentId?: string | null;
@@ -3725,7 +7290,7 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** The route settings map. */
-		routeSettings?: {[id: string]: RouteSettings } | null;
+		routeSettings?: {[id: string]: RouteSettings };
 
 		/**
 		 * A string with a length between [1-128].
@@ -3734,10 +7299,52 @@ export namespace MyNS {
 		stageName: string;
 
 		/** The stage variable map. */
-		stageVariables?: {[id: string]: string } | null;
+		stageVariables?: {[id: string]: string };
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateStagePostBodyFormProperties {
+
+		/** Specifies whether updates to an API automatically trigger a new deployment. The default value is false. */
+		autoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		clientCertificateId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		deploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** The route settings map. */
+		routeSettings: FormControl<{[id: string]: RouteSettings } | null | undefined>,
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		stageName: FormControl<string | null | undefined>,
+
+		/** The stage variable map. */
+		stageVariables: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Represents a collection of tags associated with the resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateStagePostBodyFormGroup() {
+		return new FormGroup<CreateStagePostBodyFormProperties>({
+			autoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			clientCertificateId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			routeSettings: new FormControl<{[id: string]: RouteSettings } | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			stageVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStagePostBodyAccessLogSettings {
@@ -3747,6 +7354,21 @@ export namespace MyNS {
 
 		/** A string with a length between [1-1024]. */
 		Format?: string | null;
+	}
+	export interface CreateStagePostBodyAccessLogSettingsFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		DestinationArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		Format: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStagePostBodyAccessLogSettingsFormGroup() {
+		return new FormGroup<CreateStagePostBodyAccessLogSettingsFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStagePostBodyDefaultRouteSettings {
@@ -3758,6 +7380,25 @@ export namespace MyNS {
 		ThrottlingBurstLimit?: number | null;
 		ThrottlingRateLimit?: number | null;
 	}
+	export interface CreateStagePostBodyDefaultRouteSettingsFormProperties {
+		DataTraceEnabled: FormControl<boolean | null | undefined>,
+		DetailedMetricsEnabled: FormControl<boolean | null | undefined>,
+
+		/** The logging level. */
+		LoggingLevel: FormControl<RouteSettingsLoggingLevel | null | undefined>,
+		ThrottlingBurstLimit: FormControl<number | null | undefined>,
+		ThrottlingRateLimit: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateStagePostBodyDefaultRouteSettingsFormGroup() {
+		return new FormGroup<CreateStagePostBodyDefaultRouteSettingsFormProperties>({
+			DataTraceEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DetailedMetricsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			LoggingLevel: new FormControl<RouteSettingsLoggingLevel | null | undefined>(undefined),
+			ThrottlingBurstLimit: new FormControl<number | null | undefined>(undefined),
+			ThrottlingRateLimit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateVpcLinkPostBody {
 
@@ -3768,7 +7409,7 @@ export namespace MyNS {
 		name: string;
 
 		/** A list of security group IDs for the VPC link. */
-		securityGroupIds?: Array<string> | null;
+		securityGroupIds?: Array<string>;
 
 		/**
 		 * A list of subnet IDs to include in the VPC link.
@@ -3777,7 +7418,25 @@ export namespace MyNS {
 		subnetIds: Array<string>;
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateVpcLinkPostBodyFormProperties {
+
+		/**
+		 * A string with a length between [1-128].
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Represents a collection of tags associated with the resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateVpcLinkPostBodyFormGroup() {
+		return new FormGroup<CreateVpcLinkPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReimportApiPutBody {
@@ -3788,6 +7447,20 @@ export namespace MyNS {
 		 */
 		body: string;
 	}
+	export interface ReimportApiPutBodyFormProperties {
+
+		/**
+		 * The OpenAPI definition. Supported only for HTTP APIs.
+		 * Required
+		 */
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateReimportApiPutBodyFormGroup() {
+		return new FormGroup<ReimportApiPutBodyFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateApiPatchBody {
 
@@ -3795,7 +7468,7 @@ export namespace MyNS {
 		apiKeySelectionExpression?: string | null;
 
 		/** Represents a CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information. */
-		corsConfiguration?: UpdateApiPatchBodyCorsConfiguration | null;
+		corsConfiguration?: UpdateApiPatchBodyCorsConfiguration;
 
 		/** Represents an Amazon Resource Name (ARN). */
 		credentialsArn?: string | null;
@@ -3821,21 +7494,64 @@ export namespace MyNS {
 		/** A string with a length between [1-64]. */
 		version?: string | null;
 	}
+	export interface UpdateApiPatchBodyFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		apiKeySelectionExpression: FormControl<string | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		credentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** Avoid validating models when creating a deployment. Supported only for WebSocket APIs. */
+		disableSchemaValidation: FormControl<boolean | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		name: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		routeKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		routeSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		target: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApiPatchBodyFormGroup() {
+		return new FormGroup<UpdateApiPatchBodyFormProperties>({
+			apiKeySelectionExpression: new FormControl<string | null | undefined>(undefined),
+			credentialsArn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			disableSchemaValidation: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			routeKey: new FormControl<string | null | undefined>(undefined),
+			routeSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateApiPatchBodyCorsConfiguration {
 		AllowCredentials?: boolean | null;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		AllowHeaders?: Array<string> | null;
+		AllowHeaders?: Array<string>;
 
 		/** Represents a collection of methods. Supported only for HTTP APIs. */
-		AllowMethods?: Array<string> | null;
+		AllowMethods?: Array<string>;
 
 		/** Represents a collection of origins. Supported only for HTTP APIs. */
-		AllowOrigins?: Array<string> | null;
+		AllowOrigins?: Array<string>;
 
 		/** Represents a collection of allowed headers. Supported only for HTTP APIs. */
-		ExposeHeaders?: Array<string> | null;
+		ExposeHeaders?: Array<string>;
 
 		/**
 		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
@@ -3843,6 +7559,23 @@ export namespace MyNS {
 		 * Maximum: 86400
 		 */
 		MaxAge?: number | null;
+	}
+	export interface UpdateApiPatchBodyCorsConfigurationFormProperties {
+		AllowCredentials: FormControl<boolean | null | undefined>,
+
+		/**
+		 * An integer with a value between -1 and 86400. Supported only for HTTP APIs.
+		 * Minimum: -1
+		 * Maximum: 86400
+		 */
+		MaxAge: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateApiPatchBodyCorsConfigurationFormGroup() {
+		return new FormGroup<UpdateApiPatchBodyCorsConfigurationFormProperties>({
+			AllowCredentials: new FormControl<boolean | null | undefined>(undefined),
+			MaxAge: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateApiMappingPatchBody {
@@ -3858,6 +7591,28 @@ export namespace MyNS {
 
 		/** A string with a length between [1-128]. */
 		stage?: string | null;
+	}
+	export interface UpdateApiMappingPatchBodyFormProperties {
+
+		/**
+		 * The identifier.
+		 * Required
+		 */
+		apiId: FormControl<string | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		apiMappingKey: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		stage: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApiMappingPatchBodyFormGroup() {
+		return new FormGroup<UpdateApiMappingPatchBodyFormProperties>({
+			apiId: new FormControl<string | null | undefined>(undefined),
+			apiMappingKey: new FormControl<string | null | undefined>(undefined),
+			stage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAuthorizerPatchBody {
@@ -3879,23 +7634,69 @@ export namespace MyNS {
 		authorizerUri?: string | null;
 
 		/** The identity source for which authorization is requested. For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an Auth header, a Name query string parameter are defined as identity sources, this value is $method.request.header.Auth, $method.request.querystring.Name. These parameters will be used to derive the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. */
-		identitySource?: Array<string> | null;
+		identitySource?: Array<string>;
 
 		/** A string with a length between [0-1024]. */
 		identityValidationExpression?: string | null;
 
 		/** Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs. */
-		jwtConfiguration?: UpdateAuthorizerPatchBodyJwtConfiguration | null;
+		jwtConfiguration?: UpdateAuthorizerPatchBodyJwtConfiguration;
 
 		/** A string with a length between [1-128]. */
 		name?: string | null;
 	}
+	export interface UpdateAuthorizerPatchBodyFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		authorizerCredentialsArn: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [0-3600].
+		 * Minimum: 0
+		 * Maximum: 3600
+		 */
+		authorizerResultTtlInSeconds: FormControl<number | null | undefined>,
+
+		/** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens. */
+		authorizerType: FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		authorizerUri: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		identityValidationExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerPatchBodyFormGroup() {
+		return new FormGroup<UpdateAuthorizerPatchBodyFormProperties>({
+			authorizerCredentialsArn: new FormControl<string | null | undefined>(undefined),
+			authorizerResultTtlInSeconds: new FormControl<number | null | undefined>(undefined),
+			authorizerType: new FormControl<CreateAuthorizerResponseAuthorizerType | null | undefined>(undefined),
+			authorizerUri: new FormControl<string | null | undefined>(undefined),
+			identityValidationExpression: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAuthorizerPatchBodyJwtConfiguration {
-		Audience?: Array<string> | null;
+		Audience?: Array<string>;
 
 		/** A string representation of a URI with a length between [1-2048]. */
 		Issuer?: string | null;
+	}
+	export interface UpdateAuthorizerPatchBodyJwtConfigurationFormProperties {
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		Issuer: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerPatchBodyJwtConfigurationFormGroup() {
+		return new FormGroup<UpdateAuthorizerPatchBodyJwtConfigurationFormProperties>({
+			Issuer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDeploymentPatchBody {
@@ -3903,11 +7704,29 @@ export namespace MyNS {
 		/** A string with a length between [0-1024]. */
 		description?: string | null;
 	}
+	export interface UpdateDeploymentPatchBodyFormProperties {
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeploymentPatchBodyFormGroup() {
+		return new FormGroup<UpdateDeploymentPatchBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDomainNamePatchBody {
 
 		/** The domain name configurations. */
-		domainNameConfigurations?: Array<DomainNameConfiguration> | null;
+		domainNameConfigurations?: Array<DomainNameConfiguration>;
+	}
+	export interface UpdateDomainNamePatchBodyFormProperties {
+	}
+	export function CreateUpdateDomainNamePatchBodyFormGroup() {
+		return new FormGroup<UpdateDomainNamePatchBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateIntegrationPatchBody {
@@ -3943,10 +7762,10 @@ export namespace MyNS {
 		payloadFormatVersion?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		requestParameters?: {[id: string]: string } | null;
+		requestParameters?: {[id: string]: string };
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		requestTemplates?: {[id: string]: string } | null;
+		requestTemplates?: {[id: string]: string };
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		templateSelectionExpression?: string | null;
@@ -3959,13 +7778,91 @@ export namespace MyNS {
 		timeoutInMillis?: number | null;
 
 		/** The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs. */
-		tlsConfig?: UpdateIntegrationPatchBodyTlsConfig | null;
+		tlsConfig?: UpdateIntegrationPatchBodyTlsConfig;
+	}
+	export interface UpdateIntegrationPatchBodyFormProperties {
+
+		/** A string with a length between [1-1024]. */
+		connectionId: FormControl<string | null | undefined>,
+
+		/** Represents a connection type. */
+		connectionType: FormControl<CreateIntegrationResultConnectionType | null | undefined>,
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		contentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** Represents an Amazon Resource Name (ARN). */
+		credentialsArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		integrationMethod: FormControl<string | null | undefined>,
+
+		/** Represents an API method integration type. */
+		integrationType: FormControl<CreateIntegrationResultIntegrationType | null | undefined>,
+
+		/** A string representation of a URI with a length between [1-2048]. */
+		integrationUri: FormControl<string | null | undefined>,
+
+		/** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs. */
+		passthroughBehavior: FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		payloadFormatVersion: FormControl<string | null | undefined>,
+
+		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
+		requestParameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
+		requestTemplates: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		templateSelectionExpression: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer with a value between [50-30000].
+		 * Minimum: 50
+		 * Maximum: 30000
+		 */
+		timeoutInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateIntegrationPatchBodyFormGroup() {
+		return new FormGroup<UpdateIntegrationPatchBodyFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionType: new FormControl<CreateIntegrationResultConnectionType | null | undefined>(undefined),
+			contentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			credentialsArn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			integrationMethod: new FormControl<string | null | undefined>(undefined),
+			integrationType: new FormControl<CreateIntegrationResultIntegrationType | null | undefined>(undefined),
+			integrationUri: new FormControl<string | null | undefined>(undefined),
+			passthroughBehavior: new FormControl<CreateIntegrationResultPassthroughBehavior | null | undefined>(undefined),
+			payloadFormatVersion: new FormControl<string | null | undefined>(undefined),
+			requestParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			requestTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			timeoutInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIntegrationPatchBodyTlsConfig {
 
 		/** A string with a length between [1-512]. */
 		ServerNameToVerify?: string | null;
+	}
+	export interface UpdateIntegrationPatchBodyTlsConfigFormProperties {
+
+		/** A string with a length between [1-512]. */
+		ServerNameToVerify: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIntegrationPatchBodyTlsConfigFormGroup() {
+		return new FormGroup<UpdateIntegrationPatchBodyTlsConfigFormProperties>({
+			ServerNameToVerify: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIntegrationResponsePatchBody {
@@ -3977,13 +7874,40 @@ export namespace MyNS {
 		integrationResponseKey?: string | null;
 
 		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
-		responseParameters?: {[id: string]: string } | null;
+		responseParameters?: {[id: string]: string };
 
 		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
-		responseTemplates?: {[id: string]: string } | null;
+		responseTemplates?: {[id: string]: string };
 
 		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
 		templateSelectionExpression?: string | null;
+	}
+	export interface UpdateIntegrationResponsePatchBodyFormProperties {
+
+		/** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs. */
+		contentHandlingStrategy: FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		integrationResponseKey: FormControl<string | null | undefined>,
+
+		/** A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix. */
+		responseParameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** A mapping of identifier keys to templates. The value is an actual template script. The key is typically a SelectionKey which is chosen based on evaluating a selection expression. */
+		responseTemplates: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		templateSelectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIntegrationResponsePatchBodyFormGroup() {
+		return new FormGroup<UpdateIntegrationResponsePatchBodyFormProperties>({
+			contentHandlingStrategy: new FormControl<CreateIntegrationResultContentHandlingStrategy | null | undefined>(undefined),
+			integrationResponseKey: new FormControl<string | null | undefined>(undefined),
+			responseParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			responseTemplates: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			templateSelectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateModelPatchBody {
@@ -4000,6 +7924,29 @@ export namespace MyNS {
 		/** A string with a length between [0-32768]. */
 		schema?: string | null;
 	}
+	export interface UpdateModelPatchBodyFormProperties {
+
+		/** A string with a length between [1-256]. */
+		contentType: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		name: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-32768]. */
+		schema: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateModelPatchBodyFormGroup() {
+		return new FormGroup<UpdateModelPatchBodyFormProperties>({
+			contentType: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRoutePatchBody {
 
@@ -4007,7 +7954,7 @@ export namespace MyNS {
 		apiKeyRequired?: boolean | null;
 
 		/** A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes. */
-		authorizationScopes?: Array<string> | null;
+		authorizationScopes?: Array<string>;
 
 		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
 		authorizationType?: CreateRouteResultAuthorizationType | null;
@@ -4022,10 +7969,10 @@ export namespace MyNS {
 		operationName?: string | null;
 
 		/** The route models. */
-		requestModels?: {[id: string]: string } | null;
+		requestModels?: {[id: string]: string };
 
 		/** The route parameters. */
-		requestParameters?: {[id: string]: ParameterConstraints } | null;
+		requestParameters?: {[id: string]: ParameterConstraints };
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		routeKey?: string | null;
@@ -4036,6 +7983,53 @@ export namespace MyNS {
 		/** A string with a length between [1-128]. */
 		target?: string | null;
 	}
+	export interface UpdateRoutePatchBodyFormProperties {
+
+		/** Specifies whether an API key is required for the route. Supported only for WebSocket APIs. */
+		apiKeyRequired: FormControl<boolean | null | undefined>,
+
+		/** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens. */
+		authorizationType: FormControl<CreateRouteResultAuthorizationType | null | undefined>,
+
+		/** The identifier. */
+		authorizerId: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		modelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-64]. */
+		operationName: FormControl<string | null | undefined>,
+
+		/** The route models. */
+		requestModels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The route parameters. */
+		requestParameters: FormControl<{[id: string]: ParameterConstraints } | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		routeKey: FormControl<string | null | undefined>,
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		routeResponseSelectionExpression: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-128]. */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRoutePatchBodyFormGroup() {
+		return new FormGroup<UpdateRoutePatchBodyFormProperties>({
+			apiKeyRequired: new FormControl<boolean | null | undefined>(undefined),
+			authorizationType: new FormControl<CreateRouteResultAuthorizationType | null | undefined>(undefined),
+			authorizerId: new FormControl<string | null | undefined>(undefined),
+			modelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			operationName: new FormControl<string | null | undefined>(undefined),
+			requestModels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			requestParameters: new FormControl<{[id: string]: ParameterConstraints } | null | undefined>(undefined),
+			routeKey: new FormControl<string | null | undefined>(undefined),
+			routeResponseSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRouteResponsePatchBody {
 
@@ -4043,19 +8037,42 @@ export namespace MyNS {
 		modelSelectionExpression?: string | null;
 
 		/** The route models. */
-		responseModels?: {[id: string]: string } | null;
+		responseModels?: {[id: string]: string };
 
 		/** The route parameters. */
-		responseParameters?: {[id: string]: ParameterConstraints } | null;
+		responseParameters?: {[id: string]: ParameterConstraints };
 
 		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
 		routeResponseKey?: string | null;
+	}
+	export interface UpdateRouteResponsePatchBodyFormProperties {
+
+		/** An expression used to extract information at runtime. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for more information. */
+		modelSelectionExpression: FormControl<string | null | undefined>,
+
+		/** The route models. */
+		responseModels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The route parameters. */
+		responseParameters: FormControl<{[id: string]: ParameterConstraints } | null | undefined>,
+
+		/** After evaluating a selection expression, the result is compared against one or more selection keys to find a matching key. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">Selection Expressions</a> for a list of expressions and each expression's associated selection key type. */
+		routeResponseKey: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRouteResponsePatchBodyFormGroup() {
+		return new FormGroup<UpdateRouteResponsePatchBodyFormProperties>({
+			modelSelectionExpression: new FormControl<string | null | undefined>(undefined),
+			responseModels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			responseParameters: new FormControl<{[id: string]: ParameterConstraints } | null | undefined>(undefined),
+			routeResponseKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStagePatchBody {
 
 		/** Settings for logging access in a stage. */
-		accessLogSettings?: UpdateStagePatchBodyAccessLogSettings | null;
+		accessLogSettings?: UpdateStagePatchBodyAccessLogSettings;
 
 		/** Specifies whether updates to an API automatically trigger a new deployment. The default value is false. */
 		autoDeploy?: boolean | null;
@@ -4064,7 +8081,7 @@ export namespace MyNS {
 		clientCertificateId?: string | null;
 
 		/** Represents a collection of route settings. */
-		defaultRouteSettings?: UpdateStagePatchBodyDefaultRouteSettings | null;
+		defaultRouteSettings?: UpdateStagePatchBodyDefaultRouteSettings;
 
 		/** The identifier. */
 		deploymentId?: string | null;
@@ -4073,10 +8090,41 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** The route settings map. */
-		routeSettings?: {[id: string]: RouteSettings } | null;
+		routeSettings?: {[id: string]: RouteSettings };
 
 		/** The stage variable map. */
-		stageVariables?: {[id: string]: string } | null;
+		stageVariables?: {[id: string]: string };
+	}
+	export interface UpdateStagePatchBodyFormProperties {
+
+		/** Specifies whether updates to an API automatically trigger a new deployment. The default value is false. */
+		autoDeploy: FormControl<boolean | null | undefined>,
+
+		/** The identifier. */
+		clientCertificateId: FormControl<string | null | undefined>,
+
+		/** The identifier. */
+		deploymentId: FormControl<string | null | undefined>,
+
+		/** A string with a length between [0-1024]. */
+		description: FormControl<string | null | undefined>,
+
+		/** The route settings map. */
+		routeSettings: FormControl<{[id: string]: RouteSettings } | null | undefined>,
+
+		/** The stage variable map. */
+		stageVariables: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateUpdateStagePatchBodyFormGroup() {
+		return new FormGroup<UpdateStagePatchBodyFormProperties>({
+			autoDeploy: new FormControl<boolean | null | undefined>(undefined),
+			clientCertificateId: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			routeSettings: new FormControl<{[id: string]: RouteSettings } | null | undefined>(undefined),
+			stageVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStagePatchBodyAccessLogSettings {
@@ -4086,6 +8134,21 @@ export namespace MyNS {
 
 		/** A string with a length between [1-1024]. */
 		Format?: string | null;
+	}
+	export interface UpdateStagePatchBodyAccessLogSettingsFormProperties {
+
+		/** Represents an Amazon Resource Name (ARN). */
+		DestinationArn: FormControl<string | null | undefined>,
+
+		/** A string with a length between [1-1024]. */
+		Format: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStagePatchBodyAccessLogSettingsFormGroup() {
+		return new FormGroup<UpdateStagePatchBodyAccessLogSettingsFormProperties>({
+			DestinationArn: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStagePatchBodyDefaultRouteSettings {
@@ -4097,17 +8160,58 @@ export namespace MyNS {
 		ThrottlingBurstLimit?: number | null;
 		ThrottlingRateLimit?: number | null;
 	}
+	export interface UpdateStagePatchBodyDefaultRouteSettingsFormProperties {
+		DataTraceEnabled: FormControl<boolean | null | undefined>,
+		DetailedMetricsEnabled: FormControl<boolean | null | undefined>,
+
+		/** The logging level. */
+		LoggingLevel: FormControl<RouteSettingsLoggingLevel | null | undefined>,
+		ThrottlingBurstLimit: FormControl<number | null | undefined>,
+		ThrottlingRateLimit: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateStagePatchBodyDefaultRouteSettingsFormGroup() {
+		return new FormGroup<UpdateStagePatchBodyDefaultRouteSettingsFormProperties>({
+			DataTraceEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DetailedMetricsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			LoggingLevel: new FormControl<RouteSettingsLoggingLevel | null | undefined>(undefined),
+			ThrottlingBurstLimit: new FormControl<number | null | undefined>(undefined),
+			ThrottlingRateLimit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateVpcLinkPatchBody {
 
 		/** A string with a length between [1-128]. */
 		name?: string | null;
 	}
+	export interface UpdateVpcLinkPatchBodyFormProperties {
+
+		/** A string with a length between [1-128]. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVpcLinkPatchBodyFormGroup() {
+		return new FormGroup<UpdateVpcLinkPatchBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
 		/** Represents a collection of tags associated with the resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/** Represents a collection of tags associated with the resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

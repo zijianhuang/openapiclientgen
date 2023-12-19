@@ -1,10 +1,18 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchGetNamedQueryOutput {
-		NamedQueries?: Array<NamedQuery> | null;
-		UnprocessedNamedQueryIds?: Array<UnprocessedNamedQueryId> | null;
+		NamedQueries?: Array<NamedQuery>;
+		UnprocessedNamedQueryIds?: Array<UnprocessedNamedQueryId>;
+	}
+	export interface BatchGetNamedQueryOutputFormProperties {
+	}
+	export function CreateBatchGetNamedQueryOutputFormGroup() {
+		return new FormGroup<BatchGetNamedQueryOutputFormProperties>({
+		});
+
 	}
 
 
@@ -16,6 +24,27 @@ export namespace MyNS {
 		QueryString: string;
 		NamedQueryId?: string | null;
 		WorkGroup?: string | null;
+	}
+
+	/** A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query. */
+	export interface NamedQueryFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+		QueryString: FormControl<string | null | undefined>,
+		NamedQueryId: FormControl<string | null | undefined>,
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateNamedQueryFormGroup() {
+		return new FormGroup<NamedQueryFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+			QueryString: new FormControl<string | null | undefined>(undefined),
+			NamedQueryId: new FormControl<string | null | undefined>(undefined),
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -32,19 +61,68 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Information about a named query ID that could not be processed. */
+	export interface UnprocessedNamedQueryIdFormProperties {
+		NamedQueryId: FormControl<string | null | undefined>,
+
+		/**
+		 * The error code returned when the query execution failed to process, or when the processing request for the named query failed.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateUnprocessedNamedQueryIdFormGroup() {
+		return new FormGroup<UnprocessedNamedQueryIdFormProperties>({
+			NamedQueryId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGetNamedQueryInput {
 		NamedQueryIds: Array<string>;
+	}
+	export interface BatchGetNamedQueryInputFormProperties {
+	}
+	export function CreateBatchGetNamedQueryInputFormGroup() {
+		return new FormGroup<BatchGetNamedQueryInputFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerException {
 	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetQueryExecutionOutput {
-		QueryExecutions?: Array<QueryExecution> | null;
-		UnprocessedQueryExecutionIds?: Array<UnprocessedQueryExecutionId> | null;
+		QueryExecutions?: Array<QueryExecution>;
+		UnprocessedQueryExecutionIds?: Array<UnprocessedQueryExecutionId>;
+	}
+	export interface BatchGetQueryExecutionOutputFormProperties {
+	}
+	export function CreateBatchGetQueryExecutionOutputFormGroup() {
+		return new FormGroup<BatchGetQueryExecutionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -55,17 +133,34 @@ export namespace MyNS {
 		StatementType?: QueryExecutionStatementType | null;
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
-		ResultConfiguration?: ResultConfiguration | null;
+		ResultConfiguration?: ResultConfiguration;
 
 		/** The database and data catalog context in which the query execution occurs. */
-		QueryExecutionContext?: QueryExecutionContext | null;
+		QueryExecutionContext?: QueryExecutionContext;
 
 		/** The completion date, current state, submission time, and state change reason (if applicable) for the query execution. */
-		Status?: QueryExecutionStatus | null;
+		Status?: QueryExecutionStatus;
 
 		/** The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run. */
-		Statistics?: QueryExecutionStatistics | null;
+		Statistics?: QueryExecutionStatistics;
 		WorkGroup?: string | null;
+	}
+
+	/** Information about a single instance of a query execution. */
+	export interface QueryExecutionFormProperties {
+		QueryExecutionId: FormControl<string | null | undefined>,
+		Query: FormControl<string | null | undefined>,
+		StatementType: FormControl<QueryExecutionStatementType | null | undefined>,
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryExecutionFormGroup() {
+		return new FormGroup<QueryExecutionFormProperties>({
+			QueryExecutionId: new FormControl<string | null | undefined>(undefined),
+			Query: new FormControl<string | null | undefined>(undefined),
+			StatementType: new FormControl<QueryExecutionStatementType | null | undefined>(undefined),
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QueryExecutionStatementType { DDL = 0, DML = 1, UTILITY = 2 }
@@ -76,7 +171,18 @@ export namespace MyNS {
 		OutputLocation?: string | null;
 
 		/** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
+	}
+
+	/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
+	export interface ResultConfigurationFormProperties {
+		OutputLocation: FormControl<string | null | undefined>,
+	}
+	export function CreateResultConfigurationFormGroup() {
+		return new FormGroup<ResultConfigurationFormProperties>({
+			OutputLocation: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -84,6 +190,19 @@ export namespace MyNS {
 	export interface EncryptionConfiguration {
 		EncryptionOption: EncryptionConfigurationEncryptionOption;
 		KmsKey?: string | null;
+	}
+
+	/** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. */
+	export interface EncryptionConfigurationFormProperties {
+		EncryptionOption: FormControl<EncryptionConfigurationEncryptionOption | null | undefined>,
+		KmsKey: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionConfigurationFormGroup() {
+		return new FormGroup<EncryptionConfigurationFormProperties>({
+			EncryptionOption: new FormControl<EncryptionConfigurationEncryptionOption | null | undefined>(undefined),
+			KmsKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EncryptionConfigurationEncryptionOption { SSE_S3 = 0, SSE_KMS = 1, CSE_KMS = 2 }
@@ -95,6 +214,19 @@ export namespace MyNS {
 		Catalog?: string | null;
 	}
 
+	/** The database and data catalog context in which the query execution occurs. */
+	export interface QueryExecutionContextFormProperties {
+		Database: FormControl<string | null | undefined>,
+		Catalog: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryExecutionContextFormGroup() {
+		return new FormGroup<QueryExecutionContextFormProperties>({
+			Database: new FormControl<string | null | undefined>(undefined),
+			Catalog: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The completion date, current state, submission time, and state change reason (if applicable) for the query execution. */
 	export interface QueryExecutionStatus {
@@ -102,6 +234,23 @@ export namespace MyNS {
 		StateChangeReason?: string | null;
 		SubmissionDateTime?: Date | null;
 		CompletionDateTime?: Date | null;
+	}
+
+	/** The completion date, current state, submission time, and state change reason (if applicable) for the query execution. */
+	export interface QueryExecutionStatusFormProperties {
+		State: FormControl<QueryExecutionStatusState | null | undefined>,
+		StateChangeReason: FormControl<string | null | undefined>,
+		SubmissionDateTime: FormControl<Date | null | undefined>,
+		CompletionDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateQueryExecutionStatusFormGroup() {
+		return new FormGroup<QueryExecutionStatusFormProperties>({
+			State: new FormControl<QueryExecutionStatusState | null | undefined>(undefined),
+			StateChangeReason: new FormControl<string | null | undefined>(undefined),
+			SubmissionDateTime: new FormControl<Date | null | undefined>(undefined),
+			CompletionDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QueryExecutionStatusState { QUEUED = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
@@ -118,6 +267,29 @@ export namespace MyNS {
 		ServiceProcessingTimeInMillis?: number | null;
 	}
 
+	/** The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run. */
+	export interface QueryExecutionStatisticsFormProperties {
+		EngineExecutionTimeInMillis: FormControl<number | null | undefined>,
+		DataScannedInBytes: FormControl<number | null | undefined>,
+		DataManifestLocation: FormControl<string | null | undefined>,
+		TotalExecutionTimeInMillis: FormControl<number | null | undefined>,
+		QueryQueueTimeInMillis: FormControl<number | null | undefined>,
+		QueryPlanningTimeInMillis: FormControl<number | null | undefined>,
+		ServiceProcessingTimeInMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateQueryExecutionStatisticsFormGroup() {
+		return new FormGroup<QueryExecutionStatisticsFormProperties>({
+			EngineExecutionTimeInMillis: new FormControl<number | null | undefined>(undefined),
+			DataScannedInBytes: new FormControl<number | null | undefined>(undefined),
+			DataManifestLocation: new FormControl<string | null | undefined>(undefined),
+			TotalExecutionTimeInMillis: new FormControl<number | null | undefined>(undefined),
+			QueryQueueTimeInMillis: new FormControl<number | null | undefined>(undefined),
+			QueryPlanningTimeInMillis: new FormControl<number | null | undefined>(undefined),
+			ServiceProcessingTimeInMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a query execution that failed to process. */
 	export interface UnprocessedQueryExecutionId {
@@ -132,24 +304,79 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes a query execution that failed to process. */
+	export interface UnprocessedQueryExecutionIdFormProperties {
+		QueryExecutionId: FormControl<string | null | undefined>,
+
+		/**
+		 * The error code returned when the query execution failed to process, or when the processing request for the named query failed.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateUnprocessedQueryExecutionIdFormGroup() {
+		return new FormGroup<UnprocessedQueryExecutionIdFormProperties>({
+			QueryExecutionId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGetQueryExecutionInput {
 		QueryExecutionIds: Array<string>;
 	}
+	export interface BatchGetQueryExecutionInputFormProperties {
+	}
+	export function CreateBatchGetQueryExecutionInputFormGroup() {
+		return new FormGroup<BatchGetQueryExecutionInputFormProperties>({
+		});
+
+	}
 
 	export interface CreateDataCatalogOutput {
+	}
+	export interface CreateDataCatalogOutputFormProperties {
+	}
+	export function CreateCreateDataCatalogOutputFormGroup() {
+		return new FormGroup<CreateDataCatalogOutputFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataCatalogInput {
 		Name: string;
 		Type: CreateDataCatalogInputType;
 		Description?: string | null;
-		Parameters?: ParametersMap | null;
-		Tags?: Array<Tag> | null;
+		Parameters?: ParametersMap;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDataCatalogInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<CreateDataCatalogInputType | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDataCatalogInputFormGroup() {
+		return new FormGroup<CreateDataCatalogInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateDataCatalogInputType | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDataCatalogInputType { LAMBDA = 0, GLUE = 1, HIVE = 2 }
 
 	export interface ParametersMap {
+	}
+	export interface ParametersMapFormProperties {
+	}
+	export function CreateParametersMapFormGroup() {
+		return new FormGroup<ParametersMapFormProperties>({
+		});
+
 	}
 
 
@@ -159,8 +386,30 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateNamedQueryOutput {
 		NamedQueryId?: string | null;
+	}
+	export interface CreateNamedQueryOutputFormProperties {
+		NamedQueryId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNamedQueryOutputFormGroup() {
+		return new FormGroup<CreateNamedQueryOutputFormProperties>({
+			NamedQueryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateNamedQueryInput {
@@ -171,17 +420,54 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 		WorkGroup?: string | null;
 	}
+	export interface CreateNamedQueryInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+		QueryString: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNamedQueryInputFormGroup() {
+		return new FormGroup<CreateNamedQueryInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+			QueryString: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateWorkGroupOutput {
+	}
+	export interface CreateWorkGroupOutputFormProperties {
+	}
+	export function CreateCreateWorkGroupOutputFormGroup() {
+		return new FormGroup<CreateWorkGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface CreateWorkGroupInput {
 		Name: string;
 
 		/** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
-		Configuration?: WorkGroupConfiguration | null;
+		Configuration?: WorkGroupConfiguration;
 		Description?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateWorkGroupInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWorkGroupInputFormGroup() {
+		return new FormGroup<CreateWorkGroupInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -189,39 +475,113 @@ export namespace MyNS {
 	export interface WorkGroupConfiguration {
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
-		ResultConfiguration?: ResultConfiguration | null;
+		ResultConfiguration?: ResultConfiguration;
 		EnforceWorkGroupConfiguration?: boolean | null;
 		PublishCloudWatchMetricsEnabled?: boolean | null;
 		BytesScannedCutoffPerQuery?: number | null;
 		RequesterPaysEnabled?: boolean | null;
 	}
 
+	/** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.  */
+	export interface WorkGroupConfigurationFormProperties {
+		EnforceWorkGroupConfiguration: FormControl<boolean | null | undefined>,
+		PublishCloudWatchMetricsEnabled: FormControl<boolean | null | undefined>,
+		BytesScannedCutoffPerQuery: FormControl<number | null | undefined>,
+		RequesterPaysEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWorkGroupConfigurationFormGroup() {
+		return new FormGroup<WorkGroupConfigurationFormProperties>({
+			EnforceWorkGroupConfiguration: new FormControl<boolean | null | undefined>(undefined),
+			PublishCloudWatchMetricsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			BytesScannedCutoffPerQuery: new FormControl<number | null | undefined>(undefined),
+			RequesterPaysEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteDataCatalogOutput {
+	}
+	export interface DeleteDataCatalogOutputFormProperties {
+	}
+	export function CreateDeleteDataCatalogOutputFormGroup() {
+		return new FormGroup<DeleteDataCatalogOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDataCatalogInput {
 		Name: string;
 	}
+	export interface DeleteDataCatalogInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDataCatalogInputFormGroup() {
+		return new FormGroup<DeleteDataCatalogInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteNamedQueryOutput {
+	}
+	export interface DeleteNamedQueryOutputFormProperties {
+	}
+	export function CreateDeleteNamedQueryOutputFormGroup() {
+		return new FormGroup<DeleteNamedQueryOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteNamedQueryInput {
 		NamedQueryId: string;
 	}
+	export interface DeleteNamedQueryInputFormProperties {
+		NamedQueryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteNamedQueryInputFormGroup() {
+		return new FormGroup<DeleteNamedQueryInputFormProperties>({
+			NamedQueryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWorkGroupOutput {
+	}
+	export interface DeleteWorkGroupOutputFormProperties {
+	}
+	export function CreateDeleteWorkGroupOutputFormGroup() {
+		return new FormGroup<DeleteWorkGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteWorkGroupInput {
 		WorkGroup: string;
 		RecursiveDeleteOption?: boolean | null;
 	}
+	export interface DeleteWorkGroupInputFormProperties {
+		WorkGroup: FormControl<string | null | undefined>,
+		RecursiveDeleteOption: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteWorkGroupInputFormGroup() {
+		return new FormGroup<DeleteWorkGroupInputFormProperties>({
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+			RecursiveDeleteOption: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDataCatalogOutput {
 
 		/** Contains information about a data catalog in an AWS account. */
-		DataCatalog?: DataCatalog | null;
+		DataCatalog?: DataCatalog;
+	}
+	export interface GetDataCatalogOutputFormProperties {
+	}
+	export function CreateGetDataCatalogOutputFormGroup() {
+		return new FormGroup<GetDataCatalogOutputFormProperties>({
+		});
+
 	}
 
 
@@ -230,17 +590,48 @@ export namespace MyNS {
 		Name: string;
 		Description?: string | null;
 		Type: CreateDataCatalogInputType;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
+	}
+
+	/** Contains information about a data catalog in an AWS account. */
+	export interface DataCatalogFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<CreateDataCatalogInputType | null | undefined>,
+	}
+	export function CreateDataCatalogFormGroup() {
+		return new FormGroup<DataCatalogFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateDataCatalogInputType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDataCatalogInput {
 		Name: string;
 	}
+	export interface GetDataCatalogInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataCatalogInputFormGroup() {
+		return new FormGroup<GetDataCatalogInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDatabaseOutput {
 
 		/** Contains metadata information for a database in a data catalog. */
-		Database?: Database | null;
+		Database?: Database;
+	}
+	export interface GetDatabaseOutputFormProperties {
+	}
+	export function CreateGetDatabaseOutputFormGroup() {
+		return new FormGroup<GetDatabaseOutputFormProperties>({
+		});
+
 	}
 
 
@@ -248,58 +639,150 @@ export namespace MyNS {
 	export interface Database {
 		Name: string;
 		Description?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
+	}
+
+	/** Contains metadata information for a database in a data catalog. */
+	export interface DatabaseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateDatabaseFormGroup() {
+		return new FormGroup<DatabaseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDatabaseInput {
 		CatalogName: string;
 		DatabaseName: string;
 	}
+	export interface GetDatabaseInputFormProperties {
+		CatalogName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDatabaseInputFormGroup() {
+		return new FormGroup<GetDatabaseInputFormProperties>({
+			CatalogName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface MetadataException {
+	}
+	export interface MetadataExceptionFormProperties {
+	}
+	export function CreateMetadataExceptionFormGroup() {
+		return new FormGroup<MetadataExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetNamedQueryOutput {
 
 		/** A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query. */
-		NamedQuery?: NamedQuery | null;
+		NamedQuery?: NamedQuery;
+	}
+	export interface GetNamedQueryOutputFormProperties {
+	}
+	export function CreateGetNamedQueryOutputFormGroup() {
+		return new FormGroup<GetNamedQueryOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetNamedQueryInput {
 		NamedQueryId: string;
 	}
+	export interface GetNamedQueryInputFormProperties {
+		NamedQueryId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetNamedQueryInputFormGroup() {
+		return new FormGroup<GetNamedQueryInputFormProperties>({
+			NamedQueryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetQueryExecutionOutput {
 
 		/** Information about a single instance of a query execution. */
-		QueryExecution?: QueryExecution | null;
+		QueryExecution?: QueryExecution;
+	}
+	export interface GetQueryExecutionOutputFormProperties {
+	}
+	export function CreateGetQueryExecutionOutputFormGroup() {
+		return new FormGroup<GetQueryExecutionOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetQueryExecutionInput {
 		QueryExecutionId: string;
+	}
+	export interface GetQueryExecutionInputFormProperties {
+		QueryExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetQueryExecutionInputFormGroup() {
+		return new FormGroup<GetQueryExecutionInputFormProperties>({
+			QueryExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetQueryResultsOutput {
 		UpdateCount?: number | null;
 
 		/** The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>. */
-		ResultSet?: ResultSet | null;
+		ResultSet?: ResultSet;
 		NextToken?: string | null;
+	}
+	export interface GetQueryResultsOutputFormProperties {
+		UpdateCount: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetQueryResultsOutputFormGroup() {
+		return new FormGroup<GetQueryResultsOutputFormProperties>({
+			UpdateCount: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>. */
 	export interface ResultSet {
-		Rows?: Array<Row> | null;
+		Rows?: Array<Row>;
 
 		/** The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>. */
-		ResultSetMetadata?: ResultSetMetadata | null;
+		ResultSetMetadata?: ResultSetMetadata;
+	}
+
+	/** The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>. */
+	export interface ResultSetFormProperties {
+	}
+	export function CreateResultSetFormGroup() {
+		return new FormGroup<ResultSetFormProperties>({
+		});
+
 	}
 
 
 	/** The rows that comprise a query result table. */
 	export interface Row {
-		Data?: Array<Datum> | null;
+		Data?: Array<Datum>;
+	}
+
+	/** The rows that comprise a query result table. */
+	export interface RowFormProperties {
+	}
+	export function CreateRowFormGroup() {
+		return new FormGroup<RowFormProperties>({
+		});
+
 	}
 
 
@@ -308,10 +791,30 @@ export namespace MyNS {
 		VarCharValue?: string | null;
 	}
 
+	/** A piece of data (a field in the table). */
+	export interface DatumFormProperties {
+		VarCharValue: FormControl<string | null | undefined>,
+	}
+	export function CreateDatumFormGroup() {
+		return new FormGroup<DatumFormProperties>({
+			VarCharValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>. */
 	export interface ResultSetMetadata {
-		ColumnInfo?: Array<ColumnInfo> | null;
+		ColumnInfo?: Array<ColumnInfo>;
+	}
+
+	/** The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>. */
+	export interface ResultSetMetadataFormProperties {
+	}
+	export function CreateResultSetMetadataFormGroup() {
+		return new FormGroup<ResultSetMetadataFormProperties>({
+		});
+
 	}
 
 
@@ -329,6 +832,35 @@ export namespace MyNS {
 		CaseSensitive?: boolean | null;
 	}
 
+	/** Information about the columns in a query execution result. */
+	export interface ColumnInfoFormProperties {
+		CatalogName: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Precision: FormControl<number | null | undefined>,
+		Scale: FormControl<number | null | undefined>,
+		Nullable: FormControl<ColumnInfoNullable | null | undefined>,
+		CaseSensitive: FormControl<boolean | null | undefined>,
+	}
+	export function CreateColumnInfoFormGroup() {
+		return new FormGroup<ColumnInfoFormProperties>({
+			CatalogName: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Precision: new FormControl<number | null | undefined>(undefined),
+			Scale: new FormControl<number | null | undefined>(undefined),
+			Nullable: new FormControl<ColumnInfoNullable | null | undefined>(undefined),
+			CaseSensitive: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ColumnInfoNullable { NOT_NULL = 0, NULLABLE = 1, UNKNOWN = 2 }
 
 	export interface GetQueryResultsInput {
@@ -336,11 +868,31 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetQueryResultsInputFormProperties {
+		QueryExecutionId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetQueryResultsInputFormGroup() {
+		return new FormGroup<GetQueryResultsInputFormProperties>({
+			QueryExecutionId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTableMetadataOutput {
 
 		/** Contains metadata for a table. */
-		TableMetadata?: TableMetadata | null;
+		TableMetadata?: TableMetadata;
+	}
+	export interface GetTableMetadataOutputFormProperties {
+	}
+	export function CreateGetTableMetadataOutputFormGroup() {
+		return new FormGroup<GetTableMetadataOutputFormProperties>({
+		});
+
 	}
 
 
@@ -350,9 +902,26 @@ export namespace MyNS {
 		CreateTime?: Date | null;
 		LastAccessTime?: Date | null;
 		TableType?: string | null;
-		Columns?: Array<Column> | null;
-		PartitionKeys?: Array<Column> | null;
-		Parameters?: ParametersMap | null;
+		Columns?: Array<Column>;
+		PartitionKeys?: Array<Column>;
+		Parameters?: ParametersMap;
+	}
+
+	/** Contains metadata for a table. */
+	export interface TableMetadataFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CreateTime: FormControl<Date | null | undefined>,
+		LastAccessTime: FormControl<Date | null | undefined>,
+		TableType: FormControl<string | null | undefined>,
+	}
+	export function CreateTableMetadataFormGroup() {
+		return new FormGroup<TableMetadataFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreateTime: new FormControl<Date | null | undefined>(undefined),
+			LastAccessTime: new FormControl<Date | null | undefined>(undefined),
+			TableType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -363,16 +932,51 @@ export namespace MyNS {
 		Comment?: string | null;
 	}
 
+	/** Contains metadata for a column in a table. */
+	export interface ColumnFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateColumnFormGroup() {
+		return new FormGroup<ColumnFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetTableMetadataInput {
 		CatalogName: string;
 		DatabaseName: string;
 		TableName: string;
 	}
+	export interface GetTableMetadataInputFormProperties {
+		CatalogName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTableMetadataInputFormGroup() {
+		return new FormGroup<GetTableMetadataInputFormProperties>({
+			CatalogName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetWorkGroupOutput {
 
 		/** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
-		WorkGroup?: WorkGroup | null;
+		WorkGroup?: WorkGroup;
+	}
+	export interface GetWorkGroupOutputFormProperties {
+	}
+	export function CreateGetWorkGroupOutputFormGroup() {
+		return new FormGroup<GetWorkGroupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -382,9 +986,26 @@ export namespace MyNS {
 		State?: WorkGroupState | null;
 
 		/** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
-		Configuration?: WorkGroupConfiguration | null;
+		Configuration?: WorkGroupConfiguration;
 		Description?: string | null;
 		CreationTime?: Date | null;
+	}
+
+	/** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
+	export interface WorkGroupFormProperties {
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<WorkGroupState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkGroupFormGroup() {
+		return new FormGroup<WorkGroupFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<WorkGroupState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkGroupState { ENABLED = 0, DISABLED = 1 }
@@ -392,10 +1013,28 @@ export namespace MyNS {
 	export interface GetWorkGroupInput {
 		WorkGroup: string;
 	}
+	export interface GetWorkGroupInputFormProperties {
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateGetWorkGroupInputFormGroup() {
+		return new FormGroup<GetWorkGroupInputFormProperties>({
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDataCatalogsOutput {
-		DataCatalogsSummary?: Array<DataCatalogSummary> | null;
+		DataCatalogsSummary?: Array<DataCatalogSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDataCatalogsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDataCatalogsOutputFormGroup() {
+		return new FormGroup<ListDataCatalogsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -405,14 +1044,47 @@ export namespace MyNS {
 		Type?: CreateDataCatalogInputType | null;
 	}
 
+	/** The summary information for the data catalog, which includes its name and type. */
+	export interface DataCatalogSummaryFormProperties {
+		CatalogName: FormControl<string | null | undefined>,
+		Type: FormControl<CreateDataCatalogInputType | null | undefined>,
+	}
+	export function CreateDataCatalogSummaryFormGroup() {
+		return new FormGroup<DataCatalogSummaryFormProperties>({
+			CatalogName: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateDataCatalogInputType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDataCatalogsInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDataCatalogsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDataCatalogsInputFormGroup() {
+		return new FormGroup<ListDataCatalogsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDatabasesOutput {
-		DatabaseList?: Array<Database> | null;
+		DatabaseList?: Array<Database>;
 		NextToken?: string | null;
+	}
+	export interface ListDatabasesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatabasesOutputFormGroup() {
+		return new FormGroup<ListDatabasesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDatabasesInput {
@@ -420,10 +1092,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDatabasesInputFormProperties {
+		CatalogName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatabasesInputFormGroup() {
+		return new FormGroup<ListDatabasesInputFormProperties>({
+			CatalogName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListNamedQueriesOutput {
-		NamedQueryIds?: Array<string> | null;
+		NamedQueryIds?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListNamedQueriesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNamedQueriesOutputFormGroup() {
+		return new FormGroup<ListNamedQueriesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListNamedQueriesInput {
@@ -431,10 +1125,32 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		WorkGroup?: string | null;
 	}
+	export interface ListNamedQueriesInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateListNamedQueriesInputFormGroup() {
+		return new FormGroup<ListNamedQueriesInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListQueryExecutionsOutput {
-		QueryExecutionIds?: Array<string> | null;
+		QueryExecutionIds?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListQueryExecutionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListQueryExecutionsOutputFormGroup() {
+		return new FormGroup<ListQueryExecutionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListQueryExecutionsInput {
@@ -442,10 +1158,32 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		WorkGroup?: string | null;
 	}
+	export interface ListQueryExecutionsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateListQueryExecutionsInputFormGroup() {
+		return new FormGroup<ListQueryExecutionsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTableMetadataOutput {
-		TableMetadataList?: Array<TableMetadata> | null;
+		TableMetadataList?: Array<TableMetadata>;
 		NextToken?: string | null;
+	}
+	export interface ListTableMetadataOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTableMetadataOutputFormGroup() {
+		return new FormGroup<ListTableMetadataOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTableMetadataInput {
@@ -455,10 +1193,36 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTableMetadataInputFormProperties {
+		CatalogName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Expression: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTableMetadataInputFormGroup() {
+		return new FormGroup<ListTableMetadataInputFormProperties>({
+			CatalogName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
@@ -466,13 +1230,42 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTagsForResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListWorkGroupsOutput {
-		WorkGroups?: Array<WorkGroupSummary> | null;
+		WorkGroups?: Array<WorkGroupSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListWorkGroupsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWorkGroupsOutputFormGroup() {
+		return new FormGroup<ListWorkGroupsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -484,13 +1277,50 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 	}
 
+	/** The summary information for the workgroup, which includes its name, state, description, and the date and time it was created. */
+	export interface WorkGroupSummaryFormProperties {
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<WorkGroupState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkGroupSummaryFormGroup() {
+		return new FormGroup<WorkGroupSummaryFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<WorkGroupState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListWorkGroupsInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListWorkGroupsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkGroupsInputFormGroup() {
+		return new FormGroup<ListWorkGroupsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartQueryExecutionOutput {
 		QueryExecutionId?: string | null;
+	}
+	export interface StartQueryExecutionOutputFormProperties {
+		QueryExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartQueryExecutionOutputFormGroup() {
+		return new FormGroup<StartQueryExecutionOutputFormProperties>({
+			QueryExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartQueryExecutionInput {
@@ -498,50 +1328,145 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The database and data catalog context in which the query execution occurs. */
-		QueryExecutionContext?: QueryExecutionContext | null;
+		QueryExecutionContext?: QueryExecutionContext;
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
-		ResultConfiguration?: ResultConfiguration | null;
+		ResultConfiguration?: ResultConfiguration;
 		WorkGroup?: string | null;
+	}
+	export interface StartQueryExecutionInputFormProperties {
+		QueryString: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateStartQueryExecutionInputFormGroup() {
+		return new FormGroup<StartQueryExecutionInputFormProperties>({
+			QueryString: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StopQueryExecutionOutput {
+	}
+	export interface StopQueryExecutionOutputFormProperties {
+	}
+	export function CreateStopQueryExecutionOutputFormGroup() {
+		return new FormGroup<StopQueryExecutionOutputFormProperties>({
+		});
+
 	}
 
 	export interface StopQueryExecutionInput {
 		QueryExecutionId: string;
 	}
+	export interface StopQueryExecutionInputFormProperties {
+		QueryExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopQueryExecutionInputFormGroup() {
+		return new FormGroup<StopQueryExecutionInputFormProperties>({
+			QueryExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		ResourceARN: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDataCatalogOutput {
+	}
+	export interface UpdateDataCatalogOutputFormProperties {
+	}
+	export function CreateUpdateDataCatalogOutputFormGroup() {
+		return new FormGroup<UpdateDataCatalogOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataCatalogInput {
 		Name: string;
 		Type: CreateDataCatalogInputType;
 		Description?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
+	}
+	export interface UpdateDataCatalogInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<CreateDataCatalogInputType | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDataCatalogInputFormGroup() {
+		return new FormGroup<UpdateDataCatalogInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateDataCatalogInputType | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateWorkGroupOutput {
+	}
+	export interface UpdateWorkGroupOutputFormProperties {
+	}
+	export function CreateUpdateWorkGroupOutputFormGroup() {
+		return new FormGroup<UpdateWorkGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateWorkGroupInput {
@@ -549,8 +1474,21 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified. */
-		ConfigurationUpdates?: WorkGroupConfigurationUpdates | null;
+		ConfigurationUpdates?: WorkGroupConfigurationUpdates;
 		State?: WorkGroupState | null;
+	}
+	export interface UpdateWorkGroupInputFormProperties {
+		WorkGroup: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		State: FormControl<WorkGroupState | null | undefined>,
+	}
+	export function CreateUpdateWorkGroupInputFormGroup() {
+		return new FormGroup<UpdateWorkGroupInputFormProperties>({
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<WorkGroupState | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -559,11 +1497,30 @@ export namespace MyNS {
 		EnforceWorkGroupConfiguration?: boolean | null;
 
 		/** The information about the updates in the query results, such as output location and encryption configuration for the query results. */
-		ResultConfigurationUpdates?: ResultConfigurationUpdates | null;
+		ResultConfigurationUpdates?: ResultConfigurationUpdates;
 		PublishCloudWatchMetricsEnabled?: boolean | null;
 		BytesScannedCutoffPerQuery?: number | null;
 		RemoveBytesScannedCutoffPerQuery?: boolean | null;
 		RequesterPaysEnabled?: boolean | null;
+	}
+
+	/** The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified. */
+	export interface WorkGroupConfigurationUpdatesFormProperties {
+		EnforceWorkGroupConfiguration: FormControl<boolean | null | undefined>,
+		PublishCloudWatchMetricsEnabled: FormControl<boolean | null | undefined>,
+		BytesScannedCutoffPerQuery: FormControl<number | null | undefined>,
+		RemoveBytesScannedCutoffPerQuery: FormControl<boolean | null | undefined>,
+		RequesterPaysEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWorkGroupConfigurationUpdatesFormGroup() {
+		return new FormGroup<WorkGroupConfigurationUpdatesFormProperties>({
+			EnforceWorkGroupConfiguration: new FormControl<boolean | null | undefined>(undefined),
+			PublishCloudWatchMetricsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			BytesScannedCutoffPerQuery: new FormControl<number | null | undefined>(undefined),
+			RemoveBytesScannedCutoffPerQuery: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPaysEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -573,8 +1530,23 @@ export namespace MyNS {
 		RemoveOutputLocation?: boolean | null;
 
 		/** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
 		RemoveEncryptionConfiguration?: boolean | null;
+	}
+
+	/** The information about the updates in the query results, such as output location and encryption configuration for the query results. */
+	export interface ResultConfigurationUpdatesFormProperties {
+		OutputLocation: FormControl<string | null | undefined>,
+		RemoveOutputLocation: FormControl<boolean | null | undefined>,
+		RemoveEncryptionConfiguration: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResultConfigurationUpdatesFormGroup() {
+		return new FormGroup<ResultConfigurationUpdatesFormProperties>({
+			OutputLocation: new FormControl<string | null | undefined>(undefined),
+			RemoveOutputLocation: new FormControl<boolean | null | undefined>(undefined),
+			RemoveEncryptionConfiguration: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ColumnNullable { NOT_NULL = 0, NULLABLE = 1, UNKNOWN = 2 }

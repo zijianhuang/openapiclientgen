@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateTeamMemberResult {
 		clientRequestToken?: string | null;
+	}
+	export interface AssociateTeamMemberResultFormProperties {
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTeamMemberResultFormGroup() {
+		return new FormGroup<AssociateTeamMemberResultFormProperties>({
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateTeamMemberRequest {
@@ -13,26 +23,92 @@ export namespace MyNS {
 		projectRole: string;
 		remoteAccessAllowed?: boolean | null;
 	}
+	export interface AssociateTeamMemberRequestFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+		projectRole: FormControl<string | null | undefined>,
+		remoteAccessAllowed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAssociateTeamMemberRequestFormGroup() {
+		return new FormGroup<AssociateTeamMemberRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+			projectRole: new FormControl<string | null | undefined>(undefined),
+			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ProjectNotFoundException {
 	}
+	export interface ProjectNotFoundExceptionFormProperties {
+	}
+	export function CreateProjectNotFoundExceptionFormGroup() {
+		return new FormGroup<ProjectNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TeamMemberAlreadyAssociatedException {
+	}
+	export interface TeamMemberAlreadyAssociatedExceptionFormProperties {
+	}
+	export function CreateTeamMemberAlreadyAssociatedExceptionFormGroup() {
+		return new FormGroup<TeamMemberAlreadyAssociatedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
 	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidServiceRoleException {
+	}
+	export interface InvalidServiceRoleExceptionFormProperties {
+	}
+	export function CreateInvalidServiceRoleExceptionFormGroup() {
+		return new FormGroup<InvalidServiceRoleExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ProjectConfigurationException {
 	}
+	export interface ProjectConfigurationExceptionFormProperties {
+	}
+	export function CreateProjectConfigurationExceptionFormGroup() {
+		return new FormGroup<ProjectConfigurationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateProjectResult {
@@ -41,17 +117,47 @@ export namespace MyNS {
 		clientRequestToken?: string | null;
 		projectTemplateId?: string | null;
 	}
+	export interface CreateProjectResultFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		projectTemplateId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectResultFormGroup() {
+		return new FormGroup<CreateProjectResultFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			projectTemplateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateProjectRequest {
 		name: string;
 		id: string;
 		description?: string | null;
 		clientRequestToken?: string | null;
-		sourceCode?: Array<Code> | null;
+		sourceCode?: Array<Code>;
 
 		/** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation. */
-		toolchain?: Toolchain | null;
-		tags?: Tags | null;
+		toolchain?: Toolchain;
+		tags?: Tags;
+	}
+	export interface CreateProjectRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -71,6 +177,15 @@ export namespace MyNS {
 		destination: CodeDestination;
 	}
 
+	/** Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation. */
+	export interface CodeFormProperties {
+	}
+	export function CreateCodeFormGroup() {
+		return new FormGroup<CodeFormProperties>({
+		});
+
+	}
+
 
 	/** The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation. */
 	export interface CodeSource {
@@ -82,6 +197,15 @@ export namespace MyNS {
 		s3: S3Location;
 	}
 
+	/** The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation. */
+	export interface CodeSourceFormProperties {
+	}
+	export function CreateCodeSourceFormGroup() {
+		return new FormGroup<CodeSourceFormProperties>({
+		});
+
+	}
+
 
 	/** The Amazon S3 location where the source code files provided with the project request are stored. */
 	export interface S3Location {
@@ -89,21 +213,54 @@ export namespace MyNS {
 		bucketKey?: string | null;
 	}
 
+	/** The Amazon S3 location where the source code files provided with the project request are stored. */
+	export interface S3LocationFormProperties {
+		bucketName: FormControl<string | null | undefined>,
+		bucketKey: FormControl<string | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+			bucketKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository. */
 	export interface CodeDestination {
 
 		/** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
-		codeCommit?: CodeCommitCodeDestination | null;
+		codeCommit?: CodeCommitCodeDestination;
 
 		/** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
-		gitHub?: GitHubCodeDestination | null;
+		gitHub?: GitHubCodeDestination;
+	}
+
+	/** The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository. */
+	export interface CodeDestinationFormProperties {
+	}
+	export function CreateCodeDestinationFormGroup() {
+		return new FormGroup<CodeDestinationFormProperties>({
+		});
+
 	}
 
 
 	/** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
 	export interface CodeCommitCodeDestination {
 		name: string;
+	}
+
+	/** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
+	export interface CodeCommitCodeDestinationFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeCommitCodeDestinationFormGroup() {
+		return new FormGroup<CodeCommitCodeDestinationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -118,6 +275,29 @@ export namespace MyNS {
 		token: string;
 	}
 
+	/** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
+	export interface GitHubCodeDestinationFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		owner: FormControl<string | null | undefined>,
+		privateRepository: FormControl<boolean | null | undefined>,
+		issuesEnabled: FormControl<boolean | null | undefined>,
+		token: FormControl<string | null | undefined>,
+	}
+	export function CreateGitHubCodeDestinationFormGroup() {
+		return new FormGroup<GitHubCodeDestinationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			owner: new FormControl<string | null | undefined>(undefined),
+			privateRepository: new FormControl<boolean | null | undefined>(undefined),
+			issuesEnabled: new FormControl<boolean | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation. */
 	export interface Toolchain {
@@ -128,7 +308,18 @@ export namespace MyNS {
 		 */
 		source: ToolchainSource;
 		roleArn?: string | null;
-		stackParameters?: TemplateParameterMap | null;
+		stackParameters?: TemplateParameterMap;
+	}
+
+	/** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation. */
+	export interface ToolchainFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateToolchainFormGroup() {
+		return new FormGroup<ToolchainFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -142,16 +333,53 @@ export namespace MyNS {
 		s3: S3Location;
 	}
 
+	/** The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation. */
+	export interface ToolchainSourceFormProperties {
+	}
+	export function CreateToolchainSourceFormGroup() {
+		return new FormGroup<ToolchainSourceFormProperties>({
+		});
+
+	}
+
 	export interface TemplateParameterMap {
+	}
+	export interface TemplateParameterMapFormProperties {
+	}
+	export function CreateTemplateParameterMapFormGroup() {
+		return new FormGroup<TemplateParameterMapFormProperties>({
+		});
+
 	}
 
 	export interface Tags {
 	}
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
+	}
 
 	export interface ProjectAlreadyExistsException {
 	}
+	export interface ProjectAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateProjectAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ProjectAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ProjectCreationFailedException {
+	}
+	export interface ProjectCreationFailedExceptionFormProperties {
+	}
+	export function CreateProjectCreationFailedExceptionFormGroup() {
+		return new FormGroup<ProjectCreationFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateUserProfileResult {
@@ -162,6 +390,25 @@ export namespace MyNS {
 		createdTimestamp?: Date | null;
 		lastModifiedTimestamp?: Date | null;
 	}
+	export interface CreateUserProfileResultFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+		createdTimestamp: FormControl<Date | null | undefined>,
+		lastModifiedTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateUserProfileResultFormGroup() {
+		return new FormGroup<CreateUserProfileResultFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			createdTimestamp: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateUserProfileRequest {
 		userArn: string;
@@ -169,13 +416,46 @@ export namespace MyNS {
 		emailAddress: string;
 		sshPublicKey?: string | null;
 	}
+	export interface CreateUserProfileRequestFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserProfileRequestFormGroup() {
+		return new FormGroup<CreateUserProfileRequestFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserProfileAlreadyExistsException {
+	}
+	export interface UserProfileAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateUserProfileAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<UserProfileAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProjectResult {
 		stackId?: string | null;
 		projectArn?: string | null;
+	}
+	export interface DeleteProjectResultFormProperties {
+		stackId: FormControl<string | null | undefined>,
+		projectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProjectResultFormGroup() {
+		return new FormGroup<DeleteProjectResultFormProperties>({
+			stackId: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteProjectRequest {
@@ -183,13 +463,44 @@ export namespace MyNS {
 		clientRequestToken?: string | null;
 		deleteStack?: boolean | null;
 	}
+	export interface DeleteProjectRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		deleteStack: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteProjectRequestFormGroup() {
+		return new FormGroup<DeleteProjectRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			deleteStack: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserProfileResult {
 		userArn: string;
 	}
+	export interface DeleteUserProfileResultFormProperties {
+		userArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserProfileResultFormGroup() {
+		return new FormGroup<DeleteUserProfileResultFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserProfileRequest {
 		userArn: string;
+	}
+	export interface DeleteUserProfileRequestFormProperties {
+		userArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserProfileRequestFormGroup() {
+		return new FormGroup<DeleteUserProfileRequestFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeProjectResult {
@@ -203,7 +514,30 @@ export namespace MyNS {
 		projectTemplateId?: string | null;
 
 		/** An indication of whether a project creation or deletion is failed or successful. */
-		status?: ProjectStatus | null;
+		status?: ProjectStatus;
+	}
+	export interface DescribeProjectResultFormProperties {
+		name: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		createdTimeStamp: FormControl<Date | null | undefined>,
+		stackId: FormControl<string | null | undefined>,
+		projectTemplateId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProjectResultFormGroup() {
+		return new FormGroup<DescribeProjectResultFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			createdTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			stackId: new FormControl<string | null | undefined>(undefined),
+			projectTemplateId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -213,8 +547,30 @@ export namespace MyNS {
 		reason?: string | null;
 	}
 
+	/** An indication of whether a project creation or deletion is failed or successful. */
+	export interface ProjectStatusFormProperties {
+		state: FormControl<string | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectStatusFormGroup() {
+		return new FormGroup<ProjectStatusFormProperties>({
+			state: new FormControl<string | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeProjectRequest {
 		id: string;
+	}
+	export interface DescribeProjectRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProjectRequestFormGroup() {
+		return new FormGroup<DescribeProjectRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUserProfileResult {
@@ -225,25 +581,87 @@ export namespace MyNS {
 		createdTimestamp: Date;
 		lastModifiedTimestamp: Date;
 	}
+	export interface DescribeUserProfileResultFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+		createdTimestamp: FormControl<Date | null | undefined>,
+		lastModifiedTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeUserProfileResultFormGroup() {
+		return new FormGroup<DescribeUserProfileResultFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			createdTimestamp: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeUserProfileRequest {
 		userArn: string;
 	}
+	export interface DescribeUserProfileRequestFormProperties {
+		userArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserProfileRequestFormGroup() {
+		return new FormGroup<DescribeUserProfileRequestFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserProfileNotFoundException {
 	}
+	export interface UserProfileNotFoundExceptionFormProperties {
+	}
+	export function CreateUserProfileNotFoundExceptionFormGroup() {
+		return new FormGroup<UserProfileNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateTeamMemberResult {
+	}
+	export interface DisassociateTeamMemberResultFormProperties {
+	}
+	export function CreateDisassociateTeamMemberResultFormGroup() {
+		return new FormGroup<DisassociateTeamMemberResultFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateTeamMemberRequest {
 		projectId: string;
 		userArn: string;
 	}
+	export interface DisassociateTeamMemberRequestFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateTeamMemberRequestFormGroup() {
+		return new FormGroup<DisassociateTeamMemberRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListProjectsResult {
 		projects: Array<ProjectSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListProjectsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsResultFormGroup() {
+		return new FormGroup<ListProjectsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -253,17 +671,57 @@ export namespace MyNS {
 		projectArn?: string | null;
 	}
 
+	/** Information about the metadata for a project. */
+	export interface ProjectSummaryFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		projectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectSummaryFormGroup() {
+		return new FormGroup<ProjectSummaryFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProjectsRequest {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListProjectsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListProjectsRequestFormGroup() {
+		return new FormGroup<ListProjectsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListResourcesResult {
-		resources?: Array<Resource> | null;
+		resources?: Array<Resource>;
 		nextToken?: string | null;
+	}
+	export interface ListResourcesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourcesResultFormGroup() {
+		return new FormGroup<ListResourcesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -272,15 +730,48 @@ export namespace MyNS {
 		id: string;
 	}
 
+	/** Information about a resource for a project. */
+	export interface ResourceFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListResourcesRequest {
 		projectId: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListResourcesRequestFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResourcesRequestFormGroup() {
+		return new FormGroup<ListResourcesRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForProjectResult {
-		tags?: Tags | null;
+		tags?: Tags;
 		nextToken?: string | null;
+	}
+	export interface ListTagsForProjectResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForProjectResultFormGroup() {
+		return new FormGroup<ListTagsForProjectResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForProjectRequest {
@@ -288,10 +779,32 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListTagsForProjectRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForProjectRequestFormGroup() {
+		return new FormGroup<ListTagsForProjectRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTeamMembersResult {
 		teamMembers: Array<TeamMember>;
 		nextToken?: string | null;
+	}
+	export interface ListTeamMembersResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTeamMembersResultFormGroup() {
+		return new FormGroup<ListTeamMembersResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -302,15 +815,52 @@ export namespace MyNS {
 		remoteAccessAllowed?: boolean | null;
 	}
 
+	/** Information about a team member in a project. */
+	export interface TeamMemberFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		projectRole: FormControl<string | null | undefined>,
+		remoteAccessAllowed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTeamMemberFormGroup() {
+		return new FormGroup<TeamMemberFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			projectRole: new FormControl<string | null | undefined>(undefined),
+			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTeamMembersRequest {
 		projectId: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListTeamMembersRequestFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTeamMembersRequestFormGroup() {
+		return new FormGroup<ListTeamMembersRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListUserProfilesResult {
 		userProfiles: Array<UserProfileSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListUserProfilesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserProfilesResultFormGroup() {
+		return new FormGroup<ListUserProfilesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -322,29 +872,96 @@ export namespace MyNS {
 		sshPublicKey?: string | null;
 	}
 
+	/** Information about a user's profile in AWS CodeStar. */
+	export interface UserProfileSummaryFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+	}
+	export function CreateUserProfileSummaryFormGroup() {
+		return new FormGroup<UserProfileSummaryFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListUserProfilesRequest {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListUserProfilesRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListUserProfilesRequestFormGroup() {
+		return new FormGroup<ListUserProfilesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagProjectResult {
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface TagProjectResultFormProperties {
+	}
+	export function CreateTagProjectResultFormGroup() {
+		return new FormGroup<TagProjectResultFormProperties>({
+		});
+
 	}
 
 	export interface TagProjectRequest {
 		id: string;
 		tags: Tags;
 	}
+	export interface TagProjectRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateTagProjectRequestFormGroup() {
+		return new FormGroup<TagProjectRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagProjectResult {
+	}
+	export interface UntagProjectResultFormProperties {
+	}
+	export function CreateUntagProjectResultFormGroup() {
+		return new FormGroup<UntagProjectResultFormProperties>({
+		});
+
 	}
 
 	export interface UntagProjectRequest {
 		id: string;
 		tags: Array<string>;
 	}
+	export interface UntagProjectRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagProjectRequestFormGroup() {
+		return new FormGroup<UntagProjectRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateProjectResult {
+	}
+	export interface UpdateProjectResultFormProperties {
+	}
+	export function CreateUpdateProjectResultFormGroup() {
+		return new FormGroup<UpdateProjectResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateProjectRequest {
@@ -352,11 +969,37 @@ export namespace MyNS {
 		name?: string | null;
 		description?: string | null;
 	}
+	export interface UpdateProjectRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectRequestFormGroup() {
+		return new FormGroup<UpdateProjectRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTeamMemberResult {
 		userArn?: string | null;
 		projectRole?: string | null;
 		remoteAccessAllowed?: boolean | null;
+	}
+	export interface UpdateTeamMemberResultFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		projectRole: FormControl<string | null | undefined>,
+		remoteAccessAllowed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateTeamMemberResultFormGroup() {
+		return new FormGroup<UpdateTeamMemberResultFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			projectRole: new FormControl<string | null | undefined>(undefined),
+			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTeamMemberRequest {
@@ -365,8 +1008,30 @@ export namespace MyNS {
 		projectRole?: string | null;
 		remoteAccessAllowed?: boolean | null;
 	}
+	export interface UpdateTeamMemberRequestFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+		projectRole: FormControl<string | null | undefined>,
+		remoteAccessAllowed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateTeamMemberRequestFormGroup() {
+		return new FormGroup<UpdateTeamMemberRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+			projectRole: new FormControl<string | null | undefined>(undefined),
+			remoteAccessAllowed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TeamMemberNotFoundException {
+	}
+	export interface TeamMemberNotFoundExceptionFormProperties {
+	}
+	export function CreateTeamMemberNotFoundExceptionFormGroup() {
+		return new FormGroup<TeamMemberNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateUserProfileResult {
@@ -377,12 +1042,46 @@ export namespace MyNS {
 		createdTimestamp?: Date | null;
 		lastModifiedTimestamp?: Date | null;
 	}
+	export interface UpdateUserProfileResultFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+		createdTimestamp: FormControl<Date | null | undefined>,
+		lastModifiedTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateUserProfileResultFormGroup() {
+		return new FormGroup<UpdateUserProfileResultFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			createdTimestamp: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateUserProfileRequest {
 		userArn: string;
 		displayName?: string | null;
 		emailAddress?: string | null;
 		sshPublicKey?: string | null;
+	}
+	export interface UpdateUserProfileRequestFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserProfileRequestFormGroup() {
+		return new FormGroup<UpdateUserProfileRequestFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

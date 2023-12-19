@@ -1,65 +1,204 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelKeyDeletionResponse {
 		KeyId?: string | null;
+	}
+	export interface CancelKeyDeletionResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelKeyDeletionResponseFormGroup() {
+		return new FormGroup<CancelKeyDeletionResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CancelKeyDeletionRequest {
 		KeyId: string;
 	}
+	export interface CancelKeyDeletionRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelKeyDeletionRequestFormGroup() {
+		return new FormGroup<CancelKeyDeletionRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidArnException {
 	}
+	export interface InvalidArnExceptionFormProperties {
+	}
+	export function CreateInvalidArnExceptionFormGroup() {
+		return new FormGroup<InvalidArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DependencyTimeoutException {
+	}
+	export interface DependencyTimeoutExceptionFormProperties {
+	}
+	export function CreateDependencyTimeoutExceptionFormGroup() {
+		return new FormGroup<DependencyTimeoutExceptionFormProperties>({
+		});
+
 	}
 
 	export interface KMSInternalException {
 	}
+	export interface KMSInternalExceptionFormProperties {
+	}
+	export function CreateKMSInternalExceptionFormGroup() {
+		return new FormGroup<KMSInternalExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KMSInvalidStateException {
 	}
+	export interface KMSInvalidStateExceptionFormProperties {
+	}
+	export function CreateKMSInvalidStateExceptionFormGroup() {
+		return new FormGroup<KMSInvalidStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConnectCustomKeyStoreResponse {
+	}
+	export interface ConnectCustomKeyStoreResponseFormProperties {
+	}
+	export function CreateConnectCustomKeyStoreResponseFormGroup() {
+		return new FormGroup<ConnectCustomKeyStoreResponseFormProperties>({
+		});
+
 	}
 
 	export interface ConnectCustomKeyStoreRequest {
 		CustomKeyStoreId: string;
 	}
+	export interface ConnectCustomKeyStoreRequestFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectCustomKeyStoreRequestFormGroup() {
+		return new FormGroup<ConnectCustomKeyStoreRequestFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CloudHsmClusterNotActiveException {
+	}
+	export interface CloudHsmClusterNotActiveExceptionFormProperties {
+	}
+	export function CreateCloudHsmClusterNotActiveExceptionFormGroup() {
+		return new FormGroup<CloudHsmClusterNotActiveExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CustomKeyStoreInvalidStateException {
 	}
+	export interface CustomKeyStoreInvalidStateExceptionFormProperties {
+	}
+	export function CreateCustomKeyStoreInvalidStateExceptionFormGroup() {
+		return new FormGroup<CustomKeyStoreInvalidStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CustomKeyStoreNotFoundException {
 	}
+	export interface CustomKeyStoreNotFoundExceptionFormProperties {
+	}
+	export function CreateCustomKeyStoreNotFoundExceptionFormGroup() {
+		return new FormGroup<CustomKeyStoreNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CloudHsmClusterInvalidConfigurationException {
+	}
+	export interface CloudHsmClusterInvalidConfigurationExceptionFormProperties {
+	}
+	export function CreateCloudHsmClusterInvalidConfigurationExceptionFormGroup() {
+		return new FormGroup<CloudHsmClusterInvalidConfigurationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateAliasRequest {
 		AliasName: string;
 		TargetKeyId: string;
 	}
+	export interface CreateAliasRequestFormProperties {
+		AliasName: FormControl<string | null | undefined>,
+		TargetKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAliasRequestFormGroup() {
+		return new FormGroup<CreateAliasRequestFormProperties>({
+			AliasName: new FormControl<string | null | undefined>(undefined),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlreadyExistsException {
+	}
+	export interface AlreadyExistsExceptionFormProperties {
+	}
+	export function CreateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<AlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidAliasNameException {
 	}
+	export interface InvalidAliasNameExceptionFormProperties {
+	}
+	export function CreateInvalidAliasNameExceptionFormGroup() {
+		return new FormGroup<InvalidAliasNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateCustomKeyStoreResponse {
 		CustomKeyStoreId?: string | null;
+	}
+	export interface CreateCustomKeyStoreResponseFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCustomKeyStoreResponseFormGroup() {
+		return new FormGroup<CreateCustomKeyStoreResponseFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCustomKeyStoreRequest {
@@ -68,22 +207,76 @@ export namespace MyNS {
 		TrustAnchorCertificate: string;
 		KeyStorePassword: string;
 	}
+	export interface CreateCustomKeyStoreRequestFormProperties {
+		CustomKeyStoreName: FormControl<string | null | undefined>,
+		CloudHsmClusterId: FormControl<string | null | undefined>,
+		TrustAnchorCertificate: FormControl<string | null | undefined>,
+		KeyStorePassword: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCustomKeyStoreRequestFormGroup() {
+		return new FormGroup<CreateCustomKeyStoreRequestFormProperties>({
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
+			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined),
+			KeyStorePassword: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CloudHsmClusterInUseException {
+	}
+	export interface CloudHsmClusterInUseExceptionFormProperties {
+	}
+	export function CreateCloudHsmClusterInUseExceptionFormGroup() {
+		return new FormGroup<CloudHsmClusterInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CustomKeyStoreNameInUseException {
 	}
+	export interface CustomKeyStoreNameInUseExceptionFormProperties {
+	}
+	export function CreateCustomKeyStoreNameInUseExceptionFormGroup() {
+		return new FormGroup<CustomKeyStoreNameInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CloudHsmClusterNotFoundException {
 	}
+	export interface CloudHsmClusterNotFoundExceptionFormProperties {
+	}
+	export function CreateCloudHsmClusterNotFoundExceptionFormGroup() {
+		return new FormGroup<CloudHsmClusterNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IncorrectTrustAnchorException {
+	}
+	export interface IncorrectTrustAnchorExceptionFormProperties {
+	}
+	export function CreateIncorrectTrustAnchorExceptionFormGroup() {
+		return new FormGroup<IncorrectTrustAnchorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateGrantResponse {
 		GrantToken?: string | null;
 		GrantId?: string | null;
+	}
+	export interface CreateGrantResponseFormProperties {
+		GrantToken: FormControl<string | null | undefined>,
+		GrantId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGrantResponseFormGroup() {
+		return new FormGroup<CreateGrantResponseFormProperties>({
+			GrantToken: new FormControl<string | null | undefined>(undefined),
+			GrantId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGrantRequest {
@@ -93,9 +286,24 @@ export namespace MyNS {
 		Operations: Array<GrantOperation>;
 
 		/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
-		Constraints?: GrantConstraints | null;
-		GrantTokens?: Array<string> | null;
+		Constraints?: GrantConstraints;
+		GrantTokens?: Array<string>;
 		Name?: string | null;
+	}
+	export interface CreateGrantRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		GranteePrincipal: FormControl<string | null | undefined>,
+		RetiringPrincipal: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGrantRequestFormGroup() {
+		return new FormGroup<CreateGrantRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			GranteePrincipal: new FormControl<string | null | undefined>(undefined),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GrantOperation { Decrypt = 0, Encrypt = 1, GenerateDataKey = 2, GenerateDataKeyWithoutPlaintext = 3, ReEncryptFrom = 4, ReEncryptTo = 5, Sign = 6, Verify = 7, GetPublicKey = 8, CreateGrant = 9, RetireGrant = 10, DescribeKey = 11, GenerateDataKeyPair = 12, GenerateDataKeyPairWithoutPlaintext = 13 }
@@ -103,23 +311,60 @@ export namespace MyNS {
 
 	/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
 	export interface GrantConstraints {
-		EncryptionContextSubset?: EncryptionContextType | null;
-		EncryptionContextEquals?: EncryptionContextType | null;
+		EncryptionContextSubset?: EncryptionContextType;
+		EncryptionContextEquals?: EncryptionContextType;
+	}
+
+	/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
+	export interface GrantConstraintsFormProperties {
+	}
+	export function CreateGrantConstraintsFormGroup() {
+		return new FormGroup<GrantConstraintsFormProperties>({
+		});
+
 	}
 
 	export interface EncryptionContextType {
 	}
+	export interface EncryptionContextTypeFormProperties {
+	}
+	export function CreateEncryptionContextTypeFormGroup() {
+		return new FormGroup<EncryptionContextTypeFormProperties>({
+		});
+
+	}
 
 	export interface DisabledException {
 	}
+	export interface DisabledExceptionFormProperties {
+	}
+	export function CreateDisabledExceptionFormGroup() {
+		return new FormGroup<DisabledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidGrantTokenException {
+	}
+	export interface InvalidGrantTokenExceptionFormProperties {
+	}
+	export function CreateInvalidGrantTokenExceptionFormGroup() {
+		return new FormGroup<InvalidGrantTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateKeyResponse {
 
 		/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
-		KeyMetadata?: KeyMetadata | null;
+		KeyMetadata?: KeyMetadata;
+	}
+	export interface CreateKeyResponseFormProperties {
+	}
+	export function CreateCreateKeyResponseFormGroup() {
+		return new FormGroup<CreateKeyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -141,8 +386,49 @@ export namespace MyNS {
 		ExpirationModel?: KeyMetadataExpirationModel | null;
 		KeyManager?: KeyMetadataKeyManager | null;
 		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
-		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec> | null;
-		SigningAlgorithms?: Array<SigningAlgorithmSpec> | null;
+		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec>;
+		SigningAlgorithms?: Array<SigningAlgorithmSpec>;
+	}
+
+	/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
+	export interface KeyMetadataFormProperties {
+		AWSAccountId: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		KeyUsage: FormControl<KeyMetadataKeyUsage | null | undefined>,
+		KeyState: FormControl<KeyMetadataKeyState | null | undefined>,
+		DeletionDate: FormControl<Date | null | undefined>,
+		ValidTo: FormControl<Date | null | undefined>,
+		Origin: FormControl<KeyMetadataOrigin | null | undefined>,
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+		CloudHsmClusterId: FormControl<string | null | undefined>,
+		ExpirationModel: FormControl<KeyMetadataExpirationModel | null | undefined>,
+		KeyManager: FormControl<KeyMetadataKeyManager | null | undefined>,
+		CustomerMasterKeySpec: FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>,
+	}
+	export function CreateKeyMetadataFormGroup() {
+		return new FormGroup<KeyMetadataFormProperties>({
+			AWSAccountId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
+			KeyState: new FormControl<KeyMetadataKeyState | null | undefined>(undefined),
+			DeletionDate: new FormControl<Date | null | undefined>(undefined),
+			ValidTo: new FormControl<Date | null | undefined>(undefined),
+			Origin: new FormControl<KeyMetadataOrigin | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
+			ExpirationModel: new FormControl<KeyMetadataExpirationModel | null | undefined>(undefined),
+			KeyManager: new FormControl<KeyMetadataKeyManager | null | undefined>(undefined),
+			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum KeyMetadataKeyUsage { SIGN_VERIFY = 0, ENCRYPT_DECRYPT = 1 }
@@ -169,7 +455,28 @@ export namespace MyNS {
 		Origin?: KeyMetadataOrigin | null;
 		CustomKeyStoreId?: string | null;
 		BypassPolicyLockoutSafetyCheck?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateKeyRequestFormProperties {
+		Policy: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		KeyUsage: FormControl<KeyMetadataKeyUsage | null | undefined>,
+		CustomerMasterKeySpec: FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>,
+		Origin: FormControl<KeyMetadataOrigin | null | undefined>,
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+		BypassPolicyLockoutSafetyCheck: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateKeyRequestFormGroup() {
+		return new FormGroup<CreateKeyRequestFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
+			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
+			Origin: new FormControl<KeyMetadataOrigin | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -179,13 +486,47 @@ export namespace MyNS {
 		TagValue: string;
 	}
 
+	/** <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p> <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p> */
+	export interface TagFormProperties {
+		TagKey: FormControl<string | null | undefined>,
+		TagValue: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			TagKey: new FormControl<string | null | undefined>(undefined),
+			TagValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MalformedPolicyDocumentException {
+	}
+	export interface MalformedPolicyDocumentExceptionFormProperties {
+	}
+	export function CreateMalformedPolicyDocumentExceptionFormGroup() {
+		return new FormGroup<MalformedPolicyDocumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedOperationException {
 	}
+	export interface UnsupportedOperationExceptionFormProperties {
+	}
+	export function CreateUnsupportedOperationExceptionFormGroup() {
+		return new FormGroup<UnsupportedOperationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagException {
+	}
+	export interface TagExceptionFormProperties {
+	}
+	export function CreateTagExceptionFormGroup() {
+		return new FormGroup<TagExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DecryptResponse {
@@ -193,49 +534,155 @@ export namespace MyNS {
 		Plaintext?: string | null;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
+	export interface DecryptResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Plaintext: FormControl<string | null | undefined>,
+		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+	}
+	export function CreateDecryptResponseFormGroup() {
+		return new FormGroup<DecryptResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Plaintext: new FormControl<string | null | undefined>(undefined),
+			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DecryptRequest {
 		CiphertextBlob: string;
-		EncryptionContext?: EncryptionContextType | null;
-		GrantTokens?: Array<string> | null;
+		EncryptionContext?: EncryptionContextType;
+		GrantTokens?: Array<string>;
 		KeyId?: string | null;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
+	}
+	export interface DecryptRequestFormProperties {
+		CiphertextBlob: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+	}
+	export function CreateDecryptRequestFormGroup() {
+		return new FormGroup<DecryptRequestFormProperties>({
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidCiphertextException {
 	}
+	export interface InvalidCiphertextExceptionFormProperties {
+	}
+	export function CreateInvalidCiphertextExceptionFormGroup() {
+		return new FormGroup<InvalidCiphertextExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KeyUnavailableException {
+	}
+	export interface KeyUnavailableExceptionFormProperties {
+	}
+	export function CreateKeyUnavailableExceptionFormGroup() {
+		return new FormGroup<KeyUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface IncorrectKeyException {
 	}
+	export interface IncorrectKeyExceptionFormProperties {
+	}
+	export function CreateIncorrectKeyExceptionFormGroup() {
+		return new FormGroup<IncorrectKeyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidKeyUsageException {
+	}
+	export interface InvalidKeyUsageExceptionFormProperties {
+	}
+	export function CreateInvalidKeyUsageExceptionFormGroup() {
+		return new FormGroup<InvalidKeyUsageExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAliasRequest {
 		AliasName: string;
 	}
+	export interface DeleteAliasRequestFormProperties {
+		AliasName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAliasRequestFormGroup() {
+		return new FormGroup<DeleteAliasRequestFormProperties>({
+			AliasName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteCustomKeyStoreResponse {
+	}
+	export interface DeleteCustomKeyStoreResponseFormProperties {
+	}
+	export function CreateDeleteCustomKeyStoreResponseFormGroup() {
+		return new FormGroup<DeleteCustomKeyStoreResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCustomKeyStoreRequest {
 		CustomKeyStoreId: string;
 	}
+	export interface DeleteCustomKeyStoreRequestFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCustomKeyStoreRequestFormGroup() {
+		return new FormGroup<DeleteCustomKeyStoreRequestFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CustomKeyStoreHasCMKsException {
+	}
+	export interface CustomKeyStoreHasCMKsExceptionFormProperties {
+	}
+	export function CreateCustomKeyStoreHasCMKsExceptionFormGroup() {
+		return new FormGroup<CustomKeyStoreHasCMKsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteImportedKeyMaterialRequest {
 		KeyId: string;
 	}
+	export interface DeleteImportedKeyMaterialRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteImportedKeyMaterialRequestFormGroup() {
+		return new FormGroup<DeleteImportedKeyMaterialRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCustomKeyStoresResponse {
-		CustomKeyStores?: Array<CustomKeyStoresListEntry> | null;
+		CustomKeyStores?: Array<CustomKeyStoresListEntry>;
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
+	}
+	export interface DescribeCustomKeyStoresResponseFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+		Truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeCustomKeyStoresResponseFormGroup() {
+		return new FormGroup<DescribeCustomKeyStoresResponseFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -250,6 +697,29 @@ export namespace MyNS {
 		CreationDate?: Date | null;
 	}
 
+	/** Contains information about each custom key store in the custom key store list. */
+	export interface CustomKeyStoresListEntryFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+		CustomKeyStoreName: FormControl<string | null | undefined>,
+		CloudHsmClusterId: FormControl<string | null | undefined>,
+		TrustAnchorCertificate: FormControl<string | null | undefined>,
+		ConnectionState: FormControl<CustomKeyStoresListEntryConnectionState | null | undefined>,
+		ConnectionErrorCode: FormControl<CustomKeyStoresListEntryConnectionErrorCode | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCustomKeyStoresListEntryFormGroup() {
+		return new FormGroup<CustomKeyStoresListEntryFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
+			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined),
+			ConnectionState: new FormControl<CustomKeyStoresListEntryConnectionState | null | undefined>(undefined),
+			ConnectionErrorCode: new FormControl<CustomKeyStoresListEntryConnectionErrorCode | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CustomKeyStoresListEntryConnectionState { CONNECTED = 0, CONNECTING = 1, FAILED = 2, DISCONNECTED = 3, DISCONNECTING = 4 }
 
 	export enum CustomKeyStoresListEntryConnectionErrorCode { INVALID_CREDENTIALS = 0, CLUSTER_NOT_FOUND = 1, NETWORK_ERRORS = 2, INTERNAL_ERROR = 3, INSUFFICIENT_CLOUDHSM_HSMS = 4, USER_LOCKED_OUT = 5, USER_NOT_FOUND = 6, USER_LOGGED_IN = 7, SUBNET_NOT_FOUND = 8 }
@@ -260,39 +730,122 @@ export namespace MyNS {
 		Limit?: number | null;
 		Marker?: string | null;
 	}
+	export interface DescribeCustomKeyStoresRequestFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+		CustomKeyStoreName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCustomKeyStoresRequestFormGroup() {
+		return new FormGroup<DescribeCustomKeyStoresRequestFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeKeyResponse {
 
 		/** <p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p> */
-		KeyMetadata?: KeyMetadata | null;
+		KeyMetadata?: KeyMetadata;
+	}
+	export interface DescribeKeyResponseFormProperties {
+	}
+	export function CreateDescribeKeyResponseFormGroup() {
+		return new FormGroup<DescribeKeyResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeKeyRequest {
 		KeyId: string;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface DescribeKeyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeKeyRequestFormGroup() {
+		return new FormGroup<DescribeKeyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisableKeyRequest {
 		KeyId: string;
 	}
+	export interface DisableKeyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableKeyRequestFormGroup() {
+		return new FormGroup<DisableKeyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisableKeyRotationRequest {
 		KeyId: string;
 	}
+	export interface DisableKeyRotationRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableKeyRotationRequestFormGroup() {
+		return new FormGroup<DisableKeyRotationRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisconnectCustomKeyStoreResponse {
+	}
+	export interface DisconnectCustomKeyStoreResponseFormProperties {
+	}
+	export function CreateDisconnectCustomKeyStoreResponseFormGroup() {
+		return new FormGroup<DisconnectCustomKeyStoreResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisconnectCustomKeyStoreRequest {
 		CustomKeyStoreId: string;
 	}
+	export interface DisconnectCustomKeyStoreRequestFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisconnectCustomKeyStoreRequestFormGroup() {
+		return new FormGroup<DisconnectCustomKeyStoreRequestFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableKeyRequest {
 		KeyId: string;
 	}
+	export interface EnableKeyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableKeyRequestFormGroup() {
+		return new FormGroup<EnableKeyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableKeyRotationRequest {
 		KeyId: string;
+	}
+	export interface EnableKeyRotationRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableKeyRotationRequestFormGroup() {
+		return new FormGroup<EnableKeyRotationRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EncryptResponse {
@@ -300,13 +853,39 @@ export namespace MyNS {
 		KeyId?: string | null;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
+	export interface EncryptResponseFormProperties {
+		CiphertextBlob: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+	}
+	export function CreateEncryptResponseFormGroup() {
+		return new FormGroup<EncryptResponseFormProperties>({
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EncryptRequest {
 		KeyId: string;
 		Plaintext: string;
-		EncryptionContext?: EncryptionContextType | null;
-		GrantTokens?: Array<string> | null;
+		EncryptionContext?: EncryptionContextType;
+		GrantTokens?: Array<string>;
 		EncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
+	}
+	export interface EncryptRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Plaintext: FormControl<string | null | undefined>,
+		EncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+	}
+	export function CreateEncryptRequestFormGroup() {
+		return new FormGroup<EncryptRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Plaintext: new FormControl<string | null | undefined>(undefined),
+			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateDataKeyResponse {
@@ -314,13 +893,39 @@ export namespace MyNS {
 		Plaintext?: string | null;
 		KeyId?: string | null;
 	}
+	export interface GenerateDataKeyResponseFormProperties {
+		CiphertextBlob: FormControl<string | null | undefined>,
+		Plaintext: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateDataKeyResponseFormGroup() {
+		return new FormGroup<GenerateDataKeyResponseFormProperties>({
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			Plaintext: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GenerateDataKeyRequest {
 		KeyId: string;
-		EncryptionContext?: EncryptionContextType | null;
+		EncryptionContext?: EncryptionContextType;
 		NumberOfBytes?: number | null;
 		KeySpec?: GenerateDataKeyRequestKeySpec | null;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface GenerateDataKeyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		NumberOfBytes: FormControl<number | null | undefined>,
+		KeySpec: FormControl<GenerateDataKeyRequestKeySpec | null | undefined>,
+	}
+	export function CreateGenerateDataKeyRequestFormGroup() {
+		return new FormGroup<GenerateDataKeyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			NumberOfBytes: new FormControl<number | null | undefined>(undefined),
+			KeySpec: new FormControl<GenerateDataKeyRequestKeySpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GenerateDataKeyRequestKeySpec { AES_256 = 0, AES_128 = 1 }
@@ -332,14 +937,42 @@ export namespace MyNS {
 		KeyId?: string | null;
 		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec | null;
 	}
+	export interface GenerateDataKeyPairResponseFormProperties {
+		PrivateKeyCiphertextBlob: FormControl<string | null | undefined>,
+		PrivateKeyPlaintext: FormControl<string | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
+	}
+	export function CreateGenerateDataKeyPairResponseFormGroup() {
+		return new FormGroup<GenerateDataKeyPairResponseFormProperties>({
+			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			PrivateKeyPlaintext: new FormControl<string | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GenerateDataKeyPairResponseKeyPairSpec { RSA_2048 = 0, RSA_3072 = 1, RSA_4096 = 2, ECC_NIST_P256 = 3, ECC_NIST_P384 = 4, ECC_NIST_P521 = 5, ECC_SECG_P256K1 = 6 }
 
 	export interface GenerateDataKeyPairRequest {
-		EncryptionContext?: EncryptionContextType | null;
+		EncryptionContext?: EncryptionContextType;
 		KeyId: string;
 		KeyPairSpec: GenerateDataKeyPairResponseKeyPairSpec;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface GenerateDataKeyPairRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
+	}
+	export function CreateGenerateDataKeyPairRequestFormGroup() {
+		return new FormGroup<GenerateDataKeyPairRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateDataKeyPairWithoutPlaintextResponse {
@@ -348,51 +981,159 @@ export namespace MyNS {
 		KeyId?: string | null;
 		KeyPairSpec?: GenerateDataKeyPairResponseKeyPairSpec | null;
 	}
+	export interface GenerateDataKeyPairWithoutPlaintextResponseFormProperties {
+		PrivateKeyCiphertextBlob: FormControl<string | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
+	}
+	export function CreateGenerateDataKeyPairWithoutPlaintextResponseFormGroup() {
+		return new FormGroup<GenerateDataKeyPairWithoutPlaintextResponseFormProperties>({
+			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GenerateDataKeyPairWithoutPlaintextRequest {
-		EncryptionContext?: EncryptionContextType | null;
+		EncryptionContext?: EncryptionContextType;
 		KeyId: string;
 		KeyPairSpec: GenerateDataKeyPairResponseKeyPairSpec;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface GenerateDataKeyPairWithoutPlaintextRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		KeyPairSpec: FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>,
+	}
+	export function CreateGenerateDataKeyPairWithoutPlaintextRequestFormGroup() {
+		return new FormGroup<GenerateDataKeyPairWithoutPlaintextRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateDataKeyWithoutPlaintextResponse {
 		CiphertextBlob?: string | null;
 		KeyId?: string | null;
 	}
+	export interface GenerateDataKeyWithoutPlaintextResponseFormProperties {
+		CiphertextBlob: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateDataKeyWithoutPlaintextResponseFormGroup() {
+		return new FormGroup<GenerateDataKeyWithoutPlaintextResponseFormProperties>({
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GenerateDataKeyWithoutPlaintextRequest {
 		KeyId: string;
-		EncryptionContext?: EncryptionContextType | null;
+		EncryptionContext?: EncryptionContextType;
 		KeySpec?: GenerateDataKeyRequestKeySpec | null;
 		NumberOfBytes?: number | null;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface GenerateDataKeyWithoutPlaintextRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		KeySpec: FormControl<GenerateDataKeyRequestKeySpec | null | undefined>,
+		NumberOfBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateGenerateDataKeyWithoutPlaintextRequestFormGroup() {
+		return new FormGroup<GenerateDataKeyWithoutPlaintextRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeySpec: new FormControl<GenerateDataKeyRequestKeySpec | null | undefined>(undefined),
+			NumberOfBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateRandomResponse {
 		Plaintext?: string | null;
+	}
+	export interface GenerateRandomResponseFormProperties {
+		Plaintext: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateRandomResponseFormGroup() {
+		return new FormGroup<GenerateRandomResponseFormProperties>({
+			Plaintext: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateRandomRequest {
 		NumberOfBytes?: number | null;
 		CustomKeyStoreId?: string | null;
 	}
+	export interface GenerateRandomRequestFormProperties {
+		NumberOfBytes: FormControl<number | null | undefined>,
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateRandomRequestFormGroup() {
+		return new FormGroup<GenerateRandomRequestFormProperties>({
+			NumberOfBytes: new FormControl<number | null | undefined>(undefined),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetKeyPolicyResponse {
 		Policy?: string | null;
+	}
+	export interface GetKeyPolicyResponseFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetKeyPolicyResponseFormGroup() {
+		return new FormGroup<GetKeyPolicyResponseFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetKeyPolicyRequest {
 		KeyId: string;
 		PolicyName: string;
 	}
+	export interface GetKeyPolicyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetKeyPolicyRequestFormGroup() {
+		return new FormGroup<GetKeyPolicyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetKeyRotationStatusResponse {
 		KeyRotationEnabled?: boolean | null;
 	}
+	export interface GetKeyRotationStatusResponseFormProperties {
+		KeyRotationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetKeyRotationStatusResponseFormGroup() {
+		return new FormGroup<GetKeyRotationStatusResponseFormProperties>({
+			KeyRotationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetKeyRotationStatusRequest {
 		KeyId: string;
+	}
+	export interface GetKeyRotationStatusRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetKeyRotationStatusRequestFormGroup() {
+		return new FormGroup<GetKeyRotationStatusRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetParametersForImportResponse {
@@ -401,11 +1142,39 @@ export namespace MyNS {
 		PublicKey?: string | null;
 		ParametersValidTo?: Date | null;
 	}
+	export interface GetParametersForImportResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		ImportToken: FormControl<string | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		ParametersValidTo: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetParametersForImportResponseFormGroup() {
+		return new FormGroup<GetParametersForImportResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			ImportToken: new FormControl<string | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			ParametersValidTo: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetParametersForImportRequest {
 		KeyId: string;
 		WrappingAlgorithm: GetParametersForImportRequestWrappingAlgorithm;
 		WrappingKeySpec: GetParametersForImportRequestWrappingKeySpec;
+	}
+	export interface GetParametersForImportRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		WrappingAlgorithm: FormControl<GetParametersForImportRequestWrappingAlgorithm | null | undefined>,
+		WrappingKeySpec: FormControl<GetParametersForImportRequestWrappingKeySpec | null | undefined>,
+	}
+	export function CreateGetParametersForImportRequestFormGroup() {
+		return new FormGroup<GetParametersForImportRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			WrappingAlgorithm: new FormControl<GetParametersForImportRequestWrappingAlgorithm | null | undefined>(undefined),
+			WrappingKeySpec: new FormControl<GetParametersForImportRequestWrappingKeySpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetParametersForImportRequestWrappingAlgorithm { RSAES_PKCS1_V1_5 = 0, RSAES_OAEP_SHA_1 = 1, RSAES_OAEP_SHA_256 = 2 }
@@ -417,16 +1186,47 @@ export namespace MyNS {
 		PublicKey?: string | null;
 		CustomerMasterKeySpec?: KeyMetadataCustomerMasterKeySpec | null;
 		KeyUsage?: KeyMetadataKeyUsage | null;
-		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec> | null;
-		SigningAlgorithms?: Array<SigningAlgorithmSpec> | null;
+		EncryptionAlgorithms?: Array<EncryptionAlgorithmSpec>;
+		SigningAlgorithms?: Array<SigningAlgorithmSpec>;
+	}
+	export interface GetPublicKeyResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		CustomerMasterKeySpec: FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>,
+		KeyUsage: FormControl<KeyMetadataKeyUsage | null | undefined>,
+	}
+	export function CreateGetPublicKeyResponseFormGroup() {
+		return new FormGroup<GetPublicKeyResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
+			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetPublicKeyRequest {
 		KeyId: string;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface GetPublicKeyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPublicKeyRequestFormGroup() {
+		return new FormGroup<GetPublicKeyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportKeyMaterialResponse {
+	}
+	export interface ImportKeyMaterialResponseFormProperties {
+	}
+	export function CreateImportKeyMaterialResponseFormGroup() {
+		return new FormGroup<ImportKeyMaterialResponseFormProperties>({
+		});
+
 	}
 
 	export interface ImportKeyMaterialRequest {
@@ -436,20 +1236,69 @@ export namespace MyNS {
 		ValidTo?: Date | null;
 		ExpirationModel?: KeyMetadataExpirationModel | null;
 	}
+	export interface ImportKeyMaterialRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		ImportToken: FormControl<string | null | undefined>,
+		EncryptedKeyMaterial: FormControl<string | null | undefined>,
+		ValidTo: FormControl<Date | null | undefined>,
+		ExpirationModel: FormControl<KeyMetadataExpirationModel | null | undefined>,
+	}
+	export function CreateImportKeyMaterialRequestFormGroup() {
+		return new FormGroup<ImportKeyMaterialRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			ImportToken: new FormControl<string | null | undefined>(undefined),
+			EncryptedKeyMaterial: new FormControl<string | null | undefined>(undefined),
+			ValidTo: new FormControl<Date | null | undefined>(undefined),
+			ExpirationModel: new FormControl<KeyMetadataExpirationModel | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface IncorrectKeyMaterialException {
+	}
+	export interface IncorrectKeyMaterialExceptionFormProperties {
+	}
+	export function CreateIncorrectKeyMaterialExceptionFormGroup() {
+		return new FormGroup<IncorrectKeyMaterialExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ExpiredImportTokenException {
 	}
+	export interface ExpiredImportTokenExceptionFormProperties {
+	}
+	export function CreateExpiredImportTokenExceptionFormGroup() {
+		return new FormGroup<ExpiredImportTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidImportTokenException {
 	}
+	export interface InvalidImportTokenExceptionFormProperties {
+	}
+	export function CreateInvalidImportTokenExceptionFormGroup() {
+		return new FormGroup<InvalidImportTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListAliasesResponse {
-		Aliases?: Array<AliasListEntry> | null;
+		Aliases?: Array<AliasListEntry>;
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
+	}
+	export interface ListAliasesResponseFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+		Truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListAliasesResponseFormGroup() {
+		return new FormGroup<ListAliasesResponseFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -460,19 +1309,65 @@ export namespace MyNS {
 		TargetKeyId?: string | null;
 	}
 
+	/** Contains information about an alias. */
+	export interface AliasListEntryFormProperties {
+		AliasName: FormControl<string | null | undefined>,
+		AliasArn: FormControl<string | null | undefined>,
+		TargetKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateAliasListEntryFormGroup() {
+		return new FormGroup<AliasListEntryFormProperties>({
+			AliasName: new FormControl<string | null | undefined>(undefined),
+			AliasArn: new FormControl<string | null | undefined>(undefined),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAliasesRequest {
 		KeyId?: string | null;
 		Limit?: number | null;
 		Marker?: string | null;
 	}
+	export interface ListAliasesRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAliasesRequestFormGroup() {
+		return new FormGroup<ListAliasesRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidMarkerException {
 	}
+	export interface InvalidMarkerExceptionFormProperties {
+	}
+	export function CreateInvalidMarkerExceptionFormGroup() {
+		return new FormGroup<InvalidMarkerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListGrantsResponse {
-		Grants?: Array<GrantListEntry> | null;
+		Grants?: Array<GrantListEntry>;
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
+	}
+	export interface ListGrantsResponseFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+		Truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListGrantsResponseFormGroup() {
+		return new FormGroup<ListGrantsResponseFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -485,10 +1380,33 @@ export namespace MyNS {
 		GranteePrincipal?: string | null;
 		RetiringPrincipal?: string | null;
 		IssuingAccount?: string | null;
-		Operations?: Array<GrantOperation> | null;
+		Operations?: Array<GrantOperation>;
 
 		/** <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p> <p>AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric CMK</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p> <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p> <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p> </important> */
-		Constraints?: GrantConstraints | null;
+		Constraints?: GrantConstraints;
+	}
+
+	/** Contains information about a grant. */
+	export interface GrantListEntryFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		GrantId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		GranteePrincipal: FormControl<string | null | undefined>,
+		RetiringPrincipal: FormControl<string | null | undefined>,
+		IssuingAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateGrantListEntryFormGroup() {
+		return new FormGroup<GrantListEntryFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			GrantId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			GranteePrincipal: new FormControl<string | null | undefined>(undefined),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined),
+			IssuingAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGrantsRequest {
@@ -496,11 +1414,35 @@ export namespace MyNS {
 		Marker?: string | null;
 		KeyId: string;
 	}
+	export interface ListGrantsRequestFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateListGrantsRequestFormGroup() {
+		return new FormGroup<ListGrantsRequestFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListKeyPoliciesResponse {
-		PolicyNames?: Array<string> | null;
+		PolicyNames?: Array<string>;
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
+	}
+	export interface ListKeyPoliciesResponseFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+		Truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListKeyPoliciesResponseFormGroup() {
+		return new FormGroup<ListKeyPoliciesResponseFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListKeyPoliciesRequest {
@@ -508,11 +1450,35 @@ export namespace MyNS {
 		Limit?: number | null;
 		Marker?: string | null;
 	}
+	export interface ListKeyPoliciesRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListKeyPoliciesRequestFormGroup() {
+		return new FormGroup<ListKeyPoliciesRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListKeysResponse {
-		Keys?: Array<KeyListEntry> | null;
+		Keys?: Array<KeyListEntry>;
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
+	}
+	export interface ListKeysResponseFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+		Truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListKeysResponseFormGroup() {
+		return new FormGroup<ListKeysResponseFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -522,15 +1488,50 @@ export namespace MyNS {
 		KeyArn?: string | null;
 	}
 
+	/** Contains information about each entry in the key list. */
+	export interface KeyListEntryFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		KeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateKeyListEntryFormGroup() {
+		return new FormGroup<KeyListEntryFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			KeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListKeysRequest {
 		Limit?: number | null;
 		Marker?: string | null;
 	}
+	export interface ListKeysRequestFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListKeysRequestFormGroup() {
+		return new FormGroup<ListKeysRequestFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListResourceTagsResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextMarker?: string | null;
 		Truncated?: boolean | null;
+	}
+	export interface ListResourceTagsResponseFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+		Truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListResourceTagsResponseFormGroup() {
+		return new FormGroup<ListResourceTagsResponseFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+			Truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResourceTagsRequest {
@@ -538,11 +1539,37 @@ export namespace MyNS {
 		Limit?: number | null;
 		Marker?: string | null;
 	}
+	export interface ListResourceTagsRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceTagsRequestFormGroup() {
+		return new FormGroup<ListResourceTagsRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRetirableGrantsRequest {
 		Limit?: number | null;
 		Marker?: string | null;
 		RetiringPrincipal: string;
+	}
+	export interface ListRetirableGrantsRequestFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		RetiringPrincipal: FormControl<string | null | undefined>,
+	}
+	export function CreateListRetirableGrantsRequestFormGroup() {
+		return new FormGroup<ListRetirableGrantsRequestFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutKeyPolicyRequest {
@@ -550,6 +1577,21 @@ export namespace MyNS {
 		PolicyName: string;
 		Policy: string;
 		BypassPolicyLockoutSafetyCheck?: boolean | null;
+	}
+	export interface PutKeyPolicyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+		BypassPolicyLockoutSafetyCheck: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutKeyPolicyRequestFormGroup() {
+		return new FormGroup<PutKeyPolicyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReEncryptResponse {
@@ -559,16 +1601,50 @@ export namespace MyNS {
 		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 	}
+	export interface ReEncryptResponseFormProperties {
+		CiphertextBlob: FormControl<string | null | undefined>,
+		SourceKeyId: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		SourceEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+		DestinationEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+	}
+	export function CreateReEncryptResponseFormGroup() {
+		return new FormGroup<ReEncryptResponseFormProperties>({
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			SourceKeyId: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			SourceEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+			DestinationEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReEncryptRequest {
 		CiphertextBlob: string;
-		SourceEncryptionContext?: EncryptionContextType | null;
+		SourceEncryptionContext?: EncryptionContextType;
 		SourceKeyId?: string | null;
 		DestinationKeyId: string;
-		DestinationEncryptionContext?: EncryptionContextType | null;
+		DestinationEncryptionContext?: EncryptionContextType;
 		SourceEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
 		DestinationEncryptionAlgorithm?: EncryptionAlgorithmSpec | null;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface ReEncryptRequestFormProperties {
+		CiphertextBlob: FormControl<string | null | undefined>,
+		SourceKeyId: FormControl<string | null | undefined>,
+		DestinationKeyId: FormControl<string | null | undefined>,
+		SourceEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+		DestinationEncryptionAlgorithm: FormControl<EncryptionAlgorithmSpec | null | undefined>,
+	}
+	export function CreateReEncryptRequestFormGroup() {
+		return new FormGroup<ReEncryptRequestFormProperties>({
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined),
+			SourceKeyId: new FormControl<string | null | undefined>(undefined),
+			DestinationKeyId: new FormControl<string | null | undefined>(undefined),
+			SourceEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+			DestinationEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RetireGrantRequest {
@@ -576,23 +1652,76 @@ export namespace MyNS {
 		KeyId?: string | null;
 		GrantId?: string | null;
 	}
+	export interface RetireGrantRequestFormProperties {
+		GrantToken: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		GrantId: FormControl<string | null | undefined>,
+	}
+	export function CreateRetireGrantRequestFormGroup() {
+		return new FormGroup<RetireGrantRequestFormProperties>({
+			GrantToken: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			GrantId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidGrantIdException {
+	}
+	export interface InvalidGrantIdExceptionFormProperties {
+	}
+	export function CreateInvalidGrantIdExceptionFormGroup() {
+		return new FormGroup<InvalidGrantIdExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RevokeGrantRequest {
 		KeyId: string;
 		GrantId: string;
 	}
+	export interface RevokeGrantRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		GrantId: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeGrantRequestFormGroup() {
+		return new FormGroup<RevokeGrantRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			GrantId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ScheduleKeyDeletionResponse {
 		KeyId?: string | null;
 		DeletionDate?: Date | null;
 	}
+	export interface ScheduleKeyDeletionResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		DeletionDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateScheduleKeyDeletionResponseFormGroup() {
+		return new FormGroup<ScheduleKeyDeletionResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			DeletionDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ScheduleKeyDeletionRequest {
 		KeyId: string;
 		PendingWindowInDays?: number | null;
+	}
+	export interface ScheduleKeyDeletionRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		PendingWindowInDays: FormControl<number | null | undefined>,
+	}
+	export function CreateScheduleKeyDeletionRequestFormGroup() {
+		return new FormGroup<ScheduleKeyDeletionRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			PendingWindowInDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SignResponse {
@@ -600,13 +1729,41 @@ export namespace MyNS {
 		Signature?: string | null;
 		SigningAlgorithm?: SigningAlgorithmSpec | null;
 	}
+	export interface SignResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Signature: FormControl<string | null | undefined>,
+		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
+	}
+	export function CreateSignResponseFormGroup() {
+		return new FormGroup<SignResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SignRequest {
 		KeyId: string;
 		Message: string;
 		MessageType?: SignRequestMessageType | null;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
 		SigningAlgorithm: SigningAlgorithmSpec;
+	}
+	export interface SignRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		MessageType: FormControl<SignRequestMessageType | null | undefined>,
+		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
+	}
+	export function CreateSignRequestFormGroup() {
+		return new FormGroup<SignRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			MessageType: new FormControl<SignRequestMessageType | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SignRequestMessageType { RAW = 0, DIGEST = 1 }
@@ -615,18 +1772,54 @@ export namespace MyNS {
 		KeyId: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceRequest {
 		KeyId: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAliasRequest {
 		AliasName: string;
 		TargetKeyId: string;
 	}
+	export interface UpdateAliasRequestFormProperties {
+		AliasName: FormControl<string | null | undefined>,
+		TargetKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAliasRequestFormGroup() {
+		return new FormGroup<UpdateAliasRequestFormProperties>({
+			AliasName: new FormControl<string | null | undefined>(undefined),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCustomKeyStoreResponse {
+	}
+	export interface UpdateCustomKeyStoreResponseFormProperties {
+	}
+	export function CreateUpdateCustomKeyStoreResponseFormGroup() {
+		return new FormGroup<UpdateCustomKeyStoreResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCustomKeyStoreRequest {
@@ -635,19 +1828,65 @@ export namespace MyNS {
 		KeyStorePassword?: string | null;
 		CloudHsmClusterId?: string | null;
 	}
+	export interface UpdateCustomKeyStoreRequestFormProperties {
+		CustomKeyStoreId: FormControl<string | null | undefined>,
+		NewCustomKeyStoreName: FormControl<string | null | undefined>,
+		KeyStorePassword: FormControl<string | null | undefined>,
+		CloudHsmClusterId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCustomKeyStoreRequestFormGroup() {
+		return new FormGroup<UpdateCustomKeyStoreRequestFormProperties>({
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined),
+			NewCustomKeyStoreName: new FormControl<string | null | undefined>(undefined),
+			KeyStorePassword: new FormControl<string | null | undefined>(undefined),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CloudHsmClusterNotRelatedException {
+	}
+	export interface CloudHsmClusterNotRelatedExceptionFormProperties {
+	}
+	export function CreateCloudHsmClusterNotRelatedExceptionFormGroup() {
+		return new FormGroup<CloudHsmClusterNotRelatedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateKeyDescriptionRequest {
 		KeyId: string;
 		Description: string;
 	}
+	export interface UpdateKeyDescriptionRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateKeyDescriptionRequestFormGroup() {
+		return new FormGroup<UpdateKeyDescriptionRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VerifyResponse {
 		KeyId?: string | null;
 		SignatureValid?: boolean | null;
 		SigningAlgorithm?: SigningAlgorithmSpec | null;
+	}
+	export interface VerifyResponseFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		SignatureValid: FormControl<boolean | null | undefined>,
+		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
+	}
+	export function CreateVerifyResponseFormGroup() {
+		return new FormGroup<VerifyResponseFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			SignatureValid: new FormControl<boolean | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VerifyRequest {
@@ -656,10 +1895,34 @@ export namespace MyNS {
 		MessageType?: SignRequestMessageType | null;
 		Signature: string;
 		SigningAlgorithm: SigningAlgorithmSpec;
-		GrantTokens?: Array<string> | null;
+		GrantTokens?: Array<string>;
+	}
+	export interface VerifyRequestFormProperties {
+		KeyId: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		MessageType: FormControl<SignRequestMessageType | null | undefined>,
+		Signature: FormControl<string | null | undefined>,
+		SigningAlgorithm: FormControl<SigningAlgorithmSpec | null | undefined>,
+	}
+	export function CreateVerifyRequestFormGroup() {
+		return new FormGroup<VerifyRequestFormProperties>({
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			MessageType: new FormControl<SignRequestMessageType | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface KMSInvalidSignatureException {
+	}
+	export interface KMSInvalidSignatureExceptionFormProperties {
+	}
+	export function CreateKMSInvalidSignatureExceptionFormGroup() {
+		return new FormGroup<KMSInvalidSignatureExceptionFormProperties>({
+		});
+
 	}
 
 	export enum AlgorithmSpec { RSAES_PKCS1_V1_5 = 0, RSAES_OAEP_SHA_1 = 1, RSAES_OAEP_SHA_256 = 2 }

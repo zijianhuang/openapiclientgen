@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateNodeResponse {
 		NodeAssociationStatusToken?: string | null;
+	}
+	export interface AssociateNodeResponseFormProperties {
+		NodeAssociationStatusToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateNodeResponseFormGroup() {
+		return new FormGroup<AssociateNodeResponseFormProperties>({
+			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateNodeRequest {
@@ -18,6 +28,24 @@ export namespace MyNS {
 		NodeName: string;
 		EngineAttributes: Array<EngineAttribute>;
 	}
+	export interface AssociateNodeRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * The node name that is used by <code>chef-client</code> or <code>puppet-agent</code>for a new node. We recommend to use a unique FQDN as hostname. For more information, see the <a href="https://docs.aws.amazon.com/https:/docs.chef.io/nodes.html#about-node-names">Chef</a> or <a href="https://docs.aws.amazon.com/https:/docs.puppet.com/puppet/4.10/man/agent.html">Puppet</a> documentation.
+		 * Required
+		 * Max length: 10000
+		 * Pattern: ^[\-\p{Alnum}_:.]+$
+		 */
+		NodeName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateNodeRequestFormGroup() {
+		return new FormGroup<AssociateNodeRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			NodeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A name and value pair that is specific to the engine of the server.  */
@@ -26,19 +54,60 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A name and value pair that is specific to the engine of the server.  */
+	export interface EngineAttributeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateEngineAttributeFormGroup() {
+		return new FormGroup<EngineAttributeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidStateException {
+	}
+	export interface InvalidStateExceptionFormProperties {
+	}
+	export function CreateInvalidStateExceptionFormGroup() {
+		return new FormGroup<InvalidStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateBackupResponse {
 
 		/** Describes a single backup. */
-		Backup?: Backup | null;
+		Backup?: Backup;
+	}
+	export interface CreateBackupResponseFormProperties {
+	}
+	export function CreateCreateBackupResponseFormGroup() {
+		return new FormGroup<CreateBackupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -72,14 +141,79 @@ export namespace MyNS {
 		S3DataSize?: number | null;
 		S3DataUrl?: string | null;
 		S3LogUrl?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		ServerName?: string | null;
 		ServiceRoleArn?: string | null;
 		Status?: BackupStatus | null;
 		StatusDescription?: string | null;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 		ToolsVersion?: string | null;
 		UserArn?: string | null;
+	}
+
+	/** Describes a single backup.  */
+	export interface BackupFormProperties {
+		BackupArn: FormControl<string | null | undefined>,
+		BackupId: FormControl<string | null | undefined>,
+		BackupType: FormControl<BackupBackupType | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		EngineModel: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		InstanceProfileArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		KeyPair: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		S3DataSize: FormControl<number | null | undefined>,
+		S3DataUrl: FormControl<string | null | undefined>,
+		S3LogUrl: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		ServiceRoleArn: FormControl<string | null | undefined>,
+		Status: FormControl<BackupStatus | null | undefined>,
+		StatusDescription: FormControl<string | null | undefined>,
+		ToolsVersion: FormControl<string | null | undefined>,
+		UserArn: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupFormGroup() {
+		return new FormGroup<BackupFormProperties>({
+			BackupArn: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupType: new FormControl<BackupBackupType | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineModel: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			KeyPair: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			S3DataSize: new FormControl<number | null | undefined>(undefined),
+			S3DataUrl: new FormControl<string | null | undefined>(undefined),
+			S3LogUrl: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BackupStatus | null | undefined>(undefined),
+			StatusDescription: new FormControl<string | null | undefined>(undefined),
+			ToolsVersion: new FormControl<string | null | undefined>(undefined),
+			UserArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupBackupType { AUTOMATED = 0, MANUAL = 1 }
@@ -89,7 +223,18 @@ export namespace MyNS {
 	export interface CreateBackupRequest {
 		ServerName: string;
 		Description?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateBackupRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupRequestFormGroup() {
+		return new FormGroup<CreateBackupRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -99,13 +244,40 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateServerResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server | null;
+		Server?: Server;
+	}
+	export interface CreateServerResponseFormProperties {
+	}
+	export function CreateCreateServerResponseFormGroup() {
+		return new FormGroup<CreateServerResponseFormProperties>({
+		});
+
 	}
 
 
@@ -121,7 +293,7 @@ export namespace MyNS {
 		Endpoint?: string | null;
 		Engine?: string | null;
 		EngineModel?: string | null;
-		EngineAttributes?: Array<EngineAttribute> | null;
+		EngineAttributes?: Array<EngineAttribute>;
 		EngineVersion?: string | null;
 		InstanceProfileArn?: string | null;
 		InstanceType?: string | null;
@@ -141,12 +313,75 @@ export namespace MyNS {
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
 		PreferredBackupWindow?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		ServiceRoleArn?: string | null;
 		Status?: ServerStatus | null;
 		StatusReason?: string | null;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 		ServerArn?: string | null;
+	}
+
+	/** Describes a configuration management server.  */
+	export interface ServerFormProperties {
+		AssociatePublicIpAddress: FormControl<boolean | null | undefined>,
+		BackupRetentionCount: FormControl<number | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		CloudFormationStackArn: FormControl<string | null | undefined>,
+		CustomDomain: FormControl<string | null | undefined>,
+		DisableAutomatedBackup: FormControl<boolean | null | undefined>,
+		Endpoint: FormControl<string | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		EngineModel: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		InstanceProfileArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		KeyPair: FormControl<string | null | undefined>,
+		MaintenanceStatus: FormControl<ServerMaintenanceStatus | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		ServiceRoleArn: FormControl<string | null | undefined>,
+		Status: FormControl<ServerStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		ServerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateServerFormGroup() {
+		return new FormGroup<ServerFormProperties>({
+			AssociatePublicIpAddress: new FormControl<boolean | null | undefined>(undefined),
+			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			CloudFormationStackArn: new FormControl<string | null | undefined>(undefined),
+			CustomDomain: new FormControl<string | null | undefined>(undefined),
+			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineModel: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			KeyPair: new FormControl<string | null | undefined>(undefined),
+			MaintenanceStatus: new FormControl<ServerMaintenanceStatus | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ServerStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			ServerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ServerMaintenanceStatus { SUCCESS = 0, FAILED = 1 }
@@ -162,7 +397,7 @@ export namespace MyNS {
 		Engine?: string | null;
 		EngineModel?: string | null;
 		EngineVersion?: string | null;
-		EngineAttributes?: Array<EngineAttribute> | null;
+		EngineAttributes?: Array<EngineAttribute>;
 		BackupRetentionCount?: number | null;
 		ServerName: string;
 		InstanceProfileArn: string;
@@ -182,34 +417,133 @@ export namespace MyNS {
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
 		PreferredBackupWindow?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		ServiceRoleArn: string;
-		SubnetIds?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		SubnetIds?: Array<string>;
+		Tags?: Array<Tag>;
 		BackupId?: string | null;
+	}
+	export interface CreateServerRequestFormProperties {
+		AssociatePublicIpAddress: FormControl<boolean | null | undefined>,
+		CustomDomain: FormControl<string | null | undefined>,
+		CustomCertificate: FormControl<string | null | undefined>,
+		CustomPrivateKey: FormControl<string | null | undefined>,
+		DisableAutomatedBackup: FormControl<boolean | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		EngineModel: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		BackupRetentionCount: FormControl<number | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		InstanceProfileArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		KeyPair: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		ServiceRoleArn: FormControl<string | null | undefined>,
+		BackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateServerRequestFormGroup() {
+		return new FormGroup<CreateServerRequestFormProperties>({
+			AssociatePublicIpAddress: new FormControl<boolean | null | undefined>(undefined),
+			CustomDomain: new FormControl<string | null | undefined>(undefined),
+			CustomCertificate: new FormControl<string | null | undefined>(undefined),
+			CustomPrivateKey: new FormControl<string | null | undefined>(undefined),
+			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineModel: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			KeyPair: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			ServiceRoleArn: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBackupResponse {
+	}
+	export interface DeleteBackupResponseFormProperties {
+	}
+	export function CreateDeleteBackupResponseFormGroup() {
+		return new FormGroup<DeleteBackupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteBackupRequest {
 		BackupId: string;
 	}
+	export interface DeleteBackupRequestFormProperties {
+		BackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBackupRequestFormGroup() {
+		return new FormGroup<DeleteBackupRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteServerResponse {
+	}
+	export interface DeleteServerResponseFormProperties {
+	}
+	export function CreateDeleteServerResponseFormGroup() {
+		return new FormGroup<DeleteServerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteServerRequest {
 		ServerName: string;
 	}
+	export interface DeleteServerRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServerRequestFormGroup() {
+		return new FormGroup<DeleteServerRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAccountAttributesResponse {
 
 		/** A list of individual account attributes. */
-		Attributes?: Array<AccountAttribute> | null;
+		Attributes?: Array<AccountAttribute>;
+	}
+	export interface DescribeAccountAttributesResponseFormProperties {
+	}
+	export function CreateDescribeAccountAttributesResponseFormGroup() {
+		return new FormGroup<DescribeAccountAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -220,12 +554,43 @@ export namespace MyNS {
 		Used?: number | null;
 	}
 
+	/** Stores account attributes.  */
+	export interface AccountAttributeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Maximum: FormControl<number | null | undefined>,
+		Used: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountAttributeFormGroup() {
+		return new FormGroup<AccountAttributeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Maximum: new FormControl<number | null | undefined>(undefined),
+			Used: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeAccountAttributesRequest {
+	}
+	export interface DescribeAccountAttributesRequestFormProperties {
+	}
+	export function CreateDescribeAccountAttributesRequestFormGroup() {
+		return new FormGroup<DescribeAccountAttributesRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeBackupsResponse {
-		Backups?: Array<Backup> | null;
+		Backups?: Array<Backup>;
 		NextToken?: string | null;
+	}
+	export interface DescribeBackupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBackupsResponseFormGroup() {
+		return new FormGroup<DescribeBackupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeBackupsRequest {
@@ -234,13 +599,44 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeBackupsRequestFormProperties {
+		BackupId: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeBackupsRequestFormGroup() {
+		return new FormGroup<DescribeBackupsRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeEventsResponse {
-		ServerEvents?: Array<ServerEvent> | null;
+		ServerEvents?: Array<ServerEvent>;
 		NextToken?: string | null;
+	}
+	export interface DescribeEventsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsResponseFormGroup() {
+		return new FormGroup<DescribeEventsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -252,17 +648,58 @@ export namespace MyNS {
 		LogUrl?: string | null;
 	}
 
+	/** An event that is related to the server, such as the start of maintenance or backup.  */
+	export interface ServerEventFormProperties {
+		CreatedAt: FormControl<Date | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		LogUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateServerEventFormGroup() {
+		return new FormGroup<ServerEventFormProperties>({
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			LogUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventsRequest {
 		ServerName: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeEventsRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeEventsRequestFormGroup() {
+		return new FormGroup<DescribeEventsRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeNodeAssociationStatusResponse {
 
 		/** <p>The status of the association or disassociation request. </p> <p class="title"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> </ul> */
 		NodeAssociationStatus?: DescribeNodeAssociationStatusResponseNodeAssociationStatus | null;
-		EngineAttributes?: Array<EngineAttribute> | null;
+		EngineAttributes?: Array<EngineAttribute>;
+	}
+	export interface DescribeNodeAssociationStatusResponseFormProperties {
+
+		/** <p>The status of the association or disassociation request. </p> <p class="title"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> </ul> */
+		NodeAssociationStatus: FormControl<DescribeNodeAssociationStatusResponseNodeAssociationStatus | null | undefined>,
+	}
+	export function CreateDescribeNodeAssociationStatusResponseFormGroup() {
+		return new FormGroup<DescribeNodeAssociationStatusResponseFormProperties>({
+			NodeAssociationStatus: new FormControl<DescribeNodeAssociationStatusResponseNodeAssociationStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeNodeAssociationStatusResponseNodeAssociationStatus { SUCCESS = 0, FAILED = 1, IN_PROGRESS = 2 }
@@ -271,10 +708,30 @@ export namespace MyNS {
 		NodeAssociationStatusToken: string;
 		ServerName: string;
 	}
+	export interface DescribeNodeAssociationStatusRequestFormProperties {
+		NodeAssociationStatusToken: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNodeAssociationStatusRequestFormGroup() {
+		return new FormGroup<DescribeNodeAssociationStatusRequestFormProperties>({
+			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeServersResponse {
-		Servers?: Array<Server> | null;
+		Servers?: Array<Server>;
 		NextToken?: string | null;
+	}
+	export interface DescribeServersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeServersResponseFormGroup() {
+		return new FormGroup<DescribeServersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeServersRequest {
@@ -282,9 +739,31 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeServersRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeServersRequestFormGroup() {
+		return new FormGroup<DescribeServersRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateNodeResponse {
 		NodeAssociationStatusToken?: string | null;
+	}
+	export interface DisassociateNodeResponseFormProperties {
+		NodeAssociationStatusToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateNodeResponseFormGroup() {
+		return new FormGroup<DisassociateNodeResponseFormProperties>({
+			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateNodeRequest {
@@ -297,25 +776,72 @@ export namespace MyNS {
 		 * Pattern: ^[\-\p{Alnum}_:.]+$
 		 */
 		NodeName: string;
-		EngineAttributes?: Array<EngineAttribute> | null;
+		EngineAttributes?: Array<EngineAttribute>;
+	}
+	export interface DisassociateNodeRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * The node name that is used by <code>chef-client</code> or <code>puppet-agent</code>for a new node. We recommend to use a unique FQDN as hostname. For more information, see the <a href="https://docs.aws.amazon.com/https:/docs.chef.io/nodes.html#about-node-names">Chef</a> or <a href="https://docs.aws.amazon.com/https:/docs.puppet.com/puppet/4.10/man/agent.html">Puppet</a> documentation.
+		 * Required
+		 * Max length: 10000
+		 * Pattern: ^[\-\p{Alnum}_:.]+$
+		 */
+		NodeName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateNodeRequestFormGroup() {
+		return new FormGroup<DisassociateNodeRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			NodeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExportServerEngineAttributeResponse {
 
 		/** A name and value pair that is specific to the engine of the server. */
-		EngineAttribute?: EngineAttribute | null;
+		EngineAttribute?: EngineAttribute;
 		ServerName?: string | null;
+	}
+	export interface ExportServerEngineAttributeResponseFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+	}
+	export function CreateExportServerEngineAttributeResponseFormGroup() {
+		return new FormGroup<ExportServerEngineAttributeResponseFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExportServerEngineAttributeRequest {
 		ExportAttributeName: string;
 		ServerName: string;
-		InputAttributes?: Array<EngineAttribute> | null;
+		InputAttributes?: Array<EngineAttribute>;
+	}
+	export interface ExportServerEngineAttributeRequestFormProperties {
+		ExportAttributeName: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+	}
+	export function CreateExportServerEngineAttributeRequestFormGroup() {
+		return new FormGroup<ExportServerEngineAttributeRequestFormProperties>({
+			ExportAttributeName: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -323,8 +849,28 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestoreServerResponse {
+	}
+	export interface RestoreServerResponseFormProperties {
+	}
+	export function CreateRestoreServerResponseFormGroup() {
+		return new FormGroup<RestoreServerResponseFormProperties>({
+		});
+
 	}
 
 	export interface RestoreServerRequest {
@@ -333,38 +879,108 @@ export namespace MyNS {
 		InstanceType?: string | null;
 		KeyPair?: string | null;
 	}
+	export interface RestoreServerRequestFormProperties {
+		BackupId: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		KeyPair: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreServerRequestFormGroup() {
+		return new FormGroup<RestoreServerRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			KeyPair: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartMaintenanceResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server | null;
+		Server?: Server;
+	}
+	export interface StartMaintenanceResponseFormProperties {
+	}
+	export function CreateStartMaintenanceResponseFormGroup() {
+		return new FormGroup<StartMaintenanceResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartMaintenanceRequest {
 		ServerName: string;
-		EngineAttributes?: Array<EngineAttribute> | null;
+		EngineAttributes?: Array<EngineAttribute>;
+	}
+	export interface StartMaintenanceRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMaintenanceRequestFormGroup() {
+		return new FormGroup<StartMaintenanceRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateServerResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server | null;
+		Server?: Server;
+	}
+	export interface UpdateServerResponseFormProperties {
+	}
+	export function CreateUpdateServerResponseFormGroup() {
+		return new FormGroup<UpdateServerResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateServerRequest {
@@ -386,17 +1002,66 @@ export namespace MyNS {
 		 */
 		PreferredBackupWindow?: string | null;
 	}
+	export interface UpdateServerRequestFormProperties {
+		DisableAutomatedBackup: FormControl<boolean | null | undefined>,
+		BackupRetentionCount: FormControl<number | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+
+		/**
+		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+		 * Max length: 10000
+		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
+		 */
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateServerRequestFormGroup() {
+		return new FormGroup<UpdateServerRequestFormProperties>({
+			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
+			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateServerEngineAttributesResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server | null;
+		Server?: Server;
+	}
+	export interface UpdateServerEngineAttributesResponseFormProperties {
+	}
+	export function CreateUpdateServerEngineAttributesResponseFormGroup() {
+		return new FormGroup<UpdateServerEngineAttributesResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateServerEngineAttributesRequest {
 		ServerName: string;
 		AttributeName: string;
 		AttributeValue?: string | null;
+	}
+	export interface UpdateServerEngineAttributesRequestFormProperties {
+		ServerName: FormControl<string | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateServerEngineAttributesRequestFormGroup() {
+		return new FormGroup<UpdateServerEngineAttributesRequestFormProperties>({
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupType { AUTOMATED = 0, MANUAL = 1 }

@@ -1,35 +1,103 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateFleetResult {
+	}
+	export interface AssociateFleetResultFormProperties {
+	}
+	export function CreateAssociateFleetResultFormGroup() {
+		return new FormGroup<AssociateFleetResultFormProperties>({
+		});
+
 	}
 
 	export interface AssociateFleetRequest {
 		FleetName: string;
 		StackName: string;
 	}
+	export interface AssociateFleetRequestFormProperties {
+		FleetName: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateFleetRequestFormGroup() {
+		return new FormGroup<AssociateFleetRequestFormProperties>({
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidAccountStatusException {
 	}
+	export interface InvalidAccountStatusExceptionFormProperties {
+	}
+	export function CreateInvalidAccountStatusExceptionFormGroup() {
+		return new FormGroup<InvalidAccountStatusExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IncompatibleImageException {
+	}
+	export interface IncompatibleImageExceptionFormProperties {
+	}
+	export function CreateIncompatibleImageExceptionFormGroup() {
+		return new FormGroup<IncompatibleImageExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationNotPermittedException {
 	}
+	export interface OperationNotPermittedExceptionFormProperties {
+	}
+	export function CreateOperationNotPermittedExceptionFormGroup() {
+		return new FormGroup<OperationNotPermittedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchAssociateUserStackResult {
-		errors?: Array<UserStackAssociationError> | null;
+		errors?: Array<UserStackAssociationError>;
+	}
+	export interface BatchAssociateUserStackResultFormProperties {
+	}
+	export function CreateBatchAssociateUserStackResultFormGroup() {
+		return new FormGroup<BatchAssociateUserStackResultFormProperties>({
+		});
+
 	}
 
 
@@ -37,9 +105,22 @@ export namespace MyNS {
 	export interface UserStackAssociationError {
 
 		/** Describes a user in the user pool and the associated stack. */
-		UserStackAssociation?: UserStackAssociation | null;
+		UserStackAssociation?: UserStackAssociation;
 		ErrorCode?: UserStackAssociationErrorErrorCode | null;
 		ErrorMessage?: string | null;
+	}
+
+	/** Describes the error that is returned when a user can’t be associated with or disassociated from a stack.  */
+	export interface UserStackAssociationErrorFormProperties {
+		ErrorCode: FormControl<UserStackAssociationErrorErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateUserStackAssociationErrorFormGroup() {
+		return new FormGroup<UserStackAssociationErrorFormProperties>({
+			ErrorCode: new FormControl<UserStackAssociationErrorErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -51,6 +132,23 @@ export namespace MyNS {
 		SendEmailNotification?: boolean | null;
 	}
 
+	/** Describes a user in the user pool and the associated stack. */
+	export interface UserStackAssociationFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+		SendEmailNotification: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUserStackAssociationFormGroup() {
+		return new FormGroup<UserStackAssociationFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			SendEmailNotification: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UserStackAssociationAuthenticationType { API = 0, SAML = 1, USERPOOL = 2 }
 
 	export enum UserStackAssociationErrorErrorCode { STACK_NOT_FOUND = 0, USER_NAME_NOT_FOUND = 1, INTERNAL_ERROR = 2 }
@@ -58,17 +156,47 @@ export namespace MyNS {
 	export interface BatchAssociateUserStackRequest {
 		UserStackAssociations: Array<UserStackAssociation>;
 	}
+	export interface BatchAssociateUserStackRequestFormProperties {
+	}
+	export function CreateBatchAssociateUserStackRequestFormGroup() {
+		return new FormGroup<BatchAssociateUserStackRequestFormProperties>({
+		});
+
+	}
 
 	export interface BatchDisassociateUserStackResult {
-		errors?: Array<UserStackAssociationError> | null;
+		errors?: Array<UserStackAssociationError>;
+	}
+	export interface BatchDisassociateUserStackResultFormProperties {
+	}
+	export function CreateBatchDisassociateUserStackResultFormGroup() {
+		return new FormGroup<BatchDisassociateUserStackResultFormProperties>({
+		});
+
 	}
 
 	export interface BatchDisassociateUserStackRequest {
 		UserStackAssociations: Array<UserStackAssociation>;
 	}
+	export interface BatchDisassociateUserStackRequestFormProperties {
+	}
+	export function CreateBatchDisassociateUserStackRequestFormGroup() {
+		return new FormGroup<BatchDisassociateUserStackRequestFormProperties>({
+		});
+
+	}
 
 	export interface CopyImageResponse {
 		DestinationImageName?: string | null;
+	}
+	export interface CopyImageResponseFormProperties {
+		DestinationImageName: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyImageResponseFormGroup() {
+		return new FormGroup<CopyImageResponseFormProperties>({
+			DestinationImageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CopyImageRequest {
@@ -77,28 +205,77 @@ export namespace MyNS {
 		DestinationRegion: string;
 		DestinationImageDescription?: string | null;
 	}
+	export interface CopyImageRequestFormProperties {
+		SourceImageName: FormControl<string | null | undefined>,
+		DestinationImageName: FormControl<string | null | undefined>,
+		DestinationRegion: FormControl<string | null | undefined>,
+		DestinationImageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyImageRequestFormGroup() {
+		return new FormGroup<CopyImageRequestFormProperties>({
+			SourceImageName: new FormControl<string | null | undefined>(undefined),
+			DestinationImageName: new FormControl<string | null | undefined>(undefined),
+			DestinationRegion: new FormControl<string | null | undefined>(undefined),
+			DestinationImageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotAvailableException {
+	}
+	export interface ResourceNotAvailableExceptionFormProperties {
+	}
+	export function CreateResourceNotAvailableExceptionFormGroup() {
+		return new FormGroup<ResourceNotAvailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDirectoryConfigResult {
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DirectoryConfig?: DirectoryConfig | null;
+		DirectoryConfig?: DirectoryConfig;
+	}
+	export interface CreateDirectoryConfigResultFormProperties {
+	}
+	export function CreateCreateDirectoryConfigResultFormGroup() {
+		return new FormGroup<CreateDirectoryConfigResultFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
 	export interface DirectoryConfig {
 		DirectoryName: string;
-		OrganizationalUnitDistinguishedNames?: Array<string> | null;
+		OrganizationalUnitDistinguishedNames?: Array<string>;
 
 		/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
-		ServiceAccountCredentials?: ServiceAccountCredentials | null;
+		ServiceAccountCredentials?: ServiceAccountCredentials;
 		CreatedTime?: Date | null;
+	}
+
+	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
+	export interface DirectoryConfigFormProperties {
+		DirectoryName: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDirectoryConfigFormGroup() {
+		return new FormGroup<DirectoryConfigFormProperties>({
+			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -106,6 +283,19 @@ export namespace MyNS {
 	export interface ServiceAccountCredentials {
 		AccountName: string;
 		AccountPassword: string;
+	}
+
+	/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
+	export interface ServiceAccountCredentialsFormProperties {
+		AccountName: FormControl<string | null | undefined>,
+		AccountPassword: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceAccountCredentialsFormGroup() {
+		return new FormGroup<ServiceAccountCredentialsFormProperties>({
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			AccountPassword: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDirectoryConfigRequest {
@@ -118,11 +308,27 @@ export namespace MyNS {
 		 */
 		ServiceAccountCredentials: ServiceAccountCredentials;
 	}
+	export interface CreateDirectoryConfigRequestFormProperties {
+		DirectoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDirectoryConfigRequestFormGroup() {
+		return new FormGroup<CreateDirectoryConfigRequestFormProperties>({
+			DirectoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateFleetResult {
 
 		/** Describes a fleet. */
-		Fleet?: Fleet | null;
+		Fleet?: Fleet;
+	}
+	export interface CreateFleetResultFormProperties {
+	}
+	export function CreateCreateFleetResultFormGroup() {
+		return new FormGroup<CreateFleetResultFormProperties>({
+		});
+
 	}
 
 
@@ -147,15 +353,54 @@ export namespace MyNS {
 		State: FleetState;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		CreatedTime?: Date | null;
-		FleetErrors?: Array<FleetError> | null;
+		FleetErrors?: Array<FleetError>;
 		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo | null;
+		DomainJoinInfo?: DomainJoinInfo;
 		IdleDisconnectTimeoutInSeconds?: number | null;
 		IamRoleArn?: string | null;
+	}
+
+	/** Describes a fleet. */
+	export interface FleetFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ImageName: FormControl<string | null | undefined>,
+		ImageArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		FleetType: FormControl<FleetFleetType | null | undefined>,
+		MaxUserDurationInSeconds: FormControl<number | null | undefined>,
+		DisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+		State: FormControl<FleetState | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+		IdleDisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateFleetFormGroup() {
+		return new FormGroup<FleetFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ImageName: new FormControl<string | null | undefined>(undefined),
+			ImageArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			FleetType: new FormControl<FleetFleetType | null | undefined>(undefined),
+			MaxUserDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			DisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<FleetState | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			IdleDisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FleetFleetType { ALWAYS_ON = 0, ON_DEMAND = 1 }
@@ -169,6 +414,23 @@ export namespace MyNS {
 		Available?: number | null;
 	}
 
+	/** Describes the capacity status for a fleet. */
+	export interface ComputeCapacityStatusFormProperties {
+		Desired: FormControl<number | null | undefined>,
+		Running: FormControl<number | null | undefined>,
+		InUse: FormControl<number | null | undefined>,
+		Available: FormControl<number | null | undefined>,
+	}
+	export function CreateComputeCapacityStatusFormGroup() {
+		return new FormGroup<ComputeCapacityStatusFormProperties>({
+			Desired: new FormControl<number | null | undefined>(undefined),
+			Running: new FormControl<number | null | undefined>(undefined),
+			InUse: new FormControl<number | null | undefined>(undefined),
+			Available: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FleetState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3 }
 
 
@@ -176,13 +438,22 @@ export namespace MyNS {
 	export interface VpcConfig {
 
 		/** The subnet identifiers. */
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 
 		/**
 		 * The security group identifiers.
 		 * Maximum items: 5
 		 */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
+	}
+
+	/** Describes VPC configuration information for fleets and image builders. */
+	export interface VpcConfigFormProperties {
+	}
+	export function CreateVpcConfigFormGroup() {
+		return new FormGroup<VpcConfigFormProperties>({
+		});
+
 	}
 
 
@@ -192,6 +463,19 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes a fleet error. */
+	export interface FleetErrorFormProperties {
+		ErrorCode: FormControl<FleetErrorErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateFleetErrorFormGroup() {
+		return new FormGroup<FleetErrorFormProperties>({
+			ErrorCode: new FormControl<FleetErrorErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FleetErrorErrorCode { IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = 0, IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = 1, IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = 2, NETWORK_INTERFACE_LIMIT_EXCEEDED = 3, INTERNAL_SERVICE_ERROR = 4, IAM_SERVICE_ROLE_IS_MISSING = 5, MACHINE_ROLE_IS_MISSING = 6, STS_DISABLED_IN_REGION = 7, SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = 8, IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = 9, SUBNET_NOT_FOUND = 10, IMAGE_NOT_FOUND = 11, INVALID_SUBNET_CONFIGURATION = 12, SECURITY_GROUPS_NOT_FOUND = 13, IGW_NOT_ATTACHED = 14, IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = 15, DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = 16, DOMAIN_JOIN_ERROR_ACCESS_DENIED = 17, DOMAIN_JOIN_ERROR_LOGON_FAILURE = 18, DOMAIN_JOIN_ERROR_INVALID_PARAMETER = 19, DOMAIN_JOIN_ERROR_MORE_DATA = 20, DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = 21, DOMAIN_JOIN_ERROR_NOT_SUPPORTED = 22, DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = 23, DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = 24, DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED = 25, DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = 26, DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = 27 }
 
 
@@ -199,6 +483,19 @@ export namespace MyNS {
 	export interface DomainJoinInfo {
 		DirectoryName?: string | null;
 		OrganizationalUnitDistinguishedName?: string | null;
+	}
+
+	/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
+	export interface DomainJoinInfoFormProperties {
+		DirectoryName: FormControl<string | null | undefined>,
+		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainJoinInfoFormGroup() {
+		return new FormGroup<DomainJoinInfoFormProperties>({
+			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFleetRequest {
@@ -215,7 +512,7 @@ export namespace MyNS {
 		ComputeCapacity: ComputeCapacity;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		MaxUserDurationInSeconds?: number | null;
 		DisconnectTimeoutInSeconds?: number | null;
 		Description?: string | null;
@@ -223,10 +520,41 @@ export namespace MyNS {
 		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo | null;
-		Tags?: Tags | null;
+		DomainJoinInfo?: DomainJoinInfo;
+		Tags?: Tags;
 		IdleDisconnectTimeoutInSeconds?: number | null;
 		IamRoleArn?: string | null;
+	}
+	export interface CreateFleetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ImageName: FormControl<string | null | undefined>,
+		ImageArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		FleetType: FormControl<FleetFleetType | null | undefined>,
+		MaxUserDurationInSeconds: FormControl<number | null | undefined>,
+		DisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+		IdleDisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFleetRequestFormGroup() {
+		return new FormGroup<CreateFleetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ImageName: new FormControl<string | null | undefined>(undefined),
+			ImageArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			FleetType: new FormControl<FleetFleetType | null | undefined>(undefined),
+			MaxUserDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			DisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			IdleDisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -235,19 +563,58 @@ export namespace MyNS {
 		DesiredInstances: number;
 	}
 
+	/** Describes the capacity for a fleet. */
+	export interface ComputeCapacityFormProperties {
+		DesiredInstances: FormControl<number | null | undefined>,
+	}
+	export function CreateComputeCapacityFormGroup() {
+		return new FormGroup<ComputeCapacityFormProperties>({
+			DesiredInstances: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface Tags {
+	}
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRoleException {
 	}
+	export interface InvalidRoleExceptionFormProperties {
+	}
+	export function CreateInvalidRoleExceptionFormGroup() {
+		return new FormGroup<InvalidRoleExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterCombinationException {
+	}
+	export interface InvalidParameterCombinationExceptionFormProperties {
+	}
+	export function CreateInvalidParameterCombinationExceptionFormGroup() {
+		return new FormGroup<InvalidParameterCombinationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder | null;
+		ImageBuilder?: ImageBuilder;
+	}
+	export interface CreateImageBuilderResultFormProperties {
+	}
+	export function CreateCreateImageBuilderResultFormGroup() {
+		return new FormGroup<CreateImageBuilderResultFormProperties>({
+		});
+
 	}
 
 
@@ -260,25 +627,58 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		InstanceType?: string | null;
 		Platform?: ImageBuilderPlatform | null;
 		IamRoleArn?: string | null;
 		State?: ImageBuilderState | null;
 
 		/** Describes the reason why the last image builder state change occurred. */
-		StateChangeReason?: ImageBuilderStateChangeReason | null;
+		StateChangeReason?: ImageBuilderStateChangeReason;
 		CreatedTime?: Date | null;
 		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo | null;
+		DomainJoinInfo?: DomainJoinInfo;
 
 		/** Describes the network details of the fleet or image builder instance. */
-		NetworkAccessConfiguration?: NetworkAccessConfiguration | null;
-		ImageBuilderErrors?: Array<ResourceError> | null;
+		NetworkAccessConfiguration?: NetworkAccessConfiguration;
+		ImageBuilderErrors?: Array<ResourceError>;
 		AppstreamAgentVersion?: string | null;
-		AccessEndpoints?: Array<AccessEndpoint> | null;
+		AccessEndpoints?: Array<AccessEndpoint>;
+	}
+
+	/** Describes a virtual machine that is used to create an image.  */
+	export interface ImageBuilderFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		ImageArn: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		Platform: FormControl<ImageBuilderPlatform | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		State: FormControl<ImageBuilderState | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+		AppstreamAgentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateImageBuilderFormGroup() {
+		return new FormGroup<ImageBuilderFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			ImageArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<ImageBuilderPlatform | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ImageBuilderState | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ImageBuilderPlatform { WINDOWS = 0, WINDOWS_SERVER_2016 = 1, WINDOWS_SERVER_2019 = 2 }
@@ -292,6 +692,19 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Describes the reason why the last image builder state change occurred. */
+	export interface ImageBuilderStateChangeReasonFormProperties {
+		Code: FormControl<ImageBuilderStateChangeReasonCode | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateImageBuilderStateChangeReasonFormGroup() {
+		return new FormGroup<ImageBuilderStateChangeReasonFormProperties>({
+			Code: new FormControl<ImageBuilderStateChangeReasonCode | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ImageBuilderStateChangeReasonCode { INTERNAL_ERROR = 0, IMAGE_UNAVAILABLE = 1 }
 
 
@@ -299,6 +712,19 @@ export namespace MyNS {
 	export interface NetworkAccessConfiguration {
 		EniPrivateIpAddress?: string | null;
 		EniId?: string | null;
+	}
+
+	/** Describes the network details of the fleet or image builder instance. */
+	export interface NetworkAccessConfigurationFormProperties {
+		EniPrivateIpAddress: FormControl<string | null | undefined>,
+		EniId: FormControl<string | null | undefined>,
+	}
+	export function CreateNetworkAccessConfigurationFormGroup() {
+		return new FormGroup<NetworkAccessConfigurationFormProperties>({
+			EniPrivateIpAddress: new FormControl<string | null | undefined>(undefined),
+			EniId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -309,11 +735,39 @@ export namespace MyNS {
 		ErrorTimestamp?: Date | null;
 	}
 
+	/** Describes a resource error. */
+	export interface ResourceErrorFormProperties {
+		ErrorCode: FormControl<FleetErrorErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		ErrorTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateResourceErrorFormGroup() {
+		return new FormGroup<ResourceErrorFormProperties>({
+			ErrorCode: new FormControl<FleetErrorErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint. */
 	export interface AccessEndpoint {
 		EndpointType: AccessEndpointEndpointType;
 		VpceId?: string | null;
+	}
+
+	/** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint. */
+	export interface AccessEndpointFormProperties {
+		EndpointType: FormControl<AccessEndpointEndpointType | null | undefined>,
+		VpceId: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessEndpointFormGroup() {
+		return new FormGroup<AccessEndpointFormProperties>({
+			EndpointType: new FormControl<AccessEndpointEndpointType | null | undefined>(undefined),
+			VpceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccessEndpointEndpointType { STREAMING = 0 }
@@ -327,31 +781,85 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		IamRoleArn?: string | null;
 		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo | null;
+		DomainJoinInfo?: DomainJoinInfo;
 		AppstreamAgentVersion?: string | null;
-		Tags?: Tags | null;
-		AccessEndpoints?: Array<AccessEndpoint> | null;
+		Tags?: Tags;
+		AccessEndpoints?: Array<AccessEndpoint>;
+	}
+	export interface CreateImageBuilderRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ImageName: FormControl<string | null | undefined>,
+		ImageArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+		AppstreamAgentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateImageBuilderRequestFormGroup() {
+		return new FormGroup<CreateImageBuilderRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ImageName: new FormControl<string | null | undefined>(undefined),
+			ImageArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateImageBuilderStreamingURLResult {
 		StreamingURL?: string | null;
 		Expires?: Date | null;
 	}
+	export interface CreateImageBuilderStreamingURLResultFormProperties {
+		StreamingURL: FormControl<string | null | undefined>,
+		Expires: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateImageBuilderStreamingURLResultFormGroup() {
+		return new FormGroup<CreateImageBuilderStreamingURLResultFormProperties>({
+			StreamingURL: new FormControl<string | null | undefined>(undefined),
+			Expires: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateImageBuilderStreamingURLRequest {
 		Name: string;
 		Validity?: number | null;
 	}
+	export interface CreateImageBuilderStreamingURLRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Validity: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateImageBuilderStreamingURLRequestFormGroup() {
+		return new FormGroup<CreateImageBuilderStreamingURLRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Validity: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateStackResult {
 
 		/** Describes a stack. */
-		Stack?: Stack | null;
+		Stack?: Stack;
+	}
+	export interface CreateStackResultFormProperties {
+	}
+	export function CreateCreateStackResultFormGroup() {
+		return new FormGroup<CreateStackResultFormProperties>({
+		});
+
 	}
 
 
@@ -364,18 +872,41 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 
 		/** The storage connectors. */
-		StorageConnectors?: Array<StorageConnector> | null;
+		StorageConnectors?: Array<StorageConnector>;
 		RedirectURL?: string | null;
 		FeedbackURL?: string | null;
 
 		/** The stack errors. */
-		StackErrors?: Array<StackError> | null;
-		UserSettings?: Array<UserSetting> | null;
+		StackErrors?: Array<StackError>;
+		UserSettings?: Array<UserSetting>;
 
 		/** Describes the persistent application settings for users of a stack. */
-		ApplicationSettings?: ApplicationSettingsResponse | null;
-		AccessEndpoints?: Array<AccessEndpoint> | null;
-		EmbedHostDomains?: Array<string> | null;
+		ApplicationSettings?: ApplicationSettingsResponse;
+		AccessEndpoints?: Array<AccessEndpoint>;
+		EmbedHostDomains?: Array<string>;
+	}
+
+	/** Describes a stack. */
+	export interface StackFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		RedirectURL: FormControl<string | null | undefined>,
+		FeedbackURL: FormControl<string | null | undefined>,
+	}
+	export function CreateStackFormGroup() {
+		return new FormGroup<StackFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			RedirectURL: new FormControl<string | null | undefined>(undefined),
+			FeedbackURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -393,7 +924,30 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ResourceIdentifier?: string | null;
-		Domains?: Array<string> | null;
+		Domains?: Array<string>;
+	}
+
+	/** Describes a connector that enables persistent storage for users. */
+	export interface StorageConnectorFormProperties {
+
+		/**
+		 * The type of storage connector.
+		 * Required
+		 */
+		ConnectorType: FormControl<StorageConnectorConnectorType | null | undefined>,
+
+		/**
+		 * The ARN of the resource.
+		 * Min length: 1
+		 */
+		ResourceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateStorageConnectorFormGroup() {
+		return new FormGroup<StorageConnectorFormProperties>({
+			ConnectorType: new FormControl<StorageConnectorConnectorType | null | undefined>(undefined),
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StorageConnectorConnectorType { HOMEFOLDERS = 0, GOOGLE_DRIVE = 1, ONE_DRIVE = 2 }
@@ -405,6 +959,19 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes a stack error. */
+	export interface StackErrorFormProperties {
+		ErrorCode: FormControl<StackErrorErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateStackErrorFormGroup() {
+		return new FormGroup<StackErrorFormProperties>({
+			ErrorCode: new FormControl<StackErrorErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackErrorErrorCode { STORAGE_CONNECTOR_ERROR = 0, INTERNAL_SERVICE_ERROR = 1 }
 
 
@@ -412,6 +979,19 @@ export namespace MyNS {
 	export interface UserSetting {
 		Action: UserSettingAction;
 		Permission: UserSettingPermission;
+	}
+
+	/** Describes an action and whether the action is enabled or disabled for users during their streaming sessions. */
+	export interface UserSettingFormProperties {
+		Action: FormControl<UserSettingAction | null | undefined>,
+		Permission: FormControl<UserSettingPermission | null | undefined>,
+	}
+	export function CreateUserSettingFormGroup() {
+		return new FormGroup<UserSettingFormProperties>({
+			Action: new FormControl<UserSettingAction | null | undefined>(undefined),
+			Permission: new FormControl<UserSettingPermission | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UserSettingAction { CLIPBOARD_COPY_FROM_LOCAL_DEVICE = 0, CLIPBOARD_COPY_TO_LOCAL_DEVICE = 1, FILE_UPLOAD = 2, FILE_DOWNLOAD = 3, PRINTING_TO_LOCAL_DEVICE = 4 }
@@ -426,22 +1006,54 @@ export namespace MyNS {
 		S3BucketName?: string | null;
 	}
 
+	/** Describes the persistent application settings for users of a stack. */
+	export interface ApplicationSettingsResponseFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		SettingsGroup: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationSettingsResponseFormGroup() {
+		return new FormGroup<ApplicationSettingsResponseFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			SettingsGroup: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateStackRequest {
 		Name: string;
 		Description?: string | null;
 		DisplayName?: string | null;
 
 		/** The storage connectors. */
-		StorageConnectors?: Array<StorageConnector> | null;
+		StorageConnectors?: Array<StorageConnector>;
 		RedirectURL?: string | null;
 		FeedbackURL?: string | null;
-		UserSettings?: Array<UserSetting> | null;
+		UserSettings?: Array<UserSetting>;
 
 		/** The persistent application settings for users of a stack. */
-		ApplicationSettings?: ApplicationSettings | null;
-		Tags?: Tags | null;
-		AccessEndpoints?: Array<AccessEndpoint> | null;
-		EmbedHostDomains?: Array<string> | null;
+		ApplicationSettings?: ApplicationSettings;
+		Tags?: Tags;
+		AccessEndpoints?: Array<AccessEndpoint>;
+		EmbedHostDomains?: Array<string>;
+	}
+	export interface CreateStackRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		RedirectURL: FormControl<string | null | undefined>,
+		FeedbackURL: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStackRequestFormGroup() {
+		return new FormGroup<CreateStackRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			RedirectURL: new FormControl<string | null | undefined>(undefined),
+			FeedbackURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -451,9 +1063,33 @@ export namespace MyNS {
 		SettingsGroup?: string | null;
 	}
 
+	/** The persistent application settings for users of a stack. */
+	export interface ApplicationSettingsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		SettingsGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationSettingsFormGroup() {
+		return new FormGroup<ApplicationSettingsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			SettingsGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateStreamingURLResult {
 		StreamingURL?: string | null;
 		Expires?: Date | null;
+	}
+	export interface CreateStreamingURLResultFormProperties {
+		StreamingURL: FormControl<string | null | undefined>,
+		Expires: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateStreamingURLResultFormGroup() {
+		return new FormGroup<CreateStreamingURLResultFormProperties>({
+			StreamingURL: new FormControl<string | null | undefined>(undefined),
+			Expires: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamingURLRequest {
@@ -464,18 +1100,62 @@ export namespace MyNS {
 		Validity?: number | null;
 		SessionContext?: string | null;
 	}
+	export interface CreateStreamingURLRequestFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		FleetName: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+		ApplicationId: FormControl<string | null | undefined>,
+		Validity: FormControl<number | null | undefined>,
+		SessionContext: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStreamingURLRequestFormGroup() {
+		return new FormGroup<CreateStreamingURLRequestFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			Validity: new FormControl<number | null | undefined>(undefined),
+			SessionContext: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateUsageReportSubscriptionResult {
 		S3BucketName?: string | null;
 		Schedule?: CreateUsageReportSubscriptionResultSchedule | null;
+	}
+	export interface CreateUsageReportSubscriptionResultFormProperties {
+		S3BucketName: FormControl<string | null | undefined>,
+		Schedule: FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>,
+	}
+	export function CreateCreateUsageReportSubscriptionResultFormGroup() {
+		return new FormGroup<CreateUsageReportSubscriptionResultFormProperties>({
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateUsageReportSubscriptionResultSchedule { DAILY = 0 }
 
 	export interface CreateUsageReportSubscriptionRequest {
 	}
+	export interface CreateUsageReportSubscriptionRequestFormProperties {
+	}
+	export function CreateCreateUsageReportSubscriptionRequestFormGroup() {
+		return new FormGroup<CreateUsageReportSubscriptionRequestFormProperties>({
+		});
+
+	}
 
 	export interface CreateUserResult {
+	}
+	export interface CreateUserResultFormProperties {
+	}
+	export function CreateCreateUserResultFormGroup() {
+		return new FormGroup<CreateUserResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateUserRequest {
@@ -485,30 +1165,93 @@ export namespace MyNS {
 		LastName?: string | null;
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
+	export interface CreateUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		MessageAction: FormControl<CreateUserRequestMessageAction | null | undefined>,
+		FirstName: FormControl<string | null | undefined>,
+		LastName: FormControl<string | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateCreateUserRequestFormGroup() {
+		return new FormGroup<CreateUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			MessageAction: new FormControl<CreateUserRequestMessageAction | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateUserRequestMessageAction { SUPPRESS = 0, RESEND = 1 }
 
 	export interface DeleteDirectoryConfigResult {
 	}
+	export interface DeleteDirectoryConfigResultFormProperties {
+	}
+	export function CreateDeleteDirectoryConfigResultFormGroup() {
+		return new FormGroup<DeleteDirectoryConfigResultFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDirectoryConfigRequest {
 		DirectoryName: string;
 	}
+	export interface DeleteDirectoryConfigRequestFormProperties {
+		DirectoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDirectoryConfigRequestFormGroup() {
+		return new FormGroup<DeleteDirectoryConfigRequestFormProperties>({
+			DirectoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
 	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteFleetResult {
+	}
+	export interface DeleteFleetResultFormProperties {
+	}
+	export function CreateDeleteFleetResultFormGroup() {
+		return new FormGroup<DeleteFleetResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFleetRequest {
 		Name: string;
 	}
+	export interface DeleteFleetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFleetRequestFormGroup() {
+		return new FormGroup<DeleteFleetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteImageResult {
 
 		/** Describes an image. */
-		Image?: Image | null;
+		Image?: Image;
+	}
+	export interface DeleteImageResultFormProperties {
+	}
+	export function CreateDeleteImageResultFormGroup() {
+		return new FormGroup<DeleteImageResultFormProperties>({
+		});
+
 	}
 
 
@@ -526,14 +1269,49 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Describes the reason why the last image state change occurred. */
-		StateChangeReason?: ImageStateChangeReason | null;
-		Applications?: Array<Application> | null;
+		StateChangeReason?: ImageStateChangeReason;
+		Applications?: Array<Application>;
 		CreatedTime?: Date | null;
 		PublicBaseImageReleasedDate?: Date | null;
 		AppstreamAgentVersion?: string | null;
 
 		/** Describes the permissions for an image. */
-		ImagePermissions?: ImagePermissions | null;
+		ImagePermissions?: ImagePermissions;
+	}
+
+	/** Describes an image. */
+	export interface ImageFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		BaseImageArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		State: FormControl<ImageState | null | undefined>,
+		Visibility: FormControl<ImageVisibility | null | undefined>,
+		ImageBuilderSupported: FormControl<boolean | null | undefined>,
+		ImageBuilderName: FormControl<string | null | undefined>,
+		Platform: FormControl<ImageBuilderPlatform | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		PublicBaseImageReleasedDate: FormControl<Date | null | undefined>,
+		AppstreamAgentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateImageFormGroup() {
+		return new FormGroup<ImageFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			BaseImageArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ImageState | null | undefined>(undefined),
+			Visibility: new FormControl<ImageVisibility | null | undefined>(undefined),
+			ImageBuilderSupported: new FormControl<boolean | null | undefined>(undefined),
+			ImageBuilderName: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<ImageBuilderPlatform | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			PublicBaseImageReleasedDate: new FormControl<Date | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ImageState { PENDING = 0, AVAILABLE = 1, FAILED = 2, COPYING = 3, DELETING = 4 }
@@ -547,6 +1325,19 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Describes the reason why the last image state change occurred. */
+	export interface ImageStateChangeReasonFormProperties {
+		Code: FormControl<ImageStateChangeReasonCode | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateImageStateChangeReasonFormGroup() {
+		return new FormGroup<ImageStateChangeReasonFormProperties>({
+			Code: new FormControl<ImageStateChangeReasonCode | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ImageStateChangeReasonCode { INTERNAL_ERROR = 0, IMAGE_BUILDER_NOT_AVAILABLE = 1, IMAGE_COPY_FAILURE = 2 }
 
 
@@ -558,10 +1349,38 @@ export namespace MyNS {
 		LaunchPath?: string | null;
 		LaunchParameters?: string | null;
 		Enabled?: boolean | null;
-		Metadata?: Metadata | null;
+		Metadata?: Metadata;
+	}
+
+	/** Describes an application in the application catalog. */
+	export interface ApplicationFormProperties {
+		Name: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		IconURL: FormControl<string | null | undefined>,
+		LaunchPath: FormControl<string | null | undefined>,
+		LaunchParameters: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateApplicationFormGroup() {
+		return new FormGroup<ApplicationFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			IconURL: new FormControl<string | null | undefined>(undefined),
+			LaunchPath: new FormControl<string | null | undefined>(undefined),
+			LaunchParameters: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Metadata {
+	}
+	export interface MetadataFormProperties {
+	}
+	export function CreateMetadataFormGroup() {
+		return new FormGroup<MetadataFormProperties>({
+		});
+
 	}
 
 
@@ -571,87 +1390,260 @@ export namespace MyNS {
 		allowImageBuilder?: boolean | null;
 	}
 
+	/** Describes the permissions for an image.  */
+	export interface ImagePermissionsFormProperties {
+		allowFleet: FormControl<boolean | null | undefined>,
+		allowImageBuilder: FormControl<boolean | null | undefined>,
+	}
+	export function CreateImagePermissionsFormGroup() {
+		return new FormGroup<ImagePermissionsFormProperties>({
+			allowFleet: new FormControl<boolean | null | undefined>(undefined),
+			allowImageBuilder: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteImageRequest {
 		Name: string;
+	}
+	export interface DeleteImageRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteImageRequestFormGroup() {
+		return new FormGroup<DeleteImageRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder | null;
+		ImageBuilder?: ImageBuilder;
+	}
+	export interface DeleteImageBuilderResultFormProperties {
+	}
+	export function CreateDeleteImageBuilderResultFormGroup() {
+		return new FormGroup<DeleteImageBuilderResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteImageBuilderRequest {
 		Name: string;
 	}
+	export interface DeleteImageBuilderRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteImageBuilderRequestFormGroup() {
+		return new FormGroup<DeleteImageBuilderRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteImagePermissionsResult {
+	}
+	export interface DeleteImagePermissionsResultFormProperties {
+	}
+	export function CreateDeleteImagePermissionsResultFormGroup() {
+		return new FormGroup<DeleteImagePermissionsResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteImagePermissionsRequest {
 		Name: string;
 		SharedAccountId: string;
 	}
+	export interface DeleteImagePermissionsRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		SharedAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteImagePermissionsRequestFormGroup() {
+		return new FormGroup<DeleteImagePermissionsRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			SharedAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteStackResult {
+	}
+	export interface DeleteStackResultFormProperties {
+	}
+	export function CreateDeleteStackResultFormGroup() {
+		return new FormGroup<DeleteStackResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteStackRequest {
 		Name: string;
 	}
+	export interface DeleteStackRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStackRequestFormGroup() {
+		return new FormGroup<DeleteStackRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUsageReportSubscriptionResult {
+	}
+	export interface DeleteUsageReportSubscriptionResultFormProperties {
+	}
+	export function CreateDeleteUsageReportSubscriptionResultFormGroup() {
+		return new FormGroup<DeleteUsageReportSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteUsageReportSubscriptionRequest {
 	}
+	export interface DeleteUsageReportSubscriptionRequestFormProperties {
+	}
+	export function CreateDeleteUsageReportSubscriptionRequestFormGroup() {
+		return new FormGroup<DeleteUsageReportSubscriptionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteUserResult {
+	}
+	export interface DeleteUserResultFormProperties {
+	}
+	export function CreateDeleteUserResultFormGroup() {
+		return new FormGroup<DeleteUserResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteUserRequest {
 		UserName: string;
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
+	export interface DeleteUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateDeleteUserRequestFormGroup() {
+		return new FormGroup<DeleteUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDirectoryConfigsResult {
-		DirectoryConfigs?: Array<DirectoryConfig> | null;
+		DirectoryConfigs?: Array<DirectoryConfig>;
 		NextToken?: string | null;
+	}
+	export interface DescribeDirectoryConfigsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectoryConfigsResultFormGroup() {
+		return new FormGroup<DescribeDirectoryConfigsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDirectoryConfigsRequest {
-		DirectoryNames?: Array<string> | null;
+		DirectoryNames?: Array<string>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeDirectoryConfigsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectoryConfigsRequestFormGroup() {
+		return new FormGroup<DescribeDirectoryConfigsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeFleetsResult {
 
 		/** The fleets. */
-		Fleets?: Array<Fleet> | null;
+		Fleets?: Array<Fleet>;
 		NextToken?: string | null;
+	}
+	export interface DescribeFleetsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetsResultFormGroup() {
+		return new FormGroup<DescribeFleetsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeFleetsRequest {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface DescribeFleetsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetsRequestFormGroup() {
+		return new FormGroup<DescribeFleetsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeImageBuildersResult {
-		ImageBuilders?: Array<ImageBuilder> | null;
+		ImageBuilders?: Array<ImageBuilder>;
 		NextToken?: string | null;
+	}
+	export interface DescribeImageBuildersResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeImageBuildersResultFormGroup() {
+		return new FormGroup<DescribeImageBuildersResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeImageBuildersRequest {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeImageBuildersRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeImageBuildersRequestFormGroup() {
+		return new FormGroup<DescribeImageBuildersRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeImagePermissionsResult {
 		Name?: string | null;
-		SharedImagePermissionsList?: Array<SharedImagePermissions> | null;
+		SharedImagePermissionsList?: Array<SharedImagePermissions>;
 		NextToken?: string | null;
+	}
+	export interface DescribeImagePermissionsResultFormProperties {
+		Name: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeImagePermissionsResultFormGroup() {
+		return new FormGroup<DescribeImagePermissionsResultFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -666,31 +1658,86 @@ export namespace MyNS {
 		imagePermissions: ImagePermissions;
 	}
 
+	/** Describes the permissions that are available to the specified AWS account for a shared image. */
+	export interface SharedImagePermissionsFormProperties {
+		sharedAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateSharedImagePermissionsFormGroup() {
+		return new FormGroup<SharedImagePermissionsFormProperties>({
+			sharedAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeImagePermissionsRequest {
 		Name: string;
 		MaxResults?: number | null;
-		SharedAwsAccountIds?: Array<string> | null;
+		SharedAwsAccountIds?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface DescribeImagePermissionsRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeImagePermissionsRequestFormGroup() {
+		return new FormGroup<DescribeImagePermissionsRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeImagesResult {
-		Images?: Array<Image> | null;
+		Images?: Array<Image>;
 		NextToken?: string | null;
+	}
+	export interface DescribeImagesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeImagesResultFormGroup() {
+		return new FormGroup<DescribeImagesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeImagesRequest {
-		Names?: Array<string> | null;
-		Arns?: Array<string> | null;
+		Names?: Array<string>;
+		Arns?: Array<string>;
 		Type?: ImageVisibility | null;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeImagesRequestFormProperties {
+		Type: FormControl<ImageVisibility | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeImagesRequestFormGroup() {
+		return new FormGroup<DescribeImagesRequestFormProperties>({
+			Type: new FormControl<ImageVisibility | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSessionsResult {
 
 		/** List of sessions. */
-		Sessions?: Array<Session> | null;
+		Sessions?: Array<Session>;
 		NextToken?: string | null;
+	}
+	export interface DescribeSessionsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSessionsResultFormGroup() {
+		return new FormGroup<DescribeSessionsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -712,7 +1759,39 @@ export namespace MyNS {
 		AuthenticationType?: UserStackAssociationAuthenticationType | null;
 
 		/** Describes the network details of the fleet or image builder instance. */
-		NetworkAccessConfiguration?: NetworkAccessConfiguration | null;
+		NetworkAccessConfiguration?: NetworkAccessConfiguration;
+	}
+
+	/** Describes a streaming session. */
+	export interface SessionFormProperties {
+		Id: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		FleetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Possible values for the state of a streaming session.
+		 * Required
+		 */
+		State: FormControl<SessionState | null | undefined>,
+		ConnectionState: FormControl<SessionConnectionState | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		MaxExpirationTime: FormControl<Date | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateSessionFormGroup() {
+		return new FormGroup<SessionFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<SessionState | null | undefined>(undefined),
+			ConnectionState: new FormControl<SessionConnectionState | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			MaxExpirationTime: new FormControl<Date | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SessionState { ACTIVE = 0, PENDING = 1, EXPIRED = 2 }
@@ -727,22 +1806,68 @@ export namespace MyNS {
 		Limit?: number | null;
 		AuthenticationType?: UserStackAssociationAuthenticationType | null;
 	}
+	export interface DescribeSessionsRequestFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		FleetName: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateDescribeSessionsRequestFormGroup() {
+		return new FormGroup<DescribeSessionsRequestFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeStacksResult {
 
 		/** The stacks. */
-		Stacks?: Array<Stack> | null;
+		Stacks?: Array<Stack>;
 		NextToken?: string | null;
+	}
+	export interface DescribeStacksResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStacksResultFormGroup() {
+		return new FormGroup<DescribeStacksResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeStacksRequest {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface DescribeStacksRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStacksRequestFormGroup() {
+		return new FormGroup<DescribeStacksRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUsageReportSubscriptionsResult {
-		UsageReportSubscriptions?: Array<UsageReportSubscription> | null;
+		UsageReportSubscriptions?: Array<UsageReportSubscription>;
 		NextToken?: string | null;
+	}
+	export interface DescribeUsageReportSubscriptionsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUsageReportSubscriptionsResultFormGroup() {
+		return new FormGroup<DescribeUsageReportSubscriptionsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -751,7 +1876,22 @@ export namespace MyNS {
 		S3BucketName?: string | null;
 		Schedule?: CreateUsageReportSubscriptionResultSchedule | null;
 		LastGeneratedReportDate?: Date | null;
-		SubscriptionErrors?: Array<LastReportGenerationExecutionError> | null;
+		SubscriptionErrors?: Array<LastReportGenerationExecutionError>;
+	}
+
+	/** Describes information about the usage report subscription. */
+	export interface UsageReportSubscriptionFormProperties {
+		S3BucketName: FormControl<string | null | undefined>,
+		Schedule: FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>,
+		LastGeneratedReportDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUsageReportSubscriptionFormGroup() {
+		return new FormGroup<UsageReportSubscriptionFormProperties>({
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<CreateUsageReportSubscriptionResultSchedule | null | undefined>(undefined),
+			LastGeneratedReportDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -761,16 +1901,49 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes the error that is returned when a usage report can't be generated. */
+	export interface LastReportGenerationExecutionErrorFormProperties {
+		ErrorCode: FormControl<LastReportGenerationExecutionErrorErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateLastReportGenerationExecutionErrorFormGroup() {
+		return new FormGroup<LastReportGenerationExecutionErrorFormProperties>({
+			ErrorCode: new FormControl<LastReportGenerationExecutionErrorErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LastReportGenerationExecutionErrorErrorCode { RESOURCE_NOT_FOUND = 0, ACCESS_DENIED = 1, INTERNAL_SERVICE_ERROR = 2 }
 
 	export interface DescribeUsageReportSubscriptionsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeUsageReportSubscriptionsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUsageReportSubscriptionsRequestFormGroup() {
+		return new FormGroup<DescribeUsageReportSubscriptionsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeUserStackAssociationsResult {
-		UserStackAssociations?: Array<UserStackAssociation> | null;
+		UserStackAssociations?: Array<UserStackAssociation>;
 		NextToken?: string | null;
+	}
+	export interface DescribeUserStackAssociationsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserStackAssociationsResultFormGroup() {
+		return new FormGroup<DescribeUserStackAssociationsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUserStackAssociationsRequest {
@@ -780,10 +1953,36 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeUserStackAssociationsRequestFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserStackAssociationsRequestFormGroup() {
+		return new FormGroup<DescribeUserStackAssociationsRequestFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeUsersResult {
-		Users?: Array<User> | null;
+		Users?: Array<User>;
 		NextToken?: string | null;
+	}
+	export interface DescribeUsersResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUsersResultFormGroup() {
+		return new FormGroup<DescribeUsersResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -799,140 +1998,425 @@ export namespace MyNS {
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
 
+	/** Describes a user in the user pool. */
+	export interface UserFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		FirstName: FormControl<string | null | undefined>,
+		LastName: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeUsersRequest {
 		AuthenticationType: UserStackAssociationAuthenticationType;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeUsersRequestFormProperties {
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUsersRequestFormGroup() {
+		return new FormGroup<DescribeUsersRequestFormProperties>({
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisableUserResult {
+	}
+	export interface DisableUserResultFormProperties {
+	}
+	export function CreateDisableUserResultFormGroup() {
+		return new FormGroup<DisableUserResultFormProperties>({
+		});
+
 	}
 
 	export interface DisableUserRequest {
 		UserName: string;
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
+	export interface DisableUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateDisableUserRequestFormGroup() {
+		return new FormGroup<DisableUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateFleetResult {
+	}
+	export interface DisassociateFleetResultFormProperties {
+	}
+	export function CreateDisassociateFleetResultFormGroup() {
+		return new FormGroup<DisassociateFleetResultFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateFleetRequest {
 		FleetName: string;
 		StackName: string;
 	}
+	export interface DisassociateFleetRequestFormProperties {
+		FleetName: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateFleetRequestFormGroup() {
+		return new FormGroup<DisassociateFleetRequestFormProperties>({
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableUserResult {
+	}
+	export interface EnableUserResultFormProperties {
+	}
+	export function CreateEnableUserResultFormGroup() {
+		return new FormGroup<EnableUserResultFormProperties>({
+		});
+
 	}
 
 	export interface EnableUserRequest {
 		UserName: string;
 		AuthenticationType: UserStackAssociationAuthenticationType;
 	}
+	export interface EnableUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AuthenticationType: FormControl<UserStackAssociationAuthenticationType | null | undefined>,
+	}
+	export function CreateEnableUserRequestFormGroup() {
+		return new FormGroup<EnableUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AuthenticationType: new FormControl<UserStackAssociationAuthenticationType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExpireSessionResult {
+	}
+	export interface ExpireSessionResultFormProperties {
+	}
+	export function CreateExpireSessionResultFormGroup() {
+		return new FormGroup<ExpireSessionResultFormProperties>({
+		});
+
 	}
 
 	export interface ExpireSessionRequest {
 		SessionId: string;
 	}
+	export interface ExpireSessionRequestFormProperties {
+		SessionId: FormControl<string | null | undefined>,
+	}
+	export function CreateExpireSessionRequestFormGroup() {
+		return new FormGroup<ExpireSessionRequestFormProperties>({
+			SessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAssociatedFleetsResult {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListAssociatedFleetsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssociatedFleetsResultFormGroup() {
+		return new FormGroup<ListAssociatedFleetsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAssociatedFleetsRequest {
 		StackName: string;
 		NextToken?: string | null;
 	}
+	export interface ListAssociatedFleetsRequestFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssociatedFleetsRequestFormGroup() {
+		return new FormGroup<ListAssociatedFleetsRequestFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAssociatedStacksResult {
-		Names?: Array<string> | null;
+		Names?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListAssociatedStacksResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssociatedStacksResultFormGroup() {
+		return new FormGroup<ListAssociatedStacksResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAssociatedStacksRequest {
 		FleetName: string;
 		NextToken?: string | null;
 	}
+	export interface ListAssociatedStacksRequestFormProperties {
+		FleetName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssociatedStacksRequestFormGroup() {
+		return new FormGroup<ListAssociatedStacksRequestFormProperties>({
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartFleetResult {
+	}
+	export interface StartFleetResultFormProperties {
+	}
+	export function CreateStartFleetResultFormGroup() {
+		return new FormGroup<StartFleetResultFormProperties>({
+		});
+
 	}
 
 	export interface StartFleetRequest {
 		Name: string;
 	}
+	export interface StartFleetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartFleetRequestFormGroup() {
+		return new FormGroup<StartFleetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder | null;
+		ImageBuilder?: ImageBuilder;
+	}
+	export interface StartImageBuilderResultFormProperties {
+	}
+	export function CreateStartImageBuilderResultFormGroup() {
+		return new FormGroup<StartImageBuilderResultFormProperties>({
+		});
+
 	}
 
 	export interface StartImageBuilderRequest {
 		Name: string;
 		AppstreamAgentVersion?: string | null;
 	}
+	export interface StartImageBuilderRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		AppstreamAgentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateStartImageBuilderRequestFormGroup() {
+		return new FormGroup<StartImageBuilderRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			AppstreamAgentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopFleetResult {
+	}
+	export interface StopFleetResultFormProperties {
+	}
+	export function CreateStopFleetResultFormGroup() {
+		return new FormGroup<StopFleetResultFormProperties>({
+		});
+
 	}
 
 	export interface StopFleetRequest {
 		Name: string;
 	}
+	export interface StopFleetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopFleetRequestFormGroup() {
+		return new FormGroup<StopFleetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopImageBuilderResult {
 
 		/** Describes a virtual machine that is used to create an image. */
-		ImageBuilder?: ImageBuilder | null;
+		ImageBuilder?: ImageBuilder;
+	}
+	export interface StopImageBuilderResultFormProperties {
+	}
+	export function CreateStopImageBuilderResultFormGroup() {
+		return new FormGroup<StopImageBuilderResultFormProperties>({
+		});
+
 	}
 
 	export interface StopImageBuilderRequest {
 		Name: string;
 	}
+	export interface StopImageBuilderRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopImageBuilderRequestFormGroup() {
+		return new FormGroup<StopImageBuilderRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: Tags;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDirectoryConfigResult {
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DirectoryConfig?: DirectoryConfig | null;
+		DirectoryConfig?: DirectoryConfig;
+	}
+	export interface UpdateDirectoryConfigResultFormProperties {
+	}
+	export function CreateUpdateDirectoryConfigResultFormGroup() {
+		return new FormGroup<UpdateDirectoryConfigResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDirectoryConfigRequest {
 		DirectoryName: string;
-		OrganizationalUnitDistinguishedNames?: Array<string> | null;
+		OrganizationalUnitDistinguishedNames?: Array<string>;
 
 		/** Describes the credentials for the service account used by the fleet or image builder to connect to the directory. */
-		ServiceAccountCredentials?: ServiceAccountCredentials | null;
+		ServiceAccountCredentials?: ServiceAccountCredentials;
+	}
+	export interface UpdateDirectoryConfigRequestFormProperties {
+		DirectoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDirectoryConfigRequestFormGroup() {
+		return new FormGroup<UpdateDirectoryConfigRequestFormProperties>({
+			DirectoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFleetResult {
 
 		/** Describes a fleet. */
-		Fleet?: Fleet | null;
+		Fleet?: Fleet;
+	}
+	export interface UpdateFleetResultFormProperties {
+	}
+	export function CreateUpdateFleetResultFormGroup() {
+		return new FormGroup<UpdateFleetResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFleetRequest {
@@ -942,10 +2426,10 @@ export namespace MyNS {
 		InstanceType?: string | null;
 
 		/** Describes the capacity for a fleet. */
-		ComputeCapacity?: ComputeCapacity | null;
+		ComputeCapacity?: ComputeCapacity;
 
 		/** Describes VPC configuration information for fleets and image builders. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		MaxUserDurationInSeconds?: number | null;
 		DisconnectTimeoutInSeconds?: number | null;
 		DeleteVpcConfig?: boolean | null;
@@ -954,12 +2438,43 @@ export namespace MyNS {
 		EnableDefaultInternetAccess?: boolean | null;
 
 		/** Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains. */
-		DomainJoinInfo?: DomainJoinInfo | null;
+		DomainJoinInfo?: DomainJoinInfo;
 		IdleDisconnectTimeoutInSeconds?: number | null;
 
 		/** The fleet attributes. */
-		AttributesToDelete?: Array<FleetAttribute> | null;
+		AttributesToDelete?: Array<FleetAttribute>;
 		IamRoleArn?: string | null;
+	}
+	export interface UpdateFleetRequestFormProperties {
+		ImageName: FormControl<string | null | undefined>,
+		ImageArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		MaxUserDurationInSeconds: FormControl<number | null | undefined>,
+		DisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+		DeleteVpcConfig: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		EnableDefaultInternetAccess: FormControl<boolean | null | undefined>,
+		IdleDisconnectTimeoutInSeconds: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFleetRequestFormGroup() {
+		return new FormGroup<UpdateFleetRequestFormProperties>({
+			ImageName: new FormControl<string | null | undefined>(undefined),
+			ImageArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			MaxUserDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			DisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			DeleteVpcConfig: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			EnableDefaultInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			IdleDisconnectTimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -967,6 +2482,13 @@ export namespace MyNS {
 	export enum FleetAttribute { VPC_CONFIGURATION = 0, VPC_CONFIGURATION_SECURITY_GROUP_IDS = 1, DOMAIN_JOIN_INFO = 2, IAM_ROLE_ARN = 3 }
 
 	export interface UpdateImagePermissionsResult {
+	}
+	export interface UpdateImagePermissionsResultFormProperties {
+	}
+	export function CreateUpdateImagePermissionsResultFormGroup() {
+		return new FormGroup<UpdateImagePermissionsResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateImagePermissionsRequest {
@@ -979,11 +2501,29 @@ export namespace MyNS {
 		 */
 		ImagePermissions: ImagePermissions;
 	}
+	export interface UpdateImagePermissionsRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		SharedAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateImagePermissionsRequestFormGroup() {
+		return new FormGroup<UpdateImagePermissionsRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			SharedAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateStackResult {
 
 		/** Describes a stack. */
-		Stack?: Stack | null;
+		Stack?: Stack;
+	}
+	export interface UpdateStackResultFormProperties {
+	}
+	export function CreateUpdateStackResultFormGroup() {
+		return new FormGroup<UpdateStackResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateStackRequest {
@@ -992,17 +2532,36 @@ export namespace MyNS {
 		Name: string;
 
 		/** The storage connectors. */
-		StorageConnectors?: Array<StorageConnector> | null;
+		StorageConnectors?: Array<StorageConnector>;
 		DeleteStorageConnectors?: boolean | null;
 		RedirectURL?: string | null;
 		FeedbackURL?: string | null;
-		AttributesToDelete?: Array<StackAttribute> | null;
-		UserSettings?: Array<UserSetting> | null;
+		AttributesToDelete?: Array<StackAttribute>;
+		UserSettings?: Array<UserSetting>;
 
 		/** The persistent application settings for users of a stack. */
-		ApplicationSettings?: ApplicationSettings | null;
-		AccessEndpoints?: Array<AccessEndpoint> | null;
-		EmbedHostDomains?: Array<string> | null;
+		ApplicationSettings?: ApplicationSettings;
+		AccessEndpoints?: Array<AccessEndpoint>;
+		EmbedHostDomains?: Array<string>;
+	}
+	export interface UpdateStackRequestFormProperties {
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		DeleteStorageConnectors: FormControl<boolean | null | undefined>,
+		RedirectURL: FormControl<string | null | undefined>,
+		FeedbackURL: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackRequestFormGroup() {
+		return new FormGroup<UpdateStackRequestFormProperties>({
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			DeleteStorageConnectors: new FormControl<boolean | null | undefined>(undefined),
+			RedirectURL: new FormControl<string | null | undefined>(undefined),
+			FeedbackURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackAttribute { STORAGE_CONNECTORS = 0, STORAGE_CONNECTOR_HOMEFOLDERS = 1, STORAGE_CONNECTOR_GOOGLE_DRIVE = 2, STORAGE_CONNECTOR_ONE_DRIVE = 3, REDIRECT_URL = 4, FEEDBACK_URL = 5, THEME_NAME = 6, USER_SETTINGS = 7, EMBED_HOST_DOMAINS = 8, IAM_ROLE_ARN = 9, ACCESS_ENDPOINTS = 10 }

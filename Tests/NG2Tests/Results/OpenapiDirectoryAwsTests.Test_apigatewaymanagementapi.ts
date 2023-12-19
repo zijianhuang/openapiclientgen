@@ -1,34 +1,99 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GoneException {
+	}
+	export interface GoneExceptionFormProperties {
+	}
+	export function CreateGoneExceptionFormGroup() {
+		return new FormGroup<GoneExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ForbiddenException {
+	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetConnectionResponse {
 		ConnectedAt?: Date | null;
-		Identity?: Identity | null;
+		Identity?: Identity;
 		LastActiveAt?: Date | null;
+	}
+	export interface GetConnectionResponseFormProperties {
+		ConnectedAt: FormControl<Date | null | undefined>,
+		LastActiveAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetConnectionResponseFormGroup() {
+		return new FormGroup<GetConnectionResponseFormProperties>({
+			ConnectedAt: new FormControl<Date | null | undefined>(undefined),
+			LastActiveAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Identity {
 		SourceIp: string;
 		UserAgent: string;
 	}
+	export interface IdentityFormProperties {
+		SourceIp: FormControl<string | null | undefined>,
+		UserAgent: FormControl<string | null | undefined>,
+	}
+	export function CreateIdentityFormGroup() {
+		return new FormGroup<IdentityFormProperties>({
+			SourceIp: new FormControl<string | null | undefined>(undefined),
+			UserAgent: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PayloadTooLargeException {
+	}
+	export interface PayloadTooLargeExceptionFormProperties {
+	}
+	export function CreatePayloadTooLargeExceptionFormGroup() {
+		return new FormGroup<PayloadTooLargeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteConnectionRequest {
 	}
+	export interface DeleteConnectionRequestFormProperties {
+	}
+	export function CreateDeleteConnectionRequestFormGroup() {
+		return new FormGroup<DeleteConnectionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetConnectionRequest {
+	}
+	export interface GetConnectionRequestFormProperties {
+	}
+	export function CreateGetConnectionRequestFormGroup() {
+		return new FormGroup<GetConnectionRequestFormProperties>({
+		});
+
 	}
 
 	export interface PostToConnectionRequest {
@@ -39,6 +104,21 @@ export namespace MyNS {
 		 * Max length: 131072
 		 */
 		Data: string;
+	}
+	export interface PostToConnectionRequestFormProperties {
+
+		/**
+		 * The data to be sent to the client specified by its connection id.
+		 * Required
+		 * Max length: 131072
+		 */
+		Data: FormControl<string | null | undefined>,
+	}
+	export function CreatePostToConnectionRequestFormGroup() {
+		return new FormGroup<PostToConnectionRequestFormProperties>({
+			Data: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -83,6 +163,21 @@ export namespace MyNS {
 		 * Max length: 131072
 		 */
 		Data: string;
+	}
+	export interface PostToConnectionPostBodyFormProperties {
+
+		/**
+		 * The data to be sent to the client specified by its connection id.
+		 * Required
+		 * Max length: 131072
+		 */
+		Data: FormControl<string | null | undefined>,
+	}
+	export function CreatePostToConnectionPostBodyFormGroup() {
+		return new FormGroup<PostToConnectionPostBodyFormProperties>({
+			Data: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

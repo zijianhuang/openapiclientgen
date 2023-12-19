@@ -1,23 +1,62 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetSnapshotBlockResponse {
 		BlockData?: string | null;
 	}
+	export interface GetSnapshotBlockResponseFormProperties {
+		BlockData: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSnapshotBlockResponseFormGroup() {
+		return new FormGroup<GetSnapshotBlockResponseFormProperties>({
+			BlockData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListChangedBlocksResponse {
-		ChangedBlocks?: Array<ChangedBlock> | null;
+		ChangedBlocks?: Array<ChangedBlock>;
 		ExpiryTime?: Date | null;
 		VolumeSize?: number | null;
 		BlockSize?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListChangedBlocksResponseFormProperties {
+		ExpiryTime: FormControl<Date | null | undefined>,
+		VolumeSize: FormControl<number | null | undefined>,
+		BlockSize: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListChangedBlocksResponseFormGroup() {
+		return new FormGroup<ListChangedBlocksResponseFormProperties>({
+			ExpiryTime: new FormControl<Date | null | undefined>(undefined),
+			VolumeSize: new FormControl<number | null | undefined>(undefined),
+			BlockSize: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -28,12 +67,42 @@ export namespace MyNS {
 		SecondBlockToken?: string | null;
 	}
 
+	/** A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage. */
+	export interface ChangedBlockFormProperties {
+		BlockIndex: FormControl<number | null | undefined>,
+		FirstBlockToken: FormControl<string | null | undefined>,
+		SecondBlockToken: FormControl<string | null | undefined>,
+	}
+	export function CreateChangedBlockFormGroup() {
+		return new FormGroup<ChangedBlockFormProperties>({
+			BlockIndex: new FormControl<number | null | undefined>(undefined),
+			FirstBlockToken: new FormControl<string | null | undefined>(undefined),
+			SecondBlockToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSnapshotBlocksResponse {
-		Blocks?: Array<Block> | null;
+		Blocks?: Array<Block>;
 		ExpiryTime?: Date | null;
 		VolumeSize?: number | null;
 		BlockSize?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListSnapshotBlocksResponseFormProperties {
+		ExpiryTime: FormControl<Date | null | undefined>,
+		VolumeSize: FormControl<number | null | undefined>,
+		BlockSize: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSnapshotBlocksResponseFormGroup() {
+		return new FormGroup<ListSnapshotBlocksResponseFormProperties>({
+			ExpiryTime: new FormControl<Date | null | undefined>(undefined),
+			VolumeSize: new FormControl<number | null | undefined>(undefined),
+			BlockSize: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,15 +112,49 @@ export namespace MyNS {
 		BlockToken?: string | null;
 	}
 
+	/** A block of data in an Amazon Elastic Block Store snapshot. */
+	export interface BlockFormProperties {
+		BlockIndex: FormControl<number | null | undefined>,
+		BlockToken: FormControl<string | null | undefined>,
+	}
+	export function CreateBlockFormGroup() {
+		return new FormGroup<BlockFormProperties>({
+			BlockIndex: new FormControl<number | null | undefined>(undefined),
+			BlockToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ChecksumAlgorithm { SHA256 = 0 }
 
 	export interface GetSnapshotBlockRequest {
 	}
+	export interface GetSnapshotBlockRequestFormProperties {
+	}
+	export function CreateGetSnapshotBlockRequestFormGroup() {
+		return new FormGroup<GetSnapshotBlockRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListChangedBlocksRequest {
 	}
+	export interface ListChangedBlocksRequestFormProperties {
+	}
+	export function CreateListChangedBlocksRequestFormGroup() {
+		return new FormGroup<ListChangedBlocksRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListSnapshotBlocksRequest {
+	}
+	export interface ListSnapshotBlocksRequestFormProperties {
+	}
+	export function CreateListSnapshotBlocksRequestFormGroup() {
+		return new FormGroup<ListSnapshotBlocksRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()

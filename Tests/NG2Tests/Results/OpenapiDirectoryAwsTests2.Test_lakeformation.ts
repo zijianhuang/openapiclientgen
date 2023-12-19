@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchGrantPermissionsResponse {
-		Failures?: Array<BatchPermissionsFailureEntry> | null;
+		Failures?: Array<BatchPermissionsFailureEntry>;
+	}
+	export interface BatchGrantPermissionsResponseFormProperties {
+	}
+	export function CreateBatchGrantPermissionsResponseFormGroup() {
+		return new FormGroup<BatchGrantPermissionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -11,10 +19,19 @@ export namespace MyNS {
 	export interface BatchPermissionsFailureEntry {
 
 		/** A permission to a resource granted by batch operation to the principal. */
-		RequestEntry?: BatchPermissionsRequestEntry | null;
+		RequestEntry?: BatchPermissionsRequestEntry;
 
 		/** Contains details about an error. */
-		Error?: ErrorDetail | null;
+		Error?: ErrorDetail;
+	}
+
+	/** A list of failures when performing a batch grant or batch revoke operation. */
+	export interface BatchPermissionsFailureEntryFormProperties {
+	}
+	export function CreateBatchPermissionsFailureEntryFormGroup() {
+		return new FormGroup<BatchPermissionsFailureEntryFormProperties>({
+		});
+
 	}
 
 
@@ -23,12 +40,23 @@ export namespace MyNS {
 		Id: string;
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal | null;
+		Principal?: DataLakePrincipal;
 
 		/** A structure for the resource. */
-		Resource?: Resource | null;
-		Permissions?: Array<Permission> | null;
-		PermissionsWithGrantOption?: Array<Permission> | null;
+		Resource?: Resource;
+		Permissions?: Array<Permission>;
+		PermissionsWithGrantOption?: Array<Permission>;
+	}
+
+	/** A permission to a resource granted by batch operation to the principal. */
+	export interface BatchPermissionsRequestEntryFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPermissionsRequestEntryFormGroup() {
+		return new FormGroup<BatchPermissionsRequestEntryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -37,24 +65,44 @@ export namespace MyNS {
 		DataLakePrincipalIdentifier?: string | null;
 	}
 
+	/** The AWS Lake Formation principal. */
+	export interface DataLakePrincipalFormProperties {
+		DataLakePrincipalIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDataLakePrincipalFormGroup() {
+		return new FormGroup<DataLakePrincipalFormProperties>({
+			DataLakePrincipalIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A structure for the resource. */
 	export interface Resource {
 
 		/** A structure for the catalog object. */
-		Catalog?: CatalogResource | null;
+		Catalog?: CatalogResource;
 
 		/** A structure for the database object. */
-		Database?: DatabaseResource | null;
+		Database?: DatabaseResource;
 
 		/** A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. */
-		Table?: TableResource | null;
+		Table?: TableResource;
 
 		/** <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p> */
-		TableWithColumns?: TableWithColumnsResource | null;
+		TableWithColumns?: TableWithColumnsResource;
 
 		/** A structure for a data location object where permissions are granted or revoked. */
-		DataLocation?: DataLocationResource | null;
+		DataLocation?: DataLocationResource;
+	}
+
+	/** A structure for the resource. */
+	export interface ResourceFormProperties {
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+		});
+
 	}
 
 
@@ -62,10 +110,30 @@ export namespace MyNS {
 	export interface CatalogResource {
 	}
 
+	/** A structure for the catalog object. */
+	export interface CatalogResourceFormProperties {
+	}
+	export function CreateCatalogResourceFormGroup() {
+		return new FormGroup<CatalogResourceFormProperties>({
+		});
+
+	}
+
 
 	/** A structure for the database object. */
 	export interface DatabaseResource {
 		Name: string;
+	}
+
+	/** A structure for the database object. */
+	export interface DatabaseResourceFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDatabaseResourceFormGroup() {
+		return new FormGroup<DatabaseResourceFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -75,27 +143,73 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/** A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.  */
+	export interface TableResourceFormProperties {
+		DatabaseName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateTableResourceFormGroup() {
+		return new FormGroup<TableResourceFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p> */
 	export interface TableWithColumnsResource {
 		DatabaseName?: string | null;
 		Name?: string | null;
-		ColumnNames?: Array<string> | null;
+		ColumnNames?: Array<string>;
 
 		/** A wildcard object, consisting of an optional list of excluded column names or indexes. */
-		ColumnWildcard?: ColumnWildcard | null;
+		ColumnWildcard?: ColumnWildcard;
+	}
+
+	/** <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p> */
+	export interface TableWithColumnsResourceFormProperties {
+		DatabaseName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateTableWithColumnsResourceFormGroup() {
+		return new FormGroup<TableWithColumnsResourceFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A wildcard object, consisting of an optional list of excluded column names or indexes. */
 	export interface ColumnWildcard {
-		ExcludedColumnNames?: Array<string> | null;
+		ExcludedColumnNames?: Array<string>;
+	}
+
+	/** A wildcard object, consisting of an optional list of excluded column names or indexes. */
+	export interface ColumnWildcardFormProperties {
+	}
+	export function CreateColumnWildcardFormGroup() {
+		return new FormGroup<ColumnWildcardFormProperties>({
+		});
+
 	}
 
 
 	/** A structure for a data location object where permissions are granted or revoked.  */
 	export interface DataLocationResource {
 		ResourceArn: string;
+	}
+
+	/** A structure for a data location object where permissions are granted or revoked.  */
+	export interface DataLocationResourceFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDataLocationResourceFormGroup() {
+		return new FormGroup<DataLocationResourceFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Permission { ALL = 0, SELECT = 1, ALTER = 2, DROP = 3, DELETE = 4, INSERT = 5, CREATE_DATABASE = 6, CREATE_TABLE = 7, DATA_LOCATION_ACCESS = 8 }
@@ -107,43 +221,132 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Contains details about an error. */
+	export interface ErrorDetailFormProperties {
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailFormGroup() {
+		return new FormGroup<ErrorDetailFormProperties>({
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGrantPermissionsRequest {
 		CatalogId?: string | null;
 		Entries: Array<BatchPermissionsRequestEntry>;
 	}
+	export interface BatchGrantPermissionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGrantPermissionsRequestFormGroup() {
+		return new FormGroup<BatchGrantPermissionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationTimeoutException {
 	}
+	export interface OperationTimeoutExceptionFormProperties {
+	}
+	export function CreateOperationTimeoutExceptionFormGroup() {
+		return new FormGroup<OperationTimeoutExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchRevokePermissionsResponse {
-		Failures?: Array<BatchPermissionsFailureEntry> | null;
+		Failures?: Array<BatchPermissionsFailureEntry>;
+	}
+	export interface BatchRevokePermissionsResponseFormProperties {
+	}
+	export function CreateBatchRevokePermissionsResponseFormGroup() {
+		return new FormGroup<BatchRevokePermissionsResponseFormProperties>({
+		});
+
 	}
 
 	export interface BatchRevokePermissionsRequest {
 		CatalogId?: string | null;
 		Entries: Array<BatchPermissionsRequestEntry>;
 	}
+	export interface BatchRevokePermissionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchRevokePermissionsRequestFormGroup() {
+		return new FormGroup<BatchRevokePermissionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeregisterResourceResponse {
+	}
+	export interface DeregisterResourceResponseFormProperties {
+	}
+	export function CreateDeregisterResourceResponseFormGroup() {
+		return new FormGroup<DeregisterResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterResourceRequest {
 		ResourceArn: string;
 	}
+	export interface DeregisterResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterResourceRequestFormGroup() {
+		return new FormGroup<DeregisterResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InternalServiceException {
 	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface EntityNotFoundException {
+	}
+	export interface EntityNotFoundExceptionFormProperties {
+	}
+	export function CreateEntityNotFoundExceptionFormGroup() {
+		return new FormGroup<EntityNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeResourceResponse {
 
 		/** A structure containing information about an AWS Lake Formation resource. */
-		ResourceInfo?: ResourceInfo | null;
+		ResourceInfo?: ResourceInfo;
+	}
+	export interface DescribeResourceResponseFormProperties {
+	}
+	export function CreateDescribeResourceResponseFormGroup() {
+		return new FormGroup<DescribeResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -154,22 +357,62 @@ export namespace MyNS {
 		LastModified?: Date | null;
 	}
 
+	/** A structure containing information about an AWS Lake Formation resource. */
+	export interface ResourceInfoFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+	}
+	export function CreateResourceInfoFormGroup() {
+		return new FormGroup<ResourceInfoFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeResourceRequest {
 		ResourceArn: string;
+	}
+	export interface DescribeResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeResourceRequestFormGroup() {
+		return new FormGroup<DescribeResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDataLakeSettingsResponse {
 
 		/** The AWS Lake Formation principal. */
-		DataLakeSettings?: DataLakeSettings | null;
+		DataLakeSettings?: DataLakeSettings;
+	}
+	export interface GetDataLakeSettingsResponseFormProperties {
+	}
+	export function CreateGetDataLakeSettingsResponseFormGroup() {
+		return new FormGroup<GetDataLakeSettingsResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The AWS Lake Formation principal. */
 	export interface DataLakeSettings {
-		DataLakeAdmins?: Array<DataLakePrincipal> | null;
-		CreateDatabaseDefaultPermissions?: Array<PrincipalPermissions> | null;
-		CreateTableDefaultPermissions?: Array<PrincipalPermissions> | null;
+		DataLakeAdmins?: Array<DataLakePrincipal>;
+		CreateDatabaseDefaultPermissions?: Array<PrincipalPermissions>;
+		CreateTableDefaultPermissions?: Array<PrincipalPermissions>;
+	}
+
+	/** The AWS Lake Formation principal. */
+	export interface DataLakeSettingsFormProperties {
+	}
+	export function CreateDataLakeSettingsFormGroup() {
+		return new FormGroup<DataLakeSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -177,17 +420,44 @@ export namespace MyNS {
 	export interface PrincipalPermissions {
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal | null;
-		Permissions?: Array<Permission> | null;
+		Principal?: DataLakePrincipal;
+		Permissions?: Array<Permission>;
+	}
+
+	/** Permissions granted to a principal. */
+	export interface PrincipalPermissionsFormProperties {
+	}
+	export function CreatePrincipalPermissionsFormGroup() {
+		return new FormGroup<PrincipalPermissionsFormProperties>({
+		});
+
 	}
 
 	export interface GetDataLakeSettingsRequest {
 		CatalogId?: string | null;
 	}
+	export interface GetDataLakeSettingsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataLakeSettingsRequestFormGroup() {
+		return new FormGroup<GetDataLakeSettingsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetEffectivePermissionsForPathResponse {
-		Permissions?: Array<PrincipalResourcePermissions> | null;
+		Permissions?: Array<PrincipalResourcePermissions>;
 		NextToken?: string | null;
+	}
+	export interface GetEffectivePermissionsForPathResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEffectivePermissionsForPathResponseFormGroup() {
+		return new FormGroup<GetEffectivePermissionsForPathResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -195,12 +465,21 @@ export namespace MyNS {
 	export interface PrincipalResourcePermissions {
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal | null;
+		Principal?: DataLakePrincipal;
 
 		/** A structure for the resource. */
-		Resource?: Resource | null;
-		Permissions?: Array<Permission> | null;
-		PermissionsWithGrantOption?: Array<Permission> | null;
+		Resource?: Resource;
+		Permissions?: Array<Permission>;
+		PermissionsWithGrantOption?: Array<Permission>;
+	}
+
+	/** The permissions granted or revoked on a resource. */
+	export interface PrincipalResourcePermissionsFormProperties {
+	}
+	export function CreatePrincipalResourcePermissionsFormGroup() {
+		return new FormGroup<PrincipalResourcePermissionsFormProperties>({
+		});
+
 	}
 
 	export interface GetEffectivePermissionsForPathRequest {
@@ -209,8 +488,30 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetEffectivePermissionsForPathRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetEffectivePermissionsForPathRequestFormGroup() {
+		return new FormGroup<GetEffectivePermissionsForPathRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GrantPermissionsResponse {
+	}
+	export interface GrantPermissionsResponseFormProperties {
+	}
+	export function CreateGrantPermissionsResponseFormGroup() {
+		return new FormGroup<GrantPermissionsResponseFormProperties>({
+		});
+
 	}
 
 	export interface GrantPermissionsRequest {
@@ -228,41 +529,101 @@ export namespace MyNS {
 		 */
 		Resource: Resource;
 		Permissions: Array<Permission>;
-		PermissionsWithGrantOption?: Array<Permission> | null;
+		PermissionsWithGrantOption?: Array<Permission>;
+	}
+	export interface GrantPermissionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateGrantPermissionsRequestFormGroup() {
+		return new FormGroup<GrantPermissionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListPermissionsResponse {
-		PrincipalResourcePermissions?: Array<PrincipalResourcePermissions> | null;
+		PrincipalResourcePermissions?: Array<PrincipalResourcePermissions>;
 		NextToken?: string | null;
+	}
+	export interface ListPermissionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPermissionsResponseFormGroup() {
+		return new FormGroup<ListPermissionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPermissionsRequest {
 		CatalogId?: string | null;
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal | null;
+		Principal?: DataLakePrincipal;
 		ResourceType?: ListPermissionsRequestResourceType | null;
 
 		/** A structure for the resource. */
-		Resource?: Resource | null;
+		Resource?: Resource;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListPermissionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<ListPermissionsRequestResourceType | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListPermissionsRequestFormGroup() {
+		return new FormGroup<ListPermissionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<ListPermissionsRequestResourceType | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ListPermissionsRequestResourceType { CATALOG = 0, DATABASE = 1, TABLE = 2, DATA_LOCATION = 3 }
 
 	export interface ListResourcesResponse {
-		ResourceInfoList?: Array<ResourceInfo> | null;
+		ResourceInfoList?: Array<ResourceInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListResourcesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourcesResponseFormGroup() {
+		return new FormGroup<ListResourcesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResourcesRequest {
-		FilterConditionList?: Array<FilterCondition> | null;
+		FilterConditionList?: Array<FilterCondition>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListResourcesRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourcesRequestFormGroup() {
+		return new FormGroup<ListResourcesRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -270,7 +631,20 @@ export namespace MyNS {
 	export interface FilterCondition {
 		Field?: FilterConditionField | null;
 		ComparisonOperator?: FilterConditionComparisonOperator | null;
-		StringValueList?: Array<string> | null;
+		StringValueList?: Array<string>;
+	}
+
+	/** This structure describes the filtering of columns in a table based on a filter condition. */
+	export interface FilterConditionFormProperties {
+		Field: FormControl<FilterConditionField | null | undefined>,
+		ComparisonOperator: FormControl<FilterConditionComparisonOperator | null | undefined>,
+	}
+	export function CreateFilterConditionFormGroup() {
+		return new FormGroup<FilterConditionFormProperties>({
+			Field: new FormControl<FilterConditionField | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<FilterConditionComparisonOperator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterConditionField { RESOURCE_ARN = 0, ROLE_ARN = 1, LAST_MODIFIED = 2 }
@@ -278,6 +652,13 @@ export namespace MyNS {
 	export enum FilterConditionComparisonOperator { EQ = 0, NE = 1, LE = 2, LT = 3, GE = 4, GT = 5, CONTAINS = 6, NOT_CONTAINS = 7, BEGINS_WITH = 8, IN = 9, BETWEEN = 10 }
 
 	export interface PutDataLakeSettingsResponse {
+	}
+	export interface PutDataLakeSettingsResponseFormProperties {
+	}
+	export function CreatePutDataLakeSettingsResponseFormGroup() {
+		return new FormGroup<PutDataLakeSettingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutDataLakeSettingsRequest {
@@ -289,8 +670,24 @@ export namespace MyNS {
 		 */
 		DataLakeSettings: DataLakeSettings;
 	}
+	export interface PutDataLakeSettingsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutDataLakeSettingsRequestFormGroup() {
+		return new FormGroup<PutDataLakeSettingsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterResourceResponse {
+	}
+	export interface RegisterResourceResponseFormProperties {
+	}
+	export function CreateRegisterResourceResponseFormGroup() {
+		return new FormGroup<RegisterResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface RegisterResourceRequest {
@@ -298,11 +695,38 @@ export namespace MyNS {
 		UseServiceLinkedRole?: boolean | null;
 		RoleArn?: string | null;
 	}
+	export interface RegisterResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		UseServiceLinkedRole: FormControl<boolean | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterResourceRequestFormGroup() {
+		return new FormGroup<RegisterResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			UseServiceLinkedRole: new FormControl<boolean | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlreadyExistsException {
 	}
+	export interface AlreadyExistsExceptionFormProperties {
+	}
+	export function CreateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<AlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface RevokePermissionsResponse {
+	}
+	export interface RevokePermissionsResponseFormProperties {
+	}
+	export function CreateRevokePermissionsResponseFormGroup() {
+		return new FormGroup<RevokePermissionsResponseFormProperties>({
+		});
+
 	}
 
 	export interface RevokePermissionsRequest {
@@ -320,15 +744,42 @@ export namespace MyNS {
 		 */
 		Resource: Resource;
 		Permissions: Array<Permission>;
-		PermissionsWithGrantOption?: Array<Permission> | null;
+		PermissionsWithGrantOption?: Array<Permission>;
+	}
+	export interface RevokePermissionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokePermissionsRequestFormGroup() {
+		return new FormGroup<RevokePermissionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateResourceResponse {
+	}
+	export interface UpdateResourceResponseFormProperties {
+	}
+	export function CreateUpdateResourceResponseFormGroup() {
+		return new FormGroup<UpdateResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateResourceRequest {
 		RoleArn: string;
 		ResourceArn: string;
+	}
+	export interface UpdateResourceRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResourceRequestFormGroup() {
+		return new FormGroup<UpdateResourceRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ComparisonOperator { EQ = 0, NE = 1, LE = 2, LT = 3, GE = 4, GT = 5, CONTAINS = 6, NOT_CONTAINS = 7, BEGINS_WITH = 8, IN = 9, BETWEEN = 10 }

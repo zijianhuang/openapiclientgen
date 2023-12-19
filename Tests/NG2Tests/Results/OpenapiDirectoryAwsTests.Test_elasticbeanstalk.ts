@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface InsufficientPrivilegesException {
+	}
+	export interface InsufficientPrivilegesExceptionFormProperties {
+	}
+	export function CreateInsufficientPrivilegesExceptionFormGroup() {
+		return new FormGroup<InsufficientPrivilegesExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -14,12 +22,43 @@ export namespace MyNS {
 		Status?: string | null;
 	}
 
+	/** The result message containing information about the managed action. */
+	export interface ApplyEnvironmentManagedActionResultFormProperties {
+		ActionId: FormControl<string | null | undefined>,
+		ActionDescription: FormControl<string | null | undefined>,
+		ActionType: FormControl<ApplyEnvironmentManagedActionResultActionType | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateApplyEnvironmentManagedActionResultFormGroup() {
+		return new FormGroup<ApplyEnvironmentManagedActionResultFormProperties>({
+			ActionId: new FormControl<string | null | undefined>(undefined),
+			ActionDescription: new FormControl<string | null | undefined>(undefined),
+			ActionType: new FormControl<ApplyEnvironmentManagedActionResultActionType | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ApplyEnvironmentManagedActionResultActionType { InstanceRefresh = 0, PlatformUpdate = 1, Unknown = 2 }
 
 	export interface ElasticBeanstalkServiceException {
 	}
+	export interface ElasticBeanstalkServiceExceptionFormProperties {
+	}
+	export function CreateElasticBeanstalkServiceExceptionFormGroup() {
+		return new FormGroup<ElasticBeanstalkServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ManagedActionInvalidStateException {
+	}
+	export interface ManagedActionInvalidStateExceptionFormProperties {
+	}
+	export function CreateManagedActionInvalidStateExceptionFormGroup() {
+		return new FormGroup<ManagedActionInvalidStateExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -29,11 +68,35 @@ export namespace MyNS {
 		FullyQualifiedCNAME?: string | null;
 	}
 
+	/** Indicates if the specified CNAME is available. */
+	export interface CheckDNSAvailabilityResultMessageFormProperties {
+		Available: FormControl<boolean | null | undefined>,
+		FullyQualifiedCNAME: FormControl<string | null | undefined>,
+	}
+	export function CreateCheckDNSAvailabilityResultMessageFormGroup() {
+		return new FormGroup<CheckDNSAvailabilityResultMessageFormProperties>({
+			Available: new FormControl<boolean | null | undefined>(undefined),
+			FullyQualifiedCNAME: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Result message containing a list of environment descriptions. */
 	export interface EnvironmentDescriptionsMessage {
-		Environments?: Array<EnvironmentDescription> | null;
+		Environments?: Array<EnvironmentDescription>;
 		NextToken?: string | null;
+	}
+
+	/** Result message containing a list of environment descriptions. */
+	export interface EnvironmentDescriptionsMessageFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentDescriptionsMessageFormGroup() {
+		return new FormGroup<EnvironmentDescriptionsMessageFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -57,13 +120,58 @@ export namespace MyNS {
 		HealthStatus?: EnvironmentDescriptionHealthStatus | null;
 
 		/** Describes the AWS resources in use by this environment. This data is not live data. */
-		Resources?: EnvironmentResourcesDescription | null;
+		Resources?: EnvironmentResourcesDescription;
 
 		/** Describes the properties of an environment tier */
-		Tier?: EnvironmentTier | null;
-		EnvironmentLinks?: Array<EnvironmentLink> | null;
+		Tier?: EnvironmentTier;
+		EnvironmentLinks?: Array<EnvironmentLink>;
 		EnvironmentArn?: string | null;
 		OperationsRole?: string | null;
+	}
+
+	/** Describes the properties of an environment. */
+	export interface EnvironmentDescriptionFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		EndpointURL: FormControl<string | null | undefined>,
+		CNAME: FormControl<string | null | undefined>,
+		DateCreated: FormControl<Date | null | undefined>,
+		DateUpdated: FormControl<Date | null | undefined>,
+		Status: FormControl<EnvironmentDescriptionStatus | null | undefined>,
+		AbortableOperationInProgress: FormControl<boolean | null | undefined>,
+		Health: FormControl<EnvironmentDescriptionHealth | null | undefined>,
+		HealthStatus: FormControl<EnvironmentDescriptionHealthStatus | null | undefined>,
+		EnvironmentArn: FormControl<string | null | undefined>,
+		OperationsRole: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentDescriptionFormGroup() {
+		return new FormGroup<EnvironmentDescriptionFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			EndpointURL: new FormControl<string | null | undefined>(undefined),
+			CNAME: new FormControl<string | null | undefined>(undefined),
+			DateCreated: new FormControl<Date | null | undefined>(undefined),
+			DateUpdated: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<EnvironmentDescriptionStatus | null | undefined>(undefined),
+			AbortableOperationInProgress: new FormControl<boolean | null | undefined>(undefined),
+			Health: new FormControl<EnvironmentDescriptionHealth | null | undefined>(undefined),
+			HealthStatus: new FormControl<EnvironmentDescriptionHealthStatus | null | undefined>(undefined),
+			EnvironmentArn: new FormControl<string | null | undefined>(undefined),
+			OperationsRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentDescriptionStatus { Launching = 0, Updating = 1, Ready = 2, Terminating = 3, Terminated = 4 }
@@ -77,7 +185,16 @@ export namespace MyNS {
 	export interface EnvironmentResourcesDescription {
 
 		/** Describes the details of a LoadBalancer. */
-		LoadBalancer?: LoadBalancerDescription | null;
+		LoadBalancer?: LoadBalancerDescription;
+	}
+
+	/** Describes the AWS resources in use by this environment. This data is not live data. */
+	export interface EnvironmentResourcesDescriptionFormProperties {
+	}
+	export function CreateEnvironmentResourcesDescriptionFormGroup() {
+		return new FormGroup<EnvironmentResourcesDescriptionFormProperties>({
+		});
+
 	}
 
 
@@ -85,7 +202,20 @@ export namespace MyNS {
 	export interface LoadBalancerDescription {
 		LoadBalancerName?: string | null;
 		Domain?: string | null;
-		Listeners?: Array<Listener> | null;
+		Listeners?: Array<Listener>;
+	}
+
+	/** Describes the details of a LoadBalancer. */
+	export interface LoadBalancerDescriptionFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+	}
+	export function CreateLoadBalancerDescriptionFormGroup() {
+		return new FormGroup<LoadBalancerDescriptionFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -93,6 +223,19 @@ export namespace MyNS {
 	export interface Listener {
 		Protocol?: string | null;
 		Port?: number | null;
+	}
+
+	/** Describes the properties of a Listener for the LoadBalancer. */
+	export interface ListenerFormProperties {
+		Protocol: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateListenerFormGroup() {
+		return new FormGroup<ListenerFormProperties>({
+			Protocol: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -103,6 +246,21 @@ export namespace MyNS {
 		Version?: string | null;
 	}
 
+	/** Describes the properties of an environment tier */
+	export interface EnvironmentTierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentTierFormGroup() {
+		return new FormGroup<EnvironmentTierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details. */
 	export interface EnvironmentLink {
@@ -110,7 +268,27 @@ export namespace MyNS {
 		EnvironmentName?: string | null;
 	}
 
+	/** A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details. */
+	export interface EnvironmentLinkFormProperties {
+		LinkName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentLinkFormGroup() {
+		return new FormGroup<EnvironmentLinkFormProperties>({
+			LinkName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyEnvironmentsException {
+	}
+	export interface TooManyEnvironmentsExceptionFormProperties {
+	}
+	export function CreateTooManyEnvironmentsExceptionFormGroup() {
+		return new FormGroup<TooManyEnvironmentsExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -118,7 +296,16 @@ export namespace MyNS {
 	export interface ApplicationDescriptionMessage {
 
 		/** Describes the properties of an application. */
-		Application?: ApplicationDescription | null;
+		Application?: ApplicationDescription;
+	}
+
+	/** Result message containing a single description of an application. */
+	export interface ApplicationDescriptionMessageFormProperties {
+	}
+	export function CreateApplicationDescriptionMessageFormGroup() {
+		return new FormGroup<ApplicationDescriptionMessageFormProperties>({
+		});
+
 	}
 
 
@@ -129,11 +316,30 @@ export namespace MyNS {
 		Description?: string | null;
 		DateCreated?: Date | null;
 		DateUpdated?: Date | null;
-		Versions?: Array<string> | null;
-		ConfigurationTemplates?: Array<string> | null;
+		Versions?: Array<string>;
+		ConfigurationTemplates?: Array<string>;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
-		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | null;
+		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
+	}
+
+	/** Describes the properties of an application. */
+	export interface ApplicationDescriptionFormProperties {
+		ApplicationArn: FormControl<string | null | undefined>,
+		ApplicationName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DateCreated: FormControl<Date | null | undefined>,
+		DateUpdated: FormControl<Date | null | undefined>,
+	}
+	export function CreateApplicationDescriptionFormGroup() {
+		return new FormGroup<ApplicationDescriptionFormProperties>({
+			ApplicationArn: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DateCreated: new FormControl<Date | null | undefined>(undefined),
+			DateUpdated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -142,7 +348,18 @@ export namespace MyNS {
 		ServiceRole?: string | null;
 
 		/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
-		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | null;
+		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+	}
+
+	/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
+	export interface ApplicationResourceLifecycleConfigFormProperties {
+		ServiceRole: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationResourceLifecycleConfigFormGroup() {
+		return new FormGroup<ApplicationResourceLifecycleConfigFormProperties>({
+			ServiceRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -150,10 +367,19 @@ export namespace MyNS {
 	export interface ApplicationVersionLifecycleConfig {
 
 		/** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded. */
-		MaxCountRule?: MaxCountRule | null;
+		MaxCountRule?: MaxCountRule;
 
 		/** A lifecycle rule that deletes application versions after the specified number of days. */
-		MaxAgeRule?: MaxAgeRule | null;
+		MaxAgeRule?: MaxAgeRule;
+	}
+
+	/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
+	export interface ApplicationVersionLifecycleConfigFormProperties {
+	}
+	export function CreateApplicationVersionLifecycleConfigFormGroup() {
+		return new FormGroup<ApplicationVersionLifecycleConfigFormProperties>({
+		});
+
 	}
 
 
@@ -164,12 +390,42 @@ export namespace MyNS {
 		DeleteSourceFromS3?: boolean | null;
 	}
 
+	/** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded. */
+	export interface MaxCountRuleFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		MaxCount: FormControl<number | null | undefined>,
+		DeleteSourceFromS3: FormControl<boolean | null | undefined>,
+	}
+	export function CreateMaxCountRuleFormGroup() {
+		return new FormGroup<MaxCountRuleFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			MaxCount: new FormControl<number | null | undefined>(undefined),
+			DeleteSourceFromS3: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A lifecycle rule that deletes application versions after the specified number of days. */
 	export interface MaxAgeRule {
 		Enabled: boolean;
 		MaxAgeInDays?: number | null;
 		DeleteSourceFromS3?: boolean | null;
+	}
+
+	/** A lifecycle rule that deletes application versions after the specified number of days. */
+	export interface MaxAgeRuleFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		MaxAgeInDays: FormControl<number | null | undefined>,
+		DeleteSourceFromS3: FormControl<boolean | null | undefined>,
+	}
+	export function CreateMaxAgeRuleFormGroup() {
+		return new FormGroup<MaxAgeRuleFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			MaxAgeInDays: new FormControl<number | null | undefined>(undefined),
+			DeleteSourceFromS3: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -179,7 +435,27 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Describes a tag applied to a resource in an environment. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyApplicationsException {
+	}
+	export interface TooManyApplicationsExceptionFormProperties {
+	}
+	export function CreateTooManyApplicationsExceptionFormGroup() {
+		return new FormGroup<TooManyApplicationsExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -187,7 +463,16 @@ export namespace MyNS {
 	export interface ApplicationVersionDescriptionMessage {
 
 		/** Describes the properties of an application version. */
-		ApplicationVersion?: ApplicationVersionDescription | null;
+		ApplicationVersion?: ApplicationVersionDescription;
+	}
+
+	/** Result message wrapping a single description of an application version. */
+	export interface ApplicationVersionDescriptionMessageFormProperties {
+	}
+	export function CreateApplicationVersionDescriptionMessageFormGroup() {
+		return new FormGroup<ApplicationVersionDescriptionMessageFormProperties>({
+		});
+
 	}
 
 
@@ -199,14 +484,39 @@ export namespace MyNS {
 		VersionLabel?: string | null;
 
 		/** Location of the source code for an application version. */
-		SourceBuildInformation?: SourceBuildInformation | null;
+		SourceBuildInformation?: SourceBuildInformation;
 		BuildArn?: string | null;
 
 		/** The bucket and key of an item stored in Amazon S3. */
-		SourceBundle?: S3Location | null;
+		SourceBundle?: S3Location;
 		DateCreated?: Date | null;
 		DateUpdated?: Date | null;
 		Status?: ApplicationVersionDescriptionStatus | null;
+	}
+
+	/** Describes the properties of an application version. */
+	export interface ApplicationVersionDescriptionFormProperties {
+		ApplicationVersionArn: FormControl<string | null | undefined>,
+		ApplicationName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		BuildArn: FormControl<string | null | undefined>,
+		DateCreated: FormControl<Date | null | undefined>,
+		DateUpdated: FormControl<Date | null | undefined>,
+		Status: FormControl<ApplicationVersionDescriptionStatus | null | undefined>,
+	}
+	export function CreateApplicationVersionDescriptionFormGroup() {
+		return new FormGroup<ApplicationVersionDescriptionFormProperties>({
+			ApplicationVersionArn: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			BuildArn: new FormControl<string | null | undefined>(undefined),
+			DateCreated: new FormControl<Date | null | undefined>(undefined),
+			DateUpdated: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<ApplicationVersionDescriptionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -215,6 +525,21 @@ export namespace MyNS {
 		SourceType: SourceBuildInformationSourceType;
 		SourceRepository: SourceBuildInformationSourceRepository;
 		SourceLocation: string;
+	}
+
+	/** Location of the source code for an application version. */
+	export interface SourceBuildInformationFormProperties {
+		SourceType: FormControl<SourceBuildInformationSourceType | null | undefined>,
+		SourceRepository: FormControl<SourceBuildInformationSourceRepository | null | undefined>,
+		SourceLocation: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceBuildInformationFormGroup() {
+		return new FormGroup<SourceBuildInformationFormProperties>({
+			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined),
+			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined),
+			SourceLocation: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SourceBuildInformationSourceType { Git = 0, Zip = 1 }
@@ -228,6 +553,19 @@ export namespace MyNS {
 		S3Key?: string | null;
 	}
 
+	/** The bucket and key of an item stored in Amazon S3. */
+	export interface S3LocationFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ApplicationVersionDescriptionStatus { Processed = 0, Unprocessed = 1, Failed = 2, Processing = 3, Building = 4 }
 
 	export enum SourceType { Git = 0, Zip = 1 }
@@ -238,11 +576,32 @@ export namespace MyNS {
 
 	export interface TooManyApplicationVersionsException {
 	}
+	export interface TooManyApplicationVersionsExceptionFormProperties {
+	}
+	export function CreateTooManyApplicationVersionsExceptionFormGroup() {
+		return new FormGroup<TooManyApplicationVersionsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface S3LocationNotInServiceRegionException {
 	}
+	export interface S3LocationNotInServiceRegionExceptionFormProperties {
+	}
+	export function CreateS3LocationNotInServiceRegionExceptionFormGroup() {
+		return new FormGroup<S3LocationNotInServiceRegionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CodeBuildNotInServiceRegionException {
+	}
+	export interface CodeBuildNotInServiceRegionExceptionFormProperties {
+	}
+	export function CreateCodeBuildNotInServiceRegionExceptionFormGroup() {
+		return new FormGroup<CodeBuildNotInServiceRegionExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -257,7 +616,34 @@ export namespace MyNS {
 		DeploymentStatus?: ConfigurationSettingsDescriptionDeploymentStatus | null;
 		DateCreated?: Date | null;
 		DateUpdated?: Date | null;
-		OptionSettings?: Array<ConfigurationOptionSetting> | null;
+		OptionSettings?: Array<ConfigurationOptionSetting>;
+	}
+
+	/** Describes the settings for a configuration set. */
+	export interface ConfigurationSettingsDescriptionFormProperties {
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		DeploymentStatus: FormControl<ConfigurationSettingsDescriptionDeploymentStatus | null | undefined>,
+		DateCreated: FormControl<Date | null | undefined>,
+		DateUpdated: FormControl<Date | null | undefined>,
+	}
+	export function CreateConfigurationSettingsDescriptionFormGroup() {
+		return new FormGroup<ConfigurationSettingsDescriptionFormProperties>({
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			DeploymentStatus: new FormControl<ConfigurationSettingsDescriptionDeploymentStatus | null | undefined>(undefined),
+			DateCreated: new FormControl<Date | null | undefined>(undefined),
+			DateUpdated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConfigurationSettingsDescriptionDeploymentStatus { deployed = 0, pending = 1, failed = 2 }
@@ -271,10 +657,41 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.  */
+	export interface ConfigurationOptionSettingFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		OptionName: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateConfigurationOptionSettingFormGroup() {
+		return new FormGroup<ConfigurationOptionSettingFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			OptionName: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyBucketsException {
+	}
+	export interface TooManyBucketsExceptionFormProperties {
+	}
+	export function CreateTooManyBucketsExceptionFormGroup() {
+		return new FormGroup<TooManyBucketsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyConfigurationTemplatesException {
+	}
+	export interface TooManyConfigurationTemplatesExceptionFormProperties {
+	}
+	export function CreateTooManyConfigurationTemplatesExceptionFormGroup() {
+		return new FormGroup<TooManyConfigurationTemplatesExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -285,13 +702,35 @@ export namespace MyNS {
 		OptionName?: string | null;
 	}
 
+	/** A specification identifying an individual configuration option. */
+	export interface OptionSpecificationFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		OptionName: FormControl<string | null | undefined>,
+	}
+	export function CreateOptionSpecificationFormGroup() {
+		return new FormGroup<OptionSpecificationFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			OptionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreatePlatformVersionResult {
 
 		/** Summary information about a platform version. */
-		PlatformSummary?: PlatformSummary | null;
+		PlatformSummary?: PlatformSummary;
 
 		/** The builder used to build the custom platform. */
-		Builder?: Builder | null;
+		Builder?: Builder;
+	}
+	export interface CreatePlatformVersionResultFormProperties {
+	}
+	export function CreateCreatePlatformVersionResultFormGroup() {
+		return new FormGroup<CreatePlatformVersionResultFormProperties>({
+		});
+
 	}
 
 
@@ -303,12 +742,41 @@ export namespace MyNS {
 		PlatformCategory?: string | null;
 		OperatingSystemName?: string | null;
 		OperatingSystemVersion?: string | null;
-		SupportedTierList?: Array<string> | null;
-		SupportedAddonList?: Array<string> | null;
+		SupportedTierList?: Array<string>;
+		SupportedAddonList?: Array<string>;
 		PlatformLifecycleState?: string | null;
 		PlatformVersion?: string | null;
 		PlatformBranchName?: string | null;
 		PlatformBranchLifecycleState?: string | null;
+	}
+
+	/** Summary information about a platform version. */
+	export interface PlatformSummaryFormProperties {
+		PlatformArn: FormControl<string | null | undefined>,
+		PlatformOwner: FormControl<string | null | undefined>,
+		PlatformStatus: FormControl<PlatformSummaryPlatformStatus | null | undefined>,
+		PlatformCategory: FormControl<string | null | undefined>,
+		OperatingSystemName: FormControl<string | null | undefined>,
+		OperatingSystemVersion: FormControl<string | null | undefined>,
+		PlatformLifecycleState: FormControl<string | null | undefined>,
+		PlatformVersion: FormControl<string | null | undefined>,
+		PlatformBranchName: FormControl<string | null | undefined>,
+		PlatformBranchLifecycleState: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformSummaryFormGroup() {
+		return new FormGroup<PlatformSummaryFormProperties>({
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			PlatformOwner: new FormControl<string | null | undefined>(undefined),
+			PlatformStatus: new FormControl<PlatformSummaryPlatformStatus | null | undefined>(undefined),
+			PlatformCategory: new FormControl<string | null | undefined>(undefined),
+			OperatingSystemName: new FormControl<string | null | undefined>(undefined),
+			OperatingSystemVersion: new FormControl<string | null | undefined>(undefined),
+			PlatformLifecycleState: new FormControl<string | null | undefined>(undefined),
+			PlatformVersion: new FormControl<string | null | undefined>(undefined),
+			PlatformBranchName: new FormControl<string | null | undefined>(undefined),
+			PlatformBranchLifecycleState: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlatformSummaryPlatformStatus { Creating = 0, Failed = 1, Ready = 2, Deleting = 3, Deleted = 4 }
@@ -319,7 +787,25 @@ export namespace MyNS {
 		ARN?: string | null;
 	}
 
+	/** The builder used to build the custom platform. */
+	export interface BuilderFormProperties {
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateBuilderFormGroup() {
+		return new FormGroup<BuilderFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyPlatformsException {
+	}
+	export interface TooManyPlatformsExceptionFormProperties {
+	}
+	export function CreateTooManyPlatformsExceptionFormGroup() {
+		return new FormGroup<TooManyPlatformsExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -328,28 +814,81 @@ export namespace MyNS {
 		S3Bucket?: string | null;
 	}
 
+	/** Results of a <a>CreateStorageLocationResult</a> call. */
+	export interface CreateStorageLocationResultMessageFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStorageLocationResultMessageFormGroup() {
+		return new FormGroup<CreateStorageLocationResultMessageFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface S3SubscriptionRequiredException {
+	}
+	export interface S3SubscriptionRequiredExceptionFormProperties {
+	}
+	export function CreateS3SubscriptionRequiredExceptionFormGroup() {
+		return new FormGroup<S3SubscriptionRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationInProgressException {
 	}
+	export interface OperationInProgressExceptionFormProperties {
+	}
+	export function CreateOperationInProgressExceptionFormGroup() {
+		return new FormGroup<OperationInProgressExceptionFormProperties>({
+		});
+
+	}
 
 	export interface SourceBundleDeletionException {
+	}
+	export interface SourceBundleDeletionExceptionFormProperties {
+	}
+	export function CreateSourceBundleDeletionExceptionFormGroup() {
+		return new FormGroup<SourceBundleDeletionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeletePlatformVersionResult {
 
 		/** Summary information about a platform version. */
-		PlatformSummary?: PlatformSummary | null;
+		PlatformSummary?: PlatformSummary;
+	}
+	export interface DeletePlatformVersionResultFormProperties {
+	}
+	export function CreateDeletePlatformVersionResultFormGroup() {
+		return new FormGroup<DeletePlatformVersionResultFormProperties>({
+		});
+
 	}
 
 	export interface PlatformVersionStillReferencedException {
+	}
+	export interface PlatformVersionStillReferencedExceptionFormProperties {
+	}
+	export function CreatePlatformVersionStillReferencedExceptionFormGroup() {
+		return new FormGroup<PlatformVersionStillReferencedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAccountAttributesResult {
 
 		/** A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account. */
-		ResourceQuotas?: ResourceQuotas | null;
+		ResourceQuotas?: ResourceQuotas;
+	}
+	export interface DescribeAccountAttributesResultFormProperties {
+	}
+	export function CreateDescribeAccountAttributesResultFormGroup() {
+		return new FormGroup<DescribeAccountAttributesResultFormProperties>({
+		});
+
 	}
 
 
@@ -357,19 +896,28 @@ export namespace MyNS {
 	export interface ResourceQuotas {
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		ApplicationQuota?: ResourceQuota | null;
+		ApplicationQuota?: ResourceQuota;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		ApplicationVersionQuota?: ResourceQuota | null;
+		ApplicationVersionQuota?: ResourceQuota;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		EnvironmentQuota?: ResourceQuota | null;
+		EnvironmentQuota?: ResourceQuota;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		ConfigurationTemplateQuota?: ResourceQuota | null;
+		ConfigurationTemplateQuota?: ResourceQuota;
 
 		/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
-		CustomPlatformQuota?: ResourceQuota | null;
+		CustomPlatformQuota?: ResourceQuota;
+	}
+
+	/** A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account. */
+	export interface ResourceQuotasFormProperties {
+	}
+	export function CreateResourceQuotasFormGroup() {
+		return new FormGroup<ResourceQuotasFormProperties>({
+		});
+
 	}
 
 
@@ -378,17 +926,48 @@ export namespace MyNS {
 		Maximum?: number | null;
 	}
 
+	/** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account. */
+	export interface ResourceQuotaFormProperties {
+		Maximum: FormControl<number | null | undefined>,
+	}
+	export function CreateResourceQuotaFormGroup() {
+		return new FormGroup<ResourceQuotaFormProperties>({
+			Maximum: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Result message wrapping a list of application version descriptions. */
 	export interface ApplicationVersionDescriptionsMessage {
-		ApplicationVersions?: Array<ApplicationVersionDescription> | null;
+		ApplicationVersions?: Array<ApplicationVersionDescription>;
 		NextToken?: string | null;
+	}
+
+	/** Result message wrapping a list of application version descriptions. */
+	export interface ApplicationVersionDescriptionsMessageFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationVersionDescriptionsMessageFormGroup() {
+		return new FormGroup<ApplicationVersionDescriptionsMessageFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Result message containing a list of application descriptions. */
 	export interface ApplicationDescriptionsMessage {
-		Applications?: Array<ApplicationDescription> | null;
+		Applications?: Array<ApplicationDescription>;
+	}
+
+	/** Result message containing a list of application descriptions. */
+	export interface ApplicationDescriptionsMessageFormProperties {
+	}
+	export function CreateApplicationDescriptionsMessageFormGroup() {
+		return new FormGroup<ApplicationDescriptionsMessageFormProperties>({
+		});
+
 	}
 
 
@@ -396,7 +975,20 @@ export namespace MyNS {
 	export interface ConfigurationOptionsDescription {
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
-		Options?: Array<ConfigurationOptionDescription> | null;
+		Options?: Array<ConfigurationOptionDescription>;
+	}
+
+	/** Describes the settings for a specified configuration set. */
+	export interface ConfigurationOptionsDescriptionFormProperties {
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+	}
+	export function CreateConfigurationOptionsDescriptionFormGroup() {
+		return new FormGroup<ConfigurationOptionsDescriptionFormProperties>({
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -408,13 +1000,40 @@ export namespace MyNS {
 		ChangeSeverity?: string | null;
 		UserDefined?: boolean | null;
 		ValueType?: ConfigurationOptionDescriptionValueType | null;
-		ValueOptions?: Array<string> | null;
+		ValueOptions?: Array<string>;
 		MinValue?: number | null;
 		MaxValue?: number | null;
 		MaxLength?: number | null;
 
 		/** A regular expression representing a restriction on a string configuration option value. */
-		Regex?: OptionRestrictionRegex | null;
+		Regex?: OptionRestrictionRegex;
+	}
+
+	/** Describes the possible values for a configuration option. */
+	export interface ConfigurationOptionDescriptionFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+		ChangeSeverity: FormControl<string | null | undefined>,
+		UserDefined: FormControl<boolean | null | undefined>,
+		ValueType: FormControl<ConfigurationOptionDescriptionValueType | null | undefined>,
+		MinValue: FormControl<number | null | undefined>,
+		MaxValue: FormControl<number | null | undefined>,
+		MaxLength: FormControl<number | null | undefined>,
+	}
+	export function CreateConfigurationOptionDescriptionFormGroup() {
+		return new FormGroup<ConfigurationOptionDescriptionFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			ChangeSeverity: new FormControl<string | null | undefined>(undefined),
+			UserDefined: new FormControl<boolean | null | undefined>(undefined),
+			ValueType: new FormControl<ConfigurationOptionDescriptionValueType | null | undefined>(undefined),
+			MinValue: new FormControl<number | null | undefined>(undefined),
+			MaxValue: new FormControl<number | null | undefined>(undefined),
+			MaxLength: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConfigurationOptionDescriptionValueType { Scalar = 0, List = 1 }
@@ -426,10 +1045,32 @@ export namespace MyNS {
 		Label?: string | null;
 	}
 
+	/** A regular expression representing a restriction on a string configuration option value. */
+	export interface OptionRestrictionRegexFormProperties {
+		Pattern: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+	}
+	export function CreateOptionRestrictionRegexFormGroup() {
+		return new FormGroup<OptionRestrictionRegexFormProperties>({
+			Pattern: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The results from a request to change the configuration settings of an environment. */
 	export interface ConfigurationSettingsDescriptions {
-		ConfigurationSettings?: Array<ConfigurationSettingsDescription> | null;
+		ConfigurationSettings?: Array<ConfigurationSettingsDescription>;
+	}
+
+	/** The results from a request to change the configuration settings of an environment. */
+	export interface ConfigurationSettingsDescriptionsFormProperties {
+	}
+	export function CreateConfigurationSettingsDescriptionsFormGroup() {
+		return new FormGroup<ConfigurationSettingsDescriptionsFormProperties>({
+		});
+
 	}
 
 
@@ -439,14 +1080,33 @@ export namespace MyNS {
 		HealthStatus?: string | null;
 		Status?: EnvironmentDescriptionHealth | null;
 		Color?: string | null;
-		Causes?: Array<string> | null;
+		Causes?: Array<string>;
 
 		/** Application request metrics for an AWS Elastic Beanstalk environment. */
-		ApplicationMetrics?: ApplicationMetrics | null;
+		ApplicationMetrics?: ApplicationMetrics;
 
 		/** Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>. */
-		InstancesHealth?: InstanceHealthSummary | null;
+		InstancesHealth?: InstanceHealthSummary;
 		RefreshedAt?: Date | null;
+	}
+
+	/** Health details for an AWS Elastic Beanstalk environment. */
+	export interface DescribeEnvironmentHealthResultFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		HealthStatus: FormControl<string | null | undefined>,
+		Status: FormControl<EnvironmentDescriptionHealth | null | undefined>,
+		Color: FormControl<string | null | undefined>,
+		RefreshedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentHealthResultFormGroup() {
+		return new FormGroup<DescribeEnvironmentHealthResultFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			HealthStatus: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<EnvironmentDescriptionHealth | null | undefined>(undefined),
+			Color: new FormControl<string | null | undefined>(undefined),
+			RefreshedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -456,10 +1116,23 @@ export namespace MyNS {
 		RequestCount?: number | null;
 
 		/** Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>. */
-		StatusCodes?: StatusCodes | null;
+		StatusCodes?: StatusCodes;
 
 		/** Represents the average latency for the slowest X percent of requests over the last 10 seconds. */
-		Latency?: Latency | null;
+		Latency?: Latency;
+	}
+
+	/** Application request metrics for an AWS Elastic Beanstalk environment. */
+	export interface ApplicationMetricsFormProperties {
+		Duration: FormControl<number | null | undefined>,
+		RequestCount: FormControl<number | null | undefined>,
+	}
+	export function CreateApplicationMetricsFormGroup() {
+		return new FormGroup<ApplicationMetricsFormProperties>({
+			Duration: new FormControl<number | null | undefined>(undefined),
+			RequestCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -469,6 +1142,23 @@ export namespace MyNS {
 		Status3xx?: number | null;
 		Status4xx?: number | null;
 		Status5xx?: number | null;
+	}
+
+	/** Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>. */
+	export interface StatusCodesFormProperties {
+		Status2xx: FormControl<number | null | undefined>,
+		Status3xx: FormControl<number | null | undefined>,
+		Status4xx: FormControl<number | null | undefined>,
+		Status5xx: FormControl<number | null | undefined>,
+	}
+	export function CreateStatusCodesFormGroup() {
+		return new FormGroup<StatusCodesFormProperties>({
+			Status2xx: new FormControl<number | null | undefined>(undefined),
+			Status3xx: new FormControl<number | null | undefined>(undefined),
+			Status4xx: new FormControl<number | null | undefined>(undefined),
+			Status5xx: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -484,6 +1174,31 @@ export namespace MyNS {
 		P10?: number | null;
 	}
 
+	/** Represents the average latency for the slowest X percent of requests over the last 10 seconds. */
+	export interface LatencyFormProperties {
+		P999: FormControl<number | null | undefined>,
+		P99: FormControl<number | null | undefined>,
+		P95: FormControl<number | null | undefined>,
+		P90: FormControl<number | null | undefined>,
+		P85: FormControl<number | null | undefined>,
+		P75: FormControl<number | null | undefined>,
+		P50: FormControl<number | null | undefined>,
+		P10: FormControl<number | null | undefined>,
+	}
+	export function CreateLatencyFormGroup() {
+		return new FormGroup<LatencyFormProperties>({
+			P999: new FormControl<number | null | undefined>(undefined),
+			P99: new FormControl<number | null | undefined>(undefined),
+			P95: new FormControl<number | null | undefined>(undefined),
+			P90: new FormControl<number | null | undefined>(undefined),
+			P85: new FormControl<number | null | undefined>(undefined),
+			P75: new FormControl<number | null | undefined>(undefined),
+			P50: new FormControl<number | null | undefined>(undefined),
+			P10: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>. */
 	export interface InstanceHealthSummary {
@@ -497,16 +1212,59 @@ export namespace MyNS {
 		Severe?: number | null;
 	}
 
+	/** Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>. */
+	export interface InstanceHealthSummaryFormProperties {
+		NoData: FormControl<number | null | undefined>,
+		Unknown: FormControl<number | null | undefined>,
+		Pending: FormControl<number | null | undefined>,
+		Ok: FormControl<number | null | undefined>,
+		Info: FormControl<number | null | undefined>,
+		Warning: FormControl<number | null | undefined>,
+		Degraded: FormControl<number | null | undefined>,
+		Severe: FormControl<number | null | undefined>,
+	}
+	export function CreateInstanceHealthSummaryFormGroup() {
+		return new FormGroup<InstanceHealthSummaryFormProperties>({
+			NoData: new FormControl<number | null | undefined>(undefined),
+			Unknown: new FormControl<number | null | undefined>(undefined),
+			Pending: new FormControl<number | null | undefined>(undefined),
+			Ok: new FormControl<number | null | undefined>(undefined),
+			Info: new FormControl<number | null | undefined>(undefined),
+			Warning: new FormControl<number | null | undefined>(undefined),
+			Degraded: new FormControl<number | null | undefined>(undefined),
+			Severe: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EnvironmentHealthAttribute { Status = 0, Color = 1, Causes = 2, ApplicationMetrics = 3, InstancesHealth = 4, All = 5, HealthStatus = 6, RefreshedAt = 7 }
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** A result message containing a list of completed and failed managed actions. */
 	export interface DescribeEnvironmentManagedActionHistoryResult {
-		ManagedActionHistoryItems?: Array<ManagedActionHistoryItem> | null;
+		ManagedActionHistoryItems?: Array<ManagedActionHistoryItem>;
 		NextToken?: string | null;
+	}
+
+	/** A result message containing a list of completed and failed managed actions. */
+	export interface DescribeEnvironmentManagedActionHistoryResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentManagedActionHistoryResultFormGroup() {
+		return new FormGroup<DescribeEnvironmentManagedActionHistoryResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -522,6 +1280,31 @@ export namespace MyNS {
 		FinishedTime?: Date | null;
 	}
 
+	/** The record of a completed or failed managed action. */
+	export interface ManagedActionHistoryItemFormProperties {
+		ActionId: FormControl<string | null | undefined>,
+		ActionType: FormControl<ApplyEnvironmentManagedActionResultActionType | null | undefined>,
+		ActionDescription: FormControl<string | null | undefined>,
+		FailureType: FormControl<ManagedActionHistoryItemFailureType | null | undefined>,
+		Status: FormControl<ManagedActionHistoryItemStatus | null | undefined>,
+		FailureDescription: FormControl<string | null | undefined>,
+		ExecutedTime: FormControl<Date | null | undefined>,
+		FinishedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateManagedActionHistoryItemFormGroup() {
+		return new FormGroup<ManagedActionHistoryItemFormProperties>({
+			ActionId: new FormControl<string | null | undefined>(undefined),
+			ActionType: new FormControl<ApplyEnvironmentManagedActionResultActionType | null | undefined>(undefined),
+			ActionDescription: new FormControl<string | null | undefined>(undefined),
+			FailureType: new FormControl<ManagedActionHistoryItemFailureType | null | undefined>(undefined),
+			Status: new FormControl<ManagedActionHistoryItemStatus | null | undefined>(undefined),
+			FailureDescription: new FormControl<string | null | undefined>(undefined),
+			ExecutedTime: new FormControl<Date | null | undefined>(undefined),
+			FinishedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ManagedActionHistoryItemFailureType { UpdateCancelled = 0, CancellationFailed = 1, RollbackFailed = 2, RollbackSuccessful = 3, InternalFailure = 4, InvalidEnvironmentState = 5, PermissionsError = 6 }
 
 	export enum ManagedActionHistoryItemStatus { Completed = 0, Failed = 1, Unknown = 2 }
@@ -529,7 +1312,16 @@ export namespace MyNS {
 
 	/** The result message containing a list of managed actions. */
 	export interface DescribeEnvironmentManagedActionsResult {
-		ManagedActions?: Array<ManagedAction> | null;
+		ManagedActions?: Array<ManagedAction>;
+	}
+
+	/** The result message containing a list of managed actions. */
+	export interface DescribeEnvironmentManagedActionsResultFormProperties {
+	}
+	export function CreateDescribeEnvironmentManagedActionsResultFormGroup() {
+		return new FormGroup<DescribeEnvironmentManagedActionsResultFormProperties>({
+		});
+
 	}
 
 
@@ -542,6 +1334,25 @@ export namespace MyNS {
 		WindowStartTime?: Date | null;
 	}
 
+	/** The record of an upcoming or in-progress managed action. */
+	export interface ManagedActionFormProperties {
+		ActionId: FormControl<string | null | undefined>,
+		ActionDescription: FormControl<string | null | undefined>,
+		ActionType: FormControl<ApplyEnvironmentManagedActionResultActionType | null | undefined>,
+		Status: FormControl<ManagedActionStatus | null | undefined>,
+		WindowStartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateManagedActionFormGroup() {
+		return new FormGroup<ManagedActionFormProperties>({
+			ActionId: new FormControl<string | null | undefined>(undefined),
+			ActionDescription: new FormControl<string | null | undefined>(undefined),
+			ActionType: new FormControl<ApplyEnvironmentManagedActionResultActionType | null | undefined>(undefined),
+			Status: new FormControl<ManagedActionStatus | null | undefined>(undefined),
+			WindowStartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ManagedActionStatus { Scheduled = 0, Pending = 1, Running = 2, Unknown = 3 }
 
 
@@ -549,20 +1360,40 @@ export namespace MyNS {
 	export interface EnvironmentResourceDescriptionsMessage {
 
 		/** Describes the AWS resources in use by this environment. This data is live. */
-		EnvironmentResources?: EnvironmentResourceDescription | null;
+		EnvironmentResources?: EnvironmentResourceDescription;
+	}
+
+	/** Result message containing a list of environment resource descriptions. */
+	export interface EnvironmentResourceDescriptionsMessageFormProperties {
+	}
+	export function CreateEnvironmentResourceDescriptionsMessageFormGroup() {
+		return new FormGroup<EnvironmentResourceDescriptionsMessageFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the AWS resources in use by this environment. This data is live. */
 	export interface EnvironmentResourceDescription {
 		EnvironmentName?: string | null;
-		AutoScalingGroups?: Array<AutoScalingGroup> | null;
-		Instances?: Array<Instance> | null;
-		LaunchConfigurations?: Array<LaunchConfiguration> | null;
-		LaunchTemplates?: Array<LaunchTemplate> | null;
-		LoadBalancers?: Array<LoadBalancer> | null;
-		Triggers?: Array<Trigger> | null;
-		Queues?: Array<Queue> | null;
+		AutoScalingGroups?: Array<AutoScalingGroup>;
+		Instances?: Array<Instance>;
+		LaunchConfigurations?: Array<LaunchConfiguration>;
+		LaunchTemplates?: Array<LaunchTemplate>;
+		LoadBalancers?: Array<LoadBalancer>;
+		Triggers?: Array<Trigger>;
+		Queues?: Array<Queue>;
+	}
+
+	/** Describes the AWS resources in use by this environment. This data is live. */
+	export interface EnvironmentResourceDescriptionFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentResourceDescriptionFormGroup() {
+		return new FormGroup<EnvironmentResourceDescriptionFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -571,10 +1402,32 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Describes an Auto Scaling launch configuration. */
+	export interface AutoScalingGroupFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingGroupFormGroup() {
+		return new FormGroup<AutoScalingGroupFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The description of an Amazon EC2 instance. */
 	export interface Instance {
 		Id?: string | null;
+	}
+
+	/** The description of an Amazon EC2 instance. */
+	export interface InstanceFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceFormGroup() {
+		return new FormGroup<InstanceFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -583,10 +1436,32 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Describes an Auto Scaling launch configuration. */
+	export interface LaunchConfigurationFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateLaunchConfigurationFormGroup() {
+		return new FormGroup<LaunchConfigurationFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an Amazon EC2 launch template. */
 	export interface LaunchTemplate {
 		Id?: string | null;
+	}
+
+	/** Describes an Amazon EC2 launch template. */
+	export interface LaunchTemplateFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateLaunchTemplateFormGroup() {
+		return new FormGroup<LaunchTemplateFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -595,10 +1470,32 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Describes a LoadBalancer. */
+	export interface LoadBalancerFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateLoadBalancerFormGroup() {
+		return new FormGroup<LoadBalancerFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a trigger. */
 	export interface Trigger {
 		Name?: string | null;
+	}
+
+	/** Describes a trigger. */
+	export interface TriggerFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateTriggerFormGroup() {
+		return new FormGroup<TriggerFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -608,11 +1505,35 @@ export namespace MyNS {
 		URL?: string | null;
 	}
 
+	/** Describes a queue. */
+	export interface QueueFormProperties {
+		Name: FormControl<string | null | undefined>,
+		URL: FormControl<string | null | undefined>,
+	}
+	export function CreateQueueFormGroup() {
+		return new FormGroup<QueueFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			URL: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Result message wrapping a list of event descriptions. */
 	export interface EventDescriptionsMessage {
-		Events?: Array<EventDescription> | null;
+		Events?: Array<EventDescription>;
 		NextToken?: string | null;
+	}
+
+	/** Result message wrapping a list of event descriptions. */
+	export interface EventDescriptionsMessageFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateEventDescriptionsMessageFormGroup() {
+		return new FormGroup<EventDescriptionsMessageFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -629,14 +1550,54 @@ export namespace MyNS {
 		Severity?: EventDescriptionSeverity | null;
 	}
 
+	/** Describes an event. */
+	export interface EventDescriptionFormProperties {
+		EventDate: FormControl<Date | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Severity: FormControl<EventDescriptionSeverity | null | undefined>,
+	}
+	export function CreateEventDescriptionFormGroup() {
+		return new FormGroup<EventDescriptionFormProperties>({
+			EventDate: new FormControl<Date | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<EventDescriptionSeverity | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EventDescriptionSeverity { TRACE = 0, DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4, FATAL = 5 }
 
 
 	/** Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment. */
 	export interface DescribeInstancesHealthResult {
-		InstanceHealthList?: Array<SingleInstanceHealth> | null;
+		InstanceHealthList?: Array<SingleInstanceHealth>;
 		RefreshedAt?: Date | null;
 		NextToken?: string | null;
+	}
+
+	/** Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment. */
+	export interface DescribeInstancesHealthResultFormProperties {
+		RefreshedAt: FormControl<Date | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInstancesHealthResultFormGroup() {
+		return new FormGroup<DescribeInstancesHealthResultFormProperties>({
+			RefreshedAt: new FormControl<Date | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -645,19 +1606,40 @@ export namespace MyNS {
 		InstanceId?: string | null;
 		HealthStatus?: string | null;
 		Color?: string | null;
-		Causes?: Array<string> | null;
+		Causes?: Array<string>;
 		LaunchedAt?: Date | null;
 
 		/** Application request metrics for an AWS Elastic Beanstalk environment. */
-		ApplicationMetrics?: ApplicationMetrics | null;
+		ApplicationMetrics?: ApplicationMetrics;
 
 		/** CPU utilization and load average metrics for an Amazon EC2 instance. */
-		System?: SystemStatus | null;
+		System?: SystemStatus;
 
 		/** Information about an application version deployment. */
-		Deployment?: Deployment | null;
+		Deployment?: Deployment;
 		AvailabilityZone?: string | null;
 		InstanceType?: string | null;
+	}
+
+	/** Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment. */
+	export interface SingleInstanceHealthFormProperties {
+		InstanceId: FormControl<string | null | undefined>,
+		HealthStatus: FormControl<string | null | undefined>,
+		Color: FormControl<string | null | undefined>,
+		LaunchedAt: FormControl<Date | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+	}
+	export function CreateSingleInstanceHealthFormGroup() {
+		return new FormGroup<SingleInstanceHealthFormProperties>({
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			HealthStatus: new FormControl<string | null | undefined>(undefined),
+			Color: new FormControl<string | null | undefined>(undefined),
+			LaunchedAt: new FormControl<Date | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -665,8 +1647,17 @@ export namespace MyNS {
 	export interface SystemStatus {
 
 		/** CPU utilization metrics for an instance. */
-		CPUUtilization?: CPUUtilization | null;
-		LoadAverage?: Array<number> | null;
+		CPUUtilization?: CPUUtilization;
+		LoadAverage?: Array<number>;
+	}
+
+	/** CPU utilization and load average metrics for an Amazon EC2 instance. */
+	export interface SystemStatusFormProperties {
+	}
+	export function CreateSystemStatusFormGroup() {
+		return new FormGroup<SystemStatusFormProperties>({
+		});
+
 	}
 
 
@@ -682,6 +1673,31 @@ export namespace MyNS {
 		Privileged?: number | null;
 	}
 
+	/** CPU utilization metrics for an instance. */
+	export interface CPUUtilizationFormProperties {
+		User: FormControl<number | null | undefined>,
+		Nice: FormControl<number | null | undefined>,
+		System: FormControl<number | null | undefined>,
+		Idle: FormControl<number | null | undefined>,
+		IOWait: FormControl<number | null | undefined>,
+		IRQ: FormControl<number | null | undefined>,
+		SoftIRQ: FormControl<number | null | undefined>,
+		Privileged: FormControl<number | null | undefined>,
+	}
+	export function CreateCPUUtilizationFormGroup() {
+		return new FormGroup<CPUUtilizationFormProperties>({
+			User: new FormControl<number | null | undefined>(undefined),
+			Nice: new FormControl<number | null | undefined>(undefined),
+			System: new FormControl<number | null | undefined>(undefined),
+			Idle: new FormControl<number | null | undefined>(undefined),
+			IOWait: new FormControl<number | null | undefined>(undefined),
+			IRQ: new FormControl<number | null | undefined>(undefined),
+			SoftIRQ: new FormControl<number | null | undefined>(undefined),
+			Privileged: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about an application version deployment. */
 	export interface Deployment {
@@ -691,12 +1707,36 @@ export namespace MyNS {
 		DeploymentTime?: Date | null;
 	}
 
+	/** Information about an application version deployment. */
+	export interface DeploymentFormProperties {
+		VersionLabel: FormControl<string | null | undefined>,
+		DeploymentId: FormControl<number | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		DeploymentTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDeploymentFormGroup() {
+		return new FormGroup<DeploymentFormProperties>({
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			DeploymentTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InstancesHealthAttribute { HealthStatus = 0, Color = 1, Causes = 2, ApplicationMetrics = 3, RefreshedAt = 4, LaunchedAt = 5, System = 6, Deployment = 7, AvailabilityZone = 8, InstanceType = 9, All = 10 }
 
 	export interface DescribePlatformVersionResult {
 
 		/** Detailed information about a platform version. */
-		PlatformDescription?: PlatformDescription | null;
+		PlatformDescription?: PlatformDescription;
+	}
+	export interface DescribePlatformVersionResultFormProperties {
+	}
+	export function CreateDescribePlatformVersionResultFormGroup() {
+		return new FormGroup<DescribePlatformVersionResultFormProperties>({
+		});
+
 	}
 
 
@@ -715,14 +1755,55 @@ export namespace MyNS {
 		Maintainer?: string | null;
 		OperatingSystemName?: string | null;
 		OperatingSystemVersion?: string | null;
-		ProgrammingLanguages?: Array<PlatformProgrammingLanguage> | null;
-		Frameworks?: Array<PlatformFramework> | null;
-		CustomAmiList?: Array<CustomAmi> | null;
-		SupportedTierList?: Array<string> | null;
-		SupportedAddonList?: Array<string> | null;
+		ProgrammingLanguages?: Array<PlatformProgrammingLanguage>;
+		Frameworks?: Array<PlatformFramework>;
+		CustomAmiList?: Array<CustomAmi>;
+		SupportedTierList?: Array<string>;
+		SupportedAddonList?: Array<string>;
 		PlatformLifecycleState?: string | null;
 		PlatformBranchName?: string | null;
 		PlatformBranchLifecycleState?: string | null;
+	}
+
+	/** Detailed information about a platform version. */
+	export interface PlatformDescriptionFormProperties {
+		PlatformArn: FormControl<string | null | undefined>,
+		PlatformOwner: FormControl<string | null | undefined>,
+		PlatformName: FormControl<string | null | undefined>,
+		PlatformVersion: FormControl<string | null | undefined>,
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformStatus: FormControl<PlatformSummaryPlatformStatus | null | undefined>,
+		DateCreated: FormControl<Date | null | undefined>,
+		DateUpdated: FormControl<Date | null | undefined>,
+		PlatformCategory: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Maintainer: FormControl<string | null | undefined>,
+		OperatingSystemName: FormControl<string | null | undefined>,
+		OperatingSystemVersion: FormControl<string | null | undefined>,
+		PlatformLifecycleState: FormControl<string | null | undefined>,
+		PlatformBranchName: FormControl<string | null | undefined>,
+		PlatformBranchLifecycleState: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformDescriptionFormGroup() {
+		return new FormGroup<PlatformDescriptionFormProperties>({
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			PlatformOwner: new FormControl<string | null | undefined>(undefined),
+			PlatformName: new FormControl<string | null | undefined>(undefined),
+			PlatformVersion: new FormControl<string | null | undefined>(undefined),
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformStatus: new FormControl<PlatformSummaryPlatformStatus | null | undefined>(undefined),
+			DateCreated: new FormControl<Date | null | undefined>(undefined),
+			DateUpdated: new FormControl<Date | null | undefined>(undefined),
+			PlatformCategory: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Maintainer: new FormControl<string | null | undefined>(undefined),
+			OperatingSystemName: new FormControl<string | null | undefined>(undefined),
+			OperatingSystemVersion: new FormControl<string | null | undefined>(undefined),
+			PlatformLifecycleState: new FormControl<string | null | undefined>(undefined),
+			PlatformBranchName: new FormControl<string | null | undefined>(undefined),
+			PlatformBranchLifecycleState: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -732,11 +1813,37 @@ export namespace MyNS {
 		Version?: string | null;
 	}
 
+	/** A programming language supported by the platform. */
+	export interface PlatformProgrammingLanguageFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformProgrammingLanguageFormGroup() {
+		return new FormGroup<PlatformProgrammingLanguageFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A framework supported by the platform. */
 	export interface PlatformFramework {
 		Name?: string | null;
 		Version?: string | null;
+	}
+
+	/** A framework supported by the platform. */
+	export interface PlatformFrameworkFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformFrameworkFormGroup() {
+		return new FormGroup<PlatformFrameworkFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -746,23 +1853,65 @@ export namespace MyNS {
 		ImageId?: string | null;
 	}
 
+	/** A custom AMI available to platforms. */
+	export interface CustomAmiFormProperties {
+		VirtualizationType: FormControl<string | null | undefined>,
+		ImageId: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomAmiFormGroup() {
+		return new FormGroup<CustomAmiFormProperties>({
+			VirtualizationType: new FormControl<string | null | undefined>(undefined),
+			ImageId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of available AWS Elastic Beanstalk solution stacks. */
 	export interface ListAvailableSolutionStacksResultMessage {
-		SolutionStacks?: Array<string> | null;
-		SolutionStackDetails?: Array<SolutionStackDescription> | null;
+		SolutionStacks?: Array<string>;
+		SolutionStackDetails?: Array<SolutionStackDescription>;
+	}
+
+	/** A list of available AWS Elastic Beanstalk solution stacks. */
+	export interface ListAvailableSolutionStacksResultMessageFormProperties {
+	}
+	export function CreateListAvailableSolutionStacksResultMessageFormGroup() {
+		return new FormGroup<ListAvailableSolutionStacksResultMessageFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the solution stack. */
 	export interface SolutionStackDescription {
 		SolutionStackName?: string | null;
-		PermittedFileTypes?: Array<string> | null;
+		PermittedFileTypes?: Array<string>;
+	}
+
+	/** Describes the solution stack. */
+	export interface SolutionStackDescriptionFormProperties {
+		SolutionStackName: FormControl<string | null | undefined>,
+	}
+	export function CreateSolutionStackDescriptionFormGroup() {
+		return new FormGroup<SolutionStackDescriptionFormProperties>({
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPlatformBranchesResult {
-		PlatformBranchSummaryList?: Array<PlatformBranchSummary> | null;
+		PlatformBranchSummaryList?: Array<PlatformBranchSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListPlatformBranchesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlatformBranchesResultFormGroup() {
+		return new FormGroup<ListPlatformBranchesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -772,7 +1921,24 @@ export namespace MyNS {
 		BranchName?: string | null;
 		LifecycleState?: string | null;
 		BranchOrder?: number | null;
-		SupportedTierList?: Array<string> | null;
+		SupportedTierList?: Array<string>;
+	}
+
+	/** Summary information about a platform branch. */
+	export interface PlatformBranchSummaryFormProperties {
+		PlatformName: FormControl<string | null | undefined>,
+		BranchName: FormControl<string | null | undefined>,
+		LifecycleState: FormControl<string | null | undefined>,
+		BranchOrder: FormControl<number | null | undefined>,
+	}
+	export function CreatePlatformBranchSummaryFormGroup() {
+		return new FormGroup<PlatformBranchSummaryFormProperties>({
+			PlatformName: new FormControl<string | null | undefined>(undefined),
+			BranchName: new FormControl<string | null | undefined>(undefined),
+			LifecycleState: new FormControl<string | null | undefined>(undefined),
+			BranchOrder: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -780,12 +1946,34 @@ export namespace MyNS {
 	export interface SearchFilter {
 		Attribute?: string | null;
 		Operator?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** <p>Describes criteria to restrict a list of results.</p> <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p> <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p> <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p> */
+	export interface SearchFilterFormProperties {
+		Attribute: FormControl<string | null | undefined>,
+		Operator: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFilterFormGroup() {
+		return new FormGroup<SearchFilterFormProperties>({
+			Attribute: new FormControl<string | null | undefined>(undefined),
+			Operator: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPlatformVersionsResult {
-		PlatformSummaryList?: Array<PlatformSummary> | null;
+		PlatformSummaryList?: Array<PlatformSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListPlatformVersionsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlatformVersionsResultFormGroup() {
+		return new FormGroup<ListPlatformVersionsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -793,24 +1981,69 @@ export namespace MyNS {
 	export interface PlatformFilter {
 		Type?: string | null;
 		Operator?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** <p>Describes criteria to restrict the results when listing platform versions.</p> <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code> </p> */
+	export interface PlatformFilterFormProperties {
+		Type: FormControl<string | null | undefined>,
+		Operator: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformFilterFormGroup() {
+		return new FormGroup<PlatformFilterFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+			Operator: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceTagsDescriptionMessage {
 		ResourceArn?: string | null;
-		ResourceTags?: Array<Tag> | null;
+		ResourceTags?: Array<Tag>;
+	}
+	export interface ResourceTagsDescriptionMessageFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceTagsDescriptionMessageFormGroup() {
+		return new FormGroup<ResourceTagsDescriptionMessageFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceTypeNotSupportedException {
+	}
+	export interface ResourceTypeNotSupportedExceptionFormProperties {
+	}
+	export function CreateResourceTypeNotSupportedExceptionFormGroup() {
+		return new FormGroup<ResourceTypeNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Result message containing a description of the requested environment info. */
 	export interface RetrieveEnvironmentInfoResultMessage {
-		EnvironmentInfo?: Array<EnvironmentInfoDescription> | null;
+		EnvironmentInfo?: Array<EnvironmentInfoDescription>;
+	}
+
+	/** Result message containing a description of the requested environment info. */
+	export interface RetrieveEnvironmentInfoResultMessageFormProperties {
+	}
+	export function CreateRetrieveEnvironmentInfoResultMessageFormGroup() {
+		return new FormGroup<RetrieveEnvironmentInfoResultMessageFormProperties>({
+		});
+
 	}
 
 
@@ -822,22 +2055,64 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** The information retrieved from the Amazon EC2 instances. */
+	export interface EnvironmentInfoDescriptionFormProperties {
+		InfoType: FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>,
+		Ec2InstanceId: FormControl<string | null | undefined>,
+		SampleTimestamp: FormControl<Date | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentInfoDescriptionFormGroup() {
+		return new FormGroup<EnvironmentInfoDescriptionFormProperties>({
+			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined),
+			Ec2InstanceId: new FormControl<string | null | undefined>(undefined),
+			SampleTimestamp: new FormControl<Date | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EnvironmentInfoDescriptionInfoType { tail = 0, bundle = 1 }
 
 	export interface ApplicationResourceLifecycleDescriptionMessage {
 		ApplicationName?: string | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
-		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | null;
+		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
+	}
+	export interface ApplicationResourceLifecycleDescriptionMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationResourceLifecycleDescriptionMessageFormGroup() {
+		return new FormGroup<ApplicationResourceLifecycleDescriptionMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Provides a list of validation messages. */
 	export interface ConfigurationSettingsValidationMessages {
-		Messages?: Array<ValidationMessage> | null;
+		Messages?: Array<ValidationMessage>;
+	}
+
+	/** Provides a list of validation messages. */
+	export interface ConfigurationSettingsValidationMessagesFormProperties {
+	}
+	export function CreateConfigurationSettingsValidationMessagesFormGroup() {
+		return new FormGroup<ConfigurationSettingsValidationMessagesFormProperties>({
+		});
+
 	}
 
 
@@ -849,6 +2124,23 @@ export namespace MyNS {
 		OptionName?: string | null;
 	}
 
+	/** An error or warning for a desired configuration option value. */
+	export interface ValidationMessageFormProperties {
+		Message: FormControl<string | null | undefined>,
+		Severity: FormControl<ValidationMessageSeverity | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		OptionName: FormControl<string | null | undefined>,
+	}
+	export function CreateValidationMessageFormGroup() {
+		return new FormGroup<ValidationMessageFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<ValidationMessageSeverity | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			OptionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ValidationMessageSeverity { error = 0, warning = 1 }
 
 
@@ -856,6 +2148,19 @@ export namespace MyNS {
 	export interface AbortEnvironmentUpdateMessage {
 		EnvironmentId?: string | null;
 		EnvironmentName?: string | null;
+	}
+
+	/** <p/> */
+	export interface AbortEnvironmentUpdateMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateAbortEnvironmentUpdateMessageFormGroup() {
+		return new FormGroup<AbortEnvironmentUpdateMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActionHistoryStatus { Completed = 0, Failed = 1, Unknown = 2 }
@@ -874,11 +2179,39 @@ export namespace MyNS {
 		ActionId: string;
 	}
 
+	/** Request to execute a scheduled managed action immediately. */
+	export interface ApplyEnvironmentManagedActionRequestFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		ActionId: FormControl<string | null | undefined>,
+	}
+	export function CreateApplyEnvironmentManagedActionRequestFormGroup() {
+		return new FormGroup<ApplyEnvironmentManagedActionRequestFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			ActionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to add or change the operations role used by an environment. */
 	export interface AssociateEnvironmentOperationsRoleMessage {
 		EnvironmentName: string;
 		OperationsRole: string;
+	}
+
+	/** Request to add or change the operations role used by an environment. */
+	export interface AssociateEnvironmentOperationsRoleMessageFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		OperationsRole: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateEnvironmentOperationsRoleMessageFormGroup() {
+		return new FormGroup<AssociateEnvironmentOperationsRoleMessageFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			OperationsRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -891,10 +2224,40 @@ export namespace MyNS {
 		TimeoutInMinutes?: number | null;
 	}
 
+	/** Settings for an AWS CodeBuild build. */
+	export interface BuildConfigurationFormProperties {
+		ArtifactName: FormControl<string | null | undefined>,
+		CodeBuildServiceRole: FormControl<string | null | undefined>,
+		ComputeType: FormControl<ComputeType | null | undefined>,
+		Image: FormControl<string | null | undefined>,
+		TimeoutInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateBuildConfigurationFormGroup() {
+		return new FormGroup<BuildConfigurationFormProperties>({
+			ArtifactName: new FormControl<string | null | undefined>(undefined),
+			CodeBuildServiceRole: new FormControl<string | null | undefined>(undefined),
+			ComputeType: new FormControl<ComputeType | null | undefined>(undefined),
+			Image: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Results message indicating whether a CNAME is available. */
 	export interface CheckDNSAvailabilityMessage {
 		CNAMEPrefix: string;
+	}
+
+	/** Results message indicating whether a CNAME is available. */
+	export interface CheckDNSAvailabilityMessageFormProperties {
+		CNAMEPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateCheckDNSAvailabilityMessageFormGroup() {
+		return new FormGroup<CheckDNSAvailabilityMessageFormProperties>({
+			CNAMEPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -902,7 +2265,20 @@ export namespace MyNS {
 	export interface ComposeEnvironmentsMessage {
 		ApplicationName?: string | null;
 		GroupName?: string | null;
-		VersionLabels?: Array<string> | null;
+		VersionLabels?: Array<string>;
+	}
+
+	/** Request to create or update a group of environments. */
+	export interface ComposeEnvironmentsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateComposeEnvironmentsMessageFormGroup() {
+		return new FormGroup<ComposeEnvironmentsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConfigurationDeploymentStatus { deployed = 0, pending = 1, failed = 2 }
@@ -916,8 +2292,21 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions. */
-		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig | null;
-		Tags?: Array<Tag> | null;
+		ResourceLifecycleConfig?: ApplicationResourceLifecycleConfig;
+		Tags?: Array<Tag>;
+	}
+
+	/** Request to create an application. */
+	export interface CreateApplicationMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationMessageFormGroup() {
+		return new FormGroup<CreateApplicationMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -928,16 +2317,35 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Location of the source code for an application version. */
-		SourceBuildInformation?: SourceBuildInformation | null;
+		SourceBuildInformation?: SourceBuildInformation;
 
 		/** The bucket and key of an item stored in Amazon S3. */
-		SourceBundle?: S3Location | null;
+		SourceBundle?: S3Location;
 
 		/** Settings for an AWS CodeBuild build. */
-		BuildConfiguration?: BuildConfiguration | null;
+		BuildConfiguration?: BuildConfiguration;
 		AutoCreateApplication?: boolean | null;
 		Process?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateApplicationVersionMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		AutoCreateApplication: FormControl<boolean | null | undefined>,
+		Process: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateApplicationVersionMessageFormGroup() {
+		return new FormGroup<CreateApplicationVersionMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			AutoCreateApplication: new FormControl<boolean | null | undefined>(undefined),
+			Process: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -945,6 +2353,19 @@ export namespace MyNS {
 	export interface SourceConfiguration {
 		ApplicationName?: string | null;
 		TemplateName?: string | null;
+	}
+
+	/** A specification for an environment configuration. */
+	export interface SourceConfigurationFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceConfigurationFormGroup() {
+		return new FormGroup<SourceConfigurationFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -956,11 +2377,32 @@ export namespace MyNS {
 		PlatformArn?: string | null;
 
 		/** A specification for an environment configuration. */
-		SourceConfiguration?: SourceConfiguration | null;
+		SourceConfiguration?: SourceConfiguration;
 		EnvironmentId?: string | null;
 		Description?: string | null;
-		OptionSettings?: Array<ConfigurationOptionSetting> | null;
-		Tags?: Array<Tag> | null;
+		OptionSettings?: Array<ConfigurationOptionSetting>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Request to create a configuration template. */
+	export interface CreateConfigurationTemplateMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationTemplateMessageFormGroup() {
+		return new FormGroup<CreateConfigurationTemplateMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -973,15 +2415,44 @@ export namespace MyNS {
 		CNAMEPrefix?: string | null;
 
 		/** Describes the properties of an environment tier */
-		Tier?: EnvironmentTier | null;
-		Tags?: Array<Tag> | null;
+		Tier?: EnvironmentTier;
+		Tags?: Array<Tag>;
 		VersionLabel?: string | null;
 		TemplateName?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
-		OptionSettings?: Array<ConfigurationOptionSetting> | null;
-		OptionsToRemove?: Array<OptionSpecification> | null;
+		OptionSettings?: Array<ConfigurationOptionSetting>;
+		OptionsToRemove?: Array<OptionSpecification>;
 		OperationsRole?: string | null;
+	}
+
+	/** <p/> */
+	export interface CreateEnvironmentMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CNAMEPrefix: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+		OperationsRole: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEnvironmentMessageFormGroup() {
+		return new FormGroup<CreateEnvironmentMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CNAMEPrefix: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			OperationsRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -996,8 +2467,23 @@ export namespace MyNS {
 		 */
 		PlatformDefinitionBundle: S3Location;
 		EnvironmentName?: string | null;
-		OptionSettings?: Array<ConfigurationOptionSetting> | null;
-		Tags?: Array<Tag> | null;
+		OptionSettings?: Array<ConfigurationOptionSetting>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Request to create a new platform version. */
+	export interface CreatePlatformVersionRequestFormProperties {
+		PlatformName: FormControl<string | null | undefined>,
+		PlatformVersion: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlatformVersionRequestFormGroup() {
+		return new FormGroup<CreatePlatformVersionRequestFormProperties>({
+			PlatformName: new FormControl<string | null | undefined>(undefined),
+			PlatformVersion: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1005,6 +2491,19 @@ export namespace MyNS {
 	export interface DeleteApplicationMessage {
 		ApplicationName: string;
 		TerminateEnvByForce?: boolean | null;
+	}
+
+	/** Request to delete an application. */
+	export interface DeleteApplicationMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TerminateEnvByForce: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteApplicationMessageFormGroup() {
+		return new FormGroup<DeleteApplicationMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TerminateEnvByForce: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1015,11 +2514,39 @@ export namespace MyNS {
 		DeleteSourceBundle?: boolean | null;
 	}
 
+	/** Request to delete an application version. */
+	export interface DeleteApplicationVersionMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		DeleteSourceBundle: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteApplicationVersionMessageFormGroup() {
+		return new FormGroup<DeleteApplicationVersionMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			DeleteSourceBundle: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to delete a configuration template. */
 	export interface DeleteConfigurationTemplateMessage {
 		ApplicationName: string;
 		TemplateName: string;
+	}
+
+	/** Request to delete a configuration template. */
+	export interface DeleteConfigurationTemplateMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConfigurationTemplateMessageFormGroup() {
+		return new FormGroup<DeleteConfigurationTemplateMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1029,23 +2556,69 @@ export namespace MyNS {
 		EnvironmentName: string;
 	}
 
+	/** Request to delete a draft environment configuration. */
+	export interface DeleteEnvironmentConfigurationMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEnvironmentConfigurationMessageFormGroup() {
+		return new FormGroup<DeleteEnvironmentConfigurationMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeletePlatformVersionRequest {
 		PlatformArn?: string | null;
+	}
+	export interface DeletePlatformVersionRequestFormProperties {
+		PlatformArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePlatformVersionRequestFormGroup() {
+		return new FormGroup<DeletePlatformVersionRequestFormProperties>({
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Request to describe application versions. */
 	export interface DescribeApplicationVersionsMessage {
 		ApplicationName?: string | null;
-		VersionLabels?: Array<string> | null;
+		VersionLabels?: Array<string>;
 		MaxRecords?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Request to describe application versions. */
+	export interface DescribeApplicationVersionsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeApplicationVersionsMessageFormGroup() {
+		return new FormGroup<DescribeApplicationVersionsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Request to describe one or more applications. */
 	export interface DescribeApplicationsMessage {
-		ApplicationNames?: Array<string> | null;
+		ApplicationNames?: Array<string>;
+	}
+
+	/** Request to describe one or more applications. */
+	export interface DescribeApplicationsMessageFormProperties {
+	}
+	export function CreateDescribeApplicationsMessageFormGroup() {
+		return new FormGroup<DescribeApplicationsMessageFormProperties>({
+		});
+
 	}
 
 
@@ -1056,7 +2629,26 @@ export namespace MyNS {
 		EnvironmentName?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
-		Options?: Array<OptionSpecification> | null;
+		Options?: Array<OptionSpecification>;
+	}
+
+	/** Result message containing a list of application version descriptions. */
+	export interface DescribeConfigurationOptionsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConfigurationOptionsMessageFormGroup() {
+		return new FormGroup<DescribeConfigurationOptionsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1067,12 +2659,40 @@ export namespace MyNS {
 		EnvironmentName?: string | null;
 	}
 
+	/** Result message containing all of the configuration settings for a specified solution stack or configuration template. */
+	export interface DescribeConfigurationSettingsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConfigurationSettingsMessageFormGroup() {
+		return new FormGroup<DescribeConfigurationSettingsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** See the example below to learn how to create a request body. */
 	export interface DescribeEnvironmentHealthRequest {
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
-		AttributeNames?: Array<EnvironmentHealthAttribute> | null;
+		AttributeNames?: Array<EnvironmentHealthAttribute>;
+	}
+
+	/** See the example below to learn how to create a request body. */
+	export interface DescribeEnvironmentHealthRequestFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentHealthRequestFormGroup() {
+		return new FormGroup<DescribeEnvironmentHealthRequestFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentHealth { Green = 0, Yellow = 1, Red = 2, Grey = 3 }
@@ -1086,12 +2706,44 @@ export namespace MyNS {
 		MaxItems?: number | null;
 	}
 
+	/** Request to list completed and failed managed actions. */
+	export interface DescribeEnvironmentManagedActionHistoryRequestFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentManagedActionHistoryRequestFormGroup() {
+		return new FormGroup<DescribeEnvironmentManagedActionHistoryRequestFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to list an environment's upcoming and in-progress managed actions. */
 	export interface DescribeEnvironmentManagedActionsRequest {
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
 		Status?: ManagedActionStatus | null;
+	}
+
+	/** Request to list an environment's upcoming and in-progress managed actions. */
+	export interface DescribeEnvironmentManagedActionsRequestFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		Status: FormControl<ManagedActionStatus | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentManagedActionsRequestFormGroup() {
+		return new FormGroup<DescribeEnvironmentManagedActionsRequestFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ManagedActionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1101,17 +2753,51 @@ export namespace MyNS {
 		EnvironmentName?: string | null;
 	}
 
+	/** Request to describe the resources in an environment. */
+	export interface DescribeEnvironmentResourcesMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentResourcesMessageFormGroup() {
+		return new FormGroup<DescribeEnvironmentResourcesMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to describe one or more environments. */
 	export interface DescribeEnvironmentsMessage {
 		ApplicationName?: string | null;
 		VersionLabel?: string | null;
-		EnvironmentIds?: Array<string> | null;
-		EnvironmentNames?: Array<string> | null;
+		EnvironmentIds?: Array<string>;
+		EnvironmentNames?: Array<string>;
 		IncludeDeleted?: boolean | null;
 		IncludedDeletedBackTo?: Date | null;
 		MaxRecords?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Request to describe one or more environments. */
+	export interface DescribeEnvironmentsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		IncludeDeleted: FormControl<boolean | null | undefined>,
+		IncludedDeletedBackTo: FormControl<Date | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentsMessageFormGroup() {
+		return new FormGroup<DescribeEnvironmentsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			IncludeDeleted: new FormControl<boolean | null | undefined>(undefined),
+			IncludedDeletedBackTo: new FormControl<Date | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventSeverity { TRACE = 0, DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4, FATAL = 5 }
@@ -1133,23 +2819,91 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Request to retrieve a list of events for an environment. */
+	export interface DescribeEventsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Severity: FormControl<EventDescriptionSeverity | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsMessageFormGroup() {
+		return new FormGroup<DescribeEventsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<EventDescriptionSeverity | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Parameters for a call to <code>DescribeInstancesHealth</code>. */
 	export interface DescribeInstancesHealthRequest {
 		EnvironmentName?: string | null;
 		EnvironmentId?: string | null;
-		AttributeNames?: Array<InstancesHealthAttribute> | null;
+		AttributeNames?: Array<InstancesHealthAttribute>;
 		NextToken?: string | null;
+	}
+
+	/** Parameters for a call to <code>DescribeInstancesHealth</code>. */
+	export interface DescribeInstancesHealthRequestFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInstancesHealthRequestFormGroup() {
+		return new FormGroup<DescribeInstancesHealthRequestFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribePlatformVersionRequest {
 		PlatformArn?: string | null;
+	}
+	export interface DescribePlatformVersionRequestFormProperties {
+		PlatformArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePlatformVersionRequestFormGroup() {
+		return new FormGroup<DescribePlatformVersionRequestFormProperties>({
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Request to disassociate the operations role from an environment. */
 	export interface DisassociateEnvironmentOperationsRoleMessage {
 		EnvironmentName: string;
+	}
+
+	/** Request to disassociate the operations role from an environment. */
+	export interface DisassociateEnvironmentOperationsRoleMessageFormProperties {
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateEnvironmentOperationsRoleMessageFormGroup() {
+		return new FormGroup<DisassociateEnvironmentOperationsRoleMessageFormProperties>({
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentStatus { Launching = 0, Updating = 1, Ready = 2, Terminating = 3, Terminated = 4 }
@@ -1161,19 +2915,50 @@ export namespace MyNS {
 	export enum FailureType { UpdateCancelled = 0, CancellationFailed = 1, RollbackFailed = 2, RollbackSuccessful = 3, InternalFailure = 4, InvalidEnvironmentState = 5, PermissionsError = 6 }
 
 	export interface ListPlatformBranchesRequest {
-		Filters?: Array<SearchFilter> | null;
+		Filters?: Array<SearchFilter>;
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListPlatformBranchesRequestFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlatformBranchesRequestFormGroup() {
+		return new FormGroup<ListPlatformBranchesRequestFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPlatformVersionsRequest {
-		Filters?: Array<PlatformFilter> | null;
+		Filters?: Array<PlatformFilter>;
 		MaxRecords?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListPlatformVersionsRequestFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlatformVersionsRequestFormGroup() {
+		return new FormGroup<ListPlatformVersionsRequestFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceMessage {
 		ResourceArn: string;
+	}
+	export interface ListTagsForResourceMessageFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceMessageFormGroup() {
+		return new FormGroup<ListTagsForResourceMessageFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlatformStatus { Creating = 0, Failed = 1, Ready = 2, Deleting = 3, Deleted = 4 }
@@ -1185,12 +2970,40 @@ export namespace MyNS {
 		EnvironmentName?: string | null;
 	}
 
+	/** <p/> */
+	export interface RebuildEnvironmentMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateRebuildEnvironmentMessageFormGroup() {
+		return new FormGroup<RebuildEnvironmentMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket. */
 	export interface RequestEnvironmentInfoMessage {
 		EnvironmentId?: string | null;
 		EnvironmentName?: string | null;
 		InfoType: EnvironmentInfoDescriptionInfoType;
+	}
+
+	/** Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket. */
+	export interface RequestEnvironmentInfoMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		InfoType: FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>,
+	}
+	export function CreateRequestEnvironmentInfoMessageFormGroup() {
+		return new FormGroup<RequestEnvironmentInfoMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1200,12 +3013,40 @@ export namespace MyNS {
 		EnvironmentName?: string | null;
 	}
 
+	/** <p/> */
+	export interface RestartAppServerMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateRestartAppServerMessageFormGroup() {
+		return new FormGroup<RestartAppServerMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to download logs retrieved with <a>RequestEnvironmentInfo</a>. */
 	export interface RetrieveEnvironmentInfoMessage {
 		EnvironmentId?: string | null;
 		EnvironmentName?: string | null;
 		InfoType: EnvironmentInfoDescriptionInfoType;
+	}
+
+	/** Request to download logs retrieved with <a>RequestEnvironmentInfo</a>. */
+	export interface RetrieveEnvironmentInfoMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		InfoType: FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>,
+	}
+	export function CreateRetrieveEnvironmentInfoMessageFormGroup() {
+		return new FormGroup<RetrieveEnvironmentInfoMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			InfoType: new FormControl<EnvironmentInfoDescriptionInfoType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1217,6 +3058,23 @@ export namespace MyNS {
 		DestinationEnvironmentName?: string | null;
 	}
 
+	/** Swaps the CNAMEs of two environments. */
+	export interface SwapEnvironmentCNAMEsMessageFormProperties {
+		SourceEnvironmentId: FormControl<string | null | undefined>,
+		SourceEnvironmentName: FormControl<string | null | undefined>,
+		DestinationEnvironmentId: FormControl<string | null | undefined>,
+		DestinationEnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateSwapEnvironmentCNAMEsMessageFormGroup() {
+		return new FormGroup<SwapEnvironmentCNAMEsMessageFormProperties>({
+			SourceEnvironmentId: new FormControl<string | null | undefined>(undefined),
+			SourceEnvironmentName: new FormControl<string | null | undefined>(undefined),
+			DestinationEnvironmentId: new FormControl<string | null | undefined>(undefined),
+			DestinationEnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to terminate an environment. */
 	export interface TerminateEnvironmentMessage {
@@ -1226,11 +3084,41 @@ export namespace MyNS {
 		ForceTerminate?: boolean | null;
 	}
 
+	/** Request to terminate an environment. */
+	export interface TerminateEnvironmentMessageFormProperties {
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		TerminateResources: FormControl<boolean | null | undefined>,
+		ForceTerminate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTerminateEnvironmentMessageFormGroup() {
+		return new FormGroup<TerminateEnvironmentMessageFormProperties>({
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			TerminateResources: new FormControl<boolean | null | undefined>(undefined),
+			ForceTerminate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to update an application. */
 	export interface UpdateApplicationMessage {
 		ApplicationName: string;
 		Description?: string | null;
+	}
+
+	/** Request to update an application. */
+	export interface UpdateApplicationMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationMessageFormGroup() {
+		return new FormGroup<UpdateApplicationMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateApplicationResourceLifecycleMessage {
@@ -1242,6 +3130,15 @@ export namespace MyNS {
 		 */
 		ResourceLifecycleConfig: ApplicationResourceLifecycleConfig;
 	}
+	export interface UpdateApplicationResourceLifecycleMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationResourceLifecycleMessageFormGroup() {
+		return new FormGroup<UpdateApplicationResourceLifecycleMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p/> */
@@ -1251,14 +3148,44 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** <p/> */
+	export interface UpdateApplicationVersionMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationVersionMessageFormGroup() {
+		return new FormGroup<UpdateApplicationVersionMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result message containing the options for the specified solution stack. */
 	export interface UpdateConfigurationTemplateMessage {
 		ApplicationName: string;
 		TemplateName: string;
 		Description?: string | null;
-		OptionSettings?: Array<ConfigurationOptionSetting> | null;
-		OptionsToRemove?: Array<OptionSpecification> | null;
+		OptionSettings?: Array<ConfigurationOptionSetting>;
+		OptionsToRemove?: Array<OptionSpecification>;
+	}
+
+	/** The result message containing the options for the specified solution stack. */
+	export interface UpdateConfigurationTemplateMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConfigurationTemplateMessageFormGroup() {
+		return new FormGroup<UpdateConfigurationTemplateMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1271,19 +3198,55 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Describes the properties of an environment tier */
-		Tier?: EnvironmentTier | null;
+		Tier?: EnvironmentTier;
 		VersionLabel?: string | null;
 		TemplateName?: string | null;
 		SolutionStackName?: string | null;
 		PlatformArn?: string | null;
-		OptionSettings?: Array<ConfigurationOptionSetting> | null;
-		OptionsToRemove?: Array<OptionSpecification> | null;
+		OptionSettings?: Array<ConfigurationOptionSetting>;
+		OptionsToRemove?: Array<OptionSpecification>;
+	}
+
+	/** Request to update an environment. */
+	export interface UpdateEnvironmentMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		EnvironmentId: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		VersionLabel: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		SolutionStackName: FormControl<string | null | undefined>,
+		PlatformArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEnvironmentMessageFormGroup() {
+		return new FormGroup<UpdateEnvironmentMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentId: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			VersionLabel: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			SolutionStackName: new FormControl<string | null | undefined>(undefined),
+			PlatformArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTagsForResourceMessage {
 		ResourceArn: string;
-		TagsToAdd?: Array<Tag> | null;
-		TagsToRemove?: Array<string> | null;
+		TagsToAdd?: Array<Tag>;
+		TagsToRemove?: Array<string>;
+	}
+	export interface UpdateTagsForResourceMessageFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTagsForResourceMessageFormGroup() {
+		return new FormGroup<UpdateTagsForResourceMessageFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1293,6 +3256,21 @@ export namespace MyNS {
 		TemplateName?: string | null;
 		EnvironmentName?: string | null;
 		OptionSettings: Array<ConfigurationOptionSetting>;
+	}
+
+	/** A list of validation messages for a specified configuration template. */
+	export interface ValidateConfigurationSettingsMessageFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+		EnvironmentName: FormControl<string | null | undefined>,
+	}
+	export function CreateValidateConfigurationSettingsMessageFormGroup() {
+		return new FormGroup<ValidateConfigurationSettingsMessageFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+			EnvironmentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ValidationSeverity { error = 0, warning = 1 }
@@ -1355,7 +3333,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ComposeEnvironments(ApplicationName: string | null | undefined, GroupName: string | null | undefined, VersionLabels: Array<string> | null | undefined, Action: GET_ComposeEnvironmentsAction, Version: GET_ComposeEnvironmentsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ComposeEnvironments?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&' + VersionLabels.map(z => `VersionLabels=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ComposeEnvironments?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&' + VersionLabels?.map(z => `VersionLabels=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1368,7 +3346,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateApplication(ApplicationName: string, Description: string | null | undefined, ResourceLifecycleConfig: GET_CreateApplicationResourceLifecycleConfig | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateApplicationAction, Version: GET_CreateApplicationVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateApplication?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&ResourceLifecycleConfig=' + ResourceLifecycleConfig + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateApplication?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&ResourceLifecycleConfig=' + ResourceLifecycleConfig + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1386,7 +3364,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateApplicationVersion(ApplicationName: string, VersionLabel: string, Description: string | null | undefined, SourceBuildInformation: GET_CreateApplicationVersionSourceBuildInformation | null | undefined, SourceBundle: GET_CreateApplicationVersionSourceBundle | null | undefined, BuildConfiguration: GET_CreateApplicationVersionBuildConfiguration | null | undefined, AutoCreateApplication: boolean | null | undefined, Process: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateApplicationVersionAction, Version: GET_CreateApplicationVersionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateApplicationVersion?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&SourceBuildInformation=' + SourceBuildInformation + '&SourceBundle=' + SourceBundle + '&BuildConfiguration=' + BuildConfiguration + '&AutoCreateApplication=' + AutoCreateApplication + '&Process=' + Process + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateApplicationVersion?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&SourceBuildInformation=' + SourceBuildInformation + '&SourceBundle=' + SourceBundle + '&BuildConfiguration=' + BuildConfiguration + '&AutoCreateApplication=' + AutoCreateApplication + '&Process=' + Process + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1404,7 +3382,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateConfigurationTemplate(ApplicationName: string, TemplateName: string, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, SourceConfiguration: GET_CreateConfigurationTemplateSourceConfiguration | null | undefined, EnvironmentId: string | null | undefined, Description: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateConfigurationTemplateAction, Version: GET_CreateConfigurationTemplateVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateConfigurationTemplate?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&SourceConfiguration=' + SourceConfiguration + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateConfigurationTemplate?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&SourceConfiguration=' + SourceConfiguration + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + OptionSettings?.map(z => `OptionSettings=${z}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1427,7 +3405,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateEnvironment(ApplicationName: string, EnvironmentName: string | null | undefined, GroupName: string | null | undefined, Description: string | null | undefined, CNAMEPrefix: string | null | undefined, Tier: GET_CreateEnvironmentTier | null | undefined, Tags: Array<Tag> | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, OperationsRole: string | null | undefined, Action: GET_CreateEnvironmentAction, Version: GET_CreateEnvironmentVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateEnvironment?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&CNAMEPrefix=' + (CNAMEPrefix == null ? '' : encodeURIComponent(CNAMEPrefix)) + '&Tier=' + Tier + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${z}`).join('&') + '&OperationsRole=' + (OperationsRole == null ? '' : encodeURIComponent(OperationsRole)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateEnvironment?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&CNAMEPrefix=' + (CNAMEPrefix == null ? '' : encodeURIComponent(CNAMEPrefix)) + '&Tier=' + Tier + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + OptionSettings?.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove?.map(z => `OptionsToRemove=${z}`).join('&') + '&OperationsRole=' + (OperationsRole == null ? '' : encodeURIComponent(OperationsRole)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1442,7 +3420,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreatePlatformVersion(PlatformName: string, PlatformVersion: string, PlatformDefinitionBundle: GET_CreatePlatformVersionPlatformDefinitionBundle, EnvironmentName: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreatePlatformVersionAction, Version: GET_CreatePlatformVersionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreatePlatformVersion?PlatformName=' + (PlatformName == null ? '' : encodeURIComponent(PlatformName)) + '&PlatformVersion=' + (PlatformVersion == null ? '' : encodeURIComponent(PlatformVersion)) + '&PlatformDefinitionBundle=' + PlatformDefinitionBundle + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreatePlatformVersion?PlatformName=' + (PlatformName == null ? '' : encodeURIComponent(PlatformName)) + '&PlatformVersion=' + (PlatformVersion == null ? '' : encodeURIComponent(PlatformVersion)) + '&PlatformDefinitionBundle=' + PlatformDefinitionBundle + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&' + OptionSettings?.map(z => `OptionSettings=${z}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1546,7 +3524,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeApplicationVersions(ApplicationName: string | null | undefined, VersionLabels: Array<string> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeApplicationVersionsAction, Version: GET_DescribeApplicationVersionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeApplicationVersions?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&' + VersionLabels.map(z => `VersionLabels=${encodeURIComponent(z)}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeApplicationVersions?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&' + VersionLabels?.map(z => `VersionLabels=${encodeURIComponent(z)}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1556,7 +3534,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeApplications(ApplicationNames: Array<string> | null | undefined, Action: GET_DescribeApplicationsAction, Version: GET_DescribeApplicationsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeApplications?' + ApplicationNames.map(z => `ApplicationNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeApplications?' + ApplicationNames?.map(z => `ApplicationNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1571,7 +3549,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeConfigurationOptions(ApplicationName: string | null | undefined, TemplateName: string | null | undefined, EnvironmentName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, Options: Array<OptionSpecification> | null | undefined, Action: GET_DescribeConfigurationOptionsAction, Version: GET_DescribeConfigurationOptionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeConfigurationOptions?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + Options.map(z => `Options=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeConfigurationOptions?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + Options?.map(z => `Options=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1595,7 +3573,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEnvironmentHealth(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, AttributeNames: Array<EnvironmentHealthAttribute> | null | undefined, Action: GET_DescribeEnvironmentHealthAction, Version: GET_DescribeEnvironmentHealthVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEnvironmentHealth?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&' + AttributeNames.map(z => `AttributeNames=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEnvironmentHealth?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&' + AttributeNames?.map(z => `AttributeNames=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1648,7 +3626,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEnvironments(ApplicationName: string | null | undefined, VersionLabel: string | null | undefined, EnvironmentIds: Array<string> | null | undefined, EnvironmentNames: Array<string> | null | undefined, IncludeDeleted: boolean | null | undefined, IncludedDeletedBackTo: Date | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeEnvironmentsAction, Version: GET_DescribeEnvironmentsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEnvironments?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&' + EnvironmentIds.map(z => `EnvironmentIds=${encodeURIComponent(z)}`).join('&') + '&' + EnvironmentNames.map(z => `EnvironmentNames=${encodeURIComponent(z)}`).join('&') + '&IncludeDeleted=' + IncludeDeleted + '&IncludedDeletedBackTo=' + IncludedDeletedBackTo.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEnvironments?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&' + EnvironmentIds?.map(z => `EnvironmentIds=${encodeURIComponent(z)}`).join('&') + '&' + EnvironmentNames?.map(z => `EnvironmentNames=${encodeURIComponent(z)}`).join('&') + '&IncludeDeleted=' + IncludeDeleted + '&IncludedDeletedBackTo=' + IncludedDeletedBackTo?.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1669,7 +3647,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEvents(ApplicationName: string | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, PlatformArn: string | null | undefined, RequestId: string | null | undefined, Severity: EventDescriptionSeverity | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEvents?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&RequestId=' + (RequestId == null ? '' : encodeURIComponent(RequestId)) + '&Severity=' + Severity + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEvents?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&RequestId=' + (RequestId == null ? '' : encodeURIComponent(RequestId)) + '&Severity=' + Severity + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1682,7 +3660,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeInstancesHealth(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, AttributeNames: Array<InstancesHealthAttribute> | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeInstancesHealthAction, Version: GET_DescribeInstancesHealthVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeInstancesHealth?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&' + AttributeNames.map(z => `AttributeNames=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeInstancesHealth?EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&' + AttributeNames?.map(z => `AttributeNames=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1732,7 +3710,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ListPlatformBranches(Filters: Array<SearchFilter> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListPlatformBranchesAction, Version: GET_ListPlatformBranchesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ListPlatformBranches?' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ListPlatformBranches?' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1744,7 +3722,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ListPlatformVersions(Filters: Array<PlatformFilter> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_ListPlatformVersionsAction, Version: GET_ListPlatformVersionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ListPlatformVersions?' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ListPlatformVersions?' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1874,7 +3852,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_UpdateConfigurationTemplate(ApplicationName: string, TemplateName: string, Description: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, Action: GET_UpdateConfigurationTemplateAction, Version: GET_UpdateConfigurationTemplateVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=UpdateConfigurationTemplate?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=UpdateConfigurationTemplate?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + OptionSettings?.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove?.map(z => `OptionsToRemove=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1895,7 +3873,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_UpdateEnvironment(ApplicationName: string | null | undefined, EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, GroupName: string | null | undefined, Description: string | null | undefined, Tier: GET_UpdateEnvironmentTier | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, Action: GET_UpdateEnvironmentAction, Version: GET_UpdateEnvironmentVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=UpdateEnvironment?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&Tier=' + Tier + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + OptionSettings.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=UpdateEnvironment?ApplicationName=' + (ApplicationName == null ? '' : encodeURIComponent(ApplicationName)) + '&EnvironmentId=' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '&EnvironmentName=' + (EnvironmentName == null ? '' : encodeURIComponent(EnvironmentName)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&Tier=' + Tier + '&VersionLabel=' + (VersionLabel == null ? '' : encodeURIComponent(VersionLabel)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&SolutionStackName=' + (SolutionStackName == null ? '' : encodeURIComponent(SolutionStackName)) + '&PlatformArn=' + (PlatformArn == null ? '' : encodeURIComponent(PlatformArn)) + '&' + OptionSettings?.map(z => `OptionSettings=${z}`).join('&') + '&' + OptionsToRemove?.map(z => `OptionsToRemove=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1907,7 +3885,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_UpdateTagsForResource(ResourceArn: string, TagsToAdd: Array<Tag> | null | undefined, TagsToRemove: Array<string> | null | undefined, Action: GET_UpdateTagsForResourceAction, Version: GET_UpdateTagsForResourceVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=UpdateTagsForResource?ResourceArn=' + (ResourceArn == null ? '' : encodeURIComponent(ResourceArn)) + '&' + TagsToAdd.map(z => `TagsToAdd=${z}`).join('&') + '&' + TagsToRemove.map(z => `TagsToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=UpdateTagsForResource?ResourceArn=' + (ResourceArn == null ? '' : encodeURIComponent(ResourceArn)) + '&' + TagsToAdd?.map(z => `TagsToAdd=${z}`).join('&') + '&' + TagsToRemove?.map(z => `TagsToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1958,7 +3936,16 @@ export namespace MyNS {
 		ServiceRole?: string | null;
 
 		/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
-		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | null;
+		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+	}
+	export interface GET_CreateApplicationResourceLifecycleConfigFormProperties {
+		ServiceRole: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_CreateApplicationResourceLifecycleConfigFormGroup() {
+		return new FormGroup<GET_CreateApplicationResourceLifecycleConfigFormProperties>({
+			ServiceRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateApplicationAction { CreateApplication = 0 }
@@ -1972,10 +3959,34 @@ export namespace MyNS {
 		SourceRepository: SourceBuildInformationSourceRepository;
 		SourceLocation: string;
 	}
+	export interface GET_CreateApplicationVersionSourceBuildInformationFormProperties {
+		SourceType: FormControl<SourceBuildInformationSourceType | null | undefined>,
+		SourceRepository: FormControl<SourceBuildInformationSourceRepository | null | undefined>,
+		SourceLocation: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_CreateApplicationVersionSourceBuildInformationFormGroup() {
+		return new FormGroup<GET_CreateApplicationVersionSourceBuildInformationFormProperties>({
+			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined),
+			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined),
+			SourceLocation: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GET_CreateApplicationVersionSourceBundle {
 		S3Bucket?: string | null;
 		S3Key?: string | null;
+	}
+	export interface GET_CreateApplicationVersionSourceBundleFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_CreateApplicationVersionSourceBundleFormGroup() {
+		return new FormGroup<GET_CreateApplicationVersionSourceBundleFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GET_CreateApplicationVersionBuildConfiguration {
@@ -1984,6 +3995,23 @@ export namespace MyNS {
 		ComputeType?: ComputeType | null;
 		Image: string;
 		TimeoutInMinutes?: number | null;
+	}
+	export interface GET_CreateApplicationVersionBuildConfigurationFormProperties {
+		ArtifactName: FormControl<string | null | undefined>,
+		CodeBuildServiceRole: FormControl<string | null | undefined>,
+		ComputeType: FormControl<ComputeType | null | undefined>,
+		Image: FormControl<string | null | undefined>,
+		TimeoutInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_CreateApplicationVersionBuildConfigurationFormGroup() {
+		return new FormGroup<GET_CreateApplicationVersionBuildConfigurationFormProperties>({
+			ArtifactName: new FormControl<string | null | undefined>(undefined),
+			CodeBuildServiceRole: new FormControl<string | null | undefined>(undefined),
+			ComputeType: new FormControl<ComputeType | null | undefined>(undefined),
+			Image: new FormControl<string | null | undefined>(undefined),
+			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateApplicationVersionAction { CreateApplicationVersion = 0 }
@@ -1995,6 +4023,17 @@ export namespace MyNS {
 	export interface GET_CreateConfigurationTemplateSourceConfiguration {
 		ApplicationName?: string | null;
 		TemplateName?: string | null;
+	}
+	export interface GET_CreateConfigurationTemplateSourceConfigurationFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		TemplateName: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_CreateConfigurationTemplateSourceConfigurationFormGroup() {
+		return new FormGroup<GET_CreateConfigurationTemplateSourceConfigurationFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			TemplateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateConfigurationTemplateAction { CreateConfigurationTemplate = 0 }
@@ -2008,6 +4047,19 @@ export namespace MyNS {
 		Type?: string | null;
 		Version?: string | null;
 	}
+	export interface GET_CreateEnvironmentTierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_CreateEnvironmentTierFormGroup() {
+		return new FormGroup<GET_CreateEnvironmentTierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GET_CreateEnvironmentAction { CreateEnvironment = 0 }
 
@@ -2018,6 +4070,17 @@ export namespace MyNS {
 	export interface GET_CreatePlatformVersionPlatformDefinitionBundle {
 		S3Bucket?: string | null;
 		S3Key?: string | null;
+	}
+	export interface GET_CreatePlatformVersionPlatformDefinitionBundleFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_CreatePlatformVersionPlatformDefinitionBundleFormGroup() {
+		return new FormGroup<GET_CreatePlatformVersionPlatformDefinitionBundleFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreatePlatformVersionAction { CreatePlatformVersion = 0 }
@@ -2216,7 +4279,16 @@ export namespace MyNS {
 		ServiceRole?: string | null;
 
 		/** <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p> */
-		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig | null;
+		VersionLifecycleConfig?: ApplicationVersionLifecycleConfig;
+	}
+	export interface GET_UpdateApplicationResourceLifecycleResourceLifecycleConfigFormProperties {
+		ServiceRole: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_UpdateApplicationResourceLifecycleResourceLifecycleConfigFormGroup() {
+		return new FormGroup<GET_UpdateApplicationResourceLifecycleResourceLifecycleConfigFormProperties>({
+			ServiceRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_UpdateApplicationResourceLifecycleAction { UpdateApplicationResourceLifecycle = 0 }
@@ -2241,6 +4313,19 @@ export namespace MyNS {
 		Name?: string | null;
 		Type?: string | null;
 		Version?: string | null;
+	}
+	export interface GET_UpdateEnvironmentTierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_UpdateEnvironmentTierFormGroup() {
+		return new FormGroup<GET_UpdateEnvironmentTierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_UpdateEnvironmentAction { UpdateEnvironment = 0 }

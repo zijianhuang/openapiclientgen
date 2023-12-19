@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A site's Ad Experience Report summary on a single platform. */
@@ -34,7 +35,7 @@ export namespace MyNS {
 		 * No longer populated, because there is no longer any semantic difference
 		 * between sites in different regions.
 		 */
-		region?: Array<string> | null;
+		region?: Array<string>;
 
 		/**
 		 * A link to the full Ad Experience Report for the site on this platform..
@@ -50,6 +51,57 @@ export namespace MyNS {
 		underReview?: boolean | null;
 	}
 
+	/** A site's Ad Experience Report summary on a single platform. */
+	export interface PlatformSummaryFormProperties {
+
+		/** The site's Ad Experience Report status on this platform. */
+		betterAdsStatus: FormControl<PlatformSummaryBetterAdsStatus | null | undefined>,
+
+		/**
+		 * The time at which
+		 * [enforcement](https://support.google.com/webtools/answer/7308033) against
+		 * the site began or will begin on this platform.
+		 * Not set when the
+		 * filter_status
+		 * is OFF.
+		 */
+		enforcementTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The site's [enforcement
+		 * status](https://support.google.com/webtools/answer/7308033) on this
+		 * platform.
+		 */
+		filterStatus: FormControl<PlatformSummaryFilterStatus | null | undefined>,
+
+		/** The time at which the site's status last changed on this platform. */
+		lastChangeTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A link to the full Ad Experience Report for the site on this platform..
+		 * Not set in
+		 * ViolatingSitesResponse.
+		 * Note that you must complete the [Search Console verification
+		 * process](https://support.google.com/webmasters/answer/9008080) for the site
+		 * before you can access the full report.
+		 */
+		reportUrl: FormControl<string | null | undefined>,
+
+		/** Whether the site is currently under review on this platform. */
+		underReview: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePlatformSummaryFormGroup() {
+		return new FormGroup<PlatformSummaryFormProperties>({
+			betterAdsStatus: new FormControl<PlatformSummaryBetterAdsStatus | null | undefined>(undefined),
+			enforcementTime: new FormControl<string | null | undefined>(undefined),
+			filterStatus: new FormControl<PlatformSummaryFilterStatus | null | undefined>(undefined),
+			lastChangeTime: new FormControl<string | null | undefined>(undefined),
+			reportUrl: new FormControl<string | null | undefined>(undefined),
+			underReview: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PlatformSummaryBetterAdsStatus { UNKNOWN = 0, PASSING = 1, WARNING = 2, FAILING = 3 }
 
 	export enum PlatformSummaryFilterStatus { UNKNOWN = 0, ON = 1, OFF = 2, PAUSED = 3, PENDING = 4 }
@@ -59,13 +111,26 @@ export namespace MyNS {
 	export interface SiteSummaryResponse {
 
 		/** A site's Ad Experience Report summary on a single platform. */
-		desktopSummary?: PlatformSummary | null;
+		desktopSummary?: PlatformSummary;
 
 		/** A site's Ad Experience Report summary on a single platform. */
-		mobileSummary?: PlatformSummary | null;
+		mobileSummary?: PlatformSummary;
 
 		/** The name of the reviewed site, e.g. `google.com`. */
 		reviewedSite?: string | null;
+	}
+
+	/** Response message for GetSiteSummary. */
+	export interface SiteSummaryResponseFormProperties {
+
+		/** The name of the reviewed site, e.g. `google.com`. */
+		reviewedSite: FormControl<string | null | undefined>,
+	}
+	export function CreateSiteSummaryResponseFormGroup() {
+		return new FormGroup<SiteSummaryResponseFormProperties>({
+			reviewedSite: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -73,7 +138,16 @@ export namespace MyNS {
 	export interface ViolatingSitesResponse {
 
 		/** The list of violating sites. */
-		violatingSites?: Array<SiteSummaryResponse> | null;
+		violatingSites?: Array<SiteSummaryResponse>;
+	}
+
+	/** Response message for ListViolatingSites. */
+	export interface ViolatingSitesResponseFormProperties {
+	}
+	export function CreateViolatingSitesResponseFormGroup() {
+		return new FormGroup<ViolatingSitesResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

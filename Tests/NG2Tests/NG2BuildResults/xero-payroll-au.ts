@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Employees {
-		Employees1?: Array<Employee> | null;
+		Employees1?: Array<Employee>;
+	}
+	export interface EmployeesFormProperties {
+	}
+	export function CreateEmployeesFormGroup() {
+		return new FormGroup<EmployeesFormProperties>({
+		});
+
 	}
 
 	export interface Employee {
@@ -25,7 +33,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		DateOfBirth: string;
-		HomeAddress?: HomeAddress | null;
+		HomeAddress?: HomeAddress;
 
 		/** Start date for an employee (YYYY-MM-DD) */
 		StartDate?: string | null;
@@ -77,13 +85,13 @@ export namespace MyNS {
 
 		/** Employee Termination Date (YYYY-MM-DD) */
 		TerminationDate?: string | null;
-		BankAccounts?: Array<BankAccount> | null;
-		PayTemplate?: PayTemplate | null;
-		OpeningBalances?: OpeningBalances | null;
-		TaxDeclaration?: TaxDeclaration | null;
-		LeaveBalances?: Array<LeaveBalance> | null;
-		LeaveLines?: Array<LeaveLine> | null;
-		SuperMemberships?: Array<SuperMembership> | null;
+		BankAccounts?: Array<BankAccount>;
+		PayTemplate?: PayTemplate;
+		OpeningBalances?: OpeningBalances;
+		TaxDeclaration?: TaxDeclaration;
+		LeaveBalances?: Array<LeaveBalance>;
+		LeaveLines?: Array<LeaveLine>;
+		SuperMemberships?: Array<SuperMembership>;
 
 		/** Employee Status Types */
 		Status?: EmployeeStatus | null;
@@ -92,7 +100,111 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface EmployeeFormProperties {
+
+		/**
+		 * First name of employee
+		 * Required
+		 */
+		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Last name of employee
+		 * Required
+		 */
+		LastName: FormControl<string | null | undefined>,
+
+		/**
+		 * Date of birth of the employee (YYYY-MM-DD)
+		 * Required
+		 */
+		DateOfBirth: FormControl<string | null | undefined>,
+
+		/** Start date for an employee (YYYY-MM-DD) */
+		StartDate: FormControl<string | null | undefined>,
+
+		/** Title of the employee */
+		Title: FormControl<string | null | undefined>,
+
+		/** Middle name(s) of the employee */
+		MiddleNames: FormControl<string | null | undefined>,
+
+		/** The email address for the employee */
+		Email: FormControl<string | null | undefined>,
+
+		/** The employee’s gender. See Employee Gender */
+		Gender: FormControl<EmployeeGender | null | undefined>,
+
+		/** Employee phone number */
+		Phone: FormControl<string | null | undefined>,
+
+		/** Employee mobile number */
+		Mobile: FormControl<string | null | undefined>,
+
+		/** Employee’s twitter name */
+		TwitterUserName: FormControl<string | null | undefined>,
+
+		/** Authorised to approve other employees' leave requests */
+		IsAuthorisedToApproveLeave: FormControl<boolean | null | undefined>,
+
+		/** Authorised to approve timesheets */
+		IsAuthorisedToApproveTimesheets: FormControl<boolean | null | undefined>,
+
+		/** JobTitle of the employee */
+		JobTitle: FormControl<string | null | undefined>,
+
+		/** Employees classification */
+		Classification: FormControl<string | null | undefined>,
+
+		/** Xero unique identifier for earnings rate */
+		OrdinaryEarningsRateID: FormControl<string | null | undefined>,
+
+		/** Xero unique identifier for payroll calendar for the employee */
+		PayrollCalendarID: FormControl<string | null | undefined>,
+
+		/** The Employee Group allows you to report on payroll expenses and liabilities for each group of employees */
+		EmployeeGroupName: FormControl<string | null | undefined>,
+
+		/** Xero unique identifier for an Employee */
+		EmployeeID: FormControl<string | null | undefined>,
+
+		/** Employee Termination Date (YYYY-MM-DD) */
+		TerminationDate: FormControl<string | null | undefined>,
+
+		/** Employee Status Types */
+		Status: FormControl<EmployeeStatus | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreateEmployeeFormGroup() {
+		return new FormGroup<EmployeeFormProperties>({
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			DateOfBirth: new FormControl<string | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			MiddleNames: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Gender: new FormControl<EmployeeGender | null | undefined>(undefined),
+			Phone: new FormControl<string | null | undefined>(undefined),
+			Mobile: new FormControl<string | null | undefined>(undefined),
+			TwitterUserName: new FormControl<string | null | undefined>(undefined),
+			IsAuthorisedToApproveLeave: new FormControl<boolean | null | undefined>(undefined),
+			IsAuthorisedToApproveTimesheets: new FormControl<boolean | null | undefined>(undefined),
+			JobTitle: new FormControl<string | null | undefined>(undefined),
+			Classification: new FormControl<string | null | undefined>(undefined),
+			OrdinaryEarningsRateID: new FormControl<string | null | undefined>(undefined),
+			PayrollCalendarID: new FormControl<string | null | undefined>(undefined),
+			EmployeeGroupName: new FormControl<string | null | undefined>(undefined),
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			TerminationDate: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<EmployeeStatus | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface HomeAddress {
@@ -117,6 +229,40 @@ export namespace MyNS {
 
 		/** Country of HomeAddress */
 		Country?: string | null;
+	}
+	export interface HomeAddressFormProperties {
+
+		/**
+		 * Address line 1 for employee home address
+		 * Required
+		 */
+		AddressLine1: FormControl<string | null | undefined>,
+
+		/** Address line 2 for employee home address */
+		AddressLine2: FormControl<string | null | undefined>,
+
+		/** Suburb for employee home address */
+		City: FormControl<string | null | undefined>,
+
+		/** State abbreviation for employee home address */
+		Region: FormControl<HomeAddressRegion | null | undefined>,
+
+		/** PostCode for employee home address */
+		PostalCode: FormControl<string | null | undefined>,
+
+		/** Country of HomeAddress */
+		Country: FormControl<string | null | undefined>,
+	}
+	export function CreateHomeAddressFormGroup() {
+		return new FormGroup<HomeAddressFormProperties>({
+			AddressLine1: new FormControl<string | null | undefined>(undefined),
+			AddressLine2: new FormControl<string | null | undefined>(undefined),
+			City: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<HomeAddressRegion | null | undefined>(undefined),
+			PostalCode: new FormControl<string | null | undefined>(undefined),
+			Country: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HomeAddressRegion { ACT = 0, NSW = 1, NT = 2, QLD = 3, SA = 4, TAS = 5, VIC = 6, WA = 7 }
@@ -143,13 +289,51 @@ export namespace MyNS {
 		/** Fixed amounts (for example, if an employee wants to have $100 of their salary transferred to one account, and the remaining amount to another) */
 		Amount?: number | null;
 	}
+	export interface BankAccountFormProperties {
+
+		/** The text that will appear on your employee's bank statement when they receive payment */
+		StatementText: FormControl<string | null | undefined>,
+
+		/** The name of the account */
+		AccountName: FormControl<string | null | undefined>,
+
+		/** The BSB number of the account */
+		BSB: FormControl<string | null | undefined>,
+
+		/** The account number */
+		AccountNumber: FormControl<string | null | undefined>,
+
+		/** If this account is the Remaining bank account */
+		Remainder: FormControl<boolean | null | undefined>,
+
+		/** Fixed amounts (for example, if an employee wants to have $100 of their salary transferred to one account, and the remaining amount to another) */
+		Amount: FormControl<number | null | undefined>,
+	}
+	export function CreateBankAccountFormGroup() {
+		return new FormGroup<BankAccountFormProperties>({
+			StatementText: new FormControl<string | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			BSB: new FormControl<string | null | undefined>(undefined),
+			AccountNumber: new FormControl<string | null | undefined>(undefined),
+			Remainder: new FormControl<boolean | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PayTemplate {
-		EarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		SuperLines?: Array<SuperLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		LeaveLines?: Array<LeaveLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		SuperLines?: Array<SuperLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		LeaveLines?: Array<LeaveLine>;
+	}
+	export interface PayTemplateFormProperties {
+	}
+	export function CreatePayTemplateFormGroup() {
+		return new FormGroup<PayTemplateFormProperties>({
+		});
+
 	}
 
 	export interface EarningsLine {
@@ -182,6 +366,50 @@ export namespace MyNS {
 		/** Earnings rate amount. Only applicable if the EarningsRate RateType is Fixed */
 		FixedAmount?: number | null;
 	}
+	export interface EarningsLineFormProperties {
+
+		/**
+		 * Xero unique id for earnings rate
+		 * Required
+		 */
+		EarningsRateID: FormControl<string | null | undefined>,
+		CalculationType: FormControl<EarningsLineCalculationType | null | undefined>,
+
+		/** Annual salary for earnings line */
+		AnnualSalary: FormControl<number | null | undefined>,
+
+		/** number of units for earning line */
+		NumberOfUnitsPerWeek: FormControl<number | null | undefined>,
+
+		/** Rate per unit of the EarningsLine. */
+		RatePerUnit: FormControl<number | null | undefined>,
+
+		/** Normal number of units for EarningsLine. Applicable when RateType is "MULTIPLE" */
+		NormalNumberOfUnits: FormControl<number | null | undefined>,
+
+		/** Earnings rate amount */
+		Amount: FormControl<number | null | undefined>,
+
+		/** Earnings rate number of units. */
+		NumberOfUnits: FormControl<number | null | undefined>,
+
+		/** Earnings rate amount. Only applicable if the EarningsRate RateType is Fixed */
+		FixedAmount: FormControl<number | null | undefined>,
+	}
+	export function CreateEarningsLineFormGroup() {
+		return new FormGroup<EarningsLineFormProperties>({
+			EarningsRateID: new FormControl<string | null | undefined>(undefined),
+			CalculationType: new FormControl<EarningsLineCalculationType | null | undefined>(undefined),
+			AnnualSalary: new FormControl<number | null | undefined>(undefined),
+			NumberOfUnitsPerWeek: new FormControl<number | null | undefined>(undefined),
+			RatePerUnit: new FormControl<number | null | undefined>(undefined),
+			NormalNumberOfUnits: new FormControl<number | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+			FixedAmount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum EarningsLineCalculationType { USEEARNINGSRATE = 0, ENTEREARNINGSRATE = 1, ANNUALSALARY = 2 }
 
@@ -202,6 +430,34 @@ export namespace MyNS {
 
 		/** Deduction number of units */
 		NumberOfUnits?: number | null;
+	}
+	export interface DeductionLineFormProperties {
+
+		/**
+		 * Xero deduction type identifier
+		 * Required
+		 */
+		DeductionTypeID: FormControl<string | null | undefined>,
+		CalculationType: FormControl<DeductionLineCalculationType | null | undefined>,
+
+		/** Deduction type amount */
+		Amount: FormControl<number | null | undefined>,
+
+		/** The Percentage of the Deduction */
+		Percentage: FormControl<number | null | undefined>,
+
+		/** Deduction number of units */
+		NumberOfUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateDeductionLineFormGroup() {
+		return new FormGroup<DeductionLineFormProperties>({
+			DeductionTypeID: new FormControl<string | null | undefined>(undefined),
+			CalculationType: new FormControl<DeductionLineCalculationType | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Percentage: new FormControl<number | null | undefined>(undefined),
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeductionLineCalculationType { FIXEDAMOUNT = 0, PRETAX = 1, POSTTAX = 2 }
@@ -228,6 +484,41 @@ export namespace MyNS {
 		/** Super membership amount */
 		Amount?: number | null;
 	}
+	export interface SuperLineFormProperties {
+
+		/** Xero super membership ID */
+		SuperMembershipID: FormControl<string | null | undefined>,
+		ContributionType: FormControl<SuperLineContributionType | null | undefined>,
+		CalculationType: FormControl<SuperLineCalculationType | null | undefined>,
+
+		/** amount of mimimum earnings */
+		MinimumMonthlyEarnings: FormControl<number | null | undefined>,
+
+		/** expense account code */
+		ExpenseAccountCode: FormControl<string | null | undefined>,
+
+		/** liabilty account code */
+		LiabilityAccountCode: FormControl<string | null | undefined>,
+
+		/** percentage for super line */
+		Percentage: FormControl<number | null | undefined>,
+
+		/** Super membership amount */
+		Amount: FormControl<number | null | undefined>,
+	}
+	export function CreateSuperLineFormGroup() {
+		return new FormGroup<SuperLineFormProperties>({
+			SuperMembershipID: new FormControl<string | null | undefined>(undefined),
+			ContributionType: new FormControl<SuperLineContributionType | null | undefined>(undefined),
+			CalculationType: new FormControl<SuperLineCalculationType | null | undefined>(undefined),
+			MinimumMonthlyEarnings: new FormControl<number | null | undefined>(undefined),
+			ExpenseAccountCode: new FormControl<string | null | undefined>(undefined),
+			LiabilityAccountCode: new FormControl<string | null | undefined>(undefined),
+			Percentage: new FormControl<number | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum SuperLineContributionType { SGC = 0, SALARYSACRIFICE = 1, EMPLOYERADDITIONAL = 2, EMPLOYEE = 3 }
 
@@ -250,6 +541,32 @@ export namespace MyNS {
 		/** Reimbursement expense account. For posted pay run you should be able to see expense account code. */
 		ExpenseAccount?: string | null;
 	}
+	export interface ReimbursementLineFormProperties {
+
+		/** Xero reimbursement type identifier */
+		ReimbursementTypeID: FormControl<string | null | undefined>,
+
+		/** Reimbursement type amount */
+		Amount: FormControl<number | null | undefined>,
+
+		/**
+		 * Reimbursement lines description (max length 50)
+		 * Max length: 50
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/** Reimbursement expense account. For posted pay run you should be able to see expense account code. */
+		ExpenseAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateReimbursementLineFormGroup() {
+		return new FormGroup<ReimbursementLineFormProperties>({
+			ReimbursementTypeID: new FormControl<string | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ExpenseAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LeaveLine {
 
@@ -267,6 +584,33 @@ export namespace MyNS {
 		/** Leave number of units */
 		NumberOfUnits?: number | null;
 	}
+	export interface LeaveLineFormProperties {
+
+		/** Xero leave type identifier */
+		LeaveTypeID: FormControl<string | null | undefined>,
+
+		/** Calculation type for leave line for Opening Balance on Employee */
+		CalculationType: FormControl<LeaveLineCalculationType | null | undefined>,
+		EntitlementFinalPayPayoutType: FormControl<LeaveLineEntitlementFinalPayPayoutType | null | undefined>,
+		EmploymentTerminationPaymentType: FormControl<LeaveLineEmploymentTerminationPaymentType | null | undefined>,
+
+		/** amount of leave line */
+		IncludeSuperannuationGuaranteeContribution: FormControl<boolean | null | undefined>,
+
+		/** Leave number of units */
+		NumberOfUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateLeaveLineFormGroup() {
+		return new FormGroup<LeaveLineFormProperties>({
+			LeaveTypeID: new FormControl<string | null | undefined>(undefined),
+			CalculationType: new FormControl<LeaveLineCalculationType | null | undefined>(undefined),
+			EntitlementFinalPayPayoutType: new FormControl<LeaveLineEntitlementFinalPayPayoutType | null | undefined>(undefined),
+			EmploymentTerminationPaymentType: new FormControl<LeaveLineEmploymentTerminationPaymentType | null | undefined>(undefined),
+			IncludeSuperannuationGuaranteeContribution: new FormControl<boolean | null | undefined>(undefined),
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum LeaveLineCalculationType { NOCALCULATIONREQUIRED = 0, FIXEDAMOUNTEACHPERIOD = 1, ENTERRATEINPAYTEMPLATE = 2, BASEDONORDINARYEARNINGS = 3, _ = 4 }
 
@@ -281,11 +625,26 @@ export namespace MyNS {
 
 		/** Opening Balance tax */
 		Tax?: string | null;
-		EarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		SuperLines?: Array<SuperLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		LeaveLines?: Array<LeaveLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		SuperLines?: Array<SuperLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		LeaveLines?: Array<LeaveLine>;
+	}
+	export interface OpeningBalancesFormProperties {
+
+		/** Opening Balance Date. (YYYY-MM-DD) */
+		OpeningBalanceDate: FormControl<string | null | undefined>,
+
+		/** Opening Balance tax */
+		Tax: FormControl<string | null | undefined>,
+	}
+	export function CreateOpeningBalancesFormGroup() {
+		return new FormGroup<OpeningBalancesFormProperties>({
+			OpeningBalanceDate: new FormControl<string | null | undefined>(undefined),
+			Tax: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TaxDeclaration {
@@ -335,6 +694,74 @@ export namespace MyNS {
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 	}
+	export interface TaxDeclarationFormProperties {
+
+		/**
+		 * Address line 1 for employee home address
+		 * Required
+		 */
+		EmployeeID: FormControl<string | null | undefined>,
+		EmploymentBasis: FormControl<TaxDeclarationEmploymentBasis | null | undefined>,
+		TFNExemptionType: FormControl<TaxDeclarationTFNExemptionType | null | undefined>,
+
+		/** The tax file number e.g 123123123. */
+		TaxFileNumber: FormControl<string | null | undefined>,
+
+		/** If the employee is Australian resident for tax purposes. e.g true or false */
+		AustralianResidentForTaxPurposes: FormControl<boolean | null | undefined>,
+		ResidencyStatus: FormControl<TaxDeclarationResidencyStatus | null | undefined>,
+
+		/** If tax free threshold claimed. e.g true or false */
+		TaxFreeThresholdClaimed: FormControl<boolean | null | undefined>,
+
+		/** If has tax offset estimated then the tax offset estimated amount. e.g 100 */
+		TaxOffsetEstimatedAmount: FormControl<string | null | undefined>,
+
+		/** If employee has HECS or HELP debt. e.g true or false */
+		HasHELPDebt: FormControl<boolean | null | undefined>,
+
+		/** If employee has financial supplement debt. e.g true or false */
+		HasSFSSDebt: FormControl<boolean | null | undefined>,
+
+		/** If employee has trade support loan. e.g true or false */
+		HasTradeSupportLoanDebt: FormControl<boolean | null | undefined>,
+
+		/** If the employee has requested that additional tax be withheld each pay run. e.g 50 */
+		UpwardVariationTaxWithholdingAmount: FormControl<string | null | undefined>,
+
+		/** If the employee is eligible to receive an additional percentage on top of ordinary earnings when they take leave (typically 17.5%). e.g true or false */
+		EligibleToReceiveLeaveLoading: FormControl<boolean | null | undefined>,
+
+		/** If the employee has approved withholding variation. e.g (0 - 100) */
+		ApprovedWithholdingVariationPercentage: FormControl<string | null | undefined>,
+
+		/** If the employee is eligible for student startup loan rules */
+		HasStudentStartupLoan: FormControl<boolean | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreateTaxDeclarationFormGroup() {
+		return new FormGroup<TaxDeclarationFormProperties>({
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			EmploymentBasis: new FormControl<TaxDeclarationEmploymentBasis | null | undefined>(undefined),
+			TFNExemptionType: new FormControl<TaxDeclarationTFNExemptionType | null | undefined>(undefined),
+			TaxFileNumber: new FormControl<string | null | undefined>(undefined),
+			AustralianResidentForTaxPurposes: new FormControl<boolean | null | undefined>(undefined),
+			ResidencyStatus: new FormControl<TaxDeclarationResidencyStatus | null | undefined>(undefined),
+			TaxFreeThresholdClaimed: new FormControl<boolean | null | undefined>(undefined),
+			TaxOffsetEstimatedAmount: new FormControl<string | null | undefined>(undefined),
+			HasHELPDebt: new FormControl<boolean | null | undefined>(undefined),
+			HasSFSSDebt: new FormControl<boolean | null | undefined>(undefined),
+			HasTradeSupportLoanDebt: new FormControl<boolean | null | undefined>(undefined),
+			UpwardVariationTaxWithholdingAmount: new FormControl<string | null | undefined>(undefined),
+			EligibleToReceiveLeaveLoading: new FormControl<boolean | null | undefined>(undefined),
+			ApprovedWithholdingVariationPercentage: new FormControl<string | null | undefined>(undefined),
+			HasStudentStartupLoan: new FormControl<boolean | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum TaxDeclarationEmploymentBasis { FULLTIME = 0, PARTTIME = 1, CASUAL = 2, LABOURHIRE = 3, SUPERINCOMESTREAM = 4 }
 
@@ -356,6 +783,29 @@ export namespace MyNS {
 		/** The type of units as specified by the LeaveType (see PayItems) */
 		TypeOfUnits?: string | null;
 	}
+	export interface LeaveBalanceFormProperties {
+
+		/** The name of the leave type */
+		LeaveName: FormControl<string | null | undefined>,
+
+		/** Identifier of the leave type (see PayItems) */
+		LeaveTypeID: FormControl<string | null | undefined>,
+
+		/** The balance of the leave available */
+		NumberOfUnits: FormControl<number | null | undefined>,
+
+		/** The type of units as specified by the LeaveType (see PayItems) */
+		TypeOfUnits: FormControl<string | null | undefined>,
+	}
+	export function CreateLeaveBalanceFormGroup() {
+		return new FormGroup<LeaveBalanceFormProperties>({
+			LeaveName: new FormControl<string | null | undefined>(undefined),
+			LeaveTypeID: new FormControl<string | null | undefined>(undefined),
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+			TypeOfUnits: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SuperMembership {
 
@@ -374,6 +824,31 @@ export namespace MyNS {
 		 */
 		EmployeeNumber: number;
 	}
+	export interface SuperMembershipFormProperties {
+
+		/** Xero unique identifier for Super membership */
+		SuperMembershipID: FormControl<string | null | undefined>,
+
+		/**
+		 * Xero identifier for super fund
+		 * Required
+		 */
+		SuperFundID: FormControl<string | null | undefined>,
+
+		/**
+		 * The memberhsip number assigned to the employee by the super fund.
+		 * Required
+		 */
+		EmployeeNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateSuperMembershipFormGroup() {
+		return new FormGroup<SuperMembershipFormProperties>({
+			SuperMembershipID: new FormControl<string | null | undefined>(undefined),
+			SuperFundID: new FormControl<string | null | undefined>(undefined),
+			EmployeeNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum EmployeeStatus { ACTIVE = 0, TERMINATED = 1 }
 
@@ -382,9 +857,27 @@ export namespace MyNS {
 		/** Validation error message */
 		Message?: string | null;
 	}
+	export interface ValidationErrorFormProperties {
+
+		/** Validation error message */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateValidationErrorFormGroup() {
+		return new FormGroup<ValidationErrorFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LeaveApplications {
-		LeaveApplications1?: Array<LeaveApplication> | null;
+		LeaveApplications1?: Array<LeaveApplication>;
+	}
+	export interface LeaveApplicationsFormProperties {
+	}
+	export function CreateLeaveApplicationsFormGroup() {
+		return new FormGroup<LeaveApplicationsFormProperties>({
+		});
+
 	}
 
 	export interface LeaveApplication {
@@ -409,13 +902,52 @@ export namespace MyNS {
 
 		/** The Description of the Leave */
 		Description?: string | null;
-		LeavePeriods?: Array<LeavePeriod> | null;
+		LeavePeriods?: Array<LeavePeriod>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface LeaveApplicationFormProperties {
+
+		/** The Xero identifier for Payroll Employee */
+		LeaveApplicationID: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for Payroll Employee */
+		EmployeeID: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for Leave Type */
+		LeaveTypeID: FormControl<string | null | undefined>,
+
+		/** The title of the leave */
+		Title: FormControl<string | null | undefined>,
+
+		/** Start date of the leave (YYYY-MM-DD) */
+		StartDate: FormControl<string | null | undefined>,
+
+		/** End date of the leave (YYYY-MM-DD) */
+		EndDate: FormControl<string | null | undefined>,
+
+		/** The Description of the Leave */
+		Description: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreateLeaveApplicationFormGroup() {
+		return new FormGroup<LeaveApplicationFormProperties>({
+			LeaveApplicationID: new FormControl<string | null | undefined>(undefined),
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			LeaveTypeID: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			EndDate: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LeavePeriod {
@@ -430,20 +962,55 @@ export namespace MyNS {
 		PayPeriodStartDate?: string | null;
 		LeavePeriodStatus?: LeavePeriodLeavePeriodStatus | null;
 	}
+	export interface LeavePeriodFormProperties {
+
+		/** The Number of Units for the leave */
+		NumberOfUnits: FormControl<number | null | undefined>,
+
+		/** The Pay Period End Date (YYYY-MM-DD) */
+		PayPeriodEndDate: FormControl<string | null | undefined>,
+
+		/** The Pay Period Start Date (YYYY-MM-DD) */
+		PayPeriodStartDate: FormControl<string | null | undefined>,
+		LeavePeriodStatus: FormControl<LeavePeriodLeavePeriodStatus | null | undefined>,
+	}
+	export function CreateLeavePeriodFormGroup() {
+		return new FormGroup<LeavePeriodFormProperties>({
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+			PayPeriodEndDate: new FormControl<string | null | undefined>(undefined),
+			PayPeriodStartDate: new FormControl<string | null | undefined>(undefined),
+			LeavePeriodStatus: new FormControl<LeavePeriodLeavePeriodStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum LeavePeriodLeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
 
 	export enum LeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
 
 	export interface PayItems {
-		PayItems1?: PayItem | null;
+		PayItems1?: PayItem;
+	}
+	export interface PayItemsFormProperties {
+	}
+	export function CreatePayItemsFormGroup() {
+		return new FormGroup<PayItemsFormProperties>({
+		});
+
 	}
 
 	export interface PayItem {
-		EarningsRates?: Array<EarningsRate> | null;
-		DeductionTypes?: Array<DeductionType> | null;
-		LeaveTypes?: Array<LeaveType> | null;
-		ReimbursementTypes?: Array<ReimbursementType> | null;
+		EarningsRates?: Array<EarningsRate>;
+		DeductionTypes?: Array<DeductionType>;
+		LeaveTypes?: Array<LeaveType>;
+		ReimbursementTypes?: Array<ReimbursementType>;
+	}
+	export interface PayItemFormProperties {
+	}
+	export function CreatePayItemFormGroup() {
+		return new FormGroup<PayItemFormProperties>({
+		});
+
 	}
 
 	export interface EarningsRate {
@@ -497,6 +1064,79 @@ export namespace MyNS {
 		CurrentRecord?: boolean | null;
 		AllowanceType?: EarningsRateAllowanceType | null;
 	}
+	export interface EarningsRateFormProperties {
+
+		/**
+		 * Name of the earnings rate (max length = 100)
+		 * Max length: 100
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** See Accounts */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Type of units used to record earnings (max length = 50). Only When RateType is RATEPERUNIT
+		 * Max length: 50
+		 */
+		TypeOfUnits: FormControl<string | null | undefined>,
+
+		/** Most payments are subject to tax, so you should only set this value if you are sure that a payment is exempt from PAYG withholding */
+		IsExemptFromTax: FormControl<boolean | null | undefined>,
+
+		/** See the ATO website for details of which payments are exempt from SGC */
+		IsExemptFromSuper: FormControl<boolean | null | undefined>,
+
+		/** Boolean to determine if the earnings rate is reportable or exempt from W1 */
+		IsReportableAsW1: FormControl<boolean | null | undefined>,
+		EarningsType: FormControl<EarningsRateEarningsType | null | undefined>,
+
+		/** Xero identifier */
+		EarningsRateID: FormControl<string | null | undefined>,
+		RateType: FormControl<EarningsRateRateType | null | undefined>,
+
+		/** Default rate per unit (optional). Only applicable if RateType is RATEPERUNIT. */
+		RatePerUnit: FormControl<string | null | undefined>,
+
+		/** This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE */
+		Multiplier: FormControl<number | null | undefined>,
+
+		/** Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE */
+		AccrueLeave: FormControl<boolean | null | undefined>,
+
+		/** Optional Amount for FIXEDAMOUNT RateType EarningsRate */
+		Amount: FormControl<number | null | undefined>,
+		EmploymentTerminationPaymentType: FormControl<LeaveLineEmploymentTerminationPaymentType | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+
+		/** Is the current record */
+		CurrentRecord: FormControl<boolean | null | undefined>,
+		AllowanceType: FormControl<EarningsRateAllowanceType | null | undefined>,
+	}
+	export function CreateEarningsRateFormGroup() {
+		return new FormGroup<EarningsRateFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			TypeOfUnits: new FormControl<string | null | undefined>(undefined),
+			IsExemptFromTax: new FormControl<boolean | null | undefined>(undefined),
+			IsExemptFromSuper: new FormControl<boolean | null | undefined>(undefined),
+			IsReportableAsW1: new FormControl<boolean | null | undefined>(undefined),
+			EarningsType: new FormControl<EarningsRateEarningsType | null | undefined>(undefined),
+			EarningsRateID: new FormControl<string | null | undefined>(undefined),
+			RateType: new FormControl<EarningsRateRateType | null | undefined>(undefined),
+			RatePerUnit: new FormControl<string | null | undefined>(undefined),
+			Multiplier: new FormControl<number | null | undefined>(undefined),
+			AccrueLeave: new FormControl<boolean | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			EmploymentTerminationPaymentType: new FormControl<LeaveLineEmploymentTerminationPaymentType | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+			CurrentRecord: new FormControl<boolean | null | undefined>(undefined),
+			AllowanceType: new FormControl<EarningsRateAllowanceType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum EarningsRateEarningsType { FIXED = 0, ORDINARYTIMEEARNINGS = 1, OVERTIMEEARNINGS = 2, ALLOWANCE = 3, LUMPSUMD = 4, EMPLOYMENTTERMINATIONPAYMENT = 5, LUMPSUMA = 6, LUMPSUMB = 7 }
 
@@ -534,6 +1174,50 @@ export namespace MyNS {
 		/** Is the current record */
 		CurrentRecord?: boolean | null;
 	}
+	export interface DeductionTypeFormProperties {
+
+		/**
+		 * Name of the earnings rate (max length = 100)
+		 * Max length: 100
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** See Accounts */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/** Indicates that this is a pre-tax deduction that will reduce the amount of tax you withhold from an employee. */
+		ReducesTax: FormControl<boolean | null | undefined>,
+
+		/** Most deductions don’t reduce your superannuation guarantee contribution liability, so typically you will not set any value for this. */
+		ReducesSuper: FormControl<boolean | null | undefined>,
+
+		/** Boolean to determine if the deduction type is reportable or exempt from W1 */
+		IsExemptFromW1: FormControl<boolean | null | undefined>,
+
+		/** Xero identifier */
+		DeductionTypeID: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+		DeductionCategory: FormControl<DeductionTypeDeductionCategory | null | undefined>,
+
+		/** Is the current record */
+		CurrentRecord: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeductionTypeFormGroup() {
+		return new FormGroup<DeductionTypeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			ReducesTax: new FormControl<boolean | null | undefined>(undefined),
+			ReducesSuper: new FormControl<boolean | null | undefined>(undefined),
+			IsExemptFromW1: new FormControl<boolean | null | undefined>(undefined),
+			DeductionTypeID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+			DeductionCategory: new FormControl<DeductionTypeDeductionCategory | null | undefined>(undefined),
+			CurrentRecord: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DeductionTypeDeductionCategory { NONE = 0, UNIONFEES = 1, WORKPLACEGIVING = 2 }
 
@@ -569,6 +1253,52 @@ export namespace MyNS {
 		/** Is the current record */
 		CurrentRecord?: boolean | null;
 	}
+	export interface LeaveTypeFormProperties {
+
+		/**
+		 * Name of the earnings rate (max length = 100)
+		 * Max length: 100
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** The type of units by which leave entitlements are normally tracked. These are typically the same as the type of units used for the employee’s ordinary earnings rate */
+		TypeOfUnits: FormControl<string | null | undefined>,
+
+		/** Xero identifier */
+		LeaveTypeID: FormControl<string | null | undefined>,
+
+		/** The number of units the employee is entitled to each year */
+		NormalEntitlement: FormControl<number | null | undefined>,
+
+		/** Enter an amount here if your organisation pays an additional percentage on top of ordinary earnings when your employees take leave (typically 17.5%) */
+		LeaveLoadingRate: FormControl<number | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+
+		/** Set this to indicate that an employee will be paid when taking this type of leave */
+		IsPaidLeave: FormControl<boolean | null | undefined>,
+
+		/** Set this if you want a balance for this leave type to be shown on your employee’s payslips */
+		ShowOnPayslip: FormControl<boolean | null | undefined>,
+
+		/** Is the current record */
+		CurrentRecord: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLeaveTypeFormGroup() {
+		return new FormGroup<LeaveTypeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			TypeOfUnits: new FormControl<string | null | undefined>(undefined),
+			LeaveTypeID: new FormControl<string | null | undefined>(undefined),
+			NormalEntitlement: new FormControl<number | null | undefined>(undefined),
+			LeaveLoadingRate: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+			IsPaidLeave: new FormControl<boolean | null | undefined>(undefined),
+			ShowOnPayslip: new FormControl<boolean | null | undefined>(undefined),
+			CurrentRecord: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReimbursementType {
 
@@ -590,9 +1320,46 @@ export namespace MyNS {
 		/** Is the current record */
 		CurrentRecord?: boolean | null;
 	}
+	export interface ReimbursementTypeFormProperties {
+
+		/**
+		 * Name of the earnings rate (max length = 100)
+		 * Max length: 100
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** See Accounts */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/** Xero identifier */
+		ReimbursementTypeID: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+
+		/** Is the current record */
+		CurrentRecord: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReimbursementTypeFormGroup() {
+		return new FormGroup<ReimbursementTypeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			ReimbursementTypeID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+			CurrentRecord: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PayrollCalendars {
-		PayrollCalendars1?: Array<PayrollCalendar> | null;
+		PayrollCalendars1?: Array<PayrollCalendar>;
+	}
+	export interface PayrollCalendarsFormProperties {
+	}
+	export function CreatePayrollCalendarsFormGroup() {
+		return new FormGroup<PayrollCalendarsFormProperties>({
+		});
+
 	}
 
 	export interface PayrollCalendar {
@@ -614,13 +1381,49 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface PayrollCalendarFormProperties {
+
+		/** Name of the Payroll Calendar */
+		Name: FormControl<string | null | undefined>,
+		CalendarType: FormControl<PayrollCalendarCalendarType | null | undefined>,
+
+		/** The start date of the upcoming pay period. The end date will be calculated based upon this date, and the calendar type selected (YYYY-MM-DD) */
+		StartDate: FormControl<string | null | undefined>,
+
+		/** The date on which employees will be paid for the upcoming pay period (YYYY-MM-DD) */
+		PaymentDate: FormControl<string | null | undefined>,
+
+		/** Xero identifier */
+		PayrollCalendarID: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreatePayrollCalendarFormGroup() {
+		return new FormGroup<PayrollCalendarFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CalendarType: new FormControl<PayrollCalendarCalendarType | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			PaymentDate: new FormControl<string | null | undefined>(undefined),
+			PayrollCalendarID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PayrollCalendarCalendarType { WEEKLY = 0, FORTNIGHTLY = 1, FOURWEEKLY = 2, MONTHLY = 3, TWICEMONTHLY = 4, QUARTERLY = 5 }
 
 	export interface Timesheets {
-		Timesheets1?: Array<Timesheet> | null;
+		Timesheets1?: Array<Timesheet>;
+	}
+	export interface TimesheetsFormProperties {
+	}
+	export function CreateTimesheetsFormGroup() {
+		return new FormGroup<TimesheetsFormProperties>({
+		});
+
 	}
 
 	export interface Timesheet {
@@ -649,13 +1452,55 @@ export namespace MyNS {
 
 		/** The Xero identifier for a Payroll Timesheet */
 		TimesheetID?: string | null;
-		TimesheetLines?: Array<TimesheetLine> | null;
+		TimesheetLines?: Array<TimesheetLine>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface TimesheetFormProperties {
+
+		/**
+		 * The Xero identifier for an employee
+		 * Required
+		 */
+		EmployeeID: FormControl<string | null | undefined>,
+
+		/**
+		 * Period start date (YYYY-MM-DD)
+		 * Required
+		 */
+		StartDate: FormControl<string | null | undefined>,
+
+		/**
+		 * Period end date (YYYY-MM-DD)
+		 * Required
+		 */
+		EndDate: FormControl<string | null | undefined>,
+		Status: FormControl<TimesheetStatus | null | undefined>,
+
+		/** Timesheet total hours */
+		Hours: FormControl<number | null | undefined>,
+
+		/** The Xero identifier for a Payroll Timesheet */
+		TimesheetID: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreateTimesheetFormGroup() {
+		return new FormGroup<TimesheetFormProperties>({
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			EndDate: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<TimesheetStatus | null | undefined>(undefined),
+			Hours: new FormControl<number | null | undefined>(undefined),
+			TimesheetID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TimesheetStatus { DRAFT = 0, PROCESSED = 1, APPROVED = 2 }
@@ -669,18 +1514,51 @@ export namespace MyNS {
 		TrackingItemID?: string | null;
 
 		/** The number of units on a timesheet line */
-		NumberOfUnits?: Array<number> | null;
+		NumberOfUnits?: Array<number>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 	}
+	export interface TimesheetLineFormProperties {
+
+		/** The Xero identifier for an Earnings Rate */
+		EarningsRateID: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for a Tracking Category. The TrackingOptionID must belong to the TrackingCategory selected as TimesheetCategories under Payroll Settings. */
+		TrackingItemID: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreateTimesheetLineFormGroup() {
+		return new FormGroup<TimesheetLineFormProperties>({
+			EarningsRateID: new FormControl<string | null | undefined>(undefined),
+			TrackingItemID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TimesheetObject {
-		Timesheet?: Timesheet | null;
+		Timesheet?: Timesheet;
+	}
+	export interface TimesheetObjectFormProperties {
+	}
+	export function CreateTimesheetObjectFormGroup() {
+		return new FormGroup<TimesheetObjectFormProperties>({
+		});
+
 	}
 
 	export interface PayRuns {
-		PayRuns1?: Array<PayRun> | null;
+		PayRuns1?: Array<PayRun>;
+	}
+	export interface PayRunsFormProperties {
+	}
+	export function CreatePayRunsFormGroup() {
+		return new FormGroup<PayRunsFormProperties>({
+		});
+
 	}
 
 	export interface PayRun {
@@ -711,7 +1589,7 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** The payslips in the payrun */
-		Payslips?: Array<PayslipSummary> | null;
+		Payslips?: Array<PayslipSummary>;
 
 		/** The total Wages for the Payrun */
 		Wages?: number | null;
@@ -732,7 +1610,71 @@ export namespace MyNS {
 		NetPay?: number | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface PayRunFormProperties {
+
+		/**
+		 * Xero identifier for pay run
+		 * Required
+		 */
+		PayrollCalendarID: FormControl<string | null | undefined>,
+
+		/** Xero identifier for pay run */
+		PayRunID: FormControl<string | null | undefined>,
+
+		/** Period Start Date for the PayRun (YYYY-MM-DD) */
+		PayRunPeriodStartDate: FormControl<string | null | undefined>,
+
+		/** Period End Date for the PayRun (YYYY-MM-DD) */
+		PayRunPeriodEndDate: FormControl<string | null | undefined>,
+		PayRunStatus: FormControl<PayRunPayRunStatus | null | undefined>,
+
+		/** Payment Date for the PayRun (YYYY-MM-DD) */
+		PaymentDate: FormControl<string | null | undefined>,
+
+		/** Payslip message for the PayRun */
+		PayslipMessage: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+
+		/** The total Wages for the Payrun */
+		Wages: FormControl<number | null | undefined>,
+
+		/** The total Deductions for the Payrun */
+		Deductions: FormControl<number | null | undefined>,
+
+		/** The total Tax for the Payrun */
+		Tax: FormControl<number | null | undefined>,
+
+		/** The total Super for the Payrun */
+		Super: FormControl<number | null | undefined>,
+
+		/** The total Reimbursements for the Payrun */
+		Reimbursement: FormControl<number | null | undefined>,
+
+		/** The total NetPay for the Payrun */
+		NetPay: FormControl<number | null | undefined>,
+	}
+	export function CreatePayRunFormGroup() {
+		return new FormGroup<PayRunFormProperties>({
+			PayrollCalendarID: new FormControl<string | null | undefined>(undefined),
+			PayRunID: new FormControl<string | null | undefined>(undefined),
+			PayRunPeriodStartDate: new FormControl<string | null | undefined>(undefined),
+			PayRunPeriodEndDate: new FormControl<string | null | undefined>(undefined),
+			PayRunStatus: new FormControl<PayRunPayRunStatus | null | undefined>(undefined),
+			PaymentDate: new FormControl<string | null | undefined>(undefined),
+			PayslipMessage: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+			Wages: new FormControl<number | null | undefined>(undefined),
+			Deductions: new FormControl<number | null | undefined>(undefined),
+			Tax: new FormControl<number | null | undefined>(undefined),
+			Super: new FormControl<number | null | undefined>(undefined),
+			Reimbursement: new FormControl<number | null | undefined>(undefined),
+			NetPay: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PayRunPayRunStatus { DRAFT = 0, POSTED = 1 }
@@ -775,16 +1717,78 @@ export namespace MyNS {
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 	}
+	export interface PayslipSummaryFormProperties {
+
+		/** The Xero identifier for an employee */
+		EmployeeID: FormControl<string | null | undefined>,
+
+		/** Xero identifier for the payslip */
+		PayslipID: FormControl<string | null | undefined>,
+
+		/** First name of employee */
+		FirstName: FormControl<string | null | undefined>,
+
+		/** Last name of employee */
+		LastName: FormControl<string | null | undefined>,
+
+		/** Employee group name */
+		EmployeeGroup: FormControl<string | null | undefined>,
+
+		/** The Wages for the Payslip */
+		Wages: FormControl<number | null | undefined>,
+
+		/** The Deductions for the Payslip */
+		Deductions: FormControl<number | null | undefined>,
+
+		/** The Tax for the Payslip */
+		Tax: FormControl<number | null | undefined>,
+
+		/** The Super for the Payslip */
+		Super: FormControl<number | null | undefined>,
+
+		/** The Reimbursements for the Payslip */
+		Reimbursements: FormControl<number | null | undefined>,
+
+		/** The NetPay for the Payslip */
+		NetPay: FormControl<number | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreatePayslipSummaryFormGroup() {
+		return new FormGroup<PayslipSummaryFormProperties>({
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			PayslipID: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			EmployeeGroup: new FormControl<string | null | undefined>(undefined),
+			Wages: new FormControl<number | null | undefined>(undefined),
+			Deductions: new FormControl<number | null | undefined>(undefined),
+			Tax: new FormControl<number | null | undefined>(undefined),
+			Super: new FormControl<number | null | undefined>(undefined),
+			Reimbursements: new FormControl<number | null | undefined>(undefined),
+			NetPay: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PayslipLines {
-		EarningsLines?: Array<EarningsLine> | null;
-		LeaveEarningsLines?: Array<LeaveEarningsLine> | null;
-		TimesheetEarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		LeaveAccrualLines?: Array<LeaveAccrualLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		SuperannuationLines?: Array<SuperannuationLine> | null;
-		TaxLines?: Array<TaxLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		LeaveEarningsLines?: Array<LeaveEarningsLine>;
+		TimesheetEarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		LeaveAccrualLines?: Array<LeaveAccrualLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		SuperannuationLines?: Array<SuperannuationLine>;
+		TaxLines?: Array<TaxLine>;
+	}
+	export interface PayslipLinesFormProperties {
+	}
+	export function CreatePayslipLinesFormGroup() {
+		return new FormGroup<PayslipLinesFormProperties>({
+		});
+
 	}
 
 	export interface LeaveEarningsLine {
@@ -798,6 +1802,25 @@ export namespace MyNS {
 		/** Earnings rate number of units. */
 		NumberOfUnits?: number | null;
 	}
+	export interface LeaveEarningsLineFormProperties {
+
+		/** Xero identifier */
+		EarningsRateID: FormControl<string | null | undefined>,
+
+		/** Rate per unit of the EarningsLine. */
+		RatePerUnit: FormControl<number | null | undefined>,
+
+		/** Earnings rate number of units. */
+		NumberOfUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateLeaveEarningsLineFormGroup() {
+		return new FormGroup<LeaveEarningsLineFormProperties>({
+			EarningsRateID: new FormControl<string | null | undefined>(undefined),
+			RatePerUnit: new FormControl<number | null | undefined>(undefined),
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LeaveAccrualLine {
 
@@ -809,6 +1832,25 @@ export namespace MyNS {
 
 		/** If you want to auto calculate leave. */
 		AutoCalculate?: boolean | null;
+	}
+	export interface LeaveAccrualLineFormProperties {
+
+		/** Xero identifier for the Leave type. */
+		LeaveTypeID: FormControl<string | null | undefined>,
+
+		/** Leave Accrual number of units */
+		NumberOfUnits: FormControl<number | null | undefined>,
+
+		/** If you want to auto calculate leave. */
+		AutoCalculate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLeaveAccrualLineFormGroup() {
+		return new FormGroup<LeaveAccrualLineFormProperties>({
+			LeaveTypeID: new FormControl<string | null | undefined>(undefined),
+			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
+			AutoCalculate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SuperannuationLine {
@@ -836,6 +1878,45 @@ export namespace MyNS {
 		/** Superannuation amount */
 		Amount?: number | null;
 	}
+	export interface SuperannuationLineFormProperties {
+
+		/** Xero identifier for payroll super fund membership ID. */
+		SuperMembershipID: FormControl<string | null | undefined>,
+		ContributionType: FormControl<SuperLineContributionType | null | undefined>,
+		CalculationType: FormControl<SuperLineCalculationType | null | undefined>,
+
+		/** Superannuation minimum monthly earnings. */
+		MinimumMonthlyEarnings: FormControl<number | null | undefined>,
+
+		/** Superannuation expense account code. */
+		ExpenseAccountCode: FormControl<string | null | undefined>,
+
+		/** Superannuation liability account code */
+		LiabilityAccountCode: FormControl<string | null | undefined>,
+
+		/** Superannuation payment date for the current period (YYYY-MM-DD) */
+		PaymentDateForThisPeriod: FormControl<string | null | undefined>,
+
+		/** Superannuation percentage */
+		Percentage: FormControl<number | null | undefined>,
+
+		/** Superannuation amount */
+		Amount: FormControl<number | null | undefined>,
+	}
+	export function CreateSuperannuationLineFormGroup() {
+		return new FormGroup<SuperannuationLineFormProperties>({
+			SuperMembershipID: new FormControl<string | null | undefined>(undefined),
+			ContributionType: new FormControl<SuperLineContributionType | null | undefined>(undefined),
+			CalculationType: new FormControl<SuperLineCalculationType | null | undefined>(undefined),
+			MinimumMonthlyEarnings: new FormControl<number | null | undefined>(undefined),
+			ExpenseAccountCode: new FormControl<string | null | undefined>(undefined),
+			LiabilityAccountCode: new FormControl<string | null | undefined>(undefined),
+			PaymentDateForThisPeriod: new FormControl<string | null | undefined>(undefined),
+			Percentage: new FormControl<number | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaxLine {
 
@@ -855,11 +1936,47 @@ export namespace MyNS {
 		/** The tax line liability account code. For posted pay run you should be able to see liability account code */
 		LiabilityAccount?: string | null;
 	}
+	export interface TaxLineFormProperties {
+
+		/** Xero identifier for payslip tax line ID. */
+		PayslipTaxLineID: FormControl<string | null | undefined>,
+
+		/** The tax line amount */
+		Amount: FormControl<number | null | undefined>,
+
+		/** Name of the tax type. */
+		TaxTypeName: FormControl<string | null | undefined>,
+
+		/** Description of the tax line. */
+		Description: FormControl<string | null | undefined>,
+		ManualTaxType: FormControl<TaxLineManualTaxType | null | undefined>,
+
+		/** The tax line liability account code. For posted pay run you should be able to see liability account code */
+		LiabilityAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateTaxLineFormGroup() {
+		return new FormGroup<TaxLineFormProperties>({
+			PayslipTaxLineID: new FormControl<string | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			TaxTypeName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ManualTaxType: new FormControl<TaxLineManualTaxType | null | undefined>(undefined),
+			LiabilityAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum TaxLineManualTaxType { PAYGMANUAL = 0, ETPOMANUAL = 1, ETPRMANUAL = 2 }
 
 	export interface PayslipObject {
-		Payslip?: Payslip | null;
+		Payslip?: Payslip;
+	}
+	export interface PayslipObjectFormProperties {
+	}
+	export function CreatePayslipObjectFormGroup() {
+		return new FormGroup<PayslipObjectFormProperties>({
+		});
+
 	}
 
 	export interface Payslip {
@@ -893,37 +2010,113 @@ export namespace MyNS {
 
 		/** The NetPay for the Payslip */
 		NetPay?: number | null;
-		EarningsLines?: Array<EarningsLine> | null;
-		LeaveEarningsLines?: Array<LeaveEarningsLine> | null;
-		TimesheetEarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		LeaveAccrualLines?: Array<LeaveAccrualLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		SuperannuationLines?: Array<SuperannuationLine> | null;
-		TaxLines?: Array<TaxLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		LeaveEarningsLines?: Array<LeaveEarningsLine>;
+		TimesheetEarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		LeaveAccrualLines?: Array<LeaveAccrualLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		SuperannuationLines?: Array<SuperannuationLine>;
+		TaxLines?: Array<TaxLine>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 	}
+	export interface PayslipFormProperties {
+
+		/** The Xero identifier for an employee */
+		EmployeeID: FormControl<string | null | undefined>,
+
+		/** Xero identifier for the payslip */
+		PayslipID: FormControl<string | null | undefined>,
+
+		/** First name of employee */
+		FirstName: FormControl<string | null | undefined>,
+
+		/** Last name of employee */
+		LastName: FormControl<string | null | undefined>,
+
+		/** The Wages for the Payslip */
+		Wages: FormControl<number | null | undefined>,
+
+		/** The Deductions for the Payslip */
+		Deductions: FormControl<number | null | undefined>,
+
+		/** The Tax for the Payslip */
+		Tax: FormControl<number | null | undefined>,
+
+		/** The Super for the Payslip */
+		Super: FormControl<number | null | undefined>,
+
+		/** The Reimbursements for the Payslip */
+		Reimbursements: FormControl<number | null | undefined>,
+
+		/** The NetPay for the Payslip */
+		NetPay: FormControl<number | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreatePayslipFormGroup() {
+		return new FormGroup<PayslipFormProperties>({
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			PayslipID: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			Wages: new FormControl<number | null | undefined>(undefined),
+			Deductions: new FormControl<number | null | undefined>(undefined),
+			Tax: new FormControl<number | null | undefined>(undefined),
+			Super: new FormControl<number | null | undefined>(undefined),
+			Reimbursements: new FormControl<number | null | undefined>(undefined),
+			NetPay: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Payslips {
-		Payslips1?: Array<Payslip> | null;
+		Payslips1?: Array<Payslip>;
+	}
+	export interface PayslipsFormProperties {
+	}
+	export function CreatePayslipsFormGroup() {
+		return new FormGroup<PayslipsFormProperties>({
+		});
+
 	}
 
 	export interface SettingsObject {
-		Settings?: Settings | null;
+		Settings?: Settings;
+	}
+	export interface SettingsObjectFormProperties {
+	}
+	export function CreateSettingsObjectFormGroup() {
+		return new FormGroup<SettingsObjectFormProperties>({
+		});
+
 	}
 
 	export interface Settings {
 
 		/** Payroll Account details for SuperExpense, SuperLiabilty, WagesExpense, PAYGLiability & WagesPayable. */
-		Accounts?: Array<Account> | null;
+		Accounts?: Array<Account>;
 
 		/** Tracking categories for Employees and Timesheets */
-		TrackingCategories?: SettingsTrackingCategories | null;
+		TrackingCategories?: SettingsTrackingCategories;
 
 		/** Number of days in the Payroll year */
 		DaysInPayrollYear?: number | null;
+	}
+	export interface SettingsFormProperties {
+
+		/** Number of days in the Payroll year */
+		DaysInPayrollYear: FormControl<number | null | undefined>,
+	}
+	export function CreateSettingsFormGroup() {
+		return new FormGroup<SettingsFormProperties>({
+			DaysInPayrollYear: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Account {
@@ -940,16 +2133,46 @@ export namespace MyNS {
 		/** Name of account */
 		Name?: string | null;
 	}
+	export interface AccountFormProperties {
+
+		/** Xero identifier for accounts */
+		AccountID: FormControl<string | null | undefined>,
+
+		/** See Account Types */
+		Type: FormControl<AccountType | null | undefined>,
+
+		/** Customer defined account code */
+		Code: FormControl<string | null | undefined>,
+
+		/** Name of account */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			AccountID: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<AccountType | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum AccountType { BANK = 0, CURRENT = 1, CURRLIAB = 2, DEPRECIATN = 3, DIRECTCOSTS = 4, EQUITY = 5, EXPENSE = 6, FIXED = 7, INVENTORY = 8, LIABILITY = 9, NONCURRENT = 10, OTHERINCOME = 11, OVERHEADS = 12, PREPAYMENT = 13, REVENUE = 14, SALES = 15, TERMLIAB = 16, PAYGLIABILITY = 17, PAYG = 18, SUPERANNUATIONEXPENSE = 19, SUPERANNUATIONLIABILITY = 20, WAGESEXPENSE = 21, WAGESPAYABLELIABILITY = 22 }
 
 	export interface SettingsTrackingCategories {
 
 		/** The tracking category used for employees */
-		EmployeeGroups?: SettingsTrackingCategoriesEmployeeGroups | null;
+		EmployeeGroups?: SettingsTrackingCategoriesEmployeeGroups;
 
 		/** The tracking category used for timesheets */
-		TimesheetCategories?: SettingsTrackingCategoriesTimesheetCategories | null;
+		TimesheetCategories?: SettingsTrackingCategoriesTimesheetCategories;
+	}
+	export interface SettingsTrackingCategoriesFormProperties {
+	}
+	export function CreateSettingsTrackingCategoriesFormGroup() {
+		return new FormGroup<SettingsTrackingCategoriesFormProperties>({
+		});
+
 	}
 
 	export interface SettingsTrackingCategoriesEmployeeGroups {
@@ -960,6 +2183,21 @@ export namespace MyNS {
 		/** Name of the tracking category */
 		TrackingCategoryName?: string | null;
 	}
+	export interface SettingsTrackingCategoriesEmployeeGroupsFormProperties {
+
+		/** The identifier for the tracking category */
+		TrackingCategoryID: FormControl<string | null | undefined>,
+
+		/** Name of the tracking category */
+		TrackingCategoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateSettingsTrackingCategoriesEmployeeGroupsFormGroup() {
+		return new FormGroup<SettingsTrackingCategoriesEmployeeGroupsFormProperties>({
+			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
+			TrackingCategoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SettingsTrackingCategoriesTimesheetCategories {
 
@@ -969,9 +2207,31 @@ export namespace MyNS {
 		/** Name of the tracking category */
 		TrackingCategoryName?: string | null;
 	}
+	export interface SettingsTrackingCategoriesTimesheetCategoriesFormProperties {
+
+		/** The identifier for the tracking category */
+		TrackingCategoryID: FormControl<string | null | undefined>,
+
+		/** Name of the tracking category */
+		TrackingCategoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateSettingsTrackingCategoriesTimesheetCategoriesFormGroup() {
+		return new FormGroup<SettingsTrackingCategoriesTimesheetCategoriesFormProperties>({
+			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
+			TrackingCategoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SuperFunds {
-		SuperFunds1?: Array<SuperFund> | null;
+		SuperFunds1?: Array<SuperFund>;
+	}
+	export interface SuperFundsFormProperties {
+	}
+	export function CreateSuperFundsFormGroup() {
+		return new FormGroup<SuperFundsFormProperties>({
+		});
+
 	}
 
 	export interface SuperFund {
@@ -1011,13 +2271,73 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface SuperFundFormProperties {
+
+		/** Xero identifier for a super fund */
+		SuperFundID: FormControl<string | null | undefined>,
+		Type: FormControl<SuperFundType | null | undefined>,
+
+		/** Name of the super fund */
+		Name: FormControl<string | null | undefined>,
+
+		/** ABN of the self managed super fund */
+		ABN: FormControl<string | null | undefined>,
+
+		/** BSB of the self managed super fund */
+		BSB: FormControl<string | null | undefined>,
+
+		/** The account number for the self managed super fund. */
+		AccountNumber: FormControl<string | null | undefined>,
+
+		/** The account name for the self managed super fund. */
+		AccountName: FormControl<string | null | undefined>,
+
+		/** The electronic service address for the self managed super fund. */
+		ElectronicServiceAddress: FormControl<string | null | undefined>,
+
+		/** Some funds assign a unique number to each employer */
+		EmployerNumber: FormControl<string | null | undefined>,
+
+		/** The SPIN of the Regulated SuperFund. This field has been deprecated. It will only be present for legacy superfunds. New superfunds will not have a SPIN value. The USI field should be used instead of SPIN. */
+		SPIN: FormControl<string | null | undefined>,
+
+		/** The USI of the Regulated SuperFund */
+		USI: FormControl<string | null | undefined>,
+
+		/** Last modified timestamp */
+		UpdatedDateUTC: FormControl<string | null | undefined>,
+	}
+	export function CreateSuperFundFormGroup() {
+		return new FormGroup<SuperFundFormProperties>({
+			SuperFundID: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<SuperFundType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ABN: new FormControl<string | null | undefined>(undefined),
+			BSB: new FormControl<string | null | undefined>(undefined),
+			AccountNumber: new FormControl<string | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			ElectronicServiceAddress: new FormControl<string | null | undefined>(undefined),
+			EmployerNumber: new FormControl<string | null | undefined>(undefined),
+			SPIN: new FormControl<string | null | undefined>(undefined),
+			USI: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SuperFundType { REGULATED = 0, SMSF = 1 }
 
 	export interface SuperFundProducts {
-		SuperFundProducts1?: Array<SuperFundProduct> | null;
+		SuperFundProducts1?: Array<SuperFundProduct>;
+	}
+	export interface SuperFundProductsFormProperties {
+	}
+	export function CreateSuperFundProductsFormGroup() {
+		return new FormGroup<SuperFundProductsFormProperties>({
+		});
+
 	}
 
 	export interface SuperFundProduct {
@@ -1034,17 +2354,58 @@ export namespace MyNS {
 		/** The name of the Regulated SuperFund */
 		ProductName?: string | null;
 	}
+	export interface SuperFundProductFormProperties {
+
+		/** The ABN of the Regulated SuperFund */
+		ABN: FormControl<string | null | undefined>,
+
+		/** The USI of the Regulated SuperFund */
+		USI: FormControl<string | null | undefined>,
+
+		/** The SPIN of the Regulated SuperFund. This field has been deprecated. New superfunds will not have a SPIN value. The USI field should be used instead of SPIN */
+		SPIN: FormControl<string | null | undefined>,
+
+		/** The name of the Regulated SuperFund */
+		ProductName: FormControl<string | null | undefined>,
+	}
+	export function CreateSuperFundProductFormGroup() {
+		return new FormGroup<SuperFundProductFormProperties>({
+			ABN: new FormControl<string | null | undefined>(undefined),
+			USI: new FormControl<string | null | undefined>(undefined),
+			SPIN: new FormControl<string | null | undefined>(undefined),
+			ProductName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The reimbursement type lines */
 	export interface ReimbursementLines {
-		ReimbursementLines1?: Array<ReimbursementLine> | null;
+		ReimbursementLines1?: Array<ReimbursementLine>;
+	}
+
+	/** The reimbursement type lines */
+	export interface ReimbursementLinesFormProperties {
+	}
+	export function CreateReimbursementLinesFormGroup() {
+		return new FormGroup<ReimbursementLinesFormProperties>({
+		});
+
 	}
 
 
 	/** The leave type lines */
 	export interface LeaveLines {
-		Employee?: Array<LeaveLine> | null;
+		Employee?: Array<LeaveLine>;
+	}
+
+	/** The leave type lines */
+	export interface LeaveLinesFormProperties {
+	}
+	export function CreateLeaveLinesFormGroup() {
+		return new FormGroup<LeaveLinesFormProperties>({
+		});
+
 	}
 
 	export enum RateType { FIXEDAMOUNT = 0, MULTIPLE = 1, RATEPERUNIT = 2 }
@@ -1097,6 +2458,27 @@ export namespace MyNS {
 
 		/** The message describing the error */
 		Message?: string | null;
+	}
+
+	/** The object returned for a bad request */
+	export interface APIExceptionFormProperties {
+
+		/** The error number */
+		ErrorNumber: FormControl<string | null | undefined>,
+
+		/** The type of error */
+		Type: FormControl<string | null | undefined>,
+
+		/** The message describing the error */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateAPIExceptionFormGroup() {
+		return new FormGroup<APIExceptionFormProperties>({
+			ErrorNumber: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

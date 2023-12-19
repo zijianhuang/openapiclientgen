@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Defines a unique identifier of a beacon as broadcast by the device. */
@@ -21,6 +22,33 @@ export namespace MyNS {
 		 * Required.
 		 */
 		type?: AdvertisedIdType | null;
+	}
+
+	/** Defines a unique identifier of a beacon as broadcast by the device. */
+	export interface AdvertisedIdFormProperties {
+
+		/**
+		 * The actual beacon identifier, as broadcast by the beacon hardware. Must be
+		 * [base64](http://tools.ietf.org/html/rfc4648#section-4) encoded in HTTP
+		 * requests, and will be so encoded (with padding) in responses. The base64
+		 * encoding should be of the binary byte-stream and not any textual (such as
+		 * hex) representation thereof.
+		 * Required.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the identifier type.
+		 * Required.
+		 */
+		type: FormControl<AdvertisedIdType | null | undefined>,
+	}
+	export function CreateAdvertisedIdFormGroup() {
+		return new FormGroup<AdvertisedIdFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<AdvertisedIdType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdvertisedIdType { TYPE_UNSPECIFIED = 0, EDDYSTONE = 1, IBEACON = 2, ALTBEACON = 3, EDDYSTONE_EID = 4 }
@@ -59,12 +87,53 @@ export namespace MyNS {
 		namespacedType?: string | null;
 	}
 
+	/**
+	 * A subset of attachment information served via the
+	 * `beaconinfo.getforobserved` method, used when your users encounter your
+	 * beacons.
+	 */
+	export interface AttachmentInfoFormProperties {
+
+		/** An opaque data container for client-provided data. */
+		data: FormControl<string | null | undefined>,
+
+		/**
+		 * The distance away from the beacon at which this attachment should be
+		 * delivered to a mobile app.
+		 * Setting this to a value greater than zero indicates that the app should
+		 * behave as if the beacon is "seen" when the mobile device is less than this
+		 * distance away from the beacon.
+		 * Different attachments on the same beacon can have different max distances.
+		 * Note that even though this value is expressed with fractional meter
+		 * precision, real-world behavior is likley to be much less precise than one
+		 * meter, due to the nature of current Bluetooth radio technology.
+		 * Optional. When not set or zero, the attachment should be delivered at the
+		 * beacon's outer limit of detection.
+		 */
+		maxDistanceMeters: FormControl<number | null | undefined>,
+
+		/**
+		 * Specifies what kind of attachment this is. Tells a client how to
+		 * interpret the `data` field. Format is <var>namespace/type</var>, for
+		 * example <code>scrupulous-wombat-12345/welcome-message</code>
+		 */
+		namespacedType: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachmentInfoFormGroup() {
+		return new FormGroup<AttachmentInfoFormProperties>({
+			data: new FormControl<string | null | undefined>(undefined),
+			maxDistanceMeters: new FormControl<number | null | undefined>(undefined),
+			namespacedType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details of a beacon device. */
 	export interface Beacon {
 
 		/** Defines a unique identifier of a beacon as broadcast by the device. */
-		advertisedId?: AdvertisedId | null;
+		advertisedId?: AdvertisedId;
 
 		/**
 		 * Resource name of this beacon. A beacon name has the format
@@ -106,7 +175,7 @@ export namespace MyNS {
 		 * specification](https://github.com/google/eddystone/tree/master/eddystone-eid)
 		 * at GitHub.
 		 */
-		ephemeralIdRegistration?: EphemeralIdRegistration | null;
+		ephemeralIdRegistration?: EphemeralIdRegistration;
 
 		/**
 		 * Expected location stability. This is set when the beacon is registered or
@@ -119,7 +188,7 @@ export namespace MyNS {
 		 * Indoor level, a human-readable string as returned by Google Maps APIs,
 		 * useful to indicate which floor of a building a beacon is located on.
 		 */
-		indoorLevel?: IndoorLevel | null;
+		indoorLevel?: IndoorLevel;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -128,7 +197,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng | null;
+		latLng?: LatLng;
 
 		/**
 		 * The [Google Places API](/places/place-id) Place ID of the place where
@@ -143,7 +212,7 @@ export namespace MyNS {
 		 * version.
 		 * Optional.
 		 */
-		properties?: {[id: string]: string } | null;
+		properties?: {[id: string]: string };
 
 		/**
 		 * Some beacons may require a user to provide an authorization key before
@@ -162,6 +231,79 @@ export namespace MyNS {
 		 * Required.
 		 */
 		status?: BeaconStatus | null;
+	}
+
+	/** Details of a beacon device. */
+	export interface BeaconFormProperties {
+
+		/**
+		 * Resource name of this beacon. A beacon name has the format
+		 * "beacons/N!beaconId" where the beaconId is the base16 ID broadcast by
+		 * the beacon and N is a code for the beacon's type. Possible values are
+		 * `3` for Eddystone, `1` for iBeacon, or `5` for AltBeacon.
+		 * This field must be left empty when registering. After reading a beacon,
+		 * clients can use the name for future operations.
+		 */
+		beaconName: FormControl<string | null | undefined>,
+
+		/**
+		 * Free text used to identify and describe the beacon. Maximum length 140
+		 * characters.
+		 * Optional.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Expected location stability. This is set when the beacon is registered or
+		 * updated, not automatically detected in any way.
+		 * Optional.
+		 */
+		expectedStability: FormControl<BeaconExpectedStability | null | undefined>,
+
+		/**
+		 * The [Google Places API](/places/place-id) Place ID of the place where
+		 * the beacon is deployed. This is given when the beacon is registered or
+		 * updated, not automatically detected in any way.
+		 * Optional.
+		 */
+		placeId: FormControl<string | null | undefined>,
+
+		/**
+		 * Properties of the beacon device, for example battery type or firmware
+		 * version.
+		 * Optional.
+		 */
+		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Some beacons may require a user to provide an authorization key before
+		 * changing any of its configuration (e.g. broadcast frames, transmit power).
+		 * This field provides a place to store and control access to that key.
+		 * This field is populated in responses to `GET /v1beta1/beacons/3!beaconId`
+		 * from users with write access to the given beacon. That is to say: If the
+		 * user is authorized to write the beacon's confidential data in the service,
+		 * the service considers them authorized to configure the beacon. Note
+		 * that this key grants nothing on the service, only on the beacon itself.
+		 */
+		provisioningKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Current status of the beacon.
+		 * Required.
+		 */
+		status: FormControl<BeaconStatus | null | undefined>,
+	}
+	export function CreateBeaconFormGroup() {
+		return new FormGroup<BeaconFormProperties>({
+			beaconName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			expectedStability: new FormControl<BeaconExpectedStability | null | undefined>(undefined),
+			placeId: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			provisioningKey: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<BeaconStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -241,6 +383,93 @@ export namespace MyNS {
 		serviceEcdhPublicKey?: string | null;
 	}
 
+	/**
+	 * Write-only registration parameters for beacons using Eddystone-EID format.
+	 * Two ways of securely registering an Eddystone-EID beacon with the service
+	 * are supported:
+	 * 1. Perform an ECDH key exchange via this API, including a previous call
+	 *    to `GET /v1beta1/eidparams`. In this case the fields
+	 *    `beacon_ecdh_public_key` and `service_ecdh_public_key` should be
+	 *    populated and `beacon_identity_key` should not be populated. This
+	 *    method ensures that only the two parties in the ECDH key exchange can
+	 *    compute the identity key, which becomes a secret between them.
+	 * 2. Derive or obtain the beacon's identity key via other secure means
+	 *    (perhaps an ECDH key exchange between the beacon and a mobile device
+	 *    or any other secure method), and then submit the resulting identity key
+	 *    to the service. In this case `beacon_identity_key` field should be
+	 *    populated, and neither of `beacon_ecdh_public_key` nor
+	 *    `service_ecdh_public_key` fields should be. The security of this method
+	 *    depends on how securely the parties involved (in particular the
+	 *    bluetooth client) handle the identity key, and obviously on how
+	 *    securely the identity key was generated.
+	 * See [the Eddystone
+	 * specification](https://github.com/google/eddystone/tree/master/eddystone-eid)
+	 * at GitHub.
+	 */
+	export interface EphemeralIdRegistrationFormProperties {
+
+		/**
+		 * The beacon's public key used for the Elliptic curve Diffie-Hellman
+		 * key exchange. When this field is populated, `service_ecdh_public_key`
+		 * must also be populated, and `beacon_identity_key` must not be.
+		 */
+		beaconEcdhPublicKey: FormControl<string | null | undefined>,
+
+		/**
+		 * The private key of the beacon. If this field is populated,
+		 * `beacon_ecdh_public_key` and `service_ecdh_public_key` must not be
+		 * populated.
+		 */
+		beaconIdentityKey: FormControl<string | null | undefined>,
+
+		/**
+		 * The initial clock value of the beacon. The beacon's clock must have
+		 * begun counting at this value immediately prior to transmitting this
+		 * value to the resolving service. Significant delay in transmitting this
+		 * value to the service risks registration or resolution failures. If a
+		 * value is not provided, the default is zero.
+		 */
+		initialClockValue: FormControl<string | null | undefined>,
+
+		/**
+		 * An initial ephemeral ID calculated using the clock value submitted as
+		 * `initial_clock_value`, and the secret key generated by the
+		 * Diffie-Hellman key exchange using `service_ecdh_public_key` and
+		 * `service_ecdh_public_key`. This initial EID value will be used by the
+		 * service to confirm that the key exchange process was successful.
+		 */
+		initialEid: FormControl<string | null | undefined>,
+
+		/**
+		 * Indicates the nominal period between each rotation of the beacon's
+		 * ephemeral ID. "Nominal" because the beacon should randomize the
+		 * actual interval. See [the spec at
+		 * github](https://github.com/google/eddystone/tree/master/eddystone-eid)
+		 * for details. This value corresponds to a power-of-two scaler on the
+		 * beacon's clock: when the scaler value is K, the beacon will begin
+		 * broadcasting a new ephemeral ID on average every 2^K seconds.
+		 */
+		rotationPeriodExponent: FormControl<string | null | undefined>,
+
+		/**
+		 * The service's public key used for the Elliptic curve Diffie-Hellman
+		 * key exchange. When this field is populated, `beacon_ecdh_public_key`
+		 * must also be populated, and `beacon_identity_key` must not be.
+		 */
+		serviceEcdhPublicKey: FormControl<string | null | undefined>,
+	}
+	export function CreateEphemeralIdRegistrationFormGroup() {
+		return new FormGroup<EphemeralIdRegistrationFormProperties>({
+			beaconEcdhPublicKey: new FormControl<string | null | undefined>(undefined),
+			beaconIdentityKey: new FormControl<string | null | undefined>(undefined),
+			initialClockValue: new FormControl<string | null | undefined>(undefined),
+			initialEid: new FormControl<string | null | undefined>(undefined),
+			rotationPeriodExponent: new FormControl<string | null | undefined>(undefined),
+			serviceEcdhPublicKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BeaconExpectedStability { STABILITY_UNSPECIFIED = 0, STABLE = 1, PORTABLE = 2, MOBILE = 3, ROVING = 4 }
 
 
@@ -252,6 +481,22 @@ export namespace MyNS {
 
 		/** The name of this level. */
 		name?: string | null;
+	}
+
+	/**
+	 * Indoor level, a human-readable string as returned by Google Maps APIs,
+	 * useful to indicate which floor of a building a beacon is located on.
+	 */
+	export interface IndoorLevelFormProperties {
+
+		/** The name of this level. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateIndoorLevelFormGroup() {
+		return new FormGroup<IndoorLevelFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -269,6 +514,29 @@ export namespace MyNS {
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
 		longitude?: number | null;
+	}
+
+	/**
+	 * An object representing a latitude/longitude pair. This is expressed as a pair
+	 * of doubles representing degrees latitude and degrees longitude. Unless
+	 * specified otherwise, this must conform to the
+	 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
+	 * standard</a>. Values must be within normalized ranges.
+	 */
+	export interface LatLngFormProperties {
+
+		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		latitude: FormControl<number | null | undefined>,
+
+		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		longitude: FormControl<number | null | undefined>,
+	}
+	export function CreateLatLngFormGroup() {
+		return new FormGroup<LatLngFormProperties>({
+			latitude: new FormControl<number | null | undefined>(undefined),
+			longitude: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BeaconStatus { STATUS_UNSPECIFIED = 0, ACTIVE = 1, DECOMMISSIONED = 2, INACTIVE = 3 }
@@ -324,6 +592,66 @@ export namespace MyNS {
 		namespacedType?: string | null;
 	}
 
+	/** Project-specific data associated with a beacon. */
+	export interface BeaconAttachmentFormProperties {
+
+		/**
+		 * Resource name of this attachment. Attachment names have the format:
+		 * <code>beacons/<var>beacon_id</var>/attachments/<var>attachment_id</var></code>.
+		 * Leave this empty on creation.
+		 */
+		attachmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * The UTC time when this attachment was created, in milliseconds since the
+		 * UNIX epoch.
+		 */
+		creationTimeMs: FormControl<string | null | undefined>,
+
+		/**
+		 * An opaque data container for client-provided data. Must be
+		 * [base64](http://tools.ietf.org/html/rfc4648#section-4) encoded in HTTP
+		 * requests, and will be so encoded (with padding) in responses.
+		 * Required.
+		 */
+		data: FormControl<string | null | undefined>,
+
+		/**
+		 * The distance away from the beacon at which this attachment should be
+		 * delivered to a mobile app.
+		 * Setting this to a value greater than zero indicates that the app should
+		 * behave as if the beacon is "seen" when the mobile device is less than this
+		 * distance away from the beacon.
+		 * Different attachments on the same beacon can have different max distances.
+		 * Note that even though this value is expressed with fractional meter
+		 * precision, real-world behavior is likley to be much less precise than one
+		 * meter, due to the nature of current Bluetooth radio technology.
+		 * Optional. When not set or zero, the attachment should be delivered at the
+		 * beacon's outer limit of detection.
+		 * Negative values are invalid and return an error.
+		 */
+		maxDistanceMeters: FormControl<number | null | undefined>,
+
+		/**
+		 * Specifies what kind of attachment this is. Tells a client how to
+		 * interpret the `data` field. Format is <var>namespace/type</var>. Namespace
+		 * provides type separation between clients. Type describes the type of
+		 * `data`, for use by the client when parsing the `data` field.
+		 * Required.
+		 */
+		namespacedType: FormControl<string | null | undefined>,
+	}
+	export function CreateBeaconAttachmentFormGroup() {
+		return new FormGroup<BeaconAttachmentFormProperties>({
+			attachmentName: new FormControl<string | null | undefined>(undefined),
+			creationTimeMs: new FormControl<string | null | undefined>(undefined),
+			data: new FormControl<string | null | undefined>(undefined),
+			maxDistanceMeters: new FormControl<number | null | undefined>(undefined),
+			namespacedType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A subset of beacon information served via the `beaconinfo.getforobserved`
@@ -332,16 +660,32 @@ export namespace MyNS {
 	export interface BeaconInfo {
 
 		/** Defines a unique identifier of a beacon as broadcast by the device. */
-		advertisedId?: AdvertisedId | null;
+		advertisedId?: AdvertisedId;
 
 		/**
 		 * Attachments matching the type(s) requested.
 		 * May be empty if no attachment types were requested.
 		 */
-		attachments?: Array<AttachmentInfo> | null;
+		attachments?: Array<AttachmentInfo>;
 
 		/** The name under which the beacon is registered. */
 		beaconName?: string | null;
+	}
+
+	/**
+	 * A subset of beacon information served via the `beaconinfo.getforobserved`
+	 * method, which you call when users of your app encounter your beacons.
+	 */
+	export interface BeaconInfoFormProperties {
+
+		/** The name under which the beacon is registered. */
+		beaconName: FormControl<string | null | undefined>,
+	}
+	export function CreateBeaconInfoFormGroup() {
+		return new FormGroup<BeaconInfoFormProperties>({
+			beaconName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -377,6 +721,46 @@ export namespace MyNS {
 		year?: number | null;
 	}
 
+	/**
+	 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
+	 * and time zone are either specified elsewhere or are not significant. The date
+	 * is relative to the Proleptic Gregorian Calendar. This can represent:
+	 * * A full date, with non-zero year, month and day values
+	 * * A month and day value, with a zero year, e.g. an anniversary
+	 * * A year on its own, with zero month and day values
+	 * * A year and month value, with a zero day, e.g. a credit card expiration date
+	 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
+	 */
+	export interface DateFormProperties {
+
+		/**
+		 * Day of month. Must be from 1 to 31 and valid for the year and month, or 0
+		 * if specifying a year by itself or a year and month where the day is not
+		 * significant.
+		 */
+		day: FormControl<number | null | undefined>,
+
+		/**
+		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
+		 * month and day.
+		 */
+		month: FormControl<number | null | undefined>,
+
+		/**
+		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+		 * a year.
+		 */
+		year: FormControl<number | null | undefined>,
+	}
+	export function CreateDateFormGroup() {
+		return new FormGroup<DateFormProperties>({
+			day: new FormControl<number | null | undefined>(undefined),
+			month: new FormControl<number | null | undefined>(undefined),
+			year: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response for a request to delete attachments. */
 	export interface DeleteAttachmentsResponse {
@@ -385,12 +769,25 @@ export namespace MyNS {
 		numDeleted?: number | null;
 	}
 
+	/** Response for a request to delete attachments. */
+	export interface DeleteAttachmentsResponseFormProperties {
+
+		/** The number of attachments that were deleted. */
+		numDeleted: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteAttachmentsResponseFormGroup() {
+		return new FormGroup<DeleteAttachmentsResponseFormProperties>({
+			numDeleted: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Diagnostics for a single beacon. */
 	export interface Diagnostics {
 
 		/** An unordered list of Alerts that the beacon has. */
-		alerts?: Array<string> | null;
+		alerts?: Array<string>;
 
 		/**
 		 * Resource name of the beacon. For Eddystone-EID beacons, this may
@@ -408,7 +805,23 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		estimatedLowBatteryDate?: Date | null;
+		estimatedLowBatteryDate?: Date;
+	}
+
+	/** Diagnostics for a single beacon. */
+	export interface DiagnosticsFormProperties {
+
+		/**
+		 * Resource name of the beacon. For Eddystone-EID beacons, this may
+		 * be the beacon's current EID, or the beacon's "stable" Eddystone-UID.
+		 */
+		beaconName: FormControl<string | null | undefined>,
+	}
+	export function CreateDiagnosticsFormGroup() {
+		return new FormGroup<DiagnosticsFormProperties>({
+			beaconName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -422,6 +835,23 @@ export namespace MyNS {
 	 * The JSON representation for `Empty` is empty JSON object `{}`.
 	 */
 	export interface Empty {
+	}
+
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
 	}
 
 
@@ -456,6 +886,45 @@ export namespace MyNS {
 		serviceEcdhPublicKey?: string | null;
 	}
 
+	/**
+	 * Information a client needs to provision and register beacons that
+	 * broadcast Eddystone-EID format beacon IDs, using Elliptic curve
+	 * Diffie-Hellman key exchange. See
+	 * [the Eddystone
+	 * specification](https://github.com/google/eddystone/tree/master/eddystone-eid)
+	 * at GitHub.
+	 */
+	export interface EphemeralIdRegistrationParamsFormProperties {
+
+		/**
+		 * Indicates the maximum rotation period supported by the service.
+		 * See
+		 * EddystoneEidRegistration.rotation_period_exponent
+		 */
+		maxRotationPeriodExponent: FormControl<string | null | undefined>,
+
+		/**
+		 * Indicates the minimum rotation period supported by the service.
+		 * See
+		 * EddystoneEidRegistration.rotation_period_exponent
+		 */
+		minRotationPeriodExponent: FormControl<string | null | undefined>,
+
+		/**
+		 * The beacon service's public key for use by a beacon to derive its
+		 * Identity Key using Elliptic Curve Diffie-Hellman key exchange.
+		 */
+		serviceEcdhPublicKey: FormControl<string | null | undefined>,
+	}
+	export function CreateEphemeralIdRegistrationParamsFormGroup() {
+		return new FormGroup<EphemeralIdRegistrationParamsFormProperties>({
+			maxRotationPeriodExponent: new FormControl<string | null | undefined>(undefined),
+			minRotationPeriodExponent: new FormControl<string | null | undefined>(undefined),
+			serviceEcdhPublicKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Request for beacon and attachment information about beacons that
@@ -471,13 +940,25 @@ export namespace MyNS {
 		 * all namespaces owned by the client.
 		 * Optional.
 		 */
-		namespacedTypes?: Array<string> | null;
+		namespacedTypes?: Array<string>;
 
 		/**
 		 * The beacons that the client has encountered.
 		 * At least one must be given.
 		 */
-		observations?: Array<Observation> | null;
+		observations?: Array<Observation>;
+	}
+
+	/**
+	 * Request for beacon and attachment information about beacons that
+	 * a mobile client has encountered "in the wild".
+	 */
+	export interface GetInfoForObservedBeaconsRequestFormProperties {
+	}
+	export function CreateGetInfoForObservedBeaconsRequestFormGroup() {
+		return new FormGroup<GetInfoForObservedBeaconsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -485,7 +966,7 @@ export namespace MyNS {
 	export interface Observation {
 
 		/** Defines a unique identifier of a beacon as broadcast by the device. */
-		advertisedId?: AdvertisedId | null;
+		advertisedId?: AdvertisedId;
 
 		/**
 		 * The array of telemetry bytes received from the beacon. The server is
@@ -496,6 +977,27 @@ export namespace MyNS {
 
 		/** Time when the beacon was observed. */
 		timestampMs?: string | null;
+	}
+
+	/** Represents one beacon observed once. */
+	export interface ObservationFormProperties {
+
+		/**
+		 * The array of telemetry bytes received from the beacon. The server is
+		 * responsible for parsing it. This field may frequently be empty, as
+		 * with a beacon that transmits telemetry only occasionally.
+		 */
+		telemetry: FormControl<string | null | undefined>,
+
+		/** Time when the beacon was observed. */
+		timestampMs: FormControl<string | null | undefined>,
+	}
+	export function CreateObservationFormGroup() {
+		return new FormGroup<ObservationFormProperties>({
+			telemetry: new FormControl<string | null | undefined>(undefined),
+			timestampMs: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -509,7 +1011,19 @@ export namespace MyNS {
 		 * Public information about beacons.
 		 * May be empty if the request matched no beacons.
 		 */
-		beacons?: Array<BeaconInfo> | null;
+		beacons?: Array<BeaconInfo>;
+	}
+
+	/**
+	 * Information about the requested beacons, optionally including attachment
+	 * data.
+	 */
+	export interface GetInfoForObservedBeaconsResponseFormProperties {
+	}
+	export function CreateGetInfoForObservedBeaconsResponseFormGroup() {
+		return new FormGroup<GetInfoForObservedBeaconsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -517,7 +1031,16 @@ export namespace MyNS {
 	export interface ListBeaconAttachmentsResponse {
 
 		/** The attachments that corresponded to the request params. */
-		attachments?: Array<BeaconAttachment> | null;
+		attachments?: Array<BeaconAttachment>;
+	}
+
+	/** Response to `ListBeaconAttachments` that contains the requested attachments. */
+	export interface ListBeaconAttachmentsResponseFormProperties {
+	}
+	export function CreateListBeaconAttachmentsResponseFormGroup() {
+		return new FormGroup<ListBeaconAttachmentsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -525,7 +1048,7 @@ export namespace MyNS {
 	export interface ListBeaconsResponse {
 
 		/** The beacons that matched the search criteria. */
-		beacons?: Array<Beacon> | null;
+		beacons?: Array<Beacon>;
 
 		/**
 		 * An opaque pagination token that the client may provide in their next
@@ -540,12 +1063,35 @@ export namespace MyNS {
 		totalCount?: string | null;
 	}
 
+	/** Response that contains list beacon results and pagination help. */
+	export interface ListBeaconsResponseFormProperties {
+
+		/**
+		 * An opaque pagination token that the client may provide in their next
+		 * request to retrieve the next page of results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Estimate of the total number of beacons matched by the query. Higher
+		 * values may be less accurate.
+		 */
+		totalCount: FormControl<string | null | undefined>,
+	}
+	export function CreateListBeaconsResponseFormGroup() {
+		return new FormGroup<ListBeaconsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			totalCount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response that contains the requested diagnostics. */
 	export interface ListDiagnosticsResponse {
 
 		/** The diagnostics matching the given request. */
-		diagnostics?: Array<Diagnostics> | null;
+		diagnostics?: Array<Diagnostics>;
 
 		/**
 		 * Token that can be used for pagination. Returned only if the
@@ -554,12 +1100,37 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Response that contains the requested diagnostics. */
+	export interface ListDiagnosticsResponseFormProperties {
+
+		/**
+		 * Token that can be used for pagination. Returned only if the
+		 * request matches more beacons than can be returned in this response.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDiagnosticsResponseFormGroup() {
+		return new FormGroup<ListDiagnosticsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to ListNamespacesRequest that contains all the project's namespaces. */
 	export interface ListNamespacesResponse {
 
 		/** The attachments that corresponded to the request params. */
-		namespaces?: Array<Namespace> | null;
+		namespaces?: Array<Namespace>;
+	}
+
+	/** Response to ListNamespacesRequest that contains all the project's namespaces. */
+	export interface ListNamespacesResponseFormProperties {
+	}
+	export function CreateListNamespacesResponseFormGroup() {
+		return new FormGroup<ListNamespacesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -581,6 +1152,33 @@ export namespace MyNS {
 		 * via `beaconinfo.getforobserved`.
 		 */
 		servingVisibility?: NamespaceServingVisibility | null;
+	}
+
+	/**
+	 * An attachment namespace defines read and write access for all the attachments
+	 * created under it. Each namespace is globally unique, and owned by one
+	 * project which is the only project that can create attachments under it.
+	 */
+	export interface NamespaceFormProperties {
+
+		/**
+		 * Resource name of this namespace. Namespaces names have the format:
+		 * <code>namespaces/<var>namespace</var></code>.
+		 */
+		namespaceName: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies what clients may receive attachments under this namespace
+		 * via `beaconinfo.getforobserved`.
+		 */
+		servingVisibility: FormControl<NamespaceServingVisibility | null | undefined>,
+	}
+	export function CreateNamespaceFormGroup() {
+		return new FormGroup<NamespaceFormProperties>({
+			namespaceName: new FormControl<string | null | undefined>(undefined),
+			servingVisibility: new FormControl<NamespaceServingVisibility | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NamespaceServingVisibility { VISIBILITY_UNSPECIFIED = 0, UNLISTED = 1, PUBLIC = 2 }

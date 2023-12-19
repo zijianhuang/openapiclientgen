@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A unique ID for a sales tax jurisdiction. */
@@ -10,12 +11,34 @@ export namespace MyNS {
 		salesTaxJurisdictionId?: string | null;
 	}
 
+	/** A unique ID for a sales tax jurisdiction. */
+	export interface SalesTaxJurisdictionFormProperties {
+
+		/** The unique ID for a sales tax jurisdiction. */
+		salesTaxJurisdictionId: FormControl<string | null | undefined>,
+	}
+	export function CreateSalesTaxJurisdictionFormGroup() {
+		return new FormGroup<SalesTaxJurisdictionFormProperties>({
+			salesTaxJurisdictionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type contains a list of sales tax jurisdictions. */
 	export interface SalesTaxJurisdictions {
 
 		/** A list of sales tax jurisdictions. */
-		salesTaxJurisdictions?: Array<SalesTaxJurisdiction> | null;
+		salesTaxJurisdictions?: Array<SalesTaxJurisdiction>;
+	}
+
+	/** This complex type contains a list of sales tax jurisdictions. */
+	export interface SalesTaxJurisdictionsFormProperties {
+	}
+	export function CreateSalesTaxJurisdictionsFormGroup() {
+		return new FormGroup<SalesTaxJurisdictionsFormProperties>({
+		});
+
 	}
 
 
@@ -27,6 +50,23 @@ export namespace MyNS {
 
 		/** An amount of time, as measured by the time-measurement units specified in the unit field. */
 		value?: number | null;
+	}
+
+	/** A complex type that specifies a period of time using a specified time-measurement unit. */
+	export interface TimeDurationFormProperties {
+
+		/** A time-measurement unit used to specify a period of time. Time-measurement units can be years, months, days, hours, minutes, and other time units (see TimeDurationUnitEnum for a complete list of possible units). The value setting is applied to the unit value to define a span of time. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/metadata/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
+		unit: FormControl<string | null | undefined>,
+
+		/** An amount of time, as measured by the time-measurement units specified in the unit field. */
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeDurationFormGroup() {
+		return new FormGroup<TimeDurationFormProperties>({
+			unit: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,7 +83,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
 		longMessage?: string | null;
@@ -52,13 +92,46 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** This optional complex field type contains a list of one or more context-specific ErrorParameter objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
 		subdomain?: string | null;
+	}
+
+	/** A container that defines the elements of error and warning messages. */
+	export interface ErrorFormProperties {
+
+		/** The category type for this error or warning. It takes an ErrorCategory object which can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship item to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on. */
+		category: FormControl<string | null | undefined>,
+
+		/** Name of the domain containing the service or application. */
+		domain: FormControl<string | null | undefined>,
+
+		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		errorId: FormControl<number | null | undefined>,
+
+		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
+		longMessage: FormControl<string | null | undefined>,
+
+		/** An end user and app developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale. */
+		message: FormControl<string | null | undefined>,
+
+		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
+		subdomain: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			errorId: new FormControl<number | null | undefined>(undefined),
+			longMessage: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			subdomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -70,6 +143,23 @@ export namespace MyNS {
 
 		/** A description of the error. */
 		value?: string | null;
+	}
+
+	/** Container for a error parameter. */
+	export interface ErrorParameterFormProperties {
+
+		/** Name of the entity that threw the error. */
+		name: FormControl<string | null | undefined>,
+
+		/** A description of the error. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorParameterFormGroup() {
+		return new FormGroup<ErrorParameterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AutomotivePartsCompatibilityPolicy {
@@ -84,19 +174,49 @@ export namespace MyNS {
 		compatibilityBasedOn?: string | null;
 
 		/** Indicates the compatibility classification of the part based on high-level vehicle types. */
-		compatibleVehicleTypes?: Array<string> | null;
+		compatibleVehicleTypes?: Array<string>;
 
 		/** Specifies the maximum number of compatible vehicle-applications allowed per item. */
 		maxNumberOfCompatibleVehicles?: number | null;
+	}
+	export interface AutomotivePartsCompatibilityPolicyFormProperties {
+
+		/** The category ID to which the automotive-parts-compatibility policies apply. */
+		categoryId: FormControl<string | null | undefined>,
+
+		/** This is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
+		categoryTreeId: FormControl<string | null | undefined>,
+
+		/** Indicates whether the category supports parts compatibility by either ASSEMBLY or by SPECIFICATION. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/metadata/types/CompatibilityTypeEnum.html'>eBay API documentation</a> */
+		compatibilityBasedOn: FormControl<string | null | undefined>,
+
+		/** Specifies the maximum number of compatible vehicle-applications allowed per item. */
+		maxNumberOfCompatibleVehicles: FormControl<number | null | undefined>,
+	}
+	export function CreateAutomotivePartsCompatibilityPolicyFormGroup() {
+		return new FormGroup<AutomotivePartsCompatibilityPolicyFormProperties>({
+			categoryId: new FormControl<string | null | undefined>(undefined),
+			categoryTreeId: new FormControl<string | null | undefined>(undefined),
+			compatibilityBasedOn: new FormControl<string | null | undefined>(undefined),
+			maxNumberOfCompatibleVehicles: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AutomotivePartsCompatibilityPolicyResponse {
 
 		/** A list of category IDs and the automotive-parts-compatibility policies for each of the listed categories. */
-		automotivePartsCompatibilityPolicies?: Array<AutomotivePartsCompatibilityPolicy> | null;
+		automotivePartsCompatibilityPolicies?: Array<AutomotivePartsCompatibilityPolicy>;
 
 		/** A list of the warnings that were generated as a result of the request. This field is not returned if no warnings were generated by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+	export interface AutomotivePartsCompatibilityPolicyResponseFormProperties {
+	}
+	export function CreateAutomotivePartsCompatibilityPolicyResponseFormGroup() {
+		return new FormGroup<AutomotivePartsCompatibilityPolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -104,7 +224,16 @@ export namespace MyNS {
 	export interface Exclusion {
 
 		/** A list of brands that are excluded from requiring a link to the eBay Catalog for the associated categoryId. If productRequired is set to true, items that are of a brand returned in this field are excluded from the need to specify a value for the ePID field in their item description in order to be listed in the associated category. */
-		brands?: Array<string> | null;
+		brands?: Array<string>;
+	}
+
+	/** This type returns a list of properties (and their associated values) that are excluded from requiring an ePID value (from the eBay Catalog) for items that are listed in the associated category. */
+	export interface ExclusionFormProperties {
+	}
+	export function CreateExclusionFormGroup() {
+		return new FormGroup<ExclusionFormProperties>({
+		});
+
 	}
 
 	export interface ItemCondition {
@@ -114,6 +243,21 @@ export namespace MyNS {
 
 		/** The ID value of the selected item condition. For information on the supported condition ID values, see Item condition ID and name values. */
 		conditionId?: string | null;
+	}
+	export interface ItemConditionFormProperties {
+
+		/** The human-readable label for the condition (e.g., &quot;New&quot;). This value is typically localized for each site. Note that the display name can vary by category. For example, the description for condition ID 1000 could be called &quot;New: with Tags&quot; in one category and &quot;Brand New&quot; in another. For details on condition IDs and descriptions, see Item condition ID and name values. */
+		conditionDescription: FormControl<string | null | undefined>,
+
+		/** The ID value of the selected item condition. For information on the supported condition ID values, see Item condition ID and name values. */
+		conditionId: FormControl<string | null | undefined>,
+	}
+	export function CreateItemConditionFormGroup() {
+		return new FormGroup<ItemConditionFormProperties>({
+			conditionDescription: new FormControl<string | null | undefined>(undefined),
+			conditionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ItemConditionPolicy {
@@ -128,16 +272,42 @@ export namespace MyNS {
 		itemConditionRequired?: boolean | null;
 
 		/** The item-condition values allowed in the category. */
-		itemConditions?: Array<ItemCondition> | null;
+		itemConditions?: Array<ItemCondition>;
+	}
+	export interface ItemConditionPolicyFormProperties {
+
+		/** The category ID to which the item-condition policy applies. */
+		categoryId: FormControl<string | null | undefined>,
+
+		/** The value returned in this field is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
+		categoryTreeId: FormControl<string | null | undefined>,
+
+		/** This flag denotes whether or not you must list the item condition in a listing for the specified category. If set to true, you must specify an item condition for the associated category. */
+		itemConditionRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreateItemConditionPolicyFormGroup() {
+		return new FormGroup<ItemConditionPolicyFormProperties>({
+			categoryId: new FormControl<string | null | undefined>(undefined),
+			categoryTreeId: new FormControl<string | null | undefined>(undefined),
+			itemConditionRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ItemConditionPolicyResponse {
 
 		/** A list of category IDs and the policies for how to indicate an item's condition in each of the listed categories. */
-		itemConditionPolicies?: Array<ItemConditionPolicy> | null;
+		itemConditionPolicies?: Array<ItemConditionPolicy>;
 
 		/** A list of the warnings that were generated as a result of the request. This field is not returned if no warnings were generated by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+	export interface ItemConditionPolicyResponseFormProperties {
+	}
+	export function CreateItemConditionPolicyResponseFormGroup() {
+		return new FormGroup<ItemConditionPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListingStructurePolicy {
@@ -151,14 +321,40 @@ export namespace MyNS {
 		/** This flag denotes whether or not the associated category supports listings with item variations. If set to true, the category does support item variations. */
 		variationsSupported?: boolean | null;
 	}
+	export interface ListingStructurePolicyFormProperties {
+
+		/** The category ID to which the listing-structure policy applies. */
+		categoryId: FormControl<string | null | undefined>,
+
+		/** The value returned in this field is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
+		categoryTreeId: FormControl<string | null | undefined>,
+
+		/** This flag denotes whether or not the associated category supports listings with item variations. If set to true, the category does support item variations. */
+		variationsSupported: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListingStructurePolicyFormGroup() {
+		return new FormGroup<ListingStructurePolicyFormProperties>({
+			categoryId: new FormControl<string | null | undefined>(undefined),
+			categoryTreeId: new FormControl<string | null | undefined>(undefined),
+			variationsSupported: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListingStructurePolicyResponse {
 
 		/** A list of category IDs and a flag indicating whether or not each listed category supports item variations. */
-		listingStructurePolicies?: Array<ListingStructurePolicy> | null;
+		listingStructurePolicies?: Array<ListingStructurePolicy>;
 
 		/** A list of the warnings that were generated as a result of the request. This field is not returned if no warnings were generated by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+	export interface ListingStructurePolicyResponseFormProperties {
+	}
+	export function CreateListingStructurePolicyResponseFormGroup() {
+		return new FormGroup<ListingStructurePolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface NegotiatedPricePolicy {
@@ -178,14 +374,48 @@ export namespace MyNS {
 		/** The value returned in this field is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
 		categoryTreeId?: string | null;
 	}
+	export interface NegotiatedPricePolicyFormProperties {
+
+		/** This flag denotes whether or not the category supports the setting of a price at which best offers are automatically accepted. If set to true, the category does support the setting of an automatic price for best-offers. */
+		bestOfferAutoAcceptEnabled: FormControl<boolean | null | undefined>,
+
+		/** This flag denotes whether or not the category supports the setting of an auto-decline price for best offers. If set to true, the category does support the setting of an automatic-decline price for best-offers. */
+		bestOfferAutoDeclineEnabled: FormControl<boolean | null | undefined>,
+
+		/** This flag denotes whether or not the category supports the setting for an automatic counter-offer on best offers. If set to true, the category does support the setting of an automatic counter-offer price for best-offers. */
+		bestOfferCounterEnabled: FormControl<boolean | null | undefined>,
+
+		/** The category ID to which the negotiated-price policies apply. */
+		categoryId: FormControl<string | null | undefined>,
+
+		/** The value returned in this field is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
+		categoryTreeId: FormControl<string | null | undefined>,
+	}
+	export function CreateNegotiatedPricePolicyFormGroup() {
+		return new FormGroup<NegotiatedPricePolicyFormProperties>({
+			bestOfferAutoAcceptEnabled: new FormControl<boolean | null | undefined>(undefined),
+			bestOfferAutoDeclineEnabled: new FormControl<boolean | null | undefined>(undefined),
+			bestOfferCounterEnabled: new FormControl<boolean | null | undefined>(undefined),
+			categoryId: new FormControl<string | null | undefined>(undefined),
+			categoryTreeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NegotiatedPricePolicyResponse {
 
 		/** A list of category IDs and the policies related to negotiated-price items for each of the listed categories. */
-		negotiatedPricePolicies?: Array<NegotiatedPricePolicy> | null;
+		negotiatedPricePolicies?: Array<NegotiatedPricePolicy>;
 
 		/** A list of the warnings that were generated as a result of the request. This field is not returned if no warnings were generated by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+	export interface NegotiatedPricePolicyResponseFormProperties {
+	}
+	export function CreateNegotiatedPricePolicyResponseFormGroup() {
+		return new FormGroup<NegotiatedPricePolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -199,10 +429,31 @@ export namespace MyNS {
 		categoryTreeId?: string | null;
 
 		/** This type returns a list of properties (and their associated values) that are excluded from requiring an ePID value (from the eBay Catalog) for items that are listed in the associated category. */
-		exclusion?: Exclusion | null;
+		exclusion?: Exclusion;
 
 		/** If set to true, items must include an ePID value in their item description before they can be listed in the category identified by the associated categoryId. In contrast, a value of false indicates that items listed in the associated category do not require ePID values. Important! It is possible for a productAdoptionPolicies container to not contain this productRequired field. This occurs if the eBay category is not part of the PBSE Phase 1 or Phase 2 mandate. In these scenarios, please treat the response the same as if this field were present and contained a value of false. */
 		productRequired?: boolean | null;
+	}
+
+	/** This complex type returns a category ID and a flag that indicates whether or not items listed in that category require the declaration of an ePID value, which links the item to the eBay Catalog. The type also lists any items that are excepted from the requirement to included an ePID value. */
+	export interface ProductAdoptionPolicyFormProperties {
+
+		/** The category ID to which the listing policies apply. */
+		categoryId: FormControl<string | null | undefined>,
+
+		/** The value returned in this field is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
+		categoryTreeId: FormControl<string | null | undefined>,
+
+		/** If set to true, items must include an ePID value in their item description before they can be listed in the category identified by the associated categoryId. In contrast, a value of false indicates that items listed in the associated category do not require ePID values. Important! It is possible for a productAdoptionPolicies container to not contain this productRequired field. This occurs if the eBay category is not part of the PBSE Phase 1 or Phase 2 mandate. In these scenarios, please treat the response the same as if this field were present and contained a value of false. */
+		productRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProductAdoptionPolicyFormGroup() {
+		return new FormGroup<ProductAdoptionPolicyFormProperties>({
+			categoryId: new FormControl<string | null | undefined>(undefined),
+			categoryTreeId: new FormControl<string | null | undefined>(undefined),
+			productRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -210,10 +461,19 @@ export namespace MyNS {
 	export interface ProductAdoptionPolicyResponse {
 
 		/** A list of category IDs from the marketplace specified in the request where each returned element represents a leaf node in the category tree. Each element in the list contains the policies governing whether or not items listed in that category must include an ePID value (which links the item to the eBay Catalog). */
-		productAdoptionPolicies?: Array<ProductAdoptionPolicy> | null;
+		productAdoptionPolicies?: Array<ProductAdoptionPolicy>;
 
 		/** A list of the warnings that were generated as a result of the request. This field is not returned if no warnings were generated by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+
+	/** This is the response object returned by a call to getProductAdoptionPolicies. */
+	export interface ProductAdoptionPolicyResponseFormProperties {
+	}
+	export function CreateProductAdoptionPolicyResponseFormGroup() {
+		return new FormGroup<ProductAdoptionPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface ReturnPolicy {
@@ -225,13 +485,32 @@ export namespace MyNS {
 		categoryTreeId?: string | null;
 
 		/** This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively). */
-		domestic?: ReturnPolicyDetails | null;
+		domestic?: ReturnPolicyDetails;
 
 		/** This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively). */
-		international?: ReturnPolicyDetails | null;
+		international?: ReturnPolicyDetails;
 
 		/** If set to true, this flag indicates that you must specify a return policy for items listed in the associated category. Note that not accepting returns (setting returnsAcceptedEnabled to false) is a valid return policy. */
 		required?: boolean | null;
+	}
+	export interface ReturnPolicyFormProperties {
+
+		/** The category ID to which the return policy applies. */
+		categoryId: FormControl<string | null | undefined>,
+
+		/** The value returned in this field is a unique eBay-assigned value that represents the root node of the category tree to which the associated categoryId belongs. This value reflects the category tree related to the marketplace_id passed in the request. A category tree is a hierarchical framework of eBay categories that begins at the root node of the tree and extends to include all the child nodes in the tree. Each child node in the tree is an eBay category and each is represented by a unique categoryId value. Within a category tree, the root node has no parent node and leaf nodes are nodes that have no child nodes. */
+		categoryTreeId: FormControl<string | null | undefined>,
+
+		/** If set to true, this flag indicates that you must specify a return policy for items listed in the associated category. Note that not accepting returns (setting returnsAcceptedEnabled to false) is a valid return policy. */
+		required: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReturnPolicyFormGroup() {
+		return new FormGroup<ReturnPolicyFormProperties>({
+			categoryId: new FormControl<string | null | undefined>(undefined),
+			categoryTreeId: new FormControl<string | null | undefined>(undefined),
+			required: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -242,28 +521,52 @@ export namespace MyNS {
 		policyDescriptionEnabled?: boolean | null;
 
 		/** A list of refund methods allowed for the associated category. */
-		refundMethods?: Array<string> | null;
+		refundMethods?: Array<string>;
 
 		/** A list of return methods allowed for the associated category. */
-		returnMethods?: Array<string> | null;
+		returnMethods?: Array<string>;
 
 		/** A list of return periods allowed for the associated category. Note that different APIs require you to enter the return period in different ways. For example, the Account API uses the complex TimeDuration type, which takes two values (a unit and a value), whereas the Trading API takes a single value (such as Days_30). */
-		returnPeriods?: Array<TimeDuration> | null;
+		returnPeriods?: Array<TimeDuration>;
 
 		/** If set to true, this flag indicates the seller can configure how they handle domestic returns. */
 		returnsAcceptanceEnabled?: boolean | null;
 
 		/** A list of allowed values for who pays for the return shipping cost. Note that for SNAD returns, the seller is always responsible for the return shipping cost. */
-		returnShippingCostPayers?: Array<string> | null;
+		returnShippingCostPayers?: Array<string>;
+	}
+
+	/** This container defines the category policies that relate to domestic and international return policies (the return shipping is made via a domestic or an international shipping service, respectively). */
+	export interface ReturnPolicyDetailsFormProperties {
+
+		/** If set to true, this flag indicates you can supply a detailed return policy description within your return policy (for example, by populating the returnInstructions field in the Account API's createReturnPolicy). User-supplied return policy details are allowed only in the DE, ES, FR, and IT marketplaces. */
+		policyDescriptionEnabled: FormControl<boolean | null | undefined>,
+
+		/** If set to true, this flag indicates the seller can configure how they handle domestic returns. */
+		returnsAcceptanceEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReturnPolicyDetailsFormGroup() {
+		return new FormGroup<ReturnPolicyDetailsFormProperties>({
+			policyDescriptionEnabled: new FormControl<boolean | null | undefined>(undefined),
+			returnsAcceptanceEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReturnPolicyResponse {
 
 		/** A list of category IDs and a flag indicating whether or not the listings in each category requires a return policy. */
-		returnPolicies?: Array<ReturnPolicy> | null;
+		returnPolicies?: Array<ReturnPolicy>;
 
 		/** A list of the warnings that were generated as a result of the request. This field is not returned if no warnings were generated by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+	export interface ReturnPolicyResponseFormProperties {
+	}
+	export function CreateReturnPolicyResponseFormGroup() {
+		return new FormGroup<ReturnPolicyResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

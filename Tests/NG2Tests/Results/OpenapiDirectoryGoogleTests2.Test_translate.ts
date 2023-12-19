@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The request message for language detection. */
@@ -10,13 +11,29 @@ export namespace MyNS {
 		 * The input text upon which to perform language detection. Repeat this
 		 * parameter to perform language detection on multiple text inputs.
 		 */
-		q?: Array<string> | null;
+		q?: Array<string>;
+	}
+
+	/** The request message for language detection. */
+	export interface DetectLanguageRequestFormProperties {
+	}
+	export function CreateDetectLanguageRequestFormGroup() {
+		return new FormGroup<DetectLanguageRequestFormProperties>({
+		});
+
 	}
 
 	export interface DetectionsListResponse {
 
 		/** A detections contains detection results of several text */
-		detections?: Array<Array<DetectionsResourceElement>> | null;
+		detections?: Array<Array<DetectionsResourceElement>>;
+	}
+	export interface DetectionsListResponseFormProperties {
+	}
+	export function CreateDetectionsListResponseFormGroup() {
+		return new FormGroup<DetectionsListResponseFormProperties>({
+		});
+
 	}
 
 	export interface DetectionsResourceElement {
@@ -30,6 +47,25 @@ export namespace MyNS {
 		/** The language we detected. */
 		language?: string | null;
 	}
+	export interface DetectionsResourceElementFormProperties {
+
+		/** The confidence of the detection result of this language. */
+		confidence: FormControl<number | null | undefined>,
+
+		/** A boolean to indicate is the language detection result reliable. */
+		isReliable: FormControl<boolean | null | undefined>,
+
+		/** The language we detected. */
+		language: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectionsResourceElementFormGroup() {
+		return new FormGroup<DetectionsResourceElementFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			isReliable: new FormControl<boolean | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The request message for discovering supported languages. */
@@ -42,10 +78,33 @@ export namespace MyNS {
 		target?: string | null;
 	}
 
+	/** The request message for discovering supported languages. */
+	export interface GetSupportedLanguagesRequestFormProperties {
+
+		/**
+		 * The language to use to return localized, human readable names of supported
+		 * languages.
+		 */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSupportedLanguagesRequestFormGroup() {
+		return new FormGroup<GetSupportedLanguagesRequestFormProperties>({
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LanguagesListResponse {
 
 		/** List of source/target languages supported by the translation API. If target parameter is unspecified, the list is sorted by the ASCII code point order of the language code. If target parameter is specified, the list is sorted by the collation order of the language name in the target language. */
-		languages?: Array<LanguagesResource> | null;
+		languages?: Array<LanguagesResource>;
+	}
+	export interface LanguagesListResponseFormProperties {
+	}
+	export function CreateLanguagesListResponseFormGroup() {
+		return new FormGroup<LanguagesListResponseFormProperties>({
+		});
+
 	}
 
 	export interface LanguagesResource {
@@ -59,6 +118,25 @@ export namespace MyNS {
 
 		/** Human readable name of the language localized to the target language. */
 		name?: string | null;
+	}
+	export interface LanguagesResourceFormProperties {
+
+		/**
+		 * Supported language code, generally consisting of its ISO 639-1
+		 * identifier. (E.g. 'en', 'ja'). In certain cases, BCP-47 codes including
+		 * language + region identifiers are returned (e.g. 'zh-TW' and 'zh-CH')
+		 */
+		language: FormControl<string | null | undefined>,
+
+		/** Human readable name of the language localized to the target language. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLanguagesResourceFormGroup() {
+		return new FormGroup<LanguagesResourceFormProperties>({
+			language: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -81,7 +159,7 @@ export namespace MyNS {
 		 * The input text to translate. Repeat this parameter to perform translation
 		 * operations on multiple text inputs.
 		 */
-		q?: Array<string> | null;
+		q?: Array<string>;
 
 		/**
 		 * The language of the source text, set to one of the language codes listed in
@@ -98,12 +176,60 @@ export namespace MyNS {
 		target?: string | null;
 	}
 
+	/** The main translation request message for the Cloud Translation API. */
+	export interface TranslateTextRequestFormProperties {
+
+		/**
+		 * The format of the source text, in either HTML (default) or plain-text. A
+		 * value of "html" indicates HTML and a value of "text" indicates plain-text.
+		 */
+		format: FormControl<string | null | undefined>,
+
+		/**
+		 * The `model` type requested for this translation. Valid values are
+		 * listed in public documentation.
+		 */
+		model: FormControl<string | null | undefined>,
+
+		/**
+		 * The language of the source text, set to one of the language codes listed in
+		 * Language Support. If the source language is not specified, the API will
+		 * attempt to identify the source language automatically and return it within
+		 * the response.
+		 */
+		source: FormControl<string | null | undefined>,
+
+		/**
+		 * The language to use for translation of the input text, set to one of the
+		 * language codes listed in Language Support.
+		 */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateTranslateTextRequestFormGroup() {
+		return new FormGroup<TranslateTextRequestFormProperties>({
+			format: new FormControl<string | null | undefined>(undefined),
+			model: new FormControl<string | null | undefined>(undefined),
+			source: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The main language translation response message. */
 	export interface TranslationsListResponse {
 
 		/** Translations contains list of translation results of given text */
-		translations?: Array<TranslationsResource> | null;
+		translations?: Array<TranslationsResource>;
+	}
+
+	/** The main language translation response message. */
+	export interface TranslationsListResponseFormProperties {
+	}
+	export function CreateTranslationsListResponseFormGroup() {
+		return new FormGroup<TranslationsListResponseFormProperties>({
+		});
+
 	}
 
 	export interface TranslationsResource {
@@ -125,6 +251,34 @@ export namespace MyNS {
 
 		/** Text translated into the target language. */
 		translatedText?: string | null;
+	}
+	export interface TranslationsResourceFormProperties {
+
+		/**
+		 * The source language of the initial request, detected automatically, if
+		 * no source language was passed within the initial request. If the
+		 * source language was passed, auto-detection of the language will not
+		 * occur and this field will be empty.
+		 */
+		detectedSourceLanguage: FormControl<string | null | undefined>,
+
+		/**
+		 * The `model` type used for this translation. Valid values are
+		 * listed in public documentation. Can be different from requested `model`.
+		 * Present only if specific model type was explicitly requested.
+		 */
+		model: FormControl<string | null | undefined>,
+
+		/** Text translated into the target language. */
+		translatedText: FormControl<string | null | undefined>,
+	}
+	export function CreateTranslationsResourceFormGroup() {
+		return new FormGroup<TranslationsResourceFormProperties>({
+			detectedSourceLanguage: new FormControl<string | null | undefined>(undefined),
+			model: new FormControl<string | null | undefined>(undefined),
+			translatedText: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -151,7 +305,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Language_translations_list(q: Array<string>, target: string, cid: Array<string> | null | undefined, format: Language_translations_listFormat | null | undefined, model: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v2?' + q.map(z => `q=${encodeURIComponent(z)}`).join('&') + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&' + cid.map(z => `cid=${encodeURIComponent(z)}`).join('&') + '&format=' + format + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v2?' + q.map(z => `q=${encodeURIComponent(z)}`).join('&') + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&' + cid?.map(z => `cid=${encodeURIComponent(z)}`).join('&') + '&format=' + format + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

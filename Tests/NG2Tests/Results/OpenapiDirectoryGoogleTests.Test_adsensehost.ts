@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Account {
 
@@ -16,6 +17,29 @@ export namespace MyNS {
 		/** Approval status of this account. One of: PENDING, APPROVED, DISABLED. */
 		status?: string | null;
 	}
+	export interface AccountFormProperties {
+
+		/** Unique identifier of this account. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind of resource this is, in this case adsensehost#account. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this account. */
+		name: FormControl<string | null | undefined>,
+
+		/** Approval status of this account. One of: PENDING, APPROVED, DISABLED. */
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Accounts {
 
@@ -23,10 +47,25 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The accounts returned in this list response. */
-		items?: Array<Account> | null;
+		items?: Array<Account>;
 
 		/** Kind of list this is, in this case adsensehost#accounts. */
 		kind?: string | null;
+	}
+	export interface AccountsFormProperties {
+
+		/** ETag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Kind of list this is, in this case adsensehost#accounts. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountsFormGroup() {
+		return new FormGroup<AccountsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AdClient {
@@ -46,6 +85,33 @@ export namespace MyNS {
 		/** Whether this ad client supports being reported on. */
 		supportsReporting?: boolean | null;
 	}
+	export interface AdClientFormProperties {
+
+		/** Whether this ad client is opted in to ARC. */
+		arcOptIn: FormControl<boolean | null | undefined>,
+
+		/** Unique identifier of this ad client. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind of resource this is, in this case adsensehost#adClient. */
+		kind: FormControl<string | null | undefined>,
+
+		/** This ad client's product code, which corresponds to the PRODUCT_CODE report dimension. */
+		productCode: FormControl<string | null | undefined>,
+
+		/** Whether this ad client supports being reported on. */
+		supportsReporting: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdClientFormGroup() {
+		return new FormGroup<AdClientFormProperties>({
+			arcOptIn: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			productCode: new FormControl<string | null | undefined>(undefined),
+			supportsReporting: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdClients {
 
@@ -53,13 +119,32 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The ad clients returned in this list response. */
-		items?: Array<AdClient> | null;
+		items?: Array<AdClient>;
 
 		/** Kind of list this is, in this case adsensehost#adClients. */
 		kind?: string | null;
 
 		/** Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's "pageToken" value to this. */
 		nextPageToken?: string | null;
+	}
+	export interface AdClientsFormProperties {
+
+		/** ETag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Kind of list this is, in this case adsensehost#adClients. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's "pageToken" value to this. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdClientsFormGroup() {
+		return new FormGroup<AdClientsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AdCode {
@@ -70,20 +155,50 @@ export namespace MyNS {
 		/** Kind this is, in this case adsensehost#adCode. */
 		kind?: string | null;
 	}
+	export interface AdCodeFormProperties {
+
+		/** The ad code snippet. */
+		adCode: FormControl<string | null | undefined>,
+
+		/** Kind this is, in this case adsensehost#adCode. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAdCodeFormGroup() {
+		return new FormGroup<AdCodeFormProperties>({
+			adCode: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdStyle {
 
 		/** The colors included in the style. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. */
-		colors?: AdStyleColors | null;
+		colors?: AdStyleColors;
 
 		/** The style of the corners in the ad (deprecated: never populated, ignored). */
 		corners?: string | null;
 
 		/** The font which is included in the style. */
-		font?: AdStyleFont | null;
+		font?: AdStyleFont;
 
 		/** Kind this is, in this case adsensehost#adStyle. */
 		kind?: string | null;
+	}
+	export interface AdStyleFormProperties {
+
+		/** The style of the corners in the ad (deprecated: never populated, ignored). */
+		corners: FormControl<string | null | undefined>,
+
+		/** Kind this is, in this case adsensehost#adStyle. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAdStyleFormGroup() {
+		return new FormGroup<AdStyleFormProperties>({
+			corners: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AdStyleColors {
@@ -103,6 +218,33 @@ export namespace MyNS {
 		/** The color of the ad url. */
 		url?: string | null;
 	}
+	export interface AdStyleColorsFormProperties {
+
+		/** The color of the ad background. */
+		background: FormControl<string | null | undefined>,
+
+		/** The color of the ad border. */
+		border: FormControl<string | null | undefined>,
+
+		/** The color of the ad text. */
+		text: FormControl<string | null | undefined>,
+
+		/** The color of the ad title. */
+		title: FormControl<string | null | undefined>,
+
+		/** The color of the ad url. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateAdStyleColorsFormGroup() {
+		return new FormGroup<AdStyleColorsFormProperties>({
+			background: new FormControl<string | null | undefined>(undefined),
+			border: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdStyleFont {
 
@@ -112,6 +254,21 @@ export namespace MyNS {
 		/** The size of the font. Possible values are: ACCOUNT_DEFAULT_SIZE, ADSENSE_DEFAULT_SIZE, SMALL, MEDIUM and LARGE. */
 		size?: string | null;
 	}
+	export interface AdStyleFontFormProperties {
+
+		/** The family of the font. Possible values are: ACCOUNT_DEFAULT_FAMILY, ADSENSE_DEFAULT_FAMILY, ARIAL, TIMES and VERDANA. */
+		family: FormControl<string | null | undefined>,
+
+		/** The size of the font. Possible values are: ACCOUNT_DEFAULT_SIZE, ADSENSE_DEFAULT_SIZE, SMALL, MEDIUM and LARGE. */
+		size: FormControl<string | null | undefined>,
+	}
+	export function CreateAdStyleFontFormGroup() {
+		return new FormGroup<AdStyleFontFormProperties>({
+			family: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdUnit {
 
@@ -119,8 +276,8 @@ export namespace MyNS {
 		code?: string | null;
 
 		/** Settings specific to content ads (AFC) and highend mobile content ads (AFMC - deprecated). */
-		contentAdsSettings?: AdUnitContentAdsSettings | null;
-		customStyle?: AdStyle | null;
+		contentAdsSettings?: AdUnitContentAdsSettings;
+		customStyle?: AdStyle;
 
 		/** Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
 		id?: string | null;
@@ -129,7 +286,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Settings specific to WAP mobile content ads (AFMC - deprecated). */
-		mobileContentAdsSettings?: AdUnitMobileContentAdsSettings | null;
+		mobileContentAdsSettings?: AdUnitMobileContentAdsSettings;
 
 		/** Name of this ad unit. */
 		name?: string | null;
@@ -142,17 +299,64 @@ export namespace MyNS {
 		 */
 		status?: string | null;
 	}
+	export interface AdUnitFormProperties {
+
+		/** Identity code of this ad unit, not necessarily unique across ad clients. */
+		code: FormControl<string | null | undefined>,
+
+		/** Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind of resource this is, in this case adsensehost#adUnit. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this ad unit. */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Status of this ad unit. Possible values are:
+		 * NEW: Indicates that the ad unit was created within the last seven days and does not yet have any activity associated with it.
+		 * ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
+		 * INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days.
+		 */
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAdUnitFormGroup() {
+		return new FormGroup<AdUnitFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdUnitContentAdsSettings {
 
 		/** The backup option to be used in instances where no ad is available. */
-		backupOption?: AdUnitContentAdsSettingsBackupOption | null;
+		backupOption?: AdUnitContentAdsSettingsBackupOption;
 
 		/** Size of this ad unit. Size values are in the form SIZE_{width}_{height}. */
 		size?: string | null;
 
 		/** Type of this ad unit. Possible values are TEXT, TEXT_IMAGE, IMAGE and LINK. */
 		type?: string | null;
+	}
+	export interface AdUnitContentAdsSettingsFormProperties {
+
+		/** Size of this ad unit. Size values are in the form SIZE_{width}_{height}. */
+		size: FormControl<string | null | undefined>,
+
+		/** Type of this ad unit. Possible values are TEXT, TEXT_IMAGE, IMAGE and LINK. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateAdUnitContentAdsSettingsFormGroup() {
+		return new FormGroup<AdUnitContentAdsSettingsFormProperties>({
+			size: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AdUnitContentAdsSettingsBackupOption {
@@ -165,6 +369,25 @@ export namespace MyNS {
 
 		/** URL to use when type is set to URL. */
 		url?: string | null;
+	}
+	export interface AdUnitContentAdsSettingsBackupOptionFormProperties {
+
+		/** Color to use when type is set to COLOR. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. */
+		color: FormControl<string | null | undefined>,
+
+		/** Type of the backup option. Possible values are BLANK, COLOR and URL. */
+		type: FormControl<string | null | undefined>,
+
+		/** URL to use when type is set to URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateAdUnitContentAdsSettingsBackupOptionFormGroup() {
+		return new FormGroup<AdUnitContentAdsSettingsBackupOptionFormProperties>({
+			color: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AdUnitMobileContentAdsSettings {
@@ -181,6 +404,29 @@ export namespace MyNS {
 		/** Type of this ad unit. */
 		type?: string | null;
 	}
+	export interface AdUnitMobileContentAdsSettingsFormProperties {
+
+		/** The markup language to use for this ad unit. */
+		markupLanguage: FormControl<string | null | undefined>,
+
+		/** The scripting language to use for this ad unit. */
+		scriptingLanguage: FormControl<string | null | undefined>,
+
+		/** Size of this ad unit. */
+		size: FormControl<string | null | undefined>,
+
+		/** Type of this ad unit. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateAdUnitMobileContentAdsSettingsFormGroup() {
+		return new FormGroup<AdUnitMobileContentAdsSettingsFormProperties>({
+			markupLanguage: new FormControl<string | null | undefined>(undefined),
+			scriptingLanguage: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdUnits {
 
@@ -188,13 +434,32 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The ad units returned in this list response. */
-		items?: Array<AdUnit> | null;
+		items?: Array<AdUnit>;
 
 		/** Kind of list this is, in this case adsensehost#adUnits. */
 		kind?: string | null;
 
 		/** Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this. */
 		nextPageToken?: string | null;
+	}
+	export interface AdUnitsFormProperties {
+
+		/** ETag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Kind of list this is, in this case adsensehost#adUnits. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdUnitsFormGroup() {
+		return new FormGroup<AdUnitsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociationSession {
@@ -209,7 +474,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The products to associate with the user. Options: AFC, AFG, AFV, AFS (deprecated), AFMC (deprecated) */
-		productCodes?: Array<string> | null;
+		productCodes?: Array<string>;
 
 		/** Redirect URL of this association session. Used to redirect users into the AdSense association flow. */
 		redirectUrl?: string | null;
@@ -226,6 +491,45 @@ export namespace MyNS {
 		/** The URL of the user's hosted website. */
 		websiteUrl?: string | null;
 	}
+	export interface AssociationSessionFormProperties {
+
+		/** Hosted account id of the associated publisher after association. Present if status is ACCEPTED. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Unique identifier of this association session. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind of resource this is, in this case adsensehost#associationSession. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Redirect URL of this association session. Used to redirect users into the AdSense association flow. */
+		redirectUrl: FormControl<string | null | undefined>,
+
+		/** Status of the completed association, available once the association callback token has been verified. One of ACCEPTED, REJECTED, or ERROR. */
+		status: FormControl<string | null | undefined>,
+
+		/** The preferred locale of the user themselves when going through the AdSense association flow. */
+		userLocale: FormControl<string | null | undefined>,
+
+		/** The locale of the user's hosted website. */
+		websiteLocale: FormControl<string | null | undefined>,
+
+		/** The URL of the user's hosted website. */
+		websiteUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociationSessionFormGroup() {
+		return new FormGroup<AssociationSessionFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			redirectUrl: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			userLocale: new FormControl<string | null | undefined>(undefined),
+			websiteLocale: new FormControl<string | null | undefined>(undefined),
+			websiteUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CustomChannel {
 
@@ -241,6 +545,29 @@ export namespace MyNS {
 		/** Name of this custom channel. */
 		name?: string | null;
 	}
+	export interface CustomChannelFormProperties {
+
+		/** Code of this custom channel, not necessarily unique across ad clients. */
+		code: FormControl<string | null | undefined>,
+
+		/** Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind of resource this is, in this case adsensehost#customChannel. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this custom channel. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomChannelFormGroup() {
+		return new FormGroup<CustomChannelFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CustomChannels {
 
@@ -248,7 +575,7 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The custom channels returned in this list response. */
-		items?: Array<CustomChannel> | null;
+		items?: Array<CustomChannel>;
 
 		/** Kind of list this is, in this case adsensehost#customChannels. */
 		kind?: string | null;
@@ -256,29 +583,63 @@ export namespace MyNS {
 		/** Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
 		nextPageToken?: string | null;
 	}
+	export interface CustomChannelsFormProperties {
+
+		/** ETag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Kind of list this is, in this case adsensehost#customChannels. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomChannelsFormGroup() {
+		return new FormGroup<CustomChannelsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Report {
 
 		/** The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. */
-		averages?: Array<string> | null;
+		averages?: Array<string>;
 
 		/** The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. */
-		ReportHeaders?: Array<ReportHeaders> | null;
+		ReportHeaders?: Array<ReportHeaders>;
 
 		/** Kind this is, in this case adsensehost#report. */
 		kind?: string | null;
 
 		/** The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. */
-		rows?: Array<string> | null;
+		rows?: Array<string>;
 
 		/** The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. */
 		totalMatchedRows?: string | null;
 
 		/** The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. */
-		totals?: Array<string> | null;
+		totals?: Array<string>;
 
 		/** Any warnings associated with generation of the report. */
-		warnings?: Array<string> | null;
+		warnings?: Array<string>;
+	}
+	export interface ReportFormProperties {
+
+		/** Kind this is, in this case adsensehost#report. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. */
+		totalMatchedRows: FormControl<string | null | undefined>,
+	}
+	export function CreateReportFormGroup() {
+		return new FormGroup<ReportFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			totalMatchedRows: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReportHeaders {
@@ -292,6 +653,25 @@ export namespace MyNS {
 		/** The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY. */
 		type?: string | null;
 	}
+	export interface ReportHeadersFormProperties {
+
+		/** The currency of this column. Only present if the header type is METRIC_CURRENCY. */
+		currency: FormControl<string | null | undefined>,
+
+		/** The name of the header. */
+		name: FormControl<string | null | undefined>,
+
+		/** The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateReportHeadersFormGroup() {
+		return new FormGroup<ReportHeadersFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UrlChannel {
 
@@ -304,6 +684,25 @@ export namespace MyNS {
 		/** URL Pattern of this URL channel. Does not include "http://" or "https://". Example: www.example.com/home */
 		urlPattern?: string | null;
 	}
+	export interface UrlChannelFormProperties {
+
+		/** Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind of resource this is, in this case adsensehost#urlChannel. */
+		kind: FormControl<string | null | undefined>,
+
+		/** URL Pattern of this URL channel. Does not include "http://" or "https://". Example: www.example.com/home */
+		urlPattern: FormControl<string | null | undefined>,
+	}
+	export function CreateUrlChannelFormGroup() {
+		return new FormGroup<UrlChannelFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			urlPattern: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UrlChannels {
 
@@ -311,13 +710,32 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The URL channels returned in this list response. */
-		items?: Array<UrlChannel> | null;
+		items?: Array<UrlChannel>;
 
 		/** Kind of list this is, in this case adsensehost#urlChannels. */
 		kind?: string | null;
 
 		/** Continuation token used to page through URL channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
 		nextPageToken?: string | null;
+	}
+	export interface UrlChannelsFormProperties {
+
+		/** ETag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Kind of list this is, in this case adsensehost#urlChannels. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through URL channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUrlChannelsFormGroup() {
+		return new FormGroup<UrlChannelsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -450,7 +868,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Adsensehost_accounts_adunits_getAdCode(accountId: string, adClientId: string, adUnitId: string, hostCustomChannelId: Array<string> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits/' + (adUnitId == null ? '' : encodeURIComponent(adUnitId)) + '/adcode&' + hostCustomChannelId.map(z => `hostCustomChannelId=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits/' + (adUnitId == null ? '' : encodeURIComponent(adUnitId)) + '/adcode&' + hostCustomChannelId?.map(z => `hostCustomChannelId=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -469,7 +887,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Adsensehost_accounts_reports_generate(accountId: string, startDate: string, endDate: string, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/reports&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + dimension.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/reports&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + dimension?.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter?.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric?.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort?.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -630,7 +1048,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Adsensehost_reports_generate(startDate: string, endDate: string, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'reports?startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + dimension.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'reports?startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + dimension?.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter?.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric?.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort?.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 	}
 

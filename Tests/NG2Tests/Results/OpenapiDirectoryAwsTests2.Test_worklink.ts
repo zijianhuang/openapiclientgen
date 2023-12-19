@@ -1,51 +1,153 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateDomainResponse {
+	}
+	export interface AssociateDomainResponseFormProperties {
+	}
+	export function CreateAssociateDomainResponseFormGroup() {
+		return new FormGroup<AssociateDomainResponseFormProperties>({
+		});
+
 	}
 
 	export interface UnauthorizedException {
 	}
+	export interface UnauthorizedExceptionFormProperties {
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerErrorException {
+	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AssociateWebsiteAuthorizationProviderResponse {
 		AuthorizationProviderId?: string | null;
 	}
+	export interface AssociateWebsiteAuthorizationProviderResponseFormProperties {
+		AuthorizationProviderId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateWebsiteAuthorizationProviderResponseFormGroup() {
+		return new FormGroup<AssociateWebsiteAuthorizationProviderResponseFormProperties>({
+			AuthorizationProviderId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateWebsiteCertificateAuthorityResponse {
 		WebsiteCaId?: string | null;
+	}
+	export interface AssociateWebsiteCertificateAuthorityResponseFormProperties {
+		WebsiteCaId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateWebsiteCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<AssociateWebsiteCertificateAuthorityResponseFormProperties>({
+			WebsiteCaId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFleetResponse {
 		FleetArn?: string | null;
 	}
+	export interface CreateFleetResponseFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFleetResponseFormGroup() {
+		return new FormGroup<CreateFleetResponseFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteFleetResponse {
+	}
+	export interface DeleteFleetResponseFormProperties {
+	}
+	export function CreateDeleteFleetResponseFormGroup() {
+		return new FormGroup<DeleteFleetResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAuditStreamConfigurationResponse {
 		AuditStreamArn?: string | null;
 	}
+	export interface DescribeAuditStreamConfigurationResponseFormProperties {
+		AuditStreamArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAuditStreamConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeAuditStreamConfigurationResponseFormProperties>({
+			AuditStreamArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCompanyNetworkConfigurationResponse {
 		VpcId?: string | null;
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+	export interface DescribeCompanyNetworkConfigurationResponseFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCompanyNetworkConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeCompanyNetworkConfigurationResponseFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDeviceResponse {
@@ -59,11 +161,45 @@ export namespace MyNS {
 		LastAccessedTime?: Date | null;
 		Username?: string | null;
 	}
+	export interface DescribeDeviceResponseFormProperties {
+		Status: FormControl<DescribeDeviceResponseStatus | null | undefined>,
+		Model: FormControl<string | null | undefined>,
+		Manufacturer: FormControl<string | null | undefined>,
+		OperatingSystem: FormControl<string | null | undefined>,
+		OperatingSystemVersion: FormControl<string | null | undefined>,
+		PatchLevel: FormControl<string | null | undefined>,
+		FirstAccessedTime: FormControl<Date | null | undefined>,
+		LastAccessedTime: FormControl<Date | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDeviceResponseFormGroup() {
+		return new FormGroup<DescribeDeviceResponseFormProperties>({
+			Status: new FormControl<DescribeDeviceResponseStatus | null | undefined>(undefined),
+			Model: new FormControl<string | null | undefined>(undefined),
+			Manufacturer: new FormControl<string | null | undefined>(undefined),
+			OperatingSystem: new FormControl<string | null | undefined>(undefined),
+			OperatingSystemVersion: new FormControl<string | null | undefined>(undefined),
+			PatchLevel: new FormControl<string | null | undefined>(undefined),
+			FirstAccessedTime: new FormControl<Date | null | undefined>(undefined),
+			LastAccessedTime: new FormControl<Date | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeDeviceResponseStatus { ACTIVE = 0, SIGNED_OUT = 1 }
 
 	export interface DescribeDevicePolicyConfigurationResponse {
 		DeviceCaCertificate?: string | null;
+	}
+	export interface DescribeDevicePolicyConfigurationResponseFormProperties {
+		DeviceCaCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDevicePolicyConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeDevicePolicyConfigurationResponseFormProperties>({
+			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDomainResponse {
@@ -72,6 +208,23 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 		DomainStatus?: DescribeDomainResponseDomainStatus | null;
 		AcmCertificateArn?: string | null;
+	}
+	export interface DescribeDomainResponseFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		DomainStatus: FormControl<DescribeDomainResponseDomainStatus | null | undefined>,
+		AcmCertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDomainResponseFormGroup() {
+		return new FormGroup<DescribeDomainResponseFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			DomainStatus: new FormControl<DescribeDomainResponseDomainStatus | null | undefined>(undefined),
+			AcmCertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeDomainResponseDomainStatus { PENDING_VALIDATION = 0, ASSOCIATING = 1, ACTIVE = 2, INACTIVE = 3, DISASSOCIATING = 4, DISASSOCIATED = 5, FAILED_TO_ASSOCIATE = 6, FAILED_TO_DISASSOCIATE = 7 }
@@ -84,18 +237,59 @@ export namespace MyNS {
 		OptimizeForEndUserLocation?: boolean | null;
 		CompanyCode?: string | null;
 		FleetStatus?: DescribeFleetMetadataResponseFleetStatus | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface DescribeFleetMetadataResponseFormProperties {
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		FleetName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		OptimizeForEndUserLocation: FormControl<boolean | null | undefined>,
+		CompanyCode: FormControl<string | null | undefined>,
+		FleetStatus: FormControl<DescribeFleetMetadataResponseFleetStatus | null | undefined>,
+	}
+	export function CreateDescribeFleetMetadataResponseFormGroup() {
+		return new FormGroup<DescribeFleetMetadataResponseFormProperties>({
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
+			CompanyCode: new FormControl<string | null | undefined>(undefined),
+			FleetStatus: new FormControl<DescribeFleetMetadataResponseFleetStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeFleetMetadataResponseFleetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3, FAILED_TO_CREATE = 4, FAILED_TO_DELETE = 5 }
 
 	export interface TagMap {
 	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
+	}
 
 	export interface DescribeIdentityProviderConfigurationResponse {
 		IdentityProviderType?: DescribeIdentityProviderConfigurationResponseIdentityProviderType | null;
 		ServiceProviderSamlMetadata?: string | null;
 		IdentityProviderSamlMetadata?: string | null;
+	}
+	export interface DescribeIdentityProviderConfigurationResponseFormProperties {
+		IdentityProviderType: FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>,
+		ServiceProviderSamlMetadata: FormControl<string | null | undefined>,
+		IdentityProviderSamlMetadata: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIdentityProviderConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeIdentityProviderConfigurationResponseFormProperties>({
+			IdentityProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined),
+			ServiceProviderSamlMetadata: new FormControl<string | null | undefined>(undefined),
+			IdentityProviderSamlMetadata: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeIdentityProviderConfigurationResponseIdentityProviderType { SAML = 0 }
@@ -105,19 +299,62 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 		DisplayName?: string | null;
 	}
+	export interface DescribeWebsiteCertificateAuthorityResponseFormProperties {
+		Certificate: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWebsiteCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<DescribeWebsiteCertificateAuthorityResponseFormProperties>({
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateDomainResponse {
+	}
+	export interface DisassociateDomainResponseFormProperties {
+	}
+	export function CreateDisassociateDomainResponseFormGroup() {
+		return new FormGroup<DisassociateDomainResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateWebsiteAuthorizationProviderResponse {
 	}
+	export interface DisassociateWebsiteAuthorizationProviderResponseFormProperties {
+	}
+	export function CreateDisassociateWebsiteAuthorizationProviderResponseFormGroup() {
+		return new FormGroup<DisassociateWebsiteAuthorizationProviderResponseFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateWebsiteCertificateAuthorityResponse {
 	}
+	export interface DisassociateWebsiteCertificateAuthorityResponseFormProperties {
+	}
+	export function CreateDisassociateWebsiteCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<DisassociateWebsiteCertificateAuthorityResponseFormProperties>({
+		});
+
+	}
 
 	export interface ListDevicesResponse {
-		Devices?: Array<DeviceSummary> | null;
+		Devices?: Array<DeviceSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDevicesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicesResponseFormGroup() {
+		return new FormGroup<ListDevicesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -127,9 +364,31 @@ export namespace MyNS {
 		DeviceStatus?: DescribeDeviceResponseStatus | null;
 	}
 
+	/** The summary of devices. */
+	export interface DeviceSummaryFormProperties {
+		DeviceId: FormControl<string | null | undefined>,
+		DeviceStatus: FormControl<DescribeDeviceResponseStatus | null | undefined>,
+	}
+	export function CreateDeviceSummaryFormGroup() {
+		return new FormGroup<DeviceSummaryFormProperties>({
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			DeviceStatus: new FormControl<DescribeDeviceResponseStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDomainsResponse {
-		Domains?: Array<DomainSummary> | null;
+		Domains?: Array<DomainSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDomainsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDomainsResponseFormGroup() {
+		return new FormGroup<ListDomainsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -141,9 +400,35 @@ export namespace MyNS {
 		DomainStatus: DescribeDomainResponseDomainStatus;
 	}
 
+	/** The summary of the domain. */
+	export interface DomainSummaryFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		DomainStatus: FormControl<DescribeDomainResponseDomainStatus | null | undefined>,
+	}
+	export function CreateDomainSummaryFormGroup() {
+		return new FormGroup<DomainSummaryFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			DomainStatus: new FormControl<DescribeDomainResponseDomainStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListFleetsResponse {
-		FleetSummaryList?: Array<FleetSummary> | null;
+		FleetSummaryList?: Array<FleetSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListFleetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFleetsResponseFormGroup() {
+		return new FormGroup<ListFleetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -156,16 +441,55 @@ export namespace MyNS {
 		DisplayName?: string | null;
 		CompanyCode?: string | null;
 		FleetStatus?: DescribeFleetMetadataResponseFleetStatus | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+
+	/** The summary of the fleet. */
+	export interface FleetSummaryFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		FleetName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		CompanyCode: FormControl<string | null | undefined>,
+		FleetStatus: FormControl<DescribeFleetMetadataResponseFleetStatus | null | undefined>,
+	}
+	export function CreateFleetSummaryFormGroup() {
+		return new FormGroup<FleetSummaryFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			CompanyCode: new FormControl<string | null | undefined>(undefined),
+			FleetStatus: new FormControl<DescribeFleetMetadataResponseFleetStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListWebsiteAuthorizationProvidersResponse {
-		WebsiteAuthorizationProviders?: Array<WebsiteAuthorizationProviderSummary> | null;
+		WebsiteAuthorizationProviders?: Array<WebsiteAuthorizationProviderSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListWebsiteAuthorizationProvidersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWebsiteAuthorizationProvidersResponseFormGroup() {
+		return new FormGroup<ListWebsiteAuthorizationProvidersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -177,9 +501,35 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 	}
 
+	/** The summary of the website authorization provider. */
+	export interface WebsiteAuthorizationProviderSummaryFormProperties {
+		AuthorizationProviderId: FormControl<string | null | undefined>,
+		AuthorizationProviderType: FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateWebsiteAuthorizationProviderSummaryFormGroup() {
+		return new FormGroup<WebsiteAuthorizationProviderSummaryFormProperties>({
+			AuthorizationProviderId: new FormControl<string | null | undefined>(undefined),
+			AuthorizationProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListWebsiteCertificateAuthoritiesResponse {
-		WebsiteCertificateAuthorities?: Array<WebsiteCaSummary> | null;
+		WebsiteCertificateAuthorities?: Array<WebsiteCaSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListWebsiteCertificateAuthoritiesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWebsiteCertificateAuthoritiesResponseFormGroup() {
+		return new FormGroup<ListWebsiteCertificateAuthoritiesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -190,37 +540,129 @@ export namespace MyNS {
 		DisplayName?: string | null;
 	}
 
+	/** The summary of the certificate authority (CA). */
+	export interface WebsiteCaSummaryFormProperties {
+		WebsiteCaId: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateWebsiteCaSummaryFormGroup() {
+		return new FormGroup<WebsiteCaSummaryFormProperties>({
+			WebsiteCaId: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RestoreDomainAccessResponse {
+	}
+	export interface RestoreDomainAccessResponseFormProperties {
+	}
+	export function CreateRestoreDomainAccessResponseFormGroup() {
+		return new FormGroup<RestoreDomainAccessResponseFormProperties>({
+		});
+
 	}
 
 	export interface RevokeDomainAccessResponse {
 	}
+	export interface RevokeDomainAccessResponseFormProperties {
+	}
+	export function CreateRevokeDomainAccessResponseFormGroup() {
+		return new FormGroup<RevokeDomainAccessResponseFormProperties>({
+		});
+
+	}
 
 	export interface SignOutUserResponse {
+	}
+	export interface SignOutUserResponseFormProperties {
+	}
+	export function CreateSignOutUserResponseFormGroup() {
+		return new FormGroup<SignOutUserResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAuditStreamConfigurationResponse {
 	}
+	export interface UpdateAuditStreamConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateAuditStreamConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateAuditStreamConfigurationResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateCompanyNetworkConfigurationResponse {
+	}
+	export interface UpdateCompanyNetworkConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateCompanyNetworkConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateCompanyNetworkConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDevicePolicyConfigurationResponse {
 	}
+	export interface UpdateDevicePolicyConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateDevicePolicyConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateDevicePolicyConfigurationResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDomainMetadataResponse {
+	}
+	export interface UpdateDomainMetadataResponseFormProperties {
+	}
+	export function CreateUpdateDomainMetadataResponseFormGroup() {
+		return new FormGroup<UpdateDomainMetadataResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFleetMetadataResponse {
 	}
+	export interface UpdateFleetMetadataResponseFormProperties {
+	}
+	export function CreateUpdateFleetMetadataResponseFormGroup() {
+		return new FormGroup<UpdateFleetMetadataResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateIdentityProviderConfigurationResponse {
+	}
+	export interface UpdateIdentityProviderConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateIdentityProviderConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateIdentityProviderConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateDomainRequest {
@@ -228,6 +670,21 @@ export namespace MyNS {
 		DomainName: string;
 		DisplayName?: string | null;
 		AcmCertificateArn: string;
+	}
+	export interface AssociateDomainRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		AcmCertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDomainRequestFormGroup() {
+		return new FormGroup<AssociateDomainRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			AcmCertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuthorizationProviderType { SAML = 0 }
@@ -237,39 +694,125 @@ export namespace MyNS {
 		AuthorizationProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
 		DomainName?: string | null;
 	}
+	export interface AssociateWebsiteAuthorizationProviderRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		AuthorizationProviderType: FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateWebsiteAuthorizationProviderRequestFormGroup() {
+		return new FormGroup<AssociateWebsiteAuthorizationProviderRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizationProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateWebsiteCertificateAuthorityRequest {
 		FleetArn: string;
 		Certificate: string;
 		DisplayName?: string | null;
 	}
+	export interface AssociateWebsiteCertificateAuthorityRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		Certificate: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateWebsiteCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<AssociateWebsiteCertificateAuthorityRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateFleetRequest {
 		FleetName: string;
 		DisplayName?: string | null;
 		OptimizeForEndUserLocation?: boolean | null;
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface CreateFleetRequestFormProperties {
+		FleetName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		OptimizeForEndUserLocation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateFleetRequestFormGroup() {
+		return new FormGroup<CreateFleetRequestFormProperties>({
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteFleetRequest {
 		FleetArn: string;
 	}
+	export interface DeleteFleetRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFleetRequestFormGroup() {
+		return new FormGroup<DeleteFleetRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAuditStreamConfigurationRequest {
 		FleetArn: string;
+	}
+	export interface DescribeAuditStreamConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAuditStreamConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeAuditStreamConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCompanyNetworkConfigurationRequest {
 		FleetArn: string;
 	}
+	export interface DescribeCompanyNetworkConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCompanyNetworkConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeCompanyNetworkConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDevicePolicyConfigurationRequest {
 		FleetArn: string;
+	}
+	export interface DescribeDevicePolicyConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDevicePolicyConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeDevicePolicyConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDeviceRequest {
 		FleetArn: string;
 		DeviceId: string;
+	}
+	export interface DescribeDeviceRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDeviceRequestFormGroup() {
+		return new FormGroup<DescribeDeviceRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeviceStatus { ACTIVE = 0, SIGNED_OUT = 1 }
@@ -278,17 +821,46 @@ export namespace MyNS {
 		FleetArn: string;
 		DomainName: string;
 	}
+	export interface DescribeDomainRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDomainRequestFormGroup() {
+		return new FormGroup<DescribeDomainRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DomainStatus { PENDING_VALIDATION = 0, ASSOCIATING = 1, ACTIVE = 2, INACTIVE = 3, DISASSOCIATING = 4, DISASSOCIATED = 5, FAILED_TO_ASSOCIATE = 6, FAILED_TO_DISASSOCIATE = 7 }
 
 	export interface DescribeFleetMetadataRequest {
 		FleetArn: string;
 	}
+	export interface DescribeFleetMetadataRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetMetadataRequestFormGroup() {
+		return new FormGroup<DescribeFleetMetadataRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum FleetStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3, FAILED_TO_CREATE = 4, FAILED_TO_DELETE = 5 }
 
 	export interface DescribeIdentityProviderConfigurationRequest {
 		FleetArn: string;
+	}
+	export interface DescribeIdentityProviderConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIdentityProviderConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeIdentityProviderConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IdentityProviderType { SAML = 0 }
@@ -297,20 +869,64 @@ export namespace MyNS {
 		FleetArn: string;
 		WebsiteCaId: string;
 	}
+	export interface DescribeWebsiteCertificateAuthorityRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		WebsiteCaId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWebsiteCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<DescribeWebsiteCertificateAuthorityRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			WebsiteCaId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateDomainRequest {
 		FleetArn: string;
 		DomainName: string;
+	}
+	export interface DisassociateDomainRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateDomainRequestFormGroup() {
+		return new FormGroup<DisassociateDomainRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateWebsiteAuthorizationProviderRequest {
 		FleetArn: string;
 		AuthorizationProviderId: string;
 	}
+	export interface DisassociateWebsiteAuthorizationProviderRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		AuthorizationProviderId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateWebsiteAuthorizationProviderRequestFormGroup() {
+		return new FormGroup<DisassociateWebsiteAuthorizationProviderRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizationProviderId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateWebsiteCertificateAuthorityRequest {
 		FleetArn: string;
 		WebsiteCaId: string;
+	}
+	export interface DisassociateWebsiteCertificateAuthorityRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		WebsiteCaId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateWebsiteCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<DisassociateWebsiteCertificateAuthorityRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			WebsiteCaId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDevicesRequest {
@@ -318,19 +934,63 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDevicesRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDevicesRequestFormGroup() {
+		return new FormGroup<ListDevicesRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDomainsRequest {
 		FleetArn: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDomainsRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDomainsRequestFormGroup() {
+		return new FormGroup<ListDomainsRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFleetsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListFleetsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListFleetsRequestFormGroup() {
+		return new FormGroup<ListFleetsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListWebsiteAuthorizationProvidersRequest {
@@ -338,38 +998,122 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListWebsiteAuthorizationProvidersRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWebsiteAuthorizationProvidersRequestFormGroup() {
+		return new FormGroup<ListWebsiteAuthorizationProvidersRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListWebsiteCertificateAuthoritiesRequest {
 		FleetArn: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListWebsiteCertificateAuthoritiesRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWebsiteCertificateAuthoritiesRequestFormGroup() {
+		return new FormGroup<ListWebsiteCertificateAuthoritiesRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestoreDomainAccessRequest {
 		FleetArn: string;
 		DomainName: string;
+	}
+	export interface RestoreDomainAccessRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreDomainAccessRequestFormGroup() {
+		return new FormGroup<RestoreDomainAccessRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RevokeDomainAccessRequest {
 		FleetArn: string;
 		DomainName: string;
 	}
+	export interface RevokeDomainAccessRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeDomainAccessRequestFormGroup() {
+		return new FormGroup<RevokeDomainAccessRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SignOutUserRequest {
 		FleetArn: string;
 		Username: string;
 	}
+	export interface SignOutUserRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateSignOutUserRequestFormGroup() {
+		return new FormGroup<SignOutUserRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		Tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAuditStreamConfigurationRequest {
 		FleetArn: string;
 		AuditStreamArn?: string | null;
+	}
+	export interface UpdateAuditStreamConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		AuditStreamArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuditStreamConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateAuditStreamConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			AuditStreamArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCompanyNetworkConfigurationRequest {
@@ -378,10 +1122,32 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 		SecurityGroupIds: Array<string>;
 	}
+	export interface UpdateCompanyNetworkConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCompanyNetworkConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateCompanyNetworkConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDevicePolicyConfigurationRequest {
 		FleetArn: string;
 		DeviceCaCertificate?: string | null;
+	}
+	export interface UpdateDevicePolicyConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DeviceCaCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDevicePolicyConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateDevicePolicyConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDomainMetadataRequest {
@@ -389,17 +1155,56 @@ export namespace MyNS {
 		DomainName: string;
 		DisplayName?: string | null;
 	}
+	export interface UpdateDomainMetadataRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainMetadataRequestFormGroup() {
+		return new FormGroup<UpdateDomainMetadataRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFleetMetadataRequest {
 		FleetArn: string;
 		DisplayName?: string | null;
 		OptimizeForEndUserLocation?: boolean | null;
 	}
+	export interface UpdateFleetMetadataRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		OptimizeForEndUserLocation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateFleetMetadataRequestFormGroup() {
+		return new FormGroup<UpdateFleetMetadataRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateIdentityProviderConfigurationRequest {
 		FleetArn: string;
 		IdentityProviderType: DescribeIdentityProviderConfigurationResponseIdentityProviderType;
 		IdentityProviderSamlMetadata?: string | null;
+	}
+	export interface UpdateIdentityProviderConfigurationRequestFormProperties {
+		FleetArn: FormControl<string | null | undefined>,
+		IdentityProviderType: FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>,
+		IdentityProviderSamlMetadata: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIdentityProviderConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateIdentityProviderConfigurationRequestFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			IdentityProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined),
+			IdentityProviderSamlMetadata: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -751,6 +1556,47 @@ export namespace MyNS {
 		 */
 		AcmCertificateArn: string;
 	}
+	export interface AssociateDomainPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The fully qualified domain name (FQDN).
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * The name to display.
+		 * Max length: 100
+		 */
+		DisplayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of an issued ACM certificate that is valid for the domain being associated.
+		 * Required
+		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*
+		 */
+		AcmCertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDomainPostBodyFormGroup() {
+		return new FormGroup<AssociateDomainPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			AcmCertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateWebsiteAuthorizationProviderPostBody {
 
@@ -775,6 +1621,38 @@ export namespace MyNS {
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName?: string | null;
+	}
+	export interface AssociateWebsiteAuthorizationProviderPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The authorization provider type.
+		 * Required
+		 */
+		AuthorizationProviderType: FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>,
+
+		/**
+		 * The domain name of the authorization provider. This applies only to SAML-based authorization providers.
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateWebsiteAuthorizationProviderPostBodyFormGroup() {
+		return new FormGroup<AssociateWebsiteAuthorizationProviderPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizationProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateWebsiteCertificateAuthorityPostBody {
@@ -802,6 +1680,39 @@ export namespace MyNS {
 		 */
 		DisplayName?: string | null;
 	}
+	export interface AssociateWebsiteCertificateAuthorityPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The root certificate of the CA.
+		 * Required
+		 * Max length: 8192
+		 * Min length: 1
+		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
+		 */
+		Certificate: FormControl<string | null | undefined>,
+
+		/**
+		 * The certificate name to display.
+		 * Max length: 100
+		 */
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateWebsiteCertificateAuthorityPostBodyFormGroup() {
+		return new FormGroup<AssociateWebsiteCertificateAuthorityPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateFleetPostBody {
 
@@ -824,7 +1735,39 @@ export namespace MyNS {
 		OptimizeForEndUserLocation?: boolean | null;
 
 		/** The tags to add to the resource. A tag is a key-value pair. */
-		Tags?: {[id: string]: string } | null;
+		Tags?: {[id: string]: string };
+	}
+	export interface CreateFleetPostBodyFormProperties {
+
+		/**
+		 * A unique name for the fleet.
+		 * Required
+		 * Max length: 48
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
+		 */
+		FleetName: FormControl<string | null | undefined>,
+
+		/**
+		 * The fleet name to display.
+		 * Max length: 100
+		 */
+		DisplayName: FormControl<string | null | undefined>,
+
+		/** The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. */
+		OptimizeForEndUserLocation: FormControl<boolean | null | undefined>,
+
+		/** The tags to add to the resource. A tag is a key-value pair. */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateFleetPostBodyFormGroup() {
+		return new FormGroup<CreateFleetPostBodyFormProperties>({
+			FleetName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteFleetPostBody {
@@ -837,6 +1780,22 @@ export namespace MyNS {
 		 */
 		FleetArn: string;
 	}
+	export interface DeleteFleetPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFleetPostBodyFormGroup() {
+		return new FormGroup<DeleteFleetPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAuditStreamConfigurationPostBody {
 
@@ -848,6 +1807,22 @@ export namespace MyNS {
 		 */
 		FleetArn: string;
 	}
+	export interface DescribeAuditStreamConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAuditStreamConfigurationPostBodyFormGroup() {
+		return new FormGroup<DescribeAuditStreamConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCompanyNetworkConfigurationPostBody {
 
@@ -858,6 +1833,22 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		FleetArn: string;
+	}
+	export interface DescribeCompanyNetworkConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCompanyNetworkConfigurationPostBodyFormGroup() {
+		return new FormGroup<DescribeCompanyNetworkConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDevicePostBody {
@@ -878,6 +1869,31 @@ export namespace MyNS {
 		 */
 		DeviceId: string;
 	}
+	export interface DescribeDevicePostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique identifier for a registered user's device.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		DeviceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDevicePostBodyFormGroup() {
+		return new FormGroup<DescribeDevicePostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDevicePolicyConfigurationPostBody {
 
@@ -888,6 +1904,22 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		FleetArn: string;
+	}
+	export interface DescribeDevicePolicyConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDevicePolicyConfigurationPostBodyFormGroup() {
+		return new FormGroup<DescribeDevicePolicyConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDomainPostBody {
@@ -909,6 +1941,32 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 	}
+	export interface DescribeDomainPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the domain.
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDomainPostBodyFormGroup() {
+		return new FormGroup<DescribeDomainPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeFleetMetadataPostBody {
 
@@ -920,6 +1978,22 @@ export namespace MyNS {
 		 */
 		FleetArn: string;
 	}
+	export interface DescribeFleetMetadataPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFleetMetadataPostBodyFormGroup() {
+		return new FormGroup<DescribeFleetMetadataPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeIdentityProviderConfigurationPostBody {
 
@@ -930,6 +2004,22 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		FleetArn: string;
+	}
+	export interface DescribeIdentityProviderConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIdentityProviderConfigurationPostBodyFormGroup() {
+		return new FormGroup<DescribeIdentityProviderConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeWebsiteCertificateAuthorityPostBody {
@@ -949,6 +2039,31 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		WebsiteCaId: string;
+	}
+	export interface DescribeWebsiteCertificateAuthorityPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique identifier for the certificate authority.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		WebsiteCaId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWebsiteCertificateAuthorityPostBodyFormGroup() {
+		return new FormGroup<DescribeWebsiteCertificateAuthorityPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			WebsiteCaId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateDomainPostBody {
@@ -970,6 +2085,32 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 	}
+	export interface DisassociateDomainPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the domain.
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateDomainPostBodyFormGroup() {
+		return new FormGroup<DisassociateDomainPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateWebsiteAuthorizationProviderPostBody {
 
@@ -989,6 +2130,31 @@ export namespace MyNS {
 		 */
 		AuthorizationProviderId: string;
 	}
+	export interface DisassociateWebsiteAuthorizationProviderPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique identifier for the authorization provider.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		AuthorizationProviderId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateWebsiteAuthorizationProviderPostBodyFormGroup() {
+		return new FormGroup<DisassociateWebsiteAuthorizationProviderPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			AuthorizationProviderId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateWebsiteCertificateAuthorityPostBody {
 
@@ -1007,6 +2173,31 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		WebsiteCaId: string;
+	}
+	export interface DisassociateWebsiteCertificateAuthorityPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique identifier for the CA.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		WebsiteCaId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateWebsiteCertificateAuthorityPostBodyFormGroup() {
+		return new FormGroup<DisassociateWebsiteCertificateAuthorityPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			WebsiteCaId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDevicesPostBody {
@@ -1033,6 +2224,38 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface ListDevicesPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [\w\-]+
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to be included in the next page.
+		 * Minimum: 1
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDevicesPostBodyFormGroup() {
+		return new FormGroup<ListDevicesPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDomainsPostBody {
 
@@ -1058,6 +2281,38 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface ListDomainsPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [\w\-]+
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to be included in the next page.
+		 * Minimum: 1
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDomainsPostBodyFormGroup() {
+		return new FormGroup<ListDomainsPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFleetsPostBody {
 
@@ -1075,6 +2330,29 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface ListFleetsPostBodyFormProperties {
+
+		/**
+		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [\w\-]+
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to be included in the next page.
+		 * Minimum: 1
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListFleetsPostBodyFormGroup() {
+		return new FormGroup<ListFleetsPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -1083,6 +2361,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The tags to add to the resource. A tag is a key-value pair.
+		 * Required
+		 */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListWebsiteAuthorizationProvidersPostBody {
@@ -1109,6 +2401,38 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface ListWebsiteAuthorizationProvidersPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [\w\-]+
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to be included in the next page.
+		 * Minimum: 1
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWebsiteAuthorizationProvidersPostBodyFormGroup() {
+		return new FormGroup<ListWebsiteAuthorizationProvidersPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListWebsiteCertificateAuthoritiesPostBody {
 
@@ -1134,6 +2458,38 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 	}
+	export interface ListWebsiteCertificateAuthoritiesPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to be included in the next page.
+		 * Minimum: 1
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [\w\-]+
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWebsiteCertificateAuthoritiesPostBodyFormGroup() {
+		return new FormGroup<ListWebsiteCertificateAuthoritiesPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestoreDomainAccessPostBody {
 
@@ -1153,6 +2509,32 @@ export namespace MyNS {
 		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
+	}
+	export interface RestoreDomainAccessPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the domain.
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreDomainAccessPostBodyFormGroup() {
+		return new FormGroup<RestoreDomainAccessPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RevokeDomainAccessPostBody {
@@ -1174,6 +2556,32 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 	}
+	export interface RevokeDomainAccessPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the domain.
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeDomainAccessPostBodyFormGroup() {
+		return new FormGroup<RevokeDomainAccessPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SignOutUserPostBody {
 
@@ -1193,6 +2601,31 @@ export namespace MyNS {
 		 */
 		Username: string;
 	}
+	export interface SignOutUserPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the user.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateSignOutUserPostBodyFormGroup() {
+		return new FormGroup<SignOutUserPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAuditStreamConfigurationPostBody {
 
@@ -1209,6 +2642,29 @@ export namespace MyNS {
 		 * Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$
 		 */
 		AuditStreamArn?: string | null;
+	}
+	export interface UpdateAuditStreamConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the Amazon Kinesis data stream that receives the audit events.
+		 * Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$
+		 */
+		AuditStreamArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuditStreamConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateAuditStreamConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			AuditStreamArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCompanyNetworkConfigurationPostBody {
@@ -1241,6 +2697,30 @@ export namespace MyNS {
 		 */
 		SecurityGroupIds: Array<string>;
 	}
+	export interface UpdateCompanyNetworkConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The VPC with connectivity to associated websites.
+		 * Required
+		 * Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$
+		 */
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCompanyNetworkConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateCompanyNetworkConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDevicePolicyConfigurationPostBody {
 
@@ -1259,6 +2739,31 @@ export namespace MyNS {
 		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate?: string | null;
+	}
+	export interface UpdateDevicePolicyConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
+		 * Max length: 32768
+		 * Min length: 1
+		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
+		 */
+		DeviceCaCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDevicePolicyConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateDevicePolicyConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDomainMetadataPostBody {
@@ -1286,6 +2791,39 @@ export namespace MyNS {
 		 */
 		DisplayName?: string | null;
 	}
+	export interface UpdateDomainMetadataPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the domain.
+		 * Required
+		 * Max length: 253
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * The name to display.
+		 * Max length: 100
+		 */
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainMetadataPostBodyFormGroup() {
+		return new FormGroup<UpdateDomainMetadataPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFleetMetadataPostBody {
 
@@ -1305,6 +2843,33 @@ export namespace MyNS {
 
 		/** The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. */
 		OptimizeForEndUserLocation?: boolean | null;
+	}
+	export interface UpdateFleetMetadataPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The fleet name to display. The existing DisplayName is unset if null is passed.
+		 * Max length: 100
+		 */
+		DisplayName: FormControl<string | null | undefined>,
+
+		/** The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. */
+		OptimizeForEndUserLocation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateFleetMetadataPostBodyFormGroup() {
+		return new FormGroup<UpdateFleetMetadataPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIdentityProviderConfigurationPostBody {
@@ -1329,6 +2894,37 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		IdentityProviderSamlMetadata?: string | null;
+	}
+	export interface UpdateIdentityProviderConfigurationPostBodyFormProperties {
+
+		/**
+		 * The ARN of the fleet.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		FleetArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of identity provider.
+		 * Required
+		 */
+		IdentityProviderType: FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>,
+
+		/**
+		 * The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.
+		 * Max length: 204800
+		 * Min length: 1
+		 */
+		IdentityProviderSamlMetadata: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIdentityProviderConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateIdentityProviderConfigurationPostBodyFormProperties>({
+			FleetArn: new FormControl<string | null | undefined>(undefined),
+			IdentityProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined),
+			IdentityProviderSamlMetadata: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,30 +1,84 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** An empty object that indicates that the configuration set was successfully created. */
 	export interface CreateConfigurationSetResponse {
 	}
 
+	/** An empty object that indicates that the configuration set was successfully created. */
+	export interface CreateConfigurationSetResponseFormProperties {
+	}
+	export function CreateCreateConfigurationSetResponseFormGroup() {
+		return new FormGroup<CreateConfigurationSetResponseFormProperties>({
+		});
+
+	}
+
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServiceErrorException {
 	}
+	export interface InternalServiceErrorExceptionFormProperties {
+	}
+	export function CreateInternalServiceErrorExceptionFormGroup() {
+		return new FormGroup<InternalServiceErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AlreadyExistsException {
+	}
+	export interface AlreadyExistsExceptionFormProperties {
+	}
+	export function CreateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<AlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** An empty object that indicates that the event destination was created successfully. */
 	export interface CreateConfigurationSetEventDestinationResponse {
+	}
+
+	/** An empty object that indicates that the event destination was created successfully. */
+	export interface CreateConfigurationSetEventDestinationResponseFormProperties {
+	}
+	export function CreateCreateConfigurationSetEventDestinationResponseFormGroup() {
+		return new FormGroup<CreateConfigurationSetEventDestinationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -34,11 +88,37 @@ export namespace MyNS {
 		LogGroupArn?: string | null;
 	}
 
+	/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
+	export interface CloudWatchLogsDestinationFormProperties {
+		IamRoleArn: FormControl<string | null | undefined>,
+		LogGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLogsDestinationFormGroup() {
+		return new FormGroup<CloudWatchLogsDestinationFormProperties>({
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			LogGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
 	export interface KinesisFirehoseDestination {
 		DeliveryStreamArn?: string | null;
 		IamRoleArn?: string | null;
+	}
+
+	/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
+	export interface KinesisFirehoseDestinationFormProperties {
+		DeliveryStreamArn: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseDestinationFormGroup() {
+		return new FormGroup<KinesisFirehoseDestinationFormProperties>({
+			DeliveryStreamArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -51,7 +131,25 @@ export namespace MyNS {
 		TopicArn?: string | null;
 	}
 
+	/** An object that contains information about an event destination that sends data to Amazon SNS. */
+	export interface SnsDestinationFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSnsDestinationFormGroup() {
+		return new FormGroup<SnsDestinationFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -59,9 +157,27 @@ export namespace MyNS {
 	export interface DeleteConfigurationSetResponse {
 	}
 
+	/** An empty object that indicates that the configuration set was deleted successfully. */
+	export interface DeleteConfigurationSetResponseFormProperties {
+	}
+	export function CreateDeleteConfigurationSetResponseFormGroup() {
+		return new FormGroup<DeleteConfigurationSetResponseFormProperties>({
+		});
+
+	}
+
 
 	/** An empty object that indicates that the event destination was deleted successfully. */
 	export interface DeleteConfigurationSetEventDestinationResponse {
+	}
+
+	/** An empty object that indicates that the event destination was deleted successfully. */
+	export interface DeleteConfigurationSetEventDestinationResponseFormProperties {
+	}
+	export function CreateDeleteConfigurationSetEventDestinationResponseFormGroup() {
+		return new FormGroup<DeleteConfigurationSetEventDestinationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -69,7 +185,16 @@ export namespace MyNS {
 	export interface GetConfigurationSetEventDestinationsResponse {
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		EventDestinations?: Array<EventDestination> | null;
+		EventDestinations?: Array<EventDestination>;
+	}
+
+	/** An object that contains information about an event destination. */
+	export interface GetConfigurationSetEventDestinationsResponseFormProperties {
+	}
+	export function CreateGetConfigurationSetEventDestinationsResponseFormGroup() {
+		return new FormGroup<GetConfigurationSetEventDestinationsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -77,18 +202,31 @@ export namespace MyNS {
 	export interface EventDestination {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination;
 		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType> | null;
+		MatchingEventTypes?: Array<EventType>;
 		Name?: string | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination | null;
+		SnsDestination?: SnsDestination;
+	}
+
+	/** An object that defines an event destination. */
+	export interface EventDestinationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateEventDestinationFormGroup() {
+		return new FormGroup<EventDestinationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -96,8 +234,19 @@ export namespace MyNS {
 	export interface ListConfigurationSetsResponse {
 
 		/** An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region. */
-		ConfigurationSets?: Array<string> | null;
+		ConfigurationSets?: Array<string>;
 		NextToken?: string | null;
+	}
+
+	/** An object that contains information about the configuration sets for your account in the current region. */
+	export interface ListConfigurationSetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConfigurationSetsResponseFormGroup() {
+		return new FormGroup<ListConfigurationSetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -106,10 +255,32 @@ export namespace MyNS {
 		MessageId?: string | null;
 	}
 
+	/** An object that that contains the Message ID of a Voice message that was sent successfully. */
+	export interface SendVoiceMessageResponseFormProperties {
+		MessageId: FormControl<string | null | undefined>,
+	}
+	export function CreateSendVoiceMessageResponseFormGroup() {
+		return new FormGroup<SendVoiceMessageResponseFormProperties>({
+			MessageId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
 	export interface CallInstructionsMessageType {
 		Text?: string | null;
+	}
+
+	/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
+	export interface CallInstructionsMessageTypeFormProperties {
+		Text: FormControl<string | null | undefined>,
+	}
+	export function CreateCallInstructionsMessageTypeFormGroup() {
+		return new FormGroup<CallInstructionsMessageTypeFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -120,6 +291,21 @@ export namespace MyNS {
 		VoiceId?: string | null;
 	}
 
+	/** An object that defines a message that contains unformatted text. */
+	export interface PlainTextMessageTypeFormProperties {
+		LanguageCode: FormControl<string | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		VoiceId: FormControl<string | null | undefined>,
+	}
+	export function CreatePlainTextMessageTypeFormGroup() {
+		return new FormGroup<PlainTextMessageTypeFormProperties>({
+			LanguageCode: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			VoiceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object that defines a message that contains SSML-formatted text. */
 	export interface SSMLMessageType {
@@ -128,9 +314,33 @@ export namespace MyNS {
 		VoiceId?: string | null;
 	}
 
+	/** An object that defines a message that contains SSML-formatted text. */
+	export interface SSMLMessageTypeFormProperties {
+		LanguageCode: FormControl<string | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		VoiceId: FormControl<string | null | undefined>,
+	}
+	export function CreateSSMLMessageTypeFormGroup() {
+		return new FormGroup<SSMLMessageTypeFormProperties>({
+			LanguageCode: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			VoiceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An empty object that indicates that the event destination was updated successfully. */
 	export interface UpdateConfigurationSetEventDestinationResponse {
+	}
+
+	/** An empty object that indicates that the event destination was updated successfully. */
+	export interface UpdateConfigurationSetEventDestinationResponseFormProperties {
+	}
+	export function CreateUpdateConfigurationSetEventDestinationResponseFormGroup() {
+		return new FormGroup<UpdateConfigurationSetEventDestinationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -138,17 +348,28 @@ export namespace MyNS {
 	export interface EventDestinationDefinition {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination;
 		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType> | null;
+		MatchingEventTypes?: Array<EventType>;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination | null;
+		SnsDestination?: SnsDestination;
+	}
+
+	/** An object that defines a single event destination. */
+	export interface EventDestinationDefinitionFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEventDestinationDefinitionFormGroup() {
+		return new FormGroup<EventDestinationDefinitionFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -156,8 +377,19 @@ export namespace MyNS {
 	export interface CreateConfigurationSetEventDestinationRequest {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: EventDestinationDefinition | null;
+		EventDestination?: EventDestinationDefinition;
 		EventDestinationName?: string | null;
+	}
+
+	/** Create a new event destination in a configuration set. */
+	export interface CreateConfigurationSetEventDestinationRequestFormProperties {
+		EventDestinationName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationSetEventDestinationRequestFormGroup() {
+		return new FormGroup<CreateConfigurationSetEventDestinationRequestFormProperties>({
+			EventDestinationName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -166,16 +398,55 @@ export namespace MyNS {
 		ConfigurationSetName?: string | null;
 	}
 
+	/** A request to create a new configuration set. */
+	export interface CreateConfigurationSetRequestFormProperties {
+		ConfigurationSetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationSetRequestFormGroup() {
+		return new FormGroup<CreateConfigurationSetRequestFormProperties>({
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteConfigurationSetEventDestinationRequest {
+	}
+	export interface DeleteConfigurationSetEventDestinationRequestFormProperties {
+	}
+	export function CreateDeleteConfigurationSetEventDestinationRequestFormGroup() {
+		return new FormGroup<DeleteConfigurationSetEventDestinationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteConfigurationSetRequest {
 	}
+	export interface DeleteConfigurationSetRequestFormProperties {
+	}
+	export function CreateDeleteConfigurationSetRequestFormGroup() {
+		return new FormGroup<DeleteConfigurationSetRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetConfigurationSetEventDestinationsRequest {
 	}
+	export interface GetConfigurationSetEventDestinationsRequestFormProperties {
+	}
+	export function CreateGetConfigurationSetEventDestinationsRequestFormGroup() {
+		return new FormGroup<GetConfigurationSetEventDestinationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListConfigurationSetsRequest {
+	}
+	export interface ListConfigurationSetsRequestFormProperties {
+	}
+	export function CreateListConfigurationSetsRequestFormGroup() {
+		return new FormGroup<ListConfigurationSetsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -183,13 +454,22 @@ export namespace MyNS {
 	export interface VoiceMessageContent {
 
 		/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
-		CallInstructionsMessage?: CallInstructionsMessageType | null;
+		CallInstructionsMessage?: CallInstructionsMessageType;
 
 		/** An object that defines a message that contains unformatted text. */
-		PlainTextMessage?: PlainTextMessageType | null;
+		PlainTextMessage?: PlainTextMessageType;
 
 		/** An object that defines a message that contains SSML-formatted text. */
-		SSMLMessage?: SSMLMessageType | null;
+		SSMLMessage?: SSMLMessageType;
+	}
+
+	/** An object that contains a voice message and information about the recipient that you want to send it to. */
+	export interface VoiceMessageContentFormProperties {
+	}
+	export function CreateVoiceMessageContentFormGroup() {
+		return new FormGroup<VoiceMessageContentFormProperties>({
+		});
+
 	}
 
 
@@ -199,9 +479,26 @@ export namespace MyNS {
 		ConfigurationSetName?: string | null;
 
 		/** An object that contains a voice message and information about the recipient that you want to send it to. */
-		Content?: VoiceMessageContent | null;
+		Content?: VoiceMessageContent;
 		DestinationPhoneNumber?: string | null;
 		OriginationPhoneNumber?: string | null;
+	}
+
+	/** SendVoiceMessageRequest */
+	export interface SendVoiceMessageRequestFormProperties {
+		CallerId: FormControl<string | null | undefined>,
+		ConfigurationSetName: FormControl<string | null | undefined>,
+		DestinationPhoneNumber: FormControl<string | null | undefined>,
+		OriginationPhoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateSendVoiceMessageRequestFormGroup() {
+		return new FormGroup<SendVoiceMessageRequestFormProperties>({
+			CallerId: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			DestinationPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			OriginationPhoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -209,7 +506,16 @@ export namespace MyNS {
 	export interface UpdateConfigurationSetEventDestinationRequest {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: EventDestinationDefinition | null;
+		EventDestination?: EventDestinationDefinition;
+	}
+
+	/** UpdateConfigurationSetEventDestinationRequest */
+	export interface UpdateConfigurationSetEventDestinationRequestFormProperties {
+	}
+	export function CreateUpdateConfigurationSetEventDestinationRequestFormGroup() {
+		return new FormGroup<UpdateConfigurationSetEventDestinationRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -304,52 +610,99 @@ export namespace MyNS {
 		/** The name that you want to give the configuration set. */
 		ConfigurationSetName?: string | null;
 	}
+	export interface CreateConfigurationSetPostBodyFormProperties {
+
+		/** The name that you want to give the configuration set. */
+		ConfigurationSetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationSetPostBodyFormGroup() {
+		return new FormGroup<CreateConfigurationSetPostBodyFormProperties>({
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateConfigurationSetEventDestinationPostBody {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: CreateConfigurationSetEventDestinationPostBodyEventDestination | null;
+		EventDestination?: CreateConfigurationSetEventDestinationPostBodyEventDestination;
 
 		/** A name that identifies the event destination. */
 		EventDestinationName?: string | null;
+	}
+	export interface CreateConfigurationSetEventDestinationPostBodyFormProperties {
+
+		/** A name that identifies the event destination. */
+		EventDestinationName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationSetEventDestinationPostBodyFormGroup() {
+		return new FormGroup<CreateConfigurationSetEventDestinationPostBodyFormProperties>({
+			EventDestinationName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateConfigurationSetEventDestinationPostBodyEventDestination {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination;
 		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType> | null;
+		MatchingEventTypes?: Array<EventType>;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination | null;
+		SnsDestination?: SnsDestination;
+	}
+	export interface CreateConfigurationSetEventDestinationPostBodyEventDestinationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateConfigurationSetEventDestinationPostBodyEventDestinationFormGroup() {
+		return new FormGroup<CreateConfigurationSetEventDestinationPostBodyEventDestinationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateConfigurationSetEventDestinationPutBody {
 
 		/** An object that defines a single event destination. */
-		EventDestination?: UpdateConfigurationSetEventDestinationPutBodyEventDestination | null;
+		EventDestination?: UpdateConfigurationSetEventDestinationPutBodyEventDestination;
+	}
+	export interface UpdateConfigurationSetEventDestinationPutBodyFormProperties {
+	}
+	export function CreateUpdateConfigurationSetEventDestinationPutBodyFormGroup() {
+		return new FormGroup<UpdateConfigurationSetEventDestinationPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateConfigurationSetEventDestinationPutBodyEventDestination {
 
 		/** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs. */
-		CloudWatchLogsDestination?: CloudWatchLogsDestination | null;
+		CloudWatchLogsDestination?: CloudWatchLogsDestination;
 		Enabled?: boolean | null;
 
 		/** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination;
 
 		/** An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination. */
-		MatchingEventTypes?: Array<EventType> | null;
+		MatchingEventTypes?: Array<EventType>;
 
 		/** An object that contains information about an event destination that sends data to Amazon SNS. */
-		SnsDestination?: SnsDestination | null;
+		SnsDestination?: SnsDestination;
+	}
+	export interface UpdateConfigurationSetEventDestinationPutBodyEventDestinationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateConfigurationSetEventDestinationPutBodyEventDestinationFormGroup() {
+		return new FormGroup<UpdateConfigurationSetEventDestinationPutBodyEventDestinationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SendVoiceMessagePostBody {
@@ -361,7 +714,7 @@ export namespace MyNS {
 		ConfigurationSetName?: string | null;
 
 		/** An object that contains a voice message and information about the recipient that you want to send it to. */
-		Content?: SendVoiceMessagePostBodyContent | null;
+		Content?: SendVoiceMessagePostBodyContent;
 
 		/** The phone number that you want to send the voice message to. */
 		DestinationPhoneNumber?: string | null;
@@ -369,17 +722,47 @@ export namespace MyNS {
 		/** The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request. */
 		OriginationPhoneNumber?: string | null;
 	}
+	export interface SendVoiceMessagePostBodyFormProperties {
+
+		/** The phone number that appears on recipients' devices when they receive the message. */
+		CallerId: FormControl<string | null | undefined>,
+
+		/** The name of the configuration set that you want to use to send the message. */
+		ConfigurationSetName: FormControl<string | null | undefined>,
+
+		/** The phone number that you want to send the voice message to. */
+		DestinationPhoneNumber: FormControl<string | null | undefined>,
+
+		/** The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request. */
+		OriginationPhoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateSendVoiceMessagePostBodyFormGroup() {
+		return new FormGroup<SendVoiceMessagePostBodyFormProperties>({
+			CallerId: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSetName: new FormControl<string | null | undefined>(undefined),
+			DestinationPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			OriginationPhoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendVoiceMessagePostBodyContent {
 
 		/** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup. */
-		CallInstructionsMessage?: CallInstructionsMessageType | null;
+		CallInstructionsMessage?: CallInstructionsMessageType;
 
 		/** An object that defines a message that contains unformatted text. */
-		PlainTextMessage?: PlainTextMessageType | null;
+		PlainTextMessage?: PlainTextMessageType;
 
 		/** An object that defines a message that contains SSML-formatted text. */
-		SSMLMessage?: SSMLMessageType | null;
+		SSMLMessage?: SSMLMessageType;
+	}
+	export interface SendVoiceMessagePostBodyContentFormProperties {
+	}
+	export function CreateSendVoiceMessagePostBodyContentFormGroup() {
+		return new FormGroup<SendVoiceMessagePostBodyContentFormProperties>({
+		});
+
 	}
 
 }

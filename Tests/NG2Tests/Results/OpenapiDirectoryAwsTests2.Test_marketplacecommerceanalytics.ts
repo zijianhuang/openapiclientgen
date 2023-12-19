@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Container for the result of the GenerateDataSet operation. */
 	export interface GenerateDataSetResult {
 		dataSetRequestId?: string | null;
+	}
+
+	/** Container for the result of the GenerateDataSet operation. */
+	export interface GenerateDataSetResultFormProperties {
+		dataSetRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateDataSetResultFormGroup() {
+		return new FormGroup<GenerateDataSetResultFormProperties>({
+			dataSetRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -17,21 +29,67 @@ export namespace MyNS {
 		destinationS3BucketName: string;
 		destinationS3Prefix?: string | null;
 		snsTopicArn: string;
-		customerDefinedValues?: CustomerDefinedValues | null;
+		customerDefinedValues?: CustomerDefinedValues;
+	}
+
+	/** Container for the parameters to the GenerateDataSet operation. */
+	export interface GenerateDataSetRequestFormProperties {
+		dataSetType: FormControl<GenerateDataSetRequestDataSetType | null | undefined>,
+		dataSetPublicationDate: FormControl<Date | null | undefined>,
+		roleNameArn: FormControl<string | null | undefined>,
+		destinationS3BucketName: FormControl<string | null | undefined>,
+		destinationS3Prefix: FormControl<string | null | undefined>,
+		snsTopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateDataSetRequestFormGroup() {
+		return new FormGroup<GenerateDataSetRequestFormProperties>({
+			dataSetType: new FormControl<GenerateDataSetRequestDataSetType | null | undefined>(undefined),
+			dataSetPublicationDate: new FormControl<Date | null | undefined>(undefined),
+			roleNameArn: new FormControl<string | null | undefined>(undefined),
+			destinationS3BucketName: new FormControl<string | null | undefined>(undefined),
+			destinationS3Prefix: new FormControl<string | null | undefined>(undefined),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GenerateDataSetRequestDataSetType { customer_subscriber_hourly_monthly_subscriptions = 0, customer_subscriber_annual_subscriptions = 1, daily_business_usage_by_instance_type = 2, daily_business_fees = 3, daily_business_free_trial_conversions = 4, daily_business_new_instances = 5, daily_business_new_product_subscribers = 6, daily_business_canceled_product_subscribers = 7, monthly_revenue_billing_and_revenue_data = 8, monthly_revenue_annual_subscriptions = 9, monthly_revenue_field_demonstration_usage = 10, monthly_revenue_flexible_payment_schedule = 11, disbursed_amount_by_product = 12, disbursed_amount_by_product_with_uncollected_funds = 13, disbursed_amount_by_instance_hours = 14, disbursed_amount_by_customer_geo = 15, disbursed_amount_by_age_of_uncollected_funds = 16, disbursed_amount_by_age_of_disbursed_funds = 17, disbursed_amount_by_age_of_past_due_funds = 18, disbursed_amount_by_uncollected_funds_breakdown = 19, customer_profile_by_industry = 20, customer_profile_by_revenue = 21, customer_profile_by_geography = 22, sales_compensation_billed_revenue = 23, us_sales_and_use_tax_records = 24 }
 
 	export interface CustomerDefinedValues {
 	}
+	export interface CustomerDefinedValuesFormProperties {
+	}
+	export function CreateCustomerDefinedValuesFormGroup() {
+		return new FormGroup<CustomerDefinedValuesFormProperties>({
+		});
+
+	}
 
 	export interface MarketplaceCommerceAnalyticsException {
+	}
+	export interface MarketplaceCommerceAnalyticsExceptionFormProperties {
+	}
+	export function CreateMarketplaceCommerceAnalyticsExceptionFormGroup() {
+		return new FormGroup<MarketplaceCommerceAnalyticsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Container for the result of the StartSupportDataExport operation. */
 	export interface StartSupportDataExportResult {
 		dataSetRequestId?: string | null;
+	}
+
+	/** Container for the result of the StartSupportDataExport operation. */
+	export interface StartSupportDataExportResultFormProperties {
+		dataSetRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSupportDataExportResultFormGroup() {
+		return new FormGroup<StartSupportDataExportResultFormProperties>({
+			dataSetRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,7 +101,28 @@ export namespace MyNS {
 		destinationS3BucketName: string;
 		destinationS3Prefix?: string | null;
 		snsTopicArn: string;
-		customerDefinedValues?: CustomerDefinedValues | null;
+		customerDefinedValues?: CustomerDefinedValues;
+	}
+
+	/** Container for the parameters to the StartSupportDataExport operation. */
+	export interface StartSupportDataExportRequestFormProperties {
+		dataSetType: FormControl<StartSupportDataExportRequestDataSetType | null | undefined>,
+		fromDate: FormControl<Date | null | undefined>,
+		roleNameArn: FormControl<string | null | undefined>,
+		destinationS3BucketName: FormControl<string | null | undefined>,
+		destinationS3Prefix: FormControl<string | null | undefined>,
+		snsTopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSupportDataExportRequestFormGroup() {
+		return new FormGroup<StartSupportDataExportRequestFormProperties>({
+			dataSetType: new FormControl<StartSupportDataExportRequestDataSetType | null | undefined>(undefined),
+			fromDate: new FormControl<Date | null | undefined>(undefined),
+			roleNameArn: new FormControl<string | null | undefined>(undefined),
+			destinationS3BucketName: new FormControl<string | null | undefined>(undefined),
+			destinationS3Prefix: new FormControl<string | null | undefined>(undefined),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartSupportDataExportRequestDataSetType { customer_support_contacts_data = 0, test_customer_support_contacts_data = 1 }

@@ -1,20 +1,56 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterValueException {
 	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MissingParameterValueException {
+	}
+	export interface MissingParameterValueExceptionFormProperties {
+	}
+	export function CreateMissingParameterValueExceptionFormGroup() {
+		return new FormGroup<MissingParameterValueExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -22,9 +58,27 @@ export namespace MyNS {
 	export interface ArchiveCreationOutput {
 	}
 
+	/** <p>Contains the Amazon S3 Glacier response to your request.</p> <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p> */
+	export interface ArchiveCreationOutputFormProperties {
+	}
+	export function CreateArchiveCreationOutputFormGroup() {
+		return new FormGroup<ArchiveCreationOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface CreateVaultOutput {
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface CreateVaultOutputFormProperties {
+	}
+	export function CreateCreateVaultOutputFormGroup() {
+		return new FormGroup<CreateVaultOutputFormProperties>({
+		});
+
 	}
 
 
@@ -49,14 +103,59 @@ export namespace MyNS {
 		Tier?: string | null;
 
 		/** Describes the options for a range inventory retrieval job. */
-		InventoryRetrievalParameters?: InventoryRetrievalJobDescription | null;
+		InventoryRetrievalParameters?: InventoryRetrievalJobDescription;
 		JobOutputPath?: string | null;
 
 		/** Contains information about the parameters used for a select. */
-		SelectParameters?: SelectParameters | null;
+		SelectParameters?: SelectParameters;
 
 		/** Contains information about the location where the select job results are stored. */
-		OutputLocation?: OutputLocation | null;
+		OutputLocation?: OutputLocation;
+	}
+
+	/** Contains the description of an Amazon S3 Glacier job. */
+	export interface GlacierJobDescriptionFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobDescription: FormControl<string | null | undefined>,
+		Action: FormControl<GlacierJobDescriptionAction | null | undefined>,
+		ArchiveId: FormControl<string | null | undefined>,
+		VaultARN: FormControl<string | null | undefined>,
+		CreationDate: FormControl<string | null | undefined>,
+		Completed: FormControl<boolean | null | undefined>,
+		StatusCode: FormControl<GlacierJobDescriptionStatusCode | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		ArchiveSizeInBytes: FormControl<number | null | undefined>,
+		InventorySizeInBytes: FormControl<number | null | undefined>,
+		SNSTopic: FormControl<string | null | undefined>,
+		CompletionDate: FormControl<string | null | undefined>,
+		SHA256TreeHash: FormControl<string | null | undefined>,
+		ArchiveSHA256TreeHash: FormControl<string | null | undefined>,
+		RetrievalByteRange: FormControl<string | null | undefined>,
+		Tier: FormControl<string | null | undefined>,
+		JobOutputPath: FormControl<string | null | undefined>,
+	}
+	export function CreateGlacierJobDescriptionFormGroup() {
+		return new FormGroup<GlacierJobDescriptionFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobDescription: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<GlacierJobDescriptionAction | null | undefined>(undefined),
+			ArchiveId: new FormControl<string | null | undefined>(undefined),
+			VaultARN: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined),
+			Completed: new FormControl<boolean | null | undefined>(undefined),
+			StatusCode: new FormControl<GlacierJobDescriptionStatusCode | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			ArchiveSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			InventorySizeInBytes: new FormControl<number | null | undefined>(undefined),
+			SNSTopic: new FormControl<string | null | undefined>(undefined),
+			CompletionDate: new FormControl<string | null | undefined>(undefined),
+			SHA256TreeHash: new FormControl<string | null | undefined>(undefined),
+			ArchiveSHA256TreeHash: new FormControl<string | null | undefined>(undefined),
+			RetrievalByteRange: new FormControl<string | null | undefined>(undefined),
+			Tier: new FormControl<string | null | undefined>(undefined),
+			JobOutputPath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GlacierJobDescriptionAction { ArchiveRetrieval = 0, InventoryRetrieval = 1, Select = 2 }
@@ -73,17 +172,49 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Describes the options for a range inventory retrieval job. */
+	export interface InventoryRetrievalJobDescriptionFormProperties {
+		Format: FormControl<string | null | undefined>,
+		StartDate: FormControl<string | null | undefined>,
+		EndDate: FormControl<string | null | undefined>,
+		Limit: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateInventoryRetrievalJobDescriptionFormGroup() {
+		return new FormGroup<InventoryRetrievalJobDescriptionFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			EndDate: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the parameters used for a select. */
 	export interface SelectParameters {
 
 		/** Describes how the archive is serialized. */
-		InputSerialization?: InputSerialization | null;
+		InputSerialization?: InputSerialization;
 		ExpressionType?: SelectParametersExpressionType | null;
 		Expression?: string | null;
 
 		/** Describes how the select output is serialized. */
-		OutputSerialization?: OutputSerialization | null;
+		OutputSerialization?: OutputSerialization;
+	}
+
+	/** Contains information about the parameters used for a select. */
+	export interface SelectParametersFormProperties {
+		ExpressionType: FormControl<SelectParametersExpressionType | null | undefined>,
+		Expression: FormControl<string | null | undefined>,
+	}
+	export function CreateSelectParametersFormGroup() {
+		return new FormGroup<SelectParametersFormProperties>({
+			ExpressionType: new FormControl<SelectParametersExpressionType | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -91,7 +222,16 @@ export namespace MyNS {
 	export interface InputSerialization {
 
 		/** Contains information about the comma-separated value (CSV) file to select from. */
-		csv?: CSVInput | null;
+		csv?: CSVInput;
+	}
+
+	/** Describes how the archive is serialized. */
+	export interface InputSerializationFormProperties {
+	}
+	export function CreateInputSerializationFormGroup() {
+		return new FormGroup<InputSerializationFormProperties>({
+		});
+
 	}
 
 
@@ -105,6 +245,27 @@ export namespace MyNS {
 		QuoteCharacter?: string | null;
 	}
 
+	/** Contains information about the comma-separated value (CSV) file to select from. */
+	export interface CSVInputFormProperties {
+		FileHeaderInfo: FormControl<CSVInputFileHeaderInfo | null | undefined>,
+		Comments: FormControl<string | null | undefined>,
+		QuoteEscapeCharacter: FormControl<string | null | undefined>,
+		RecordDelimiter: FormControl<string | null | undefined>,
+		FieldDelimiter: FormControl<string | null | undefined>,
+		QuoteCharacter: FormControl<string | null | undefined>,
+	}
+	export function CreateCSVInputFormGroup() {
+		return new FormGroup<CSVInputFormProperties>({
+			FileHeaderInfo: new FormControl<CSVInputFileHeaderInfo | null | undefined>(undefined),
+			Comments: new FormControl<string | null | undefined>(undefined),
+			QuoteEscapeCharacter: new FormControl<string | null | undefined>(undefined),
+			RecordDelimiter: new FormControl<string | null | undefined>(undefined),
+			FieldDelimiter: new FormControl<string | null | undefined>(undefined),
+			QuoteCharacter: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CSVInputFileHeaderInfo { USE = 0, IGNORE = 1, NONE = 2 }
 
 	export enum SelectParametersExpressionType { SQL = 0 }
@@ -114,7 +275,16 @@ export namespace MyNS {
 	export interface OutputSerialization {
 
 		/** Contains information about the comma-separated value (CSV) file that the job results are stored in. */
-		csv?: CSVOutput | null;
+		csv?: CSVOutput;
+	}
+
+	/** Describes how the select output is serialized. */
+	export interface OutputSerializationFormProperties {
+	}
+	export function CreateOutputSerializationFormGroup() {
+		return new FormGroup<OutputSerializationFormProperties>({
+		});
+
 	}
 
 
@@ -127,6 +297,25 @@ export namespace MyNS {
 		QuoteCharacter?: string | null;
 	}
 
+	/** Contains information about the comma-separated value (CSV) file that the job results are stored in. */
+	export interface CSVOutputFormProperties {
+		QuoteFields: FormControl<CSVOutputQuoteFields | null | undefined>,
+		QuoteEscapeCharacter: FormControl<string | null | undefined>,
+		RecordDelimiter: FormControl<string | null | undefined>,
+		FieldDelimiter: FormControl<string | null | undefined>,
+		QuoteCharacter: FormControl<string | null | undefined>,
+	}
+	export function CreateCSVOutputFormGroup() {
+		return new FormGroup<CSVOutputFormProperties>({
+			QuoteFields: new FormControl<CSVOutputQuoteFields | null | undefined>(undefined),
+			QuoteEscapeCharacter: new FormControl<string | null | undefined>(undefined),
+			RecordDelimiter: new FormControl<string | null | undefined>(undefined),
+			FieldDelimiter: new FormControl<string | null | undefined>(undefined),
+			QuoteCharacter: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CSVOutputQuoteFields { ALWAYS = 0, ASNEEDED = 1 }
 
 
@@ -134,7 +323,16 @@ export namespace MyNS {
 	export interface OutputLocation {
 
 		/** Contains information about the location in Amazon S3 where the select job results are stored. */
-		S3?: S3Location | null;
+		S3?: S3Location;
+	}
+
+	/** Contains information about the location where the select job results are stored. */
+	export interface OutputLocationFormProperties {
+	}
+	export function CreateOutputLocationFormGroup() {
+		return new FormGroup<OutputLocationFormProperties>({
+		});
+
 	}
 
 
@@ -144,12 +342,29 @@ export namespace MyNS {
 		Prefix?: string | null;
 
 		/** Contains information about the encryption used to store the job results in Amazon S3. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 		CannedACL?: S3LocationCannedACL | null;
-		AccessControlList?: Array<Grant> | null;
-		Tagging?: Hashmap | null;
-		UserMetadata?: Hashmap | null;
+		AccessControlList?: Array<Grant>;
+		Tagging?: Hashmap;
+		UserMetadata?: Hashmap;
 		StorageClass?: S3LocationStorageClass | null;
+	}
+
+	/** Contains information about the location in Amazon S3 where the select job results are stored. */
+	export interface S3LocationFormProperties {
+		BucketName: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		CannedACL: FormControl<S3LocationCannedACL | null | undefined>,
+		StorageClass: FormControl<S3LocationStorageClass | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			BucketName: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			CannedACL: new FormControl<S3LocationCannedACL | null | undefined>(undefined),
+			StorageClass: new FormControl<S3LocationStorageClass | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -158,6 +373,21 @@ export namespace MyNS {
 		EncryptionType?: EncryptionEncryptionType | null;
 		KMSKeyId?: string | null;
 		KMSContext?: string | null;
+	}
+
+	/** Contains information about the encryption used to store the job results in Amazon S3.  */
+	export interface EncryptionFormProperties {
+		EncryptionType: FormControl<EncryptionEncryptionType | null | undefined>,
+		KMSKeyId: FormControl<string | null | undefined>,
+		KMSContext: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionFormGroup() {
+		return new FormGroup<EncryptionFormProperties>({
+			EncryptionType: new FormControl<EncryptionEncryptionType | null | undefined>(undefined),
+			KMSKeyId: new FormControl<string | null | undefined>(undefined),
+			KMSContext: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EncryptionEncryptionType { awskms = 0, AES256 = 1 }
@@ -169,8 +399,19 @@ export namespace MyNS {
 	export interface Grant {
 
 		/** Contains information about the grantee. */
-		Grantee?: Grantee | null;
+		Grantee?: Grantee;
 		Permission?: GrantPermission | null;
+	}
+
+	/** Contains information about a grant. */
+	export interface GrantFormProperties {
+		Permission: FormControl<GrantPermission | null | undefined>,
+	}
+	export function CreateGrantFormGroup() {
+		return new FormGroup<GrantFormProperties>({
+			Permission: new FormControl<GrantPermission | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -183,11 +424,37 @@ export namespace MyNS {
 		EmailAddress?: string | null;
 	}
 
+	/** Contains information about the grantee. */
+	export interface GranteeFormProperties {
+		Type: FormControl<GranteeType | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		URI: FormControl<string | null | undefined>,
+		ID: FormControl<string | null | undefined>,
+		EmailAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateGranteeFormGroup() {
+		return new FormGroup<GranteeFormProperties>({
+			Type: new FormControl<GranteeType | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			URI: new FormControl<string | null | undefined>(undefined),
+			ID: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GranteeType { AmazonCustomerByEmail = 0, CanonicalUser = 1, Group = 2 }
 
 	export enum GrantPermission { FULL_CONTROL = 0, WRITE = 1, WRITE_ACP = 2, READ = 3, READ_ACP = 4 }
 
 	export interface Hashmap {
+	}
+	export interface HashmapFormProperties {
+	}
+	export function CreateHashmapFormGroup() {
+		return new FormGroup<HashmapFormProperties>({
+		});
+
 	}
 
 	export enum S3LocationStorageClass { STANDARD = 0, REDUCED_REDUNDANCY = 1, STANDARD_IA = 2 }
@@ -203,18 +470,57 @@ export namespace MyNS {
 		SizeInBytes?: number | null;
 	}
 
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface DescribeVaultOutputFormProperties {
+		VaultARN: FormControl<string | null | undefined>,
+		VaultName: FormControl<string | null | undefined>,
+		CreationDate: FormControl<string | null | undefined>,
+		LastInventoryDate: FormControl<string | null | undefined>,
+		NumberOfArchives: FormControl<number | null | undefined>,
+		SizeInBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeVaultOutputFormGroup() {
+		return new FormGroup<DescribeVaultOutputFormProperties>({
+			VaultARN: new FormControl<string | null | undefined>(undefined),
+			VaultName: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined),
+			LastInventoryDate: new FormControl<string | null | undefined>(undefined),
+			NumberOfArchives: new FormControl<number | null | undefined>(undefined),
+			SizeInBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request. */
 	export interface GetDataRetrievalPolicyOutput {
 
 		/** Data retrieval policy. */
-		Policy?: DataRetrievalPolicy | null;
+		Policy?: DataRetrievalPolicy;
+	}
+
+	/** Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request. */
+	export interface GetDataRetrievalPolicyOutputFormProperties {
+	}
+	export function CreateGetDataRetrievalPolicyOutputFormGroup() {
+		return new FormGroup<GetDataRetrievalPolicyOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Data retrieval policy. */
 	export interface DataRetrievalPolicy {
-		Rules?: Array<DataRetrievalRule> | null;
+		Rules?: Array<DataRetrievalRule>;
+	}
+
+	/** Data retrieval policy. */
+	export interface DataRetrievalPolicyFormProperties {
+	}
+	export function CreateDataRetrievalPolicyFormGroup() {
+		return new FormGroup<DataRetrievalPolicyFormProperties>({
+		});
+
 	}
 
 
@@ -224,6 +530,19 @@ export namespace MyNS {
 		BytesPerHour?: number | null;
 	}
 
+	/** Data retrieval policy rule. */
+	export interface DataRetrievalRuleFormProperties {
+		Strategy: FormControl<string | null | undefined>,
+		BytesPerHour: FormControl<number | null | undefined>,
+	}
+	export function CreateDataRetrievalRuleFormGroup() {
+		return new FormGroup<DataRetrievalRuleFormProperties>({
+			Strategy: new FormControl<string | null | undefined>(undefined),
+			BytesPerHour: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface GetJobOutputOutput {
@@ -231,18 +550,51 @@ export namespace MyNS {
 		status?: number | null;
 	}
 
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface GetJobOutputOutputFormProperties {
+		body: FormControl<string | null | undefined>,
+		status: FormControl<number | null | undefined>,
+	}
+	export function CreateGetJobOutputOutputFormGroup() {
+		return new FormGroup<GetJobOutputOutputFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Output for GetVaultAccessPolicy. */
 	export interface GetVaultAccessPolicyOutput {
 
 		/** Contains the vault access policy. */
-		policy?: VaultAccessPolicy | null;
+		policy?: VaultAccessPolicy;
+	}
+
+	/** Output for GetVaultAccessPolicy. */
+	export interface GetVaultAccessPolicyOutputFormProperties {
+	}
+	export function CreateGetVaultAccessPolicyOutputFormGroup() {
+		return new FormGroup<GetVaultAccessPolicyOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the vault access policy. */
 	export interface VaultAccessPolicy {
 		Policy?: string | null;
+	}
+
+	/** Contains the vault access policy. */
+	export interface VaultAccessPolicyFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateVaultAccessPolicyFormGroup() {
+		return new FormGroup<VaultAccessPolicyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -254,24 +606,70 @@ export namespace MyNS {
 		CreationDate?: string | null;
 	}
 
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface GetVaultLockOutputFormProperties {
+		Policy: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		ExpirationDate: FormControl<string | null | undefined>,
+		CreationDate: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVaultLockOutputFormGroup() {
+		return new FormGroup<GetVaultLockOutputFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			ExpirationDate: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface GetVaultNotificationsOutput {
 
 		/** Represents a vault's notification configuration. */
-		vaultNotificationConfig?: VaultNotificationConfig | null;
+		vaultNotificationConfig?: VaultNotificationConfig;
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface GetVaultNotificationsOutputFormProperties {
+	}
+	export function CreateGetVaultNotificationsOutputFormGroup() {
+		return new FormGroup<GetVaultNotificationsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Represents a vault's notification configuration. */
 	export interface VaultNotificationConfig {
 		SNSTopic?: string | null;
-		Events?: Array<string> | null;
+		Events?: Array<string>;
+	}
+
+	/** Represents a vault's notification configuration. */
+	export interface VaultNotificationConfigFormProperties {
+		SNSTopic: FormControl<string | null | undefined>,
+	}
+	export function CreateVaultNotificationConfigFormGroup() {
+		return new FormGroup<VaultNotificationConfigFormProperties>({
+			SNSTopic: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface InitiateJobOutput {
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface InitiateJobOutputFormProperties {
+	}
+	export function CreateInitiateJobOutputFormGroup() {
+		return new FormGroup<InitiateJobOutputFormProperties>({
+		});
+
 	}
 
 
@@ -283,10 +681,41 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Provides options for specifying a range inventory retrieval job. */
+	export interface InventoryRetrievalJobInputFormProperties {
+		StartDate: FormControl<string | null | undefined>,
+		EndDate: FormControl<string | null | undefined>,
+		Limit: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateInventoryRetrievalJobInputFormGroup() {
+		return new FormGroup<InventoryRetrievalJobInputFormProperties>({
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			EndDate: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PolicyEnforcedException {
+	}
+	export interface PolicyEnforcedExceptionFormProperties {
+	}
+	export function CreatePolicyEnforcedExceptionFormGroup() {
+		return new FormGroup<PolicyEnforcedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientCapacityException {
+	}
+	export interface InsufficientCapacityExceptionFormProperties {
+	}
+	export function CreateInsufficientCapacityExceptionFormGroup() {
+		return new FormGroup<InsufficientCapacityExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -294,23 +723,63 @@ export namespace MyNS {
 	export interface InitiateMultipartUploadOutput {
 	}
 
+	/** The Amazon S3 Glacier response to your request. */
+	export interface InitiateMultipartUploadOutputFormProperties {
+	}
+	export function CreateInitiateMultipartUploadOutputFormGroup() {
+		return new FormGroup<InitiateMultipartUploadOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface InitiateVaultLockOutput {
 	}
 
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface InitiateVaultLockOutputFormProperties {
+	}
+	export function CreateInitiateVaultLockOutputFormGroup() {
+		return new FormGroup<InitiateVaultLockOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListJobsOutput {
-		JobList?: Array<GlacierJobDescription> | null;
+		JobList?: Array<GlacierJobDescription>;
 		Marker?: string | null;
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface ListJobsOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsOutputFormGroup() {
+		return new FormGroup<ListJobsOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListMultipartUploadsOutput {
-		UploadsList?: Array<UploadListElement> | null;
+		UploadsList?: Array<UploadListElement>;
 		Marker?: string | null;
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface ListMultipartUploadsOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListMultipartUploadsOutputFormGroup() {
+		return new FormGroup<ListMultipartUploadsOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -323,6 +792,25 @@ export namespace MyNS {
 		CreationDate?: string | null;
 	}
 
+	/** A list of in-progress multipart uploads for a vault. */
+	export interface UploadListElementFormProperties {
+		MultipartUploadId: FormControl<string | null | undefined>,
+		VaultARN: FormControl<string | null | undefined>,
+		ArchiveDescription: FormControl<string | null | undefined>,
+		PartSizeInBytes: FormControl<number | null | undefined>,
+		CreationDate: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadListElementFormGroup() {
+		return new FormGroup<UploadListElementFormProperties>({
+			MultipartUploadId: new FormControl<string | null | undefined>(undefined),
+			VaultARN: new FormControl<string | null | undefined>(undefined),
+			ArchiveDescription: new FormControl<string | null | undefined>(undefined),
+			PartSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListPartsOutput {
@@ -331,8 +819,29 @@ export namespace MyNS {
 		ArchiveDescription?: string | null;
 		PartSizeInBytes?: number | null;
 		CreationDate?: string | null;
-		Parts?: Array<PartListElement> | null;
+		Parts?: Array<PartListElement>;
 		Marker?: string | null;
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface ListPartsOutputFormProperties {
+		MultipartUploadId: FormControl<string | null | undefined>,
+		VaultARN: FormControl<string | null | undefined>,
+		ArchiveDescription: FormControl<string | null | undefined>,
+		PartSizeInBytes: FormControl<number | null | undefined>,
+		CreationDate: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPartsOutputFormGroup() {
+		return new FormGroup<ListPartsOutputFormProperties>({
+			MultipartUploadId: new FormControl<string | null | undefined>(undefined),
+			VaultARN: new FormControl<string | null | undefined>(undefined),
+			ArchiveDescription: new FormControl<string | null | undefined>(undefined),
+			PartSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			CreationDate: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -342,8 +851,28 @@ export namespace MyNS {
 		SHA256TreeHash?: string | null;
 	}
 
+	/** A list of the part sizes of the multipart upload. */
+	export interface PartListElementFormProperties {
+		RangeInBytes: FormControl<string | null | undefined>,
+		SHA256TreeHash: FormControl<string | null | undefined>,
+	}
+	export function CreatePartListElementFormGroup() {
+		return new FormGroup<PartListElementFormProperties>({
+			RangeInBytes: new FormControl<string | null | undefined>(undefined),
+			SHA256TreeHash: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProvisionedCapacityOutput {
-		ProvisionedCapacityList?: Array<ProvisionedCapacityDescription> | null;
+		ProvisionedCapacityList?: Array<ProvisionedCapacityDescription>;
+	}
+	export interface ListProvisionedCapacityOutputFormProperties {
+	}
+	export function CreateListProvisionedCapacityOutputFormGroup() {
+		return new FormGroup<ListProvisionedCapacityOutputFormProperties>({
+		});
+
 	}
 
 
@@ -354,26 +883,82 @@ export namespace MyNS {
 		ExpirationDate?: string | null;
 	}
 
+	/** The definition for a provisioned capacity unit. */
+	export interface ProvisionedCapacityDescriptionFormProperties {
+		CapacityId: FormControl<string | null | undefined>,
+		StartDate: FormControl<string | null | undefined>,
+		ExpirationDate: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionedCapacityDescriptionFormGroup() {
+		return new FormGroup<ProvisionedCapacityDescriptionFormProperties>({
+			CapacityId: new FormControl<string | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			ExpirationDate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListTagsForVaultOutput {
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface ListTagsForVaultOutputFormProperties {
+	}
+	export function CreateListTagsForVaultOutputFormGroup() {
+		return new FormGroup<ListTagsForVaultOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagMap {
+	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListVaultsOutput {
-		VaultList?: Array<DescribeVaultOutput> | null;
+		VaultList?: Array<DescribeVaultOutput>;
 		Marker?: string | null;
+	}
+
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface ListVaultsOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListVaultsOutputFormGroup() {
+		return new FormGroup<ListVaultsOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PurchaseProvisionedCapacityOutput {
 	}
+	export interface PurchaseProvisionedCapacityOutputFormProperties {
+	}
+	export function CreatePurchaseProvisionedCapacityOutputFormGroup() {
+		return new FormGroup<PurchaseProvisionedCapacityOutputFormProperties>({
+		});
+
+	}
 
 	export interface RequestTimeoutException {
+	}
+	export interface RequestTimeoutExceptionFormProperties {
+	}
+	export function CreateRequestTimeoutExceptionFormGroup() {
+		return new FormGroup<RequestTimeoutExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -381,9 +966,27 @@ export namespace MyNS {
 	export interface UploadMultipartPartOutput {
 	}
 
+	/** Contains the Amazon S3 Glacier response to your request. */
+	export interface UploadMultipartPartOutputFormProperties {
+	}
+	export function CreateUploadMultipartPartOutputFormGroup() {
+		return new FormGroup<UploadMultipartPartOutputFormProperties>({
+		});
+
+	}
+
 
 	/** <p>Provides options to abort a multipart upload identified by the upload ID.</p> <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p> */
 	export interface AbortMultipartUploadInput {
+	}
+
+	/** <p>Provides options to abort a multipart upload identified by the upload ID.</p> <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p> */
+	export interface AbortMultipartUploadInputFormProperties {
+	}
+	export function CreateAbortMultipartUploadInputFormGroup() {
+		return new FormGroup<AbortMultipartUploadInputFormProperties>({
+		});
+
 	}
 
 
@@ -391,12 +994,30 @@ export namespace MyNS {
 	export interface AbortVaultLockInput {
 	}
 
+	/** The input values for <code>AbortVaultLock</code>. */
+	export interface AbortVaultLockInputFormProperties {
+	}
+	export function CreateAbortVaultLockInputFormGroup() {
+		return new FormGroup<AbortVaultLockInputFormProperties>({
+		});
+
+	}
+
 	export enum ActionCode { ArchiveRetrieval = 0, InventoryRetrieval = 1, Select = 2 }
 
 
 	/** The input values for <code>AddTagsToVault</code>. */
 	export interface AddTagsToVaultInput {
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+
+	/** The input values for <code>AddTagsToVault</code>. */
+	export interface AddTagsToVaultInputFormProperties {
+	}
+	export function CreateAddTagsToVaultInputFormGroup() {
+		return new FormGroup<AddTagsToVaultInputFormProperties>({
+		});
+
 	}
 
 	export enum FileHeaderInfo { USE = 0, IGNORE = 1, NONE = 2 }
@@ -410,9 +1031,27 @@ export namespace MyNS {
 	export interface CompleteMultipartUploadInput {
 	}
 
+	/** Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource. */
+	export interface CompleteMultipartUploadInputFormProperties {
+	}
+	export function CreateCompleteMultipartUploadInputFormGroup() {
+		return new FormGroup<CompleteMultipartUploadInputFormProperties>({
+		});
+
+	}
+
 
 	/** The input values for <code>CompleteVaultLock</code>. */
 	export interface CompleteVaultLockInput {
+	}
+
+	/** The input values for <code>CompleteVaultLock</code>. */
+	export interface CompleteVaultLockInputFormProperties {
+	}
+	export function CreateCompleteVaultLockInputFormGroup() {
+		return new FormGroup<CompleteVaultLockInputFormProperties>({
+		});
+
 	}
 
 
@@ -420,9 +1059,27 @@ export namespace MyNS {
 	export interface CreateVaultInput {
 	}
 
+	/** Provides options to create a vault. */
+	export interface CreateVaultInputFormProperties {
+	}
+	export function CreateCreateVaultInputFormGroup() {
+		return new FormGroup<CreateVaultInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for deleting an archive from an Amazon S3 Glacier vault. */
 	export interface DeleteArchiveInput {
+	}
+
+	/** Provides options for deleting an archive from an Amazon S3 Glacier vault. */
+	export interface DeleteArchiveInputFormProperties {
+	}
+	export function CreateDeleteArchiveInputFormGroup() {
+		return new FormGroup<DeleteArchiveInputFormProperties>({
+		});
+
 	}
 
 
@@ -430,9 +1087,27 @@ export namespace MyNS {
 	export interface DeleteVaultAccessPolicyInput {
 	}
 
+	/** DeleteVaultAccessPolicy input. */
+	export interface DeleteVaultAccessPolicyInputFormProperties {
+	}
+	export function CreateDeleteVaultAccessPolicyInputFormGroup() {
+		return new FormGroup<DeleteVaultAccessPolicyInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for deleting a vault from Amazon S3 Glacier. */
 	export interface DeleteVaultInput {
+	}
+
+	/** Provides options for deleting a vault from Amazon S3 Glacier. */
+	export interface DeleteVaultInputFormProperties {
+	}
+	export function CreateDeleteVaultInputFormGroup() {
+		return new FormGroup<DeleteVaultInputFormProperties>({
+		});
+
 	}
 
 
@@ -440,14 +1115,41 @@ export namespace MyNS {
 	export interface DeleteVaultNotificationsInput {
 	}
 
+	/** Provides options for deleting a vault notification configuration from an Amazon Glacier vault. */
+	export interface DeleteVaultNotificationsInputFormProperties {
+	}
+	export function CreateDeleteVaultNotificationsInputFormGroup() {
+		return new FormGroup<DeleteVaultNotificationsInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for retrieving a job description. */
 	export interface DescribeJobInput {
 	}
 
+	/** Provides options for retrieving a job description. */
+	export interface DescribeJobInputFormProperties {
+	}
+	export function CreateDescribeJobInputFormGroup() {
+		return new FormGroup<DescribeJobInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for retrieving metadata for a specific vault in Amazon Glacier. */
 	export interface DescribeVaultInput {
+	}
+
+	/** Provides options for retrieving metadata for a specific vault in Amazon Glacier. */
+	export interface DescribeVaultInputFormProperties {
+	}
+	export function CreateDescribeVaultInputFormGroup() {
+		return new FormGroup<DescribeVaultInputFormProperties>({
+		});
+
 	}
 
 	export enum EncryptionType { awskms = 0, AES256 = 1 }
@@ -459,9 +1161,27 @@ export namespace MyNS {
 	export interface GetDataRetrievalPolicyInput {
 	}
 
+	/** Input for GetDataRetrievalPolicy. */
+	export interface GetDataRetrievalPolicyInputFormProperties {
+	}
+	export function CreateGetDataRetrievalPolicyInputFormGroup() {
+		return new FormGroup<GetDataRetrievalPolicyInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for downloading output of an Amazon S3 Glacier job. */
 	export interface GetJobOutputInput {
+	}
+
+	/** Provides options for downloading output of an Amazon S3 Glacier job. */
+	export interface GetJobOutputInputFormProperties {
+	}
+	export function CreateGetJobOutputInputFormGroup() {
+		return new FormGroup<GetJobOutputInputFormProperties>({
+		});
+
 	}
 
 
@@ -469,14 +1189,41 @@ export namespace MyNS {
 	export interface GetVaultAccessPolicyInput {
 	}
 
+	/** Input for GetVaultAccessPolicy. */
+	export interface GetVaultAccessPolicyInputFormProperties {
+	}
+	export function CreateGetVaultAccessPolicyInputFormGroup() {
+		return new FormGroup<GetVaultAccessPolicyInputFormProperties>({
+		});
+
+	}
+
 
 	/** The input values for <code>GetVaultLock</code>. */
 	export interface GetVaultLockInput {
 	}
 
+	/** The input values for <code>GetVaultLock</code>. */
+	export interface GetVaultLockInputFormProperties {
+	}
+	export function CreateGetVaultLockInputFormGroup() {
+		return new FormGroup<GetVaultLockInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for retrieving the notification configuration set on an Amazon Glacier vault. */
 	export interface GetVaultNotificationsInput {
+	}
+
+	/** Provides options for retrieving the notification configuration set on an Amazon Glacier vault. */
+	export interface GetVaultNotificationsInputFormProperties {
+	}
+	export function CreateGetVaultNotificationsInputFormGroup() {
+		return new FormGroup<GetVaultNotificationsInputFormProperties>({
+		});
+
 	}
 
 	export enum StatusCode { InProgress = 0, Succeeded = 1, Failed = 2 }
@@ -497,13 +1244,36 @@ export namespace MyNS {
 		Tier?: string | null;
 
 		/** Provides options for specifying a range inventory retrieval job. */
-		InventoryRetrievalParameters?: InventoryRetrievalJobInput | null;
+		InventoryRetrievalParameters?: InventoryRetrievalJobInput;
 
 		/** Contains information about the parameters used for a select. */
-		SelectParameters?: SelectParameters | null;
+		SelectParameters?: SelectParameters;
 
 		/** Contains information about the location where the select job results are stored. */
-		OutputLocation?: OutputLocation | null;
+		OutputLocation?: OutputLocation;
+	}
+
+	/** Provides options for defining a job. */
+	export interface JobParametersFormProperties {
+		Format: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		ArchiveId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SNSTopic: FormControl<string | null | undefined>,
+		RetrievalByteRange: FormControl<string | null | undefined>,
+		Tier: FormControl<string | null | undefined>,
+	}
+	export function CreateJobParametersFormGroup() {
+		return new FormGroup<JobParametersFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			ArchiveId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SNSTopic: new FormControl<string | null | undefined>(undefined),
+			RetrievalByteRange: new FormControl<string | null | undefined>(undefined),
+			Tier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -511,12 +1281,30 @@ export namespace MyNS {
 	export interface InitiateJobInput {
 
 		/** Provides options for defining a job. */
-		jobParameters?: JobParameters | null;
+		jobParameters?: JobParameters;
+	}
+
+	/** Provides options for initiating an Amazon S3 Glacier job. */
+	export interface InitiateJobInputFormProperties {
+	}
+	export function CreateInitiateJobInputFormGroup() {
+		return new FormGroup<InitiateJobInputFormProperties>({
+		});
+
 	}
 
 
 	/** Provides options for initiating a multipart upload to an Amazon S3 Glacier vault. */
 	export interface InitiateMultipartUploadInput {
+	}
+
+	/** Provides options for initiating a multipart upload to an Amazon S3 Glacier vault. */
+	export interface InitiateMultipartUploadInputFormProperties {
+	}
+	export function CreateInitiateMultipartUploadInputFormGroup() {
+		return new FormGroup<InitiateMultipartUploadInputFormProperties>({
+		});
+
 	}
 
 
@@ -525,12 +1313,32 @@ export namespace MyNS {
 		Policy?: string | null;
 	}
 
+	/** Contains the vault lock policy. */
+	export interface VaultLockPolicyFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateVaultLockPolicyFormGroup() {
+		return new FormGroup<VaultLockPolicyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input values for <code>InitiateVaultLock</code>. */
 	export interface InitiateVaultLockInput {
 
 		/** Contains the vault lock policy. */
-		policy?: VaultLockPolicy | null;
+		policy?: VaultLockPolicy;
+	}
+
+	/** The input values for <code>InitiateVaultLock</code>. */
+	export interface InitiateVaultLockInputFormProperties {
+	}
+	export function CreateInitiateVaultLockInputFormGroup() {
+		return new FormGroup<InitiateVaultLockInputFormProperties>({
+		});
+
 	}
 
 
@@ -538,9 +1346,27 @@ export namespace MyNS {
 	export interface ListJobsInput {
 	}
 
+	/** Provides options for retrieving a job list for an Amazon S3 Glacier vault. */
+	export interface ListJobsInputFormProperties {
+	}
+	export function CreateListJobsInputFormGroup() {
+		return new FormGroup<ListJobsInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault. */
 	export interface ListMultipartUploadsInput {
+	}
+
+	/** Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault. */
+	export interface ListMultipartUploadsInputFormProperties {
+	}
+	export function CreateListMultipartUploadsInputFormGroup() {
+		return new FormGroup<ListMultipartUploadsInputFormProperties>({
+		});
+
 	}
 
 
@@ -548,7 +1374,23 @@ export namespace MyNS {
 	export interface ListPartsInput {
 	}
 
+	/** Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload. */
+	export interface ListPartsInputFormProperties {
+	}
+	export function CreateListPartsInputFormGroup() {
+		return new FormGroup<ListPartsInputFormProperties>({
+		});
+
+	}
+
 	export interface ListProvisionedCapacityInput {
+	}
+	export interface ListProvisionedCapacityInputFormProperties {
+	}
+	export function CreateListProvisionedCapacityInputFormGroup() {
+		return new FormGroup<ListProvisionedCapacityInputFormProperties>({
+		});
+
 	}
 
 
@@ -556,18 +1398,52 @@ export namespace MyNS {
 	export interface ListTagsForVaultInput {
 	}
 
+	/** The input value for <code>ListTagsForVaultInput</code>. */
+	export interface ListTagsForVaultInputFormProperties {
+	}
+	export function CreateListTagsForVaultInputFormGroup() {
+		return new FormGroup<ListTagsForVaultInputFormProperties>({
+		});
+
+	}
+
 
 	/** Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault. */
 	export interface ListVaultsInput {
 	}
 
+	/** Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault. */
+	export interface ListVaultsInputFormProperties {
+	}
+	export function CreateListVaultsInputFormGroup() {
+		return new FormGroup<ListVaultsInputFormProperties>({
+		});
+
+	}
+
 	export interface PurchaseProvisionedCapacityInput {
+	}
+	export interface PurchaseProvisionedCapacityInputFormProperties {
+	}
+	export function CreatePurchaseProvisionedCapacityInputFormGroup() {
+		return new FormGroup<PurchaseProvisionedCapacityInputFormProperties>({
+		});
+
 	}
 
 
 	/** The input value for <code>RemoveTagsFromVaultInput</code>. */
 	export interface RemoveTagsFromVaultInput {
-		TagKeys?: Array<string> | null;
+		TagKeys?: Array<string>;
+	}
+
+	/** The input value for <code>RemoveTagsFromVaultInput</code>. */
+	export interface RemoveTagsFromVaultInputFormProperties {
+	}
+	export function CreateRemoveTagsFromVaultInputFormGroup() {
+		return new FormGroup<RemoveTagsFromVaultInputFormProperties>({
+		});
+
 	}
 
 	export enum StorageClass { STANDARD = 0, REDUCED_REDUNDANCY = 1, STANDARD_IA = 2 }
@@ -577,7 +1453,16 @@ export namespace MyNS {
 	export interface SetDataRetrievalPolicyInput {
 
 		/** Data retrieval policy. */
-		Policy?: DataRetrievalPolicy | null;
+		Policy?: DataRetrievalPolicy;
+	}
+
+	/** SetDataRetrievalPolicy input. */
+	export interface SetDataRetrievalPolicyInputFormProperties {
+	}
+	export function CreateSetDataRetrievalPolicyInputFormGroup() {
+		return new FormGroup<SetDataRetrievalPolicyInputFormProperties>({
+		});
+
 	}
 
 
@@ -585,7 +1470,16 @@ export namespace MyNS {
 	export interface SetVaultAccessPolicyInput {
 
 		/** Contains the vault access policy. */
-		policy?: VaultAccessPolicy | null;
+		policy?: VaultAccessPolicy;
+	}
+
+	/** SetVaultAccessPolicy input. */
+	export interface SetVaultAccessPolicyInputFormProperties {
+	}
+	export function CreateSetVaultAccessPolicyInputFormGroup() {
+		return new FormGroup<SetVaultAccessPolicyInputFormProperties>({
+		});
+
 	}
 
 
@@ -593,7 +1487,16 @@ export namespace MyNS {
 	export interface SetVaultNotificationsInput {
 
 		/** Represents a vault's notification configuration. */
-		vaultNotificationConfig?: VaultNotificationConfig | null;
+		vaultNotificationConfig?: VaultNotificationConfig;
+	}
+
+	/** Provides options to configure notifications that will be sent when specific events happen to a vault. */
+	export interface SetVaultNotificationsInputFormProperties {
+	}
+	export function CreateSetVaultNotificationsInputFormGroup() {
+		return new FormGroup<SetVaultNotificationsInputFormProperties>({
+		});
+
 	}
 
 
@@ -602,10 +1505,32 @@ export namespace MyNS {
 		body?: string | null;
 	}
 
+	/** Provides options to add an archive to a vault. */
+	export interface UploadArchiveInputFormProperties {
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadArchiveInputFormGroup() {
+		return new FormGroup<UploadArchiveInputFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides options to upload a part of an archive in a multipart upload operation. */
 	export interface UploadMultipartPartInput {
 		body?: string | null;
+	}
+
+	/** Provides options to upload a part of an archive in a multipart upload operation. */
+	export interface UploadMultipartPartInputFormProperties {
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadMultipartPartInputFormGroup() {
+		return new FormGroup<UploadMultipartPartInputFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -995,15 +1920,42 @@ export namespace MyNS {
 		/** The data to upload. */
 		body?: string | null;
 	}
+	export interface UploadMultipartPartPutBodyFormProperties {
+
+		/** The data to upload. */
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadMultipartPartPutBodyFormGroup() {
+		return new FormGroup<UploadMultipartPartPutBodyFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InitiateVaultLockPostBody {
 
 		/** Contains the vault lock policy. */
-		policy?: InitiateVaultLockPostBodyPolicy | null;
+		policy?: InitiateVaultLockPostBodyPolicy;
+	}
+	export interface InitiateVaultLockPostBodyFormProperties {
+	}
+	export function CreateInitiateVaultLockPostBodyFormGroup() {
+		return new FormGroup<InitiateVaultLockPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface InitiateVaultLockPostBodyPolicy {
 		Policy?: string | null;
+	}
+	export interface InitiateVaultLockPostBodyPolicyFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateVaultLockPostBodyPolicyFormGroup() {
+		return new FormGroup<InitiateVaultLockPostBodyPolicyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AddTagsToVaultOperation { add = 0 }
@@ -1011,44 +1963,108 @@ export namespace MyNS {
 	export interface AddTagsToVaultPostBody {
 
 		/** The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string. */
-		Tags?: {[id: string]: string } | null;
+		Tags?: {[id: string]: string };
+	}
+	export interface AddTagsToVaultPostBodyFormProperties {
+
+		/** The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string. */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateAddTagsToVaultPostBodyFormGroup() {
+		return new FormGroup<AddTagsToVaultPostBodyFormProperties>({
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetVaultAccessPolicyPutBody {
 
 		/** Contains the vault access policy. */
-		policy?: SetVaultAccessPolicyPutBodyPolicy | null;
+		policy?: SetVaultAccessPolicyPutBodyPolicy;
+	}
+	export interface SetVaultAccessPolicyPutBodyFormProperties {
+	}
+	export function CreateSetVaultAccessPolicyPutBodyFormGroup() {
+		return new FormGroup<SetVaultAccessPolicyPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface SetVaultAccessPolicyPutBodyPolicy {
 		Policy?: string | null;
 	}
+	export interface SetVaultAccessPolicyPutBodyPolicyFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateSetVaultAccessPolicyPutBodyPolicyFormGroup() {
+		return new FormGroup<SetVaultAccessPolicyPutBodyPolicyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetVaultNotificationsPutBody {
 
 		/** Represents a vault's notification configuration. */
-		vaultNotificationConfig?: SetVaultNotificationsPutBodyVaultNotificationConfig | null;
+		vaultNotificationConfig?: SetVaultNotificationsPutBodyVaultNotificationConfig;
+	}
+	export interface SetVaultNotificationsPutBodyFormProperties {
+	}
+	export function CreateSetVaultNotificationsPutBodyFormGroup() {
+		return new FormGroup<SetVaultNotificationsPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface SetVaultNotificationsPutBodyVaultNotificationConfig {
 		SNSTopic?: string | null;
-		Events?: Array<string> | null;
+		Events?: Array<string>;
+	}
+	export interface SetVaultNotificationsPutBodyVaultNotificationConfigFormProperties {
+		SNSTopic: FormControl<string | null | undefined>,
+	}
+	export function CreateSetVaultNotificationsPutBodyVaultNotificationConfigFormGroup() {
+		return new FormGroup<SetVaultNotificationsPutBodyVaultNotificationConfigFormProperties>({
+			SNSTopic: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetDataRetrievalPolicyPutBody {
 
 		/** Data retrieval policy. */
-		Policy?: SetDataRetrievalPolicyPutBodyPolicy | null;
+		Policy?: SetDataRetrievalPolicyPutBodyPolicy;
+	}
+	export interface SetDataRetrievalPolicyPutBodyFormProperties {
+	}
+	export function CreateSetDataRetrievalPolicyPutBodyFormGroup() {
+		return new FormGroup<SetDataRetrievalPolicyPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface SetDataRetrievalPolicyPutBodyPolicy {
-		Rules?: Array<DataRetrievalRule> | null;
+		Rules?: Array<DataRetrievalRule>;
+	}
+	export interface SetDataRetrievalPolicyPutBodyPolicyFormProperties {
+	}
+	export function CreateSetDataRetrievalPolicyPutBodyPolicyFormGroup() {
+		return new FormGroup<SetDataRetrievalPolicyPutBodyPolicyFormProperties>({
+		});
+
 	}
 
 	export interface InitiateJobPostBody {
 
 		/** Provides options for defining a job. */
-		jobParameters?: InitiateJobPostBodyJobParameters | null;
+		jobParameters?: InitiateJobPostBodyJobParameters;
+	}
+	export interface InitiateJobPostBodyFormProperties {
+	}
+	export function CreateInitiateJobPostBodyFormGroup() {
+		return new FormGroup<InitiateJobPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface InitiateJobPostBodyJobParameters {
@@ -1061,13 +2077,34 @@ export namespace MyNS {
 		Tier?: string | null;
 
 		/** Provides options for specifying a range inventory retrieval job. */
-		InventoryRetrievalParameters?: InventoryRetrievalJobInput | null;
+		InventoryRetrievalParameters?: InventoryRetrievalJobInput;
 
 		/** Contains information about the parameters used for a select. */
-		SelectParameters?: SelectParameters | null;
+		SelectParameters?: SelectParameters;
 
 		/** Contains information about the location where the select job results are stored. */
-		OutputLocation?: OutputLocation | null;
+		OutputLocation?: OutputLocation;
+	}
+	export interface InitiateJobPostBodyJobParametersFormProperties {
+		Format: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		ArchiveId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SNSTopic: FormControl<string | null | undefined>,
+		RetrievalByteRange: FormControl<string | null | undefined>,
+		Tier: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateJobPostBodyJobParametersFormGroup() {
+		return new FormGroup<InitiateJobPostBodyJobParametersFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			ArchiveId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SNSTopic: new FormControl<string | null | undefined>(undefined),
+			RetrievalByteRange: new FormControl<string | null | undefined>(undefined),
+			Tier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RemoveTagsFromVaultOperation { remove = 0 }
@@ -1075,13 +2112,31 @@ export namespace MyNS {
 	export interface RemoveTagsFromVaultPostBody {
 
 		/** A list of tag keys. Each corresponding tag is removed from the vault. */
-		TagKeys?: Array<string> | null;
+		TagKeys?: Array<string>;
+	}
+	export interface RemoveTagsFromVaultPostBodyFormProperties {
+	}
+	export function CreateRemoveTagsFromVaultPostBodyFormGroup() {
+		return new FormGroup<RemoveTagsFromVaultPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UploadArchivePostBody {
 
 		/** The data to upload. */
 		body?: string | null;
+	}
+	export interface UploadArchivePostBodyFormProperties {
+
+		/** The data to upload. */
+		body: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadArchivePostBodyFormGroup() {
+		return new FormGroup<UploadArchivePostBodyFormProperties>({
+			body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

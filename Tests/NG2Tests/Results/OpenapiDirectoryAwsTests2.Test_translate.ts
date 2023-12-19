@@ -1,24 +1,62 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeleteTerminologyRequest {
 		Name: string;
 	}
+	export interface DeleteTerminologyRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTerminologyRequestFormGroup() {
+		return new FormGroup<DeleteTerminologyRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTextTranslationJobResponse {
 
 		/** Provides information about a translation job. */
-		TextTranslationJobProperties?: TextTranslationJobProperties | null;
+		TextTranslationJobProperties?: TextTranslationJobProperties;
+	}
+	export interface DescribeTextTranslationJobResponseFormProperties {
+	}
+	export function CreateDescribeTextTranslationJobResponseFormGroup() {
+		return new FormGroup<DescribeTextTranslationJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -29,20 +67,45 @@ export namespace MyNS {
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 
 		/** The number of documents successfully and unsuccessfully processed during a translation job. */
-		JobDetails?: JobDetails | null;
+		JobDetails?: JobDetails;
 		SourceLanguageCode?: string | null;
-		TargetLanguageCodes?: Array<string> | null;
-		TerminologyNames?: Array<string> | null;
+		TargetLanguageCodes?: Array<string>;
+		TerminologyNames?: Array<string>;
 		Message?: string | null;
 		SubmittedTime?: Date | null;
 		EndTime?: Date | null;
 
 		/** The input configuration properties for requesting a batch translation job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** The output configuration properties for a batch translation job. */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		DataAccessRoleArn?: string | null;
+	}
+
+	/** Provides information about a translation job. */
+	export interface TextTranslationJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
+		SourceLanguageCode: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmittedTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTextTranslationJobPropertiesFormGroup() {
+		return new FormGroup<TextTranslationJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmittedTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TextTranslationJobPropertiesJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERROR = 3, FAILED = 4, STOP_REQUESTED = 5, STOPPED = 6 }
@@ -55,11 +118,39 @@ export namespace MyNS {
 		InputDocumentsCount?: number | null;
 	}
 
+	/** The number of documents successfully and unsuccessfully processed during a translation job. */
+	export interface JobDetailsFormProperties {
+		TranslatedDocumentsCount: FormControl<number | null | undefined>,
+		DocumentsWithErrorsCount: FormControl<number | null | undefined>,
+		InputDocumentsCount: FormControl<number | null | undefined>,
+	}
+	export function CreateJobDetailsFormGroup() {
+		return new FormGroup<JobDetailsFormProperties>({
+			TranslatedDocumentsCount: new FormControl<number | null | undefined>(undefined),
+			DocumentsWithErrorsCount: new FormControl<number | null | undefined>(undefined),
+			InputDocumentsCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input configuration properties for requesting a batch translation job. */
 	export interface InputDataConfig {
 		S3Uri: string;
 		ContentType: string;
+	}
+
+	/** The input configuration properties for requesting a batch translation job. */
+	export interface InputDataConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+	}
+	export function CreateInputDataConfigFormGroup() {
+		return new FormGroup<InputDataConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -68,17 +159,44 @@ export namespace MyNS {
 		S3Uri: string;
 	}
 
+	/** The output configuration properties for a batch translation job. */
+	export interface OutputDataConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputDataConfigFormGroup() {
+		return new FormGroup<OutputDataConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTextTranslationJobRequest {
 		JobId: string;
+	}
+	export interface DescribeTextTranslationJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTextTranslationJobRequestFormGroup() {
+		return new FormGroup<DescribeTextTranslationJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTerminologyResponse {
 
 		/** The properties of the custom terminology. */
-		TerminologyProperties?: TerminologyProperties | null;
+		TerminologyProperties?: TerminologyProperties;
 
 		/** The location of the custom terminology data. */
-		TerminologyDataLocation?: TerminologyDataLocation | null;
+		TerminologyDataLocation?: TerminologyDataLocation;
+	}
+	export interface GetTerminologyResponseFormProperties {
+	}
+	export function CreateGetTerminologyResponseFormGroup() {
+		return new FormGroup<GetTerminologyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -88,14 +206,39 @@ export namespace MyNS {
 		Description?: string | null;
 		Arn?: string | null;
 		SourceLanguageCode?: string | null;
-		TargetLanguageCodes?: Array<string> | null;
+		TargetLanguageCodes?: Array<string>;
 
 		/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
-		EncryptionKey?: EncryptionKey | null;
+		EncryptionKey?: EncryptionKey;
 		SizeBytes?: number | null;
 		TermCount?: number | null;
 		CreatedAt?: Date | null;
 		LastUpdatedAt?: Date | null;
+	}
+
+	/** The properties of the custom terminology. */
+	export interface TerminologyPropertiesFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		SourceLanguageCode: FormControl<string | null | undefined>,
+		SizeBytes: FormControl<number | null | undefined>,
+		TermCount: FormControl<number | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateTerminologyPropertiesFormGroup() {
+		return new FormGroup<TerminologyPropertiesFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			SizeBytes: new FormControl<number | null | undefined>(undefined),
+			TermCount: new FormControl<number | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -103,6 +246,19 @@ export namespace MyNS {
 	export interface EncryptionKey {
 		Type: EncryptionKeyType;
 		Id: string;
+	}
+
+	/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
+	export interface EncryptionKeyFormProperties {
+		Type: FormControl<EncryptionKeyType | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionKeyFormGroup() {
+		return new FormGroup<EncryptionKeyFormProperties>({
+			Type: new FormControl<EncryptionKeyType | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EncryptionKeyType { KMS = 0 }
@@ -114,20 +270,58 @@ export namespace MyNS {
 		Location: string;
 	}
 
+	/** The location of the custom terminology data. */
+	export interface TerminologyDataLocationFormProperties {
+		RepositoryType: FormControl<string | null | undefined>,
+		Location: FormControl<string | null | undefined>,
+	}
+	export function CreateTerminologyDataLocationFormGroup() {
+		return new FormGroup<TerminologyDataLocationFormProperties>({
+			RepositoryType: new FormControl<string | null | undefined>(undefined),
+			Location: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetTerminologyRequest {
 		Name: string;
 		TerminologyDataFormat: GetTerminologyRequestTerminologyDataFormat;
+	}
+	export interface GetTerminologyRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		TerminologyDataFormat: FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>,
+	}
+	export function CreateGetTerminologyRequestFormGroup() {
+		return new FormGroup<GetTerminologyRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			TerminologyDataFormat: new FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetTerminologyRequestTerminologyDataFormat { CSV = 0, TMX = 1 }
 
 	export interface InvalidParameterValueException {
 	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ImportTerminologyResponse {
 
 		/** The properties of the custom terminology. */
-		TerminologyProperties?: TerminologyProperties | null;
+		TerminologyProperties?: TerminologyProperties;
+	}
+	export interface ImportTerminologyResponseFormProperties {
+	}
+	export function CreateImportTerminologyResponseFormGroup() {
+		return new FormGroup<ImportTerminologyResponseFormProperties>({
+		});
+
 	}
 
 	export interface ImportTerminologyRequest {
@@ -142,7 +336,20 @@ export namespace MyNS {
 		TerminologyData: TerminologyData;
 
 		/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
-		EncryptionKey?: EncryptionKey | null;
+		EncryptionKey?: EncryptionKey;
+	}
+	export interface ImportTerminologyRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		MergeStrategy: FormControl<ImportTerminologyRequestMergeStrategy | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateImportTerminologyRequestFormGroup() {
+		return new FormGroup<ImportTerminologyRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			MergeStrategy: new FormControl<ImportTerminologyRequestMergeStrategy | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ImportTerminologyRequestMergeStrategy { OVERWRITE = 0 }
@@ -154,30 +361,90 @@ export namespace MyNS {
 		Format: GetTerminologyRequestTerminologyDataFormat;
 	}
 
+	/** The data associated with the custom terminology. */
+	export interface TerminologyDataFormProperties {
+		File: FormControl<string | null | undefined>,
+		Format: FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>,
+	}
+	export function CreateTerminologyDataFormGroup() {
+		return new FormGroup<TerminologyDataFormProperties>({
+			File: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<GetTerminologyRequestTerminologyDataFormat | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListTerminologiesResponse {
-		TerminologyPropertiesList?: Array<TerminologyProperties> | null;
+		TerminologyPropertiesList?: Array<TerminologyProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListTerminologiesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTerminologiesResponseFormGroup() {
+		return new FormGroup<ListTerminologiesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTerminologiesRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTerminologiesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTerminologiesRequestFormGroup() {
+		return new FormGroup<ListTerminologiesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTextTranslationJobsResponse {
-		TextTranslationJobPropertiesList?: Array<TextTranslationJobProperties> | null;
+		TextTranslationJobPropertiesList?: Array<TextTranslationJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListTextTranslationJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTextTranslationJobsResponseFormGroup() {
+		return new FormGroup<ListTextTranslationJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTextTranslationJobsRequest {
 
 		/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
-		Filter?: TextTranslationJobFilter | null;
+		Filter?: TextTranslationJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListTextTranslationJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTextTranslationJobsRequestFormGroup() {
+		return new FormGroup<ListTextTranslationJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -189,15 +456,57 @@ export namespace MyNS {
 		SubmittedAfterTime?: Date | null;
 	}
 
+	/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
+	export interface TextTranslationJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
+		SubmittedBeforeTime: FormControl<Date | null | undefined>,
+		SubmittedAfterTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTextTranslationJobFilterFormGroup() {
+		return new FormGroup<TextTranslationJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmittedBeforeTime: new FormControl<Date | null | undefined>(undefined),
+			SubmittedAfterTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidFilterException {
+	}
+	export interface InvalidFilterExceptionFormProperties {
+	}
+	export function CreateInvalidFilterExceptionFormGroup() {
+		return new FormGroup<InvalidFilterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StartTextTranslationJobResponse {
 		JobId?: string | null;
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
+	}
+	export interface StartTextTranslationJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartTextTranslationJobResponseFormGroup() {
+		return new FormGroup<StartTextTranslationJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartTextTranslationJobRequest {
@@ -217,34 +526,100 @@ export namespace MyNS {
 		DataAccessRoleArn: string;
 		SourceLanguageCode: string;
 		TargetLanguageCodes: Array<string>;
-		TerminologyNames?: Array<string> | null;
+		TerminologyNames?: Array<string>;
 		ClientToken: string;
+	}
+	export interface StartTextTranslationJobRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		SourceLanguageCode: FormControl<string | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTextTranslationJobRequestFormGroup() {
+		return new FormGroup<StartTextTranslationJobRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UnsupportedLanguagePairException {
+	}
+	export interface UnsupportedLanguagePairExceptionFormProperties {
+	}
+	export function CreateUnsupportedLanguagePairExceptionFormGroup() {
+		return new FormGroup<UnsupportedLanguagePairExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StopTextTranslationJobResponse {
 		JobId?: string | null;
 		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 	}
+	export interface StopTextTranslationJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStopTextTranslationJobResponseFormGroup() {
+		return new FormGroup<StopTextTranslationJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<TextTranslationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopTextTranslationJobRequest {
 		JobId: string;
+	}
+	export interface StopTextTranslationJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTextTranslationJobRequestFormGroup() {
+		return new FormGroup<StopTextTranslationJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TranslateTextResponse {
 		TranslatedText: string;
 		SourceLanguageCode: string;
 		TargetLanguageCode: string;
-		AppliedTerminologies?: Array<AppliedTerminology> | null;
+		AppliedTerminologies?: Array<AppliedTerminology>;
+	}
+	export interface TranslateTextResponseFormProperties {
+		TranslatedText: FormControl<string | null | undefined>,
+		SourceLanguageCode: FormControl<string | null | undefined>,
+		TargetLanguageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateTranslateTextResponseFormGroup() {
+		return new FormGroup<TranslateTextResponseFormProperties>({
+			TranslatedText: new FormControl<string | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			TargetLanguageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request. */
 	export interface AppliedTerminology {
 		Name?: string | null;
-		Terms?: Array<Term> | null;
+		Terms?: Array<Term>;
+	}
+
+	/** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request. */
+	export interface AppliedTerminologyFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAppliedTerminologyFormGroup() {
+		return new FormGroup<AppliedTerminologyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -254,20 +629,67 @@ export namespace MyNS {
 		TargetText?: string | null;
 	}
 
+	/** The term being translated by the custom terminology. */
+	export interface TermFormProperties {
+		SourceText: FormControl<string | null | undefined>,
+		TargetText: FormControl<string | null | undefined>,
+	}
+	export function CreateTermFormGroup() {
+		return new FormGroup<TermFormProperties>({
+			SourceText: new FormControl<string | null | undefined>(undefined),
+			TargetText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TranslateTextRequest {
 		Text: string;
-		TerminologyNames?: Array<string> | null;
+		TerminologyNames?: Array<string>;
 		SourceLanguageCode: string;
 		TargetLanguageCode: string;
+	}
+	export interface TranslateTextRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+		SourceLanguageCode: FormControl<string | null | undefined>,
+		TargetLanguageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateTranslateTextRequestFormGroup() {
+		return new FormGroup<TranslateTextRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+			SourceLanguageCode: new FormControl<string | null | undefined>(undefined),
+			TargetLanguageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TextSizeLimitExceededException {
 	}
+	export interface TextSizeLimitExceededExceptionFormProperties {
+	}
+	export function CreateTextSizeLimitExceededExceptionFormGroup() {
+		return new FormGroup<TextSizeLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DetectedLanguageLowConfidenceException {
 	}
+	export interface DetectedLanguageLowConfidenceExceptionFormProperties {
+	}
+	export function CreateDetectedLanguageLowConfidenceExceptionFormGroup() {
+		return new FormGroup<DetectedLanguageLowConfidenceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export enum TerminologyDataFormat { CSV = 0, TMX = 1 }

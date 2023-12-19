@@ -1,9 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Account {
-		address?: Address | null;
+		address?: Address;
 
 		/** Unique identifier of the account */
 		id?: number | null;
@@ -13,6 +14,25 @@ export namespace MyNS {
 
 		/** Status of the account */
 		status?: string | null;
+	}
+	export interface AccountFormProperties {
+
+		/** Unique identifier of the account */
+		id: FormControl<number | null | undefined>,
+
+		/** Name of the account */
+		name: FormControl<string | null | undefined>,
+
+		/** Status of the account */
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Address {
@@ -35,18 +55,58 @@ export namespace MyNS {
 		/** State/Province code */
 		state?: string | null;
 	}
+	export interface AddressFormProperties {
+
+		/** Street portion of the address */
+		address_1: FormControl<string | null | undefined>,
+
+		/** Additional address information */
+		address_2: FormControl<string | null | undefined>,
+
+		/** City name */
+		city: FormControl<string | null | undefined>,
+
+		/** Country code */
+		country: FormControl<string | null | undefined>,
+
+		/** Postal code */
+		postal_code: FormControl<string | null | undefined>,
+
+		/** State/Province code */
+		state: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressFormGroup() {
+		return new FormGroup<AddressFormProperties>({
+			address_1: new FormControl<string | null | undefined>(undefined),
+			address_2: new FormControl<string | null | undefined>(undefined),
+			city: new FormControl<string | null | undefined>(undefined),
+			country: new FormControl<string | null | undefined>(undefined),
+			postal_code: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Account object */
 	export interface AccountEmbeddedObject {
-		data?: Account | null;
+		data?: Account;
+	}
+
+	/** Account object */
+	export interface AccountEmbeddedObjectFormProperties {
+	}
+	export function CreateAccountEmbeddedObjectFormGroup() {
+		return new FormGroup<AccountEmbeddedObjectFormProperties>({
+		});
+
 	}
 
 	export interface AccountHalResponse {
 
 		/** Account object */
-		_embedded?: AccountEmbeddedObject | null;
-		_links?: Links | null;
+		_embedded?: AccountEmbeddedObject;
+		_links?: Links;
 
 		/** Current page number */
 		page?: number | null;
@@ -60,23 +120,53 @@ export namespace MyNS {
 		/** Total number of pages */
 		total_pages?: number | null;
 	}
+	export interface AccountHalResponseFormProperties {
+
+		/** Current page number */
+		page: FormControl<number | null | undefined>,
+
+		/** Number of records per page */
+		page_size: FormControl<number | null | undefined>,
+
+		/** Total number of records */
+		total_items: FormControl<number | null | undefined>,
+
+		/** Total number of pages */
+		total_pages: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountHalResponseFormGroup() {
+		return new FormGroup<AccountHalResponseFormProperties>({
+			page: new FormControl<number | null | undefined>(undefined),
+			page_size: new FormControl<number | null | undefined>(undefined),
+			total_items: new FormControl<number | null | undefined>(undefined),
+			total_pages: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Links {
 
 		/** URL to the first page of records */
-		first?: FirstHref | null;
+		first?: FirstHref;
 
 		/** URL to the last page of records */
-		last?: LastHref | null;
+		last?: LastHref;
 
 		/** URL to the next page of records */
-		next?: NextHref | null;
+		next?: NextHref;
 
 		/** URL to the previous page of records */
-		prev?: PrevHref | null;
+		prev?: PrevHref;
 
 		/** URL to the current page of records */
-		self?: SelfHref | null;
+		self?: SelfHref;
+	}
+	export interface LinksFormProperties {
+	}
+	export function CreateLinksFormGroup() {
+		return new FormGroup<LinksFormProperties>({
+		});
+
 	}
 
 
@@ -85,10 +175,32 @@ export namespace MyNS {
 		href?: string | null;
 	}
 
+	/** URL to the first page of records */
+	export interface FirstHrefFormProperties {
+		href: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstHrefFormGroup() {
+		return new FormGroup<FirstHrefFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** URL to the last page of records */
 	export interface LastHref {
 		href?: string | null;
+	}
+
+	/** URL to the last page of records */
+	export interface LastHrefFormProperties {
+		href: FormControl<string | null | undefined>,
+	}
+	export function CreateLastHrefFormGroup() {
+		return new FormGroup<LastHrefFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -97,16 +209,49 @@ export namespace MyNS {
 		href?: string | null;
 	}
 
+	/** URL to the next page of records */
+	export interface NextHrefFormProperties {
+		href: FormControl<string | null | undefined>,
+	}
+	export function CreateNextHrefFormGroup() {
+		return new FormGroup<NextHrefFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** URL to the previous page of records */
 	export interface PrevHref {
 		href?: string | null;
 	}
 
+	/** URL to the previous page of records */
+	export interface PrevHrefFormProperties {
+		href: FormControl<string | null | undefined>,
+	}
+	export function CreatePrevHrefFormGroup() {
+		return new FormGroup<PrevHrefFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** URL to the current page of records */
 	export interface SelfHref {
 		href?: string | null;
+	}
+
+	/** URL to the current page of records */
+	export interface SelfHrefFormProperties {
+		href: FormControl<string | null | undefined>,
+	}
+	export function CreateSelfHrefFormGroup() {
+		return new FormGroup<SelfHrefFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AddressWithTimeZone {
@@ -132,9 +277,44 @@ export namespace MyNS {
 		/** Time zone */
 		time_zone?: string | null;
 	}
+	export interface AddressWithTimeZoneFormProperties {
+
+		/** Street portion of the address */
+		address_1: FormControl<string | null | undefined>,
+
+		/** Additional address information */
+		address_2: FormControl<string | null | undefined>,
+
+		/** City name */
+		city: FormControl<string | null | undefined>,
+
+		/** Country code */
+		country: FormControl<string | null | undefined>,
+
+		/** Postal code */
+		postal_code: FormControl<string | null | undefined>,
+
+		/** State/Province code */
+		state: FormControl<string | null | undefined>,
+
+		/** Time zone */
+		time_zone: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressWithTimeZoneFormGroup() {
+		return new FormGroup<AddressWithTimeZoneFormProperties>({
+			address_1: new FormControl<string | null | undefined>(undefined),
+			address_2: new FormControl<string | null | undefined>(undefined),
+			city: new FormControl<string | null | undefined>(undefined),
+			country: new FormControl<string | null | undefined>(undefined),
+			postal_code: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined),
+			time_zone: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Location {
-		address?: AddressWithTimeZone | null;
+		address?: AddressWithTimeZone;
 
 		/** Unique identifier of the location */
 		id?: number | null;
@@ -142,18 +322,42 @@ export namespace MyNS {
 		/** Name of the location */
 		name?: string | null;
 	}
+	export interface LocationFormProperties {
+
+		/** Unique identifier of the location */
+		id: FormControl<number | null | undefined>,
+
+		/** Name of the location */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Location object */
 	export interface LocationEmbeddedObject {
-		data?: Location | null;
+		data?: Location;
+	}
+
+	/** Location object */
+	export interface LocationEmbeddedObjectFormProperties {
+	}
+	export function CreateLocationEmbeddedObjectFormGroup() {
+		return new FormGroup<LocationEmbeddedObjectFormProperties>({
+		});
+
 	}
 
 	export interface LocationHalResponse {
 
 		/** Location object */
-		_embedded?: LocationEmbeddedObject | null;
-		_links?: Links | null;
+		_embedded?: LocationEmbeddedObject;
+		_links?: Links;
 
 		/** Current page number */
 		page?: number | null;
@@ -167,22 +371,69 @@ export namespace MyNS {
 		/** Total number of pages */
 		total_pages?: number | null;
 	}
+	export interface LocationHalResponseFormProperties {
+
+		/** Current page number */
+		page: FormControl<number | null | undefined>,
+
+		/** Number of records per page */
+		page_size: FormControl<number | null | undefined>,
+
+		/** Total number of records */
+		total_items: FormControl<number | null | undefined>,
+
+		/** Total number of pages */
+		total_pages: FormControl<number | null | undefined>,
+	}
+	export function CreateLocationHalResponseFormGroup() {
+		return new FormGroup<LocationHalResponseFormProperties>({
+			page: new FormControl<number | null | undefined>(undefined),
+			page_size: new FormControl<number | null | undefined>(undefined),
+			total_items: new FormControl<number | null | undefined>(undefined),
+			total_pages: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Collection of location objects */
 	export interface LocationsEmbeddedObject {
-		data?: Array<Location> | null;
+		data?: Array<Location>;
+	}
+
+	/** Collection of location objects */
+	export interface LocationsEmbeddedObjectFormProperties {
+	}
+	export function CreateLocationsEmbeddedObjectFormGroup() {
+		return new FormGroup<LocationsEmbeddedObjectFormProperties>({
+		});
+
 	}
 
 	export interface LocationsHalResponse {
 
 		/** Collection of location objects */
-		_embedded?: LocationsEmbeddedObject | null;
-		_links?: Links | null;
+		_embedded?: LocationsEmbeddedObject;
+		_links?: Links;
 		page?: number | null;
 		page_size?: number | null;
 		total_items?: number | null;
 		total_pages?: number | null;
+	}
+	export interface LocationsHalResponseFormProperties {
+		page: FormControl<number | null | undefined>,
+		page_size: FormControl<number | null | undefined>,
+		total_items: FormControl<number | null | undefined>,
+		total_pages: FormControl<number | null | undefined>,
+	}
+	export function CreateLocationsHalResponseFormGroup() {
+		return new FormGroup<LocationsHalResponseFormProperties>({
+			page: new FormControl<number | null | undefined>(undefined),
+			page_size: new FormControl<number | null | undefined>(undefined),
+			total_items: new FormControl<number | null | undefined>(undefined),
+			total_pages: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeleteSessionResponse {
 		botName?: string | null;
@@ -8,29 +9,88 @@ export namespace MyNS {
 		userId?: string | null;
 		sessionId?: string | null;
 	}
+	export interface DeleteSessionResponseFormProperties {
+		botName: FormControl<string | null | undefined>,
+		botAlias: FormControl<string | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+		sessionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSessionResponseFormGroup() {
+		return new FormGroup<DeleteSessionResponseFormProperties>({
+			botName: new FormControl<string | null | undefined>(undefined),
+			botAlias: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+			sessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GetSessionResponse {
-		recentIntentSummaryView?: Array<IntentSummary> | null;
-		sessionAttributes?: StringMap | null;
+		recentIntentSummaryView?: Array<IntentSummary>;
+		sessionAttributes?: StringMap;
 		sessionId?: string | null;
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
-		dialogAction?: DialogAction | null;
+		dialogAction?: DialogAction;
+	}
+	export interface GetSessionResponseFormProperties {
+		sessionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSessionResponseFormGroup() {
+		return new FormGroup<GetSessionResponseFormProperties>({
+			sessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -38,14 +98,42 @@ export namespace MyNS {
 	export interface IntentSummary {
 		intentName?: string | null;
 		checkpointLabel?: string | null;
-		slots?: StringMap | null;
+		slots?: StringMap;
 		confirmationStatus?: IntentSummaryConfirmationStatus | null;
 		dialogActionType: IntentSummaryDialogActionType;
 		fulfillmentState?: IntentSummaryFulfillmentState | null;
 		slotToElicit?: string | null;
 	}
 
+	/** Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state. */
+	export interface IntentSummaryFormProperties {
+		intentName: FormControl<string | null | undefined>,
+		checkpointLabel: FormControl<string | null | undefined>,
+		confirmationStatus: FormControl<IntentSummaryConfirmationStatus | null | undefined>,
+		dialogActionType: FormControl<IntentSummaryDialogActionType | null | undefined>,
+		fulfillmentState: FormControl<IntentSummaryFulfillmentState | null | undefined>,
+		slotToElicit: FormControl<string | null | undefined>,
+	}
+	export function CreateIntentSummaryFormGroup() {
+		return new FormGroup<IntentSummaryFormProperties>({
+			intentName: new FormControl<string | null | undefined>(undefined),
+			checkpointLabel: new FormControl<string | null | undefined>(undefined),
+			confirmationStatus: new FormControl<IntentSummaryConfirmationStatus | null | undefined>(undefined),
+			dialogActionType: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined),
+			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
+			slotToElicit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StringMap {
+	}
+	export interface StringMapFormProperties {
+	}
+	export function CreateStringMapFormGroup() {
+		return new FormGroup<StringMapFormProperties>({
+		});
+
 	}
 
 	export enum IntentSummaryConfirmationStatus { None = 0, Confirmed = 1, Denied = 2 }
@@ -59,11 +147,32 @@ export namespace MyNS {
 	export interface DialogAction {
 		type: IntentSummaryDialogActionType;
 		intentName?: string | null;
-		slots?: StringMap | null;
+		slots?: StringMap;
 		slotToElicit?: string | null;
 		fulfillmentState?: IntentSummaryFulfillmentState | null;
 		message?: string | null;
 		messageFormat?: DialogActionMessageFormat | null;
+	}
+
+	/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
+	export interface DialogActionFormProperties {
+		type: FormControl<IntentSummaryDialogActionType | null | undefined>,
+		intentName: FormControl<string | null | undefined>,
+		slotToElicit: FormControl<string | null | undefined>,
+		fulfillmentState: FormControl<IntentSummaryFulfillmentState | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		messageFormat: FormControl<DialogActionMessageFormat | null | undefined>,
+	}
+	export function CreateDialogActionFormGroup() {
+		return new FormGroup<DialogActionFormProperties>({
+			type: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined),
+			intentName: new FormControl<string | null | undefined>(undefined),
+			slotToElicit: new FormControl<string | null | undefined>(undefined),
+			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DialogActionMessageFormat { PlainText = 0, CustomPayload = 1, SSML = 2, Composite = 3 }
@@ -71,40 +180,110 @@ export namespace MyNS {
 	export interface PostContentResponse {
 		audioStream?: string | null;
 	}
+	export interface PostContentResponseFormProperties {
+		audioStream: FormControl<string | null | undefined>,
+	}
+	export function CreatePostContentResponseFormGroup() {
+		return new FormGroup<PostContentResponseFormProperties>({
+			audioStream: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnsupportedMediaTypeException {
+	}
+	export interface UnsupportedMediaTypeExceptionFormProperties {
+	}
+	export function CreateUnsupportedMediaTypeExceptionFormGroup() {
+		return new FormGroup<UnsupportedMediaTypeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotAcceptableException {
 	}
+	export interface NotAcceptableExceptionFormProperties {
+	}
+	export function CreateNotAcceptableExceptionFormGroup() {
+		return new FormGroup<NotAcceptableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface RequestTimeoutException {
+	}
+	export interface RequestTimeoutExceptionFormProperties {
+	}
+	export function CreateRequestTimeoutExceptionFormGroup() {
+		return new FormGroup<RequestTimeoutExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DependencyFailedException {
 	}
+	export interface DependencyFailedExceptionFormProperties {
+	}
+	export function CreateDependencyFailedExceptionFormGroup() {
+		return new FormGroup<DependencyFailedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BadGatewayException {
+	}
+	export interface BadGatewayExceptionFormProperties {
+	}
+	export function CreateBadGatewayExceptionFormGroup() {
+		return new FormGroup<BadGatewayExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LoopDetectedException {
 	}
+	export interface LoopDetectedExceptionFormProperties {
+	}
+	export function CreateLoopDetectedExceptionFormGroup() {
+		return new FormGroup<LoopDetectedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PostTextResponse {
 		intentName?: string | null;
-		slots?: StringMap | null;
-		sessionAttributes?: StringMap | null;
+		slots?: StringMap;
+		sessionAttributes?: StringMap;
 		message?: string | null;
 
 		/** <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p> */
-		sentimentResponse?: SentimentResponse | null;
+		sentimentResponse?: SentimentResponse;
 		messageFormat?: DialogActionMessageFormat | null;
 		dialogState?: PostTextResponseDialogState | null;
 		slotToElicit?: string | null;
 
 		/** If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent). */
-		responseCard?: ResponseCard | null;
+		responseCard?: ResponseCard;
 		sessionId?: string | null;
+	}
+	export interface PostTextResponseFormProperties {
+		intentName: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		messageFormat: FormControl<DialogActionMessageFormat | null | undefined>,
+		dialogState: FormControl<PostTextResponseDialogState | null | undefined>,
+		slotToElicit: FormControl<string | null | undefined>,
+		sessionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePostTextResponseFormGroup() {
+		return new FormGroup<PostTextResponseFormProperties>({
+			intentName: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
+			dialogState: new FormControl<PostTextResponseDialogState | null | undefined>(undefined),
+			slotToElicit: new FormControl<string | null | undefined>(undefined),
+			sessionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -114,6 +293,19 @@ export namespace MyNS {
 		sentimentScore?: string | null;
 	}
 
+	/** <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p> */
+	export interface SentimentResponseFormProperties {
+		sentimentLabel: FormControl<string | null | undefined>,
+		sentimentScore: FormControl<string | null | undefined>,
+	}
+	export function CreateSentimentResponseFormGroup() {
+		return new FormGroup<SentimentResponseFormProperties>({
+			sentimentLabel: new FormControl<string | null | undefined>(undefined),
+			sentimentScore: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PostTextResponseDialogState { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Fulfilled = 3, ReadyForFulfillment = 4, Failed = 5 }
 
 
@@ -121,7 +313,20 @@ export namespace MyNS {
 	export interface ResponseCard {
 		version?: string | null;
 		contentType?: ResponseCardContentType | null;
-		genericAttachments?: Array<GenericAttachment> | null;
+		genericAttachments?: Array<GenericAttachment>;
+	}
+
+	/** If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent). */
+	export interface ResponseCardFormProperties {
+		version: FormControl<string | null | undefined>,
+		contentType: FormControl<ResponseCardContentType | null | undefined>,
+	}
+	export function CreateResponseCardFormGroup() {
+		return new FormGroup<ResponseCardFormProperties>({
+			version: new FormControl<string | null | undefined>(undefined),
+			contentType: new FormControl<ResponseCardContentType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResponseCardContentType { application_vnd_amazonaws_card_generic = 0 }
@@ -133,7 +338,24 @@ export namespace MyNS {
 		subTitle?: string | null;
 		attachmentLinkUrl?: string | null;
 		imageUrl?: string | null;
-		buttons?: Array<Button> | null;
+		buttons?: Array<Button>;
+	}
+
+	/** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.  */
+	export interface GenericAttachmentFormProperties {
+		title: FormControl<string | null | undefined>,
+		subTitle: FormControl<string | null | undefined>,
+		attachmentLinkUrl: FormControl<string | null | undefined>,
+		imageUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGenericAttachmentFormGroup() {
+		return new FormGroup<GenericAttachmentFormProperties>({
+			title: new FormControl<string | null | undefined>(undefined),
+			subTitle: new FormControl<string | null | undefined>(undefined),
+			attachmentLinkUrl: new FormControl<string | null | undefined>(undefined),
+			imageUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -143,8 +365,30 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** Represents an option to be shown on the client platform (Facebook, Slack, etc.) */
+	export interface ButtonFormProperties {
+		text: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateButtonFormGroup() {
+		return new FormGroup<ButtonFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutSessionResponse {
 		audioStream?: string | null;
+	}
+	export interface PutSessionResponseFormProperties {
+		audioStream: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSessionResponseFormGroup() {
+		return new FormGroup<PutSessionResponseFormProperties>({
+			audioStream: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DialogActionType { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Close = 3, Delegate = 4 }
@@ -159,28 +403,67 @@ export namespace MyNS {
 
 	export interface DeleteSessionRequest {
 	}
+	export interface DeleteSessionRequestFormProperties {
+	}
+	export function CreateDeleteSessionRequestFormGroup() {
+		return new FormGroup<DeleteSessionRequestFormProperties>({
+		});
+
+	}
 
 	export enum DialogState { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Fulfilled = 3, ReadyForFulfillment = 4, Failed = 5 }
 
 	export interface GetSessionRequest {
 	}
+	export interface GetSessionRequestFormProperties {
+	}
+	export function CreateGetSessionRequestFormGroup() {
+		return new FormGroup<GetSessionRequestFormProperties>({
+		});
+
+	}
 
 	export interface PostContentRequest {
 		inputStream: string;
 	}
+	export interface PostContentRequestFormProperties {
+		inputStream: FormControl<string | null | undefined>,
+	}
+	export function CreatePostContentRequestFormGroup() {
+		return new FormGroup<PostContentRequestFormProperties>({
+			inputStream: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PostTextRequest {
-		sessionAttributes?: StringMap | null;
-		requestAttributes?: StringMap | null;
+		sessionAttributes?: StringMap;
+		requestAttributes?: StringMap;
 		inputText: string;
+	}
+	export interface PostTextRequestFormProperties {
+		inputText: FormControl<string | null | undefined>,
+	}
+	export function CreatePostTextRequestFormGroup() {
+		return new FormGroup<PostTextRequestFormProperties>({
+			inputText: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutSessionRequest {
-		sessionAttributes?: StringMap | null;
+		sessionAttributes?: StringMap;
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
-		dialogAction?: DialogAction | null;
-		recentIntentSummaryView?: Array<IntentSummary> | null;
+		dialogAction?: DialogAction;
+		recentIntentSummaryView?: Array<IntentSummary>;
+	}
+	export interface PutSessionRequestFormProperties {
+	}
+	export function CreatePutSessionRequestFormGroup() {
+		return new FormGroup<PutSessionRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -253,27 +536,57 @@ export namespace MyNS {
 	export interface PutSessionPostBody {
 
 		/** Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application. */
-		sessionAttributes?: {[id: string]: string } | null;
+		sessionAttributes?: {[id: string]: string };
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
-		dialogAction?: PutSessionPostBodyDialogAction | null;
+		dialogAction?: PutSessionPostBodyDialogAction;
 
 		/**
 		 * <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p> <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
 		 * Minimum items: 0
 		 * Maximum items: 3
 		 */
-		recentIntentSummaryView?: Array<IntentSummary> | null;
+		recentIntentSummaryView?: Array<IntentSummary>;
+	}
+	export interface PutSessionPostBodyFormProperties {
+
+		/** Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application. */
+		sessionAttributes: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreatePutSessionPostBodyFormGroup() {
+		return new FormGroup<PutSessionPostBodyFormProperties>({
+			sessionAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutSessionPostBodyDialogAction {
 		type?: IntentSummaryDialogActionType | null;
 		intentName?: string | null;
-		slots?: StringMap | null;
+		slots?: StringMap;
 		slotToElicit?: string | null;
 		fulfillmentState?: IntentSummaryFulfillmentState | null;
 		message?: string | null;
 		messageFormat?: DialogActionMessageFormat | null;
+	}
+	export interface PutSessionPostBodyDialogActionFormProperties {
+		type: FormControl<IntentSummaryDialogActionType | null | undefined>,
+		intentName: FormControl<string | null | undefined>,
+		slotToElicit: FormControl<string | null | undefined>,
+		fulfillmentState: FormControl<IntentSummaryFulfillmentState | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		messageFormat: FormControl<DialogActionMessageFormat | null | undefined>,
+	}
+	export function CreatePutSessionPostBodyDialogActionFormGroup() {
+		return new FormGroup<PutSessionPostBodyDialogActionFormProperties>({
+			type: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined),
+			intentName: new FormControl<string | null | undefined>(undefined),
+			slotToElicit: new FormControl<string | null | undefined>(undefined),
+			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PostContentPostBody {
@@ -284,14 +597,28 @@ export namespace MyNS {
 		 */
 		inputStream: string;
 	}
+	export interface PostContentPostBodyFormProperties {
+
+		/**
+		 * <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p> <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
+		 * Required
+		 */
+		inputStream: FormControl<string | null | undefined>,
+	}
+	export function CreatePostContentPostBodyFormGroup() {
+		return new FormGroup<PostContentPostBodyFormProperties>({
+			inputStream: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PostTextPostBody {
 
 		/** <p>Application-specific information passed between Amazon Lex and a client application.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p> */
-		sessionAttributes?: {[id: string]: string } | null;
+		sessionAttributes?: {[id: string]: string };
 
 		/** <p>Request-specific information passed between Amazon Lex and a client application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p> */
-		requestAttributes?: {[id: string]: string } | null;
+		requestAttributes?: {[id: string]: string };
 
 		/**
 		 * The text that the user entered (Amazon Lex interprets this text).
@@ -300,6 +627,30 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		inputText: string;
+	}
+	export interface PostTextPostBodyFormProperties {
+
+		/** <p>Application-specific information passed between Amazon Lex and a client application.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p> */
+		sessionAttributes: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** <p>Request-specific information passed between Amazon Lex and a client application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p> */
+		requestAttributes: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The text that the user entered (Amazon Lex interprets this text).
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		inputText: FormControl<string | null | undefined>,
+	}
+	export function CreatePostTextPostBodyFormGroup() {
+		return new FormGroup<PostTextPostBodyFormProperties>({
+			sessionAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			requestAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			inputText: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CopyBackupToRegionResponse {
 
 		/** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation. */
-		DestinationBackup?: DestinationBackup | null;
+		DestinationBackup?: DestinationBackup;
+	}
+	export interface CopyBackupToRegionResponseFormProperties {
+	}
+	export function CreateCopyBackupToRegionResponseFormGroup() {
+		return new FormGroup<CopyBackupToRegionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -17,10 +25,38 @@ export namespace MyNS {
 		SourceCluster?: string | null;
 	}
 
+	/** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation. */
+	export interface DestinationBackupFormProperties {
+		CreateTimestamp: FormControl<Date | null | undefined>,
+		SourceRegion: FormControl<string | null | undefined>,
+		SourceBackup: FormControl<string | null | undefined>,
+		SourceCluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDestinationBackupFormGroup() {
+		return new FormGroup<DestinationBackupFormProperties>({
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			SourceRegion: new FormControl<string | null | undefined>(undefined),
+			SourceBackup: new FormControl<string | null | undefined>(undefined),
+			SourceCluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CopyBackupToRegionRequest {
 		DestinationRegion: string;
 		BackupId: string;
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+	export interface CopyBackupToRegionRequestFormProperties {
+		DestinationRegion: FormControl<string | null | undefined>,
+		BackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyBackupToRegionRequestFormGroup() {
+		return new FormGroup<CopyBackupToRegionRequestFormProperties>({
+			DestinationRegion: new FormControl<string | null | undefined>(undefined),
+			BackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -30,28 +66,90 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Contains a tag. A tag is a key-value pair. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CloudHsmAccessDeniedException {
+	}
+	export interface CloudHsmAccessDeniedExceptionFormProperties {
+	}
+	export function CreateCloudHsmAccessDeniedExceptionFormGroup() {
+		return new FormGroup<CloudHsmAccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CloudHsmInternalFailureException {
 	}
+	export interface CloudHsmInternalFailureExceptionFormProperties {
+	}
+	export function CreateCloudHsmInternalFailureExceptionFormGroup() {
+		return new FormGroup<CloudHsmInternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CloudHsmInvalidRequestException {
+	}
+	export interface CloudHsmInvalidRequestExceptionFormProperties {
+	}
+	export function CreateCloudHsmInvalidRequestExceptionFormGroup() {
+		return new FormGroup<CloudHsmInvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CloudHsmResourceNotFoundException {
 	}
+	export interface CloudHsmResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateCloudHsmResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<CloudHsmResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CloudHsmServiceException {
 	}
+	export interface CloudHsmServiceExceptionFormProperties {
+	}
+	export function CreateCloudHsmServiceExceptionFormGroup() {
+		return new FormGroup<CloudHsmServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CloudHsmTagException {
+	}
+	export interface CloudHsmTagExceptionFormProperties {
+	}
+	export function CreateCloudHsmTagExceptionFormGroup() {
+		return new FormGroup<CloudHsmTagExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterResponse {
 
 		/** Contains information about an AWS CloudHSM cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface CreateClusterResponseFormProperties {
+	}
+	export function CreateCreateClusterResponseFormGroup() {
+		return new FormGroup<CreateClusterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -60,19 +158,48 @@ export namespace MyNS {
 		BackupPolicy?: ClusterBackupPolicy | null;
 		ClusterId?: string | null;
 		CreateTimestamp?: Date | null;
-		Hsms?: Array<Hsm> | null;
+		Hsms?: Array<Hsm>;
 		HsmType?: string | null;
 		PreCoPassword?: string | null;
 		SecurityGroup?: string | null;
 		SourceBackupId?: string | null;
 		State?: ClusterState | null;
 		StateMessage?: string | null;
-		SubnetMapping?: ExternalSubnetMapping | null;
+		SubnetMapping?: ExternalSubnetMapping;
 		VpcId?: string | null;
 
 		/** Contains one or more certificates or a certificate signing request (CSR). */
-		Certificates?: Certificates | null;
-		TagList?: Array<Tag> | null;
+		Certificates?: Certificates;
+		TagList?: Array<Tag>;
+	}
+
+	/** Contains information about an AWS CloudHSM cluster. */
+	export interface ClusterFormProperties {
+		BackupPolicy: FormControl<ClusterBackupPolicy | null | undefined>,
+		ClusterId: FormControl<string | null | undefined>,
+		CreateTimestamp: FormControl<Date | null | undefined>,
+		HsmType: FormControl<string | null | undefined>,
+		PreCoPassword: FormControl<string | null | undefined>,
+		SecurityGroup: FormControl<string | null | undefined>,
+		SourceBackupId: FormControl<string | null | undefined>,
+		State: FormControl<ClusterState | null | undefined>,
+		StateMessage: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterFormGroup() {
+		return new FormGroup<ClusterFormProperties>({
+			BackupPolicy: new FormControl<ClusterBackupPolicy | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			HsmType: new FormControl<string | null | undefined>(undefined),
+			PreCoPassword: new FormControl<string | null | undefined>(undefined),
+			SecurityGroup: new FormControl<string | null | undefined>(undefined),
+			SourceBackupId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ClusterState | null | undefined>(undefined),
+			StateMessage: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ClusterBackupPolicy { DEFAULT = 0 }
@@ -90,11 +217,43 @@ export namespace MyNS {
 		StateMessage?: string | null;
 	}
 
+	/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
+	export interface HsmFormProperties {
+		AvailabilityZone: FormControl<string | null | undefined>,
+		ClusterId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		EniId: FormControl<string | null | undefined>,
+		EniIp: FormControl<string | null | undefined>,
+		HsmId: FormControl<string | null | undefined>,
+		State: FormControl<HsmState | null | undefined>,
+		StateMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateHsmFormGroup() {
+		return new FormGroup<HsmFormProperties>({
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			EniId: new FormControl<string | null | undefined>(undefined),
+			EniIp: new FormControl<string | null | undefined>(undefined),
+			HsmId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<HsmState | null | undefined>(undefined),
+			StateMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HsmState { CREATE_IN_PROGRESS = 0, ACTIVE = 1, DEGRADED = 2, DELETE_IN_PROGRESS = 3, DELETED = 4 }
 
 	export enum ClusterState { CREATE_IN_PROGRESS = 0, UNINITIALIZED = 1, INITIALIZE_IN_PROGRESS = 2, INITIALIZED = 3, ACTIVE = 4, UPDATE_IN_PROGRESS = 5, DELETE_IN_PROGRESS = 6, DELETED = 7, DEGRADED = 8 }
 
 	export interface ExternalSubnetMapping {
+	}
+	export interface ExternalSubnetMappingFormProperties {
+	}
+	export function CreateExternalSubnetMappingFormGroup() {
+		return new FormGroup<ExternalSubnetMappingFormProperties>({
+		});
+
 	}
 
 
@@ -107,17 +266,54 @@ export namespace MyNS {
 		ClusterCertificate?: string | null;
 	}
 
+	/** Contains one or more certificates or a certificate signing request (CSR). */
+	export interface CertificatesFormProperties {
+		ClusterCsr: FormControl<string | null | undefined>,
+		HsmCertificate: FormControl<string | null | undefined>,
+		AwsHardwareCertificate: FormControl<string | null | undefined>,
+		ManufacturerHardwareCertificate: FormControl<string | null | undefined>,
+		ClusterCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateCertificatesFormGroup() {
+		return new FormGroup<CertificatesFormProperties>({
+			ClusterCsr: new FormControl<string | null | undefined>(undefined),
+			HsmCertificate: new FormControl<string | null | undefined>(undefined),
+			AwsHardwareCertificate: new FormControl<string | null | undefined>(undefined),
+			ManufacturerHardwareCertificate: new FormControl<string | null | undefined>(undefined),
+			ClusterCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateClusterRequest {
 		SubnetIds: Array<string>;
 		HsmType: string;
 		SourceBackupId?: string | null;
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+	export interface CreateClusterRequestFormProperties {
+		HsmType: FormControl<string | null | undefined>,
+		SourceBackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterRequestFormGroup() {
+		return new FormGroup<CreateClusterRequestFormProperties>({
+			HsmType: new FormControl<string | null | undefined>(undefined),
+			SourceBackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateHsmResponse {
 
 		/** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster. */
-		Hsm?: Hsm | null;
+		Hsm?: Hsm;
+	}
+	export interface CreateHsmResponseFormProperties {
+	}
+	export function CreateCreateHsmResponseFormGroup() {
+		return new FormGroup<CreateHsmResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateHsmRequest {
@@ -125,11 +321,31 @@ export namespace MyNS {
 		AvailabilityZone: string;
 		IpAddress?: string | null;
 	}
+	export interface CreateHsmRequestFormProperties {
+		ClusterId: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHsmRequestFormGroup() {
+		return new FormGroup<CreateHsmRequestFormProperties>({
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteBackupResponse {
 
 		/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
-		Backup?: Backup | null;
+		Backup?: Backup;
+	}
+	export interface DeleteBackupResponseFormProperties {
+	}
+	export function CreateDeleteBackupResponseFormGroup() {
+		return new FormGroup<DeleteBackupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -144,7 +360,34 @@ export namespace MyNS {
 		SourceBackup?: string | null;
 		SourceCluster?: string | null;
 		DeleteTimestamp?: Date | null;
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+
+	/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
+	export interface BackupFormProperties {
+		BackupId: FormControl<string | null | undefined>,
+		BackupState: FormControl<BackupBackupState | null | undefined>,
+		ClusterId: FormControl<string | null | undefined>,
+		CreateTimestamp: FormControl<Date | null | undefined>,
+		CopyTimestamp: FormControl<Date | null | undefined>,
+		SourceRegion: FormControl<string | null | undefined>,
+		SourceBackup: FormControl<string | null | undefined>,
+		SourceCluster: FormControl<string | null | undefined>,
+		DeleteTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateBackupFormGroup() {
+		return new FormGroup<BackupFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			BackupState: new FormControl<BackupBackupState | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			CopyTimestamp: new FormControl<Date | null | undefined>(undefined),
+			SourceRegion: new FormControl<string | null | undefined>(undefined),
+			SourceBackup: new FormControl<string | null | undefined>(undefined),
+			SourceCluster: new FormControl<string | null | undefined>(undefined),
+			DeleteTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupBackupState { CREATE_IN_PROGRESS = 0, READY = 1, DELETED = 2, PENDING_DELETION = 3 }
@@ -152,19 +395,53 @@ export namespace MyNS {
 	export interface DeleteBackupRequest {
 		BackupId: string;
 	}
+	export interface DeleteBackupRequestFormProperties {
+		BackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBackupRequestFormGroup() {
+		return new FormGroup<DeleteBackupRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteClusterResponse {
 
 		/** Contains information about an AWS CloudHSM cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface DeleteClusterResponseFormProperties {
+	}
+	export function CreateDeleteClusterResponseFormGroup() {
+		return new FormGroup<DeleteClusterResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterRequest {
 		ClusterId: string;
 	}
+	export interface DeleteClusterRequestFormProperties {
+		ClusterId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterRequestFormGroup() {
+		return new FormGroup<DeleteClusterRequestFormProperties>({
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteHsmResponse {
 		HsmId?: string | null;
+	}
+	export interface DeleteHsmResponseFormProperties {
+		HsmId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteHsmResponseFormGroup() {
+		return new FormGroup<DeleteHsmResponseFormProperties>({
+			HsmId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteHsmRequest {
@@ -173,36 +450,111 @@ export namespace MyNS {
 		EniId?: string | null;
 		EniIp?: string | null;
 	}
+	export interface DeleteHsmRequestFormProperties {
+		ClusterId: FormControl<string | null | undefined>,
+		HsmId: FormControl<string | null | undefined>,
+		EniId: FormControl<string | null | undefined>,
+		EniIp: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteHsmRequestFormGroup() {
+		return new FormGroup<DeleteHsmRequestFormProperties>({
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+			HsmId: new FormControl<string | null | undefined>(undefined),
+			EniId: new FormControl<string | null | undefined>(undefined),
+			EniIp: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeBackupsResponse {
-		Backups?: Array<Backup> | null;
+		Backups?: Array<Backup>;
 		NextToken?: string | null;
+	}
+	export interface DescribeBackupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBackupsResponseFormGroup() {
+		return new FormGroup<DescribeBackupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeBackupsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Filters?: Filters | null;
+		Filters?: Filters;
 		SortAscending?: boolean | null;
+	}
+	export interface DescribeBackupsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		SortAscending: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeBackupsRequestFormGroup() {
+		return new FormGroup<DescribeBackupsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			SortAscending: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Filters {
 	}
+	export interface FiltersFormProperties {
+	}
+	export function CreateFiltersFormGroup() {
+		return new FormGroup<FiltersFormProperties>({
+		});
+
+	}
 
 	export interface DescribeClustersResponse {
-		Clusters?: Array<Cluster> | null;
+		Clusters?: Array<Cluster>;
 		NextToken?: string | null;
+	}
+	export interface DescribeClustersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClustersResponseFormGroup() {
+		return new FormGroup<DescribeClustersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeClustersRequest {
-		Filters?: Filters | null;
+		Filters?: Filters;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeClustersRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeClustersRequestFormGroup() {
+		return new FormGroup<DescribeClustersRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InitializeClusterResponse {
 		State?: ClusterState | null;
 		StateMessage?: string | null;
+	}
+	export interface InitializeClusterResponseFormProperties {
+		State: FormControl<ClusterState | null | undefined>,
+		StateMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateInitializeClusterResponseFormGroup() {
+		return new FormGroup<InitializeClusterResponseFormProperties>({
+			State: new FormControl<ClusterState | null | undefined>(undefined),
+			StateMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InitializeClusterRequest {
@@ -210,10 +562,32 @@ export namespace MyNS {
 		SignedCert: string;
 		TrustAnchor: string;
 	}
+	export interface InitializeClusterRequestFormProperties {
+		ClusterId: FormControl<string | null | undefined>,
+		SignedCert: FormControl<string | null | undefined>,
+		TrustAnchor: FormControl<string | null | undefined>,
+	}
+	export function CreateInitializeClusterRequestFormGroup() {
+		return new FormGroup<InitializeClusterRequestFormProperties>({
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+			SignedCert: new FormControl<string | null | undefined>(undefined),
+			TrustAnchor: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsResponse {
 		TagList: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsResponseFormGroup() {
+		return new FormGroup<ListTagsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsRequest {
@@ -221,31 +595,92 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTagsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsRequestFormGroup() {
+		return new FormGroup<ListTagsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestoreBackupResponse {
 
 		/** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter. */
-		Backup?: Backup | null;
+		Backup?: Backup;
+	}
+	export interface RestoreBackupResponseFormProperties {
+	}
+	export function CreateRestoreBackupResponseFormGroup() {
+		return new FormGroup<RestoreBackupResponseFormProperties>({
+		});
+
 	}
 
 	export interface RestoreBackupRequest {
 		BackupId: string;
 	}
+	export interface RestoreBackupRequestFormProperties {
+		BackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreBackupRequestFormGroup() {
+		return new FormGroup<RestoreBackupRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceId: string;
 		TagList: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceId: string;
 		TagKeyList: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupState { CREATE_IN_PROGRESS = 0, READY = 1, DELETED = 2, PENDING_DELETION = 3 }

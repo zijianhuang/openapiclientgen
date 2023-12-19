@@ -1,23 +1,63 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ClaimDevicesByClaimCodeResponse {
 		ClaimCode?: string | null;
 		Total?: number | null;
 	}
+	export interface ClaimDevicesByClaimCodeResponseFormProperties {
+		ClaimCode: FormControl<string | null | undefined>,
+		Total: FormControl<number | null | undefined>,
+	}
+	export function CreateClaimDevicesByClaimCodeResponseFormGroup() {
+		return new FormGroup<ClaimDevicesByClaimCodeResponseFormProperties>({
+			ClaimCode: new FormControl<string | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ForbiddenException {
 	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDeviceResponse {
-		DeviceDescription?: DeviceDescription | null;
+		DeviceDescription?: DeviceDescription;
+	}
+	export interface DescribeDeviceResponseFormProperties {
+	}
+	export function CreateDescribeDeviceResponseFormGroup() {
+		return new FormGroup<DescribeDeviceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeviceDescription {
@@ -26,12 +66,29 @@ export namespace MyNS {
 		/**
 		 * DeviceAttributes is a string-to-string map specified by the user.
 		 */
-		Attributes?: DeviceAttributes | null;
+		Attributes?: DeviceAttributes;
 		DeviceId?: string | null;
 		Enabled?: boolean | null;
 		RemainingLife?: number | null;
 		Type?: string | null;
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface DeviceDescriptionFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		RemainingLife: FormControl<number | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceDescriptionFormGroup() {
+		return new FormGroup<DeviceDescriptionFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			RemainingLife: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -41,119 +98,373 @@ export namespace MyNS {
 	export interface DeviceAttributes {
 	}
 
+	/**
+	 *  DeviceAttributes is a string-to-string map specified by the user.
+	 */
+	export interface DeviceAttributesFormProperties {
+	}
+	export function CreateDeviceAttributesFormGroup() {
+		return new FormGroup<DeviceAttributesFormProperties>({
+		});
+
+	}
+
 	export interface __mapOf__string {
+	}
+	export interface __mapOf__stringFormProperties {
+	}
+	export function Create__mapOf__stringFormGroup() {
+		return new FormGroup<__mapOf__stringFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface FinalizeDeviceClaimResponse {
 		State?: string | null;
 	}
+	export interface FinalizeDeviceClaimResponseFormProperties {
+		State: FormControl<string | null | undefined>,
+	}
+	export function CreateFinalizeDeviceClaimResponseFormGroup() {
+		return new FormGroup<FinalizeDeviceClaimResponseFormProperties>({
+			State: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PreconditionFailedException {
+	}
+	export interface PreconditionFailedExceptionFormProperties {
+	}
+	export function CreatePreconditionFailedExceptionFormGroup() {
+		return new FormGroup<PreconditionFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceConflictException {
 	}
+	export interface ResourceConflictExceptionFormProperties {
+	}
+	export function CreateResourceConflictExceptionFormGroup() {
+		return new FormGroup<ResourceConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GetDeviceMethodsResponse {
-		DeviceMethods?: Array<DeviceMethod> | null;
+		DeviceMethods?: Array<DeviceMethod>;
+	}
+	export interface GetDeviceMethodsResponseFormProperties {
+	}
+	export function CreateGetDeviceMethodsResponseFormGroup() {
+		return new FormGroup<GetDeviceMethodsResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeviceMethod {
 		DeviceType?: string | null;
 		MethodName?: string | null;
 	}
+	export interface DeviceMethodFormProperties {
+		DeviceType: FormControl<string | null | undefined>,
+		MethodName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceMethodFormGroup() {
+		return new FormGroup<DeviceMethodFormProperties>({
+			DeviceType: new FormControl<string | null | undefined>(undefined),
+			MethodName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InitiateDeviceClaimResponse {
 		State?: string | null;
+	}
+	export interface InitiateDeviceClaimResponseFormProperties {
+		State: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateDeviceClaimResponseFormGroup() {
+		return new FormGroup<InitiateDeviceClaimResponseFormProperties>({
+			State: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvokeDeviceMethodResponse {
 		DeviceMethodResponse?: string | null;
 	}
+	export interface InvokeDeviceMethodResponseFormProperties {
+		DeviceMethodResponse: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeDeviceMethodResponseFormGroup() {
+		return new FormGroup<InvokeDeviceMethodResponseFormProperties>({
+			DeviceMethodResponse: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RangeNotSatisfiableException {
 	}
+	export interface RangeNotSatisfiableExceptionFormProperties {
+	}
+	export function CreateRangeNotSatisfiableExceptionFormGroup() {
+		return new FormGroup<RangeNotSatisfiableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListDeviceEventsResponse {
-		Events?: Array<DeviceEvent> | null;
+		Events?: Array<DeviceEvent>;
 		NextToken?: string | null;
+	}
+	export interface ListDeviceEventsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeviceEventsResponseFormGroup() {
+		return new FormGroup<ListDeviceEventsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeviceEvent {
-		Device?: Device | null;
+		Device?: Device;
 		StdEvent?: string | null;
+	}
+	export interface DeviceEventFormProperties {
+		StdEvent: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceEventFormGroup() {
+		return new FormGroup<DeviceEventFormProperties>({
+			StdEvent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Device {
-		Attributes?: Attributes | null;
+		Attributes?: Attributes;
 		DeviceId?: string | null;
 		Type?: string | null;
+	}
+	export interface DeviceFormProperties {
+		DeviceId: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceFormGroup() {
+		return new FormGroup<DeviceFormProperties>({
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Attributes {
 	}
+	export interface AttributesFormProperties {
+	}
+	export function CreateAttributesFormGroup() {
+		return new FormGroup<AttributesFormProperties>({
+		});
+
+	}
 
 	export interface ListDevicesResponse {
-		Devices?: Array<DeviceDescription> | null;
+		Devices?: Array<DeviceDescription>;
 		NextToken?: string | null;
+	}
+	export interface ListDevicesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicesResponseFormGroup() {
+		return new FormGroup<ListDevicesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UnclaimDeviceResponse {
 		State?: string | null;
 	}
+	export interface UnclaimDeviceResponseFormProperties {
+		State: FormControl<string | null | undefined>,
+	}
+	export function CreateUnclaimDeviceResponseFormGroup() {
+		return new FormGroup<UnclaimDeviceResponseFormProperties>({
+			State: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDeviceStateResponse {
+	}
+	export interface UpdateDeviceStateResponseFormProperties {
+	}
+	export function CreateUpdateDeviceStateResponseFormGroup() {
+		return new FormGroup<UpdateDeviceStateResponseFormProperties>({
+		});
+
 	}
 
 	export interface ClaimDevicesByClaimCodeRequest {
 	}
+	export interface ClaimDevicesByClaimCodeRequestFormProperties {
+	}
+	export function CreateClaimDevicesByClaimCodeRequestFormGroup() {
+		return new FormGroup<ClaimDevicesByClaimCodeRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDeviceRequest {
 	}
+	export interface DescribeDeviceRequestFormProperties {
+	}
+	export function CreateDescribeDeviceRequestFormGroup() {
+		return new FormGroup<DescribeDeviceRequestFormProperties>({
+		});
+
+	}
 
 	export interface FinalizeDeviceClaimRequest {
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface FinalizeDeviceClaimRequestFormProperties {
+	}
+	export function CreateFinalizeDeviceClaimRequestFormGroup() {
+		return new FormGroup<FinalizeDeviceClaimRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDeviceMethodsRequest {
 	}
+	export interface GetDeviceMethodsRequestFormProperties {
+	}
+	export function CreateGetDeviceMethodsRequestFormGroup() {
+		return new FormGroup<GetDeviceMethodsRequestFormProperties>({
+		});
+
+	}
 
 	export interface InitiateDeviceClaimRequest {
 	}
+	export interface InitiateDeviceClaimRequestFormProperties {
+	}
+	export function CreateInitiateDeviceClaimRequestFormGroup() {
+		return new FormGroup<InitiateDeviceClaimRequestFormProperties>({
+		});
+
+	}
 
 	export interface InvokeDeviceMethodRequest {
-		DeviceMethod?: DeviceMethod | null;
+		DeviceMethod?: DeviceMethod;
 		DeviceMethodParameters?: string | null;
+	}
+	export interface InvokeDeviceMethodRequestFormProperties {
+		DeviceMethodParameters: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeDeviceMethodRequestFormGroup() {
+		return new FormGroup<InvokeDeviceMethodRequestFormProperties>({
+			DeviceMethodParameters: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDeviceEventsRequest {
 	}
+	export interface ListDeviceEventsRequestFormProperties {
+	}
+	export function CreateListDeviceEventsRequestFormGroup() {
+		return new FormGroup<ListDeviceEventsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDevicesRequest {
 	}
+	export interface ListDevicesRequestFormProperties {
+	}
+	export function CreateListDevicesRequestFormGroup() {
+		return new FormGroup<ListDevicesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		Tags: __mapOf__string;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UnclaimDeviceRequest {
+	}
+	export interface UnclaimDeviceRequestFormProperties {
+	}
+	export function CreateUnclaimDeviceRequestFormGroup() {
+		return new FormGroup<UnclaimDeviceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDeviceStateRequest {
 		Enabled?: boolean | null;
+	}
+	export interface UpdateDeviceStateRequestFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDeviceStateRequestFormGroup() {
+		return new FormGroup<UpdateDeviceStateRequestFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -328,21 +639,59 @@ export namespace MyNS {
 		 * Tagging Strategies</a>.</p><p>
 		 * </p>
 		 */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface FinalizeDeviceClaimPutBodyFormProperties {
+
+		/**
+		 * <p>A collection of key/value pairs defining the resource tags. For example, {
+		 * "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+		 * Tagging Strategies</a>.</p><p>
+		 * </p>
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateFinalizeDeviceClaimPutBodyFormGroup() {
+		return new FormGroup<FinalizeDeviceClaimPutBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvokeDeviceMethodPostBody {
 
 		/** The device method to invoke. */
-		deviceMethod?: InvokeDeviceMethodPostBodyDeviceMethod | null;
+		deviceMethod?: InvokeDeviceMethodPostBodyDeviceMethod;
 
 		/** A JSON encoded string containing the device method request parameters. */
 		deviceMethodParameters?: string | null;
+	}
+	export interface InvokeDeviceMethodPostBodyFormProperties {
+
+		/** A JSON encoded string containing the device method request parameters. */
+		deviceMethodParameters: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeDeviceMethodPostBodyFormGroup() {
+		return new FormGroup<InvokeDeviceMethodPostBodyFormProperties>({
+			deviceMethodParameters: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvokeDeviceMethodPostBodyDeviceMethod {
 		DeviceType?: string | null;
 		MethodName?: string | null;
+	}
+	export interface InvokeDeviceMethodPostBodyDeviceMethodFormProperties {
+		DeviceType: FormControl<string | null | undefined>,
+		MethodName: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeDeviceMethodPostBodyDeviceMethodFormGroup() {
+		return new FormGroup<InvokeDeviceMethodPostBodyDeviceMethodFormProperties>({
+			DeviceType: new FormControl<string | null | undefined>(undefined),
+			MethodName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -356,6 +705,23 @@ export namespace MyNS {
 		 */
 		tags: {[id: string]: string };
 	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * <p>A collection of key/value pairs defining the resource tags. For example, {
+		 * "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+		 * Tagging Strategies</a>.</p><p>
+		 * </p>
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDeviceStatePutBody {
 
@@ -364,6 +730,20 @@ export namespace MyNS {
 		 * disabled.
 		 */
 		enabled?: boolean | null;
+	}
+	export interface UpdateDeviceStatePutBodyFormProperties {
+
+		/**
+		 * If true, the device is enabled. If false, the device is
+		 * disabled.
+		 */
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDeviceStatePutBodyFormGroup() {
+		return new FormGroup<UpdateDeviceStatePutBodyFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 }

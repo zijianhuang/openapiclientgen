@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateBatchInferenceJobResponse {
 		batchInferenceJobArn?: string | null;
+	}
+	export interface CreateBatchInferenceJobResponseFormProperties {
+		batchInferenceJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBatchInferenceJobResponseFormGroup() {
+		return new FormGroup<CreateBatchInferenceJobResponseFormProperties>({
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBatchInferenceJobRequest {
@@ -25,6 +35,23 @@ export namespace MyNS {
 		jobOutput: BatchInferenceJobOutput;
 		roleArn: string;
 	}
+	export interface CreateBatchInferenceJobRequestFormProperties {
+		jobName: FormControl<string | null | undefined>,
+		solutionVersionArn: FormControl<string | null | undefined>,
+		filterArn: FormControl<string | null | undefined>,
+		numResults: FormControl<number | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBatchInferenceJobRequestFormGroup() {
+		return new FormGroup<CreateBatchInferenceJobRequestFormProperties>({
+			jobName: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined),
+			numResults: new FormControl<number | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input configuration of a batch inference job. */
@@ -37,11 +64,33 @@ export namespace MyNS {
 		s3DataSource: S3DataConfig;
 	}
 
+	/** The input configuration of a batch inference job. */
+	export interface BatchInferenceJobInputFormProperties {
+	}
+	export function CreateBatchInferenceJobInputFormGroup() {
+		return new FormGroup<BatchInferenceJobInputFormProperties>({
+		});
+
+	}
+
 
 	/** The configuration details of an Amazon S3 input or output bucket. */
 	export interface S3DataConfig {
 		path: string;
 		kmsKeyArn?: string | null;
+	}
+
+	/** The configuration details of an Amazon S3 input or output bucket. */
+	export interface S3DataConfigFormProperties {
+		path: FormControl<string | null | undefined>,
+		kmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3DataConfigFormGroup() {
+		return new FormGroup<S3DataConfigFormProperties>({
+			path: new FormControl<string | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -55,23 +104,76 @@ export namespace MyNS {
 		s3DataDestination: S3DataConfig;
 	}
 
+	/** The output configuration parameters of a batch inference job. */
+	export interface BatchInferenceJobOutputFormProperties {
+	}
+	export function CreateBatchInferenceJobOutputFormGroup() {
+		return new FormGroup<BatchInferenceJobOutputFormProperties>({
+		});
+
+	}
+
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateCampaignResponse {
 		campaignArn?: string | null;
+	}
+	export interface CreateCampaignResponseFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCampaignResponseFormGroup() {
+		return new FormGroup<CreateCampaignResponseFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCampaignRequest {
@@ -79,9 +181,31 @@ export namespace MyNS {
 		solutionVersionArn: string;
 		minProvisionedTPS: number;
 	}
+	export interface CreateCampaignRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		solutionVersionArn: FormControl<string | null | undefined>,
+		minProvisionedTPS: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateCampaignRequestFormGroup() {
+		return new FormGroup<CreateCampaignRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDatasetResponse {
 		datasetArn?: string | null;
+	}
+	export interface CreateDatasetResponseFormProperties {
+		datasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetResponseFormGroup() {
+		return new FormGroup<CreateDatasetResponseFormProperties>({
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetRequest {
@@ -90,9 +214,33 @@ export namespace MyNS {
 		datasetGroupArn: string;
 		datasetType: string;
 	}
+	export interface CreateDatasetRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		schemaArn: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		datasetType: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetRequestFormGroup() {
+		return new FormGroup<CreateDatasetRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDatasetGroupResponse {
 		datasetGroupArn?: string | null;
+	}
+	export interface CreateDatasetGroupResponseFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetGroupResponseFormGroup() {
+		return new FormGroup<CreateDatasetGroupResponseFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetGroupRequest {
@@ -100,9 +248,31 @@ export namespace MyNS {
 		roleArn?: string | null;
 		kmsKeyArn?: string | null;
 	}
+	export interface CreateDatasetGroupRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		kmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetGroupRequestFormGroup() {
+		return new FormGroup<CreateDatasetGroupRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDatasetImportJobResponse {
 		datasetImportJobArn?: string | null;
+	}
+	export interface CreateDatasetImportJobResponseFormProperties {
+		datasetImportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetImportJobResponseFormGroup() {
+		return new FormGroup<CreateDatasetImportJobResponseFormProperties>({
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetImportJobRequest {
@@ -116,6 +286,19 @@ export namespace MyNS {
 		dataSource: DataSource;
 		roleArn: string;
 	}
+	export interface CreateDatasetImportJobRequestFormProperties {
+		jobName: FormControl<string | null | undefined>,
+		datasetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetImportJobRequestFormGroup() {
+		return new FormGroup<CreateDatasetImportJobRequestFormProperties>({
+			jobName: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Describes the data source that contains the data to upload to a dataset. */
@@ -123,18 +306,60 @@ export namespace MyNS {
 		dataLocation?: string | null;
 	}
 
+	/** Describes the data source that contains the data to upload to a dataset. */
+	export interface DataSourceFormProperties {
+		dataLocation: FormControl<string | null | undefined>,
+	}
+	export function CreateDataSourceFormGroup() {
+		return new FormGroup<DataSourceFormProperties>({
+			dataLocation: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateEventTrackerResponse {
 		eventTrackerArn?: string | null;
 		trackingId?: string | null;
+	}
+	export interface CreateEventTrackerResponseFormProperties {
+		eventTrackerArn: FormControl<string | null | undefined>,
+		trackingId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEventTrackerResponseFormGroup() {
+		return new FormGroup<CreateEventTrackerResponseFormProperties>({
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+			trackingId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEventTrackerRequest {
 		name: string;
 		datasetGroupArn: string;
 	}
+	export interface CreateEventTrackerRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEventTrackerRequestFormGroup() {
+		return new FormGroup<CreateEventTrackerRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateFilterResponse {
 		filterArn?: string | null;
+	}
+	export interface CreateFilterResponseFormProperties {
+		filterArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFilterResponseFormGroup() {
+		return new FormGroup<CreateFilterResponseFormProperties>({
+			filterArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFilterRequest {
@@ -142,18 +367,60 @@ export namespace MyNS {
 		datasetGroupArn: string;
 		filterExpression: string;
 	}
+	export interface CreateFilterRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		filterExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFilterRequestFormGroup() {
+		return new FormGroup<CreateFilterRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			filterExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSchemaResponse {
 		schemaArn?: string | null;
+	}
+	export interface CreateSchemaResponseFormProperties {
+		schemaArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSchemaResponseFormGroup() {
+		return new FormGroup<CreateSchemaResponseFormProperties>({
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSchemaRequest {
 		name: string;
 		schema: string;
 	}
+	export interface CreateSchemaRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		schema: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSchemaRequestFormGroup() {
+		return new FormGroup<CreateSchemaRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSolutionResponse {
 		solutionArn?: string | null;
+	}
+	export interface CreateSolutionResponseFormProperties {
+		solutionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSolutionResponseFormGroup() {
+		return new FormGroup<CreateSolutionResponseFormProperties>({
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSolutionRequest {
@@ -165,7 +432,26 @@ export namespace MyNS {
 		eventType?: string | null;
 
 		/** Describes the configuration properties for the solution. */
-		solutionConfig?: SolutionConfig | null;
+		solutionConfig?: SolutionConfig;
+	}
+	export interface CreateSolutionRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		performHPO: FormControl<boolean | null | undefined>,
+		performAutoML: FormControl<boolean | null | undefined>,
+		recipeArn: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		eventType: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSolutionRequestFormGroup() {
+		return new FormGroup<CreateSolutionRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			performHPO: new FormControl<boolean | null | undefined>(undefined),
+			performAutoML: new FormControl<boolean | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			eventType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -174,12 +460,23 @@ export namespace MyNS {
 		eventValueThreshold?: string | null;
 
 		/** Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes. */
-		hpoConfig?: HPOConfig | null;
-		algorithmHyperParameters?: HyperParameters | null;
-		featureTransformationParameters?: FeatureTransformationParameters | null;
+		hpoConfig?: HPOConfig;
+		algorithmHyperParameters?: HyperParameters;
+		featureTransformationParameters?: FeatureTransformationParameters;
 
 		/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
-		autoMLConfig?: AutoMLConfig | null;
+		autoMLConfig?: AutoMLConfig;
+	}
+
+	/** Describes the configuration properties for the solution. */
+	export interface SolutionConfigFormProperties {
+		eventValueThreshold: FormControl<string | null | undefined>,
+	}
+	export function CreateSolutionConfigFormGroup() {
+		return new FormGroup<SolutionConfigFormProperties>({
+			eventValueThreshold: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -187,13 +484,22 @@ export namespace MyNS {
 	export interface HPOConfig {
 
 		/** The metric to optimize during hyperparameter optimization (HPO). */
-		hpoObjective?: HPOObjective | null;
+		hpoObjective?: HPOObjective;
 
 		/** Describes the resource configuration for hyperparameter optimization (HPO). */
-		hpoResourceConfig?: HPOResourceConfig | null;
+		hpoResourceConfig?: HPOResourceConfig;
 
 		/** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
-		algorithmHyperParameterRanges?: HyperParameterRanges | null;
+		algorithmHyperParameterRanges?: HyperParameterRanges;
+	}
+
+	/** Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes. */
+	export interface HPOConfigFormProperties {
+	}
+	export function CreateHPOConfigFormGroup() {
+		return new FormGroup<HPOConfigFormProperties>({
+		});
+
 	}
 
 
@@ -204,6 +510,21 @@ export namespace MyNS {
 		metricRegex?: string | null;
 	}
 
+	/** The metric to optimize during hyperparameter optimization (HPO). */
+	export interface HPOObjectiveFormProperties {
+		type: FormControl<string | null | undefined>,
+		metricName: FormControl<string | null | undefined>,
+		metricRegex: FormControl<string | null | undefined>,
+	}
+	export function CreateHPOObjectiveFormGroup() {
+		return new FormGroup<HPOObjectiveFormProperties>({
+			type: new FormControl<string | null | undefined>(undefined),
+			metricName: new FormControl<string | null | undefined>(undefined),
+			metricRegex: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the resource configuration for hyperparameter optimization (HPO). */
 	export interface HPOResourceConfig {
@@ -211,12 +532,34 @@ export namespace MyNS {
 		maxParallelTrainingJobs?: string | null;
 	}
 
+	/** Describes the resource configuration for hyperparameter optimization (HPO). */
+	export interface HPOResourceConfigFormProperties {
+		maxNumberOfTrainingJobs: FormControl<string | null | undefined>,
+		maxParallelTrainingJobs: FormControl<string | null | undefined>,
+	}
+	export function CreateHPOResourceConfigFormGroup() {
+		return new FormGroup<HPOResourceConfigFormProperties>({
+			maxNumberOfTrainingJobs: new FormControl<string | null | undefined>(undefined),
+			maxParallelTrainingJobs: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 	export interface HyperParameterRanges {
-		integerHyperParameterRanges?: Array<IntegerHyperParameterRange> | null;
-		continuousHyperParameterRanges?: Array<ContinuousHyperParameterRange> | null;
-		categoricalHyperParameterRanges?: Array<CategoricalHyperParameterRange> | null;
+		integerHyperParameterRanges?: Array<IntegerHyperParameterRange>;
+		continuousHyperParameterRanges?: Array<ContinuousHyperParameterRange>;
+		categoricalHyperParameterRanges?: Array<CategoricalHyperParameterRange>;
+	}
+
+	/** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
+	export interface HyperParameterRangesFormProperties {
+	}
+	export function CreateHyperParameterRangesFormGroup() {
+		return new FormGroup<HyperParameterRangesFormProperties>({
+		});
+
 	}
 
 
@@ -227,6 +570,21 @@ export namespace MyNS {
 		maxValue?: number | null;
 	}
 
+	/** Provides the name and range of an integer-valued hyperparameter. */
+	export interface IntegerHyperParameterRangeFormProperties {
+		name: FormControl<string | null | undefined>,
+		minValue: FormControl<number | null | undefined>,
+		maxValue: FormControl<number | null | undefined>,
+	}
+	export function CreateIntegerHyperParameterRangeFormGroup() {
+		return new FormGroup<IntegerHyperParameterRangeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			minValue: new FormControl<number | null | undefined>(undefined),
+			maxValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides the name and range of a continuous hyperparameter. */
 	export interface ContinuousHyperParameterRange {
@@ -235,33 +593,104 @@ export namespace MyNS {
 		maxValue?: number | null;
 	}
 
+	/** Provides the name and range of a continuous hyperparameter. */
+	export interface ContinuousHyperParameterRangeFormProperties {
+		name: FormControl<string | null | undefined>,
+		minValue: FormControl<number | null | undefined>,
+		maxValue: FormControl<number | null | undefined>,
+	}
+	export function CreateContinuousHyperParameterRangeFormGroup() {
+		return new FormGroup<ContinuousHyperParameterRangeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			minValue: new FormControl<number | null | undefined>(undefined),
+			maxValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides the name and range of a categorical hyperparameter. */
 	export interface CategoricalHyperParameterRange {
 		name?: string | null;
-		values?: Array<string> | null;
+		values?: Array<string>;
+	}
+
+	/** Provides the name and range of a categorical hyperparameter. */
+	export interface CategoricalHyperParameterRangeFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoricalHyperParameterRangeFormGroup() {
+		return new FormGroup<CategoricalHyperParameterRangeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface HyperParameters {
 	}
+	export interface HyperParametersFormProperties {
+	}
+	export function CreateHyperParametersFormGroup() {
+		return new FormGroup<HyperParametersFormProperties>({
+		});
+
+	}
 
 	export interface FeatureTransformationParameters {
+	}
+	export interface FeatureTransformationParametersFormProperties {
+	}
+	export function CreateFeatureTransformationParametersFormGroup() {
+		return new FormGroup<FeatureTransformationParametersFormProperties>({
+		});
+
 	}
 
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
 	export interface AutoMLConfig {
 		metricName?: string | null;
-		recipeList?: Array<string> | null;
+		recipeList?: Array<string>;
+	}
+
+	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
+	export interface AutoMLConfigFormProperties {
+		metricName: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLConfigFormGroup() {
+		return new FormGroup<AutoMLConfigFormProperties>({
+			metricName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSolutionVersionResponse {
 		solutionVersionArn?: string | null;
 	}
+	export interface CreateSolutionVersionResponseFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSolutionVersionResponseFormGroup() {
+		return new FormGroup<CreateSolutionVersionResponseFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSolutionVersionRequest {
 		solutionArn: string;
 		trainingMode?: CreateSolutionVersionRequestTrainingMode | null;
+	}
+	export interface CreateSolutionVersionRequestFormProperties {
+		solutionArn: FormControl<string | null | undefined>,
+		trainingMode: FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>,
+	}
+	export function CreateCreateSolutionVersionRequestFormGroup() {
+		return new FormGroup<CreateSolutionVersionRequestFormProperties>({
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+			trainingMode: new FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateSolutionVersionRequestTrainingMode { FULL = 0, UPDATE = 1 }
@@ -269,35 +698,105 @@ export namespace MyNS {
 	export interface DeleteCampaignRequest {
 		campaignArn: string;
 	}
+	export interface DeleteCampaignRequestFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCampaignRequestFormGroup() {
+		return new FormGroup<DeleteCampaignRequestFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDatasetRequest {
 		datasetArn: string;
+	}
+	export interface DeleteDatasetRequestFormProperties {
+		datasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDatasetRequestFormGroup() {
+		return new FormGroup<DeleteDatasetRequestFormProperties>({
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDatasetGroupRequest {
 		datasetGroupArn: string;
 	}
+	export interface DeleteDatasetGroupRequestFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDatasetGroupRequestFormGroup() {
+		return new FormGroup<DeleteDatasetGroupRequestFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEventTrackerRequest {
 		eventTrackerArn: string;
+	}
+	export interface DeleteEventTrackerRequestFormProperties {
+		eventTrackerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEventTrackerRequestFormGroup() {
+		return new FormGroup<DeleteEventTrackerRequestFormProperties>({
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteFilterRequest {
 		filterArn: string;
 	}
+	export interface DeleteFilterRequestFormProperties {
+		filterArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFilterRequestFormGroup() {
+		return new FormGroup<DeleteFilterRequestFormProperties>({
+			filterArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSchemaRequest {
 		schemaArn: string;
+	}
+	export interface DeleteSchemaRequestFormProperties {
+		schemaArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSchemaRequestFormGroup() {
+		return new FormGroup<DeleteSchemaRequestFormProperties>({
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSolutionRequest {
 		solutionArn: string;
 	}
+	export interface DeleteSolutionRequestFormProperties {
+		solutionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSolutionRequestFormGroup() {
+		return new FormGroup<DeleteSolutionRequestFormProperties>({
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAlgorithmResponse {
 
 		/** Describes a custom algorithm. */
-		algorithm?: Algorithm | null;
+		algorithm?: Algorithm;
+	}
+	export interface DescribeAlgorithmResponseFormProperties {
+	}
+	export function CreateDescribeAlgorithmResponseFormGroup() {
+		return new FormGroup<DescribeAlgorithmResponseFormProperties>({
+		});
+
 	}
 
 
@@ -307,16 +806,37 @@ export namespace MyNS {
 		algorithmArn?: string | null;
 
 		/** Describes an algorithm image. */
-		algorithmImage?: AlgorithmImage | null;
-		defaultHyperParameters?: HyperParameters | null;
+		algorithmImage?: AlgorithmImage;
+		defaultHyperParameters?: HyperParameters;
 
 		/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
-		defaultHyperParameterRanges?: DefaultHyperParameterRanges | null;
-		defaultResourceConfig?: ResourceConfig | null;
+		defaultHyperParameterRanges?: DefaultHyperParameterRanges;
+		defaultResourceConfig?: ResourceConfig;
 		trainingInputMode?: string | null;
 		roleArn?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
+	}
+
+	/** Describes a custom algorithm. */
+	export interface AlgorithmFormProperties {
+		name: FormControl<string | null | undefined>,
+		algorithmArn: FormControl<string | null | undefined>,
+		trainingInputMode: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateAlgorithmFormGroup() {
+		return new FormGroup<AlgorithmFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			algorithmArn: new FormControl<string | null | undefined>(undefined),
+			trainingInputMode: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -326,12 +846,34 @@ export namespace MyNS {
 		dockerURI: string;
 	}
 
+	/** Describes an algorithm image. */
+	export interface AlgorithmImageFormProperties {
+		name: FormControl<string | null | undefined>,
+		dockerURI: FormControl<string | null | undefined>,
+	}
+	export function CreateAlgorithmImageFormGroup() {
+		return new FormGroup<AlgorithmImageFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			dockerURI: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 	export interface DefaultHyperParameterRanges {
-		integerHyperParameterRanges?: Array<DefaultIntegerHyperParameterRange> | null;
-		continuousHyperParameterRanges?: Array<DefaultContinuousHyperParameterRange> | null;
-		categoricalHyperParameterRanges?: Array<DefaultCategoricalHyperParameterRange> | null;
+		integerHyperParameterRanges?: Array<DefaultIntegerHyperParameterRange>;
+		continuousHyperParameterRanges?: Array<DefaultContinuousHyperParameterRange>;
+		categoricalHyperParameterRanges?: Array<DefaultCategoricalHyperParameterRange>;
+	}
+
+	/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
+	export interface DefaultHyperParameterRangesFormProperties {
+	}
+	export function CreateDefaultHyperParameterRangesFormGroup() {
+		return new FormGroup<DefaultHyperParameterRangesFormProperties>({
+		});
+
 	}
 
 
@@ -343,6 +885,23 @@ export namespace MyNS {
 		isTunable?: boolean | null;
 	}
 
+	/** Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
+	export interface DefaultIntegerHyperParameterRangeFormProperties {
+		name: FormControl<string | null | undefined>,
+		minValue: FormControl<number | null | undefined>,
+		maxValue: FormControl<number | null | undefined>,
+		isTunable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDefaultIntegerHyperParameterRangeFormGroup() {
+		return new FormGroup<DefaultIntegerHyperParameterRangeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			minValue: new FormControl<number | null | undefined>(undefined),
+			maxValue: new FormControl<number | null | undefined>(undefined),
+			isTunable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultContinuousHyperParameterRange {
@@ -352,25 +911,78 @@ export namespace MyNS {
 		isTunable?: boolean | null;
 	}
 
+	/** Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
+	export interface DefaultContinuousHyperParameterRangeFormProperties {
+		name: FormControl<string | null | undefined>,
+		minValue: FormControl<number | null | undefined>,
+		maxValue: FormControl<number | null | undefined>,
+		isTunable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDefaultContinuousHyperParameterRangeFormGroup() {
+		return new FormGroup<DefaultContinuousHyperParameterRangeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			minValue: new FormControl<number | null | undefined>(undefined),
+			maxValue: new FormControl<number | null | undefined>(undefined),
+			isTunable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultCategoricalHyperParameterRange {
 		name?: string | null;
-		values?: Array<string> | null;
+		values?: Array<string>;
 		isTunable?: boolean | null;
 	}
 
+	/** Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
+	export interface DefaultCategoricalHyperParameterRangeFormProperties {
+		name: FormControl<string | null | undefined>,
+		isTunable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDefaultCategoricalHyperParameterRangeFormGroup() {
+		return new FormGroup<DefaultCategoricalHyperParameterRangeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			isTunable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceConfig {
+	}
+	export interface ResourceConfigFormProperties {
+	}
+	export function CreateResourceConfigFormGroup() {
+		return new FormGroup<ResourceConfigFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAlgorithmRequest {
 		algorithmArn: string;
 	}
+	export interface DescribeAlgorithmRequestFormProperties {
+		algorithmArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAlgorithmRequestFormGroup() {
+		return new FormGroup<DescribeAlgorithmRequestFormProperties>({
+			algorithmArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeBatchInferenceJobResponse {
 
 		/** Contains information on a batch inference job. */
-		batchInferenceJob?: BatchInferenceJob | null;
+		batchInferenceJob?: BatchInferenceJob;
+	}
+	export interface DescribeBatchInferenceJobResponseFormProperties {
+	}
+	export function CreateDescribeBatchInferenceJobResponseFormGroup() {
+		return new FormGroup<DescribeBatchInferenceJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -384,24 +996,69 @@ export namespace MyNS {
 		numResults?: number | null;
 
 		/** The input configuration of a batch inference job. */
-		jobInput?: BatchInferenceJobInput | null;
+		jobInput?: BatchInferenceJobInput;
 
 		/** The output configuration parameters of a batch inference job. */
-		jobOutput?: BatchInferenceJobOutput | null;
+		jobOutput?: BatchInferenceJobOutput;
 		roleArn?: string | null;
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Contains information on a batch inference job. */
+	export interface BatchInferenceJobFormProperties {
+		jobName: FormControl<string | null | undefined>,
+		batchInferenceJobArn: FormControl<string | null | undefined>,
+		filterArn: FormControl<string | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		solutionVersionArn: FormControl<string | null | undefined>,
+		numResults: FormControl<number | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateBatchInferenceJobFormGroup() {
+		return new FormGroup<BatchInferenceJobFormProperties>({
+			jobName: new FormControl<string | null | undefined>(undefined),
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			numResults: new FormControl<number | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeBatchInferenceJobRequest {
 		batchInferenceJobArn: string;
+	}
+	export interface DescribeBatchInferenceJobRequestFormProperties {
+		batchInferenceJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBatchInferenceJobRequestFormGroup() {
+		return new FormGroup<DescribeBatchInferenceJobRequestFormProperties>({
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCampaignResponse {
 
 		/** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>. */
-		campaign?: Campaign | null;
+		campaign?: Campaign;
+	}
+	export interface DescribeCampaignResponseFormProperties {
+	}
+	export function CreateDescribeCampaignResponseFormGroup() {
+		return new FormGroup<DescribeCampaignResponseFormProperties>({
+		});
+
 	}
 
 
@@ -417,7 +1074,32 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 
 		/** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API. */
-		latestCampaignUpdate?: CampaignUpdateSummary | null;
+		latestCampaignUpdate?: CampaignUpdateSummary;
+	}
+
+	/** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>. */
+	export interface CampaignFormProperties {
+		name: FormControl<string | null | undefined>,
+		campaignArn: FormControl<string | null | undefined>,
+		solutionVersionArn: FormControl<string | null | undefined>,
+		minProvisionedTPS: FormControl<number | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCampaignFormGroup() {
+		return new FormGroup<CampaignFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -431,14 +1113,51 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API. */
+	export interface CampaignUpdateSummaryFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+		minProvisionedTPS: FormControl<number | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCampaignUpdateSummaryFormGroup() {
+		return new FormGroup<CampaignUpdateSummaryFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCampaignRequest {
 		campaignArn: string;
+	}
+	export interface DescribeCampaignRequestFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCampaignRequestFormGroup() {
+		return new FormGroup<DescribeCampaignRequestFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDatasetResponse {
 
 		/** Provides metadata for a dataset. */
-		dataset?: Dataset | null;
+		dataset?: Dataset;
+	}
+	export interface DescribeDatasetResponseFormProperties {
+	}
+	export function CreateDescribeDatasetResponseFormGroup() {
+		return new FormGroup<DescribeDatasetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -454,14 +1173,55 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides metadata for a dataset. */
+	export interface DatasetFormProperties {
+		name: FormControl<string | null | undefined>,
+		datasetArn: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		datasetType: FormControl<string | null | undefined>,
+		schemaArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetFormGroup() {
+		return new FormGroup<DatasetFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			datasetType: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDatasetRequest {
 		datasetArn: string;
+	}
+	export interface DescribeDatasetRequestFormProperties {
+		datasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDatasetRequestFormGroup() {
+		return new FormGroup<DescribeDatasetRequestFormProperties>({
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDatasetGroupResponse {
 
 		/** <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p> */
-		datasetGroup?: DatasetGroup | null;
+		datasetGroup?: DatasetGroup;
+	}
+	export interface DescribeDatasetGroupResponseFormProperties {
+	}
+	export function CreateDescribeDatasetGroupResponseFormGroup() {
+		return new FormGroup<DescribeDatasetGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -477,14 +1237,55 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 
+	/** <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p> */
+	export interface DatasetGroupFormProperties {
+		name: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		kmsKeyArn: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetGroupFormGroup() {
+		return new FormGroup<DatasetGroupFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDatasetGroupRequest {
 		datasetGroupArn: string;
+	}
+	export interface DescribeDatasetGroupRequestFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDatasetGroupRequestFormGroup() {
+		return new FormGroup<DescribeDatasetGroupRequestFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDatasetImportJobResponse {
 
 		/** <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> */
-		datasetImportJob?: DatasetImportJob | null;
+		datasetImportJob?: DatasetImportJob;
+	}
+	export interface DescribeDatasetImportJobResponseFormProperties {
+	}
+	export function CreateDescribeDatasetImportJobResponseFormGroup() {
+		return new FormGroup<DescribeDatasetImportJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -495,7 +1296,7 @@ export namespace MyNS {
 		datasetArn?: string | null;
 
 		/** Describes the data source that contains the data to upload to a dataset. */
-		dataSource?: DataSource | null;
+		dataSource?: DataSource;
 		roleArn?: string | null;
 		status?: string | null;
 		creationDateTime?: Date | null;
@@ -503,14 +1304,55 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 
+	/** <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> */
+	export interface DatasetImportJobFormProperties {
+		jobName: FormControl<string | null | undefined>,
+		datasetImportJobArn: FormControl<string | null | undefined>,
+		datasetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetImportJobFormGroup() {
+		return new FormGroup<DatasetImportJobFormProperties>({
+			jobName: new FormControl<string | null | undefined>(undefined),
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDatasetImportJobRequest {
 		datasetImportJobArn: string;
+	}
+	export interface DescribeDatasetImportJobRequestFormProperties {
+		datasetImportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDatasetImportJobRequestFormGroup() {
+		return new FormGroup<DescribeDatasetImportJobRequestFormProperties>({
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEventTrackerResponse {
 
 		/** Provides information about an event tracker. */
-		eventTracker?: EventTracker | null;
+		eventTracker?: EventTracker;
+	}
+	export interface DescribeEventTrackerResponseFormProperties {
+	}
+	export function CreateDescribeEventTrackerResponseFormGroup() {
+		return new FormGroup<DescribeEventTrackerResponseFormProperties>({
+		});
+
 	}
 
 
@@ -526,14 +1368,55 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides information about an event tracker. */
+	export interface EventTrackerFormProperties {
+		name: FormControl<string | null | undefined>,
+		eventTrackerArn: FormControl<string | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
+		trackingId: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateEventTrackerFormGroup() {
+		return new FormGroup<EventTrackerFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+			trackingId: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventTrackerRequest {
 		eventTrackerArn: string;
+	}
+	export interface DescribeEventTrackerRequestFormProperties {
+		eventTrackerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventTrackerRequestFormGroup() {
+		return new FormGroup<DescribeEventTrackerRequestFormProperties>({
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeFeatureTransformationResponse {
 
 		/** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training. */
-		featureTransformation?: FeatureTransformation | null;
+		featureTransformation?: FeatureTransformation;
+	}
+	export interface DescribeFeatureTransformationResponseFormProperties {
+	}
+	export function CreateDescribeFeatureTransformationResponseFormGroup() {
+		return new FormGroup<DescribeFeatureTransformationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -541,23 +1424,65 @@ export namespace MyNS {
 	export interface FeatureTransformation {
 		name?: string | null;
 		featureTransformationArn?: string | null;
-		defaultParameters?: FeaturizationParameters | null;
+		defaultParameters?: FeaturizationParameters;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
 		status?: string | null;
 	}
 
+	/** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training. */
+	export interface FeatureTransformationFormProperties {
+		name: FormControl<string | null | undefined>,
+		featureTransformationArn: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateFeatureTransformationFormGroup() {
+		return new FormGroup<FeatureTransformationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			featureTransformationArn: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface FeaturizationParameters {
+	}
+	export interface FeaturizationParametersFormProperties {
+	}
+	export function CreateFeaturizationParametersFormGroup() {
+		return new FormGroup<FeaturizationParametersFormProperties>({
+		});
+
 	}
 
 	export interface DescribeFeatureTransformationRequest {
 		featureTransformationArn: string;
 	}
+	export interface DescribeFeatureTransformationRequestFormProperties {
+		featureTransformationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFeatureTransformationRequestFormGroup() {
+		return new FormGroup<DescribeFeatureTransformationRequestFormProperties>({
+			featureTransformationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeFilterResponse {
 
 		/** Contains information on a recommendation filter, including its ARN, status, and filter expression. */
-		filter?: Filter | null;
+		filter?: Filter;
+	}
+	export interface DescribeFilterResponseFormProperties {
+	}
+	export function CreateDescribeFilterResponseFormGroup() {
+		return new FormGroup<DescribeFilterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -573,14 +1498,55 @@ export namespace MyNS {
 		status?: string | null;
 	}
 
+	/** Contains information on a recommendation filter, including its ARN, status, and filter expression. */
+	export interface FilterFormProperties {
+		name: FormControl<string | null | undefined>,
+		filterArn: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		filterExpression: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			filterExpression: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeFilterRequest {
 		filterArn: string;
+	}
+	export interface DescribeFilterRequestFormProperties {
+		filterArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFilterRequestFormGroup() {
+		return new FormGroup<DescribeFilterRequestFormProperties>({
+			filterArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRecipeResponse {
 
 		/** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation. */
-		recipe?: Recipe | null;
+		recipe?: Recipe;
+	}
+	export interface DescribeRecipeResponseFormProperties {
+	}
+	export function CreateDescribeRecipeResponseFormGroup() {
+		return new FormGroup<DescribeRecipeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -597,14 +1563,57 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.  */
+	export interface RecipeFormProperties {
+		name: FormControl<string | null | undefined>,
+		recipeArn: FormControl<string | null | undefined>,
+		algorithmArn: FormControl<string | null | undefined>,
+		featureTransformationArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		recipeType: FormControl<string | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateRecipeFormGroup() {
+		return new FormGroup<RecipeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined),
+			algorithmArn: new FormControl<string | null | undefined>(undefined),
+			featureTransformationArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			recipeType: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeRecipeRequest {
 		recipeArn: string;
+	}
+	export interface DescribeRecipeRequestFormProperties {
+		recipeArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRecipeRequestFormGroup() {
+		return new FormGroup<DescribeRecipeRequestFormProperties>({
+			recipeArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSchemaResponse {
 
 		/** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>. */
-		schema?: DatasetSchema | null;
+		schema?: DatasetSchema;
+	}
+	export interface DescribeSchemaResponseFormProperties {
+	}
+	export function CreateDescribeSchemaResponseFormGroup() {
+		return new FormGroup<DescribeSchemaResponseFormProperties>({
+		});
+
 	}
 
 
@@ -617,14 +1626,49 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>. */
+	export interface DatasetSchemaFormProperties {
+		name: FormControl<string | null | undefined>,
+		schemaArn: FormControl<string | null | undefined>,
+		schema: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetSchemaFormGroup() {
+		return new FormGroup<DatasetSchemaFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+			schema: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeSchemaRequest {
 		schemaArn: string;
+	}
+	export interface DescribeSchemaRequestFormProperties {
+		schemaArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSchemaRequestFormGroup() {
+		return new FormGroup<DescribeSchemaRequestFormProperties>({
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSolutionResponse {
 
 		/** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign. */
-		solution?: Solution | null;
+		solution?: Solution;
+	}
+	export interface DescribeSolutionResponseFormProperties {
+	}
+	export function CreateDescribeSolutionResponseFormGroup() {
+		return new FormGroup<DescribeSolutionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -639,22 +1683,62 @@ export namespace MyNS {
 		eventType?: string | null;
 
 		/** Describes the configuration properties for the solution. */
-		solutionConfig?: SolutionConfig | null;
+		solutionConfig?: SolutionConfig;
 
 		/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
-		autoMLResult?: AutoMLResult | null;
+		autoMLResult?: AutoMLResult;
 		status?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
 
 		/** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API. */
-		latestSolutionVersion?: SolutionVersionSummary | null;
+		latestSolutionVersion?: SolutionVersionSummary;
+	}
+
+	/** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign. */
+	export interface SolutionFormProperties {
+		name: FormControl<string | null | undefined>,
+		solutionArn: FormControl<string | null | undefined>,
+		performHPO: FormControl<boolean | null | undefined>,
+		performAutoML: FormControl<boolean | null | undefined>,
+		recipeArn: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		eventType: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSolutionFormGroup() {
+		return new FormGroup<SolutionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+			performHPO: new FormControl<boolean | null | undefined>(undefined),
+			performAutoML: new FormControl<boolean | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			eventType: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
 	export interface AutoMLResult {
 		bestRecipeArn?: string | null;
+	}
+
+	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
+	export interface AutoMLResultFormProperties {
+		bestRecipeArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLResultFormGroup() {
+		return new FormGroup<AutoMLResultFormProperties>({
+			bestRecipeArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -667,14 +1751,49 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 
+	/** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API. */
+	export interface SolutionVersionSummaryFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateSolutionVersionSummaryFormGroup() {
+		return new FormGroup<SolutionVersionSummaryFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeSolutionRequest {
 		solutionArn: string;
+	}
+	export interface DescribeSolutionRequestFormProperties {
+		solutionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSolutionRequestFormGroup() {
+		return new FormGroup<DescribeSolutionRequestFormProperties>({
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSolutionVersionResponse {
 
 		/** An object that provides information about a specific version of a <a>Solution</a>. */
-		solutionVersion?: SolutionVersion | null;
+		solutionVersion?: SolutionVersion;
+	}
+	export interface DescribeSolutionVersionResponseFormProperties {
+	}
+	export function CreateDescribeSolutionVersionResponseFormGroup() {
+		return new FormGroup<DescribeSolutionVersionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -689,43 +1808,130 @@ export namespace MyNS {
 		datasetGroupArn?: string | null;
 
 		/** Describes the configuration properties for the solution. */
-		solutionConfig?: SolutionConfig | null;
+		solutionConfig?: SolutionConfig;
 		trainingHours?: number | null;
 		trainingMode?: CreateSolutionVersionRequestTrainingMode | null;
 
 		/** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model. */
-		tunedHPOParams?: TunedHPOParams | null;
+		tunedHPOParams?: TunedHPOParams;
 		status?: string | null;
 		failureReason?: string | null;
 		creationDateTime?: Date | null;
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** An object that provides information about a specific version of a <a>Solution</a>. */
+	export interface SolutionVersionFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+		solutionArn: FormControl<string | null | undefined>,
+		performHPO: FormControl<boolean | null | undefined>,
+		performAutoML: FormControl<boolean | null | undefined>,
+		recipeArn: FormControl<string | null | undefined>,
+		eventType: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		trainingHours: FormControl<number | null | undefined>,
+		trainingMode: FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSolutionVersionFormGroup() {
+		return new FormGroup<SolutionVersionFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+			performHPO: new FormControl<boolean | null | undefined>(undefined),
+			performAutoML: new FormControl<boolean | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined),
+			eventType: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			trainingHours: new FormControl<number | null | undefined>(undefined),
+			trainingMode: new FormControl<CreateSolutionVersionRequestTrainingMode | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model. */
 	export interface TunedHPOParams {
-		algorithmHyperParameters?: HyperParameters | null;
+		algorithmHyperParameters?: HyperParameters;
+	}
+
+	/** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model. */
+	export interface TunedHPOParamsFormProperties {
+	}
+	export function CreateTunedHPOParamsFormGroup() {
+		return new FormGroup<TunedHPOParamsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSolutionVersionRequest {
 		solutionVersionArn: string;
 	}
+	export interface DescribeSolutionVersionRequestFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSolutionVersionRequestFormGroup() {
+		return new FormGroup<DescribeSolutionVersionRequestFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetSolutionMetricsResponse {
 		solutionVersionArn?: string | null;
-		metrics?: Metrics | null;
+		metrics?: Metrics;
+	}
+	export interface GetSolutionMetricsResponseFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSolutionMetricsResponseFormGroup() {
+		return new FormGroup<GetSolutionMetricsResponseFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Metrics {
+	}
+	export interface MetricsFormProperties {
+	}
+	export function CreateMetricsFormGroup() {
+		return new FormGroup<MetricsFormProperties>({
+		});
+
 	}
 
 	export interface GetSolutionMetricsRequest {
 		solutionVersionArn: string;
 	}
+	export interface GetSolutionMetricsRequestFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSolutionMetricsRequestFormGroup() {
+		return new FormGroup<GetSolutionMetricsRequestFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListBatchInferenceJobsResponse {
-		batchInferenceJobs?: Array<BatchInferenceJobSummary> | null;
+		batchInferenceJobs?: Array<BatchInferenceJobSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListBatchInferenceJobsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBatchInferenceJobsResponseFormGroup() {
+		return new FormGroup<ListBatchInferenceJobsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -740,18 +1946,70 @@ export namespace MyNS {
 		solutionVersionArn?: string | null;
 	}
 
+	/** A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries. */
+	export interface BatchInferenceJobSummaryFormProperties {
+		batchInferenceJobArn: FormControl<string | null | undefined>,
+		jobName: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		solutionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchInferenceJobSummaryFormGroup() {
+		return new FormGroup<BatchInferenceJobSummaryFormProperties>({
+			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBatchInferenceJobsRequest {
 		solutionVersionArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListBatchInferenceJobsRequestFormProperties {
+		solutionVersionArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListBatchInferenceJobsRequestFormGroup() {
+		return new FormGroup<ListBatchInferenceJobsRequestFormProperties>({
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListCampaignsResponse {
-		campaigns?: Array<CampaignSummary> | null;
+		campaigns?: Array<CampaignSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListCampaignsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCampaignsResponseFormGroup() {
+		return new FormGroup<ListCampaignsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -765,15 +2023,58 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 
+	/** Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API. */
+	export interface CampaignSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		campaignArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateCampaignSummaryFormGroup() {
+		return new FormGroup<CampaignSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCampaignsRequest {
 		solutionArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListCampaignsRequestFormProperties {
+		solutionArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListCampaignsRequestFormGroup() {
+		return new FormGroup<ListCampaignsRequestFormProperties>({
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDatasetGroupsResponse {
-		datasetGroups?: Array<DatasetGroupSummary> | null;
+		datasetGroups?: Array<DatasetGroupSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDatasetGroupsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetGroupsResponseFormGroup() {
+		return new FormGroup<ListDatasetGroupsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -787,14 +2088,55 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 
+	/** Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API. */
+	export interface DatasetGroupSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetGroupSummaryFormGroup() {
+		return new FormGroup<DatasetGroupSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetGroupsRequest {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListDatasetGroupsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatasetGroupsRequestFormGroup() {
+		return new FormGroup<ListDatasetGroupsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDatasetImportJobsResponse {
-		datasetImportJobs?: Array<DatasetImportJobSummary> | null;
+		datasetImportJobs?: Array<DatasetImportJobSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDatasetImportJobsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetImportJobsResponseFormGroup() {
+		return new FormGroup<ListDatasetImportJobsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -808,15 +2150,58 @@ export namespace MyNS {
 		failureReason?: string | null;
 	}
 
+	/** Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API. */
+	export interface DatasetImportJobSummaryFormProperties {
+		datasetImportJobArn: FormControl<string | null | undefined>,
+		jobName: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDatasetImportJobSummaryFormGroup() {
+		return new FormGroup<DatasetImportJobSummaryFormProperties>({
+			datasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+			jobName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetImportJobsRequest {
 		datasetArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListDatasetImportJobsRequestFormProperties {
+		datasetArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatasetImportJobsRequestFormGroup() {
+		return new FormGroup<ListDatasetImportJobsRequestFormProperties>({
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDatasetsResponse {
-		datasets?: Array<DatasetSummary> | null;
+		datasets?: Array<DatasetSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDatasetsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetsResponseFormGroup() {
+		return new FormGroup<ListDatasetsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -830,15 +2215,58 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API. */
+	export interface DatasetSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		datasetArn: FormControl<string | null | undefined>,
+		datasetType: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetSummaryFormGroup() {
+		return new FormGroup<DatasetSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			datasetArn: new FormControl<string | null | undefined>(undefined),
+			datasetType: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetsRequest {
 		datasetGroupArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListDatasetsRequestFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatasetsRequestFormGroup() {
+		return new FormGroup<ListDatasetsRequestFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListEventTrackersResponse {
-		eventTrackers?: Array<EventTrackerSummary> | null;
+		eventTrackers?: Array<EventTrackerSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListEventTrackersResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEventTrackersResponseFormGroup() {
+		return new FormGroup<ListEventTrackersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -851,15 +2279,56 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API. */
+	export interface EventTrackerSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		eventTrackerArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateEventTrackerSummaryFormGroup() {
+		return new FormGroup<EventTrackerSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			eventTrackerArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListEventTrackersRequest {
 		datasetGroupArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListEventTrackersRequestFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListEventTrackersRequestFormGroup() {
+		return new FormGroup<ListEventTrackersRequestFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFiltersResponse {
-		Filters?: Array<FilterSummary> | null;
+		Filters?: Array<FilterSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListFiltersResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFiltersResponseFormGroup() {
+		return new FormGroup<ListFiltersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -874,15 +2343,60 @@ export namespace MyNS {
 		status?: string | null;
 	}
 
+	/** A short summary of a filter's attributes. */
+	export interface FilterSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		filterArn: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+		datasetGroupArn: FormControl<string | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterSummaryFormGroup() {
+		return new FormGroup<FilterSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListFiltersRequest {
 		datasetGroupArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListFiltersRequestFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListFiltersRequestFormGroup() {
+		return new FormGroup<ListFiltersRequestFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRecipesResponse {
-		recipes?: Array<RecipeSummary> | null;
+		recipes?: Array<RecipeSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListRecipesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecipesResponseFormGroup() {
+		return new FormGroup<ListRecipesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -895,17 +2409,58 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API. */
+	export interface RecipeSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		recipeArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateRecipeSummaryFormGroup() {
+		return new FormGroup<RecipeSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			recipeArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRecipesRequest {
 		recipeProvider?: ListRecipesRequestRecipeProvider | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListRecipesRequestFormProperties {
+		recipeProvider: FormControl<ListRecipesRequestRecipeProvider | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListRecipesRequestFormGroup() {
+		return new FormGroup<ListRecipesRequestFormProperties>({
+			recipeProvider: new FormControl<ListRecipesRequestRecipeProvider | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListRecipesRequestRecipeProvider { SERVICE = 0 }
 
 	export interface ListSchemasResponse {
-		schemas?: Array<DatasetSchemaSummary> | null;
+		schemas?: Array<DatasetSchemaSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListSchemasResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSchemasResponseFormGroup() {
+		return new FormGroup<ListSchemasResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -917,14 +2472,51 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API. */
+	export interface DatasetSchemaSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		schemaArn: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetSchemaSummaryFormGroup() {
+		return new FormGroup<DatasetSchemaSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			schemaArn: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSchemasRequest {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListSchemasRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListSchemasRequestFormGroup() {
+		return new FormGroup<ListSchemasRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSolutionVersionsResponse {
-		solutionVersions?: Array<SolutionVersionSummary> | null;
+		solutionVersions?: Array<SolutionVersionSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListSolutionVersionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSolutionVersionsResponseFormGroup() {
+		return new FormGroup<ListSolutionVersionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSolutionVersionsRequest {
@@ -932,10 +2524,32 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListSolutionVersionsRequestFormProperties {
+		solutionArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListSolutionVersionsRequestFormGroup() {
+		return new FormGroup<ListSolutionVersionsRequestFormProperties>({
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSolutionsResponse {
-		solutions?: Array<SolutionSummary> | null;
+		solutions?: Array<SolutionSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListSolutionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSolutionsResponseFormGroup() {
+		return new FormGroup<ListSolutionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -948,20 +2562,74 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 	}
 
+	/** Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API. */
+	export interface SolutionSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		solutionArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		creationDateTime: FormControl<Date | null | undefined>,
+		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSolutionSummaryFormGroup() {
+		return new FormGroup<SolutionSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			solutionArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			creationDateTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSolutionsRequest {
 		datasetGroupArn?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListSolutionsRequestFormProperties {
+		datasetGroupArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListSolutionsRequestFormGroup() {
+		return new FormGroup<ListSolutionsRequestFormProperties>({
+			datasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCampaignResponse {
 		campaignArn?: string | null;
+	}
+	export interface UpdateCampaignResponseFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCampaignResponseFormGroup() {
+		return new FormGroup<UpdateCampaignResponseFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCampaignRequest {
 		campaignArn: string;
 		solutionVersionArn?: string | null;
 		minProvisionedTPS?: number | null;
+	}
+	export interface UpdateCampaignRequestFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+		solutionVersionArn: FormControl<string | null | undefined>,
+		minProvisionedTPS: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateCampaignRequestFormGroup() {
+		return new FormGroup<UpdateCampaignRequestFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			solutionVersionArn: new FormControl<string | null | undefined>(undefined),
+			minProvisionedTPS: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TrainingMode { FULL = 0, UPDATE = 1 }

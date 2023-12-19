@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface AddTagsResponse {
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface AddTagsResponseFormProperties {
+	}
+	export function CreateAddTagsResponseFormGroup() {
+		return new FormGroup<AddTagsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -13,7 +23,18 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag> | null;
+		TagsList?: Array<Tag>;
+	}
+
+	/** Specifies the tags to add to a trail. */
+	export interface AddTagsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsRequestFormGroup() {
+		return new FormGroup<AddTagsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -23,31 +44,107 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A custom key-value pair associated with a resource such as a CloudTrail trail. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CloudTrailARNInvalidException {
 	}
+	export interface CloudTrailARNInvalidExceptionFormProperties {
+	}
+	export function CreateCloudTrailARNInvalidExceptionFormGroup() {
+		return new FormGroup<CloudTrailARNInvalidExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceTypeNotSupportedException {
+	}
+	export interface ResourceTypeNotSupportedExceptionFormProperties {
+	}
+	export function CreateResourceTypeNotSupportedExceptionFormGroup() {
+		return new FormGroup<ResourceTypeNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TagsLimitExceededException {
 	}
+	export interface TagsLimitExceededExceptionFormProperties {
+	}
+	export function CreateTagsLimitExceededExceptionFormGroup() {
+		return new FormGroup<TagsLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTrailNameException {
+	}
+	export interface InvalidTrailNameExceptionFormProperties {
+	}
+	export function CreateInvalidTrailNameExceptionFormGroup() {
+		return new FormGroup<InvalidTrailNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTagParameterException {
 	}
+	export interface InvalidTagParameterExceptionFormProperties {
+	}
+	export function CreateInvalidTagParameterExceptionFormGroup() {
+		return new FormGroup<InvalidTagParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedOperationException {
+	}
+	export interface UnsupportedOperationExceptionFormProperties {
+	}
+	export function CreateUnsupportedOperationExceptionFormGroup() {
+		return new FormGroup<UnsupportedOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationNotPermittedException {
 	}
+	export interface OperationNotPermittedExceptionFormProperties {
+	}
+	export function CreateOperationNotPermittedExceptionFormGroup() {
+		return new FormGroup<OperationNotPermittedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotOrganizationMasterAccountException {
+	}
+	export interface NotOrganizationMasterAccountExceptionFormProperties {
+	}
+	export function CreateNotOrganizationMasterAccountExceptionFormGroup() {
+		return new FormGroup<NotOrganizationMasterAccountExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -68,6 +165,41 @@ export namespace MyNS {
 		IsOrganizationTrail?: boolean | null;
 	}
 
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface CreateTrailResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+		SnsTopicName: FormControl<string | null | undefined>,
+		SnsTopicARN: FormControl<string | null | undefined>,
+		IncludeGlobalServiceEvents: FormControl<boolean | null | undefined>,
+		IsMultiRegionTrail: FormControl<boolean | null | undefined>,
+		TrailARN: FormControl<string | null | undefined>,
+		LogFileValidationEnabled: FormControl<boolean | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		IsOrganizationTrail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateTrailResponseFormGroup() {
+		return new FormGroup<CreateTrailResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SnsTopicName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicARN: new FormControl<string | null | undefined>(undefined),
+			IncludeGlobalServiceEvents: new FormControl<boolean | null | undefined>(undefined),
+			IsMultiRegionTrail: new FormControl<boolean | null | undefined>(undefined),
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+			LogFileValidationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			IsOrganizationTrail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the settings for each trail. */
 	export interface CreateTrailRequest {
@@ -84,78 +216,272 @@ export namespace MyNS {
 		IsOrganizationTrail?: boolean | null;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag> | null;
+		TagsList?: Array<Tag>;
+	}
+
+	/** Specifies the settings for each trail. */
+	export interface CreateTrailRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+		SnsTopicName: FormControl<string | null | undefined>,
+		IncludeGlobalServiceEvents: FormControl<boolean | null | undefined>,
+		IsMultiRegionTrail: FormControl<boolean | null | undefined>,
+		EnableLogFileValidation: FormControl<boolean | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		IsOrganizationTrail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateTrailRequestFormGroup() {
+		return new FormGroup<CreateTrailRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SnsTopicName: new FormControl<string | null | undefined>(undefined),
+			IncludeGlobalServiceEvents: new FormControl<boolean | null | undefined>(undefined),
+			IsMultiRegionTrail: new FormControl<boolean | null | undefined>(undefined),
+			EnableLogFileValidation: new FormControl<boolean | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			IsOrganizationTrail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface MaximumNumberOfTrailsExceededException {
 	}
+	export interface MaximumNumberOfTrailsExceededExceptionFormProperties {
+	}
+	export function CreateMaximumNumberOfTrailsExceededExceptionFormGroup() {
+		return new FormGroup<MaximumNumberOfTrailsExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TrailAlreadyExistsException {
+	}
+	export interface TrailAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateTrailAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<TrailAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface S3BucketDoesNotExistException {
 	}
+	export interface S3BucketDoesNotExistExceptionFormProperties {
+	}
+	export function CreateS3BucketDoesNotExistExceptionFormGroup() {
+		return new FormGroup<S3BucketDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InsufficientS3BucketPolicyException {
+	}
+	export interface InsufficientS3BucketPolicyExceptionFormProperties {
+	}
+	export function CreateInsufficientS3BucketPolicyExceptionFormGroup() {
+		return new FormGroup<InsufficientS3BucketPolicyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientSnsTopicPolicyException {
 	}
+	export interface InsufficientSnsTopicPolicyExceptionFormProperties {
+	}
+	export function CreateInsufficientSnsTopicPolicyExceptionFormGroup() {
+		return new FormGroup<InsufficientSnsTopicPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InsufficientEncryptionPolicyException {
+	}
+	export interface InsufficientEncryptionPolicyExceptionFormProperties {
+	}
+	export function CreateInsufficientEncryptionPolicyExceptionFormGroup() {
+		return new FormGroup<InsufficientEncryptionPolicyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidS3BucketNameException {
 	}
+	export interface InvalidS3BucketNameExceptionFormProperties {
+	}
+	export function CreateInvalidS3BucketNameExceptionFormGroup() {
+		return new FormGroup<InvalidS3BucketNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidS3PrefixException {
+	}
+	export interface InvalidS3PrefixExceptionFormProperties {
+	}
+	export function CreateInvalidS3PrefixExceptionFormGroup() {
+		return new FormGroup<InvalidS3PrefixExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSnsTopicNameException {
 	}
+	export interface InvalidSnsTopicNameExceptionFormProperties {
+	}
+	export function CreateInvalidSnsTopicNameExceptionFormGroup() {
+		return new FormGroup<InvalidSnsTopicNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidKmsKeyIdException {
+	}
+	export interface InvalidKmsKeyIdExceptionFormProperties {
+	}
+	export function CreateInvalidKmsKeyIdExceptionFormGroup() {
+		return new FormGroup<InvalidKmsKeyIdExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TrailNotProvidedException {
 	}
+	export interface TrailNotProvidedExceptionFormProperties {
+	}
+	export function CreateTrailNotProvidedExceptionFormGroup() {
+		return new FormGroup<TrailNotProvidedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterCombinationException {
+	}
+	export interface InvalidParameterCombinationExceptionFormProperties {
+	}
+	export function CreateInvalidParameterCombinationExceptionFormGroup() {
+		return new FormGroup<InvalidParameterCombinationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface KmsKeyNotFoundException {
 	}
+	export interface KmsKeyNotFoundExceptionFormProperties {
+	}
+	export function CreateKmsKeyNotFoundExceptionFormGroup() {
+		return new FormGroup<KmsKeyNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KmsKeyDisabledException {
+	}
+	export interface KmsKeyDisabledExceptionFormProperties {
+	}
+	export function CreateKmsKeyDisabledExceptionFormGroup() {
+		return new FormGroup<KmsKeyDisabledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface KmsException {
 	}
+	export interface KmsExceptionFormProperties {
+	}
+	export function CreateKmsExceptionFormGroup() {
+		return new FormGroup<KmsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidCloudWatchLogsLogGroupArnException {
+	}
+	export interface InvalidCloudWatchLogsLogGroupArnExceptionFormProperties {
+	}
+	export function CreateInvalidCloudWatchLogsLogGroupArnExceptionFormGroup() {
+		return new FormGroup<InvalidCloudWatchLogsLogGroupArnExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidCloudWatchLogsRoleArnException {
 	}
+	export interface InvalidCloudWatchLogsRoleArnExceptionFormProperties {
+	}
+	export function CreateInvalidCloudWatchLogsRoleArnExceptionFormGroup() {
+		return new FormGroup<InvalidCloudWatchLogsRoleArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CloudWatchLogsDeliveryUnavailableException {
+	}
+	export interface CloudWatchLogsDeliveryUnavailableExceptionFormProperties {
+	}
+	export function CreateCloudWatchLogsDeliveryUnavailableExceptionFormGroup() {
+		return new FormGroup<CloudWatchLogsDeliveryUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CloudTrailAccessNotEnabledException {
 	}
+	export interface CloudTrailAccessNotEnabledExceptionFormProperties {
+	}
+	export function CreateCloudTrailAccessNotEnabledExceptionFormGroup() {
+		return new FormGroup<CloudTrailAccessNotEnabledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InsufficientDependencyServiceAccessPermissionException {
+	}
+	export interface InsufficientDependencyServiceAccessPermissionExceptionFormProperties {
+	}
+	export function CreateInsufficientDependencyServiceAccessPermissionExceptionFormGroup() {
+		return new FormGroup<InsufficientDependencyServiceAccessPermissionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OrganizationsNotInUseException {
 	}
+	export interface OrganizationsNotInUseExceptionFormProperties {
+	}
+	export function CreateOrganizationsNotInUseExceptionFormGroup() {
+		return new FormGroup<OrganizationsNotInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OrganizationNotInAllFeaturesModeException {
+	}
+	export interface OrganizationNotInAllFeaturesModeExceptionFormProperties {
+	}
+	export function CreateOrganizationNotInAllFeaturesModeExceptionFormGroup() {
+		return new FormGroup<OrganizationNotInAllFeaturesModeExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface DeleteTrailResponse {
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface DeleteTrailResponseFormProperties {
+	}
+	export function CreateDeleteTrailResponseFormGroup() {
+		return new FormGroup<DeleteTrailResponseFormProperties>({
+		});
+
 	}
 
 
@@ -164,16 +490,50 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/** The request that specifies the name of a trail to delete. */
+	export interface DeleteTrailRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTrailRequestFormGroup() {
+		return new FormGroup<DeleteTrailRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TrailNotFoundException {
+	}
+	export interface TrailNotFoundExceptionFormProperties {
+	}
+	export function CreateTrailNotFoundExceptionFormGroup() {
+		return new FormGroup<TrailNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidHomeRegionException {
+	}
+	export interface InvalidHomeRegionExceptionFormProperties {
+	}
+	export function CreateInvalidHomeRegionExceptionFormGroup() {
+		return new FormGroup<InvalidHomeRegionExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface DescribeTrailsResponse {
-		trailList?: Array<Trail> | null;
+		trailList?: Array<Trail>;
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface DescribeTrailsResponseFormProperties {
+	}
+	export function CreateDescribeTrailsResponseFormGroup() {
+		return new FormGroup<DescribeTrailsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -197,16 +557,77 @@ export namespace MyNS {
 		IsOrganizationTrail?: boolean | null;
 	}
 
+	/** The settings for a trail. */
+	export interface TrailFormProperties {
+		Name: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+		SnsTopicName: FormControl<string | null | undefined>,
+		SnsTopicARN: FormControl<string | null | undefined>,
+		IncludeGlobalServiceEvents: FormControl<boolean | null | undefined>,
+		IsMultiRegionTrail: FormControl<boolean | null | undefined>,
+		HomeRegion: FormControl<string | null | undefined>,
+		TrailARN: FormControl<string | null | undefined>,
+		LogFileValidationEnabled: FormControl<boolean | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		HasCustomEventSelectors: FormControl<boolean | null | undefined>,
+		HasInsightSelectors: FormControl<boolean | null | undefined>,
+		IsOrganizationTrail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTrailFormGroup() {
+		return new FormGroup<TrailFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SnsTopicName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicARN: new FormControl<string | null | undefined>(undefined),
+			IncludeGlobalServiceEvents: new FormControl<boolean | null | undefined>(undefined),
+			IsMultiRegionTrail: new FormControl<boolean | null | undefined>(undefined),
+			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+			LogFileValidationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			HasCustomEventSelectors: new FormControl<boolean | null | undefined>(undefined),
+			HasInsightSelectors: new FormControl<boolean | null | undefined>(undefined),
+			IsOrganizationTrail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Returns information about the trail. */
 	export interface DescribeTrailsRequest {
-		trailNameList?: Array<string> | null;
+		trailNameList?: Array<string>;
 		includeShadowTrails?: boolean | null;
+	}
+
+	/** Returns information about the trail. */
+	export interface DescribeTrailsRequestFormProperties {
+		includeShadowTrails: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeTrailsRequestFormGroup() {
+		return new FormGroup<DescribeTrailsRequestFormProperties>({
+			includeShadowTrails: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetEventSelectorsResponse {
 		TrailARN?: string | null;
-		EventSelectors?: Array<EventSelector> | null;
+		EventSelectors?: Array<EventSelector>;
+	}
+	export interface GetEventSelectorsResponseFormProperties {
+		TrailARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEventSelectorsResponseFormGroup() {
+		return new FormGroup<GetEventSelectorsResponseFormProperties>({
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -214,8 +635,21 @@ export namespace MyNS {
 	export interface EventSelector {
 		ReadWriteType?: EventSelectorReadWriteType | null;
 		IncludeManagementEvents?: boolean | null;
-		DataResources?: Array<DataResource> | null;
-		ExcludeManagementEventSources?: Array<string> | null;
+		DataResources?: Array<DataResource>;
+		ExcludeManagementEventSources?: Array<string>;
+	}
+
+	/** <p>Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.</p> <p>You can configure up to five event selectors for a trail.</p> */
+	export interface EventSelectorFormProperties {
+		ReadWriteType: FormControl<EventSelectorReadWriteType | null | undefined>,
+		IncludeManagementEvents: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEventSelectorFormGroup() {
+		return new FormGroup<EventSelectorFormProperties>({
+			ReadWriteType: new FormControl<EventSelectorReadWriteType | null | undefined>(undefined),
+			IncludeManagementEvents: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventSelectorReadWriteType { ReadOnly = 0, WriteOnly = 1, All = 2 }
@@ -224,16 +658,45 @@ export namespace MyNS {
 	/** <p>The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. </p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li> </ol> */
 	export interface DataResource {
 		Type?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** <p>The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. </p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li> </ol> */
+	export interface DataResourceFormProperties {
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateDataResourceFormGroup() {
+		return new FormGroup<DataResourceFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetEventSelectorsRequest {
 		TrailName: string;
 	}
+	export interface GetEventSelectorsRequestFormProperties {
+		TrailName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEventSelectorsRequestFormGroup() {
+		return new FormGroup<GetEventSelectorsRequestFormProperties>({
+			TrailName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetInsightSelectorsResponse {
 		TrailARN?: string | null;
-		InsightSelectors?: Array<InsightSelector> | null;
+		InsightSelectors?: Array<InsightSelector>;
+	}
+	export interface GetInsightSelectorsResponseFormProperties {
+		TrailARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetInsightSelectorsResponseFormGroup() {
+		return new FormGroup<GetInsightSelectorsResponseFormProperties>({
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -242,23 +705,66 @@ export namespace MyNS {
 		InsightType?: InsightSelectorInsightType | null;
 	}
 
+	/** A JSON string that contains a list of insight types that are logged on a trail. */
+	export interface InsightSelectorFormProperties {
+		InsightType: FormControl<InsightSelectorInsightType | null | undefined>,
+	}
+	export function CreateInsightSelectorFormGroup() {
+		return new FormGroup<InsightSelectorFormProperties>({
+			InsightType: new FormControl<InsightSelectorInsightType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InsightSelectorInsightType { ApiCallRateInsight = 0 }
 
 	export interface GetInsightSelectorsRequest {
 		TrailName: string;
 	}
+	export interface GetInsightSelectorsRequestFormProperties {
+		TrailName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetInsightSelectorsRequestFormGroup() {
+		return new FormGroup<GetInsightSelectorsRequestFormProperties>({
+			TrailName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InsightNotEnabledException {
+	}
+	export interface InsightNotEnabledExceptionFormProperties {
+	}
+	export function CreateInsightNotEnabledExceptionFormGroup() {
+		return new FormGroup<InsightNotEnabledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetTrailResponse {
 
 		/** The settings for a trail. */
-		Trail?: Trail | null;
+		Trail?: Trail;
+	}
+	export interface GetTrailResponseFormProperties {
+	}
+	export function CreateGetTrailResponseFormGroup() {
+		return new FormGroup<GetTrailResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetTrailRequest {
 		Name: string;
+	}
+	export interface GetTrailRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTrailRequestFormGroup() {
+		return new FormGroup<GetTrailRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -283,17 +789,82 @@ export namespace MyNS {
 		TimeLoggingStopped?: string | null;
 	}
 
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface GetTrailStatusResponseFormProperties {
+		IsLogging: FormControl<boolean | null | undefined>,
+		LatestDeliveryError: FormControl<string | null | undefined>,
+		LatestNotificationError: FormControl<string | null | undefined>,
+		LatestDeliveryTime: FormControl<Date | null | undefined>,
+		LatestNotificationTime: FormControl<Date | null | undefined>,
+		StartLoggingTime: FormControl<Date | null | undefined>,
+		StopLoggingTime: FormControl<Date | null | undefined>,
+		LatestCloudWatchLogsDeliveryError: FormControl<string | null | undefined>,
+		LatestCloudWatchLogsDeliveryTime: FormControl<Date | null | undefined>,
+		LatestDigestDeliveryTime: FormControl<Date | null | undefined>,
+		LatestDigestDeliveryError: FormControl<string | null | undefined>,
+		LatestDeliveryAttemptTime: FormControl<string | null | undefined>,
+		LatestNotificationAttemptTime: FormControl<string | null | undefined>,
+		LatestNotificationAttemptSucceeded: FormControl<string | null | undefined>,
+		LatestDeliveryAttemptSucceeded: FormControl<string | null | undefined>,
+		TimeLoggingStarted: FormControl<string | null | undefined>,
+		TimeLoggingStopped: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTrailStatusResponseFormGroup() {
+		return new FormGroup<GetTrailStatusResponseFormProperties>({
+			IsLogging: new FormControl<boolean | null | undefined>(undefined),
+			LatestDeliveryError: new FormControl<string | null | undefined>(undefined),
+			LatestNotificationError: new FormControl<string | null | undefined>(undefined),
+			LatestDeliveryTime: new FormControl<Date | null | undefined>(undefined),
+			LatestNotificationTime: new FormControl<Date | null | undefined>(undefined),
+			StartLoggingTime: new FormControl<Date | null | undefined>(undefined),
+			StopLoggingTime: new FormControl<Date | null | undefined>(undefined),
+			LatestCloudWatchLogsDeliveryError: new FormControl<string | null | undefined>(undefined),
+			LatestCloudWatchLogsDeliveryTime: new FormControl<Date | null | undefined>(undefined),
+			LatestDigestDeliveryTime: new FormControl<Date | null | undefined>(undefined),
+			LatestDigestDeliveryError: new FormControl<string | null | undefined>(undefined),
+			LatestDeliveryAttemptTime: new FormControl<string | null | undefined>(undefined),
+			LatestNotificationAttemptTime: new FormControl<string | null | undefined>(undefined),
+			LatestNotificationAttemptSucceeded: new FormControl<string | null | undefined>(undefined),
+			LatestDeliveryAttemptSucceeded: new FormControl<string | null | undefined>(undefined),
+			TimeLoggingStarted: new FormControl<string | null | undefined>(undefined),
+			TimeLoggingStopped: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The name of a trail about which you want the current status. */
 	export interface GetTrailStatusRequest {
 		Name: string;
 	}
 
+	/** The name of a trail about which you want the current status. */
+	export interface GetTrailStatusRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTrailStatusRequestFormGroup() {
+		return new FormGroup<GetTrailStatusRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface ListPublicKeysResponse {
-		PublicKeyList?: Array<PublicKey> | null;
+		PublicKeyList?: Array<PublicKey>;
 		NextToken?: string | null;
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface ListPublicKeysResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPublicKeysResponseFormGroup() {
+		return new FormGroup<ListPublicKeysResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -305,6 +876,23 @@ export namespace MyNS {
 		Fingerprint?: string | null;
 	}
 
+	/** Contains information about a returned public key. */
+	export interface PublicKeyFormProperties {
+		Value: FormControl<string | null | undefined>,
+		ValidityStartTime: FormControl<Date | null | undefined>,
+		ValidityEndTime: FormControl<Date | null | undefined>,
+		Fingerprint: FormControl<string | null | undefined>,
+	}
+	export function CreatePublicKeyFormGroup() {
+		return new FormGroup<PublicKeyFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+			ValidityStartTime: new FormControl<Date | null | undefined>(undefined),
+			ValidityEndTime: new FormControl<Date | null | undefined>(undefined),
+			Fingerprint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Requests the public keys for a specified time range. */
 	export interface ListPublicKeysRequest {
@@ -313,17 +901,57 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Requests the public keys for a specified time range. */
+	export interface ListPublicKeysRequestFormProperties {
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPublicKeysRequestFormGroup() {
+		return new FormGroup<ListPublicKeysRequestFormProperties>({
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidTimeRangeException {
+	}
+	export interface InvalidTimeRangeExceptionFormProperties {
+	}
+	export function CreateInvalidTimeRangeExceptionFormGroup() {
+		return new FormGroup<InvalidTimeRangeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTokenException {
+	}
+	export interface InvalidTokenExceptionFormProperties {
+	}
+	export function CreateInvalidTokenExceptionFormGroup() {
+		return new FormGroup<InvalidTokenExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface ListTagsResponse {
-		ResourceTagList?: Array<ResourceTag> | null;
+		ResourceTagList?: Array<ResourceTag>;
 		NextToken?: string | null;
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface ListTagsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsResponseFormGroup() {
+		return new FormGroup<ListTagsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -332,7 +960,18 @@ export namespace MyNS {
 		ResourceId?: string | null;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag> | null;
+		TagsList?: Array<Tag>;
+	}
+
+	/** A resource tag. */
+	export interface ResourceTagFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceTagFormGroup() {
+		return new FormGroup<ResourceTagFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -342,9 +981,29 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Specifies a list of trail tags to return. */
+	export interface ListTagsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsRequestFormGroup() {
+		return new FormGroup<ListTagsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTrailsResponse {
-		Trails?: Array<TrailInfo> | null;
+		Trails?: Array<TrailInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListTrailsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrailsResponseFormGroup() {
+		return new FormGroup<ListTrailsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -355,15 +1014,50 @@ export namespace MyNS {
 		HomeRegion?: string | null;
 	}
 
+	/** Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN). */
+	export interface TrailInfoFormProperties {
+		TrailARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		HomeRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateTrailInfoFormGroup() {
+		return new FormGroup<TrailInfoFormProperties>({
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			HomeRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTrailsRequest {
 		NextToken?: string | null;
+	}
+	export interface ListTrailsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrailsRequestFormGroup() {
+		return new FormGroup<ListTrailsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains a response to a LookupEvents action. */
 	export interface LookupEventsResponse {
-		Events?: Array<Event> | null;
+		Events?: Array<Event>;
 		NextToken?: string | null;
+	}
+
+	/** Contains a response to a LookupEvents action. */
+	export interface LookupEventsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupEventsResponseFormGroup() {
+		return new FormGroup<LookupEventsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -378,8 +1072,33 @@ export namespace MyNS {
 		Username?: string | null;
 
 		/** A list of resources referenced by the event returned. */
-		Resources?: Array<Resource> | null;
+		Resources?: Array<Resource>;
 		CloudTrailEvent?: string | null;
+	}
+
+	/** Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event. */
+	export interface EventFormProperties {
+		EventId: FormControl<string | null | undefined>,
+		EventName: FormControl<string | null | undefined>,
+		ReadOnly: FormControl<string | null | undefined>,
+		AccessKeyId: FormControl<string | null | undefined>,
+		EventTime: FormControl<Date | null | undefined>,
+		EventSource: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		CloudTrailEvent: FormControl<string | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			EventId: new FormControl<string | null | undefined>(undefined),
+			EventName: new FormControl<string | null | undefined>(undefined),
+			ReadOnly: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			EventTime: new FormControl<Date | null | undefined>(undefined),
+			EventSource: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			CloudTrailEvent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -389,15 +1108,47 @@ export namespace MyNS {
 		ResourceName?: string | null;
 	}
 
+	/** Specifies the type and name of a resource referenced by an event. */
+	export interface ResourceFormProperties {
+		ResourceType: FormControl<string | null | undefined>,
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains a request for LookupEvents. */
 	export interface LookupEventsRequest {
-		LookupAttributes?: Array<LookupAttribute> | null;
+		LookupAttributes?: Array<LookupAttribute>;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		EventCategory?: LookupEventsRequestEventCategory | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Contains a request for LookupEvents. */
+	export interface LookupEventsRequestFormProperties {
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		EventCategory: FormControl<LookupEventsRequestEventCategory | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupEventsRequestFormGroup() {
+		return new FormGroup<LookupEventsRequestFormProperties>({
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			EventCategory: new FormControl<LookupEventsRequestEventCategory | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -407,51 +1158,151 @@ export namespace MyNS {
 		AttributeValue: string;
 	}
 
+	/** Specifies an attribute and value that filter the events returned. */
+	export interface LookupAttributeFormProperties {
+		AttributeKey: FormControl<LookupAttributeAttributeKey | null | undefined>,
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupAttributeFormGroup() {
+		return new FormGroup<LookupAttributeFormProperties>({
+			AttributeKey: new FormControl<LookupAttributeAttributeKey | null | undefined>(undefined),
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LookupAttributeAttributeKey { EventId = 0, EventName = 1, ReadOnly = 2, Username = 3, ResourceType = 4, ResourceName = 5, EventSource = 6, AccessKeyId = 7 }
 
 	export enum LookupEventsRequestEventCategory { insight = 0 }
 
 	export interface InvalidLookupAttributesException {
 	}
+	export interface InvalidLookupAttributesExceptionFormProperties {
+	}
+	export function CreateInvalidLookupAttributesExceptionFormGroup() {
+		return new FormGroup<InvalidLookupAttributesExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidMaxResultsException {
+	}
+	export interface InvalidMaxResultsExceptionFormProperties {
+	}
+	export function CreateInvalidMaxResultsExceptionFormGroup() {
+		return new FormGroup<InvalidMaxResultsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidEventCategoryException {
+	}
+	export interface InvalidEventCategoryExceptionFormProperties {
+	}
+	export function CreateInvalidEventCategoryExceptionFormGroup() {
+		return new FormGroup<InvalidEventCategoryExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutEventSelectorsResponse {
 		TrailARN?: string | null;
-		EventSelectors?: Array<EventSelector> | null;
+		EventSelectors?: Array<EventSelector>;
+	}
+	export interface PutEventSelectorsResponseFormProperties {
+		TrailARN: FormControl<string | null | undefined>,
+	}
+	export function CreatePutEventSelectorsResponseFormGroup() {
+		return new FormGroup<PutEventSelectorsResponseFormProperties>({
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutEventSelectorsRequest {
 		TrailName: string;
 		EventSelectors: Array<EventSelector>;
 	}
+	export interface PutEventSelectorsRequestFormProperties {
+		TrailName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutEventSelectorsRequestFormGroup() {
+		return new FormGroup<PutEventSelectorsRequestFormProperties>({
+			TrailName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidEventSelectorsException {
+	}
+	export interface InvalidEventSelectorsExceptionFormProperties {
+	}
+	export function CreateInvalidEventSelectorsExceptionFormGroup() {
+		return new FormGroup<InvalidEventSelectorsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutInsightSelectorsResponse {
 		TrailARN?: string | null;
-		InsightSelectors?: Array<InsightSelector> | null;
+		InsightSelectors?: Array<InsightSelector>;
+	}
+	export interface PutInsightSelectorsResponseFormProperties {
+		TrailARN: FormControl<string | null | undefined>,
+	}
+	export function CreatePutInsightSelectorsResponseFormGroup() {
+		return new FormGroup<PutInsightSelectorsResponseFormProperties>({
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutInsightSelectorsRequest {
 		TrailName: string;
 		InsightSelectors: Array<InsightSelector>;
 	}
+	export interface PutInsightSelectorsRequestFormProperties {
+		TrailName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutInsightSelectorsRequestFormGroup() {
+		return new FormGroup<PutInsightSelectorsRequestFormProperties>({
+			TrailName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidInsightSelectorsException {
+	}
+	export interface InvalidInsightSelectorsExceptionFormProperties {
+	}
+	export function CreateInvalidInsightSelectorsExceptionFormGroup() {
+		return new FormGroup<InvalidInsightSelectorsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface RemoveTagsResponse {
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface RemoveTagsResponseFormProperties {
+	}
+	export function CreateRemoveTagsResponseFormGroup() {
+		return new FormGroup<RemoveTagsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -460,12 +1311,32 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag> | null;
+		TagsList?: Array<Tag>;
+	}
+
+	/** Specifies the tags to remove from a trail. */
+	export interface RemoveTagsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsRequestFormGroup() {
+		return new FormGroup<RemoveTagsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface StartLoggingResponse {
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface StartLoggingResponseFormProperties {
+	}
+	export function CreateStartLoggingResponseFormGroup() {
+		return new FormGroup<StartLoggingResponseFormProperties>({
+		});
+
 	}
 
 
@@ -474,15 +1345,46 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/** The request to CloudTrail to start logging AWS API calls for an account. */
+	export interface StartLoggingRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartLoggingRequestFormGroup() {
+		return new FormGroup<StartLoggingRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface StopLoggingResponse {
+	}
+
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface StopLoggingResponseFormProperties {
+	}
+	export function CreateStopLoggingResponseFormGroup() {
+		return new FormGroup<StopLoggingResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Passes the request to CloudTrail to stop logging AWS API calls for the specified account. */
 	export interface StopLoggingRequest {
 		Name: string;
+	}
+
+	/** Passes the request to CloudTrail to stop logging AWS API calls for the specified account. */
+	export interface StopLoggingRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopLoggingRequestFormGroup() {
+		return new FormGroup<StopLoggingRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -503,6 +1405,41 @@ export namespace MyNS {
 		IsOrganizationTrail?: boolean | null;
 	}
 
+	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
+	export interface UpdateTrailResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+		SnsTopicName: FormControl<string | null | undefined>,
+		SnsTopicARN: FormControl<string | null | undefined>,
+		IncludeGlobalServiceEvents: FormControl<boolean | null | undefined>,
+		IsMultiRegionTrail: FormControl<boolean | null | undefined>,
+		TrailARN: FormControl<string | null | undefined>,
+		LogFileValidationEnabled: FormControl<boolean | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		IsOrganizationTrail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateTrailResponseFormGroup() {
+		return new FormGroup<UpdateTrailResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SnsTopicName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicARN: new FormControl<string | null | undefined>(undefined),
+			IncludeGlobalServiceEvents: new FormControl<boolean | null | undefined>(undefined),
+			IsMultiRegionTrail: new FormControl<boolean | null | undefined>(undefined),
+			TrailARN: new FormControl<string | null | undefined>(undefined),
+			LogFileValidationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			IsOrganizationTrail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies settings to update for the trail. */
 	export interface UpdateTrailRequest {
@@ -517,6 +1454,37 @@ export namespace MyNS {
 		CloudWatchLogsRoleArn?: string | null;
 		KmsKeyId?: string | null;
 		IsOrganizationTrail?: boolean | null;
+	}
+
+	/** Specifies settings to update for the trail. */
+	export interface UpdateTrailRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+		SnsTopicName: FormControl<string | null | undefined>,
+		IncludeGlobalServiceEvents: FormControl<boolean | null | undefined>,
+		IsMultiRegionTrail: FormControl<boolean | null | undefined>,
+		EnableLogFileValidation: FormControl<boolean | null | undefined>,
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		IsOrganizationTrail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateTrailRequestFormGroup() {
+		return new FormGroup<UpdateTrailRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SnsTopicName: new FormControl<string | null | undefined>(undefined),
+			IncludeGlobalServiceEvents: new FormControl<boolean | null | undefined>(undefined),
+			IsMultiRegionTrail: new FormControl<boolean | null | undefined>(undefined),
+			EnableLogFileValidation: new FormControl<boolean | null | undefined>(undefined),
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			IsOrganizationTrail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventCategory { insight = 0 }

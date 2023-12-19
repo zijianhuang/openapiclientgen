@@ -1,13 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**  Result structure used in response to a request to create a project.  */
 	export interface CreateProjectResult {
 
 		/** Detailed information about an AWS Mobile Hub project. */
-		details?: ProjectDetails | null;
+		details?: ProjectDetails;
+	}
+
+	/**  Result structure used in response to a request to create a project.  */
+	export interface CreateProjectResultFormProperties {
+	}
+	export function CreateCreateProjectResultFormGroup() {
+		return new FormGroup<CreateProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -30,7 +40,38 @@ export namespace MyNS {
 		consoleUrl?: string | null;
 
 		/** List of AWS resources associated with a project. */
-		resources?: Array<Resource> | null;
+		resources?: Array<Resource>;
+	}
+
+	/**  Detailed information about an AWS Mobile Hub project.  */
+	export interface ProjectDetailsFormProperties {
+
+		/** Name of the project. */
+		name: FormControl<string | null | undefined>,
+
+		/** Unique project identifier. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** Default region to use for AWS resource creation in the AWS Mobile Hub project. */
+		region: FormControl<string | null | undefined>,
+
+		/** Synchronization state for a project. */
+		state: FormControl<ProjectDetailsState | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		consoleUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectDetailsFormGroup() {
+		return new FormGroup<ProjectDetailsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<ProjectDetailsState | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			consoleUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProjectDetailsState { NORMAL = 0, SYNCING = 1, IMPORTING = 2 }
@@ -52,12 +93,46 @@ export namespace MyNS {
 		feature?: string | null;
 
 		/** Key-value attribute pairs. */
-		attributes?: Attributes | null;
+		attributes?: Attributes;
+	}
+
+	/**  Information about an instance of an AWS resource associated with a project.  */
+	export interface ResourceFormProperties {
+
+		/** Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). */
+		type: FormControl<string | null | undefined>,
+
+		/** Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). */
+		name: FormControl<string | null | undefined>,
+
+		/** AWS resource name which uniquely identifies the resource in AWS systems. */
+		arn: FormControl<string | null | undefined>,
+
+		/** Identifies which feature in AWS Mobile Hub is associated with this AWS resource. */
+		feature: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			type: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			feature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  Key-value attribute pairs.  */
 	export interface Attributes {
+	}
+
+	/**  Key-value attribute pairs.  */
+	export interface AttributesFormProperties {
+	}
+	export function CreateAttributesFormGroup() {
+		return new FormGroup<AttributesFormProperties>({
+		});
+
 	}
 
 
@@ -68,12 +143,38 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**  The service has encountered an unexpected error condition which prevents it from servicing the request.  */
+	export interface InternalFailureExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  The service is temporarily unavailable. The request should be retried after some time delay.  */
 	export interface ServiceUnavailableException {
 
 		/** The Exception Error Message. */
 		message?: string | null;
+	}
+
+	/**  The service is temporarily unavailable. The request should be retried after some time delay.  */
+	export interface ServiceUnavailableExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -84,12 +185,38 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**  Credentials of the caller are insufficient to authorize the request.  */
+	export interface UnauthorizedExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay.  */
 	export interface TooManyRequestsException {
 
 		/** The Exception Error Message. */
 		message?: string | null;
+	}
+
+	/**  Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay.  */
+	export interface TooManyRequestsExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -100,12 +227,38 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**  The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed.  */
+	export interface BadRequestExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  No entity can be found with the specified identifier.  */
 	export interface NotFoundException {
 
 		/** The Exception Error Message. */
 		message?: string | null;
+	}
+
+	/**  No entity can be found with the specified identifier.  */
+	export interface NotFoundExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -116,15 +269,37 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**  There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request.  */
+	export interface LimitExceededExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Result structure used in response to request to delete a project.  */
 	export interface DeleteProjectResult {
 
 		/** List of AWS resources associated with a project. */
-		deletedResources?: Array<Resource> | null;
+		deletedResources?: Array<Resource>;
 
 		/** List of AWS resources associated with a project. */
-		orphanedResources?: Array<Resource> | null;
+		orphanedResources?: Array<Resource>;
+	}
+
+	/**  Result structure used in response to request to delete a project.  */
+	export interface DeleteProjectResultFormProperties {
+	}
+	export function CreateDeleteProjectResultFormGroup() {
+		return new FormGroup<DeleteProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -132,7 +307,16 @@ export namespace MyNS {
 	export interface DescribeBundleResult {
 
 		/** The details of the bundle. */
-		details?: BundleDetails | null;
+		details?: BundleDetails;
+	}
+
+	/**  Result structure contains the details of the bundle.  */
+	export interface DescribeBundleResultFormProperties {
+	}
+	export function CreateDescribeBundleResultFormGroup() {
+		return new FormGroup<DescribeBundleResultFormProperties>({
+		});
+
 	}
 
 
@@ -155,7 +339,36 @@ export namespace MyNS {
 		iconUrl?: string | null;
 
 		/** Developer desktop or mobile app or website platforms. */
-		availablePlatforms?: Array<Platform> | null;
+		availablePlatforms?: Array<Platform>;
+	}
+
+	/**  The details of the bundle.  */
+	export interface BundleDetailsFormProperties {
+
+		/** Unique bundle identifier. */
+		bundleId: FormControl<string | null | undefined>,
+
+		/** Title of the download bundle. */
+		title: FormControl<string | null | undefined>,
+
+		/** Version of the download bundle. */
+		version: FormControl<string | null | undefined>,
+
+		/** Description of the download bundle. */
+		description: FormControl<string | null | undefined>,
+
+		/** Icon for the download bundle. */
+		iconUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateBundleDetailsFormGroup() {
+		return new FormGroup<BundleDetailsFormProperties>({
+			bundleId: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			iconUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -167,7 +380,16 @@ export namespace MyNS {
 	export interface DescribeProjectResult {
 
 		/** Detailed information about an AWS Mobile Hub project. */
-		details?: ProjectDetails | null;
+		details?: ProjectDetails;
+	}
+
+	/**  Result structure used for requests of project details.  */
+	export interface DescribeProjectResultFormProperties {
+	}
+	export function CreateDescribeProjectResultFormGroup() {
+		return new FormGroup<DescribeProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -176,6 +398,19 @@ export namespace MyNS {
 
 		/** The download Url. */
 		downloadUrl?: string | null;
+	}
+
+	/**  Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources.  */
+	export interface ExportBundleResultFormProperties {
+
+		/** The download Url. */
+		downloadUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateExportBundleResultFormGroup() {
+		return new FormGroup<ExportBundleResultFormProperties>({
+			downloadUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -192,15 +427,49 @@ export namespace MyNS {
 		snapshotId?: string | null;
 	}
 
+	/**  Result structure used for requests to export project configuration details.  */
+	export interface ExportProjectResultFormProperties {
+
+		/** The download Url. */
+		downloadUrl: FormControl<string | null | undefined>,
+
+		/** URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. */
+		shareUrl: FormControl<string | null | undefined>,
+
+		/** Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. */
+		snapshotId: FormControl<string | null | undefined>,
+	}
+	export function CreateExportProjectResultFormGroup() {
+		return new FormGroup<ExportProjectResultFormProperties>({
+			downloadUrl: new FormControl<string | null | undefined>(undefined),
+			shareUrl: new FormControl<string | null | undefined>(undefined),
+			snapshotId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Result structure contains a list of all available bundles with details.  */
 	export interface ListBundlesResult {
 
 		/** A list of bundles. */
-		bundleList?: Array<BundleDetails> | null;
+		bundleList?: Array<BundleDetails>;
 
 		/** Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. */
 		nextToken?: string | null;
+	}
+
+	/**  Result structure contains a list of all available bundles with details.  */
+	export interface ListBundlesResultFormProperties {
+
+		/** Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBundlesResultFormGroup() {
+		return new FormGroup<ListBundlesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -208,10 +477,23 @@ export namespace MyNS {
 	export interface ListProjectsResult {
 
 		/** List of projects. */
-		projects?: Array<ProjectSummary> | null;
+		projects?: Array<ProjectSummary>;
 
 		/** Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. */
 		nextToken?: string | null;
+	}
+
+	/**  Result structure used for requests to list projects in AWS Mobile Hub.  */
+	export interface ListProjectsResultFormProperties {
+
+		/** Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsResultFormGroup() {
+		return new FormGroup<ListProjectsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -225,12 +507,38 @@ export namespace MyNS {
 		projectId?: string | null;
 	}
 
+	/**  Summary information about an AWS Mobile Hub project.  */
+	export interface ProjectSummaryFormProperties {
+
+		/** Name of the project. */
+		name: FormControl<string | null | undefined>,
+
+		/** Unique project identifier. */
+		projectId: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectSummaryFormGroup() {
+		return new FormGroup<ProjectSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Result structure used for requests to updated project configuration.  */
 	export interface UpdateProjectResult {
 
 		/** Detailed information about an AWS Mobile Hub project. */
-		details?: ProjectDetails | null;
+		details?: ProjectDetails;
+	}
+
+	/**  Result structure used for requests to updated project configuration.  */
+	export interface UpdateProjectResultFormProperties {
+	}
+	export function CreateUpdateProjectResultFormGroup() {
+		return new FormGroup<UpdateProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -241,6 +549,19 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**  Account Action is required in order to continue the request.  */
+	export interface AccountActionRequiredExceptionFormProperties {
+
+		/** The Exception Error Message. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountActionRequiredExceptionFormGroup() {
+		return new FormGroup<AccountActionRequiredExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Request structure used to request a project be created.  */
 	export interface CreateProjectRequest {
@@ -249,9 +570,31 @@ export namespace MyNS {
 		contents?: string | null;
 	}
 
+	/**  Request structure used to request a project be created.  */
+	export interface CreateProjectRequestFormProperties {
+
+		/** Binary file data. */
+		contents: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			contents: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Request structure used to request a project be deleted.  */
 	export interface DeleteProjectRequest {
+	}
+
+	/**  Request structure used to request a project be deleted.  */
+	export interface DeleteProjectRequestFormProperties {
+	}
+	export function CreateDeleteProjectRequestFormGroup() {
+		return new FormGroup<DeleteProjectRequestFormProperties>({
+		});
+
 	}
 
 
@@ -259,9 +602,27 @@ export namespace MyNS {
 	export interface DescribeBundleRequest {
 	}
 
+	/**  Request structure to request the details of a specific bundle.  */
+	export interface DescribeBundleRequestFormProperties {
+	}
+	export function CreateDescribeBundleRequestFormGroup() {
+		return new FormGroup<DescribeBundleRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Request structure used to request details about a project.  */
 	export interface DescribeProjectRequest {
+	}
+
+	/**  Request structure used to request details about a project.  */
+	export interface DescribeProjectRequestFormProperties {
+	}
+	export function CreateDescribeProjectRequestFormGroup() {
+		return new FormGroup<DescribeProjectRequestFormProperties>({
+		});
+
 	}
 
 
@@ -269,9 +630,27 @@ export namespace MyNS {
 	export interface ExportBundleRequest {
 	}
 
+	/**  Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources.  */
+	export interface ExportBundleRequestFormProperties {
+	}
+	export function CreateExportBundleRequestFormGroup() {
+		return new FormGroup<ExportBundleRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Request structure used in requests to export project configuration details.  */
 	export interface ExportProjectRequest {
+	}
+
+	/**  Request structure used in requests to export project configuration details.  */
+	export interface ExportProjectRequestFormProperties {
+	}
+	export function CreateExportProjectRequestFormGroup() {
+		return new FormGroup<ExportProjectRequestFormProperties>({
+		});
+
 	}
 
 
@@ -279,9 +658,27 @@ export namespace MyNS {
 	export interface ListBundlesRequest {
 	}
 
+	/**  Request structure to request all available bundles.  */
+	export interface ListBundlesRequestFormProperties {
+	}
+	export function CreateListBundlesRequestFormGroup() {
+		return new FormGroup<ListBundlesRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Request structure used to request projects list in AWS Mobile Hub.  */
 	export interface ListProjectsRequest {
+	}
+
+	/**  Request structure used to request projects list in AWS Mobile Hub.  */
+	export interface ListProjectsRequestFormProperties {
+	}
+	export function CreateListProjectsRequestFormGroup() {
+		return new FormGroup<ListProjectsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -294,6 +691,19 @@ export namespace MyNS {
 
 		/** Binary file data. */
 		contents?: string | null;
+	}
+
+	/**  Request structure used for requests to update project configuration.  */
+	export interface UpdateProjectRequestFormProperties {
+
+		/** Binary file data. */
+		contents: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectRequestFormGroup() {
+		return new FormGroup<UpdateProjectRequestFormProperties>({
+			contents: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -404,11 +814,33 @@ export namespace MyNS {
 		/** Binary file data. */
 		contents?: string | null;
 	}
+	export interface CreateProjectPostBodyFormProperties {
+
+		/** Binary file data. */
+		contents: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectPostBodyFormGroup() {
+		return new FormGroup<CreateProjectPostBodyFormProperties>({
+			contents: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateProjectPostBody {
 
 		/** Binary file data. */
 		contents?: string | null;
+	}
+	export interface UpdateProjectPostBodyFormProperties {
+
+		/** Binary file data. */
+		contents: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectPostBodyFormGroup() {
+		return new FormGroup<UpdateProjectPostBodyFormProperties>({
+			contents: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

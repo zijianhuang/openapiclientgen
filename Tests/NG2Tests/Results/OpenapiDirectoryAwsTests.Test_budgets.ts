@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**  Response of CreateBudget  */
 	export interface CreateBudgetResponse {
+	}
+
+	/**  Response of CreateBudget  */
+	export interface CreateBudgetResponseFormProperties {
+	}
+	export function CreateCreateBudgetResponseFormGroup() {
+		return new FormGroup<CreateBudgetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -30,7 +40,26 @@ export namespace MyNS {
 		 * A list of notifications, each with a list of subscribers.
 		 * Maximum items: 5
 		 */
-		NotificationsWithSubscribers?: Array<NotificationWithSubscribers> | null;
+		NotificationsWithSubscribers?: Array<NotificationWithSubscribers>;
+	}
+
+	/**  Request of CreateBudget  */
+	export interface CreateBudgetRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBudgetRequestFormGroup() {
+		return new FormGroup<CreateBudgetRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -47,14 +76,14 @@ export namespace MyNS {
 		BudgetName: string;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		BudgetLimit?: Spend | null;
-		PlannedBudgetLimits?: PlannedBudgetLimits | null;
+		BudgetLimit?: Spend;
+		PlannedBudgetLimits?: PlannedBudgetLimits;
 
 		/** A map that represents the cost filters that are applied to the budget. */
-		CostFilters?: CostFilters | null;
+		CostFilters?: CostFilters;
 
 		/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
-		CostTypes?: CostTypes | null;
+		CostTypes?: CostTypes;
 
 		/**
 		 * The time unit of the budget, such as MONTHLY or QUARTERLY.
@@ -63,10 +92,10 @@ export namespace MyNS {
 		TimeUnit: BudgetTimeUnit;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
-		TimePeriod?: TimePeriod | null;
+		TimePeriod?: TimePeriod;
 
 		/** <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p> */
-		CalculatedSpend?: CalculatedSpend | null;
+		CalculatedSpend?: CalculatedSpend;
 
 		/**
 		 * <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p>
@@ -76,6 +105,43 @@ export namespace MyNS {
 
 		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
 		LastUpdatedTime?: Date | null;
+	}
+
+	/** <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p> */
+	export interface BudgetFormProperties {
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+
+		/**
+		 * The time unit of the budget, such as MONTHLY or QUARTERLY.
+		 * Required
+		 */
+		TimeUnit: FormControl<BudgetTimeUnit | null | undefined>,
+
+		/**
+		 * <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p>
+		 * Required
+		 */
+		BudgetType: FormControl<BudgetBudgetType | null | undefined>,
+
+		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateBudgetFormGroup() {
+		return new FormGroup<BudgetFormProperties>({
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			TimeUnit: new FormControl<BudgetTimeUnit | null | undefined>(undefined),
+			BudgetType: new FormControl<BudgetBudgetType | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -101,12 +167,57 @@ export namespace MyNS {
 		Unit: string;
 	}
 
+	/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
+	export interface SpendFormProperties {
+
+		/**
+		 * A string that represents a numeric value.
+		 * Required
+		 * Max length: 2147483647
+		 * Min length: 1
+		 * Pattern: ([0-9]*\.)?[0-9]+
+		 */
+		Amount: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the spend unit of a budget. It can't be null or empty.
+		 * Required
+		 * Max length: 2147483647
+		 * Min length: 1
+		 * Pattern: .*
+		 */
+		Unit: FormControl<string | null | undefined>,
+	}
+	export function CreateSpendFormGroup() {
+		return new FormGroup<SpendFormProperties>({
+			Amount: new FormControl<string | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PlannedBudgetLimits {
+	}
+	export interface PlannedBudgetLimitsFormProperties {
+	}
+	export function CreatePlannedBudgetLimitsFormGroup() {
+		return new FormGroup<PlannedBudgetLimitsFormProperties>({
+		});
+
 	}
 
 
 	/**  A map that represents the cost filters that are applied to the budget. */
 	export interface CostFilters {
+	}
+
+	/**  A map that represents the cost filters that are applied to the budget. */
+	export interface CostFiltersFormProperties {
+	}
+	export function CreateCostFiltersFormGroup() {
+		return new FormGroup<CostFiltersFormProperties>({
+		});
+
 	}
 
 
@@ -125,6 +236,37 @@ export namespace MyNS {
 		UseAmortized?: boolean | null;
 	}
 
+	/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
+	export interface CostTypesFormProperties {
+		IncludeTax: FormControl<boolean | null | undefined>,
+		IncludeSubscription: FormControl<boolean | null | undefined>,
+		UseBlended: FormControl<boolean | null | undefined>,
+		IncludeRefund: FormControl<boolean | null | undefined>,
+		IncludeCredit: FormControl<boolean | null | undefined>,
+		IncludeUpfront: FormControl<boolean | null | undefined>,
+		IncludeRecurring: FormControl<boolean | null | undefined>,
+		IncludeOtherSubscription: FormControl<boolean | null | undefined>,
+		IncludeSupport: FormControl<boolean | null | undefined>,
+		IncludeDiscount: FormControl<boolean | null | undefined>,
+		UseAmortized: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCostTypesFormGroup() {
+		return new FormGroup<CostTypesFormProperties>({
+			IncludeTax: new FormControl<boolean | null | undefined>(undefined),
+			IncludeSubscription: new FormControl<boolean | null | undefined>(undefined),
+			UseBlended: new FormControl<boolean | null | undefined>(undefined),
+			IncludeRefund: new FormControl<boolean | null | undefined>(undefined),
+			IncludeCredit: new FormControl<boolean | null | undefined>(undefined),
+			IncludeUpfront: new FormControl<boolean | null | undefined>(undefined),
+			IncludeRecurring: new FormControl<boolean | null | undefined>(undefined),
+			IncludeOtherSubscription: new FormControl<boolean | null | undefined>(undefined),
+			IncludeSupport: new FormControl<boolean | null | undefined>(undefined),
+			IncludeDiscount: new FormControl<boolean | null | undefined>(undefined),
+			UseAmortized: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BudgetTimeUnit { DAILY = 0, MONTHLY = 1, QUARTERLY = 2, ANNUALLY = 3 }
 
 
@@ -138,6 +280,23 @@ export namespace MyNS {
 		End?: Date | null;
 	}
 
+	/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.  */
+	export interface TimePeriodFormProperties {
+
+		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
+		Start: FormControl<Date | null | undefined>,
+
+		/** A generic time stamp. In Java, it is transformed to a <code>Date</code> object. */
+		End: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimePeriodFormGroup() {
+		return new FormGroup<TimePeriodFormProperties>({
+			Start: new FormControl<Date | null | undefined>(undefined),
+			End: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p> */
 	export interface CalculatedSpend {
@@ -149,7 +308,16 @@ export namespace MyNS {
 		ActualSpend: Spend;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		ForecastedSpend?: Spend | null;
+		ForecastedSpend?: Spend;
+	}
+
+	/** <p>The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.</p> <p>For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.</p> */
+	export interface CalculatedSpendFormProperties {
+	}
+	export function CreateCalculatedSpendFormGroup() {
+		return new FormGroup<CalculatedSpendFormProperties>({
+		});
+
 	}
 
 	export enum BudgetBudgetType { USAGE = 0, COST = 1, RI_UTILIZATION = 2, RI_COVERAGE = 3, SAVINGS_PLANS_UTILIZATION = 4, SAVINGS_PLANS_COVERAGE = 5 }
@@ -171,6 +339,15 @@ export namespace MyNS {
 		 * Maximum items: 11
 		 */
 		Subscribers: Array<Subscriber>;
+	}
+
+	/** A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers. */
+	export interface NotificationWithSubscribersFormProperties {
+	}
+	export function CreateNotificationWithSubscribersFormGroup() {
+		return new FormGroup<NotificationWithSubscribersFormProperties>({
+		});
+
 	}
 
 
@@ -202,6 +379,44 @@ export namespace MyNS {
 		NotificationState?: NotificationNotificationState | null;
 	}
 
+	/** <p>A notification that is associated with a budget. A budget can have up to five notifications. </p> <p>Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.</p> <p>For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:</p> <ul> <li> <p>A notificationType of <code>ACTUAL</code> </p> </li> <li> <p>A <code>thresholdType</code> of <code>PERCENTAGE</code> </p> </li> <li> <p>A <code>comparisonOperator</code> of <code>GREATER_THAN</code> </p> </li> <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li> </ul> */
+	export interface NotificationFormProperties {
+
+		/**
+		 * The type of a notification. It must be ACTUAL or FORECASTED.
+		 * Required
+		 */
+		NotificationType: FormControl<NotificationNotificationType | null | undefined>,
+
+		/**
+		 * <p> The comparison operator of a notification. Currently the service supports the following operators:</p> <p> <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code> </p>
+		 * Required
+		 */
+		ComparisonOperator: FormControl<NotificationComparisonOperator | null | undefined>,
+
+		/**
+		 * The threshold of a notification. It must be a number between 0 and 1,000,000,000.
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1000000000
+		 */
+		Threshold: FormControl<number | null | undefined>,
+
+		/** The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE. */
+		ThresholdType: FormControl<NotificationThresholdType | null | undefined>,
+		NotificationState: FormControl<NotificationNotificationState | null | undefined>,
+	}
+	export function CreateNotificationFormGroup() {
+		return new FormGroup<NotificationFormProperties>({
+			NotificationType: new FormControl<NotificationNotificationType | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<NotificationComparisonOperator | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined),
+			ThresholdType: new FormControl<NotificationThresholdType | null | undefined>(undefined),
+			NotificationState: new FormControl<NotificationNotificationState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum NotificationNotificationType { ACTUAL = 0, FORECASTED = 1 }
 
 	export enum NotificationComparisonOperator { GREATER_THAN = 0, LESS_THAN = 1, EQUAL_TO = 2 }
@@ -230,26 +445,96 @@ export namespace MyNS {
 		Address: string;
 	}
 
+	/** <p>The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.</p> <p>For example, an email subscriber would have the following parameters:</p> <ul> <li> <p>A <code>subscriptionType</code> of <code>EMAIL</code> </p> </li> <li> <p>An <code>address</code> of <code>example@example.com</code> </p> </li> </ul> */
+	export interface SubscriberFormProperties {
+
+		/**
+		 * The subscription type of the subscriber. It can be SMS or EMAIL.
+		 * Required
+		 */
+		SubscriptionType: FormControl<SubscriberSubscriptionType | null | undefined>,
+
+		/**
+		 * A string that contains an email address or SNS topic for the subscriber's address.
+		 * Required
+		 * Max length: 2147483647
+		 * Min length: 1
+		 * Pattern: (.*[\n\r\t\f\ ]?)*
+		 */
+		Address: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriberFormGroup() {
+		return new FormGroup<SubscriberFormProperties>({
+			SubscriptionType: new FormControl<SubscriberSubscriptionType | null | undefined>(undefined),
+			Address: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SubscriberSubscriptionType { SNS = 0, EMAIL = 1 }
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalErrorException {
+	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreationLimitExceededException {
 	}
+	export interface CreationLimitExceededExceptionFormProperties {
+	}
+	export function CreateCreationLimitExceededExceptionFormGroup() {
+		return new FormGroup<CreationLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DuplicateRecordException {
 	}
+	export interface DuplicateRecordExceptionFormProperties {
+	}
+	export function CreateDuplicateRecordExceptionFormGroup() {
+		return new FormGroup<DuplicateRecordExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 
 	/**  Response of CreateNotification  */
 	export interface CreateNotificationResponse {
+	}
+
+	/**  Response of CreateNotification  */
+	export interface CreateNotificationResponseFormProperties {
+	}
+	export function CreateCreateNotificationResponseFormGroup() {
+		return new FormGroup<CreateNotificationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -289,12 +574,57 @@ export namespace MyNS {
 		Subscribers: Array<Subscriber>;
 	}
 
+	/**  Request of CreateNotification  */
+	export interface CreateNotificationRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNotificationRequestFormGroup() {
+		return new FormGroup<CreateNotificationRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/**  Response of CreateSubscriber  */
 	export interface CreateSubscriberResponse {
+	}
+
+	/**  Response of CreateSubscriber  */
+	export interface CreateSubscriberResponseFormProperties {
+	}
+	export function CreateCreateSubscriberResponseFormGroup() {
+		return new FormGroup<CreateSubscriberResponseFormProperties>({
+		});
+
 	}
 
 
@@ -332,9 +662,47 @@ export namespace MyNS {
 		Subscriber: Subscriber;
 	}
 
+	/**  Request of CreateSubscriber  */
+	export interface CreateSubscriberRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSubscriberRequestFormGroup() {
+		return new FormGroup<CreateSubscriberRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of DeleteBudget  */
 	export interface DeleteBudgetResponse {
+	}
+
+	/**  Response of DeleteBudget  */
+	export interface DeleteBudgetResponseFormProperties {
+	}
+	export function CreateDeleteBudgetResponseFormGroup() {
+		return new FormGroup<DeleteBudgetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -360,9 +728,47 @@ export namespace MyNS {
 		BudgetName: string;
 	}
 
+	/**  Request of DeleteBudget  */
+	export interface DeleteBudgetRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBudgetRequestFormGroup() {
+		return new FormGroup<DeleteBudgetRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of DeleteNotification  */
 	export interface DeleteNotificationResponse {
+	}
+
+	/**  Response of DeleteNotification  */
+	export interface DeleteNotificationResponseFormProperties {
+	}
+	export function CreateDeleteNotificationResponseFormGroup() {
+		return new FormGroup<DeleteNotificationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -394,9 +800,47 @@ export namespace MyNS {
 		Notification: Notification;
 	}
 
+	/**  Request of DeleteNotification  */
+	export interface DeleteNotificationRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteNotificationRequestFormGroup() {
+		return new FormGroup<DeleteNotificationRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of DeleteSubscriber  */
 	export interface DeleteSubscriberResponse {
+	}
+
+	/**  Response of DeleteSubscriber  */
+	export interface DeleteSubscriberResponseFormProperties {
+	}
+	export function CreateDeleteSubscriberResponseFormGroup() {
+		return new FormGroup<DeleteSubscriberResponseFormProperties>({
+		});
+
 	}
 
 
@@ -434,12 +878,50 @@ export namespace MyNS {
 		Subscriber: Subscriber;
 	}
 
+	/**  Request of DeleteSubscriber  */
+	export interface DeleteSubscriberRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSubscriberRequestFormGroup() {
+		return new FormGroup<DeleteSubscriberRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of DescribeBudget  */
 	export interface DescribeBudgetResponse {
 
 		/** <p>Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.</p> <p>This is the ARN pattern for a budget: </p> <p> <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p> */
-		Budget?: Budget | null;
+		Budget?: Budget;
+	}
+
+	/**  Response of DescribeBudget  */
+	export interface DescribeBudgetResponseFormProperties {
+	}
+	export function CreateDescribeBudgetResponseFormGroup() {
+		return new FormGroup<DescribeBudgetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -465,10 +947,39 @@ export namespace MyNS {
 		BudgetName: string;
 	}
 
+	/**  Request of DescribeBudget  */
+	export interface DescribeBudgetRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBudgetRequestFormGroup() {
+		return new FormGroup<DescribeBudgetRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeBudgetPerformanceHistoryResponse {
 
 		/** A history of the state of a budget at the end of the budget's specified time period. */
-		BudgetPerformanceHistory?: BudgetPerformanceHistory | null;
+		BudgetPerformanceHistory?: BudgetPerformanceHistory;
 
 		/**
 		 * A generic string.
@@ -477,6 +988,22 @@ export namespace MyNS {
 		 * Pattern: .*
 		 */
 		NextToken?: string | null;
+	}
+	export interface DescribeBudgetPerformanceHistoryResponseFormProperties {
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBudgetPerformanceHistoryResponseFormGroup() {
+		return new FormGroup<DescribeBudgetPerformanceHistoryResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -495,14 +1022,40 @@ export namespace MyNS {
 		BudgetType?: BudgetBudgetType | null;
 
 		/** A map that represents the cost filters that are applied to the budget. */
-		CostFilters?: CostFilters | null;
+		CostFilters?: CostFilters;
 
 		/** <p>The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p> */
-		CostTypes?: CostTypes | null;
+		CostTypes?: CostTypes;
 
 		/** The time unit of the budget, such as MONTHLY or QUARTERLY. */
 		TimeUnit?: BudgetTimeUnit | null;
-		BudgetedAndActualAmountsList?: Array<BudgetedAndActualAmounts> | null;
+		BudgetedAndActualAmountsList?: Array<BudgetedAndActualAmounts>;
+	}
+
+	/** A history of the state of a budget at the end of the budget's specified time period. */
+	export interface BudgetPerformanceHistoryFormProperties {
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+
+		/** <p> The type of a budget. It must be one of the following types: </p> <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.</p> */
+		BudgetType: FormControl<BudgetBudgetType | null | undefined>,
+
+		/** The time unit of the budget, such as MONTHLY or QUARTERLY. */
+		TimeUnit: FormControl<BudgetTimeUnit | null | undefined>,
+	}
+	export function CreateBudgetPerformanceHistoryFormGroup() {
+		return new FormGroup<BudgetPerformanceHistoryFormProperties>({
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			BudgetType: new FormControl<BudgetBudgetType | null | undefined>(undefined),
+			TimeUnit: new FormControl<BudgetTimeUnit | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -510,13 +1063,22 @@ export namespace MyNS {
 	export interface BudgetedAndActualAmounts {
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		BudgetedAmount?: Spend | null;
+		BudgetedAmount?: Spend;
 
 		/** <p>The amount of cost or usage that is measured for a budget.</p> <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:</p> <ul> <li> <p>An <code>Amount</code> of <code>3</code> </p> </li> <li> <p>A <code>unit</code> of <code>GB</code> </p> </li> </ul> */
-		ActualAmount?: Spend | null;
+		ActualAmount?: Spend;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
-		TimePeriod?: TimePeriod | null;
+		TimePeriod?: TimePeriod;
+	}
+
+	/** The amount of cost or usage that you created the budget for, compared to your actual costs or usage. */
+	export interface BudgetedAndActualAmountsFormProperties {
+	}
+	export function CreateBudgetedAndActualAmountsFormGroup() {
+		return new FormGroup<BudgetedAndActualAmountsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeBudgetPerformanceHistoryRequest {
@@ -540,7 +1102,7 @@ export namespace MyNS {
 		BudgetName: string;
 
 		/** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. */
-		TimePeriod?: TimePeriod | null;
+		TimePeriod?: TimePeriod;
 
 		/**
 		 * An integer that represents how many entries a paginated response contains. The maximum is 100.
@@ -557,11 +1119,69 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 	}
+	export interface DescribeBudgetPerformanceHistoryRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer that represents how many entries a paginated response contains. The maximum is 100.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBudgetPerformanceHistoryRequestFormGroup() {
+		return new FormGroup<DescribeBudgetPerformanceHistoryRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ExpiredNextTokenException {
+	}
+	export interface ExpiredNextTokenExceptionFormProperties {
+	}
+	export function CreateExpiredNextTokenExceptionFormGroup() {
+		return new FormGroup<ExpiredNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -569,7 +1189,7 @@ export namespace MyNS {
 	export interface DescribeBudgetsResponse {
 
 		/** A list of budgets. */
-		Budgets?: Array<Budget> | null;
+		Budgets?: Array<Budget>;
 
 		/**
 		 * A generic string.
@@ -578,6 +1198,24 @@ export namespace MyNS {
 		 * Pattern: .*
 		 */
 		NextToken?: string | null;
+	}
+
+	/**  Response of DescribeBudgets  */
+	export interface DescribeBudgetsResponseFormProperties {
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBudgetsResponseFormGroup() {
+		return new FormGroup<DescribeBudgetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -609,12 +1247,48 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/**  Request of DescribeBudgets  */
+	export interface DescribeBudgetsRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer that represents how many entries a paginated response contains. The maximum is 100.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBudgetsRequestFormGroup() {
+		return new FormGroup<DescribeBudgetsRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of GetNotificationsForBudget  */
 	export interface DescribeNotificationsForBudgetResponse {
 
 		/** A list of notifications. */
-		Notifications?: Array<Notification> | null;
+		Notifications?: Array<Notification>;
 
 		/**
 		 * A generic string.
@@ -623,6 +1297,24 @@ export namespace MyNS {
 		 * Pattern: .*
 		 */
 		NextToken?: string | null;
+	}
+
+	/**  Response of GetNotificationsForBudget  */
+	export interface DescribeNotificationsForBudgetResponseFormProperties {
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNotificationsForBudgetResponseFormGroup() {
+		return new FormGroup<DescribeNotificationsForBudgetResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -663,6 +1355,52 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/**  Request of DescribeNotificationsForBudget  */
+	export interface DescribeNotificationsForBudgetRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer that represents how many entries a paginated response contains. The maximum is 100.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNotificationsForBudgetRequestFormGroup() {
+		return new FormGroup<DescribeNotificationsForBudgetRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of DescribeSubscribersForNotification  */
 	export interface DescribeSubscribersForNotificationResponse {
@@ -672,7 +1410,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 11
 		 */
-		Subscribers?: Array<Subscriber> | null;
+		Subscribers?: Array<Subscriber>;
 
 		/**
 		 * A generic string.
@@ -681,6 +1419,24 @@ export namespace MyNS {
 		 * Pattern: .*
 		 */
 		NextToken?: string | null;
+	}
+
+	/**  Response of DescribeSubscribersForNotification  */
+	export interface DescribeSubscribersForNotificationResponseFormProperties {
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSubscribersForNotificationResponseFormGroup() {
+		return new FormGroup<DescribeSubscribersForNotificationResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -727,9 +1483,64 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/**  Request of DescribeSubscribersForNotification  */
+	export interface DescribeSubscribersForNotificationRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+
+		/**
+		 * An integer that represents how many entries a paginated response contains. The maximum is 100.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * A generic string.
+		 * Max length: 2147483647
+		 * Min length: 0
+		 * Pattern: .*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSubscribersForNotificationRequestFormGroup() {
+		return new FormGroup<DescribeSubscribersForNotificationRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of UpdateBudget  */
 	export interface UpdateBudgetResponse {
+	}
+
+	/**  Response of UpdateBudget  */
+	export interface UpdateBudgetResponseFormProperties {
+	}
+	export function CreateUpdateBudgetResponseFormGroup() {
+		return new FormGroup<UpdateBudgetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -752,9 +1563,37 @@ export namespace MyNS {
 		NewBudget: Budget;
 	}
 
+	/**  Request of UpdateBudget  */
+	export interface UpdateBudgetRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBudgetRequestFormGroup() {
+		return new FormGroup<UpdateBudgetRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of UpdateNotification  */
 	export interface UpdateNotificationResponse {
+	}
+
+	/**  Response of UpdateNotification  */
+	export interface UpdateNotificationResponseFormProperties {
+	}
+	export function CreateUpdateNotificationResponseFormGroup() {
+		return new FormGroup<UpdateNotificationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -792,9 +1631,47 @@ export namespace MyNS {
 		NewNotification: Notification;
 	}
 
+	/**  Request of UpdateNotification  */
+	export interface UpdateNotificationRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNotificationRequestFormGroup() {
+		return new FormGroup<UpdateNotificationRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Response of UpdateSubscriber  */
 	export interface UpdateSubscriberResponse {
+	}
+
+	/**  Response of UpdateSubscriber  */
+	export interface UpdateSubscriberResponseFormProperties {
+	}
+	export function CreateUpdateSubscriberResponseFormGroup() {
+		return new FormGroup<UpdateSubscriberResponseFormProperties>({
+		});
+
 	}
 
 
@@ -836,6 +1713,35 @@ export namespace MyNS {
 		 * Required
 		 */
 		NewSubscriber: Subscriber;
+	}
+
+	/**  Request of UpdateSubscriber  */
+	export interface UpdateSubscriberRequestFormProperties {
+
+		/**
+		 * The account ID of the user. It should be a 12-digit number.
+		 * Required
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: [^:\\]+
+		 */
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSubscriberRequestFormGroup() {
+		return new FormGroup<UpdateSubscriberRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ActionDescription {
 
@@ -13,6 +14,24 @@ export namespace MyNS {
 		/** A short description of the action. */
 		description?: string | null;
 		entry_point: EntryPoint;
+	}
+	export interface ActionDescriptionFormProperties {
+
+		/**
+		 * A unique one word identifier for the action.
+		 * Required
+		 */
+		action_id: FormControl<string | null | undefined>,
+
+		/** A short description of the action. */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateActionDescriptionFormGroup() {
+		return new FormGroup<ActionDescriptionFormProperties>({
+			action_id: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EntryPoint {
@@ -65,6 +84,48 @@ export namespace MyNS {
 		 */
 		url_template: string;
 	}
+	export interface EntryPointFormProperties {
+
+		/**
+		 * A short description of the action. Optional - may be null.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The HTTP method used by the EntryPoint.
+		 * Required
+		 */
+		http_method: FormControl<EntryPointHttp_method | null | undefined>,
+
+		/**
+		 * A word or short phrase to be used as the action's display name. Optional - may be null.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The EntryPoint URL. It will be non-null if url_template is null.
+		 * Required
+		 */
+		url: FormControl<string | null | undefined>,
+
+		/**
+		 * The EntryPoint's URL template. Only required if the entry point URL is parameterized. Property 'url' will be null if url_template is non-null.
+		 * Required
+		 */
+		url_template: FormControl<string | null | undefined>,
+	}
+	export function CreateEntryPointFormGroup() {
+		return new FormGroup<EntryPointFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			http_method: new FormControl<EntryPointHttp_method | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+			url_template: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum EntryPointHttp_method { GET = 0, PUT = 1, POST = 2, DELETE = 3 }
 
@@ -108,6 +169,50 @@ export namespace MyNS {
 		 */
 		type: EntryPointParameterType;
 	}
+	export interface EntryPointParameterFormProperties {
+
+		/**
+		 * A short description of the parameter for use in the OSDB Action Console. Optional - may be null.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The parameter's display name in the OSDB Action Console. Optional - may be null.
+		 * Required
+		 */
+		display_name: FormControl<string | null | undefined>,
+
+		/**
+		 * The parameter name as present in the HTTP request. e.g. the key name in a query string key-value pair.
+		 * Required
+		 */
+		parameter_name: FormControl<string | null | undefined>,
+
+		/**
+		 * A flag indicating if the parameter is optional.
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 1
+		 */
+		required: FormControl<number | null | undefined>,
+
+		/**
+		 * The type of the parameter, indicating its location in the HTTP request.
+		 * Required
+		 */
+		type: FormControl<EntryPointParameterType | null | undefined>,
+	}
+	export function CreateEntryPointParameterFormGroup() {
+		return new FormGroup<EntryPointParameterFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			display_name: new FormControl<string | null | undefined>(undefined),
+			parameter_name: new FormControl<string | null | undefined>(undefined),
+			required: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<EntryPointParameterType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum EntryPointParameterType { query = 0, header = 1, uri = 2, path = 3, body = 4 }
 
@@ -131,6 +236,34 @@ export namespace MyNS {
 		 */
 		service_id: string;
 	}
+	export interface ActionHelpFormProperties {
+
+		/**
+		 * A unique one word identifier for the action.
+		 * Required
+		 */
+		action_id: FormControl<string | null | undefined>,
+
+		/**
+		 * The help text for the action.
+		 * Required
+		 */
+		help_text: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique one word identifier for the service.
+		 * Required
+		 */
+		service_id: FormControl<string | null | undefined>,
+	}
+	export function CreateActionHelpFormGroup() {
+		return new FormGroup<ActionHelpFormProperties>({
+			action_id: new FormControl<string | null | undefined>(undefined),
+			help_text: new FormControl<string | null | undefined>(undefined),
+			service_id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ActionHelpResponse {
 
@@ -147,6 +280,29 @@ export namespace MyNS {
 		method: string;
 		response: ActionHelp;
 		status: ActionHelpResponseStatus;
+	}
+	export interface ActionHelpResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateActionHelpResponseFormGroup() {
+		return new FormGroup<ActionHelpResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActionHelpResponseStatus { success = 0 }
@@ -167,6 +323,29 @@ export namespace MyNS {
 		response: ActionDescription;
 		status: ActionHelpResponseStatus;
 	}
+	export interface DescribeActionResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateDescribeActionResponseFormGroup() {
+		return new FormGroup<DescribeActionResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeServiceResponse {
 
@@ -183,6 +362,29 @@ export namespace MyNS {
 		method: string;
 		response: ServiceDescription;
 		status: ActionHelpResponseStatus;
+	}
+	export interface DescribeServiceResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateDescribeServiceResponseFormGroup() {
+		return new FormGroup<DescribeServiceResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ServiceDescription {
@@ -208,6 +410,38 @@ export namespace MyNS {
 		 */
 		service_name: string;
 	}
+	export interface ServiceDescriptionFormProperties {
+
+		/** A short description of the service. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI of the source service description document used to load the service into OSDB.
+		 * Required
+		 */
+		import_source_uri: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique one word identifier for the service.
+		 * Required
+		 */
+		service_id: FormControl<string | null | undefined>,
+
+		/**
+		 * A word or phrase naming the service.
+		 * Required
+		 */
+		service_name: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceDescriptionFormGroup() {
+		return new FormGroup<ServiceDescriptionFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			import_source_uri: new FormControl<string | null | undefined>(undefined),
+			service_id: new FormControl<string | null | undefined>(undefined),
+			service_name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ErrorModel {
 
@@ -220,6 +454,27 @@ export namespace MyNS {
 		/** A message describing the error */
 		response?: string | null;
 		status?: ErrorModelStatus | null;
+	}
+	export interface ErrorModelFormProperties {
+
+		/** The path of the REST API method reporting the error */
+		api: FormControl<string | null | undefined>,
+
+		/** The name of the REST API method reporting the error */
+		method: FormControl<string | null | undefined>,
+
+		/** A message describing the error */
+		response: FormControl<string | null | undefined>,
+		status: FormControl<ErrorModelStatus | null | undefined>,
+	}
+	export function CreateErrorModelFormGroup() {
+		return new FormGroup<ErrorModelFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ErrorModelStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ErrorModelStatus { error = 0 }
@@ -247,6 +502,41 @@ export namespace MyNS {
 		/** Preferred response MIME type. This must be an output MIME type supported natively by the action or, if 'osdb:output_type' is set to 'generate_rdf', a Virtuoso Sponger output format. i.e. 'application/ld+json', 'text/turtle' or 'application/rdf+xml'. */
 		osdb_response_format?: string | null;
 	}
+	export interface ExecBodyFormProperties {
+
+		/** An example action specific property. There may be 0, 1 or more action specific properties, each holding an action specific parameter value. */
+		action_specific_property1: FormControl<string | null | undefined>,
+
+		/** An example action specific property. There may be 0, 1 or more action specific properties, each holding an action specific parameter value. */
+		action_specific_property2: FormControl<string | null | undefined>,
+
+		/** The media type of the data associated with osdb:body_data_raw or osdb:body_data_src_url. In the case of osdb:body_data_raw, this is the media type before base64 encoding. */
+		osdb_body_data_encoding: FormControl<string | null | undefined>,
+
+		/** Input data for the action (e.g. CSV data). The data must be base64 encoded by the client. Alternatively, clients can use osdb:body_data_src_url to supply the input data via a web-accessible document. */
+		osdb_body_data_raw: FormControl<string | null | undefined>,
+
+		/** URL of a resource containing input data for the action (e.g. CSV data). Clients can instead use osdb:body_data_raw to supply the input data directly. */
+		osdb_body_data_src_url: FormControl<string | null | undefined>,
+
+		/** An OSDB-specific parameter controlling the action output type. If omitted, the native action output is returned. */
+		osdb_output_type: FormControl<ExecBodyOsdb_output_type | null | undefined>,
+
+		/** Preferred response MIME type. This must be an output MIME type supported natively by the action or, if 'osdb:output_type' is set to 'generate_rdf', a Virtuoso Sponger output format. i.e. 'application/ld+json', 'text/turtle' or 'application/rdf+xml'. */
+		osdb_response_format: FormControl<string | null | undefined>,
+	}
+	export function CreateExecBodyFormGroup() {
+		return new FormGroup<ExecBodyFormProperties>({
+			action_specific_property1: new FormControl<string | null | undefined>(undefined),
+			action_specific_property2: new FormControl<string | null | undefined>(undefined),
+			osdb_body_data_encoding: new FormControl<string | null | undefined>(undefined),
+			osdb_body_data_raw: new FormControl<string | null | undefined>(undefined),
+			osdb_body_data_src_url: new FormControl<string | null | undefined>(undefined),
+			osdb_output_type: new FormControl<ExecBodyOsdb_output_type | null | undefined>(undefined),
+			osdb_response_format: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ExecBodyOsdb_output_type { url_only = 0, generate_rdf = 1, display_rdf = 2 }
 
@@ -266,6 +556,29 @@ export namespace MyNS {
 		response: Array<ActionDescription>;
 		status: ActionHelpResponseStatus;
 	}
+	export interface ListActionsResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateListActionsResponseFormGroup() {
+		return new FormGroup<ListActionsResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServicesResponse {
 
@@ -282,6 +595,29 @@ export namespace MyNS {
 		method: string;
 		response: Array<ServiceDescription>;
 		status: ActionHelpResponseStatus;
+	}
+	export interface ListServicesResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateListServicesResponseFormGroup() {
+		return new FormGroup<ListServicesResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LoginResponse {
@@ -300,6 +636,29 @@ export namespace MyNS {
 		response: LoginResponseResponse;
 		status: ActionHelpResponseStatus;
 	}
+	export interface LoginResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateLoginResponseFormGroup() {
+		return new FormGroup<LoginResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LoginResponseResponse {
 
@@ -308,6 +667,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		user: string;
+	}
+	export interface LoginResponseResponseFormProperties {
+
+		/**
+		 * The WebID of the user who has logged in.
+		 * Required
+		 */
+		user: FormControl<string | null | undefined>,
+	}
+	export function CreateLoginResponseResponseFormGroup() {
+		return new FormGroup<LoginResponseResponseFormProperties>({
+			user: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LogoutResponse {
@@ -326,6 +699,29 @@ export namespace MyNS {
 		response: LogoutResponseResponse;
 		status: ActionHelpResponseStatus;
 	}
+	export interface LogoutResponseFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateLogoutResponseFormGroup() {
+		return new FormGroup<LogoutResponseFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LogoutResponseResponse {
 
@@ -334,6 +730,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		user: string;
+	}
+	export interface LogoutResponseResponseFormProperties {
+
+		/**
+		 * The WebID of the user who has logged out.
+		 * Required
+		 */
+		user: FormControl<string | null | undefined>,
+	}
+	export function CreateLogoutResponseResponseFormGroup() {
+		return new FormGroup<LogoutResponseResponseFormProperties>({
+			user: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -477,6 +887,24 @@ export namespace MyNS {
 		/** Service ID to be used to uniquely identify the service. (Optional: Required for anonymous services or to override the service name in the service description.) */
 		service_moniker?: string | null;
 	}
+	export interface LoadServicePostBodyFormProperties {
+
+		/**
+		 * The URL of the resource containing the service description to load.
+		 * Required
+		 */
+		service_description_url: FormControl<string | null | undefined>,
+
+		/** Service ID to be used to uniquely identify the service. (Optional: Required for anonymous services or to override the service name in the service description.) */
+		service_moniker: FormControl<string | null | undefined>,
+	}
+	export function CreateLoadServicePostBodyFormGroup() {
+		return new FormGroup<LoadServicePostBodyFormProperties>({
+			service_description_url: new FormControl<string | null | undefined>(undefined),
+			service_moniker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LoadServiceReturn {
 
@@ -499,6 +927,36 @@ export namespace MyNS {
 		response: string;
 		status: ActionHelpResponseStatus;
 	}
+	export interface LoadServiceReturnFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+
+		/**
+		 * Confirmation message
+		 * Required
+		 */
+		response: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateLoadServiceReturnFormGroup() {
+		return new FormGroup<LoadServiceReturnFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnloadServiceReturn {
 
@@ -520,6 +978,36 @@ export namespace MyNS {
 		 */
 		response: string;
 		status: ActionHelpResponseStatus;
+	}
+	export interface UnloadServiceReturnFormProperties {
+
+		/**
+		 * The path of the REST API method
+		 * Required
+		 */
+		api: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the REST API method
+		 * Required
+		 */
+		method: FormControl<string | null | undefined>,
+
+		/**
+		 * Confirmation message
+		 * Required
+		 */
+		response: FormControl<string | null | undefined>,
+		status: FormControl<ActionHelpResponseStatus | null | undefined>,
+	}
+	export function CreateUnloadServiceReturnFormGroup() {
+		return new FormGroup<UnloadServiceReturnFormProperties>({
+			api: new FormControl<string | null | undefined>(undefined),
+			method: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ActionHelpResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 }

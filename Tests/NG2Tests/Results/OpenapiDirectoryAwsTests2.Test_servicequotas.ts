@@ -1,38 +1,116 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateServiceQuotaTemplateResponse {
+	}
+	export interface AssociateServiceQuotaTemplateResponseFormProperties {
+	}
+	export function CreateAssociateServiceQuotaTemplateResponseFormGroup() {
+		return new FormGroup<AssociateServiceQuotaTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateServiceQuotaTemplateRequest {
 	}
+	export interface AssociateServiceQuotaTemplateRequestFormProperties {
+	}
+	export function CreateAssociateServiceQuotaTemplateRequestFormGroup() {
+		return new FormGroup<AssociateServiceQuotaTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface DependencyAccessDeniedException {
+	}
+	export interface DependencyAccessDeniedExceptionFormProperties {
+	}
+	export function CreateDependencyAccessDeniedExceptionFormGroup() {
+		return new FormGroup<DependencyAccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceException {
+	}
+	export interface ServiceExceptionFormProperties {
+	}
+	export function CreateServiceExceptionFormGroup() {
+		return new FormGroup<ServiceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AWSServiceAccessNotEnabledException {
+	}
+	export interface AWSServiceAccessNotEnabledExceptionFormProperties {
+	}
+	export function CreateAWSServiceAccessNotEnabledExceptionFormGroup() {
+		return new FormGroup<AWSServiceAccessNotEnabledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OrganizationNotInAllFeaturesModeException {
 	}
+	export interface OrganizationNotInAllFeaturesModeExceptionFormProperties {
+	}
+	export function CreateOrganizationNotInAllFeaturesModeExceptionFormGroup() {
+		return new FormGroup<OrganizationNotInAllFeaturesModeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TemplatesNotAvailableInRegionException {
+	}
+	export interface TemplatesNotAvailableInRegionExceptionFormProperties {
+	}
+	export function CreateTemplatesNotAvailableInRegionExceptionFormGroup() {
+		return new FormGroup<TemplatesNotAvailableInRegionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NoAvailableOrganizationException {
 	}
+	export interface NoAvailableOrganizationExceptionFormProperties {
+	}
+	export function CreateNoAvailableOrganizationExceptionFormGroup() {
+		return new FormGroup<NoAvailableOrganizationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteServiceQuotaIncreaseRequestFromTemplateResponse {
+	}
+	export interface DeleteServiceQuotaIncreaseRequestFromTemplateResponseFormProperties {
+	}
+	export function CreateDeleteServiceQuotaIncreaseRequestFromTemplateResponseFormGroup() {
+		return new FormGroup<DeleteServiceQuotaIncreaseRequestFromTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteServiceQuotaIncreaseRequestFromTemplateRequest {
@@ -40,26 +118,81 @@ export namespace MyNS {
 		QuotaCode: string;
 		AwsRegion: string;
 	}
+	export interface DeleteServiceQuotaIncreaseRequestFromTemplateRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		AwsRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServiceQuotaIncreaseRequestFromTemplateRequestFormGroup() {
+		return new FormGroup<DeleteServiceQuotaIncreaseRequestFromTemplateRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			AwsRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NoSuchResourceException {
+	}
+	export interface NoSuchResourceExceptionFormProperties {
+	}
+	export function CreateNoSuchResourceExceptionFormGroup() {
+		return new FormGroup<NoSuchResourceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface IllegalArgumentException {
 	}
+	export interface IllegalArgumentExceptionFormProperties {
+	}
+	export function CreateIllegalArgumentExceptionFormGroup() {
+		return new FormGroup<IllegalArgumentExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateServiceQuotaTemplateResponse {
+	}
+	export interface DisassociateServiceQuotaTemplateResponseFormProperties {
+	}
+	export function CreateDisassociateServiceQuotaTemplateResponseFormGroup() {
+		return new FormGroup<DisassociateServiceQuotaTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateServiceQuotaTemplateRequest {
 	}
+	export interface DisassociateServiceQuotaTemplateRequestFormProperties {
+	}
+	export function CreateDisassociateServiceQuotaTemplateRequestFormGroup() {
+		return new FormGroup<DisassociateServiceQuotaTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface ServiceQuotaTemplateNotInUseException {
+	}
+	export interface ServiceQuotaTemplateNotInUseExceptionFormProperties {
+	}
+	export function CreateServiceQuotaTemplateNotInUseExceptionFormGroup() {
+		return new FormGroup<ServiceQuotaTemplateNotInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetAWSDefaultServiceQuotaResponse {
 
 		/** A structure that contains the full set of details that define the service quota. */
-		Quota?: ServiceQuota | null;
+		Quota?: ServiceQuota;
+	}
+	export interface GetAWSDefaultServiceQuotaResponseFormProperties {
+	}
+	export function CreateGetAWSDefaultServiceQuotaResponseFormGroup() {
+		return new FormGroup<GetAWSDefaultServiceQuotaResponseFormProperties>({
+		});
+
 	}
 
 
@@ -76,13 +209,40 @@ export namespace MyNS {
 		GlobalQuota?: boolean | null;
 
 		/** A structure that uses CloudWatch metrics to gather data about the service quota. */
-		UsageMetric?: MetricInfo | null;
+		UsageMetric?: MetricInfo;
 
 		/** A structure that contains information about the quota period. */
-		Period?: QuotaPeriod | null;
+		Period?: QuotaPeriod;
 
 		/** Returns an error that explains why the action did not succeed. */
-		ErrorReason?: ErrorReason | null;
+		ErrorReason?: ErrorReason;
+	}
+
+	/** A structure that contains the full set of details that define the service quota. */
+	export interface ServiceQuotaFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		QuotaArn: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		QuotaName: FormControl<string | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+		Adjustable: FormControl<boolean | null | undefined>,
+		GlobalQuota: FormControl<boolean | null | undefined>,
+	}
+	export function CreateServiceQuotaFormGroup() {
+		return new FormGroup<ServiceQuotaFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			QuotaArn: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			QuotaName: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+			Adjustable: new FormControl<boolean | null | undefined>(undefined),
+			GlobalQuota: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -90,11 +250,33 @@ export namespace MyNS {
 	export interface MetricInfo {
 		MetricNamespace?: string | null;
 		MetricName?: string | null;
-		MetricDimensions?: MetricDimensionsMapDefinition | null;
+		MetricDimensions?: MetricDimensionsMapDefinition;
 		MetricStatisticRecommendation?: string | null;
 	}
 
+	/** A structure that uses CloudWatch metrics to gather data about the service quota. */
+	export interface MetricInfoFormProperties {
+		MetricNamespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		MetricStatisticRecommendation: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricInfoFormGroup() {
+		return new FormGroup<MetricInfoFormProperties>({
+			MetricNamespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			MetricStatisticRecommendation: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MetricDimensionsMapDefinition {
+	}
+	export interface MetricDimensionsMapDefinitionFormProperties {
+	}
+	export function CreateMetricDimensionsMapDefinitionFormGroup() {
+		return new FormGroup<MetricDimensionsMapDefinitionFormProperties>({
+		});
+
 	}
 
 
@@ -102,6 +284,19 @@ export namespace MyNS {
 	export interface QuotaPeriod {
 		PeriodValue?: number | null;
 		PeriodUnit?: QuotaPeriodPeriodUnit | null;
+	}
+
+	/** A structure that contains information about the quota period. */
+	export interface QuotaPeriodFormProperties {
+		PeriodValue: FormControl<number | null | undefined>,
+		PeriodUnit: FormControl<QuotaPeriodPeriodUnit | null | undefined>,
+	}
+	export function CreateQuotaPeriodFormGroup() {
+		return new FormGroup<QuotaPeriodFormProperties>({
+			PeriodValue: new FormControl<number | null | undefined>(undefined),
+			PeriodUnit: new FormControl<QuotaPeriodPeriodUnit | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QuotaPeriodPeriodUnit { MICROSECOND = 0, MILLISECOND = 1, SECOND = 2, MINUTE = 3, HOUR = 4, DAY = 5, WEEK = 6 }
@@ -113,26 +308,73 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Returns an error that explains why the action did not succeed. */
+	export interface ErrorReasonFormProperties {
+		ErrorCode: FormControl<ErrorReasonErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorReasonFormGroup() {
+		return new FormGroup<ErrorReasonFormProperties>({
+			ErrorCode: new FormControl<ErrorReasonErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ErrorReasonErrorCode { DEPENDENCY_ACCESS_DENIED_ERROR = 0, DEPENDENCY_THROTTLING_ERROR = 1, DEPENDENCY_SERVICE_ERROR = 2, SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 3 }
 
 	export interface GetAWSDefaultServiceQuotaRequest {
 		ServiceCode: string;
 		QuotaCode: string;
 	}
+	export interface GetAWSDefaultServiceQuotaRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAWSDefaultServiceQuotaRequestFormGroup() {
+		return new FormGroup<GetAWSDefaultServiceQuotaRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAssociationForServiceQuotaTemplateResponse {
 		ServiceQuotaTemplateAssociationStatus?: GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus | null;
+	}
+	export interface GetAssociationForServiceQuotaTemplateResponseFormProperties {
+		ServiceQuotaTemplateAssociationStatus: FormControl<GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus | null | undefined>,
+	}
+	export function CreateGetAssociationForServiceQuotaTemplateResponseFormGroup() {
+		return new FormGroup<GetAssociationForServiceQuotaTemplateResponseFormProperties>({
+			ServiceQuotaTemplateAssociationStatus: new FormControl<GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus { ASSOCIATED = 0, DISASSOCIATED = 1 }
 
 	export interface GetAssociationForServiceQuotaTemplateRequest {
 	}
+	export interface GetAssociationForServiceQuotaTemplateRequestFormProperties {
+	}
+	export function CreateGetAssociationForServiceQuotaTemplateRequestFormGroup() {
+		return new FormGroup<GetAssociationForServiceQuotaTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetRequestedServiceQuotaChangeResponse {
 
 		/** A structure that contains information about a requested change for a quota. */
-		RequestedQuota?: RequestedServiceQuotaChange | null;
+		RequestedQuota?: RequestedServiceQuotaChange;
+	}
+	export interface GetRequestedServiceQuotaChangeResponseFormProperties {
+	}
+	export function CreateGetRequestedServiceQuotaChangeResponseFormGroup() {
+		return new FormGroup<GetRequestedServiceQuotaChangeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -154,27 +396,98 @@ export namespace MyNS {
 		Unit?: string | null;
 	}
 
+	/** A structure that contains information about a requested change for a quota. */
+	export interface RequestedServiceQuotaChangeFormProperties {
+		Id: FormControl<string | null | undefined>,
+		CaseId: FormControl<string | null | undefined>,
+		ServiceCode: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		QuotaName: FormControl<string | null | undefined>,
+		DesiredValue: FormControl<number | null | undefined>,
+		Status: FormControl<RequestedServiceQuotaChangeStatus | null | undefined>,
+		Created: FormControl<Date | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Requester: FormControl<string | null | undefined>,
+		QuotaArn: FormControl<string | null | undefined>,
+		GlobalQuota: FormControl<boolean | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestedServiceQuotaChangeFormGroup() {
+		return new FormGroup<RequestedServiceQuotaChangeFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			CaseId: new FormControl<string | null | undefined>(undefined),
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			QuotaName: new FormControl<string | null | undefined>(undefined),
+			DesiredValue: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<RequestedServiceQuotaChangeStatus | null | undefined>(undefined),
+			Created: new FormControl<Date | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Requester: new FormControl<string | null | undefined>(undefined),
+			QuotaArn: new FormControl<string | null | undefined>(undefined),
+			GlobalQuota: new FormControl<boolean | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RequestedServiceQuotaChangeStatus { PENDING = 0, CASE_OPENED = 1, APPROVED = 2, DENIED = 3, CASE_CLOSED = 4 }
 
 	export interface GetRequestedServiceQuotaChangeRequest {
 		RequestId: string;
 	}
+	export interface GetRequestedServiceQuotaChangeRequestFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRequestedServiceQuotaChangeRequestFormGroup() {
+		return new FormGroup<GetRequestedServiceQuotaChangeRequestFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetServiceQuotaResponse {
 
 		/** A structure that contains the full set of details that define the service quota. */
-		Quota?: ServiceQuota | null;
+		Quota?: ServiceQuota;
+	}
+	export interface GetServiceQuotaResponseFormProperties {
+	}
+	export function CreateGetServiceQuotaResponseFormGroup() {
+		return new FormGroup<GetServiceQuotaResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetServiceQuotaRequest {
 		ServiceCode: string;
 		QuotaCode: string;
 	}
+	export interface GetServiceQuotaRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceQuotaRequestFormGroup() {
+		return new FormGroup<GetServiceQuotaRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetServiceQuotaIncreaseRequestFromTemplateResponse {
 
 		/** A structure that contains information about one service quota increase request. */
-		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate | null;
+		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate;
+	}
+	export interface GetServiceQuotaIncreaseRequestFromTemplateResponseFormProperties {
+	}
+	export function CreateGetServiceQuotaIncreaseRequestFromTemplateResponseFormGroup() {
+		return new FormGroup<GetServiceQuotaIncreaseRequestFromTemplateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -190,15 +503,62 @@ export namespace MyNS {
 		GlobalQuota?: boolean | null;
 	}
 
+	/** A structure that contains information about one service quota increase request. */
+	export interface ServiceQuotaIncreaseRequestInTemplateFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		QuotaName: FormControl<string | null | undefined>,
+		DesiredValue: FormControl<number | null | undefined>,
+		AwsRegion: FormControl<string | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+		GlobalQuota: FormControl<boolean | null | undefined>,
+	}
+	export function CreateServiceQuotaIncreaseRequestInTemplateFormGroup() {
+		return new FormGroup<ServiceQuotaIncreaseRequestInTemplateFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			QuotaName: new FormControl<string | null | undefined>(undefined),
+			DesiredValue: new FormControl<number | null | undefined>(undefined),
+			AwsRegion: new FormControl<string | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+			GlobalQuota: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetServiceQuotaIncreaseRequestFromTemplateRequest {
 		ServiceCode: string;
 		QuotaCode: string;
 		AwsRegion: string;
 	}
+	export interface GetServiceQuotaIncreaseRequestFromTemplateRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		AwsRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceQuotaIncreaseRequestFromTemplateRequestFormGroup() {
+		return new FormGroup<GetServiceQuotaIncreaseRequestFromTemplateRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			AwsRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAWSDefaultServiceQuotasResponse {
 		NextToken?: string | null;
-		Quotas?: Array<ServiceQuota> | null;
+		Quotas?: Array<ServiceQuota>;
+	}
+	export interface ListAWSDefaultServiceQuotasResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAWSDefaultServiceQuotasResponseFormGroup() {
+		return new FormGroup<ListAWSDefaultServiceQuotasResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAWSDefaultServiceQuotasRequest {
@@ -206,13 +566,42 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListAWSDefaultServiceQuotasRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAWSDefaultServiceQuotasRequestFormGroup() {
+		return new FormGroup<ListAWSDefaultServiceQuotasRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPaginationTokenException {
+	}
+	export interface InvalidPaginationTokenExceptionFormProperties {
+	}
+	export function CreateInvalidPaginationTokenExceptionFormGroup() {
+		return new FormGroup<InvalidPaginationTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryResponse {
 		NextToken?: string | null;
-		RequestedQuotas?: Array<RequestedServiceQuotaChange> | null;
+		RequestedQuotas?: Array<RequestedServiceQuotaChange>;
+	}
+	export interface ListRequestedServiceQuotaChangeHistoryResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRequestedServiceQuotaChangeHistoryResponseFormGroup() {
+		return new FormGroup<ListRequestedServiceQuotaChangeHistoryResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryRequest {
@@ -221,10 +610,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListRequestedServiceQuotaChangeHistoryRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		Status: FormControl<RequestedServiceQuotaChangeStatus | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListRequestedServiceQuotaChangeHistoryRequestFormGroup() {
+		return new FormGroup<ListRequestedServiceQuotaChangeHistoryRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<RequestedServiceQuotaChangeStatus | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryByQuotaResponse {
 		NextToken?: string | null;
-		RequestedQuotas?: Array<RequestedServiceQuotaChange> | null;
+		RequestedQuotas?: Array<RequestedServiceQuotaChange>;
+	}
+	export interface ListRequestedServiceQuotaChangeHistoryByQuotaResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRequestedServiceQuotaChangeHistoryByQuotaResponseFormGroup() {
+		return new FormGroup<ListRequestedServiceQuotaChangeHistoryByQuotaResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryByQuotaRequest {
@@ -234,10 +647,36 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListRequestedServiceQuotaChangeHistoryByQuotaRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		Status: FormControl<RequestedServiceQuotaChangeStatus | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListRequestedServiceQuotaChangeHistoryByQuotaRequestFormGroup() {
+		return new FormGroup<ListRequestedServiceQuotaChangeHistoryByQuotaRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<RequestedServiceQuotaChangeStatus | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServiceQuotaIncreaseRequestsInTemplateResponse {
-		ServiceQuotaIncreaseRequestInTemplateList?: Array<ServiceQuotaIncreaseRequestInTemplate> | null;
+		ServiceQuotaIncreaseRequestInTemplateList?: Array<ServiceQuotaIncreaseRequestInTemplate>;
 		NextToken?: string | null;
+	}
+	export interface ListServiceQuotaIncreaseRequestsInTemplateResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceQuotaIncreaseRequestsInTemplateResponseFormGroup() {
+		return new FormGroup<ListServiceQuotaIncreaseRequestsInTemplateResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListServiceQuotaIncreaseRequestsInTemplateRequest {
@@ -246,10 +685,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListServiceQuotaIncreaseRequestsInTemplateRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		AwsRegion: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListServiceQuotaIncreaseRequestsInTemplateRequestFormGroup() {
+		return new FormGroup<ListServiceQuotaIncreaseRequestsInTemplateRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			AwsRegion: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServiceQuotasResponse {
 		NextToken?: string | null;
-		Quotas?: Array<ServiceQuota> | null;
+		Quotas?: Array<ServiceQuota>;
+	}
+	export interface ListServiceQuotasResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceQuotasResponseFormGroup() {
+		return new FormGroup<ListServiceQuotasResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListServiceQuotasRequest {
@@ -257,10 +720,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListServiceQuotasRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListServiceQuotasRequestFormGroup() {
+		return new FormGroup<ListServiceQuotasRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServicesResponse {
 		NextToken?: string | null;
-		Services?: Array<ServiceInfo> | null;
+		Services?: Array<ServiceInfo>;
+	}
+	export interface ListServicesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServicesResponseFormGroup() {
+		return new FormGroup<ListServicesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -270,15 +755,46 @@ export namespace MyNS {
 		ServiceName?: string | null;
 	}
 
+	/** A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>. It does not include all details of the service quota. To get those values, use the <a>ListServiceQuotas</a> operation.  */
+	export interface ServiceInfoFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceInfoFormGroup() {
+		return new FormGroup<ServiceInfoFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListServicesRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListServicesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListServicesRequestFormGroup() {
+		return new FormGroup<ListServicesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutServiceQuotaIncreaseRequestIntoTemplateResponse {
 
 		/** A structure that contains information about one service quota increase request. */
-		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate | null;
+		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate;
+	}
+	export interface PutServiceQuotaIncreaseRequestIntoTemplateResponseFormProperties {
+	}
+	export function CreatePutServiceQuotaIncreaseRequestIntoTemplateResponseFormGroup() {
+		return new FormGroup<PutServiceQuotaIncreaseRequestIntoTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutServiceQuotaIncreaseRequestIntoTemplateRequest {
@@ -287,14 +803,43 @@ export namespace MyNS {
 		AwsRegion: string;
 		DesiredValue: number;
 	}
+	export interface PutServiceQuotaIncreaseRequestIntoTemplateRequestFormProperties {
+		QuotaCode: FormControl<string | null | undefined>,
+		ServiceCode: FormControl<string | null | undefined>,
+		AwsRegion: FormControl<string | null | undefined>,
+		DesiredValue: FormControl<number | null | undefined>,
+	}
+	export function CreatePutServiceQuotaIncreaseRequestIntoTemplateRequestFormGroup() {
+		return new FormGroup<PutServiceQuotaIncreaseRequestIntoTemplateRequestFormProperties>({
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			AwsRegion: new FormControl<string | null | undefined>(undefined),
+			DesiredValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface QuotaExceededException {
+	}
+	export interface QuotaExceededExceptionFormProperties {
+	}
+	export function CreateQuotaExceededExceptionFormGroup() {
+		return new FormGroup<QuotaExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RequestServiceQuotaIncreaseResponse {
 
 		/** A structure that contains information about a requested change for a quota. */
-		RequestedQuota?: RequestedServiceQuotaChange | null;
+		RequestedQuota?: RequestedServiceQuotaChange;
+	}
+	export interface RequestServiceQuotaIncreaseResponseFormProperties {
+	}
+	export function CreateRequestServiceQuotaIncreaseResponseFormGroup() {
+		return new FormGroup<RequestServiceQuotaIncreaseResponseFormProperties>({
+		});
+
 	}
 
 	export interface RequestServiceQuotaIncreaseRequest {
@@ -302,11 +847,38 @@ export namespace MyNS {
 		QuotaCode: string;
 		DesiredValue: number;
 	}
+	export interface RequestServiceQuotaIncreaseRequestFormProperties {
+		ServiceCode: FormControl<string | null | undefined>,
+		QuotaCode: FormControl<string | null | undefined>,
+		DesiredValue: FormControl<number | null | undefined>,
+	}
+	export function CreateRequestServiceQuotaIncreaseRequestFormGroup() {
+		return new FormGroup<RequestServiceQuotaIncreaseRequestFormProperties>({
+			ServiceCode: new FormControl<string | null | undefined>(undefined),
+			QuotaCode: new FormControl<string | null | undefined>(undefined),
+			DesiredValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidResourceStateException {
+	}
+	export interface InvalidResourceStateExceptionFormProperties {
+	}
+	export function CreateInvalidResourceStateExceptionFormGroup() {
+		return new FormGroup<InvalidResourceStateExceptionFormProperties>({
+		});
+
 	}
 
 	export enum ErrorCode { DEPENDENCY_ACCESS_DENIED_ERROR = 0, DEPENDENCY_THROTTLING_ERROR = 1, DEPENDENCY_SERVICE_ERROR = 2, SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 3 }

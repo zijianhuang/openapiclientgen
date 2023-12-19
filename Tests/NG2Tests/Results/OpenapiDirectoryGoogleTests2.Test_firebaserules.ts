@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Arg matchers for the mock function. */
@@ -15,10 +16,23 @@ export namespace MyNS {
 		 * }
 		 * The JSON representation for `Empty` is empty JSON object `{}`.
 		 */
-		anyValue?: Empty | null;
+		anyValue?: Empty;
 
 		/** Argument exactly matches value provided. */
-		exactValue?: any | null;
+		exactValue?: any;
+	}
+
+	/** Arg matchers for the mock function. */
+	export interface ArgFormProperties {
+
+		/** Argument exactly matches value provided. */
+		exactValue: FormControl<any | null | undefined>,
+	}
+	export function CreateArgFormGroup() {
+		return new FormGroup<ArgFormProperties>({
+			exactValue: new FormControl<any | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -34,6 +48,23 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/**
 	 * Describes where in a file an expression is found and what it was
@@ -42,16 +73,28 @@ export namespace MyNS {
 	export interface ExpressionReport {
 
 		/** Subexpressions */
-		children?: Array<ExpressionReport> | null;
+		children?: Array<ExpressionReport>;
 
 		/**
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		sourcePosition?: SourcePosition | null;
+		sourcePosition?: SourcePosition;
 
 		/** Values that this expression evaluated to when encountered. */
-		values?: Array<ValueCount> | null;
+		values?: Array<ValueCount>;
+	}
+
+	/**
+	 * Describes where in a file an expression is found and what it was
+	 * evaluated to over the course of its use.
+	 */
+	export interface ExpressionReportFormProperties {
+	}
+	export function CreateExpressionReportFormGroup() {
+		return new FormGroup<ExpressionReportFormProperties>({
+		});
+
 	}
 
 
@@ -77,6 +120,38 @@ export namespace MyNS {
 		line?: number | null;
 	}
 
+	/**
+	 * Position in the `Source` content including its line, column number, and an
+	 * index of the `File` in the `Source` message. Used for debug purposes.
+	 */
+	export interface SourcePositionFormProperties {
+
+		/** First column on the source line associated with the source fragment. */
+		column: FormControl<number | null | undefined>,
+
+		/** Start position relative to the beginning of the file. */
+		currentOffset: FormControl<number | null | undefined>,
+
+		/** End position relative to the beginning of the file. */
+		endOffset: FormControl<number | null | undefined>,
+
+		/** Name of the `File`. */
+		fileName: FormControl<string | null | undefined>,
+
+		/** Line number of the source fragment. 1-based. */
+		line: FormControl<number | null | undefined>,
+	}
+	export function CreateSourcePositionFormGroup() {
+		return new FormGroup<SourcePositionFormProperties>({
+			column: new FormControl<number | null | undefined>(undefined),
+			currentOffset: new FormControl<number | null | undefined>(undefined),
+			endOffset: new FormControl<number | null | undefined>(undefined),
+			fileName: new FormControl<string | null | undefined>(undefined),
+			line: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Tuple for how many times an Expression was evaluated to a particular
@@ -88,7 +163,27 @@ export namespace MyNS {
 		count?: number | null;
 
 		/** The return value of the expression */
-		value?: any | null;
+		value?: any;
+	}
+
+	/**
+	 * Tuple for how many times an Expression was evaluated to a particular
+	 * ExpressionValue.
+	 */
+	export interface ValueCountFormProperties {
+
+		/** The amount of times that expression returned. */
+		count: FormControl<number | null | undefined>,
+
+		/** The return value of the expression */
+		value: FormControl<any | null | undefined>,
+	}
+	export function CreateValueCountFormGroup() {
+		return new FormGroup<ValueCountFormProperties>({
+			count: new FormControl<number | null | undefined>(undefined),
+			value: new FormControl<any | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -105,6 +200,27 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** `File` containing source content. */
+	export interface FileFormProperties {
+
+		/** Textual Content. */
+		content: FormControl<string | null | undefined>,
+
+		/** Fingerprint (e.g. github sha) associated with the `File`. */
+		fingerprint: FormControl<string | null | undefined>,
+
+		/** File name. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateFileFormGroup() {
+		return new FormGroup<FileFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			fingerprint: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Represents a service-defined function call that was invoked during test
@@ -113,10 +229,26 @@ export namespace MyNS {
 	export interface FunctionCall {
 
 		/** The arguments that were provided to the function. */
-		args?: Array<string> | null;
+		args?: Array<string>;
 
 		/** Name of the function invoked. */
 		function?: string | null;
+	}
+
+	/**
+	 * Represents a service-defined function call that was invoked during test
+	 * execution.
+	 */
+	export interface FunctionCallFormProperties {
+
+		/** Name of the function invoked. */
+		function: FormControl<string | null | undefined>,
+	}
+	export function CreateFunctionCallFormGroup() {
+		return new FormGroup<FunctionCallFormProperties>({
+			function: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -137,7 +269,7 @@ export namespace MyNS {
 		 * provided is the order in which they must appear in the function
 		 * invocation.
 		 */
-		args?: Array<Arg> | null;
+		args?: Array<Arg>;
 
 		/**
 		 * The name of the function.
@@ -146,7 +278,32 @@ export namespace MyNS {
 		function?: string | null;
 
 		/** Possible result values from the function mock invocation. */
-		result?: Result | null;
+		result?: Result;
+	}
+
+	/**
+	 * Mock function definition.
+	 * Mocks must refer to a function declared by the target service. The type of
+	 * the function args and result will be inferred at test time. If either the
+	 * arg or result values are not compatible with function type declaration, the
+	 * request will be considered invalid.
+	 * More than one `FunctionMock` may be provided for a given function name so
+	 * long as the `Arg` matchers are distinct. There may be only one function
+	 * for a given overload where all `Arg` values are `Arg.any_value`.
+	 */
+	export interface FunctionMockFormProperties {
+
+		/**
+		 * The name of the function.
+		 * The function name must match one provided by a service declaration.
+		 */
+		function: FormControl<string | null | undefined>,
+	}
+	export function CreateFunctionMockFormGroup() {
+		return new FormGroup<FunctionMockFormProperties>({
+			function: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -162,13 +319,29 @@ export namespace MyNS {
 		 * }
 		 * The JSON representation for `Empty` is empty JSON object `{}`.
 		 */
-		undefined?: Empty | null;
+		undefined?: Empty;
 
 		/**
 		 * The result is an actual value. The type of the value must match that
 		 * of the type declared by the service.
 		 */
-		value?: any | null;
+		value?: any;
+	}
+
+	/** Possible result values from the function mock invocation. */
+	export interface ResultFormProperties {
+
+		/**
+		 * The result is an actual value. The type of the value must match that
+		 * of the type declared by the service.
+		 */
+		value: FormControl<any | null | undefined>,
+	}
+	export function CreateResultFormGroup() {
+		return new FormGroup<ResultFormProperties>({
+			value: new FormControl<any | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -198,6 +371,43 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** The response for FirebaseRulesService.GetReleaseExecutable */
+	export interface GetReleaseExecutableResponseFormProperties {
+
+		/** Executable view of the `Ruleset` referenced by the `Release`. */
+		executable: FormControl<string | null | undefined>,
+
+		/** The Rules runtime version of the executable. */
+		executableVersion: FormControl<GetReleaseExecutableResponseExecutableVersion | null | undefined>,
+
+		/** `Language` used to generate the executable bytes. */
+		language: FormControl<GetReleaseExecutableResponseLanguage | null | undefined>,
+
+		/** `Ruleset` name associated with the `Release` executable. */
+		rulesetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional, indicates the freshness of the result. The response is
+		 * guaranteed to be the latest within an interval up to the
+		 * sync_time (inclusive).
+		 */
+		syncTime: FormControl<string | null | undefined>,
+
+		/** Timestamp for the most recent `Release.update_time`. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReleaseExecutableResponseFormGroup() {
+		return new FormGroup<GetReleaseExecutableResponseFormProperties>({
+			executable: new FormControl<string | null | undefined>(undefined),
+			executableVersion: new FormControl<GetReleaseExecutableResponseExecutableVersion | null | undefined>(undefined),
+			language: new FormControl<GetReleaseExecutableResponseLanguage | null | undefined>(undefined),
+			rulesetName: new FormControl<string | null | undefined>(undefined),
+			syncTime: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GetReleaseExecutableResponseExecutableVersion { RELEASE_EXECUTABLE_VERSION_UNSPECIFIED = 0, FIREBASE_RULES_EXECUTABLE_V1 = 1, FIREBASE_RULES_EXECUTABLE_V2 = 2 }
 
 	export enum GetReleaseExecutableResponseLanguage { LANGUAGE_UNSPECIFIED = 0, FIREBASE_RULES = 1, EVENT_FLOW_TRIGGERS = 2 }
@@ -216,7 +426,24 @@ export namespace MyNS {
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		sourcePosition?: SourcePosition | null;
+		sourcePosition?: SourcePosition;
+	}
+
+	/** Issues include warnings, errors, and deprecation notices. */
+	export interface IssueFormProperties {
+
+		/** Short error description. */
+		description: FormControl<string | null | undefined>,
+
+		/** The severity of the issue. */
+		severity: FormControl<IssueSeverity | null | undefined>,
+	}
+	export function CreateIssueFormGroup() {
+		return new FormGroup<IssueFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			severity: new FormControl<IssueSeverity | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IssueSeverity { SEVERITY_UNSPECIFIED = 0, DEPRECATION = 1, WARNING = 2, ERROR = 3 }
@@ -232,7 +459,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of `Release` instances. */
-		releases?: Array<Release> | null;
+		releases?: Array<Release>;
+	}
+
+	/** The response for FirebaseRulesService.ListReleases. */
+	export interface ListReleasesResponseFormProperties {
+
+		/**
+		 * The pagination token to retrieve the next page of results. If the value is
+		 * empty, no further results remain.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListReleasesResponseFormGroup() {
+		return new FormGroup<ListReleasesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -284,6 +527,63 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/**
+	 * `Release` is a named reference to a `Ruleset`. Once a `Release` refers to a
+	 * `Ruleset`, rules-enabled services will be able to enforce the `Ruleset`.
+	 */
+	export interface ReleaseFormProperties {
+
+		/**
+		 * Time the release was created.
+		 * Output only.
+		 */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Resource name for the `Release`.
+		 * `Release` names may be structured `app1/prod/v2` or flat `app1_prod_v2`
+		 * which affords developers a great deal of flexibility in mapping the name
+		 * to the style that best fits their existing development practices. For
+		 * example, a name could refer to an environment, an app, a version, or some
+		 * combination of three.
+		 * In the table below, for the project name `projects/foo`, the following
+		 * relative release paths show how flat and structured names might be chosen
+		 * to match a desired development / deployment strategy.
+		 * Use Case     | Flat Name           | Structured Name
+		 * -------------|---------------------|----------------
+		 * Environments | releases/qa         | releases/qa
+		 * Apps         | releases/app1_qa    | releases/app1/qa
+		 * Versions     | releases/app1_v2_qa | releases/app1/v2/qa
+		 * The delimiter between the release name path elements can be almost anything
+		 * and it should work equally well with the release name list filter, but in
+		 * many ways the structured paths provide a clearer picture of the
+		 * relationship between `Release` instances.
+		 * Format: `projects/{project_id}/releases/{release_id}`
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must
+		 * exist the `Release` to be created.
+		 */
+		rulesetName: FormControl<string | null | undefined>,
+
+		/**
+		 * Time the release was updated.
+		 * Output only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateReleaseFormGroup() {
+		return new FormGroup<ReleaseFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			rulesetName: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for FirebaseRulesService.ListRulesets. */
 	export interface ListRulesetsResponse {
@@ -295,7 +595,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of `Ruleset` instances. */
-		rulesets?: Array<Ruleset> | null;
+		rulesets?: Array<Ruleset>;
+	}
+
+	/** The response for FirebaseRulesService.ListRulesets. */
+	export interface ListRulesetsResponseFormProperties {
+
+		/**
+		 * The pagination token to retrieve the next page of results. If the value is
+		 * empty, no further results remain.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRulesetsResponseFormGroup() {
+		return new FormGroup<ListRulesetsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -312,7 +628,7 @@ export namespace MyNS {
 		createTime?: string | null;
 
 		/** Metadata for a Ruleset. */
-		metadata?: Metadata | null;
+		metadata?: Metadata;
 
 		/**
 		 * Name of the `Ruleset`. The ruleset_id is auto generated by the service.
@@ -322,7 +638,34 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** `Source` is one or more `File` messages comprising a logical set of rules. */
-		source?: Source | null;
+		source?: Source;
+	}
+
+	/**
+	 * `Ruleset` is an immutable copy of `Source` with a globally unique identifier
+	 * and a creation time.
+	 */
+	export interface RulesetFormProperties {
+
+		/**
+		 * Time the `Ruleset` was created.
+		 * Output only.
+		 */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Name of the `Ruleset`. The ruleset_id is auto generated by the service.
+		 * Format: `projects/{project_id}/rulesets/{ruleset_id}`
+		 * Output only.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateRulesetFormGroup() {
+		return new FormGroup<RulesetFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -333,7 +676,16 @@ export namespace MyNS {
 		 * Services that this ruleset has declarations for (e.g.,
 		 * "cloud.firestore"). There may be 0+ of these.
 		 */
-		services?: Array<string> | null;
+		services?: Array<string>;
+	}
+
+	/** Metadata for a Ruleset. */
+	export interface MetadataFormProperties {
+	}
+	export function CreateMetadataFormGroup() {
+		return new FormGroup<MetadataFormProperties>({
+		});
+
 	}
 
 
@@ -341,7 +693,16 @@ export namespace MyNS {
 	export interface Source {
 
 		/** `File` set constituting the `Source` bundle. */
-		files?: Array<File> | null;
+		files?: Array<File>;
+	}
+
+	/** `Source` is one or more `File` messages comprising a logical set of rules. */
+	export interface SourceFormProperties {
+	}
+	export function CreateSourceFormGroup() {
+		return new FormGroup<SourceFormProperties>({
+		});
+
 	}
 
 
@@ -367,7 +728,7 @@ export namespace MyNS {
 		 * service defined function is expected to return an error, which may or may
 		 * not influence the test outcome.
 		 */
-		functionMocks?: Array<FunctionMock> | null;
+		functionMocks?: Array<FunctionMock>;
 
 		/** Specifies whether paths (such as request.path) are encoded and how. */
 		pathEncoding?: TestCasePathEncoding | null;
@@ -390,14 +751,72 @@ export namespace MyNS {
 		 * If the request value is not well-formed for the service, the request will
 		 * be rejected as an invalid argument.
 		 */
-		request?: any | null;
+		request?: any;
 
 		/**
 		 * Optional resource value as it appears in persistent storage before the
 		 * request is fulfilled.
 		 * The resource type depends on the `request.path` value.
 		 */
-		resource?: any | null;
+		resource?: any;
+	}
+
+	/**
+	 * `TestCase` messages provide the request context and an expectation as to
+	 * whether the given context will be allowed or denied. Test cases may specify
+	 * the `request`, `resource`, and `function_mocks` to mock a function call to
+	 * a service-provided function.
+	 * The `request` object represents context present at request-time.
+	 * The `resource` is the value of the target resource as it appears in
+	 * persistent storage before the request is executed.
+	 */
+	export interface TestCaseFormProperties {
+
+		/** Test expectation. */
+		expectation: FormControl<TestCaseExpectation | null | undefined>,
+
+		/** Specifies what should be included in the response. */
+		expressionReportLevel: FormControl<TestCaseExpressionReportLevel | null | undefined>,
+
+		/** Specifies whether paths (such as request.path) are encoded and how. */
+		pathEncoding: FormControl<TestCasePathEncoding | null | undefined>,
+
+		/**
+		 * Request context.
+		 * The exact format of the request context is service-dependent. See the
+		 * appropriate service documentation for information about the supported
+		 * fields and types on the request. Minimally, all services support the
+		 * following fields and types:
+		 * Request field  | Type
+		 * ---------------|-----------------
+		 * auth.uid       | `string`
+		 * auth.token     | `map<string, string>`
+		 * headers        | `map<string, string>`
+		 * method         | `string`
+		 * params         | `map<string, string>`
+		 * path           | `string`
+		 * time           | `google.protobuf.Timestamp`
+		 * If the request value is not well-formed for the service, the request will
+		 * be rejected as an invalid argument.
+		 */
+		request: FormControl<any | null | undefined>,
+
+		/**
+		 * Optional resource value as it appears in persistent storage before the
+		 * request is fulfilled.
+		 * The resource type depends on the `request.path` value.
+		 */
+		resource: FormControl<any | null | undefined>,
+	}
+	export function CreateTestCaseFormGroup() {
+		return new FormGroup<TestCaseFormProperties>({
+			expectation: new FormControl<TestCaseExpectation | null | undefined>(undefined),
+			expressionReportLevel: new FormControl<TestCaseExpressionReportLevel | null | undefined>(undefined),
+			pathEncoding: new FormControl<TestCasePathEncoding | null | undefined>(undefined),
+			request: new FormControl<any | null | undefined>(undefined),
+			resource: new FormControl<any | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TestCaseExpectation { EXPECTATION_UNSPECIFIED = 0, ALLOW = 1, DENY = 2 }
@@ -420,13 +839,13 @@ export namespace MyNS {
 		 * function mocks or to runtime errors that occur during evaluation.
 		 * For example: ```Unable to read variable [name: "resource"]```
 		 */
-		debugMessages?: Array<string> | null;
+		debugMessages?: Array<string>;
 
 		/**
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		errorPosition?: SourcePosition | null;
+		errorPosition?: SourcePosition;
 
 		/**
 		 * The mapping from expression in the ruleset AST to the values they were
@@ -435,7 +854,7 @@ export namespace MyNS {
 		 * contrast to the "visited_expressions" field above. Literal expressions
 		 * are omitted.
 		 */
-		expressionReports?: Array<ExpressionReport> | null;
+		expressionReports?: Array<ExpressionReport>;
 
 		/**
 		 * The set of function calls made to service-defined methods.
@@ -443,7 +862,7 @@ export namespace MyNS {
 		 * during evaluation, are provided for both mocked and unmocked functions,
 		 * and included on the response regardless of the test `state`.
 		 */
-		functionCalls?: Array<FunctionCall> | null;
+		functionCalls?: Array<FunctionCall>;
 
 		/** State of the test. */
 		state?: TestResultState | null;
@@ -460,7 +879,23 @@ export namespace MyNS {
 		 * For a detailed report of the intermediate evaluation states, see the
 		 * `expression_reports` field
 		 */
-		visitedExpressions?: Array<VisitedExpression> | null;
+		visitedExpressions?: Array<VisitedExpression>;
+	}
+
+	/**
+	 * Test result message containing the state of the test as well as a
+	 * description and source position for test failures.
+	 */
+	export interface TestResultFormProperties {
+
+		/** State of the test. */
+		state: FormControl<TestResultState | null | undefined>,
+	}
+	export function CreateTestResultFormGroup() {
+		return new FormGroup<TestResultFormProperties>({
+			state: new FormControl<TestResultState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TestResultState { STATE_UNSPECIFIED = 0, SUCCESS = 1, FAILURE = 2 }
@@ -473,10 +908,23 @@ export namespace MyNS {
 		 * Position in the `Source` content including its line, column number, and an
 		 * index of the `File` in the `Source` message. Used for debug purposes.
 		 */
-		sourcePosition?: SourcePosition | null;
+		sourcePosition?: SourcePosition;
 
 		/** The evaluated value for the visited expression, e.g. true/false */
-		value?: any | null;
+		value?: any;
+	}
+
+	/** Store the position and access outcome for an expression visited in rules. */
+	export interface VisitedExpressionFormProperties {
+
+		/** The evaluated value for the visited expression, e.g. true/false */
+		value: FormControl<any | null | undefined>,
+	}
+	export function CreateVisitedExpressionFormGroup() {
+		return new FormGroup<VisitedExpressionFormProperties>({
+			value: new FormControl<any | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -484,7 +932,7 @@ export namespace MyNS {
 	export interface TestRulesetRequest {
 
 		/** `Source` is one or more `File` messages comprising a logical set of rules. */
-		source?: Source | null;
+		source?: Source;
 
 		/**
 		 * `TestSuite` is a collection of `TestCase` instances that validate the logical
@@ -492,7 +940,16 @@ export namespace MyNS {
 		 * a `TestRuleset` invocation or as part of a `Release` object as a pre-release
 		 * check.
 		 */
-		testSuite?: TestSuite | null;
+		testSuite?: TestSuite;
+	}
+
+	/** The request for FirebaseRulesService.TestRuleset. */
+	export interface TestRulesetRequestFormProperties {
+	}
+	export function CreateTestRulesetRequestFormGroup() {
+		return new FormGroup<TestRulesetRequestFormProperties>({
+		});
+
 	}
 
 
@@ -505,7 +962,21 @@ export namespace MyNS {
 	export interface TestSuite {
 
 		/** Collection of test cases associated with the `TestSuite`. */
-		testCases?: Array<TestCase> | null;
+		testCases?: Array<TestCase>;
+	}
+
+	/**
+	 * `TestSuite` is a collection of `TestCase` instances that validate the logical
+	 * correctness of a `Ruleset`. The `TestSuite` may be referenced in-line within
+	 * a `TestRuleset` invocation or as part of a `Release` object as a pre-release
+	 * check.
+	 */
+	export interface TestSuiteFormProperties {
+	}
+	export function CreateTestSuiteFormGroup() {
+		return new FormGroup<TestSuiteFormProperties>({
+		});
+
 	}
 
 
@@ -516,14 +987,23 @@ export namespace MyNS {
 		 * Syntactic and semantic `Source` issues of varying severity. Issues of
 		 * `ERROR` severity will prevent tests from executing.
 		 */
-		issues?: Array<Issue> | null;
+		issues?: Array<Issue>;
 
 		/**
 		 * The set of test results given the test cases in the `TestSuite`.
 		 * The results will appear in the same order as the test cases appear in the
 		 * `TestSuite`.
 		 */
-		testResults?: Array<TestResult> | null;
+		testResults?: Array<TestResult>;
+	}
+
+	/** The response for FirebaseRulesService.TestRuleset. */
+	export interface TestRulesetResponseFormProperties {
+	}
+	export function CreateTestRulesetResponseFormGroup() {
+		return new FormGroup<TestRulesetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -534,10 +1014,23 @@ export namespace MyNS {
 		 * `Release` is a named reference to a `Ruleset`. Once a `Release` refers to a
 		 * `Ruleset`, rules-enabled services will be able to enforce the `Ruleset`.
 		 */
-		release?: Release | null;
+		release?: Release;
 
 		/** Specifies which fields to update. */
 		updateMask?: string | null;
+	}
+
+	/** The request for FirebaseRulesService.UpdateReleasePatch. */
+	export interface UpdateReleaseRequestFormProperties {
+
+		/** Specifies which fields to update. */
+		updateMask: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateReleaseRequestFormGroup() {
+		return new FormGroup<UpdateReleaseRequestFormProperties>({
+			updateMask: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

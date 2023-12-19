@@ -1,33 +1,62 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServiceErrorException {
+	}
+	export interface InternalServiceErrorExceptionFormProperties {
+	}
+	export function CreateInternalServiceErrorExceptionFormGroup() {
+		return new FormGroup<InternalServiceErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSigningJobResponse {
 		jobId?: string | null;
 
 		/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
-		source?: Source | null;
+		source?: Source;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial | null;
+		signingMaterial?: SigningMaterial;
 		platformId?: string | null;
 		profileName?: string | null;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: SigningPlatformOverrides | null;
-		signingParameters?: SigningParameters | null;
+		overrides?: SigningPlatformOverrides;
+		signingParameters?: SigningParameters;
 		createdAt?: Date | null;
 		completedAt?: Date | null;
 		requestedBy?: string | null;
@@ -35,7 +64,30 @@ export namespace MyNS {
 		statusReason?: string | null;
 
 		/** Points to an <code>S3SignedObject</code> object that contains information about your signed code image. */
-		signedObject?: SignedObject | null;
+		signedObject?: SignedObject;
+	}
+	export interface DescribeSigningJobResponseFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		platformId: FormControl<string | null | undefined>,
+		profileName: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		completedAt: FormControl<Date | null | undefined>,
+		requestedBy: FormControl<string | null | undefined>,
+		status: FormControl<DescribeSigningJobResponseStatus | null | undefined>,
+		statusReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSigningJobResponseFormGroup() {
+		return new FormGroup<DescribeSigningJobResponseFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			platformId: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			completedAt: new FormControl<Date | null | undefined>(undefined),
+			requestedBy: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DescribeSigningJobResponseStatus | null | undefined>(undefined),
+			statusReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,7 +95,16 @@ export namespace MyNS {
 	export interface Source {
 
 		/** Information about the S3 bucket where you saved your unsigned code. */
-		s3?: S3Source | null;
+		s3?: S3Source;
+	}
+
+	/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
+	export interface SourceFormProperties {
+	}
+	export function CreateSourceFormGroup() {
+		return new FormGroup<SourceFormProperties>({
+		});
+
 	}
 
 
@@ -54,10 +115,36 @@ export namespace MyNS {
 		version: string;
 	}
 
+	/** Information about the S3 bucket where you saved your unsigned code. */
+	export interface S3SourceFormProperties {
+		bucketName: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateS3SourceFormGroup() {
+		return new FormGroup<S3SourceFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ACM certificate that is used to sign your code. */
 	export interface SigningMaterial {
 		certificateArn: string;
+	}
+
+	/** The ACM certificate that is used to sign your code. */
+	export interface SigningMaterialFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSigningMaterialFormGroup() {
+		return new FormGroup<SigningMaterialFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -65,8 +152,19 @@ export namespace MyNS {
 	export interface SigningPlatformOverrides {
 
 		/** A signing configuration that overrides the default encryption or hash algorithm of a signing job. */
-		signingConfiguration?: SigningConfigurationOverrides | null;
+		signingConfiguration?: SigningConfigurationOverrides;
 		signingImageFormat?: SigningPlatformOverridesSigningImageFormat | null;
+	}
+
+	/** Any overrides that are applied to the signing configuration of a code signing platform. */
+	export interface SigningPlatformOverridesFormProperties {
+		signingImageFormat: FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>,
+	}
+	export function CreateSigningPlatformOverridesFormGroup() {
+		return new FormGroup<SigningPlatformOverridesFormProperties>({
+			signingImageFormat: new FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -74,6 +172,19 @@ export namespace MyNS {
 	export interface SigningConfigurationOverrides {
 		encryptionAlgorithm?: SigningConfigurationOverridesEncryptionAlgorithm | null;
 		hashAlgorithm?: SigningConfigurationOverridesHashAlgorithm | null;
+	}
+
+	/** A signing configuration that overrides the default encryption or hash algorithm of a signing job. */
+	export interface SigningConfigurationOverridesFormProperties {
+		encryptionAlgorithm: FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>,
+		hashAlgorithm: FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>,
+	}
+	export function CreateSigningConfigurationOverridesFormGroup() {
+		return new FormGroup<SigningConfigurationOverridesFormProperties>({
+			encryptionAlgorithm: new FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>(undefined),
+			hashAlgorithm: new FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SigningConfigurationOverridesEncryptionAlgorithm { RSA = 0, ECDSA = 1 }
@@ -84,6 +195,13 @@ export namespace MyNS {
 
 	export interface SigningParameters {
 	}
+	export interface SigningParametersFormProperties {
+	}
+	export function CreateSigningParametersFormGroup() {
+		return new FormGroup<SigningParametersFormProperties>({
+		});
+
+	}
 
 	export enum DescribeSigningJobResponseStatus { InProgress = 0, Failed = 1, Succeeded = 2 }
 
@@ -92,7 +210,16 @@ export namespace MyNS {
 	export interface SignedObject {
 
 		/** The S3 bucket name and key where code signing saved your signed code image. */
-		s3?: S3SignedObject | null;
+		s3?: S3SignedObject;
+	}
+
+	/** Points to an <code>S3SignedObject</code> object that contains information about your signed code image. */
+	export interface SignedObjectFormProperties {
+	}
+	export function CreateSignedObjectFormGroup() {
+		return new FormGroup<SignedObjectFormProperties>({
+		});
+
 	}
 
 
@@ -100,6 +227,19 @@ export namespace MyNS {
 	export interface S3SignedObject {
 		bucketName?: string | null;
 		key?: string | null;
+	}
+
+	/** The S3 bucket name and key where code signing saved your signed code image. */
+	export interface S3SignedObjectFormProperties {
+		bucketName: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+	}
+	export function CreateS3SignedObjectFormGroup() {
+		return new FormGroup<S3SignedObjectFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSigningPlatformResponse {
@@ -110,11 +250,30 @@ export namespace MyNS {
 		category?: GetSigningPlatformResponseCategory | null;
 
 		/** The configuration of a code signing operation. */
-		signingConfiguration?: SigningConfiguration | null;
+		signingConfiguration?: SigningConfiguration;
 
 		/** The image format of a code signing platform or profile. */
-		signingImageFormat?: SigningImageFormat | null;
+		signingImageFormat?: SigningImageFormat;
 		maxSizeInMB?: number | null;
+	}
+	export interface GetSigningPlatformResponseFormProperties {
+		platformId: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		partner: FormControl<string | null | undefined>,
+		target: FormControl<string | null | undefined>,
+		category: FormControl<GetSigningPlatformResponseCategory | null | undefined>,
+		maxSizeInMB: FormControl<number | null | undefined>,
+	}
+	export function CreateGetSigningPlatformResponseFormGroup() {
+		return new FormGroup<GetSigningPlatformResponseFormProperties>({
+			platformId: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			partner: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			category: new FormControl<GetSigningPlatformResponseCategory | null | undefined>(undefined),
+			maxSizeInMB: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetSigningPlatformResponseCategory { AWSIoT = 0 }
@@ -136,11 +295,31 @@ export namespace MyNS {
 		hashAlgorithmOptions: HashAlgorithmOptions;
 	}
 
+	/** The configuration of a code signing operation. */
+	export interface SigningConfigurationFormProperties {
+	}
+	export function CreateSigningConfigurationFormGroup() {
+		return new FormGroup<SigningConfigurationFormProperties>({
+		});
+
+	}
+
 
 	/** The encryption algorithm options that are available to a code signing job. */
 	export interface EncryptionAlgorithmOptions {
 		allowedValues: Array<EncryptionAlgorithm>;
 		defaultValue: SigningConfigurationOverridesEncryptionAlgorithm;
+	}
+
+	/** The encryption algorithm options that are available to a code signing job. */
+	export interface EncryptionAlgorithmOptionsFormProperties {
+		defaultValue: FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>,
+	}
+	export function CreateEncryptionAlgorithmOptionsFormGroup() {
+		return new FormGroup<EncryptionAlgorithmOptionsFormProperties>({
+			defaultValue: new FormControl<SigningConfigurationOverridesEncryptionAlgorithm | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EncryptionAlgorithm { RSA = 0, ECDSA = 1 }
@@ -152,6 +331,17 @@ export namespace MyNS {
 		defaultValue: SigningConfigurationOverridesHashAlgorithm;
 	}
 
+	/** The hash algorithms that are available to a code signing job. */
+	export interface HashAlgorithmOptionsFormProperties {
+		defaultValue: FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>,
+	}
+	export function CreateHashAlgorithmOptionsFormGroup() {
+		return new FormGroup<HashAlgorithmOptionsFormProperties>({
+			defaultValue: new FormControl<SigningConfigurationOverridesHashAlgorithm | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HashAlgorithm { SHA1 = 0, SHA256 = 1 }
 
 
@@ -161,31 +351,73 @@ export namespace MyNS {
 		defaultFormat: SigningPlatformOverridesSigningImageFormat;
 	}
 
+	/** The image format of a code signing platform or profile. */
+	export interface SigningImageFormatFormProperties {
+		defaultFormat: FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>,
+	}
+	export function CreateSigningImageFormatFormGroup() {
+		return new FormGroup<SigningImageFormatFormProperties>({
+			defaultFormat: new FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ImageFormat { JSON = 0, JSONEmbedded = 1, JSONDetached = 2 }
 
 	export interface GetSigningProfileResponse {
 		profileName?: string | null;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial | null;
+		signingMaterial?: SigningMaterial;
 		platformId?: string | null;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: SigningPlatformOverrides | null;
-		signingParameters?: SigningParameters | null;
+		overrides?: SigningPlatformOverrides;
+		signingParameters?: SigningParameters;
 		status?: GetSigningProfileResponseStatus | null;
 		arn?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface GetSigningProfileResponseFormProperties {
+		profileName: FormControl<string | null | undefined>,
+		platformId: FormControl<string | null | undefined>,
+		status: FormControl<GetSigningProfileResponseStatus | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSigningProfileResponseFormGroup() {
+		return new FormGroup<GetSigningProfileResponseFormProperties>({
+			profileName: new FormControl<string | null | undefined>(undefined),
+			platformId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<GetSigningProfileResponseStatus | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetSigningProfileResponseStatus { Active = 0, Canceled = 1 }
 
 	export interface TagMap {
 	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
+	}
 
 	export interface ListSigningJobsResponse {
-		jobs?: Array<SigningJob> | null;
+		jobs?: Array<SigningJob>;
 		nextToken?: string | null;
+	}
+	export interface ListSigningJobsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSigningJobsResponseFormGroup() {
+		return new FormGroup<ListSigningJobsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -194,23 +426,54 @@ export namespace MyNS {
 		jobId?: string | null;
 
 		/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
-		source?: Source | null;
+		source?: Source;
 
 		/** Points to an <code>S3SignedObject</code> object that contains information about your signed code image. */
-		signedObject?: SignedObject | null;
+		signedObject?: SignedObject;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial | null;
+		signingMaterial?: SigningMaterial;
 		createdAt?: Date | null;
 		status?: DescribeSigningJobResponseStatus | null;
 	}
 
+	/** Contains information about a signing job. */
+	export interface SigningJobFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		status: FormControl<DescribeSigningJobResponseStatus | null | undefined>,
+	}
+	export function CreateSigningJobFormGroup() {
+		return new FormGroup<SigningJobFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DescribeSigningJobResponseStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListSigningPlatformsResponse {
-		platforms?: Array<SigningPlatform> | null;
+		platforms?: Array<SigningPlatform>;
 		nextToken?: string | null;
+	}
+	export interface ListSigningPlatformsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSigningPlatformsResponseFormGroup() {
+		return new FormGroup<ListSigningPlatformsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -223,16 +486,46 @@ export namespace MyNS {
 		category?: GetSigningPlatformResponseCategory | null;
 
 		/** The configuration of a code signing operation. */
-		signingConfiguration?: SigningConfiguration | null;
+		signingConfiguration?: SigningConfiguration;
 
 		/** The image format of a code signing platform or profile. */
-		signingImageFormat?: SigningImageFormat | null;
+		signingImageFormat?: SigningImageFormat;
 		maxSizeInMB?: number | null;
 	}
 
+	/** Contains information about the signing configurations and parameters that are used to perform a code signing job. */
+	export interface SigningPlatformFormProperties {
+		platformId: FormControl<string | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		partner: FormControl<string | null | undefined>,
+		target: FormControl<string | null | undefined>,
+		category: FormControl<GetSigningPlatformResponseCategory | null | undefined>,
+		maxSizeInMB: FormControl<number | null | undefined>,
+	}
+	export function CreateSigningPlatformFormGroup() {
+		return new FormGroup<SigningPlatformFormProperties>({
+			platformId: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			partner: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			category: new FormControl<GetSigningPlatformResponseCategory | null | undefined>(undefined),
+			maxSizeInMB: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSigningProfilesResponse {
-		profiles?: Array<SigningProfile> | null;
+		profiles?: Array<SigningProfile>;
 		nextToken?: string | null;
+	}
+	export interface ListSigningProfilesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSigningProfilesResponseFormGroup() {
+		return new FormGroup<ListSigningProfilesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -241,30 +534,86 @@ export namespace MyNS {
 		profileName?: string | null;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial | null;
+		signingMaterial?: SigningMaterial;
 		platformId?: string | null;
-		signingParameters?: SigningParameters | null;
+		signingParameters?: SigningParameters;
 		status?: GetSigningProfileResponseStatus | null;
 		arn?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+
+	/** Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user. */
+	export interface SigningProfileFormProperties {
+		profileName: FormControl<string | null | undefined>,
+		platformId: FormControl<string | null | undefined>,
+		status: FormControl<GetSigningProfileResponseStatus | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateSigningProfileFormGroup() {
+		return new FormGroup<SigningProfileFormProperties>({
+			profileName: new FormControl<string | null | undefined>(undefined),
+			platformId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<GetSigningProfileResponseStatus | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutSigningProfileResponse {
 		arn?: string | null;
 	}
+	export interface PutSigningProfileResponseFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSigningProfileResponseFormGroup() {
+		return new FormGroup<PutSigningProfileResponseFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartSigningJobResponse {
 		jobId?: string | null;
+	}
+	export interface StartSigningJobResponseFormProperties {
+		jobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSigningJobResponseFormGroup() {
+		return new FormGroup<StartSigningJobResponseFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -274,18 +623,59 @@ export namespace MyNS {
 		prefix?: string | null;
 	}
 
+	/** The name and prefix of the S3 bucket where code signing saves your signed objects. */
+	export interface S3DestinationFormProperties {
+		bucketName: FormControl<string | null | undefined>,
+		prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateS3DestinationFormGroup() {
+		return new FormGroup<S3DestinationFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+			prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceResponse {
 	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface CancelSigningProfileRequest {
+	}
+	export interface CancelSigningProfileRequestFormProperties {
+	}
+	export function CreateCancelSigningProfileRequestFormGroup() {
+		return new FormGroup<CancelSigningProfileRequestFormProperties>({
+		});
+
 	}
 
 	export enum Category { AWSIoT = 0 }
 
 	export interface DescribeSigningJobRequest {
+	}
+	export interface DescribeSigningJobRequestFormProperties {
+	}
+	export function CreateDescribeSigningJobRequestFormGroup() {
+		return new FormGroup<DescribeSigningJobRequestFormProperties>({
+		});
+
 	}
 
 	export enum SigningStatus { InProgress = 0, Failed = 1, Succeeded = 2 }
@@ -295,27 +685,78 @@ export namespace MyNS {
 	export interface Destination {
 
 		/** The name and prefix of the S3 bucket where code signing saves your signed objects. */
-		s3?: S3Destination | null;
+		s3?: S3Destination;
+	}
+
+	/** Points to an <code>S3Destination</code> object that contains information about your S3 bucket. */
+	export interface DestinationFormProperties {
+	}
+	export function CreateDestinationFormGroup() {
+		return new FormGroup<DestinationFormProperties>({
+		});
+
 	}
 
 	export interface GetSigningPlatformRequest {
 	}
+	export interface GetSigningPlatformRequestFormProperties {
+	}
+	export function CreateGetSigningPlatformRequestFormGroup() {
+		return new FormGroup<GetSigningPlatformRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetSigningProfileRequest {
+	}
+	export interface GetSigningProfileRequestFormProperties {
+	}
+	export function CreateGetSigningProfileRequestFormGroup() {
+		return new FormGroup<GetSigningProfileRequestFormProperties>({
+		});
+
 	}
 
 	export enum SigningProfileStatus { Active = 0, Canceled = 1 }
 
 	export interface ListSigningJobsRequest {
 	}
+	export interface ListSigningJobsRequestFormProperties {
+	}
+	export function CreateListSigningJobsRequestFormGroup() {
+		return new FormGroup<ListSigningJobsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListSigningPlatformsRequest {
+	}
+	export interface ListSigningPlatformsRequestFormProperties {
+	}
+	export function CreateListSigningPlatformsRequestFormGroup() {
+		return new FormGroup<ListSigningPlatformsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListSigningProfilesRequest {
 	}
+	export interface ListSigningProfilesRequestFormProperties {
+	}
+	export function CreateListSigningProfilesRequestFormGroup() {
+		return new FormGroup<ListSigningProfilesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutSigningProfileRequest {
@@ -328,9 +769,18 @@ export namespace MyNS {
 		platformId: string;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: SigningPlatformOverrides | null;
-		signingParameters?: SigningParameters | null;
-		tags?: TagMap | null;
+		overrides?: SigningPlatformOverrides;
+		signingParameters?: SigningParameters;
+		tags?: TagMap;
+	}
+	export interface PutSigningProfileRequestFormProperties {
+		platformId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSigningProfileRequestFormGroup() {
+		return new FormGroup<PutSigningProfileRequestFormProperties>({
+			platformId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartSigningJobRequest {
@@ -349,12 +799,37 @@ export namespace MyNS {
 		profileName?: string | null;
 		clientRequestToken: string;
 	}
+	export interface StartSigningJobRequestFormProperties {
+		profileName: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSigningJobRequestFormGroup() {
+		return new FormGroup<StartSigningJobRequestFormProperties>({
+			profileName: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -508,24 +983,64 @@ export namespace MyNS {
 		platformId: string;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: PutSigningProfilePutBodyOverrides | null;
+		overrides?: PutSigningProfilePutBodyOverrides;
 
 		/** Map of key-value pairs for signing. These can include any information that you want to use during signing. */
-		signingParameters?: {[id: string]: string } | null;
+		signingParameters?: {[id: string]: string };
 
 		/** Tags to be associated with the signing profile that is being created. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface PutSigningProfilePutBodyFormProperties {
+
+		/**
+		 * The ID of the signing platform to be created.
+		 * Required
+		 */
+		platformId: FormControl<string | null | undefined>,
+
+		/** Map of key-value pairs for signing. These can include any information that you want to use during signing. */
+		signingParameters: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Tags to be associated with the signing profile that is being created. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreatePutSigningProfilePutBodyFormGroup() {
+		return new FormGroup<PutSigningProfilePutBodyFormProperties>({
+			platformId: new FormControl<string | null | undefined>(undefined),
+			signingParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutSigningProfilePutBodySigningMaterial {
 		certificateArn?: string | null;
 	}
+	export interface PutSigningProfilePutBodySigningMaterialFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSigningProfilePutBodySigningMaterialFormGroup() {
+		return new FormGroup<PutSigningProfilePutBodySigningMaterialFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutSigningProfilePutBodyOverrides {
 
 		/** A signing configuration that overrides the default encryption or hash algorithm of a signing job. */
-		signingConfiguration?: SigningConfigurationOverrides | null;
+		signingConfiguration?: SigningConfigurationOverrides;
 		signingImageFormat?: SigningPlatformOverridesSigningImageFormat | null;
+	}
+	export interface PutSigningProfilePutBodyOverridesFormProperties {
+		signingImageFormat: FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>,
+	}
+	export function CreatePutSigningProfilePutBodyOverridesFormGroup() {
+		return new FormGroup<PutSigningProfilePutBodyOverridesFormProperties>({
+			signingImageFormat: new FormControl<SigningPlatformOverridesSigningImageFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartSigningJobPostBody {
@@ -556,17 +1071,54 @@ export namespace MyNS {
 		 */
 		clientRequestToken: string;
 	}
+	export interface StartSigningJobPostBodyFormProperties {
+
+		/**
+		 * The name of the signing profile.
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: ^[a-zA-Z0-9_]{2,}
+		 */
+		profileName: FormControl<string | null | undefined>,
+
+		/**
+		 * String that identifies the signing request. All calls after the first that use this token return the same response as the first call.
+		 * Required
+		 */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSigningJobPostBodyFormGroup() {
+		return new FormGroup<StartSigningJobPostBodyFormProperties>({
+			profileName: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartSigningJobPostBodySource {
 
 		/** Information about the S3 bucket where you saved your unsigned code. */
-		s3?: S3Source | null;
+		s3?: S3Source;
+	}
+	export interface StartSigningJobPostBodySourceFormProperties {
+	}
+	export function CreateStartSigningJobPostBodySourceFormGroup() {
+		return new FormGroup<StartSigningJobPostBodySourceFormProperties>({
+		});
+
 	}
 
 	export interface StartSigningJobPostBodyDestination {
 
 		/** The name and prefix of the S3 bucket where code signing saves your signed objects. */
-		s3?: S3Destination | null;
+		s3?: S3Destination;
+	}
+	export interface StartSigningJobPostBodyDestinationFormProperties {
+	}
+	export function CreateStartSigningJobPostBodyDestinationFormGroup() {
+		return new FormGroup<StartSigningJobPostBodyDestinationFormProperties>({
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -576,6 +1128,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * One or more tags to be associated with the signing profile.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

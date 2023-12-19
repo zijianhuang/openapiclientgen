@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Representation of a license assignment. */
@@ -31,12 +32,66 @@ export namespace MyNS {
 		userId?: string | null;
 	}
 
+	/** Representation of a license assignment. */
+	export interface LicenseAssignmentFormProperties {
+
+		/** ETag of the resource. */
+		etags: FormControl<string | null | undefined>,
+
+		/** Identifies the resource as a LicenseAssignment. */
+		kind: FormControl<string | null | undefined>,
+
+		/** A product's unique identifier. For more information about products in this version of the API, see Product and SKU IDs. */
+		productId: FormControl<string | null | undefined>,
+
+		/** Display Name of the product. */
+		productName: FormControl<string | null | undefined>,
+
+		/** Link to this page. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** A product SKU's unique identifier. For more information about available SKUs in this version of the API, see Products and SKUs. */
+		skuId: FormControl<string | null | undefined>,
+
+		/** Display Name of the sku of the product. */
+		skuName: FormControl<string | null | undefined>,
+
+		/** The user's current primary email address. If the user's email address changes, use the new email address in your API requests. Since a userId is subject to change, do not use a userId value as a key for persistent data. This key could break if the current user's email address changes. If the userId is suspended, the license status changes. */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateLicenseAssignmentFormGroup() {
+		return new FormGroup<LicenseAssignmentFormProperties>({
+			etags: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			productId: new FormControl<string | null | undefined>(undefined),
+			productName: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			skuId: new FormControl<string | null | undefined>(undefined),
+			skuName: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Representation of a license assignment. */
 	export interface LicenseAssignmentInsert {
 
 		/** Email id of the user */
 		userId?: string | null;
+	}
+
+	/** Representation of a license assignment. */
+	export interface LicenseAssignmentInsertFormProperties {
+
+		/** Email id of the user */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateLicenseAssignmentInsertFormGroup() {
+		return new FormGroup<LicenseAssignmentInsertFormProperties>({
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -47,13 +102,34 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The LicenseAssignments in this page of results. */
-		items?: Array<LicenseAssignment> | null;
+		items?: Array<LicenseAssignment>;
 
 		/** Identifies the resource as a collection of LicenseAssignments. */
 		kind?: string | null;
 
 		/** The token that you must submit in a subsequent request to retrieve additional license results matching your query parameters. The maxResults query string is related to the nextPageToken since maxResults determines how many entries are returned on each next page. */
 		nextPageToken?: string | null;
+	}
+
+	/** LicesnseAssignment List for a given product/sku for a customer. */
+	export interface LicenseAssignmentListFormProperties {
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Identifies the resource as a collection of LicenseAssignments. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The token that you must submit in a subsequent request to retrieve additional license results matching your query parameters. The maxResults query string is related to the nextPageToken since maxResults determines how many entries are returned on each next page. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateLicenseAssignmentListFormGroup() {
+		return new FormGroup<LicenseAssignmentListFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

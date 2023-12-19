@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateDatasetResponse {
 		DatasetArn?: string | null;
+	}
+	export interface CreateDatasetResponseFormProperties {
+		DatasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetResponseFormGroup() {
+		return new FormGroup<CreateDatasetResponseFormProperties>({
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetRequest {
@@ -19,7 +29,22 @@ export namespace MyNS {
 		Schema: Schema;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig | null;
+		EncryptionConfig?: EncryptionConfig;
+	}
+	export interface CreateDatasetRequestFormProperties {
+		DatasetName: FormControl<string | null | undefined>,
+		Domain: FormControl<CreateDatasetRequestDomain | null | undefined>,
+		DatasetType: FormControl<CreateDatasetRequestDatasetType | null | undefined>,
+		DataFrequency: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetRequestFormGroup() {
+		return new FormGroup<CreateDatasetRequestFormProperties>({
+			DatasetName: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
+			DatasetType: new FormControl<CreateDatasetRequestDatasetType | null | undefined>(undefined),
+			DataFrequency: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDatasetRequestDomain { RETAIL = 0, CUSTOM = 1, INVENTORY_PLANNING = 2, EC2_CAPACITY = 3, WORK_FORCE = 4, WEB_TRAFFIC = 5, METRICS = 6 }
@@ -29,7 +54,16 @@ export namespace MyNS {
 
 	/** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request. */
 	export interface Schema {
-		Attributes?: Array<SchemaAttribute> | null;
+		Attributes?: Array<SchemaAttribute>;
+	}
+
+	/** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request. */
+	export interface SchemaFormProperties {
+	}
+	export function CreateSchemaFormGroup() {
+		return new FormGroup<SchemaFormProperties>({
+		});
+
 	}
 
 
@@ -37,6 +71,19 @@ export namespace MyNS {
 	export interface SchemaAttribute {
 		AttributeName?: string | null;
 		AttributeType?: SchemaAttributeAttributeType | null;
+	}
+
+	/** An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects. */
+	export interface SchemaAttributeFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeType: FormControl<SchemaAttributeAttributeType | null | undefined>,
+	}
+	export function CreateSchemaAttributeFormGroup() {
+		return new FormGroup<SchemaAttributeFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeType: new FormControl<SchemaAttributeAttributeType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SchemaAttributeAttributeType { _string = 0, integer = 1, _float = 2, timestamp = 3 }
@@ -48,33 +95,110 @@ export namespace MyNS {
 		KMSKeyArn: string;
 	}
 
+	/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
+	export interface EncryptionConfigFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		KMSKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionConfigFormGroup() {
+		return new FormGroup<EncryptionConfigFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDatasetGroupResponse {
 		DatasetGroupArn?: string | null;
 	}
+	export interface CreateDatasetGroupResponseFormProperties {
+		DatasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetGroupResponseFormGroup() {
+		return new FormGroup<CreateDatasetGroupResponseFormProperties>({
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDatasetGroupRequest {
 		DatasetGroupName: string;
 		Domain: CreateDatasetRequestDomain;
-		DatasetArns?: Array<string> | null;
+		DatasetArns?: Array<string>;
+	}
+	export interface CreateDatasetGroupRequestFormProperties {
+		DatasetGroupName: FormControl<string | null | undefined>,
+		Domain: FormControl<CreateDatasetRequestDomain | null | undefined>,
+	}
+	export function CreateCreateDatasetGroupRequestFormGroup() {
+		return new FormGroup<CreateDatasetGroupRequestFormProperties>({
+			DatasetGroupName: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDatasetImportJobResponse {
 		DatasetImportJobArn?: string | null;
+	}
+	export interface CreateDatasetImportJobResponseFormProperties {
+		DatasetImportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetImportJobResponseFormGroup() {
+		return new FormGroup<CreateDatasetImportJobResponseFormProperties>({
+			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDatasetImportJobRequest {
@@ -88,6 +212,19 @@ export namespace MyNS {
 		DataSource: DataSource;
 		TimestampFormat?: string | null;
 	}
+	export interface CreateDatasetImportJobRequestFormProperties {
+		DatasetImportJobName: FormControl<string | null | undefined>,
+		DatasetArn: FormControl<string | null | undefined>,
+		TimestampFormat: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatasetImportJobRequestFormGroup() {
+		return new FormGroup<CreateDatasetImportJobRequestFormProperties>({
+			DatasetImportJobName: new FormControl<string | null | undefined>(undefined),
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+			TimestampFormat: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request. */
@@ -100,6 +237,15 @@ export namespace MyNS {
 		S3Config: S3Config;
 	}
 
+	/** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request. */
+	export interface DataSourceFormProperties {
+	}
+	export function CreateDataSourceFormGroup() {
+		return new FormGroup<DataSourceFormProperties>({
+		});
+
+	}
+
 
 	/** The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the <a>CreateForecastExportJob</a> request. */
 	export interface S3Config {
@@ -108,18 +254,62 @@ export namespace MyNS {
 		KMSKeyArn?: string | null;
 	}
 
+	/** The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the <a>CreateForecastExportJob</a> request. */
+	export interface S3ConfigFormProperties {
+		Path: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		KMSKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ConfigFormGroup() {
+		return new FormGroup<S3ConfigFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateForecastResponse {
 		ForecastArn?: string | null;
+	}
+	export interface CreateForecastResponseFormProperties {
+		ForecastArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateForecastResponseFormGroup() {
+		return new FormGroup<CreateForecastResponseFormProperties>({
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateForecastRequest {
 		ForecastName: string;
 		PredictorArn: string;
-		ForecastTypes?: Array<string> | null;
+		ForecastTypes?: Array<string>;
+	}
+	export interface CreateForecastRequestFormProperties {
+		ForecastName: FormControl<string | null | undefined>,
+		PredictorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateForecastRequestFormGroup() {
+		return new FormGroup<CreateForecastRequestFormProperties>({
+			ForecastName: new FormControl<string | null | undefined>(undefined),
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateForecastExportJobResponse {
 		ForecastExportJobArn?: string | null;
+	}
+	export interface CreateForecastExportJobResponseFormProperties {
+		ForecastExportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateForecastExportJobResponseFormGroup() {
+		return new FormGroup<CreateForecastExportJobResponseFormProperties>({
+			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateForecastExportJobRequest {
@@ -131,6 +321,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		Destination: DataDestination;
+	}
+	export interface CreateForecastExportJobRequestFormProperties {
+		ForecastExportJobName: FormControl<string | null | undefined>,
+		ForecastArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateForecastExportJobRequestFormGroup() {
+		return new FormGroup<CreateForecastExportJobRequestFormProperties>({
+			ForecastExportJobName: new FormControl<string | null | undefined>(undefined),
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -144,8 +345,26 @@ export namespace MyNS {
 		S3Config: S3Config;
 	}
 
+	/** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request. */
+	export interface DataDestinationFormProperties {
+	}
+	export function CreateDataDestinationFormGroup() {
+		return new FormGroup<DataDestinationFormProperties>({
+		});
+
+	}
+
 	export interface CreatePredictorResponse {
 		PredictorArn?: string | null;
+	}
+	export interface CreatePredictorResponseFormProperties {
+		PredictorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePredictorResponseFormGroup() {
+		return new FormGroup<CreatePredictorResponseFormProperties>({
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePredictorRequest {
@@ -154,13 +373,13 @@ export namespace MyNS {
 		ForecastHorizon: number;
 		PerformAutoML?: boolean | null;
 		PerformHPO?: boolean | null;
-		TrainingParameters?: TrainingParameters | null;
+		TrainingParameters?: TrainingParameters;
 
 		/** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request. */
-		EvaluationParameters?: EvaluationParameters | null;
+		EvaluationParameters?: EvaluationParameters;
 
 		/** <p>Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.</p> <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p> <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p> */
-		HPOConfig?: HyperParameterTuningJobConfig | null;
+		HPOConfig?: HyperParameterTuningJobConfig;
 
 		/**
 		 * The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request.
@@ -175,10 +394,34 @@ export namespace MyNS {
 		FeaturizationConfig: FeaturizationConfig;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig | null;
+		EncryptionConfig?: EncryptionConfig;
+	}
+	export interface CreatePredictorRequestFormProperties {
+		PredictorName: FormControl<string | null | undefined>,
+		AlgorithmArn: FormControl<string | null | undefined>,
+		ForecastHorizon: FormControl<number | null | undefined>,
+		PerformAutoML: FormControl<boolean | null | undefined>,
+		PerformHPO: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreatePredictorRequestFormGroup() {
+		return new FormGroup<CreatePredictorRequestFormProperties>({
+			PredictorName: new FormControl<string | null | undefined>(undefined),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+			ForecastHorizon: new FormControl<number | null | undefined>(undefined),
+			PerformAutoML: new FormControl<boolean | null | undefined>(undefined),
+			PerformHPO: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TrainingParameters {
+	}
+	export interface TrainingParametersFormProperties {
+	}
+	export function CreateTrainingParametersFormGroup() {
+		return new FormGroup<TrainingParametersFormProperties>({
+		});
+
 	}
 
 
@@ -188,20 +431,51 @@ export namespace MyNS {
 		BackTestWindowOffset?: number | null;
 	}
 
+	/** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request. */
+	export interface EvaluationParametersFormProperties {
+		NumberOfBacktestWindows: FormControl<number | null | undefined>,
+		BackTestWindowOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateEvaluationParametersFormGroup() {
+		return new FormGroup<EvaluationParametersFormProperties>({
+			NumberOfBacktestWindows: new FormControl<number | null | undefined>(undefined),
+			BackTestWindowOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.</p> <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p> <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p> */
 	export interface HyperParameterTuningJobConfig {
 
 		/** Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object. */
-		ParameterRanges?: ParameterRanges | null;
+		ParameterRanges?: ParameterRanges;
+	}
+
+	/** <p>Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.</p> <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p> <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p> */
+	export interface HyperParameterTuningJobConfigFormProperties {
+	}
+	export function CreateHyperParameterTuningJobConfigFormGroup() {
+		return new FormGroup<HyperParameterTuningJobConfigFormProperties>({
+		});
+
 	}
 
 
 	/** Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object. */
 	export interface ParameterRanges {
-		CategoricalParameterRanges?: Array<CategoricalParameterRange> | null;
-		ContinuousParameterRanges?: Array<ContinuousParameterRange> | null;
-		IntegerParameterRanges?: Array<IntegerParameterRange> | null;
+		CategoricalParameterRanges?: Array<CategoricalParameterRange>;
+		ContinuousParameterRanges?: Array<ContinuousParameterRange>;
+		IntegerParameterRanges?: Array<IntegerParameterRange>;
+	}
+
+	/** Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object. */
+	export interface ParameterRangesFormProperties {
+	}
+	export function CreateParameterRangesFormGroup() {
+		return new FormGroup<ParameterRangesFormProperties>({
+		});
+
 	}
 
 
@@ -211,6 +485,17 @@ export namespace MyNS {
 		Values: Array<string>;
 	}
 
+	/** Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object. */
+	export interface CategoricalParameterRangeFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoricalParameterRangeFormGroup() {
+		return new FormGroup<CategoricalParameterRangeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies a continuous hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object. */
 	export interface ContinuousParameterRange {
@@ -218,6 +503,23 @@ export namespace MyNS {
 		MaxValue: number;
 		MinValue: number;
 		ScalingType?: ContinuousParameterRangeScalingType | null;
+	}
+
+	/** Specifies a continuous hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object. */
+	export interface ContinuousParameterRangeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		MaxValue: FormControl<number | null | undefined>,
+		MinValue: FormControl<number | null | undefined>,
+		ScalingType: FormControl<ContinuousParameterRangeScalingType | null | undefined>,
+	}
+	export function CreateContinuousParameterRangeFormGroup() {
+		return new FormGroup<ContinuousParameterRangeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<number | null | undefined>(undefined),
+			MinValue: new FormControl<number | null | undefined>(undefined),
+			ScalingType: new FormControl<ContinuousParameterRangeScalingType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContinuousParameterRangeScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
@@ -231,11 +533,39 @@ export namespace MyNS {
 		ScalingType?: ContinuousParameterRangeScalingType | null;
 	}
 
+	/** Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object. */
+	export interface IntegerParameterRangeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		MaxValue: FormControl<number | null | undefined>,
+		MinValue: FormControl<number | null | undefined>,
+		ScalingType: FormControl<ContinuousParameterRangeScalingType | null | undefined>,
+	}
+	export function CreateIntegerParameterRangeFormGroup() {
+		return new FormGroup<IntegerParameterRangeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<number | null | undefined>(undefined),
+			MinValue: new FormControl<number | null | undefined>(undefined),
+			ScalingType: new FormControl<ContinuousParameterRangeScalingType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request. */
 	export interface InputDataConfig {
 		DatasetGroupArn: string;
-		SupplementaryFeatures?: Array<SupplementaryFeature> | null;
+		SupplementaryFeatures?: Array<SupplementaryFeature>;
+	}
+
+	/** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request. */
+	export interface InputDataConfigFormProperties {
+		DatasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateInputDataConfigFormGroup() {
+		return new FormGroup<InputDataConfigFormProperties>({
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -245,55 +575,162 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p>Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.</p> <p>The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> web site.</p> */
+	export interface SupplementaryFeatureFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateSupplementaryFeatureFormGroup() {
+		return new FormGroup<SupplementaryFeatureFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.</p> <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> dataset before model training.</p> <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p> */
 	export interface FeaturizationConfig {
 		ForecastFrequency: string;
-		ForecastDimensions?: Array<string> | null;
-		Featurizations?: Array<Featurization> | null;
+		ForecastDimensions?: Array<string>;
+		Featurizations?: Array<Featurization>;
+	}
+
+	/** <p>In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.</p> <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> dataset before model training.</p> <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p> */
+	export interface FeaturizationConfigFormProperties {
+		ForecastFrequency: FormControl<string | null | undefined>,
+	}
+	export function CreateFeaturizationConfigFormGroup() {
+		return new FormGroup<FeaturizationConfigFormProperties>({
+			ForecastFrequency: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.</p> <p>For example:</p> <p> <code>{</code> </p> <p> <code>"AttributeName": "demand",</code> </p> <p> <code>FeaturizationPipeline [ {</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p> <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p> <p> <code>} ]</code> </p> <p> <code>}</code> </p> */
 	export interface Featurization {
 		AttributeName: string;
-		FeaturizationPipeline?: Array<FeaturizationMethod> | null;
+		FeaturizationPipeline?: Array<FeaturizationMethod>;
+	}
+
+	/** <p>Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.</p> <p>For example:</p> <p> <code>{</code> </p> <p> <code>"AttributeName": "demand",</code> </p> <p> <code>FeaturizationPipeline [ {</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p> <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p> <p> <code>} ]</code> </p> <p> <code>}</code> </p> */
+	export interface FeaturizationFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateFeaturizationFormGroup() {
+		return new FormGroup<FeaturizationFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If you don't specify <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default parameters.</p> <p>The following is an example of how you specify a <code>FeaturizationMethod</code> object.</p> <p> <code>{</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p> <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p> <p> <code>}</code> </p> */
 	export interface FeaturizationMethod {
 		FeaturizationMethodName: FeaturizationMethodFeaturizationMethodName;
-		FeaturizationMethodParameters?: FeaturizationMethodParameters | null;
+		FeaturizationMethodParameters?: FeaturizationMethodParameters;
+	}
+
+	/** <p>Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If you don't specify <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default parameters.</p> <p>The following is an example of how you specify a <code>FeaturizationMethod</code> object.</p> <p> <code>{</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p> <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p> <p> <code>}</code> </p> */
+	export interface FeaturizationMethodFormProperties {
+		FeaturizationMethodName: FormControl<FeaturizationMethodFeaturizationMethodName | null | undefined>,
+	}
+	export function CreateFeaturizationMethodFormGroup() {
+		return new FormGroup<FeaturizationMethodFormProperties>({
+			FeaturizationMethodName: new FormControl<FeaturizationMethodFeaturizationMethodName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FeaturizationMethodFeaturizationMethodName { filling = 0 }
 
 	export interface FeaturizationMethodParameters {
 	}
+	export interface FeaturizationMethodParametersFormProperties {
+	}
+	export function CreateFeaturizationMethodParametersFormGroup() {
+		return new FormGroup<FeaturizationMethodParametersFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDatasetRequest {
 		DatasetArn: string;
+	}
+	export interface DeleteDatasetRequestFormProperties {
+		DatasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDatasetRequestFormGroup() {
+		return new FormGroup<DeleteDatasetRequestFormProperties>({
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDatasetGroupRequest {
 		DatasetGroupArn: string;
 	}
+	export interface DeleteDatasetGroupRequestFormProperties {
+		DatasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDatasetGroupRequestFormGroup() {
+		return new FormGroup<DeleteDatasetGroupRequestFormProperties>({
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDatasetImportJobRequest {
 		DatasetImportJobArn: string;
+	}
+	export interface DeleteDatasetImportJobRequestFormProperties {
+		DatasetImportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDatasetImportJobRequestFormGroup() {
+		return new FormGroup<DeleteDatasetImportJobRequestFormProperties>({
+			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteForecastRequest {
 		ForecastArn: string;
 	}
+	export interface DeleteForecastRequestFormProperties {
+		ForecastArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteForecastRequestFormGroup() {
+		return new FormGroup<DeleteForecastRequestFormProperties>({
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteForecastExportJobRequest {
 		ForecastExportJobArn: string;
 	}
+	export interface DeleteForecastExportJobRequestFormProperties {
+		ForecastExportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteForecastExportJobRequestFormGroup() {
+		return new FormGroup<DeleteForecastExportJobRequestFormProperties>({
+			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeletePredictorRequest {
 		PredictorArn: string;
+	}
+	export interface DeletePredictorRequestFormProperties {
+		PredictorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePredictorRequestFormGroup() {
+		return new FormGroup<DeletePredictorRequestFormProperties>({
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDatasetResponse {
@@ -304,31 +741,91 @@ export namespace MyNS {
 		DataFrequency?: string | null;
 
 		/** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request. */
-		Schema?: Schema | null;
+		Schema?: Schema;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig | null;
+		EncryptionConfig?: EncryptionConfig;
 		Status?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
+	}
+	export interface DescribeDatasetResponseFormProperties {
+		DatasetArn: FormControl<string | null | undefined>,
+		DatasetName: FormControl<string | null | undefined>,
+		Domain: FormControl<CreateDatasetRequestDomain | null | undefined>,
+		DatasetType: FormControl<CreateDatasetRequestDatasetType | null | undefined>,
+		DataFrequency: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeDatasetResponseFormGroup() {
+		return new FormGroup<DescribeDatasetResponseFormProperties>({
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+			DatasetName: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
+			DatasetType: new FormControl<CreateDatasetRequestDatasetType | null | undefined>(undefined),
+			DataFrequency: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDatasetRequest {
 		DatasetArn: string;
 	}
+	export interface DescribeDatasetRequestFormProperties {
+		DatasetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDatasetRequestFormGroup() {
+		return new FormGroup<DescribeDatasetRequestFormProperties>({
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDatasetGroupResponse {
 		DatasetGroupName?: string | null;
 		DatasetGroupArn?: string | null;
-		DatasetArns?: Array<string> | null;
+		DatasetArns?: Array<string>;
 		Domain?: CreateDatasetRequestDomain | null;
 		Status?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
+	export interface DescribeDatasetGroupResponseFormProperties {
+		DatasetGroupName: FormControl<string | null | undefined>,
+		DatasetGroupArn: FormControl<string | null | undefined>,
+		Domain: FormControl<CreateDatasetRequestDomain | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeDatasetGroupResponseFormGroup() {
+		return new FormGroup<DescribeDatasetGroupResponseFormProperties>({
+			DatasetGroupName: new FormControl<string | null | undefined>(undefined),
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDatasetGroupRequest {
 		DatasetGroupArn: string;
+	}
+	export interface DescribeDatasetGroupRequestFormProperties {
+		DatasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDatasetGroupRequestFormGroup() {
+		return new FormGroup<DescribeDatasetGroupRequestFormProperties>({
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDatasetImportJobResponse {
@@ -338,26 +835,67 @@ export namespace MyNS {
 		TimestampFormat?: string | null;
 
 		/** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request. */
-		DataSource?: DataSource | null;
-		FieldStatistics?: FieldStatistics | null;
+		DataSource?: DataSource;
+		FieldStatistics?: FieldStatistics;
 		DataSize?: number | null;
 		Status?: string | null;
 		Message?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
+	export interface DescribeDatasetImportJobResponseFormProperties {
+		DatasetImportJobName: FormControl<string | null | undefined>,
+		DatasetImportJobArn: FormControl<string | null | undefined>,
+		DatasetArn: FormControl<string | null | undefined>,
+		TimestampFormat: FormControl<string | null | undefined>,
+		DataSize: FormControl<number | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeDatasetImportJobResponseFormGroup() {
+		return new FormGroup<DescribeDatasetImportJobResponseFormProperties>({
+			DatasetImportJobName: new FormControl<string | null | undefined>(undefined),
+			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+			TimestampFormat: new FormControl<string | null | undefined>(undefined),
+			DataSize: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface FieldStatistics {
+	}
+	export interface FieldStatisticsFormProperties {
+	}
+	export function CreateFieldStatisticsFormGroup() {
+		return new FormGroup<FieldStatisticsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDatasetImportJobRequest {
 		DatasetImportJobArn: string;
 	}
+	export interface DescribeDatasetImportJobRequestFormProperties {
+		DatasetImportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDatasetImportJobRequestFormGroup() {
+		return new FormGroup<DescribeDatasetImportJobRequestFormProperties>({
+			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeForecastResponse {
 		ForecastArn?: string | null;
 		ForecastName?: string | null;
-		ForecastTypes?: Array<string> | null;
+		ForecastTypes?: Array<string>;
 		PredictorArn?: string | null;
 		DatasetGroupArn?: string | null;
 		Status?: string | null;
@@ -365,9 +903,41 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
+	export interface DescribeForecastResponseFormProperties {
+		ForecastArn: FormControl<string | null | undefined>,
+		ForecastName: FormControl<string | null | undefined>,
+		PredictorArn: FormControl<string | null | undefined>,
+		DatasetGroupArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeForecastResponseFormGroup() {
+		return new FormGroup<DescribeForecastResponseFormProperties>({
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+			ForecastName: new FormControl<string | null | undefined>(undefined),
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeForecastRequest {
 		ForecastArn: string;
+	}
+	export interface DescribeForecastRequestFormProperties {
+		ForecastArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeForecastRequestFormGroup() {
+		return new FormGroup<DescribeForecastRequestFormProperties>({
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeForecastExportJobResponse {
@@ -376,15 +946,45 @@ export namespace MyNS {
 		ForecastArn?: string | null;
 
 		/** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request. */
-		Destination?: DataDestination | null;
+		Destination?: DataDestination;
 		Message?: string | null;
 		Status?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
+	export interface DescribeForecastExportJobResponseFormProperties {
+		ForecastExportJobArn: FormControl<string | null | undefined>,
+		ForecastExportJobName: FormControl<string | null | undefined>,
+		ForecastArn: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeForecastExportJobResponseFormGroup() {
+		return new FormGroup<DescribeForecastExportJobResponseFormProperties>({
+			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined),
+			ForecastExportJobName: new FormControl<string | null | undefined>(undefined),
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeForecastExportJobRequest {
 		ForecastExportJobArn: string;
+	}
+	export interface DescribeForecastExportJobRequestFormProperties {
+		ForecastExportJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeForecastExportJobRequestFormGroup() {
+		return new FormGroup<DescribeForecastExportJobRequestFormProperties>({
+			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribePredictorResponse {
@@ -394,44 +994,91 @@ export namespace MyNS {
 		ForecastHorizon?: number | null;
 		PerformAutoML?: boolean | null;
 		PerformHPO?: boolean | null;
-		TrainingParameters?: TrainingParameters | null;
+		TrainingParameters?: TrainingParameters;
 
 		/** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request. */
-		EvaluationParameters?: EvaluationParameters | null;
+		EvaluationParameters?: EvaluationParameters;
 
 		/** <p>Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.</p> <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p> <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p> */
-		HPOConfig?: HyperParameterTuningJobConfig | null;
+		HPOConfig?: HyperParameterTuningJobConfig;
 
 		/** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.</p> <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> dataset before model training.</p> <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p> */
-		FeaturizationConfig?: FeaturizationConfig | null;
+		FeaturizationConfig?: FeaturizationConfig;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig | null;
+		EncryptionConfig?: EncryptionConfig;
 
 		/** Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation. */
-		PredictorExecutionDetails?: PredictorExecutionDetails | null;
-		DatasetImportJobArns?: Array<string> | null;
-		AutoMLAlgorithmArns?: Array<string> | null;
+		PredictorExecutionDetails?: PredictorExecutionDetails;
+		DatasetImportJobArns?: Array<string>;
+		AutoMLAlgorithmArns?: Array<string>;
 		Status?: string | null;
 		Message?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
+	export interface DescribePredictorResponseFormProperties {
+		PredictorArn: FormControl<string | null | undefined>,
+		PredictorName: FormControl<string | null | undefined>,
+		AlgorithmArn: FormControl<string | null | undefined>,
+		ForecastHorizon: FormControl<number | null | undefined>,
+		PerformAutoML: FormControl<boolean | null | undefined>,
+		PerformHPO: FormControl<boolean | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribePredictorResponseFormGroup() {
+		return new FormGroup<DescribePredictorResponseFormProperties>({
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+			PredictorName: new FormControl<string | null | undefined>(undefined),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+			ForecastHorizon: new FormControl<number | null | undefined>(undefined),
+			PerformAutoML: new FormControl<boolean | null | undefined>(undefined),
+			PerformHPO: new FormControl<boolean | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation. */
 	export interface PredictorExecutionDetails {
-		PredictorExecutions?: Array<PredictorExecution> | null;
+		PredictorExecutions?: Array<PredictorExecution>;
+	}
+
+	/** Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation. */
+	export interface PredictorExecutionDetailsFormProperties {
+	}
+	export function CreatePredictorExecutionDetailsFormGroup() {
+		return new FormGroup<PredictorExecutionDetailsFormProperties>({
+		});
+
 	}
 
 
 	/** The algorithm used to perform a backtest and the status of those tests. */
 	export interface PredictorExecution {
 		AlgorithmArn?: string | null;
-		TestWindows?: Array<TestWindowSummary> | null;
+		TestWindows?: Array<TestWindowSummary>;
+	}
+
+	/** The algorithm used to perform a backtest and the status of those tests. */
+	export interface PredictorExecutionFormProperties {
+		AlgorithmArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePredictorExecutionFormGroup() {
+		return new FormGroup<PredictorExecutionFormProperties>({
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -443,19 +1090,63 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** The status, start time, and end time of a backtest, as well as a failure reason if applicable. */
+	export interface TestWindowSummaryFormProperties {
+		TestWindowStart: FormControl<Date | null | undefined>,
+		TestWindowEnd: FormControl<Date | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateTestWindowSummaryFormGroup() {
+		return new FormGroup<TestWindowSummaryFormProperties>({
+			TestWindowStart: new FormControl<Date | null | undefined>(undefined),
+			TestWindowEnd: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribePredictorRequest {
 		PredictorArn: string;
 	}
+	export interface DescribePredictorRequestFormProperties {
+		PredictorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePredictorRequestFormGroup() {
+		return new FormGroup<DescribePredictorRequestFormProperties>({
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAccuracyMetricsResponse {
-		PredictorEvaluationResults?: Array<EvaluationResult> | null;
+		PredictorEvaluationResults?: Array<EvaluationResult>;
+	}
+	export interface GetAccuracyMetricsResponseFormProperties {
+	}
+	export function CreateGetAccuracyMetricsResponseFormGroup() {
+		return new FormGroup<GetAccuracyMetricsResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response. */
 	export interface EvaluationResult {
 		AlgorithmArn?: string | null;
-		TestWindows?: Array<WindowSummary> | null;
+		TestWindows?: Array<WindowSummary>;
+	}
+
+	/** The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response. */
+	export interface EvaluationResultFormProperties {
+		AlgorithmArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEvaluationResultFormGroup() {
+		return new FormGroup<EvaluationResultFormProperties>({
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -467,7 +1158,24 @@ export namespace MyNS {
 		EvaluationType?: WindowSummaryEvaluationType | null;
 
 		/** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object. */
-		Metrics?: Metrics | null;
+		Metrics?: Metrics;
+	}
+
+	/** <p>The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object.</p> <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.</p> */
+	export interface WindowSummaryFormProperties {
+		TestWindowStart: FormControl<Date | null | undefined>,
+		TestWindowEnd: FormControl<Date | null | undefined>,
+		ItemCount: FormControl<number | null | undefined>,
+		EvaluationType: FormControl<WindowSummaryEvaluationType | null | undefined>,
+	}
+	export function CreateWindowSummaryFormGroup() {
+		return new FormGroup<WindowSummaryFormProperties>({
+			TestWindowStart: new FormControl<Date | null | undefined>(undefined),
+			TestWindowEnd: new FormControl<Date | null | undefined>(undefined),
+			ItemCount: new FormControl<number | null | undefined>(undefined),
+			EvaluationType: new FormControl<WindowSummaryEvaluationType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WindowSummaryEvaluationType { SUMMARY = 0, COMPUTED = 1 }
@@ -476,7 +1184,18 @@ export namespace MyNS {
 	/** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object. */
 	export interface Metrics {
 		RMSE?: number | null;
-		WeightedQuantileLosses?: Array<WeightedQuantileLoss> | null;
+		WeightedQuantileLosses?: Array<WeightedQuantileLoss>;
+	}
+
+	/** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object. */
+	export interface MetricsFormProperties {
+		RMSE: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricsFormGroup() {
+		return new FormGroup<MetricsFormProperties>({
+			RMSE: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -486,13 +1205,44 @@ export namespace MyNS {
 		LossValue?: number | null;
 	}
 
+	/** The weighted loss value for a quantile. This object is part of the <a>Metrics</a> object. */
+	export interface WeightedQuantileLossFormProperties {
+		Quantile: FormControl<number | null | undefined>,
+		LossValue: FormControl<number | null | undefined>,
+	}
+	export function CreateWeightedQuantileLossFormGroup() {
+		return new FormGroup<WeightedQuantileLossFormProperties>({
+			Quantile: new FormControl<number | null | undefined>(undefined),
+			LossValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetAccuracyMetricsRequest {
 		PredictorArn: string;
 	}
+	export interface GetAccuracyMetricsRequestFormProperties {
+		PredictorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccuracyMetricsRequestFormGroup() {
+		return new FormGroup<GetAccuracyMetricsRequestFormProperties>({
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDatasetGroupsResponse {
-		DatasetGroups?: Array<DatasetGroupSummary> | null;
+		DatasetGroups?: Array<DatasetGroupSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDatasetGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetGroupsResponseFormGroup() {
+		return new FormGroup<ListDatasetGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -504,17 +1254,61 @@ export namespace MyNS {
 		LastModificationTime?: Date | null;
 	}
 
+	/** Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>. */
+	export interface DatasetGroupSummaryFormProperties {
+		DatasetGroupArn: FormControl<string | null | undefined>,
+		DatasetGroupName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetGroupSummaryFormGroup() {
+		return new FormGroup<DatasetGroupSummaryFormProperties>({
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			DatasetGroupName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetGroupsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDatasetGroupsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatasetGroupsRequestFormGroup() {
+		return new FormGroup<ListDatasetGroupsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListDatasetImportJobsResponse {
-		DatasetImportJobs?: Array<DatasetImportJobSummary> | null;
+		DatasetImportJobs?: Array<DatasetImportJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDatasetImportJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetImportJobsResponseFormGroup() {
+		return new FormGroup<ListDatasetImportJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -524,17 +1318,49 @@ export namespace MyNS {
 		DatasetImportJobName?: string | null;
 
 		/** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request. */
-		DataSource?: DataSource | null;
+		DataSource?: DataSource;
 		Status?: string | null;
 		Message?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
 
+	/** Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>. */
+	export interface DatasetImportJobSummaryFormProperties {
+		DatasetImportJobArn: FormControl<string | null | undefined>,
+		DatasetImportJobName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetImportJobSummaryFormGroup() {
+		return new FormGroup<DatasetImportJobSummaryFormProperties>({
+			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined),
+			DatasetImportJobName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetImportJobsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListDatasetImportJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatasetImportJobsRequestFormGroup() {
+		return new FormGroup<ListDatasetImportJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -545,11 +1371,35 @@ export namespace MyNS {
 		Condition: FilterCondition;
 	}
 
+	/** Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value. */
+	export interface FilterFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Condition: FormControl<FilterCondition | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Condition: new FormControl<FilterCondition | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FilterCondition { IS = 0, IS_NOT = 1 }
 
 	export interface ListDatasetsResponse {
-		Datasets?: Array<DatasetSummary> | null;
+		Datasets?: Array<DatasetSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDatasetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetsResponseFormGroup() {
+		return new FormGroup<ListDatasetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -563,14 +1413,55 @@ export namespace MyNS {
 		LastModificationTime?: Date | null;
 	}
 
+	/** Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation. To get the complete set of properties, call the <a>DescribeDataset</a> operation, and provide the <code>DatasetArn</code>. */
+	export interface DatasetSummaryFormProperties {
+		DatasetArn: FormControl<string | null | undefined>,
+		DatasetName: FormControl<string | null | undefined>,
+		DatasetType: FormControl<CreateDatasetRequestDatasetType | null | undefined>,
+		Domain: FormControl<CreateDatasetRequestDomain | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatasetSummaryFormGroup() {
+		return new FormGroup<DatasetSummaryFormProperties>({
+			DatasetArn: new FormControl<string | null | undefined>(undefined),
+			DatasetName: new FormControl<string | null | undefined>(undefined),
+			DatasetType: new FormControl<CreateDatasetRequestDatasetType | null | undefined>(undefined),
+			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDatasetsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDatasetsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDatasetsRequestFormGroup() {
+		return new FormGroup<ListDatasetsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListForecastExportJobsResponse {
-		ForecastExportJobs?: Array<ForecastExportJobSummary> | null;
+		ForecastExportJobs?: Array<ForecastExportJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListForecastExportJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListForecastExportJobsResponseFormGroup() {
+		return new FormGroup<ListForecastExportJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -580,22 +1471,63 @@ export namespace MyNS {
 		ForecastExportJobName?: string | null;
 
 		/** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request. */
-		Destination?: DataDestination | null;
+		Destination?: DataDestination;
 		Status?: string | null;
 		Message?: string | null;
 		CreationTime?: Date | null;
 		LastModificationTime?: Date | null;
 	}
 
+	/** Provides a summary of the forecast export job properties used in the <a>ListForecastExportJobs</a> operation. To get the complete set of properties, call the <a>DescribeForecastExportJob</a> operation, and provide the listed <code>ForecastExportJobArn</code>. */
+	export interface ForecastExportJobSummaryFormProperties {
+		ForecastExportJobArn: FormControl<string | null | undefined>,
+		ForecastExportJobName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateForecastExportJobSummaryFormGroup() {
+		return new FormGroup<ForecastExportJobSummaryFormProperties>({
+			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined),
+			ForecastExportJobName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListForecastExportJobsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListForecastExportJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListForecastExportJobsRequestFormGroup() {
+		return new FormGroup<ListForecastExportJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListForecastsResponse {
-		Forecasts?: Array<ForecastSummary> | null;
+		Forecasts?: Array<ForecastSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListForecastsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListForecastsResponseFormGroup() {
+		return new FormGroup<ListForecastsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -611,15 +1543,60 @@ export namespace MyNS {
 		LastModificationTime?: Date | null;
 	}
 
+	/** Provides a summary of the forecast properties used in the <a>ListForecasts</a> operation. To get the complete set of properties, call the <a>DescribeForecast</a> operation, and provide the <code>ForecastArn</code> that is listed in the summary. */
+	export interface ForecastSummaryFormProperties {
+		ForecastArn: FormControl<string | null | undefined>,
+		ForecastName: FormControl<string | null | undefined>,
+		PredictorArn: FormControl<string | null | undefined>,
+		DatasetGroupArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateForecastSummaryFormGroup() {
+		return new FormGroup<ForecastSummaryFormProperties>({
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+			ForecastName: new FormControl<string | null | undefined>(undefined),
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListForecastsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListForecastsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListForecastsRequestFormGroup() {
+		return new FormGroup<ListForecastsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPredictorsResponse {
-		Predictors?: Array<PredictorSummary> | null;
+		Predictors?: Array<PredictorSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListPredictorsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPredictorsResponseFormGroup() {
+		return new FormGroup<ListPredictorsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -634,18 +1611,68 @@ export namespace MyNS {
 		LastModificationTime?: Date | null;
 	}
 
+	/** Provides a summary of the predictor properties that are used in the <a>ListPredictors</a> operation. To get the complete set of properties, call the <a>DescribePredictor</a> operation, and provide the listed <code>PredictorArn</code>. */
+	export interface PredictorSummaryFormProperties {
+		PredictorArn: FormControl<string | null | undefined>,
+		PredictorName: FormControl<string | null | undefined>,
+		DatasetGroupArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModificationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePredictorSummaryFormGroup() {
+		return new FormGroup<PredictorSummaryFormProperties>({
+			PredictorArn: new FormControl<string | null | undefined>(undefined),
+			PredictorName: new FormControl<string | null | undefined>(undefined),
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPredictorsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListPredictorsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListPredictorsRequestFormGroup() {
+		return new FormGroup<ListPredictorsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDatasetGroupResponse {
+	}
+	export interface UpdateDatasetGroupResponseFormProperties {
+	}
+	export function CreateUpdateDatasetGroupResponseFormGroup() {
+		return new FormGroup<UpdateDatasetGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDatasetGroupRequest {
 		DatasetGroupArn: string;
 		DatasetArns: Array<string>;
+	}
+	export interface UpdateDatasetGroupRequestFormProperties {
+		DatasetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDatasetGroupRequestFormGroup() {
+		return new FormGroup<UpdateDatasetGroupRequestFormProperties>({
+			DatasetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AttributeType { _string = 0, integer = 1, _float = 2, timestamp = 3 }
@@ -671,6 +1698,31 @@ export namespace MyNS {
 		Max?: string | null;
 		Avg?: number | null;
 		Stddev?: number | null;
+	}
+
+	/** Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a>CreateDatasetImportJob</a> operation. */
+	export interface StatisticsFormProperties {
+		Count: FormControl<number | null | undefined>,
+		CountDistinct: FormControl<number | null | undefined>,
+		CountNull: FormControl<number | null | undefined>,
+		CountNan: FormControl<number | null | undefined>,
+		Min: FormControl<string | null | undefined>,
+		Max: FormControl<string | null | undefined>,
+		Avg: FormControl<number | null | undefined>,
+		Stddev: FormControl<number | null | undefined>,
+	}
+	export function CreateStatisticsFormGroup() {
+		return new FormGroup<StatisticsFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+			CountDistinct: new FormControl<number | null | undefined>(undefined),
+			CountNull: new FormControl<number | null | undefined>(undefined),
+			CountNan: new FormControl<number | null | undefined>(undefined),
+			Min: new FormControl<string | null | undefined>(undefined),
+			Max: new FormControl<string | null | undefined>(undefined),
+			Avg: new FormControl<number | null | undefined>(undefined),
+			Stddev: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterConditionString { IS = 0, IS_NOT = 1 }

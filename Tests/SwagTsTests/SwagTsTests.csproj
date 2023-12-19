@@ -900,6 +900,9 @@
     <None Update="NG2Results\xero_bankfeeds.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="SwagMock\googleBooksOpenApi.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

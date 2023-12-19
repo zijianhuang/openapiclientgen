@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -14,7 +15,20 @@ export namespace MyNS {
 		 * A PermissionDelta message to record the added_permissions and
 		 * removed_permissions inside a role.
 		 */
-		permissionDelta?: PermissionDelta | null;
+		permissionDelta?: PermissionDelta;
+	}
+
+	/**
+	 * Audit log information specific to Cloud IAM admin APIs. This message is
+	 * serialized as an `Any` type in the `ServiceData` message of an
+	 * `AuditLog` message.
+	 */
+	export interface AdminAuditDataFormProperties {
+	}
+	export function CreateAdminAuditDataFormGroup() {
+		return new FormGroup<AdminAuditDataFormProperties>({
+		});
+
 	}
 
 
@@ -25,10 +39,22 @@ export namespace MyNS {
 	export interface PermissionDelta {
 
 		/** Added permissions. */
-		addedPermissions?: Array<string> | null;
+		addedPermissions?: Array<string>;
 
 		/** Removed permissions. */
-		removedPermissions?: Array<string> | null;
+		removedPermissions?: Array<string>;
+	}
+
+	/**
+	 * A PermissionDelta message to record the added_permissions and
+	 * removed_permissions inside a role.
+	 */
+	export interface PermissionDeltaFormProperties {
+	}
+	export function CreatePermissionDeltaFormGroup() {
+		return new FormGroup<PermissionDeltaFormProperties>({
+		});
+
 	}
 
 
@@ -84,7 +110,7 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig> | null;
+		auditLogConfigs?: Array<AuditLogConfig>;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
@@ -92,6 +118,71 @@ export namespace MyNS {
 		 * `allServices` is a special value that covers all services.
 		 */
 		service?: string | null;
+	}
+
+	/**
+	 * Specifies the audit configuration for a service.
+	 * The configuration determines which permission types are logged, and what
+	 * identities, if any, are exempted from logging.
+	 * An AuditConfig must have one or more AuditLogConfigs.
+	 * If there are AuditConfigs for both `allServices` and a specific service,
+	 * the union of the two AuditConfigs is used for that service: the log_types
+	 * specified in each AuditConfig are enabled, and the exempted_members in each
+	 * AuditLogConfig are exempted.
+	 * Example Policy with multiple AuditConfigs:
+	 *     {
+	 *       "audit_configs": [
+	 *         {
+	 *           "service": "allServices"
+	 *           "audit_log_configs": [
+	 *             {
+	 *               "log_type": "DATA_READ",
+	 *               "exempted_members": [
+	 *                 "user:jose@example.com"
+	 *               ]
+	 *             },
+	 *             {
+	 *               "log_type": "DATA_WRITE",
+	 *             },
+	 *             {
+	 *               "log_type": "ADMIN_READ",
+	 *             }
+	 *           ]
+	 *         },
+	 *         {
+	 *           "service": "sampleservice.googleapis.com"
+	 *           "audit_log_configs": [
+	 *             {
+	 *               "log_type": "DATA_READ",
+	 *             },
+	 *             {
+	 *               "log_type": "DATA_WRITE",
+	 *               "exempted_members": [
+	 *                 "user:aliya@example.com"
+	 *               ]
+	 *             }
+	 *           ]
+	 *         }
+	 *       ]
+	 *     }
+	 * For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
+	 * logging. It also exempts jose@example.com from DATA_READ logging, and
+	 * aliya@example.com from DATA_WRITE logging.
+	 */
+	export interface AuditConfigFormProperties {
+
+		/**
+		 * Specifies a service that will be enabled for audit logging.
+		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+		 * `allServices` is a special value that covers all services.
+		 */
+		service: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditConfigFormGroup() {
+		return new FormGroup<AuditConfigFormProperties>({
+			service: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -121,10 +212,41 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string> | null;
+		exemptedMembers?: Array<string>;
 
 		/** The log type that this config enables. */
 		logType?: AuditLogConfigLogType | null;
+	}
+
+	/**
+	 * Provides the configuration for logging a type of permissions.
+	 * Example:
+	 *     {
+	 *       "audit_log_configs": [
+	 *         {
+	 *           "log_type": "DATA_READ",
+	 *           "exempted_members": [
+	 *             "user:jose@example.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "log_type": "DATA_WRITE",
+	 *         }
+	 *       ]
+	 *     }
+	 * This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
+	 * jose@example.com from DATA_READ logging.
+	 */
+	export interface AuditLogConfigFormProperties {
+
+		/** The log type that this config enables. */
+		logType: FormControl<AuditLogConfigLogType | null | undefined>,
+	}
+	export function CreateAuditLogConfigFormGroup() {
+		return new FormGroup<AuditLogConfigFormProperties>({
+			logType: new FormControl<AuditLogConfigLogType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -138,7 +260,20 @@ export namespace MyNS {
 	export interface AuditData {
 
 		/** The difference delta between two policies. */
-		policyDelta?: PolicyDelta | null;
+		policyDelta?: PolicyDelta;
+	}
+
+	/**
+	 * Audit log information specific to Cloud IAM. This message is serialized
+	 * as an `Any` type in the `ServiceData` message of an
+	 * `AuditLog` message.
+	 */
+	export interface AuditDataFormProperties {
+	}
+	export function CreateAuditDataFormGroup() {
+		return new FormGroup<AuditDataFormProperties>({
+		});
+
 	}
 
 
@@ -146,7 +281,16 @@ export namespace MyNS {
 	export interface PolicyDelta {
 
 		/** The delta for Bindings between two policies. */
-		bindingDeltas?: Array<BindingDelta> | null;
+		bindingDeltas?: Array<BindingDelta>;
+	}
+
+	/** The difference delta between two policies. */
+	export interface PolicyDeltaFormProperties {
+	}
+	export function CreatePolicyDeltaFormGroup() {
+		return new FormGroup<PolicyDeltaFormProperties>({
+		});
+
 	}
 
 
@@ -186,7 +330,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * A single identity requesting access for a Cloud Platform resource.
@@ -201,6 +345,41 @@ export namespace MyNS {
 		 * Required
 		 */
 		role?: string | null;
+	}
+
+	/**
+	 * One delta entry for Binding. Each individual change (only one member in each
+	 * entry) to a binding will be a separate entry.
+	 */
+	export interface BindingDeltaFormProperties {
+
+		/**
+		 * The action that was performed on a Binding.
+		 * Required
+		 */
+		action: FormControl<BindingDeltaAction | null | undefined>,
+
+		/**
+		 * A single identity requesting access for a Cloud Platform resource.
+		 * Follows the same format of Binding.members.
+		 * Required
+		 */
+		member: FormControl<string | null | undefined>,
+
+		/**
+		 * Role that is assigned to `members`.
+		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+		 * Required
+		 */
+		role: FormControl<string | null | undefined>,
+	}
+	export function CreateBindingDeltaFormGroup() {
+		return new FormGroup<BindingDeltaFormProperties>({
+			action: new FormControl<BindingDeltaAction | null | undefined>(undefined),
+			member: new FormControl<string | null | undefined>(undefined),
+			role: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BindingDeltaAction { ACTION_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
@@ -258,6 +437,67 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * Represents a textual expression in the Common Expression Language (CEL)
+	 * syntax. CEL is a C-like expression language. The syntax and semantics of CEL
+	 * are documented at https://github.com/google/cel-spec.
+	 * Example (Comparison):
+	 *     title: "Summary size limit"
+	 *     description: "Determines if a summary is less than 100 chars"
+	 *     expression: "document.summary.size() < 100"
+	 * Example (Equality):
+	 *     title: "Requestor is owner"
+	 *     description: "Determines if requestor is the document owner"
+	 *     expression: "document.owner == request.auth.claims.email"
+	 * Example (Logic):
+	 *     title: "Public documents"
+	 *     description: "Determine whether the document should be publicly visible"
+	 *     expression: "document.type != 'private' && document.type != 'internal'"
+	 * Example (Data Manipulation):
+	 *     title: "Notification string"
+	 *     description: "Create a notification string with a timestamp."
+	 *     expression: "'New message received at ' + string(document.create_time)"
+	 * The exact variables and functions that may be referenced within an expression
+	 * are determined by the service that evaluates it. See the service
+	 * documentation for additional information.
+	 */
+	export interface ExprFormProperties {
+
+		/**
+		 * Optional. Description of the expression. This is a longer text which
+		 * describes the expression, e.g. when hovered over it in a UI.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Textual representation of an expression in Common Expression Language
+		 * syntax.
+		 */
+		expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. String indicating the location of the expression for error
+		 * reporting, e.g. a file name and a position in the file.
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Title for the expression, i.e. a short string describing
+		 * its purpose. This can be used e.g. in UIs which allow to enter the
+		 * expression.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateExprFormGroup() {
+		return new FormGroup<ExprFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about an auditable service. */
 	export interface AuditableService {
@@ -267,6 +507,22 @@ export namespace MyNS {
 		 * For example, the service name for Cloud IAM is 'iam.googleapis.com'.
 		 */
 		name?: string | null;
+	}
+
+	/** Contains information about an auditable service. */
+	export interface AuditableServiceFormProperties {
+
+		/**
+		 * Public name of the service.
+		 * For example, the service name for Cloud IAM is 'iam.googleapis.com'.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditableServiceFormGroup() {
+		return new FormGroup<AuditableServiceFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -297,7 +553,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -332,7 +588,7 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string> | null;
+		members?: Array<string>;
 
 		/**
 		 * Role that is assigned to `members`.
@@ -341,15 +597,44 @@ export namespace MyNS {
 		role?: string | null;
 	}
 
+	/** Associates `members` with a `role`. */
+	export interface BindingFormProperties {
+
+		/**
+		 * Role that is assigned to `members`.
+		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+		 */
+		role: FormControl<string | null | undefined>,
+	}
+	export function CreateBindingFormGroup() {
+		return new FormGroup<BindingFormProperties>({
+			role: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request to create a new role. */
 	export interface CreateRoleRequest {
 
 		/** A role in the Identity and Access Management API. */
-		role?: Role | null;
+		role?: Role;
 
 		/** The role ID to use for this role. */
 		roleId?: string | null;
+	}
+
+	/** The request to create a new role. */
+	export interface CreateRoleRequestFormProperties {
+
+		/** The role ID to use for this role. */
+		roleId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRoleRequestFormGroup() {
+		return new FormGroup<CreateRoleRequestFormProperties>({
+			roleId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -369,7 +654,7 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The names of the permissions this role grants when bound in an IAM policy. */
-		includedPermissions?: Array<string> | null;
+		includedPermissions?: Array<string>;
 
 		/**
 		 * The name of the role.
@@ -394,6 +679,55 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** A role in the Identity and Access Management API. */
+	export interface RoleFormProperties {
+
+		/**
+		 * The current deleted state of the role. This field is read only.
+		 * It will be ignored in calls to CreateRole and UpdateRole.
+		 */
+		deleted: FormControl<boolean | null | undefined>,
+
+		/** Optional. A human-readable description for the role. */
+		description: FormControl<string | null | undefined>,
+
+		/** Used to perform a consistent read-modify-write. */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the role.
+		 * When Role is used in CreateRole, the role name must not be set.
+		 * When Role is used in output and other input such as UpdateRole, the role
+		 * name is the complete path, e.g., roles/logging.viewer for predefined roles
+		 * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The current launch stage of the role. If the `ALPHA` launch stage has been
+		 * selected for a role, the `stage` field will not be included in the
+		 * returned definition for the role.
+		 */
+		stage: FormControl<RoleStage | null | undefined>,
+
+		/**
+		 * Optional. A human-readable title for the role.  Typically this
+		 * is limited to 100 UTF-8 bytes.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateRoleFormGroup() {
+		return new FormGroup<RoleFormProperties>({
+			deleted: new FormControl<boolean | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			stage: new FormControl<RoleStage | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RoleStage { ALPHA = 0, BETA = 1, GA = 2, DEPRECATED = 3, DISABLED = 4, EAP = 5 }
 
 
@@ -413,6 +747,31 @@ export namespace MyNS {
 		 * format.
 		 */
 		privateKeyType?: CreateServiceAccountKeyRequestPrivateKeyType | null;
+	}
+
+	/** The service account key create request. */
+	export interface CreateServiceAccountKeyRequestFormProperties {
+
+		/**
+		 * Which type of key and algorithm to use for the key.
+		 * The default is currently a 2K RSA key.  However this may change in the
+		 * future.
+		 */
+		keyAlgorithm: FormControl<CreateServiceAccountKeyRequestKeyAlgorithm | null | undefined>,
+
+		/**
+		 * The output format of the private key. The default value is
+		 * `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
+		 * format.
+		 */
+		privateKeyType: FormControl<CreateServiceAccountKeyRequestPrivateKeyType | null | undefined>,
+	}
+	export function CreateCreateServiceAccountKeyRequestFormGroup() {
+		return new FormGroup<CreateServiceAccountKeyRequestFormProperties>({
+			keyAlgorithm: new FormControl<CreateServiceAccountKeyRequestKeyAlgorithm | null | undefined>(undefined),
+			privateKeyType: new FormControl<CreateServiceAccountKeyRequestPrivateKeyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateServiceAccountKeyRequestKeyAlgorithm { KEY_ALG_UNSPECIFIED = 0, KEY_ALG_RSA_1024 = 1, KEY_ALG_RSA_2048 = 2 }
@@ -446,7 +805,25 @@ export namespace MyNS {
 		 * the account. The `ACCOUNT` value can be the `email` address or the
 		 * `unique_id` of the service account.
 		 */
-		serviceAccount?: ServiceAccount | null;
+		serviceAccount?: ServiceAccount;
+	}
+
+	/** The service account create request. */
+	export interface CreateServiceAccountRequestFormProperties {
+
+		/**
+		 * Required. The account id that is used to generate the service account
+		 * email address and a stable unique id. It is unique within a project,
+		 * must be 6-30 characters long, and match the regular expression
+		 * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
+		 */
+		accountId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateServiceAccountRequestFormGroup() {
+		return new FormGroup<CreateServiceAccountRequestFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -519,9 +896,101 @@ export namespace MyNS {
 		uniqueId?: string | null;
 	}
 
+	/**
+	 * A service account in the Identity and Access Management API.
+	 * To create a service account, specify the `project_id` and the `account_id`
+	 * for the account.  The `account_id` is unique within the project, and is used
+	 * to generate the service account email address and a stable
+	 * `unique_id`.
+	 * If the account already exists, the account's resource name is returned
+	 * in the format of projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The caller
+	 * can use the name in other methods to access the account.
+	 * All other methods can identify the service account using the format
+	 * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+	 * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+	 * the account. The `ACCOUNT` value can be the `email` address or the
+	 * `unique_id` of the service account.
+	 */
+	export interface ServiceAccountFormProperties {
+
+		/**
+		 * Optional. A user-specified opaque description of the service account.
+		 * Must be less than or equal to 256 UTF-8 bytes.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * @OutputOnly A bool indicate if the service account is disabled.
+		 * The field is currently in alpha phase.
+		 */
+		disabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Optional. A user-specified name for the service account.
+		 * Must be less than or equal to 100 UTF-8 bytes.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/** @OutputOnly The email address of the service account. */
+		email: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Note: `etag` is an inoperable legacy field that is only returned
+		 * for backwards compatibility.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the service account in the following format:
+		 * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+		 * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
+		 * project from the `account` and the `ACCOUNT` value can be the `email`
+		 * address or the `unique_id` of the service account.
+		 * In responses the resource name will always be in the format
+		 * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * @OutputOnly The OAuth2 client id for the service account.
+		 * This is used in conjunction with the OAuth2 clientconfig API to make
+		 * three legged OAuth2 (3LO) flows to access the data of Google users.
+		 */
+		oauth2ClientId: FormControl<string | null | undefined>,
+
+		/** @OutputOnly The id of the project that owns the service account. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** @OutputOnly The unique and stable id of the service account. */
+		uniqueId: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceAccountFormGroup() {
+		return new FormGroup<ServiceAccountFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			disabled: new FormControl<boolean | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			oauth2ClientId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			uniqueId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The service account disable request. */
 	export interface DisableServiceAccountRequest {
+	}
+
+	/** The service account disable request. */
+	export interface DisableServiceAccountRequestFormProperties {
+	}
+	export function CreateDisableServiceAccountRequestFormGroup() {
+		return new FormGroup<DisableServiceAccountRequestFormProperties>({
+		});
+
 	}
 
 
@@ -537,9 +1006,35 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** The service account enable request. */
 	export interface EnableServiceAccountRequest {
+	}
+
+	/** The service account enable request. */
+	export interface EnableServiceAccountRequestFormProperties {
+	}
+	export function CreateEnableServiceAccountRequestFormGroup() {
+		return new FormGroup<EnableServiceAccountRequestFormProperties>({
+		});
+
 	}
 
 
@@ -570,7 +1065,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * The full resource name of the policy this lint request is about.
@@ -584,6 +1079,27 @@ export namespace MyNS {
 		fullResourceName?: string | null;
 	}
 
+	/** The request to lint a Cloud IAM policy object. */
+	export interface LintPolicyRequestFormProperties {
+
+		/**
+		 * The full resource name of the policy this lint request is about.
+		 * The name follows the Google Cloud Platform (GCP) resource format.
+		 * For example, a GCP project with ID `my-project` will be named
+		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+		 * The resource name is not used to read the policy instance from the Cloud
+		 * IAM database. The candidate policy for lint has to be provided in the same
+		 * request object.
+		 */
+		fullResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateLintPolicyRequestFormGroup() {
+		return new FormGroup<LintPolicyRequestFormProperties>({
+			fullResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The response of a lint operation. An empty response indicates
@@ -592,7 +1108,19 @@ export namespace MyNS {
 	export interface LintPolicyResponse {
 
 		/** List of lint results sorted by `severity` in descending order. */
-		lintResults?: Array<LintResult> | null;
+		lintResults?: Array<LintResult>;
+	}
+
+	/**
+	 * The response of a lint operation. An empty response indicates
+	 * the operation was able to fully execute and no lint issue was found.
+	 */
+	export interface LintPolicyResponseFormProperties {
+	}
+	export function CreateLintPolicyResponseFormGroup() {
+		return new FormGroup<LintPolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -632,6 +1160,53 @@ export namespace MyNS {
 		validationUnitName?: string | null;
 	}
 
+	/** Structured response of a single validation unit. */
+	export interface LintResultFormProperties {
+
+		/** Human readable debug message associated with the issue. */
+		debugMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the field for which this lint result is about.
+		 * For nested messages `field_name` consists of names of the embedded fields
+		 * separated by period character. The top-level qualifier is the input object
+		 * to lint in the request. For example, the `field_name` value
+		 * `condition.expression` identifies a lint result for the `expression` field
+		 * of the provided condition.
+		 */
+		fieldName: FormControl<string | null | undefined>,
+
+		/** The validation unit level. */
+		level: FormControl<LintResultLevel | null | undefined>,
+
+		/**
+		 * 0-based character position of problematic construct within the object
+		 * identified by `field_name`. Currently, this is populated only for condition
+		 * expression.
+		 */
+		locationOffset: FormControl<number | null | undefined>,
+
+		/** The validation unit severity. */
+		severity: FormControl<LintResultSeverity | null | undefined>,
+
+		/**
+		 * The validation unit name, for instance
+		 * "lintValidationUnits/ConditionComplexityCheck".
+		 */
+		validationUnitName: FormControl<string | null | undefined>,
+	}
+	export function CreateLintResultFormGroup() {
+		return new FormGroup<LintResultFormProperties>({
+			debugMessage: new FormControl<string | null | undefined>(undefined),
+			fieldName: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<LintResultLevel | null | undefined>(undefined),
+			locationOffset: new FormControl<number | null | undefined>(undefined),
+			severity: new FormControl<LintResultSeverity | null | undefined>(undefined),
+			validationUnitName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LintResultLevel { LEVEL_UNSPECIFIED = 0, CONDITION = 1 }
 
 	export enum LintResultSeverity { SEVERITY_UNSPECIFIED = 0, ERROR = 1, WARNING = 2, NOTICE = 3, INFO = 4, DEPRECATED = 5 }
@@ -647,7 +1222,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The Roles defined on this resource. */
-		roles?: Array<Role> | null;
+		roles?: Array<Role>;
+	}
+
+	/** The response containing the roles defined under a resource. */
+	export interface ListRolesResponseFormProperties {
+
+		/**
+		 * To retrieve the next page of results, set
+		 * `ListRolesRequest.page_token` to this value.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRolesResponseFormGroup() {
+		return new FormGroup<ListRolesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -655,7 +1246,16 @@ export namespace MyNS {
 	export interface ListServiceAccountKeysResponse {
 
 		/** The public keys for the service account. */
-		keys?: Array<ServiceAccountKey> | null;
+		keys?: Array<ServiceAccountKey>;
+	}
+
+	/** The service account keys list response. */
+	export interface ListServiceAccountKeysResponseFormProperties {
+	}
+	export function CreateListServiceAccountKeysResponseFormGroup() {
+		return new FormGroup<ListServiceAccountKeysResponseFormProperties>({
+		});
+
 	}
 
 
@@ -727,6 +1327,88 @@ export namespace MyNS {
 		validBeforeTime?: string | null;
 	}
 
+	/**
+	 * Represents a service account key.
+	 * A service account has two sets of key-pairs: user-managed, and
+	 * system-managed.
+	 * User-managed key-pairs can be created and deleted by users.  Users are
+	 * responsible for rotating these keys periodically to ensure security of
+	 * their service accounts.  Users retain the private key of these key-pairs,
+	 * and Google retains ONLY the public key.
+	 * System-managed keys are automatically rotated by Google, and are used for
+	 * signing for a maximum of two weeks. The rotation process is probabilistic,
+	 * and usage of the new key will gradually ramp up and down over the key's
+	 * lifetime. We recommend caching the public key set for a service account for
+	 * no more than 24 hours to ensure you have access to the latest keys.
+	 * Public keys for all service accounts are also published at the OAuth2
+	 * Service Account API.
+	 */
+	export interface ServiceAccountKeyFormProperties {
+
+		/** Specifies the algorithm (and possibly key size) for the key. */
+		keyAlgorithm: FormControl<CreateServiceAccountKeyRequestKeyAlgorithm | null | undefined>,
+
+		/** The key origin. */
+		keyOrigin: FormControl<ServiceAccountKeyKeyOrigin | null | undefined>,
+
+		/** The key type. */
+		keyType: FormControl<ServiceAccountKeyKeyType | null | undefined>,
+
+		/**
+		 * The resource name of the service account key in the following format
+		 * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The private key data. Only provided in `CreateServiceAccountKey`
+		 * responses. Make sure to keep the private key data secure because it
+		 * allows for the assertion of the service account identity.
+		 * When base64 decoded, the private key data can be used to authenticate with
+		 * Google API client libraries and with
+		 * <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
+		 * auth activate-service-account</a>.
+		 */
+		privateKeyData: FormControl<string | null | undefined>,
+
+		/**
+		 * The output format for the private key.
+		 * Only provided in `CreateServiceAccountKey` responses, not
+		 * in `GetServiceAccountKey` or `ListServiceAccountKey` responses.
+		 * Google never exposes system-managed private keys, and never retains
+		 * user-managed private keys.
+		 */
+		privateKeyType: FormControl<CreateServiceAccountKeyRequestPrivateKeyType | null | undefined>,
+
+		/** The public key data. Only provided in `GetServiceAccountKey` responses. */
+		publicKeyData: FormControl<string | null | undefined>,
+
+		/** The key can be used after this timestamp. */
+		validAfterTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The key can be used before this timestamp.
+		 * For system-managed key pairs, this timestamp is the end time for the
+		 * private key signing operation. The public key could still be used
+		 * for verification for a few hours after this time.
+		 */
+		validBeforeTime: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceAccountKeyFormGroup() {
+		return new FormGroup<ServiceAccountKeyFormProperties>({
+			keyAlgorithm: new FormControl<CreateServiceAccountKeyRequestKeyAlgorithm | null | undefined>(undefined),
+			keyOrigin: new FormControl<ServiceAccountKeyKeyOrigin | null | undefined>(undefined),
+			keyType: new FormControl<ServiceAccountKeyKeyType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			privateKeyData: new FormControl<string | null | undefined>(undefined),
+			privateKeyType: new FormControl<CreateServiceAccountKeyRequestPrivateKeyType | null | undefined>(undefined),
+			publicKeyData: new FormControl<string | null | undefined>(undefined),
+			validAfterTime: new FormControl<string | null | undefined>(undefined),
+			validBeforeTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ServiceAccountKeyKeyOrigin { ORIGIN_UNSPECIFIED = 0, USER_PROVIDED = 1, GOOGLE_PROVIDED = 2 }
 
 	export enum ServiceAccountKeyKeyType { KEY_TYPE_UNSPECIFIED = 0, USER_MANAGED = 1, SYSTEM_MANAGED = 2 }
@@ -736,7 +1418,7 @@ export namespace MyNS {
 	export interface ListServiceAccountsResponse {
 
 		/** The list of matching service accounts. */
-		accounts?: Array<ServiceAccount> | null;
+		accounts?: Array<ServiceAccount>;
 
 		/**
 		 * To retrieve the next page of results, set
@@ -744,6 +1426,23 @@ export namespace MyNS {
 		 * to this value.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** The service account list response. */
+	export interface ListServiceAccountsResponseFormProperties {
+
+		/**
+		 * To retrieve the next page of results, set
+		 * ListServiceAccountsRequest.page_token
+		 * to this value.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceAccountsResponseFormGroup() {
+		return new FormGroup<ListServiceAccountsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -765,8 +1464,19 @@ export namespace MyNS {
 		 * the account. The `ACCOUNT` value can be the `email` address or the
 		 * `unique_id` of the service account.
 		 */
-		serviceAccount?: ServiceAccount | null;
+		serviceAccount?: ServiceAccount;
 		updateMask?: string | null;
+	}
+
+	/** The patch service account request. */
+	export interface PatchServiceAccountRequestFormProperties {
+		updateMask: FormControl<string | null | undefined>,
+	}
+	export function CreatePatchServiceAccountRequestFormGroup() {
+		return new FormGroup<PatchServiceAccountRequestFormProperties>({
+			updateMask: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -800,6 +1510,51 @@ export namespace MyNS {
 
 		/** The title of this Permission. */
 		title?: string | null;
+	}
+
+	/** A permission which can be included by a role. */
+	export interface PermissionFormProperties {
+
+		/** The service API associated with the permission is not enabled. */
+		apiDisabled: FormControl<boolean | null | undefined>,
+
+		/** The current custom role support level. */
+		customRolesSupportLevel: FormControl<PermissionCustomRolesSupportLevel | null | undefined>,
+
+		/**
+		 * A brief description of what this Permission is used for.
+		 * This permission can ONLY be used in predefined roles.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** The name of this Permission. */
+		name: FormControl<string | null | undefined>,
+		onlyInPredefinedRoles: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The preferred name for this permission. If present, then this permission is
+		 * an alias of, and equivalent to, the listed primary_permission.
+		 */
+		primaryPermission: FormControl<string | null | undefined>,
+
+		/** The current launch stage of the permission. */
+		stage: FormControl<PermissionStage | null | undefined>,
+
+		/** The title of this Permission. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreatePermissionFormGroup() {
+		return new FormGroup<PermissionFormProperties>({
+			apiDisabled: new FormControl<boolean | null | undefined>(undefined),
+			customRolesSupportLevel: new FormControl<PermissionCustomRolesSupportLevel | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			onlyInPredefinedRoles: new FormControl<boolean | null | undefined>(undefined),
+			primaryPermission: new FormControl<string | null | undefined>(undefined),
+			stage: new FormControl<PermissionStage | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PermissionCustomRolesSupportLevel { SUPPORTED = 0, TESTING = 1, NOT_SUPPORTED = 2 }
@@ -867,14 +1622,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig> | null;
+		auditConfigs?: Array<AuditConfig>;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding> | null;
+		bindings?: Array<Binding>;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -912,6 +1667,108 @@ export namespace MyNS {
 		version?: number | null;
 	}
 
+	/**
+	 * An Identity and Access Management (IAM) policy, which specifies access
+	 * controls for Google Cloud resources.
+	 * A `Policy` is a collection of `bindings`. A `binding` binds one or more
+	 * `members` to a single `role`. Members can be user accounts, service accounts,
+	 * Google groups, and domains (such as G Suite). A `role` is a named list of
+	 * permissions; each `role` can be an IAM predefined role or a user-created
+	 * custom role.
+	 * Optionally, a `binding` can specify a `condition`, which is a logical
+	 * expression that allows access to a resource only if the expression evaluates
+	 * to `true`. A condition can add constraints based on attributes of the
+	 * request, the resource, or both.
+	 * **JSON example:**
+	 *     {
+	 *       "bindings": [
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationAdmin",
+	 *           "members": [
+	 *             "user:mike@example.com",
+	 *             "group:admins@example.com",
+	 *             "domain:google.com",
+	 *             "serviceAccount:my-project-id@appspot.gserviceaccount.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationViewer",
+	 *           "members": ["user:eve@example.com"],
+	 *           "condition": {
+	 *             "title": "expirable access",
+	 *             "description": "Does not grant access after Sep 2020",
+	 *             "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')",
+	 *           }
+	 *         }
+	 *       ],
+	 *       "etag": "BwWWja0YfJA=",
+	 *       "version": 3
+	 *     }
+	 * **YAML example:**
+	 *     bindings:
+	 *     - members:
+	 *       - user:mike@example.com
+	 *       - group:admins@example.com
+	 *       - domain:google.com
+	 *       - serviceAccount:my-project-id@appspot.gserviceaccount.com
+	 *       role: roles/resourcemanager.organizationAdmin
+	 *     - members:
+	 *       - user:eve@example.com
+	 *       role: roles/resourcemanager.organizationViewer
+	 *       condition:
+	 *         title: expirable access
+	 *         description: Does not grant access after Sep 2020
+	 *         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+	 *     - etag: BwWWja0YfJA=
+	 *     - version: 3
+	 * For a description of IAM and its features, see the
+	 * [IAM documentation](https://cloud.google.com/iam/docs/).
+	 */
+	export interface PolicyFormProperties {
+
+		/**
+		 * `etag` is used for optimistic concurrency control as a way to help
+		 * prevent simultaneous updates of a policy from overwriting each other.
+		 * It is strongly suggested that systems make use of the `etag` in the
+		 * read-modify-write cycle to perform policy updates in order to avoid race
+		 * conditions: An `etag` is returned in the response to `getIamPolicy`, and
+		 * systems are expected to put that etag in the request to `setIamPolicy` to
+		 * ensure that their change will be applied to the same version of the policy.
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the format of the policy.
+		 * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+		 * are rejected.
+		 * Any operation that affects conditional role bindings must specify version
+		 * `3`. This requirement applies to the following operations:
+		 * * Getting a policy that includes a conditional role binding
+		 * * Adding a conditional role binding to a policy
+		 * * Changing a conditional role binding in a policy
+		 * * Removing any role binding, with or without a condition, from a policy
+		 * that includes conditions
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 * If a policy does not include any conditions, operations on that policy may
+		 * specify any valid version or leave the field unset.
+		 */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to get the list of auditable services for a resource. */
 	export interface QueryAuditableServicesRequest {
@@ -926,12 +1783,40 @@ export namespace MyNS {
 		fullResourceName?: string | null;
 	}
 
+	/** A request to get the list of auditable services for a resource. */
+	export interface QueryAuditableServicesRequestFormProperties {
+
+		/**
+		 * Required. The full resource name to query from the list of auditable
+		 * services.
+		 * The name follows the Google Cloud Platform resource format.
+		 * For example, a Cloud Platform project with id `my-project` will be named
+		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+		 */
+		fullResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryAuditableServicesRequestFormGroup() {
+		return new FormGroup<QueryAuditableServicesRequestFormProperties>({
+			fullResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A response containing a list of auditable services for a resource. */
 	export interface QueryAuditableServicesResponse {
 
 		/** The auditable services for a resource. */
-		services?: Array<AuditableService> | null;
+		services?: Array<AuditableService>;
+	}
+
+	/** A response containing a list of auditable services for a resource. */
+	export interface QueryAuditableServicesResponseFormProperties {
+	}
+	export function CreateQueryAuditableServicesResponseFormGroup() {
+		return new FormGroup<QueryAuditableServicesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -957,6 +1842,37 @@ export namespace MyNS {
 		view?: QueryGrantableRolesRequestView | null;
 	}
 
+	/** The grantable role query request. */
+	export interface QueryGrantableRolesRequestFormProperties {
+
+		/**
+		 * Required. The full resource name to query from the list of grantable roles.
+		 * The name follows the Google Cloud Platform resource format.
+		 * For example, a Cloud Platform project with id `my-project` will be named
+		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+		 */
+		fullResourceName: FormControl<string | null | undefined>,
+
+		/** Optional limit on the number of roles to include in the response. */
+		pageSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional pagination token returned in an earlier
+		 * QueryGrantableRolesResponse.
+		 */
+		pageToken: FormControl<string | null | undefined>,
+		view: FormControl<QueryGrantableRolesRequestView | null | undefined>,
+	}
+	export function CreateQueryGrantableRolesRequestFormGroup() {
+		return new FormGroup<QueryGrantableRolesRequestFormProperties>({
+			fullResourceName: new FormControl<string | null | undefined>(undefined),
+			pageSize: new FormControl<number | null | undefined>(undefined),
+			pageToken: new FormControl<string | null | undefined>(undefined),
+			view: new FormControl<QueryGrantableRolesRequestView | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum QueryGrantableRolesRequestView { BASIC = 0, FULL = 1 }
 
 
@@ -970,7 +1886,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The list of matching roles. */
-		roles?: Array<Role> | null;
+		roles?: Array<Role>;
+	}
+
+	/** The grantable role query response. */
+	export interface QueryGrantableRolesResponseFormProperties {
+
+		/**
+		 * To retrieve the next page of results, set
+		 * `QueryGrantableRolesRequest.page_token` to this value.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryGrantableRolesResponseFormGroup() {
+		return new FormGroup<QueryGrantableRolesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -996,6 +1928,36 @@ export namespace MyNS {
 		pageToken?: string | null;
 	}
 
+	/** A request to get permissions which can be tested on a resource. */
+	export interface QueryTestablePermissionsRequestFormProperties {
+
+		/**
+		 * Required. The full resource name to query from the list of testable
+		 * permissions.
+		 * The name follows the Google Cloud Platform resource format.
+		 * For example, a Cloud Platform project with id `my-project` will be named
+		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+		 */
+		fullResourceName: FormControl<string | null | undefined>,
+
+		/** Optional limit on the number of permissions to include in the response. */
+		pageSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional pagination token returned in an earlier
+		 * QueryTestablePermissionsRequest.
+		 */
+		pageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryTestablePermissionsRequestFormGroup() {
+		return new FormGroup<QueryTestablePermissionsRequestFormProperties>({
+			fullResourceName: new FormControl<string | null | undefined>(undefined),
+			pageSize: new FormControl<number | null | undefined>(undefined),
+			pageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response containing permissions which can be tested on a resource. */
 	export interface QueryTestablePermissionsResponse {
@@ -1007,7 +1969,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The Permissions testable on the requested resource. */
-		permissions?: Array<Permission> | null;
+		permissions?: Array<Permission>;
+	}
+
+	/** The response containing permissions which can be tested on a resource. */
+	export interface QueryTestablePermissionsResponseFormProperties {
+
+		/**
+		 * To retrieve the next page of results, set
+		 * `QueryTestableRolesRequest.page_token` to this value.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryTestablePermissionsResponseFormGroup() {
+		return new FormGroup<QueryTestablePermissionsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1071,7 +2049,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy | null;
+		policy?: Policy;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -1083,12 +2061,44 @@ export namespace MyNS {
 		updateMask?: string | null;
 	}
 
+	/** Request message for `SetIamPolicy` method. */
+	export interface SetIamPolicyRequestFormProperties {
+
+		/**
+		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+		 * the fields in the mask will be modified. If no mask is provided, the
+		 * following default mask is used:
+		 * paths: "bindings, etag"
+		 * This field is only used by Cloud IAM.
+		 */
+		updateMask: FormControl<string | null | undefined>,
+	}
+	export function CreateSetIamPolicyRequestFormGroup() {
+		return new FormGroup<SetIamPolicyRequestFormProperties>({
+			updateMask: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The service account sign blob request. */
 	export interface SignBlobRequest {
 
 		/** Required. The bytes to sign. */
 		bytesToSign?: string | null;
+	}
+
+	/** The service account sign blob request. */
+	export interface SignBlobRequestFormProperties {
+
+		/** Required. The bytes to sign. */
+		bytesToSign: FormControl<string | null | undefined>,
+	}
+	export function CreateSignBlobRequestFormGroup() {
+		return new FormGroup<SignBlobRequestFormProperties>({
+			bytesToSign: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1102,12 +2112,42 @@ export namespace MyNS {
 		signature?: string | null;
 	}
 
+	/** The service account sign blob response. */
+	export interface SignBlobResponseFormProperties {
+
+		/** The id of the key used to sign the blob. */
+		keyId: FormControl<string | null | undefined>,
+
+		/** The signed blob. */
+		signature: FormControl<string | null | undefined>,
+	}
+	export function CreateSignBlobResponseFormGroup() {
+		return new FormGroup<SignBlobResponseFormProperties>({
+			keyId: new FormControl<string | null | undefined>(undefined),
+			signature: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The service account sign JWT request. */
 	export interface SignJwtRequest {
 
 		/** Required. The JWT payload to sign, a JSON JWT Claim set. */
 		payload?: string | null;
+	}
+
+	/** The service account sign JWT request. */
+	export interface SignJwtRequestFormProperties {
+
+		/** Required. The JWT payload to sign, a JSON JWT Claim set. */
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateSignJwtRequestFormGroup() {
+		return new FormGroup<SignJwtRequestFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1121,6 +2161,23 @@ export namespace MyNS {
 		signedJwt?: string | null;
 	}
 
+	/** The service account sign JWT response. */
+	export interface SignJwtResponseFormProperties {
+
+		/** The id of the key used to sign the JWT. */
+		keyId: FormControl<string | null | undefined>,
+
+		/** The signed JWT. */
+		signedJwt: FormControl<string | null | undefined>,
+	}
+	export function CreateSignJwtResponseFormGroup() {
+		return new FormGroup<SignJwtResponseFormProperties>({
+			keyId: new FormControl<string | null | undefined>(undefined),
+			signedJwt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request message for `TestIamPermissions` method. */
 	export interface TestIamPermissionsRequest {
@@ -1131,7 +2188,16 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Request message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsRequestFormProperties {
+	}
+	export function CreateTestIamPermissionsRequestFormGroup() {
+		return new FormGroup<TestIamPermissionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1142,7 +2208,16 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Response message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsResponseFormProperties {
+	}
+	export function CreateTestIamPermissionsResponseFormGroup() {
+		return new FormGroup<TestIamPermissionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1153,9 +2228,31 @@ export namespace MyNS {
 		etag?: string | null;
 	}
 
+	/** The request to undelete an existing role. */
+	export interface UndeleteRoleRequestFormProperties {
+
+		/** Used to perform a consistent read-modify-write. */
+		etag: FormControl<string | null | undefined>,
+	}
+	export function CreateUndeleteRoleRequestFormGroup() {
+		return new FormGroup<UndeleteRoleRequestFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The service account undelete request. */
 	export interface UndeleteServiceAccountRequest {
+	}
+
+	/** The service account undelete request. */
+	export interface UndeleteServiceAccountRequestFormProperties {
+	}
+	export function CreateUndeleteServiceAccountRequestFormGroup() {
+		return new FormGroup<UndeleteServiceAccountRequestFormProperties>({
+		});
+
 	}
 
 	export interface UndeleteServiceAccountResponse {
@@ -1175,7 +2272,14 @@ export namespace MyNS {
 		 * the account. The `ACCOUNT` value can be the `email` address or the
 		 * `unique_id` of the service account.
 		 */
-		restoredAccount?: ServiceAccount | null;
+		restoredAccount?: ServiceAccount;
+	}
+	export interface UndeleteServiceAccountResponseFormProperties {
+	}
+	export function CreateUndeleteServiceAccountResponseFormGroup() {
+		return new FormGroup<UndeleteServiceAccountResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1189,6 +2293,24 @@ export namespace MyNS {
 		 * Please note, the expected format for this field is X509_PEM.
 		 */
 		publicKeyData?: string | null;
+	}
+
+	/** The service account key upload request. */
+	export interface UploadServiceAccountKeyRequestFormProperties {
+
+		/**
+		 * A field that allows clients to upload their own public key. If set,
+		 * use this public key data to create a service account key for given
+		 * service account.
+		 * Please note, the expected format for this field is X509_PEM.
+		 */
+		publicKeyData: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadServiceAccountKeyRequestFormGroup() {
+		return new FormGroup<UploadServiceAccountKeyRequestFormProperties>({
+			publicKeyData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1412,7 +2534,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Iam_projects_serviceAccounts_keys_list(name: string, keyTypes: Array<ServiceAccountKeyKeyType> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/keys&' + keyTypes.map(z => `keyTypes=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/keys&' + keyTypes?.map(z => `keyTypes=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

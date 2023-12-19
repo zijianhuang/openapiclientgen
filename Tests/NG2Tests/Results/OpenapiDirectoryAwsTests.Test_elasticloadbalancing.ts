@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Contains the output of AddTags. */
 	export interface AddTagsOutput {
+	}
+
+	/** Contains the output of AddTags. */
+	export interface AddTagsOutputFormProperties {
+	}
+	export function CreateAddTagsOutputFormGroup() {
+		return new FormGroup<AddTagsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -14,37 +24,117 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Information about a tag. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AccessPointNotFoundException {
+	}
+	export interface AccessPointNotFoundExceptionFormProperties {
+	}
+	export function CreateAccessPointNotFoundExceptionFormGroup() {
+		return new FormGroup<AccessPointNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyTagsException {
 	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DuplicateTagKeysException {
+	}
+	export interface DuplicateTagKeysExceptionFormProperties {
+	}
+	export function CreateDuplicateTagKeysExceptionFormGroup() {
+		return new FormGroup<DuplicateTagKeysExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of ApplySecurityGroupsToLoadBalancer. */
 	export interface ApplySecurityGroupsToLoadBalancerOutput {
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
+	}
+
+	/** Contains the output of ApplySecurityGroupsToLoadBalancer. */
+	export interface ApplySecurityGroupsToLoadBalancerOutputFormProperties {
+	}
+	export function CreateApplySecurityGroupsToLoadBalancerOutputFormGroup() {
+		return new FormGroup<ApplySecurityGroupsToLoadBalancerOutputFormProperties>({
+		});
+
 	}
 
 	export interface InvalidConfigurationRequestException {
 	}
+	export interface InvalidConfigurationRequestExceptionFormProperties {
+	}
+	export function CreateInvalidConfigurationRequestExceptionFormGroup() {
+		return new FormGroup<InvalidConfigurationRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSecurityGroupException {
+	}
+	export interface InvalidSecurityGroupExceptionFormProperties {
+	}
+	export function CreateInvalidSecurityGroupExceptionFormGroup() {
+		return new FormGroup<InvalidSecurityGroupExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of AttachLoadBalancerToSubnets. */
 	export interface AttachLoadBalancerToSubnetsOutput {
-		Subnets?: Array<string> | null;
+		Subnets?: Array<string>;
+	}
+
+	/** Contains the output of AttachLoadBalancerToSubnets. */
+	export interface AttachLoadBalancerToSubnetsOutputFormProperties {
+	}
+	export function CreateAttachLoadBalancerToSubnetsOutputFormGroup() {
+		return new FormGroup<AttachLoadBalancerToSubnetsOutputFormProperties>({
+		});
+
 	}
 
 	export interface SubnetNotFoundException {
 	}
+	export interface SubnetNotFoundExceptionFormProperties {
+	}
+	export function CreateSubnetNotFoundExceptionFormGroup() {
+		return new FormGroup<SubnetNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSubnetException {
+	}
+	export interface InvalidSubnetExceptionFormProperties {
+	}
+	export function CreateInvalidSubnetExceptionFormGroup() {
+		return new FormGroup<InvalidSubnetExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -52,7 +142,16 @@ export namespace MyNS {
 	export interface ConfigureHealthCheckOutput {
 
 		/** Information about a health check. */
-		HealthCheck?: HealthCheck | null;
+		HealthCheck?: HealthCheck;
+	}
+
+	/** Contains the output of ConfigureHealthCheck. */
+	export interface ConfigureHealthCheckOutputFormProperties {
+	}
+	export function CreateConfigureHealthCheckOutputFormGroup() {
+		return new FormGroup<ConfigureHealthCheckOutputFormProperties>({
+		});
+
 	}
 
 
@@ -65,15 +164,57 @@ export namespace MyNS {
 		HealthyThreshold: number;
 	}
 
+	/** Information about a health check. */
+	export interface HealthCheckFormProperties {
+		Target: FormControl<string | null | undefined>,
+		Interval: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		UnhealthyThreshold: FormControl<number | null | undefined>,
+		HealthyThreshold: FormControl<number | null | undefined>,
+	}
+	export function CreateHealthCheckFormGroup() {
+		return new FormGroup<HealthCheckFormProperties>({
+			Target: new FormControl<string | null | undefined>(undefined),
+			Interval: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			UnhealthyThreshold: new FormControl<number | null | undefined>(undefined),
+			HealthyThreshold: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output for CreateAppCookieStickinessPolicy. */
 	export interface CreateAppCookieStickinessPolicyOutput {
 	}
 
+	/** Contains the output for CreateAppCookieStickinessPolicy. */
+	export interface CreateAppCookieStickinessPolicyOutputFormProperties {
+	}
+	export function CreateCreateAppCookieStickinessPolicyOutputFormGroup() {
+		return new FormGroup<CreateAppCookieStickinessPolicyOutputFormProperties>({
+		});
+
+	}
+
 	export interface DuplicatePolicyNameException {
+	}
+	export interface DuplicatePolicyNameExceptionFormProperties {
+	}
+	export function CreateDuplicatePolicyNameExceptionFormGroup() {
+		return new FormGroup<DuplicatePolicyNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyPoliciesException {
+	}
+	export interface TooManyPoliciesExceptionFormProperties {
+	}
+	export function CreateTooManyPoliciesExceptionFormGroup() {
+		return new FormGroup<TooManyPoliciesExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -81,10 +222,30 @@ export namespace MyNS {
 	export interface CreateLBCookieStickinessPolicyOutput {
 	}
 
+	/** Contains the output for CreateLBCookieStickinessPolicy. */
+	export interface CreateLBCookieStickinessPolicyOutputFormProperties {
+	}
+	export function CreateCreateLBCookieStickinessPolicyOutputFormGroup() {
+		return new FormGroup<CreateLBCookieStickinessPolicyOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the output for CreateLoadBalancer. */
 	export interface CreateAccessPointOutput {
 		DNSName?: string | null;
+	}
+
+	/** Contains the output for CreateLoadBalancer. */
+	export interface CreateAccessPointOutputFormProperties {
+		DNSName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPointOutputFormGroup() {
+		return new FormGroup<CreateAccessPointOutputFormProperties>({
+			DNSName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -97,22 +258,83 @@ export namespace MyNS {
 		SSLCertificateId?: string | null;
 	}
 
+	/** <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p> */
+	export interface ListenerFormProperties {
+		Protocol: FormControl<string | null | undefined>,
+		LoadBalancerPort: FormControl<number | null | undefined>,
+		InstanceProtocol: FormControl<string | null | undefined>,
+		InstancePort: FormControl<number | null | undefined>,
+		SSLCertificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateListenerFormGroup() {
+		return new FormGroup<ListenerFormProperties>({
+			Protocol: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerPort: new FormControl<number | null | undefined>(undefined),
+			InstanceProtocol: new FormControl<string | null | undefined>(undefined),
+			InstancePort: new FormControl<number | null | undefined>(undefined),
+			SSLCertificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DuplicateAccessPointNameException {
+	}
+	export interface DuplicateAccessPointNameExceptionFormProperties {
+	}
+	export function CreateDuplicateAccessPointNameExceptionFormGroup() {
+		return new FormGroup<DuplicateAccessPointNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyAccessPointsException {
 	}
+	export interface TooManyAccessPointsExceptionFormProperties {
+	}
+	export function CreateTooManyAccessPointsExceptionFormGroup() {
+		return new FormGroup<TooManyAccessPointsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CertificateNotFoundException {
+	}
+	export interface CertificateNotFoundExceptionFormProperties {
+	}
+	export function CreateCertificateNotFoundExceptionFormGroup() {
+		return new FormGroup<CertificateNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSchemeException {
 	}
+	export interface InvalidSchemeExceptionFormProperties {
+	}
+	export function CreateInvalidSchemeExceptionFormGroup() {
+		return new FormGroup<InvalidSchemeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedProtocolException {
 	}
+	export interface UnsupportedProtocolExceptionFormProperties {
+	}
+	export function CreateUnsupportedProtocolExceptionFormGroup() {
+		return new FormGroup<UnsupportedProtocolExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OperationNotPermittedException {
+	}
+	export interface OperationNotPermittedExceptionFormProperties {
+	}
+	export function CreateOperationNotPermittedExceptionFormGroup() {
+		return new FormGroup<OperationNotPermittedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -120,12 +342,37 @@ export namespace MyNS {
 	export interface CreateLoadBalancerListenerOutput {
 	}
 
+	/** Contains the parameters for CreateLoadBalancerListener. */
+	export interface CreateLoadBalancerListenerOutputFormProperties {
+	}
+	export function CreateCreateLoadBalancerListenerOutputFormGroup() {
+		return new FormGroup<CreateLoadBalancerListenerOutputFormProperties>({
+		});
+
+	}
+
 	export interface DuplicateListenerException {
+	}
+	export interface DuplicateListenerExceptionFormProperties {
+	}
+	export function CreateDuplicateListenerExceptionFormGroup() {
+		return new FormGroup<DuplicateListenerExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of CreateLoadBalancerPolicy. */
 	export interface CreateLoadBalancerPolicyOutput {
+	}
+
+	/** Contains the output of CreateLoadBalancerPolicy. */
+	export interface CreateLoadBalancerPolicyOutputFormProperties {
+	}
+	export function CreateCreateLoadBalancerPolicyOutputFormGroup() {
+		return new FormGroup<CreateLoadBalancerPolicyOutputFormProperties>({
+		});
+
 	}
 
 
@@ -135,7 +382,27 @@ export namespace MyNS {
 		AttributeValue?: string | null;
 	}
 
+	/** Information about a policy attribute. */
+	export interface PolicyAttributeFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyAttributeFormGroup() {
+		return new FormGroup<PolicyAttributeFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PolicyTypeNotFoundException {
+	}
+	export interface PolicyTypeNotFoundExceptionFormProperties {
+	}
+	export function CreatePolicyTypeNotFoundExceptionFormGroup() {
+		return new FormGroup<PolicyTypeNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -143,9 +410,27 @@ export namespace MyNS {
 	export interface DeleteAccessPointOutput {
 	}
 
+	/** Contains the output of DeleteLoadBalancer. */
+	export interface DeleteAccessPointOutputFormProperties {
+	}
+	export function CreateDeleteAccessPointOutputFormGroup() {
+		return new FormGroup<DeleteAccessPointOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the output of DeleteLoadBalancerListeners. */
 	export interface DeleteLoadBalancerListenerOutput {
+	}
+
+	/** Contains the output of DeleteLoadBalancerListeners. */
+	export interface DeleteLoadBalancerListenerOutputFormProperties {
+	}
+	export function CreateDeleteLoadBalancerListenerOutputFormGroup() {
+		return new FormGroup<DeleteLoadBalancerListenerOutputFormProperties>({
+		});
+
 	}
 
 
@@ -153,10 +438,28 @@ export namespace MyNS {
 	export interface DeleteLoadBalancerPolicyOutput {
 	}
 
+	/** Contains the output of DeleteLoadBalancerPolicy. */
+	export interface DeleteLoadBalancerPolicyOutputFormProperties {
+	}
+	export function CreateDeleteLoadBalancerPolicyOutputFormGroup() {
+		return new FormGroup<DeleteLoadBalancerPolicyOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the output of DeregisterInstancesFromLoadBalancer. */
 	export interface DeregisterEndPointsOutput {
-		Instances?: Array<Instance> | null;
+		Instances?: Array<Instance>;
+	}
+
+	/** Contains the output of DeregisterInstancesFromLoadBalancer. */
+	export interface DeregisterEndPointsOutputFormProperties {
+	}
+	export function CreateDeregisterEndPointsOutputFormGroup() {
+		return new FormGroup<DeregisterEndPointsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -165,12 +468,39 @@ export namespace MyNS {
 		InstanceId?: string | null;
 	}
 
+	/** The ID of an EC2 instance. */
+	export interface InstanceFormProperties {
+		InstanceId: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceFormGroup() {
+		return new FormGroup<InstanceFormProperties>({
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidEndPointException {
+	}
+	export interface InvalidEndPointExceptionFormProperties {
+	}
+	export function CreateInvalidEndPointExceptionFormGroup() {
+		return new FormGroup<InvalidEndPointExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAccountLimitsOutput {
-		Limits?: Array<Limit> | null;
+		Limits?: Array<Limit>;
 		NextMarker?: string | null;
+	}
+	export interface DescribeAccountLimitsOutputFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountLimitsOutputFormGroup() {
+		return new FormGroup<DescribeAccountLimitsOutputFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -180,10 +510,32 @@ export namespace MyNS {
 		Max?: string | null;
 	}
 
+	/** Information about an Elastic Load Balancing resource limit for your AWS account. */
+	export interface LimitFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Max: FormControl<string | null | undefined>,
+	}
+	export function CreateLimitFormGroup() {
+		return new FormGroup<LimitFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Max: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output for DescribeInstanceHealth. */
 	export interface DescribeEndPointStateOutput {
-		InstanceStates?: Array<InstanceState> | null;
+		InstanceStates?: Array<InstanceState>;
+	}
+
+	/** Contains the output for DescribeInstanceHealth. */
+	export interface DescribeEndPointStateOutputFormProperties {
+	}
+	export function CreateDescribeEndPointStateOutputFormGroup() {
+		return new FormGroup<DescribeEndPointStateOutputFormProperties>({
+		});
+
 	}
 
 
@@ -195,12 +547,38 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Information about the state of an EC2 instance. */
+	export interface InstanceStateFormProperties {
+		InstanceId: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		ReasonCode: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceStateFormGroup() {
+		return new FormGroup<InstanceStateFormProperties>({
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			ReasonCode: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of DescribeLoadBalancerAttributes. */
 	export interface DescribeLoadBalancerAttributesOutput {
 
 		/** The attributes for a load balancer. */
-		LoadBalancerAttributes?: LoadBalancerAttributes | null;
+		LoadBalancerAttributes?: LoadBalancerAttributes;
+	}
+
+	/** Contains the output of DescribeLoadBalancerAttributes. */
+	export interface DescribeLoadBalancerAttributesOutputFormProperties {
+	}
+	export function CreateDescribeLoadBalancerAttributesOutputFormGroup() {
+		return new FormGroup<DescribeLoadBalancerAttributesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -208,23 +586,43 @@ export namespace MyNS {
 	export interface LoadBalancerAttributes {
 
 		/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
-		CrossZoneLoadBalancing?: CrossZoneLoadBalancing | null;
+		CrossZoneLoadBalancing?: CrossZoneLoadBalancing;
 
 		/** Information about the <code>AccessLog</code> attribute. */
-		AccessLog?: AccessLog | null;
+		AccessLog?: AccessLog;
 
 		/** Information about the <code>ConnectionDraining</code> attribute. */
-		ConnectionDraining?: ConnectionDraining | null;
+		ConnectionDraining?: ConnectionDraining;
 
 		/** Information about the <code>ConnectionSettings</code> attribute. */
-		ConnectionSettings?: ConnectionSettings | null;
-		AdditionalAttributes?: Array<AdditionalAttribute> | null;
+		ConnectionSettings?: ConnectionSettings;
+		AdditionalAttributes?: Array<AdditionalAttribute>;
+	}
+
+	/** The attributes for a load balancer. */
+	export interface LoadBalancerAttributesFormProperties {
+	}
+	export function CreateLoadBalancerAttributesFormGroup() {
+		return new FormGroup<LoadBalancerAttributesFormProperties>({
+		});
+
 	}
 
 
 	/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
 	export interface CrossZoneLoadBalancing {
 		Enabled: boolean;
+	}
+
+	/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
+	export interface CrossZoneLoadBalancingFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCrossZoneLoadBalancingFormGroup() {
+		return new FormGroup<CrossZoneLoadBalancingFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -236,6 +634,23 @@ export namespace MyNS {
 		S3BucketPrefix?: string | null;
 	}
 
+	/** Information about the <code>AccessLog</code> attribute. */
+	export interface AccessLogFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		EmitInterval: FormControl<number | null | undefined>,
+		S3BucketPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessLogFormGroup() {
+		return new FormGroup<AccessLogFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			EmitInterval: new FormControl<number | null | undefined>(undefined),
+			S3BucketPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the <code>ConnectionDraining</code> attribute. */
 	export interface ConnectionDraining {
@@ -243,10 +658,34 @@ export namespace MyNS {
 		Timeout?: number | null;
 	}
 
+	/** Information about the <code>ConnectionDraining</code> attribute. */
+	export interface ConnectionDrainingFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+	}
+	export function CreateConnectionDrainingFormGroup() {
+		return new FormGroup<ConnectionDrainingFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the <code>ConnectionSettings</code> attribute. */
 	export interface ConnectionSettings {
 		IdleTimeout: number;
+	}
+
+	/** Information about the <code>ConnectionSettings</code> attribute. */
+	export interface ConnectionSettingsFormProperties {
+		IdleTimeout: FormControl<number | null | undefined>,
+	}
+	export function CreateConnectionSettingsFormGroup() {
+		return new FormGroup<ConnectionSettingsFormProperties>({
+			IdleTimeout: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -256,13 +695,42 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** This data type is reserved. */
+	export interface AdditionalAttributeFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateAdditionalAttributeFormGroup() {
+		return new FormGroup<AdditionalAttributeFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LoadBalancerAttributeNotFoundException {
+	}
+	export interface LoadBalancerAttributeNotFoundExceptionFormProperties {
+	}
+	export function CreateLoadBalancerAttributeNotFoundExceptionFormGroup() {
+		return new FormGroup<LoadBalancerAttributeNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of DescribeLoadBalancerPolicies. */
 	export interface DescribeLoadBalancerPoliciesOutput {
-		PolicyDescriptions?: Array<PolicyDescription> | null;
+		PolicyDescriptions?: Array<PolicyDescription>;
+	}
+
+	/** Contains the output of DescribeLoadBalancerPolicies. */
+	export interface DescribeLoadBalancerPoliciesOutputFormProperties {
+	}
+	export function CreateDescribeLoadBalancerPoliciesOutputFormGroup() {
+		return new FormGroup<DescribeLoadBalancerPoliciesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -270,7 +738,20 @@ export namespace MyNS {
 	export interface PolicyDescription {
 		PolicyName?: string | null;
 		PolicyTypeName?: string | null;
-		PolicyAttributeDescriptions?: Array<PolicyAttributeDescription> | null;
+		PolicyAttributeDescriptions?: Array<PolicyAttributeDescription>;
+	}
+
+	/** Information about a policy. */
+	export interface PolicyDescriptionFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyTypeName: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyDescriptionFormGroup() {
+		return new FormGroup<PolicyDescriptionFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyTypeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,13 +761,42 @@ export namespace MyNS {
 		AttributeValue?: string | null;
 	}
 
+	/** Information about a policy attribute. */
+	export interface PolicyAttributeDescriptionFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyAttributeDescriptionFormGroup() {
+		return new FormGroup<PolicyAttributeDescriptionFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PolicyNotFoundException {
+	}
+	export interface PolicyNotFoundExceptionFormProperties {
+	}
+	export function CreatePolicyNotFoundExceptionFormGroup() {
+		return new FormGroup<PolicyNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of DescribeLoadBalancerPolicyTypes. */
 	export interface DescribeLoadBalancerPolicyTypesOutput {
-		PolicyTypeDescriptions?: Array<PolicyTypeDescription> | null;
+		PolicyTypeDescriptions?: Array<PolicyTypeDescription>;
+	}
+
+	/** Contains the output of DescribeLoadBalancerPolicyTypes. */
+	export interface DescribeLoadBalancerPolicyTypesOutputFormProperties {
+	}
+	export function CreateDescribeLoadBalancerPolicyTypesOutputFormGroup() {
+		return new FormGroup<DescribeLoadBalancerPolicyTypesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -294,7 +804,20 @@ export namespace MyNS {
 	export interface PolicyTypeDescription {
 		PolicyTypeName?: string | null;
 		Description?: string | null;
-		PolicyAttributeTypeDescriptions?: Array<PolicyAttributeTypeDescription> | null;
+		PolicyAttributeTypeDescriptions?: Array<PolicyAttributeTypeDescription>;
+	}
+
+	/** Information about a policy type. */
+	export interface PolicyTypeDescriptionFormProperties {
+		PolicyTypeName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyTypeDescriptionFormGroup() {
+		return new FormGroup<PolicyTypeDescriptionFormProperties>({
+			PolicyTypeName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -307,11 +830,41 @@ export namespace MyNS {
 		Cardinality?: string | null;
 	}
 
+	/** Information about a policy attribute type. */
+	export interface PolicyAttributeTypeDescriptionFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeType: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+		Cardinality: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyAttributeTypeDescriptionFormGroup() {
+		return new FormGroup<PolicyAttributeTypeDescriptionFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			Cardinality: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for DescribeLoadBalancers. */
 	export interface DescribeAccessPointsOutput {
-		LoadBalancerDescriptions?: Array<LoadBalancerDescription> | null;
+		LoadBalancerDescriptions?: Array<LoadBalancerDescription>;
 		NextMarker?: string | null;
+	}
+
+	/** Contains the parameters for DescribeLoadBalancers. */
+	export interface DescribeAccessPointsOutputFormProperties {
+		NextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccessPointsOutputFormGroup() {
+		return new FormGroup<DescribeAccessPointsOutputFormProperties>({
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -321,24 +874,47 @@ export namespace MyNS {
 		DNSName?: string | null;
 		CanonicalHostedZoneName?: string | null;
 		CanonicalHostedZoneNameID?: string | null;
-		ListenerDescriptions?: Array<ListenerDescription> | null;
+		ListenerDescriptions?: Array<ListenerDescription>;
 
 		/** The policies for a load balancer. */
-		Policies?: Policies | null;
-		BackendServerDescriptions?: Array<BackendServerDescription> | null;
-		AvailabilityZones?: Array<string> | null;
-		Subnets?: Array<string> | null;
+		Policies?: Policies;
+		BackendServerDescriptions?: Array<BackendServerDescription>;
+		AvailabilityZones?: Array<string>;
+		Subnets?: Array<string>;
 		VPCId?: string | null;
-		Instances?: Array<Instance> | null;
+		Instances?: Array<Instance>;
 
 		/** Information about a health check. */
-		HealthCheck?: HealthCheck | null;
+		HealthCheck?: HealthCheck;
 
 		/** Information about a source security group. */
-		SourceSecurityGroup?: SourceSecurityGroup | null;
-		SecurityGroups?: Array<string> | null;
+		SourceSecurityGroup?: SourceSecurityGroup;
+		SecurityGroups?: Array<string>;
 		CreatedTime?: Date | null;
 		Scheme?: string | null;
+	}
+
+	/** Information about a load balancer. */
+	export interface LoadBalancerDescriptionFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		DNSName: FormControl<string | null | undefined>,
+		CanonicalHostedZoneName: FormControl<string | null | undefined>,
+		CanonicalHostedZoneNameID: FormControl<string | null | undefined>,
+		VPCId: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		Scheme: FormControl<string | null | undefined>,
+	}
+	export function CreateLoadBalancerDescriptionFormGroup() {
+		return new FormGroup<LoadBalancerDescriptionFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			DNSName: new FormControl<string | null | undefined>(undefined),
+			CanonicalHostedZoneName: new FormControl<string | null | undefined>(undefined),
+			CanonicalHostedZoneNameID: new FormControl<string | null | undefined>(undefined),
+			VPCId: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			Scheme: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -346,16 +922,34 @@ export namespace MyNS {
 	export interface ListenerDescription {
 
 		/** <p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p> */
-		Listener?: Listener | null;
-		PolicyNames?: Array<string> | null;
+		Listener?: Listener;
+		PolicyNames?: Array<string>;
+	}
+
+	/** The policies enabled for a listener. */
+	export interface ListenerDescriptionFormProperties {
+	}
+	export function CreateListenerDescriptionFormGroup() {
+		return new FormGroup<ListenerDescriptionFormProperties>({
+		});
+
 	}
 
 
 	/** The policies for a load balancer. */
 	export interface Policies {
-		AppCookieStickinessPolicies?: Array<AppCookieStickinessPolicy> | null;
-		LBCookieStickinessPolicies?: Array<LBCookieStickinessPolicy> | null;
-		OtherPolicies?: Array<string> | null;
+		AppCookieStickinessPolicies?: Array<AppCookieStickinessPolicy>;
+		LBCookieStickinessPolicies?: Array<LBCookieStickinessPolicy>;
+		OtherPolicies?: Array<string>;
+	}
+
+	/** The policies for a load balancer. */
+	export interface PoliciesFormProperties {
+	}
+	export function CreatePoliciesFormGroup() {
+		return new FormGroup<PoliciesFormProperties>({
+		});
+
 	}
 
 
@@ -365,6 +959,19 @@ export namespace MyNS {
 		CookieName?: string | null;
 	}
 
+	/** Information about a policy for application-controlled session stickiness. */
+	export interface AppCookieStickinessPolicyFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		CookieName: FormControl<string | null | undefined>,
+	}
+	export function CreateAppCookieStickinessPolicyFormGroup() {
+		return new FormGroup<AppCookieStickinessPolicyFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			CookieName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a policy for duration-based session stickiness. */
 	export interface LBCookieStickinessPolicy {
@@ -372,11 +979,35 @@ export namespace MyNS {
 		CookieExpirationPeriod?: number | null;
 	}
 
+	/** Information about a policy for duration-based session stickiness. */
+	export interface LBCookieStickinessPolicyFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		CookieExpirationPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateLBCookieStickinessPolicyFormGroup() {
+		return new FormGroup<LBCookieStickinessPolicyFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			CookieExpirationPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the configuration of an EC2 instance. */
 	export interface BackendServerDescription {
 		InstancePort?: number | null;
-		PolicyNames?: Array<string> | null;
+		PolicyNames?: Array<string>;
+	}
+
+	/** Information about the configuration of an EC2 instance. */
+	export interface BackendServerDescriptionFormProperties {
+		InstancePort: FormControl<number | null | undefined>,
+	}
+	export function CreateBackendServerDescriptionFormGroup() {
+		return new FormGroup<BackendServerDescriptionFormProperties>({
+			InstancePort: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -386,38 +1017,105 @@ export namespace MyNS {
 		GroupName?: string | null;
 	}
 
+	/** Information about a source security group. */
+	export interface SourceSecurityGroupFormProperties {
+		OwnerAlias: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceSecurityGroupFormGroup() {
+		return new FormGroup<SourceSecurityGroupFormProperties>({
+			OwnerAlias: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DependencyThrottleException {
+	}
+	export interface DependencyThrottleExceptionFormProperties {
+	}
+	export function CreateDependencyThrottleExceptionFormGroup() {
+		return new FormGroup<DependencyThrottleExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output for DescribeTags. */
 	export interface DescribeTagsOutput {
-		TagDescriptions?: Array<TagDescription> | null;
+		TagDescriptions?: Array<TagDescription>;
+	}
+
+	/** Contains the output for DescribeTags. */
+	export interface DescribeTagsOutputFormProperties {
+	}
+	export function CreateDescribeTagsOutputFormGroup() {
+		return new FormGroup<DescribeTagsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** The tags associated with a load balancer. */
 	export interface TagDescription {
 		LoadBalancerName?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** The tags associated with a load balancer. */
+	export interface TagDescriptionFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagDescriptionFormGroup() {
+		return new FormGroup<TagDescriptionFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output of DetachLoadBalancerFromSubnets. */
 	export interface DetachLoadBalancerFromSubnetsOutput {
-		Subnets?: Array<string> | null;
+		Subnets?: Array<string>;
+	}
+
+	/** Contains the output of DetachLoadBalancerFromSubnets. */
+	export interface DetachLoadBalancerFromSubnetsOutputFormProperties {
+	}
+	export function CreateDetachLoadBalancerFromSubnetsOutputFormGroup() {
+		return new FormGroup<DetachLoadBalancerFromSubnetsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output for DisableAvailabilityZonesForLoadBalancer. */
 	export interface RemoveAvailabilityZonesOutput {
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+	}
+
+	/** Contains the output for DisableAvailabilityZonesForLoadBalancer. */
+	export interface RemoveAvailabilityZonesOutputFormProperties {
+	}
+	export function CreateRemoveAvailabilityZonesOutputFormGroup() {
+		return new FormGroup<RemoveAvailabilityZonesOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of EnableAvailabilityZonesForLoadBalancer. */
 	export interface AddAvailabilityZonesOutput {
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+	}
+
+	/** Contains the output of EnableAvailabilityZonesForLoadBalancer. */
+	export interface AddAvailabilityZonesOutputFormProperties {
+	}
+	export function CreateAddAvailabilityZonesOutputFormGroup() {
+		return new FormGroup<AddAvailabilityZonesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -426,18 +1124,47 @@ export namespace MyNS {
 		LoadBalancerName?: string | null;
 
 		/** The attributes for a load balancer. */
-		LoadBalancerAttributes?: LoadBalancerAttributes | null;
+		LoadBalancerAttributes?: LoadBalancerAttributes;
+	}
+
+	/** Contains the output of ModifyLoadBalancerAttributes. */
+	export interface ModifyLoadBalancerAttributesOutputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyLoadBalancerAttributesOutputFormGroup() {
+		return new FormGroup<ModifyLoadBalancerAttributesOutputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output of RegisterInstancesWithLoadBalancer. */
 	export interface RegisterEndPointsOutput {
-		Instances?: Array<Instance> | null;
+		Instances?: Array<Instance>;
+	}
+
+	/** Contains the output of RegisterInstancesWithLoadBalancer. */
+	export interface RegisterEndPointsOutputFormProperties {
+	}
+	export function CreateRegisterEndPointsOutputFormGroup() {
+		return new FormGroup<RegisterEndPointsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the output of RemoveTags. */
 	export interface RemoveTagsOutput {
+	}
+
+	/** Contains the output of RemoveTags. */
+	export interface RemoveTagsOutputFormProperties {
+	}
+	export function CreateRemoveTagsOutputFormGroup() {
+		return new FormGroup<RemoveTagsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -446,12 +1173,39 @@ export namespace MyNS {
 		Key?: string | null;
 	}
 
+	/** The key of a tag. */
+	export interface TagKeyOnlyFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateTagKeyOnlyFormGroup() {
+		return new FormGroup<TagKeyOnlyFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of SetLoadBalancerListenerSSLCertificate. */
 	export interface SetLoadBalancerListenerSSLCertificateOutput {
 	}
 
+	/** Contains the output of SetLoadBalancerListenerSSLCertificate. */
+	export interface SetLoadBalancerListenerSSLCertificateOutputFormProperties {
+	}
+	export function CreateSetLoadBalancerListenerSSLCertificateOutputFormGroup() {
+		return new FormGroup<SetLoadBalancerListenerSSLCertificateOutputFormProperties>({
+		});
+
+	}
+
 	export interface ListenerNotFoundException {
+	}
+	export interface ListenerNotFoundExceptionFormProperties {
+	}
+	export function CreateListenerNotFoundExceptionFormGroup() {
+		return new FormGroup<ListenerNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -459,9 +1213,27 @@ export namespace MyNS {
 	export interface SetLoadBalancerPoliciesForBackendServerOutput {
 	}
 
+	/** Contains the output of SetLoadBalancerPoliciesForBackendServer. */
+	export interface SetLoadBalancerPoliciesForBackendServerOutputFormProperties {
+	}
+	export function CreateSetLoadBalancerPoliciesForBackendServerOutputFormGroup() {
+		return new FormGroup<SetLoadBalancerPoliciesForBackendServerOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the output of SetLoadBalancePoliciesOfListener. */
 	export interface SetLoadBalancerPoliciesOfListenerOutput {
+	}
+
+	/** Contains the output of SetLoadBalancePoliciesOfListener. */
+	export interface SetLoadBalancerPoliciesOfListenerOutputFormProperties {
+	}
+	export function CreateSetLoadBalancerPoliciesOfListenerOutputFormGroup() {
+		return new FormGroup<SetLoadBalancerPoliciesOfListenerOutputFormProperties>({
+		});
+
 	}
 
 
@@ -471,11 +1243,31 @@ export namespace MyNS {
 		AvailabilityZones: Array<string>;
 	}
 
+	/** Contains the parameters for EnableAvailabilityZonesForLoadBalancer. */
+	export interface AddAvailabilityZonesInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateAddAvailabilityZonesInputFormGroup() {
+		return new FormGroup<AddAvailabilityZonesInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for AddTags. */
 	export interface AddTagsInput {
 		LoadBalancerNames: Array<string>;
 		Tags: Array<Tag>;
+	}
+
+	/** Contains the parameters for AddTags. */
+	export interface AddTagsInputFormProperties {
+	}
+	export function CreateAddTagsInputFormGroup() {
+		return new FormGroup<AddTagsInputFormProperties>({
+		});
+
 	}
 
 
@@ -485,11 +1277,33 @@ export namespace MyNS {
 		SecurityGroups: Array<string>;
 	}
 
+	/** Contains the parameters for ApplySecurityGroupsToLoadBalancer. */
+	export interface ApplySecurityGroupsToLoadBalancerInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateApplySecurityGroupsToLoadBalancerInputFormGroup() {
+		return new FormGroup<ApplySecurityGroupsToLoadBalancerInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for AttachLoaBalancerToSubnets. */
 	export interface AttachLoadBalancerToSubnetsInput {
 		LoadBalancerName: string;
 		Subnets: Array<string>;
+	}
+
+	/** Contains the parameters for AttachLoaBalancerToSubnets. */
+	export interface AttachLoadBalancerToSubnetsInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachLoadBalancerToSubnetsInputFormGroup() {
+		return new FormGroup<AttachLoadBalancerToSubnetsInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -504,16 +1318,40 @@ export namespace MyNS {
 		HealthCheck: HealthCheck;
 	}
 
+	/** Contains the parameters for ConfigureHealthCheck. */
+	export interface ConfigureHealthCheckInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateConfigureHealthCheckInputFormGroup() {
+		return new FormGroup<ConfigureHealthCheckInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for CreateLoadBalancer. */
 	export interface CreateAccessPointInput {
 		LoadBalancerName: string;
 		Listeners: Array<Listener>;
-		AvailabilityZones?: Array<string> | null;
-		Subnets?: Array<string> | null;
-		SecurityGroups?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+		Subnets?: Array<string>;
+		SecurityGroups?: Array<string>;
 		Scheme?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Contains the parameters for CreateLoadBalancer. */
+	export interface CreateAccessPointInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		Scheme: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPointInputFormGroup() {
+		return new FormGroup<CreateAccessPointInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			Scheme: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -524,12 +1362,42 @@ export namespace MyNS {
 		CookieName: string;
 	}
 
+	/** Contains the parameters for CreateAppCookieStickinessPolicy. */
+	export interface CreateAppCookieStickinessPolicyInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		CookieName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAppCookieStickinessPolicyInputFormGroup() {
+		return new FormGroup<CreateAppCookieStickinessPolicyInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			CookieName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for CreateLBCookieStickinessPolicy. */
 	export interface CreateLBCookieStickinessPolicyInput {
 		LoadBalancerName: string;
 		PolicyName: string;
 		CookieExpirationPeriod?: number | null;
+	}
+
+	/** Contains the parameters for CreateLBCookieStickinessPolicy. */
+	export interface CreateLBCookieStickinessPolicyInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		CookieExpirationPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateLBCookieStickinessPolicyInputFormGroup() {
+		return new FormGroup<CreateLBCookieStickinessPolicyInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			CookieExpirationPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -539,19 +1407,56 @@ export namespace MyNS {
 		Listeners: Array<Listener>;
 	}
 
+	/** Contains the parameters for CreateLoadBalancerListeners. */
+	export interface CreateLoadBalancerListenerInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLoadBalancerListenerInputFormGroup() {
+		return new FormGroup<CreateLoadBalancerListenerInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for CreateLoadBalancerPolicy. */
 	export interface CreateLoadBalancerPolicyInput {
 		LoadBalancerName: string;
 		PolicyName: string;
 		PolicyTypeName: string;
-		PolicyAttributes?: Array<PolicyAttribute> | null;
+		PolicyAttributes?: Array<PolicyAttribute>;
+	}
+
+	/** Contains the parameters for CreateLoadBalancerPolicy. */
+	export interface CreateLoadBalancerPolicyInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyTypeName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLoadBalancerPolicyInputFormGroup() {
+		return new FormGroup<CreateLoadBalancerPolicyInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyTypeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the parameters for DeleteLoadBalancer. */
 	export interface DeleteAccessPointInput {
 		LoadBalancerName: string;
+	}
+
+	/** Contains the parameters for DeleteLoadBalancer. */
+	export interface DeleteAccessPointInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAccessPointInputFormGroup() {
+		return new FormGroup<DeleteAccessPointInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -561,11 +1466,35 @@ export namespace MyNS {
 		LoadBalancerPorts: Array<number>;
 	}
 
+	/** Contains the parameters for DeleteLoadBalancerListeners. */
+	export interface DeleteLoadBalancerListenerInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLoadBalancerListenerInputFormGroup() {
+		return new FormGroup<DeleteLoadBalancerListenerInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for DeleteLoadBalancerPolicy. */
 	export interface DeleteLoadBalancerPolicyInput {
 		LoadBalancerName: string;
 		PolicyName: string;
+	}
+
+	/** Contains the parameters for DeleteLoadBalancerPolicy. */
+	export interface DeleteLoadBalancerPolicyInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLoadBalancerPolicyInputFormGroup() {
+		return new FormGroup<DeleteLoadBalancerPolicyInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -575,24 +1504,70 @@ export namespace MyNS {
 		Instances: Array<Instance>;
 	}
 
+	/** Contains the parameters for DeregisterInstancesFromLoadBalancer. */
+	export interface DeregisterEndPointsInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterEndPointsInputFormGroup() {
+		return new FormGroup<DeregisterEndPointsInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for DescribeLoadBalancers. */
 	export interface DescribeAccessPointsInput {
-		LoadBalancerNames?: Array<string> | null;
+		LoadBalancerNames?: Array<string>;
 		Marker?: string | null;
 		PageSize?: number | null;
+	}
+
+	/** Contains the parameters for DescribeLoadBalancers. */
+	export interface DescribeAccessPointsInputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeAccessPointsInputFormGroup() {
+		return new FormGroup<DescribeAccessPointsInputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAccountLimitsInput {
 		Marker?: string | null;
 		PageSize?: number | null;
 	}
+	export interface DescribeAccountLimitsInputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeAccountLimitsInputFormGroup() {
+		return new FormGroup<DescribeAccountLimitsInputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains the parameters for DescribeInstanceHealth. */
 	export interface DescribeEndPointStateInput {
 		LoadBalancerName: string;
-		Instances?: Array<Instance> | null;
+		Instances?: Array<Instance>;
+	}
+
+	/** Contains the parameters for DescribeInstanceHealth. */
+	export interface DescribeEndPointStateInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndPointStateInputFormGroup() {
+		return new FormGroup<DescribeEndPointStateInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -601,17 +1576,48 @@ export namespace MyNS {
 		LoadBalancerName: string;
 	}
 
+	/** Contains the parameters for DescribeLoadBalancerAttributes. */
+	export interface DescribeLoadBalancerAttributesInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLoadBalancerAttributesInputFormGroup() {
+		return new FormGroup<DescribeLoadBalancerAttributesInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for DescribeLoadBalancerPolicies. */
 	export interface DescribeLoadBalancerPoliciesInput {
 		LoadBalancerName?: string | null;
-		PolicyNames?: Array<string> | null;
+		PolicyNames?: Array<string>;
+	}
+
+	/** Contains the parameters for DescribeLoadBalancerPolicies. */
+	export interface DescribeLoadBalancerPoliciesInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLoadBalancerPoliciesInputFormGroup() {
+		return new FormGroup<DescribeLoadBalancerPoliciesInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the parameters for DescribeLoadBalancerPolicyTypes. */
 	export interface DescribeLoadBalancerPolicyTypesInput {
-		PolicyTypeNames?: Array<string> | null;
+		PolicyTypeNames?: Array<string>;
+	}
+
+	/** Contains the parameters for DescribeLoadBalancerPolicyTypes. */
+	export interface DescribeLoadBalancerPolicyTypesInputFormProperties {
+	}
+	export function CreateDescribeLoadBalancerPolicyTypesInputFormGroup() {
+		return new FormGroup<DescribeLoadBalancerPolicyTypesInputFormProperties>({
+		});
+
 	}
 
 
@@ -620,11 +1626,31 @@ export namespace MyNS {
 		LoadBalancerNames: Array<string>;
 	}
 
+	/** Contains the parameters for DescribeTags. */
+	export interface DescribeTagsInputFormProperties {
+	}
+	export function CreateDescribeTagsInputFormGroup() {
+		return new FormGroup<DescribeTagsInputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the parameters for DetachLoadBalancerFromSubnets. */
 	export interface DetachLoadBalancerFromSubnetsInput {
 		LoadBalancerName: string;
 		Subnets: Array<string>;
+	}
+
+	/** Contains the parameters for DetachLoadBalancerFromSubnets. */
+	export interface DetachLoadBalancerFromSubnetsInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachLoadBalancerFromSubnetsInputFormGroup() {
+		return new FormGroup<DetachLoadBalancerFromSubnetsInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -639,11 +1665,33 @@ export namespace MyNS {
 		LoadBalancerAttributes: LoadBalancerAttributes;
 	}
 
+	/** Contains the parameters for ModifyLoadBalancerAttributes. */
+	export interface ModifyLoadBalancerAttributesInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyLoadBalancerAttributesInputFormGroup() {
+		return new FormGroup<ModifyLoadBalancerAttributesInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for RegisterInstancesWithLoadBalancer. */
 	export interface RegisterEndPointsInput {
 		LoadBalancerName: string;
 		Instances: Array<Instance>;
+	}
+
+	/** Contains the parameters for RegisterInstancesWithLoadBalancer. */
+	export interface RegisterEndPointsInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterEndPointsInputFormGroup() {
+		return new FormGroup<RegisterEndPointsInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -653,11 +1701,31 @@ export namespace MyNS {
 		AvailabilityZones: Array<string>;
 	}
 
+	/** Contains the parameters for DisableAvailabilityZonesForLoadBalancer. */
+	export interface RemoveAvailabilityZonesInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveAvailabilityZonesInputFormGroup() {
+		return new FormGroup<RemoveAvailabilityZonesInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for RemoveTags. */
 	export interface RemoveTagsInput {
 		LoadBalancerNames: Array<string>;
 		Tags: Array<TagKeyOnly>;
+	}
+
+	/** Contains the parameters for RemoveTags. */
+	export interface RemoveTagsInputFormProperties {
+	}
+	export function CreateRemoveTagsInputFormGroup() {
+		return new FormGroup<RemoveTagsInputFormProperties>({
+		});
+
 	}
 
 
@@ -668,6 +1736,21 @@ export namespace MyNS {
 		SSLCertificateId: string;
 	}
 
+	/** Contains the parameters for SetLoadBalancerListenerSSLCertificate. */
+	export interface SetLoadBalancerListenerSSLCertificateInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		LoadBalancerPort: FormControl<number | null | undefined>,
+		SSLCertificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetLoadBalancerListenerSSLCertificateInputFormGroup() {
+		return new FormGroup<SetLoadBalancerListenerSSLCertificateInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerPort: new FormControl<number | null | undefined>(undefined),
+			SSLCertificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for SetLoadBalancerPoliciesForBackendServer. */
 	export interface SetLoadBalancerPoliciesForBackendServerInput {
@@ -676,12 +1759,38 @@ export namespace MyNS {
 		PolicyNames: Array<string>;
 	}
 
+	/** Contains the parameters for SetLoadBalancerPoliciesForBackendServer. */
+	export interface SetLoadBalancerPoliciesForBackendServerInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		InstancePort: FormControl<number | null | undefined>,
+	}
+	export function CreateSetLoadBalancerPoliciesForBackendServerInputFormGroup() {
+		return new FormGroup<SetLoadBalancerPoliciesForBackendServerInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			InstancePort: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for SetLoadBalancePoliciesOfListener. */
 	export interface SetLoadBalancerPoliciesOfListenerInput {
 		LoadBalancerName: string;
 		LoadBalancerPort: number;
 		PolicyNames: Array<string>;
+	}
+
+	/** Contains the parameters for SetLoadBalancePoliciesOfListener. */
+	export interface SetLoadBalancerPoliciesOfListenerInputFormProperties {
+		LoadBalancerName: FormControl<string | null | undefined>,
+		LoadBalancerPort: FormControl<number | null | undefined>,
+	}
+	export function CreateSetLoadBalancerPoliciesOfListenerInputFormGroup() {
+		return new FormGroup<SetLoadBalancerPoliciesOfListenerInputFormProperties>({
+			LoadBalancerName: new FormControl<string | null | undefined>(undefined),
+			LoadBalancerPort: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -770,7 +1879,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateLoadBalancer(LoadBalancerName: string, Listeners: Array<Listener>, AvailabilityZones: Array<string> | null | undefined, Subnets: Array<string> | null | undefined, SecurityGroups: Array<string> | null | undefined, Scheme: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateLoadBalancerAction, Version: GET_CreateLoadBalancerVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateLoadBalancer?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + Listeners.map(z => `Listeners=${z}`).join('&') + '&' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&' + Subnets.map(z => `Subnets=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroups.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&Scheme=' + (Scheme == null ? '' : encodeURIComponent(Scheme)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateLoadBalancer?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + Listeners.map(z => `Listeners=${z}`).join('&') + '&' + AvailabilityZones?.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&' + Subnets?.map(z => `Subnets=${encodeURIComponent(z)}`).join('&') + '&' + SecurityGroups?.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&Scheme=' + (Scheme == null ? '' : encodeURIComponent(Scheme)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -794,7 +1903,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateLoadBalancerPolicy(LoadBalancerName: string, PolicyName: string, PolicyTypeName: string, PolicyAttributes: Array<PolicyAttribute> | null | undefined, Action: GET_CreateLoadBalancerPolicyAction, Version: GET_CreateLoadBalancerPolicyVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateLoadBalancerPolicy?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&PolicyTypeName=' + (PolicyTypeName == null ? '' : encodeURIComponent(PolicyTypeName)) + '&' + PolicyAttributes.map(z => `PolicyAttributes=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateLoadBalancerPolicy?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&PolicyTypeName=' + (PolicyTypeName == null ? '' : encodeURIComponent(PolicyTypeName)) + '&' + PolicyAttributes?.map(z => `PolicyAttributes=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -859,7 +1968,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeInstanceHealth(LoadBalancerName: string, Instances: Array<Instance> | null | undefined, Action: GET_DescribeInstanceHealthAction, Version: GET_DescribeInstanceHealthVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeInstanceHealth?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + Instances.map(z => `Instances=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeInstanceHealth?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + Instances?.map(z => `Instances=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -880,7 +1989,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeLoadBalancerPolicies(LoadBalancerName: string | null | undefined, PolicyNames: Array<string> | null | undefined, Action: GET_DescribeLoadBalancerPoliciesAction, Version: GET_DescribeLoadBalancerPoliciesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerPolicies?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + PolicyNames.map(z => `PolicyNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerPolicies?LoadBalancerName=' + (LoadBalancerName == null ? '' : encodeURIComponent(LoadBalancerName)) + '&' + PolicyNames?.map(z => `PolicyNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -890,7 +1999,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeLoadBalancerPolicyTypes(PolicyTypeNames: Array<string> | null | undefined, Action: GET_DescribeLoadBalancerPolicyTypesAction, Version: GET_DescribeLoadBalancerPolicyTypesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerPolicyTypes?' + PolicyTypeNames.map(z => `PolicyTypeNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerPolicyTypes?' + PolicyTypeNames?.map(z => `PolicyTypeNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -902,7 +2011,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeLoadBalancers(LoadBalancerNames: Array<string> | null | undefined, Marker: string | null | undefined, PageSize: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancers?' + LoadBalancerNames.map(z => `LoadBalancerNames=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancers?' + LoadBalancerNames?.map(z => `LoadBalancerNames=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&PageSize=' + PageSize + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1043,6 +2152,23 @@ export namespace MyNS {
 		UnhealthyThreshold: number;
 		HealthyThreshold: number;
 	}
+	export interface GET_ConfigureHealthCheckHealthCheckFormProperties {
+		Target: FormControl<string | null | undefined>,
+		Interval: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		UnhealthyThreshold: FormControl<number | null | undefined>,
+		HealthyThreshold: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_ConfigureHealthCheckHealthCheckFormGroup() {
+		return new FormGroup<GET_ConfigureHealthCheckHealthCheckFormProperties>({
+			Target: new FormControl<string | null | undefined>(undefined),
+			Interval: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			UnhealthyThreshold: new FormControl<number | null | undefined>(undefined),
+			HealthyThreshold: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GET_ConfigureHealthCheckAction { ConfigureHealthCheck = 0 }
 
@@ -1167,17 +2293,24 @@ export namespace MyNS {
 	export interface GET_ModifyLoadBalancerAttributesLoadBalancerAttributes {
 
 		/** Information about the <code>CrossZoneLoadBalancing</code> attribute. */
-		CrossZoneLoadBalancing?: CrossZoneLoadBalancing | null;
+		CrossZoneLoadBalancing?: CrossZoneLoadBalancing;
 
 		/** Information about the <code>AccessLog</code> attribute. */
-		AccessLog?: AccessLog | null;
+		AccessLog?: AccessLog;
 
 		/** Information about the <code>ConnectionDraining</code> attribute. */
-		ConnectionDraining?: ConnectionDraining | null;
+		ConnectionDraining?: ConnectionDraining;
 
 		/** Information about the <code>ConnectionSettings</code> attribute. */
-		ConnectionSettings?: ConnectionSettings | null;
-		AdditionalAttributes?: Array<AdditionalAttribute> | null;
+		ConnectionSettings?: ConnectionSettings;
+		AdditionalAttributes?: Array<AdditionalAttribute>;
+	}
+	export interface GET_ModifyLoadBalancerAttributesLoadBalancerAttributesFormProperties {
+	}
+	export function CreateGET_ModifyLoadBalancerAttributesLoadBalancerAttributesFormGroup() {
+		return new FormGroup<GET_ModifyLoadBalancerAttributesLoadBalancerAttributesFormProperties>({
+		});
+
 	}
 
 	export enum GET_ModifyLoadBalancerAttributesAction { ModifyLoadBalancerAttributes = 0 }

@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchPutMessageResponse {
-		BatchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry> | null;
+		BatchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry>;
+	}
+	export interface BatchPutMessageResponseFormProperties {
+	}
+	export function CreateBatchPutMessageResponseFormGroup() {
+		return new FormGroup<BatchPutMessageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -12,6 +20,21 @@ export namespace MyNS {
 		messageId?: string | null;
 		errorCode?: BatchPutMessageErrorEntryErrorCode | null;
 		errorMessage?: string | null;
+	}
+
+	/** Contains information about the errors encountered. */
+	export interface BatchPutMessageErrorEntryFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		errorCode: FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPutMessageErrorEntryFormGroup() {
+		return new FormGroup<BatchPutMessageErrorEntryFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			errorCode: new FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BatchPutMessageErrorEntryErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4 }
@@ -24,20 +47,70 @@ export namespace MyNS {
 		payload: string;
 	}
 
+	/** Information about a message. */
+	export interface MessageFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		inputName: FormControl<string | null | undefined>,
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateMessageFormGroup() {
+		return new FormGroup<MessageFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			inputName: new FormControl<string | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchUpdateDetectorResponse {
-		batchUpdateDetectorErrorEntries?: Array<BatchUpdateDetectorErrorEntry> | null;
+		batchUpdateDetectorErrorEntries?: Array<BatchUpdateDetectorErrorEntry>;
+	}
+	export interface BatchUpdateDetectorResponseFormProperties {
+	}
+	export function CreateBatchUpdateDetectorResponseFormGroup() {
+		return new FormGroup<BatchUpdateDetectorResponseFormProperties>({
+		});
+
 	}
 
 
@@ -46,6 +119,21 @@ export namespace MyNS {
 		messageId?: string | null;
 		errorCode?: BatchPutMessageErrorEntryErrorCode | null;
 		errorMessage?: string | null;
+	}
+
+	/** Information about the error that occured when attempting to update a detector. */
+	export interface BatchUpdateDetectorErrorEntryFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		errorCode: FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchUpdateDetectorErrorEntryFormGroup() {
+		return new FormGroup<BatchUpdateDetectorErrorEntryFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			errorCode: new FormControl<BatchPutMessageErrorEntryErrorCode | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -62,12 +150,38 @@ export namespace MyNS {
 		state: DetectorStateDefinition;
 	}
 
+	/** Information used to update the detector (instance). */
+	export interface UpdateDetectorRequestFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		detectorModelName: FormControl<string | null | undefined>,
+		keyValue: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDetectorRequestFormGroup() {
+		return new FormGroup<UpdateDetectorRequestFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			keyValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The new state, variable values, and timer settings of the detector (instance). */
 	export interface DetectorStateDefinition {
 		stateName: string;
 		variables: Array<VariableDefinition>;
 		timers: Array<TimerDefinition>;
+	}
+
+	/** The new state, variable values, and timer settings of the detector (instance). */
+	export interface DetectorStateDefinitionFormProperties {
+		stateName: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorStateDefinitionFormGroup() {
+		return new FormGroup<DetectorStateDefinitionFormProperties>({
+			stateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -77,6 +191,19 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** The new value of the variable. */
+	export interface VariableDefinitionFormProperties {
+		name: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateVariableDefinitionFormGroup() {
+		return new FormGroup<VariableDefinitionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The new setting of a timer. */
 	export interface TimerDefinition {
@@ -84,10 +211,30 @@ export namespace MyNS {
 		seconds: number;
 	}
 
+	/** The new setting of a timer. */
+	export interface TimerDefinitionFormProperties {
+		name: FormControl<string | null | undefined>,
+		seconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTimerDefinitionFormGroup() {
+		return new FormGroup<TimerDefinitionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			seconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDetectorResponse {
 
 		/** Information about the detector (instance). */
-		detector?: Detector | null;
+		detector?: Detector;
+	}
+	export interface DescribeDetectorResponseFormProperties {
+	}
+	export function CreateDescribeDetectorResponseFormGroup() {
+		return new FormGroup<DescribeDetectorResponseFormProperties>({
+		});
+
 	}
 
 
@@ -98,9 +245,28 @@ export namespace MyNS {
 		detectorModelVersion?: string | null;
 
 		/** Information about the current state of the detector instance. */
-		state?: DetectorState | null;
+		state?: DetectorState;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** Information about the detector (instance). */
+	export interface DetectorFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		keyValue: FormControl<string | null | undefined>,
+		detectorModelVersion: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDetectorFormGroup() {
+		return new FormGroup<DetectorFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			keyValue: new FormControl<string | null | undefined>(undefined),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -111,11 +277,35 @@ export namespace MyNS {
 		timers: Array<Timer>;
 	}
 
+	/** Information about the current state of the detector instance. */
+	export interface DetectorStateFormProperties {
+		stateName: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorStateFormGroup() {
+		return new FormGroup<DetectorStateFormProperties>({
+			stateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The current state of the variable. */
 	export interface Variable {
 		name: string;
 		value: string;
+	}
+
+	/** The current state of the variable. */
+	export interface VariableFormProperties {
+		name: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateVariableFormGroup() {
+		return new FormGroup<VariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -125,12 +315,41 @@ export namespace MyNS {
 		timestamp: Date;
 	}
 
+	/** The current state of a timer. */
+	export interface TimerFormProperties {
+		name: FormControl<string | null | undefined>,
+		timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimerFormGroup() {
+		return new FormGroup<TimerFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListDetectorsResponse {
-		detectorSummaries?: Array<DetectorSummary> | null;
+		detectorSummaries?: Array<DetectorSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDetectorsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDetectorsResponseFormGroup() {
+		return new FormGroup<ListDetectorsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -141,9 +360,28 @@ export namespace MyNS {
 		detectorModelVersion?: string | null;
 
 		/** Information about the detector state. */
-		state?: DetectorStateSummary | null;
+		state?: DetectorStateSummary;
 		creationTime?: Date | null;
 		lastUpdateTime?: Date | null;
+	}
+
+	/** Information about the detector (instance). */
+	export interface DetectorSummaryFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		keyValue: FormControl<string | null | undefined>,
+		detectorModelVersion: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDetectorSummaryFormGroup() {
+		return new FormGroup<DetectorSummaryFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			keyValue: new FormControl<string | null | undefined>(undefined),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -152,20 +390,59 @@ export namespace MyNS {
 		stateName?: string | null;
 	}
 
+	/** Information about the detector state. */
+	export interface DetectorStateSummaryFormProperties {
+		stateName: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorStateSummaryFormGroup() {
+		return new FormGroup<DetectorStateSummaryFormProperties>({
+			stateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4 }
 
 	export interface BatchPutMessageRequest {
 		messages: Array<Message>;
 	}
+	export interface BatchPutMessageRequestFormProperties {
+	}
+	export function CreateBatchPutMessageRequestFormGroup() {
+		return new FormGroup<BatchPutMessageRequestFormProperties>({
+		});
+
+	}
 
 	export interface BatchUpdateDetectorRequest {
 		detectors: Array<UpdateDetectorRequest>;
 	}
+	export interface BatchUpdateDetectorRequestFormProperties {
+	}
+	export function CreateBatchUpdateDetectorRequestFormGroup() {
+		return new FormGroup<BatchUpdateDetectorRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDetectorRequest {
 	}
+	export interface DescribeDetectorRequestFormProperties {
+	}
+	export function CreateDescribeDetectorRequestFormGroup() {
+		return new FormGroup<DescribeDetectorRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDetectorsRequest {
+	}
+	export interface ListDetectorsRequestFormProperties {
+	}
+	export function CreateListDetectorsRequestFormGroup() {
+		return new FormGroup<ListDetectorsRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -225,6 +502,13 @@ export namespace MyNS {
 		 */
 		messages: Array<Message>;
 	}
+	export interface BatchPutMessagePostBodyFormProperties {
+	}
+	export function CreateBatchPutMessagePostBodyFormGroup() {
+		return new FormGroup<BatchPutMessagePostBodyFormProperties>({
+		});
+
+	}
 
 	export interface BatchUpdateDetectorPostBody {
 
@@ -234,6 +518,13 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 */
 		detectors: Array<UpdateDetectorRequest>;
+	}
+	export interface BatchUpdateDetectorPostBodyFormProperties {
+	}
+	export function CreateBatchUpdateDetectorPostBodyFormGroup() {
+		return new FormGroup<BatchUpdateDetectorPostBodyFormProperties>({
+		});
+
 	}
 
 }

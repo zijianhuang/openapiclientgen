@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** An achievement configuration resource. */
@@ -10,7 +11,7 @@ export namespace MyNS {
 		achievementType?: AchievementConfigurationAchievementType | null;
 
 		/** An achievement configuration detail. */
-		draft?: AchievementConfigurationDetail | null;
+		draft?: AchievementConfigurationDetail;
 
 		/** The ID of the achievement. */
 		id?: string | null;
@@ -25,13 +26,49 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** An achievement configuration detail. */
-		published?: AchievementConfigurationDetail | null;
+		published?: AchievementConfigurationDetail;
 
 		/** Steps to unlock.  Only applicable to incremental achievements. */
 		stepsToUnlock?: number | null;
 
 		/** The token for this resource. */
 		token?: string | null;
+	}
+
+	/** An achievement configuration resource. */
+	export interface AchievementConfigurationFormProperties {
+
+		/** The type of the achievement. */
+		achievementType: FormControl<AchievementConfigurationAchievementType | null | undefined>,
+
+		/** The ID of the achievement. */
+		id: FormControl<string | null | undefined>,
+
+		/** The initial state of the achievement. */
+		initialState: FormControl<AchievementConfigurationInitialState | null | undefined>,
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#achievementConfiguration</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** Steps to unlock.  Only applicable to incremental achievements. */
+		stepsToUnlock: FormControl<number | null | undefined>,
+
+		/** The token for this resource. */
+		token: FormControl<string | null | undefined>,
+	}
+	export function CreateAchievementConfigurationFormGroup() {
+		return new FormGroup<AchievementConfigurationFormProperties>({
+			achievementType: new FormControl<AchievementConfigurationAchievementType | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			initialState: new FormControl<AchievementConfigurationInitialState | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			stepsToUnlock: new FormControl<number | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AchievementConfigurationAchievementType { ACHIEVEMENT_TYPE_UNSPECIFIED = 0, STANDARD = 1, INCREMENTAL = 2 }
@@ -41,7 +78,7 @@ export namespace MyNS {
 	export interface AchievementConfigurationDetail {
 
 		/** A localized string bundle resource. */
-		description?: LocalizedStringBundle | null;
+		description?: LocalizedStringBundle;
 
 		/** The icon url of this achievement. Writes to this field are ignored. */
 		iconUrl?: string | null;
@@ -53,13 +90,41 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** A localized string bundle resource. */
-		name?: LocalizedStringBundle | null;
+		name?: LocalizedStringBundle;
 
 		/** Point value for the achievement. */
 		pointValue?: number | null;
 
 		/** The sort rank of this achievement. Writes to this field are ignored. */
 		sortRank?: number | null;
+	}
+
+	/** An achievement configuration detail. */
+	export interface AchievementConfigurationDetailFormProperties {
+
+		/** The icon url of this achievement. Writes to this field are ignored. */
+		iconUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#achievementConfigurationDetail</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** Point value for the achievement. */
+		pointValue: FormControl<number | null | undefined>,
+
+		/** The sort rank of this achievement. Writes to this field are ignored. */
+		sortRank: FormControl<number | null | undefined>,
+	}
+	export function CreateAchievementConfigurationDetailFormGroup() {
+		return new FormGroup<AchievementConfigurationDetailFormProperties>({
+			iconUrl: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			pointValue: new FormControl<number | null | undefined>(undefined),
+			sortRank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -73,7 +138,23 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The locale strings. */
-		translations?: Array<LocalizedString> | null;
+		translations?: Array<LocalizedString>;
+	}
+
+	/** A localized string bundle resource. */
+	export interface LocalizedStringBundleFormProperties {
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#localizedStringBundle</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalizedStringBundleFormGroup() {
+		return new FormGroup<LocalizedStringBundleFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -93,6 +174,30 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A localized string resource. */
+	export interface LocalizedStringFormProperties {
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#localizedString</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** The locale string. */
+		locale: FormControl<string | null | undefined>,
+
+		/** The string value. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalizedStringFormGroup() {
+		return new FormGroup<LocalizedStringFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AchievementConfigurationInitialState { INITIAL_STATE_UNSPECIFIED = 0, HIDDEN = 1, REVEALED = 2 }
 
 
@@ -100,7 +205,7 @@ export namespace MyNS {
 	export interface AchievementConfigurationListResponse {
 
 		/** The achievement configurations. */
-		items?: Array<AchievementConfiguration> | null;
+		items?: Array<AchievementConfiguration>;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
@@ -113,27 +218,57 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** A ListConfigurations response. */
+	export interface AchievementConfigurationListResponseFormProperties {
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string
+		 * <code>gamesConfiguration#achievementConfigurationListResponse</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** The pagination token for the next page of results. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAchievementConfigurationListResponseFormGroup() {
+		return new FormGroup<AchievementConfigurationListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A number affix resource. */
 	export interface GamesNumberAffixConfiguration {
 
 		/** A localized string bundle resource. */
-		few?: LocalizedStringBundle | null;
+		few?: LocalizedStringBundle;
 
 		/** A localized string bundle resource. */
-		many?: LocalizedStringBundle | null;
+		many?: LocalizedStringBundle;
 
 		/** A localized string bundle resource. */
-		one?: LocalizedStringBundle | null;
+		one?: LocalizedStringBundle;
 
 		/** A localized string bundle resource. */
-		other?: LocalizedStringBundle | null;
+		other?: LocalizedStringBundle;
 
 		/** A localized string bundle resource. */
-		two?: LocalizedStringBundle | null;
+		two?: LocalizedStringBundle;
 
 		/** A localized string bundle resource. */
-		zero?: LocalizedStringBundle | null;
+		zero?: LocalizedStringBundle;
+	}
+
+	/** A number affix resource. */
+	export interface GamesNumberAffixConfigurationFormProperties {
+	}
+	export function CreateGamesNumberAffixConfigurationFormGroup() {
+		return new FormGroup<GamesNumberAffixConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -150,7 +285,28 @@ export namespace MyNS {
 		numberFormatType?: GamesNumberFormatConfigurationNumberFormatType | null;
 
 		/** A number affix resource. */
-		suffix?: GamesNumberAffixConfiguration | null;
+		suffix?: GamesNumberAffixConfiguration;
+	}
+
+	/** A number format resource. */
+	export interface GamesNumberFormatConfigurationFormProperties {
+
+		/** The curreny code string. Only used for CURRENCY format type. */
+		currencyCode: FormControl<string | null | undefined>,
+
+		/** The number of decimal places for number. Only used for NUMERIC format type. */
+		numDecimalPlaces: FormControl<number | null | undefined>,
+
+		/** The formatting for the number. */
+		numberFormatType: FormControl<GamesNumberFormatConfigurationNumberFormatType | null | undefined>,
+	}
+	export function CreateGamesNumberFormatConfigurationFormGroup() {
+		return new FormGroup<GamesNumberFormatConfigurationFormProperties>({
+			currencyCode: new FormControl<string | null | undefined>(undefined),
+			numDecimalPlaces: new FormControl<number | null | undefined>(undefined),
+			numberFormatType: new FormControl<GamesNumberFormatConfigurationNumberFormatType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GamesNumberFormatConfigurationNumberFormatType { NUMBER_FORMAT_TYPE_UNSPECIFIED = 0, NUMERIC = 1, TIME_DURATION = 2, CURRENCY = 3 }
@@ -175,6 +331,34 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** An image configuration resource. */
+	export interface ImageConfigurationFormProperties {
+
+		/** The image type for the image. */
+		imageType: FormControl<ImageConfigurationImageType | null | undefined>,
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#imageConfiguration</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** The resource ID of resource which the image belongs to. */
+		resourceId: FormControl<string | null | undefined>,
+
+		/** The url for this image. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateImageConfigurationFormGroup() {
+		return new FormGroup<ImageConfigurationFormProperties>({
+			imageType: new FormControl<ImageConfigurationImageType | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ImageConfigurationImageType { IMAGE_TYPE_UNSPECIFIED = 0, ACHIEVEMENT_ICON = 1, LEADERBOARD_ICON = 2 }
 
 
@@ -182,7 +366,7 @@ export namespace MyNS {
 	export interface LeaderboardConfiguration {
 
 		/** A leaderboard configuration detail. */
-		draft?: LeaderboardConfigurationDetail | null;
+		draft?: LeaderboardConfigurationDetail;
 
 		/** The ID of the leaderboard. */
 		id?: string | null;
@@ -194,7 +378,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** A leaderboard configuration detail. */
-		published?: LeaderboardConfigurationDetail | null;
+		published?: LeaderboardConfigurationDetail;
 
 		/** Maximum score that can be posted to this leaderboard. */
 		scoreMax?: string | null;
@@ -205,6 +389,40 @@ export namespace MyNS {
 
 		/** The token for this resource. */
 		token?: string | null;
+	}
+
+	/** An leaderboard configuration resource. */
+	export interface LeaderboardConfigurationFormProperties {
+
+		/** The ID of the leaderboard. */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#leaderboardConfiguration</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** Maximum score that can be posted to this leaderboard. */
+		scoreMax: FormControl<string | null | undefined>,
+
+		/** Minimum score that can be posted to this leaderboard. */
+		scoreMin: FormControl<string | null | undefined>,
+		scoreOrder: FormControl<LeaderboardConfigurationScoreOrder | null | undefined>,
+
+		/** The token for this resource. */
+		token: FormControl<string | null | undefined>,
+	}
+	export function CreateLeaderboardConfigurationFormGroup() {
+		return new FormGroup<LeaderboardConfigurationFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			scoreMax: new FormControl<string | null | undefined>(undefined),
+			scoreMin: new FormControl<string | null | undefined>(undefined),
+			scoreOrder: new FormControl<LeaderboardConfigurationScoreOrder | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -221,13 +439,37 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** A localized string bundle resource. */
-		name?: LocalizedStringBundle | null;
+		name?: LocalizedStringBundle;
 
 		/** A number format resource. */
-		scoreFormat?: GamesNumberFormatConfiguration | null;
+		scoreFormat?: GamesNumberFormatConfiguration;
 
 		/** The sort rank of this leaderboard. Writes to this field are ignored. */
 		sortRank?: number | null;
+	}
+
+	/** A leaderboard configuration detail. */
+	export interface LeaderboardConfigurationDetailFormProperties {
+
+		/** The icon url of this leaderboard. Writes to this field are ignored. */
+		iconUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string <code>gamesConfiguration#leaderboardConfigurationDetail</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** The sort rank of this leaderboard. Writes to this field are ignored. */
+		sortRank: FormControl<number | null | undefined>,
+	}
+	export function CreateLeaderboardConfigurationDetailFormGroup() {
+		return new FormGroup<LeaderboardConfigurationDetailFormProperties>({
+			iconUrl: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			sortRank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LeaderboardConfigurationScoreOrder { SCORE_ORDER_UNSPECIFIED = 0, LARGER_IS_BETTER = 1, SMALLER_IS_BETTER = 2 }
@@ -237,7 +479,7 @@ export namespace MyNS {
 	export interface LeaderboardConfigurationListResponse {
 
 		/** The leaderboard configurations. */
-		items?: Array<LeaderboardConfiguration> | null;
+		items?: Array<LeaderboardConfiguration>;
 
 		/**
 		 * Uniquely identifies the type of this resource. Value is always the fixed
@@ -248,6 +490,27 @@ export namespace MyNS {
 
 		/** The pagination token for the next page of results. */
 		nextPageToken?: string | null;
+	}
+
+	/** A ListConfigurations response. */
+	export interface LeaderboardConfigurationListResponseFormProperties {
+
+		/**
+		 * Uniquely identifies the type of this resource. Value is always the fixed
+		 * string
+		 * <code>gamesConfiguration#leaderboardConfigurationListResponse</code>.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/** The pagination token for the next page of results. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateLeaderboardConfigurationListResponseFormGroup() {
+		return new FormGroup<LeaderboardConfigurationListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

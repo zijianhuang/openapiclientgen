@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateCapacityProviderResponse {
 
 		/** The details of a capacity provider. */
-		capacityProvider?: CapacityProvider | null;
+		capacityProvider?: CapacityProvider;
+	}
+	export interface CreateCapacityProviderResponseFormProperties {
+	}
+	export function CreateCreateCapacityProviderResponseFormGroup() {
+		return new FormGroup<CreateCapacityProviderResponseFormProperties>({
+		});
+
 	}
 
 
@@ -16,8 +24,23 @@ export namespace MyNS {
 		status?: CapacityProviderStatus | null;
 
 		/** The details of the Auto Scaling group for the capacity provider. */
-		autoScalingGroupProvider?: AutoScalingGroupProvider | null;
-		tags?: Array<Tag> | null;
+		autoScalingGroupProvider?: AutoScalingGroupProvider;
+		tags?: Array<Tag>;
+	}
+
+	/** The details of a capacity provider. */
+	export interface CapacityProviderFormProperties {
+		capacityProviderArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		status: FormControl<CapacityProviderStatus | null | undefined>,
+	}
+	export function CreateCapacityProviderFormGroup() {
+		return new FormGroup<CapacityProviderFormProperties>({
+			capacityProviderArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CapacityProviderStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CapacityProviderStatus { ACTIVE = 0 }
@@ -28,8 +51,21 @@ export namespace MyNS {
 		autoScalingGroupArn: string;
 
 		/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
-		managedScaling?: ManagedScaling | null;
+		managedScaling?: ManagedScaling;
 		managedTerminationProtection?: ManagedScalingStatus | null;
+	}
+
+	/** The details of the Auto Scaling group for the capacity provider. */
+	export interface AutoScalingGroupProviderFormProperties {
+		autoScalingGroupArn: FormControl<string | null | undefined>,
+		managedTerminationProtection: FormControl<ManagedScalingStatus | null | undefined>,
+	}
+	export function CreateAutoScalingGroupProviderFormGroup() {
+		return new FormGroup<AutoScalingGroupProviderFormProperties>({
+			autoScalingGroupArn: new FormControl<string | null | undefined>(undefined),
+			managedTerminationProtection: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -41,6 +77,23 @@ export namespace MyNS {
 		maximumScalingStepSize?: number | null;
 	}
 
+	/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
+	export interface ManagedScalingFormProperties {
+		status: FormControl<ManagedScalingStatus | null | undefined>,
+		targetCapacity: FormControl<number | null | undefined>,
+		minimumScalingStepSize: FormControl<number | null | undefined>,
+		maximumScalingStepSize: FormControl<number | null | undefined>,
+	}
+	export function CreateManagedScalingFormGroup() {
+		return new FormGroup<ManagedScalingFormProperties>({
+			status: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
+			targetCapacity: new FormControl<number | null | undefined>(undefined),
+			minimumScalingStepSize: new FormControl<number | null | undefined>(undefined),
+			maximumScalingStepSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ManagedScalingStatus { ENABLED = 0, DISABLED = 1 }
 
 
@@ -48,6 +101,19 @@ export namespace MyNS {
 	export interface Tag {
 		key?: string | null;
 		value?: string | null;
+	}
+
+	/** <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul> */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCapacityProviderRequest {
@@ -58,25 +124,69 @@ export namespace MyNS {
 		 * Required
 		 */
 		autoScalingGroupProvider: AutoScalingGroupProvider;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateCapacityProviderRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCapacityProviderRequestFormGroup() {
+		return new FormGroup<CreateCapacityProviderRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ServerException {
 	}
+	export interface ServerExceptionFormProperties {
+	}
+	export function CreateServerExceptionFormGroup() {
+		return new FormGroup<ServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ClientException {
+	}
+	export interface ClientExceptionFormProperties {
+	}
+	export function CreateClientExceptionFormGroup() {
+		return new FormGroup<ClientExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface CreateClusterResponseFormProperties {
+	}
+	export function CreateCreateClusterResponseFormGroup() {
+		return new FormGroup<CreateClusterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -89,13 +199,38 @@ export namespace MyNS {
 		runningTasksCount?: number | null;
 		pendingTasksCount?: number | null;
 		activeServicesCount?: number | null;
-		statistics?: Array<KeyValuePair> | null;
-		tags?: Array<Tag> | null;
-		settings?: Array<ClusterSetting> | null;
-		capacityProviders?: Array<string> | null;
-		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
-		attachments?: Array<Attachment> | null;
+		statistics?: Array<KeyValuePair>;
+		tags?: Array<Tag>;
+		settings?: Array<ClusterSetting>;
+		capacityProviders?: Array<string>;
+		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
+		attachments?: Array<Attachment>;
 		attachmentsStatus?: string | null;
+	}
+
+	/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
+	export interface ClusterFormProperties {
+		clusterArn: FormControl<string | null | undefined>,
+		clusterName: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		registeredContainerInstancesCount: FormControl<number | null | undefined>,
+		runningTasksCount: FormControl<number | null | undefined>,
+		pendingTasksCount: FormControl<number | null | undefined>,
+		activeServicesCount: FormControl<number | null | undefined>,
+		attachmentsStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterFormGroup() {
+		return new FormGroup<ClusterFormProperties>({
+			clusterArn: new FormControl<string | null | undefined>(undefined),
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			registeredContainerInstancesCount: new FormControl<number | null | undefined>(undefined),
+			runningTasksCount: new FormControl<number | null | undefined>(undefined),
+			pendingTasksCount: new FormControl<number | null | undefined>(undefined),
+			activeServicesCount: new FormControl<number | null | undefined>(undefined),
+			attachmentsStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -105,11 +240,37 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A key-value pair object. */
+	export interface KeyValuePairFormProperties {
+		name: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateKeyValuePairFormGroup() {
+		return new FormGroup<KeyValuePairFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. */
 	export interface ClusterSetting {
 		name?: ClusterSettingName | null;
 		value?: string | null;
+	}
+
+	/** The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. */
+	export interface ClusterSettingFormProperties {
+		name: FormControl<ClusterSettingName | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSettingFormGroup() {
+		return new FormGroup<ClusterSettingFormProperties>({
+			name: new FormControl<ClusterSettingName | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ClusterSettingName { containerInsights = 0 }
@@ -122,27 +283,73 @@ export namespace MyNS {
 		base?: number | null;
 	}
 
+	/** The details of a capacity provider strategy. */
+	export interface CapacityProviderStrategyItemFormProperties {
+		capacityProvider: FormControl<string | null | undefined>,
+		weight: FormControl<number | null | undefined>,
+		base: FormControl<number | null | undefined>,
+	}
+	export function CreateCapacityProviderStrategyItemFormGroup() {
+		return new FormGroup<CapacityProviderStrategyItemFormProperties>({
+			capacityProvider: new FormControl<string | null | undefined>(undefined),
+			weight: new FormControl<number | null | undefined>(undefined),
+			base: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object representing a container instance or task attachment. */
 	export interface Attachment {
 		id?: string | null;
 		type?: string | null;
 		status?: string | null;
-		details?: Array<KeyValuePair> | null;
+		details?: Array<KeyValuePair>;
+	}
+
+	/** An object representing a container instance or task attachment. */
+	export interface AttachmentFormProperties {
+		id: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachmentFormGroup() {
+		return new FormGroup<AttachmentFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterRequest {
 		clusterName?: string | null;
-		tags?: Array<Tag> | null;
-		settings?: Array<ClusterSetting> | null;
-		capacityProviders?: Array<string> | null;
-		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		tags?: Array<Tag>;
+		settings?: Array<ClusterSetting>;
+		capacityProviders?: Array<string>;
+		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
+	}
+	export interface CreateClusterRequestFormProperties {
+		clusterName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterRequestFormGroup() {
+		return new FormGroup<CreateClusterRequestFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateServiceResponse {
 
 		/** Details on a service within a cluster */
-		service?: Service | null;
+		service?: Service;
+	}
+	export interface CreateServiceResponseFormProperties {
+	}
+	export function CreateCreateServiceResponseFormGroup() {
+		return new FormGroup<CreateServiceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -151,38 +358,81 @@ export namespace MyNS {
 		serviceArn?: string | null;
 		serviceName?: string | null;
 		clusterArn?: string | null;
-		loadBalancers?: Array<LoadBalancer> | null;
-		serviceRegistries?: Array<ServiceRegistry> | null;
+		loadBalancers?: Array<LoadBalancer>;
+		serviceRegistries?: Array<ServiceRegistry>;
 		status?: string | null;
 		desiredCount?: number | null;
 		runningCount?: number | null;
 		pendingCount?: number | null;
 		launchType?: ServiceLaunchType | null;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 		platformVersion?: string | null;
 		taskDefinition?: string | null;
 
 		/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
-		deploymentConfiguration?: DeploymentConfiguration | null;
-		taskSets?: Array<TaskSet> | null;
-		deployments?: Array<Deployment> | null;
+		deploymentConfiguration?: DeploymentConfiguration;
+		taskSets?: Array<TaskSet>;
+		deployments?: Array<Deployment>;
 		roleArn?: string | null;
-		events?: Array<ServiceEvent> | null;
+		events?: Array<ServiceEvent>;
 		createdAt?: Date | null;
-		placementConstraints?: Array<PlacementConstraint> | null;
-		placementStrategy?: Array<PlacementStrategy> | null;
+		placementConstraints?: Array<PlacementConstraint>;
+		placementStrategy?: Array<PlacementStrategy>;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
+		networkConfiguration?: NetworkConfiguration;
 		healthCheckGracePeriodSeconds?: number | null;
 		schedulingStrategy?: ServiceSchedulingStrategy | null;
 
 		/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		deploymentController?: DeploymentController | null;
-		tags?: Array<Tag> | null;
+		deploymentController?: DeploymentController;
+		tags?: Array<Tag>;
 		createdBy?: string | null;
 		enableECSManagedTags?: boolean | null;
 		propagateTags?: ServicePropagateTags | null;
+	}
+
+	/** Details on a service within a cluster */
+	export interface ServiceFormProperties {
+		serviceArn: FormControl<string | null | undefined>,
+		serviceName: FormControl<string | null | undefined>,
+		clusterArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		desiredCount: FormControl<number | null | undefined>,
+		runningCount: FormControl<number | null | undefined>,
+		pendingCount: FormControl<number | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		healthCheckGracePeriodSeconds: FormControl<number | null | undefined>,
+		schedulingStrategy: FormControl<ServiceSchedulingStrategy | null | undefined>,
+		createdBy: FormControl<string | null | undefined>,
+		enableECSManagedTags: FormControl<boolean | null | undefined>,
+		propagateTags: FormControl<ServicePropagateTags | null | undefined>,
+	}
+	export function CreateServiceFormGroup() {
+		return new FormGroup<ServiceFormProperties>({
+			serviceArn: new FormControl<string | null | undefined>(undefined),
+			serviceName: new FormControl<string | null | undefined>(undefined),
+			clusterArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			desiredCount: new FormControl<number | null | undefined>(undefined),
+			runningCount: new FormControl<number | null | undefined>(undefined),
+			pendingCount: new FormControl<number | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			healthCheckGracePeriodSeconds: new FormControl<number | null | undefined>(undefined),
+			schedulingStrategy: new FormControl<ServiceSchedulingStrategy | null | undefined>(undefined),
+			createdBy: new FormControl<string | null | undefined>(undefined),
+			enableECSManagedTags: new FormControl<boolean | null | undefined>(undefined),
+			propagateTags: new FormControl<ServicePropagateTags | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -194,6 +444,23 @@ export namespace MyNS {
 		containerPort?: number | null;
 	}
 
+	/** <p>The load balancer configuration to use with a service or task set.</p> <p>For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.</p> */
+	export interface LoadBalancerFormProperties {
+		targetGroupArn: FormControl<string | null | undefined>,
+		loadBalancerName: FormControl<string | null | undefined>,
+		containerName: FormControl<string | null | undefined>,
+		containerPort: FormControl<number | null | undefined>,
+	}
+	export function CreateLoadBalancerFormGroup() {
+		return new FormGroup<LoadBalancerFormProperties>({
+			targetGroupArn: new FormControl<string | null | undefined>(undefined),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined),
+			containerName: new FormControl<string | null | undefined>(undefined),
+			containerPort: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details of the service registry. */
 	export interface ServiceRegistry {
@@ -203,6 +470,23 @@ export namespace MyNS {
 		containerPort?: number | null;
 	}
 
+	/** Details of the service registry. */
+	export interface ServiceRegistryFormProperties {
+		registryArn: FormControl<string | null | undefined>,
+		port: FormControl<number | null | undefined>,
+		containerName: FormControl<string | null | undefined>,
+		containerPort: FormControl<number | null | undefined>,
+	}
+	export function CreateServiceRegistryFormGroup() {
+		return new FormGroup<ServiceRegistryFormProperties>({
+			registryArn: new FormControl<string | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined),
+			containerName: new FormControl<string | null | undefined>(undefined),
+			containerPort: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ServiceLaunchType { EC2 = 0, FARGATE = 1 }
 
 
@@ -210,6 +494,19 @@ export namespace MyNS {
 	export interface DeploymentConfiguration {
 		maximumPercent?: number | null;
 		minimumHealthyPercent?: number | null;
+	}
+
+	/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
+	export interface DeploymentConfigurationFormProperties {
+		maximumPercent: FormControl<number | null | undefined>,
+		minimumHealthyPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateDeploymentConfigurationFormGroup() {
+		return new FormGroup<DeploymentConfigurationFormProperties>({
+			maximumPercent: new FormControl<number | null | undefined>(undefined),
+			minimumHealthyPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -229,19 +526,62 @@ export namespace MyNS {
 		createdAt?: Date | null;
 		updatedAt?: Date | null;
 		launchType?: ServiceLaunchType | null;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 		platformVersion?: string | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
-		loadBalancers?: Array<LoadBalancer> | null;
-		serviceRegistries?: Array<ServiceRegistry> | null;
+		networkConfiguration?: NetworkConfiguration;
+		loadBalancers?: Array<LoadBalancer>;
+		serviceRegistries?: Array<ServiceRegistry>;
 
 		/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
-		scale?: Scale | null;
+		scale?: Scale;
 		stabilityStatus?: TaskSetStabilityStatus | null;
 		stabilityStatusAt?: Date | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
+	export interface TaskSetFormProperties {
+		id: FormControl<string | null | undefined>,
+		taskSetArn: FormControl<string | null | undefined>,
+		serviceArn: FormControl<string | null | undefined>,
+		clusterArn: FormControl<string | null | undefined>,
+		startedBy: FormControl<string | null | undefined>,
+		externalId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+		computedDesiredCount: FormControl<number | null | undefined>,
+		pendingCount: FormControl<number | null | undefined>,
+		runningCount: FormControl<number | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		stabilityStatus: FormControl<TaskSetStabilityStatus | null | undefined>,
+		stabilityStatusAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateTaskSetFormGroup() {
+		return new FormGroup<TaskSetFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			taskSetArn: new FormControl<string | null | undefined>(undefined),
+			serviceArn: new FormControl<string | null | undefined>(undefined),
+			clusterArn: new FormControl<string | null | undefined>(undefined),
+			startedBy: new FormControl<string | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			computedDesiredCount: new FormControl<number | null | undefined>(undefined),
+			pendingCount: new FormControl<number | null | undefined>(undefined),
+			runningCount: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			stabilityStatus: new FormControl<TaskSetStabilityStatus | null | undefined>(undefined),
+			stabilityStatusAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -249,15 +589,35 @@ export namespace MyNS {
 	export interface NetworkConfiguration {
 
 		/** An object representing the networking details for a task or service. */
-		awsvpcConfiguration?: AwsVpcConfiguration | null;
+		awsvpcConfiguration?: AwsVpcConfiguration;
+	}
+
+	/** An object representing the network configuration for a task or service. */
+	export interface NetworkConfigurationFormProperties {
+	}
+	export function CreateNetworkConfigurationFormGroup() {
+		return new FormGroup<NetworkConfigurationFormProperties>({
+		});
+
 	}
 
 
 	/** An object representing the networking details for a task or service. */
 	export interface AwsVpcConfiguration {
 		subnets: Array<string>;
-		securityGroups?: Array<string> | null;
+		securityGroups?: Array<string>;
 		assignPublicIp?: ManagedScalingStatus | null;
+	}
+
+	/** An object representing the networking details for a task or service. */
+	export interface AwsVpcConfigurationFormProperties {
+		assignPublicIp: FormControl<ManagedScalingStatus | null | undefined>,
+	}
+	export function CreateAwsVpcConfigurationFormGroup() {
+		return new FormGroup<AwsVpcConfigurationFormProperties>({
+			assignPublicIp: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -265,6 +625,19 @@ export namespace MyNS {
 	export interface Scale {
 		value?: number | null;
 		unit?: ScaleUnit | null;
+	}
+
+	/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
+	export interface ScaleFormProperties {
+		value: FormControl<number | null | undefined>,
+		unit: FormControl<ScaleUnit | null | undefined>,
+	}
+	export function CreateScaleFormGroup() {
+		return new FormGroup<ScaleFormProperties>({
+			value: new FormControl<number | null | undefined>(undefined),
+			unit: new FormControl<ScaleUnit | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScaleUnit { PERCENT = 0 }
@@ -282,12 +655,41 @@ export namespace MyNS {
 		runningCount?: number | null;
 		createdAt?: Date | null;
 		updatedAt?: Date | null;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 		launchType?: ServiceLaunchType | null;
 		platformVersion?: string | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
+		networkConfiguration?: NetworkConfiguration;
+	}
+
+	/** The details of an Amazon ECS service deployment. This is used only when a service uses the <code>ECS</code> deployment controller type. */
+	export interface DeploymentFormProperties {
+		id: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+		desiredCount: FormControl<number | null | undefined>,
+		pendingCount: FormControl<number | null | undefined>,
+		runningCount: FormControl<number | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploymentFormGroup() {
+		return new FormGroup<DeploymentFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			desiredCount: new FormControl<number | null | undefined>(undefined),
+			pendingCount: new FormControl<number | null | undefined>(undefined),
+			runningCount: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -298,11 +700,39 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Details on an event associated with a service. */
+	export interface ServiceEventFormProperties {
+		id: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceEventFormGroup() {
+		return new FormGroup<ServiceEventFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>An object representing a constraint on task placement. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>If you are using the Fargate launch type, task placement constraints are not supported.</p> </note> */
 	export interface PlacementConstraint {
 		type?: PlacementConstraintType | null;
 		expression?: string | null;
+	}
+
+	/** <p>An object representing a constraint on task placement. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>If you are using the Fargate launch type, task placement constraints are not supported.</p> </note> */
+	export interface PlacementConstraintFormProperties {
+		type: FormControl<PlacementConstraintType | null | undefined>,
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementConstraintFormGroup() {
+		return new FormGroup<PlacementConstraintFormProperties>({
+			type: new FormControl<PlacementConstraintType | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlacementConstraintType { distinctInstance = 0, memberOf = 1 }
@@ -312,6 +742,19 @@ export namespace MyNS {
 	export interface PlacementStrategy {
 		type?: PlacementStrategyType | null;
 		field?: string | null;
+	}
+
+	/** The task placement strategy for a task or service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface PlacementStrategyFormProperties {
+		type: FormControl<PlacementStrategyType | null | undefined>,
+		field: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementStrategyFormGroup() {
+		return new FormGroup<PlacementStrategyFormProperties>({
+			type: new FormControl<PlacementStrategyType | null | undefined>(undefined),
+			field: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlacementStrategyType { random = 0, spread = 1, binpack = 2 }
@@ -324,6 +767,17 @@ export namespace MyNS {
 		type: DeploymentControllerType;
 	}
 
+	/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface DeploymentControllerFormProperties {
+		type: FormControl<DeploymentControllerType | null | undefined>,
+	}
+	export function CreateDeploymentControllerFormGroup() {
+		return new FormGroup<DeploymentControllerFormProperties>({
+			type: new FormControl<DeploymentControllerType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DeploymentControllerType { ECS = 0, CODE_DEPLOY = 1, EXTERNAL = 2 }
 
 	export enum ServicePropagateTags { TASK_DEFINITION = 0, SERVICE = 1 }
@@ -332,51 +786,124 @@ export namespace MyNS {
 		cluster?: string | null;
 		serviceName: string;
 		taskDefinition?: string | null;
-		loadBalancers?: Array<LoadBalancer> | null;
-		serviceRegistries?: Array<ServiceRegistry> | null;
+		loadBalancers?: Array<LoadBalancer>;
+		serviceRegistries?: Array<ServiceRegistry>;
 		desiredCount?: number | null;
 		clientToken?: string | null;
 		launchType?: ServiceLaunchType | null;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 		platformVersion?: string | null;
 		role?: string | null;
 
 		/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
-		deploymentConfiguration?: DeploymentConfiguration | null;
-		placementConstraints?: Array<PlacementConstraint> | null;
-		placementStrategy?: Array<PlacementStrategy> | null;
+		deploymentConfiguration?: DeploymentConfiguration;
+		placementConstraints?: Array<PlacementConstraint>;
+		placementStrategy?: Array<PlacementStrategy>;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
+		networkConfiguration?: NetworkConfiguration;
 		healthCheckGracePeriodSeconds?: number | null;
 		schedulingStrategy?: ServiceSchedulingStrategy | null;
 
 		/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		deploymentController?: DeploymentController | null;
-		tags?: Array<Tag> | null;
+		deploymentController?: DeploymentController;
+		tags?: Array<Tag>;
 		enableECSManagedTags?: boolean | null;
 		propagateTags?: ServicePropagateTags | null;
+	}
+	export interface CreateServiceRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		serviceName: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+		desiredCount: FormControl<number | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		role: FormControl<string | null | undefined>,
+		healthCheckGracePeriodSeconds: FormControl<number | null | undefined>,
+		schedulingStrategy: FormControl<ServiceSchedulingStrategy | null | undefined>,
+		enableECSManagedTags: FormControl<boolean | null | undefined>,
+		propagateTags: FormControl<ServicePropagateTags | null | undefined>,
+	}
+	export function CreateCreateServiceRequestFormGroup() {
+		return new FormGroup<CreateServiceRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			serviceName: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			desiredCount: new FormControl<number | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			role: new FormControl<string | null | undefined>(undefined),
+			healthCheckGracePeriodSeconds: new FormControl<number | null | undefined>(undefined),
+			schedulingStrategy: new FormControl<ServiceSchedulingStrategy | null | undefined>(undefined),
+			enableECSManagedTags: new FormControl<boolean | null | undefined>(undefined),
+			propagateTags: new FormControl<ServicePropagateTags | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ClusterNotFoundException {
 	}
+	export interface ClusterNotFoundExceptionFormProperties {
+	}
+	export function CreateClusterNotFoundExceptionFormGroup() {
+		return new FormGroup<ClusterNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedFeatureException {
+	}
+	export interface UnsupportedFeatureExceptionFormProperties {
+	}
+	export function CreateUnsupportedFeatureExceptionFormGroup() {
+		return new FormGroup<UnsupportedFeatureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PlatformUnknownException {
 	}
+	export interface PlatformUnknownExceptionFormProperties {
+	}
+	export function CreatePlatformUnknownExceptionFormGroup() {
+		return new FormGroup<PlatformUnknownExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PlatformTaskDefinitionIncompatibilityException {
 	}
+	export interface PlatformTaskDefinitionIncompatibilityExceptionFormProperties {
+	}
+	export function CreatePlatformTaskDefinitionIncompatibilityExceptionFormGroup() {
+		return new FormGroup<PlatformTaskDefinitionIncompatibilityExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet | null;
+		taskSet?: TaskSet;
+	}
+	export interface CreateTaskSetResponseFormProperties {
+	}
+	export function CreateCreateTaskSetResponseFormGroup() {
+		return new FormGroup<CreateTaskSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateTaskSetRequest {
@@ -386,29 +913,71 @@ export namespace MyNS {
 		taskDefinition: string;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
-		loadBalancers?: Array<LoadBalancer> | null;
-		serviceRegistries?: Array<ServiceRegistry> | null;
+		networkConfiguration?: NetworkConfiguration;
+		loadBalancers?: Array<LoadBalancer>;
+		serviceRegistries?: Array<ServiceRegistry>;
 		launchType?: ServiceLaunchType | null;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 		platformVersion?: string | null;
 
 		/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
-		scale?: Scale | null;
+		scale?: Scale;
 		clientToken?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateTaskSetRequestFormProperties {
+		service: FormControl<string | null | undefined>,
+		cluster: FormControl<string | null | undefined>,
+		externalId: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTaskSetRequestFormGroup() {
+		return new FormGroup<CreateTaskSetRequestFormProperties>({
+			service: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ServiceNotFoundException {
 	}
+	export interface ServiceNotFoundExceptionFormProperties {
+	}
+	export function CreateServiceNotFoundExceptionFormGroup() {
+		return new FormGroup<ServiceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceNotActiveException {
+	}
+	export interface ServiceNotActiveExceptionFormProperties {
+	}
+	export function CreateServiceNotActiveExceptionFormGroup() {
+		return new FormGroup<ServiceNotActiveExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAccountSettingResponse {
 
 		/** The current account setting for a resource. */
-		setting?: Setting | null;
+		setting?: Setting;
+	}
+	export interface DeleteAccountSettingResponseFormProperties {
+	}
+	export function CreateDeleteAccountSettingResponseFormGroup() {
+		return new FormGroup<DeleteAccountSettingResponseFormProperties>({
+		});
+
 	}
 
 
@@ -419,15 +988,48 @@ export namespace MyNS {
 		principalArn?: string | null;
 	}
 
+	/** The current account setting for a resource. */
+	export interface SettingFormProperties {
+		name: FormControl<SettingName | null | undefined>,
+		value: FormControl<string | null | undefined>,
+		principalArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSettingFormGroup() {
+		return new FormGroup<SettingFormProperties>({
+			name: new FormControl<SettingName | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+			principalArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SettingName { serviceLongArnFormat = 0, taskLongArnFormat = 1, containerInstanceLongArnFormat = 2, awsvpcTrunking = 3, containerInsights = 4 }
 
 	export interface DeleteAccountSettingRequest {
 		name: SettingName;
 		principalArn?: string | null;
 	}
+	export interface DeleteAccountSettingRequestFormProperties {
+		name: FormControl<SettingName | null | undefined>,
+		principalArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAccountSettingRequestFormGroup() {
+		return new FormGroup<DeleteAccountSettingRequestFormProperties>({
+			name: new FormControl<SettingName | null | undefined>(undefined),
+			principalArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteAttributesResponse {
-		attributes?: Array<Attribute> | null;
+		attributes?: Array<Attribute>;
+	}
+	export interface DeleteAttributesResponseFormProperties {
+	}
+	export function CreateDeleteAttributesResponseFormGroup() {
+		return new FormGroup<DeleteAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -439,42 +1041,126 @@ export namespace MyNS {
 		targetId?: string | null;
 	}
 
+	/** An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface AttributeFormProperties {
+		name: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+		targetType: FormControl<AttributeTargetType | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
+	}
+	export function CreateAttributeFormGroup() {
+		return new FormGroup<AttributeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+			targetType: new FormControl<AttributeTargetType | null | undefined>(undefined),
+			targetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AttributeTargetType { container_instance = 0 }
 
 	export interface DeleteAttributesRequest {
 		cluster?: string | null;
 		attributes: Array<Attribute>;
 	}
+	export interface DeleteAttributesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAttributesRequestFormGroup() {
+		return new FormGroup<DeleteAttributesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TargetNotFoundException {
+	}
+	export interface TargetNotFoundExceptionFormProperties {
+	}
+	export function CreateTargetNotFoundExceptionFormGroup() {
+		return new FormGroup<TargetNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface DeleteClusterResponseFormProperties {
+	}
+	export function CreateDeleteClusterResponseFormGroup() {
+		return new FormGroup<DeleteClusterResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterRequest {
 		cluster: string;
 	}
+	export interface DeleteClusterRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterRequestFormGroup() {
+		return new FormGroup<DeleteClusterRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ClusterContainsContainerInstancesException {
+	}
+	export interface ClusterContainsContainerInstancesExceptionFormProperties {
+	}
+	export function CreateClusterContainsContainerInstancesExceptionFormGroup() {
+		return new FormGroup<ClusterContainsContainerInstancesExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ClusterContainsServicesException {
 	}
+	export interface ClusterContainsServicesExceptionFormProperties {
+	}
+	export function CreateClusterContainsServicesExceptionFormGroup() {
+		return new FormGroup<ClusterContainsServicesExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ClusterContainsTasksException {
 	}
+	export interface ClusterContainsTasksExceptionFormProperties {
+	}
+	export function CreateClusterContainsTasksExceptionFormGroup() {
+		return new FormGroup<ClusterContainsTasksExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UpdateInProgressException {
+	}
+	export interface UpdateInProgressExceptionFormProperties {
+	}
+	export function CreateUpdateInProgressExceptionFormGroup() {
+		return new FormGroup<UpdateInProgressExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteServiceResponse {
 
 		/** Details on a service within a cluster */
-		service?: Service | null;
+		service?: Service;
+	}
+	export interface DeleteServiceResponseFormProperties {
+	}
+	export function CreateDeleteServiceResponseFormGroup() {
+		return new FormGroup<DeleteServiceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteServiceRequest {
@@ -482,11 +1168,31 @@ export namespace MyNS {
 		service: string;
 		force?: boolean | null;
 	}
+	export interface DeleteServiceRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteServiceRequestFormGroup() {
+		return new FormGroup<DeleteServiceRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet | null;
+		taskSet?: TaskSet;
+	}
+	export interface DeleteTaskSetResponseFormProperties {
+	}
+	export function CreateDeleteTaskSetResponseFormGroup() {
+		return new FormGroup<DeleteTaskSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTaskSetRequest {
@@ -495,14 +1201,43 @@ export namespace MyNS {
 		taskSet: string;
 		force?: boolean | null;
 	}
+	export interface DeleteTaskSetRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		taskSet: FormControl<string | null | undefined>,
+		force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteTaskSetRequestFormGroup() {
+		return new FormGroup<DeleteTaskSetRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			taskSet: new FormControl<string | null | undefined>(undefined),
+			force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaskSetNotFoundException {
+	}
+	export interface TaskSetNotFoundExceptionFormProperties {
+	}
+	export function CreateTaskSetNotFoundExceptionFormGroup() {
+		return new FormGroup<TaskSetNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterContainerInstanceResponse {
 
 		/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
-		containerInstance?: ContainerInstance | null;
+		containerInstance?: ContainerInstance;
+	}
+	export interface DeregisterContainerInstanceResponseFormProperties {
+	}
+	export function CreateDeregisterContainerInstanceResponseFormGroup() {
+		return new FormGroup<DeregisterContainerInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -514,19 +1249,50 @@ export namespace MyNS {
 		version?: number | null;
 
 		/** The Docker and Amazon ECS container agent version information about a container instance. */
-		versionInfo?: VersionInfo | null;
-		remainingResources?: Array<Resource> | null;
-		registeredResources?: Array<Resource> | null;
+		versionInfo?: VersionInfo;
+		remainingResources?: Array<Resource>;
+		registeredResources?: Array<Resource>;
 		status?: string | null;
 		statusReason?: string | null;
 		agentConnected?: boolean | null;
 		runningTasksCount?: number | null;
 		pendingTasksCount?: number | null;
 		agentUpdateStatus?: ContainerInstanceAgentUpdateStatus | null;
-		attributes?: Array<Attribute> | null;
+		attributes?: Array<Attribute>;
 		registeredAt?: Date | null;
-		attachments?: Array<Attachment> | null;
-		tags?: Array<Tag> | null;
+		attachments?: Array<Attachment>;
+		tags?: Array<Tag>;
+	}
+
+	/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
+	export interface ContainerInstanceFormProperties {
+		containerInstanceArn: FormControl<string | null | undefined>,
+		ec2InstanceId: FormControl<string | null | undefined>,
+		capacityProviderName: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		statusReason: FormControl<string | null | undefined>,
+		agentConnected: FormControl<boolean | null | undefined>,
+		runningTasksCount: FormControl<number | null | undefined>,
+		pendingTasksCount: FormControl<number | null | undefined>,
+		agentUpdateStatus: FormControl<ContainerInstanceAgentUpdateStatus | null | undefined>,
+		registeredAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateContainerInstanceFormGroup() {
+		return new FormGroup<ContainerInstanceFormProperties>({
+			containerInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ec2InstanceId: new FormControl<string | null | undefined>(undefined),
+			capacityProviderName: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			statusReason: new FormControl<string | null | undefined>(undefined),
+			agentConnected: new FormControl<boolean | null | undefined>(undefined),
+			runningTasksCount: new FormControl<number | null | undefined>(undefined),
+			pendingTasksCount: new FormControl<number | null | undefined>(undefined),
+			agentUpdateStatus: new FormControl<ContainerInstanceAgentUpdateStatus | null | undefined>(undefined),
+			registeredAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -537,6 +1303,21 @@ export namespace MyNS {
 		dockerVersion?: string | null;
 	}
 
+	/** The Docker and Amazon ECS container agent version information about a container instance. */
+	export interface VersionInfoFormProperties {
+		agentVersion: FormControl<string | null | undefined>,
+		agentHash: FormControl<string | null | undefined>,
+		dockerVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateVersionInfoFormGroup() {
+		return new FormGroup<VersionInfoFormProperties>({
+			agentVersion: new FormControl<string | null | undefined>(undefined),
+			agentHash: new FormControl<string | null | undefined>(undefined),
+			dockerVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the resources available for a container instance. */
 	export interface Resource {
@@ -545,7 +1326,26 @@ export namespace MyNS {
 		doubleValue?: number | null;
 		longValue?: number | null;
 		integerValue?: number | null;
-		stringSetValue?: Array<string> | null;
+		stringSetValue?: Array<string>;
+	}
+
+	/** Describes the resources available for a container instance. */
+	export interface ResourceFormProperties {
+		name: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		doubleValue: FormControl<number | null | undefined>,
+		longValue: FormControl<number | null | undefined>,
+		integerValue: FormControl<number | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			doubleValue: new FormControl<number | null | undefined>(undefined),
+			longValue: new FormControl<number | null | undefined>(undefined),
+			integerValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContainerInstanceAgentUpdateStatus { PENDING = 0, STAGING = 1, STAGED = 2, UPDATING = 3, UPDATED = 4, FAILED = 5 }
@@ -555,37 +1355,88 @@ export namespace MyNS {
 		containerInstance: string;
 		force?: boolean | null;
 	}
+	export interface DeregisterContainerInstanceRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		containerInstance: FormControl<string | null | undefined>,
+		force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeregisterContainerInstanceRequestFormGroup() {
+		return new FormGroup<DeregisterContainerInstanceRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			containerInstance: new FormControl<string | null | undefined>(undefined),
+			force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeregisterTaskDefinitionResponse {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
-		taskDefinition?: TaskDefinition | null;
+		taskDefinition?: TaskDefinition;
+	}
+	export interface DeregisterTaskDefinitionResponseFormProperties {
+	}
+	export function CreateDeregisterTaskDefinitionResponseFormGroup() {
+		return new FormGroup<DeregisterTaskDefinitionResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
 	export interface TaskDefinition {
 		taskDefinitionArn?: string | null;
-		containerDefinitions?: Array<ContainerDefinition> | null;
+		containerDefinitions?: Array<ContainerDefinition>;
 		family?: string | null;
 		taskRoleArn?: string | null;
 		executionRoleArn?: string | null;
 		networkMode?: TaskDefinitionNetworkMode | null;
 		revision?: number | null;
-		volumes?: Array<Volume> | null;
+		volumes?: Array<Volume>;
 		status?: TaskDefinitionStatus | null;
-		requiresAttributes?: Array<Attribute> | null;
-		placementConstraints?: Array<TaskDefinitionPlacementConstraint> | null;
-		compatibilities?: Array<Compatibility> | null;
-		requiresCompatibilities?: Array<Compatibility> | null;
+		requiresAttributes?: Array<Attribute>;
+		placementConstraints?: Array<TaskDefinitionPlacementConstraint>;
+		compatibilities?: Array<Compatibility>;
+		requiresCompatibilities?: Array<Compatibility>;
 		cpu?: string | null;
 		memory?: string | null;
-		inferenceAccelerators?: Array<InferenceAccelerator> | null;
+		inferenceAccelerators?: Array<InferenceAccelerator>;
 		pidMode?: TaskDefinitionPidMode | null;
 		ipcMode?: TaskDefinitionIpcMode | null;
 
 		/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
-		proxyConfiguration?: ProxyConfiguration | null;
+		proxyConfiguration?: ProxyConfiguration;
+	}
+
+	/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
+	export interface TaskDefinitionFormProperties {
+		taskDefinitionArn: FormControl<string | null | undefined>,
+		family: FormControl<string | null | undefined>,
+		taskRoleArn: FormControl<string | null | undefined>,
+		executionRoleArn: FormControl<string | null | undefined>,
+		networkMode: FormControl<TaskDefinitionNetworkMode | null | undefined>,
+		revision: FormControl<number | null | undefined>,
+		status: FormControl<TaskDefinitionStatus | null | undefined>,
+		cpu: FormControl<string | null | undefined>,
+		memory: FormControl<string | null | undefined>,
+		pidMode: FormControl<TaskDefinitionPidMode | null | undefined>,
+		ipcMode: FormControl<TaskDefinitionIpcMode | null | undefined>,
+	}
+	export function CreateTaskDefinitionFormGroup() {
+		return new FormGroup<TaskDefinitionFormProperties>({
+			taskDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			family: new FormControl<string | null | undefined>(undefined),
+			taskRoleArn: new FormControl<string | null | undefined>(undefined),
+			executionRoleArn: new FormControl<string | null | undefined>(undefined),
+			networkMode: new FormControl<TaskDefinitionNetworkMode | null | undefined>(undefined),
+			revision: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<TaskDefinitionStatus | null | undefined>(undefined),
+			cpu: new FormControl<string | null | undefined>(undefined),
+			memory: new FormControl<string | null | undefined>(undefined),
+			pidMode: new FormControl<TaskDefinitionPidMode | null | undefined>(undefined),
+			ipcMode: new FormControl<TaskDefinitionIpcMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -595,24 +1446,24 @@ export namespace MyNS {
 		image?: string | null;
 
 		/** The repository credentials for private registry authentication. */
-		repositoryCredentials?: RepositoryCredentials | null;
+		repositoryCredentials?: RepositoryCredentials;
 		cpu?: number | null;
 		memory?: number | null;
 		memoryReservation?: number | null;
-		links?: Array<string> | null;
-		portMappings?: Array<PortMapping> | null;
+		links?: Array<string>;
+		portMappings?: Array<PortMapping>;
 		essential?: boolean | null;
-		entryPoint?: Array<string> | null;
-		command?: Array<string> | null;
-		environment?: Array<KeyValuePair> | null;
-		environmentFiles?: Array<EnvironmentFile> | null;
-		mountPoints?: Array<MountPoint> | null;
-		volumesFrom?: Array<VolumeFrom> | null;
+		entryPoint?: Array<string>;
+		command?: Array<string>;
+		environment?: Array<KeyValuePair>;
+		environmentFiles?: Array<EnvironmentFile>;
+		mountPoints?: Array<MountPoint>;
+		volumesFrom?: Array<VolumeFrom>;
 
 		/** Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>. */
-		linuxParameters?: LinuxParameters | null;
-		secrets?: Array<Secret> | null;
-		dependsOn?: Array<ContainerDependency> | null;
+		linuxParameters?: LinuxParameters;
+		secrets?: Array<Secret>;
+		dependsOn?: Array<ContainerDependency>;
 		startTimeout?: number | null;
 		stopTimeout?: number | null;
 		hostname?: string | null;
@@ -621,31 +1472,83 @@ export namespace MyNS {
 		disableNetworking?: boolean | null;
 		privileged?: boolean | null;
 		readonlyRootFilesystem?: boolean | null;
-		dnsServers?: Array<string> | null;
-		dnsSearchDomains?: Array<string> | null;
-		extraHosts?: Array<HostEntry> | null;
-		dockerSecurityOptions?: Array<string> | null;
+		dnsServers?: Array<string>;
+		dnsSearchDomains?: Array<string>;
+		extraHosts?: Array<HostEntry>;
+		dockerSecurityOptions?: Array<string>;
 		interactive?: boolean | null;
 		pseudoTerminal?: boolean | null;
-		dockerLabels?: DockerLabelsMap | null;
-		ulimits?: Array<Ulimit> | null;
+		dockerLabels?: DockerLabelsMap;
+		ulimits?: Array<Ulimit>;
 
 		/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
-		logConfiguration?: LogConfiguration | null;
+		logConfiguration?: LogConfiguration;
 
 		/** <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p> <p>The following describes the possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.</p> </li> </ul> <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.</p> </li> </ul> */
-		healthCheck?: HealthCheck | null;
-		systemControls?: Array<SystemControl> | null;
-		resourceRequirements?: Array<ResourceRequirement> | null;
+		healthCheck?: HealthCheck;
+		systemControls?: Array<SystemControl>;
+		resourceRequirements?: Array<ResourceRequirement>;
 
 		/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		firelensConfiguration?: FirelensConfiguration | null;
+		firelensConfiguration?: FirelensConfiguration;
+	}
+
+	/** Container definitions are used in task definitions to describe the different containers that are launched as part of a task. */
+	export interface ContainerDefinitionFormProperties {
+		name: FormControl<string | null | undefined>,
+		image: FormControl<string | null | undefined>,
+		cpu: FormControl<number | null | undefined>,
+		memory: FormControl<number | null | undefined>,
+		memoryReservation: FormControl<number | null | undefined>,
+		essential: FormControl<boolean | null | undefined>,
+		startTimeout: FormControl<number | null | undefined>,
+		stopTimeout: FormControl<number | null | undefined>,
+		hostname: FormControl<string | null | undefined>,
+		user: FormControl<string | null | undefined>,
+		workingDirectory: FormControl<string | null | undefined>,
+		disableNetworking: FormControl<boolean | null | undefined>,
+		privileged: FormControl<boolean | null | undefined>,
+		readonlyRootFilesystem: FormControl<boolean | null | undefined>,
+		interactive: FormControl<boolean | null | undefined>,
+		pseudoTerminal: FormControl<boolean | null | undefined>,
+	}
+	export function CreateContainerDefinitionFormGroup() {
+		return new FormGroup<ContainerDefinitionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			image: new FormControl<string | null | undefined>(undefined),
+			cpu: new FormControl<number | null | undefined>(undefined),
+			memory: new FormControl<number | null | undefined>(undefined),
+			memoryReservation: new FormControl<number | null | undefined>(undefined),
+			essential: new FormControl<boolean | null | undefined>(undefined),
+			startTimeout: new FormControl<number | null | undefined>(undefined),
+			stopTimeout: new FormControl<number | null | undefined>(undefined),
+			hostname: new FormControl<string | null | undefined>(undefined),
+			user: new FormControl<string | null | undefined>(undefined),
+			workingDirectory: new FormControl<string | null | undefined>(undefined),
+			disableNetworking: new FormControl<boolean | null | undefined>(undefined),
+			privileged: new FormControl<boolean | null | undefined>(undefined),
+			readonlyRootFilesystem: new FormControl<boolean | null | undefined>(undefined),
+			interactive: new FormControl<boolean | null | undefined>(undefined),
+			pseudoTerminal: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The repository credentials for private registry authentication. */
 	export interface RepositoryCredentials {
 		credentialsParameter: string;
+	}
+
+	/** The repository credentials for private registry authentication. */
+	export interface RepositoryCredentialsFormProperties {
+		credentialsParameter: FormControl<string | null | undefined>,
+	}
+	export function CreateRepositoryCredentialsFormGroup() {
+		return new FormGroup<RepositoryCredentialsFormProperties>({
+			credentialsParameter: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -656,6 +1559,21 @@ export namespace MyNS {
 		protocol?: PortMappingProtocol | null;
 	}
 
+	/** <p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.</p> <p>If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.</p> <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p> */
+	export interface PortMappingFormProperties {
+		containerPort: FormControl<number | null | undefined>,
+		hostPort: FormControl<number | null | undefined>,
+		protocol: FormControl<PortMappingProtocol | null | undefined>,
+	}
+	export function CreatePortMappingFormGroup() {
+		return new FormGroup<PortMappingFormProperties>({
+			containerPort: new FormControl<number | null | undefined>(undefined),
+			hostPort: new FormControl<number | null | undefined>(undefined),
+			protocol: new FormControl<PortMappingProtocol | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PortMappingProtocol { tcp = 0, udp = 1 }
 
 
@@ -663,6 +1581,19 @@ export namespace MyNS {
 	export interface EnvironmentFile {
 		value: string;
 		type: EnvironmentFileType;
+	}
+
+	/** <p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p> <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>This field is not valid for containers in tasks using the Fargate launch type.</p> */
+	export interface EnvironmentFileFormProperties {
+		value: FormControl<string | null | undefined>,
+		type: FormControl<EnvironmentFileType | null | undefined>,
+	}
+	export function CreateEnvironmentFileFormGroup() {
+		return new FormGroup<EnvironmentFileFormProperties>({
+			value: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<EnvironmentFileType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentFileType { s3 = 0 }
@@ -675,6 +1606,21 @@ export namespace MyNS {
 		readOnly?: boolean | null;
 	}
 
+	/** Details on a volume mount point that is used in a container definition. */
+	export interface MountPointFormProperties {
+		sourceVolume: FormControl<string | null | undefined>,
+		containerPath: FormControl<string | null | undefined>,
+		readOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateMountPointFormGroup() {
+		return new FormGroup<MountPointFormProperties>({
+			sourceVolume: new FormControl<string | null | undefined>(undefined),
+			containerPath: new FormControl<string | null | undefined>(undefined),
+			readOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details on a data volume from another container in the same task definition. */
 	export interface VolumeFrom {
@@ -682,25 +1628,64 @@ export namespace MyNS {
 		readOnly?: boolean | null;
 	}
 
+	/** Details on a data volume from another container in the same task definition. */
+	export interface VolumeFromFormProperties {
+		sourceContainer: FormControl<string | null | undefined>,
+		readOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateVolumeFromFormGroup() {
+		return new FormGroup<VolumeFromFormProperties>({
+			sourceContainer: new FormControl<string | null | undefined>(undefined),
+			readOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>. */
 	export interface LinuxParameters {
 
 		/** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page. */
-		capabilities?: KernelCapabilities | null;
-		devices?: Array<Device> | null;
+		capabilities?: KernelCapabilities;
+		devices?: Array<Device>;
 		initProcessEnabled?: boolean | null;
 		sharedMemorySize?: number | null;
-		tmpfs?: Array<Tmpfs> | null;
+		tmpfs?: Array<Tmpfs>;
 		maxSwap?: number | null;
 		swappiness?: number | null;
+	}
+
+	/** Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>. */
+	export interface LinuxParametersFormProperties {
+		initProcessEnabled: FormControl<boolean | null | undefined>,
+		sharedMemorySize: FormControl<number | null | undefined>,
+		maxSwap: FormControl<number | null | undefined>,
+		swappiness: FormControl<number | null | undefined>,
+	}
+	export function CreateLinuxParametersFormGroup() {
+		return new FormGroup<LinuxParametersFormProperties>({
+			initProcessEnabled: new FormControl<boolean | null | undefined>(undefined),
+			sharedMemorySize: new FormControl<number | null | undefined>(undefined),
+			maxSwap: new FormControl<number | null | undefined>(undefined),
+			swappiness: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page. */
 	export interface KernelCapabilities {
-		add?: Array<string> | null;
-		drop?: Array<string> | null;
+		add?: Array<string>;
+		drop?: Array<string>;
+	}
+
+	/** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page. */
+	export interface KernelCapabilitiesFormProperties {
+	}
+	export function CreateKernelCapabilitiesFormGroup() {
+		return new FormGroup<KernelCapabilitiesFormProperties>({
+		});
+
 	}
 
 
@@ -708,7 +1693,20 @@ export namespace MyNS {
 	export interface Device {
 		hostPath: string;
 		containerPath?: string | null;
-		permissions?: Array<DeviceCgroupPermission> | null;
+		permissions?: Array<DeviceCgroupPermission>;
+	}
+
+	/** An object representing a container instance host device. */
+	export interface DeviceFormProperties {
+		hostPath: FormControl<string | null | undefined>,
+		containerPath: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceFormGroup() {
+		return new FormGroup<DeviceFormProperties>({
+			hostPath: new FormControl<string | null | undefined>(undefined),
+			containerPath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeviceCgroupPermission { read = 0, write = 1, mknod = 2 }
@@ -718,7 +1716,20 @@ export namespace MyNS {
 	export interface Tmpfs {
 		containerPath: string;
 		size: number;
-		mountOptions?: Array<string> | null;
+		mountOptions?: Array<string>;
+	}
+
+	/** The container path, mount options, and size of the tmpfs mount. */
+	export interface TmpfsFormProperties {
+		containerPath: FormControl<string | null | undefined>,
+		size: FormControl<number | null | undefined>,
+	}
+	export function CreateTmpfsFormGroup() {
+		return new FormGroup<TmpfsFormProperties>({
+			containerPath: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -728,11 +1739,37 @@ export namespace MyNS {
 		valueFrom: string;
 	}
 
+	/** <p>An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:</p> <ul> <li> <p>To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.</p> </li> <li> <p>To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> */
+	export interface SecretFormProperties {
+		name: FormControl<string | null | undefined>,
+		valueFrom: FormControl<string | null | undefined>,
+	}
+	export function CreateSecretFormGroup() {
+		return new FormGroup<SecretFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			valueFrom: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.</p> </note> */
 	export interface ContainerDependency {
 		containerName: string;
 		condition: ContainerDependencyCondition;
+	}
+
+	/** <p>The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.</p> </note> */
+	export interface ContainerDependencyFormProperties {
+		containerName: FormControl<string | null | undefined>,
+		condition: FormControl<ContainerDependencyCondition | null | undefined>,
+	}
+	export function CreateContainerDependencyFormGroup() {
+		return new FormGroup<ContainerDependencyFormProperties>({
+			containerName: new FormControl<string | null | undefined>(undefined),
+			condition: new FormControl<ContainerDependencyCondition | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContainerDependencyCondition { START = 0, COMPLETE = 1, SUCCESS = 2, HEALTHY = 3 }
@@ -744,7 +1781,27 @@ export namespace MyNS {
 		ipAddress: string;
 	}
 
+	/** Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.  */
+	export interface HostEntryFormProperties {
+		hostname: FormControl<string | null | undefined>,
+		ipAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateHostEntryFormGroup() {
+		return new FormGroup<HostEntryFormProperties>({
+			hostname: new FormControl<string | null | undefined>(undefined),
+			ipAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DockerLabelsMap {
+	}
+	export interface DockerLabelsMapFormProperties {
+	}
+	export function CreateDockerLabelsMapFormGroup() {
+		return new FormGroup<DockerLabelsMapFormProperties>({
+		});
+
 	}
 
 
@@ -755,19 +1812,52 @@ export namespace MyNS {
 		hardLimit: number;
 	}
 
+	/** The <code>ulimit</code> settings to pass to the container. */
+	export interface UlimitFormProperties {
+		name: FormControl<UlimitName | null | undefined>,
+		softLimit: FormControl<number | null | undefined>,
+		hardLimit: FormControl<number | null | undefined>,
+	}
+	export function CreateUlimitFormGroup() {
+		return new FormGroup<UlimitFormProperties>({
+			name: new FormControl<UlimitName | null | undefined>(undefined),
+			softLimit: new FormControl<number | null | undefined>(undefined),
+			hardLimit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UlimitName { core = 0, cpu = 1, data = 2, fsize = 3, locks = 4, memlock = 5, msgqueue = 6, nice = 7, nofile = 8, nproc = 9, rss = 10, rtprio = 11, rttime = 12, sigpending = 13, stack = 14 }
 
 
 	/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
 	export interface LogConfiguration {
 		logDriver: LogConfigurationLogDriver;
-		options?: LogConfigurationOptionsMap | null;
-		secretOptions?: Array<Secret> | null;
+		options?: LogConfigurationOptionsMap;
+		secretOptions?: Array<Secret>;
+	}
+
+	/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
+	export interface LogConfigurationFormProperties {
+		logDriver: FormControl<LogConfigurationLogDriver | null | undefined>,
+	}
+	export function CreateLogConfigurationFormGroup() {
+		return new FormGroup<LogConfigurationFormProperties>({
+			logDriver: new FormControl<LogConfigurationLogDriver | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LogConfigurationLogDriver { json_file = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
 
 	export interface LogConfigurationOptionsMap {
+	}
+	export interface LogConfigurationOptionsMapFormProperties {
+	}
+	export function CreateLogConfigurationOptionsMapFormGroup() {
+		return new FormGroup<LogConfigurationOptionsMapFormProperties>({
+		});
+
 	}
 
 
@@ -780,11 +1870,41 @@ export namespace MyNS {
 		startPeriod?: number | null;
 	}
 
+	/** <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p> <p>The following describes the possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.</p> </li> </ul> <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.</p> </li> </ul> */
+	export interface HealthCheckFormProperties {
+		interval: FormControl<number | null | undefined>,
+		timeout: FormControl<number | null | undefined>,
+		retries: FormControl<number | null | undefined>,
+		startPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateHealthCheckFormGroup() {
+		return new FormGroup<HealthCheckFormProperties>({
+			interval: new FormControl<number | null | undefined>(undefined),
+			timeout: new FormControl<number | null | undefined>(undefined),
+			retries: new FormControl<number | null | undefined>(undefined),
+			startPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:</p> <ul> <li> <p>For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.</p> </li> </ul> */
 	export interface SystemControl {
 		namespace?: string | null;
 		value?: string | null;
+	}
+
+	/** <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:</p> <ul> <li> <p>For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.</p> </li> </ul> */
+	export interface SystemControlFormProperties {
+		namespace: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateSystemControlFormGroup() {
+		return new FormGroup<SystemControlFormProperties>({
+			namespace: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -794,18 +1914,49 @@ export namespace MyNS {
 		type: ResourceRequirementType;
 	}
 
+	/** The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>  */
+	export interface ResourceRequirementFormProperties {
+		value: FormControl<string | null | undefined>,
+		type: FormControl<ResourceRequirementType | null | undefined>,
+	}
+	export function CreateResourceRequirementFormGroup() {
+		return new FormGroup<ResourceRequirementFormProperties>({
+			value: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ResourceRequirementType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceRequirementType { GPU = 0, InferenceAccelerator = 1 }
 
 
 	/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface FirelensConfiguration {
 		type: FirelensConfigurationType;
-		options?: FirelensConfigurationOptionsMap | null;
+		options?: FirelensConfigurationOptionsMap;
+	}
+
+	/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface FirelensConfigurationFormProperties {
+		type: FormControl<FirelensConfigurationType | null | undefined>,
+	}
+	export function CreateFirelensConfigurationFormGroup() {
+		return new FormGroup<FirelensConfigurationFormProperties>({
+			type: new FormControl<FirelensConfigurationType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FirelensConfigurationType { fluentd = 0, fluentbit = 1 }
 
 	export interface FirelensConfigurationOptionsMap {
+	}
+	export interface FirelensConfigurationOptionsMapFormProperties {
+	}
+	export function CreateFirelensConfigurationOptionsMapFormGroup() {
+		return new FormGroup<FirelensConfigurationOptionsMapFormProperties>({
+		});
+
 	}
 
 	export enum TaskDefinitionNetworkMode { bridge = 0, host = 1, awsvpc = 2, none = 3 }
@@ -816,13 +1967,24 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Details on a container instance bind mount host volume. */
-		host?: HostVolumeProperties | null;
+		host?: HostVolumeProperties;
 
 		/** This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead. */
-		dockerVolumeConfiguration?: DockerVolumeConfiguration | null;
+		dockerVolumeConfiguration?: DockerVolumeConfiguration;
 
 		/** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		efsVolumeConfiguration?: EFSVolumeConfiguration | null;
+		efsVolumeConfiguration?: EFSVolumeConfiguration;
+	}
+
+	/** A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>. */
+	export interface VolumeFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateVolumeFormGroup() {
+		return new FormGroup<VolumeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -831,19 +1993,52 @@ export namespace MyNS {
 		sourcePath?: string | null;
 	}
 
+	/** Details on a container instance bind mount host volume. */
+	export interface HostVolumePropertiesFormProperties {
+		sourcePath: FormControl<string | null | undefined>,
+	}
+	export function CreateHostVolumePropertiesFormGroup() {
+		return new FormGroup<HostVolumePropertiesFormProperties>({
+			sourcePath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead. */
 	export interface DockerVolumeConfiguration {
 		scope?: DockerVolumeConfigurationScope | null;
 		autoprovision?: boolean | null;
 		driver?: string | null;
-		driverOpts?: StringMap | null;
-		labels?: StringMap | null;
+		driverOpts?: StringMap;
+		labels?: StringMap;
+	}
+
+	/** This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead. */
+	export interface DockerVolumeConfigurationFormProperties {
+		scope: FormControl<DockerVolumeConfigurationScope | null | undefined>,
+		autoprovision: FormControl<boolean | null | undefined>,
+		driver: FormControl<string | null | undefined>,
+	}
+	export function CreateDockerVolumeConfigurationFormGroup() {
+		return new FormGroup<DockerVolumeConfigurationFormProperties>({
+			scope: new FormControl<DockerVolumeConfigurationScope | null | undefined>(undefined),
+			autoprovision: new FormControl<boolean | null | undefined>(undefined),
+			driver: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DockerVolumeConfigurationScope { task = 0, shared = 1 }
 
 	export interface StringMap {
+	}
+	export interface StringMapFormProperties {
+	}
+	export function CreateStringMapFormGroup() {
+		return new FormGroup<StringMapFormProperties>({
+		});
+
 	}
 
 
@@ -855,7 +2050,24 @@ export namespace MyNS {
 		transitEncryptionPort?: number | null;
 
 		/** The authorization configuration details for the Amazon EFS file system. */
-		authorizationConfig?: EFSAuthorizationConfig | null;
+		authorizationConfig?: EFSAuthorizationConfig;
+	}
+
+	/** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface EFSVolumeConfigurationFormProperties {
+		fileSystemId: FormControl<string | null | undefined>,
+		rootDirectory: FormControl<string | null | undefined>,
+		transitEncryption: FormControl<ManagedScalingStatus | null | undefined>,
+		transitEncryptionPort: FormControl<number | null | undefined>,
+	}
+	export function CreateEFSVolumeConfigurationFormGroup() {
+		return new FormGroup<EFSVolumeConfigurationFormProperties>({
+			fileSystemId: new FormControl<string | null | undefined>(undefined),
+			rootDirectory: new FormControl<string | null | undefined>(undefined),
+			transitEncryption: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
+			transitEncryptionPort: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -865,6 +2077,19 @@ export namespace MyNS {
 		iam?: ManagedScalingStatus | null;
 	}
 
+	/** The authorization configuration details for the Amazon EFS file system. */
+	export interface EFSAuthorizationConfigFormProperties {
+		accessPointId: FormControl<string | null | undefined>,
+		iam: FormControl<ManagedScalingStatus | null | undefined>,
+	}
+	export function CreateEFSAuthorizationConfigFormGroup() {
+		return new FormGroup<EFSAuthorizationConfigFormProperties>({
+			accessPointId: new FormControl<string | null | undefined>(undefined),
+			iam: new FormControl<ManagedScalingStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TaskDefinitionStatus { ACTIVE = 0, INACTIVE = 1 }
 
 
@@ -872,6 +2097,19 @@ export namespace MyNS {
 	export interface TaskDefinitionPlacementConstraint {
 		type?: TaskDefinitionPlacementConstraintType | null;
 		expression?: string | null;
+	}
+
+	/** <p>An object representing a constraint on task placement in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>If you are using the Fargate launch type, task placement constraints are not supported.</p> </note> */
+	export interface TaskDefinitionPlacementConstraintFormProperties {
+		type: FormControl<TaskDefinitionPlacementConstraintType | null | undefined>,
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskDefinitionPlacementConstraintFormGroup() {
+		return new FormGroup<TaskDefinitionPlacementConstraintFormProperties>({
+			type: new FormControl<TaskDefinitionPlacementConstraintType | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskDefinitionPlacementConstraintType { memberOf = 0 }
@@ -885,6 +2123,19 @@ export namespace MyNS {
 		deviceType: string;
 	}
 
+	/** Details on a Elastic Inference accelerator. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface InferenceAcceleratorFormProperties {
+		deviceName: FormControl<string | null | undefined>,
+		deviceType: FormControl<string | null | undefined>,
+	}
+	export function CreateInferenceAcceleratorFormGroup() {
+		return new FormGroup<InferenceAcceleratorFormProperties>({
+			deviceName: new FormControl<string | null | undefined>(undefined),
+			deviceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TaskDefinitionPidMode { host = 0, task = 1 }
 
 	export enum TaskDefinitionIpcMode { host = 0, task = 1, none = 2 }
@@ -894,7 +2145,20 @@ export namespace MyNS {
 	export interface ProxyConfiguration {
 		type?: ProxyConfigurationType | null;
 		containerName: string;
-		properties?: Array<KeyValuePair> | null;
+		properties?: Array<KeyValuePair>;
+	}
+
+	/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
+	export interface ProxyConfigurationFormProperties {
+		type: FormControl<ProxyConfigurationType | null | undefined>,
+		containerName: FormControl<string | null | undefined>,
+	}
+	export function CreateProxyConfigurationFormGroup() {
+		return new FormGroup<ProxyConfigurationFormProperties>({
+			type: new FormControl<ProxyConfigurationType | null | undefined>(undefined),
+			containerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProxyConfigurationType { APPMESH = 0 }
@@ -902,11 +2166,29 @@ export namespace MyNS {
 	export interface DeregisterTaskDefinitionRequest {
 		taskDefinition: string;
 	}
+	export interface DeregisterTaskDefinitionRequestFormProperties {
+		taskDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterTaskDefinitionRequestFormGroup() {
+		return new FormGroup<DeregisterTaskDefinitionRequestFormProperties>({
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCapacityProvidersResponse {
-		capacityProviders?: Array<CapacityProvider> | null;
-		failures?: Array<Failure> | null;
+		capacityProviders?: Array<CapacityProvider>;
+		failures?: Array<Failure>;
 		nextToken?: string | null;
+	}
+	export interface DescribeCapacityProvidersResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCapacityProvidersResponseFormGroup() {
+		return new FormGroup<DescribeCapacityProvidersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -917,49 +2199,121 @@ export namespace MyNS {
 		detail?: string | null;
 	}
 
+	/** A failed resource. */
+	export interface FailureFormProperties {
+		arn: FormControl<string | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+		detail: FormControl<string | null | undefined>,
+	}
+	export function CreateFailureFormGroup() {
+		return new FormGroup<FailureFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			detail: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCapacityProvidersRequest {
-		capacityProviders?: Array<string> | null;
-		include?: Array<CapacityProviderField> | null;
+		capacityProviders?: Array<string>;
+		include?: Array<CapacityProviderField>;
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface DescribeCapacityProvidersRequestFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCapacityProvidersRequestFormGroup() {
+		return new FormGroup<DescribeCapacityProvidersRequestFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CapacityProviderField { TAGS = 0 }
 
 	export interface DescribeClustersResponse {
-		clusters?: Array<Cluster> | null;
-		failures?: Array<Failure> | null;
+		clusters?: Array<Cluster>;
+		failures?: Array<Failure>;
+	}
+	export interface DescribeClustersResponseFormProperties {
+	}
+	export function CreateDescribeClustersResponseFormGroup() {
+		return new FormGroup<DescribeClustersResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClustersRequest {
-		clusters?: Array<string> | null;
-		include?: Array<ClusterField> | null;
+		clusters?: Array<string>;
+		include?: Array<ClusterField>;
+	}
+	export interface DescribeClustersRequestFormProperties {
+	}
+	export function CreateDescribeClustersRequestFormGroup() {
+		return new FormGroup<DescribeClustersRequestFormProperties>({
+		});
+
 	}
 
 	export enum ClusterField { ATTACHMENTS = 0, SETTINGS = 1, STATISTICS = 2, TAGS = 3 }
 
 	export interface DescribeContainerInstancesResponse {
-		containerInstances?: Array<ContainerInstance> | null;
-		failures?: Array<Failure> | null;
+		containerInstances?: Array<ContainerInstance>;
+		failures?: Array<Failure>;
+	}
+	export interface DescribeContainerInstancesResponseFormProperties {
+	}
+	export function CreateDescribeContainerInstancesResponseFormGroup() {
+		return new FormGroup<DescribeContainerInstancesResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeContainerInstancesRequest {
 		cluster?: string | null;
 		containerInstances: Array<string>;
-		include?: Array<ContainerInstanceField> | null;
+		include?: Array<ContainerInstanceField>;
+	}
+	export interface DescribeContainerInstancesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeContainerInstancesRequestFormGroup() {
+		return new FormGroup<DescribeContainerInstancesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContainerInstanceField { TAGS = 0 }
 
 	export interface DescribeServicesResponse {
-		services?: Array<Service> | null;
-		failures?: Array<Failure> | null;
+		services?: Array<Service>;
+		failures?: Array<Failure>;
+	}
+	export interface DescribeServicesResponseFormProperties {
+	}
+	export function CreateDescribeServicesResponseFormGroup() {
+		return new FormGroup<DescribeServicesResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeServicesRequest {
 		cluster?: string | null;
 		services: Array<string>;
-		include?: Array<ServiceField> | null;
+		include?: Array<ServiceField>;
+	}
+	export interface DescribeServicesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeServicesRequestFormGroup() {
+		return new FormGroup<DescribeServicesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ServiceField { TAGS = 0 }
@@ -967,61 +2321,102 @@ export namespace MyNS {
 	export interface DescribeTaskDefinitionResponse {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
-		taskDefinition?: TaskDefinition | null;
-		tags?: Array<Tag> | null;
+		taskDefinition?: TaskDefinition;
+		tags?: Array<Tag>;
+	}
+	export interface DescribeTaskDefinitionResponseFormProperties {
+	}
+	export function CreateDescribeTaskDefinitionResponseFormGroup() {
+		return new FormGroup<DescribeTaskDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTaskDefinitionRequest {
 		taskDefinition: string;
-		include?: Array<TaskDefinitionField> | null;
+		include?: Array<TaskDefinitionField>;
+	}
+	export interface DescribeTaskDefinitionRequestFormProperties {
+		taskDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTaskDefinitionRequestFormGroup() {
+		return new FormGroup<DescribeTaskDefinitionRequestFormProperties>({
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskDefinitionField { TAGS = 0 }
 
 	export interface DescribeTaskSetsResponse {
-		taskSets?: Array<TaskSet> | null;
-		failures?: Array<Failure> | null;
+		taskSets?: Array<TaskSet>;
+		failures?: Array<Failure>;
+	}
+	export interface DescribeTaskSetsResponseFormProperties {
+	}
+	export function CreateDescribeTaskSetsResponseFormGroup() {
+		return new FormGroup<DescribeTaskSetsResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTaskSetsRequest {
 		cluster: string;
 		service: string;
-		taskSets?: Array<string> | null;
-		include?: Array<TaskSetField> | null;
+		taskSets?: Array<string>;
+		include?: Array<TaskSetField>;
+	}
+	export interface DescribeTaskSetsRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTaskSetsRequestFormGroup() {
+		return new FormGroup<DescribeTaskSetsRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskSetField { TAGS = 0 }
 
 	export interface DescribeTasksResponse {
-		tasks?: Array<Task_> | null;
-		failures?: Array<Failure> | null;
+		tasks?: Array<Task_>;
+		failures?: Array<Failure>;
+	}
+	export interface DescribeTasksResponseFormProperties {
+	}
+	export function CreateDescribeTasksResponseFormGroup() {
+		return new FormGroup<DescribeTasksResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Details on a task in a cluster. */
 	export interface Task_ {
-		attachments?: Array<Attachment> | null;
-		attributes?: Array<Attribute> | null;
+		attachments?: Array<Attachment>;
+		attributes?: Array<Attribute>;
 		availabilityZone?: string | null;
 		capacityProviderName?: string | null;
 		clusterArn?: string | null;
 		connectivity?: Task_Connectivity | null;
 		connectivityAt?: Date | null;
 		containerInstanceArn?: string | null;
-		containers?: Array<Container> | null;
+		containers?: Array<Container>;
 		cpu?: string | null;
 		createdAt?: Date | null;
 		desiredStatus?: string | null;
 		executionStoppedAt?: Date | null;
 		group?: string | null;
 		healthStatus?: ContainerHealthStatus | null;
-		inferenceAccelerators?: Array<InferenceAccelerator> | null;
+		inferenceAccelerators?: Array<InferenceAccelerator>;
 		lastStatus?: string | null;
 		launchType?: ServiceLaunchType | null;
 		memory?: string | null;
 
 		/** The overrides associated with a task. */
-		overrides?: TaskOverride | null;
+		overrides?: TaskOverride;
 		platformVersion?: string | null;
 		pullStartedAt?: Date | null;
 		pullStoppedAt?: Date | null;
@@ -1031,10 +2426,73 @@ export namespace MyNS {
 		stoppedAt?: Date | null;
 		stoppedReason?: string | null;
 		stoppingAt?: Date | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		taskArn?: string | null;
 		taskDefinitionArn?: string | null;
 		version?: number | null;
+	}
+
+	/** Details on a task in a cluster. */
+	export interface Task_FormProperties {
+		availabilityZone: FormControl<string | null | undefined>,
+		capacityProviderName: FormControl<string | null | undefined>,
+		clusterArn: FormControl<string | null | undefined>,
+		connectivity: FormControl<Task_Connectivity | null | undefined>,
+		connectivityAt: FormControl<Date | null | undefined>,
+		containerInstanceArn: FormControl<string | null | undefined>,
+		cpu: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		desiredStatus: FormControl<string | null | undefined>,
+		executionStoppedAt: FormControl<Date | null | undefined>,
+		group: FormControl<string | null | undefined>,
+		healthStatus: FormControl<ContainerHealthStatus | null | undefined>,
+		lastStatus: FormControl<string | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		memory: FormControl<string | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		pullStartedAt: FormControl<Date | null | undefined>,
+		pullStoppedAt: FormControl<Date | null | undefined>,
+		startedAt: FormControl<Date | null | undefined>,
+		startedBy: FormControl<string | null | undefined>,
+		stopCode: FormControl<Task_StopCode | null | undefined>,
+		stoppedAt: FormControl<Date | null | undefined>,
+		stoppedReason: FormControl<string | null | undefined>,
+		stoppingAt: FormControl<Date | null | undefined>,
+		taskArn: FormControl<string | null | undefined>,
+		taskDefinitionArn: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateTask_FormGroup() {
+		return new FormGroup<Task_FormProperties>({
+			availabilityZone: new FormControl<string | null | undefined>(undefined),
+			capacityProviderName: new FormControl<string | null | undefined>(undefined),
+			clusterArn: new FormControl<string | null | undefined>(undefined),
+			connectivity: new FormControl<Task_Connectivity | null | undefined>(undefined),
+			connectivityAt: new FormControl<Date | null | undefined>(undefined),
+			containerInstanceArn: new FormControl<string | null | undefined>(undefined),
+			cpu: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			desiredStatus: new FormControl<string | null | undefined>(undefined),
+			executionStoppedAt: new FormControl<Date | null | undefined>(undefined),
+			group: new FormControl<string | null | undefined>(undefined),
+			healthStatus: new FormControl<ContainerHealthStatus | null | undefined>(undefined),
+			lastStatus: new FormControl<string | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			memory: new FormControl<string | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			pullStartedAt: new FormControl<Date | null | undefined>(undefined),
+			pullStoppedAt: new FormControl<Date | null | undefined>(undefined),
+			startedAt: new FormControl<Date | null | undefined>(undefined),
+			startedBy: new FormControl<string | null | undefined>(undefined),
+			stopCode: new FormControl<Task_StopCode | null | undefined>(undefined),
+			stoppedAt: new FormControl<Date | null | undefined>(undefined),
+			stoppedReason: new FormControl<string | null | undefined>(undefined),
+			stoppingAt: new FormControl<Date | null | undefined>(undefined),
+			taskArn: new FormControl<string | null | undefined>(undefined),
+			taskDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Task_Connectivity { CONNECTED = 0, DISCONNECTED = 1 }
@@ -1051,13 +2509,48 @@ export namespace MyNS {
 		lastStatus?: string | null;
 		exitCode?: number | null;
 		reason?: string | null;
-		networkBindings?: Array<NetworkBinding> | null;
-		networkInterfaces?: Array<NetworkInterface> | null;
+		networkBindings?: Array<NetworkBinding>;
+		networkInterfaces?: Array<NetworkInterface>;
 		healthStatus?: ContainerHealthStatus | null;
 		cpu?: string | null;
 		memory?: string | null;
 		memoryReservation?: string | null;
-		gpuIds?: Array<string> | null;
+		gpuIds?: Array<string>;
+	}
+
+	/** A Docker container that is part of a task. */
+	export interface ContainerFormProperties {
+		containerArn: FormControl<string | null | undefined>,
+		taskArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		image: FormControl<string | null | undefined>,
+		imageDigest: FormControl<string | null | undefined>,
+		runtimeId: FormControl<string | null | undefined>,
+		lastStatus: FormControl<string | null | undefined>,
+		exitCode: FormControl<number | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+		healthStatus: FormControl<ContainerHealthStatus | null | undefined>,
+		cpu: FormControl<string | null | undefined>,
+		memory: FormControl<string | null | undefined>,
+		memoryReservation: FormControl<string | null | undefined>,
+	}
+	export function CreateContainerFormGroup() {
+		return new FormGroup<ContainerFormProperties>({
+			containerArn: new FormControl<string | null | undefined>(undefined),
+			taskArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			image: new FormControl<string | null | undefined>(undefined),
+			imageDigest: new FormControl<string | null | undefined>(undefined),
+			runtimeId: new FormControl<string | null | undefined>(undefined),
+			lastStatus: new FormControl<string | null | undefined>(undefined),
+			exitCode: new FormControl<number | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			healthStatus: new FormControl<ContainerHealthStatus | null | undefined>(undefined),
+			cpu: new FormControl<string | null | undefined>(undefined),
+			memory: new FormControl<string | null | undefined>(undefined),
+			memoryReservation: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1069,6 +2562,23 @@ export namespace MyNS {
 		protocol?: PortMappingProtocol | null;
 	}
 
+	/** Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses. */
+	export interface NetworkBindingFormProperties {
+		bindIP: FormControl<string | null | undefined>,
+		containerPort: FormControl<number | null | undefined>,
+		hostPort: FormControl<number | null | undefined>,
+		protocol: FormControl<PortMappingProtocol | null | undefined>,
+	}
+	export function CreateNetworkBindingFormGroup() {
+		return new FormGroup<NetworkBindingFormProperties>({
+			bindIP: new FormControl<string | null | undefined>(undefined),
+			containerPort: new FormControl<number | null | undefined>(undefined),
+			hostPort: new FormControl<number | null | undefined>(undefined),
+			protocol: new FormControl<PortMappingProtocol | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode. */
 	export interface NetworkInterface {
@@ -1077,30 +2587,79 @@ export namespace MyNS {
 		ipv6Address?: string | null;
 	}
 
+	/** An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode. */
+	export interface NetworkInterfaceFormProperties {
+		attachmentId: FormControl<string | null | undefined>,
+		privateIpv4Address: FormControl<string | null | undefined>,
+		ipv6Address: FormControl<string | null | undefined>,
+	}
+	export function CreateNetworkInterfaceFormGroup() {
+		return new FormGroup<NetworkInterfaceFormProperties>({
+			attachmentId: new FormControl<string | null | undefined>(undefined),
+			privateIpv4Address: new FormControl<string | null | undefined>(undefined),
+			ipv6Address: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ContainerHealthStatus { HEALTHY = 0, UNHEALTHY = 1, UNKNOWN = 2 }
 
 
 	/** The overrides associated with a task. */
 	export interface TaskOverride {
-		containerOverrides?: Array<ContainerOverride> | null;
+		containerOverrides?: Array<ContainerOverride>;
 		cpu?: string | null;
-		inferenceAcceleratorOverrides?: Array<InferenceAcceleratorOverride> | null;
+		inferenceAcceleratorOverrides?: Array<InferenceAcceleratorOverride>;
 		executionRoleArn?: string | null;
 		memory?: string | null;
 		taskRoleArn?: string | null;
+	}
+
+	/** The overrides associated with a task. */
+	export interface TaskOverrideFormProperties {
+		cpu: FormControl<string | null | undefined>,
+		executionRoleArn: FormControl<string | null | undefined>,
+		memory: FormControl<string | null | undefined>,
+		taskRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskOverrideFormGroup() {
+		return new FormGroup<TaskOverrideFormProperties>({
+			cpu: new FormControl<string | null | undefined>(undefined),
+			executionRoleArn: new FormControl<string | null | undefined>(undefined),
+			memory: new FormControl<string | null | undefined>(undefined),
+			taskRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included. */
 	export interface ContainerOverride {
 		name?: string | null;
-		command?: Array<string> | null;
-		environment?: Array<KeyValuePair> | null;
-		environmentFiles?: Array<EnvironmentFile> | null;
+		command?: Array<string>;
+		environment?: Array<KeyValuePair>;
+		environmentFiles?: Array<EnvironmentFile>;
 		cpu?: number | null;
 		memory?: number | null;
 		memoryReservation?: number | null;
-		resourceRequirements?: Array<ResourceRequirement> | null;
+		resourceRequirements?: Array<ResourceRequirement>;
+	}
+
+	/** The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included. */
+	export interface ContainerOverrideFormProperties {
+		name: FormControl<string | null | undefined>,
+		cpu: FormControl<number | null | undefined>,
+		memory: FormControl<number | null | undefined>,
+		memoryReservation: FormControl<number | null | undefined>,
+	}
+	export function CreateContainerOverrideFormGroup() {
+		return new FormGroup<ContainerOverrideFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			cpu: new FormControl<number | null | undefined>(undefined),
+			memory: new FormControl<number | null | undefined>(undefined),
+			memoryReservation: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1110,12 +2669,34 @@ export namespace MyNS {
 		deviceType?: string | null;
 	}
 
+	/** Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
+	export interface InferenceAcceleratorOverrideFormProperties {
+		deviceName: FormControl<string | null | undefined>,
+		deviceType: FormControl<string | null | undefined>,
+	}
+	export function CreateInferenceAcceleratorOverrideFormGroup() {
+		return new FormGroup<InferenceAcceleratorOverrideFormProperties>({
+			deviceName: new FormControl<string | null | undefined>(undefined),
+			deviceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Task_StopCode { TaskFailedToStart = 0, EssentialContainerExited = 1, UserInitiated = 2 }
 
 	export interface DescribeTasksRequest {
 		cluster?: string | null;
 		tasks: Array<string>;
-		include?: Array<TaskField> | null;
+		include?: Array<TaskField>;
+	}
+	export interface DescribeTasksRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTasksRequestFormGroup() {
+		return new FormGroup<DescribeTasksRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskField { TAGS = 0 }
@@ -1124,15 +2705,46 @@ export namespace MyNS {
 		endpoint?: string | null;
 		telemetryEndpoint?: string | null;
 	}
+	export interface DiscoverPollEndpointResponseFormProperties {
+		endpoint: FormControl<string | null | undefined>,
+		telemetryEndpoint: FormControl<string | null | undefined>,
+	}
+	export function CreateDiscoverPollEndpointResponseFormGroup() {
+		return new FormGroup<DiscoverPollEndpointResponseFormProperties>({
+			endpoint: new FormControl<string | null | undefined>(undefined),
+			telemetryEndpoint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DiscoverPollEndpointRequest {
 		containerInstance?: string | null;
 		cluster?: string | null;
 	}
+	export interface DiscoverPollEndpointRequestFormProperties {
+		containerInstance: FormControl<string | null | undefined>,
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateDiscoverPollEndpointRequestFormGroup() {
+		return new FormGroup<DiscoverPollEndpointRequestFormProperties>({
+			containerInstance: new FormControl<string | null | undefined>(undefined),
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAccountSettingsResponse {
-		settings?: Array<Setting> | null;
+		settings?: Array<Setting>;
 		nextToken?: string | null;
+	}
+	export interface ListAccountSettingsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccountSettingsResponseFormGroup() {
+		return new FormGroup<ListAccountSettingsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAccountSettingsRequest {
@@ -1143,10 +2755,38 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListAccountSettingsRequestFormProperties {
+		name: FormControl<SettingName | null | undefined>,
+		value: FormControl<string | null | undefined>,
+		principalArn: FormControl<string | null | undefined>,
+		effectiveSettings: FormControl<boolean | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAccountSettingsRequestFormGroup() {
+		return new FormGroup<ListAccountSettingsRequestFormProperties>({
+			name: new FormControl<SettingName | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+			principalArn: new FormControl<string | null | undefined>(undefined),
+			effectiveSettings: new FormControl<boolean | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAttributesResponse {
-		attributes?: Array<Attribute> | null;
+		attributes?: Array<Attribute>;
 		nextToken?: string | null;
+	}
+	export interface ListAttributesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttributesResponseFormGroup() {
+		return new FormGroup<ListAttributesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAttributesRequest {
@@ -1157,22 +2797,70 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListAttributesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		targetType: FormControl<ListAttributesRequestTargetType | null | undefined>,
+		attributeName: FormControl<string | null | undefined>,
+		attributeValue: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAttributesRequestFormGroup() {
+		return new FormGroup<ListAttributesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			targetType: new FormControl<ListAttributesRequestTargetType | null | undefined>(undefined),
+			attributeName: new FormControl<string | null | undefined>(undefined),
+			attributeValue: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListAttributesRequestTargetType { container_instance = 0 }
 
 	export interface ListClustersResponse {
-		clusterArns?: Array<string> | null;
+		clusterArns?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListClustersResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListClustersResponseFormGroup() {
+		return new FormGroup<ListClustersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListClustersRequest {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListClustersRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListClustersRequestFormGroup() {
+		return new FormGroup<ListClustersRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListContainerInstancesResponse {
-		containerInstanceArns?: Array<string> | null;
+		containerInstanceArns?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListContainerInstancesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListContainerInstancesResponseFormGroup() {
+		return new FormGroup<ListContainerInstancesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListContainerInstancesRequest {
@@ -1182,12 +2870,38 @@ export namespace MyNS {
 		maxResults?: number | null;
 		status?: ListContainerInstancesRequestStatus | null;
 	}
+	export interface ListContainerInstancesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		filter: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		status: FormControl<ListContainerInstancesRequestStatus | null | undefined>,
+	}
+	export function CreateListContainerInstancesRequestFormGroup() {
+		return new FormGroup<ListContainerInstancesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<ListContainerInstancesRequestStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListContainerInstancesRequestStatus { ACTIVE = 0, DRAINING = 1, REGISTERING = 2, DEREGISTERING = 3, REGISTRATION_FAILED = 4 }
 
 	export interface ListServicesResponse {
-		serviceArns?: Array<string> | null;
+		serviceArns?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListServicesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServicesResponseFormGroup() {
+		return new FormGroup<ListServicesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListServicesRequest {
@@ -1197,18 +2911,60 @@ export namespace MyNS {
 		launchType?: ServiceLaunchType | null;
 		schedulingStrategy?: ServiceSchedulingStrategy | null;
 	}
+	export interface ListServicesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		schedulingStrategy: FormControl<ServiceSchedulingStrategy | null | undefined>,
+	}
+	export function CreateListServicesRequestFormGroup() {
+		return new FormGroup<ListServicesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			schedulingStrategy: new FormControl<ServiceSchedulingStrategy | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		resourceArn: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTaskDefinitionFamiliesResponse {
-		families?: Array<string> | null;
+		families?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListTaskDefinitionFamiliesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTaskDefinitionFamiliesResponseFormGroup() {
+		return new FormGroup<ListTaskDefinitionFamiliesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTaskDefinitionFamiliesRequest {
@@ -1217,12 +2973,36 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListTaskDefinitionFamiliesRequestFormProperties {
+		familyPrefix: FormControl<string | null | undefined>,
+		status: FormControl<ListTaskDefinitionFamiliesRequestStatus | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTaskDefinitionFamiliesRequestFormGroup() {
+		return new FormGroup<ListTaskDefinitionFamiliesRequestFormProperties>({
+			familyPrefix: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ListTaskDefinitionFamiliesRequestStatus | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListTaskDefinitionFamiliesRequestStatus { ACTIVE = 0, INACTIVE = 1, ALL = 2 }
 
 	export interface ListTaskDefinitionsResponse {
-		taskDefinitionArns?: Array<string> | null;
+		taskDefinitionArns?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListTaskDefinitionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTaskDefinitionsResponseFormGroup() {
+		return new FormGroup<ListTaskDefinitionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTaskDefinitionsRequest {
@@ -1232,12 +3012,38 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListTaskDefinitionsRequestFormProperties {
+		familyPrefix: FormControl<string | null | undefined>,
+		status: FormControl<TaskDefinitionStatus | null | undefined>,
+		sort: FormControl<ListTaskDefinitionsRequestSort | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTaskDefinitionsRequestFormGroup() {
+		return new FormGroup<ListTaskDefinitionsRequestFormProperties>({
+			familyPrefix: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TaskDefinitionStatus | null | undefined>(undefined),
+			sort: new FormControl<ListTaskDefinitionsRequestSort | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListTaskDefinitionsRequestSort { ASC = 0, DESC = 1 }
 
 	export interface ListTasksResponse {
-		taskArns?: Array<string> | null;
+		taskArns?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListTasksResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTasksResponseFormGroup() {
+		return new FormGroup<ListTasksResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTasksRequest {
@@ -1251,13 +3057,45 @@ export namespace MyNS {
 		desiredStatus?: ListTasksRequestDesiredStatus | null;
 		launchType?: ServiceLaunchType | null;
 	}
+	export interface ListTasksRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		containerInstance: FormControl<string | null | undefined>,
+		family: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		startedBy: FormControl<string | null | undefined>,
+		serviceName: FormControl<string | null | undefined>,
+		desiredStatus: FormControl<ListTasksRequestDesiredStatus | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+	}
+	export function CreateListTasksRequestFormGroup() {
+		return new FormGroup<ListTasksRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			containerInstance: new FormControl<string | null | undefined>(undefined),
+			family: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			startedBy: new FormControl<string | null | undefined>(undefined),
+			serviceName: new FormControl<string | null | undefined>(undefined),
+			desiredStatus: new FormControl<ListTasksRequestDesiredStatus | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListTasksRequestDesiredStatus { RUNNING = 0, PENDING = 1, STOPPED = 2 }
 
 	export interface PutAccountSettingResponse {
 
 		/** The current account setting for a resource. */
-		setting?: Setting | null;
+		setting?: Setting;
+	}
+	export interface PutAccountSettingResponseFormProperties {
+	}
+	export function CreatePutAccountSettingResponseFormGroup() {
+		return new FormGroup<PutAccountSettingResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutAccountSettingRequest {
@@ -1265,34 +3103,95 @@ export namespace MyNS {
 		value: string;
 		principalArn?: string | null;
 	}
+	export interface PutAccountSettingRequestFormProperties {
+		name: FormControl<SettingName | null | undefined>,
+		value: FormControl<string | null | undefined>,
+		principalArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAccountSettingRequestFormGroup() {
+		return new FormGroup<PutAccountSettingRequestFormProperties>({
+			name: new FormControl<SettingName | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+			principalArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutAccountSettingDefaultResponse {
 
 		/** The current account setting for a resource. */
-		setting?: Setting | null;
+		setting?: Setting;
+	}
+	export interface PutAccountSettingDefaultResponseFormProperties {
+	}
+	export function CreatePutAccountSettingDefaultResponseFormGroup() {
+		return new FormGroup<PutAccountSettingDefaultResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutAccountSettingDefaultRequest {
 		name: SettingName;
 		value: string;
 	}
+	export interface PutAccountSettingDefaultRequestFormProperties {
+		name: FormControl<SettingName | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAccountSettingDefaultRequestFormGroup() {
+		return new FormGroup<PutAccountSettingDefaultRequestFormProperties>({
+			name: new FormControl<SettingName | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutAttributesResponse {
-		attributes?: Array<Attribute> | null;
+		attributes?: Array<Attribute>;
+	}
+	export interface PutAttributesResponseFormProperties {
+	}
+	export function CreatePutAttributesResponseFormGroup() {
+		return new FormGroup<PutAttributesResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutAttributesRequest {
 		cluster?: string | null;
 		attributes: Array<Attribute>;
 	}
+	export interface PutAttributesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAttributesRequestFormGroup() {
+		return new FormGroup<PutAttributesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AttributeLimitExceededException {
+	}
+	export interface AttributeLimitExceededExceptionFormProperties {
+	}
+	export function CreateAttributeLimitExceededExceptionFormGroup() {
+		return new FormGroup<AttributeLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutClusterCapacityProvidersResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface PutClusterCapacityProvidersResponseFormProperties {
+	}
+	export function CreatePutClusterCapacityProvidersResponseFormGroup() {
+		return new FormGroup<PutClusterCapacityProvidersResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutClusterCapacityProvidersRequest {
@@ -1300,28 +3199,66 @@ export namespace MyNS {
 		capacityProviders: Array<string>;
 		defaultCapacityProviderStrategy: Array<CapacityProviderStrategyItem>;
 	}
+	export interface PutClusterCapacityProvidersRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreatePutClusterCapacityProvidersRequestFormGroup() {
+		return new FormGroup<PutClusterCapacityProvidersRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RegisterContainerInstanceResponse {
 
 		/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
-		containerInstance?: ContainerInstance | null;
+		containerInstance?: ContainerInstance;
+	}
+	export interface RegisterContainerInstanceResponseFormProperties {
+	}
+	export function CreateRegisterContainerInstanceResponseFormGroup() {
+		return new FormGroup<RegisterContainerInstanceResponseFormProperties>({
+		});
+
 	}
 
 	export interface RegisterContainerInstanceRequest {
 		cluster?: string | null;
 		instanceIdentityDocument?: string | null;
 		instanceIdentityDocumentSignature?: string | null;
-		totalResources?: Array<Resource> | null;
+		totalResources?: Array<Resource>;
 
 		/** The Docker and Amazon ECS container agent version information about a container instance. */
-		versionInfo?: VersionInfo | null;
+		versionInfo?: VersionInfo;
 		containerInstanceArn?: string | null;
-		attributes?: Array<Attribute> | null;
-		platformDevices?: Array<PlatformDevice> | null;
-		tags?: Array<Tag> | null;
+		attributes?: Array<Attribute>;
+		platformDevices?: Array<PlatformDevice>;
+		tags?: Array<Tag>;
+	}
+	export interface RegisterContainerInstanceRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		instanceIdentityDocument: FormControl<string | null | undefined>,
+		instanceIdentityDocumentSignature: FormControl<string | null | undefined>,
+		containerInstanceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterContainerInstanceRequestFormGroup() {
+		return new FormGroup<RegisterContainerInstanceRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			instanceIdentityDocument: new FormControl<string | null | undefined>(undefined),
+			instanceIdentityDocumentSignature: new FormControl<string | null | undefined>(undefined),
+			containerInstanceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1331,13 +3268,33 @@ export namespace MyNS {
 		type: PlatformDeviceType;
 	}
 
+	/** The devices that are available on the container instance. The only supported device type is a GPU. */
+	export interface PlatformDeviceFormProperties {
+		id: FormControl<string | null | undefined>,
+		type: FormControl<PlatformDeviceType | null | undefined>,
+	}
+	export function CreatePlatformDeviceFormGroup() {
+		return new FormGroup<PlatformDeviceFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<PlatformDeviceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PlatformDeviceType { GPU = 0 }
 
 	export interface RegisterTaskDefinitionResponse {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
-		taskDefinition?: TaskDefinition | null;
-		tags?: Array<Tag> | null;
+		taskDefinition?: TaskDefinition;
+		tags?: Array<Tag>;
+	}
+	export interface RegisterTaskDefinitionResponseFormProperties {
+	}
+	export function CreateRegisterTaskDefinitionResponseFormGroup() {
+		return new FormGroup<RegisterTaskDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface RegisterTaskDefinitionRequest {
@@ -1346,27 +3303,57 @@ export namespace MyNS {
 		executionRoleArn?: string | null;
 		networkMode?: TaskDefinitionNetworkMode | null;
 		containerDefinitions: Array<ContainerDefinition>;
-		volumes?: Array<Volume> | null;
-		placementConstraints?: Array<TaskDefinitionPlacementConstraint> | null;
-		requiresCompatibilities?: Array<Compatibility> | null;
+		volumes?: Array<Volume>;
+		placementConstraints?: Array<TaskDefinitionPlacementConstraint>;
+		requiresCompatibilities?: Array<Compatibility>;
 		cpu?: string | null;
 		memory?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		pidMode?: TaskDefinitionPidMode | null;
 		ipcMode?: TaskDefinitionIpcMode | null;
 
 		/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
-		proxyConfiguration?: ProxyConfiguration | null;
-		inferenceAccelerators?: Array<InferenceAccelerator> | null;
+		proxyConfiguration?: ProxyConfiguration;
+		inferenceAccelerators?: Array<InferenceAccelerator>;
+	}
+	export interface RegisterTaskDefinitionRequestFormProperties {
+		family: FormControl<string | null | undefined>,
+		taskRoleArn: FormControl<string | null | undefined>,
+		executionRoleArn: FormControl<string | null | undefined>,
+		networkMode: FormControl<TaskDefinitionNetworkMode | null | undefined>,
+		cpu: FormControl<string | null | undefined>,
+		memory: FormControl<string | null | undefined>,
+		pidMode: FormControl<TaskDefinitionPidMode | null | undefined>,
+		ipcMode: FormControl<TaskDefinitionIpcMode | null | undefined>,
+	}
+	export function CreateRegisterTaskDefinitionRequestFormGroup() {
+		return new FormGroup<RegisterTaskDefinitionRequestFormProperties>({
+			family: new FormControl<string | null | undefined>(undefined),
+			taskRoleArn: new FormControl<string | null | undefined>(undefined),
+			executionRoleArn: new FormControl<string | null | undefined>(undefined),
+			networkMode: new FormControl<TaskDefinitionNetworkMode | null | undefined>(undefined),
+			cpu: new FormControl<string | null | undefined>(undefined),
+			memory: new FormControl<string | null | undefined>(undefined),
+			pidMode: new FormControl<TaskDefinitionPidMode | null | undefined>(undefined),
+			ipcMode: new FormControl<TaskDefinitionIpcMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RunTaskResponse {
-		tasks?: Array<Task_> | null;
-		failures?: Array<Failure> | null;
+		tasks?: Array<Task_>;
+		failures?: Array<Failure>;
+	}
+	export interface RunTaskResponseFormProperties {
+	}
+	export function CreateRunTaskResponseFormGroup() {
+		return new FormGroup<RunTaskResponseFormProperties>({
+		});
+
 	}
 
 	export interface RunTaskRequest {
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 		cluster?: string | null;
 		count?: number | null;
 		enableECSManagedTags?: boolean | null;
@@ -1374,26 +3361,67 @@ export namespace MyNS {
 		launchType?: ServiceLaunchType | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
+		networkConfiguration?: NetworkConfiguration;
 
 		/** The overrides associated with a task. */
-		overrides?: TaskOverride | null;
-		placementConstraints?: Array<PlacementConstraint> | null;
-		placementStrategy?: Array<PlacementStrategy> | null;
+		overrides?: TaskOverride;
+		placementConstraints?: Array<PlacementConstraint>;
+		placementStrategy?: Array<PlacementStrategy>;
 		platformVersion?: string | null;
 		propagateTags?: ServicePropagateTags | null;
 		referenceId?: string | null;
 		startedBy?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		taskDefinition: string;
+	}
+	export interface RunTaskRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		count: FormControl<number | null | undefined>,
+		enableECSManagedTags: FormControl<boolean | null | undefined>,
+		group: FormControl<string | null | undefined>,
+		launchType: FormControl<ServiceLaunchType | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		propagateTags: FormControl<ServicePropagateTags | null | undefined>,
+		referenceId: FormControl<string | null | undefined>,
+		startedBy: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreateRunTaskRequestFormGroup() {
+		return new FormGroup<RunTaskRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+			enableECSManagedTags: new FormControl<boolean | null | undefined>(undefined),
+			group: new FormControl<string | null | undefined>(undefined),
+			launchType: new FormControl<ServiceLaunchType | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			propagateTags: new FormControl<ServicePropagateTags | null | undefined>(undefined),
+			referenceId: new FormControl<string | null | undefined>(undefined),
+			startedBy: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BlockedException {
 	}
+	export interface BlockedExceptionFormProperties {
+	}
+	export function CreateBlockedExceptionFormGroup() {
+		return new FormGroup<BlockedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StartTaskResponse {
-		tasks?: Array<Task_> | null;
-		failures?: Array<Failure> | null;
+		tasks?: Array<Task_>;
+		failures?: Array<Failure>;
+	}
+	export interface StartTaskResponseFormProperties {
+	}
+	export function CreateStartTaskResponseFormGroup() {
+		return new FormGroup<StartTaskResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartTaskRequest {
@@ -1403,21 +3431,49 @@ export namespace MyNS {
 		group?: string | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
+		networkConfiguration?: NetworkConfiguration;
 
 		/** The overrides associated with a task. */
-		overrides?: TaskOverride | null;
+		overrides?: TaskOverride;
 		propagateTags?: ServicePropagateTags | null;
 		referenceId?: string | null;
 		startedBy?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		taskDefinition: string;
+	}
+	export interface StartTaskRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		enableECSManagedTags: FormControl<boolean | null | undefined>,
+		group: FormControl<string | null | undefined>,
+		propagateTags: FormControl<ServicePropagateTags | null | undefined>,
+		referenceId: FormControl<string | null | undefined>,
+		startedBy: FormControl<string | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTaskRequestFormGroup() {
+		return new FormGroup<StartTaskRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			enableECSManagedTags: new FormControl<boolean | null | undefined>(undefined),
+			group: new FormControl<string | null | undefined>(undefined),
+			propagateTags: new FormControl<ServicePropagateTags | null | undefined>(undefined),
+			referenceId: new FormControl<string | null | undefined>(undefined),
+			startedBy: new FormControl<string | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopTaskResponse {
 
 		/** Details on a task in a cluster. */
-		task?: Task_ | null;
+		task?: Task_;
+	}
+	export interface StopTaskResponseFormProperties {
+	}
+	export function CreateStopTaskResponseFormGroup() {
+		return new FormGroup<StopTaskResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopTaskRequest {
@@ -1425,14 +3481,45 @@ export namespace MyNS {
 		task: string;
 		reason?: string | null;
 	}
+	export interface StopTaskRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		task: FormControl<string | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTaskRequestFormGroup() {
+		return new FormGroup<StopTaskRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			task: new FormControl<string | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubmitAttachmentStateChangesResponse {
 		acknowledgment?: string | null;
+	}
+	export interface SubmitAttachmentStateChangesResponseFormProperties {
+		acknowledgment: FormControl<string | null | undefined>,
+	}
+	export function CreateSubmitAttachmentStateChangesResponseFormGroup() {
+		return new FormGroup<SubmitAttachmentStateChangesResponseFormProperties>({
+			acknowledgment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubmitAttachmentStateChangesRequest {
 		cluster?: string | null;
 		attachments: Array<AttachmentStateChange>;
+	}
+	export interface SubmitAttachmentStateChangesRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateSubmitAttachmentStateChangesRequestFormGroup() {
+		return new FormGroup<SubmitAttachmentStateChangesRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1442,8 +3529,30 @@ export namespace MyNS {
 		status: string;
 	}
 
+	/** An object representing a change in state for a task attachment. */
+	export interface AttachmentStateChangeFormProperties {
+		attachmentArn: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachmentStateChangeFormGroup() {
+		return new FormGroup<AttachmentStateChangeFormProperties>({
+			attachmentArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SubmitContainerStateChangeResponse {
 		acknowledgment?: string | null;
+	}
+	export interface SubmitContainerStateChangeResponseFormProperties {
+		acknowledgment: FormControl<string | null | undefined>,
+	}
+	export function CreateSubmitContainerStateChangeResponseFormGroup() {
+		return new FormGroup<SubmitContainerStateChangeResponseFormProperties>({
+			acknowledgment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubmitContainerStateChangeRequest {
@@ -1454,11 +3563,41 @@ export namespace MyNS {
 		status?: string | null;
 		exitCode?: number | null;
 		reason?: string | null;
-		networkBindings?: Array<NetworkBinding> | null;
+		networkBindings?: Array<NetworkBinding>;
+	}
+	export interface SubmitContainerStateChangeRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		task: FormControl<string | null | undefined>,
+		containerName: FormControl<string | null | undefined>,
+		runtimeId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		exitCode: FormControl<number | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateSubmitContainerStateChangeRequestFormGroup() {
+		return new FormGroup<SubmitContainerStateChangeRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			task: new FormControl<string | null | undefined>(undefined),
+			containerName: new FormControl<string | null | undefined>(undefined),
+			runtimeId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			exitCode: new FormControl<number | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubmitTaskStateChangeResponse {
 		acknowledgment?: string | null;
+	}
+	export interface SubmitTaskStateChangeResponseFormProperties {
+		acknowledgment: FormControl<string | null | undefined>,
+	}
+	export function CreateSubmitTaskStateChangeResponseFormGroup() {
+		return new FormGroup<SubmitTaskStateChangeResponseFormProperties>({
+			acknowledgment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubmitTaskStateChangeRequest {
@@ -1466,11 +3605,32 @@ export namespace MyNS {
 		task?: string | null;
 		status?: string | null;
 		reason?: string | null;
-		containers?: Array<ContainerStateChange> | null;
-		attachments?: Array<AttachmentStateChange> | null;
+		containers?: Array<ContainerStateChange>;
+		attachments?: Array<AttachmentStateChange>;
 		pullStartedAt?: Date | null;
 		pullStoppedAt?: Date | null;
 		executionStoppedAt?: Date | null;
+	}
+	export interface SubmitTaskStateChangeRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		task: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+		pullStartedAt: FormControl<Date | null | undefined>,
+		pullStoppedAt: FormControl<Date | null | undefined>,
+		executionStoppedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateSubmitTaskStateChangeRequestFormGroup() {
+		return new FormGroup<SubmitTaskStateChangeRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			task: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			pullStartedAt: new FormControl<Date | null | undefined>(undefined),
+			pullStoppedAt: new FormControl<Date | null | undefined>(undefined),
+			executionStoppedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1480,61 +3640,176 @@ export namespace MyNS {
 		imageDigest?: string | null;
 		runtimeId?: string | null;
 		exitCode?: number | null;
-		networkBindings?: Array<NetworkBinding> | null;
+		networkBindings?: Array<NetworkBinding>;
 		reason?: string | null;
 		status?: string | null;
 	}
 
+	/** An object representing a change in state for a container. */
+	export interface ContainerStateChangeFormProperties {
+		containerName: FormControl<string | null | undefined>,
+		imageDigest: FormControl<string | null | undefined>,
+		runtimeId: FormControl<string | null | undefined>,
+		exitCode: FormControl<number | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateContainerStateChangeFormGroup() {
+		return new FormGroup<ContainerStateChangeFormProperties>({
+			containerName: new FormControl<string | null | undefined>(undefined),
+			imageDigest: new FormControl<string | null | undefined>(undefined),
+			runtimeId: new FormControl<string | null | undefined>(undefined),
+			exitCode: new FormControl<number | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		resourceArn: string;
 		tagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterSettingsResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster | null;
+		cluster?: Cluster;
+	}
+	export interface UpdateClusterSettingsResponseFormProperties {
+	}
+	export function CreateUpdateClusterSettingsResponseFormGroup() {
+		return new FormGroup<UpdateClusterSettingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClusterSettingsRequest {
 		cluster: string;
 		settings: Array<ClusterSetting>;
 	}
+	export interface UpdateClusterSettingsRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterSettingsRequestFormGroup() {
+		return new FormGroup<UpdateClusterSettingsRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateContainerAgentResponse {
 
 		/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
-		containerInstance?: ContainerInstance | null;
+		containerInstance?: ContainerInstance;
+	}
+	export interface UpdateContainerAgentResponseFormProperties {
+	}
+	export function CreateUpdateContainerAgentResponseFormGroup() {
+		return new FormGroup<UpdateContainerAgentResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateContainerAgentRequest {
 		cluster?: string | null;
 		containerInstance: string;
 	}
+	export interface UpdateContainerAgentRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		containerInstance: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateContainerAgentRequestFormGroup() {
+		return new FormGroup<UpdateContainerAgentRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			containerInstance: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NoUpdateAvailableException {
+	}
+	export interface NoUpdateAvailableExceptionFormProperties {
+	}
+	export function CreateNoUpdateAvailableExceptionFormGroup() {
+		return new FormGroup<NoUpdateAvailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MissingVersionException {
 	}
+	export interface MissingVersionExceptionFormProperties {
+	}
+	export function CreateMissingVersionExceptionFormGroup() {
+		return new FormGroup<MissingVersionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UpdateContainerInstancesStateResponse {
-		containerInstances?: Array<ContainerInstance> | null;
-		failures?: Array<Failure> | null;
+		containerInstances?: Array<ContainerInstance>;
+		failures?: Array<Failure>;
+	}
+	export interface UpdateContainerInstancesStateResponseFormProperties {
+	}
+	export function CreateUpdateContainerInstancesStateResponseFormGroup() {
+		return new FormGroup<UpdateContainerInstancesStateResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateContainerInstancesStateRequest {
@@ -1542,11 +3817,29 @@ export namespace MyNS {
 		containerInstances: Array<string>;
 		status: ListContainerInstancesRequestStatus;
 	}
+	export interface UpdateContainerInstancesStateRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		status: FormControl<ListContainerInstancesRequestStatus | null | undefined>,
+	}
+	export function CreateUpdateContainerInstancesStateRequestFormGroup() {
+		return new FormGroup<UpdateContainerInstancesStateRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ListContainerInstancesRequestStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateServiceResponse {
 
 		/** Details on a service within a cluster */
-		service?: Service | null;
+		service?: Service;
+	}
+	export interface UpdateServiceResponseFormProperties {
+	}
+	export function CreateUpdateServiceResponseFormGroup() {
+		return new FormGroup<UpdateServiceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateServiceRequest {
@@ -1554,24 +3847,52 @@ export namespace MyNS {
 		service: string;
 		desiredCount?: number | null;
 		taskDefinition?: string | null;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
 
 		/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
-		deploymentConfiguration?: DeploymentConfiguration | null;
+		deploymentConfiguration?: DeploymentConfiguration;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration | null;
-		placementConstraints?: Array<PlacementConstraint> | null;
-		placementStrategy?: Array<PlacementStrategy> | null;
+		networkConfiguration?: NetworkConfiguration;
+		placementConstraints?: Array<PlacementConstraint>;
+		placementStrategy?: Array<PlacementStrategy>;
 		platformVersion?: string | null;
 		forceNewDeployment?: boolean | null;
 		healthCheckGracePeriodSeconds?: number | null;
+	}
+	export interface UpdateServiceRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		desiredCount: FormControl<number | null | undefined>,
+		taskDefinition: FormControl<string | null | undefined>,
+		platformVersion: FormControl<string | null | undefined>,
+		forceNewDeployment: FormControl<boolean | null | undefined>,
+		healthCheckGracePeriodSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateServiceRequestFormGroup() {
+		return new FormGroup<UpdateServiceRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			desiredCount: new FormControl<number | null | undefined>(undefined),
+			taskDefinition: new FormControl<string | null | undefined>(undefined),
+			platformVersion: new FormControl<string | null | undefined>(undefined),
+			forceNewDeployment: new FormControl<boolean | null | undefined>(undefined),
+			healthCheckGracePeriodSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateServicePrimaryTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet | null;
+		taskSet?: TaskSet;
+	}
+	export interface UpdateServicePrimaryTaskSetResponseFormProperties {
+	}
+	export function CreateUpdateServicePrimaryTaskSetResponseFormGroup() {
+		return new FormGroup<UpdateServicePrimaryTaskSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateServicePrimaryTaskSetRequest {
@@ -1579,11 +3900,31 @@ export namespace MyNS {
 		service: string;
 		primaryTaskSet: string;
 	}
+	export interface UpdateServicePrimaryTaskSetRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		primaryTaskSet: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateServicePrimaryTaskSetRequestFormGroup() {
+		return new FormGroup<UpdateServicePrimaryTaskSetRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			primaryTaskSet: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet | null;
+		taskSet?: TaskSet;
+	}
+	export interface UpdateTaskSetResponseFormProperties {
+	}
+	export function CreateUpdateTaskSetResponseFormGroup() {
+		return new FormGroup<UpdateTaskSetResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTaskSetRequest {
@@ -1596,6 +3937,19 @@ export namespace MyNS {
 		 * Required
 		 */
 		scale: Scale;
+	}
+	export interface UpdateTaskSetRequestFormProperties {
+		cluster: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		taskSet: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTaskSetRequestFormGroup() {
+		return new FormGroup<UpdateTaskSetRequestFormProperties>({
+			cluster: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			taskSet: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AgentUpdateStatus { PENDING = 0, STAGING = 1, STAGED = 2, UPDATING = 3, UPDATED = 4, FAILED = 5 }

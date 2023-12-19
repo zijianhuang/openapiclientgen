@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Webfont {
 
@@ -11,7 +12,7 @@ export namespace MyNS {
 		family?: string | null;
 
 		/** The font files (with all supported scripts) for each one of the available variants, as a key : value map. */
-		files?: {[id: string]: string } | null;
+		files?: {[id: string]: string };
 
 		/** This kind represents a webfont object in the webfonts service. */
 		kind?: string | null;
@@ -20,22 +21,64 @@ export namespace MyNS {
 		lastModified?: Date | null;
 
 		/** The scripts supported by the font. */
-		subsets?: Array<string> | null;
+		subsets?: Array<string>;
 
 		/** The available variants for the font. */
-		variants?: Array<string> | null;
+		variants?: Array<string>;
 
 		/** The font version. */
 		version?: string | null;
+	}
+	export interface WebfontFormProperties {
+
+		/** The category of the font. */
+		category: FormControl<string | null | undefined>,
+
+		/** The name of the font. */
+		family: FormControl<string | null | undefined>,
+
+		/** The font files (with all supported scripts) for each one of the available variants, as a key : value map. */
+		files: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** This kind represents a webfont object in the webfonts service. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The date (format "yyyy-MM-dd") the font was modified for the last time. */
+		lastModified: FormControl<Date | null | undefined>,
+
+		/** The font version. */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateWebfontFormGroup() {
+		return new FormGroup<WebfontFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			family: new FormControl<string | null | undefined>(undefined),
+			files: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			lastModified: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface WebfontList {
 
 		/** The list of fonts currently served by the Google Fonts API. */
-		items?: Array<Webfont> | null;
+		items?: Array<Webfont>;
 
 		/** This kind represents a list of webfont objects in the webfonts service. */
 		kind?: string | null;
+	}
+	export interface WebfontListFormProperties {
+
+		/** This kind represents a list of webfont objects in the webfonts service. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateWebfontListFormGroup() {
+		return new FormGroup<WebfontListFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

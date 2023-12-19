@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Address {
 
@@ -61,6 +62,80 @@ export namespace MyNS {
 		 */
 		AttentionTo?: string | null;
 	}
+	export interface AddressFormProperties {
+
+		/** define the type of address */
+		AddressType: FormControl<AddressAddressType | null | undefined>,
+
+		/**
+		 * max length = 500
+		 * Max length: 500
+		 */
+		AddressLine1: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 500
+		 * Max length: 500
+		 */
+		AddressLine2: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 500
+		 * Max length: 500
+		 */
+		AddressLine3: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 500
+		 * Max length: 500
+		 */
+		AddressLine4: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 255
+		 * Max length: 255
+		 */
+		City: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 255
+		 * Max length: 255
+		 */
+		Region: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 50
+		 * Max length: 50
+		 */
+		PostalCode: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 50, [A-Z], [a-z] only
+		 * Max length: 50
+		 */
+		Country: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 255
+		 * Max length: 255
+		 */
+		AttentionTo: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressFormGroup() {
+		return new FormGroup<AddressFormProperties>({
+			AddressType: new FormControl<AddressAddressType | null | undefined>(undefined),
+			AddressLine1: new FormControl<string | null | undefined>(undefined),
+			AddressLine2: new FormControl<string | null | undefined>(undefined),
+			AddressLine3: new FormControl<string | null | undefined>(undefined),
+			AddressLine4: new FormControl<string | null | undefined>(undefined),
+			City: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			PostalCode: new FormControl<string | null | undefined>(undefined),
+			Country: new FormControl<string | null | undefined>(undefined),
+			AttentionTo: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum AddressAddressType { POBOX = 0, STREET = 1, DELIVERY = 2 }
 
@@ -85,11 +160,48 @@ export namespace MyNS {
 		 */
 		PhoneCountryCode?: string | null;
 	}
+	export interface PhoneFormProperties {
+		PhoneType: FormControl<PhonePhoneType | null | undefined>,
+
+		/**
+		 * max length = 50
+		 * Max length: 50
+		 */
+		PhoneNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 10
+		 * Max length: 10
+		 */
+		PhoneAreaCode: FormControl<string | null | undefined>,
+
+		/**
+		 * max length = 20
+		 * Max length: 20
+		 */
+		PhoneCountryCode: FormControl<string | null | undefined>,
+	}
+	export function CreatePhoneFormGroup() {
+		return new FormGroup<PhoneFormProperties>({
+			PhoneType: new FormControl<PhonePhoneType | null | undefined>(undefined),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			PhoneAreaCode: new FormControl<string | null | undefined>(undefined),
+			PhoneCountryCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PhonePhoneType { DEFAULT = 0, DDI = 1, MOBILE = 2, FAX = 3, OFFICE = 4 }
 
 	export interface Accounts {
-		Accounts1?: Array<Account> | null;
+		Accounts1?: Array<Account>;
+	}
+	export interface AccountsFormProperties {
+	}
+	export function CreateAccountsFormGroup() {
+		return new FormGroup<AccountsFormProperties>({
+		});
+
 	}
 
 	export interface Account {
@@ -158,7 +270,96 @@ export namespace MyNS {
 		AddToWatchlist?: boolean | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface AccountFormProperties {
+
+		/**
+		 * Customer defined alpha numeric account code e.g 200 or SALES (max length = 10)
+		 * Max length: 10
+		 */
+		Code: FormControl<string | null | undefined>,
+
+		/**
+		 * Name of account (max length = 150)
+		 * Max length: 150
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for an account � specified as a string following  the endpoint name   e.g. /297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		AccountID: FormControl<string | null | undefined>,
+
+		/** See Account Types */
+		Type: FormControl<AccountType | null | undefined>,
+
+		/** For bank accounts only (Account Type BANK) */
+		BankAccountNumber: FormControl<string | null | undefined>,
+
+		/** Accounts with a status of ACTIVE can be updated to ARCHIVED. See Account Status Codes */
+		Status: FormControl<AccountStatus | null | undefined>,
+
+		/** Description of the Account. Valid for all types of accounts except bank accounts (max length = 4000) */
+		Description: FormControl<string | null | undefined>,
+
+		/** For bank accounts only. See Bank Account types */
+		BankAccountType: FormControl<AccountBankAccountType | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<AccountCurrencyCode | null | undefined>,
+
+		/** The tax type from TaxRates */
+		TaxType: FormControl<string | null | undefined>,
+
+		/** Boolean � describes whether account can have payments applied to it */
+		EnablePaymentsToAccount: FormControl<boolean | null | undefined>,
+
+		/** Boolean � describes whether account code is available for use with expense claims */
+		ShowInExpenseClaims: FormControl<boolean | null | undefined>,
+
+		/** See Account Class Types */
+		Class: FormControl<AccountClass | null | undefined>,
+
+		/** If this is a system account then this element is returned. See System Account types. Note that non-system accounts may have this element set as either �� or null. */
+		SystemAccount: FormControl<AccountSystemAccount | null | undefined>,
+
+		/** Shown if set */
+		ReportingCode: FormControl<string | null | undefined>,
+
+		/** Shown if set */
+		ReportingCodeName: FormControl<string | null | undefined>,
+
+		/** boolean to indicate if an account has an attachment (read only) */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Boolean � describes whether the account is shown in the watchlist widget on the dashboard */
+		AddToWatchlist: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			AccountID: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<AccountType | null | undefined>(undefined),
+			BankAccountNumber: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccountStatus | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			BankAccountType: new FormControl<AccountBankAccountType | null | undefined>(undefined),
+			CurrencyCode: new FormControl<AccountCurrencyCode | null | undefined>(undefined),
+			TaxType: new FormControl<string | null | undefined>(undefined),
+			EnablePaymentsToAccount: new FormControl<boolean | null | undefined>(undefined),
+			ShowInExpenseClaims: new FormControl<boolean | null | undefined>(undefined),
+			Class: new FormControl<AccountClass | null | undefined>(undefined),
+			SystemAccount: new FormControl<AccountSystemAccount | null | undefined>(undefined),
+			ReportingCode: new FormControl<string | null | undefined>(undefined),
+			ReportingCodeName: new FormControl<string | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			AddToWatchlist: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountType { BANK = 0, CURRENT = 1, CURRLIAB = 2, DEPRECIATN = 3, DIRECTCOSTS = 4, EQUITY = 5, EXPENSE = 6, FIXED = 7, INVENTORY = 8, LIABILITY = 9, NONCURRENT = 10, OTHERINCOME = 11, OVERHEADS = 12, PREPAYMENT = 13, REVENUE = 14, SALES = 15, TERMLIAB = 16, PAYGLIABILITY = 17, PAYG = 18, SUPERANNUATIONEXPENSE = 19, SUPERANNUATIONLIABILITY = 20, WAGESEXPENSE = 21 }
@@ -178,9 +379,27 @@ export namespace MyNS {
 		/** Validation error message */
 		Message?: string | null;
 	}
+	export interface ValidationErrorFormProperties {
+
+		/** Validation error message */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateValidationErrorFormGroup() {
+		return new FormGroup<ValidationErrorFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Attachments {
-		Attachments1?: Array<Attachment> | null;
+		Attachments1?: Array<Attachment>;
+	}
+	export interface AttachmentsFormProperties {
+	}
+	export function CreateAttachmentsFormGroup() {
+		return new FormGroup<AttachmentsFormProperties>({
+		});
+
 	}
 
 	export interface Attachment {
@@ -203,9 +422,47 @@ export namespace MyNS {
 		/** Include the file with the online invoice */
 		IncludeOnline?: boolean | null;
 	}
+	export interface AttachmentFormProperties {
+
+		/** Unique ID for the file */
+		AttachmentID: FormControl<string | null | undefined>,
+
+		/** Name of the file */
+		FileName: FormControl<string | null | undefined>,
+
+		/** URL to the file on xero.com */
+		Url: FormControl<string | null | undefined>,
+
+		/** Type of file */
+		MimeType: FormControl<string | null | undefined>,
+
+		/** Length of the file content */
+		ContentLength: FormControl<number | null | undefined>,
+
+		/** Include the file with the online invoice */
+		IncludeOnline: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAttachmentFormGroup() {
+		return new FormGroup<AttachmentFormProperties>({
+			AttachmentID: new FormControl<string | null | undefined>(undefined),
+			FileName: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			MimeType: new FormControl<string | null | undefined>(undefined),
+			ContentLength: new FormControl<number | null | undefined>(undefined),
+			IncludeOnline: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BankTransactions {
-		BankTransactions1?: Array<BankTransaction> | null;
+		BankTransactions1?: Array<BankTransaction>;
+	}
+	export interface BankTransactionsFormProperties {
+	}
+	export function CreateBankTransactionsFormGroup() {
+		return new FormGroup<BankTransactionsFormProperties>({
+		});
+
 	}
 
 	export interface BankTransaction {
@@ -276,7 +533,89 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface BankTransactionFormProperties {
+
+		/**
+		 * See Bank Transaction Types
+		 * Required
+		 */
+		Type: FormControl<BankTransactionType | null | undefined>,
+
+		/** Boolean to show if transaction is reconciled */
+		IsReconciled: FormControl<boolean | null | undefined>,
+
+		/** Date of transaction � YYYY-MM-DD */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Reference for the transaction. Only supported for SPEND and RECEIVE transactions. */
+		Reference: FormControl<string | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<BankTransactionCurrencyCode | null | undefined>,
+
+		/** Exchange rate to base currency when money is spent or received. e.g.0.7500 Only used for bank transactions in non base currency. If this isn�t specified for non base currency accounts then either the user-defined rate (preference) or the XE.com day rate will be used. Setting currency is only supported on overpayments. */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** URL link to a source document � shown as �Go to App Name� */
+		Url: FormControl<string | null | undefined>,
+
+		/** See Bank Transaction Status Codes */
+		Status: FormControl<BankTransactionStatus | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** Total of bank transaction excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** Total tax on bank transaction */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** Total of bank transaction tax inclusive */
+		Total: FormControl<number | null | undefined>,
+
+		/** Xero generated unique identifier for bank transaction */
+		BankTransactionID: FormControl<string | null | undefined>,
+
+		/** Xero generated unique identifier for a Prepayment. This will be returned on BankTransactions with a Type of SPEND-PREPAYMENT or RECEIVE-PREPAYMENT */
+		PrepaymentID: FormControl<string | null | undefined>,
+
+		/** Xero generated unique identifier for an Overpayment. This will be returned on BankTransactions with a Type of SPEND-OVERPAYMENT or RECEIVE-OVERPAYMENT */
+		OverpaymentID: FormControl<string | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Boolean to indicate if a bank transaction has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateBankTransactionFormGroup() {
+		return new FormGroup<BankTransactionFormProperties>({
+			Type: new FormControl<BankTransactionType | null | undefined>(undefined),
+			IsReconciled: new FormControl<boolean | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<BankTransactionCurrencyCode | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BankTransactionStatus | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			BankTransactionID: new FormControl<string | null | undefined>(undefined),
+			PrepaymentID: new FormControl<string | null | undefined>(undefined),
+			OverpaymentID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BankTransactionType { RECEIVE = 0, RECEIVE_OVERPAYMENT = 1, RECEIVE_PREPAYMENT = 2, SPEND = 3, SPEND_OVERPAYMENT = 4, SPEND_PREPAYMENT = 5, RECEIVE_TRANSFER = 6, SPEND_TRANSFER = 7 }
@@ -329,7 +668,7 @@ export namespace MyNS {
 		SkypeUserName?: string | null;
 
 		/** See contact persons */
-		ContactPersons?: Array<ContactPerson> | null;
+		ContactPersons?: Array<ContactPerson>;
 
 		/** Bank account number of contact */
 		BankAccountDetails?: string | null;
@@ -347,10 +686,10 @@ export namespace MyNS {
 		AccountsPayableTaxType?: string | null;
 
 		/** Store certain address types for a contact � see address types */
-		Addresses?: Array<Address> | null;
+		Addresses?: Array<Address>;
 
 		/** Store certain phone types for a contact � see phone types */
-		Phones?: Array<Phone> | null;
+		Phones?: Array<Phone>;
 
 		/** true or false � Boolean that describes if a contact that has any AP  invoices entered against them. Cannot be set via PUT or POST � it is automatically set when an accounts payable invoice is generated against this contact. */
 		IsSupplier?: boolean | null;
@@ -371,51 +710,187 @@ export namespace MyNS {
 		PurchasesDefaultAccountCode?: string | null;
 
 		/** The default sales tracking categories for contacts */
-		SalesTrackingCategories?: Array<SalesTrackingCategory> | null;
+		SalesTrackingCategories?: Array<SalesTrackingCategory>;
 
 		/** The default purchases tracking categories for contacts */
-		PurchasesTrackingCategories?: Array<SalesTrackingCategory> | null;
+		PurchasesTrackingCategories?: Array<SalesTrackingCategory>;
 
 		/** The name of the Tracking Category assigned to the contact under SalesTrackingCategories and PurchasesTrackingCategories */
 		TrackingCategoryName?: string | null;
 
 		/** The name of the Tracking Option assigned to the contact under SalesTrackingCategories and PurchasesTrackingCategories */
 		TrackingCategoryOption?: string | null;
-		PaymentTerms?: PaymentTerm | null;
+		PaymentTerms?: PaymentTerm;
 
 		/** UTC timestamp of last update to contact */
 		UpdatedDateUTC?: Date | null;
 
 		/** Displays which contact groups a contact is included in */
-		ContactGroups?: Array<ContactGroup> | null;
+		ContactGroups?: Array<ContactGroup>;
 
 		/** Website address for contact (read only) */
 		Website?: string | null;
-		BrandingTheme?: BrandingTheme | null;
+		BrandingTheme?: BrandingTheme;
 
 		/** Bank details for use on a batch payment stored with each contact */
-		BatchPayments?: BatchPaymentDetails | null;
+		BatchPayments?: BatchPaymentDetails;
 
 		/** The default discount rate for the contact (read only) */
 		Discount?: number | null;
 
 		/** The raw AccountsReceivable(sales invoices) and AccountsPayable(bills) outstanding and overdue amounts, not converted to base currency (read only) */
-		Balances?: Balances | null;
+		Balances?: Balances;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 
 		/** A boolean to indicate if a contact has an attachment */
 		HasAttachments?: boolean | null;
 
 		/** Displays validation errors returned from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** A boolean to indicate if a contact has an validation errors */
 		HasValidationErrors?: boolean | null;
 
 		/** Status of object */
 		StatusAttributeString?: string | null;
+	}
+	export interface ContactFormProperties {
+
+		/** Xero identifier */
+		ContactID: FormControl<string | null | undefined>,
+
+		/**
+		 * This can be updated via the API only i.e. This field is read only on the Xero contact screen, used to identify contacts in external systems (max length = 50). If the Contact Number is used, this is displayed as Contact Code in the Contacts UI in Xero.
+		 * Max length: 50
+		 */
+		ContactNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * A user defined account number. This can be updated via the API and the Xero UI (max length = 50)
+		 * Max length: 50
+		 */
+		AccountNumber: FormControl<string | null | undefined>,
+
+		/** Current status of a contact � see contact status types */
+		ContactStatus: FormControl<ContactContactStatus | null | undefined>,
+
+		/**
+		 * Full name of contact/organisation (max length = 255)
+		 * Max length: 255
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * First name of contact person (max length = 255)
+		 * Max length: 255
+		 */
+		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Last name of contact person (max length = 255)
+		 * Max length: 255
+		 */
+		LastName: FormControl<string | null | undefined>,
+
+		/**
+		 * Email address of contact person (umlauts not supported) (max length  = 255)
+		 * Max length: 255
+		 */
+		EmailAddress: FormControl<string | null | undefined>,
+
+		/** Skype user name of contact */
+		SkypeUserName: FormControl<string | null | undefined>,
+
+		/** Bank account number of contact */
+		BankAccountDetails: FormControl<string | null | undefined>,
+
+		/**
+		 * Tax number of contact � this is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global) in the Xero UI depending on which regionalized version of Xero you are using (max length = 50)
+		 * Max length: 50
+		 */
+		TaxNumber: FormControl<string | null | undefined>,
+
+		/** The tax type from TaxRates */
+		AccountsReceivableTaxType: FormControl<string | null | undefined>,
+
+		/** The tax type from TaxRates */
+		AccountsPayableTaxType: FormControl<string | null | undefined>,
+
+		/** true or false � Boolean that describes if a contact that has any AP  invoices entered against them. Cannot be set via PUT or POST � it is automatically set when an accounts payable invoice is generated against this contact. */
+		IsSupplier: FormControl<boolean | null | undefined>,
+
+		/** true or false � Boolean that describes if a contact has any AR invoices entered against them. Cannot be set via PUT or POST � it is automatically set when an accounts receivable invoice is generated against this contact. */
+		IsCustomer: FormControl<boolean | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		DefaultCurrency: FormControl<ContactDefaultCurrency | null | undefined>,
+
+		/** Store XeroNetworkKey for contacts. */
+		XeroNetworkKey: FormControl<string | null | undefined>,
+
+		/** The default sales account code for contacts */
+		SalesDefaultAccountCode: FormControl<string | null | undefined>,
+
+		/** The default purchases account code for contacts */
+		PurchasesDefaultAccountCode: FormControl<string | null | undefined>,
+
+		/** The name of the Tracking Category assigned to the contact under SalesTrackingCategories and PurchasesTrackingCategories */
+		TrackingCategoryName: FormControl<string | null | undefined>,
+
+		/** The name of the Tracking Option assigned to the contact under SalesTrackingCategories and PurchasesTrackingCategories */
+		TrackingCategoryOption: FormControl<string | null | undefined>,
+
+		/** UTC timestamp of last update to contact */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Website address for contact (read only) */
+		Website: FormControl<string | null | undefined>,
+
+		/** The default discount rate for the contact (read only) */
+		Discount: FormControl<number | null | undefined>,
+
+		/** A boolean to indicate if a contact has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** A boolean to indicate if a contact has an validation errors */
+		HasValidationErrors: FormControl<boolean | null | undefined>,
+
+		/** Status of object */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateContactFormGroup() {
+		return new FormGroup<ContactFormProperties>({
+			ContactID: new FormControl<string | null | undefined>(undefined),
+			ContactNumber: new FormControl<string | null | undefined>(undefined),
+			AccountNumber: new FormControl<string | null | undefined>(undefined),
+			ContactStatus: new FormControl<ContactContactStatus | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			SkypeUserName: new FormControl<string | null | undefined>(undefined),
+			BankAccountDetails: new FormControl<string | null | undefined>(undefined),
+			TaxNumber: new FormControl<string | null | undefined>(undefined),
+			AccountsReceivableTaxType: new FormControl<string | null | undefined>(undefined),
+			AccountsPayableTaxType: new FormControl<string | null | undefined>(undefined),
+			IsSupplier: new FormControl<boolean | null | undefined>(undefined),
+			IsCustomer: new FormControl<boolean | null | undefined>(undefined),
+			DefaultCurrency: new FormControl<ContactDefaultCurrency | null | undefined>(undefined),
+			XeroNetworkKey: new FormControl<string | null | undefined>(undefined),
+			SalesDefaultAccountCode: new FormControl<string | null | undefined>(undefined),
+			PurchasesDefaultAccountCode: new FormControl<string | null | undefined>(undefined),
+			TrackingCategoryName: new FormControl<string | null | undefined>(undefined),
+			TrackingCategoryOption: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			Website: new FormControl<string | null | undefined>(undefined),
+			Discount: new FormControl<number | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			HasValidationErrors: new FormControl<boolean | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContactContactStatus { ACTIVE = 0, ARCHIVED = 1, GDPRREQUEST = 2 }
@@ -434,6 +909,29 @@ export namespace MyNS {
 		/** boolean to indicate whether contact should be included on emails with invoices etc. */
 		IncludeInEmails?: boolean | null;
 	}
+	export interface ContactPersonFormProperties {
+
+		/** First name of person */
+		FirstName: FormControl<string | null | undefined>,
+
+		/** Last name of person */
+		LastName: FormControl<string | null | undefined>,
+
+		/** Email address of person */
+		EmailAddress: FormControl<string | null | undefined>,
+
+		/** boolean to indicate whether contact should be included on emails with invoices etc. */
+		IncludeInEmails: FormControl<boolean | null | undefined>,
+	}
+	export function CreateContactPersonFormGroup() {
+		return new FormGroup<ContactPersonFormProperties>({
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			IncludeInEmails: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ContactDefaultCurrency { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BRL = 19, BSD = 20, BTN = 21, BWP = 22, BYN = 23, BZD = 24, CAD = 25, CDF = 26, CHF = 27, CLP = 28, CNY = 29, COP = 30, CRC = 31, CUC = 32, CUP = 33, CVE = 34, CZK = 35, DJF = 36, DKK = 37, DOP = 38, DZD = 39, EGP = 40, ERN = 41, ETB = 42, EUR = 43, FJD = 44, FKP = 45, GBP = 46, GEL = 47, GGP = 48, GHS = 49, GIP = 50, GMD = 51, GNF = 52, GTQ = 53, GYD = 54, HKD = 55, HNL = 56, HRK = 57, HTG = 58, HUF = 59, IDR = 60, ILS = 61, IMP = 62, INR = 63, IQD = 64, IRR = 65, ISK = 66, JEP = 67, JMD = 68, JOD = 69, JPY = 70, KES = 71, KGS = 72, KHR = 73, KMF = 74, KPW = 75, KRW = 76, KWD = 77, KYD = 78, KZT = 79, LAK = 80, LBP = 81, LKR = 82, LRD = 83, LSL = 84, LYD = 85, MAD = 86, MDL = 87, MGA = 88, MKD = 89, MMK = 90, MNT = 91, MOP = 92, MRU = 93, MUR = 94, MVR = 95, MWK = 96, MXN = 97, MYR = 98, MZN = 99, NAD = 100, NGN = 101, NIO = 102, NOK = 103, NPR = 104, NZD = 105, OMR = 106, PAB = 107, PEN = 108, PGK = 109, PHP = 110, PKR = 111, PLN = 112, PYG = 113, QAR = 114, RON = 115, RSD = 116, RUB = 117, RWF = 118, SAR = 119, SBD = 120, SCR = 121, SDG = 122, SEK = 123, SGD = 124, SHP = 125, SLL = 126, SOS = 127, SPL = 128, SRD = 129, STN = 130, SVC = 131, SYP = 132, SZL = 133, THB = 134, TJS = 135, TMT = 136, TND = 137, TOP = 138, TRY = 139, TTD = 140, TVD = 141, TWD = 142, TZS = 143, UAH = 144, UGX = 145, USD = 146, UYU = 147, UZS = 148, VEF = 149, VND = 150, VUV = 151, WST = 152, XAF = 153, XCD = 154, XDR = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160, ZMK = 161, ZWD = 162, _ = 163 }
 
@@ -445,10 +943,32 @@ export namespace MyNS {
 		/** The default purchase tracking category name for contacts */
 		TrackingOptionName?: string | null;
 	}
+	export interface SalesTrackingCategoryFormProperties {
+
+		/** The default sales tracking category name for contacts */
+		TrackingCategoryName: FormControl<string | null | undefined>,
+
+		/** The default purchase tracking category name for contacts */
+		TrackingOptionName: FormControl<string | null | undefined>,
+	}
+	export function CreateSalesTrackingCategoryFormGroup() {
+		return new FormGroup<SalesTrackingCategoryFormProperties>({
+			TrackingCategoryName: new FormControl<string | null | undefined>(undefined),
+			TrackingOptionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PaymentTerm {
-		Bills?: Bill | null;
-		Sales?: Bill | null;
+		Bills?: Bill;
+		Sales?: Bill;
+	}
+	export interface PaymentTermFormProperties {
+	}
+	export function CreatePaymentTermFormGroup() {
+		return new FormGroup<PaymentTermFormProperties>({
+		});
+
 	}
 
 	export interface Bill {
@@ -456,6 +976,19 @@ export namespace MyNS {
 		/** Day of Month (0-31) */
 		Day?: number | null;
 		Type?: BillType | null;
+	}
+	export interface BillFormProperties {
+
+		/** Day of Month (0-31) */
+		Day: FormControl<number | null | undefined>,
+		Type: FormControl<BillType | null | undefined>,
+	}
+	export function CreateBillFormGroup() {
+		return new FormGroup<BillFormProperties>({
+			Day: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<BillType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BillType { DAYSAFTERBILLDATE = 0, DAYSAFTERBILLMONTH = 1, OFCURRENTMONTH = 2, OFFOLLOWINGMONTH = 3 }
@@ -472,7 +1005,26 @@ export namespace MyNS {
 		ContactGroupID?: string | null;
 
 		/** The ContactID and Name of Contacts in a contact group. Returned on GETs when the ContactGroupID is supplied in the URL. */
-		Contacts?: Array<Contact> | null;
+		Contacts?: Array<Contact>;
+	}
+	export interface ContactGroupFormProperties {
+
+		/** The Name of the contact group. Required when creating a new contact  group */
+		Name: FormControl<string | null | undefined>,
+
+		/** The Status of a contact group. To delete a contact group update the status to DELETED. Only contact groups with a status of ACTIVE are returned on GETs. */
+		Status: FormControl<ContactGroupStatus | null | undefined>,
+
+		/** The Xero identifier for an contact group � specified as a string following the endpoint name. e.g. /297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		ContactGroupID: FormControl<string | null | undefined>,
+	}
+	export function CreateContactGroupFormGroup() {
+		return new FormGroup<ContactGroupFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ContactGroupStatus | null | undefined>(undefined),
+			ContactGroupID: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContactGroupStatus { ACTIVE = 0, DELETED = 1 }
@@ -497,24 +1049,86 @@ export namespace MyNS {
 		/** UTC timestamp of creation date of branding theme */
 		CreatedDateUTC?: Date | null;
 	}
+	export interface BrandingThemeFormProperties {
+
+		/** Xero identifier */
+		BrandingThemeID: FormControl<string | null | undefined>,
+
+		/** Name of branding theme */
+		Name: FormControl<string | null | undefined>,
+
+		/** The location of the image file used as the logo on this branding theme */
+		LogoUrl: FormControl<string | null | undefined>,
+
+		/** Always INVOICE */
+		Type: FormControl<BrandingThemeType | null | undefined>,
+
+		/** Integer � ranked order of branding theme. The default branding theme has a value of 0 */
+		SortOrder: FormControl<number | null | undefined>,
+
+		/** UTC timestamp of creation date of branding theme */
+		CreatedDateUTC: FormControl<Date | null | undefined>,
+	}
+	export function CreateBrandingThemeFormGroup() {
+		return new FormGroup<BrandingThemeFormProperties>({
+			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			LogoUrl: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<BrandingThemeType | null | undefined>(undefined),
+			SortOrder: new FormControl<number | null | undefined>(undefined),
+			CreatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum BrandingThemeType { INVOICE = 0 }
 
 
 	/** The raw AccountsReceivable(sales invoices) and AccountsPayable(bills) outstanding and overdue amounts, not converted to base currency (read only) */
 	export interface Balances {
-		AccountsReceivable?: AccountsReceivable | null;
-		AccountsPayable?: AccountsPayable | null;
+		AccountsReceivable?: AccountsReceivable;
+		AccountsPayable?: AccountsPayable;
+	}
+
+	/** The raw AccountsReceivable(sales invoices) and AccountsPayable(bills) outstanding and overdue amounts, not converted to base currency (read only) */
+	export interface BalancesFormProperties {
+	}
+	export function CreateBalancesFormGroup() {
+		return new FormGroup<BalancesFormProperties>({
+		});
+
 	}
 
 	export interface AccountsReceivable {
 		Outstanding?: number | null;
 		Overdue?: number | null;
 	}
+	export interface AccountsReceivableFormProperties {
+		Outstanding: FormControl<number | null | undefined>,
+		Overdue: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountsReceivableFormGroup() {
+		return new FormGroup<AccountsReceivableFormProperties>({
+			Outstanding: new FormControl<number | null | undefined>(undefined),
+			Overdue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountsPayable {
 		Outstanding?: number | null;
 		Overdue?: number | null;
+	}
+	export interface AccountsPayableFormProperties {
+		Outstanding: FormControl<number | null | undefined>,
+		Overdue: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountsPayableFormGroup() {
+		return new FormGroup<AccountsPayableFormProperties>({
+			Outstanding: new FormControl<number | null | undefined>(undefined),
+			Overdue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LineItem {
@@ -547,7 +1161,7 @@ export namespace MyNS {
 		LineAmount?: number | null;
 
 		/** Optional Tracking Category � see Tracking.  Any LineItem can have a  maximum of 2 <TrackingCategory> elements. */
-		Tracking?: Array<LineItemTracking> | null;
+		Tracking?: Array<LineItemTracking>;
 
 		/** Percentage discount being applied to a line item (only supported on  ACCREC invoices � ACC PAY invoices and credit notes in Xero do not support discounts */
 		DiscountRate?: number | null;
@@ -557,6 +1171,61 @@ export namespace MyNS {
 
 		/** The Xero identifier for a Repeating Invoice */
 		RepeatingInvoiceID?: string | null;
+	}
+	export interface LineItemFormProperties {
+
+		/** LineItem unique ID */
+		LineItemID: FormControl<string | null | undefined>,
+
+		/** Description needs to be at least 1 char long. A line item with just a description (i.e no unit amount or quantity) can be created by specifying just a <Description> element that contains at least 1 character */
+		Description: FormControl<string | null | undefined>,
+
+		/** LineItem Quantity */
+		Quantity: FormControl<number | null | undefined>,
+
+		/** LineItem Unit Amount */
+		UnitAmount: FormControl<number | null | undefined>,
+
+		/** See Items */
+		ItemCode: FormControl<string | null | undefined>,
+
+		/** See Accounts */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/** The tax type from TaxRates */
+		TaxType: FormControl<string | null | undefined>,
+
+		/** The tax amount is auto calculated as a percentage of the line amount (see below) based on the tax rate. This value can be overriden if the calculated <TaxAmount> is not correct. */
+		TaxAmount: FormControl<number | null | undefined>,
+
+		/** If you wish to omit either of the <Quantity> or <UnitAmount> you can provide a LineAmount and Xero will calculate the missing amount for you. The line amount reflects the discounted price if a DiscountRate has been used . i.e LineAmount = Quantity * Unit Amount * ((100 � DiscountRate)/100) */
+		LineAmount: FormControl<number | null | undefined>,
+
+		/** Percentage discount being applied to a line item (only supported on  ACCREC invoices � ACC PAY invoices and credit notes in Xero do not support discounts */
+		DiscountRate: FormControl<number | null | undefined>,
+
+		/** Discount amount being applied to a line item. Only supported on ACCREC invoices - ACCPAY invoices and credit notes in Xero do not support discounts. */
+		DiscountAmount: FormControl<number | null | undefined>,
+
+		/** The Xero identifier for a Repeating Invoice */
+		RepeatingInvoiceID: FormControl<string | null | undefined>,
+	}
+	export function CreateLineItemFormGroup() {
+		return new FormGroup<LineItemFormProperties>({
+			LineItemID: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined),
+			UnitAmount: new FormControl<number | null | undefined>(undefined),
+			ItemCode: new FormControl<string | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			TaxType: new FormControl<string | null | undefined>(undefined),
+			TaxAmount: new FormControl<number | null | undefined>(undefined),
+			LineAmount: new FormControl<number | null | undefined>(undefined),
+			DiscountRate: new FormControl<number | null | undefined>(undefined),
+			DiscountAmount: new FormControl<number | null | undefined>(undefined),
+			RepeatingInvoiceID: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LineItemTracking {
@@ -576,6 +1245,32 @@ export namespace MyNS {
 		/** See Tracking Options */
 		Option?: string | null;
 	}
+	export interface LineItemTrackingFormProperties {
+
+		/** The Xero identifier for a tracking category */
+		TrackingCategoryID: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for a tracking category option */
+		TrackingOptionID: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the tracking category
+		 * Max length: 100
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** See Tracking Options */
+		Option: FormControl<string | null | undefined>,
+	}
+	export function CreateLineItemTrackingFormGroup() {
+		return new FormGroup<LineItemTrackingFormProperties>({
+			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
+			TrackingOptionID: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Option: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum BankTransactionCurrencyCode { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BRL = 19, BSD = 20, BTN = 21, BWP = 22, BYN = 23, BZD = 24, CAD = 25, CDF = 26, CHF = 27, CLP = 28, CNY = 29, COP = 30, CRC = 31, CUC = 32, CUP = 33, CVE = 34, CZK = 35, DJF = 36, DKK = 37, DOP = 38, DZD = 39, EGP = 40, ERN = 41, ETB = 42, EUR = 43, FJD = 44, FKP = 45, GBP = 46, GEL = 47, GGP = 48, GHS = 49, GIP = 50, GMD = 51, GNF = 52, GTQ = 53, GYD = 54, HKD = 55, HNL = 56, HRK = 57, HTG = 58, HUF = 59, IDR = 60, ILS = 61, IMP = 62, INR = 63, IQD = 64, IRR = 65, ISK = 66, JEP = 67, JMD = 68, JOD = 69, JPY = 70, KES = 71, KGS = 72, KHR = 73, KMF = 74, KPW = 75, KRW = 76, KWD = 77, KYD = 78, KZT = 79, LAK = 80, LBP = 81, LKR = 82, LRD = 83, LSL = 84, LYD = 85, MAD = 86, MDL = 87, MGA = 88, MKD = 89, MMK = 90, MNT = 91, MOP = 92, MRU = 93, MUR = 94, MVR = 95, MWK = 96, MXN = 97, MYR = 98, MZN = 99, NAD = 100, NGN = 101, NIO = 102, NOK = 103, NPR = 104, NZD = 105, OMR = 106, PAB = 107, PEN = 108, PGK = 109, PHP = 110, PKR = 111, PLN = 112, PYG = 113, QAR = 114, RON = 115, RSD = 116, RUB = 117, RWF = 118, SAR = 119, SBD = 120, SCR = 121, SDG = 122, SEK = 123, SGD = 124, SHP = 125, SLL = 126, SOS = 127, SPL = 128, SRD = 129, STN = 130, SVC = 131, SYP = 132, SZL = 133, THB = 134, TJS = 135, TMT = 136, TND = 137, TOP = 138, TRY = 139, TTD = 140, TVD = 141, TWD = 142, TZS = 143, UAH = 144, UGX = 145, USD = 146, UYU = 147, UZS = 148, VEF = 149, VND = 150, VUV = 151, WST = 152, XAF = 153, XCD = 154, XDR = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160, ZMK = 161, ZWD = 162, _ = 163 }
 
@@ -588,7 +1283,14 @@ export namespace MyNS {
 	export enum LineAmountTypes { Exclusive = 0, Inclusive = 1, NoTax = 2 }
 
 	export interface BankTransfers {
-		BankTransfers1?: Array<BankTransfer> | null;
+		BankTransfers1?: Array<BankTransfer>;
+	}
+	export interface BankTransfersFormProperties {
+	}
+	export function CreateBankTransfersFormGroup() {
+		return new FormGroup<BankTransfersFormProperties>({
+		});
+
 	}
 
 	export interface BankTransfer {
@@ -623,15 +1325,64 @@ export namespace MyNS {
 		CreatedDateUTC?: Date | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface BankTransferFormProperties {
+
+		/**
+		 * amount of the transaction
+		 * Required
+		 */
+		Amount: FormControl<number | null | undefined>,
+
+		/** The date of the Transfer YYYY-MM-DD */
+		Date: FormControl<Date | null | undefined>,
+
+		/** The identifier of the Bank Transfer */
+		BankTransferID: FormControl<string | null | undefined>,
+
+		/** The currency rate */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** The Bank Transaction ID for the source account */
+		FromBankTransactionID: FormControl<string | null | undefined>,
+
+		/** The Bank Transaction ID for the destination account */
+		ToBankTransactionID: FormControl<string | null | undefined>,
+
+		/** Boolean to indicate if a Bank Transfer has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** UTC timestamp of creation date of bank transfer */
+		CreatedDateUTC: FormControl<Date | null | undefined>,
+	}
+	export function CreateBankTransferFormGroup() {
+		return new FormGroup<BankTransferFormProperties>({
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			BankTransferID: new FormControl<string | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			FromBankTransactionID: new FormControl<string | null | undefined>(undefined),
+			ToBankTransactionID: new FormControl<string | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			CreatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchPayments {
-		BatchPayments1?: Array<BatchPayment> | null;
+		BatchPayments1?: Array<BatchPayment>;
+	}
+	export interface BatchPaymentsFormProperties {
+	}
+	export function CreateBatchPaymentsFormGroup() {
+		return new FormGroup<BatchPaymentsFormProperties>({
+		});
+
 	}
 
 	export interface BatchPayment {
-		Account?: Account | null;
+		Account?: Account;
 
 		/**
 		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
@@ -674,7 +1425,7 @@ export namespace MyNS {
 
 		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00 */
 		Amount?: number | null;
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** PAYBATCH for bill payments or RECBATCH for sales invoice payments (read-only) */
 		Type?: BatchPaymentType | null;
@@ -691,19 +1442,97 @@ export namespace MyNS {
 		/** Booelan that tells you if the batch payment has been reconciled (read-only) */
 		IsReconciled?: string | null;
 	}
+	export interface BatchPaymentFormProperties {
+
+		/**
+		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
+		 * Max length: 12
+		 */
+		Reference: FormControl<string | null | undefined>,
+
+		/**
+		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
+		 * Max length: 12
+		 */
+		Particulars: FormControl<string | null | undefined>,
+
+		/**
+		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
+		 * Max length: 12
+		 */
+		Code: FormControl<string | null | undefined>,
+
+		/**
+		 * (Non-NZ Only) These details are sent to the org�s bank as a reference for the batch payment transaction. They will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement imported into Xero. Maximum field length = 18
+		 * Max length: 18
+		 */
+		Details: FormControl<string | null | undefined>,
+
+		/**
+		 * (UK Only) Only shows on the statement line in Xero. Max length =18
+		 * Max length: 18
+		 */
+		Narrative: FormControl<string | null | undefined>,
+
+		/** The Xero generated unique identifier for the bank transaction (read-only) */
+		BatchPaymentID: FormControl<string | null | undefined>,
+
+		/** Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06 */
+		DateString: FormControl<string | null | undefined>,
+
+		/** Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06 */
+		Date: FormControl<Date | null | undefined>,
+
+		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00 */
+		Amount: FormControl<number | null | undefined>,
+
+		/** PAYBATCH for bill payments or RECBATCH for sales invoice payments (read-only) */
+		Type: FormControl<BatchPaymentType | null | undefined>,
+
+		/** AUTHORISED or DELETED (read-only). New batch payments will have a status of AUTHORISED. It is not possible to delete batch payments via the API. */
+		Status: FormControl<PaymentStatus | null | undefined>,
+
+		/** The total of the payments that make up the batch (read-only) */
+		TotalAmount: FormControl<string | null | undefined>,
+
+		/** UTC timestamp of last update to the payment */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Booelan that tells you if the batch payment has been reconciled (read-only) */
+		IsReconciled: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPaymentFormGroup() {
+		return new FormGroup<BatchPaymentFormProperties>({
+			Reference: new FormControl<string | null | undefined>(undefined),
+			Particulars: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+			Details: new FormControl<string | null | undefined>(undefined),
+			Narrative: new FormControl<string | null | undefined>(undefined),
+			BatchPaymentID: new FormControl<string | null | undefined>(undefined),
+			DateString: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<BatchPaymentType | null | undefined>(undefined),
+			Status: new FormControl<PaymentStatus | null | undefined>(undefined),
+			TotalAmount: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			IsReconciled: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Payment {
-		Invoice?: Invoice | null;
-		CreditNote?: CreditNote | null;
-		Prepayment?: Prepayment | null;
-		Overpayment?: Overpayment | null;
+		Invoice?: Invoice;
+		CreditNote?: CreditNote;
+		Prepayment?: Prepayment;
+		Overpayment?: Overpayment;
 
 		/** Number of invoice or credit note you are applying payment to e.g.INV-4003 */
 		InvoiceNumber?: string | null;
 
 		/** Number of invoice or credit note you are applying payment to e.g. INV-4003 */
 		CreditNoteNumber?: string | null;
-		Account?: Account | null;
+		Account?: Account;
 
 		/** Code of account you are using to make the payment e.g. 001 (note- not all accounts have a code value) */
 		Code?: string | null;
@@ -754,17 +1583,96 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface PaymentFormProperties {
+
+		/** Number of invoice or credit note you are applying payment to e.g.INV-4003 */
+		InvoiceNumber: FormControl<string | null | undefined>,
+
+		/** Number of invoice or credit note you are applying payment to e.g. INV-4003 */
+		CreditNoteNumber: FormControl<string | null | undefined>,
+
+		/** Code of account you are using to make the payment e.g. 001 (note- not all accounts have a code value) */
+		Code: FormControl<string | null | undefined>,
+
+		/** Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06 */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Exchange rate when payment is received. Only used for non base currency invoices and credit notes e.g. 0.7500 */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00 */
+		Amount: FormControl<number | null | undefined>,
+
+		/** An optional description for the payment e.g. Direct Debit */
+		Reference: FormControl<string | null | undefined>,
+
+		/** An optional parameter for the payment. A boolean indicating whether you would like the payment to be created as reconciled when using PUT, or whether a payment has been reconciled when using GET */
+		IsReconciled: FormControl<boolean | null | undefined>,
+
+		/** The status of the payment. */
+		Status: FormControl<PaymentStatus | null | undefined>,
+
+		/** See Payment Types. */
+		PaymentType: FormControl<PaymentPaymentType | null | undefined>,
+
+		/** UTC timestamp of last update to the payment */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** The Xero identifier for an Payment e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		PaymentID: FormControl<string | null | undefined>,
+
+		/** The suppliers bank account number the payment is being made to */
+		BankAccountNumber: FormControl<string | null | undefined>,
+
+		/** The suppliers bank account number the payment is being made to */
+		Particulars: FormControl<string | null | undefined>,
+
+		/** The information to appear on the supplier's bank account */
+		Details: FormControl<string | null | undefined>,
+
+		/** A boolean to indicate if a contact has an validation errors */
+		HasAccount: FormControl<boolean | null | undefined>,
+
+		/** A boolean to indicate if a contact has an validation errors */
+		HasValidationErrors: FormControl<boolean | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentFormGroup() {
+		return new FormGroup<PaymentFormProperties>({
+			InvoiceNumber: new FormControl<string | null | undefined>(undefined),
+			CreditNoteNumber: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			IsReconciled: new FormControl<boolean | null | undefined>(undefined),
+			Status: new FormControl<PaymentStatus | null | undefined>(undefined),
+			PaymentType: new FormControl<PaymentPaymentType | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			PaymentID: new FormControl<string | null | undefined>(undefined),
+			BankAccountNumber: new FormControl<string | null | undefined>(undefined),
+			Particulars: new FormControl<string | null | undefined>(undefined),
+			Details: new FormControl<string | null | undefined>(undefined),
+			HasAccount: new FormControl<boolean | null | undefined>(undefined),
+			HasValidationErrors: new FormControl<boolean | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Invoice {
 
 		/** See Invoice Types */
 		Type?: InvoiceType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Date invoice was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -836,13 +1744,13 @@ export namespace MyNS {
 		IsDiscounted?: boolean | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** See Prepayments */
-		Prepayments?: Array<Prepayment> | null;
+		Prepayments?: Array<Prepayment>;
 
 		/** See Overpayments */
-		Overpayments?: Array<Overpayment> | null;
+		Overpayments?: Array<Overpayment>;
 
 		/** Amount remaining to be paid on invoice */
 		AmountDue?: number | null;
@@ -860,10 +1768,10 @@ export namespace MyNS {
 		UpdatedDateUTC?: Date | null;
 
 		/** Details of credit notes that have been applied to an invoice */
-		CreditNotes?: Array<CreditNote> | null;
+		CreditNotes?: Array<CreditNote>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 
 		/** A boolean to indicate if a invoice has an validation errors */
 		HasErrors?: boolean | null;
@@ -872,10 +1780,139 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
+	}
+	export interface InvoiceFormProperties {
+
+		/** See Invoice Types */
+		Type: FormControl<InvoiceType | null | undefined>,
+
+		/** Date invoice was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Date invoice is due � YYYY-MM-DD */
+		DueDate: FormControl<Date | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/**
+		 * ACCREC � Unique alpha numeric code identifying invoice (when missing will auto-generate from your Organisation Invoice Settings) (max length = 255)
+		 * Max length: 255
+		 */
+		InvoiceNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * ACCREC only � additional reference number (max length = 255)
+		 * Max length: 255
+		 */
+		Reference: FormControl<string | null | undefined>,
+
+		/** See BrandingThemes */
+		BrandingThemeID: FormControl<string | null | undefined>,
+
+		/** URL link to a source document � shown as �Go to [appName]� in the Xero app */
+		Url: FormControl<string | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<InvoiceCurrencyCode | null | undefined>,
+
+		/** The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used. (max length = [18].[6]) */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** See Invoice Status Codes */
+		Status: FormControl<InvoiceStatus | null | undefined>,
+
+		/** Boolean to set whether the invoice in the Xero app should be marked as �sent�. This can be set only on invoices that have been approved */
+		SentToContact: FormControl<boolean | null | undefined>,
+
+		/** Shown on sales invoices (Accounts Receivable) when this has been set */
+		ExpectedPaymentDate: FormControl<Date | null | undefined>,
+
+		/** Shown on bills (Accounts Payable) when this has been set */
+		PlannedPaymentDate: FormControl<Date | null | undefined>,
+
+		/** CIS deduction for UK contractors */
+		CISDeduction: FormControl<number | null | undefined>,
+
+		/** Total of invoice excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** Total tax on invoice */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn�t equal the sum of the LineAmounts */
+		Total: FormControl<number | null | undefined>,
+
+		/** Total of discounts applied on the invoice line items */
+		TotalDiscount: FormControl<number | null | undefined>,
+
+		/** Xero generated unique identifier for invoice */
+		InvoiceID: FormControl<string | null | undefined>,
+
+		/** boolean to indicate if an invoice has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** boolean to indicate if an invoice has a discount */
+		IsDiscounted: FormControl<boolean | null | undefined>,
+
+		/** Amount remaining to be paid on invoice */
+		AmountDue: FormControl<number | null | undefined>,
+
+		/** Sum of payments received for invoice */
+		AmountPaid: FormControl<number | null | undefined>,
+
+		/** The date the invoice was fully paid. Only returned on fully paid invoices */
+		FullyPaidOnDate: FormControl<Date | null | undefined>,
+
+		/** Sum of all credit notes, over-payments and pre-payments applied to invoice */
+		AmountCredited: FormControl<number | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** A boolean to indicate if a invoice has an validation errors */
+		HasErrors: FormControl<boolean | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateInvoiceFormGroup() {
+		return new FormGroup<InvoiceFormProperties>({
+			Type: new FormControl<InvoiceType | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			DueDate: new FormControl<Date | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			InvoiceNumber: new FormControl<string | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<InvoiceCurrencyCode | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<InvoiceStatus | null | undefined>(undefined),
+			SentToContact: new FormControl<boolean | null | undefined>(undefined),
+			ExpectedPaymentDate: new FormControl<Date | null | undefined>(undefined),
+			PlannedPaymentDate: new FormControl<Date | null | undefined>(undefined),
+			CISDeduction: new FormControl<number | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			TotalDiscount: new FormControl<number | null | undefined>(undefined),
+			InvoiceID: new FormControl<string | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			IsDiscounted: new FormControl<boolean | null | undefined>(undefined),
+			AmountDue: new FormControl<number | null | undefined>(undefined),
+			AmountPaid: new FormControl<number | null | undefined>(undefined),
+			FullyPaidOnDate: new FormControl<Date | null | undefined>(undefined),
+			AmountCredited: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			HasErrors: new FormControl<boolean | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InvoiceType { ACCPAY = 0, ACCPAYCREDIT = 1, APOVERPAYMENT = 2, APPREPAYMENT = 3, ACCREC = 4, ACCRECCREDIT = 5, AROVERPAYMENT = 6, ARPREPAYMENT = 7 }
@@ -888,7 +1925,7 @@ export namespace MyNS {
 
 		/** See Prepayment Types */
 		Type?: PrepaymentType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** The date the prepayment is created YYYY-MM-DD */
 		Date?: Date | null;
@@ -900,7 +1937,7 @@ export namespace MyNS {
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
 
 		/** See Prepayment Line Items */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** The subtotal of the prepayment excluding taxes */
 		SubTotal?: number | null;
@@ -930,7 +1967,7 @@ export namespace MyNS {
 		RemainingCredit?: number | null;
 
 		/** See Allocations */
-		Allocations?: Array<Allocation> | null;
+		Allocations?: Array<Allocation>;
 
 		/** The amount of applied to an invoice */
 		AppliedAmount?: number | null;
@@ -939,7 +1976,74 @@ export namespace MyNS {
 		HasAttachments?: boolean | null;
 
 		/** See Attachments */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
+	}
+	export interface PrepaymentFormProperties {
+
+		/** See Prepayment Types */
+		Type: FormControl<PrepaymentType | null | undefined>,
+
+		/** The date the prepayment is created YYYY-MM-DD */
+		Date: FormControl<Date | null | undefined>,
+
+		/** See Prepayment Status Codes */
+		Status: FormControl<PrepaymentStatus | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** The subtotal of the prepayment excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** The total tax on the prepayment */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** The total of the prepayment(subtotal + total tax) */
+		Total: FormControl<number | null | undefined>,
+
+		/** Returns Invoice number field. Reference field isn't available. */
+		Reference: FormControl<string | null | undefined>,
+
+		/** UTC timestamp of last update to the prepayment */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<PrepaymentCurrencyCode | null | undefined>,
+
+		/** Xero generated unique identifier */
+		PrepaymentID: FormControl<string | null | undefined>,
+
+		/** The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** The remaining credit balance on the prepayment */
+		RemainingCredit: FormControl<number | null | undefined>,
+
+		/** The amount of applied to an invoice */
+		AppliedAmount: FormControl<number | null | undefined>,
+
+		/** boolean to indicate if a prepayment has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePrepaymentFormGroup() {
+		return new FormGroup<PrepaymentFormProperties>({
+			Type: new FormControl<PrepaymentType | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<PrepaymentStatus | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			CurrencyCode: new FormControl<PrepaymentCurrencyCode | null | undefined>(undefined),
+			PrepaymentID: new FormControl<string | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			RemainingCredit: new FormControl<number | null | undefined>(undefined),
+			AppliedAmount: new FormControl<number | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PrepaymentType { RECEIVE_PREPAYMENT = 0, SPEND_PREPAYMENT = 1, ARPREPAYMENT = 2, APPREPAYMENT = 3 }
@@ -950,9 +2054,9 @@ export namespace MyNS {
 
 	export interface Allocation {
 		Invoice: Invoice;
-		Overpayment?: Overpayment | null;
-		Prepayment?: Prepayment | null;
-		CreditNote?: CreditNote | null;
+		Overpayment?: Overpayment;
+		Prepayment?: Prepayment;
+		CreditNote?: CreditNote;
 
 		/**
 		 * the amount being applied to the invoice
@@ -970,14 +2074,39 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface AllocationFormProperties {
+
+		/**
+		 * the amount being applied to the invoice
+		 * Required
+		 */
+		Amount: FormControl<number | null | undefined>,
+
+		/**
+		 * the date the allocation is applied YYYY-MM-DD.
+		 * Required
+		 */
+		Date: FormControl<Date | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateAllocationFormGroup() {
+		return new FormGroup<AllocationFormProperties>({
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Overpayment {
 
 		/** See Overpayment Types */
 		Type?: OverpaymentType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** The date the overpayment is created YYYY-MM-DD */
 		Date?: Date | null;
@@ -989,7 +2118,7 @@ export namespace MyNS {
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
 
 		/** See Overpayment Line Items */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** The subtotal of the overpayment excluding taxes */
 		SubTotal?: number | null;
@@ -1016,19 +2145,82 @@ export namespace MyNS {
 		RemainingCredit?: number | null;
 
 		/** See Allocations */
-		Allocations?: Array<Allocation> | null;
+		Allocations?: Array<Allocation>;
 
 		/** The amount of applied to an invoice */
 		AppliedAmount?: number | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** boolean to indicate if a overpayment has an attachment */
 		HasAttachments?: boolean | null;
 
 		/** See Attachments */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
+	}
+	export interface OverpaymentFormProperties {
+
+		/** See Overpayment Types */
+		Type: FormControl<OverpaymentType | null | undefined>,
+
+		/** The date the overpayment is created YYYY-MM-DD */
+		Date: FormControl<Date | null | undefined>,
+
+		/** See Overpayment Status Codes */
+		Status: FormControl<PrepaymentStatus | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** The subtotal of the overpayment excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** The total tax on the overpayment */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** The total of the overpayment (subtotal + total tax) */
+		Total: FormControl<number | null | undefined>,
+
+		/** UTC timestamp of last update to the overpayment */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<OverpaymentCurrencyCode | null | undefined>,
+
+		/** Xero generated unique identifier */
+		OverpaymentID: FormControl<string | null | undefined>,
+
+		/** The currency rate for a multicurrency overpayment. If no rate is specified, the XE.com day rate is used */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** The remaining credit balance on the overpayment */
+		RemainingCredit: FormControl<number | null | undefined>,
+
+		/** The amount of applied to an invoice */
+		AppliedAmount: FormControl<number | null | undefined>,
+
+		/** boolean to indicate if a overpayment has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOverpaymentFormGroup() {
+		return new FormGroup<OverpaymentFormProperties>({
+			Type: new FormControl<OverpaymentType | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<PrepaymentStatus | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			CurrencyCode: new FormControl<OverpaymentCurrencyCode | null | undefined>(undefined),
+			OverpaymentID: new FormControl<string | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			RemainingCredit: new FormControl<number | null | undefined>(undefined),
+			AppliedAmount: new FormControl<number | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OverpaymentType { RECEIVE_OVERPAYMENT = 0, SPEND_OVERPAYMENT = 1, AROVERPAYMENT = 2 }
@@ -1039,7 +2231,7 @@ export namespace MyNS {
 
 		/** See Credit Note Types */
 		Type?: CreditNoteType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -1051,7 +2243,7 @@ export namespace MyNS {
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
 
 		/** See Invoice Line Items */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** The subtotal of the credit note excluding taxes */
 		SubTotal?: number | null;
@@ -1090,13 +2282,13 @@ export namespace MyNS {
 		RemainingCredit?: number | null;
 
 		/** See Allocations */
-		Allocations?: Array<Allocation> | null;
+		Allocations?: Array<Allocation>;
 
 		/** The amount of applied to an invoice */
 		AppliedAmount?: number | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** See BrandingThemes */
 		BrandingThemeID?: string | null;
@@ -1111,7 +2303,98 @@ export namespace MyNS {
 		HasErrors?: boolean | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface CreditNoteFormProperties {
+
+		/** See Credit Note Types */
+		Type: FormControl<CreditNoteType | null | undefined>,
+
+		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		Date: FormControl<Date | null | undefined>,
+
+		/** See Credit Note Status Codes */
+		Status: FormControl<InvoiceStatus | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** The subtotal of the credit note excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** The total tax on the credit note */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** The total of the Credit Note(subtotal + total tax) */
+		Total: FormControl<number | null | undefined>,
+
+		/** UTC timestamp of last update to the credit note */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<CreditNoteCurrencyCode | null | undefined>,
+
+		/** Date when credit note was fully paid(UTC format) */
+		FullyPaidOnDate: FormControl<Date | null | undefined>,
+
+		/** Xero generated unique identifier */
+		CreditNoteID: FormControl<string | null | undefined>,
+
+		/** ACCRECCREDIT � Unique alpha numeric code identifying credit note (when missing will auto-generate from your Organisation Invoice Settings) */
+		CreditNoteNumber: FormControl<string | null | undefined>,
+
+		/** ACCRECCREDIT only � additional reference number */
+		Reference: FormControl<string | null | undefined>,
+
+		/** boolean to indicate if a credit note has been sent to a contact via  the Xero app (currently read only) */
+		SentToContact: FormControl<boolean | null | undefined>,
+
+		/** The currency rate for a multicurrency invoice. If no rate is specified, the XE.com day rate is used */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** The remaining credit balance on the Credit Note */
+		RemainingCredit: FormControl<number | null | undefined>,
+
+		/** The amount of applied to an invoice */
+		AppliedAmount: FormControl<number | null | undefined>,
+
+		/** See BrandingThemes */
+		BrandingThemeID: FormControl<string | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+
+		/** boolean to indicate if a credit note has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** A boolean to indicate if a credit note has an validation errors */
+		HasErrors: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreditNoteFormGroup() {
+		return new FormGroup<CreditNoteFormProperties>({
+			Type: new FormControl<CreditNoteType | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<InvoiceStatus | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			CurrencyCode: new FormControl<CreditNoteCurrencyCode | null | undefined>(undefined),
+			FullyPaidOnDate: new FormControl<Date | null | undefined>(undefined),
+			CreditNoteID: new FormControl<string | null | undefined>(undefined),
+			CreditNoteNumber: new FormControl<string | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			SentToContact: new FormControl<boolean | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			RemainingCredit: new FormControl<number | null | undefined>(undefined),
+			AppliedAmount: new FormControl<number | null | undefined>(undefined),
+			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			HasErrors: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreditNoteType { ACCPAYCREDIT = 0, ACCRECCREDIT = 1 }
@@ -1153,12 +2436,64 @@ export namespace MyNS {
 		Reference?: string | null;
 	}
 
+	/** Bank details for use on a batch payment stored with each contact */
+	export interface BatchPaymentDetailsFormProperties {
+
+		/** Bank account number for use with Batch Payments */
+		BankAccountNumber: FormControl<string | null | undefined>,
+
+		/** Name of bank for use with Batch Payments */
+		BankAccountName: FormControl<string | null | undefined>,
+
+		/**
+		 * (Non-NZ Only) These details are sent to the org�s bank as a reference for the batch payment transaction. They will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement imported into Xero. Maximum field length = 18
+		 * Max length: 18
+		 */
+		Details: FormControl<string | null | undefined>,
+
+		/**
+		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
+		 * Max length: 12
+		 */
+		Code: FormControl<string | null | undefined>,
+
+		/**
+		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
+		 * Max length: 12
+		 */
+		Reference: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPaymentDetailsFormGroup() {
+		return new FormGroup<BatchPaymentDetailsFormProperties>({
+			BankAccountNumber: new FormControl<string | null | undefined>(undefined),
+			BankAccountName: new FormControl<string | null | undefined>(undefined),
+			Details: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BrandingThemes {
-		BrandingThemes1?: Array<BrandingTheme> | null;
+		BrandingThemes1?: Array<BrandingTheme>;
+	}
+	export interface BrandingThemesFormProperties {
+	}
+	export function CreateBrandingThemesFormGroup() {
+		return new FormGroup<BrandingThemesFormProperties>({
+		});
+
 	}
 
 	export interface PaymentServices {
-		PaymentServices1?: Array<PaymentService> | null;
+		PaymentServices1?: Array<PaymentService>;
+	}
+	export interface PaymentServicesFormProperties {
+	}
+	export function CreatePaymentServicesFormGroup() {
+		return new FormGroup<PaymentServicesFormProperties>({
+		});
+
 	}
 
 	export interface PaymentService {
@@ -1179,15 +2514,56 @@ export namespace MyNS {
 		PaymentServiceType?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface PaymentServiceFormProperties {
+
+		/** Xero identifier */
+		PaymentServiceID: FormControl<string | null | undefined>,
+
+		/** Name of payment service */
+		PaymentServiceName: FormControl<string | null | undefined>,
+
+		/** The custom payment URL */
+		PaymentServiceUrl: FormControl<string | null | undefined>,
+
+		/** The text displayed on the Pay Now button in Xero Online Invoicing. If this is not set it will default to Pay by credit card */
+		PayNowText: FormControl<string | null | undefined>,
+
+		/** This will always be CUSTOM for payment services created via the API. */
+		PaymentServiceType: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentServiceFormGroup() {
+		return new FormGroup<PaymentServiceFormProperties>({
+			PaymentServiceID: new FormControl<string | null | undefined>(undefined),
+			PaymentServiceName: new FormControl<string | null | undefined>(undefined),
+			PaymentServiceUrl: new FormControl<string | null | undefined>(undefined),
+			PayNowText: new FormControl<string | null | undefined>(undefined),
+			PaymentServiceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Contacts {
-		Contacts1?: Array<Contact> | null;
+		Contacts1?: Array<Contact>;
+	}
+	export interface ContactsFormProperties {
+	}
+	export function CreateContactsFormGroup() {
+		return new FormGroup<ContactsFormProperties>({
+		});
+
 	}
 
 	export interface CISSettings {
-		CISSettings1?: Array<CISSetting> | null;
+		CISSettings1?: Array<CISSetting>;
+	}
+	export interface CISSettingsFormProperties {
+	}
+	export function CreateCISSettingsFormGroup() {
+		return new FormGroup<CISSettingsFormProperties>({
+		});
+
 	}
 
 	export interface CISSetting {
@@ -1197,6 +2573,21 @@ export namespace MyNS {
 
 		/** CIS Deduction rate for the contact if he is a subcontractor. If the contact is not CISEnabled, then the rate is not returned */
 		Rate?: number | null;
+	}
+	export interface CISSettingFormProperties {
+
+		/** Boolean that describes if the contact is a CIS Subcontractor */
+		CISEnabled: FormControl<boolean | null | undefined>,
+
+		/** CIS Deduction rate for the contact if he is a subcontractor. If the contact is not CISEnabled, then the rate is not returned */
+		Rate: FormControl<number | null | undefined>,
+	}
+	export function CreateCISSettingFormGroup() {
+		return new FormGroup<CISSettingFormProperties>({
+			CISEnabled: new FormControl<boolean | null | undefined>(undefined),
+			Rate: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CISOrgSetting {
@@ -1210,9 +2601,35 @@ export namespace MyNS {
 		/** CIS Deduction rate for the organisation */
 		Rate?: number | null;
 	}
+	export interface CISOrgSettingFormProperties {
+
+		/** true or false - Boolean that describes if the organisation is a CIS Contractor */
+		CISContractorEnabled: FormControl<boolean | null | undefined>,
+
+		/** true or false - Boolean that describes if the organisation is a CIS SubContractor */
+		CISSubContractorEnabled: FormControl<boolean | null | undefined>,
+
+		/** CIS Deduction rate for the organisation */
+		Rate: FormControl<number | null | undefined>,
+	}
+	export function CreateCISOrgSettingFormGroup() {
+		return new FormGroup<CISOrgSettingFormProperties>({
+			CISContractorEnabled: new FormControl<boolean | null | undefined>(undefined),
+			CISSubContractorEnabled: new FormControl<boolean | null | undefined>(undefined),
+			Rate: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ContactGroups {
-		ContactGroups1?: Array<ContactGroup> | null;
+		ContactGroups1?: Array<ContactGroup>;
+	}
+	export interface ContactGroupsFormProperties {
+	}
+	export function CreateContactGroupsFormGroup() {
+		return new FormGroup<ContactGroupsFormProperties>({
+		});
+
 	}
 
 	export interface RequestEmpty {
@@ -1220,17 +2637,49 @@ export namespace MyNS {
 		/** Need at least one field to create an empty JSON payload */
 		Status?: string | null;
 	}
+	export interface RequestEmptyFormProperties {
+
+		/** Need at least one field to create an empty JSON payload */
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestEmptyFormGroup() {
+		return new FormGroup<RequestEmptyFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreditNotes {
-		CreditNotes1?: Array<CreditNote> | null;
+		CreditNotes1?: Array<CreditNote>;
+	}
+	export interface CreditNotesFormProperties {
+	}
+	export function CreateCreditNotesFormGroup() {
+		return new FormGroup<CreditNotesFormProperties>({
+		});
+
 	}
 
 	export interface Allocations {
-		Allocations1?: Array<Allocation> | null;
+		Allocations1?: Array<Allocation>;
+	}
+	export interface AllocationsFormProperties {
+	}
+	export function CreateAllocationsFormGroup() {
+		return new FormGroup<AllocationsFormProperties>({
+		});
+
 	}
 
 	export interface Currencies {
-		Currencies1?: Array<Currency> | null;
+		Currencies1?: Array<Currency>;
+	}
+	export interface CurrenciesFormProperties {
+	}
+	export function CreateCurrenciesFormGroup() {
+		return new FormGroup<CurrenciesFormProperties>({
+		});
+
 	}
 
 	export interface Currency {
@@ -1241,11 +2690,33 @@ export namespace MyNS {
 		/** Name of Currency */
 		Description?: string | null;
 	}
+	export interface CurrencyFormProperties {
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		Code: FormControl<CurrencyCode | null | undefined>,
+
+		/** Name of Currency */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCurrencyFormGroup() {
+		return new FormGroup<CurrencyFormProperties>({
+			Code: new FormControl<CurrencyCode | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CurrencyCode { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BRL = 19, BSD = 20, BTN = 21, BWP = 22, BYN = 23, BZD = 24, CAD = 25, CDF = 26, CHF = 27, CLP = 28, CNY = 29, COP = 30, CRC = 31, CUC = 32, CUP = 33, CVE = 34, CZK = 35, DJF = 36, DKK = 37, DOP = 38, DZD = 39, EGP = 40, ERN = 41, ETB = 42, EUR = 43, FJD = 44, FKP = 45, GBP = 46, GEL = 47, GGP = 48, GHS = 49, GIP = 50, GMD = 51, GNF = 52, GTQ = 53, GYD = 54, HKD = 55, HNL = 56, HRK = 57, HTG = 58, HUF = 59, IDR = 60, ILS = 61, IMP = 62, INR = 63, IQD = 64, IRR = 65, ISK = 66, JEP = 67, JMD = 68, JOD = 69, JPY = 70, KES = 71, KGS = 72, KHR = 73, KMF = 74, KPW = 75, KRW = 76, KWD = 77, KYD = 78, KZT = 79, LAK = 80, LBP = 81, LKR = 82, LRD = 83, LSL = 84, LYD = 85, MAD = 86, MDL = 87, MGA = 88, MKD = 89, MMK = 90, MNT = 91, MOP = 92, MRU = 93, MUR = 94, MVR = 95, MWK = 96, MXN = 97, MYR = 98, MZN = 99, NAD = 100, NGN = 101, NIO = 102, NOK = 103, NPR = 104, NZD = 105, OMR = 106, PAB = 107, PEN = 108, PGK = 109, PHP = 110, PKR = 111, PLN = 112, PYG = 113, QAR = 114, RON = 115, RSD = 116, RUB = 117, RWF = 118, SAR = 119, SBD = 120, SCR = 121, SDG = 122, SEK = 123, SGD = 124, SHP = 125, SLL = 126, SOS = 127, SPL = 128, SRD = 129, STN = 130, SVC = 131, SYP = 132, SZL = 133, THB = 134, TJS = 135, TMT = 136, TND = 137, TOP = 138, TRY = 139, TTD = 140, TVD = 141, TWD = 142, TZS = 143, UAH = 144, UGX = 145, USD = 146, UYU = 147, UZS = 148, VEF = 149, VND = 150, VUV = 151, WST = 152, XAF = 153, XCD = 154, XDR = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160, ZMK = 161, ZWD = 162, _ = 163 }
 
 	export interface Employees {
-		Employees1?: Array<Employee> | null;
+		Employees1?: Array<Employee>;
+	}
+	export interface EmployeesFormProperties {
+	}
+	export function CreateEmployeesFormGroup() {
+		return new FormGroup<EmployeesFormProperties>({
+		});
+
 	}
 
 	export interface Employee {
@@ -1267,14 +2738,49 @@ export namespace MyNS {
 		 * Max length: 255
 		 */
 		LastName?: string | null;
-		ExternalLink?: ExternalLink | null;
+		ExternalLink?: ExternalLink;
 		UpdatedDateUTC?: Date | null;
 
 		/** A string to indicate if a invoice status */
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface EmployeeFormProperties {
+
+		/** The Xero identifier for an employee e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		EmployeeID: FormControl<string | null | undefined>,
+
+		/** Current status of an employee � see contact status types */
+		Status: FormControl<ContactContactStatus | null | undefined>,
+
+		/**
+		 * First name of an employee (max length = 255)
+		 * Max length: 255
+		 */
+		FirstName: FormControl<string | null | undefined>,
+
+		/**
+		 * Last name of an employee (max length = 255)
+		 * Max length: 255
+		 */
+		LastName: FormControl<string | null | undefined>,
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateEmployeeFormGroup() {
+		return new FormGroup<EmployeeFormProperties>({
+			EmployeeID: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ContactContactStatus | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExternalLink {
@@ -1286,11 +2792,35 @@ export namespace MyNS {
 		Url?: string | null;
 		Description?: string | null;
 	}
+	export interface ExternalLinkFormProperties {
+
+		/** See External link types */
+		LinkType: FormControl<ExternalLinkLinkType | null | undefined>,
+
+		/** URL for service e.g. http://twitter.com/xeroapi */
+		Url: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateExternalLinkFormGroup() {
+		return new FormGroup<ExternalLinkFormProperties>({
+			LinkType: new FormControl<ExternalLinkLinkType | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ExternalLinkLinkType { Facebook = 0, GooglePlus = 1, LinkedIn = 2, Twitter = 3, Website = 4 }
 
 	export interface ExpenseClaims {
-		ExpenseClaims1?: Array<ExpenseClaim> | null;
+		ExpenseClaims1?: Array<ExpenseClaim>;
+	}
+	export interface ExpenseClaimsFormProperties {
+	}
+	export function CreateExpenseClaimsFormGroup() {
+		return new FormGroup<ExpenseClaimsFormProperties>({
+		});
+
 	}
 
 	export interface ExpenseClaim {
@@ -1302,9 +2832,9 @@ export namespace MyNS {
 		Status?: ExpenseClaimStatus | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
-		User?: User | null;
-		Receipts?: Array<Receipt> | null;
+		Payments?: Array<Payment>;
+		User?: User;
+		Receipts?: Array<Receipt>;
 
 		/** Last modified date UTC format */
 		UpdatedDateUTC?: Date | null;
@@ -1326,6 +2856,49 @@ export namespace MyNS {
 
 		/** The Xero identifier for the Receipt e.g.  e59a2c7f-1306-4078-a0f3-73537afcbba9 */
 		ReceiptID?: string | null;
+	}
+	export interface ExpenseClaimFormProperties {
+
+		/** Xero generated unique identifier for an expense claim */
+		ExpenseClaimID: FormControl<string | null | undefined>,
+
+		/** Current status of an expense claim � see status types */
+		Status: FormControl<ExpenseClaimStatus | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** The total of an expense claim being paid */
+		Total: FormControl<number | null | undefined>,
+
+		/** The amount due to be paid for an expense claim */
+		AmountDue: FormControl<number | null | undefined>,
+
+		/** The amount still to pay for an expense claim */
+		AmountPaid: FormControl<number | null | undefined>,
+
+		/** The date when the expense claim is due to be paid YYYY-MM-DD */
+		PaymentDueDate: FormControl<Date | null | undefined>,
+
+		/** The date the expense claim will be reported in Xero YYYY-MM-DD */
+		ReportingDate: FormControl<Date | null | undefined>,
+
+		/** The Xero identifier for the Receipt e.g.  e59a2c7f-1306-4078-a0f3-73537afcbba9 */
+		ReceiptID: FormControl<string | null | undefined>,
+	}
+	export function CreateExpenseClaimFormGroup() {
+		return new FormGroup<ExpenseClaimFormProperties>({
+			ExpenseClaimID: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ExpenseClaimStatus | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			AmountDue: new FormControl<number | null | undefined>(undefined),
+			AmountPaid: new FormControl<number | null | undefined>(undefined),
+			PaymentDueDate: new FormControl<Date | null | undefined>(undefined),
+			ReportingDate: new FormControl<Date | null | undefined>(undefined),
+			ReceiptID: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ExpenseClaimStatus { SUBMITTED = 0, AUTHORISED = 1, PAID = 2, VOIDED = 3, DELETED = 4 }
@@ -1353,6 +2926,41 @@ export namespace MyNS {
 		/** User role that defines permissions in Xero and via API (READONLY, INVOICEONLY, STANDARD, FINANCIALADVISER, etc) */
 		OrganisationRole?: UserOrganisationRole | null;
 	}
+	export interface UserFormProperties {
+
+		/** Xero identifier */
+		UserID: FormControl<string | null | undefined>,
+
+		/** Email address of user */
+		EmailAddress: FormControl<string | null | undefined>,
+
+		/** First name of user */
+		FirstName: FormControl<string | null | undefined>,
+
+		/** Last name of user */
+		LastName: FormControl<string | null | undefined>,
+
+		/** Timestamp of last change to user */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Boolean to indicate if user is the subscriber */
+		IsSubscriber: FormControl<boolean | null | undefined>,
+
+		/** User role that defines permissions in Xero and via API (READONLY, INVOICEONLY, STANDARD, FINANCIALADVISER, etc) */
+		OrganisationRole: FormControl<UserOrganisationRole | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			UserID: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			IsSubscriber: new FormControl<boolean | null | undefined>(undefined),
+			OrganisationRole: new FormControl<UserOrganisationRole | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UserOrganisationRole { READONLY = 0, INVOICEONLY = 1, STANDARD = 2, FINANCIALADVISER = 3, MANAGEDCLIENT = 4, CASHBOOKCLIENT = 5, UNKNOWN = 6 }
 
@@ -1360,9 +2968,9 @@ export namespace MyNS {
 
 		/** Date of receipt � YYYY-MM-DD */
 		Date?: Date | null;
-		Contact?: Contact | null;
-		LineItems?: Array<LineItem> | null;
-		User?: User | null;
+		Contact?: Contact;
+		LineItems?: Array<LineItem>;
+		User?: User;
 
 		/** Additional reference number */
 		Reference?: string | null;
@@ -1398,19 +3006,81 @@ export namespace MyNS {
 		Url?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
+	}
+	export interface ReceiptFormProperties {
+
+		/** Date of receipt � YYYY-MM-DD */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Additional reference number */
+		Reference: FormControl<string | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** Total of receipt excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** Total tax on receipt */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** Total of receipt tax inclusive (i.e. SubTotal + TotalTax) */
+		Total: FormControl<number | null | undefined>,
+
+		/** Xero generated unique identifier for receipt */
+		ReceiptID: FormControl<string | null | undefined>,
+
+		/** Current status of receipt � see status types */
+		Status: FormControl<ReceiptStatus | null | undefined>,
+
+		/** Xero generated sequence number for receipt in current claim for a given user */
+		ReceiptNumber: FormControl<string | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** boolean to indicate if a receipt has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** URL link to a source document � shown as �Go to [appName]� in the Xero app */
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateReceiptFormGroup() {
+		return new FormGroup<ReceiptFormProperties>({
+			Date: new FormControl<Date | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			ReceiptID: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ReceiptStatus | null | undefined>(undefined),
+			ReceiptNumber: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReceiptStatus { DRAFT = 0, SUBMITTED = 1, AUTHORISED = 2, DECLINED = 3, VOIDED = 4 }
 
 	export interface HistoryRecords {
-		HistoryRecords1?: Array<HistoryRecord> | null;
+		HistoryRecords1?: Array<HistoryRecord>;
+	}
+	export interface HistoryRecordsFormProperties {
+	}
+	export function CreateHistoryRecordsFormGroup() {
+		return new FormGroup<HistoryRecordsFormProperties>({
+		});
+
 	}
 
 	export interface HistoryRecord {
@@ -1427,13 +3097,50 @@ export namespace MyNS {
 		/** UTC timestamp of creation date of branding theme */
 		DateUTC?: Date | null;
 	}
+	export interface HistoryRecordFormProperties {
+
+		/** details */
+		Details: FormControl<string | null | undefined>,
+
+		/** Name of branding theme */
+		Changes: FormControl<string | null | undefined>,
+
+		/** has a value of 0 */
+		User: FormControl<string | null | undefined>,
+
+		/** UTC timestamp of creation date of branding theme */
+		DateUTC: FormControl<Date | null | undefined>,
+	}
+	export function CreateHistoryRecordFormGroup() {
+		return new FormGroup<HistoryRecordFormProperties>({
+			Details: new FormControl<string | null | undefined>(undefined),
+			Changes: new FormControl<string | null | undefined>(undefined),
+			User: new FormControl<string | null | undefined>(undefined),
+			DateUTC: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Invoices {
-		Invoices1?: Array<Invoice> | null;
+		Invoices1?: Array<Invoice>;
+	}
+	export interface InvoicesFormProperties {
+	}
+	export function CreateInvoicesFormGroup() {
+		return new FormGroup<InvoicesFormProperties>({
+		});
+
 	}
 
 	export interface OnlineInvoices {
-		OnlineInvoices1?: Array<OnlineInvoice> | null;
+		OnlineInvoices1?: Array<OnlineInvoice>;
+	}
+	export interface OnlineInvoicesFormProperties {
+	}
+	export function CreateOnlineInvoicesFormGroup() {
+		return new FormGroup<OnlineInvoicesFormProperties>({
+		});
+
 	}
 
 	export interface OnlineInvoice {
@@ -1441,9 +3148,27 @@ export namespace MyNS {
 		/** the URL to an online invoice */
 		OnlineInvoiceUrl?: string | null;
 	}
+	export interface OnlineInvoiceFormProperties {
+
+		/** the URL to an online invoice */
+		OnlineInvoiceUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateOnlineInvoiceFormGroup() {
+		return new FormGroup<OnlineInvoiceFormProperties>({
+			OnlineInvoiceUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvoiceReminders {
-		InvoiceReminders1?: Array<InvoiceReminder> | null;
+		InvoiceReminders1?: Array<InvoiceReminder>;
+	}
+	export interface InvoiceRemindersFormProperties {
+	}
+	export function CreateInvoiceRemindersFormGroup() {
+		return new FormGroup<InvoiceRemindersFormProperties>({
+		});
+
 	}
 
 	export interface InvoiceReminder {
@@ -1451,9 +3176,27 @@ export namespace MyNS {
 		/** setting for on or off */
 		Enabled?: boolean | null;
 	}
+	export interface InvoiceReminderFormProperties {
+
+		/** setting for on or off */
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateInvoiceReminderFormGroup() {
+		return new FormGroup<InvoiceReminderFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Items {
-		Items1?: Array<Item> | null;
+		Items1?: Array<Item>;
+	}
+	export interface ItemsFormProperties {
+	}
+	export function CreateItemsFormGroup() {
+		return new FormGroup<ItemsFormProperties>({
+		});
+
 	}
 
 	export interface Item {
@@ -1491,8 +3234,8 @@ export namespace MyNS {
 		 * Max length: 4000
 		 */
 		PurchaseDescription?: string | null;
-		PurchaseDetails?: Purchase | null;
-		SalesDetails?: Purchase | null;
+		PurchaseDetails?: Purchase;
+		SalesDetails?: Purchase;
 
 		/** True for items that are tracked as inventory. An item will be tracked as inventory if the InventoryAssetAccountCode and COGSAccountCode are set. */
 		IsTrackedAsInventory?: boolean | null;
@@ -1513,7 +3256,79 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface ItemFormProperties {
+
+		/**
+		 * User defined item code (max length = 30)
+		 * Required
+		 * Max length: 30
+		 */
+		Code: FormControl<string | null | undefined>,
+
+		/** The inventory asset account for the item. The account must be of type INVENTORY. The  COGSAccountCode in PurchaseDetails is also required to create a tracked item */
+		InventoryAssetAccountCode: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the item (max length = 50)
+		 * Max length: 50
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** Boolean value, defaults to true. When IsSold is true the item will be available on sales transactions in the Xero UI. If IsSold is updated to false then Description and SalesDetails values will be nulled. */
+		IsSold: FormControl<boolean | null | undefined>,
+
+		/** Boolean value, defaults to true. When IsPurchased is true the item is available for purchase transactions in the Xero UI. If IsPurchased is updated to false then PurchaseDescription and PurchaseDetails values will be nulled. */
+		IsPurchased: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The sales description of the item (max length = 4000)
+		 * Max length: 4000
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * The purchase description of the item (max length = 4000)
+		 * Max length: 4000
+		 */
+		PurchaseDescription: FormControl<string | null | undefined>,
+
+		/** True for items that are tracked as inventory. An item will be tracked as inventory if the InventoryAssetAccountCode and COGSAccountCode are set. */
+		IsTrackedAsInventory: FormControl<boolean | null | undefined>,
+
+		/** The value of the item on hand. Calculated using average cost accounting. */
+		TotalCostPool: FormControl<number | null | undefined>,
+
+		/** The quantity of the item on hand */
+		QuantityOnHand: FormControl<number | null | undefined>,
+
+		/** Last modified date in UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** The Xero identifier for an Item */
+		ItemID: FormControl<string | null | undefined>,
+
+		/** Status of object */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateItemFormGroup() {
+		return new FormGroup<ItemFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			InventoryAssetAccountCode: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			IsSold: new FormControl<boolean | null | undefined>(undefined),
+			IsPurchased: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			PurchaseDescription: new FormControl<string | null | undefined>(undefined),
+			IsTrackedAsInventory: new FormControl<boolean | null | undefined>(undefined),
+			TotalCostPool: new FormControl<number | null | undefined>(undefined),
+			QuantityOnHand: new FormControl<number | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			ItemID: new FormControl<string | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Purchase {
@@ -1530,9 +3345,39 @@ export namespace MyNS {
 		/** The tax type from TaxRates */
 		TaxType?: string | null;
 	}
+	export interface PurchaseFormProperties {
+
+		/** Unit Price of the item. By default UnitPrice is rounded to two decimal places. You can use 4 decimal places by adding the unitdp=4 querystring parameter to your request. */
+		UnitPrice: FormControl<number | null | undefined>,
+
+		/** Default account code to be used for purchased/sale. Not applicable to the purchase details of tracked items */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/** Cost of goods sold account. Only applicable to the purchase details of tracked items. */
+		COGSAccountCode: FormControl<string | null | undefined>,
+
+		/** The tax type from TaxRates */
+		TaxType: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchaseFormGroup() {
+		return new FormGroup<PurchaseFormProperties>({
+			UnitPrice: new FormControl<number | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			COGSAccountCode: new FormControl<string | null | undefined>(undefined),
+			TaxType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Journals {
-		Journals1?: Array<Journal> | null;
+		Journals1?: Array<Journal>;
+	}
+	export interface JournalsFormProperties {
+	}
+	export function CreateJournalsFormGroup() {
+		return new FormGroup<JournalsFormProperties>({
+		});
+
 	}
 
 	export interface Journal {
@@ -1559,7 +3404,42 @@ export namespace MyNS {
 		SourceType?: JournalSourceType | null;
 
 		/** See JournalLines */
-		JournalLines?: Array<JournalLine> | null;
+		JournalLines?: Array<JournalLine>;
+	}
+	export interface JournalFormProperties {
+
+		/** Xero identifier */
+		JournalID: FormControl<string | null | undefined>,
+
+		/** Date the journal was posted */
+		JournalDate: FormControl<Date | null | undefined>,
+
+		/** Xero generated journal number */
+		JournalNumber: FormControl<number | null | undefined>,
+
+		/** Created date UTC format */
+		CreatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** reference field for additional indetifying information */
+		Reference: FormControl<string | null | undefined>,
+
+		/** The identifier for the source transaction (e.g. InvoiceID) */
+		SourceID: FormControl<string | null | undefined>,
+
+		/** The journal source type. The type of transaction that created the journal */
+		SourceType: FormControl<JournalSourceType | null | undefined>,
+	}
+	export function CreateJournalFormGroup() {
+		return new FormGroup<JournalFormProperties>({
+			JournalID: new FormControl<string | null | undefined>(undefined),
+			JournalDate: new FormControl<Date | null | undefined>(undefined),
+			JournalNumber: new FormControl<number | null | undefined>(undefined),
+			CreatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			SourceID: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<JournalSourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JournalSourceType { ACCREC = 0, ACCPAY = 1, ACCRECCREDIT = 2, ACCPAYCREDIT = 3, ACCRECPAYMENT = 4, ACCPAYPAYMENT = 5, ARCREDITPAYMENT = 6, APCREDITPAYMENT = 7, CASHREC = 8, CASHPAID = 9, TRANSFER = 10, ARPREPAYMENT = 11, APPREPAYMENT = 12, AROVERPAYMENT = 13, APOVERPAYMENT = 14, EXPCLAIM = 15, EXPPAYMENT = 16, MANJOURNAL = 17, PAYSLIP = 18, WAGEPAYABLE = 19, INTEGRATEDPAYROLLPE = 20, INTEGRATEDPAYROLLPT = 21, EXTERNALSPENDMONEY = 22, INTEGRATEDPAYROLLPTPAYMENT = 23, INTEGRATEDPAYROLLCN = 24 }
@@ -1600,7 +3480,58 @@ export namespace MyNS {
 		TaxName?: string | null;
 
 		/** Optional Tracking Category � see Tracking. Any JournalLine can have a maximum of 2 <TrackingCategory> elements. */
-		TrackingCategories?: Array<TrackingCategory> | null;
+		TrackingCategories?: Array<TrackingCategory>;
+	}
+	export interface JournalLineFormProperties {
+
+		/** Xero identifier for Journal */
+		JournalLineID: FormControl<string | null | undefined>,
+
+		/** See Accounts */
+		AccountID: FormControl<string | null | undefined>,
+
+		/** See Accounts */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/** See Account Types */
+		AccountType: FormControl<AccountType | null | undefined>,
+
+		/** See AccountCodes */
+		AccountName: FormControl<string | null | undefined>,
+
+		/** The description from the source transaction line item. Only returned if populated. */
+		Description: FormControl<string | null | undefined>,
+
+		/** Net amount of journal line. This will be a positive value for a debit and negative for a credit */
+		NetAmount: FormControl<number | null | undefined>,
+
+		/** Gross amount of journal line (NetAmount + TaxAmount). */
+		GrossAmount: FormControl<number | null | undefined>,
+
+		/** Total tax on a journal line */
+		TaxAmount: FormControl<number | null | undefined>,
+
+		/** The tax type from TaxRates */
+		TaxType: FormControl<string | null | undefined>,
+
+		/** see TaxRates */
+		TaxName: FormControl<string | null | undefined>,
+	}
+	export function CreateJournalLineFormGroup() {
+		return new FormGroup<JournalLineFormProperties>({
+			JournalLineID: new FormControl<string | null | undefined>(undefined),
+			AccountID: new FormControl<string | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			AccountType: new FormControl<AccountType | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			NetAmount: new FormControl<number | null | undefined>(undefined),
+			GrossAmount: new FormControl<number | null | undefined>(undefined),
+			TaxAmount: new FormControl<number | null | undefined>(undefined),
+			TaxType: new FormControl<string | null | undefined>(undefined),
+			TaxName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TrackingCategory {
@@ -1627,7 +3558,40 @@ export namespace MyNS {
 		Status?: AccountStatus | null;
 
 		/** See Tracking Options */
-		Options?: Array<TrackingOption> | null;
+		Options?: Array<TrackingOption>;
+	}
+	export interface TrackingCategoryFormProperties {
+
+		/** The Xero identifier for a tracking category e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		TrackingCategoryID: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for a tracking option e.g. dc54c220-0140-495a-b925-3246adc0075f */
+		TrackingOptionID: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the tracking category e.g. Department, Region (max length = 100)
+		 * Max length: 100
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The option name of the tracking option e.g. East, West (max length = 100)
+		 * Max length: 100
+		 */
+		Option: FormControl<string | null | undefined>,
+
+		/** The status of a tracking category */
+		Status: FormControl<AccountStatus | null | undefined>,
+	}
+	export function CreateTrackingCategoryFormGroup() {
+		return new FormGroup<TrackingCategoryFormProperties>({
+			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
+			TrackingOptionID: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Option: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccountStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TrackingOption {
@@ -1647,9 +3611,42 @@ export namespace MyNS {
 		/** Filter by a tracking categorye.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
 		TrackingCategoryID?: string | null;
 	}
+	export interface TrackingOptionFormProperties {
+
+		/** The Xero identifier for a tracking optione.g. ae777a87-5ef3-4fa0-a4f0-d10e1f13073a */
+		TrackingOptionID: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the tracking option e.g. Marketing, East (max length = 50)
+		 * Max length: 50
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** The status of a tracking option */
+		Status: FormControl<AccountStatus | null | undefined>,
+
+		/** Filter by a tracking categorye.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		TrackingCategoryID: FormControl<string | null | undefined>,
+	}
+	export function CreateTrackingOptionFormGroup() {
+		return new FormGroup<TrackingOptionFormProperties>({
+			TrackingOptionID: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccountStatus | null | undefined>(undefined),
+			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LinkedTransactions {
-		LinkedTransactions1?: Array<LinkedTransaction> | null;
+		LinkedTransactions1?: Array<LinkedTransaction>;
+	}
+	export interface LinkedTransactionsFormProperties {
+	}
+	export function CreateLinkedTransactionsFormGroup() {
+		return new FormGroup<LinkedTransactionsFormProperties>({
+		});
+
 	}
 
 	export interface LinkedTransaction {
@@ -1685,7 +3682,54 @@ export namespace MyNS {
 		SourceTransactionTypeCode?: LinkedTransactionSourceTransactionTypeCode | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface LinkedTransactionFormProperties {
+
+		/** Filter by the SourceTransactionID. Get all the linked transactions created from a particular ACCPAY invoice */
+		SourceTransactionID: FormControl<string | null | undefined>,
+
+		/** The line item identifier from the source transaction. */
+		SourceLineItemID: FormControl<string | null | undefined>,
+
+		/** Filter by the combination of ContactID and Status. Get all the linked transactions that have been assigned to a particular customer and have a particular status e.g. GET /LinkedTransactions?ContactID=4bb34b03-3378-4bb2-a0ed-6345abf3224e&Status=APPROVED. */
+		ContactID: FormControl<string | null | undefined>,
+
+		/** Filter by the TargetTransactionID. Get all the linked transactions  allocated to a particular ACCREC invoice */
+		TargetTransactionID: FormControl<string | null | undefined>,
+
+		/** The line item identifier from the target transaction. It is possible  to link multiple billable expenses to the same TargetLineItemID. */
+		TargetLineItemID: FormControl<string | null | undefined>,
+
+		/** The Xero identifier for an Linked Transaction e.g./LinkedTransactions/297c2dc5-cc47-4afd-8ec8-74990b8761e9 */
+		LinkedTransactionID: FormControl<string | null | undefined>,
+
+		/** Filter by the combination of ContactID and Status. Get all the linked transactions that have been assigned to a particular customer and have a particular status e.g. GET /LinkedTransactions?ContactID=4bb34b03-3378-4bb2-a0ed-6345abf3224e&Status=APPROVED. */
+		Status: FormControl<LinkedTransactionStatus | null | undefined>,
+
+		/** This will always be BILLABLEEXPENSE. More types may be added in future. */
+		Type: FormControl<LinkedTransactionType | null | undefined>,
+
+		/** The last modified date in UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** The Type of the source tranasction. This will be ACCPAY if the linked transaction was created from an invoice and SPEND if it was created from a bank transaction. */
+		SourceTransactionTypeCode: FormControl<LinkedTransactionSourceTransactionTypeCode | null | undefined>,
+	}
+	export function CreateLinkedTransactionFormGroup() {
+		return new FormGroup<LinkedTransactionFormProperties>({
+			SourceTransactionID: new FormControl<string | null | undefined>(undefined),
+			SourceLineItemID: new FormControl<string | null | undefined>(undefined),
+			ContactID: new FormControl<string | null | undefined>(undefined),
+			TargetTransactionID: new FormControl<string | null | undefined>(undefined),
+			TargetLineItemID: new FormControl<string | null | undefined>(undefined),
+			LinkedTransactionID: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<LinkedTransactionStatus | null | undefined>(undefined),
+			Type: new FormControl<LinkedTransactionType | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			SourceTransactionTypeCode: new FormControl<LinkedTransactionSourceTransactionTypeCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LinkedTransactionStatus { APPROVED = 0, DRAFT = 1, ONDRAFT = 2, BILLED = 3, VOIDED = 4 }
@@ -1695,7 +3739,14 @@ export namespace MyNS {
 	export enum LinkedTransactionSourceTransactionTypeCode { ACCPAY = 0, SPEND = 1 }
 
 	export interface ManualJournals {
-		ManualJournals1?: Array<ManualJournal> | null;
+		ManualJournals1?: Array<ManualJournal>;
+	}
+	export interface ManualJournalsFormProperties {
+	}
+	export function CreateManualJournalsFormGroup() {
+		return new FormGroup<ManualJournalsFormProperties>({
+		});
+
 	}
 
 	export interface ManualJournal {
@@ -1707,7 +3758,7 @@ export namespace MyNS {
 		Narration: string;
 
 		/** See JournalLines */
-		JournalLines?: Array<ManualJournalLine> | null;
+		JournalLines?: Array<ManualJournalLine>;
 
 		/** Date journal was posted � YYYY-MM-DD */
 		Date?: Date | null;
@@ -1737,13 +3788,63 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
+	}
+	export interface ManualJournalFormProperties {
+
+		/**
+		 * Description of journal being posted
+		 * Required
+		 */
+		Narration: FormControl<string | null | undefined>,
+
+		/** Date journal was posted � YYYY-MM-DD */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** See Manual Journal Status Codes */
+		Status: FormControl<ManualJournalStatus | null | undefined>,
+
+		/** Url link to a source document � shown as �Go to [appName]� in the Xero app */
+		Url: FormControl<string | null | undefined>,
+
+		/** Boolean � default is true if not specified */
+		ShowOnCashBasisReports: FormControl<boolean | null | undefined>,
+
+		/** Boolean to indicate if a manual journal has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** The Xero identifier for a Manual Journal */
+		ManualJournalID: FormControl<string | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateManualJournalFormGroup() {
+		return new FormGroup<ManualJournalFormProperties>({
+			Narration: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			Status: new FormControl<ManualJournalStatus | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			ShowOnCashBasisReports: new FormControl<boolean | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			ManualJournalID: new FormControl<string | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ManualJournalLine {
@@ -1761,7 +3862,7 @@ export namespace MyNS {
 		TaxType?: string | null;
 
 		/** Optional Tracking Category � see Tracking. Any JournalLine can have a maximum of 2 <TrackingCategory> elements. */
-		Tracking?: Array<TrackingCategory> | null;
+		Tracking?: Array<TrackingCategory>;
 
 		/** The calculated tax amount based on the TaxType and LineAmount */
 		TaxAmount?: number | null;
@@ -1769,11 +3870,49 @@ export namespace MyNS {
 		/** is the line blank */
 		IsBlank?: boolean | null;
 	}
+	export interface ManualJournalLineFormProperties {
+
+		/** total for line. Debits are positive, credits are negative value */
+		LineAmount: FormControl<number | null | undefined>,
+
+		/** See Accounts */
+		AccountCode: FormControl<string | null | undefined>,
+
+		/** Description for journal line */
+		Description: FormControl<string | null | undefined>,
+
+		/** The tax type from TaxRates */
+		TaxType: FormControl<string | null | undefined>,
+
+		/** The calculated tax amount based on the TaxType and LineAmount */
+		TaxAmount: FormControl<number | null | undefined>,
+
+		/** is the line blank */
+		IsBlank: FormControl<boolean | null | undefined>,
+	}
+	export function CreateManualJournalLineFormGroup() {
+		return new FormGroup<ManualJournalLineFormProperties>({
+			LineAmount: new FormControl<number | null | undefined>(undefined),
+			AccountCode: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			TaxType: new FormControl<string | null | undefined>(undefined),
+			TaxAmount: new FormControl<number | null | undefined>(undefined),
+			IsBlank: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ManualJournalStatus { DRAFT = 0, POSTED = 1, DELETED = 2, VOIDED = 3, ARCHIVED = 4 }
 
 	export interface Organisations {
-		Organisations1?: Array<Organisation> | null;
+		Organisations1?: Array<Organisation>;
+	}
+	export interface OrganisationsFormProperties {
+	}
+	export function CreateOrganisationsFormGroup() {
+		return new FormGroup<OrganisationsFormProperties>({
+		});
+
 	}
 
 	export interface Organisation {
@@ -1864,14 +4003,135 @@ export namespace MyNS {
 		LineOfBusiness?: string | null;
 
 		/** Address details for organisation � see Addresses */
-		Addresses?: Array<Address> | null;
+		Addresses?: Array<Address>;
 
 		/** Phones details for organisation � see Phones */
-		Phones?: Array<Phone> | null;
+		Phones?: Array<Phone>;
 
 		/** Organisation profile links for popular services such as Facebook,Twitter, GooglePlus and LinkedIn. You can also add link to your website here. Shown if Organisation settings  is updated in Xero. See ExternalLinks below */
-		ExternalLinks?: Array<ExternalLink> | null;
-		PaymentTerms?: PaymentTerm | null;
+		ExternalLinks?: Array<ExternalLink>;
+		PaymentTerms?: PaymentTerm;
+	}
+	export interface OrganisationFormProperties {
+
+		/** Unique Xero identifier */
+		OrganisationID: FormControl<string | null | undefined>,
+
+		/** Display a unique key used for Xero-to-Xero transactions */
+		APIKey: FormControl<string | null | undefined>,
+
+		/** Display name of organisation shown in Xero */
+		Name: FormControl<string | null | undefined>,
+
+		/** Organisation name shown on Reports */
+		LegalName: FormControl<string | null | undefined>,
+
+		/** Boolean to describe if organisation is registered with a local tax authority i.e. true, false */
+		PaysTax: FormControl<boolean | null | undefined>,
+
+		/** See Version Types */
+		Version: FormControl<OrganisationVersion | null | undefined>,
+
+		/** Organisation Type */
+		OrganisationType: FormControl<OrganisationOrganisationType | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		BaseCurrency: FormControl<OrganisationBaseCurrency | null | undefined>,
+		CountryCode: FormControl<OrganisationCountryCode | null | undefined>,
+
+		/** Boolean to describe if organisation is a demo company. */
+		IsDemoCompany: FormControl<boolean | null | undefined>,
+
+		/** Will be set to ACTIVE if you can connect to organisation via the Xero API */
+		OrganisationStatus: FormControl<string | null | undefined>,
+
+		/** Shows for New Zealand, Australian and UK organisations */
+		RegistrationNumber: FormControl<string | null | undefined>,
+
+		/** Shown if set. US Only. */
+		EmployerIdentificationNumber: FormControl<string | null | undefined>,
+
+		/** Shown if set. Displays in the Xero UI as Tax File Number (AU), GST Number (NZ), VAT Number (UK) and Tax ID Number (US & Global). */
+		TaxNumber: FormControl<string | null | undefined>,
+
+		/** Calendar day e.g. 0-31 */
+		FinancialYearEndDay: FormControl<number | null | undefined>,
+
+		/** Calendar Month e.g. 1-12 */
+		FinancialYearEndMonth: FormControl<number | null | undefined>,
+
+		/** The accounting basis used for tax returns. See Sales Tax Basis */
+		SalesTaxBasis: FormControl<OrganisationSalesTaxBasis | null | undefined>,
+
+		/** The frequency with which tax returns are processed. See Sales Tax Period */
+		SalesTaxPeriod: FormControl<OrganisationSalesTaxPeriod | null | undefined>,
+
+		/** The default for LineAmountTypes on sales transactions */
+		DefaultSalesTax: FormControl<string | null | undefined>,
+
+		/** The default for LineAmountTypes on purchase transactions */
+		DefaultPurchasesTax: FormControl<string | null | undefined>,
+
+		/** Shown if set. See lock dates */
+		PeriodLockDate: FormControl<Date | null | undefined>,
+
+		/** Shown if set. See lock dates */
+		EndOfYearLockDate: FormControl<Date | null | undefined>,
+
+		/** Timestamp when the organisation was created in Xero */
+		CreatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Timezone specifications */
+		Timezone: FormControl<OrganisationTimezone | null | undefined>,
+
+		/** Organisation Type */
+		OrganisationEntityType: FormControl<OrganisationOrganisationType | null | undefined>,
+
+		/** A unique identifier for the organisation. Potential uses. */
+		ShortCode: FormControl<string | null | undefined>,
+
+		/** Organisation Classes describe which plan the Xero organisation is on (e.g. DEMO, TRIAL, PREMIUM) */
+		Class: FormControl<OrganisationClass | null | undefined>,
+
+		/** BUSINESS or PARTNER. Partner edition organisations are sold exclusively through accounting partners and have restricted functionality (e.g. no access to invoicing) */
+		Edition: FormControl<OrganisationEdition | null | undefined>,
+
+		/** Description of business type as defined in Organisation settings */
+		LineOfBusiness: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganisationFormGroup() {
+		return new FormGroup<OrganisationFormProperties>({
+			OrganisationID: new FormControl<string | null | undefined>(undefined),
+			APIKey: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			LegalName: new FormControl<string | null | undefined>(undefined),
+			PaysTax: new FormControl<boolean | null | undefined>(undefined),
+			Version: new FormControl<OrganisationVersion | null | undefined>(undefined),
+			OrganisationType: new FormControl<OrganisationOrganisationType | null | undefined>(undefined),
+			BaseCurrency: new FormControl<OrganisationBaseCurrency | null | undefined>(undefined),
+			CountryCode: new FormControl<OrganisationCountryCode | null | undefined>(undefined),
+			IsDemoCompany: new FormControl<boolean | null | undefined>(undefined),
+			OrganisationStatus: new FormControl<string | null | undefined>(undefined),
+			RegistrationNumber: new FormControl<string | null | undefined>(undefined),
+			EmployerIdentificationNumber: new FormControl<string | null | undefined>(undefined),
+			TaxNumber: new FormControl<string | null | undefined>(undefined),
+			FinancialYearEndDay: new FormControl<number | null | undefined>(undefined),
+			FinancialYearEndMonth: new FormControl<number | null | undefined>(undefined),
+			SalesTaxBasis: new FormControl<OrganisationSalesTaxBasis | null | undefined>(undefined),
+			SalesTaxPeriod: new FormControl<OrganisationSalesTaxPeriod | null | undefined>(undefined),
+			DefaultSalesTax: new FormControl<string | null | undefined>(undefined),
+			DefaultPurchasesTax: new FormControl<string | null | undefined>(undefined),
+			PeriodLockDate: new FormControl<Date | null | undefined>(undefined),
+			EndOfYearLockDate: new FormControl<Date | null | undefined>(undefined),
+			CreatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			Timezone: new FormControl<OrganisationTimezone | null | undefined>(undefined),
+			OrganisationEntityType: new FormControl<OrganisationOrganisationType | null | undefined>(undefined),
+			ShortCode: new FormControl<string | null | undefined>(undefined),
+			Class: new FormControl<OrganisationClass | null | undefined>(undefined),
+			Edition: new FormControl<OrganisationEdition | null | undefined>(undefined),
+			LineOfBusiness: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OrganisationVersion { AU = 0, NZ = 1, GLOBAL = 2, UK = 3, US = 4, AUONRAMP = 5, NZONRAMP = 6, GLOBALONRAMP = 7, UKONRAMP = 8, USONRAMP = 9 }
@@ -1901,11 +4161,25 @@ export namespace MyNS {
 	export enum PaymentTermType { DAYSAFTERBILLDATE = 0, DAYSAFTERBILLMONTH = 1, OFCURRENTMONTH = 2, OFFOLLOWINGMONTH = 3 }
 
 	export interface Overpayments {
-		Overpayments1?: Array<Overpayment> | null;
+		Overpayments1?: Array<Overpayment>;
+	}
+	export interface OverpaymentsFormProperties {
+	}
+	export function CreateOverpaymentsFormGroup() {
+		return new FormGroup<OverpaymentsFormProperties>({
+		});
+
 	}
 
 	export interface Payments {
-		Payments1?: Array<Payment> | null;
+		Payments1?: Array<Payment>;
+	}
+	export interface PaymentsFormProperties {
+	}
+	export function CreatePaymentsFormGroup() {
+		return new FormGroup<PaymentsFormProperties>({
+		});
+
 	}
 
 	export interface PaymentDelete {
@@ -1916,20 +4190,48 @@ export namespace MyNS {
 		 */
 		Status: string;
 	}
+	export interface PaymentDeleteFormProperties {
+
+		/**
+		 * The status of the payment.
+		 * Required
+		 */
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentDeleteFormGroup() {
+		return new FormGroup<PaymentDeleteFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Prepayments {
-		Prepayments1?: Array<Prepayment> | null;
+		Prepayments1?: Array<Prepayment>;
+	}
+	export interface PrepaymentsFormProperties {
+	}
+	export function CreatePrepaymentsFormGroup() {
+		return new FormGroup<PrepaymentsFormProperties>({
+		});
+
 	}
 
 	export interface PurchaseOrders {
-		PurchaseOrders1?: Array<PurchaseOrder> | null;
+		PurchaseOrders1?: Array<PurchaseOrder>;
+	}
+	export interface PurchaseOrdersFormProperties {
+	}
+	export function CreatePurchaseOrdersFormGroup() {
+		return new FormGroup<PurchaseOrdersFormProperties>({
+		});
+
 	}
 
 	export interface PurchaseOrder {
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Date purchase order was issued � YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -2001,13 +4303,112 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
+	}
+	export interface PurchaseOrderFormProperties {
+
+		/** Date purchase order was issued � YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Date the goods are to be delivered � YYYY-MM-DD */
+		DeliveryDate: FormControl<Date | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** Unique alpha numeric code identifying purchase order (when missing will auto-generate from your Organisation Invoice Settings) */
+		PurchaseOrderNumber: FormControl<string | null | undefined>,
+
+		/** Additional reference number */
+		Reference: FormControl<string | null | undefined>,
+
+		/** See BrandingThemes */
+		BrandingThemeID: FormControl<string | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<PurchaseOrderCurrencyCode | null | undefined>,
+
+		/** See Purchase Order Status Codes */
+		Status: FormControl<PurchaseOrderStatus | null | undefined>,
+
+		/** Boolean to set whether the purchase order should be marked as �sent�. This can be set only on purchase orders that have been approved or billed */
+		SentToContact: FormControl<boolean | null | undefined>,
+
+		/** The address the goods are to be delivered to */
+		DeliveryAddress: FormControl<string | null | undefined>,
+
+		/** The person that the delivery is going to */
+		AttentionTo: FormControl<string | null | undefined>,
+
+		/** The phone number for the person accepting the delivery */
+		Telephone: FormControl<string | null | undefined>,
+
+		/** A free text feild for instructions (500 characters max) */
+		DeliveryInstructions: FormControl<string | null | undefined>,
+
+		/** The date the goods are expected to arrive. */
+		ExpectedArrivalDate: FormControl<Date | null | undefined>,
+
+		/** Xero generated unique identifier for purchase order */
+		PurchaseOrderID: FormControl<string | null | undefined>,
+
+		/** The currency rate for a multicurrency purchase order. If no rate is specified, the XE.com day rate is used. */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** Total of purchase order excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** Total tax on purchase order */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** Total of Purchase Order tax inclusive (i.e. SubTotal + TotalTax) */
+		Total: FormControl<number | null | undefined>,
+
+		/** Total of discounts applied on the purchase order line items */
+		TotalDiscount: FormControl<number | null | undefined>,
+
+		/** boolean to indicate if a purchase order has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchaseOrderFormGroup() {
+		return new FormGroup<PurchaseOrderFormProperties>({
+			Date: new FormControl<Date | null | undefined>(undefined),
+			DeliveryDate: new FormControl<Date | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			PurchaseOrderNumber: new FormControl<string | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<PurchaseOrderCurrencyCode | null | undefined>(undefined),
+			Status: new FormControl<PurchaseOrderStatus | null | undefined>(undefined),
+			SentToContact: new FormControl<boolean | null | undefined>(undefined),
+			DeliveryAddress: new FormControl<string | null | undefined>(undefined),
+			AttentionTo: new FormControl<string | null | undefined>(undefined),
+			Telephone: new FormControl<string | null | undefined>(undefined),
+			DeliveryInstructions: new FormControl<string | null | undefined>(undefined),
+			ExpectedArrivalDate: new FormControl<Date | null | undefined>(undefined),
+			PurchaseOrderID: new FormControl<string | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			TotalDiscount: new FormControl<number | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PurchaseOrderCurrencyCode { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BRL = 19, BSD = 20, BTN = 21, BWP = 22, BYN = 23, BZD = 24, CAD = 25, CDF = 26, CHF = 27, CLP = 28, CNY = 29, COP = 30, CRC = 31, CUC = 32, CUP = 33, CVE = 34, CZK = 35, DJF = 36, DKK = 37, DOP = 38, DZD = 39, EGP = 40, ERN = 41, ETB = 42, EUR = 43, FJD = 44, FKP = 45, GBP = 46, GEL = 47, GGP = 48, GHS = 49, GIP = 50, GMD = 51, GNF = 52, GTQ = 53, GYD = 54, HKD = 55, HNL = 56, HRK = 57, HTG = 58, HUF = 59, IDR = 60, ILS = 61, IMP = 62, INR = 63, IQD = 64, IRR = 65, ISK = 66, JEP = 67, JMD = 68, JOD = 69, JPY = 70, KES = 71, KGS = 72, KHR = 73, KMF = 74, KPW = 75, KRW = 76, KWD = 77, KYD = 78, KZT = 79, LAK = 80, LBP = 81, LKR = 82, LRD = 83, LSL = 84, LYD = 85, MAD = 86, MDL = 87, MGA = 88, MKD = 89, MMK = 90, MNT = 91, MOP = 92, MRU = 93, MUR = 94, MVR = 95, MWK = 96, MXN = 97, MYR = 98, MZN = 99, NAD = 100, NGN = 101, NIO = 102, NOK = 103, NPR = 104, NZD = 105, OMR = 106, PAB = 107, PEN = 108, PGK = 109, PHP = 110, PKR = 111, PLN = 112, PYG = 113, QAR = 114, RON = 115, RSD = 116, RUB = 117, RWF = 118, SAR = 119, SBD = 120, SCR = 121, SDG = 122, SEK = 123, SGD = 124, SHP = 125, SLL = 126, SOS = 127, SPL = 128, SRD = 129, STN = 130, SVC = 131, SYP = 132, SZL = 133, THB = 134, TJS = 135, TMT = 136, TND = 137, TOP = 138, TRY = 139, TTD = 140, TVD = 141, TWD = 142, TZS = 143, UAH = 144, UGX = 145, USD = 146, UYU = 147, UZS = 148, VEF = 149, VND = 150, VUV = 151, WST = 152, XAF = 153, XCD = 154, XDR = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160, ZMK = 161, ZWD = 162, _ = 163 }
@@ -2015,7 +4416,14 @@ export namespace MyNS {
 	export enum PurchaseOrderStatus { DRAFT = 0, SUBMITTED = 1, AUTHORISED = 2, BILLED = 3, DELETED = 4 }
 
 	export interface Quotes {
-		Quotes1?: Array<Quote> | null;
+		Quotes1?: Array<Quote>;
+	}
+	export interface QuotesFormProperties {
+	}
+	export function CreateQuotesFormGroup() {
+		return new FormGroup<QuotesFormProperties>({
+		});
+
 	}
 
 	export interface Quote {
@@ -2040,10 +4448,10 @@ export namespace MyNS {
 		 * Max length: 4000
 		 */
 		Terms?: string | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Date quote was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -2103,7 +4511,113 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
+	}
+	export interface QuoteFormProperties {
+
+		/** QuoteID GUID is automatically generated and is returned after create or GET. */
+		QuoteID: FormControl<string | null | undefined>,
+
+		/**
+		 * Unique alpha numeric code identifying a quote (Max Length = 255)
+		 * Max length: 255
+		 */
+		QuoteNumber: FormControl<string | null | undefined>,
+
+		/**
+		 * Additional reference number
+		 * Max length: 4000
+		 */
+		Reference: FormControl<string | null | undefined>,
+
+		/**
+		 * Terms of the quote
+		 * Max length: 4000
+		 */
+		Terms: FormControl<string | null | undefined>,
+
+		/** Date quote was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation */
+		Date: FormControl<Date | null | undefined>,
+
+		/** Date the quote was issued (YYYY-MM-DD) */
+		DateString: FormControl<string | null | undefined>,
+
+		/** Date the quote expires � YYYY-MM-DD. */
+		ExpiryDate: FormControl<Date | null | undefined>,
+
+		/** Date the quote expires � YYYY-MM-DD. */
+		ExpiryDateString: FormControl<string | null | undefined>,
+
+		/** The status of the quote. */
+		Status: FormControl<QuoteStatus | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<QuoteCurrencyCode | null | undefined>,
+
+		/** The currency rate for a multicurrency quote */
+		CurrencyRate: FormControl<number | null | undefined>,
+
+		/** Total of quote excluding taxes. */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** Total tax on quote */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** Total of Quote tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn�t equal the sum of the LineAmounts */
+		Total: FormControl<number | null | undefined>,
+
+		/** Total of discounts applied on the quote line items */
+		TotalDiscount: FormControl<number | null | undefined>,
+
+		/**
+		 * Title text for the quote
+		 * Max length: 100
+		 */
+		Title: FormControl<string | null | undefined>,
+
+		/**
+		 * Summary text for the quote
+		 * Max length: 3000
+		 */
+		Summary: FormControl<string | null | undefined>,
+
+		/** See BrandingThemes */
+		BrandingThemeID: FormControl<string | null | undefined>,
+
+		/** Last modified date UTC format */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<QuoteLineAmountTypes | null | undefined>,
+
+		/** A string to indicate if a invoice status */
+		StatusAttributeString: FormControl<string | null | undefined>,
+	}
+	export function CreateQuoteFormGroup() {
+		return new FormGroup<QuoteFormProperties>({
+			QuoteID: new FormControl<string | null | undefined>(undefined),
+			QuoteNumber: new FormControl<string | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			Terms: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			DateString: new FormControl<string | null | undefined>(undefined),
+			ExpiryDate: new FormControl<Date | null | undefined>(undefined),
+			ExpiryDateString: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<QuoteStatus | null | undefined>(undefined),
+			CurrencyCode: new FormControl<QuoteCurrencyCode | null | undefined>(undefined),
+			CurrencyRate: new FormControl<number | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			TotalDiscount: new FormControl<number | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			Summary: new FormControl<string | null | undefined>(undefined),
+			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<QuoteLineAmountTypes | null | undefined>(undefined),
+			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QuoteStatus { DRAFT = 0, SENT = 1, DECLINED = 2, ACCEPTED = 3, INVOICED = 4 }
@@ -2117,22 +4631,36 @@ export namespace MyNS {
 	export enum QuoteStatusCodes { DRAFT = 0, SENT = 1, DECLINED = 2, ACCEPTED = 3, INVOICED = 4 }
 
 	export interface Receipts {
-		Receipts1?: Array<Receipt> | null;
+		Receipts1?: Array<Receipt>;
+	}
+	export interface ReceiptsFormProperties {
+	}
+	export function CreateReceiptsFormGroup() {
+		return new FormGroup<ReceiptsFormProperties>({
+		});
+
 	}
 
 	export interface RepeatingInvoices {
-		RepeatingInvoices1?: Array<RepeatingInvoice> | null;
+		RepeatingInvoices1?: Array<RepeatingInvoice>;
+	}
+	export interface RepeatingInvoicesFormProperties {
+	}
+	export function CreateRepeatingInvoicesFormGroup() {
+		return new FormGroup<RepeatingInvoicesFormProperties>({
+		});
+
 	}
 
 	export interface RepeatingInvoice {
 
 		/** See Invoice Types */
 		Type?: RepeatingInvoiceType | null;
-		Contact?: Contact | null;
-		Schedule?: Schedule | null;
+		Contact?: Contact;
+		Schedule?: Schedule;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
@@ -2168,7 +4696,62 @@ export namespace MyNS {
 		HasAttachments?: boolean | null;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
+	}
+	export interface RepeatingInvoiceFormProperties {
+
+		/** See Invoice Types */
+		Type: FormControl<RepeatingInvoiceType | null | undefined>,
+
+		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
+		LineAmountTypes: FormControl<BankTransactionLineAmountTypes | null | undefined>,
+
+		/** ACCREC only � additional reference number */
+		Reference: FormControl<string | null | undefined>,
+
+		/** See BrandingThemes */
+		BrandingThemeID: FormControl<string | null | undefined>,
+
+		/** 3 letter alpha code for the currency � see list of currency codes */
+		CurrencyCode: FormControl<RepeatingInvoiceCurrencyCode | null | undefined>,
+
+		/** One of the following - DRAFT or AUTHORISED � See Invoice Status Codes */
+		Status: FormControl<RepeatingInvoiceStatus | null | undefined>,
+
+		/** Total of invoice excluding taxes */
+		SubTotal: FormControl<number | null | undefined>,
+
+		/** Total tax on invoice */
+		TotalTax: FormControl<number | null | undefined>,
+
+		/** Total of Invoice tax inclusive (i.e. SubTotal + TotalTax) */
+		Total: FormControl<number | null | undefined>,
+
+		/** Xero generated unique identifier for repeating invoice template */
+		RepeatingInvoiceID: FormControl<string | null | undefined>,
+
+		/** Xero generated unique identifier for repeating invoice template */
+		ID: FormControl<string | null | undefined>,
+
+		/** boolean to indicate if an invoice has an attachment */
+		HasAttachments: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRepeatingInvoiceFormGroup() {
+		return new FormGroup<RepeatingInvoiceFormProperties>({
+			Type: new FormControl<RepeatingInvoiceType | null | undefined>(undefined),
+			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined),
+			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<RepeatingInvoiceCurrencyCode | null | undefined>(undefined),
+			Status: new FormControl<RepeatingInvoiceStatus | null | undefined>(undefined),
+			SubTotal: new FormControl<number | null | undefined>(undefined),
+			TotalTax: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+			RepeatingInvoiceID: new FormControl<string | null | undefined>(undefined),
+			ID: new FormControl<string | null | undefined>(undefined),
+			HasAttachments: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RepeatingInvoiceType { ACCPAY = 0, ACCREC = 1 }
@@ -2196,6 +4779,41 @@ export namespace MyNS {
 		/** Invoice end date � only returned if the template has an end date set */
 		EndDate?: Date | null;
 	}
+	export interface ScheduleFormProperties {
+
+		/** Integer used with the unit e.g. 1 (every 1 week), 2 (every 2 months) */
+		Period: FormControl<number | null | undefined>,
+
+		/** One of the following - WEEKLY or MONTHLY */
+		Unit: FormControl<ScheduleUnit | null | undefined>,
+
+		/** Integer used with due date type e.g 20 (of following month), 31 (of current month) */
+		DueDate: FormControl<number | null | undefined>,
+
+		/** the payment terms */
+		DueDateType: FormControl<ScheduleDueDateType | null | undefined>,
+
+		/** Date the first invoice of the current version of the repeating schedule was generated (changes when repeating invoice is edited) */
+		StartDate: FormControl<Date | null | undefined>,
+
+		/** The calendar date of the next invoice in the schedule to be generated */
+		NextScheduledDate: FormControl<Date | null | undefined>,
+
+		/** Invoice end date � only returned if the template has an end date set */
+		EndDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateScheduleFormGroup() {
+		return new FormGroup<ScheduleFormProperties>({
+			Period: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<ScheduleUnit | null | undefined>(undefined),
+			DueDate: new FormControl<number | null | undefined>(undefined),
+			DueDateType: new FormControl<ScheduleDueDateType | null | undefined>(undefined),
+			StartDate: new FormControl<Date | null | undefined>(undefined),
+			NextScheduledDate: new FormControl<Date | null | undefined>(undefined),
+			EndDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ScheduleUnit { WEEKLY = 0, MONTHLY = 1 }
 
@@ -2206,7 +4824,14 @@ export namespace MyNS {
 	export enum RepeatingInvoiceStatus { DRAFT = 0, AUTHORISED = 1, DELETED = 2 }
 
 	export interface ReportWithRows {
-		Reports?: Array<ReportWithRow> | null;
+		Reports?: Array<ReportWithRow>;
+	}
+	export interface ReportWithRowsFormProperties {
+	}
+	export function CreateReportWithRowsFormGroup() {
+		return new FormGroup<ReportWithRowsFormProperties>({
+		});
+
 	}
 
 	export interface ReportWithRow {
@@ -2224,40 +4849,113 @@ export namespace MyNS {
 		ReportType?: string | null;
 
 		/** Report titles array (3 to 4 strings with the report name, orgnisation name and time frame of report) */
-		ReportTitles?: Array<string> | null;
+		ReportTitles?: Array<string>;
 
 		/** Date of report */
 		ReportDate?: string | null;
-		Rows?: Array<ReportRows> | null;
+		Rows?: Array<ReportRows>;
 
 		/** Updated Date */
 		UpdatedDateUTC?: Date | null;
-		Fields?: Array<ReportFields> | null;
+		Fields?: Array<ReportFields>;
+	}
+	export interface ReportWithRowFormProperties {
+
+		/** Report id */
+		ReportID: FormControl<string | null | undefined>,
+
+		/** Name of the report */
+		ReportName: FormControl<string | null | undefined>,
+
+		/** Title of the report */
+		ReportTitle: FormControl<string | null | undefined>,
+
+		/** The type of report (BalanceSheet,ProfitLoss, etc) */
+		ReportType: FormControl<string | null | undefined>,
+
+		/** Date of report */
+		ReportDate: FormControl<string | null | undefined>,
+
+		/** Updated Date */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+	}
+	export function CreateReportWithRowFormGroup() {
+		return new FormGroup<ReportWithRowFormProperties>({
+			ReportID: new FormControl<string | null | undefined>(undefined),
+			ReportName: new FormControl<string | null | undefined>(undefined),
+			ReportTitle: new FormControl<string | null | undefined>(undefined),
+			ReportType: new FormControl<string | null | undefined>(undefined),
+			ReportDate: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReportRows {
 		RowType?: ReportRowsRowType | null;
 		Title?: string | null;
-		Cells?: Array<ReportCell> | null;
-		Rows?: Array<ReportRow> | null;
+		Cells?: Array<ReportCell>;
+		Rows?: Array<ReportRow>;
+	}
+	export interface ReportRowsFormProperties {
+		RowType: FormControl<ReportRowsRowType | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+	}
+	export function CreateReportRowsFormGroup() {
+		return new FormGroup<ReportRowsFormProperties>({
+			RowType: new FormControl<ReportRowsRowType | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportRowsRowType { Header = 0, Section = 1, Row = 2, SummaryRow = 3 }
 
 	export interface ReportCell {
 		Value?: string | null;
-		Attributes?: Array<ReportAttribute> | null;
+		Attributes?: Array<ReportAttribute>;
+	}
+	export interface ReportCellFormProperties {
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateReportCellFormGroup() {
+		return new FormGroup<ReportCellFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReportAttribute {
 		Id?: string | null;
 		Value?: string | null;
 	}
+	export interface ReportAttributeFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateReportAttributeFormGroup() {
+		return new FormGroup<ReportAttributeFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReportRow {
 		RowType?: ReportRowsRowType | null;
 		Title?: string | null;
-		Cells?: Array<ReportCell> | null;
+		Cells?: Array<ReportCell>;
+	}
+	export interface ReportRowFormProperties {
+		RowType: FormControl<ReportRowsRowType | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+	}
+	export function CreateReportRowFormGroup() {
+		return new FormGroup<ReportRowFormProperties>({
+			RowType: new FormControl<ReportRowsRowType | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReportFields {
@@ -2265,11 +4963,31 @@ export namespace MyNS {
 		Description?: string | null;
 		Value?: string | null;
 	}
+	export interface ReportFieldsFormProperties {
+		FieldID: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateReportFieldsFormGroup() {
+		return new FormGroup<ReportFieldsFormProperties>({
+			FieldID: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum RowType { Header = 0, Section = 1, Row = 2, SummaryRow = 3 }
 
 	export interface Reports {
-		Reports1?: Array<Report> | null;
+		Reports1?: Array<Report>;
+	}
+	export interface ReportsFormProperties {
+	}
+	export function CreateReportsFormGroup() {
+		return new FormGroup<ReportsFormProperties>({
+		});
+
 	}
 
 	export interface Report {
@@ -2291,7 +5009,38 @@ export namespace MyNS {
 
 		/** Updated Date */
 		UpdatedDateUTC?: Date | null;
-		Contacts?: Array<TenNinteyNineContact> | null;
+		Contacts?: Array<TenNinteyNineContact>;
+	}
+	export interface ReportFormProperties {
+
+		/** See Prepayment Types */
+		ReportID: FormControl<string | null | undefined>,
+
+		/** See Prepayment Types */
+		ReportName: FormControl<string | null | undefined>,
+
+		/** See Prepayment Types */
+		ReportType: FormControl<ReportReportType | null | undefined>,
+
+		/** See Prepayment Types */
+		ReportTitle: FormControl<string | null | undefined>,
+
+		/** Date of report */
+		ReportDate: FormControl<string | null | undefined>,
+
+		/** Updated Date */
+		UpdatedDateUTC: FormControl<Date | null | undefined>,
+	}
+	export function CreateReportFormGroup() {
+		return new FormGroup<ReportFormProperties>({
+			ReportID: new FormControl<string | null | undefined>(undefined),
+			ReportName: new FormControl<string | null | undefined>(undefined),
+			ReportType: new FormControl<ReportReportType | null | undefined>(undefined),
+			ReportTitle: new FormControl<string | null | undefined>(undefined),
+			ReportDate: new FormControl<string | null | undefined>(undefined),
+			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportReportType { AgedPayablesByContact = 0 }
@@ -2364,9 +5113,111 @@ export namespace MyNS {
 		/** Contact contact id */
 		ContactId?: string | null;
 	}
+	export interface TenNinteyNineContactFormProperties {
+
+		/** Box 1 on 1099 Form */
+		Box1: FormControl<number | null | undefined>,
+
+		/** Box 2 on 1099 Form */
+		Box2: FormControl<number | null | undefined>,
+
+		/** Box 3 on 1099 Form */
+		Box3: FormControl<number | null | undefined>,
+
+		/** Box 4 on 1099 Form */
+		Box4: FormControl<number | null | undefined>,
+
+		/** Box 5 on 1099 Form */
+		Box5: FormControl<number | null | undefined>,
+
+		/** Box 6 on 1099 Form */
+		Box6: FormControl<number | null | undefined>,
+
+		/** Box 7 on 1099 Form */
+		Box7: FormControl<number | null | undefined>,
+
+		/** Box 8 on 1099 Form */
+		Box8: FormControl<number | null | undefined>,
+
+		/** Box 9 on 1099 Form */
+		Box9: FormControl<number | null | undefined>,
+
+		/** Box 10 on 1099 Form */
+		Box10: FormControl<number | null | undefined>,
+
+		/** Box 11 on 1099 Form */
+		Box11: FormControl<number | null | undefined>,
+
+		/** Box 13 on 1099 Form */
+		Box13: FormControl<number | null | undefined>,
+
+		/** Box 14 on 1099 Form */
+		Box14: FormControl<number | null | undefined>,
+
+		/** Contact name on 1099 Form */
+		Name: FormControl<string | null | undefined>,
+
+		/** Contact Fed Tax ID type */
+		FederalTaxIDType: FormControl<string | null | undefined>,
+
+		/** Contact city on 1099 Form */
+		City: FormControl<string | null | undefined>,
+
+		/** Contact zip on 1099 Form */
+		Zip: FormControl<string | null | undefined>,
+
+		/** Contact State on 1099 Form */
+		State: FormControl<string | null | undefined>,
+
+		/** Contact email on 1099 Form */
+		Email: FormControl<string | null | undefined>,
+
+		/** Contact address on 1099 Form */
+		StreetAddress: FormControl<string | null | undefined>,
+
+		/** Contact tax id on 1099 Form */
+		TaxID: FormControl<string | null | undefined>,
+
+		/** Contact contact id */
+		ContactId: FormControl<string | null | undefined>,
+	}
+	export function CreateTenNinteyNineContactFormGroup() {
+		return new FormGroup<TenNinteyNineContactFormProperties>({
+			Box1: new FormControl<number | null | undefined>(undefined),
+			Box2: new FormControl<number | null | undefined>(undefined),
+			Box3: new FormControl<number | null | undefined>(undefined),
+			Box4: new FormControl<number | null | undefined>(undefined),
+			Box5: new FormControl<number | null | undefined>(undefined),
+			Box6: new FormControl<number | null | undefined>(undefined),
+			Box7: new FormControl<number | null | undefined>(undefined),
+			Box8: new FormControl<number | null | undefined>(undefined),
+			Box9: new FormControl<number | null | undefined>(undefined),
+			Box10: new FormControl<number | null | undefined>(undefined),
+			Box11: new FormControl<number | null | undefined>(undefined),
+			Box13: new FormControl<number | null | undefined>(undefined),
+			Box14: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			FederalTaxIDType: new FormControl<string | null | undefined>(undefined),
+			City: new FormControl<string | null | undefined>(undefined),
+			Zip: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			StreetAddress: new FormControl<string | null | undefined>(undefined),
+			TaxID: new FormControl<string | null | undefined>(undefined),
+			ContactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaxRates {
-		TaxRates1?: Array<TaxRate> | null;
+		TaxRates1?: Array<TaxRate>;
+	}
+	export interface TaxRatesFormProperties {
+	}
+	export function CreateTaxRatesFormGroup() {
+		return new FormGroup<TaxRatesFormProperties>({
+		});
+
 	}
 
 	export interface TaxRate {
@@ -2378,7 +5229,7 @@ export namespace MyNS {
 		TaxType?: string | null;
 
 		/** See TaxComponents */
-		TaxComponents?: Array<TaxComponent> | null;
+		TaxComponents?: Array<TaxComponent>;
 
 		/** See Status Codes */
 		Status?: TaxRateStatus | null;
@@ -2407,6 +5258,57 @@ export namespace MyNS {
 		/** Effective Tax Rate (decimal to 4dp) e.g 12.5000 */
 		EffectiveRate?: number | null;
 	}
+	export interface TaxRateFormProperties {
+
+		/** Name of tax rate */
+		Name: FormControl<string | null | undefined>,
+
+		/** The tax type */
+		TaxType: FormControl<string | null | undefined>,
+
+		/** See Status Codes */
+		Status: FormControl<TaxRateStatus | null | undefined>,
+
+		/** See ReportTaxTypes */
+		ReportTaxType: FormControl<TaxRateReportTaxType | null | undefined>,
+
+		/** Boolean to describe if tax rate can be used for asset accounts i.e.  true,false */
+		CanApplyToAssets: FormControl<boolean | null | undefined>,
+
+		/** Boolean to describe if tax rate can be used for equity accounts i.e true,false */
+		CanApplyToEquity: FormControl<boolean | null | undefined>,
+
+		/** Boolean to describe if tax rate can be used for expense accounts  i.e. true,false */
+		CanApplyToExpenses: FormControl<boolean | null | undefined>,
+
+		/** Boolean to describe if tax rate can be used for liability accounts  i.e. true,false */
+		CanApplyToLiabilities: FormControl<boolean | null | undefined>,
+
+		/** Boolean to describe if tax rate can be used for revenue accounts i.e. true,false */
+		CanApplyToRevenue: FormControl<boolean | null | undefined>,
+
+		/** Tax Rate (decimal to 4dp) e.g 12.5000 */
+		DisplayTaxRate: FormControl<number | null | undefined>,
+
+		/** Effective Tax Rate (decimal to 4dp) e.g 12.5000 */
+		EffectiveRate: FormControl<number | null | undefined>,
+	}
+	export function CreateTaxRateFormGroup() {
+		return new FormGroup<TaxRateFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			TaxType: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<TaxRateStatus | null | undefined>(undefined),
+			ReportTaxType: new FormControl<TaxRateReportTaxType | null | undefined>(undefined),
+			CanApplyToAssets: new FormControl<boolean | null | undefined>(undefined),
+			CanApplyToEquity: new FormControl<boolean | null | undefined>(undefined),
+			CanApplyToExpenses: new FormControl<boolean | null | undefined>(undefined),
+			CanApplyToLiabilities: new FormControl<boolean | null | undefined>(undefined),
+			CanApplyToRevenue: new FormControl<boolean | null | undefined>(undefined),
+			DisplayTaxRate: new FormControl<number | null | undefined>(undefined),
+			EffectiveRate: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaxComponent {
 
@@ -2422,6 +5324,29 @@ export namespace MyNS {
 		/** Boolean to describe if tax rate is non-recoverable. Non-recoverable rates are only applicable to Canadian organisations */
 		IsNonRecoverable?: boolean | null;
 	}
+	export interface TaxComponentFormProperties {
+
+		/** Name of Tax Component */
+		Name: FormControl<string | null | undefined>,
+
+		/** Tax Rate (up to 4dp) */
+		Rate: FormControl<number | null | undefined>,
+
+		/** Boolean to describe if Tax rate is compounded. */
+		IsCompound: FormControl<boolean | null | undefined>,
+
+		/** Boolean to describe if tax rate is non-recoverable. Non-recoverable rates are only applicable to Canadian organisations */
+		IsNonRecoverable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTaxComponentFormGroup() {
+		return new FormGroup<TaxComponentFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Rate: new FormControl<number | null | undefined>(undefined),
+			IsCompound: new FormControl<boolean | null | undefined>(undefined),
+			IsNonRecoverable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum TaxRateStatus { ACTIVE = 0, DELETED = 1, ARCHIVED = 2, PENDING = 3 }
 
@@ -2432,15 +5357,36 @@ export namespace MyNS {
 	export enum TaxType { OUTPUT = 0, INPUT = 1, CAPEXINPUT = 2, EXEMPTEXPORT = 3, EXEMPTEXPENSES = 4, EXEMPTCAPITAL = 5, EXEMPTOUTPUT = 6, INPUTTAXED = 7, BASEXCLUDED = 8, GSTONCAPIMPORTS = 9, GSTONIMPORTS = 10, NONE = 11, INPUT2 = 12, ZERORATED = 13, OUTPUT2 = 14, CAPEXINPUT2 = 15, CAPEXOUTPUT = 16, CAPEXOUTPUT2 = 17, CAPEXSRINPUT = 18, CAPEXSROUTPUT = 19, ECACQUISITIONS = 20, ECZRINPUT = 21, ECZROUTPUT = 22, ECZROUTPUTSERVICES = 23, EXEMPTINPUT = 24, REVERSECHARGES = 25, RRINPUT = 26, RROUTPUT = 27, SRINPUT = 28, SROUTPUT = 29, ZERORATEDINPUT = 30, ZERORATEDOUTPUT = 31, BLINPUT = 32, DSOUTPUT = 33, EPINPUT = 34, ES33OUTPUT = 35, ESN33OUTPUT = 36, IGDSINPUT2 = 37, IMINPUT2 = 38, MEINPUT = 39, NRINPUT = 40, OPINPUT = 41, OSOUTPUT = 42, TXESSINPUT = 43, TXN33INPUT = 44, TXPETINPUT = 45, TXREINPUT = 46, INPUT3 = 47, INPUT4 = 48, OUTPUT3 = 49, OUTPUT4 = 50, SROUTPUT2 = 51, TXCA = 52, SRCAS = 53, BLINPUT2 = 54, DRCHARGESUPPLY20 = 55, DRCHARGE20 = 56, DRCHARGESUPPLY5 = 57, DRCHARGE5 = 58 }
 
 	export interface TrackingCategories {
-		TrackingCategories1?: Array<TrackingCategory> | null;
+		TrackingCategories1?: Array<TrackingCategory>;
+	}
+	export interface TrackingCategoriesFormProperties {
+	}
+	export function CreateTrackingCategoriesFormGroup() {
+		return new FormGroup<TrackingCategoriesFormProperties>({
+		});
+
 	}
 
 	export interface TrackingOptions {
-		Options?: Array<TrackingOption> | null;
+		Options?: Array<TrackingOption>;
+	}
+	export interface TrackingOptionsFormProperties {
+	}
+	export function CreateTrackingOptionsFormGroup() {
+		return new FormGroup<TrackingOptionsFormProperties>({
+		});
+
 	}
 
 	export interface Users {
-		Users1?: Array<User> | null;
+		Users1?: Array<User>;
+	}
+	export interface UsersFormProperties {
+	}
+	export function CreateUsersFormGroup() {
+		return new FormGroup<UsersFormProperties>({
+		});
+
 	}
 
 	export interface Error {
@@ -2455,13 +5401,32 @@ export namespace MyNS {
 		Message?: string | null;
 
 		/** Array of Elements of validation Errors */
-		Elements?: Array<Element> | null;
+		Elements?: Array<Element>;
+	}
+	export interface ErrorFormProperties {
+
+		/** Exception number */
+		ErrorNumber: FormControl<number | null | undefined>,
+
+		/** Exception type */
+		Type: FormControl<string | null | undefined>,
+
+		/** Exception message */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			ErrorNumber: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Element {
 
 		/** Array of Validation Error message */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Unique ID for batch payment object with validation error */
 		BatchPaymentID?: string | null;
@@ -2471,6 +5436,29 @@ export namespace MyNS {
 		InvoiceID?: string | null;
 		ItemID?: string | null;
 		PurchaseOrderID?: string | null;
+	}
+	export interface ElementFormProperties {
+
+		/** Unique ID for batch payment object with validation error */
+		BatchPaymentID: FormControl<string | null | undefined>,
+		BankTransactionID: FormControl<string | null | undefined>,
+		CreditNoteID: FormControl<string | null | undefined>,
+		ContactID: FormControl<string | null | undefined>,
+		InvoiceID: FormControl<string | null | undefined>,
+		ItemID: FormControl<string | null | undefined>,
+		PurchaseOrderID: FormControl<string | null | undefined>,
+	}
+	export function CreateElementFormGroup() {
+		return new FormGroup<ElementFormProperties>({
+			BatchPaymentID: new FormControl<string | null | undefined>(undefined),
+			BankTransactionID: new FormControl<string | null | undefined>(undefined),
+			CreditNoteID: new FormControl<string | null | undefined>(undefined),
+			ContactID: new FormControl<string | null | undefined>(undefined),
+			InvoiceID: new FormControl<string | null | undefined>(undefined),
+			ItemID: new FormControl<string | null | undefined>(undefined),
+			PurchaseOrderID: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -2850,7 +5838,7 @@ export namespace MyNS {
 		 * @return {Contacts} Success - return response of type Contacts array with 0 to N Contact
 		 */
 		GetContacts(where: string | null | undefined, order: string | null | undefined, IDs: Array<string> | null | undefined, page: number | null | undefined, includeArchived: boolean | null | undefined): Observable<Contacts> {
-			return this.http.get<Contacts>(this.baseUri + 'Contacts?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived, {});
+			return this.http.get<Contacts>(this.baseUri + 'Contacts?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs?.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived, {});
 		}
 
 		/**
@@ -3317,7 +6305,7 @@ export namespace MyNS {
 		 * @return {Invoices} Success - return response of type Invoices array with all Invoices
 		 */
 		GetInvoices(where: string | null | undefined, order: string | null | undefined, IDs: Array<string> | null | undefined, InvoiceNumbers: Array<string> | null | undefined, ContactIDs: Array<string> | null | undefined, Statuses: Array<string> | null | undefined, page: number | null | undefined, includeArchived: boolean | null | undefined, createdByMyApp: boolean | null | undefined, unitdp: number | null | undefined): Observable<Invoices> {
-			return this.http.get<Invoices>(this.baseUri + 'Invoices?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&' + InvoiceNumbers.map(z => `InvoiceNumbers=${encodeURIComponent(z)}`).join('&') + '&' + ContactIDs.map(z => `ContactIDs=${encodeURIComponent(z)}`).join('&') + '&' + Statuses.map(z => `Statuses=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived + '&createdByMyApp=' + createdByMyApp + '&unitdp=' + unitdp, {});
+			return this.http.get<Invoices>(this.baseUri + 'Invoices?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&' + IDs?.map(z => `IDs=${encodeURIComponent(z)}`).join('&') + '&' + InvoiceNumbers?.map(z => `InvoiceNumbers=${encodeURIComponent(z)}`).join('&') + '&' + ContactIDs?.map(z => `ContactIDs=${encodeURIComponent(z)}`).join('&') + '&' + Statuses?.map(z => `Statuses=${encodeURIComponent(z)}`).join('&') + '&page=' + page + '&includeArchived=' + includeArchived + '&createdByMyApp=' + createdByMyApp + '&unitdp=' + unitdp, {});
 		}
 
 		/**
@@ -4041,7 +7029,7 @@ export namespace MyNS {
 		 * @return {Quotes} Success - return response of type quotes array with all quotes
 		 */
 		GetQuotes(DateFrom: Date | null | undefined, DateTo: Date | null | undefined, ExpiryDateFrom: Date | null | undefined, ExpiryDateTo: Date | null | undefined, ContactID: string | null | undefined, Status: string | null | undefined, page: number | null | undefined, order: string | null | undefined): Observable<Quotes> {
-			return this.http.get<Quotes>(this.baseUri + 'Quotes?DateFrom=' + DateFrom.toISOString() + '&DateTo=' + DateTo.toISOString() + '&ExpiryDateFrom=' + ExpiryDateFrom.toISOString() + '&ExpiryDateTo=' + ExpiryDateTo.toISOString() + '&ContactID=' + (ContactID == null ? '' : encodeURIComponent(ContactID)) + '&Status=' + (Status == null ? '' : encodeURIComponent(Status)) + '&page=' + page + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
+			return this.http.get<Quotes>(this.baseUri + 'Quotes?DateFrom=' + DateFrom?.toISOString() + '&DateTo=' + DateTo?.toISOString() + '&ExpiryDateFrom=' + ExpiryDateFrom?.toISOString() + '&ExpiryDateTo=' + ExpiryDateTo?.toISOString() + '&ContactID=' + (ContactID == null ? '' : encodeURIComponent(ContactID)) + '&Status=' + (Status == null ? '' : encodeURIComponent(Status)) + '&page=' + page + '&order=' + (order == null ? '' : encodeURIComponent(order)), {});
 		}
 
 		/**
@@ -4340,7 +7328,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportAgedPayablesByContact(contactId: string, date: Date | null | undefined, fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedPayablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date.toISOString() + '&fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString(), {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedPayablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date?.toISOString() + '&fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString(), {});
 		}
 
 		/**
@@ -4353,7 +7341,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportAgedReceivablesByContact(contactId: string, date: Date | null | undefined, fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedReceivablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date.toISOString() + '&fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString(), {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/AgedReceivablesByContact?contactId=' + (contactId == null ? '' : encodeURIComponent(contactId)) + '&date=' + date?.toISOString() + '&fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString(), {});
 		}
 
 		/**
@@ -4380,7 +7368,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportBankSummary(fromDate: Date | null | undefined, toDate: Date | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BankSummary?fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString(), {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BankSummary?fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString(), {});
 		}
 
 		/**
@@ -4411,7 +7399,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} success- return a Report with Rows object
 		 */
 		GetReportBudgetSummary(date: Date | null | undefined, period: number | null | undefined, timeframe: number | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BudgetSummary?date=' + date.toISOString() + '&period=' + period + '&timeframe=' + timeframe, {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/BudgetSummary?date=' + date?.toISOString() + '&period=' + period + '&timeframe=' + timeframe, {});
 		}
 
 		/**
@@ -4421,7 +7409,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportExecutiveSummary(date: Date | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ExecutiveSummary?date=' + date.toISOString(), {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ExecutiveSummary?date=' + date?.toISOString(), {});
 		}
 
 		/**
@@ -4440,7 +7428,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportProfitAndLoss(fromDate: Date | null | undefined, toDate: Date | null | undefined, periods: number | null | undefined, timeframe: GetReportBalanceSheetTimeframe | null | undefined, trackingCategoryID: string | null | undefined, trackingCategoryID2: string | null | undefined, trackingOptionID: string | null | undefined, trackingOptionID2: string | null | undefined, standardLayout: boolean | null | undefined, paymentsOnly: boolean | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ProfitAndLoss?fromDate=' + fromDate.toISOString() + '&toDate=' + toDate.toISOString() + '&periods=' + periods + '&timeframe=' + timeframe + '&trackingCategoryID=' + (trackingCategoryID == null ? '' : encodeURIComponent(trackingCategoryID)) + '&trackingCategoryID2=' + (trackingCategoryID2 == null ? '' : encodeURIComponent(trackingCategoryID2)) + '&trackingOptionID=' + (trackingOptionID == null ? '' : encodeURIComponent(trackingOptionID)) + '&trackingOptionID2=' + (trackingOptionID2 == null ? '' : encodeURIComponent(trackingOptionID2)) + '&standardLayout=' + standardLayout + '&paymentsOnly=' + paymentsOnly, {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/ProfitAndLoss?fromDate=' + fromDate?.toISOString() + '&toDate=' + toDate?.toISOString() + '&periods=' + periods + '&timeframe=' + timeframe + '&trackingCategoryID=' + (trackingCategoryID == null ? '' : encodeURIComponent(trackingCategoryID)) + '&trackingCategoryID2=' + (trackingCategoryID2 == null ? '' : encodeURIComponent(trackingCategoryID2)) + '&trackingOptionID=' + (trackingOptionID == null ? '' : encodeURIComponent(trackingOptionID)) + '&trackingOptionID2=' + (trackingOptionID2 == null ? '' : encodeURIComponent(trackingOptionID2)) + '&standardLayout=' + standardLayout + '&paymentsOnly=' + paymentsOnly, {});
 		}
 
 		/**
@@ -4451,7 +7439,7 @@ export namespace MyNS {
 		 * @return {ReportWithRows} Success - return response of type ReportWithRows
 		 */
 		GetReportTrialBalance(date: Date | null | undefined, paymentsOnly: boolean | null | undefined): Observable<ReportWithRows> {
-			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/TrialBalance?date=' + date.toISOString() + '&paymentsOnly=' + paymentsOnly, {});
+			return this.http.get<ReportWithRows>(this.baseUri + 'Reports/TrialBalance?date=' + date?.toISOString() + '&paymentsOnly=' + paymentsOnly, {});
 		}
 
 		/**

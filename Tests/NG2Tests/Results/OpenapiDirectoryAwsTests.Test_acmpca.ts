@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateCertificateAuthorityResponse {
 		CertificateAuthorityArn?: string | null;
+	}
+	export interface CreateCertificateAuthorityResponseFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<CreateCertificateAuthorityResponseFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCertificateAuthorityRequest {
@@ -15,10 +25,21 @@ export namespace MyNS {
 		CertificateAuthorityConfiguration: CertificateAuthorityConfiguration;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
-		RevocationConfiguration?: RevocationConfiguration | null;
+		RevocationConfiguration?: RevocationConfiguration;
 		CertificateAuthorityType: CreateCertificateAuthorityRequestCertificateAuthorityType;
 		IdempotencyToken?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityType: FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<CreateCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityType: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -32,6 +53,19 @@ export namespace MyNS {
 		 * Required
 		 */
 		Subject: ASN1Subject;
+	}
+
+	/** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action.  */
+	export interface CertificateAuthorityConfigurationFormProperties {
+		KeyAlgorithm: FormControl<CertificateAuthorityConfigurationKeyAlgorithm | null | undefined>,
+		SigningAlgorithm: FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>,
+	}
+	export function CreateCertificateAuthorityConfigurationFormGroup() {
+		return new FormGroup<CertificateAuthorityConfigurationFormProperties>({
+			KeyAlgorithm: new FormControl<CertificateAuthorityConfigurationKeyAlgorithm | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CertificateAuthorityConfigurationKeyAlgorithm { RSA_2048 = 0, RSA_4096 = 1, EC_prime256v1 = 2, EC_secp384r1 = 3 }
@@ -57,12 +91,58 @@ export namespace MyNS {
 		GenerationQualifier?: string | null;
 	}
 
+	/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.  */
+	export interface ASN1SubjectFormProperties {
+		Country: FormControl<string | null | undefined>,
+		Organization: FormControl<string | null | undefined>,
+		OrganizationalUnit: FormControl<string | null | undefined>,
+		DistinguishedNameQualifier: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		CommonName: FormControl<string | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+		Locality: FormControl<string | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+		Surname: FormControl<string | null | undefined>,
+		GivenName: FormControl<string | null | undefined>,
+		Initials: FormControl<string | null | undefined>,
+		Pseudonym: FormControl<string | null | undefined>,
+		GenerationQualifier: FormControl<string | null | undefined>,
+	}
+	export function CreateASN1SubjectFormGroup() {
+		return new FormGroup<ASN1SubjectFormProperties>({
+			Country: new FormControl<string | null | undefined>(undefined),
+			Organization: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnit: new FormControl<string | null | undefined>(undefined),
+			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			CommonName: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			Locality: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Initials: new FormControl<string | null | undefined>(undefined),
+			Pseudonym: new FormControl<string | null | undefined>(undefined),
+			GenerationQualifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
 	export interface RevocationConfiguration {
 
 		/** <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p> */
-		CrlConfiguration?: CrlConfiguration | null;
+		CrlConfiguration?: CrlConfiguration;
+	}
+
+	/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
+	export interface RevocationConfigurationFormProperties {
+	}
+	export function CreateRevocationConfigurationFormGroup() {
+		return new FormGroup<RevocationConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -74,6 +154,23 @@ export namespace MyNS {
 		S3BucketName?: string | null;
 	}
 
+	/** <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p> */
+	export interface CrlConfigurationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		ExpirationInDays: FormControl<number | null | undefined>,
+		CustomCname: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+	}
+	export function CreateCrlConfigurationFormGroup() {
+		return new FormGroup<CrlConfigurationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			ExpirationInDays: new FormControl<number | null | undefined>(undefined),
+			CustomCname: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateCertificateAuthorityRequestCertificateAuthorityType { ROOT = 0, SUBORDINATE = 1 }
 
 
@@ -83,21 +180,73 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> action. To remove a tag, call the <a>UntagCertificateAuthority</a> action.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidArgsException {
+	}
+	export interface InvalidArgsExceptionFormProperties {
+	}
+	export function CreateInvalidArgsExceptionFormGroup() {
+		return new FormGroup<InvalidArgsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidPolicyException {
 	}
+	export interface InvalidPolicyExceptionFormProperties {
+	}
+	export function CreateInvalidPolicyExceptionFormGroup() {
+		return new FormGroup<InvalidPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTagException {
 	}
+	export interface InvalidTagExceptionFormProperties {
+	}
+	export function CreateInvalidTagExceptionFormGroup() {
+		return new FormGroup<InvalidTagExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateCertificateAuthorityAuditReportResponse {
 		AuditReportId?: string | null;
 		S3Key?: string | null;
+	}
+	export interface CreateCertificateAuthorityAuditReportResponseFormProperties {
+		AuditReportId: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCertificateAuthorityAuditReportResponseFormGroup() {
+		return new FormGroup<CreateCertificateAuthorityAuditReportResponseFormProperties>({
+			AuditReportId: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCertificateAuthorityAuditReportRequest {
@@ -105,22 +254,70 @@ export namespace MyNS {
 		S3BucketName: string;
 		AuditReportResponseFormat: CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat;
 	}
+	export interface CreateCertificateAuthorityAuditReportRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		AuditReportResponseFormat: FormControl<CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat | null | undefined>,
+	}
+	export function CreateCreateCertificateAuthorityAuditReportRequestFormGroup() {
+		return new FormGroup<CreateCertificateAuthorityAuditReportRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			AuditReportResponseFormat: new FormControl<CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateCertificateAuthorityAuditReportRequestAuditReportResponseFormat { JSON = 0, CSV = 1 }
 
 	export interface RequestInProgressException {
 	}
+	export interface RequestInProgressExceptionFormProperties {
+	}
+	export function CreateRequestInProgressExceptionFormGroup() {
+		return new FormGroup<RequestInProgressExceptionFormProperties>({
+		});
+
+	}
 
 	export interface RequestFailedException {
+	}
+	export interface RequestFailedExceptionFormProperties {
+	}
+	export function CreateRequestFailedExceptionFormGroup() {
+		return new FormGroup<RequestFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidArnException {
 	}
+	export interface InvalidArnExceptionFormProperties {
+	}
+	export function CreateInvalidArnExceptionFormGroup() {
+		return new FormGroup<InvalidArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidStateException {
+	}
+	export interface InvalidStateExceptionFormProperties {
+	}
+	export function CreateInvalidStateExceptionFormGroup() {
+		return new FormGroup<InvalidStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreatePermissionRequest {
@@ -129,18 +326,56 @@ export namespace MyNS {
 		SourceAccount?: string | null;
 		Actions: Array<ActionType>;
 	}
+	export interface CreatePermissionRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		Principal: FormControl<string | null | undefined>,
+		SourceAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePermissionRequestFormGroup() {
+		return new FormGroup<CreatePermissionRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			Principal: new FormControl<string | null | undefined>(undefined),
+			SourceAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ActionType { IssueCertificate = 0, GetCertificate = 1, ListPermissions = 2 }
 
 	export interface PermissionAlreadyExistsException {
+	}
+	export interface PermissionAlreadyExistsExceptionFormProperties {
+	}
+	export function CreatePermissionAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<PermissionAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
 		PermanentDeletionTimeInDays?: number | null;
 	}
+	export interface DeleteCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		PermanentDeletionTimeInDays: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<DeleteCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			PermanentDeletionTimeInDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeletePermissionRequest {
@@ -148,11 +383,31 @@ export namespace MyNS {
 		Principal: string;
 		SourceAccount?: string | null;
 	}
+	export interface DeletePermissionRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		Principal: FormControl<string | null | undefined>,
+		SourceAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePermissionRequestFormGroup() {
+		return new FormGroup<DeletePermissionRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			Principal: new FormControl<string | null | undefined>(undefined),
+			SourceAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCertificateAuthorityResponse {
 
 		/** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM). */
-		CertificateAuthority?: CertificateAuthority | null;
+		CertificateAuthority?: CertificateAuthority;
+	}
+	export interface DescribeCertificateAuthorityResponseFormProperties {
+	}
+	export function CreateDescribeCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<DescribeCertificateAuthorityResponseFormProperties>({
+		});
+
 	}
 
 
@@ -169,11 +424,40 @@ export namespace MyNS {
 		FailureReason?: CertificateAuthorityFailureReason | null;
 
 		/** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action. */
-		CertificateAuthorityConfiguration?: CertificateAuthorityConfiguration | null;
+		CertificateAuthorityConfiguration?: CertificateAuthorityConfiguration;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
-		RevocationConfiguration?: RevocationConfiguration | null;
+		RevocationConfiguration?: RevocationConfiguration;
 		RestorableUntil?: Date | null;
+	}
+
+	/** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM).  */
+	export interface CertificateAuthorityFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		LastStateChangeAt: FormControl<Date | null | undefined>,
+		Type: FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>,
+		Serial: FormControl<string | null | undefined>,
+		Status: FormControl<CertificateAuthorityStatus | null | undefined>,
+		NotBefore: FormControl<Date | null | undefined>,
+		NotAfter: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<CertificateAuthorityFailureReason | null | undefined>,
+		RestorableUntil: FormControl<Date | null | undefined>,
+	}
+	export function CreateCertificateAuthorityFormGroup() {
+		return new FormGroup<CertificateAuthorityFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastStateChangeAt: new FormControl<Date | null | undefined>(undefined),
+			Type: new FormControl<CreateCertificateAuthorityRequestCertificateAuthorityType | null | undefined>(undefined),
+			Serial: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CertificateAuthorityStatus | null | undefined>(undefined),
+			NotBefore: new FormControl<Date | null | undefined>(undefined),
+			NotAfter: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<CertificateAuthorityFailureReason | null | undefined>(undefined),
+			RestorableUntil: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CertificateAuthorityStatus { CREATING = 0, PENDING_CERTIFICATE = 1, ACTIVE = 2, DELETED = 3, DISABLED = 4, EXPIRED = 5, FAILED = 6 }
@@ -183,12 +467,36 @@ export namespace MyNS {
 	export interface DescribeCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
 	}
+	export interface DescribeCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<DescribeCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCertificateAuthorityAuditReportResponse {
 		AuditReportStatus?: DescribeCertificateAuthorityAuditReportResponseAuditReportStatus | null;
 		S3BucketName?: string | null;
 		S3Key?: string | null;
 		CreatedAt?: Date | null;
+	}
+	export interface DescribeCertificateAuthorityAuditReportResponseFormProperties {
+		AuditReportStatus: FormControl<DescribeCertificateAuthorityAuditReportResponseAuditReportStatus | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeCertificateAuthorityAuditReportResponseFormGroup() {
+		return new FormGroup<DescribeCertificateAuthorityAuditReportResponseFormProperties>({
+			AuditReportStatus: new FormControl<DescribeCertificateAuthorityAuditReportResponseAuditReportStatus | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeCertificateAuthorityAuditReportResponseAuditReportStatus { CREATING = 0, SUCCESS = 1, FAILED = 2 }
@@ -197,32 +505,103 @@ export namespace MyNS {
 		CertificateAuthorityArn: string;
 		AuditReportId: string;
 	}
+	export interface DescribeCertificateAuthorityAuditReportRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		AuditReportId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCertificateAuthorityAuditReportRequestFormGroup() {
+		return new FormGroup<DescribeCertificateAuthorityAuditReportRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			AuditReportId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCertificateResponse {
 		Certificate?: string | null;
 		CertificateChain?: string | null;
+	}
+	export interface GetCertificateResponseFormProperties {
+		Certificate: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateResponseFormGroup() {
+		return new FormGroup<GetCertificateResponseFormProperties>({
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCertificateRequest {
 		CertificateAuthorityArn: string;
 		CertificateArn: string;
 	}
+	export interface GetCertificateRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateRequestFormGroup() {
+		return new FormGroup<GetCertificateRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCertificateAuthorityCertificateResponse {
 		Certificate?: string | null;
 		CertificateChain?: string | null;
 	}
+	export interface GetCertificateAuthorityCertificateResponseFormProperties {
+		Certificate: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateAuthorityCertificateResponseFormGroup() {
+		return new FormGroup<GetCertificateAuthorityCertificateResponseFormProperties>({
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCertificateAuthorityCertificateRequest {
 		CertificateAuthorityArn: string;
+	}
+	export interface GetCertificateAuthorityCertificateRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateAuthorityCertificateRequestFormGroup() {
+		return new FormGroup<GetCertificateAuthorityCertificateRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCertificateAuthorityCsrResponse {
 		Csr?: string | null;
 	}
+	export interface GetCertificateAuthorityCsrResponseFormProperties {
+		Csr: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateAuthorityCsrResponseFormGroup() {
+		return new FormGroup<GetCertificateAuthorityCsrResponseFormProperties>({
+			Csr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCertificateAuthorityCsrRequest {
 		CertificateAuthorityArn: string;
+	}
+	export interface GetCertificateAuthorityCsrRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCertificateAuthorityCsrRequestFormGroup() {
+		return new FormGroup<GetCertificateAuthorityCsrRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportCertificateAuthorityCertificateRequest {
@@ -230,18 +609,61 @@ export namespace MyNS {
 		Certificate: string;
 		CertificateChain?: string | null;
 	}
+	export interface ImportCertificateAuthorityCertificateRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		Certificate: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateImportCertificateAuthorityCertificateRequestFormGroup() {
+		return new FormGroup<ImportCertificateAuthorityCertificateRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MalformedCertificateException {
 	}
+	export interface MalformedCertificateExceptionFormProperties {
+	}
+	export function CreateMalformedCertificateExceptionFormGroup() {
+		return new FormGroup<MalformedCertificateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CertificateMismatchException {
+	}
+	export interface CertificateMismatchExceptionFormProperties {
+	}
+	export function CreateCertificateMismatchExceptionFormGroup() {
+		return new FormGroup<CertificateMismatchExceptionFormProperties>({
+		});
+
 	}
 
 	export interface IssueCertificateResponse {
 		CertificateArn?: string | null;
+	}
+	export interface IssueCertificateResponseFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateIssueCertificateResponseFormGroup() {
+		return new FormGroup<IssueCertificateResponseFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface IssueCertificateRequest {
@@ -257,6 +679,23 @@ export namespace MyNS {
 		Validity: Validity;
 		IdempotencyToken?: string | null;
 	}
+	export interface IssueCertificateRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		Csr: FormControl<string | null | undefined>,
+		SigningAlgorithm: FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>,
+		TemplateArn: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateIssueCertificateRequestFormGroup() {
+		return new FormGroup<IssueCertificateRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			Csr: new FormControl<string | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<CertificateAuthorityConfigurationSigningAlgorithm | null | undefined>(undefined),
+			TemplateArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action. */
@@ -265,27 +704,83 @@ export namespace MyNS {
 		Type: ValidityType;
 	}
 
+	/** Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action. */
+	export interface ValidityFormProperties {
+		Value: FormControl<number | null | undefined>,
+		Type: FormControl<ValidityType | null | undefined>,
+	}
+	export function CreateValidityFormGroup() {
+		return new FormGroup<ValidityFormProperties>({
+			Value: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<ValidityType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ValidityType { END_DATE = 0, ABSOLUTE = 1, DAYS = 2, MONTHS = 3, YEARS = 4 }
 
 	export interface MalformedCSRException {
 	}
+	export interface MalformedCSRExceptionFormProperties {
+	}
+	export function CreateMalformedCSRExceptionFormGroup() {
+		return new FormGroup<MalformedCSRExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListCertificateAuthoritiesResponse {
-		CertificateAuthorities?: Array<CertificateAuthority> | null;
+		CertificateAuthorities?: Array<CertificateAuthority>;
 		NextToken?: string | null;
+	}
+	export interface ListCertificateAuthoritiesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCertificateAuthoritiesResponseFormGroup() {
+		return new FormGroup<ListCertificateAuthoritiesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCertificateAuthoritiesRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListCertificateAuthoritiesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListCertificateAuthoritiesRequestFormGroup() {
+		return new FormGroup<ListCertificateAuthoritiesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListPermissionsResponse {
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
 		NextToken?: string | null;
+	}
+	export interface ListPermissionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPermissionsResponseFormGroup() {
+		return new FormGroup<ListPermissionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -295,8 +790,27 @@ export namespace MyNS {
 		CreatedAt?: Date | null;
 		Principal?: string | null;
 		SourceAccount?: string | null;
-		Actions?: Array<ActionType> | null;
+		Actions?: Array<ActionType>;
 		Policy?: string | null;
+	}
+
+	/** Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action, and listed with the <a>ListPermissions</a> action. */
+	export interface PermissionFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		Principal: FormControl<string | null | undefined>,
+		SourceAccount: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreatePermissionFormGroup() {
+		return new FormGroup<PermissionFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			Principal: new FormControl<string | null | undefined>(undefined),
+			SourceAccount: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPermissionsRequest {
@@ -304,10 +818,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListPermissionsRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListPermissionsRequestFormGroup() {
+		return new FormGroup<ListPermissionsRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsResponseFormGroup() {
+		return new FormGroup<ListTagsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsRequest {
@@ -315,9 +851,31 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTagsRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsRequestFormGroup() {
+		return new FormGroup<ListTagsRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestoreCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
+	}
+	export interface RestoreCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<RestoreCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RevokeCertificateRequest {
@@ -325,31 +883,87 @@ export namespace MyNS {
 		CertificateSerial: string;
 		RevocationReason: RevokeCertificateRequestRevocationReason;
 	}
+	export interface RevokeCertificateRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		CertificateSerial: FormControl<string | null | undefined>,
+		RevocationReason: FormControl<RevokeCertificateRequestRevocationReason | null | undefined>,
+	}
+	export function CreateRevokeCertificateRequestFormGroup() {
+		return new FormGroup<RevokeCertificateRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			CertificateSerial: new FormControl<string | null | undefined>(undefined),
+			RevocationReason: new FormControl<RevokeCertificateRequestRevocationReason | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum RevokeCertificateRequestRevocationReason { UNSPECIFIED = 0, KEY_COMPROMISE = 1, CERTIFICATE_AUTHORITY_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERSEDED = 4, CESSATION_OF_OPERATION = 5, PRIVILEGE_WITHDRAWN = 6, A_A_COMPROMISE = 7 }
 
 	export interface RequestAlreadyProcessedException {
+	}
+	export interface RequestAlreadyProcessedExceptionFormProperties {
+	}
+	export function CreateRequestAlreadyProcessedExceptionFormGroup() {
+		return new FormGroup<RequestAlreadyProcessedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TagCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<TagCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UntagCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface UntagCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<UntagCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
-		RevocationConfiguration?: RevocationConfiguration | null;
+		RevocationConfiguration?: RevocationConfiguration;
 		Status?: CertificateAuthorityStatus | null;
+	}
+	export interface UpdateCertificateAuthorityRequestFormProperties {
+		CertificateAuthorityArn: FormControl<string | null | undefined>,
+		Status: FormControl<CertificateAuthorityStatus | null | undefined>,
+	}
+	export function CreateUpdateCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<UpdateCertificateAuthorityRequestFormProperties>({
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CertificateAuthorityStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditReportResponseFormat { JSON = 0, CSV = 1 }

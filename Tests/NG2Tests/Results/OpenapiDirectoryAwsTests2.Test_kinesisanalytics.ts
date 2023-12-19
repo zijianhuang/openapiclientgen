@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AddApplicationCloudWatchLoggingOptionResponse {
+	}
+	export interface AddApplicationCloudWatchLoggingOptionResponseFormProperties {
+	}
+	export function CreateAddApplicationCloudWatchLoggingOptionResponseFormGroup() {
+		return new FormGroup<AddApplicationCloudWatchLoggingOptionResponseFormProperties>({
+		});
+
 	}
 
 	export interface AddApplicationCloudWatchLoggingOptionRequest {
@@ -15,6 +23,17 @@ export namespace MyNS {
 		 */
 		CloudWatchLoggingOption: CloudWatchLoggingOption;
 	}
+	export interface AddApplicationCloudWatchLoggingOptionRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateAddApplicationCloudWatchLoggingOptionRequestFormGroup() {
+		return new FormGroup<AddApplicationCloudWatchLoggingOptionRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the role ARN. */
@@ -23,24 +42,81 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/** Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the role ARN. */
+	export interface CloudWatchLoggingOptionFormProperties {
+		LogStreamARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLoggingOptionFormGroup() {
+		return new FormGroup<CloudWatchLoggingOptionFormProperties>({
+			LogStreamARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceInUseException {
 	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedOperationException {
+	}
+	export interface UnsupportedOperationExceptionFormProperties {
+	}
+	export function CreateUnsupportedOperationExceptionFormGroup() {
+		return new FormGroup<UnsupportedOperationExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface AddApplicationInputResponse {
+	}
+
+	/** <p/> */
+	export interface AddApplicationInputResponseFormProperties {
+	}
+	export function CreateAddApplicationInputResponseFormGroup() {
+		return new FormGroup<AddApplicationInputResponseFormProperties>({
+		});
+
 	}
 
 
@@ -56,28 +132,52 @@ export namespace MyNS {
 		Input: Input;
 	}
 
+	/** <p/> */
+	export interface AddApplicationInputRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateAddApplicationInputRequestFormGroup() {
+		return new FormGroup<AddApplicationInputRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface Input {
 		NamePrefix: string;
 
 		/** Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>. */
-		InputProcessingConfiguration?: InputProcessingConfiguration | null;
+		InputProcessingConfiguration?: InputProcessingConfiguration;
 
 		/** Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
-		KinesisStreamsInput?: KinesisStreamsInput | null;
+		KinesisStreamsInput?: KinesisStreamsInput;
 
 		/** Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
-		KinesisFirehoseInput?: KinesisFirehoseInput | null;
+		KinesisFirehoseInput?: KinesisFirehoseInput;
 
 		/** Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. */
-		InputParallelism?: InputParallelism | null;
+		InputParallelism?: InputParallelism;
 
 		/**
 		 * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
 		 * Required
 		 */
 		InputSchema: SourceSchema;
+	}
+
+	/** When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
+	export interface InputFormProperties {
+		NamePrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateInputFormGroup() {
+		return new FormGroup<InputFormProperties>({
+			NamePrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -91,11 +191,33 @@ export namespace MyNS {
 		InputLambdaProcessor: InputLambdaProcessor;
 	}
 
+	/** Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>. */
+	export interface InputProcessingConfigurationFormProperties {
+	}
+	export function CreateInputProcessingConfigurationFormGroup() {
+		return new FormGroup<InputProcessingConfigurationFormProperties>({
+		});
+
+	}
+
 
 	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.  */
 	export interface InputLambdaProcessor {
 		ResourceARN: string;
 		RoleARN: string;
+	}
+
+	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.  */
+	export interface InputLambdaProcessorFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateInputLambdaProcessorFormGroup() {
+		return new FormGroup<InputLambdaProcessorFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -105,6 +227,19 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/**  Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
+	export interface KinesisStreamsInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamsInputFormGroup() {
+		return new FormGroup<KinesisStreamsInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
 	export interface KinesisFirehoseInput {
@@ -112,10 +247,34 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/**  Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf. */
+	export interface KinesisFirehoseInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseInputFormGroup() {
+		return new FormGroup<KinesisFirehoseInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
 	export interface InputParallelism {
 		Count?: number | null;
+	}
+
+	/** Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
+	export interface InputParallelismFormProperties {
+		Count: FormControl<number | null | undefined>,
+	}
+	export function CreateInputParallelismFormGroup() {
+		return new FormGroup<InputParallelismFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -131,13 +290,35 @@ export namespace MyNS {
 		RecordColumns: Array<RecordColumn>;
 	}
 
+	/** Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
+	export interface SourceSchemaFormProperties {
+		RecordEncoding: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceSchemaFormGroup() {
+		return new FormGroup<SourceSchemaFormProperties>({
+			RecordEncoding: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.  */
 	export interface RecordFormat {
 		RecordFormatType: RecordFormatRecordFormatType;
 
 		/** When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. */
-		MappingParameters?: MappingParameters | null;
+		MappingParameters?: MappingParameters;
+	}
+
+	/**  Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.  */
+	export interface RecordFormatFormProperties {
+		RecordFormatType: FormControl<RecordFormatRecordFormatType | null | undefined>,
+	}
+	export function CreateRecordFormatFormGroup() {
+		return new FormGroup<RecordFormatFormProperties>({
+			RecordFormatType: new FormControl<RecordFormatRecordFormatType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RecordFormatRecordFormatType { JSON = 0, CSV = 1 }
@@ -147,10 +328,19 @@ export namespace MyNS {
 	export interface MappingParameters {
 
 		/** Provides additional mapping information when JSON is the record format on the streaming source. */
-		JSONMappingParameters?: JSONMappingParameters | null;
+		JSONMappingParameters?: JSONMappingParameters;
 
 		/** <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p> */
-		CSVMappingParameters?: CSVMappingParameters | null;
+		CSVMappingParameters?: CSVMappingParameters;
+	}
+
+	/** When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source. */
+	export interface MappingParametersFormProperties {
+	}
+	export function CreateMappingParametersFormGroup() {
+		return new FormGroup<MappingParametersFormProperties>({
+		});
+
 	}
 
 
@@ -159,11 +349,35 @@ export namespace MyNS {
 		RecordRowPath: string;
 	}
 
+	/** Provides additional mapping information when JSON is the record format on the streaming source. */
+	export interface JSONMappingParametersFormProperties {
+		RecordRowPath: FormControl<string | null | undefined>,
+	}
+	export function CreateJSONMappingParametersFormGroup() {
+		return new FormGroup<JSONMappingParametersFormProperties>({
+			RecordRowPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p> */
 	export interface CSVMappingParameters {
 		RecordRowDelimiter: string;
 		RecordColumnDelimiter: string;
+	}
+
+	/** <p>Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p> <p> <code>"name2", "address2"</code> </p> */
+	export interface CSVMappingParametersFormProperties {
+		RecordRowDelimiter: FormControl<string | null | undefined>,
+		RecordColumnDelimiter: FormControl<string | null | undefined>,
+	}
+	export function CreateCSVMappingParametersFormGroup() {
+		return new FormGroup<CSVMappingParametersFormProperties>({
+			RecordRowDelimiter: new FormControl<string | null | undefined>(undefined),
+			RecordColumnDelimiter: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -174,10 +388,39 @@ export namespace MyNS {
 		SqlType: string;
 	}
 
+	/** <p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p> <p>Also used to describe the format of the reference data source.</p> */
+	export interface RecordColumnFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Mapping: FormControl<string | null | undefined>,
+		SqlType: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordColumnFormGroup() {
+		return new FormGroup<RecordColumnFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Mapping: new FormControl<string | null | undefined>(undefined),
+			SqlType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CodeValidationException {
+	}
+	export interface CodeValidationExceptionFormProperties {
+	}
+	export function CreateCodeValidationExceptionFormGroup() {
+		return new FormGroup<CodeValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AddApplicationInputProcessingConfigurationResponse {
+	}
+	export interface AddApplicationInputProcessingConfigurationResponseFormProperties {
+	}
+	export function CreateAddApplicationInputProcessingConfigurationResponseFormGroup() {
+		return new FormGroup<AddApplicationInputProcessingConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface AddApplicationInputProcessingConfigurationRequest {
@@ -191,10 +434,32 @@ export namespace MyNS {
 		 */
 		InputProcessingConfiguration: InputProcessingConfiguration;
 	}
+	export interface AddApplicationInputProcessingConfigurationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+		InputId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddApplicationInputProcessingConfigurationRequestFormGroup() {
+		return new FormGroup<AddApplicationInputProcessingConfigurationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			InputId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p/> */
 	export interface AddApplicationOutputResponse {
+	}
+
+	/** <p/> */
+	export interface AddApplicationOutputResponseFormProperties {
+	}
+	export function CreateAddApplicationOutputResponseFormGroup() {
+		return new FormGroup<AddApplicationOutputResponseFormProperties>({
+		});
+
 	}
 
 
@@ -210,25 +475,49 @@ export namespace MyNS {
 		Output: Output;
 	}
 
+	/** <p/> */
+	export interface AddApplicationOutputRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateAddApplicationOutputRequestFormGroup() {
+		return new FormGroup<AddApplicationOutputRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p> <p/> <p>For limits on how many destinations an application can write and other limitations, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p> */
 	export interface Output {
 		Name: string;
 
 		/** When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf. */
-		KinesisStreamsOutput?: KinesisStreamsOutput | null;
+		KinesisStreamsOutput?: KinesisStreamsOutput;
 
 		/** When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf. */
-		KinesisFirehoseOutput?: KinesisFirehoseOutput | null;
+		KinesisFirehoseOutput?: KinesisFirehoseOutput;
 
 		/** When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf. */
-		LambdaOutput?: LambdaOutput | null;
+		LambdaOutput?: LambdaOutput;
 
 		/**
 		 * Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.
 		 * Required
 		 */
 		DestinationSchema: DestinationSchema;
+	}
+
+	/** <p> Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p> <p/> <p>For limits on how many destinations an application can write and other limitations, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>. </p> */
+	export interface OutputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputFormGroup() {
+		return new FormGroup<OutputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -238,11 +527,37 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/** When configuring application output, identifies an Amazon Kinesis stream as the destination. You provide the stream Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the stream on your behalf. */
+	export interface KinesisStreamsOutputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamsOutputFormGroup() {
+		return new FormGroup<KinesisStreamsOutputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf. */
 	export interface KinesisFirehoseOutput {
 		ResourceARN: string;
 		RoleARN: string;
+	}
+
+	/** When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf. */
+	export interface KinesisFirehoseOutputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseOutputFormGroup() {
+		return new FormGroup<KinesisFirehoseOutputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -252,15 +567,48 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/** When configuring application output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) and also an IAM role ARN that Amazon Kinesis Analytics can use to write to the function on your behalf.  */
+	export interface LambdaOutputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaOutputFormGroup() {
+		return new FormGroup<LambdaOutputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.  */
 	export interface DestinationSchema {
 		RecordFormatType: RecordFormatRecordFormatType;
 	}
 
+	/** Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.  */
+	export interface DestinationSchemaFormProperties {
+		RecordFormatType: FormControl<RecordFormatRecordFormatType | null | undefined>,
+	}
+	export function CreateDestinationSchemaFormGroup() {
+		return new FormGroup<DestinationSchemaFormProperties>({
+			RecordFormatType: new FormControl<RecordFormatRecordFormatType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface AddApplicationReferenceDataSourceResponse {
+	}
+
+	/** <p/> */
+	export interface AddApplicationReferenceDataSourceResponseFormProperties {
+	}
+	export function CreateAddApplicationReferenceDataSourceResponseFormGroup() {
+		return new FormGroup<AddApplicationReferenceDataSourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -276,13 +624,26 @@ export namespace MyNS {
 		ReferenceDataSource: ReferenceDataSource;
 	}
 
+	/** <p/> */
+	export interface AddApplicationReferenceDataSourceRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateAddApplicationReferenceDataSourceRequestFormGroup() {
+		return new FormGroup<AddApplicationReferenceDataSourceRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the reference data source by providing the source information (S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table. */
 	export interface ReferenceDataSource {
 		TableName: string;
 
 		/** <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p> */
-		S3ReferenceDataSource?: S3ReferenceDataSource | null;
+		S3ReferenceDataSource?: S3ReferenceDataSource;
 
 		/**
 		 * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
@@ -291,12 +652,38 @@ export namespace MyNS {
 		ReferenceSchema: SourceSchema;
 	}
 
+	/** Describes the reference data source by providing the source information (S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table. */
+	export interface ReferenceDataSourceFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceDataSourceFormGroup() {
+		return new FormGroup<ReferenceDataSourceFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p> */
 	export interface S3ReferenceDataSource {
 		BucketARN: string;
 		FileKey: string;
 		ReferenceRoleARN: string;
+	}
+
+	/** <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.</p> <p>An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation to trigger reloading of data into your application.</p> */
+	export interface S3ReferenceDataSourceFormProperties {
+		BucketARN: FormControl<string | null | undefined>,
+		FileKey: FormControl<string | null | undefined>,
+		ReferenceRoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ReferenceDataSourceFormGroup() {
+		return new FormGroup<S3ReferenceDataSourceFormProperties>({
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			FileKey: new FormControl<string | null | undefined>(undefined),
+			ReferenceRoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -310,12 +697,36 @@ export namespace MyNS {
 		ApplicationSummary: ApplicationSummary;
 	}
 
+	/** TBD */
+	export interface CreateApplicationResponseFormProperties {
+	}
+	export function CreateCreateApplicationResponseFormGroup() {
+		return new FormGroup<CreateApplicationResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p> */
 	export interface ApplicationSummary {
 		ApplicationName: string;
 		ApplicationARN: string;
 		ApplicationStatus: ApplicationSummaryApplicationStatus;
+	}
+
+	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p> */
+	export interface ApplicationSummaryFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		ApplicationARN: FormControl<string | null | undefined>,
+		ApplicationStatus: FormControl<ApplicationSummaryApplicationStatus | null | undefined>,
+	}
+	export function CreateApplicationSummaryFormGroup() {
+		return new FormGroup<ApplicationSummaryFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationARN: new FormControl<string | null | undefined>(undefined),
+			ApplicationStatus: new FormControl<ApplicationSummaryApplicationStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ApplicationSummaryApplicationStatus { DELETING = 0, STARTING = 1, STOPPING = 2, READY = 3, RUNNING = 4, UPDATING = 5 }
@@ -325,11 +736,26 @@ export namespace MyNS {
 	export interface CreateApplicationRequest {
 		ApplicationName: string;
 		ApplicationDescription?: string | null;
-		Inputs?: Array<Input> | null;
-		Outputs?: Array<Output> | null;
-		CloudWatchLoggingOptions?: Array<CloudWatchLoggingOption> | null;
+		Inputs?: Array<Input>;
+		Outputs?: Array<Output>;
+		CloudWatchLoggingOptions?: Array<CloudWatchLoggingOption>;
 		ApplicationCode?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** TBD */
+	export interface CreateApplicationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		ApplicationDescription: FormControl<string | null | undefined>,
+		ApplicationCode: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationRequestFormGroup() {
+		return new FormGroup<CreateApplicationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationDescription: new FormControl<string | null | undefined>(undefined),
+			ApplicationCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -339,15 +765,51 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DeleteApplicationResponse {
+	}
+
+	/** <p/> */
+	export interface DeleteApplicationResponseFormProperties {
+	}
+	export function CreateDeleteApplicationResponseFormGroup() {
+		return new FormGroup<DeleteApplicationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -357,7 +819,27 @@ export namespace MyNS {
 		CreateTimestamp: Date;
 	}
 
+	/** <p/> */
+	export interface DeleteApplicationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CreateTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateDeleteApplicationRequestFormGroup() {
+		return new FormGroup<DeleteApplicationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteApplicationCloudWatchLoggingOptionResponse {
+	}
+	export interface DeleteApplicationCloudWatchLoggingOptionResponseFormProperties {
+	}
+	export function CreateDeleteApplicationCloudWatchLoggingOptionResponseFormGroup() {
+		return new FormGroup<DeleteApplicationCloudWatchLoggingOptionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteApplicationCloudWatchLoggingOptionRequest {
@@ -365,8 +847,28 @@ export namespace MyNS {
 		CurrentApplicationVersionId: number;
 		CloudWatchLoggingOptionId: string;
 	}
+	export interface DeleteApplicationCloudWatchLoggingOptionRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+		CloudWatchLoggingOptionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteApplicationCloudWatchLoggingOptionRequestFormGroup() {
+		return new FormGroup<DeleteApplicationCloudWatchLoggingOptionRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteApplicationInputProcessingConfigurationResponse {
+	}
+	export interface DeleteApplicationInputProcessingConfigurationResponseFormProperties {
+	}
+	export function CreateDeleteApplicationInputProcessingConfigurationResponseFormGroup() {
+		return new FormGroup<DeleteApplicationInputProcessingConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteApplicationInputProcessingConfigurationRequest {
@@ -374,10 +876,32 @@ export namespace MyNS {
 		CurrentApplicationVersionId: number;
 		InputId: string;
 	}
+	export interface DeleteApplicationInputProcessingConfigurationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+		InputId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteApplicationInputProcessingConfigurationRequestFormGroup() {
+		return new FormGroup<DeleteApplicationInputProcessingConfigurationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			InputId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p/> */
 	export interface DeleteApplicationOutputResponse {
+	}
+
+	/** <p/> */
+	export interface DeleteApplicationOutputResponseFormProperties {
+	}
+	export function CreateDeleteApplicationOutputResponseFormGroup() {
+		return new FormGroup<DeleteApplicationOutputResponseFormProperties>({
+		});
+
 	}
 
 
@@ -388,13 +912,48 @@ export namespace MyNS {
 		OutputId: string;
 	}
 
+	/** <p/> */
+	export interface DeleteApplicationOutputRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+		OutputId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteApplicationOutputRequestFormGroup() {
+		return new FormGroup<DeleteApplicationOutputRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			OutputId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteApplicationReferenceDataSourceResponse {
+	}
+	export interface DeleteApplicationReferenceDataSourceResponseFormProperties {
+	}
+	export function CreateDeleteApplicationReferenceDataSourceResponseFormGroup() {
+		return new FormGroup<DeleteApplicationReferenceDataSourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteApplicationReferenceDataSourceRequest {
 		ApplicationName: string;
 		CurrentApplicationVersionId: number;
 		ReferenceId: string;
+	}
+	export interface DeleteApplicationReferenceDataSourceRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+		ReferenceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteApplicationReferenceDataSourceRequestFormGroup() {
+		return new FormGroup<DeleteApplicationReferenceDataSourceRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+			ReferenceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -408,6 +967,15 @@ export namespace MyNS {
 		ApplicationDetail: ApplicationDetail;
 	}
 
+	/** <p/> */
+	export interface DescribeApplicationResponseFormProperties {
+	}
+	export function CreateDescribeApplicationResponseFormGroup() {
+		return new FormGroup<DescribeApplicationResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.</p> */
 	export interface ApplicationDetail {
@@ -417,12 +985,37 @@ export namespace MyNS {
 		ApplicationStatus: ApplicationSummaryApplicationStatus;
 		CreateTimestamp?: Date | null;
 		LastUpdateTimestamp?: Date | null;
-		InputDescriptions?: Array<InputDescription> | null;
-		OutputDescriptions?: Array<OutputDescription> | null;
-		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription> | null;
-		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription> | null;
+		InputDescriptions?: Array<InputDescription>;
+		OutputDescriptions?: Array<OutputDescription>;
+		ReferenceDataSourceDescriptions?: Array<ReferenceDataSourceDescription>;
+		CloudWatchLoggingOptionDescriptions?: Array<CloudWatchLoggingOptionDescription>;
 		ApplicationCode?: string | null;
 		ApplicationVersionId: number;
+	}
+
+	/** <note> <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.</p> </note> <p>Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.</p> */
+	export interface ApplicationDetailFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		ApplicationDescription: FormControl<string | null | undefined>,
+		ApplicationARN: FormControl<string | null | undefined>,
+		ApplicationStatus: FormControl<ApplicationSummaryApplicationStatus | null | undefined>,
+		CreateTimestamp: FormControl<Date | null | undefined>,
+		LastUpdateTimestamp: FormControl<Date | null | undefined>,
+		ApplicationCode: FormControl<string | null | undefined>,
+		ApplicationVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateApplicationDetailFormGroup() {
+		return new FormGroup<ApplicationDetailFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			ApplicationDescription: new FormControl<string | null | undefined>(undefined),
+			ApplicationARN: new FormControl<string | null | undefined>(undefined),
+			ApplicationStatus: new FormControl<ApplicationSummaryApplicationStatus | null | undefined>(undefined),
+			CreateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			LastUpdateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ApplicationCode: new FormControl<string | null | undefined>(undefined),
+			ApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -430,25 +1023,38 @@ export namespace MyNS {
 	export interface InputDescription {
 		InputId?: string | null;
 		NamePrefix?: string | null;
-		InAppStreamNames?: Array<string> | null;
+		InAppStreamNames?: Array<string>;
 
 		/** Provides configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>. */
-		InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription | null;
+		InputProcessingConfigurationDescription?: InputProcessingConfigurationDescription;
 
 		/** Describes the Amazon Kinesis stream that is configured as the streaming source in the application input configuration. */
-		KinesisStreamsInputDescription?: KinesisStreamsInputDescription | null;
+		KinesisStreamsInputDescription?: KinesisStreamsInputDescription;
 
 		/** Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming source in the application input configuration. */
-		KinesisFirehoseInputDescription?: KinesisFirehoseInputDescription | null;
+		KinesisFirehoseInputDescription?: KinesisFirehoseInputDescription;
 
 		/** Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		InputSchema?: SourceSchema | null;
+		InputSchema?: SourceSchema;
 
 		/** Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>. */
-		InputParallelism?: InputParallelism | null;
+		InputParallelism?: InputParallelism;
 
 		/** Describes the point at which the application reads from the streaming source. */
-		InputStartingPositionConfiguration?: InputStartingPositionConfiguration | null;
+		InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
+	}
+
+	/** Describes the application input configuration. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.  */
+	export interface InputDescriptionFormProperties {
+		InputId: FormControl<string | null | undefined>,
+		NamePrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateInputDescriptionFormGroup() {
+		return new FormGroup<InputDescriptionFormProperties>({
+			InputId: new FormControl<string | null | undefined>(undefined),
+			NamePrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -456,7 +1062,16 @@ export namespace MyNS {
 	export interface InputProcessingConfigurationDescription {
 
 		/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression. */
-		InputLambdaProcessorDescription?: InputLambdaProcessorDescription | null;
+		InputLambdaProcessorDescription?: InputLambdaProcessorDescription;
+	}
+
+	/** Provides configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>. */
+	export interface InputProcessingConfigurationDescriptionFormProperties {
+	}
+	export function CreateInputProcessingConfigurationDescriptionFormGroup() {
+		return new FormGroup<InputProcessingConfigurationDescriptionFormProperties>({
+		});
+
 	}
 
 
@@ -466,11 +1081,37 @@ export namespace MyNS {
 		RoleARN?: string | null;
 	}
 
+	/** An object that contains the Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression. */
+	export interface InputLambdaProcessorDescriptionFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateInputLambdaProcessorDescriptionFormGroup() {
+		return new FormGroup<InputLambdaProcessorDescriptionFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Describes the Amazon Kinesis stream that is configured as the streaming source in the application input configuration.  */
 	export interface KinesisStreamsInputDescription {
 		ResourceARN?: string | null;
 		RoleARN?: string | null;
+	}
+
+	/**  Describes the Amazon Kinesis stream that is configured as the streaming source in the application input configuration.  */
+	export interface KinesisStreamsInputDescriptionFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamsInputDescriptionFormGroup() {
+		return new FormGroup<KinesisStreamsInputDescriptionFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -480,10 +1121,34 @@ export namespace MyNS {
 		RoleARN?: string | null;
 	}
 
+	/**  Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming source in the application input configuration.  */
+	export interface KinesisFirehoseInputDescriptionFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseInputDescriptionFormGroup() {
+		return new FormGroup<KinesisFirehoseInputDescriptionFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the point at which the application reads from the streaming source. */
 	export interface InputStartingPositionConfiguration {
 		InputStartingPosition?: InputStartingPositionConfigurationInputStartingPosition | null;
+	}
+
+	/** Describes the point at which the application reads from the streaming source. */
+	export interface InputStartingPositionConfigurationFormProperties {
+		InputStartingPosition: FormControl<InputStartingPositionConfigurationInputStartingPosition | null | undefined>,
+	}
+	export function CreateInputStartingPositionConfigurationFormGroup() {
+		return new FormGroup<InputStartingPositionConfigurationFormProperties>({
+			InputStartingPosition: new FormControl<InputStartingPositionConfigurationInputStartingPosition | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InputStartingPositionConfigurationInputStartingPosition { NOW = 0, TRIM_HORIZON = 1, LAST_STOPPED_POINT = 2 }
@@ -495,16 +1160,29 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** For an application output, describes the Amazon Kinesis stream configured as its destination. */
-		KinesisStreamsOutputDescription?: KinesisStreamsOutputDescription | null;
+		KinesisStreamsOutputDescription?: KinesisStreamsOutputDescription;
 
 		/** For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination. */
-		KinesisFirehoseOutputDescription?: KinesisFirehoseOutputDescription | null;
+		KinesisFirehoseOutputDescription?: KinesisFirehoseOutputDescription;
 
 		/** For an application output, describes the AWS Lambda function configured as its destination. */
-		LambdaOutputDescription?: LambdaOutputDescription | null;
+		LambdaOutputDescription?: LambdaOutputDescription;
 
 		/** Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. */
-		DestinationSchema?: DestinationSchema | null;
+		DestinationSchema?: DestinationSchema;
+	}
+
+	/** Describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.  */
+	export interface OutputDescriptionFormProperties {
+		OutputId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputDescriptionFormGroup() {
+		return new FormGroup<OutputDescriptionFormProperties>({
+			OutputId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -514,6 +1192,19 @@ export namespace MyNS {
 		RoleARN?: string | null;
 	}
 
+	/**  For an application output, describes the Amazon Kinesis stream configured as its destination.  */
+	export interface KinesisStreamsOutputDescriptionFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamsOutputDescriptionFormGroup() {
+		return new FormGroup<KinesisStreamsOutputDescriptionFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination.  */
 	export interface KinesisFirehoseOutputDescription {
@@ -521,11 +1212,37 @@ export namespace MyNS {
 		RoleARN?: string | null;
 	}
 
+	/**  For an application output, describes the Amazon Kinesis Firehose delivery stream configured as its destination.  */
+	export interface KinesisFirehoseOutputDescriptionFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseOutputDescriptionFormGroup() {
+		return new FormGroup<KinesisFirehoseOutputDescriptionFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** For an application output, describes the AWS Lambda function configured as its destination.  */
 	export interface LambdaOutputDescription {
 		ResourceARN?: string | null;
 		RoleARN?: string | null;
+	}
+
+	/** For an application output, describes the AWS Lambda function configured as its destination.  */
+	export interface LambdaOutputDescriptionFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaOutputDescriptionFormGroup() {
+		return new FormGroup<LambdaOutputDescriptionFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -541,7 +1258,20 @@ export namespace MyNS {
 		S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription;
 
 		/** Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		ReferenceSchema?: SourceSchema | null;
+		ReferenceSchema?: SourceSchema;
+	}
+
+	/** Describes the reference data source configured for an application. */
+	export interface ReferenceDataSourceDescriptionFormProperties {
+		ReferenceId: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceDataSourceDescriptionFormGroup() {
+		return new FormGroup<ReferenceDataSourceDescriptionFormProperties>({
+			ReferenceId: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -552,6 +1282,21 @@ export namespace MyNS {
 		ReferenceRoleARN: string;
 	}
 
+	/** Provides the bucket name and object key name that stores the reference data. */
+	export interface S3ReferenceDataSourceDescriptionFormProperties {
+		BucketARN: FormControl<string | null | undefined>,
+		FileKey: FormControl<string | null | undefined>,
+		ReferenceRoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ReferenceDataSourceDescriptionFormGroup() {
+		return new FormGroup<S3ReferenceDataSourceDescriptionFormProperties>({
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			FileKey: new FormControl<string | null | undefined>(undefined),
+			ReferenceRoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Description of the CloudWatch logging option. */
 	export interface CloudWatchLoggingOptionDescription {
@@ -560,10 +1305,36 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/** Description of the CloudWatch logging option. */
+	export interface CloudWatchLoggingOptionDescriptionFormProperties {
+		CloudWatchLoggingOptionId: FormControl<string | null | undefined>,
+		LogStreamARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLoggingOptionDescriptionFormGroup() {
+		return new FormGroup<CloudWatchLoggingOptionDescriptionFormProperties>({
+			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined),
+			LogStreamARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeApplicationRequest {
 		ApplicationName: string;
+	}
+
+	/** <p/> */
+	export interface DescribeApplicationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeApplicationRequestFormGroup() {
+		return new FormGroup<DescribeApplicationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -571,10 +1342,19 @@ export namespace MyNS {
 	export interface DiscoverInputSchemaResponse {
 
 		/** Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		InputSchema?: SourceSchema | null;
-		ParsedInputRecords?: Array<Array<string>> | null;
-		ProcessedInputRecords?: Array<string> | null;
-		RawInputRecords?: Array<string> | null;
+		InputSchema?: SourceSchema;
+		ParsedInputRecords?: Array<Array<string>>;
+		ProcessedInputRecords?: Array<string>;
+		RawInputRecords?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DiscoverInputSchemaResponseFormProperties {
+	}
+	export function CreateDiscoverInputSchemaResponseFormGroup() {
+		return new FormGroup<DiscoverInputSchemaResponseFormProperties>({
+		});
+
 	}
 
 	export interface DiscoverInputSchemaRequest {
@@ -582,13 +1362,24 @@ export namespace MyNS {
 		RoleARN?: string | null;
 
 		/** Describes the point at which the application reads from the streaming source. */
-		InputStartingPositionConfiguration?: InputStartingPositionConfiguration | null;
+		InputStartingPositionConfiguration?: InputStartingPositionConfiguration;
 
 		/** Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data. */
-		S3Configuration?: S3Configuration | null;
+		S3Configuration?: S3Configuration;
 
 		/** Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>. */
-		InputProcessingConfiguration?: InputProcessingConfiguration | null;
+		InputProcessingConfiguration?: InputProcessingConfiguration;
+	}
+	export interface DiscoverInputSchemaRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDiscoverInputSchemaRequestFormGroup() {
+		return new FormGroup<DiscoverInputSchemaRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -599,13 +1390,49 @@ export namespace MyNS {
 		FileKey: string;
 	}
 
+	/** Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data. */
+	export interface S3ConfigurationFormProperties {
+		RoleARN: FormControl<string | null | undefined>,
+		BucketARN: FormControl<string | null | undefined>,
+		FileKey: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ConfigurationFormGroup() {
+		return new FormGroup<S3ConfigurationFormProperties>({
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			BucketARN: new FormControl<string | null | undefined>(undefined),
+			FileKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UnableToDetectSchemaException {
+	}
+	export interface UnableToDetectSchemaExceptionFormProperties {
+	}
+	export function CreateUnableToDetectSchemaExceptionFormGroup() {
+		return new FormGroup<UnableToDetectSchemaExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceProvisionedThroughputExceededException {
 	}
+	export interface ResourceProvisionedThroughputExceededExceptionFormProperties {
+	}
+	export function CreateResourceProvisionedThroughputExceededExceptionFormGroup() {
+		return new FormGroup<ResourceProvisionedThroughputExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -615,6 +1442,17 @@ export namespace MyNS {
 		HasMoreApplications: boolean;
 	}
 
+	/** <p/> */
+	export interface ListApplicationsResponseFormProperties {
+		HasMoreApplications: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListApplicationsResponseFormGroup() {
+		return new FormGroup<ListApplicationsResponseFormProperties>({
+			HasMoreApplications: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListApplicationsRequest {
@@ -622,12 +1460,41 @@ export namespace MyNS {
 		ExclusiveStartApplicationName?: string | null;
 	}
 
+	/** <p/> */
+	export interface ListApplicationsRequestFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		ExclusiveStartApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationsRequestFormGroup() {
+		return new FormGroup<ListApplicationsRequestFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			ExclusiveStartApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceARN: string;
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -635,11 +1502,31 @@ export namespace MyNS {
 	export interface StartApplicationResponse {
 	}
 
+	/** <p/> */
+	export interface StartApplicationResponseFormProperties {
+	}
+	export function CreateStartApplicationResponseFormGroup() {
+		return new FormGroup<StartApplicationResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface StartApplicationRequest {
 		ApplicationName: string;
 		InputConfigurations: Array<InputConfiguration>;
+	}
+
+	/** <p/> */
+	export interface StartApplicationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartApplicationRequestFormGroup() {
+		return new FormGroup<StartApplicationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -654,12 +1541,39 @@ export namespace MyNS {
 		InputStartingPositionConfiguration: InputStartingPositionConfiguration;
 	}
 
+	/** When you start your application, you provide this configuration, which identifies the input source and the point in the input source at which you want the application to start processing records. */
+	export interface InputConfigurationFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateInputConfigurationFormGroup() {
+		return new FormGroup<InputConfigurationFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidApplicationConfigurationException {
+	}
+	export interface InvalidApplicationConfigurationExceptionFormProperties {
+	}
+	export function CreateInvalidApplicationConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidApplicationConfigurationExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface StopApplicationResponse {
+	}
+
+	/** <p/> */
+	export interface StopApplicationResponseFormProperties {
+	}
+	export function CreateStopApplicationResponseFormGroup() {
+		return new FormGroup<StopApplicationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -668,23 +1582,73 @@ export namespace MyNS {
 		ApplicationName: string;
 	}
 
+	/** <p/> */
+	export interface StopApplicationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopApplicationRequestFormGroup() {
+		return new FormGroup<StopApplicationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceARN: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateApplicationResponse {
+	}
+	export interface UpdateApplicationResponseFormProperties {
+	}
+	export function CreateUpdateApplicationResponseFormGroup() {
+		return new FormGroup<UpdateApplicationResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateApplicationRequest {
@@ -697,15 +1661,37 @@ export namespace MyNS {
 		 */
 		ApplicationUpdate: ApplicationUpdate;
 	}
+	export interface UpdateApplicationRequestFormProperties {
+		ApplicationName: FormControl<string | null | undefined>,
+		CurrentApplicationVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateApplicationRequestFormGroup() {
+		return new FormGroup<UpdateApplicationRequestFormProperties>({
+			ApplicationName: new FormControl<string | null | undefined>(undefined),
+			CurrentApplicationVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Describes updates to apply to an existing Amazon Kinesis Analytics application. */
 	export interface ApplicationUpdate {
-		InputUpdates?: Array<InputUpdate> | null;
+		InputUpdates?: Array<InputUpdate>;
 		ApplicationCodeUpdate?: string | null;
-		OutputUpdates?: Array<OutputUpdate> | null;
-		ReferenceDataSourceUpdates?: Array<ReferenceDataSourceUpdate> | null;
-		CloudWatchLoggingOptionUpdates?: Array<CloudWatchLoggingOptionUpdate> | null;
+		OutputUpdates?: Array<OutputUpdate>;
+		ReferenceDataSourceUpdates?: Array<ReferenceDataSourceUpdate>;
+		CloudWatchLoggingOptionUpdates?: Array<CloudWatchLoggingOptionUpdate>;
+	}
+
+	/** Describes updates to apply to an existing Amazon Kinesis Analytics application. */
+	export interface ApplicationUpdateFormProperties {
+		ApplicationCodeUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationUpdateFormGroup() {
+		return new FormGroup<ApplicationUpdateFormProperties>({
+			ApplicationCodeUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -715,19 +1701,32 @@ export namespace MyNS {
 		NamePrefixUpdate?: string | null;
 
 		/** Describes updates to an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>. */
-		InputProcessingConfigurationUpdate?: InputProcessingConfigurationUpdate | null;
+		InputProcessingConfigurationUpdate?: InputProcessingConfigurationUpdate;
 
 		/** When updating application input configuration, provides information about an Amazon Kinesis stream as the streaming source. */
-		KinesisStreamsInputUpdate?: KinesisStreamsInputUpdate | null;
+		KinesisStreamsInputUpdate?: KinesisStreamsInputUpdate;
 
 		/** When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source. */
-		KinesisFirehoseInputUpdate?: KinesisFirehoseInputUpdate | null;
+		KinesisFirehoseInputUpdate?: KinesisFirehoseInputUpdate;
 
 		/** Describes updates for the application's input schema. */
-		InputSchemaUpdate?: InputSchemaUpdate | null;
+		InputSchemaUpdate?: InputSchemaUpdate;
 
 		/** Provides updates to the parallelism count. */
-		InputParallelismUpdate?: InputParallelismUpdate | null;
+		InputParallelismUpdate?: InputParallelismUpdate;
+	}
+
+	/** Describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).  */
+	export interface InputUpdateFormProperties {
+		InputId: FormControl<string | null | undefined>,
+		NamePrefixUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateInputUpdateFormGroup() {
+		return new FormGroup<InputUpdateFormProperties>({
+			InputId: new FormControl<string | null | undefined>(undefined),
+			NamePrefixUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -741,11 +1740,33 @@ export namespace MyNS {
 		InputLambdaProcessorUpdate: InputLambdaProcessorUpdate;
 	}
 
+	/** Describes updates to an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>.  */
+	export interface InputProcessingConfigurationUpdateFormProperties {
+	}
+	export function CreateInputProcessingConfigurationUpdateFormGroup() {
+		return new FormGroup<InputProcessingConfigurationUpdateFormProperties>({
+		});
+
+	}
+
 
 	/** Represents an update to the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream. */
 	export interface InputLambdaProcessorUpdate {
 		ResourceARNUpdate?: string | null;
 		RoleARNUpdate?: string | null;
+	}
+
+	/** Represents an update to the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a> that is used to preprocess the records in the stream. */
+	export interface InputLambdaProcessorUpdateFormProperties {
+		ResourceARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateInputLambdaProcessorUpdateFormGroup() {
+		return new FormGroup<InputLambdaProcessorUpdateFormProperties>({
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -755,6 +1776,19 @@ export namespace MyNS {
 		RoleARNUpdate?: string | null;
 	}
 
+	/** When updating application input configuration, provides information about an Amazon Kinesis stream as the streaming source. */
+	export interface KinesisStreamsInputUpdateFormProperties {
+		ResourceARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamsInputUpdateFormGroup() {
+		return new FormGroup<KinesisStreamsInputUpdateFormProperties>({
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source. */
 	export interface KinesisFirehoseInputUpdate {
@@ -762,20 +1796,55 @@ export namespace MyNS {
 		RoleARNUpdate?: string | null;
 	}
 
+	/** When updating application input configuration, provides information about an Amazon Kinesis Firehose delivery stream as the streaming source. */
+	export interface KinesisFirehoseInputUpdateFormProperties {
+		ResourceARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseInputUpdateFormGroup() {
+		return new FormGroup<KinesisFirehoseInputUpdateFormProperties>({
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes updates for the application's input schema. */
 	export interface InputSchemaUpdate {
 
 		/** Describes the record format and relevant mapping information that should be applied to schematize the records on the stream. */
-		RecordFormatUpdate?: RecordFormat | null;
+		RecordFormatUpdate?: RecordFormat;
 		RecordEncodingUpdate?: string | null;
-		RecordColumnUpdates?: Array<RecordColumn> | null;
+		RecordColumnUpdates?: Array<RecordColumn>;
+	}
+
+	/** Describes updates for the application's input schema. */
+	export interface InputSchemaUpdateFormProperties {
+		RecordEncodingUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateInputSchemaUpdateFormGroup() {
+		return new FormGroup<InputSchemaUpdateFormProperties>({
+			RecordEncodingUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Provides updates to the parallelism count. */
 	export interface InputParallelismUpdate {
 		CountUpdate?: number | null;
+	}
+
+	/** Provides updates to the parallelism count. */
+	export interface InputParallelismUpdateFormProperties {
+		CountUpdate: FormControl<number | null | undefined>,
+	}
+	export function CreateInputParallelismUpdateFormGroup() {
+		return new FormGroup<InputParallelismUpdateFormProperties>({
+			CountUpdate: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -785,16 +1854,29 @@ export namespace MyNS {
 		NameUpdate?: string | null;
 
 		/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination. */
-		KinesisStreamsOutputUpdate?: KinesisStreamsOutputUpdate | null;
+		KinesisStreamsOutputUpdate?: KinesisStreamsOutputUpdate;
 
 		/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination. */
-		KinesisFirehoseOutputUpdate?: KinesisFirehoseOutputUpdate | null;
+		KinesisFirehoseOutputUpdate?: KinesisFirehoseOutputUpdate;
 
 		/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination. */
-		LambdaOutputUpdate?: LambdaOutputUpdate | null;
+		LambdaOutputUpdate?: LambdaOutputUpdate;
 
 		/** Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>. */
-		DestinationSchemaUpdate?: DestinationSchema | null;
+		DestinationSchemaUpdate?: DestinationSchema;
+	}
+
+	/**  Describes updates to the output configuration identified by the <code>OutputId</code>.  */
+	export interface OutputUpdateFormProperties {
+		OutputId: FormControl<string | null | undefined>,
+		NameUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputUpdateFormGroup() {
+		return new FormGroup<OutputUpdateFormProperties>({
+			OutputId: new FormControl<string | null | undefined>(undefined),
+			NameUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -804,11 +1886,37 @@ export namespace MyNS {
 		RoleARNUpdate?: string | null;
 	}
 
+	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination.  */
+	export interface KinesisStreamsOutputUpdateFormProperties {
+		ResourceARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisStreamsOutputUpdateFormGroup() {
+		return new FormGroup<KinesisStreamsOutputUpdateFormProperties>({
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.  */
 	export interface KinesisFirehoseOutputUpdate {
 		ResourceARNUpdate?: string | null;
 		RoleARNUpdate?: string | null;
+	}
+
+	/**  When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.  */
+	export interface KinesisFirehoseOutputUpdateFormProperties {
+		ResourceARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisFirehoseOutputUpdateFormGroup() {
+		return new FormGroup<KinesisFirehoseOutputUpdateFormProperties>({
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -818,6 +1926,19 @@ export namespace MyNS {
 		RoleARNUpdate?: string | null;
 	}
 
+	/** When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination. */
+	export interface LambdaOutputUpdateFormProperties {
+		ResourceARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaOutputUpdateFormGroup() {
+		return new FormGroup<LambdaOutputUpdateFormProperties>({
+			ResourceARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** When you update a reference data source configuration for an application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created. */
 	export interface ReferenceDataSourceUpdate {
@@ -825,10 +1946,23 @@ export namespace MyNS {
 		TableNameUpdate?: string | null;
 
 		/** Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table. */
-		S3ReferenceDataSourceUpdate?: S3ReferenceDataSourceUpdate | null;
+		S3ReferenceDataSourceUpdate?: S3ReferenceDataSourceUpdate;
 
 		/** Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. */
-		ReferenceSchemaUpdate?: SourceSchema | null;
+		ReferenceSchemaUpdate?: SourceSchema;
+	}
+
+	/** When you update a reference data source configuration for an application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created. */
+	export interface ReferenceDataSourceUpdateFormProperties {
+		ReferenceId: FormControl<string | null | undefined>,
+		TableNameUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceDataSourceUpdateFormGroup() {
+		return new FormGroup<ReferenceDataSourceUpdateFormProperties>({
+			ReferenceId: new FormControl<string | null | undefined>(undefined),
+			TableNameUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -839,12 +1973,42 @@ export namespace MyNS {
 		ReferenceRoleARNUpdate?: string | null;
 	}
 
+	/** Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table. */
+	export interface S3ReferenceDataSourceUpdateFormProperties {
+		BucketARNUpdate: FormControl<string | null | undefined>,
+		FileKeyUpdate: FormControl<string | null | undefined>,
+		ReferenceRoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ReferenceDataSourceUpdateFormGroup() {
+		return new FormGroup<S3ReferenceDataSourceUpdateFormProperties>({
+			BucketARNUpdate: new FormControl<string | null | undefined>(undefined),
+			FileKeyUpdate: new FormControl<string | null | undefined>(undefined),
+			ReferenceRoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes CloudWatch logging option updates. */
 	export interface CloudWatchLoggingOptionUpdate {
 		CloudWatchLoggingOptionId: string;
 		LogStreamARNUpdate?: string | null;
 		RoleARNUpdate?: string | null;
+	}
+
+	/** Describes CloudWatch logging option updates. */
+	export interface CloudWatchLoggingOptionUpdateFormProperties {
+		CloudWatchLoggingOptionId: FormControl<string | null | undefined>,
+		LogStreamARNUpdate: FormControl<string | null | undefined>,
+		RoleARNUpdate: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLoggingOptionUpdateFormGroup() {
+		return new FormGroup<CloudWatchLoggingOptionUpdateFormProperties>({
+			CloudWatchLoggingOptionId: new FormControl<string | null | undefined>(undefined),
+			LogStreamARNUpdate: new FormControl<string | null | undefined>(undefined),
+			RoleARNUpdate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ApplicationStatus { DELETING = 0, STARTING = 1, STOPPING = 2, READY = 3, RUNNING = 4, UPDATING = 5 }

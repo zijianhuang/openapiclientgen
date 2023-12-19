@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateHomeRegionControlResult {
 
 		/** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set. */
-		HomeRegionControl?: HomeRegionControl | null;
+		HomeRegionControl?: HomeRegionControl;
+	}
+	export interface CreateHomeRegionControlResultFormProperties {
+	}
+	export function CreateCreateHomeRegionControlResultFormGroup() {
+		return new FormGroup<CreateHomeRegionControlResultFormProperties>({
+		});
+
 	}
 
 
@@ -15,8 +23,23 @@ export namespace MyNS {
 		HomeRegion?: string | null;
 
 		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
-		Target?: Target | null;
+		Target?: Target;
 		RequestedTime?: Date | null;
+	}
+
+	/** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set. */
+	export interface HomeRegionControlFormProperties {
+		ControlId: FormControl<string | null | undefined>,
+		HomeRegion: FormControl<string | null | undefined>,
+		RequestedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateHomeRegionControlFormGroup() {
+		return new FormGroup<HomeRegionControlFormProperties>({
+			ControlId: new FormControl<string | null | undefined>(undefined),
+			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			RequestedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -24,6 +47,19 @@ export namespace MyNS {
 	export interface Target {
 		Type: TargetType;
 		Id?: string | null;
+	}
+
+	/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
+	export interface TargetFormProperties {
+		Type: FormControl<TargetType | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetFormGroup() {
+		return new FormGroup<TargetFormProperties>({
+			Type: new FormControl<TargetType | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TargetType { ACCOUNT = 0 }
@@ -38,28 +74,90 @@ export namespace MyNS {
 		Target: Target;
 		DryRun?: boolean | null;
 	}
+	export interface CreateHomeRegionControlRequestFormProperties {
+		HomeRegion: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateHomeRegionControlRequestFormGroup() {
+		return new FormGroup<CreateHomeRegionControlRequestFormProperties>({
+			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InternalServerError {
+	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DryRunOperation {
+	}
+	export interface DryRunOperationFormProperties {
+	}
+	export function CreateDryRunOperationFormGroup() {
+		return new FormGroup<DryRunOperationFormProperties>({
+		});
+
 	}
 
 	export interface InvalidInputException {
 	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeHomeRegionControlsResult {
-		HomeRegionControls?: Array<HomeRegionControl> | null;
+		HomeRegionControls?: Array<HomeRegionControl>;
 		NextToken?: string | null;
+	}
+	export interface DescribeHomeRegionControlsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHomeRegionControlsResultFormGroup() {
+		return new FormGroup<DescribeHomeRegionControlsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeHomeRegionControlsRequest {
@@ -67,16 +165,47 @@ export namespace MyNS {
 		HomeRegion?: string | null;
 
 		/** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>. */
-		Target?: Target | null;
+		Target?: Target;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeHomeRegionControlsRequestFormProperties {
+		ControlId: FormControl<string | null | undefined>,
+		HomeRegion: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHomeRegionControlsRequestFormGroup() {
+		return new FormGroup<DescribeHomeRegionControlsRequestFormProperties>({
+			ControlId: new FormControl<string | null | undefined>(undefined),
+			HomeRegion: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetHomeRegionResult {
 		HomeRegion?: string | null;
 	}
+	export interface GetHomeRegionResultFormProperties {
+		HomeRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetHomeRegionResultFormGroup() {
+		return new FormGroup<GetHomeRegionResultFormProperties>({
+			HomeRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetHomeRegionRequest {
+	}
+	export interface GetHomeRegionRequestFormProperties {
+	}
+	export function CreateGetHomeRegionRequestFormGroup() {
+		return new FormGroup<GetHomeRegionRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()

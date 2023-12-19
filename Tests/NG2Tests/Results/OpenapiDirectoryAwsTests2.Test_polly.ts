@@ -1,19 +1,50 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeleteLexiconOutput {
+	}
+	export interface DeleteLexiconOutputFormProperties {
+	}
+	export function CreateDeleteLexiconOutputFormGroup() {
+		return new FormGroup<DeleteLexiconOutputFormProperties>({
+		});
+
 	}
 
 	export interface LexiconNotFoundException {
 	}
+	export interface LexiconNotFoundExceptionFormProperties {
+	}
+	export function CreateLexiconNotFoundExceptionFormGroup() {
+		return new FormGroup<LexiconNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceFailureException {
 	}
+	export interface ServiceFailureExceptionFormProperties {
+	}
+	export function CreateServiceFailureExceptionFormGroup() {
+		return new FormGroup<ServiceFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeVoicesOutput {
-		Voices?: Array<Voice> | null;
+		Voices?: Array<Voice>;
 		NextToken?: string | null;
+	}
+	export interface DescribeVoicesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeVoicesOutputFormGroup() {
+		return new FormGroup<DescribeVoicesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -24,8 +55,27 @@ export namespace MyNS {
 		LanguageCode?: VoiceLanguageCode | null;
 		LanguageName?: string | null;
 		Name?: string | null;
-		AdditionalLanguageCodes?: Array<LanguageCode> | null;
-		SupportedEngines?: Array<Engine> | null;
+		AdditionalLanguageCodes?: Array<LanguageCode>;
+		SupportedEngines?: Array<Engine>;
+	}
+
+	/** Description of the voice. */
+	export interface VoiceFormProperties {
+		Gender: FormControl<VoiceGender | null | undefined>,
+		Id: FormControl<VoiceId | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
+		LanguageName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateVoiceFormGroup() {
+		return new FormGroup<VoiceFormProperties>({
+			Gender: new FormControl<VoiceGender | null | undefined>(undefined),
+			Id: new FormControl<VoiceId | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
+			LanguageName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VoiceGender { Female = 0, Male = 1 }
@@ -40,14 +90,28 @@ export namespace MyNS {
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GetLexiconOutput {
 
 		/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
-		Lexicon?: Lexicon | null;
+		Lexicon?: Lexicon;
 
 		/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
-		LexiconAttributes?: LexiconAttributes | null;
+		LexiconAttributes?: LexiconAttributes;
+	}
+	export interface GetLexiconOutputFormProperties {
+	}
+	export function CreateGetLexiconOutputFormGroup() {
+		return new FormGroup<GetLexiconOutputFormProperties>({
+		});
+
 	}
 
 
@@ -55,6 +119,19 @@ export namespace MyNS {
 	export interface Lexicon {
 		Content?: string | null;
 		Name?: string | null;
+	}
+
+	/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
+	export interface LexiconFormProperties {
+		Content: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateLexiconFormGroup() {
+		return new FormGroup<LexiconFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -68,12 +145,40 @@ export namespace MyNS {
 		Size?: number | null;
 	}
 
+	/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
+	export interface LexiconAttributesFormProperties {
+		Alphabet: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<LexiconAttributesLanguageCode | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		LexiconArn: FormControl<string | null | undefined>,
+		LexemesCount: FormControl<number | null | undefined>,
+		Size: FormControl<number | null | undefined>,
+	}
+	export function CreateLexiconAttributesFormGroup() {
+		return new FormGroup<LexiconAttributesFormProperties>({
+			Alphabet: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<LexiconAttributesLanguageCode | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			LexiconArn: new FormControl<string | null | undefined>(undefined),
+			LexemesCount: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LexiconAttributesLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
 	export interface GetSpeechSynthesisTaskOutput {
 
 		/** SynthesisTask object that provides information about a speech synthesis task. */
-		SynthesisTask?: SynthesisTask | null;
+		SynthesisTask?: SynthesisTask;
+	}
+	export interface GetSpeechSynthesisTaskOutputFormProperties {
+	}
+	export function CreateGetSpeechSynthesisTaskOutputFormGroup() {
+		return new FormGroup<GetSpeechSynthesisTaskOutputFormProperties>({
+		});
+
 	}
 
 
@@ -87,13 +192,48 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 		RequestCharacters?: number | null;
 		SnsTopicArn?: string | null;
-		LexiconNames?: Array<string> | null;
+		LexiconNames?: Array<string>;
 		OutputFormat?: SynthesisTaskOutputFormat | null;
 		SampleRate?: string | null;
-		SpeechMarkTypes?: Array<SpeechMarkType> | null;
+		SpeechMarkTypes?: Array<SpeechMarkType>;
 		TextType?: SynthesisTaskTextType | null;
 		VoiceId?: VoiceId | null;
 		LanguageCode?: SynthesisTaskLanguageCode | null;
+	}
+
+	/** SynthesisTask object that provides information about a speech synthesis task. */
+	export interface SynthesisTaskFormProperties {
+		Engine: FormControl<Engine | null | undefined>,
+		TaskId: FormControl<string | null | undefined>,
+		TaskStatus: FormControl<SynthesisTaskTaskStatus | null | undefined>,
+		TaskStatusReason: FormControl<string | null | undefined>,
+		OutputUri: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		RequestCharacters: FormControl<number | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
+		SampleRate: FormControl<string | null | undefined>,
+		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+		VoiceId: FormControl<VoiceId | null | undefined>,
+		LanguageCode: FormControl<SynthesisTaskLanguageCode | null | undefined>,
+	}
+	export function CreateSynthesisTaskFormGroup() {
+		return new FormGroup<SynthesisTaskFormProperties>({
+			Engine: new FormControl<Engine | null | undefined>(undefined),
+			TaskId: new FormControl<string | null | undefined>(undefined),
+			TaskStatus: new FormControl<SynthesisTaskTaskStatus | null | undefined>(undefined),
+			TaskStatusReason: new FormControl<string | null | undefined>(undefined),
+			OutputUri: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			RequestCharacters: new FormControl<number | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+			LanguageCode: new FormControl<SynthesisTaskLanguageCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SynthesisTaskTaskStatus { scheduled = 0, inProgress = 1, completed = 2, failed = 3 }
@@ -108,13 +248,36 @@ export namespace MyNS {
 
 	export interface InvalidTaskIdException {
 	}
+	export interface InvalidTaskIdExceptionFormProperties {
+	}
+	export function CreateInvalidTaskIdExceptionFormGroup() {
+		return new FormGroup<InvalidTaskIdExceptionFormProperties>({
+		});
+
+	}
 
 	export interface SynthesisTaskNotFoundException {
 	}
+	export interface SynthesisTaskNotFoundExceptionFormProperties {
+	}
+	export function CreateSynthesisTaskNotFoundExceptionFormGroup() {
+		return new FormGroup<SynthesisTaskNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListLexiconsOutput {
-		Lexicons?: Array<LexiconDescription> | null;
+		Lexicons?: Array<LexiconDescription>;
 		NextToken?: string | null;
+	}
+	export interface ListLexiconsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLexiconsOutputFormGroup() {
+		return new FormGroup<ListLexiconsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -123,95 +286,292 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
-		Attributes?: LexiconAttributes | null;
+		Attributes?: LexiconAttributes;
+	}
+
+	/** Describes the content of the lexicon. */
+	export interface LexiconDescriptionFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateLexiconDescriptionFormGroup() {
+		return new FormGroup<LexiconDescriptionFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSpeechSynthesisTasksOutput {
 		NextToken?: string | null;
-		SynthesisTasks?: Array<SynthesisTask> | null;
+		SynthesisTasks?: Array<SynthesisTask>;
+	}
+	export interface ListSpeechSynthesisTasksOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSpeechSynthesisTasksOutputFormGroup() {
+		return new FormGroup<ListSpeechSynthesisTasksOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutLexiconOutput {
 	}
+	export interface PutLexiconOutputFormProperties {
+	}
+	export function CreatePutLexiconOutputFormGroup() {
+		return new FormGroup<PutLexiconOutputFormProperties>({
+		});
+
+	}
 
 	export interface InvalidLexiconException {
+	}
+	export interface InvalidLexiconExceptionFormProperties {
+	}
+	export function CreateInvalidLexiconExceptionFormGroup() {
+		return new FormGroup<InvalidLexiconExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedPlsAlphabetException {
 	}
+	export interface UnsupportedPlsAlphabetExceptionFormProperties {
+	}
+	export function CreateUnsupportedPlsAlphabetExceptionFormGroup() {
+		return new FormGroup<UnsupportedPlsAlphabetExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedPlsLanguageException {
+	}
+	export interface UnsupportedPlsLanguageExceptionFormProperties {
+	}
+	export function CreateUnsupportedPlsLanguageExceptionFormGroup() {
+		return new FormGroup<UnsupportedPlsLanguageExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LexiconSizeExceededException {
 	}
+	export interface LexiconSizeExceededExceptionFormProperties {
+	}
+	export function CreateLexiconSizeExceededExceptionFormGroup() {
+		return new FormGroup<LexiconSizeExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MaxLexemeLengthExceededException {
 	}
+	export interface MaxLexemeLengthExceededExceptionFormProperties {
+	}
+	export function CreateMaxLexemeLengthExceededExceptionFormGroup() {
+		return new FormGroup<MaxLexemeLengthExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MaxLexiconsNumberExceededException {
+	}
+	export interface MaxLexiconsNumberExceededExceptionFormProperties {
+	}
+	export function CreateMaxLexiconsNumberExceededExceptionFormGroup() {
+		return new FormGroup<MaxLexiconsNumberExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StartSpeechSynthesisTaskOutput {
 
 		/** SynthesisTask object that provides information about a speech synthesis task. */
-		SynthesisTask?: SynthesisTask | null;
+		SynthesisTask?: SynthesisTask;
+	}
+	export interface StartSpeechSynthesisTaskOutputFormProperties {
+	}
+	export function CreateStartSpeechSynthesisTaskOutputFormGroup() {
+		return new FormGroup<StartSpeechSynthesisTaskOutputFormProperties>({
+		});
+
 	}
 
 	export interface TextLengthExceededException {
 	}
+	export interface TextLengthExceededExceptionFormProperties {
+	}
+	export function CreateTextLengthExceededExceptionFormGroup() {
+		return new FormGroup<TextLengthExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidS3BucketException {
+	}
+	export interface InvalidS3BucketExceptionFormProperties {
+	}
+	export function CreateInvalidS3BucketExceptionFormGroup() {
+		return new FormGroup<InvalidS3BucketExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidS3KeyException {
 	}
+	export interface InvalidS3KeyExceptionFormProperties {
+	}
+	export function CreateInvalidS3KeyExceptionFormGroup() {
+		return new FormGroup<InvalidS3KeyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSampleRateException {
+	}
+	export interface InvalidSampleRateExceptionFormProperties {
+	}
+	export function CreateInvalidSampleRateExceptionFormGroup() {
+		return new FormGroup<InvalidSampleRateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSnsTopicArnException {
 	}
+	export interface InvalidSnsTopicArnExceptionFormProperties {
+	}
+	export function CreateInvalidSnsTopicArnExceptionFormGroup() {
+		return new FormGroup<InvalidSnsTopicArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSsmlException {
+	}
+	export interface InvalidSsmlExceptionFormProperties {
+	}
+	export function CreateInvalidSsmlExceptionFormGroup() {
+		return new FormGroup<InvalidSsmlExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EngineNotSupportedException {
 	}
+	export interface EngineNotSupportedExceptionFormProperties {
+	}
+	export function CreateEngineNotSupportedExceptionFormGroup() {
+		return new FormGroup<EngineNotSupportedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MarksNotSupportedForFormatException {
+	}
+	export interface MarksNotSupportedForFormatExceptionFormProperties {
+	}
+	export function CreateMarksNotSupportedForFormatExceptionFormGroup() {
+		return new FormGroup<MarksNotSupportedForFormatExceptionFormProperties>({
+		});
+
 	}
 
 	export interface SsmlMarksNotSupportedForTextTypeException {
 	}
+	export interface SsmlMarksNotSupportedForTextTypeExceptionFormProperties {
+	}
+	export function CreateSsmlMarksNotSupportedForTextTypeExceptionFormGroup() {
+		return new FormGroup<SsmlMarksNotSupportedForTextTypeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LanguageNotSupportedException {
+	}
+	export interface LanguageNotSupportedExceptionFormProperties {
+	}
+	export function CreateLanguageNotSupportedExceptionFormGroup() {
+		return new FormGroup<LanguageNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface SynthesizeSpeechOutput {
 		AudioStream?: string | null;
 	}
+	export interface SynthesizeSpeechOutputFormProperties {
+		AudioStream: FormControl<string | null | undefined>,
+	}
+	export function CreateSynthesizeSpeechOutputFormGroup() {
+		return new FormGroup<SynthesizeSpeechOutputFormProperties>({
+			AudioStream: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteLexiconInput {
 	}
+	export interface DeleteLexiconInputFormProperties {
+	}
+	export function CreateDeleteLexiconInputFormGroup() {
+		return new FormGroup<DeleteLexiconInputFormProperties>({
+		});
+
+	}
 
 	export interface DescribeVoicesInput {
+	}
+	export interface DescribeVoicesInputFormProperties {
+	}
+	export function CreateDescribeVoicesInputFormGroup() {
+		return new FormGroup<DescribeVoicesInputFormProperties>({
+		});
+
 	}
 
 	export enum Gender { Female = 0, Male = 1 }
 
 	export interface GetLexiconInput {
 	}
+	export interface GetLexiconInputFormProperties {
+	}
+	export function CreateGetLexiconInputFormGroup() {
+		return new FormGroup<GetLexiconInputFormProperties>({
+		});
+
+	}
 
 	export interface GetSpeechSynthesisTaskInput {
 	}
+	export interface GetSpeechSynthesisTaskInputFormProperties {
+	}
+	export function CreateGetSpeechSynthesisTaskInputFormGroup() {
+		return new FormGroup<GetSpeechSynthesisTaskInputFormProperties>({
+		});
+
+	}
 
 	export interface ListLexiconsInput {
+	}
+	export interface ListLexiconsInputFormProperties {
+	}
+	export function CreateListLexiconsInputFormGroup() {
+		return new FormGroup<ListLexiconsInputFormProperties>({
+		});
+
 	}
 
 	export enum TaskStatus { scheduled = 0, inProgress = 1, completed = 2, failed = 3 }
 
 	export interface ListSpeechSynthesisTasksInput {
+	}
+	export interface ListSpeechSynthesisTasksInputFormProperties {
+	}
+	export function CreateListSpeechSynthesisTasksInputFormGroup() {
+		return new FormGroup<ListSpeechSynthesisTasksInputFormProperties>({
+		});
+
 	}
 
 	export enum OutputFormat { json = 0, mp3 = 1, ogg_vorbis = 2, pcm = 3 }
@@ -219,22 +579,58 @@ export namespace MyNS {
 	export interface PutLexiconInput {
 		Content: string;
 	}
+	export interface PutLexiconInputFormProperties {
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreatePutLexiconInputFormGroup() {
+		return new FormGroup<PutLexiconInputFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum TextType { ssml = 0, text = 1 }
 
 	export interface StartSpeechSynthesisTaskInput {
 		Engine?: Engine | null;
 		LanguageCode?: StartSpeechSynthesisTaskInputLanguageCode | null;
-		LexiconNames?: Array<string> | null;
+		LexiconNames?: Array<string>;
 		OutputFormat: SynthesisTaskOutputFormat;
 		OutputS3BucketName: string;
 		OutputS3KeyPrefix?: string | null;
 		SampleRate?: string | null;
 		SnsTopicArn?: string | null;
-		SpeechMarkTypes?: Array<SpeechMarkType> | null;
+		SpeechMarkTypes?: Array<SpeechMarkType>;
 		Text: string;
 		TextType?: SynthesisTaskTextType | null;
 		VoiceId: VoiceId;
+	}
+	export interface StartSpeechSynthesisTaskInputFormProperties {
+		Engine: FormControl<Engine | null | undefined>,
+		LanguageCode: FormControl<StartSpeechSynthesisTaskInputLanguageCode | null | undefined>,
+		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
+		OutputS3BucketName: FormControl<string | null | undefined>,
+		OutputS3KeyPrefix: FormControl<string | null | undefined>,
+		SampleRate: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+		VoiceId: FormControl<VoiceId | null | undefined>,
+	}
+	export function CreateStartSpeechSynthesisTaskInputFormGroup() {
+		return new FormGroup<StartSpeechSynthesisTaskInputFormProperties>({
+			Engine: new FormControl<Engine | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartSpeechSynthesisTaskInputLanguageCode | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartSpeechSynthesisTaskInputLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
@@ -242,13 +638,34 @@ export namespace MyNS {
 	export interface SynthesizeSpeechInput {
 		Engine?: Engine | null;
 		LanguageCode?: SynthesizeSpeechInputLanguageCode | null;
-		LexiconNames?: Array<string> | null;
+		LexiconNames?: Array<string>;
 		OutputFormat: SynthesisTaskOutputFormat;
 		SampleRate?: string | null;
-		SpeechMarkTypes?: Array<SpeechMarkType> | null;
+		SpeechMarkTypes?: Array<SpeechMarkType>;
 		Text: string;
 		TextType?: SynthesisTaskTextType | null;
 		VoiceId: VoiceId;
+	}
+	export interface SynthesizeSpeechInputFormProperties {
+		Engine: FormControl<Engine | null | undefined>,
+		LanguageCode: FormControl<SynthesizeSpeechInputLanguageCode | null | undefined>,
+		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
+		SampleRate: FormControl<string | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+		VoiceId: FormControl<VoiceId | null | undefined>,
+	}
+	export function CreateSynthesizeSpeechInputFormGroup() {
+		return new FormGroup<SynthesizeSpeechInputFormProperties>({
+			Engine: new FormControl<Engine | null | undefined>(undefined),
+			LanguageCode: new FormControl<SynthesizeSpeechInputLanguageCode | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SynthesizeSpeechInputLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
@@ -360,6 +777,20 @@ export namespace MyNS {
 		 */
 		Content: string;
 	}
+	export interface PutLexiconPutBodyFormProperties {
+
+		/**
+		 * Content of the PLS lexicon as string data.
+		 * Required
+		 */
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreatePutLexiconPutBodyFormGroup() {
+		return new FormGroup<PutLexiconPutBodyFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeVoicesLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
@@ -375,7 +806,7 @@ export namespace MyNS {
 		 * List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.
 		 * Maximum items: 5
 		 */
-		LexiconNames?: Array<string> | null;
+		LexiconNames?: Array<string>;
 
 		/**
 		 * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.
@@ -409,7 +840,7 @@ export namespace MyNS {
 		 * The type of speech marks returned for the input text.
 		 * Maximum items: 4
 		 */
-		SpeechMarkTypes?: Array<SpeechMarkType> | null;
+		SpeechMarkTypes?: Array<SpeechMarkType>;
 
 		/**
 		 * The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.
@@ -426,6 +857,72 @@ export namespace MyNS {
 		 */
 		VoiceId: VoiceId;
 	}
+	export interface StartSpeechSynthesisTaskPostBodyFormProperties {
+
+		/** Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error. */
+		Engine: FormControl<Engine | null | undefined>,
+
+		/** <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
+		LanguageCode: FormControl<StartSpeechSynthesisTaskPostBodyLanguageCode | null | undefined>,
+
+		/**
+		 * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.
+		 * Required
+		 */
+		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
+
+		/**
+		 * Amazon S3 bucket name to which the output file will be saved.
+		 * Required
+		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
+		 */
+		OutputS3BucketName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon S3 key prefix for the output speech file.
+		 * Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$
+		 */
+		OutputS3KeyPrefix: FormControl<string | null | undefined>,
+
+		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
+		SampleRate: FormControl<string | null | undefined>,
+
+		/**
+		 * ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.
+		 * Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$
+		 */
+		SnsTopicArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.
+		 * Required
+		 */
+		Text: FormControl<string | null | undefined>,
+
+		/** Specifies whether the input text is plain text or SSML. The default value is plain text. */
+		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+
+		/**
+		 * Voice ID to use for the synthesis.
+		 * Required
+		 */
+		VoiceId: FormControl<VoiceId | null | undefined>,
+	}
+	export function CreateStartSpeechSynthesisTaskPostBodyFormGroup() {
+		return new FormGroup<StartSpeechSynthesisTaskPostBodyFormProperties>({
+			Engine: new FormControl<Engine | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartSpeechSynthesisTaskPostBodyLanguageCode | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum StartSpeechSynthesisTaskPostBodyLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
@@ -441,7 +938,7 @@ export namespace MyNS {
 		 * List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.
 		 * Maximum items: 5
 		 */
-		LexiconNames?: Array<string> | null;
+		LexiconNames?: Array<string>;
 
 		/**
 		 * <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
@@ -456,7 +953,7 @@ export namespace MyNS {
 		 * The type of speech marks returned for the input text.
 		 * Maximum items: 4
 		 */
-		SpeechMarkTypes?: Array<SpeechMarkType> | null;
+		SpeechMarkTypes?: Array<SpeechMarkType>;
 
 		/**
 		 * Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.
@@ -472,6 +969,50 @@ export namespace MyNS {
 		 * Required
 		 */
 		VoiceId: VoiceId;
+	}
+	export interface SynthesizeSpeechPostBodyFormProperties {
+
+		/** Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error. */
+		Engine: FormControl<Engine | null | undefined>,
+
+		/** <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
+		LanguageCode: FormControl<SynthesizeSpeechPostBodyLanguageCode | null | undefined>,
+
+		/**
+		 * <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
+		 * Required
+		 */
+		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
+
+		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
+		SampleRate: FormControl<string | null | undefined>,
+
+		/**
+		 * Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.
+		 * Required
+		 */
+		Text: FormControl<string | null | undefined>,
+
+		/** Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>. */
+		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
+
+		/**
+		 * Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.
+		 * Required
+		 */
+		VoiceId: FormControl<VoiceId | null | undefined>,
+	}
+	export function CreateSynthesizeSpeechPostBodyFormGroup() {
+		return new FormGroup<SynthesizeSpeechPostBodyFormProperties>({
+			Engine: new FormControl<Engine | null | undefined>(undefined),
+			LanguageCode: new FormControl<SynthesizeSpeechPostBodyLanguageCode | null | undefined>(undefined),
+			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
+			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SynthesizeSpeechPostBodyLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }

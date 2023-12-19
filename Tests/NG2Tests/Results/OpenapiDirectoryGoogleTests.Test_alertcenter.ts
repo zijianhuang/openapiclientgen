@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Alerts for user account warning events. */
@@ -10,7 +11,20 @@ export namespace MyNS {
 		email?: string | null;
 
 		/** The details of the login action. */
-		loginDetails?: LoginDetails | null;
+		loginDetails?: LoginDetails;
+	}
+
+	/** Alerts for user account warning events. */
+	export interface AccountWarningFormProperties {
+
+		/** Required. The email of the user that this event belongs to. */
+		email: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountWarningFormGroup() {
+		return new FormGroup<AccountWarningFormProperties>({
+			email: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -30,12 +44,35 @@ export namespace MyNS {
 		loginTime?: string | null;
 	}
 
+	/** The details of the login action. */
+	export interface LoginDetailsFormProperties {
+
+		/**
+		 * Optional. The human-readable IP address (for example,
+		 * `11.22.33.44`) that is associated with the warning event.
+		 */
+		ipAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The successful login time that is associated with the warning
+		 * event. This isn't present for blocked login attempts.
+		 */
+		loginTime: FormControl<string | null | undefined>,
+	}
+	export function CreateLoginDetailsFormGroup() {
+		return new FormGroup<LoginDetailsFormProperties>({
+			ipAddress: new FormControl<string | null | undefined>(undefined),
+			loginTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Alerts from G Suite Security Center rules service configured by admin. */
 	export interface ActivityRule {
 
 		/** List of action names associated with the rule threshold. */
-		actionNames?: Array<string> | null;
+		actionNames?: Array<string>;
 
 		/** Rule create timestamp. */
 		createTime?: string | null;
@@ -57,7 +94,7 @@ export namespace MyNS {
 		 * this alert is essentially extension of superseded alerts and we found the
 		 * relationship after creating these alerts.
 		 */
-		supersededAlerts?: Array<string> | null;
+		supersededAlerts?: Array<string>;
 
 		/**
 		 * Alert ID superseding this alert. It is used to indicate that superseding
@@ -84,6 +121,64 @@ export namespace MyNS {
 		windowSize?: string | null;
 	}
 
+	/** Alerts from G Suite Security Center rules service configured by admin. */
+	export interface ActivityRuleFormProperties {
+
+		/** Rule create timestamp. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Description of the rule. */
+		description: FormControl<string | null | undefined>,
+
+		/** Alert display name. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Rule name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Query that is used to get the data from the associated source. */
+		query: FormControl<string | null | undefined>,
+
+		/**
+		 * Alert ID superseding this alert. It is used to indicate that superseding
+		 * alert is essentially extension of this alert and we found the relationship
+		 * after creating both alerts.
+		 */
+		supersedingAlert: FormControl<string | null | undefined>,
+
+		/** Alert threshold is for example “COUNT > 5”. */
+		threshold: FormControl<string | null | undefined>,
+
+		/**
+		 * The trigger sources for this rule.
+		 * * GMAIL_EVENTS
+		 * * DEVICE_EVENTS
+		 * * USER_EVENTS
+		 */
+		triggerSource: FormControl<string | null | undefined>,
+
+		/** The timestamp of the last update to the rule. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/** Rule window size. Possible values are 1 hour or 24 hours. */
+		windowSize: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityRuleFormGroup() {
+		return new FormGroup<ActivityRuleFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			query: new FormControl<string | null | undefined>(undefined),
+			supersedingAlert: new FormControl<string | null | undefined>(undefined),
+			threshold: new FormControl<string | null | undefined>(undefined),
+			triggerSource: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			windowSize: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An alert affecting a customer. */
 	export interface Alert {
@@ -101,7 +196,7 @@ export namespace MyNS {
 		 * Optional. The data associated with this alert, for example
 		 * google.apps.alertcenter.type.DeviceCompromised.
 		 */
-		data?: {[id: string]: any } | null;
+		data?: {[id: string]: any };
 
 		/** Output only. `True` if this alert is marked for deletion. */
 		deleted?: boolean | null;
@@ -127,7 +222,7 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** An alert metadata. */
-		metadata?: AlertMetadata | null;
+		metadata?: AlertMetadata;
 
 		/**
 		 * Output only. An optional
@@ -165,6 +260,102 @@ export namespace MyNS {
 
 		/** Output only. The time this alert was last updated. */
 		updateTime?: string | null;
+	}
+
+	/** An alert affecting a customer. */
+	export interface AlertFormProperties {
+
+		/** Output only. The unique identifier for the alert. */
+		alertId: FormControl<string | null | undefined>,
+
+		/** Output only. The time this alert was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Output only. The unique identifier of the Google account of the customer. */
+		customerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The data associated with this alert, for example
+		 * google.apps.alertcenter.type.DeviceCompromised.
+		 */
+		data: FormControl<{[id: string]: any } | null | undefined>,
+
+		/** Output only. `True` if this alert is marked for deletion. */
+		deleted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Optional. The time the event that caused this alert ceased being active.
+		 * If provided, the end time must not be earlier than the start time.
+		 * If not provided, it indicates an ongoing alert.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. `etag` is used for optimistic concurrency control as a way to help
+		 * prevent simultaneous updates of an alert from overwriting each other.
+		 * It is strongly suggested that systems make use of the `etag` in the
+		 * read-modify-write cycle to perform alert updates in order to avoid race
+		 * conditions: An `etag` is returned in the response which contains alerts,
+		 * and systems are expected to put that etag in the request to update alert to
+		 * ensure that their change will be applied to the same version of the alert.
+		 * If no `etag` is provided in the call to update alert, then the existing
+		 * alert is overwritten blindly.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. An optional
+		 * [Security Investigation Tool](https://support.google.com/a/answer/7575955)
+		 * query for this alert.
+		 */
+		securityInvestigationToolLink: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. A unique identifier for the system that reported the alert.
+		 * This is output only after alert is created.
+		 * Supported sources are any of the following:
+		 * * Google Operations
+		 * * Mobile device management
+		 * * Gmail phishing
+		 * * Domain wide takeout
+		 * * State sponsored attack
+		 * * Google identity
+		 */
+		source: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The time the event that caused this alert was started or
+		 * detected.
+		 */
+		startTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The type of the alert.
+		 * This is output only after alert is created.
+		 * For a list of available alert types see
+		 * [G Suite Alert types](/admin-sdk/alertcenter/reference/alert-types).
+		 */
+		type: FormControl<string | null | undefined>,
+
+		/** Output only. The time this alert was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateAlertFormGroup() {
+		return new FormGroup<AlertFormProperties>({
+			alertId: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			data: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			deleted: new FormControl<boolean | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			securityInvestigationToolLink: new FormControl<string | null | undefined>(undefined),
+			source: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -218,6 +409,68 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** An alert metadata. */
+	export interface AlertMetadataFormProperties {
+
+		/** Output only. The alert identifier. */
+		alertId: FormControl<string | null | undefined>,
+
+		/** The email address of the user assigned to the alert. */
+		assignee: FormControl<string | null | undefined>,
+
+		/** Output only. The unique identifier of the Google account of the customer. */
+		customerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. `etag` is used for optimistic concurrency control as a way to
+		 * help prevent simultaneous updates of an alert metadata from overwriting
+		 * each other. It is strongly suggested that systems make use of the `etag` in
+		 * the read-modify-write cycle to perform metatdata updates in order to avoid
+		 * race conditions: An `etag` is returned in the response which contains alert
+		 * metadata, and systems are expected to put that etag in the request to
+		 * update alert metadata to ensure that their change will be applied to the
+		 * same version of the alert metadata.
+		 * If no `etag` is provided in the call to update alert metadata, then the
+		 * existing alert metadata is overwritten blindly.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * The severity value of the alert. Alert Center will set this field at alert
+		 * creation time, default's to an empty string when it could not be
+		 * determined.
+		 * The supported values for update actions on this field are the following:
+		 * * HIGH
+		 * * MEDIUM
+		 * * LOW
+		 */
+		severity: FormControl<string | null | undefined>,
+
+		/**
+		 * The current status of the alert.
+		 * The supported values are the following:
+		 * * NOT_STARTED
+		 * * IN_PROGRESS
+		 * * CLOSED
+		 */
+		status: FormControl<string | null | undefined>,
+
+		/** Output only. The time this metadata was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateAlertMetadataFormGroup() {
+		return new FormGroup<AlertMetadataFormProperties>({
+			alertId: new FormControl<string | null | undefined>(undefined),
+			assignee: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			severity: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A customer feedback about an alert. */
 	export interface AlertFeedback {
@@ -241,6 +494,39 @@ export namespace MyNS {
 		type?: AlertFeedbackType | null;
 	}
 
+	/** A customer feedback about an alert. */
+	export interface AlertFeedbackFormProperties {
+
+		/** Output only. The alert identifier. */
+		alertId: FormControl<string | null | undefined>,
+
+		/** Output only. The time this feedback was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Output only. The unique identifier of the Google account of the customer. */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Output only. The email of the user that provided the feedback. */
+		email: FormControl<string | null | undefined>,
+
+		/** Output only. The unique identifier for the feedback. */
+		feedbackId: FormControl<string | null | undefined>,
+
+		/** Required. The type of the feedback. */
+		type: FormControl<AlertFeedbackType | null | undefined>,
+	}
+	export function CreateAlertFeedbackFormGroup() {
+		return new FormGroup<AlertFeedbackFormProperties>({
+			alertId: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			feedbackId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<AlertFeedbackType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AlertFeedbackType { ALERT_FEEDBACK_TYPE_UNSPECIFIED = 0, NOT_USEFUL = 1, SOMEWHAT_USEFUL = 2, VERY_USEFUL = 3 }
 
 
@@ -248,7 +534,16 @@ export namespace MyNS {
 	export interface AppMakerSqlSetupNotification {
 
 		/** List of applications with requests for default SQL set up. */
-		requestInfo?: Array<RequestInfo> | null;
+		requestInfo?: Array<RequestInfo>;
+	}
+
+	/** Alerts from App Maker to notify admins to set up default SQL instance. */
+	export interface AppMakerSqlSetupNotificationFormProperties {
+	}
+	export function CreateAppMakerSqlSetupNotificationFormGroup() {
+		return new FormGroup<AppMakerSqlSetupNotificationFormProperties>({
+		});
+
 	}
 
 
@@ -259,7 +554,7 @@ export namespace MyNS {
 		 * List of app developers who triggered notifications for above
 		 * application.
 		 */
-		appDeveloperEmail?: Array<string> | null;
+		appDeveloperEmail?: Array<string>;
 
 		/** Required. The application that requires the SQL setup. */
 		appKey?: string | null;
@@ -271,6 +566,26 @@ export namespace MyNS {
 		numberOfRequests?: string | null;
 	}
 
+	/** Requests for one application that needs default SQL setup. */
+	export interface RequestInfoFormProperties {
+
+		/** Required. The application that requires the SQL setup. */
+		appKey: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. Number of requests sent for this application to set up default
+		 * SQL instance.
+		 */
+		numberOfRequests: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestInfoFormGroup() {
+		return new FormGroup<RequestInfoFormProperties>({
+			appKey: new FormControl<string | null | undefined>(undefined),
+			numberOfRequests: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Attachment with application-specific information about an alert. */
 	export interface Attachment {
@@ -279,7 +594,16 @@ export namespace MyNS {
 		 * A representation of a CSV file attachment, as a list of column headers and
 		 * a list of data rows.
 		 */
-		csv?: Csv | null;
+		csv?: Csv;
+	}
+
+	/** Attachment with application-specific information about an alert. */
+	export interface AttachmentFormProperties {
+	}
+	export function CreateAttachmentFormGroup() {
+		return new FormGroup<AttachmentFormProperties>({
+		});
+
 	}
 
 
@@ -293,10 +617,22 @@ export namespace MyNS {
 		 * The list of data rows in a CSV file, as string arrays rather than as a
 		 * single comma-separated string.
 		 */
-		dataRows?: Array<CsvRow> | null;
+		dataRows?: Array<CsvRow>;
 
 		/** The list of headers for data columns in a CSV file. */
-		headers?: Array<string> | null;
+		headers?: Array<string>;
+	}
+
+	/**
+	 * A representation of a CSV file attachment, as a list of column headers and
+	 * a list of data rows.
+	 */
+	export interface CsvFormProperties {
+	}
+	export function CreateCsvFormGroup() {
+		return new FormGroup<CsvFormProperties>({
+		});
+
 	}
 
 
@@ -307,7 +643,16 @@ export namespace MyNS {
 		 * The data entries in a CSV file row, as a string array rather than a
 		 * single comma-separated string.
 		 */
-		entries?: Array<string> | null;
+		entries?: Array<string>;
+	}
+
+	/** A representation of a single data row in a CSV file. */
+	export interface CsvRowFormProperties {
+	}
+	export function CreateCsvRowFormGroup() {
+		return new FormGroup<CsvRowFormProperties>({
+		});
+
 	}
 
 
@@ -318,19 +663,38 @@ export namespace MyNS {
 	export interface BadWhitelist {
 
 		/** Domain ID of Gmail phishing alerts. */
-		domainId?: DomainId | null;
+		domainId?: DomainId;
 
 		/** Entity whose actions triggered a Gmail phishing alert. */
-		maliciousEntity?: MaliciousEntity | null;
+		maliciousEntity?: MaliciousEntity;
 
 		/** The list of messages contained by this alert. */
-		messages?: Array<GmailMessageInfo> | null;
+		messages?: Array<GmailMessageInfo>;
 
 		/**
 		 * The source IP address of the malicious email, for example,
 		 * `127.0.0.1`.
 		 */
 		sourceIp?: string | null;
+	}
+
+	/**
+	 * Alert for setting the domain or IP that malicious email comes from as
+	 * whitelisted domain or IP in Gmail advanced settings.
+	 */
+	export interface BadWhitelistFormProperties {
+
+		/**
+		 * The source IP address of the malicious email, for example,
+		 * `127.0.0.1`.
+		 */
+		sourceIp: FormControl<string | null | undefined>,
+	}
+	export function CreateBadWhitelistFormGroup() {
+		return new FormGroup<BadWhitelistFormProperties>({
+			sourceIp: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -341,6 +705,19 @@ export namespace MyNS {
 		customerPrimaryDomain?: string | null;
 	}
 
+	/** Domain ID of Gmail phishing alerts. */
+	export interface DomainIdFormProperties {
+
+		/** The primary domain for the customer. */
+		customerPrimaryDomain: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainIdFormGroup() {
+		return new FormGroup<DomainIdFormProperties>({
+			customerPrimaryDomain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Entity whose actions triggered a Gmail phishing alert. */
 	export interface MaliciousEntity {
@@ -349,10 +726,27 @@ export namespace MyNS {
 		displayName?: string | null;
 
 		/** A user. */
-		entity?: User | null;
+		entity?: User;
 
 		/** The sender email address. */
 		fromHeader?: string | null;
+	}
+
+	/** Entity whose actions triggered a Gmail phishing alert. */
+	export interface MaliciousEntityFormProperties {
+
+		/** The header from display name. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** The sender email address. */
+		fromHeader: FormControl<string | null | undefined>,
+	}
+	export function CreateMaliciousEntityFormGroup() {
+		return new FormGroup<MaliciousEntityFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			fromHeader: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,12 +760,29 @@ export namespace MyNS {
 		emailAddress?: string | null;
 	}
 
+	/** A user. */
+	export interface UserFormProperties {
+
+		/** Display name of the user. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Email address of the user. */
+		emailAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details of a message in phishing spike alert. */
 	export interface GmailMessageInfo {
 
 		/** The `SHA256` hash of email's attachment and all MIME parts. */
-		attachmentsSha256Hash?: Array<string> | null;
+		attachmentsSha256Hash?: Array<string>;
 
 		/** The date the malicious email was sent. */
 		date?: string | null;
@@ -395,12 +806,49 @@ export namespace MyNS {
 		subjectText?: string | null;
 	}
 
+	/** Details of a message in phishing spike alert. */
+	export interface GmailMessageInfoFormProperties {
+
+		/** The date the malicious email was sent. */
+		date: FormControl<string | null | undefined>,
+
+		/** The hash of the message body text. */
+		md5HashMessageBody: FormControl<string | null | undefined>,
+
+		/** The MD5 Hash of email's subject (only available for reported emails). */
+		md5HashSubject: FormControl<string | null | undefined>,
+
+		/** The snippet of the message body text (only available for reported emails). */
+		messageBodySnippet: FormControl<string | null | undefined>,
+
+		/** The message ID. */
+		messageId: FormControl<string | null | undefined>,
+
+		/** The recipient of this email. */
+		recipient: FormControl<string | null | undefined>,
+
+		/** The email subject text (only available for reported emails). */
+		subjectText: FormControl<string | null | undefined>,
+	}
+	export function CreateGmailMessageInfoFormGroup() {
+		return new FormGroup<GmailMessageInfoFormProperties>({
+			date: new FormControl<string | null | undefined>(undefined),
+			md5HashMessageBody: new FormControl<string | null | undefined>(undefined),
+			md5HashSubject: new FormControl<string | null | undefined>(undefined),
+			messageBodySnippet: new FormControl<string | null | undefined>(undefined),
+			messageId: new FormControl<string | null | undefined>(undefined),
+			recipient: new FormControl<string | null | undefined>(undefined),
+			subjectText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to perform batch delete on alerts. */
 	export interface BatchDeleteAlertsRequest {
 
 		/** Required. list of alert IDs. */
-		alertId?: Array<string> | null;
+		alertId?: Array<string>;
 
 		/**
 		 * Optional. The unique identifier of the G Suite organization account of the
@@ -409,15 +857,44 @@ export namespace MyNS {
 		customerId?: string | null;
 	}
 
+	/** A request to perform batch delete on alerts. */
+	export interface BatchDeleteAlertsRequestFormProperties {
+
+		/**
+		 * Optional. The unique identifier of the G Suite organization account of the
+		 * customer the alerts are associated with.
+		 */
+		customerId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDeleteAlertsRequestFormGroup() {
+		return new FormGroup<BatchDeleteAlertsRequestFormProperties>({
+			customerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to batch delete operation on alerts. */
 	export interface BatchDeleteAlertsResponse {
 
 		/** The status details for each failed alert_id. */
-		failedAlertStatus?: {[id: string]: Status } | null;
+		failedAlertStatus?: {[id: string]: Status };
 
 		/** The successful list of alert IDs. */
-		successAlertIds?: Array<string> | null;
+		successAlertIds?: Array<string>;
+	}
+
+	/** Response to batch delete operation on alerts. */
+	export interface BatchDeleteAlertsResponseFormProperties {
+
+		/** The status details for each failed alert_id. */
+		failedAlertStatus: FormControl<{[id: string]: Status } | null | undefined>,
+	}
+	export function CreateBatchDeleteAlertsResponseFormGroup() {
+		return new FormGroup<BatchDeleteAlertsResponseFormProperties>({
+			failedAlertStatus: new FormControl<{[id: string]: Status } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -438,7 +915,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -448,12 +925,40 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to perform batch undelete on alerts. */
 	export interface BatchUndeleteAlertsRequest {
 
 		/** Required. list of alert IDs. */
-		alertId?: Array<string> | null;
+		alertId?: Array<string>;
 
 		/**
 		 * Optional. The unique identifier of the G Suite organization account of the
@@ -462,15 +967,44 @@ export namespace MyNS {
 		customerId?: string | null;
 	}
 
+	/** A request to perform batch undelete on alerts. */
+	export interface BatchUndeleteAlertsRequestFormProperties {
+
+		/**
+		 * Optional. The unique identifier of the G Suite organization account of the
+		 * customer the alerts are associated with.
+		 */
+		customerId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchUndeleteAlertsRequestFormGroup() {
+		return new FormGroup<BatchUndeleteAlertsRequestFormProperties>({
+			customerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to batch undelete operation on alerts. */
 	export interface BatchUndeleteAlertsResponse {
 
 		/** The status details for each failed alert_id. */
-		failedAlertStatus?: {[id: string]: Status } | null;
+		failedAlertStatus?: {[id: string]: Status };
 
 		/** The successful list of alert IDs. */
-		successAlertIds?: Array<string> | null;
+		successAlertIds?: Array<string>;
+	}
+
+	/** Response to batch undelete operation on alerts. */
+	export interface BatchUndeleteAlertsResponseFormProperties {
+
+		/** The status details for each failed alert_id. */
+		failedAlertStatus: FormControl<{[id: string]: Status } | null | undefined>,
+	}
+	export function CreateBatchUndeleteAlertsResponseFormGroup() {
+		return new FormGroup<BatchUndeleteAlertsResponseFormProperties>({
+			failedAlertStatus: new FormControl<{[id: string]: Status } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -495,6 +1029,34 @@ export namespace MyNS {
 		topicName?: string | null;
 	}
 
+	/**
+	 * A reference to a Cloud Pubsub topic.
+	 * To register for notifications, the owner of the topic must grant
+	 * `alerts-api-push-notifications@system.gserviceaccount.com` the
+	 *  `projects.topics.publish` permission.
+	 */
+	export interface CloudPubsubTopicFormProperties {
+
+		/**
+		 * Optional. The format of the payload that would be sent.
+		 * If not specified the format will be JSON.
+		 */
+		payloadFormat: FormControl<CloudPubsubTopicPayloadFormat | null | undefined>,
+
+		/**
+		 * The `name` field of a Cloud Pubsub [Topic]
+		 * (https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
+		 */
+		topicName: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudPubsubTopicFormGroup() {
+		return new FormGroup<CloudPubsubTopicFormProperties>({
+			payloadFormat: new FormControl<CloudPubsubTopicPayloadFormat | null | undefined>(undefined),
+			topicName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CloudPubsubTopicPayloadFormat { PAYLOAD_FORMAT_UNSPECIFIED = 0, JSON = 1 }
 
 
@@ -505,7 +1067,20 @@ export namespace MyNS {
 		email?: string | null;
 
 		/** Required. The list of security events. */
-		events?: Array<DeviceCompromisedSecurityDetail> | null;
+		events?: Array<DeviceCompromisedSecurityDetail>;
+	}
+
+	/** A mobile device compromised alert. Derived from audit logs. */
+	export interface DeviceCompromisedFormProperties {
+
+		/** The email of the user this alert was created for. */
+		email: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceCompromisedFormGroup() {
+		return new FormGroup<DeviceCompromisedFormProperties>({
+			email: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -537,6 +1112,46 @@ export namespace MyNS {
 		serialNumber?: string | null;
 	}
 
+	/** Detailed information of a single MDM device compromised event. */
+	export interface DeviceCompromisedSecurityDetailFormProperties {
+
+		/**
+		 * The device compromised state. Possible values are "`Compromised`" or
+		 * "`Not Compromised`".
+		 */
+		deviceCompromisedState: FormControl<string | null | undefined>,
+
+		/** Required. The device ID. */
+		deviceId: FormControl<string | null | undefined>,
+
+		/** The model of the device. */
+		deviceModel: FormControl<string | null | undefined>,
+
+		/** The type of the device. */
+		deviceType: FormControl<string | null | undefined>,
+
+		/** Required for iOS, empty for others. */
+		iosVendorId: FormControl<string | null | undefined>,
+
+		/** The device resource ID. */
+		resourceId: FormControl<string | null | undefined>,
+
+		/** The serial number of the device. */
+		serialNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceCompromisedSecurityDetailFormGroup() {
+		return new FormGroup<DeviceCompromisedSecurityDetailFormProperties>({
+			deviceCompromisedState: new FormControl<string | null | undefined>(undefined),
+			deviceId: new FormControl<string | null | undefined>(undefined),
+			deviceModel: new FormControl<string | null | undefined>(undefined),
+			deviceType: new FormControl<string | null | undefined>(undefined),
+			iosVendorId: new FormControl<string | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined),
+			serialNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Alerts that get triggered on violations of Data Loss Prevention (DLP) rules. */
 	export interface DlpRuleViolation {
@@ -545,7 +1160,16 @@ export namespace MyNS {
 		 * Common alert information about violated rules that are configured by G Suite
 		 * administrators.
 		 */
-		ruleViolationInfo?: RuleViolationInfo | null;
+		ruleViolationInfo?: RuleViolationInfo;
+	}
+
+	/** Alerts that get triggered on violations of Data Loss Prevention (DLP) rules. */
+	export interface DlpRuleViolationFormProperties {
+	}
+	export function CreateDlpRuleViolationFormGroup() {
+		return new FormGroup<DlpRuleViolationFormProperties>({
+		});
+
 	}
 
 
@@ -559,7 +1183,7 @@ export namespace MyNS {
 		dataSource?: RuleViolationInfoDataSource | null;
 
 		/** List of matches that were found in the resource content. */
-		matchInfo?: Array<MatchInfo> | null;
+		matchInfo?: Array<MatchInfo>;
 
 		/**
 		 * Resource recipients.
@@ -570,28 +1194,55 @@ export namespace MyNS {
 		 * For Gmail, they are emails of the users or groups that the Gmail message
 		 * was sent to.
 		 */
-		recipients?: Array<string> | null;
+		recipients?: Array<string>;
 
 		/** Proto that contains resource information. */
-		resourceInfo?: ResourceInfo | null;
+		resourceInfo?: ResourceInfo;
 
 		/** Proto that contains rule information. */
-		ruleInfo?: RuleInfo | null;
+		ruleInfo?: RuleInfo;
 
 		/** Actions suppressed due to other actions with higher priority. */
-		suppressedActionTypes?: Array<string> | null;
+		suppressedActionTypes?: Array<string>;
 
 		/** Trigger of the rule. */
 		trigger?: RuleViolationInfoTrigger | null;
 
 		/** Actions applied as a consequence of the rule being triggered. */
-		triggeredActionTypes?: Array<string> | null;
+		triggeredActionTypes?: Array<string>;
 
 		/**
 		 * Email of the user who caused the violation. Value could be empty if not
 		 * applicable, for example, a violation found by drive continuous scan.
 		 */
 		triggeringUserEmail?: string | null;
+	}
+
+	/**
+	 * Common alert information about violated rules that are configured by G Suite
+	 * administrators.
+	 */
+	export interface RuleViolationInfoFormProperties {
+
+		/** Source of the data. */
+		dataSource: FormControl<RuleViolationInfoDataSource | null | undefined>,
+
+		/** Trigger of the rule. */
+		trigger: FormControl<RuleViolationInfoTrigger | null | undefined>,
+
+		/**
+		 * Email of the user who caused the violation. Value could be empty if not
+		 * applicable, for example, a violation found by drive continuous scan.
+		 */
+		triggeringUserEmail: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleViolationInfoFormGroup() {
+		return new FormGroup<RuleViolationInfoFormProperties>({
+			dataSource: new FormControl<RuleViolationInfoDataSource | null | undefined>(undefined),
+			trigger: new FormControl<RuleViolationInfoTrigger | null | undefined>(undefined),
+			triggeringUserEmail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RuleViolationInfoDataSource { DATA_SOURCE_UNSPECIFIED = 0, DRIVE = 1 }
@@ -601,10 +1252,19 @@ export namespace MyNS {
 	export interface MatchInfo {
 
 		/** Detector provided by Google. */
-		predefinedDetector?: PredefinedDetectorInfo | null;
+		predefinedDetector?: PredefinedDetectorInfo;
 
 		/** Detector defined by administrators. */
-		userDefinedDetector?: UserDefinedDetectorInfo | null;
+		userDefinedDetector?: UserDefinedDetectorInfo;
+	}
+
+	/** Proto that contains match information from the condition part of the rule. */
+	export interface MatchInfoFormProperties {
+	}
+	export function CreateMatchInfoFormGroup() {
+		return new FormGroup<MatchInfoFormProperties>({
+		});
+
 	}
 
 
@@ -613,6 +1273,19 @@ export namespace MyNS {
 
 		/** Name that uniquely identifies the detector. */
 		detectorName?: string | null;
+	}
+
+	/** Detector provided by Google. */
+	export interface PredefinedDetectorInfoFormProperties {
+
+		/** Name that uniquely identifies the detector. */
+		detectorName: FormControl<string | null | undefined>,
+	}
+	export function CreatePredefinedDetectorInfoFormGroup() {
+		return new FormGroup<PredefinedDetectorInfoFormProperties>({
+			detectorName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -626,6 +1299,23 @@ export namespace MyNS {
 		resourceName?: string | null;
 	}
 
+	/** Detector defined by administrators. */
+	export interface UserDefinedDetectorInfoFormProperties {
+
+		/** Display name of the detector. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Resource name that uniquely identifies the detector. */
+		resourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateUserDefinedDetectorInfoFormGroup() {
+		return new FormGroup<UserDefinedDetectorInfoFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			resourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Proto that contains resource information. */
 	export interface ResourceInfo {
@@ -637,6 +1327,23 @@ export namespace MyNS {
 		resourceTitle?: string | null;
 	}
 
+	/** Proto that contains resource information. */
+	export interface ResourceInfoFormProperties {
+
+		/** Drive file ID. */
+		documentId: FormControl<string | null | undefined>,
+
+		/** Title of the resource, for example email subject, or document title. */
+		resourceTitle: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceInfoFormGroup() {
+		return new FormGroup<ResourceInfoFormProperties>({
+			documentId: new FormControl<string | null | undefined>(undefined),
+			resourceTitle: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Proto that contains rule information. */
 	export interface RuleInfo {
@@ -646,6 +1353,23 @@ export namespace MyNS {
 
 		/** Resource name that uniquely identifies the rule. */
 		resourceName?: string | null;
+	}
+
+	/** Proto that contains rule information. */
+	export interface RuleInfoFormProperties {
+
+		/** User provided name of the rule. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Resource name that uniquely identifies the rule. */
+		resourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleInfoFormGroup() {
+		return new FormGroup<RuleInfoFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			resourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RuleViolationInfoTrigger { TRIGGER_UNSPECIFIED = 0, DRIVE_SHARE = 1 }
@@ -664,6 +1388,26 @@ export namespace MyNS {
 		takeoutRequestId?: string | null;
 	}
 
+	/**
+	 * A takeout operation for the entire domain was initiated by an admin. Derived
+	 * from audit logs.
+	 */
+	export interface DomainWideTakeoutInitiatedFormProperties {
+
+		/** The email of the admin who initiated the takeout. */
+		email: FormControl<string | null | undefined>,
+
+		/** The takeout request ID. */
+		takeoutRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainWideTakeoutInitiatedFormGroup() {
+		return new FormGroup<DomainWideTakeoutInitiatedFormProperties>({
+			email: new FormControl<string | null | undefined>(undefined),
+			takeoutRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A generic empty message that you can re-use to avoid defining duplicated
@@ -677,6 +1421,23 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** An incident reported by Google Operations for a G Suite application. */
 	export interface GoogleOperations {
@@ -685,16 +1446,33 @@ export namespace MyNS {
 		 * The list of emails which correspond to the users directly affected by the
 		 * incident.
 		 */
-		affectedUserEmails?: Array<string> | null;
+		affectedUserEmails?: Array<string>;
 
 		/** Attachment with application-specific information about an alert. */
-		attachmentData?: Attachment | null;
+		attachmentData?: Attachment;
 
 		/** A detailed, freeform incident description. */
 		description?: string | null;
 
 		/** A one-line incident description. */
 		title?: string | null;
+	}
+
+	/** An incident reported by Google Operations for a G Suite application. */
+	export interface GoogleOperationsFormProperties {
+
+		/** A detailed, freeform incident description. */
+		description: FormControl<string | null | undefined>,
+
+		/** A one-line incident description. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleOperationsFormGroup() {
+		return new FormGroup<GoogleOperationsFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -705,7 +1483,16 @@ export namespace MyNS {
 		 * The list of alert feedback.
 		 * Feedback entries for each alert are ordered by creation time descending.
 		 */
-		feedback?: Array<AlertFeedback> | null;
+		feedback?: Array<AlertFeedback>;
+	}
+
+	/** Response message for an alert feedback listing request. */
+	export interface ListAlertFeedbackResponseFormProperties {
+	}
+	export function CreateListAlertFeedbackResponseFormGroup() {
+		return new FormGroup<ListAlertFeedbackResponseFormProperties>({
+		});
+
 	}
 
 
@@ -713,7 +1500,7 @@ export namespace MyNS {
 	export interface ListAlertsResponse {
 
 		/** The list of alerts. */
-		alerts?: Array<Alert> | null;
+		alerts?: Array<Alert>;
 
 		/**
 		 * The token for the next page. If not empty, indicates that there may be more
@@ -722,6 +1509,24 @@ export namespace MyNS {
 		 * of the current list call.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response message for an alert listing request. */
+	export interface ListAlertsResponseFormProperties {
+
+		/**
+		 * The token for the next page. If not empty, indicates that there may be more
+		 * alerts that match the listing request; this value can be used in a
+		 * subsequent ListAlertsRequest to get alerts continuing from last result
+		 * of the current list call.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAlertsResponseFormGroup() {
+		return new FormGroup<ListAlertsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -738,19 +1543,45 @@ export namespace MyNS {
 	export interface MailPhishing {
 
 		/** Domain ID of Gmail phishing alerts. */
-		domainId?: DomainId | null;
+		domainId?: DomainId;
 
 		/** If `true`, the email originated from within the organization. */
 		isInternal?: boolean | null;
 
 		/** Entity whose actions triggered a Gmail phishing alert. */
-		maliciousEntity?: MaliciousEntity | null;
+		maliciousEntity?: MaliciousEntity;
 
 		/** The list of messages contained by this alert. */
-		messages?: Array<GmailMessageInfo> | null;
+		messages?: Array<GmailMessageInfo>;
 
 		/** System actions on the messages. */
 		systemActionType?: MailPhishingSystemActionType | null;
+	}
+
+	/**
+	 * Proto for all phishing alerts with common payload.
+	 * Supported types are any of the following:
+	 * * User reported phishing
+	 * * User reported spam spike
+	 * * Suspicious message reported
+	 * * Phishing reclassification
+	 * * Malware reclassification
+	 * * Gmail potential employee spoofing
+	 */
+	export interface MailPhishingFormProperties {
+
+		/** If `true`, the email originated from within the organization. */
+		isInternal: FormControl<boolean | null | undefined>,
+
+		/** System actions on the messages. */
+		systemActionType: FormControl<MailPhishingSystemActionType | null | undefined>,
+	}
+	export function CreateMailPhishingFormGroup() {
+		return new FormGroup<MailPhishingFormProperties>({
+			isInternal: new FormControl<boolean | null | undefined>(undefined),
+			systemActionType: new FormControl<MailPhishingSystemActionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MailPhishingSystemActionType { SYSTEM_ACTION_TYPE_UNSPECIFIED = 0, NO_OPERATION = 1, REMOVED_FROM_INBOX = 2 }
@@ -769,7 +1600,20 @@ export namespace MyNS {
 		 * `alerts-api-push-notifications@system.gserviceaccount.com` the
 		 * `projects.topics.publish` permission.
 		 */
-		cloudPubsubTopic?: CloudPubsubTopic | null;
+		cloudPubsubTopic?: CloudPubsubTopic;
+	}
+
+	/**
+	 * Settings for callback notifications.
+	 * For more details see [G Suite Alert
+	 * Notification](/admin-sdk/alertcenter/guides/notifications).
+	 */
+	export interface NotificationFormProperties {
+	}
+	export function CreateNotificationFormGroup() {
+		return new FormGroup<NotificationFormProperties>({
+		});
+
 	}
 
 
@@ -782,16 +1626,34 @@ export namespace MyNS {
 	export interface PhishingSpike {
 
 		/** Domain ID of Gmail phishing alerts. */
-		domainId?: DomainId | null;
+		domainId?: DomainId;
 
 		/** If `true`, the email originated from within the organization. */
 		isInternal?: boolean | null;
 
 		/** Entity whose actions triggered a Gmail phishing alert. */
-		maliciousEntity?: MaliciousEntity | null;
+		maliciousEntity?: MaliciousEntity;
 
 		/** The list of messages contained by this alert. */
-		messages?: Array<GmailMessageInfo> | null;
+		messages?: Array<GmailMessageInfo>;
+	}
+
+	/**
+	 * Alert for a spike in user reported phishing.
+	 * <aside class="warning"><b>Warning</b>: This type has been deprecated. Use
+	 * [MailPhishing](/admin-sdk/alertcenter/reference/rest/v1beta1/MailPhishing)
+	 * instead.</aside>
+	 */
+	export interface PhishingSpikeFormProperties {
+
+		/** If `true`, the email originated from within the organization. */
+		isInternal: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePhishingSpikeFormGroup() {
+		return new FormGroup<PhishingSpikeFormProperties>({
+			isInternal: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -799,7 +1661,16 @@ export namespace MyNS {
 	export interface Settings {
 
 		/** The list of notifications. */
-		notifications?: Array<Notification> | null;
+		notifications?: Array<Notification>;
+	}
+
+	/** Customer-level settings. */
+	export interface SettingsFormProperties {
+	}
+	export function CreateSettingsFormGroup() {
+		return new FormGroup<SettingsFormProperties>({
+		});
+
 	}
 
 
@@ -810,6 +1681,19 @@ export namespace MyNS {
 		email?: string | null;
 	}
 
+	/** A state-sponsored attack alert. Derived from audit logs. */
+	export interface StateSponsoredAttackFormProperties {
+
+		/** The email of the user this incident was created for. */
+		email: FormControl<string | null | undefined>,
+	}
+	export function CreateStateSponsoredAttackFormGroup() {
+		return new FormGroup<StateSponsoredAttackFormProperties>({
+			email: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A mobile suspicious activity alert. Derived from audit logs. */
 	export interface SuspiciousActivity {
@@ -818,7 +1702,20 @@ export namespace MyNS {
 		email?: string | null;
 
 		/** Required. The list of security events. */
-		events?: Array<SuspiciousActivitySecurityDetail> | null;
+		events?: Array<SuspiciousActivitySecurityDetail>;
+	}
+
+	/** A mobile suspicious activity alert. Derived from audit logs. */
+	export interface SuspiciousActivityFormProperties {
+
+		/** The email of the user this alert was created for. */
+		email: FormControl<string | null | undefined>,
+	}
+	export function CreateSuspiciousActivityFormGroup() {
+		return new FormGroup<SuspiciousActivityFormProperties>({
+			email: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -853,6 +1750,51 @@ export namespace MyNS {
 		serialNumber?: string | null;
 	}
 
+	/** Detailed information of a single MDM suspicious activity event. */
+	export interface SuspiciousActivitySecurityDetailFormProperties {
+
+		/** Required. The device ID. */
+		deviceId: FormControl<string | null | undefined>,
+
+		/** The model of the device. */
+		deviceModel: FormControl<string | null | undefined>,
+
+		/** The device property which was changed. */
+		deviceProperty: FormControl<string | null | undefined>,
+
+		/** The type of the device. */
+		deviceType: FormControl<string | null | undefined>,
+
+		/** Required for iOS, empty for others. */
+		iosVendorId: FormControl<string | null | undefined>,
+
+		/** The new value of the device property after the change. */
+		newValue: FormControl<string | null | undefined>,
+
+		/** The old value of the device property before the change. */
+		oldValue: FormControl<string | null | undefined>,
+
+		/** The device resource ID. */
+		resourceId: FormControl<string | null | undefined>,
+
+		/** The serial number of the device. */
+		serialNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateSuspiciousActivitySecurityDetailFormGroup() {
+		return new FormGroup<SuspiciousActivitySecurityDetailFormProperties>({
+			deviceId: new FormControl<string | null | undefined>(undefined),
+			deviceModel: new FormControl<string | null | undefined>(undefined),
+			deviceProperty: new FormControl<string | null | undefined>(undefined),
+			deviceType: new FormControl<string | null | undefined>(undefined),
+			iosVendorId: new FormControl<string | null | undefined>(undefined),
+			newValue: new FormControl<string | null | undefined>(undefined),
+			oldValue: new FormControl<string | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined),
+			serialNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to undelete a specific alert that was marked for deletion. */
 	export interface UndeleteAlertRequest {
@@ -863,6 +1805,23 @@ export namespace MyNS {
 		 * Inferred from the caller identity if not provided.
 		 */
 		customerId?: string | null;
+	}
+
+	/** A request to undelete a specific alert that was marked for deletion. */
+	export interface UndeleteAlertRequestFormProperties {
+
+		/**
+		 * Optional. The unique identifier of the G Suite organization account of the
+		 * customer the alert is associated with.
+		 * Inferred from the caller identity if not provided.
+		 */
+		customerId: FormControl<string | null | undefined>,
+	}
+	export function CreateUndeleteAlertRequestFormGroup() {
+		return new FormGroup<UndeleteAlertRequestFormProperties>({
+			customerId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

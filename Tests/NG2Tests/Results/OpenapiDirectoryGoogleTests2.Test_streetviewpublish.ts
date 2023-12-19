@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Request to delete multiple Photos. */
@@ -11,7 +12,16 @@ export namespace MyNS {
 		 * GET requests require the following syntax for the URL query parameter:
 		 * `photoIds=<id1>&photoIds=<id2>&...`.
 		 */
-		photoIds?: Array<string> | null;
+		photoIds?: Array<string>;
+	}
+
+	/** Request to delete multiple Photos. */
+	export interface BatchDeletePhotosRequestFormProperties {
+	}
+	export function CreateBatchDeletePhotosRequestFormGroup() {
+		return new FormGroup<BatchDeletePhotosRequestFormProperties>({
+		});
+
 	}
 
 
@@ -25,7 +35,19 @@ export namespace MyNS {
 		 * The status for the operation to delete a single
 		 * Photo in the batch request.
 		 */
-		status?: Array<Status> | null;
+		status?: Array<Status>;
+	}
+
+	/**
+	 * Response to batch delete of one or more
+	 * Photos.
+	 */
+	export interface BatchDeletePhotosResponseFormProperties {
+	}
+	export function CreateBatchDeletePhotosResponseFormGroup() {
+		return new FormGroup<BatchDeletePhotosResponseFormProperties>({
+		});
+
 	}
 
 
@@ -46,7 +68,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -54,6 +76,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -66,7 +116,16 @@ export namespace MyNS {
 		 * the requests in
 		 * BatchGetPhotos.
 		 */
-		results?: Array<PhotoResponse> | null;
+		results?: Array<PhotoResponse>;
+	}
+
+	/** Response to batch get of Photos. */
+	export interface BatchGetPhotosResponseFormProperties {
+	}
+	export function CreateBatchGetPhotosResponseFormGroup() {
+		return new FormGroup<BatchGetPhotosResponseFormProperties>({
+		});
+
 	}
 
 
@@ -81,7 +140,7 @@ export namespace MyNS {
 	export interface PhotoResponse {
 
 		/** Photo is used to store 360 photos along with photo metadata. */
-		photo?: Photo | null;
+		photo?: Photo;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -91,7 +150,23 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status | null;
+		status?: Status;
+	}
+
+	/**
+	 * Response payload for a single
+	 * Photo
+	 * in batch operations including
+	 * BatchGetPhotos
+	 * and
+	 * BatchUpdatePhotos.
+	 */
+	export interface PhotoResponseFormProperties {
+	}
+	export function CreatePhotoResponseFormGroup() {
+		return new FormGroup<PhotoResponseFormProperties>({
+		});
+
 	}
 
 
@@ -109,7 +184,7 @@ export namespace MyNS {
 		 * Connections to other photos. A connection represents the link from this
 		 * photo to another photo.
 		 */
-		connections?: Array<Connection> | null;
+		connections?: Array<Connection>;
 
 		/**
 		 * Output only. The download URL for the photo bytes. This field is set only
@@ -127,13 +202,13 @@ export namespace MyNS {
 		mapsPublishStatus?: PhotoMapsPublishStatus | null;
 
 		/** Identifier for a Photo. */
-		photoId?: PhotoId | null;
+		photoId?: PhotoId;
 
 		/** Places where this photo belongs. */
-		places?: Array<Place> | null;
+		places?: Array<Place>;
 
 		/** Raw pose measurement for an entity. */
-		pose?: Pose | null;
+		pose?: Pose;
 
 		/** Output only. The share link for the photo. */
 		shareLink?: string | null;
@@ -145,10 +220,60 @@ export namespace MyNS {
 		transferStatus?: PhotoTransferStatus | null;
 
 		/** Upload reference for media files. */
-		uploadReference?: UploadRef | null;
+		uploadReference?: UploadRef;
 
 		/** Output only. View count of the photo. */
 		viewCount?: string | null;
+	}
+
+	/** Photo is used to store 360 photos along with photo metadata. */
+	export interface PhotoFormProperties {
+
+		/**
+		 * Absolute time when the photo was captured.
+		 * When the photo has no exif timestamp, this is used to set a timestamp in
+		 * the photo metadata.
+		 */
+		captureTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The download URL for the photo bytes. This field is set only
+		 * when
+		 * GetPhotoRequest.view
+		 * is set to
+		 * PhotoView.INCLUDE_DOWNLOAD_URL.
+		 */
+		downloadUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Status in Google Maps, whether this photo was published or
+		 * rejected. Not currently populated.
+		 */
+		mapsPublishStatus: FormControl<PhotoMapsPublishStatus | null | undefined>,
+
+		/** Output only. The share link for the photo. */
+		shareLink: FormControl<string | null | undefined>,
+
+		/** Output only. The thumbnail URL for showing a preview of the given photo. */
+		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/** Output only. Status of rights transfer on this photo. */
+		transferStatus: FormControl<PhotoTransferStatus | null | undefined>,
+
+		/** Output only. View count of the photo. */
+		viewCount: FormControl<string | null | undefined>,
+	}
+	export function CreatePhotoFormGroup() {
+		return new FormGroup<PhotoFormProperties>({
+			captureTime: new FormControl<string | null | undefined>(undefined),
+			downloadUrl: new FormControl<string | null | undefined>(undefined),
+			mapsPublishStatus: new FormControl<PhotoMapsPublishStatus | null | undefined>(undefined),
+			shareLink: new FormControl<string | null | undefined>(undefined),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
+			transferStatus: new FormControl<PhotoTransferStatus | null | undefined>(undefined),
+			viewCount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -156,7 +281,16 @@ export namespace MyNS {
 	export interface Connection {
 
 		/** Identifier for a Photo. */
-		target?: PhotoId | null;
+		target?: PhotoId;
+	}
+
+	/** A connection is the link from a source photo to a destination photo. */
+	export interface ConnectionFormProperties {
+	}
+	export function CreateConnectionFormGroup() {
+		return new FormGroup<ConnectionFormProperties>({
+		});
+
 	}
 
 
@@ -165,6 +299,19 @@ export namespace MyNS {
 
 		/** Required. A unique identifier for a photo. */
 		id?: string | null;
+	}
+
+	/** Identifier for a Photo. */
+	export interface PhotoIdFormProperties {
+
+		/** Required. A unique identifier for a photo. */
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreatePhotoIdFormGroup() {
+		return new FormGroup<PhotoIdFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PhotoMapsPublishStatus { UNSPECIFIED_MAPS_PUBLISH_STATUS = 0, PUBLISHED = 1, REJECTED_UNKNOWN = 2 }
@@ -187,6 +334,33 @@ export namespace MyNS {
 		 * https://developers.google.com/places/place-id.
 		 */
 		placeId?: string | null;
+	}
+
+	/** Place metadata for an entity. */
+	export interface PlaceFormProperties {
+
+		/**
+		 * Output-only. The language_code that the name is localized with. This should
+		 * be the language_code specified in the request, but may be a fallback.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Output-only. The name of the place, localized to the language_code. */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Place identifier, as described in
+		 * https://developers.google.com/places/place-id.
+		 */
+		placeId: FormControl<string | null | undefined>,
+	}
+	export function CreatePlaceFormGroup() {
+		return new FormGroup<PlaceFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			placeId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -223,10 +397,10 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLngPair?: LatLng | null;
+		latLngPair?: LatLng;
 
 		/** Level information containing level number and its corresponding name. */
-		level?: Level | null;
+		level?: Level;
 
 		/**
 		 * Pitch, measured at the center of the photo in degrees. Value must be >=-90
@@ -244,6 +418,58 @@ export namespace MyNS {
 		roll?: number | null;
 	}
 
+	/** Raw pose measurement for an entity. */
+	export interface PoseFormProperties {
+
+		/**
+		 * The estimated horizontal accuracy of this pose in meters with 68%
+		 * confidence (one standard deviation). For example, on Android, this value is
+		 * available from this method:
+		 * https://developer.android.com/reference/android/location/Location#getAccuracy().
+		 * Other platforms have different methods of obtaining similar accuracy
+		 * estimations.
+		 */
+		accuracyMeters: FormControl<number | null | undefined>,
+
+		/**
+		 * Altitude of the pose in meters above WGS84 ellipsoid.
+		 * NaN indicates an unmeasured quantity.
+		 */
+		altitude: FormControl<number | null | undefined>,
+
+		/**
+		 * Compass heading, measured at the center of the photo in degrees clockwise
+		 * from North. Value must be >=0 and <360.
+		 * NaN indicates an unmeasured quantity.
+		 */
+		heading: FormControl<number | null | undefined>,
+
+		/**
+		 * Pitch, measured at the center of the photo in degrees. Value must be >=-90
+		 * and <= 90. A value of -90 means looking directly down, and a value of 90
+		 * means looking directly up.
+		 * NaN indicates an unmeasured quantity.
+		 */
+		pitch: FormControl<number | null | undefined>,
+
+		/**
+		 * Roll, measured in degrees. Value must be >= 0 and <360. A value of 0
+		 * means level with the horizon.
+		 * NaN indicates an unmeasured quantity.
+		 */
+		roll: FormControl<number | null | undefined>,
+	}
+	export function CreatePoseFormGroup() {
+		return new FormGroup<PoseFormProperties>({
+			accuracyMeters: new FormControl<number | null | undefined>(undefined),
+			altitude: new FormControl<number | null | undefined>(undefined),
+			heading: new FormControl<number | null | undefined>(undefined),
+			pitch: new FormControl<number | null | undefined>(undefined),
+			roll: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -259,6 +485,29 @@ export namespace MyNS {
 
 		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
 		longitude?: number | null;
+	}
+
+	/**
+	 * An object representing a latitude/longitude pair. This is expressed as a pair
+	 * of doubles representing degrees latitude and degrees longitude. Unless
+	 * specified otherwise, this must conform to the
+	 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
+	 * standard</a>. Values must be within normalized ranges.
+	 */
+	export interface LatLngFormProperties {
+
+		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		latitude: FormControl<number | null | undefined>,
+
+		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		longitude: FormControl<number | null | undefined>,
+	}
+	export function CreateLatLngFormGroup() {
+		return new FormGroup<LatLngFormProperties>({
+			latitude: new FormControl<number | null | undefined>(undefined),
+			longitude: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,6 +529,31 @@ export namespace MyNS {
 		number?: number | null;
 	}
 
+	/** Level information containing level number and its corresponding name. */
+	export interface LevelFormProperties {
+
+		/**
+		 * Required. A name assigned to this Level, restricted to 3 characters.
+		 * Consider how the elevator buttons would be labeled for this level if there
+		 * was an elevator.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+		 * the first level above ground level, -1 indicates the first level under
+		 * ground level. Non-integer values are OK.
+		 */
+		number: FormControl<number | null | undefined>,
+	}
+	export function CreateLevelFormGroup() {
+		return new FormGroup<LevelFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			number: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PhotoTransferStatus { TRANSFER_STATUS_UNKNOWN = 0, NEVER_TRANSFERRED = 1, PENDING = 2, COMPLETED = 3, REJECTED = 4, EXPIRED = 5, CANCELLED = 6, RECEIVED_VIA_TRANSFER = 7 }
 
 
@@ -294,6 +568,23 @@ export namespace MyNS {
 		uploadUrl?: string | null;
 	}
 
+	/** Upload reference for media files. */
+	export interface UploadRefFormProperties {
+
+		/**
+		 * Required. An upload reference should be unique for each user. It follows
+		 * the form:
+		 * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
+		 */
+		uploadUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadRefFormGroup() {
+		return new FormGroup<UploadRefFormProperties>({
+			uploadUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Request to update the metadata of photos.
@@ -305,7 +596,19 @@ export namespace MyNS {
 		 * Required. List of
 		 * UpdatePhotoRequests.
 		 */
-		updatePhotoRequests?: Array<UpdatePhotoRequest> | null;
+		updatePhotoRequests?: Array<UpdatePhotoRequest>;
+	}
+
+	/**
+	 * Request to update the metadata of photos.
+	 * Updating the pixels of photos is not supported.
+	 */
+	export interface BatchUpdatePhotosRequestFormProperties {
+	}
+	export function CreateBatchUpdatePhotosRequestFormGroup() {
+		return new FormGroup<BatchUpdatePhotosRequestFormProperties>({
+		});
+
 	}
 
 
@@ -317,7 +620,7 @@ export namespace MyNS {
 	export interface UpdatePhotoRequest {
 
 		/** Photo is used to store 360 photos along with photo metadata. */
-		photo?: Photo | null;
+		photo?: Photo;
 
 		/**
 		 * Required. Mask that identifies fields on the photo metadata to update.
@@ -346,6 +649,46 @@ export namespace MyNS {
 		updateMask?: string | null;
 	}
 
+	/**
+	 * Request to update the metadata of a
+	 * Photo. Updating the pixels of a photo
+	 * is not supported.
+	 */
+	export interface UpdatePhotoRequestFormProperties {
+
+		/**
+		 * Required. Mask that identifies fields on the photo metadata to update.
+		 * If not present, the old Photo
+		 * metadata is entirely replaced with the
+		 * new Photo metadata in this request.
+		 * The update fails if invalid fields are specified. Multiple fields can be
+		 * specified in a comma-delimited list.
+		 * The following fields are valid:
+		 * * `pose.heading`
+		 * * `pose.latLngPair`
+		 * * `pose.pitch`
+		 * * `pose.roll`
+		 * * `pose.level`
+		 * * `pose.altitude`
+		 * * `connections`
+		 * * `places`
+		 * <aside class="note"><b>Note:</b> When
+		 * updateMask
+		 * contains repeated fields, the entire set of repeated values get replaced
+		 * with the new contents. For example, if
+		 * updateMask
+		 * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
+		 * all connections are removed.</aside>
+		 */
+		updateMask: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePhotoRequestFormGroup() {
+		return new FormGroup<UpdatePhotoRequestFormProperties>({
+			updateMask: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Response to batch update of metadata of one or more
@@ -358,7 +701,19 @@ export namespace MyNS {
 		 * Photo updated, in the same order as
 		 * the request.
 		 */
-		results?: Array<PhotoResponse> | null;
+		results?: Array<PhotoResponse>;
+	}
+
+	/**
+	 * Response to batch update of metadata of one or more
+	 * Photos.
+	 */
+	export interface BatchUpdatePhotosResponseFormProperties {
+	}
+	export function CreateBatchUpdatePhotosResponseFormGroup() {
+		return new FormGroup<BatchUpdatePhotosResponseFormProperties>({
+		});
+
 	}
 
 
@@ -372,6 +727,23 @@ export namespace MyNS {
 	 * The JSON representation for `Empty` is empty JSON object `{}`.
 	 */
 	export interface Empty {
+	}
+
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
 	}
 
 
@@ -389,7 +761,23 @@ export namespace MyNS {
 		 * pageSize field
 		 * in the request determines the number of items returned.
 		 */
-		photos?: Array<Photo> | null;
+		photos?: Array<Photo>;
+	}
+
+	/** Response to list all photos that belong to a user. */
+	export interface ListPhotosResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no more
+		 * results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPhotosResponseFormGroup() {
+		return new FormGroup<ListPhotosResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -414,7 +802,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -422,7 +810,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -441,7 +829,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -666,7 +1104,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Streetviewpublish_photos_batchGet(languageCode: string | null | undefined, photoIds: Array<string> | null | undefined, view: Streetviewpublish_photo_getView | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/photos:batchGet?languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&' + photoIds.map(z => `photoIds=${encodeURIComponent(z)}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/photos:batchGet?languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&' + photoIds?.map(z => `photoIds=${encodeURIComponent(z)}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
 		/**

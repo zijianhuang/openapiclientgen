@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DirectoryList {
 
@@ -8,10 +9,25 @@ export namespace MyNS {
 		discoveryVersion?: string | null;
 
 		/** The individual directory entries. One entry per api/version pair. */
-		DirectoryListItems?: Array<DirectoryListItems> | null;
+		DirectoryListItems?: Array<DirectoryListItems>;
 
 		/** The kind for this response. */
 		kind?: string | null;
+	}
+	export interface DirectoryListFormProperties {
+
+		/** Indicate the version of the Discovery API used to generate this doc. */
+		discoveryVersion: FormControl<string | null | undefined>,
+
+		/** The kind for this response. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryListFormGroup() {
+		return new FormGroup<DirectoryListFormProperties>({
+			discoveryVersion: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DirectoryListItems {
@@ -29,7 +45,7 @@ export namespace MyNS {
 		documentationLink?: string | null;
 
 		/** Links to 16x16 and 32x32 icons representing the API. */
-		icons?: DirectoryListIcons | null;
+		icons?: DirectoryListIcons;
 
 		/** The id of this API. */
 		id?: string | null;
@@ -38,7 +54,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Labels for the status of this API, such as labs or deprecated. */
-		labels?: Array<string> | null;
+		labels?: Array<string>;
 
 		/** The name of the API. */
 		name?: string | null;
@@ -52,6 +68,53 @@ export namespace MyNS {
 		/** The version of the API. */
 		version?: string | null;
 	}
+	export interface DirectoryListItemsFormProperties {
+
+		/** The description of this API. */
+		description: FormControl<string | null | undefined>,
+
+		/** A link to the discovery document. */
+		discoveryLink: FormControl<string | null | undefined>,
+
+		/** The URL for the discovery REST document. */
+		discoveryRestUrl: FormControl<string | null | undefined>,
+
+		/** A link to human readable documentation for the API. */
+		documentationLink: FormControl<string | null | undefined>,
+
+		/** The id of this API. */
+		id: FormControl<string | null | undefined>,
+
+		/** The kind for this response. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The name of the API. */
+		name: FormControl<string | null | undefined>,
+
+		/** True if this version is the preferred version to use. */
+		preferred: FormControl<boolean | null | undefined>,
+
+		/** The title of this API. */
+		title: FormControl<string | null | undefined>,
+
+		/** The version of the API. */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryListItemsFormGroup() {
+		return new FormGroup<DirectoryListItemsFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			discoveryLink: new FormControl<string | null | undefined>(undefined),
+			discoveryRestUrl: new FormControl<string | null | undefined>(undefined),
+			documentationLink: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			preferred: new FormControl<boolean | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DirectoryListIcons {
 
@@ -61,15 +124,30 @@ export namespace MyNS {
 		/** The URL of the 32x32 icon. */
 		x32?: string | null;
 	}
+	export interface DirectoryListIconsFormProperties {
+
+		/** The URL of the 16x16 icon. */
+		x16: FormControl<string | null | undefined>,
+
+		/** The URL of the 32x32 icon. */
+		x32: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryListIconsFormGroup() {
+		return new FormGroup<DirectoryListIconsFormProperties>({
+			x16: new FormControl<string | null | undefined>(undefined),
+			x32: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface JsonSchema {
 
 		/** A reference to another schema. The value of this property is the "id" of another schema. */
 		ref?: string | null;
-		additionalProperties?: JsonSchema | null;
+		additionalProperties?: JsonSchema;
 
 		/** Additional information about this property. */
-		annotations?: JsonSchemaAnnotations | null;
+		annotations?: JsonSchemaAnnotations;
 
 		/** The default value of this property (if one exists). */
 		default?: string | null;
@@ -78,17 +156,17 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Values this parameter may take (if it is an enum). */
-		enum?: Array<string> | null;
+		enum?: Array<string>;
 
 		/** The descriptions for the enums. Each position maps to the corresponding value in the "enum" array. */
-		enumDescriptions?: Array<string> | null;
+		enumDescriptions?: Array<string>;
 
 		/** An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23 */
 		format?: string | null;
 
 		/** Unique identifier for this schema. */
 		id?: string | null;
-		items?: JsonSchema | null;
+		items?: JsonSchema;
 
 		/** Whether this parameter goes in the query or the path for REST requests. */
 		location?: string | null;
@@ -103,7 +181,7 @@ export namespace MyNS {
 		pattern?: string | null;
 
 		/** If this is a schema for an object, list the schema for each property of this object. */
-		properties?: {[id: string]: JsonSchema } | null;
+		properties?: {[id: string]: JsonSchema };
 
 		/** The value is read-only, generated by the service. The value cannot be modified by the client. If the value is included in a POST, PUT, or PATCH request, it is ignored by the service. */
 		readOnly?: boolean | null;
@@ -118,13 +196,83 @@ export namespace MyNS {
 		type?: string | null;
 
 		/** In a variant data type, the value of one property is used to determine how to interpret the entire entity. Its value must exist in a map of descriminant values to schema names. */
-		variant?: JsonSchemaVariant | null;
+		variant?: JsonSchemaVariant;
+	}
+	export interface JsonSchemaFormProperties {
+
+		/** A reference to another schema. The value of this property is the "id" of another schema. */
+		ref: FormControl<string | null | undefined>,
+
+		/** The default value of this property (if one exists). */
+		default: FormControl<string | null | undefined>,
+
+		/** A description of this object. */
+		description: FormControl<string | null | undefined>,
+
+		/** An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23 */
+		format: FormControl<string | null | undefined>,
+
+		/** Unique identifier for this schema. */
+		id: FormControl<string | null | undefined>,
+
+		/** Whether this parameter goes in the query or the path for REST requests. */
+		location: FormControl<string | null | undefined>,
+
+		/** The maximum value of this parameter. */
+		maximum: FormControl<string | null | undefined>,
+
+		/** The minimum value of this parameter. */
+		minimum: FormControl<string | null | undefined>,
+
+		/** The regular expression this parameter must conform to. Uses Java 6 regex format: http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html */
+		pattern: FormControl<string | null | undefined>,
+
+		/** If this is a schema for an object, list the schema for each property of this object. */
+		properties: FormControl<{[id: string]: JsonSchema } | null | undefined>,
+
+		/** The value is read-only, generated by the service. The value cannot be modified by the client. If the value is included in a POST, PUT, or PATCH request, it is ignored by the service. */
+		readOnly: FormControl<boolean | null | undefined>,
+
+		/** Whether this parameter may appear multiple times. */
+		repeated: FormControl<boolean | null | undefined>,
+
+		/** Whether the parameter is required. */
+		required: FormControl<boolean | null | undefined>,
+
+		/** The value type for this schema. A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1 */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateJsonSchemaFormGroup() {
+		return new FormGroup<JsonSchemaFormProperties>({
+			ref: new FormControl<string | null | undefined>(undefined),
+			default: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			maximum: new FormControl<string | null | undefined>(undefined),
+			minimum: new FormControl<string | null | undefined>(undefined),
+			pattern: new FormControl<string | null | undefined>(undefined),
+			properties: new FormControl<{[id: string]: JsonSchema } | null | undefined>(undefined),
+			readOnly: new FormControl<boolean | null | undefined>(undefined),
+			repeated: new FormControl<boolean | null | undefined>(undefined),
+			required: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface JsonSchemaAnnotations {
 
 		/** A list of methods for which this property is required on requests. */
-		required?: Array<string> | null;
+		required?: Array<string>;
+	}
+	export interface JsonSchemaAnnotationsFormProperties {
+	}
+	export function CreateJsonSchemaAnnotationsFormGroup() {
+		return new FormGroup<JsonSchemaAnnotationsFormProperties>({
+		});
+
 	}
 
 	export interface JsonSchemaVariant {
@@ -133,18 +281,40 @@ export namespace MyNS {
 		discriminant?: string | null;
 
 		/** The map of discriminant value to schema to use for parsing.. */
-		JsonSchemaVariantMap?: Array<JsonSchemaVariantMap> | null;
+		JsonSchemaVariantMap?: Array<JsonSchemaVariantMap>;
+	}
+	export interface JsonSchemaVariantFormProperties {
+
+		/** The name of the type discriminant property. */
+		discriminant: FormControl<string | null | undefined>,
+	}
+	export function CreateJsonSchemaVariantFormGroup() {
+		return new FormGroup<JsonSchemaVariantFormProperties>({
+			discriminant: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface JsonSchemaVariantMap {
 		ref?: string | null;
 		type_value?: string | null;
 	}
+	export interface JsonSchemaVariantMapFormProperties {
+		ref: FormControl<string | null | undefined>,
+		type_value: FormControl<string | null | undefined>,
+	}
+	export function CreateJsonSchemaVariantMapFormGroup() {
+		return new FormGroup<JsonSchemaVariantMapFormProperties>({
+			ref: new FormControl<string | null | undefined>(undefined),
+			type_value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestDescription {
 
 		/** Authentication information. */
-		auth?: RestDescriptionAuth | null;
+		auth?: RestDescriptionAuth;
 
 		/** [DEPRECATED] The base path for REST requests. */
 		basePath?: string | null;
@@ -174,10 +344,10 @@ export namespace MyNS {
 		exponentialBackoffDefault?: boolean | null;
 
 		/** A list of supported features for this API. */
-		features?: Array<string> | null;
+		features?: Array<string>;
 
 		/** Links to 16x16 and 32x32 icons representing the API. */
-		icons?: RestDescriptionIcons | null;
+		icons?: RestDescriptionIcons;
 
 		/** The ID of this API. */
 		id?: string | null;
@@ -186,10 +356,10 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Labels for the status of this API, such as labs or deprecated. */
-		labels?: Array<string> | null;
+		labels?: Array<string>;
 
 		/** API-level methods for this API. */
-		methods?: {[id: string]: RestMethod } | null;
+		methods?: {[id: string]: RestMethod };
 
 		/** The name of this API. */
 		name?: string | null;
@@ -204,13 +374,13 @@ export namespace MyNS {
 		packagePath?: string | null;
 
 		/** Common parameters that apply across all apis. */
-		parameters?: {[id: string]: JsonSchema } | null;
+		parameters?: {[id: string]: JsonSchema };
 
 		/** The protocol described by this document. */
 		protocol?: string | null;
 
 		/** The resources in this API. */
-		resources?: {[id: string]: RestResource } | null;
+		resources?: {[id: string]: RestResource };
 
 		/** The version of this API. */
 		revision?: string | null;
@@ -219,7 +389,7 @@ export namespace MyNS {
 		rootUrl?: string | null;
 
 		/** The schemas for this API. */
-		schemas?: {[id: string]: JsonSchema } | null;
+		schemas?: {[id: string]: JsonSchema };
 
 		/** The base path for all REST requests. */
 		servicePath?: string | null;
@@ -231,23 +401,161 @@ export namespace MyNS {
 		version?: string | null;
 		version_module?: boolean | null;
 	}
+	export interface RestDescriptionFormProperties {
+
+		/** [DEPRECATED] The base path for REST requests. */
+		basePath: FormControl<string | null | undefined>,
+
+		/** [DEPRECATED] The base URL for REST requests. */
+		baseUrl: FormControl<string | null | undefined>,
+
+		/** The path for REST batch requests. */
+		batchPath: FormControl<string | null | undefined>,
+
+		/** Indicates how the API name should be capitalized and split into various parts. Useful for generating pretty class names. */
+		canonicalName: FormControl<string | null | undefined>,
+
+		/** The description of this API. */
+		description: FormControl<string | null | undefined>,
+
+		/** Indicate the version of the Discovery API used to generate this doc. */
+		discoveryVersion: FormControl<string | null | undefined>,
+
+		/** A link to human readable documentation for the API. */
+		documentationLink: FormControl<string | null | undefined>,
+
+		/** The ETag for this response. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Enable exponential backoff for suitable methods in the generated clients. */
+		exponentialBackoffDefault: FormControl<boolean | null | undefined>,
+
+		/** The ID of this API. */
+		id: FormControl<string | null | undefined>,
+
+		/** The kind for this response. */
+		kind: FormControl<string | null | undefined>,
+
+		/** API-level methods for this API. */
+		methods: FormControl<{[id: string]: RestMethod } | null | undefined>,
+
+		/** The name of this API. */
+		name: FormControl<string | null | undefined>,
+
+		/** The domain of the owner of this API. Together with the ownerName and a packagePath values, this can be used to generate a library for this API which would have a unique fully qualified name. */
+		ownerDomain: FormControl<string | null | undefined>,
+
+		/** The name of the owner of this API. See ownerDomain. */
+		ownerName: FormControl<string | null | undefined>,
+
+		/** The package of the owner of this API. See ownerDomain. */
+		packagePath: FormControl<string | null | undefined>,
+
+		/** Common parameters that apply across all apis. */
+		parameters: FormControl<{[id: string]: JsonSchema } | null | undefined>,
+
+		/** The protocol described by this document. */
+		protocol: FormControl<string | null | undefined>,
+
+		/** The resources in this API. */
+		resources: FormControl<{[id: string]: RestResource } | null | undefined>,
+
+		/** The version of this API. */
+		revision: FormControl<string | null | undefined>,
+
+		/** The root URL under which all API services live. */
+		rootUrl: FormControl<string | null | undefined>,
+
+		/** The schemas for this API. */
+		schemas: FormControl<{[id: string]: JsonSchema } | null | undefined>,
+
+		/** The base path for all REST requests. */
+		servicePath: FormControl<string | null | undefined>,
+
+		/** The title of this API. */
+		title: FormControl<string | null | undefined>,
+
+		/** The version of this API. */
+		version: FormControl<string | null | undefined>,
+		version_module: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRestDescriptionFormGroup() {
+		return new FormGroup<RestDescriptionFormProperties>({
+			basePath: new FormControl<string | null | undefined>(undefined),
+			baseUrl: new FormControl<string | null | undefined>(undefined),
+			batchPath: new FormControl<string | null | undefined>(undefined),
+			canonicalName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			discoveryVersion: new FormControl<string | null | undefined>(undefined),
+			documentationLink: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			exponentialBackoffDefault: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			methods: new FormControl<{[id: string]: RestMethod } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			ownerDomain: new FormControl<string | null | undefined>(undefined),
+			ownerName: new FormControl<string | null | undefined>(undefined),
+			packagePath: new FormControl<string | null | undefined>(undefined),
+			parameters: new FormControl<{[id: string]: JsonSchema } | null | undefined>(undefined),
+			protocol: new FormControl<string | null | undefined>(undefined),
+			resources: new FormControl<{[id: string]: RestResource } | null | undefined>(undefined),
+			revision: new FormControl<string | null | undefined>(undefined),
+			rootUrl: new FormControl<string | null | undefined>(undefined),
+			schemas: new FormControl<{[id: string]: JsonSchema } | null | undefined>(undefined),
+			servicePath: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			version_module: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestDescriptionAuth {
 
 		/** OAuth 2.0 authentication information. */
-		oauth2?: RestDescriptionAuthOauth2 | null;
+		oauth2?: RestDescriptionAuthOauth2;
+	}
+	export interface RestDescriptionAuthFormProperties {
+	}
+	export function CreateRestDescriptionAuthFormGroup() {
+		return new FormGroup<RestDescriptionAuthFormProperties>({
+		});
+
 	}
 
 	export interface RestDescriptionAuthOauth2 {
 
 		/** Available OAuth 2.0 scopes. */
-		scopes?: {[id: string]: RestDescriptionAuthOauth2Scopes } | null;
+		scopes?: {[id: string]: RestDescriptionAuthOauth2Scopes };
+	}
+	export interface RestDescriptionAuthOauth2FormProperties {
+
+		/** Available OAuth 2.0 scopes. */
+		scopes: FormControl<{[id: string]: RestDescriptionAuthOauth2Scopes } | null | undefined>,
+	}
+	export function CreateRestDescriptionAuthOauth2FormGroup() {
+		return new FormGroup<RestDescriptionAuthOauth2FormProperties>({
+			scopes: new FormControl<{[id: string]: RestDescriptionAuthOauth2Scopes } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestDescriptionAuthOauth2Scopes {
 
 		/** Description of scope. */
 		description?: string | null;
+	}
+	export interface RestDescriptionAuthOauth2ScopesFormProperties {
+
+		/** Description of scope. */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateRestDescriptionAuthOauth2ScopesFormGroup() {
+		return new FormGroup<RestDescriptionAuthOauth2ScopesFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestDescriptionIcons {
@@ -257,6 +565,21 @@ export namespace MyNS {
 
 		/** The URL of the 32x32 icon. */
 		x32?: string | null;
+	}
+	export interface RestDescriptionIconsFormProperties {
+
+		/** The URL of the 16x16 icon. */
+		x16: FormControl<string | null | undefined>,
+
+		/** The URL of the 32x32 icon. */
+		x32: FormControl<string | null | undefined>,
+	}
+	export function CreateRestDescriptionIconsFormGroup() {
+		return new FormGroup<RestDescriptionIconsFormProperties>({
+			x16: new FormControl<string | null | undefined>(undefined),
+			x32: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestMethod {
@@ -274,25 +597,25 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Media upload parameters. */
-		mediaUpload?: RestMethodMediaUpload | null;
+		mediaUpload?: RestMethodMediaUpload;
 
 		/** Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the "most-significant" parameter appears first. */
-		parameterOrder?: Array<string> | null;
+		parameterOrder?: Array<string>;
 
 		/** Details for all parameters in this method. */
-		parameters?: {[id: string]: JsonSchema } | null;
+		parameters?: {[id: string]: JsonSchema };
 
 		/** The URI path of this REST method. Should be used in conjunction with the basePath property at the api-level. */
 		path?: string | null;
 
 		/** The schema for the request. */
-		request?: RestMethodRequest | null;
+		request?: RestMethodRequest;
 
 		/** The schema for the response. */
-		response?: RestMethodResponse | null;
+		response?: RestMethodResponse;
 
 		/** OAuth 2.0 scopes applicable to this method. */
-		scopes?: Array<string> | null;
+		scopes?: Array<string>;
 
 		/** Whether this method supports media downloads. */
 		supportsMediaDownload?: boolean | null;
@@ -306,26 +629,91 @@ export namespace MyNS {
 		/** Indicates that downloads from this method should use the download service URL (i.e. "/download"). Only applies if the method supports media download. */
 		useMediaDownloadService?: boolean | null;
 	}
+	export interface RestMethodFormProperties {
+
+		/** Description of this method. */
+		description: FormControl<string | null | undefined>,
+
+		/** Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header. */
+		etagRequired: FormControl<boolean | null | undefined>,
+
+		/** HTTP method used by this method. */
+		httpMethod: FormControl<string | null | undefined>,
+
+		/** A unique ID for this method. This property can be used to match methods between different versions of Discovery. */
+		id: FormControl<string | null | undefined>,
+
+		/** Details for all parameters in this method. */
+		parameters: FormControl<{[id: string]: JsonSchema } | null | undefined>,
+
+		/** The URI path of this REST method. Should be used in conjunction with the basePath property at the api-level. */
+		path: FormControl<string | null | undefined>,
+
+		/** Whether this method supports media downloads. */
+		supportsMediaDownload: FormControl<boolean | null | undefined>,
+
+		/** Whether this method supports media uploads. */
+		supportsMediaUpload: FormControl<boolean | null | undefined>,
+
+		/** Whether this method supports subscriptions. */
+		supportsSubscription: FormControl<boolean | null | undefined>,
+
+		/** Indicates that downloads from this method should use the download service URL (i.e. "/download"). Only applies if the method supports media download. */
+		useMediaDownloadService: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRestMethodFormGroup() {
+		return new FormGroup<RestMethodFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			etagRequired: new FormControl<boolean | null | undefined>(undefined),
+			httpMethod: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			parameters: new FormControl<{[id: string]: JsonSchema } | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined),
+			supportsMediaDownload: new FormControl<boolean | null | undefined>(undefined),
+			supportsMediaUpload: new FormControl<boolean | null | undefined>(undefined),
+			supportsSubscription: new FormControl<boolean | null | undefined>(undefined),
+			useMediaDownloadService: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestMethodMediaUpload {
 
 		/** MIME Media Ranges for acceptable media uploads to this method. */
-		accept?: Array<string> | null;
+		accept?: Array<string>;
 
 		/** Maximum size of a media upload, such as "1MB", "2GB" or "3TB". */
 		maxSize?: string | null;
 
 		/** Supported upload protocols. */
-		protocols?: RestMethodMediaUploadProtocols | null;
+		protocols?: RestMethodMediaUploadProtocols;
+	}
+	export interface RestMethodMediaUploadFormProperties {
+
+		/** Maximum size of a media upload, such as "1MB", "2GB" or "3TB". */
+		maxSize: FormControl<string | null | undefined>,
+	}
+	export function CreateRestMethodMediaUploadFormGroup() {
+		return new FormGroup<RestMethodMediaUploadFormProperties>({
+			maxSize: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestMethodMediaUploadProtocols {
 
 		/** Supports the Resumable Media Upload protocol. */
-		resumable?: RestMethodMediaUploadProtocolsResumable | null;
+		resumable?: RestMethodMediaUploadProtocolsResumable;
 
 		/** Supports uploading as a single HTTP request. */
-		simple?: RestMethodMediaUploadProtocolsSimple | null;
+		simple?: RestMethodMediaUploadProtocolsSimple;
+	}
+	export interface RestMethodMediaUploadProtocolsFormProperties {
+	}
+	export function CreateRestMethodMediaUploadProtocolsFormGroup() {
+		return new FormGroup<RestMethodMediaUploadProtocolsFormProperties>({
+		});
+
 	}
 
 	export interface RestMethodMediaUploadProtocolsResumable {
@@ -336,6 +724,21 @@ export namespace MyNS {
 		/** The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. */
 		path?: string | null;
 	}
+	export interface RestMethodMediaUploadProtocolsResumableFormProperties {
+
+		/** True if this endpoint supports uploading multipart media. */
+		multipart: FormControl<boolean | null | undefined>,
+
+		/** The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. */
+		path: FormControl<string | null | undefined>,
+	}
+	export function CreateRestMethodMediaUploadProtocolsResumableFormGroup() {
+		return new FormGroup<RestMethodMediaUploadProtocolsResumableFormProperties>({
+			multipart: new FormControl<boolean | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestMethodMediaUploadProtocolsSimple {
 
@@ -344,6 +747,21 @@ export namespace MyNS {
 
 		/** The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. */
 		path?: string | null;
+	}
+	export interface RestMethodMediaUploadProtocolsSimpleFormProperties {
+
+		/** True if this endpoint supports upload multipart media. */
+		multipart: FormControl<boolean | null | undefined>,
+
+		/** The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level. */
+		path: FormControl<string | null | undefined>,
+	}
+	export function CreateRestMethodMediaUploadProtocolsSimpleFormGroup() {
+		return new FormGroup<RestMethodMediaUploadProtocolsSimpleFormProperties>({
+			multipart: new FormControl<boolean | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestMethodRequest {
@@ -354,20 +772,61 @@ export namespace MyNS {
 		/** parameter name. */
 		parameterName?: string | null;
 	}
+	export interface RestMethodRequestFormProperties {
+
+		/** Schema ID for the request schema. */
+		ref: FormControl<string | null | undefined>,
+
+		/** parameter name. */
+		parameterName: FormControl<string | null | undefined>,
+	}
+	export function CreateRestMethodRequestFormGroup() {
+		return new FormGroup<RestMethodRequestFormProperties>({
+			ref: new FormControl<string | null | undefined>(undefined),
+			parameterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestMethodResponse {
 
 		/** Schema ID for the response schema. */
 		ref?: string | null;
 	}
+	export interface RestMethodResponseFormProperties {
+
+		/** Schema ID for the response schema. */
+		ref: FormControl<string | null | undefined>,
+	}
+	export function CreateRestMethodResponseFormGroup() {
+		return new FormGroup<RestMethodResponseFormProperties>({
+			ref: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestResource {
 
 		/** Methods on this resource. */
-		methods?: {[id: string]: RestMethod } | null;
+		methods?: {[id: string]: RestMethod };
 
 		/** Sub-resources on this resource. */
-		resources?: {[id: string]: RestResource } | null;
+		resources?: {[id: string]: RestResource };
+	}
+	export interface RestResourceFormProperties {
+
+		/** Methods on this resource. */
+		methods: FormControl<{[id: string]: RestMethod } | null | undefined>,
+
+		/** Sub-resources on this resource. */
+		resources: FormControl<{[id: string]: RestResource } | null | undefined>,
+	}
+	export function CreateRestResourceFormGroup() {
+		return new FormGroup<RestResourceFormProperties>({
+			methods: new FormControl<{[id: string]: RestMethod } | null | undefined>(undefined),
+			resources: new FormControl<{[id: string]: RestResource } | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

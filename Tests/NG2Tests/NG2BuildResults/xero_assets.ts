@@ -1,10 +1,18 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Assets {
-		pagination?: Pagination | null;
-		items?: Array<Asset> | null;
+		pagination?: Pagination;
+		items?: Array<Asset>;
+	}
+	export interface AssetsFormProperties {
+	}
+	export function CreateAssetsFormGroup() {
+		return new FormGroup<AssetsFormProperties>({
+		});
+
 	}
 
 	export interface Asset {
@@ -41,8 +49,8 @@ export namespace MyNS {
 
 		/** The asset's serial number */
 		serialNumber?: string | null;
-		bookDepreciationSetting?: BookDepreciationSetting | null;
-		bookDepreciationDetail?: BookDepreciationDetail | null;
+		bookDepreciationSetting?: BookDepreciationSetting;
+		bookDepreciationDetail?: BookDepreciationDetail;
 
 		/** Boolean to indicate whether depreciation can be rolled back for this asset individually. This is true if it doesn't have 'legacy' journal entries and if there is no lock period that would prevent this asset from rolling back. */
 		canRollback?: boolean | null;
@@ -53,6 +61,68 @@ export namespace MyNS {
 		/** Boolean to indicate whether delete is enabled */
 		isDeleteEnabledForDate?: boolean | null;
 	}
+	export interface AssetFormProperties {
+
+		/** The Xero-generated Id for the asset */
+		assetId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the asset
+		 * Required
+		 */
+		assetName: FormControl<string | null | undefined>,
+
+		/** The Xero-generated Id for the asset type */
+		assetTypeId: FormControl<string | null | undefined>,
+
+		/** Must be unique. */
+		assetNumber: FormControl<string | null | undefined>,
+
+		/** The date the asset was purchased YYYY-MM-DD */
+		purchaseDate: FormControl<Date | null | undefined>,
+
+		/** The purchase price of the asset */
+		purchasePrice: FormControl<number | null | undefined>,
+
+		/** The price the asset was disposed at */
+		disposalPrice: FormControl<number | null | undefined>,
+
+		/** See Asset Status Codes. */
+		assetStatus: FormControl<AssetAssetStatus | null | undefined>,
+
+		/** The date the asset’s warranty expires (if needed) YYYY-MM-DD */
+		warrantyExpiryDate: FormControl<string | null | undefined>,
+
+		/** The asset's serial number */
+		serialNumber: FormControl<string | null | undefined>,
+
+		/** Boolean to indicate whether depreciation can be rolled back for this asset individually. This is true if it doesn't have 'legacy' journal entries and if there is no lock period that would prevent this asset from rolling back. */
+		canRollback: FormControl<boolean | null | undefined>,
+
+		/** The accounting value of the asset */
+		accountingBookValue: FormControl<number | null | undefined>,
+
+		/** Boolean to indicate whether delete is enabled */
+		isDeleteEnabledForDate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAssetFormGroup() {
+		return new FormGroup<AssetFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			assetName: new FormControl<string | null | undefined>(undefined),
+			assetTypeId: new FormControl<string | null | undefined>(undefined),
+			assetNumber: new FormControl<string | null | undefined>(undefined),
+			purchaseDate: new FormControl<Date | null | undefined>(undefined),
+			purchasePrice: new FormControl<number | null | undefined>(undefined),
+			disposalPrice: new FormControl<number | null | undefined>(undefined),
+			assetStatus: new FormControl<AssetAssetStatus | null | undefined>(undefined),
+			warrantyExpiryDate: new FormControl<string | null | undefined>(undefined),
+			serialNumber: new FormControl<string | null | undefined>(undefined),
+			canRollback: new FormControl<boolean | null | undefined>(undefined),
+			accountingBookValue: new FormControl<number | null | undefined>(undefined),
+			isDeleteEnabledForDate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum AssetAssetStatus { Draft = 0, Registered = 1, Disposed = 2 }
 
@@ -61,6 +131,21 @@ export namespace MyNS {
 		pageSize?: number | null;
 		pageCount?: number | null;
 		itemCount?: number | null;
+	}
+	export interface PaginationFormProperties {
+		page: FormControl<number | null | undefined>,
+		pageSize: FormControl<number | null | undefined>,
+		pageCount: FormControl<number | null | undefined>,
+		itemCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePaginationFormGroup() {
+		return new FormGroup<PaginationFormProperties>({
+			page: new FormControl<number | null | undefined>(undefined),
+			pageSize: new FormControl<number | null | undefined>(undefined),
+			pageCount: new FormControl<number | null | undefined>(undefined),
+			itemCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -95,6 +180,40 @@ export namespace MyNS {
 		/** All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed. */
 		locks?: number | null;
 	}
+	export interface AssetTypeFormProperties {
+
+		/** Xero generated unique identifier for asset types */
+		assetTypeId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the asset type
+		 * Required
+		 */
+		assetTypeName: FormControl<string | null | undefined>,
+
+		/** The asset account for fixed assets of this type */
+		fixedAssetAccountId: FormControl<string | null | undefined>,
+
+		/** The expense account for the depreciation of fixed assets of this type */
+		depreciationExpenseAccountId: FormControl<string | null | undefined>,
+
+		/** The account for accumulated depreciation of fixed assets of this type */
+		accumulatedDepreciationAccountId: FormControl<string | null | undefined>,
+
+		/** All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed. */
+		locks: FormControl<number | null | undefined>,
+	}
+	export function CreateAssetTypeFormGroup() {
+		return new FormGroup<AssetTypeFormProperties>({
+			assetTypeId: new FormControl<string | null | undefined>(undefined),
+			assetTypeName: new FormControl<string | null | undefined>(undefined),
+			fixedAssetAccountId: new FormControl<string | null | undefined>(undefined),
+			depreciationExpenseAccountId: new FormControl<string | null | undefined>(undefined),
+			accumulatedDepreciationAccountId: new FormControl<string | null | undefined>(undefined),
+			locks: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BookDepreciationSetting {
 
@@ -121,6 +240,45 @@ export namespace MyNS {
 
 		/** Unique Xero identifier for the effective date change */
 		bookEffectiveDateOfChangeId?: string | null;
+	}
+	export interface BookDepreciationSettingFormProperties {
+
+		/** The method of depreciation applied to this asset. See Depreciation Methods */
+		depreciationMethod: FormControl<BookDepreciationSettingDepreciationMethod | null | undefined>,
+
+		/** The method of averaging applied to this asset. See Averaging Methods */
+		averagingMethod: FormControl<BookDepreciationSettingAveragingMethod | null | undefined>,
+
+		/** The rate of depreciation (e.g. 0.05) */
+		depreciationRate: FormControl<number | null | undefined>,
+
+		/** Effective life of the asset in years (e.g. 5) */
+		effectiveLifeYears: FormControl<number | null | undefined>,
+
+		/** See Depreciation Calculation Methods */
+		depreciationCalculationMethod: FormControl<BookDepreciationSettingDepreciationCalculationMethod | null | undefined>,
+
+		/** Unique Xero identifier for the depreciable object */
+		depreciableObjectId: FormControl<string | null | undefined>,
+
+		/** The type of asset object */
+		depreciableObjectType: FormControl<string | null | undefined>,
+
+		/** Unique Xero identifier for the effective date change */
+		bookEffectiveDateOfChangeId: FormControl<string | null | undefined>,
+	}
+	export function CreateBookDepreciationSettingFormGroup() {
+		return new FormGroup<BookDepreciationSettingFormProperties>({
+			depreciationMethod: new FormControl<BookDepreciationSettingDepreciationMethod | null | undefined>(undefined),
+			averagingMethod: new FormControl<BookDepreciationSettingAveragingMethod | null | undefined>(undefined),
+			depreciationRate: new FormControl<number | null | undefined>(undefined),
+			effectiveLifeYears: new FormControl<number | null | undefined>(undefined),
+			depreciationCalculationMethod: new FormControl<BookDepreciationSettingDepreciationCalculationMethod | null | undefined>(undefined),
+			depreciableObjectId: new FormControl<string | null | undefined>(undefined),
+			depreciableObjectType: new FormControl<string | null | undefined>(undefined),
+			bookEffectiveDateOfChangeId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BookDepreciationSettingDepreciationMethod { NoDepreciation = 0, StraightLine = 1, DiminishingValue100 = 2, DiminishingValue150 = 3, DiminishingValue200 = 4, FullDepreciation = 5 }
@@ -152,6 +310,41 @@ export namespace MyNS {
 		/** All depreciation occurring in the current financial year. */
 		currentAccumDepreciationAmount?: number | null;
 	}
+	export interface BookDepreciationDetailFormProperties {
+
+		/** When an asset is disposed, this will be the sell price minus the purchase price if a profit was made. */
+		currentCapitalGain: FormControl<number | null | undefined>,
+
+		/** When an asset is disposed, this will be the lowest one of sell price or purchase price, minus the current book value. */
+		currentGainLoss: FormControl<number | null | undefined>,
+
+		/** YYYY-MM-DD */
+		depreciationStartDate: FormControl<Date | null | undefined>,
+
+		/** The value of the asset you want to depreciate, if this is less than the cost of the asset. */
+		costLimit: FormControl<number | null | undefined>,
+
+		/** The value of the asset remaining when you've fully depreciated it. */
+		residualValue: FormControl<number | null | undefined>,
+
+		/** All depreciation prior to the current financial year. */
+		priorAccumDepreciationAmount: FormControl<number | null | undefined>,
+
+		/** All depreciation occurring in the current financial year. */
+		currentAccumDepreciationAmount: FormControl<number | null | undefined>,
+	}
+	export function CreateBookDepreciationDetailFormGroup() {
+		return new FormGroup<BookDepreciationDetailFormProperties>({
+			currentCapitalGain: new FormControl<number | null | undefined>(undefined),
+			currentGainLoss: new FormControl<number | null | undefined>(undefined),
+			depreciationStartDate: new FormControl<Date | null | undefined>(undefined),
+			costLimit: new FormControl<number | null | undefined>(undefined),
+			residualValue: new FormControl<number | null | undefined>(undefined),
+			priorAccumDepreciationAmount: new FormControl<number | null | undefined>(undefined),
+			currentAccumDepreciationAmount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Setting {
 
@@ -179,14 +372,53 @@ export namespace MyNS {
 		/** opt in for tax calculation */
 		optInForTax?: boolean | null;
 	}
+	export interface SettingFormProperties {
+
+		/** The prefix used for fixed asset numbers (“FA-” by default) */
+		assetNumberPrefix: FormControl<string | null | undefined>,
+
+		/** The next available sequence number */
+		assetNumberSequence: FormControl<string | null | undefined>,
+
+		/** The date depreciation calculations started on registered fixed assets in Xero */
+		assetStartDate: FormControl<Date | null | undefined>,
+
+		/** The last depreciation date */
+		lastDepreciationDate: FormControl<Date | null | undefined>,
+
+		/** Default account that gains are posted to */
+		defaultGainOnDisposalAccountId: FormControl<string | null | undefined>,
+
+		/** Default account that losses are posted to */
+		defaultLossOnDisposalAccountId: FormControl<string | null | undefined>,
+
+		/** Default account that capital gains are posted to */
+		defaultCapitalGainOnDisposalAccountId: FormControl<string | null | undefined>,
+
+		/** opt in for tax calculation */
+		optInForTax: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSettingFormGroup() {
+		return new FormGroup<SettingFormProperties>({
+			assetNumberPrefix: new FormControl<string | null | undefined>(undefined),
+			assetNumberSequence: new FormControl<string | null | undefined>(undefined),
+			assetStartDate: new FormControl<Date | null | undefined>(undefined),
+			lastDepreciationDate: new FormControl<Date | null | undefined>(undefined),
+			defaultGainOnDisposalAccountId: new FormControl<string | null | undefined>(undefined),
+			defaultLossOnDisposalAccountId: new FormControl<string | null | undefined>(undefined),
+			defaultCapitalGainOnDisposalAccountId: new FormControl<string | null | undefined>(undefined),
+			optInForTax: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Error {
 
 		/** Array of elements of resource validation errors */
-		resourceValidationErrors?: Array<ResourceValidationErrorsElement> | null;
+		resourceValidationErrors?: Array<ResourceValidationErrorsElement>;
 
 		/** Array of elements of field validation errors */
-		fieldValidationErrors?: Array<FieldValidationErrorsElement> | null;
+		fieldValidationErrors?: Array<FieldValidationErrorsElement>;
 
 		/** The internal type of error, not accessible externally */
 		type?: string | null;
@@ -196,6 +428,25 @@ export namespace MyNS {
 
 		/** Detail of the error */
 		detail?: string | null;
+	}
+	export interface ErrorFormProperties {
+
+		/** The internal type of error, not accessible externally */
+		type: FormControl<string | null | undefined>,
+
+		/** Title of the error */
+		title: FormControl<string | null | undefined>,
+
+		/** Detail of the error */
+		detail: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			type: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			detail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceValidationErrorsElement {
@@ -214,6 +465,33 @@ export namespace MyNS {
 
 		/** Detail of the resource validation error */
 		detail?: string | null;
+	}
+	export interface ResourceValidationErrorsElementFormProperties {
+
+		/** The field name of the erroneous field */
+		resourceName: FormControl<string | null | undefined>,
+
+		/** Explaination of the resource validation error */
+		localisedMessage: FormControl<string | null | undefined>,
+
+		/** Internal type of the resource error message */
+		type: FormControl<string | null | undefined>,
+
+		/** Title of the resource validation error */
+		title: FormControl<string | null | undefined>,
+
+		/** Detail of the resource validation error */
+		detail: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceValidationErrorsElementFormGroup() {
+		return new FormGroup<ResourceValidationErrorsElementFormProperties>({
+			resourceName: new FormControl<string | null | undefined>(undefined),
+			localisedMessage: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			detail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FieldValidationErrorsElement {
@@ -235,6 +513,37 @@ export namespace MyNS {
 
 		/** Detail of the field validation error */
 		detail?: string | null;
+	}
+	export interface FieldValidationErrorsElementFormProperties {
+
+		/** The field name of the erroneous field */
+		fieldName: FormControl<string | null | undefined>,
+
+		/** The provided value */
+		valueProvided: FormControl<string | null | undefined>,
+
+		/** Explaination of the field validation error */
+		localisedMessage: FormControl<string | null | undefined>,
+
+		/** Internal type of the field validation error message */
+		type: FormControl<string | null | undefined>,
+
+		/** Title of the field validation error */
+		title: FormControl<string | null | undefined>,
+
+		/** Detail of the field validation error */
+		detail: FormControl<string | null | undefined>,
+	}
+	export function CreateFieldValidationErrorsElementFormGroup() {
+		return new FormGroup<FieldValidationErrorsElementFormProperties>({
+			fieldName: new FormControl<string | null | undefined>(undefined),
+			valueProvided: new FormControl<string | null | undefined>(undefined),
+			localisedMessage: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			detail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

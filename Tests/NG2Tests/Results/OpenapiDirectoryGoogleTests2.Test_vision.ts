@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Request message for the `AddProductToProductSet` method. */
@@ -14,18 +15,35 @@ export namespace MyNS {
 		product?: string | null;
 	}
 
+	/** Request message for the `AddProductToProductSet` method. */
+	export interface AddProductToProductSetRequestFormProperties {
+
+		/**
+		 * Required. The resource name for the Product to be added to this ProductSet.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+		 */
+		product: FormControl<string | null | undefined>,
+	}
+	export function CreateAddProductToProductSetRequestFormGroup() {
+		return new FormGroup<AddProductToProductSetRequestFormProperties>({
+			product: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to annotate one single file, e.g. a PDF, TIFF or GIF file. */
 	export interface AnnotateFileRequest {
 
 		/** Required. Requested features. */
-		features?: Array<Feature> | null;
+		features?: Array<Feature>;
 
 		/** Image context and/or feature-specific parameters. */
-		imageContext?: ImageContext | null;
+		imageContext?: ImageContext;
 
 		/** The desired input location and metadata. */
-		inputConfig?: InputConfig | null;
+		inputConfig?: InputConfig;
 
 		/**
 		 * Pages of the file to perform image annotation.
@@ -39,7 +57,16 @@ export namespace MyNS {
 		 * If this field is empty, by default the service performs image annotation
 		 * for the first 5 pages of the file.
 		 */
-		pages?: Array<number> | null;
+		pages?: Array<number>;
+	}
+
+	/** A request to annotate one single file, e.g. a PDF, TIFF or GIF file. */
+	export interface AnnotateFileRequestFormProperties {
+	}
+	export function CreateAnnotateFileRequestFormGroup() {
+		return new FormGroup<AnnotateFileRequestFormProperties>({
+		});
+
 	}
 
 
@@ -67,6 +94,38 @@ export namespace MyNS {
 		type?: FeatureType | null;
 	}
 
+	/**
+	 * The type of Google Cloud Vision API detection to perform, and the maximum
+	 * number of results to return for that type. Multiple `Feature` objects can
+	 * be specified in the `features` list.
+	 */
+	export interface FeatureFormProperties {
+
+		/**
+		 * Maximum number of results of this type. Does not apply to
+		 * `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
+		 */
+		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * Model to use for the feature.
+		 * Supported values: "builtin/stable" (the default if unset) and
+		 * "builtin/latest".
+		 */
+		model: FormControl<string | null | undefined>,
+
+		/** The feature type. */
+		type: FormControl<FeatureType | null | undefined>,
+	}
+	export function CreateFeatureFormGroup() {
+		return new FormGroup<FeatureFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			model: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<FeatureType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FeatureType { TYPE_UNSPECIFIED = 0, FACE_DETECTION = 1, LANDMARK_DETECTION = 2, LOGO_DETECTION = 3, LABEL_DETECTION = 4, TEXT_DETECTION = 5, DOCUMENT_TEXT_DETECTION = 6, SAFE_SEARCH_DETECTION = 7, IMAGE_PROPERTIES = 8, CROP_HINTS = 9, WEB_DETECTION = 10, PRODUCT_SEARCH = 11, OBJECT_LOCALIZATION = 12 }
 
 
@@ -74,7 +133,7 @@ export namespace MyNS {
 	export interface ImageContext {
 
 		/** Parameters for crop hints annotation request. */
-		cropHintsParams?: CropHintsParams | null;
+		cropHintsParams?: CropHintsParams;
 
 		/**
 		 * List of languages to use for TEXT_DETECTION. In most cases, an empty value
@@ -86,16 +145,25 @@ export namespace MyNS {
 		 * error if one or more of the specified languages is not one of the
 		 * [supported languages](https://cloud.google.com/vision/docs/languages).
 		 */
-		languageHints?: Array<string> | null;
+		languageHints?: Array<string>;
 
 		/** Rectangle determined by min and max `LatLng` pairs. */
-		latLongRect?: LatLongRect | null;
+		latLongRect?: LatLongRect;
 
 		/** Parameters for a product search request. */
-		productSearchParams?: ProductSearchParams | null;
+		productSearchParams?: ProductSearchParams;
 
 		/** Parameters for web detection request. */
-		webDetectionParams?: WebDetectionParams | null;
+		webDetectionParams?: WebDetectionParams;
+	}
+
+	/** Image context and/or feature-specific parameters. */
+	export interface ImageContextFormProperties {
+	}
+	export function CreateImageContextFormGroup() {
+		return new FormGroup<ImageContextFormProperties>({
+		});
+
 	}
 
 
@@ -110,7 +178,16 @@ export namespace MyNS {
 		 * limited to a maximum of 16; any aspect ratios provided after the 16th are
 		 * ignored.
 		 */
-		aspectRatios?: Array<number> | null;
+		aspectRatios?: Array<number>;
+	}
+
+	/** Parameters for crop hints annotation request. */
+	export interface CropHintsParamsFormProperties {
+	}
+	export function CreateCropHintsParamsFormGroup() {
+		return new FormGroup<CropHintsParamsFormProperties>({
+		});
+
 	}
 
 
@@ -124,7 +201,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		maxLatLng?: LatLng | null;
+		maxLatLng?: LatLng;
 
 		/**
 		 * An object representing a latitude/longitude pair. This is expressed as a pair
@@ -133,7 +210,16 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		minLatLng?: LatLng | null;
+		minLatLng?: LatLng;
+	}
+
+	/** Rectangle determined by min and max `LatLng` pairs. */
+	export interface LatLongRectFormProperties {
+	}
+	export function CreateLatLongRectFormGroup() {
+		return new FormGroup<LatLongRectFormProperties>({
+		});
+
 	}
 
 
@@ -153,12 +239,35 @@ export namespace MyNS {
 		longitude?: number | null;
 	}
 
+	/**
+	 * An object representing a latitude/longitude pair. This is expressed as a pair
+	 * of doubles representing degrees latitude and degrees longitude. Unless
+	 * specified otherwise, this must conform to the
+	 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
+	 * standard</a>. Values must be within normalized ranges.
+	 */
+	export interface LatLngFormProperties {
+
+		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		latitude: FormControl<number | null | undefined>,
+
+		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		longitude: FormControl<number | null | undefined>,
+	}
+	export function CreateLatLngFormGroup() {
+		return new FormGroup<LatLngFormProperties>({
+			latitude: new FormControl<number | null | undefined>(undefined),
+			longitude: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Parameters for a product search request. */
 	export interface ProductSearchParams {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly | null;
+		boundingPoly?: BoundingPoly;
 
 		/**
 		 * The filtering expression. This can be used to restrict search results based
@@ -180,7 +289,7 @@ export namespace MyNS {
 		 * or "toys-v2" for better product search accuracy. It is recommended to
 		 * migrate existing products to these categories as well.
 		 */
-		productCategories?: Array<string> | null;
+		productCategories?: Array<string>;
 
 		/**
 		 * The resource name of a ProductSet to be searched for similar images.
@@ -190,15 +299,53 @@ export namespace MyNS {
 		productSet?: string | null;
 	}
 
+	/** Parameters for a product search request. */
+	export interface ProductSearchParamsFormProperties {
+
+		/**
+		 * The filtering expression. This can be used to restrict search results based
+		 * on Product labels. We currently support an AND of OR of key-value
+		 * expressions, where each expression within an OR must have the same key. An
+		 * '=' should be used to connect the key and value.
+		 * For example, "(color = red OR color = blue) AND brand = Google" is
+		 * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+		 * "color: red" is not acceptable because it uses a ':' instead of an '='.
+		 */
+		filter: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of a ProductSet to be searched for similar images.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+		 */
+		productSet: FormControl<string | null | undefined>,
+	}
+	export function CreateProductSearchParamsFormGroup() {
+		return new FormGroup<ProductSearchParamsFormProperties>({
+			filter: new FormControl<string | null | undefined>(undefined),
+			productSet: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A bounding polygon for the detected image annotation. */
 	export interface BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<NormalizedVertex> | null;
+		normalizedVertices?: Array<NormalizedVertex>;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<Vertex> | null;
+		vertices?: Array<Vertex>;
+	}
+
+	/** A bounding polygon for the detected image annotation. */
+	export interface BoundingPolyFormProperties {
+	}
+	export function CreateBoundingPolyFormGroup() {
+		return new FormGroup<BoundingPolyFormProperties>({
+		});
+
 	}
 
 
@@ -216,6 +363,27 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the normalized vertex coordinates are relative to the original image
+	 * and range from 0 to 1.
+	 */
+	export interface NormalizedVertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateNormalizedVertexFormGroup() {
+		return new FormGroup<NormalizedVertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A vertex represents a 2D point in the image.
@@ -230,12 +398,45 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the vertex coordinates are in the same scale as the original image.
+	 */
+	export interface VertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateVertexFormGroup() {
+		return new FormGroup<VertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Parameters for web detection request. */
 	export interface WebDetectionParams {
 
 		/** Whether to include results derived from the geo information in the image. */
 		includeGeoResults?: boolean | null;
+	}
+
+	/** Parameters for web detection request. */
+	export interface WebDetectionParamsFormProperties {
+
+		/** Whether to include results derived from the geo information in the image. */
+		includeGeoResults: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWebDetectionParamsFormGroup() {
+		return new FormGroup<WebDetectionParamsFormProperties>({
+			includeGeoResults: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -252,13 +453,39 @@ export namespace MyNS {
 		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GcsSource | null;
+		gcsSource?: GcsSource;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
 		mimeType?: string | null;
+	}
+
+	/** The desired input location and metadata. */
+	export interface InputConfigFormProperties {
+
+		/**
+		 * File content, represented as a stream of bytes.
+		 * Note: As with all `bytes` fields, protobuffers use a pure binary
+		 * representation, whereas JSON representations use base64.
+		 * Currently, this field only works for BatchAnnotateFiles requests. It does
+		 * not work for AsyncBatchAnnotateFiles requests.
+		 */
+		content: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the file. Currently only "application/pdf", "image/tiff" and
+		 * "image/gif" are supported. Wildcards are not supported.
+		 */
+		mimeType: FormControl<string | null | undefined>,
+	}
+	export function CreateInputConfigFormGroup() {
+		return new FormGroup<InputConfigFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			mimeType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -270,6 +497,22 @@ export namespace MyNS {
 		 * Google Cloud Storage object. Wildcards are not currently supported.
 		 */
 		uri?: string | null;
+	}
+
+	/** The Google Cloud Storage location where the input will be read from. */
+	export interface GcsSourceFormProperties {
+
+		/**
+		 * Google Cloud Storage URI for the input file. This must only be a
+		 * Google Cloud Storage object. Wildcards are not currently supported.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGcsSourceFormGroup() {
+		return new FormGroup<GcsSourceFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -287,19 +530,35 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** The desired input location and metadata. */
-		inputConfig?: InputConfig | null;
+		inputConfig?: InputConfig;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<AnnotateImageResponse> | null;
+		responses?: Array<AnnotateImageResponse>;
 
 		/** This field gives the total number of pages in the file. */
 		totalPages?: number | null;
+	}
+
+	/**
+	 * Response to a single file annotation request. A file may contain one or more
+	 * images, which individually have their own responses.
+	 */
+	export interface AnnotateFileResponseFormProperties {
+
+		/** This field gives the total number of pages in the file. */
+		totalPages: FormControl<number | null | undefined>,
+	}
+	export function CreateAnnotateFileResponseFormGroup() {
+		return new FormGroup<AnnotateFileResponseFormProperties>({
+			totalPages: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -320,7 +579,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -328,6 +587,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -338,10 +625,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: ImageAnnotationContext | null;
+		context?: ImageAnnotationContext;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: CropHintsAnnotation | null;
+		cropHintsAnnotation?: CropHintsAnnotation;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -351,10 +638,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<FaceAnnotation> | null;
+		faceAnnotations?: Array<FaceAnnotation>;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -365,41 +652,50 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: TextAnnotation | null;
+		fullTextAnnotation?: TextAnnotation;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: ImageProperties | null;
+		imagePropertiesAnnotation?: ImageProperties;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<EntityAnnotation> | null;
+		labelAnnotations?: Array<EntityAnnotation>;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<EntityAnnotation> | null;
+		landmarkAnnotations?: Array<EntityAnnotation>;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<LocalizedObjectAnnotation> | null;
+		localizedObjectAnnotations?: Array<LocalizedObjectAnnotation>;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<EntityAnnotation> | null;
+		logoAnnotations?: Array<EntityAnnotation>;
 
 		/** Results for a product search request. */
-		productSearchResults?: ProductSearchResults | null;
+		productSearchResults?: ProductSearchResults;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: SafeSearchAnnotation | null;
+		safeSearchAnnotation?: SafeSearchAnnotation;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<EntityAnnotation> | null;
+		textAnnotations?: Array<EntityAnnotation>;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: WebDetection | null;
+		webDetection?: WebDetection;
+	}
+
+	/** Response to an image annotation request. */
+	export interface AnnotateImageResponseFormProperties {
+	}
+	export function CreateAnnotateImageResponseFormGroup() {
+		return new FormGroup<AnnotateImageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -419,12 +715,44 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * If an image was produced from a file (e.g. a PDF), this message gives
+	 * information about the source of that image.
+	 */
+	export interface ImageAnnotationContextFormProperties {
+
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within
+		 * the file used to produce the image.
+		 */
+		pageNumber: FormControl<number | null | undefined>,
+
+		/** The URI of the file used to produce the image. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateImageAnnotationContextFormGroup() {
+		return new FormGroup<ImageAnnotationContextFormProperties>({
+			pageNumber: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of crop hints that are used to generate new crops when serving images. */
 	export interface CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<CropHint> | null;
+		cropHints?: Array<CropHint>;
+	}
+
+	/** Set of crop hints that are used to generate new crops when serving images. */
+	export interface CropHintsAnnotationFormProperties {
+	}
+	export function CreateCropHintsAnnotationFormGroup() {
+		return new FormGroup<CropHintsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -432,7 +760,7 @@ export namespace MyNS {
 	export interface CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly | null;
+		boundingPoly?: BoundingPoly;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
 		confidence?: number | null;
@@ -442,6 +770,26 @@ export namespace MyNS {
 		 * image.
 		 */
 		importanceFraction?: number | null;
+	}
+
+	/** Single crop hint that is used to generate a new crop when serving an image. */
+	export interface CropHintFormProperties {
+
+		/** Confidence of this being a salient region.  Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Fraction of importance of this salient region with respect to the original
+		 * image.
+		 */
+		importanceFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateCropHintFormGroup() {
+		return new FormGroup<CropHintFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			importanceFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -455,13 +803,13 @@ export namespace MyNS {
 		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly | null;
+		boundingPoly?: BoundingPoly;
 
 		/** Detection confidence. Range [0, 1]. */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: BoundingPoly | null;
+		fdBoundingPoly?: BoundingPoly;
 
 		/** Headwear likelihood. */
 		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
@@ -473,7 +821,7 @@ export namespace MyNS {
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<Landmark> | null;
+		landmarks?: Array<Landmark>;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
@@ -505,6 +853,74 @@ export namespace MyNS {
 		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/** A face annotation object contains the results of face detection. */
+	export interface FaceAnnotationFormProperties {
+
+		/** Anger likelihood. */
+		angerLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Blurred likelihood. */
+		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Detection confidence. Range [0, 1]. */
+		detectionConfidence: FormControl<number | null | undefined>,
+
+		/** Headwear likelihood. */
+		headwearLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Joy likelihood. */
+		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Face landmarking confidence. Range [0, 1]. */
+		landmarkingConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is
+		 * pointing relative to the vertical plane perpendicular to the image. Range
+		 * [-180,180].
+		 */
+		panAngle: FormControl<number | null | undefined>,
+
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+		 * of the face relative to the image vertical about the axis perpendicular to
+		 * the face. Range [-180,180].
+		 */
+		rollAngle: FormControl<number | null | undefined>,
+
+		/** Sorrow likelihood. */
+		sorrowLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Surprise likelihood. */
+		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is
+		 * pointing relative to the image's horizontal plane. Range [-180,180].
+		 */
+		tiltAngle: FormControl<number | null | undefined>,
+
+		/** Under-exposed likelihood. */
+		underExposedLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateFaceAnnotationFormGroup() {
+		return new FormGroup<FaceAnnotationFormProperties>({
+			angerLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			blurredLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			detectionConfidence: new FormControl<number | null | undefined>(undefined),
+			headwearLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			joyLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			landmarkingConfidence: new FormControl<number | null | undefined>(undefined),
+			panAngle: new FormControl<number | null | undefined>(undefined),
+			rollAngle: new FormControl<number | null | undefined>(undefined),
+			sorrowLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			surpriseLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			tiltAngle: new FormControl<number | null | undefined>(undefined),
+			underExposedLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FaceAnnotationAngerLikelihood { UNKNOWN = 0, VERY_UNLIKELY = 1, UNLIKELY = 2, POSSIBLE = 3, LIKELY = 4, VERY_LIKELY = 5 }
 
 
@@ -516,10 +932,23 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: Position | null;
+		position?: Position;
 
 		/** Face landmark type. */
 		type?: LandmarkType | null;
+	}
+
+	/** A face-specific landmark (for example, a face feature). */
+	export interface LandmarkFormProperties {
+
+		/** Face landmark type. */
+		type: FormControl<LandmarkType | null | undefined>,
+	}
+	export function CreateLandmarkFormGroup() {
+		return new FormGroup<LandmarkFormProperties>({
+			type: new FormControl<LandmarkType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -540,6 +969,31 @@ export namespace MyNS {
 		z?: number | null;
 	}
 
+	/**
+	 * A 3D position in the image, used primarily for Face detection landmarks.
+	 * A valid Position must have both x and y coordinates.
+	 * The position coordinates are in the same scale as the original image.
+	 */
+	export interface PositionFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+
+		/** Z coordinate (or depth). */
+		z: FormControl<number | null | undefined>,
+	}
+	export function CreatePositionFormGroup() {
+		return new FormGroup<PositionFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+			z: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LandmarkType { UNKNOWN_LANDMARK = 0, LEFT_EYE = 1, RIGHT_EYE = 2, LEFT_OF_LEFT_EYEBROW = 3, RIGHT_OF_LEFT_EYEBROW = 4, LEFT_OF_RIGHT_EYEBROW = 5, RIGHT_OF_RIGHT_EYEBROW = 6, MIDPOINT_BETWEEN_EYES = 7, NOSE_TIP = 8, UPPER_LIP = 9, LOWER_LIP = 10, MOUTH_LEFT = 11, MOUTH_RIGHT = 12, MOUTH_CENTER = 13, NOSE_BOTTOM_RIGHT = 14, NOSE_BOTTOM_LEFT = 15, NOSE_BOTTOM_CENTER = 16, LEFT_EYE_TOP_BOUNDARY = 17, LEFT_EYE_RIGHT_CORNER = 18, LEFT_EYE_BOTTOM_BOUNDARY = 19, LEFT_EYE_LEFT_CORNER = 20, RIGHT_EYE_TOP_BOUNDARY = 21, RIGHT_EYE_RIGHT_CORNER = 22, RIGHT_EYE_BOTTOM_BOUNDARY = 23, RIGHT_EYE_LEFT_CORNER = 24, LEFT_EYEBROW_UPPER_MIDPOINT = 25, RIGHT_EYEBROW_UPPER_MIDPOINT = 26, LEFT_EAR_TRAGION = 27, RIGHT_EAR_TRAGION = 28, LEFT_EYE_PUPIL = 29, RIGHT_EYE_PUPIL = 30, FOREHEAD_GLABELLA = 31, CHIN_GNATHION = 32, CHIN_LEFT_GONION = 33, CHIN_RIGHT_GONION = 34 }
 
 
@@ -555,10 +1009,31 @@ export namespace MyNS {
 	export interface TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<Page> | null;
+		pages?: Array<Page>;
 
 		/** UTF-8 text detected on the pages. */
 		text?: string | null;
+	}
+
+	/**
+	 * TextAnnotation contains a structured representation of OCR extracted text.
+	 * The hierarchy of an OCR extracted text structure is like this:
+	 *     TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol
+	 * Each structural component, starting from Page, may further have their own
+	 * properties. Properties describe detected languages, breaks etc.. Please refer
+	 * to the TextAnnotation.TextProperty message definition below for more
+	 * detail.
+	 */
+	export interface TextAnnotationFormProperties {
+
+		/** UTF-8 text detected on the pages. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateTextAnnotationFormGroup() {
+		return new FormGroup<TextAnnotationFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -566,7 +1041,7 @@ export namespace MyNS {
 	export interface Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<Block> | null;
+		blocks?: Array<Block>;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
 		confidence?: number | null;
@@ -578,13 +1053,40 @@ export namespace MyNS {
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty | null;
+		property?: TextProperty;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
 		width?: number | null;
+	}
+
+	/** Detected page from OCR. */
+	export interface PageFormProperties {
+
+		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Page height. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * Page width. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreatePageFormGroup() {
+		return new FormGroup<PageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -595,16 +1097,33 @@ export namespace MyNS {
 		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly | null;
+		boundingBox?: BoundingPoly;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<Paragraph> | null;
+		paragraphs?: Array<Paragraph>;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty | null;
+		property?: TextProperty;
+	}
+
+	/** Logical element on the page. */
+	export interface BlockFormProperties {
+
+		/** Detected block type (text, image etc) for this block. */
+		blockType: FormControl<BlockBlockType | null | undefined>,
+
+		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateBlockFormGroup() {
+		return new FormGroup<BlockFormProperties>({
+			blockType: new FormControl<BlockBlockType | null | undefined>(undefined),
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BlockBlockType { UNKNOWN = 0, TEXT = 1, TABLE = 2, PICTURE = 3, RULER = 4, BARCODE = 5 }
@@ -614,16 +1133,29 @@ export namespace MyNS {
 	export interface Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly | null;
+		boundingBox?: BoundingPoly;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty | null;
+		property?: TextProperty;
 
 		/** List of all words in this paragraph. */
-		words?: Array<Word> | null;
+		words?: Array<Word>;
+	}
+
+	/** Structural unit of text representing a number of words in certain order. */
+	export interface ParagraphFormProperties {
+
+		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateParagraphFormGroup() {
+		return new FormGroup<ParagraphFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -631,10 +1163,19 @@ export namespace MyNS {
 	export interface TextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: DetectedBreak | null;
+		detectedBreak?: DetectedBreak;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<DetectedLanguage> | null;
+		detectedLanguages?: Array<DetectedLanguage>;
+	}
+
+	/** Additional information detected on the structural component. */
+	export interface TextPropertyFormProperties {
+	}
+	export function CreateTextPropertyFormGroup() {
+		return new FormGroup<TextPropertyFormProperties>({
+		});
+
 	}
 
 
@@ -646,6 +1187,23 @@ export namespace MyNS {
 
 		/** Detected break type. */
 		type?: DetectedBreakType | null;
+	}
+
+	/** Detected start or end of a structural component. */
+	export interface DetectedBreakFormProperties {
+
+		/** True if break prepends the element. */
+		isPrefix: FormControl<boolean | null | undefined>,
+
+		/** Detected break type. */
+		type: FormControl<DetectedBreakType | null | undefined>,
+	}
+	export function CreateDetectedBreakFormGroup() {
+		return new FormGroup<DetectedBreakFormProperties>({
+			isPrefix: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<DetectedBreakType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DetectedBreakType { UNKNOWN = 0, SPACE = 1, SURE_SPACE = 2, EOL_SURE_SPACE = 3, HYPHEN = 4, LINE_BREAK = 5 }
@@ -665,24 +1223,58 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Detected language for a structural component. */
+	export interface DetectedLanguageFormProperties {
+
+		/** Confidence of detected language. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectedLanguageFormGroup() {
+		return new FormGroup<DetectedLanguageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A word representation. */
 	export interface Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly | null;
+		boundingBox?: BoundingPoly;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty | null;
+		property?: TextProperty;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<Symbol> | null;
+		symbols?: Array<Symbol>;
+	}
+
+	/** A word representation. */
+	export interface WordFormProperties {
+
+		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateWordFormGroup() {
+		return new FormGroup<WordFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -690,16 +1282,33 @@ export namespace MyNS {
 	export interface Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: BoundingPoly | null;
+		boundingBox?: BoundingPoly;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: TextProperty | null;
+		property?: TextProperty;
 
 		/** The actual UTF-8 representation of the symbol. */
 		text?: string | null;
+	}
+
+	/** A single symbol representation. */
+	export interface SymbolFormProperties {
+
+		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/** The actual UTF-8 representation of the symbol. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateSymbolFormGroup() {
+		return new FormGroup<SymbolFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -707,7 +1316,16 @@ export namespace MyNS {
 	export interface ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: DominantColorsAnnotation | null;
+		dominantColors?: DominantColorsAnnotation;
+	}
+
+	/** Stores image properties, such as dominant colors. */
+	export interface ImagePropertiesFormProperties {
+	}
+	export function CreateImagePropertiesFormGroup() {
+		return new FormGroup<ImagePropertiesFormProperties>({
+		});
+
 	}
 
 
@@ -715,7 +1333,16 @@ export namespace MyNS {
 	export interface DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<ColorInfo> | null;
+		colors?: Array<ColorInfo>;
+	}
+
+	/** Set of dominant colors and their corresponding scores. */
+	export interface DominantColorsAnnotationFormProperties {
+	}
+	export function CreateDominantColorsAnnotationFormGroup() {
+		return new FormGroup<DominantColorsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -830,7 +1457,7 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color | null;
+		color?: Color;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
@@ -840,6 +1467,29 @@ export namespace MyNS {
 
 		/** Image-specific score for this color. Value in range [0, 1]. */
 		score?: number | null;
+	}
+
+	/**
+	 * Color information consists of RGB channels, score, and the fraction of
+	 * the image that the color occupies in the image.
+	 */
+	export interface ColorInfoFormProperties {
+
+		/**
+		 * The fraction of pixels the color occupies in the image.
+		 * Value in range [0, 1].
+		 */
+		pixelFraction: FormControl<number | null | undefined>,
+
+		/** Image-specific score for this color. Value in range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateColorInfoFormGroup() {
+		return new FormGroup<ColorInfoFormProperties>({
+			pixelFraction: new FormControl<number | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -973,12 +1623,151 @@ export namespace MyNS {
 		red?: number | null;
 	}
 
+	/**
+	 * Represents a color in the RGBA color space. This representation is designed
+	 * for simplicity of conversion to/from color representations in various
+	 * languages over compactness; for example, the fields of this representation
+	 * can be trivially provided to the constructor of "java.awt.Color" in Java; it
+	 * can also be trivially provided to UIColor's "+colorWithRed:green:blue:alpha"
+	 * method in iOS; and, with just a little work, it can be easily formatted into
+	 * a CSS "rgba()" string in JavaScript, as well.
+	 * Note: this proto does not carry information about the absolute color space
+	 * that should be used to interpret the RGB value (e.g. sRGB, Adobe RGB,
+	 * DCI-P3, BT.2020, etc.). By default, applications SHOULD assume the sRGB color
+	 * space.
+	 * Example (Java):
+	 *      import com.google.type.Color;
+	 *      // ...
+	 *      public static java.awt.Color fromProto(Color protocolor) {
+	 *        float alpha = protocolor.hasAlpha()
+	 *            ? protocolor.getAlpha().getValue()
+	 *            : 1.0;
+	 *        return new java.awt.Color(
+	 *            protocolor.getRed(),
+	 *            protocolor.getGreen(),
+	 *            protocolor.getBlue(),
+	 *            alpha);
+	 *      }
+	 *      public static Color toProto(java.awt.Color color) {
+	 *        float red = (float) color.getRed();
+	 *        float green = (float) color.getGreen();
+	 *        float blue = (float) color.getBlue();
+	 *        float denominator = 255.0;
+	 *        Color.Builder resultBuilder =
+	 *            Color
+	 *                .newBuilder()
+	 *                .setRed(red / denominator)
+	 *                .setGreen(green / denominator)
+	 *                .setBlue(blue / denominator);
+	 *        int alpha = color.getAlpha();
+	 *        if (alpha != 255) {
+	 *          result.setAlpha(
+	 *              FloatValue
+	 *                  .newBuilder()
+	 *                  .setValue(((float) alpha) / denominator)
+	 *                  .build());
+	 *        }
+	 *        return resultBuilder.build();
+	 *      }
+	 *      // ...
+	 * Example (iOS / Obj-C):
+	 *      // ...
+	 *      static UIColor* fromProto(Color* protocolor) {
+	 *         float red = [protocolor red];
+	 *         float green = [protocolor green];
+	 *         float blue = [protocolor blue];
+	 *         FloatValue* alpha_wrapper = [protocolor alpha];
+	 *         float alpha = 1.0;
+	 *         if (alpha_wrapper != nil) {
+	 *           alpha = [alpha_wrapper value];
+	 *         }
+	 *         return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+	 *      }
+	 *      static Color* toProto(UIColor* color) {
+	 *          CGFloat red, green, blue, alpha;
+	 *          if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) {
+	 *            return nil;
+	 *          }
+	 *          Color* result = [[Color alloc] init];
+	 *          [result setRed:red];
+	 *          [result setGreen:green];
+	 *          [result setBlue:blue];
+	 *          if (alpha <= 0.9999) {
+	 *            [result setAlpha:floatWrapperWithValue(alpha)];
+	 *          }
+	 *          [result autorelease];
+	 *          return result;
+	 *     }
+	 *     // ...
+	 *  Example (JavaScript):
+	 *     // ...
+	 *     var protoToCssColor = function(rgb_color) {
+	 *        var redFrac = rgb_color.red || 0.0;
+	 *        var greenFrac = rgb_color.green || 0.0;
+	 *        var blueFrac = rgb_color.blue || 0.0;
+	 *        var red = Math.floor(redFrac * 255);
+	 *        var green = Math.floor(greenFrac * 255);
+	 *        var blue = Math.floor(blueFrac * 255);
+	 *        if (!('alpha' in rgb_color)) {
+	 *           return rgbToCssColor_(red, green, blue);
+	 *        }
+	 *        var alphaFrac = rgb_color.alpha.value || 0.0;
+	 *        var rgbParams = [red, green, blue].join(',');
+	 *        return ['rgba(', rgbParams, ',', alphaFrac, ')'].join('');
+	 *     };
+	 *     var rgbToCssColor_ = function(red, green, blue) {
+	 *       var rgbNumber = new Number((red << 16) | (green << 8) | blue);
+	 *       var hexString = rgbNumber.toString(16);
+	 *       var missingZeros = 6 - hexString.length;
+	 *       var resultBuilder = ['#'];
+	 *       for (var i = 0; i < missingZeros; i++) {
+	 *          resultBuilder.push('0');
+	 *       }
+	 *       resultBuilder.push(hexString);
+	 *       return resultBuilder.join('');
+	 *     };
+	 *     // ...
+	 */
+	export interface ColorFormProperties {
+
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is,
+		 * the final pixel color is defined by the equation:
+		 * pixel color = alpha * (this color) + (1.0 - alpha) * (background color)
+		 * This means that a value of 1.0 corresponds to a solid color, whereas
+		 * a value of 0.0 corresponds to a completely transparent color. This
+		 * uses a wrapper message rather than a simple float scalar so that it is
+		 * possible to distinguish between a default value and the value being unset.
+		 * If omitted, this color object is to be rendered as a solid color
+		 * (as if the alpha value had been explicitly given with a value of 1.0).
+		 */
+		alpha: FormControl<number | null | undefined>,
+
+		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		blue: FormControl<number | null | undefined>,
+
+		/** The amount of green in the color as a value in the interval [0, 1]. */
+		green: FormControl<number | null | undefined>,
+
+		/** The amount of red in the color as a value in the interval [0, 1]. */
+		red: FormControl<number | null | undefined>,
+	}
+	export function CreateColorFormGroup() {
+		return new FormGroup<ColorFormProperties>({
+			alpha: new FormControl<number | null | undefined>(undefined),
+			blue: new FormControl<number | null | undefined>(undefined),
+			green: new FormControl<number | null | undefined>(undefined),
+			red: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected entity features. */
 	export interface EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly | null;
+		boundingPoly?: BoundingPoly;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -1005,7 +1794,7 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<LocationInfo> | null;
+		locations?: Array<LocationInfo>;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
@@ -1018,7 +1807,7 @@ export namespace MyNS {
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<Property> | null;
+		properties?: Array<Property>;
 
 		/** Overall score of the result. Range [0, 1]. */
 		score?: number | null;
@@ -1033,6 +1822,58 @@ export namespace MyNS {
 		topicality?: number | null;
 	}
 
+	/** Set of detected entity features. */
+	export interface EntityAnnotationFormProperties {
+
+		/**
+		 * **Deprecated. Use `score` instead.**
+		 * The accuracy of the entity detection in an image.
+		 * For example, for an image in which the "Eiffel Tower" entity is detected,
+		 * this field represents the confidence that there is a tower in the query
+		 * image. Range [0, 1].
+		 */
+		confidence: FormControl<number | null | undefined>,
+
+		/** Entity textual description, expressed in its `locale` language. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The language code for the locale in which the entity textual
+		 * `description` is expressed.
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/**
+		 * Opaque entity ID. Some IDs may be available in
+		 * [Google Knowledge Graph Search
+		 * API](https://developers.google.com/knowledge-graph/).
+		 */
+		mid: FormControl<string | null | undefined>,
+
+		/** Overall score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the
+		 * image. For example, the relevancy of "tower" is likely higher to an image
+		 * containing the detected "Eiffel Tower" than to an image containing a
+		 * detected distant towering building, even though the confidence that
+		 * there is a tower in each image may be the same. Range [0, 1].
+		 */
+		topicality: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityAnnotationFormGroup() {
+		return new FormGroup<EntityAnnotationFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			topicality: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Detected entity location information. */
 	export interface LocationInfo {
@@ -1044,7 +1885,16 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng | null;
+		latLng?: LatLng;
+	}
+
+	/** Detected entity location information. */
+	export interface LocationInfoFormProperties {
+	}
+	export function CreateLocationInfoFormGroup() {
+		return new FormGroup<LocationInfoFormProperties>({
+		});
+
 	}
 
 
@@ -1061,12 +1911,33 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A `Property` consists of a user-supplied name/value pair. */
+	export interface PropertyFormProperties {
+
+		/** Name of the property. */
+		name: FormControl<string | null | undefined>,
+
+		/** Value of numeric properties. */
+		uint64Value: FormControl<string | null | undefined>,
+
+		/** Value of the property. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreatePropertyFormGroup() {
+		return new FormGroup<PropertyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uint64Value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected objects with bounding boxes. */
 	export interface LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly | null;
+		boundingPoly?: BoundingPoly;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -1083,6 +1954,35 @@ export namespace MyNS {
 
 		/** Score of the result. Range [0, 1]. */
 		score?: number | null;
+	}
+
+	/** Set of detected objects with bounding boxes. */
+	export interface LocalizedObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateLocalizedObjectAnnotationFormGroup() {
+		return new FormGroup<LocalizedObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1102,10 +2002,27 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GroupedResult> | null;
+		productGroupedResults?: Array<GroupedResult>;
 
 		/** List of results, one for each product match. */
-		results?: Array<Result> | null;
+		results?: Array<Result>;
+	}
+
+	/** Results for a product search request. */
+	export interface ProductSearchResultsFormProperties {
+
+		/**
+		 * Timestamp of the index which provided these results. Products added to the
+		 * product set and products removed from the product set after this time are
+		 * not reflected in the current results.
+		 */
+		indexTime: FormControl<string | null | undefined>,
+	}
+	export function CreateProductSearchResultsFormGroup() {
+		return new FormGroup<ProductSearchResultsFormProperties>({
+			indexTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1116,13 +2033,25 @@ export namespace MyNS {
 	export interface GroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: BoundingPoly | null;
+		boundingPoly?: BoundingPoly;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<ObjectAnnotation> | null;
+		objectAnnotations?: Array<ObjectAnnotation>;
 
 		/** List of results, one for each product match. */
-		results?: Array<Result> | null;
+		results?: Array<Result>;
+	}
+
+	/**
+	 * Information about the products similar to a single product in a query
+	 * image.
+	 */
+	export interface GroupedResultFormProperties {
+	}
+	export function CreateGroupedResultFormGroup() {
+		return new FormGroup<GroupedResultFormProperties>({
+		});
+
 	}
 
 
@@ -1146,6 +2075,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Prediction for what the object in the bounding box is. */
+	export interface ObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateObjectAnnotationFormGroup() {
+		return new FormGroup<ObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a product. */
 	export interface Result {
@@ -1157,13 +2115,36 @@ export namespace MyNS {
 		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: Product | null;
+		product?: Product;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
 		score?: number | null;
+	}
+
+	/** Information about a product. */
+	export interface ResultFormProperties {
+
+		/**
+		 * The resource name of the image from the product that is the closest match
+		 * to the query.
+		 */
+		image: FormControl<string | null | undefined>,
+
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to
+		 * 1 (full confidence).
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateResultFormGroup() {
+		return new FormGroup<ResultFormProperties>({
+			image: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1210,7 +2191,48 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<KeyValue> | null;
+		productLabels?: Array<KeyValue>;
+	}
+
+	/** A Product contains ReferenceImages. */
+	export interface ProductFormProperties {
+
+		/**
+		 * User-provided metadata to be stored with this product. Must be at most 4096
+		 * characters long.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The user-provided name for this Product. Must not be empty. Must be at most
+		 * 4096 characters long.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the product.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+		 * This field is ignored when creating a product.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Immutable. The category for the product identified by the reference image. This should
+		 * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+		 * "homegoods", "apparel", and "toys" are still supported, but these should
+		 * not be used for new products.
+		 */
+		productCategory: FormControl<string | null | undefined>,
+	}
+	export function CreateProductFormGroup() {
+		return new FormGroup<ProductFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			productCategory: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1228,6 +2250,29 @@ export namespace MyNS {
 		 * cannot exceed 128 bytes.
 		 */
 		value?: string | null;
+	}
+
+	/** A product label represented as a key-value pair. */
+	export interface KeyValueFormProperties {
+
+		/**
+		 * The key of the label attached to the product. Cannot be empty and cannot
+		 * exceed 128 bytes.
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/**
+		 * The value of the label attached to the product. Cannot be empty and
+		 * cannot exceed 128 bytes.
+		 */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateKeyValueFormGroup() {
+		return new FormGroup<KeyValueFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1267,6 +2312,52 @@ export namespace MyNS {
 		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/**
+	 * Set of features pertaining to the image, computed by computer vision
+	 * methods over safe-search verticals (for example, adult, spoof, medical,
+	 * violence).
+	 */
+	export interface SafeSearchAnnotationFormProperties {
+
+		/**
+		 * Represents the adult content likelihood for the image. Adult content may
+		 * contain elements such as nudity, pornographic images or cartoons, or
+		 * sexual activities.
+		 */
+		adult: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this is a medical image. */
+		medical: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Likelihood that the request image contains racy content. Racy content may
+		 * include (but is not limited to) skimpy or sheer clothing, strategically
+		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
+		 * body areas.
+		 */
+		racy: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Spoof likelihood. The likelihood that an modification
+		 * was made to the image's canonical version to make it appear
+		 * funny or offensive.
+		 */
+		spoof: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this image contains violent content. */
+		violence: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateSafeSearchAnnotationFormGroup() {
+		return new FormGroup<SafeSearchAnnotationFormProperties>({
+			adult: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			medical: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			racy: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			spoof: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			violence: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Relevant information for the image from the Internet. */
 	export interface WebDetection {
@@ -1275,29 +2366,38 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<WebLabel> | null;
+		bestGuessLabels?: Array<WebLabel>;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<WebImage> | null;
+		fullMatchingImages?: Array<WebImage>;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<WebPage> | null;
+		pagesWithMatchingImages?: Array<WebPage>;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<WebImage> | null;
+		partialMatchingImages?: Array<WebImage>;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<WebImage> | null;
+		visuallySimilarImages?: Array<WebImage>;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<WebEntity> | null;
+		webEntities?: Array<WebEntity>;
+	}
+
+	/** Relevant information for the image from the Internet. */
+	export interface WebDetectionFormProperties {
+	}
+	export function CreateWebDetectionFormGroup() {
+		return new FormGroup<WebDetectionFormProperties>({
+		});
+
 	}
 
 
@@ -1315,6 +2415,27 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Label to provide extra metadata for the web detection. */
+	export interface WebLabelFormProperties {
+
+		/** Label for extra metadata. */
+		label: FormControl<string | null | undefined>,
+
+		/**
+		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
+		 * For more information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateWebLabelFormGroup() {
+		return new FormGroup<WebLabelFormProperties>({
+			label: new FormControl<string | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for online images. */
 	export interface WebImage {
@@ -1326,6 +2447,23 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** Metadata for online images. */
+	export interface WebImageFormProperties {
+
+		/** (Deprecated) Overall relevancy score for the image. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result image URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateWebImageFormGroup() {
+		return new FormGroup<WebImageFormProperties>({
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for web pages. */
 	export interface WebPage {
@@ -1334,7 +2472,7 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<WebImage> | null;
+		fullMatchingImages?: Array<WebImage>;
 
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle?: string | null;
@@ -1345,13 +2483,34 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<WebImage> | null;
+		partialMatchingImages?: Array<WebImage>;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
 		score?: number | null;
 
 		/** The result web page URL. */
 		url?: string | null;
+	}
+
+	/** Metadata for web pages. */
+	export interface WebPageFormProperties {
+
+		/** Title for the web page, may contain HTML markups. */
+		pageTitle: FormControl<string | null | undefined>,
+
+		/** (Deprecated) Overall relevancy score for the web page. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result web page URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateWebPageFormGroup() {
+		return new FormGroup<WebPageFormProperties>({
+			pageTitle: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1371,6 +2530,30 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Entity deduced from similar images on the Internet. */
+	export interface WebEntityFormProperties {
+
+		/** Canonical description of the entity, in English. */
+		description: FormControl<string | null | undefined>,
+
+		/** Opaque entity ID. */
+		entityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Overall relevancy score for the entity.
+		 * Not normalized and not comparable across different image queries.
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateWebEntityFormGroup() {
+		return new FormGroup<WebEntityFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Request for performing Google Cloud Vision API tasks over a user-provided
@@ -1379,13 +2562,25 @@ export namespace MyNS {
 	export interface AnnotateImageRequest {
 
 		/** Requested features. */
-		features?: Array<Feature> | null;
+		features?: Array<Feature>;
 
 		/** Client image to perform Google Cloud Vision API tasks over. */
-		image?: Image | null;
+		image?: Image;
 
 		/** Image context and/or feature-specific parameters. */
-		imageContext?: ImageContext | null;
+		imageContext?: ImageContext;
+	}
+
+	/**
+	 * Request for performing Google Cloud Vision API tasks over a user-provided
+	 * image, with user-requested features, and with context information.
+	 */
+	export interface AnnotateImageRequestFormProperties {
+	}
+	export function CreateAnnotateImageRequestFormGroup() {
+		return new FormGroup<AnnotateImageRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1400,7 +2595,24 @@ export namespace MyNS {
 		content?: string | null;
 
 		/** External image source (Google Cloud Storage or web URL image location). */
-		source?: ImageSource | null;
+		source?: ImageSource;
+	}
+
+	/** Client image to perform Google Cloud Vision API tasks over. */
+	export interface ImageFormProperties {
+
+		/**
+		 * Image content, represented as a stream of bytes.
+		 * Note: As with all `bytes` fields, protobuffers use a pure binary
+		 * representation, whereas JSON representations use base64.
+		 */
+		content: FormControl<string | null | undefined>,
+	}
+	export function CreateImageFormGroup() {
+		return new FormGroup<ImageFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1435,21 +2647,68 @@ export namespace MyNS {
 		imageUri?: string | null;
 	}
 
+	/** External image source (Google Cloud Storage or web URL image location). */
+	export interface ImageSourceFormProperties {
+
+		/**
+		 * **Use `image_uri` instead.**
+		 * The Google Cloud Storage  URI of the form
+		 * `gs://bucket_name/object_name`. Object versioning is not supported. See
+		 * [Google Cloud Storage Request
+		 * URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
+		 */
+		gcsImageUri: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI of the source image. Can be either:
+		 * 1. A Google Cloud Storage URI of the form
+		 * `gs://bucket_name/object_name`. Object versioning is not supported. See
+		 * [Google Cloud Storage Request
+		 * URIs](https://cloud.google.com/storage/docs/reference-uris) for more
+		 * info.
+		 * 2. A publicly-accessible image HTTP/HTTPS URL. When fetching images from
+		 * HTTP/HTTPS URLs, Google cannot guarantee that the request will be
+		 * completed. Your request may fail if the specified host denies the
+		 * request (e.g. due to request throttling or DOS prevention), or if Google
+		 * throttles requests to the site for abuse prevention. You should not
+		 * depend on externally-hosted images for production applications.
+		 * When both `gcs_image_uri` and `image_uri` are specified, `image_uri` takes
+		 * precedence.
+		 */
+		imageUri: FormControl<string | null | undefined>,
+	}
+	export function CreateImageSourceFormGroup() {
+		return new FormGroup<ImageSourceFormProperties>({
+			gcsImageUri: new FormControl<string | null | undefined>(undefined),
+			imageUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An offline file annotation request. */
 	export interface AsyncAnnotateFileRequest {
 
 		/** Required. Requested features. */
-		features?: Array<Feature> | null;
+		features?: Array<Feature>;
 
 		/** Image context and/or feature-specific parameters. */
-		imageContext?: ImageContext | null;
+		imageContext?: ImageContext;
 
 		/** The desired input location and metadata. */
-		inputConfig?: InputConfig | null;
+		inputConfig?: InputConfig;
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig | null;
+		outputConfig?: OutputConfig;
+	}
+
+	/** An offline file annotation request. */
+	export interface AsyncAnnotateFileRequestFormProperties {
+	}
+	export function CreateAsyncAnnotateFileRequestFormGroup() {
+		return new FormGroup<AsyncAnnotateFileRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1470,7 +2729,30 @@ export namespace MyNS {
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GcsDestination | null;
+		gcsDestination?: GcsDestination;
+	}
+
+	/** The desired output location and metadata. */
+	export interface OutputConfigFormProperties {
+
+		/**
+		 * The max number of response protos to put into each output JSON file on
+		 * Google Cloud Storage.
+		 * The valid range is [1, 100]. If not specified, the default value is 20.
+		 * For example, for one pdf file with 100 pages, 100 response protos will
+		 * be generated. If `batch_size` = 20, then 5 json files each
+		 * containing 20 response protos will be written under the prefix
+		 * `gcs_destination`.`uri`.
+		 * Currently, batch_size only applies to GcsDestination, with potential future
+		 * support for other output configurations.
+		 */
+		batchSize: FormControl<number | null | undefined>,
+	}
+	export function CreateOutputConfigFormGroup() {
+		return new FormGroup<OutputConfigFormProperties>({
+			batchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1500,12 +2782,53 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the output will be written to. */
+	export interface GcsDestinationFormProperties {
+
+		/**
+		 * Google Cloud Storage URI prefix where the results will be stored. Results
+		 * will be in JSON format and preceded by its corresponding input URI prefix.
+		 * This field can either represent a gcs file prefix or gcs directory. In
+		 * either case, the uri should be unique because in order to get all of the
+		 * output files, you will need to do a wildcard gcs search on the uri prefix
+		 * you provide.
+		 * Examples:
+		 * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
+		 * will be created in gs://bucket-name/here/ and the names of the
+		 * output files will begin with "filenameprefix".
+		 * *    Directory Prefix: gs://bucket-name/some/location/   The output files
+		 * will be created in gs://bucket-name/some/location/ and the names of the
+		 * output files could be anything because there was no filename prefix
+		 * specified.
+		 * If multiple outputs, each response is still AnnotateFileResponse, each of
+		 * which contains some subset of the full list of AnnotateImageResponse.
+		 * Multiple outputs can happen if, for example, the output JSON is too large
+		 * and overflows into multiple sharded files.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGcsDestinationFormGroup() {
+		return new FormGroup<GcsDestinationFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for a single offline file annotation request. */
 	export interface AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig | null;
+		outputConfig?: OutputConfig;
+	}
+
+	/** The response for a single offline file annotation request. */
+	export interface AsyncAnnotateFileResponseFormProperties {
+	}
+	export function CreateAsyncAnnotateFileResponseFormGroup() {
+		return new FormGroup<AsyncAnnotateFileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1528,7 +2851,32 @@ export namespace MyNS {
 		parent?: string | null;
 
 		/** Required. Individual async file annotation requests for this batch. */
-		requests?: Array<AsyncAnnotateFileRequest> | null;
+		requests?: Array<AsyncAnnotateFileRequest>;
+	}
+
+	/**
+	 * Multiple async file annotation requests are batched into a single service
+	 * call.
+	 */
+	export interface AsyncBatchAnnotateFilesRequestFormProperties {
+
+		/**
+		 * Optional. Target project and location to make a call.
+		 * Format: `projects/{project-id}/locations/{location-id}`.
+		 * If no parent is specified, a region will be chosen automatically.
+		 * Supported location-ids:
+		 * `us`: USA country only,
+		 * `asia`: East asia areas, like Japan, Taiwan,
+		 * `eu`: The European Union.
+		 * Example: `projects/project-A/locations/eu`.
+		 */
+		parent: FormControl<string | null | undefined>,
+	}
+	export function CreateAsyncBatchAnnotateFilesRequestFormGroup() {
+		return new FormGroup<AsyncBatchAnnotateFilesRequestFormProperties>({
+			parent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1539,7 +2887,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<AsyncAnnotateFileResponse> | null;
+		responses?: Array<AsyncAnnotateFileResponse>;
+	}
+
+	/** Response to an async batch file annotation request. */
+	export interface AsyncBatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateAsyncBatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<AsyncBatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1547,7 +2904,7 @@ export namespace MyNS {
 	export interface AsyncBatchAnnotateImagesRequest {
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig | null;
+		outputConfig?: OutputConfig;
 
 		/**
 		 * Optional. Target project and location to make a call.
@@ -1562,7 +2919,29 @@ export namespace MyNS {
 		parent?: string | null;
 
 		/** Required. Individual image annotation requests for this batch. */
-		requests?: Array<AnnotateImageRequest> | null;
+		requests?: Array<AnnotateImageRequest>;
+	}
+
+	/** Request for async image annotation for a list of images. */
+	export interface AsyncBatchAnnotateImagesRequestFormProperties {
+
+		/**
+		 * Optional. Target project and location to make a call.
+		 * Format: `projects/{project-id}/locations/{location-id}`.
+		 * If no parent is specified, a region will be chosen automatically.
+		 * Supported location-ids:
+		 * `us`: USA country only,
+		 * `asia`: East asia areas, like Japan, Taiwan,
+		 * `eu`: The European Union.
+		 * Example: `projects/project-A/locations/eu`.
+		 */
+		parent: FormControl<string | null | undefined>,
+	}
+	export function CreateAsyncBatchAnnotateImagesRequestFormGroup() {
+		return new FormGroup<AsyncBatchAnnotateImagesRequestFormProperties>({
+			parent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1570,7 +2949,16 @@ export namespace MyNS {
 	export interface AsyncBatchAnnotateImagesResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: OutputConfig | null;
+		outputConfig?: OutputConfig;
+	}
+
+	/** Response to an async batch image annotation request. */
+	export interface AsyncBatchAnnotateImagesResponseFormProperties {
+	}
+	export function CreateAsyncBatchAnnotateImagesResponseFormGroup() {
+		return new FormGroup<AsyncBatchAnnotateImagesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1593,7 +2981,29 @@ export namespace MyNS {
 		 * Required. The list of file annotation requests. Right now we support only one
 		 * AnnotateFileRequest in BatchAnnotateFilesRequest.
 		 */
-		requests?: Array<AnnotateFileRequest> | null;
+		requests?: Array<AnnotateFileRequest>;
+	}
+
+	/** A list of requests to annotate files using the BatchAnnotateFiles API. */
+	export interface BatchAnnotateFilesRequestFormProperties {
+
+		/**
+		 * Optional. Target project and location to make a call.
+		 * Format: `projects/{project-id}/locations/{location-id}`.
+		 * If no parent is specified, a region will be chosen automatically.
+		 * Supported location-ids:
+		 * `us`: USA country only,
+		 * `asia`: East asia areas, like Japan, Taiwan,
+		 * `eu`: The European Union.
+		 * Example: `projects/project-A/locations/eu`.
+		 */
+		parent: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchAnnotateFilesRequestFormGroup() {
+		return new FormGroup<BatchAnnotateFilesRequestFormProperties>({
+			parent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1604,7 +3014,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, each response corresponding to each
 		 * AnnotateFileRequest in BatchAnnotateFilesRequest.
 		 */
-		responses?: Array<AnnotateFileResponse> | null;
+		responses?: Array<AnnotateFileResponse>;
+	}
+
+	/** A list of file annotation responses. */
+	export interface BatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateBatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<BatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1624,7 +3043,29 @@ export namespace MyNS {
 		parent?: string | null;
 
 		/** Required. Individual image annotation requests for this batch. */
-		requests?: Array<AnnotateImageRequest> | null;
+		requests?: Array<AnnotateImageRequest>;
+	}
+
+	/** Multiple image annotation requests are batched into a single service call. */
+	export interface BatchAnnotateImagesRequestFormProperties {
+
+		/**
+		 * Optional. Target project and location to make a call.
+		 * Format: `projects/{project-id}/locations/{location-id}`.
+		 * If no parent is specified, a region will be chosen automatically.
+		 * Supported location-ids:
+		 * `us`: USA country only,
+		 * `asia`: East asia areas, like Japan, Taiwan,
+		 * `eu`: The European Union.
+		 * Example: `projects/project-A/locations/eu`.
+		 */
+		parent: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchAnnotateImagesRequestFormGroup() {
+		return new FormGroup<BatchAnnotateImagesRequestFormProperties>({
+			parent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1632,7 +3073,16 @@ export namespace MyNS {
 	export interface BatchAnnotateImagesResponse {
 
 		/** Individual responses to image annotation requests within the batch. */
-		responses?: Array<AnnotateImageResponse> | null;
+		responses?: Array<AnnotateImageResponse>;
+	}
+
+	/** Response to a batch image annotation request. */
+	export interface BatchAnnotateImagesResponseFormProperties {
+	}
+	export function CreateBatchAnnotateImagesResponseFormGroup() {
+		return new FormGroup<BatchAnnotateImagesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1656,11 +3106,48 @@ export namespace MyNS {
 		submitTime?: string | null;
 	}
 
+	/**
+	 * Metadata for the batch operations such as the current state.
+	 * This is included in the `metadata` field of the `Operation` returned by the
+	 * `GetOperation` call of the `google::longrunning::Operations` service.
+	 */
+	export interface BatchOperationMetadataFormProperties {
+
+		/**
+		 * The time when the batch request is finished and
+		 * google.longrunning.Operation.done is set to true.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/** The current state of the batch operation. */
+		state: FormControl<BatchOperationMetadataState | null | undefined>,
+
+		/** The time when the batch request was submitted to the server. */
+		submitTime: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchOperationMetadataFormGroup() {
+		return new FormGroup<BatchOperationMetadataFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<BatchOperationMetadataState | null | undefined>(undefined),
+			submitTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BatchOperationMetadataState { STATE_UNSPECIFIED = 0, PROCESSING = 1, SUCCESSFUL = 2, FAILED = 3, CANCELLED = 4 }
 
 
 	/** The request message for Operations.CancelOperation. */
 	export interface CancelOperationRequest {
+	}
+
+	/** The request message for Operations.CancelOperation. */
+	export interface CancelOperationRequestFormProperties {
+	}
+	export function CreateCancelOperationRequestFormGroup() {
+		return new FormGroup<CancelOperationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1674,6 +3161,23 @@ export namespace MyNS {
 	 * The JSON representation for `Empty` is empty JSON object `{}`.
 	 */
 	export interface Empty {
+	}
+
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
 	}
 
 
@@ -1691,19 +3195,35 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p1beta1InputConfig | null;
+		inputConfig?: GoogleCloudVisionV1p1beta1InputConfig;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p1beta1AnnotateImageResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p1beta1AnnotateImageResponse>;
 
 		/** This field gives the total number of pages in the file. */
 		totalPages?: number | null;
+	}
+
+	/**
+	 * Response to a single file annotation request. A file may contain one or more
+	 * images, which individually have their own responses.
+	 */
+	export interface GoogleCloudVisionV1p1beta1AnnotateFileResponseFormProperties {
+
+		/** This field gives the total number of pages in the file. */
+		totalPages: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1AnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1AnnotateFileResponseFormProperties>({
+			totalPages: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1720,13 +3240,39 @@ export namespace MyNS {
 		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p1beta1GcsSource | null;
+		gcsSource?: GoogleCloudVisionV1p1beta1GcsSource;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
 		mimeType?: string | null;
+	}
+
+	/** The desired input location and metadata. */
+	export interface GoogleCloudVisionV1p1beta1InputConfigFormProperties {
+
+		/**
+		 * File content, represented as a stream of bytes.
+		 * Note: As with all `bytes` fields, protobuffers use a pure binary
+		 * representation, whereas JSON representations use base64.
+		 * Currently, this field only works for BatchAnnotateFiles requests. It does
+		 * not work for AsyncBatchAnnotateFiles requests.
+		 */
+		content: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the file. Currently only "application/pdf", "image/tiff" and
+		 * "image/gif" are supported. Wildcards are not supported.
+		 */
+		mimeType: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1InputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1InputConfigFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			mimeType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1740,6 +3286,22 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the input will be read from. */
+	export interface GoogleCloudVisionV1p1beta1GcsSourceFormProperties {
+
+		/**
+		 * Google Cloud Storage URI for the input file. This must only be a
+		 * Google Cloud Storage object. Wildcards are not currently supported.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1GcsSourceFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1GcsSourceFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an image annotation request. */
 	export interface GoogleCloudVisionV1p1beta1AnnotateImageResponse {
@@ -1748,10 +3310,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p1beta1ImageAnnotationContext | null;
+		context?: GoogleCloudVisionV1p1beta1ImageAnnotationContext;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p1beta1CropHintsAnnotation | null;
+		cropHintsAnnotation?: GoogleCloudVisionV1p1beta1CropHintsAnnotation;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1761,10 +3323,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p1beta1FaceAnnotation> | null;
+		faceAnnotations?: Array<GoogleCloudVisionV1p1beta1FaceAnnotation>;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -1775,41 +3337,50 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p1beta1TextAnnotation | null;
+		fullTextAnnotation?: GoogleCloudVisionV1p1beta1TextAnnotation;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p1beta1ImageProperties | null;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p1beta1ImageProperties;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
+		labelAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation> | null;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation>;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
+		logoAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p1beta1ProductSearchResults | null;
+		productSearchResults?: GoogleCloudVisionV1p1beta1ProductSearchResults;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p1beta1SafeSearchAnnotation | null;
+		safeSearchAnnotation?: GoogleCloudVisionV1p1beta1SafeSearchAnnotation;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation> | null;
+		textAnnotations?: Array<GoogleCloudVisionV1p1beta1EntityAnnotation>;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p1beta1WebDetection | null;
+		webDetection?: GoogleCloudVisionV1p1beta1WebDetection;
+	}
+
+	/** Response to an image annotation request. */
+	export interface GoogleCloudVisionV1p1beta1AnnotateImageResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1AnnotateImageResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1AnnotateImageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1829,12 +3400,44 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * If an image was produced from a file (e.g. a PDF), this message gives
+	 * information about the source of that image.
+	 */
+	export interface GoogleCloudVisionV1p1beta1ImageAnnotationContextFormProperties {
+
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within
+		 * the file used to produce the image.
+		 */
+		pageNumber: FormControl<number | null | undefined>,
+
+		/** The URI of the file used to produce the image. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ImageAnnotationContextFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ImageAnnotationContextFormProperties>({
+			pageNumber: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of crop hints that are used to generate new crops when serving images. */
 	export interface GoogleCloudVisionV1p1beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p1beta1CropHint> | null;
+		cropHints?: Array<GoogleCloudVisionV1p1beta1CropHint>;
+	}
+
+	/** Set of crop hints that are used to generate new crops when serving images. */
+	export interface GoogleCloudVisionV1p1beta1CropHintsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1CropHintsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1CropHintsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -1842,7 +3445,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
 		confidence?: number | null;
@@ -1854,15 +3457,44 @@ export namespace MyNS {
 		importanceFraction?: number | null;
 	}
 
+	/** Single crop hint that is used to generate a new crop when serving an image. */
+	export interface GoogleCloudVisionV1p1beta1CropHintFormProperties {
+
+		/** Confidence of this being a salient region.  Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Fraction of importance of this salient region with respect to the original
+		 * image.
+		 */
+		importanceFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1CropHintFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1CropHintFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			importanceFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A bounding polygon for the detected image annotation. */
 	export interface GoogleCloudVisionV1p1beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p1beta1NormalizedVertex> | null;
+		normalizedVertices?: Array<GoogleCloudVisionV1p1beta1NormalizedVertex>;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p1beta1Vertex> | null;
+		vertices?: Array<GoogleCloudVisionV1p1beta1Vertex>;
+	}
+
+	/** A bounding polygon for the detected image annotation. */
+	export interface GoogleCloudVisionV1p1beta1BoundingPolyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1BoundingPolyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1BoundingPolyFormProperties>({
+		});
+
 	}
 
 
@@ -1880,6 +3512,27 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the normalized vertex coordinates are relative to the original image
+	 * and range from 0 to 1.
+	 */
+	export interface GoogleCloudVisionV1p1beta1NormalizedVertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1NormalizedVertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1NormalizedVertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A vertex represents a 2D point in the image.
@@ -1894,6 +3547,26 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the vertex coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p1beta1VertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1VertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1VertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face annotation object contains the results of face detection. */
 	export interface GoogleCloudVisionV1p1beta1FaceAnnotation {
@@ -1905,13 +3578,13 @@ export namespace MyNS {
 		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Detection confidence. Range [0, 1]. */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		fdBoundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Headwear likelihood. */
 		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
@@ -1923,7 +3596,7 @@ export namespace MyNS {
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p1beta1FaceAnnotationLandmark> | null;
+		landmarks?: Array<GoogleCloudVisionV1p1beta1FaceAnnotationLandmark>;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
@@ -1955,6 +3628,74 @@ export namespace MyNS {
 		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/** A face annotation object contains the results of face detection. */
+	export interface GoogleCloudVisionV1p1beta1FaceAnnotationFormProperties {
+
+		/** Anger likelihood. */
+		angerLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Blurred likelihood. */
+		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Detection confidence. Range [0, 1]. */
+		detectionConfidence: FormControl<number | null | undefined>,
+
+		/** Headwear likelihood. */
+		headwearLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Joy likelihood. */
+		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Face landmarking confidence. Range [0, 1]. */
+		landmarkingConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is
+		 * pointing relative to the vertical plane perpendicular to the image. Range
+		 * [-180,180].
+		 */
+		panAngle: FormControl<number | null | undefined>,
+
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+		 * of the face relative to the image vertical about the axis perpendicular to
+		 * the face. Range [-180,180].
+		 */
+		rollAngle: FormControl<number | null | undefined>,
+
+		/** Sorrow likelihood. */
+		sorrowLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Surprise likelihood. */
+		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is
+		 * pointing relative to the image's horizontal plane. Range [-180,180].
+		 */
+		tiltAngle: FormControl<number | null | undefined>,
+
+		/** Under-exposed likelihood. */
+		underExposedLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1FaceAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1FaceAnnotationFormProperties>({
+			angerLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			blurredLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			detectionConfidence: new FormControl<number | null | undefined>(undefined),
+			headwearLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			joyLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			landmarkingConfidence: new FormControl<number | null | undefined>(undefined),
+			panAngle: new FormControl<number | null | undefined>(undefined),
+			rollAngle: new FormControl<number | null | undefined>(undefined),
+			sorrowLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			surpriseLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			tiltAngle: new FormControl<number | null | undefined>(undefined),
+			underExposedLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face-specific landmark (for example, a face feature). */
 	export interface GoogleCloudVisionV1p1beta1FaceAnnotationLandmark {
@@ -1964,10 +3705,23 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p1beta1Position | null;
+		position?: GoogleCloudVisionV1p1beta1Position;
 
 		/** Face landmark type. */
 		type?: LandmarkType | null;
+	}
+
+	/** A face-specific landmark (for example, a face feature). */
+	export interface GoogleCloudVisionV1p1beta1FaceAnnotationLandmarkFormProperties {
+
+		/** Face landmark type. */
+		type: FormControl<LandmarkType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1FaceAnnotationLandmarkFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1FaceAnnotationLandmarkFormProperties>({
+			type: new FormControl<LandmarkType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1988,6 +3742,31 @@ export namespace MyNS {
 		z?: number | null;
 	}
 
+	/**
+	 * A 3D position in the image, used primarily for Face detection landmarks.
+	 * A valid Position must have both x and y coordinates.
+	 * The position coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p1beta1PositionFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+
+		/** Z coordinate (or depth). */
+		z: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1PositionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1PositionFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+			z: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -2001,10 +3780,31 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p1beta1Page> | null;
+		pages?: Array<GoogleCloudVisionV1p1beta1Page>;
 
 		/** UTF-8 text detected on the pages. */
 		text?: string | null;
+	}
+
+	/**
+	 * TextAnnotation contains a structured representation of OCR extracted text.
+	 * The hierarchy of an OCR extracted text structure is like this:
+	 *     TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol
+	 * Each structural component, starting from Page, may further have their own
+	 * properties. Properties describe detected languages, breaks etc.. Please refer
+	 * to the TextAnnotation.TextProperty message definition below for more
+	 * detail.
+	 */
+	export interface GoogleCloudVisionV1p1beta1TextAnnotationFormProperties {
+
+		/** UTF-8 text detected on the pages. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1TextAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1TextAnnotationFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2012,7 +3812,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p1beta1Block> | null;
+		blocks?: Array<GoogleCloudVisionV1p1beta1Block>;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
 		confidence?: number | null;
@@ -2024,13 +3824,40 @@ export namespace MyNS {
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
 		width?: number | null;
+	}
+
+	/** Detected page from OCR. */
+	export interface GoogleCloudVisionV1p1beta1PageFormProperties {
+
+		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Page height. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * Page width. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1PageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1PageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2041,16 +3868,33 @@ export namespace MyNS {
 		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p1beta1Paragraph> | null;
+		paragraphs?: Array<GoogleCloudVisionV1p1beta1Paragraph>;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
+	}
+
+	/** Logical element on the page. */
+	export interface GoogleCloudVisionV1p1beta1BlockFormProperties {
+
+		/** Detected block type (text, image etc) for this block. */
+		blockType: FormControl<BlockBlockType | null | undefined>,
+
+		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1BlockFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1BlockFormProperties>({
+			blockType: new FormControl<BlockBlockType | null | undefined>(undefined),
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2058,16 +3902,29 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p1beta1Word> | null;
+		words?: Array<GoogleCloudVisionV1p1beta1Word>;
+	}
+
+	/** Structural unit of text representing a number of words in certain order. */
+	export interface GoogleCloudVisionV1p1beta1ParagraphFormProperties {
+
+		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ParagraphFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ParagraphFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2075,10 +3932,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak | null;
+		detectedBreak?: GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreak;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage> | null;
+		detectedLanguages?: Array<GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage>;
+	}
+
+	/** Additional information detected on the structural component. */
+	export interface GoogleCloudVisionV1p1beta1TextAnnotationTextPropertyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1TextAnnotationTextPropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1TextAnnotationTextPropertyFormProperties>({
+		});
+
 	}
 
 
@@ -2090,6 +3956,23 @@ export namespace MyNS {
 
 		/** Detected break type. */
 		type?: DetectedBreakType | null;
+	}
+
+	/** Detected start or end of a structural component. */
+	export interface GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreakFormProperties {
+
+		/** True if break prepends the element. */
+		isPrefix: FormControl<boolean | null | undefined>,
+
+		/** Detected break type. */
+		type: FormControl<DetectedBreakType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1TextAnnotationDetectedBreakFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1TextAnnotationDetectedBreakFormProperties>({
+			isPrefix: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<DetectedBreakType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2107,24 +3990,58 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Detected language for a structural component. */
+	export interface GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguageFormProperties {
+
+		/** Confidence of detected language. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p1beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p1beta1Symbol> | null;
+		symbols?: Array<GoogleCloudVisionV1p1beta1Symbol>;
+	}
+
+	/** A word representation. */
+	export interface GoogleCloudVisionV1p1beta1WordFormProperties {
+
+		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1WordFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1WordFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2132,16 +4049,33 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p1beta1TextAnnotationTextProperty;
 
 		/** The actual UTF-8 representation of the symbol. */
 		text?: string | null;
+	}
+
+	/** A single symbol representation. */
+	export interface GoogleCloudVisionV1p1beta1SymbolFormProperties {
+
+		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/** The actual UTF-8 representation of the symbol. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1SymbolFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1SymbolFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2149,7 +4083,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p1beta1DominantColorsAnnotation | null;
+		dominantColors?: GoogleCloudVisionV1p1beta1DominantColorsAnnotation;
+	}
+
+	/** Stores image properties, such as dominant colors. */
+	export interface GoogleCloudVisionV1p1beta1ImagePropertiesFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ImagePropertiesFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ImagePropertiesFormProperties>({
+		});
+
 	}
 
 
@@ -2157,7 +4100,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p1beta1ColorInfo> | null;
+		colors?: Array<GoogleCloudVisionV1p1beta1ColorInfo>;
+	}
+
+	/** Set of dominant colors and their corresponding scores. */
+	export interface GoogleCloudVisionV1p1beta1DominantColorsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1DominantColorsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1DominantColorsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -2272,7 +4224,7 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color | null;
+		color?: Color;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
@@ -2284,12 +4236,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/**
+	 * Color information consists of RGB channels, score, and the fraction of
+	 * the image that the color occupies in the image.
+	 */
+	export interface GoogleCloudVisionV1p1beta1ColorInfoFormProperties {
+
+		/**
+		 * The fraction of pixels the color occupies in the image.
+		 * Value in range [0, 1].
+		 */
+		pixelFraction: FormControl<number | null | undefined>,
+
+		/** Image-specific score for this color. Value in range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ColorInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ColorInfoFormProperties>({
+			pixelFraction: new FormControl<number | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p1beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -2316,7 +4291,7 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p1beta1LocationInfo> | null;
+		locations?: Array<GoogleCloudVisionV1p1beta1LocationInfo>;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
@@ -2329,7 +4304,7 @@ export namespace MyNS {
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p1beta1Property> | null;
+		properties?: Array<GoogleCloudVisionV1p1beta1Property>;
 
 		/** Overall score of the result. Range [0, 1]. */
 		score?: number | null;
@@ -2344,6 +4319,58 @@ export namespace MyNS {
 		topicality?: number | null;
 	}
 
+	/** Set of detected entity features. */
+	export interface GoogleCloudVisionV1p1beta1EntityAnnotationFormProperties {
+
+		/**
+		 * **Deprecated. Use `score` instead.**
+		 * The accuracy of the entity detection in an image.
+		 * For example, for an image in which the "Eiffel Tower" entity is detected,
+		 * this field represents the confidence that there is a tower in the query
+		 * image. Range [0, 1].
+		 */
+		confidence: FormControl<number | null | undefined>,
+
+		/** Entity textual description, expressed in its `locale` language. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The language code for the locale in which the entity textual
+		 * `description` is expressed.
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/**
+		 * Opaque entity ID. Some IDs may be available in
+		 * [Google Knowledge Graph Search
+		 * API](https://developers.google.com/knowledge-graph/).
+		 */
+		mid: FormControl<string | null | undefined>,
+
+		/** Overall score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the
+		 * image. For example, the relevancy of "tower" is likely higher to an image
+		 * containing the detected "Eiffel Tower" than to an image containing a
+		 * detected distant towering building, even though the confidence that
+		 * there is a tower in each image may be the same. Range [0, 1].
+		 */
+		topicality: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1EntityAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1EntityAnnotationFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			topicality: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Detected entity location information. */
 	export interface GoogleCloudVisionV1p1beta1LocationInfo {
@@ -2355,7 +4382,16 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng | null;
+		latLng?: LatLng;
+	}
+
+	/** Detected entity location information. */
+	export interface GoogleCloudVisionV1p1beta1LocationInfoFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1LocationInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1LocationInfoFormProperties>({
+		});
+
 	}
 
 
@@ -2372,12 +4408,33 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A `Property` consists of a user-supplied name/value pair. */
+	export interface GoogleCloudVisionV1p1beta1PropertyFormProperties {
+
+		/** Name of the property. */
+		name: FormControl<string | null | undefined>,
+
+		/** Value of numeric properties. */
+		uint64Value: FormControl<string | null | undefined>,
+
+		/** Value of the property. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1PropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1PropertyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uint64Value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected objects with bounding boxes. */
 	export interface GoogleCloudVisionV1p1beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -2394,6 +4451,35 @@ export namespace MyNS {
 
 		/** Score of the result. Range [0, 1]. */
 		score?: number | null;
+	}
+
+	/** Set of detected objects with bounding boxes. */
+	export interface GoogleCloudVisionV1p1beta1LocalizedObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1LocalizedObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1LocalizedObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2413,10 +4499,27 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult> | null;
+		productGroupedResults?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult>;
+	}
+
+	/** Results for a product search request. */
+	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsFormProperties {
+
+		/**
+		 * Timestamp of the index which provided these results. Products added to the
+		 * product set and products removed from the product set after this time are
+		 * not reflected in the current results.
+		 */
+		indexTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ProductSearchResultsFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ProductSearchResultsFormProperties>({
+			indexTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2427,13 +4530,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p1beta1BoundingPoly;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation> | null;
+		objectAnnotations?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p1beta1ProductSearchResultsResult>;
+	}
+
+	/**
+	 * Information about the products similar to a single product in a query
+	 * image.
+	 */
+	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResultFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResultFormProperties>({
+		});
+
 	}
 
 
@@ -2457,6 +4572,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Prediction for what the object in the bounding box is. */
+	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a product. */
 	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsResult {
@@ -2468,13 +4612,36 @@ export namespace MyNS {
 		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p1beta1Product | null;
+		product?: GoogleCloudVisionV1p1beta1Product;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
 		score?: number | null;
+	}
+
+	/** Information about a product. */
+	export interface GoogleCloudVisionV1p1beta1ProductSearchResultsResultFormProperties {
+
+		/**
+		 * The resource name of the image from the product that is the closest match
+		 * to the query.
+		 */
+		image: FormControl<string | null | undefined>,
+
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to
+		 * 1 (full confidence).
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ProductSearchResultsResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ProductSearchResultsResultFormProperties>({
+			image: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2521,7 +4688,48 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p1beta1ProductKeyValue> | null;
+		productLabels?: Array<GoogleCloudVisionV1p1beta1ProductKeyValue>;
+	}
+
+	/** A Product contains ReferenceImages. */
+	export interface GoogleCloudVisionV1p1beta1ProductFormProperties {
+
+		/**
+		 * User-provided metadata to be stored with this product. Must be at most 4096
+		 * characters long.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The user-provided name for this Product. Must not be empty. Must be at most
+		 * 4096 characters long.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the product.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+		 * This field is ignored when creating a product.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Immutable. The category for the product identified by the reference image. This should
+		 * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+		 * "homegoods", "apparel", and "toys" are still supported, but these should
+		 * not be used for new products.
+		 */
+		productCategory: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ProductFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ProductFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			productCategory: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2539,6 +4747,29 @@ export namespace MyNS {
 		 * cannot exceed 128 bytes.
 		 */
 		value?: string | null;
+	}
+
+	/** A product label represented as a key-value pair. */
+	export interface GoogleCloudVisionV1p1beta1ProductKeyValueFormProperties {
+
+		/**
+		 * The key of the label attached to the product. Cannot be empty and cannot
+		 * exceed 128 bytes.
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/**
+		 * The value of the label attached to the product. Cannot be empty and
+		 * cannot exceed 128 bytes.
+		 */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1ProductKeyValueFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1ProductKeyValueFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2578,6 +4809,52 @@ export namespace MyNS {
 		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/**
+	 * Set of features pertaining to the image, computed by computer vision
+	 * methods over safe-search verticals (for example, adult, spoof, medical,
+	 * violence).
+	 */
+	export interface GoogleCloudVisionV1p1beta1SafeSearchAnnotationFormProperties {
+
+		/**
+		 * Represents the adult content likelihood for the image. Adult content may
+		 * contain elements such as nudity, pornographic images or cartoons, or
+		 * sexual activities.
+		 */
+		adult: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this is a medical image. */
+		medical: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Likelihood that the request image contains racy content. Racy content may
+		 * include (but is not limited to) skimpy or sheer clothing, strategically
+		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
+		 * body areas.
+		 */
+		racy: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Spoof likelihood. The likelihood that an modification
+		 * was made to the image's canonical version to make it appear
+		 * funny or offensive.
+		 */
+		spoof: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this image contains violent content. */
+		violence: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1SafeSearchAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1SafeSearchAnnotationFormProperties>({
+			adult: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			medical: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			racy: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			spoof: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			violence: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Relevant information for the image from the Internet. */
 	export interface GoogleCloudVisionV1p1beta1WebDetection {
@@ -2586,29 +4863,38 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebLabel> | null;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebLabel>;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebPage> | null;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebPage>;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebEntity> | null;
+		webEntities?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebEntity>;
+	}
+
+	/** Relevant information for the image from the Internet. */
+	export interface GoogleCloudVisionV1p1beta1WebDetectionFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1WebDetectionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1WebDetectionFormProperties>({
+		});
+
 	}
 
 
@@ -2626,6 +4912,27 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Label to provide extra metadata for the web detection. */
+	export interface GoogleCloudVisionV1p1beta1WebDetectionWebLabelFormProperties {
+
+		/** Label for extra metadata. */
+		label: FormControl<string | null | undefined>,
+
+		/**
+		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
+		 * For more information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1WebDetectionWebLabelFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1WebDetectionWebLabelFormProperties>({
+			label: new FormControl<string | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebImage {
@@ -2637,6 +4944,23 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** Metadata for online images. */
+	export interface GoogleCloudVisionV1p1beta1WebDetectionWebImageFormProperties {
+
+		/** (Deprecated) Overall relevancy score for the image. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result image URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1WebDetectionWebImageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1WebDetectionWebImageFormProperties>({
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for web pages. */
 	export interface GoogleCloudVisionV1p1beta1WebDetectionWebPage {
@@ -2645,7 +4969,7 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
 
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle?: string | null;
@@ -2656,13 +4980,34 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p1beta1WebDetectionWebImage>;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
 		score?: number | null;
 
 		/** The result web page URL. */
 		url?: string | null;
+	}
+
+	/** Metadata for web pages. */
+	export interface GoogleCloudVisionV1p1beta1WebDetectionWebPageFormProperties {
+
+		/** Title for the web page, may contain HTML markups. */
+		pageTitle: FormControl<string | null | undefined>,
+
+		/** (Deprecated) Overall relevancy score for the web page. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result web page URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1WebDetectionWebPageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1WebDetectionWebPageFormProperties>({
+			pageTitle: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2682,12 +5027,45 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Entity deduced from similar images on the Internet. */
+	export interface GoogleCloudVisionV1p1beta1WebDetectionWebEntityFormProperties {
+
+		/** Canonical description of the entity, in English. */
+		description: FormControl<string | null | undefined>,
+
+		/** Opaque entity ID. */
+		entityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Overall relevancy score for the entity.
+		 * Not normalized and not comparable across different image queries.
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1WebDetectionWebEntityFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1WebDetectionWebEntityFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for a single offline file annotation request. */
 	export interface GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p1beta1OutputConfig | null;
+		outputConfig?: GoogleCloudVisionV1p1beta1OutputConfig;
+	}
+
+	/** The response for a single offline file annotation request. */
+	export interface GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1AsyncAnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2708,7 +5086,30 @@ export namespace MyNS {
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p1beta1GcsDestination | null;
+		gcsDestination?: GoogleCloudVisionV1p1beta1GcsDestination;
+	}
+
+	/** The desired output location and metadata. */
+	export interface GoogleCloudVisionV1p1beta1OutputConfigFormProperties {
+
+		/**
+		 * The max number of response protos to put into each output JSON file on
+		 * Google Cloud Storage.
+		 * The valid range is [1, 100]. If not specified, the default value is 20.
+		 * For example, for one pdf file with 100 pages, 100 response protos will
+		 * be generated. If `batch_size` = 20, then 5 json files each
+		 * containing 20 response protos will be written under the prefix
+		 * `gcs_destination`.`uri`.
+		 * Currently, batch_size only applies to GcsDestination, with potential future
+		 * support for other output configurations.
+		 */
+		batchSize: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1OutputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1OutputConfigFormProperties>({
+			batchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2738,6 +5139,38 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the output will be written to. */
+	export interface GoogleCloudVisionV1p1beta1GcsDestinationFormProperties {
+
+		/**
+		 * Google Cloud Storage URI prefix where the results will be stored. Results
+		 * will be in JSON format and preceded by its corresponding input URI prefix.
+		 * This field can either represent a gcs file prefix or gcs directory. In
+		 * either case, the uri should be unique because in order to get all of the
+		 * output files, you will need to do a wildcard gcs search on the uri prefix
+		 * you provide.
+		 * Examples:
+		 * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
+		 * will be created in gs://bucket-name/here/ and the names of the
+		 * output files will begin with "filenameprefix".
+		 * *    Directory Prefix: gs://bucket-name/some/location/   The output files
+		 * will be created in gs://bucket-name/some/location/ and the names of the
+		 * output files could be anything because there was no filename prefix
+		 * specified.
+		 * If multiple outputs, each response is still AnnotateFileResponse, each of
+		 * which contains some subset of the full list of AnnotateImageResponse.
+		 * Multiple outputs can happen if, for example, the output JSON is too large
+		 * and overflows into multiple sharded files.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1GcsDestinationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1GcsDestinationFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an async batch file annotation request. */
 	export interface GoogleCloudVisionV1p1beta1AsyncBatchAnnotateFilesResponse {
@@ -2746,7 +5179,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p1beta1AsyncAnnotateFileResponse>;
+	}
+
+	/** Response to an async batch file annotation request. */
+	export interface GoogleCloudVisionV1p1beta1AsyncBatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p1beta1AsyncBatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1AsyncBatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2761,6 +5203,27 @@ export namespace MyNS {
 
 		/** The time when the operation result was last updated. */
 		updateTime?: string | null;
+	}
+
+	/** Contains metadata for the BatchAnnotateImages operation. */
+	export interface GoogleCloudVisionV1p1beta1OperationMetadataFormProperties {
+
+		/** The time when the batch request was received. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Current state of the batch operation. */
+		state: FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>,
+
+		/** The time when the operation result was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p1beta1OperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p1beta1OperationMetadataFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GoogleCloudVisionV1p1beta1OperationMetadataState { STATE_UNSPECIFIED = 0, CREATED = 1, RUNNING = 2, DONE = 3, CANCELLED = 4 }
@@ -2780,19 +5243,35 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p2beta1InputConfig | null;
+		inputConfig?: GoogleCloudVisionV1p2beta1InputConfig;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p2beta1AnnotateImageResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p2beta1AnnotateImageResponse>;
 
 		/** This field gives the total number of pages in the file. */
 		totalPages?: number | null;
+	}
+
+	/**
+	 * Response to a single file annotation request. A file may contain one or more
+	 * images, which individually have their own responses.
+	 */
+	export interface GoogleCloudVisionV1p2beta1AnnotateFileResponseFormProperties {
+
+		/** This field gives the total number of pages in the file. */
+		totalPages: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1AnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1AnnotateFileResponseFormProperties>({
+			totalPages: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2809,13 +5288,39 @@ export namespace MyNS {
 		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p2beta1GcsSource | null;
+		gcsSource?: GoogleCloudVisionV1p2beta1GcsSource;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
 		mimeType?: string | null;
+	}
+
+	/** The desired input location and metadata. */
+	export interface GoogleCloudVisionV1p2beta1InputConfigFormProperties {
+
+		/**
+		 * File content, represented as a stream of bytes.
+		 * Note: As with all `bytes` fields, protobuffers use a pure binary
+		 * representation, whereas JSON representations use base64.
+		 * Currently, this field only works for BatchAnnotateFiles requests. It does
+		 * not work for AsyncBatchAnnotateFiles requests.
+		 */
+		content: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the file. Currently only "application/pdf", "image/tiff" and
+		 * "image/gif" are supported. Wildcards are not supported.
+		 */
+		mimeType: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1InputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1InputConfigFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			mimeType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2829,6 +5334,22 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the input will be read from. */
+	export interface GoogleCloudVisionV1p2beta1GcsSourceFormProperties {
+
+		/**
+		 * Google Cloud Storage URI for the input file. This must only be a
+		 * Google Cloud Storage object. Wildcards are not currently supported.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1GcsSourceFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1GcsSourceFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an image annotation request. */
 	export interface GoogleCloudVisionV1p2beta1AnnotateImageResponse {
@@ -2837,10 +5358,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p2beta1ImageAnnotationContext | null;
+		context?: GoogleCloudVisionV1p2beta1ImageAnnotationContext;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p2beta1CropHintsAnnotation | null;
+		cropHintsAnnotation?: GoogleCloudVisionV1p2beta1CropHintsAnnotation;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -2850,10 +5371,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p2beta1FaceAnnotation> | null;
+		faceAnnotations?: Array<GoogleCloudVisionV1p2beta1FaceAnnotation>;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -2864,41 +5385,50 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p2beta1TextAnnotation | null;
+		fullTextAnnotation?: GoogleCloudVisionV1p2beta1TextAnnotation;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p2beta1ImageProperties | null;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p2beta1ImageProperties;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
+		labelAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation> | null;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation>;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
+		logoAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p2beta1ProductSearchResults | null;
+		productSearchResults?: GoogleCloudVisionV1p2beta1ProductSearchResults;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p2beta1SafeSearchAnnotation | null;
+		safeSearchAnnotation?: GoogleCloudVisionV1p2beta1SafeSearchAnnotation;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation> | null;
+		textAnnotations?: Array<GoogleCloudVisionV1p2beta1EntityAnnotation>;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p2beta1WebDetection | null;
+		webDetection?: GoogleCloudVisionV1p2beta1WebDetection;
+	}
+
+	/** Response to an image annotation request. */
+	export interface GoogleCloudVisionV1p2beta1AnnotateImageResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1AnnotateImageResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1AnnotateImageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2918,12 +5448,44 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * If an image was produced from a file (e.g. a PDF), this message gives
+	 * information about the source of that image.
+	 */
+	export interface GoogleCloudVisionV1p2beta1ImageAnnotationContextFormProperties {
+
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within
+		 * the file used to produce the image.
+		 */
+		pageNumber: FormControl<number | null | undefined>,
+
+		/** The URI of the file used to produce the image. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ImageAnnotationContextFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ImageAnnotationContextFormProperties>({
+			pageNumber: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of crop hints that are used to generate new crops when serving images. */
 	export interface GoogleCloudVisionV1p2beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p2beta1CropHint> | null;
+		cropHints?: Array<GoogleCloudVisionV1p2beta1CropHint>;
+	}
+
+	/** Set of crop hints that are used to generate new crops when serving images. */
+	export interface GoogleCloudVisionV1p2beta1CropHintsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1CropHintsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1CropHintsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -2931,7 +5493,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
 		confidence?: number | null;
@@ -2943,15 +5505,44 @@ export namespace MyNS {
 		importanceFraction?: number | null;
 	}
 
+	/** Single crop hint that is used to generate a new crop when serving an image. */
+	export interface GoogleCloudVisionV1p2beta1CropHintFormProperties {
+
+		/** Confidence of this being a salient region.  Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Fraction of importance of this salient region with respect to the original
+		 * image.
+		 */
+		importanceFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1CropHintFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1CropHintFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			importanceFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A bounding polygon for the detected image annotation. */
 	export interface GoogleCloudVisionV1p2beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p2beta1NormalizedVertex> | null;
+		normalizedVertices?: Array<GoogleCloudVisionV1p2beta1NormalizedVertex>;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p2beta1Vertex> | null;
+		vertices?: Array<GoogleCloudVisionV1p2beta1Vertex>;
+	}
+
+	/** A bounding polygon for the detected image annotation. */
+	export interface GoogleCloudVisionV1p2beta1BoundingPolyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1BoundingPolyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1BoundingPolyFormProperties>({
+		});
+
 	}
 
 
@@ -2969,6 +5560,27 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the normalized vertex coordinates are relative to the original image
+	 * and range from 0 to 1.
+	 */
+	export interface GoogleCloudVisionV1p2beta1NormalizedVertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1NormalizedVertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1NormalizedVertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A vertex represents a 2D point in the image.
@@ -2983,6 +5595,26 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the vertex coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p2beta1VertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1VertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1VertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face annotation object contains the results of face detection. */
 	export interface GoogleCloudVisionV1p2beta1FaceAnnotation {
@@ -2994,13 +5626,13 @@ export namespace MyNS {
 		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Detection confidence. Range [0, 1]. */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		fdBoundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Headwear likelihood. */
 		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
@@ -3012,7 +5644,7 @@ export namespace MyNS {
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p2beta1FaceAnnotationLandmark> | null;
+		landmarks?: Array<GoogleCloudVisionV1p2beta1FaceAnnotationLandmark>;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
@@ -3044,6 +5676,74 @@ export namespace MyNS {
 		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/** A face annotation object contains the results of face detection. */
+	export interface GoogleCloudVisionV1p2beta1FaceAnnotationFormProperties {
+
+		/** Anger likelihood. */
+		angerLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Blurred likelihood. */
+		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Detection confidence. Range [0, 1]. */
+		detectionConfidence: FormControl<number | null | undefined>,
+
+		/** Headwear likelihood. */
+		headwearLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Joy likelihood. */
+		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Face landmarking confidence. Range [0, 1]. */
+		landmarkingConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is
+		 * pointing relative to the vertical plane perpendicular to the image. Range
+		 * [-180,180].
+		 */
+		panAngle: FormControl<number | null | undefined>,
+
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+		 * of the face relative to the image vertical about the axis perpendicular to
+		 * the face. Range [-180,180].
+		 */
+		rollAngle: FormControl<number | null | undefined>,
+
+		/** Sorrow likelihood. */
+		sorrowLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Surprise likelihood. */
+		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is
+		 * pointing relative to the image's horizontal plane. Range [-180,180].
+		 */
+		tiltAngle: FormControl<number | null | undefined>,
+
+		/** Under-exposed likelihood. */
+		underExposedLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1FaceAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1FaceAnnotationFormProperties>({
+			angerLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			blurredLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			detectionConfidence: new FormControl<number | null | undefined>(undefined),
+			headwearLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			joyLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			landmarkingConfidence: new FormControl<number | null | undefined>(undefined),
+			panAngle: new FormControl<number | null | undefined>(undefined),
+			rollAngle: new FormControl<number | null | undefined>(undefined),
+			sorrowLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			surpriseLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			tiltAngle: new FormControl<number | null | undefined>(undefined),
+			underExposedLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face-specific landmark (for example, a face feature). */
 	export interface GoogleCloudVisionV1p2beta1FaceAnnotationLandmark {
@@ -3053,10 +5753,23 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p2beta1Position | null;
+		position?: GoogleCloudVisionV1p2beta1Position;
 
 		/** Face landmark type. */
 		type?: LandmarkType | null;
+	}
+
+	/** A face-specific landmark (for example, a face feature). */
+	export interface GoogleCloudVisionV1p2beta1FaceAnnotationLandmarkFormProperties {
+
+		/** Face landmark type. */
+		type: FormControl<LandmarkType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1FaceAnnotationLandmarkFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1FaceAnnotationLandmarkFormProperties>({
+			type: new FormControl<LandmarkType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3077,6 +5790,31 @@ export namespace MyNS {
 		z?: number | null;
 	}
 
+	/**
+	 * A 3D position in the image, used primarily for Face detection landmarks.
+	 * A valid Position must have both x and y coordinates.
+	 * The position coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p2beta1PositionFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+
+		/** Z coordinate (or depth). */
+		z: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1PositionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1PositionFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+			z: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -3090,10 +5828,31 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p2beta1Page> | null;
+		pages?: Array<GoogleCloudVisionV1p2beta1Page>;
 
 		/** UTF-8 text detected on the pages. */
 		text?: string | null;
+	}
+
+	/**
+	 * TextAnnotation contains a structured representation of OCR extracted text.
+	 * The hierarchy of an OCR extracted text structure is like this:
+	 *     TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol
+	 * Each structural component, starting from Page, may further have their own
+	 * properties. Properties describe detected languages, breaks etc.. Please refer
+	 * to the TextAnnotation.TextProperty message definition below for more
+	 * detail.
+	 */
+	export interface GoogleCloudVisionV1p2beta1TextAnnotationFormProperties {
+
+		/** UTF-8 text detected on the pages. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1TextAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1TextAnnotationFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3101,7 +5860,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p2beta1Block> | null;
+		blocks?: Array<GoogleCloudVisionV1p2beta1Block>;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
 		confidence?: number | null;
@@ -3113,13 +5872,40 @@ export namespace MyNS {
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
 		width?: number | null;
+	}
+
+	/** Detected page from OCR. */
+	export interface GoogleCloudVisionV1p2beta1PageFormProperties {
+
+		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Page height. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * Page width. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1PageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1PageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3130,16 +5916,33 @@ export namespace MyNS {
 		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p2beta1Paragraph> | null;
+		paragraphs?: Array<GoogleCloudVisionV1p2beta1Paragraph>;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
+	}
+
+	/** Logical element on the page. */
+	export interface GoogleCloudVisionV1p2beta1BlockFormProperties {
+
+		/** Detected block type (text, image etc) for this block. */
+		blockType: FormControl<BlockBlockType | null | undefined>,
+
+		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1BlockFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1BlockFormProperties>({
+			blockType: new FormControl<BlockBlockType | null | undefined>(undefined),
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3147,16 +5950,29 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p2beta1Word> | null;
+		words?: Array<GoogleCloudVisionV1p2beta1Word>;
+	}
+
+	/** Structural unit of text representing a number of words in certain order. */
+	export interface GoogleCloudVisionV1p2beta1ParagraphFormProperties {
+
+		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ParagraphFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ParagraphFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3164,10 +5980,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak | null;
+		detectedBreak?: GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreak;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage> | null;
+		detectedLanguages?: Array<GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguage>;
+	}
+
+	/** Additional information detected on the structural component. */
+	export interface GoogleCloudVisionV1p2beta1TextAnnotationTextPropertyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1TextAnnotationTextPropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1TextAnnotationTextPropertyFormProperties>({
+		});
+
 	}
 
 
@@ -3179,6 +6004,23 @@ export namespace MyNS {
 
 		/** Detected break type. */
 		type?: DetectedBreakType | null;
+	}
+
+	/** Detected start or end of a structural component. */
+	export interface GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreakFormProperties {
+
+		/** True if break prepends the element. */
+		isPrefix: FormControl<boolean | null | undefined>,
+
+		/** Detected break type. */
+		type: FormControl<DetectedBreakType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1TextAnnotationDetectedBreakFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1TextAnnotationDetectedBreakFormProperties>({
+			isPrefix: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<DetectedBreakType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3196,24 +6038,58 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Detected language for a structural component. */
+	export interface GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguageFormProperties {
+
+		/** Confidence of detected language. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1TextAnnotationDetectedLanguageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p2beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p2beta1Symbol> | null;
+		symbols?: Array<GoogleCloudVisionV1p2beta1Symbol>;
+	}
+
+	/** A word representation. */
+	export interface GoogleCloudVisionV1p2beta1WordFormProperties {
+
+		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1WordFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1WordFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3221,16 +6097,33 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p2beta1TextAnnotationTextProperty;
 
 		/** The actual UTF-8 representation of the symbol. */
 		text?: string | null;
+	}
+
+	/** A single symbol representation. */
+	export interface GoogleCloudVisionV1p2beta1SymbolFormProperties {
+
+		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/** The actual UTF-8 representation of the symbol. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1SymbolFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1SymbolFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3238,7 +6131,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p2beta1DominantColorsAnnotation | null;
+		dominantColors?: GoogleCloudVisionV1p2beta1DominantColorsAnnotation;
+	}
+
+	/** Stores image properties, such as dominant colors. */
+	export interface GoogleCloudVisionV1p2beta1ImagePropertiesFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ImagePropertiesFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ImagePropertiesFormProperties>({
+		});
+
 	}
 
 
@@ -3246,7 +6148,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p2beta1ColorInfo> | null;
+		colors?: Array<GoogleCloudVisionV1p2beta1ColorInfo>;
+	}
+
+	/** Set of dominant colors and their corresponding scores. */
+	export interface GoogleCloudVisionV1p2beta1DominantColorsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1DominantColorsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1DominantColorsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -3361,7 +6272,7 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color | null;
+		color?: Color;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
@@ -3373,12 +6284,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/**
+	 * Color information consists of RGB channels, score, and the fraction of
+	 * the image that the color occupies in the image.
+	 */
+	export interface GoogleCloudVisionV1p2beta1ColorInfoFormProperties {
+
+		/**
+		 * The fraction of pixels the color occupies in the image.
+		 * Value in range [0, 1].
+		 */
+		pixelFraction: FormControl<number | null | undefined>,
+
+		/** Image-specific score for this color. Value in range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ColorInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ColorInfoFormProperties>({
+			pixelFraction: new FormControl<number | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p2beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -3405,7 +6339,7 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p2beta1LocationInfo> | null;
+		locations?: Array<GoogleCloudVisionV1p2beta1LocationInfo>;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
@@ -3418,7 +6352,7 @@ export namespace MyNS {
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p2beta1Property> | null;
+		properties?: Array<GoogleCloudVisionV1p2beta1Property>;
 
 		/** Overall score of the result. Range [0, 1]. */
 		score?: number | null;
@@ -3433,6 +6367,58 @@ export namespace MyNS {
 		topicality?: number | null;
 	}
 
+	/** Set of detected entity features. */
+	export interface GoogleCloudVisionV1p2beta1EntityAnnotationFormProperties {
+
+		/**
+		 * **Deprecated. Use `score` instead.**
+		 * The accuracy of the entity detection in an image.
+		 * For example, for an image in which the "Eiffel Tower" entity is detected,
+		 * this field represents the confidence that there is a tower in the query
+		 * image. Range [0, 1].
+		 */
+		confidence: FormControl<number | null | undefined>,
+
+		/** Entity textual description, expressed in its `locale` language. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The language code for the locale in which the entity textual
+		 * `description` is expressed.
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/**
+		 * Opaque entity ID. Some IDs may be available in
+		 * [Google Knowledge Graph Search
+		 * API](https://developers.google.com/knowledge-graph/).
+		 */
+		mid: FormControl<string | null | undefined>,
+
+		/** Overall score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the
+		 * image. For example, the relevancy of "tower" is likely higher to an image
+		 * containing the detected "Eiffel Tower" than to an image containing a
+		 * detected distant towering building, even though the confidence that
+		 * there is a tower in each image may be the same. Range [0, 1].
+		 */
+		topicality: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1EntityAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1EntityAnnotationFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			topicality: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Detected entity location information. */
 	export interface GoogleCloudVisionV1p2beta1LocationInfo {
@@ -3444,7 +6430,16 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng | null;
+		latLng?: LatLng;
+	}
+
+	/** Detected entity location information. */
+	export interface GoogleCloudVisionV1p2beta1LocationInfoFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1LocationInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1LocationInfoFormProperties>({
+		});
+
 	}
 
 
@@ -3461,12 +6456,33 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A `Property` consists of a user-supplied name/value pair. */
+	export interface GoogleCloudVisionV1p2beta1PropertyFormProperties {
+
+		/** Name of the property. */
+		name: FormControl<string | null | undefined>,
+
+		/** Value of numeric properties. */
+		uint64Value: FormControl<string | null | undefined>,
+
+		/** Value of the property. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1PropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1PropertyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uint64Value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected objects with bounding boxes. */
 	export interface GoogleCloudVisionV1p2beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -3483,6 +6499,35 @@ export namespace MyNS {
 
 		/** Score of the result. Range [0, 1]. */
 		score?: number | null;
+	}
+
+	/** Set of detected objects with bounding boxes. */
+	export interface GoogleCloudVisionV1p2beta1LocalizedObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1LocalizedObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1LocalizedObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3502,10 +6547,27 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult> | null;
+		productGroupedResults?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult>;
+	}
+
+	/** Results for a product search request. */
+	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsFormProperties {
+
+		/**
+		 * Timestamp of the index which provided these results. Products added to the
+		 * product set and products removed from the product set after this time are
+		 * not reflected in the current results.
+		 */
+		indexTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ProductSearchResultsFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ProductSearchResultsFormProperties>({
+			indexTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3516,13 +6578,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p2beta1BoundingPoly;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotation> | null;
+		objectAnnotations?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotation>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p2beta1ProductSearchResultsResult>;
+	}
+
+	/**
+	 * Information about the products similar to a single product in a query
+	 * image.
+	 */
+	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResultFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ProductSearchResultsGroupedResultFormProperties>({
+		});
+
 	}
 
 
@@ -3546,6 +6620,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Prediction for what the object in the bounding box is. */
+	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ProductSearchResultsObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a product. */
 	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsResult {
@@ -3557,13 +6660,36 @@ export namespace MyNS {
 		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p2beta1Product | null;
+		product?: GoogleCloudVisionV1p2beta1Product;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
 		score?: number | null;
+	}
+
+	/** Information about a product. */
+	export interface GoogleCloudVisionV1p2beta1ProductSearchResultsResultFormProperties {
+
+		/**
+		 * The resource name of the image from the product that is the closest match
+		 * to the query.
+		 */
+		image: FormControl<string | null | undefined>,
+
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to
+		 * 1 (full confidence).
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ProductSearchResultsResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ProductSearchResultsResultFormProperties>({
+			image: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3610,7 +6736,48 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p2beta1ProductKeyValue> | null;
+		productLabels?: Array<GoogleCloudVisionV1p2beta1ProductKeyValue>;
+	}
+
+	/** A Product contains ReferenceImages. */
+	export interface GoogleCloudVisionV1p2beta1ProductFormProperties {
+
+		/**
+		 * User-provided metadata to be stored with this product. Must be at most 4096
+		 * characters long.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The user-provided name for this Product. Must not be empty. Must be at most
+		 * 4096 characters long.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the product.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+		 * This field is ignored when creating a product.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Immutable. The category for the product identified by the reference image. This should
+		 * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+		 * "homegoods", "apparel", and "toys" are still supported, but these should
+		 * not be used for new products.
+		 */
+		productCategory: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ProductFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ProductFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			productCategory: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3628,6 +6795,29 @@ export namespace MyNS {
 		 * cannot exceed 128 bytes.
 		 */
 		value?: string | null;
+	}
+
+	/** A product label represented as a key-value pair. */
+	export interface GoogleCloudVisionV1p2beta1ProductKeyValueFormProperties {
+
+		/**
+		 * The key of the label attached to the product. Cannot be empty and cannot
+		 * exceed 128 bytes.
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/**
+		 * The value of the label attached to the product. Cannot be empty and
+		 * cannot exceed 128 bytes.
+		 */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1ProductKeyValueFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1ProductKeyValueFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3667,6 +6857,52 @@ export namespace MyNS {
 		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/**
+	 * Set of features pertaining to the image, computed by computer vision
+	 * methods over safe-search verticals (for example, adult, spoof, medical,
+	 * violence).
+	 */
+	export interface GoogleCloudVisionV1p2beta1SafeSearchAnnotationFormProperties {
+
+		/**
+		 * Represents the adult content likelihood for the image. Adult content may
+		 * contain elements such as nudity, pornographic images or cartoons, or
+		 * sexual activities.
+		 */
+		adult: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this is a medical image. */
+		medical: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Likelihood that the request image contains racy content. Racy content may
+		 * include (but is not limited to) skimpy or sheer clothing, strategically
+		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
+		 * body areas.
+		 */
+		racy: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Spoof likelihood. The likelihood that an modification
+		 * was made to the image's canonical version to make it appear
+		 * funny or offensive.
+		 */
+		spoof: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this image contains violent content. */
+		violence: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1SafeSearchAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1SafeSearchAnnotationFormProperties>({
+			adult: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			medical: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			racy: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			spoof: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			violence: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Relevant information for the image from the Internet. */
 	export interface GoogleCloudVisionV1p2beta1WebDetection {
@@ -3675,29 +6911,38 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebLabel> | null;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebLabel>;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebPage> | null;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebPage>;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebEntity> | null;
+		webEntities?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebEntity>;
+	}
+
+	/** Relevant information for the image from the Internet. */
+	export interface GoogleCloudVisionV1p2beta1WebDetectionFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1WebDetectionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1WebDetectionFormProperties>({
+		});
+
 	}
 
 
@@ -3715,6 +6960,27 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Label to provide extra metadata for the web detection. */
+	export interface GoogleCloudVisionV1p2beta1WebDetectionWebLabelFormProperties {
+
+		/** Label for extra metadata. */
+		label: FormControl<string | null | undefined>,
+
+		/**
+		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
+		 * For more information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1WebDetectionWebLabelFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1WebDetectionWebLabelFormProperties>({
+			label: new FormControl<string | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebImage {
@@ -3726,6 +6992,23 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** Metadata for online images. */
+	export interface GoogleCloudVisionV1p2beta1WebDetectionWebImageFormProperties {
+
+		/** (Deprecated) Overall relevancy score for the image. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result image URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1WebDetectionWebImageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1WebDetectionWebImageFormProperties>({
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for web pages. */
 	export interface GoogleCloudVisionV1p2beta1WebDetectionWebPage {
@@ -3734,7 +7017,7 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
 
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle?: string | null;
@@ -3745,13 +7028,34 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p2beta1WebDetectionWebImage>;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
 		score?: number | null;
 
 		/** The result web page URL. */
 		url?: string | null;
+	}
+
+	/** Metadata for web pages. */
+	export interface GoogleCloudVisionV1p2beta1WebDetectionWebPageFormProperties {
+
+		/** Title for the web page, may contain HTML markups. */
+		pageTitle: FormControl<string | null | undefined>,
+
+		/** (Deprecated) Overall relevancy score for the web page. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result web page URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1WebDetectionWebPageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1WebDetectionWebPageFormProperties>({
+			pageTitle: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3771,12 +7075,45 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Entity deduced from similar images on the Internet. */
+	export interface GoogleCloudVisionV1p2beta1WebDetectionWebEntityFormProperties {
+
+		/** Canonical description of the entity, in English. */
+		description: FormControl<string | null | undefined>,
+
+		/** Opaque entity ID. */
+		entityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Overall relevancy score for the entity.
+		 * Not normalized and not comparable across different image queries.
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1WebDetectionWebEntityFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1WebDetectionWebEntityFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for a single offline file annotation request. */
 	export interface GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p2beta1OutputConfig | null;
+		outputConfig?: GoogleCloudVisionV1p2beta1OutputConfig;
+	}
+
+	/** The response for a single offline file annotation request. */
+	export interface GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1AsyncAnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -3797,7 +7134,30 @@ export namespace MyNS {
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p2beta1GcsDestination | null;
+		gcsDestination?: GoogleCloudVisionV1p2beta1GcsDestination;
+	}
+
+	/** The desired output location and metadata. */
+	export interface GoogleCloudVisionV1p2beta1OutputConfigFormProperties {
+
+		/**
+		 * The max number of response protos to put into each output JSON file on
+		 * Google Cloud Storage.
+		 * The valid range is [1, 100]. If not specified, the default value is 20.
+		 * For example, for one pdf file with 100 pages, 100 response protos will
+		 * be generated. If `batch_size` = 20, then 5 json files each
+		 * containing 20 response protos will be written under the prefix
+		 * `gcs_destination`.`uri`.
+		 * Currently, batch_size only applies to GcsDestination, with potential future
+		 * support for other output configurations.
+		 */
+		batchSize: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1OutputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1OutputConfigFormProperties>({
+			batchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3827,6 +7187,38 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the output will be written to. */
+	export interface GoogleCloudVisionV1p2beta1GcsDestinationFormProperties {
+
+		/**
+		 * Google Cloud Storage URI prefix where the results will be stored. Results
+		 * will be in JSON format and preceded by its corresponding input URI prefix.
+		 * This field can either represent a gcs file prefix or gcs directory. In
+		 * either case, the uri should be unique because in order to get all of the
+		 * output files, you will need to do a wildcard gcs search on the uri prefix
+		 * you provide.
+		 * Examples:
+		 * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
+		 * will be created in gs://bucket-name/here/ and the names of the
+		 * output files will begin with "filenameprefix".
+		 * *    Directory Prefix: gs://bucket-name/some/location/   The output files
+		 * will be created in gs://bucket-name/some/location/ and the names of the
+		 * output files could be anything because there was no filename prefix
+		 * specified.
+		 * If multiple outputs, each response is still AnnotateFileResponse, each of
+		 * which contains some subset of the full list of AnnotateImageResponse.
+		 * Multiple outputs can happen if, for example, the output JSON is too large
+		 * and overflows into multiple sharded files.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1GcsDestinationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1GcsDestinationFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an async batch file annotation request. */
 	export interface GoogleCloudVisionV1p2beta1AsyncBatchAnnotateFilesResponse {
@@ -3835,7 +7227,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p2beta1AsyncAnnotateFileResponse>;
+	}
+
+	/** Response to an async batch file annotation request. */
+	export interface GoogleCloudVisionV1p2beta1AsyncBatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p2beta1AsyncBatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1AsyncBatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -3850,6 +7251,27 @@ export namespace MyNS {
 
 		/** The time when the operation result was last updated. */
 		updateTime?: string | null;
+	}
+
+	/** Contains metadata for the BatchAnnotateImages operation. */
+	export interface GoogleCloudVisionV1p2beta1OperationMetadataFormProperties {
+
+		/** The time when the batch request was received. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Current state of the batch operation. */
+		state: FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>,
+
+		/** The time when the operation result was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p2beta1OperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p2beta1OperationMetadataFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3867,19 +7289,35 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p3beta1InputConfig | null;
+		inputConfig?: GoogleCloudVisionV1p3beta1InputConfig;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p3beta1AnnotateImageResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p3beta1AnnotateImageResponse>;
 
 		/** This field gives the total number of pages in the file. */
 		totalPages?: number | null;
+	}
+
+	/**
+	 * Response to a single file annotation request. A file may contain one or more
+	 * images, which individually have their own responses.
+	 */
+	export interface GoogleCloudVisionV1p3beta1AnnotateFileResponseFormProperties {
+
+		/** This field gives the total number of pages in the file. */
+		totalPages: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1AnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1AnnotateFileResponseFormProperties>({
+			totalPages: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3896,13 +7334,39 @@ export namespace MyNS {
 		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p3beta1GcsSource | null;
+		gcsSource?: GoogleCloudVisionV1p3beta1GcsSource;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
 		mimeType?: string | null;
+	}
+
+	/** The desired input location and metadata. */
+	export interface GoogleCloudVisionV1p3beta1InputConfigFormProperties {
+
+		/**
+		 * File content, represented as a stream of bytes.
+		 * Note: As with all `bytes` fields, protobuffers use a pure binary
+		 * representation, whereas JSON representations use base64.
+		 * Currently, this field only works for BatchAnnotateFiles requests. It does
+		 * not work for AsyncBatchAnnotateFiles requests.
+		 */
+		content: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the file. Currently only "application/pdf", "image/tiff" and
+		 * "image/gif" are supported. Wildcards are not supported.
+		 */
+		mimeType: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1InputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1InputConfigFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			mimeType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3916,6 +7380,22 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the input will be read from. */
+	export interface GoogleCloudVisionV1p3beta1GcsSourceFormProperties {
+
+		/**
+		 * Google Cloud Storage URI for the input file. This must only be a
+		 * Google Cloud Storage object. Wildcards are not currently supported.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1GcsSourceFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1GcsSourceFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an image annotation request. */
 	export interface GoogleCloudVisionV1p3beta1AnnotateImageResponse {
@@ -3924,10 +7404,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p3beta1ImageAnnotationContext | null;
+		context?: GoogleCloudVisionV1p3beta1ImageAnnotationContext;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p3beta1CropHintsAnnotation | null;
+		cropHintsAnnotation?: GoogleCloudVisionV1p3beta1CropHintsAnnotation;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -3937,10 +7417,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p3beta1FaceAnnotation> | null;
+		faceAnnotations?: Array<GoogleCloudVisionV1p3beta1FaceAnnotation>;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -3951,41 +7431,50 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p3beta1TextAnnotation | null;
+		fullTextAnnotation?: GoogleCloudVisionV1p3beta1TextAnnotation;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p3beta1ImageProperties | null;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p3beta1ImageProperties;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
+		labelAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation> | null;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation>;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
+		logoAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p3beta1ProductSearchResults | null;
+		productSearchResults?: GoogleCloudVisionV1p3beta1ProductSearchResults;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p3beta1SafeSearchAnnotation | null;
+		safeSearchAnnotation?: GoogleCloudVisionV1p3beta1SafeSearchAnnotation;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation> | null;
+		textAnnotations?: Array<GoogleCloudVisionV1p3beta1EntityAnnotation>;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p3beta1WebDetection | null;
+		webDetection?: GoogleCloudVisionV1p3beta1WebDetection;
+	}
+
+	/** Response to an image annotation request. */
+	export interface GoogleCloudVisionV1p3beta1AnnotateImageResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1AnnotateImageResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1AnnotateImageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -4005,12 +7494,44 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * If an image was produced from a file (e.g. a PDF), this message gives
+	 * information about the source of that image.
+	 */
+	export interface GoogleCloudVisionV1p3beta1ImageAnnotationContextFormProperties {
+
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within
+		 * the file used to produce the image.
+		 */
+		pageNumber: FormControl<number | null | undefined>,
+
+		/** The URI of the file used to produce the image. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ImageAnnotationContextFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ImageAnnotationContextFormProperties>({
+			pageNumber: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of crop hints that are used to generate new crops when serving images. */
 	export interface GoogleCloudVisionV1p3beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p3beta1CropHint> | null;
+		cropHints?: Array<GoogleCloudVisionV1p3beta1CropHint>;
+	}
+
+	/** Set of crop hints that are used to generate new crops when serving images. */
+	export interface GoogleCloudVisionV1p3beta1CropHintsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1CropHintsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1CropHintsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -4018,7 +7539,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
 		confidence?: number | null;
@@ -4030,15 +7551,44 @@ export namespace MyNS {
 		importanceFraction?: number | null;
 	}
 
+	/** Single crop hint that is used to generate a new crop when serving an image. */
+	export interface GoogleCloudVisionV1p3beta1CropHintFormProperties {
+
+		/** Confidence of this being a salient region.  Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Fraction of importance of this salient region with respect to the original
+		 * image.
+		 */
+		importanceFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1CropHintFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1CropHintFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			importanceFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A bounding polygon for the detected image annotation. */
 	export interface GoogleCloudVisionV1p3beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p3beta1NormalizedVertex> | null;
+		normalizedVertices?: Array<GoogleCloudVisionV1p3beta1NormalizedVertex>;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p3beta1Vertex> | null;
+		vertices?: Array<GoogleCloudVisionV1p3beta1Vertex>;
+	}
+
+	/** A bounding polygon for the detected image annotation. */
+	export interface GoogleCloudVisionV1p3beta1BoundingPolyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1BoundingPolyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1BoundingPolyFormProperties>({
+		});
+
 	}
 
 
@@ -4056,6 +7606,27 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the normalized vertex coordinates are relative to the original image
+	 * and range from 0 to 1.
+	 */
+	export interface GoogleCloudVisionV1p3beta1NormalizedVertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1NormalizedVertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1NormalizedVertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A vertex represents a 2D point in the image.
@@ -4070,6 +7641,26 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the vertex coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p3beta1VertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1VertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1VertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face annotation object contains the results of face detection. */
 	export interface GoogleCloudVisionV1p3beta1FaceAnnotation {
@@ -4081,13 +7672,13 @@ export namespace MyNS {
 		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Detection confidence. Range [0, 1]. */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		fdBoundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Headwear likelihood. */
 		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
@@ -4099,7 +7690,7 @@ export namespace MyNS {
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p3beta1FaceAnnotationLandmark> | null;
+		landmarks?: Array<GoogleCloudVisionV1p3beta1FaceAnnotationLandmark>;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
@@ -4131,6 +7722,74 @@ export namespace MyNS {
 		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/** A face annotation object contains the results of face detection. */
+	export interface GoogleCloudVisionV1p3beta1FaceAnnotationFormProperties {
+
+		/** Anger likelihood. */
+		angerLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Blurred likelihood. */
+		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Detection confidence. Range [0, 1]. */
+		detectionConfidence: FormControl<number | null | undefined>,
+
+		/** Headwear likelihood. */
+		headwearLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Joy likelihood. */
+		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Face landmarking confidence. Range [0, 1]. */
+		landmarkingConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is
+		 * pointing relative to the vertical plane perpendicular to the image. Range
+		 * [-180,180].
+		 */
+		panAngle: FormControl<number | null | undefined>,
+
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+		 * of the face relative to the image vertical about the axis perpendicular to
+		 * the face. Range [-180,180].
+		 */
+		rollAngle: FormControl<number | null | undefined>,
+
+		/** Sorrow likelihood. */
+		sorrowLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Surprise likelihood. */
+		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is
+		 * pointing relative to the image's horizontal plane. Range [-180,180].
+		 */
+		tiltAngle: FormControl<number | null | undefined>,
+
+		/** Under-exposed likelihood. */
+		underExposedLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1FaceAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1FaceAnnotationFormProperties>({
+			angerLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			blurredLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			detectionConfidence: new FormControl<number | null | undefined>(undefined),
+			headwearLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			joyLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			landmarkingConfidence: new FormControl<number | null | undefined>(undefined),
+			panAngle: new FormControl<number | null | undefined>(undefined),
+			rollAngle: new FormControl<number | null | undefined>(undefined),
+			sorrowLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			surpriseLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			tiltAngle: new FormControl<number | null | undefined>(undefined),
+			underExposedLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face-specific landmark (for example, a face feature). */
 	export interface GoogleCloudVisionV1p3beta1FaceAnnotationLandmark {
@@ -4140,10 +7799,23 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p3beta1Position | null;
+		position?: GoogleCloudVisionV1p3beta1Position;
 
 		/** Face landmark type. */
 		type?: LandmarkType | null;
+	}
+
+	/** A face-specific landmark (for example, a face feature). */
+	export interface GoogleCloudVisionV1p3beta1FaceAnnotationLandmarkFormProperties {
+
+		/** Face landmark type. */
+		type: FormControl<LandmarkType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1FaceAnnotationLandmarkFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1FaceAnnotationLandmarkFormProperties>({
+			type: new FormControl<LandmarkType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4164,6 +7836,31 @@ export namespace MyNS {
 		z?: number | null;
 	}
 
+	/**
+	 * A 3D position in the image, used primarily for Face detection landmarks.
+	 * A valid Position must have both x and y coordinates.
+	 * The position coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p3beta1PositionFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+
+		/** Z coordinate (or depth). */
+		z: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1PositionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1PositionFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+			z: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -4177,10 +7874,31 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p3beta1Page> | null;
+		pages?: Array<GoogleCloudVisionV1p3beta1Page>;
 
 		/** UTF-8 text detected on the pages. */
 		text?: string | null;
+	}
+
+	/**
+	 * TextAnnotation contains a structured representation of OCR extracted text.
+	 * The hierarchy of an OCR extracted text structure is like this:
+	 *     TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol
+	 * Each structural component, starting from Page, may further have their own
+	 * properties. Properties describe detected languages, breaks etc.. Please refer
+	 * to the TextAnnotation.TextProperty message definition below for more
+	 * detail.
+	 */
+	export interface GoogleCloudVisionV1p3beta1TextAnnotationFormProperties {
+
+		/** UTF-8 text detected on the pages. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1TextAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1TextAnnotationFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4188,7 +7906,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p3beta1Block> | null;
+		blocks?: Array<GoogleCloudVisionV1p3beta1Block>;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
 		confidence?: number | null;
@@ -4200,13 +7918,40 @@ export namespace MyNS {
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
 		width?: number | null;
+	}
+
+	/** Detected page from OCR. */
+	export interface GoogleCloudVisionV1p3beta1PageFormProperties {
+
+		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Page height. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * Page width. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1PageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1PageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4217,16 +7962,33 @@ export namespace MyNS {
 		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p3beta1Paragraph> | null;
+		paragraphs?: Array<GoogleCloudVisionV1p3beta1Paragraph>;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
+	}
+
+	/** Logical element on the page. */
+	export interface GoogleCloudVisionV1p3beta1BlockFormProperties {
+
+		/** Detected block type (text, image etc) for this block. */
+		blockType: FormControl<BlockBlockType | null | undefined>,
+
+		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1BlockFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1BlockFormProperties>({
+			blockType: new FormControl<BlockBlockType | null | undefined>(undefined),
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4234,16 +7996,29 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p3beta1Word> | null;
+		words?: Array<GoogleCloudVisionV1p3beta1Word>;
+	}
+
+	/** Structural unit of text representing a number of words in certain order. */
+	export interface GoogleCloudVisionV1p3beta1ParagraphFormProperties {
+
+		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ParagraphFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ParagraphFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4251,10 +8026,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak | null;
+		detectedBreak?: GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreak;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage> | null;
+		detectedLanguages?: Array<GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguage>;
+	}
+
+	/** Additional information detected on the structural component. */
+	export interface GoogleCloudVisionV1p3beta1TextAnnotationTextPropertyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1TextAnnotationTextPropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1TextAnnotationTextPropertyFormProperties>({
+		});
+
 	}
 
 
@@ -4266,6 +8050,23 @@ export namespace MyNS {
 
 		/** Detected break type. */
 		type?: DetectedBreakType | null;
+	}
+
+	/** Detected start or end of a structural component. */
+	export interface GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreakFormProperties {
+
+		/** True if break prepends the element. */
+		isPrefix: FormControl<boolean | null | undefined>,
+
+		/** Detected break type. */
+		type: FormControl<DetectedBreakType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1TextAnnotationDetectedBreakFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1TextAnnotationDetectedBreakFormProperties>({
+			isPrefix: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<DetectedBreakType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4283,24 +8084,58 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Detected language for a structural component. */
+	export interface GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguageFormProperties {
+
+		/** Confidence of detected language. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1TextAnnotationDetectedLanguageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p3beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p3beta1Symbol> | null;
+		symbols?: Array<GoogleCloudVisionV1p3beta1Symbol>;
+	}
+
+	/** A word representation. */
+	export interface GoogleCloudVisionV1p3beta1WordFormProperties {
+
+		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1WordFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1WordFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4308,16 +8143,33 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p3beta1TextAnnotationTextProperty;
 
 		/** The actual UTF-8 representation of the symbol. */
 		text?: string | null;
+	}
+
+	/** A single symbol representation. */
+	export interface GoogleCloudVisionV1p3beta1SymbolFormProperties {
+
+		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/** The actual UTF-8 representation of the symbol. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1SymbolFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1SymbolFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4325,7 +8177,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p3beta1DominantColorsAnnotation | null;
+		dominantColors?: GoogleCloudVisionV1p3beta1DominantColorsAnnotation;
+	}
+
+	/** Stores image properties, such as dominant colors. */
+	export interface GoogleCloudVisionV1p3beta1ImagePropertiesFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ImagePropertiesFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ImagePropertiesFormProperties>({
+		});
+
 	}
 
 
@@ -4333,7 +8194,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p3beta1ColorInfo> | null;
+		colors?: Array<GoogleCloudVisionV1p3beta1ColorInfo>;
+	}
+
+	/** Set of dominant colors and their corresponding scores. */
+	export interface GoogleCloudVisionV1p3beta1DominantColorsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1DominantColorsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1DominantColorsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -4448,7 +8318,7 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color | null;
+		color?: Color;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
@@ -4460,12 +8330,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/**
+	 * Color information consists of RGB channels, score, and the fraction of
+	 * the image that the color occupies in the image.
+	 */
+	export interface GoogleCloudVisionV1p3beta1ColorInfoFormProperties {
+
+		/**
+		 * The fraction of pixels the color occupies in the image.
+		 * Value in range [0, 1].
+		 */
+		pixelFraction: FormControl<number | null | undefined>,
+
+		/** Image-specific score for this color. Value in range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ColorInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ColorInfoFormProperties>({
+			pixelFraction: new FormControl<number | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p3beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -4492,7 +8385,7 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p3beta1LocationInfo> | null;
+		locations?: Array<GoogleCloudVisionV1p3beta1LocationInfo>;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
@@ -4505,7 +8398,7 @@ export namespace MyNS {
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p3beta1Property> | null;
+		properties?: Array<GoogleCloudVisionV1p3beta1Property>;
 
 		/** Overall score of the result. Range [0, 1]. */
 		score?: number | null;
@@ -4520,6 +8413,58 @@ export namespace MyNS {
 		topicality?: number | null;
 	}
 
+	/** Set of detected entity features. */
+	export interface GoogleCloudVisionV1p3beta1EntityAnnotationFormProperties {
+
+		/**
+		 * **Deprecated. Use `score` instead.**
+		 * The accuracy of the entity detection in an image.
+		 * For example, for an image in which the "Eiffel Tower" entity is detected,
+		 * this field represents the confidence that there is a tower in the query
+		 * image. Range [0, 1].
+		 */
+		confidence: FormControl<number | null | undefined>,
+
+		/** Entity textual description, expressed in its `locale` language. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The language code for the locale in which the entity textual
+		 * `description` is expressed.
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/**
+		 * Opaque entity ID. Some IDs may be available in
+		 * [Google Knowledge Graph Search
+		 * API](https://developers.google.com/knowledge-graph/).
+		 */
+		mid: FormControl<string | null | undefined>,
+
+		/** Overall score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the
+		 * image. For example, the relevancy of "tower" is likely higher to an image
+		 * containing the detected "Eiffel Tower" than to an image containing a
+		 * detected distant towering building, even though the confidence that
+		 * there is a tower in each image may be the same. Range [0, 1].
+		 */
+		topicality: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1EntityAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1EntityAnnotationFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			topicality: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Detected entity location information. */
 	export interface GoogleCloudVisionV1p3beta1LocationInfo {
@@ -4531,7 +8476,16 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng | null;
+		latLng?: LatLng;
+	}
+
+	/** Detected entity location information. */
+	export interface GoogleCloudVisionV1p3beta1LocationInfoFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1LocationInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1LocationInfoFormProperties>({
+		});
+
 	}
 
 
@@ -4548,12 +8502,33 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A `Property` consists of a user-supplied name/value pair. */
+	export interface GoogleCloudVisionV1p3beta1PropertyFormProperties {
+
+		/** Name of the property. */
+		name: FormControl<string | null | undefined>,
+
+		/** Value of numeric properties. */
+		uint64Value: FormControl<string | null | undefined>,
+
+		/** Value of the property. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1PropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1PropertyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uint64Value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected objects with bounding boxes. */
 	export interface GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -4570,6 +8545,35 @@ export namespace MyNS {
 
 		/** Score of the result. Range [0, 1]. */
 		score?: number | null;
+	}
+
+	/** Set of detected objects with bounding boxes. */
+	export interface GoogleCloudVisionV1p3beta1LocalizedObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1LocalizedObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1LocalizedObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4589,10 +8593,27 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult> | null;
+		productGroupedResults?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult>;
+	}
+
+	/** Results for a product search request. */
+	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsFormProperties {
+
+		/**
+		 * Timestamp of the index which provided these results. Products added to the
+		 * product set and products removed from the product set after this time are
+		 * not reflected in the current results.
+		 */
+		indexTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ProductSearchResultsFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ProductSearchResultsFormProperties>({
+			indexTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4603,13 +8624,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p3beta1BoundingPoly;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation> | null;
+		objectAnnotations?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotation>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p3beta1ProductSearchResultsResult>;
+	}
+
+	/**
+	 * Information about the products similar to a single product in a query
+	 * image.
+	 */
+	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResultFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ProductSearchResultsGroupedResultFormProperties>({
+		});
+
 	}
 
 
@@ -4633,6 +8666,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Prediction for what the object in the bounding box is. */
+	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ProductSearchResultsObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a product. */
 	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsResult {
@@ -4644,13 +8706,36 @@ export namespace MyNS {
 		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p3beta1Product | null;
+		product?: GoogleCloudVisionV1p3beta1Product;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
 		score?: number | null;
+	}
+
+	/** Information about a product. */
+	export interface GoogleCloudVisionV1p3beta1ProductSearchResultsResultFormProperties {
+
+		/**
+		 * The resource name of the image from the product that is the closest match
+		 * to the query.
+		 */
+		image: FormControl<string | null | undefined>,
+
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to
+		 * 1 (full confidence).
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ProductSearchResultsResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ProductSearchResultsResultFormProperties>({
+			image: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4697,7 +8782,48 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p3beta1ProductKeyValue> | null;
+		productLabels?: Array<GoogleCloudVisionV1p3beta1ProductKeyValue>;
+	}
+
+	/** A Product contains ReferenceImages. */
+	export interface GoogleCloudVisionV1p3beta1ProductFormProperties {
+
+		/**
+		 * User-provided metadata to be stored with this product. Must be at most 4096
+		 * characters long.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The user-provided name for this Product. Must not be empty. Must be at most
+		 * 4096 characters long.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the product.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+		 * This field is ignored when creating a product.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Immutable. The category for the product identified by the reference image. This should
+		 * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+		 * "homegoods", "apparel", and "toys" are still supported, but these should
+		 * not be used for new products.
+		 */
+		productCategory: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ProductFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ProductFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			productCategory: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4715,6 +8841,29 @@ export namespace MyNS {
 		 * cannot exceed 128 bytes.
 		 */
 		value?: string | null;
+	}
+
+	/** A product label represented as a key-value pair. */
+	export interface GoogleCloudVisionV1p3beta1ProductKeyValueFormProperties {
+
+		/**
+		 * The key of the label attached to the product. Cannot be empty and cannot
+		 * exceed 128 bytes.
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/**
+		 * The value of the label attached to the product. Cannot be empty and
+		 * cannot exceed 128 bytes.
+		 */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ProductKeyValueFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ProductKeyValueFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4754,6 +8903,52 @@ export namespace MyNS {
 		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/**
+	 * Set of features pertaining to the image, computed by computer vision
+	 * methods over safe-search verticals (for example, adult, spoof, medical,
+	 * violence).
+	 */
+	export interface GoogleCloudVisionV1p3beta1SafeSearchAnnotationFormProperties {
+
+		/**
+		 * Represents the adult content likelihood for the image. Adult content may
+		 * contain elements such as nudity, pornographic images or cartoons, or
+		 * sexual activities.
+		 */
+		adult: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this is a medical image. */
+		medical: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Likelihood that the request image contains racy content. Racy content may
+		 * include (but is not limited to) skimpy or sheer clothing, strategically
+		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
+		 * body areas.
+		 */
+		racy: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Spoof likelihood. The likelihood that an modification
+		 * was made to the image's canonical version to make it appear
+		 * funny or offensive.
+		 */
+		spoof: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this image contains violent content. */
+		violence: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1SafeSearchAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1SafeSearchAnnotationFormProperties>({
+			adult: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			medical: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			racy: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			spoof: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			violence: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Relevant information for the image from the Internet. */
 	export interface GoogleCloudVisionV1p3beta1WebDetection {
@@ -4762,29 +8957,38 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebLabel> | null;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebLabel>;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebPage> | null;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebPage>;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebEntity> | null;
+		webEntities?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebEntity>;
+	}
+
+	/** Relevant information for the image from the Internet. */
+	export interface GoogleCloudVisionV1p3beta1WebDetectionFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1WebDetectionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1WebDetectionFormProperties>({
+		});
+
 	}
 
 
@@ -4802,6 +9006,27 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Label to provide extra metadata for the web detection. */
+	export interface GoogleCloudVisionV1p3beta1WebDetectionWebLabelFormProperties {
+
+		/** Label for extra metadata. */
+		label: FormControl<string | null | undefined>,
+
+		/**
+		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
+		 * For more information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1WebDetectionWebLabelFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1WebDetectionWebLabelFormProperties>({
+			label: new FormControl<string | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebImage {
@@ -4813,6 +9038,23 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** Metadata for online images. */
+	export interface GoogleCloudVisionV1p3beta1WebDetectionWebImageFormProperties {
+
+		/** (Deprecated) Overall relevancy score for the image. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result image URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1WebDetectionWebImageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1WebDetectionWebImageFormProperties>({
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for web pages. */
 	export interface GoogleCloudVisionV1p3beta1WebDetectionWebPage {
@@ -4821,7 +9063,7 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
 
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle?: string | null;
@@ -4832,13 +9074,34 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p3beta1WebDetectionWebImage>;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
 		score?: number | null;
 
 		/** The result web page URL. */
 		url?: string | null;
+	}
+
+	/** Metadata for web pages. */
+	export interface GoogleCloudVisionV1p3beta1WebDetectionWebPageFormProperties {
+
+		/** Title for the web page, may contain HTML markups. */
+		pageTitle: FormControl<string | null | undefined>,
+
+		/** (Deprecated) Overall relevancy score for the web page. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result web page URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1WebDetectionWebPageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1WebDetectionWebPageFormProperties>({
+			pageTitle: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4858,12 +9121,45 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Entity deduced from similar images on the Internet. */
+	export interface GoogleCloudVisionV1p3beta1WebDetectionWebEntityFormProperties {
+
+		/** Canonical description of the entity, in English. */
+		description: FormControl<string | null | undefined>,
+
+		/** Opaque entity ID. */
+		entityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Overall relevancy score for the entity.
+		 * Not normalized and not comparable across different image queries.
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1WebDetectionWebEntityFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1WebDetectionWebEntityFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for a single offline file annotation request. */
 	export interface GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p3beta1OutputConfig | null;
+		outputConfig?: GoogleCloudVisionV1p3beta1OutputConfig;
+	}
+
+	/** The response for a single offline file annotation request. */
+	export interface GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1AsyncAnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -4884,7 +9180,30 @@ export namespace MyNS {
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p3beta1GcsDestination | null;
+		gcsDestination?: GoogleCloudVisionV1p3beta1GcsDestination;
+	}
+
+	/** The desired output location and metadata. */
+	export interface GoogleCloudVisionV1p3beta1OutputConfigFormProperties {
+
+		/**
+		 * The max number of response protos to put into each output JSON file on
+		 * Google Cloud Storage.
+		 * The valid range is [1, 100]. If not specified, the default value is 20.
+		 * For example, for one pdf file with 100 pages, 100 response protos will
+		 * be generated. If `batch_size` = 20, then 5 json files each
+		 * containing 20 response protos will be written under the prefix
+		 * `gcs_destination`.`uri`.
+		 * Currently, batch_size only applies to GcsDestination, with potential future
+		 * support for other output configurations.
+		 */
+		batchSize: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1OutputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1OutputConfigFormProperties>({
+			batchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4914,6 +9233,38 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the output will be written to. */
+	export interface GoogleCloudVisionV1p3beta1GcsDestinationFormProperties {
+
+		/**
+		 * Google Cloud Storage URI prefix where the results will be stored. Results
+		 * will be in JSON format and preceded by its corresponding input URI prefix.
+		 * This field can either represent a gcs file prefix or gcs directory. In
+		 * either case, the uri should be unique because in order to get all of the
+		 * output files, you will need to do a wildcard gcs search on the uri prefix
+		 * you provide.
+		 * Examples:
+		 * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
+		 * will be created in gs://bucket-name/here/ and the names of the
+		 * output files will begin with "filenameprefix".
+		 * *    Directory Prefix: gs://bucket-name/some/location/   The output files
+		 * will be created in gs://bucket-name/some/location/ and the names of the
+		 * output files could be anything because there was no filename prefix
+		 * specified.
+		 * If multiple outputs, each response is still AnnotateFileResponse, each of
+		 * which contains some subset of the full list of AnnotateImageResponse.
+		 * Multiple outputs can happen if, for example, the output JSON is too large
+		 * and overflows into multiple sharded files.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1GcsDestinationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1GcsDestinationFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an async batch file annotation request. */
 	export interface GoogleCloudVisionV1p3beta1AsyncBatchAnnotateFilesResponse {
@@ -4922,7 +9273,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p3beta1AsyncAnnotateFileResponse>;
+	}
+
+	/** Response to an async batch file annotation request. */
+	export interface GoogleCloudVisionV1p3beta1AsyncBatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1AsyncBatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1AsyncBatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -4946,6 +9306,34 @@ export namespace MyNS {
 		submitTime?: string | null;
 	}
 
+	/**
+	 * Metadata for the batch operations such as the current state.
+	 * This is included in the `metadata` field of the `Operation` returned by the
+	 * `GetOperation` call of the `google::longrunning::Operations` service.
+	 */
+	export interface GoogleCloudVisionV1p3beta1BatchOperationMetadataFormProperties {
+
+		/**
+		 * The time when the batch request is finished and
+		 * google.longrunning.Operation.done is set to true.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/** The current state of the batch operation. */
+		state: FormControl<BatchOperationMetadataState | null | undefined>,
+
+		/** The time when the batch request was submitted to the server. */
+		submitTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1BatchOperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1BatchOperationMetadataFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<BatchOperationMetadataState | null | undefined>(undefined),
+			submitTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Response message for the `ImportProductSets` method.
@@ -4956,7 +9344,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p3beta1ImportProductSetsResponse {
 
 		/** The list of reference_images that are imported successfully. */
-		referenceImages?: Array<GoogleCloudVisionV1p3beta1ReferenceImage> | null;
+		referenceImages?: Array<GoogleCloudVisionV1p3beta1ReferenceImage>;
 
 		/**
 		 * The rpc status for each ImportProductSet request, including both successes
@@ -4965,7 +9353,21 @@ export namespace MyNS {
 		 * and statuses[i] stores the success or failure status of processing the i-th
 		 * line of the csv, starting from line 0.
 		 */
-		statuses?: Array<Status> | null;
+		statuses?: Array<Status>;
+	}
+
+	/**
+	 * Response message for the `ImportProductSets` method.
+	 * This message is returned by the
+	 * google.longrunning.Operations.GetOperation method in the returned
+	 * google.longrunning.Operation.response field.
+	 */
+	export interface GoogleCloudVisionV1p3beta1ImportProductSetsResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ImportProductSetsResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ImportProductSetsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -4984,7 +9386,7 @@ export namespace MyNS {
 		 * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
 		 * is not).
 		 */
-		boundingPolys?: Array<GoogleCloudVisionV1p3beta1BoundingPoly> | null;
+		boundingPolys?: Array<GoogleCloudVisionV1p3beta1BoundingPoly>;
 
 		/**
 		 * The resource name of the reference image.
@@ -5001,6 +9403,34 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * A `ReferenceImage` represents a product image and its associated metadata,
+	 * such as bounding boxes.
+	 */
+	export interface GoogleCloudVisionV1p3beta1ReferenceImageFormProperties {
+
+		/**
+		 * The resource name of the reference image.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+		 * This field is ignored when creating a reference image.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The Google Cloud Storage URI of the reference image.
+		 * The URI must start with `gs://`.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1ReferenceImageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1ReferenceImageFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains metadata for the BatchAnnotateImages operation. */
 	export interface GoogleCloudVisionV1p3beta1OperationMetadata {
@@ -5013,6 +9443,27 @@ export namespace MyNS {
 
 		/** The time when the operation result was last updated. */
 		updateTime?: string | null;
+	}
+
+	/** Contains metadata for the BatchAnnotateImages operation. */
+	export interface GoogleCloudVisionV1p3beta1OperationMetadataFormProperties {
+
+		/** The time when the batch request was received. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Current state of the batch operation. */
+		state: FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>,
+
+		/** The time when the operation result was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p3beta1OperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p3beta1OperationMetadataFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5030,19 +9481,35 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** The desired input location and metadata. */
-		inputConfig?: GoogleCloudVisionV1p4beta1InputConfig | null;
+		inputConfig?: GoogleCloudVisionV1p4beta1InputConfig;
 
 		/**
 		 * Individual responses to images found within the file. This field will be
 		 * empty if the `error` field is set.
 		 */
-		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateImageResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateImageResponse>;
 
 		/** This field gives the total number of pages in the file. */
 		totalPages?: number | null;
+	}
+
+	/**
+	 * Response to a single file annotation request. A file may contain one or more
+	 * images, which individually have their own responses.
+	 */
+	export interface GoogleCloudVisionV1p4beta1AnnotateFileResponseFormProperties {
+
+		/** This field gives the total number of pages in the file. */
+		totalPages: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1AnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1AnnotateFileResponseFormProperties>({
+			totalPages: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5059,13 +9526,39 @@ export namespace MyNS {
 		content?: string | null;
 
 		/** The Google Cloud Storage location where the input will be read from. */
-		gcsSource?: GoogleCloudVisionV1p4beta1GcsSource | null;
+		gcsSource?: GoogleCloudVisionV1p4beta1GcsSource;
 
 		/**
 		 * The type of the file. Currently only "application/pdf", "image/tiff" and
 		 * "image/gif" are supported. Wildcards are not supported.
 		 */
 		mimeType?: string | null;
+	}
+
+	/** The desired input location and metadata. */
+	export interface GoogleCloudVisionV1p4beta1InputConfigFormProperties {
+
+		/**
+		 * File content, represented as a stream of bytes.
+		 * Note: As with all `bytes` fields, protobuffers use a pure binary
+		 * representation, whereas JSON representations use base64.
+		 * Currently, this field only works for BatchAnnotateFiles requests. It does
+		 * not work for AsyncBatchAnnotateFiles requests.
+		 */
+		content: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the file. Currently only "application/pdf", "image/tiff" and
+		 * "image/gif" are supported. Wildcards are not supported.
+		 */
+		mimeType: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1InputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1InputConfigFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			mimeType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5079,6 +9572,22 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the input will be read from. */
+	export interface GoogleCloudVisionV1p4beta1GcsSourceFormProperties {
+
+		/**
+		 * Google Cloud Storage URI for the input file. This must only be a
+		 * Google Cloud Storage object. Wildcards are not currently supported.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1GcsSourceFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1GcsSourceFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an image annotation request. */
 	export interface GoogleCloudVisionV1p4beta1AnnotateImageResponse {
@@ -5087,10 +9596,10 @@ export namespace MyNS {
 		 * If an image was produced from a file (e.g. a PDF), this message gives
 		 * information about the source of that image.
 		 */
-		context?: GoogleCloudVisionV1p4beta1ImageAnnotationContext | null;
+		context?: GoogleCloudVisionV1p4beta1ImageAnnotationContext;
 
 		/** Set of crop hints that are used to generate new crops when serving images. */
-		cropHintsAnnotation?: GoogleCloudVisionV1p4beta1CropHintsAnnotation | null;
+		cropHintsAnnotation?: GoogleCloudVisionV1p4beta1CropHintsAnnotation;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -5100,10 +9609,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** If present, face detection has completed successfully. */
-		faceAnnotations?: Array<GoogleCloudVisionV1p4beta1FaceAnnotation> | null;
+		faceAnnotations?: Array<GoogleCloudVisionV1p4beta1FaceAnnotation>;
 
 		/**
 		 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -5114,41 +9623,50 @@ export namespace MyNS {
 		 * to the TextAnnotation.TextProperty message definition below for more
 		 * detail.
 		 */
-		fullTextAnnotation?: GoogleCloudVisionV1p4beta1TextAnnotation | null;
+		fullTextAnnotation?: GoogleCloudVisionV1p4beta1TextAnnotation;
 
 		/** Stores image properties, such as dominant colors. */
-		imagePropertiesAnnotation?: GoogleCloudVisionV1p4beta1ImageProperties | null;
+		imagePropertiesAnnotation?: GoogleCloudVisionV1p4beta1ImageProperties;
 
 		/** If present, label detection has completed successfully. */
-		labelAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
+		labelAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
 
 		/** If present, landmark detection has completed successfully. */
-		landmarkAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
+		landmarkAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
 
 		/**
 		 * If present, localized object detection has completed successfully.
 		 * This will be sorted descending by confidence score.
 		 */
-		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation> | null;
+		localizedObjectAnnotations?: Array<GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation>;
 
 		/** If present, logo detection has completed successfully. */
-		logoAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
+		logoAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
 
 		/** Results for a product search request. */
-		productSearchResults?: GoogleCloudVisionV1p4beta1ProductSearchResults | null;
+		productSearchResults?: GoogleCloudVisionV1p4beta1ProductSearchResults;
 
 		/**
 		 * Set of features pertaining to the image, computed by computer vision
 		 * methods over safe-search verticals (for example, adult, spoof, medical,
 		 * violence).
 		 */
-		safeSearchAnnotation?: GoogleCloudVisionV1p4beta1SafeSearchAnnotation | null;
+		safeSearchAnnotation?: GoogleCloudVisionV1p4beta1SafeSearchAnnotation;
 
 		/** If present, text (OCR) detection has completed successfully. */
-		textAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation> | null;
+		textAnnotations?: Array<GoogleCloudVisionV1p4beta1EntityAnnotation>;
 
 		/** Relevant information for the image from the Internet. */
-		webDetection?: GoogleCloudVisionV1p4beta1WebDetection | null;
+		webDetection?: GoogleCloudVisionV1p4beta1WebDetection;
+	}
+
+	/** Response to an image annotation request. */
+	export interface GoogleCloudVisionV1p4beta1AnnotateImageResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1AnnotateImageResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1AnnotateImageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -5168,12 +9686,44 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * If an image was produced from a file (e.g. a PDF), this message gives
+	 * information about the source of that image.
+	 */
+	export interface GoogleCloudVisionV1p4beta1ImageAnnotationContextFormProperties {
+
+		/**
+		 * If the file was a PDF or TIFF, this field gives the page number within
+		 * the file used to produce the image.
+		 */
+		pageNumber: FormControl<number | null | undefined>,
+
+		/** The URI of the file used to produce the image. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ImageAnnotationContextFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ImageAnnotationContextFormProperties>({
+			pageNumber: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of crop hints that are used to generate new crops when serving images. */
 	export interface GoogleCloudVisionV1p4beta1CropHintsAnnotation {
 
 		/** Crop hint results. */
-		cropHints?: Array<GoogleCloudVisionV1p4beta1CropHint> | null;
+		cropHints?: Array<GoogleCloudVisionV1p4beta1CropHint>;
+	}
+
+	/** Set of crop hints that are used to generate new crops when serving images. */
+	export interface GoogleCloudVisionV1p4beta1CropHintsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1CropHintsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1CropHintsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -5181,7 +9731,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1CropHint {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Confidence of this being a salient region.  Range [0, 1]. */
 		confidence?: number | null;
@@ -5193,15 +9743,44 @@ export namespace MyNS {
 		importanceFraction?: number | null;
 	}
 
+	/** Single crop hint that is used to generate a new crop when serving an image. */
+	export interface GoogleCloudVisionV1p4beta1CropHintFormProperties {
+
+		/** Confidence of this being a salient region.  Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Fraction of importance of this salient region with respect to the original
+		 * image.
+		 */
+		importanceFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1CropHintFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1CropHintFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			importanceFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A bounding polygon for the detected image annotation. */
 	export interface GoogleCloudVisionV1p4beta1BoundingPoly {
 
 		/** The bounding polygon normalized vertices. */
-		normalizedVertices?: Array<GoogleCloudVisionV1p4beta1NormalizedVertex> | null;
+		normalizedVertices?: Array<GoogleCloudVisionV1p4beta1NormalizedVertex>;
 
 		/** The bounding polygon vertices. */
-		vertices?: Array<GoogleCloudVisionV1p4beta1Vertex> | null;
+		vertices?: Array<GoogleCloudVisionV1p4beta1Vertex>;
+	}
+
+	/** A bounding polygon for the detected image annotation. */
+	export interface GoogleCloudVisionV1p4beta1BoundingPolyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1BoundingPolyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1BoundingPolyFormProperties>({
+		});
+
 	}
 
 
@@ -5219,6 +9798,27 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the normalized vertex coordinates are relative to the original image
+	 * and range from 0 to 1.
+	 */
+	export interface GoogleCloudVisionV1p4beta1NormalizedVertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1NormalizedVertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1NormalizedVertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A vertex represents a 2D point in the image.
@@ -5233,6 +9833,26 @@ export namespace MyNS {
 		y?: number | null;
 	}
 
+	/**
+	 * A vertex represents a 2D point in the image.
+	 * NOTE: the vertex coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p4beta1VertexFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1VertexFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1VertexFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face annotation object contains the results of face detection. */
 	export interface GoogleCloudVisionV1p4beta1FaceAnnotation {
@@ -5244,13 +9864,13 @@ export namespace MyNS {
 		blurredLikelihood?: FaceAnnotationAngerLikelihood | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Detection confidence. Range [0, 1]. */
 		detectionConfidence?: number | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		fdBoundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		fdBoundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Headwear likelihood. */
 		headwearLikelihood?: FaceAnnotationAngerLikelihood | null;
@@ -5262,7 +9882,7 @@ export namespace MyNS {
 		landmarkingConfidence?: number | null;
 
 		/** Detected face landmarks. */
-		landmarks?: Array<GoogleCloudVisionV1p4beta1FaceAnnotationLandmark> | null;
+		landmarks?: Array<GoogleCloudVisionV1p4beta1FaceAnnotationLandmark>;
 
 		/**
 		 * Yaw angle, which indicates the leftward/rightward angle that the face is
@@ -5277,7 +9897,7 @@ export namespace MyNS {
 		 * to a Celebrity in the input CelebritySet. This field is
 		 * sorted in order of decreasing confidence values.
 		 */
-		recognitionResult?: Array<GoogleCloudVisionV1p4beta1FaceRecognitionResult> | null;
+		recognitionResult?: Array<GoogleCloudVisionV1p4beta1FaceRecognitionResult>;
 
 		/**
 		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
@@ -5302,6 +9922,74 @@ export namespace MyNS {
 		underExposedLikelihood?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/** A face annotation object contains the results of face detection. */
+	export interface GoogleCloudVisionV1p4beta1FaceAnnotationFormProperties {
+
+		/** Anger likelihood. */
+		angerLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Blurred likelihood. */
+		blurredLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Detection confidence. Range [0, 1]. */
+		detectionConfidence: FormControl<number | null | undefined>,
+
+		/** Headwear likelihood. */
+		headwearLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Joy likelihood. */
+		joyLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Face landmarking confidence. Range [0, 1]. */
+		landmarkingConfidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Yaw angle, which indicates the leftward/rightward angle that the face is
+		 * pointing relative to the vertical plane perpendicular to the image. Range
+		 * [-180,180].
+		 */
+		panAngle: FormControl<number | null | undefined>,
+
+		/**
+		 * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+		 * of the face relative to the image vertical about the axis perpendicular to
+		 * the face. Range [-180,180].
+		 */
+		rollAngle: FormControl<number | null | undefined>,
+
+		/** Sorrow likelihood. */
+		sorrowLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Surprise likelihood. */
+		surpriseLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Pitch angle, which indicates the upwards/downwards angle that the face is
+		 * pointing relative to the image's horizontal plane. Range [-180,180].
+		 */
+		tiltAngle: FormControl<number | null | undefined>,
+
+		/** Under-exposed likelihood. */
+		underExposedLikelihood: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1FaceAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1FaceAnnotationFormProperties>({
+			angerLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			blurredLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			detectionConfidence: new FormControl<number | null | undefined>(undefined),
+			headwearLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			joyLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			landmarkingConfidence: new FormControl<number | null | undefined>(undefined),
+			panAngle: new FormControl<number | null | undefined>(undefined),
+			rollAngle: new FormControl<number | null | undefined>(undefined),
+			sorrowLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			surpriseLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			tiltAngle: new FormControl<number | null | undefined>(undefined),
+			underExposedLikelihood: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A face-specific landmark (for example, a face feature). */
 	export interface GoogleCloudVisionV1p4beta1FaceAnnotationLandmark {
@@ -5311,10 +9999,23 @@ export namespace MyNS {
 		 * A valid Position must have both x and y coordinates.
 		 * The position coordinates are in the same scale as the original image.
 		 */
-		position?: GoogleCloudVisionV1p4beta1Position | null;
+		position?: GoogleCloudVisionV1p4beta1Position;
 
 		/** Face landmark type. */
 		type?: LandmarkType | null;
+	}
+
+	/** A face-specific landmark (for example, a face feature). */
+	export interface GoogleCloudVisionV1p4beta1FaceAnnotationLandmarkFormProperties {
+
+		/** Face landmark type. */
+		type: FormControl<LandmarkType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1FaceAnnotationLandmarkFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1FaceAnnotationLandmarkFormProperties>({
+			type: new FormControl<LandmarkType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5335,15 +10036,53 @@ export namespace MyNS {
 		z?: number | null;
 	}
 
+	/**
+	 * A 3D position in the image, used primarily for Face detection landmarks.
+	 * A valid Position must have both x and y coordinates.
+	 * The position coordinates are in the same scale as the original image.
+	 */
+	export interface GoogleCloudVisionV1p4beta1PositionFormProperties {
+
+		/** X coordinate. */
+		x: FormControl<number | null | undefined>,
+
+		/** Y coordinate. */
+		y: FormControl<number | null | undefined>,
+
+		/** Z coordinate (or depth). */
+		z: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1PositionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1PositionFormProperties>({
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+			z: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a face's identity. */
 	export interface GoogleCloudVisionV1p4beta1FaceRecognitionResult {
 
 		/** A Celebrity is a group of Faces with an identity. */
-		celebrity?: GoogleCloudVisionV1p4beta1Celebrity | null;
+		celebrity?: GoogleCloudVisionV1p4beta1Celebrity;
 
 		/** Recognition confidence. Range [0, 1]. */
 		confidence?: number | null;
+	}
+
+	/** Information about a face's identity. */
+	export interface GoogleCloudVisionV1p4beta1FaceRecognitionResultFormProperties {
+
+		/** Recognition confidence. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1FaceRecognitionResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1FaceRecognitionResultFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5363,6 +10102,30 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A Celebrity is a group of Faces with an identity. */
+	export interface GoogleCloudVisionV1p4beta1CelebrityFormProperties {
+
+		/** The Celebrity's description. */
+		description: FormControl<string | null | undefined>,
+
+		/** The Celebrity's display name. */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the preloaded Celebrity. Has the format
+		 * `builtin/{mid}`.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1CelebrityFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1CelebrityFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * TextAnnotation contains a structured representation of OCR extracted text.
@@ -5376,10 +10139,31 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1TextAnnotation {
 
 		/** List of pages detected by OCR. */
-		pages?: Array<GoogleCloudVisionV1p4beta1Page> | null;
+		pages?: Array<GoogleCloudVisionV1p4beta1Page>;
 
 		/** UTF-8 text detected on the pages. */
 		text?: string | null;
+	}
+
+	/**
+	 * TextAnnotation contains a structured representation of OCR extracted text.
+	 * The hierarchy of an OCR extracted text structure is like this:
+	 *     TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol
+	 * Each structural component, starting from Page, may further have their own
+	 * properties. Properties describe detected languages, breaks etc.. Please refer
+	 * to the TextAnnotation.TextProperty message definition below for more
+	 * detail.
+	 */
+	export interface GoogleCloudVisionV1p4beta1TextAnnotationFormProperties {
+
+		/** UTF-8 text detected on the pages. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1TextAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1TextAnnotationFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5387,7 +10171,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Page {
 
 		/** List of blocks of text, images etc on this page. */
-		blocks?: Array<GoogleCloudVisionV1p4beta1Block> | null;
+		blocks?: Array<GoogleCloudVisionV1p4beta1Block>;
 
 		/** Confidence of the OCR results on the page. Range [0, 1]. */
 		confidence?: number | null;
@@ -5399,13 +10183,40 @@ export namespace MyNS {
 		height?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
 
 		/**
 		 * Page width. For PDFs the unit is points. For images (including
 		 * TIFFs) the unit is pixels.
 		 */
 		width?: number | null;
+	}
+
+	/** Detected page from OCR. */
+	export interface GoogleCloudVisionV1p4beta1PageFormProperties {
+
+		/** Confidence of the OCR results on the page. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * Page height. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * Page width. For PDFs the unit is points. For images (including
+		 * TIFFs) the unit is pixels.
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1PageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1PageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5416,16 +10227,33 @@ export namespace MyNS {
 		blockType?: BlockBlockType | null;
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Confidence of the OCR results on the block. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** List of paragraphs in this block (if this blocks is of type text). */
-		paragraphs?: Array<GoogleCloudVisionV1p4beta1Paragraph> | null;
+		paragraphs?: Array<GoogleCloudVisionV1p4beta1Paragraph>;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
+	}
+
+	/** Logical element on the page. */
+	export interface GoogleCloudVisionV1p4beta1BlockFormProperties {
+
+		/** Detected block type (text, image etc) for this block. */
+		blockType: FormControl<BlockBlockType | null | undefined>,
+
+		/** Confidence of the OCR results on the block. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1BlockFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1BlockFormProperties>({
+			blockType: new FormControl<BlockBlockType | null | undefined>(undefined),
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5433,16 +10261,29 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Paragraph {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
 
 		/** List of all words in this paragraph. */
-		words?: Array<GoogleCloudVisionV1p4beta1Word> | null;
+		words?: Array<GoogleCloudVisionV1p4beta1Word>;
+	}
+
+	/** Structural unit of text representing a number of words in certain order. */
+	export interface GoogleCloudVisionV1p4beta1ParagraphFormProperties {
+
+		/** Confidence of the OCR results for the paragraph. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ParagraphFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ParagraphFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5450,10 +10291,19 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1TextAnnotationTextProperty {
 
 		/** Detected start or end of a structural component. */
-		detectedBreak?: GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak | null;
+		detectedBreak?: GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak;
 
 		/** A list of detected languages together with confidence. */
-		detectedLanguages?: Array<GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage> | null;
+		detectedLanguages?: Array<GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage>;
+	}
+
+	/** Additional information detected on the structural component. */
+	export interface GoogleCloudVisionV1p4beta1TextAnnotationTextPropertyFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1TextAnnotationTextPropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1TextAnnotationTextPropertyFormProperties>({
+		});
+
 	}
 
 
@@ -5465,6 +10315,23 @@ export namespace MyNS {
 
 		/** Detected break type. */
 		type?: DetectedBreakType | null;
+	}
+
+	/** Detected start or end of a structural component. */
+	export interface GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreakFormProperties {
+
+		/** True if break prepends the element. */
+		isPrefix: FormControl<boolean | null | undefined>,
+
+		/** Detected break type. */
+		type: FormControl<DetectedBreakType | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1TextAnnotationDetectedBreakFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreakFormProperties>({
+			isPrefix: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<DetectedBreakType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5482,24 +10349,58 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Detected language for a structural component. */
+	export interface GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguageFormProperties {
+
+		/** Confidence of detected language. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguageFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A word representation. */
 	export interface GoogleCloudVisionV1p4beta1Word {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the word. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
 
 		/**
 		 * List of symbols in the word.
 		 * The order of the symbols follows the natural reading order.
 		 */
-		symbols?: Array<GoogleCloudVisionV1p4beta1Symbol> | null;
+		symbols?: Array<GoogleCloudVisionV1p4beta1Symbol>;
+	}
+
+	/** A word representation. */
+	export interface GoogleCloudVisionV1p4beta1WordFormProperties {
+
+		/** Confidence of the OCR results for the word. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1WordFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1WordFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5507,16 +10408,33 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1Symbol {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingBox?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
 		confidence?: number | null;
 
 		/** Additional information detected on the structural component. */
-		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty | null;
+		property?: GoogleCloudVisionV1p4beta1TextAnnotationTextProperty;
 
 		/** The actual UTF-8 representation of the symbol. */
 		text?: string | null;
+	}
+
+	/** A single symbol representation. */
+	export interface GoogleCloudVisionV1p4beta1SymbolFormProperties {
+
+		/** Confidence of the OCR results for the symbol. Range [0, 1]. */
+		confidence: FormControl<number | null | undefined>,
+
+		/** The actual UTF-8 representation of the symbol. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1SymbolFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1SymbolFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5524,7 +10442,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1ImageProperties {
 
 		/** Set of dominant colors and their corresponding scores. */
-		dominantColors?: GoogleCloudVisionV1p4beta1DominantColorsAnnotation | null;
+		dominantColors?: GoogleCloudVisionV1p4beta1DominantColorsAnnotation;
+	}
+
+	/** Stores image properties, such as dominant colors. */
+	export interface GoogleCloudVisionV1p4beta1ImagePropertiesFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ImagePropertiesFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ImagePropertiesFormProperties>({
+		});
+
 	}
 
 
@@ -5532,7 +10459,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1DominantColorsAnnotation {
 
 		/** RGB color values with their score and pixel fraction. */
-		colors?: Array<GoogleCloudVisionV1p4beta1ColorInfo> | null;
+		colors?: Array<GoogleCloudVisionV1p4beta1ColorInfo>;
+	}
+
+	/** Set of dominant colors and their corresponding scores. */
+	export interface GoogleCloudVisionV1p4beta1DominantColorsAnnotationFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1DominantColorsAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1DominantColorsAnnotationFormProperties>({
+		});
+
 	}
 
 
@@ -5647,7 +10583,7 @@ export namespace MyNS {
 		 * };
 		 * // ...
 		 */
-		color?: Color | null;
+		color?: Color;
 
 		/**
 		 * The fraction of pixels the color occupies in the image.
@@ -5659,12 +10595,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/**
+	 * Color information consists of RGB channels, score, and the fraction of
+	 * the image that the color occupies in the image.
+	 */
+	export interface GoogleCloudVisionV1p4beta1ColorInfoFormProperties {
+
+		/**
+		 * The fraction of pixels the color occupies in the image.
+		 * Value in range [0, 1].
+		 */
+		pixelFraction: FormControl<number | null | undefined>,
+
+		/** Image-specific score for this color. Value in range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ColorInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ColorInfoFormProperties>({
+			pixelFraction: new FormControl<number | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected entity features. */
 	export interface GoogleCloudVisionV1p4beta1EntityAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/**
 		 * **Deprecated. Use `score` instead.**
@@ -5691,7 +10650,7 @@ export namespace MyNS {
 		 * may indicate the location of the place where the image was taken.
 		 * Location information is usually present for landmarks.
 		 */
-		locations?: Array<GoogleCloudVisionV1p4beta1LocationInfo> | null;
+		locations?: Array<GoogleCloudVisionV1p4beta1LocationInfo>;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
@@ -5704,7 +10663,7 @@ export namespace MyNS {
 		 * Some entities may have optional user-supplied `Property` (name/value)
 		 * fields, such a score or string that qualifies the entity.
 		 */
-		properties?: Array<GoogleCloudVisionV1p4beta1Property> | null;
+		properties?: Array<GoogleCloudVisionV1p4beta1Property>;
 
 		/** Overall score of the result. Range [0, 1]. */
 		score?: number | null;
@@ -5719,6 +10678,58 @@ export namespace MyNS {
 		topicality?: number | null;
 	}
 
+	/** Set of detected entity features. */
+	export interface GoogleCloudVisionV1p4beta1EntityAnnotationFormProperties {
+
+		/**
+		 * **Deprecated. Use `score` instead.**
+		 * The accuracy of the entity detection in an image.
+		 * For example, for an image in which the "Eiffel Tower" entity is detected,
+		 * this field represents the confidence that there is a tower in the query
+		 * image. Range [0, 1].
+		 */
+		confidence: FormControl<number | null | undefined>,
+
+		/** Entity textual description, expressed in its `locale` language. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The language code for the locale in which the entity textual
+		 * `description` is expressed.
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/**
+		 * Opaque entity ID. Some IDs may be available in
+		 * [Google Knowledge Graph Search
+		 * API](https://developers.google.com/knowledge-graph/).
+		 */
+		mid: FormControl<string | null | undefined>,
+
+		/** Overall score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+
+		/**
+		 * The relevancy of the ICA (Image Content Annotation) label to the
+		 * image. For example, the relevancy of "tower" is likely higher to an image
+		 * containing the detected "Eiffel Tower" than to an image containing a
+		 * detected distant towering building, even though the confidence that
+		 * there is a tower in each image may be the same. Range [0, 1].
+		 */
+		topicality: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1EntityAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1EntityAnnotationFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			topicality: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Detected entity location information. */
 	export interface GoogleCloudVisionV1p4beta1LocationInfo {
@@ -5730,7 +10741,16 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		latLng?: LatLng | null;
+		latLng?: LatLng;
+	}
+
+	/** Detected entity location information. */
+	export interface GoogleCloudVisionV1p4beta1LocationInfoFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1LocationInfoFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1LocationInfoFormProperties>({
+		});
+
 	}
 
 
@@ -5747,12 +10767,33 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A `Property` consists of a user-supplied name/value pair. */
+	export interface GoogleCloudVisionV1p4beta1PropertyFormProperties {
+
+		/** Name of the property. */
+		name: FormControl<string | null | undefined>,
+
+		/** Value of numeric properties. */
+		uint64Value: FormControl<string | null | undefined>,
+
+		/** Value of the property. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1PropertyFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1PropertyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uint64Value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Set of detected objects with bounding boxes. */
 	export interface GoogleCloudVisionV1p4beta1LocalizedObjectAnnotation {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -5769,6 +10810,35 @@ export namespace MyNS {
 
 		/** Score of the result. Range [0, 1]. */
 		score?: number | null;
+	}
+
+	/** Set of detected objects with bounding boxes. */
+	export interface GoogleCloudVisionV1p4beta1LocalizedObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1LocalizedObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1LocalizedObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5788,10 +10858,27 @@ export namespace MyNS {
 		 * matching products specific to that region. There may be duplicate product
 		 * matches in the union of all the per-product results.
 		 */
-		productGroupedResults?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult> | null;
+		productGroupedResults?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult>;
+	}
+
+	/** Results for a product search request. */
+	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsFormProperties {
+
+		/**
+		 * Timestamp of the index which provided these results. Products added to the
+		 * product set and products removed from the product set after this time are
+		 * not reflected in the current results.
+		 */
+		indexTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ProductSearchResultsFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ProductSearchResultsFormProperties>({
+			indexTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5802,13 +10889,25 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult {
 
 		/** A bounding polygon for the detected image annotation. */
-		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly | null;
+		boundingPoly?: GoogleCloudVisionV1p4beta1BoundingPoly;
 
 		/** List of generic predictions for the object in the bounding box. */
-		objectAnnotations?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotation> | null;
+		objectAnnotations?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotation>;
 
 		/** List of results, one for each product match. */
-		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult> | null;
+		results?: Array<GoogleCloudVisionV1p4beta1ProductSearchResultsResult>;
+	}
+
+	/**
+	 * Information about the products similar to a single product in a query
+	 * image.
+	 */
+	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResultFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResultFormProperties>({
+		});
+
 	}
 
 
@@ -5832,6 +10931,35 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Prediction for what the object in the bounding box is. */
+	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotationFormProperties {
+
+		/**
+		 * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+		 * information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Object ID that should align with EntityAnnotation mid. */
+		mid: FormControl<string | null | undefined>,
+
+		/** Object name, expressed in its `language_code` language. */
+		name: FormControl<string | null | undefined>,
+
+		/** Score of the result. Range [0, 1]. */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotationFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			mid: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a product. */
 	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsResult {
@@ -5843,13 +10971,36 @@ export namespace MyNS {
 		image?: string | null;
 
 		/** A Product contains ReferenceImages. */
-		product?: GoogleCloudVisionV1p4beta1Product | null;
+		product?: GoogleCloudVisionV1p4beta1Product;
 
 		/**
 		 * A confidence level on the match, ranging from 0 (no confidence) to
 		 * 1 (full confidence).
 		 */
 		score?: number | null;
+	}
+
+	/** Information about a product. */
+	export interface GoogleCloudVisionV1p4beta1ProductSearchResultsResultFormProperties {
+
+		/**
+		 * The resource name of the image from the product that is the closest match
+		 * to the query.
+		 */
+		image: FormControl<string | null | undefined>,
+
+		/**
+		 * A confidence level on the match, ranging from 0 (no confidence) to
+		 * 1 (full confidence).
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ProductSearchResultsResultFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ProductSearchResultsResultFormProperties>({
+			image: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5896,7 +11047,48 @@ export namespace MyNS {
 		 * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
 		 * will refuse to work for that ProductSet.
 		 */
-		productLabels?: Array<GoogleCloudVisionV1p4beta1ProductKeyValue> | null;
+		productLabels?: Array<GoogleCloudVisionV1p4beta1ProductKeyValue>;
+	}
+
+	/** A Product contains ReferenceImages. */
+	export interface GoogleCloudVisionV1p4beta1ProductFormProperties {
+
+		/**
+		 * User-provided metadata to be stored with this product. Must be at most 4096
+		 * characters long.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The user-provided name for this Product. Must not be empty. Must be at most
+		 * 4096 characters long.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the product.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+		 * This field is ignored when creating a product.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Immutable. The category for the product identified by the reference image. This should
+		 * be either "homegoods-v2", "apparel-v2", or "toys-v2". The legacy categories
+		 * "homegoods", "apparel", and "toys" are still supported, but these should
+		 * not be used for new products.
+		 */
+		productCategory: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ProductFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ProductFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			productCategory: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5914,6 +11106,29 @@ export namespace MyNS {
 		 * cannot exceed 128 bytes.
 		 */
 		value?: string | null;
+	}
+
+	/** A product label represented as a key-value pair. */
+	export interface GoogleCloudVisionV1p4beta1ProductKeyValueFormProperties {
+
+		/**
+		 * The key of the label attached to the product. Cannot be empty and cannot
+		 * exceed 128 bytes.
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/**
+		 * The value of the label attached to the product. Cannot be empty and
+		 * cannot exceed 128 bytes.
+		 */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ProductKeyValueFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ProductKeyValueFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5953,6 +11168,52 @@ export namespace MyNS {
 		violence?: FaceAnnotationAngerLikelihood | null;
 	}
 
+	/**
+	 * Set of features pertaining to the image, computed by computer vision
+	 * methods over safe-search verticals (for example, adult, spoof, medical,
+	 * violence).
+	 */
+	export interface GoogleCloudVisionV1p4beta1SafeSearchAnnotationFormProperties {
+
+		/**
+		 * Represents the adult content likelihood for the image. Adult content may
+		 * contain elements such as nudity, pornographic images or cartoons, or
+		 * sexual activities.
+		 */
+		adult: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this is a medical image. */
+		medical: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Likelihood that the request image contains racy content. Racy content may
+		 * include (but is not limited to) skimpy or sheer clothing, strategically
+		 * covered nudity, lewd or provocative poses, or close-ups of sensitive
+		 * body areas.
+		 */
+		racy: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/**
+		 * Spoof likelihood. The likelihood that an modification
+		 * was made to the image's canonical version to make it appear
+		 * funny or offensive.
+		 */
+		spoof: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+
+		/** Likelihood that this image contains violent content. */
+		violence: FormControl<FaceAnnotationAngerLikelihood | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1SafeSearchAnnotationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1SafeSearchAnnotationFormProperties>({
+			adult: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			medical: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			racy: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			spoof: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+			violence: new FormControl<FaceAnnotationAngerLikelihood | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Relevant information for the image from the Internet. */
 	export interface GoogleCloudVisionV1p4beta1WebDetection {
@@ -5961,29 +11222,38 @@ export namespace MyNS {
 		 * The service's best guess as to the topic of the request image.
 		 * Inferred from similar images on the open web.
 		 */
-		bestGuessLabels?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebLabel> | null;
+		bestGuessLabels?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebLabel>;
 
 		/**
 		 * Fully matching images from the Internet.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
 
 		/** Web pages containing the matching images from the Internet. */
-		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebPage> | null;
+		pagesWithMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebPage>;
 
 		/**
 		 * Partial matching images from the Internet.
 		 * Those images are similar enough to share some key-point features. For
 		 * example an original image will likely have partial matching for its crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
 
 		/** The visually similar image results. */
-		visuallySimilarImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
+		visuallySimilarImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
 
 		/** Deduced entities from similar images on the Internet. */
-		webEntities?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebEntity> | null;
+		webEntities?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebEntity>;
+	}
+
+	/** Relevant information for the image from the Internet. */
+	export interface GoogleCloudVisionV1p4beta1WebDetectionFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1WebDetectionFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1WebDetectionFormProperties>({
+		});
+
 	}
 
 
@@ -6001,6 +11271,27 @@ export namespace MyNS {
 		languageCode?: string | null;
 	}
 
+	/** Label to provide extra metadata for the web detection. */
+	export interface GoogleCloudVisionV1p4beta1WebDetectionWebLabelFormProperties {
+
+		/** Label for extra metadata. */
+		label: FormControl<string | null | undefined>,
+
+		/**
+		 * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
+		 * For more information, see
+		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1WebDetectionWebLabelFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1WebDetectionWebLabelFormProperties>({
+			label: new FormControl<string | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for online images. */
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebImage {
@@ -6012,6 +11303,23 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** Metadata for online images. */
+	export interface GoogleCloudVisionV1p4beta1WebDetectionWebImageFormProperties {
+
+		/** (Deprecated) Overall relevancy score for the image. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result image URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1WebDetectionWebImageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1WebDetectionWebImageFormProperties>({
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for web pages. */
 	export interface GoogleCloudVisionV1p4beta1WebDetectionWebPage {
@@ -6020,7 +11328,7 @@ export namespace MyNS {
 		 * Fully matching images on the page.
 		 * Can include resized copies of the query image.
 		 */
-		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
+		fullMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
 
 		/** Title for the web page, may contain HTML markups. */
 		pageTitle?: string | null;
@@ -6031,13 +11339,34 @@ export namespace MyNS {
 		 * example an original image will likely have partial matching for its
 		 * crops.
 		 */
-		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage> | null;
+		partialMatchingImages?: Array<GoogleCloudVisionV1p4beta1WebDetectionWebImage>;
 
 		/** (Deprecated) Overall relevancy score for the web page. */
 		score?: number | null;
 
 		/** The result web page URL. */
 		url?: string | null;
+	}
+
+	/** Metadata for web pages. */
+	export interface GoogleCloudVisionV1p4beta1WebDetectionWebPageFormProperties {
+
+		/** Title for the web page, may contain HTML markups. */
+		pageTitle: FormControl<string | null | undefined>,
+
+		/** (Deprecated) Overall relevancy score for the web page. */
+		score: FormControl<number | null | undefined>,
+
+		/** The result web page URL. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1WebDetectionWebPageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1WebDetectionWebPageFormProperties>({
+			pageTitle: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6057,12 +11386,45 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Entity deduced from similar images on the Internet. */
+	export interface GoogleCloudVisionV1p4beta1WebDetectionWebEntityFormProperties {
+
+		/** Canonical description of the entity, in English. */
+		description: FormControl<string | null | undefined>,
+
+		/** Opaque entity ID. */
+		entityId: FormControl<string | null | undefined>,
+
+		/**
+		 * Overall relevancy score for the entity.
+		 * Not normalized and not comparable across different image queries.
+		 */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1WebDetectionWebEntityFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1WebDetectionWebEntityFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for a single offline file annotation request. */
 	export interface GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig | null;
+		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig;
+	}
+
+	/** The response for a single offline file annotation request. */
+	export interface GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1AsyncAnnotateFileResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -6083,7 +11445,30 @@ export namespace MyNS {
 		batchSize?: number | null;
 
 		/** The Google Cloud Storage location where the output will be written to. */
-		gcsDestination?: GoogleCloudVisionV1p4beta1GcsDestination | null;
+		gcsDestination?: GoogleCloudVisionV1p4beta1GcsDestination;
+	}
+
+	/** The desired output location and metadata. */
+	export interface GoogleCloudVisionV1p4beta1OutputConfigFormProperties {
+
+		/**
+		 * The max number of response protos to put into each output JSON file on
+		 * Google Cloud Storage.
+		 * The valid range is [1, 100]. If not specified, the default value is 20.
+		 * For example, for one pdf file with 100 pages, 100 response protos will
+		 * be generated. If `batch_size` = 20, then 5 json files each
+		 * containing 20 response protos will be written under the prefix
+		 * `gcs_destination`.`uri`.
+		 * Currently, batch_size only applies to GcsDestination, with potential future
+		 * support for other output configurations.
+		 */
+		batchSize: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1OutputConfigFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1OutputConfigFormProperties>({
+			batchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6113,6 +11498,38 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Google Cloud Storage location where the output will be written to. */
+	export interface GoogleCloudVisionV1p4beta1GcsDestinationFormProperties {
+
+		/**
+		 * Google Cloud Storage URI prefix where the results will be stored. Results
+		 * will be in JSON format and preceded by its corresponding input URI prefix.
+		 * This field can either represent a gcs file prefix or gcs directory. In
+		 * either case, the uri should be unique because in order to get all of the
+		 * output files, you will need to do a wildcard gcs search on the uri prefix
+		 * you provide.
+		 * Examples:
+		 * *    File Prefix: gs://bucket-name/here/filenameprefix   The output files
+		 * will be created in gs://bucket-name/here/ and the names of the
+		 * output files will begin with "filenameprefix".
+		 * *    Directory Prefix: gs://bucket-name/some/location/   The output files
+		 * will be created in gs://bucket-name/some/location/ and the names of the
+		 * output files could be anything because there was no filename prefix
+		 * specified.
+		 * If multiple outputs, each response is still AnnotateFileResponse, each of
+		 * which contains some subset of the full list of AnnotateImageResponse.
+		 * Multiple outputs can happen if, for example, the output JSON is too large
+		 * and overflows into multiple sharded files.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1GcsDestinationFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1GcsDestinationFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to an async batch file annotation request. */
 	export interface GoogleCloudVisionV1p4beta1AsyncBatchAnnotateFilesResponse {
@@ -6121,7 +11538,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, one for each request in
 		 * AsyncBatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p4beta1AsyncAnnotateFileResponse>;
+	}
+
+	/** Response to an async batch file annotation request. */
+	export interface GoogleCloudVisionV1p4beta1AsyncBatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1AsyncBatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1AsyncBatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -6129,7 +11555,16 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponse {
 
 		/** The desired output location and metadata. */
-		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig | null;
+		outputConfig?: GoogleCloudVisionV1p4beta1OutputConfig;
+	}
+
+	/** Response to an async batch image annotation request. */
+	export interface GoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -6140,7 +11575,16 @@ export namespace MyNS {
 		 * The list of file annotation responses, each response corresponding to each
 		 * AnnotateFileRequest in BatchAnnotateFilesRequest.
 		 */
-		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateFileResponse> | null;
+		responses?: Array<GoogleCloudVisionV1p4beta1AnnotateFileResponse>;
+	}
+
+	/** A list of file annotation responses. */
+	export interface GoogleCloudVisionV1p4beta1BatchAnnotateFilesResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1BatchAnnotateFilesResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1BatchAnnotateFilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -6164,6 +11608,34 @@ export namespace MyNS {
 		submitTime?: string | null;
 	}
 
+	/**
+	 * Metadata for the batch operations such as the current state.
+	 * This is included in the `metadata` field of the `Operation` returned by the
+	 * `GetOperation` call of the `google::longrunning::Operations` service.
+	 */
+	export interface GoogleCloudVisionV1p4beta1BatchOperationMetadataFormProperties {
+
+		/**
+		 * The time when the batch request is finished and
+		 * google.longrunning.Operation.done is set to true.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/** The current state of the batch operation. */
+		state: FormControl<BatchOperationMetadataState | null | undefined>,
+
+		/** The time when the batch request was submitted to the server. */
+		submitTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1BatchOperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1BatchOperationMetadataFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<BatchOperationMetadataState | null | undefined>(undefined),
+			submitTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Response message for the `ImportProductSets` method.
@@ -6174,7 +11646,7 @@ export namespace MyNS {
 	export interface GoogleCloudVisionV1p4beta1ImportProductSetsResponse {
 
 		/** The list of reference_images that are imported successfully. */
-		referenceImages?: Array<GoogleCloudVisionV1p4beta1ReferenceImage> | null;
+		referenceImages?: Array<GoogleCloudVisionV1p4beta1ReferenceImage>;
 
 		/**
 		 * The rpc status for each ImportProductSet request, including both successes
@@ -6183,7 +11655,21 @@ export namespace MyNS {
 		 * and statuses[i] stores the success or failure status of processing the i-th
 		 * line of the csv, starting from line 0.
 		 */
-		statuses?: Array<Status> | null;
+		statuses?: Array<Status>;
+	}
+
+	/**
+	 * Response message for the `ImportProductSets` method.
+	 * This message is returned by the
+	 * google.longrunning.Operations.GetOperation method in the returned
+	 * google.longrunning.Operation.response field.
+	 */
+	export interface GoogleCloudVisionV1p4beta1ImportProductSetsResponseFormProperties {
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ImportProductSetsResponseFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ImportProductSetsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -6202,7 +11688,7 @@ export namespace MyNS {
 		 * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
 		 * is not).
 		 */
-		boundingPolys?: Array<GoogleCloudVisionV1p4beta1BoundingPoly> | null;
+		boundingPolys?: Array<GoogleCloudVisionV1p4beta1BoundingPoly>;
 
 		/**
 		 * The resource name of the reference image.
@@ -6219,6 +11705,34 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * A `ReferenceImage` represents a product image and its associated metadata,
+	 * such as bounding boxes.
+	 */
+	export interface GoogleCloudVisionV1p4beta1ReferenceImageFormProperties {
+
+		/**
+		 * The resource name of the reference image.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+		 * This field is ignored when creating a reference image.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The Google Cloud Storage URI of the reference image.
+		 * The URI must start with `gs://`.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1ReferenceImageFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1ReferenceImageFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains metadata for the BatchAnnotateImages operation. */
 	export interface GoogleCloudVisionV1p4beta1OperationMetadata {
@@ -6231,6 +11745,27 @@ export namespace MyNS {
 
 		/** The time when the operation result was last updated. */
 		updateTime?: string | null;
+	}
+
+	/** Contains metadata for the BatchAnnotateImages operation. */
+	export interface GoogleCloudVisionV1p4beta1OperationMetadataFormProperties {
+
+		/** The time when the batch request was received. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Current state of the batch operation. */
+		state: FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>,
+
+		/** The time when the operation result was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudVisionV1p4beta1OperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudVisionV1p4beta1OperationMetadataFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6292,6 +11827,70 @@ export namespace MyNS {
 		csvFileUri?: string | null;
 	}
 
+	/**
+	 * The Google Cloud Storage location for a csv file which preserves a list of
+	 * ImportProductSetRequests in each line.
+	 */
+	export interface ImportProductSetsGcsSourceFormProperties {
+
+		/**
+		 * The Google Cloud Storage URI of the input csv file.
+		 * The URI must start with `gs://`.
+		 * The format of the input csv file should be one image per line.
+		 * In each line, there are 8 columns.
+		 * 1.  image-uri
+		 * 2.  image-id
+		 * 3.  product-set-id
+		 * 4.  product-id
+		 * 5.  product-category
+		 * 6.  product-display-name
+		 * 7.  labels
+		 * 8.  bounding-poly
+		 * The `image-uri`, `product-set-id`, `product-id`, and `product-category`
+		 * columns are required. All other columns are optional.
+		 * If the `ProductSet` or `Product` specified by the `product-set-id` and
+		 * `product-id` values does not exist, then the system will create a new
+		 * `ProductSet` or `Product` for the image. In this case, the
+		 * `product-display-name` column refers to
+		 * display_name, the
+		 * `product-category` column refers to
+		 * product_category, and the
+		 * `labels` column refers to product_labels.
+		 * The `image-id` column is optional but must be unique if provided. If it is
+		 * empty, the system will automatically assign a unique id to the image.
+		 * The `product-display-name` column is optional. If it is empty, the system
+		 * sets the display_name field for the product to a
+		 * space (" "). You can update the `display_name` later by using the API.
+		 * If a `Product` with the specified `product-id` already exists, then the
+		 * system ignores the `product-display-name`, `product-category`, and `labels`
+		 * columns.
+		 * The `labels` column (optional) is a line containing a list of
+		 * comma-separated key-value pairs, in the following format:
+		 * "key_1=value_1,key_2=value_2,...,key_n=value_n"
+		 * The `bounding-poly` column (optional) identifies one region of
+		 * interest from the image in the same manner as `CreateReferenceImage`. If
+		 * you do not specify the `bounding-poly` column, then the system will try to
+		 * detect regions of interest automatically.
+		 * At most one `bounding-poly` column is allowed per line. If the image
+		 * contains multiple regions of interest, add a line to the CSV file that
+		 * includes the same product information, and the `bounding-poly` values for
+		 * each region of interest.
+		 * The `bounding-poly` column must contain an even number of comma-separated
+		 * numbers, in the format "p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y". Use
+		 * non-negative integers for absolute bounding polygons, and float values
+		 * in [0, 1] for normalized bounding polygons.
+		 * The system will resize the image if the image resolution is too
+		 * large to process (larger than 20MP).
+		 */
+		csvFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateImportProductSetsGcsSourceFormGroup() {
+		return new FormGroup<ImportProductSetsGcsSourceFormProperties>({
+			csvFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input content for the `ImportProductSets` method. */
 	export interface ImportProductSetsInputConfig {
@@ -6300,7 +11899,16 @@ export namespace MyNS {
 		 * The Google Cloud Storage location for a csv file which preserves a list of
 		 * ImportProductSetRequests in each line.
 		 */
-		gcsSource?: ImportProductSetsGcsSource | null;
+		gcsSource?: ImportProductSetsGcsSource;
+	}
+
+	/** The input content for the `ImportProductSets` method. */
+	export interface ImportProductSetsInputConfigFormProperties {
+	}
+	export function CreateImportProductSetsInputConfigFormGroup() {
+		return new FormGroup<ImportProductSetsInputConfigFormProperties>({
+		});
+
 	}
 
 
@@ -6308,7 +11916,16 @@ export namespace MyNS {
 	export interface ImportProductSetsRequest {
 
 		/** The input content for the `ImportProductSets` method. */
-		inputConfig?: ImportProductSetsInputConfig | null;
+		inputConfig?: ImportProductSetsInputConfig;
+	}
+
+	/** Request message for the `ImportProductSets` method. */
+	export interface ImportProductSetsRequestFormProperties {
+	}
+	export function CreateImportProductSetsRequestFormGroup() {
+		return new FormGroup<ImportProductSetsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -6321,7 +11938,7 @@ export namespace MyNS {
 	export interface ImportProductSetsResponse {
 
 		/** The list of reference_images that are imported successfully. */
-		referenceImages?: Array<ReferenceImage> | null;
+		referenceImages?: Array<ReferenceImage>;
 
 		/**
 		 * The rpc status for each ImportProductSet request, including both successes
@@ -6330,7 +11947,21 @@ export namespace MyNS {
 		 * and statuses[i] stores the success or failure status of processing the i-th
 		 * line of the csv, starting from line 0.
 		 */
-		statuses?: Array<Status> | null;
+		statuses?: Array<Status>;
+	}
+
+	/**
+	 * Response message for the `ImportProductSets` method.
+	 * This message is returned by the
+	 * google.longrunning.Operations.GetOperation method in the returned
+	 * google.longrunning.Operation.response field.
+	 */
+	export interface ImportProductSetsResponseFormProperties {
+	}
+	export function CreateImportProductSetsResponseFormGroup() {
+		return new FormGroup<ImportProductSetsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -6349,7 +11980,7 @@ export namespace MyNS {
 		 * to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5
 		 * is not).
 		 */
-		boundingPolys?: Array<BoundingPoly> | null;
+		boundingPolys?: Array<BoundingPoly>;
 
 		/**
 		 * The resource name of the reference image.
@@ -6366,6 +11997,34 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * A `ReferenceImage` represents a product image and its associated metadata,
+	 * such as bounding boxes.
+	 */
+	export interface ReferenceImageFormProperties {
+
+		/**
+		 * The resource name of the reference image.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+		 * This field is ignored when creating a reference image.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The Google Cloud Storage URI of the reference image.
+		 * The URI must start with `gs://`.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceImageFormGroup() {
+		return new FormGroup<ReferenceImageFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response message for Operations.ListOperations. */
 	export interface ListOperationsResponse {
@@ -6374,7 +12033,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6399,7 +12071,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -6407,7 +12079,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -6426,7 +12098,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6440,7 +12162,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of ProductSets. */
-		productSets?: Array<ProductSet> | null;
+		productSets?: Array<ProductSet>;
+	}
+
+	/** Response message for the `ListProductSets` method. */
+	export interface ListProductSetsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no more
+		 * results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProductSetsResponseFormGroup() {
+		return new FormGroup<ListProductSetsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6465,7 +12203,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		indexError?: Status | null;
+		indexError?: Status;
 
 		/**
 		 * Output only. The time at which this ProductSet was last indexed. Query
@@ -6485,6 +12223,45 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/**
+	 * A ProductSet contains Products. A ProductSet can contain a maximum of 1
+	 * million reference images. If the limit is exceeded, periodic indexing will
+	 * fail.
+	 */
+	export interface ProductSetFormProperties {
+
+		/**
+		 * The user-provided name for this ProductSet. Must not be empty. Must be at
+		 * most 4096 characters long.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The time at which this ProductSet was last indexed. Query
+		 * results will reflect all updates before this time. If this ProductSet has
+		 * never been indexed, this timestamp is the default value
+		 * "1970-01-01T00:00:00Z".
+		 * This field is ignored when creating a ProductSet.
+		 */
+		indexTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the ProductSet.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+		 * This field is ignored when creating a ProductSet.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateProductSetFormGroup() {
+		return new FormGroup<ProductSetFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			indexTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response message for the `ListProductsInProductSet` method. */
 	export interface ListProductsInProductSetResponse {
@@ -6496,7 +12273,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The list of Products. */
-		products?: Array<Product> | null;
+		products?: Array<Product>;
+	}
+
+	/** Response message for the `ListProductsInProductSet` method. */
+	export interface ListProductsInProductSetResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no more
+		 * results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProductsInProductSetResponseFormGroup() {
+		return new FormGroup<ListProductsInProductSetResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6510,7 +12303,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of products. */
-		products?: Array<Product> | null;
+		products?: Array<Product>;
+	}
+
+	/** Response message for the `ListProducts` method. */
+	export interface ListProductsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no more
+		 * results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProductsResponseFormGroup() {
+		return new FormGroup<ListProductsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6524,7 +12333,24 @@ export namespace MyNS {
 		pageSize?: number | null;
 
 		/** The list of reference images. */
-		referenceImages?: Array<ReferenceImage> | null;
+		referenceImages?: Array<ReferenceImage>;
+	}
+
+	/** Response message for the `ListReferenceImages` method. */
+	export interface ListReferenceImagesResponseFormProperties {
+
+		/** The next_page_token returned from a previous List request, if any. */
+		nextPageToken: FormControl<string | null | undefined>,
+
+		/** The maximum number of items to return. Default 10, maximum 100. */
+		pageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListReferenceImagesResponseFormGroup() {
+		return new FormGroup<ListReferenceImagesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			pageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6541,6 +12367,27 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** Contains metadata for the BatchAnnotateImages operation. */
+	export interface OperationMetadataFormProperties {
+
+		/** The time when the batch request was received. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** Current state of the batch operation. */
+		state: FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>,
+
+		/** The time when the operation result was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateOperationMetadataFormGroup() {
+		return new FormGroup<OperationMetadataFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleCloudVisionV1p1beta1OperationMetadataState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Config to control which ProductSet contains the Products to be deleted. */
 	export interface ProductSetPurgeConfig {
@@ -6551,6 +12398,23 @@ export namespace MyNS {
 		 * still be deleted.
 		 */
 		productSetId?: string | null;
+	}
+
+	/** Config to control which ProductSet contains the Products to be deleted. */
+	export interface ProductSetPurgeConfigFormProperties {
+
+		/**
+		 * The ProductSet that contains the Products to delete. If a Product is a
+		 * member of product_set_id in addition to other ProductSets, the Product will
+		 * still be deleted.
+		 */
+		productSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateProductSetPurgeConfigFormGroup() {
+		return new FormGroup<ProductSetPurgeConfigFormProperties>({
+			productSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6570,7 +12434,30 @@ export namespace MyNS {
 		force?: boolean | null;
 
 		/** Config to control which ProductSet contains the Products to be deleted. */
-		productSetPurgeConfig?: ProductSetPurgeConfig | null;
+		productSetPurgeConfig?: ProductSetPurgeConfig;
+	}
+
+	/** Request message for the `PurgeProducts` method. */
+	export interface PurgeProductsRequestFormProperties {
+
+		/**
+		 * If delete_orphan_products is true, all Products that are not in any
+		 * ProductSet will be deleted.
+		 */
+		deleteOrphanProducts: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The default value is false. Override this value to true to actually perform
+		 * the purge.
+		 */
+		force: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePurgeProductsRequestFormGroup() {
+		return new FormGroup<PurgeProductsRequestFormProperties>({
+			deleteOrphanProducts: new FormControl<boolean | null | undefined>(undefined),
+			force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -6583,6 +12470,23 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
 		 */
 		product?: string | null;
+	}
+
+	/** Request message for the `RemoveProductFromProductSet` method. */
+	export interface RemoveProductFromProductSetRequestFormProperties {
+
+		/**
+		 * Required. The resource name for the Product to be removed from this ProductSet.
+		 * Format is:
+		 * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+		 */
+		product: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveProductFromProductSetRequestFormGroup() {
+		return new FormGroup<RemoveProductFromProductSetRequestFormProperties>({
+			product: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

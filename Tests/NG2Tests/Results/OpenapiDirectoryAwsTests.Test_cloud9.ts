@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateEnvironmentEC2Result {
 		environmentId?: string | null;
+	}
+	export interface CreateEnvironmentEC2ResultFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEnvironmentEC2ResultFormGroup() {
+		return new FormGroup<CreateEnvironmentEC2ResultFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEnvironmentEC2Request {
@@ -14,7 +24,28 @@ export namespace MyNS {
 		subnetId?: string | null;
 		automaticStopTimeMinutes?: number | null;
 		ownerArn?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateEnvironmentEC2RequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+		instanceType: FormControl<string | null | undefined>,
+		subnetId: FormControl<string | null | undefined>,
+		automaticStopTimeMinutes: FormControl<number | null | undefined>,
+		ownerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEnvironmentEC2RequestFormGroup() {
+		return new FormGroup<CreateEnvironmentEC2RequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			instanceType: new FormControl<string | null | undefined>(undefined),
+			subnetId: new FormControl<string | null | undefined>(undefined),
+			automaticStopTimeMinutes: new FormControl<number | null | undefined>(undefined),
+			ownerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -24,31 +55,100 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BadRequestException {
+	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ForbiddenException {
 	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerErrorException {
+	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateEnvironmentMembershipResult {
 
 		/** Information about an environment member for an AWS Cloud9 development environment. */
-		membership?: EnvironmentMember | null;
+		membership?: EnvironmentMember;
+	}
+	export interface CreateEnvironmentMembershipResultFormProperties {
+	}
+	export function CreateCreateEnvironmentMembershipResultFormGroup() {
+		return new FormGroup<CreateEnvironmentMembershipResultFormProperties>({
+		});
+
 	}
 
 
@@ -61,6 +161,25 @@ export namespace MyNS {
 		lastAccess?: Date | null;
 	}
 
+	/** Information about an environment member for an AWS Cloud9 development environment. */
+	export interface EnvironmentMemberFormProperties {
+		permissions: FormControl<EnvironmentMemberPermissions | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+		environmentId: FormControl<string | null | undefined>,
+		lastAccess: FormControl<Date | null | undefined>,
+	}
+	export function CreateEnvironmentMemberFormGroup() {
+		return new FormGroup<EnvironmentMemberFormProperties>({
+			permissions: new FormControl<EnvironmentMemberPermissions | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined),
+			lastAccess: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EnvironmentMemberPermissions { owner = 0, read_write = 1, read_only = 2 }
 
 	export interface CreateEnvironmentMembershipRequest {
@@ -68,35 +187,106 @@ export namespace MyNS {
 		userArn: string;
 		permissions: CreateEnvironmentMembershipRequestPermissions;
 	}
+	export interface CreateEnvironmentMembershipRequestFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+		permissions: FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>,
+	}
+	export function CreateCreateEnvironmentMembershipRequestFormGroup() {
+		return new FormGroup<CreateEnvironmentMembershipRequestFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+			permissions: new FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateEnvironmentMembershipRequestPermissions { read_write = 0, read_only = 1 }
 
 	export interface DeleteEnvironmentResult {
 	}
+	export interface DeleteEnvironmentResultFormProperties {
+	}
+	export function CreateDeleteEnvironmentResultFormGroup() {
+		return new FormGroup<DeleteEnvironmentResultFormProperties>({
+		});
+
+	}
 
 	export interface DeleteEnvironmentRequest {
 		environmentId: string;
 	}
+	export interface DeleteEnvironmentRequestFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEnvironmentRequestFormGroup() {
+		return new FormGroup<DeleteEnvironmentRequestFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEnvironmentMembershipResult {
+	}
+	export interface DeleteEnvironmentMembershipResultFormProperties {
+	}
+	export function CreateDeleteEnvironmentMembershipResultFormGroup() {
+		return new FormGroup<DeleteEnvironmentMembershipResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteEnvironmentMembershipRequest {
 		environmentId: string;
 		userArn: string;
 	}
+	export interface DeleteEnvironmentMembershipRequestFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEnvironmentMembershipRequestFormGroup() {
+		return new FormGroup<DeleteEnvironmentMembershipRequestFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEnvironmentMembershipsResult {
-		memberships?: Array<EnvironmentMember> | null;
+		memberships?: Array<EnvironmentMember>;
 		nextToken?: string | null;
+	}
+	export interface DescribeEnvironmentMembershipsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentMembershipsResultFormGroup() {
+		return new FormGroup<DescribeEnvironmentMembershipsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEnvironmentMembershipsRequest {
 		userArn?: string | null;
 		environmentId?: string | null;
-		permissions?: Array<Permissions> | null;
+		permissions?: Array<Permissions>;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface DescribeEnvironmentMembershipsRequestFormProperties {
+		userArn: FormControl<string | null | undefined>,
+		environmentId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentMembershipsRequestFormGroup() {
+		return new FormGroup<DescribeEnvironmentMembershipsRequestFormProperties>({
+			userArn: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Permissions { owner = 0, read_write = 1, read_only = 2 }
@@ -105,15 +295,42 @@ export namespace MyNS {
 		status?: DescribeEnvironmentStatusResultStatus | null;
 		message?: string | null;
 	}
+	export interface DescribeEnvironmentStatusResultFormProperties {
+		status: FormControl<DescribeEnvironmentStatusResultStatus | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentStatusResultFormGroup() {
+		return new FormGroup<DescribeEnvironmentStatusResultFormProperties>({
+			status: new FormControl<DescribeEnvironmentStatusResultStatus | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeEnvironmentStatusResultStatus { error = 0, creating = 1, connecting = 2, ready = 3, stopping = 4, stopped = 5, deleting = 6 }
 
 	export interface DescribeEnvironmentStatusRequest {
 		environmentId: string;
 	}
+	export interface DescribeEnvironmentStatusRequestFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEnvironmentStatusRequestFormGroup() {
+		return new FormGroup<DescribeEnvironmentStatusRequestFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEnvironmentsResult {
-		environments?: Array<Environment> | null;
+		environments?: Array<Environment>;
+	}
+	export interface DescribeEnvironmentsResultFormProperties {
+	}
+	export function CreateDescribeEnvironmentsResultFormGroup() {
+		return new FormGroup<DescribeEnvironmentsResultFormProperties>({
+		});
+
 	}
 
 
@@ -127,7 +344,28 @@ export namespace MyNS {
 		ownerArn?: string | null;
 
 		/** Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment. */
-		lifecycle?: EnvironmentLifecycle | null;
+		lifecycle?: EnvironmentLifecycle;
+	}
+
+	/** Information about an AWS Cloud9 development environment. */
+	export interface EnvironmentFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<EnvironmentType | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		ownerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentFormGroup() {
+		return new FormGroup<EnvironmentFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<EnvironmentType | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			ownerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentType { ssh = 0, ec2 = 1 }
@@ -140,47 +378,144 @@ export namespace MyNS {
 		failureResource?: string | null;
 	}
 
+	/** Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment. */
+	export interface EnvironmentLifecycleFormProperties {
+		status: FormControl<EnvironmentLifecycleStatus | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+		failureResource: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentLifecycleFormGroup() {
+		return new FormGroup<EnvironmentLifecycleFormProperties>({
+			status: new FormControl<EnvironmentLifecycleStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			failureResource: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EnvironmentLifecycleStatus { CREATING = 0, CREATED = 1, CREATE_FAILED = 2, DELETING = 3, DELETE_FAILED = 4 }
 
 	export interface DescribeEnvironmentsRequest {
 		environmentIds: Array<string>;
 	}
+	export interface DescribeEnvironmentsRequestFormProperties {
+	}
+	export function CreateDescribeEnvironmentsRequestFormGroup() {
+		return new FormGroup<DescribeEnvironmentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListEnvironmentsResult {
 		nextToken?: string | null;
-		environmentIds?: Array<string> | null;
+		environmentIds?: Array<string>;
+	}
+	export interface ListEnvironmentsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEnvironmentsResultFormGroup() {
+		return new FormGroup<ListEnvironmentsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEnvironmentsRequest {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListEnvironmentsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListEnvironmentsRequestFormGroup() {
+		return new FormGroup<ListEnvironmentsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceARN: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceARN: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEnvironmentResult {
+	}
+	export interface UpdateEnvironmentResultFormProperties {
+	}
+	export function CreateUpdateEnvironmentResultFormGroup() {
+		return new FormGroup<UpdateEnvironmentResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateEnvironmentRequest {
@@ -188,17 +523,50 @@ export namespace MyNS {
 		name?: string | null;
 		description?: string | null;
 	}
+	export interface UpdateEnvironmentRequestFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEnvironmentRequestFormGroup() {
+		return new FormGroup<UpdateEnvironmentRequestFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEnvironmentMembershipResult {
 
 		/** Information about an environment member for an AWS Cloud9 development environment. */
-		membership?: EnvironmentMember | null;
+		membership?: EnvironmentMember;
+	}
+	export interface UpdateEnvironmentMembershipResultFormProperties {
+	}
+	export function CreateUpdateEnvironmentMembershipResultFormGroup() {
+		return new FormGroup<UpdateEnvironmentMembershipResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateEnvironmentMembershipRequest {
 		environmentId: string;
 		userArn: string;
 		permissions: UpdateEnvironmentMembershipRequestPermissions;
+	}
+	export interface UpdateEnvironmentMembershipRequestFormProperties {
+		environmentId: FormControl<string | null | undefined>,
+		userArn: FormControl<string | null | undefined>,
+		permissions: FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>,
+	}
+	export function CreateUpdateEnvironmentMembershipRequestFormGroup() {
+		return new FormGroup<UpdateEnvironmentMembershipRequestFormProperties>({
+			environmentId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined),
+			permissions: new FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateEnvironmentMembershipRequestPermissions { read_write = 0, read_only = 1 }

@@ -1,10 +1,18 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchDeleteBuildsOutput {
-		buildsDeleted?: Array<string> | null;
-		buildsNotDeleted?: Array<BuildNotDeleted> | null;
+		buildsDeleted?: Array<string>;
+		buildsNotDeleted?: Array<BuildNotDeleted>;
+	}
+	export interface BatchDeleteBuildsOutputFormProperties {
+	}
+	export function CreateBatchDeleteBuildsOutputFormGroup() {
+		return new FormGroup<BatchDeleteBuildsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -14,16 +22,50 @@ export namespace MyNS {
 		statusCode?: string | null;
 	}
 
+	/** Information about a build that could not be successfully deleted. */
+	export interface BuildNotDeletedFormProperties {
+		id: FormControl<string | null | undefined>,
+		statusCode: FormControl<string | null | undefined>,
+	}
+	export function CreateBuildNotDeletedFormGroup() {
+		return new FormGroup<BuildNotDeletedFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			statusCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDeleteBuildsInput {
 		ids: Array<string>;
+	}
+	export interface BatchDeleteBuildsInputFormProperties {
+	}
+	export function CreateBatchDeleteBuildsInputFormGroup() {
+		return new FormGroup<BatchDeleteBuildsInputFormProperties>({
+		});
+
 	}
 
 	export interface InvalidInputException {
 	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetBuildsOutput {
-		builds?: Array<Build> | null;
-		buildsNotFound?: Array<string> | null;
+		builds?: Array<Build>;
+		buildsNotFound?: Array<string>;
+	}
+	export interface BatchGetBuildsOutputFormProperties {
+	}
+	export function CreateBatchGetBuildsOutputFormGroup() {
+		return new FormGroup<BatchGetBuildsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -39,40 +81,81 @@ export namespace MyNS {
 		sourceVersion?: string | null;
 		resolvedSourceVersion?: string | null;
 		projectName?: string | null;
-		phases?: Array<BuildPhase> | null;
+		phases?: Array<BuildPhase>;
 
 		/** Information about the build input source code for the build project. */
-		source?: ProjectSource | null;
-		secondarySources?: Array<ProjectSource> | null;
-		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
+		source?: ProjectSource;
+		secondarySources?: Array<ProjectSource>;
+		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/** Information about build output artifacts. */
-		artifacts?: BuildArtifacts | null;
-		secondaryArtifacts?: Array<BuildArtifacts> | null;
+		artifacts?: BuildArtifacts;
+		secondaryArtifacts?: Array<BuildArtifacts>;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache | null;
+		cache?: ProjectCache;
 
 		/** Information about the build environment of the build project. */
-		environment?: ProjectEnvironment | null;
+		environment?: ProjectEnvironment;
 		serviceRole?: string | null;
 
 		/** Information about build logs in Amazon CloudWatch Logs. */
-		logs?: LogsLocation | null;
+		logs?: LogsLocation;
 		timeoutInMinutes?: number | null;
 		queuedTimeoutInMinutes?: number | null;
 		buildComplete?: boolean | null;
 		initiator?: string | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig | null;
+		vpcConfig?: VpcConfig;
 
 		/** Describes a network interface. */
-		networkInterface?: NetworkInterface | null;
+		networkInterface?: NetworkInterface;
 		encryptionKey?: string | null;
-		exportedEnvironmentVariables?: Array<ExportedEnvironmentVariable> | null;
-		reportArns?: Array<string> | null;
-		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
+		exportedEnvironmentVariables?: Array<ExportedEnvironmentVariable>;
+		reportArns?: Array<string>;
+		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+	}
+
+	/** Information about a build. */
+	export interface BuildFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		buildNumber: FormControl<number | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		currentPhase: FormControl<string | null | undefined>,
+		buildStatus: FormControl<BuildBuildStatus | null | undefined>,
+		sourceVersion: FormControl<string | null | undefined>,
+		resolvedSourceVersion: FormControl<string | null | undefined>,
+		projectName: FormControl<string | null | undefined>,
+		serviceRole: FormControl<string | null | undefined>,
+		timeoutInMinutes: FormControl<number | null | undefined>,
+		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+		buildComplete: FormControl<boolean | null | undefined>,
+		initiator: FormControl<string | null | undefined>,
+		encryptionKey: FormControl<string | null | undefined>,
+	}
+	export function CreateBuildFormGroup() {
+		return new FormGroup<BuildFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			buildNumber: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			currentPhase: new FormControl<string | null | undefined>(undefined),
+			buildStatus: new FormControl<BuildBuildStatus | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined),
+			resolvedSourceVersion: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			buildComplete: new FormControl<boolean | null | undefined>(undefined),
+			initiator: new FormControl<string | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BuildBuildStatus { SUCCEEDED = 0, FAILED = 1, FAULT = 2, TIMED_OUT = 3, IN_PROGRESS = 4, STOPPED = 5 }
@@ -85,7 +168,26 @@ export namespace MyNS {
 		startTime?: Date | null;
 		endTime?: Date | null;
 		durationInSeconds?: number | null;
-		contexts?: Array<PhaseContext> | null;
+		contexts?: Array<PhaseContext>;
+	}
+
+	/** Information about a stage for a build. */
+	export interface BuildPhaseFormProperties {
+		phaseType: FormControl<BuildPhasePhaseType | null | undefined>,
+		phaseStatus: FormControl<BuildBuildStatus | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		durationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateBuildPhaseFormGroup() {
+		return new FormGroup<BuildPhaseFormProperties>({
+			phaseType: new FormControl<BuildPhasePhaseType | null | undefined>(undefined),
+			phaseStatus: new FormControl<BuildBuildStatus | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			durationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BuildPhasePhaseType { SUBMITTED = 0, QUEUED = 1, PROVISIONING = 2, DOWNLOAD_SOURCE = 3, INSTALL = 4, PRE_BUILD = 5, BUILD = 6, POST_BUILD = 7, UPLOAD_ARTIFACTS = 8, FINALIZING = 9, COMPLETED = 10 }
@@ -97,6 +199,19 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Additional information about a build phase that has an error. You can use this information for troubleshooting. */
+	export interface PhaseContextFormProperties {
+		statusCode: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreatePhaseContextFormGroup() {
+		return new FormGroup<PhaseContextFormProperties>({
+			statusCode: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the build input source code for the build project. */
 	export interface ProjectSource {
@@ -105,14 +220,37 @@ export namespace MyNS {
 		gitCloneDepth?: number | null;
 
 		/** Information about the Git submodules configuration for an AWS CodeBuild build project. */
-		gitSubmodulesConfig?: GitSubmodulesConfig | null;
+		gitSubmodulesConfig?: GitSubmodulesConfig;
 		buildspec?: string | null;
 
 		/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
-		auth?: SourceAuth | null;
+		auth?: SourceAuth;
 		reportBuildStatus?: boolean | null;
 		insecureSsl?: boolean | null;
 		sourceIdentifier?: string | null;
+	}
+
+	/** Information about the build input source code for the build project. */
+	export interface ProjectSourceFormProperties {
+		type: FormControl<ProjectSourceType | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		gitCloneDepth: FormControl<number | null | undefined>,
+		buildspec: FormControl<string | null | undefined>,
+		reportBuildStatus: FormControl<boolean | null | undefined>,
+		insecureSsl: FormControl<boolean | null | undefined>,
+		sourceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectSourceFormGroup() {
+		return new FormGroup<ProjectSourceFormProperties>({
+			type: new FormControl<ProjectSourceType | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			gitCloneDepth: new FormControl<number | null | undefined>(undefined),
+			buildspec: new FormControl<string | null | undefined>(undefined),
+			reportBuildStatus: new FormControl<boolean | null | undefined>(undefined),
+			insecureSsl: new FormControl<boolean | null | undefined>(undefined),
+			sourceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProjectSourceType { CODECOMMIT = 0, CODEPIPELINE = 1, GITHUB = 2, S3 = 3, BITBUCKET = 4, GITHUB_ENTERPRISE = 5, NO_SOURCE = 6 }
@@ -123,11 +261,35 @@ export namespace MyNS {
 		fetchSubmodules: boolean;
 	}
 
+	/**  Information about the Git submodules configuration for an AWS CodeBuild build project.  */
+	export interface GitSubmodulesConfigFormProperties {
+		fetchSubmodules: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGitSubmodulesConfigFormGroup() {
+		return new FormGroup<GitSubmodulesConfigFormProperties>({
+			fetchSubmodules: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
 	export interface SourceAuth {
 		type: SourceAuthType;
 		resource?: string | null;
+	}
+
+	/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
+	export interface SourceAuthFormProperties {
+		type: FormControl<SourceAuthType | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceAuthFormGroup() {
+		return new FormGroup<SourceAuthFormProperties>({
+			type: new FormControl<SourceAuthType | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SourceAuthType { OAUTH = 0 }
@@ -137,6 +299,19 @@ export namespace MyNS {
 	export interface ProjectSourceVersion {
 		sourceIdentifier: string;
 		sourceVersion: string;
+	}
+
+	/**  A source identifier and its corresponding version.  */
+	export interface ProjectSourceVersionFormProperties {
+		sourceIdentifier: FormControl<string | null | undefined>,
+		sourceVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectSourceVersionFormGroup() {
+		return new FormGroup<ProjectSourceVersionFormProperties>({
+			sourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -150,12 +325,46 @@ export namespace MyNS {
 		artifactIdentifier?: string | null;
 	}
 
+	/** Information about build output artifacts. */
+	export interface BuildArtifactsFormProperties {
+		location: FormControl<string | null | undefined>,
+		sha256sum: FormControl<string | null | undefined>,
+		md5sum: FormControl<string | null | undefined>,
+		overrideArtifactName: FormControl<boolean | null | undefined>,
+		encryptionDisabled: FormControl<boolean | null | undefined>,
+		artifactIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateBuildArtifactsFormGroup() {
+		return new FormGroup<BuildArtifactsFormProperties>({
+			location: new FormControl<string | null | undefined>(undefined),
+			sha256sum: new FormControl<string | null | undefined>(undefined),
+			md5sum: new FormControl<string | null | undefined>(undefined),
+			overrideArtifactName: new FormControl<boolean | null | undefined>(undefined),
+			encryptionDisabled: new FormControl<boolean | null | undefined>(undefined),
+			artifactIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the cache for the build project. */
 	export interface ProjectCache {
 		type: ProjectCacheType;
 		location?: string | null;
-		modes?: Array<CacheMode> | null;
+		modes?: Array<CacheMode>;
+	}
+
+	/** Information about the cache for the build project. */
+	export interface ProjectCacheFormProperties {
+		type: FormControl<ProjectCacheType | null | undefined>,
+		location: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectCacheFormGroup() {
+		return new FormGroup<ProjectCacheFormProperties>({
+			type: new FormControl<ProjectCacheType | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProjectCacheType { NO_CACHE = 0, S3 = 1, LOCAL = 2 }
@@ -168,13 +377,34 @@ export namespace MyNS {
 		type: ProjectEnvironmentType;
 		image: string;
 		computeType: ProjectEnvironmentComputeType;
-		environmentVariables?: Array<EnvironmentVariable> | null;
+		environmentVariables?: Array<EnvironmentVariable>;
 		privilegedMode?: boolean | null;
 		certificate?: string | null;
 
 		/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
-		registryCredential?: RegistryCredential | null;
+		registryCredential?: RegistryCredential;
 		imagePullCredentialsType?: ProjectEnvironmentImagePullCredentialsType | null;
+	}
+
+	/** Information about the build environment of the build project. */
+	export interface ProjectEnvironmentFormProperties {
+		type: FormControl<ProjectEnvironmentType | null | undefined>,
+		image: FormControl<string | null | undefined>,
+		computeType: FormControl<ProjectEnvironmentComputeType | null | undefined>,
+		privilegedMode: FormControl<boolean | null | undefined>,
+		certificate: FormControl<string | null | undefined>,
+		imagePullCredentialsType: FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>,
+	}
+	export function CreateProjectEnvironmentFormGroup() {
+		return new FormGroup<ProjectEnvironmentFormProperties>({
+			type: new FormControl<ProjectEnvironmentType | null | undefined>(undefined),
+			image: new FormControl<string | null | undefined>(undefined),
+			computeType: new FormControl<ProjectEnvironmentComputeType | null | undefined>(undefined),
+			privilegedMode: new FormControl<boolean | null | undefined>(undefined),
+			certificate: new FormControl<string | null | undefined>(undefined),
+			imagePullCredentialsType: new FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProjectEnvironmentType { WINDOWS_CONTAINER = 0, LINUX_CONTAINER = 1, LINUX_GPU_CONTAINER = 2, ARM_CONTAINER = 3 }
@@ -189,6 +419,21 @@ export namespace MyNS {
 		type?: EnvironmentVariableType | null;
 	}
 
+	/** Information about an environment variable for a build project or a build. */
+	export interface EnvironmentVariableFormProperties {
+		name: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+		type: FormControl<EnvironmentVariableType | null | undefined>,
+	}
+	export function CreateEnvironmentVariableFormGroup() {
+		return new FormGroup<EnvironmentVariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<EnvironmentVariableType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EnvironmentVariableType { PLAINTEXT = 0, PARAMETER_STORE = 1, SECRETS_MANAGER = 2 }
 
 
@@ -196,6 +441,19 @@ export namespace MyNS {
 	export interface RegistryCredential {
 		credential: string;
 		credentialProvider: RegistryCredentialCredentialProvider;
+	}
+
+	/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
+	export interface RegistryCredentialFormProperties {
+		credential: FormControl<string | null | undefined>,
+		credentialProvider: FormControl<RegistryCredentialCredentialProvider | null | undefined>,
+	}
+	export function CreateRegistryCredentialFormGroup() {
+		return new FormGroup<RegistryCredentialFormProperties>({
+			credential: new FormControl<string | null | undefined>(undefined),
+			credentialProvider: new FormControl<RegistryCredentialCredentialProvider | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RegistryCredentialCredentialProvider { SECRETS_MANAGER = 0 }
@@ -213,10 +471,31 @@ export namespace MyNS {
 		s3LogsArn?: string | null;
 
 		/** Information about Amazon CloudWatch Logs for a build project. */
-		cloudWatchLogs?: CloudWatchLogsConfig | null;
+		cloudWatchLogs?: CloudWatchLogsConfig;
 
 		/** Information about S3 logs for a build project. */
-		s3Logs?: S3LogsConfig | null;
+		s3Logs?: S3LogsConfig;
+	}
+
+	/** Information about build logs in Amazon CloudWatch Logs. */
+	export interface LogsLocationFormProperties {
+		groupName: FormControl<string | null | undefined>,
+		streamName: FormControl<string | null | undefined>,
+		deepLink: FormControl<string | null | undefined>,
+		s3DeepLink: FormControl<string | null | undefined>,
+		cloudWatchLogsArn: FormControl<string | null | undefined>,
+		s3LogsArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLogsLocationFormGroup() {
+		return new FormGroup<LogsLocationFormProperties>({
+			groupName: new FormControl<string | null | undefined>(undefined),
+			streamName: new FormControl<string | null | undefined>(undefined),
+			deepLink: new FormControl<string | null | undefined>(undefined),
+			s3DeepLink: new FormControl<string | null | undefined>(undefined),
+			cloudWatchLogsArn: new FormControl<string | null | undefined>(undefined),
+			s3LogsArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -225,6 +504,21 @@ export namespace MyNS {
 		status: CloudWatchLogsConfigStatus;
 		groupName?: string | null;
 		streamName?: string | null;
+	}
+
+	/**  Information about Amazon CloudWatch Logs for a build project.  */
+	export interface CloudWatchLogsConfigFormProperties {
+		status: FormControl<CloudWatchLogsConfigStatus | null | undefined>,
+		groupName: FormControl<string | null | undefined>,
+		streamName: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLogsConfigFormGroup() {
+		return new FormGroup<CloudWatchLogsConfigFormProperties>({
+			status: new FormControl<CloudWatchLogsConfigStatus | null | undefined>(undefined),
+			groupName: new FormControl<string | null | undefined>(undefined),
+			streamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CloudWatchLogsConfigStatus { ENABLED = 0, DISABLED = 1 }
@@ -237,12 +531,38 @@ export namespace MyNS {
 		encryptionDisabled?: boolean | null;
 	}
 
+	/**  Information about S3 logs for a build project.  */
+	export interface S3LogsConfigFormProperties {
+		status: FormControl<CloudWatchLogsConfigStatus | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		encryptionDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateS3LogsConfigFormGroup() {
+		return new FormGroup<S3LogsConfigFormProperties>({
+			status: new FormControl<CloudWatchLogsConfigStatus | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			encryptionDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface VpcConfig {
 		vpcId?: string | null;
-		subnets?: Array<string> | null;
-		securityGroupIds?: Array<string> | null;
+		subnets?: Array<string>;
+		securityGroupIds?: Array<string>;
+	}
+
+	/** Information about the VPC configuration that AWS CodeBuild accesses. */
+	export interface VpcConfigFormProperties {
+		vpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcConfigFormGroup() {
+		return new FormGroup<VpcConfigFormProperties>({
+			vpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -252,11 +572,37 @@ export namespace MyNS {
 		networkInterfaceId?: string | null;
 	}
 
+	/** Describes a network interface. */
+	export interface NetworkInterfaceFormProperties {
+		subnetId: FormControl<string | null | undefined>,
+		networkInterfaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateNetworkInterfaceFormGroup() {
+		return new FormGroup<NetworkInterfaceFormProperties>({
+			subnetId: new FormControl<string | null | undefined>(undefined),
+			networkInterfaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Information about an exported environment variable.  */
 	export interface ExportedEnvironmentVariable {
 		name?: string | null;
 		value?: string | null;
+	}
+
+	/**  Information about an exported environment variable.  */
+	export interface ExportedEnvironmentVariableFormProperties {
+		name: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateExportedEnvironmentVariableFormGroup() {
+		return new FormGroup<ExportedEnvironmentVariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -269,15 +615,48 @@ export namespace MyNS {
 		mountOptions?: string | null;
 	}
 
+	/**  Information about a file system created by Amazon Elastic File System (EFS). For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">What Is Amazon Elastic File System?</a>  */
+	export interface ProjectFileSystemLocationFormProperties {
+		type: FormControl<ProjectFileSystemLocationType | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		mountPoint: FormControl<string | null | undefined>,
+		identifier: FormControl<string | null | undefined>,
+		mountOptions: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectFileSystemLocationFormGroup() {
+		return new FormGroup<ProjectFileSystemLocationFormProperties>({
+			type: new FormControl<ProjectFileSystemLocationType | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			mountPoint: new FormControl<string | null | undefined>(undefined),
+			identifier: new FormControl<string | null | undefined>(undefined),
+			mountOptions: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProjectFileSystemLocationType { EFS = 0 }
 
 	export interface BatchGetBuildsInput {
 		ids: Array<string>;
 	}
+	export interface BatchGetBuildsInputFormProperties {
+	}
+	export function CreateBatchGetBuildsInputFormGroup() {
+		return new FormGroup<BatchGetBuildsInputFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetProjectsOutput {
-		projects?: Array<Project> | null;
-		projectsNotFound?: Array<string> | null;
+		projects?: Array<Project>;
+		projectsNotFound?: Array<string>;
+	}
+	export interface BatchGetProjectsOutputFormProperties {
+	}
+	export function CreateBatchGetProjectsOutputFormGroup() {
+		return new FormGroup<BatchGetProjectsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -288,40 +667,69 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Information about the build input source code for the build project. */
-		source?: ProjectSource | null;
-		secondarySources?: Array<ProjectSource> | null;
+		source?: ProjectSource;
+		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string | null;
-		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/** Information about the build output artifacts for the build project. */
-		artifacts?: ProjectArtifacts | null;
-		secondaryArtifacts?: Array<ProjectArtifacts> | null;
+		artifacts?: ProjectArtifacts;
+		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache | null;
+		cache?: ProjectCache;
 
 		/** Information about the build environment of the build project. */
-		environment?: ProjectEnvironment | null;
+		environment?: ProjectEnvironment;
 		serviceRole?: string | null;
 		timeoutInMinutes?: number | null;
 		queuedTimeoutInMinutes?: number | null;
 		encryptionKey?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		created?: Date | null;
 		lastModified?: Date | null;
 
 		/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
-		webhook?: Webhook | null;
+		webhook?: Webhook;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig | null;
+		vpcConfig?: VpcConfig;
 
 		/** Information about the build badge for the build project. */
-		badge?: ProjectBadge | null;
+		badge?: ProjectBadge;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfig?: LogsConfig | null;
-		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
+		logsConfig?: LogsConfig;
+		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+	}
+
+	/** Information about a build project. */
+	export interface ProjectFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		sourceVersion: FormControl<string | null | undefined>,
+		serviceRole: FormControl<string | null | undefined>,
+		timeoutInMinutes: FormControl<number | null | undefined>,
+		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+		encryptionKey: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		lastModified: FormControl<Date | null | undefined>,
+	}
+	export function CreateProjectFormGroup() {
+		return new FormGroup<ProjectFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			lastModified: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -338,6 +746,33 @@ export namespace MyNS {
 		artifactIdentifier?: string | null;
 	}
 
+	/** Information about the build output artifacts for the build project. */
+	export interface ProjectArtifactsFormProperties {
+		type: FormControl<ProjectArtifactsType | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		path: FormControl<string | null | undefined>,
+		namespaceType: FormControl<ProjectArtifactsNamespaceType | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		packaging: FormControl<ProjectArtifactsPackaging | null | undefined>,
+		overrideArtifactName: FormControl<boolean | null | undefined>,
+		encryptionDisabled: FormControl<boolean | null | undefined>,
+		artifactIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectArtifactsFormGroup() {
+		return new FormGroup<ProjectArtifactsFormProperties>({
+			type: new FormControl<ProjectArtifactsType | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined),
+			namespaceType: new FormControl<ProjectArtifactsNamespaceType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			packaging: new FormControl<ProjectArtifactsPackaging | null | undefined>(undefined),
+			overrideArtifactName: new FormControl<boolean | null | undefined>(undefined),
+			encryptionDisabled: new FormControl<boolean | null | undefined>(undefined),
+			artifactIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProjectArtifactsType { CODEPIPELINE = 0, S3 = 1, NO_ARTIFACTS = 2 }
 
 	export enum ProjectArtifactsNamespaceType { NONE = 0, BUILD_ID = 1 }
@@ -351,6 +786,19 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by AWS services that support tags in AWS CodeBuild.</p> */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
 	export interface Webhook {
@@ -358,8 +806,27 @@ export namespace MyNS {
 		payloadUrl?: string | null;
 		secret?: string | null;
 		branchFilter?: string | null;
-		filterGroups?: Array<Array<WebhookFilter>> | null;
+		filterGroups?: Array<Array<WebhookFilter>>;
 		lastModifiedSecret?: Date | null;
+	}
+
+	/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
+	export interface WebhookFormProperties {
+		url: FormControl<string | null | undefined>,
+		payloadUrl: FormControl<string | null | undefined>,
+		secret: FormControl<string | null | undefined>,
+		branchFilter: FormControl<string | null | undefined>,
+		lastModifiedSecret: FormControl<Date | null | undefined>,
+	}
+	export function CreateWebhookFormGroup() {
+		return new FormGroup<WebhookFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+			payloadUrl: new FormControl<string | null | undefined>(undefined),
+			secret: new FormControl<string | null | undefined>(undefined),
+			branchFilter: new FormControl<string | null | undefined>(undefined),
+			lastModifiedSecret: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -368,6 +835,21 @@ export namespace MyNS {
 		type: WebhookFilterType;
 		pattern: string;
 		excludeMatchedPattern?: boolean | null;
+	}
+
+	/**  A filter used to determine which webhooks trigger a build.  */
+	export interface WebhookFilterFormProperties {
+		type: FormControl<WebhookFilterType | null | undefined>,
+		pattern: FormControl<string | null | undefined>,
+		excludeMatchedPattern: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWebhookFilterFormGroup() {
+		return new FormGroup<WebhookFilterFormProperties>({
+			type: new FormControl<WebhookFilterType | null | undefined>(undefined),
+			pattern: new FormControl<string | null | undefined>(undefined),
+			excludeMatchedPattern: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WebhookFilterType { EVENT = 0, BASE_REF = 1, HEAD_REF = 2, ACTOR_ACCOUNT_ID = 3, FILE_PATH = 4, COMMIT_MESSAGE = 5 }
@@ -379,24 +861,60 @@ export namespace MyNS {
 		badgeRequestUrl?: string | null;
 	}
 
+	/** Information about the build badge for the build project. */
+	export interface ProjectBadgeFormProperties {
+		badgeEnabled: FormControl<boolean | null | undefined>,
+		badgeRequestUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectBadgeFormGroup() {
+		return new FormGroup<ProjectBadgeFormProperties>({
+			badgeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			badgeRequestUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.  */
 	export interface LogsConfig {
 
 		/** Information about Amazon CloudWatch Logs for a build project. */
-		cloudWatchLogs?: CloudWatchLogsConfig | null;
+		cloudWatchLogs?: CloudWatchLogsConfig;
 
 		/** Information about S3 logs for a build project. */
-		s3Logs?: S3LogsConfig | null;
+		s3Logs?: S3LogsConfig;
+	}
+
+	/**  Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.  */
+	export interface LogsConfigFormProperties {
+	}
+	export function CreateLogsConfigFormGroup() {
+		return new FormGroup<LogsConfigFormProperties>({
+		});
+
 	}
 
 	export interface BatchGetProjectsInput {
 		names: Array<string>;
 	}
+	export interface BatchGetProjectsInputFormProperties {
+	}
+	export function CreateBatchGetProjectsInputFormGroup() {
+		return new FormGroup<BatchGetProjectsInputFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetReportGroupsOutput {
-		reportGroups?: Array<ReportGroup> | null;
-		reportGroupsNotFound?: Array<string> | null;
+		reportGroups?: Array<ReportGroup>;
+		reportGroupsNotFound?: Array<string>;
+	}
+	export interface BatchGetReportGroupsOutputFormProperties {
+	}
+	export function CreateBatchGetReportGroupsOutputFormGroup() {
+		return new FormGroup<BatchGetReportGroupsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -407,10 +925,29 @@ export namespace MyNS {
 		type?: ReportGroupType | null;
 
 		/** Information about the location where the run of a report is exported. */
-		exportConfig?: ReportExportConfig | null;
+		exportConfig?: ReportExportConfig;
 		created?: Date | null;
 		lastModified?: Date | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/**  A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.  */
+	export interface ReportGroupFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<ReportGroupType | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		lastModified: FormControl<Date | null | undefined>,
+	}
+	export function CreateReportGroupFormGroup() {
+		return new FormGroup<ReportGroupFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ReportGroupType | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			lastModified: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportGroupType { TEST = 0 }
@@ -421,7 +958,18 @@ export namespace MyNS {
 		exportConfigType?: ReportExportConfigExportConfigType | null;
 
 		/** Information about the S3 bucket where the raw data of a report are exported. */
-		s3Destination?: S3ReportExportConfig | null;
+		s3Destination?: S3ReportExportConfig;
+	}
+
+	/**  Information about the location where the run of a report is exported.  */
+	export interface ReportExportConfigFormProperties {
+		exportConfigType: FormControl<ReportExportConfigExportConfigType | null | undefined>,
+	}
+	export function CreateReportExportConfigFormGroup() {
+		return new FormGroup<ReportExportConfigFormProperties>({
+			exportConfigType: new FormControl<ReportExportConfigExportConfigType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportExportConfigExportConfigType { S3 = 0, NO_EXPORT = 1 }
@@ -436,15 +984,48 @@ export namespace MyNS {
 		encryptionDisabled?: boolean | null;
 	}
 
+	/**  Information about the S3 bucket where the raw data of a report are exported.  */
+	export interface S3ReportExportConfigFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		path: FormControl<string | null | undefined>,
+		packaging: FormControl<S3ReportExportConfigPackaging | null | undefined>,
+		encryptionKey: FormControl<string | null | undefined>,
+		encryptionDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateS3ReportExportConfigFormGroup() {
+		return new FormGroup<S3ReportExportConfigFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined),
+			packaging: new FormControl<S3ReportExportConfigPackaging | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			encryptionDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum S3ReportExportConfigPackaging { ZIP = 0, NONE = 1 }
 
 	export interface BatchGetReportGroupsInput {
 		reportGroupArns: Array<string>;
 	}
+	export interface BatchGetReportGroupsInputFormProperties {
+	}
+	export function CreateBatchGetReportGroupsInputFormGroup() {
+		return new FormGroup<BatchGetReportGroupsInputFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetReportsOutput {
-		reports?: Array<Report> | null;
-		reportsNotFound?: Array<string> | null;
+		reports?: Array<Report>;
+		reportsNotFound?: Array<string>;
+	}
+	export interface BatchGetReportsOutputFormProperties {
+	}
+	export function CreateBatchGetReportsOutputFormGroup() {
+		return new FormGroup<BatchGetReportsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -460,11 +1041,38 @@ export namespace MyNS {
 		expired?: Date | null;
 
 		/** Information about the location where the run of a report is exported. */
-		exportConfig?: ReportExportConfig | null;
+		exportConfig?: ReportExportConfig;
 		truncated?: boolean | null;
 
 		/** Information about a test report. */
-		testSummary?: TestReportSummary | null;
+		testSummary?: TestReportSummary;
+	}
+
+	/**  Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.  */
+	export interface ReportFormProperties {
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<ReportGroupType | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		reportGroupArn: FormControl<string | null | undefined>,
+		executionId: FormControl<string | null | undefined>,
+		status: FormControl<ReportStatus | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		expired: FormControl<Date | null | undefined>,
+		truncated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportFormGroup() {
+		return new FormGroup<ReportFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ReportGroupType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			reportGroupArn: new FormControl<string | null | undefined>(undefined),
+			executionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ReportStatus | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			expired: new FormControl<Date | null | undefined>(undefined),
+			truncated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportStatus { GENERATING = 0, SUCCEEDED = 1, FAILED = 2, INCOMPLETE = 3, DELETING = 4 }
@@ -477,17 +1085,51 @@ export namespace MyNS {
 		durationInNanoSeconds: number;
 	}
 
+	/**  Information about a test report.  */
+	export interface TestReportSummaryFormProperties {
+		total: FormControl<number | null | undefined>,
+		durationInNanoSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTestReportSummaryFormGroup() {
+		return new FormGroup<TestReportSummaryFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			durationInNanoSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ReportStatusCounts {
+	}
+	export interface ReportStatusCountsFormProperties {
+	}
+	export function CreateReportStatusCountsFormGroup() {
+		return new FormGroup<ReportStatusCountsFormProperties>({
+		});
+
 	}
 
 	export interface BatchGetReportsInput {
 		reportArns: Array<string>;
 	}
+	export interface BatchGetReportsInputFormProperties {
+	}
+	export function CreateBatchGetReportsInputFormGroup() {
+		return new FormGroup<BatchGetReportsInputFormProperties>({
+		});
+
+	}
 
 	export interface CreateProjectOutput {
 
 		/** Information about a build project. */
-		project?: Project | null;
+		project?: Project;
+	}
+	export interface CreateProjectOutputFormProperties {
+	}
+	export function CreateCreateProjectOutputFormGroup() {
+		return new FormGroup<CreateProjectOutputFormProperties>({
+		});
+
 	}
 
 	export interface CreateProjectInput {
@@ -499,19 +1141,19 @@ export namespace MyNS {
 		 * Required
 		 */
 		source: ProjectSource;
-		secondarySources?: Array<ProjectSource> | null;
+		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string | null;
-		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/**
 		 * Information about the build output artifacts for the build project.
 		 * Required
 		 */
 		artifacts: ProjectArtifacts;
-		secondaryArtifacts?: Array<ProjectArtifacts> | null;
+		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache | null;
+		cache?: ProjectCache;
 
 		/**
 		 * Information about the build environment of the build project.
@@ -522,27 +1164,71 @@ export namespace MyNS {
 		timeoutInMinutes?: number | null;
 		queuedTimeoutInMinutes?: number | null;
 		encryptionKey?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig | null;
+		vpcConfig?: VpcConfig;
 		badgeEnabled?: boolean | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfig?: LogsConfig | null;
-		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
+		logsConfig?: LogsConfig;
+		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+	}
+	export interface CreateProjectInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		sourceVersion: FormControl<string | null | undefined>,
+		serviceRole: FormControl<string | null | undefined>,
+		timeoutInMinutes: FormControl<number | null | undefined>,
+		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+		encryptionKey: FormControl<string | null | undefined>,
+		badgeEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateProjectInputFormGroup() {
+		return new FormGroup<CreateProjectInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			badgeEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccountLimitExceededException {
+	}
+	export interface AccountLimitExceededExceptionFormProperties {
+	}
+	export function CreateAccountLimitExceededExceptionFormGroup() {
+		return new FormGroup<AccountLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateReportGroupOutput {
 
 		/** A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files. */
-		reportGroup?: ReportGroup | null;
+		reportGroup?: ReportGroup;
+	}
+	export interface CreateReportGroupOutputFormProperties {
+	}
+	export function CreateCreateReportGroupOutputFormGroup() {
+		return new FormGroup<CreateReportGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface CreateReportGroupInput {
@@ -554,73 +1240,223 @@ export namespace MyNS {
 		 * Required
 		 */
 		exportConfig: ReportExportConfig;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateReportGroupInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		type: FormControl<ReportGroupType | null | undefined>,
+	}
+	export function CreateCreateReportGroupInputFormGroup() {
+		return new FormGroup<CreateReportGroupInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ReportGroupType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateWebhookOutput {
 
 		/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
-		webhook?: Webhook | null;
+		webhook?: Webhook;
+	}
+	export interface CreateWebhookOutputFormProperties {
+	}
+	export function CreateCreateWebhookOutputFormGroup() {
+		return new FormGroup<CreateWebhookOutputFormProperties>({
+		});
+
 	}
 
 	export interface CreateWebhookInput {
 		projectName: string;
 		branchFilter?: string | null;
-		filterGroups?: Array<Array<WebhookFilter>> | null;
+		filterGroups?: Array<Array<WebhookFilter>>;
+	}
+	export interface CreateWebhookInputFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		branchFilter: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWebhookInputFormGroup() {
+		return new FormGroup<CreateWebhookInputFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			branchFilter: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface OAuthProviderException {
 	}
+	export interface OAuthProviderExceptionFormProperties {
+	}
+	export function CreateOAuthProviderExceptionFormGroup() {
+		return new FormGroup<OAuthProviderExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProjectOutput {
+	}
+	export interface DeleteProjectOutputFormProperties {
+	}
+	export function CreateDeleteProjectOutputFormGroup() {
+		return new FormGroup<DeleteProjectOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProjectInput {
 		name: string;
 	}
+	export interface DeleteProjectInputFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProjectInputFormGroup() {
+		return new FormGroup<DeleteProjectInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteReportOutput {
+	}
+	export interface DeleteReportOutputFormProperties {
+	}
+	export function CreateDeleteReportOutputFormGroup() {
+		return new FormGroup<DeleteReportOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteReportInput {
 		arn: string;
 	}
+	export interface DeleteReportInputFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReportInputFormGroup() {
+		return new FormGroup<DeleteReportInputFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteReportGroupOutput {
+	}
+	export interface DeleteReportGroupOutputFormProperties {
+	}
+	export function CreateDeleteReportGroupOutputFormGroup() {
+		return new FormGroup<DeleteReportGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteReportGroupInput {
 		arn: string;
 	}
+	export interface DeleteReportGroupInputFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReportGroupInputFormGroup() {
+		return new FormGroup<DeleteReportGroupInputFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteResourcePolicyOutput {
+	}
+	export interface DeleteResourcePolicyOutputFormProperties {
+	}
+	export function CreateDeleteResourcePolicyOutputFormGroup() {
+		return new FormGroup<DeleteResourcePolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourcePolicyInput {
 		resourceArn: string;
 	}
+	export interface DeleteResourcePolicyInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourcePolicyInputFormGroup() {
+		return new FormGroup<DeleteResourcePolicyInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSourceCredentialsOutput {
 		arn?: string | null;
+	}
+	export interface DeleteSourceCredentialsOutputFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSourceCredentialsOutputFormGroup() {
+		return new FormGroup<DeleteSourceCredentialsOutputFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSourceCredentialsInput {
 		arn: string;
 	}
+	export interface DeleteSourceCredentialsInputFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSourceCredentialsInputFormGroup() {
+		return new FormGroup<DeleteSourceCredentialsInputFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWebhookOutput {
+	}
+	export interface DeleteWebhookOutputFormProperties {
+	}
+	export function CreateDeleteWebhookOutputFormGroup() {
+		return new FormGroup<DeleteWebhookOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteWebhookInput {
 		projectName: string;
 	}
+	export interface DeleteWebhookInputFormProperties {
+		projectName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWebhookInputFormGroup() {
+		return new FormGroup<DeleteWebhookInputFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeTestCasesOutput {
 		nextToken?: string | null;
-		testCases?: Array<TestCase> | null;
+		testCases?: Array<TestCase>;
+	}
+	export interface DescribeTestCasesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTestCasesOutputFormGroup() {
+		return new FormGroup<DescribeTestCasesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -636,13 +1472,51 @@ export namespace MyNS {
 		expired?: Date | null;
 	}
 
+	/**  Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.  */
+	export interface TestCaseFormProperties {
+		reportArn: FormControl<string | null | undefined>,
+		testRawDataPath: FormControl<string | null | undefined>,
+		prefix: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		durationInNanoSeconds: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		expired: FormControl<Date | null | undefined>,
+	}
+	export function CreateTestCaseFormGroup() {
+		return new FormGroup<TestCaseFormProperties>({
+			reportArn: new FormControl<string | null | undefined>(undefined),
+			testRawDataPath: new FormControl<string | null | undefined>(undefined),
+			prefix: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			durationInNanoSeconds: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			expired: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTestCasesInput {
 		reportArn: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 
 		/** A filter used to return specific types of test cases. */
-		filter?: TestCaseFilter | null;
+		filter?: TestCaseFilter;
+	}
+	export interface DescribeTestCasesInputFormProperties {
+		reportArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTestCasesInputFormGroup() {
+		return new FormGroup<DescribeTestCasesInputFormProperties>({
+			reportArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -651,16 +1525,54 @@ export namespace MyNS {
 		status?: string | null;
 	}
 
+	/**  A filter used to return specific types of test cases.  */
+	export interface TestCaseFilterFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateTestCaseFilterFormGroup() {
+		return new FormGroup<TestCaseFilterFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetResourcePolicyOutput {
 		policy?: string | null;
+	}
+	export interface GetResourcePolicyOutputFormProperties {
+		policy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourcePolicyOutputFormGroup() {
+		return new FormGroup<GetResourcePolicyOutputFormProperties>({
+			policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetResourcePolicyInput {
 		resourceArn: string;
 	}
+	export interface GetResourcePolicyInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourcePolicyInputFormGroup() {
+		return new FormGroup<GetResourcePolicyInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ImportSourceCredentialsOutput {
 		arn?: string | null;
+	}
+	export interface ImportSourceCredentialsOutputFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateImportSourceCredentialsOutputFormGroup() {
+		return new FormGroup<ImportSourceCredentialsOutputFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportSourceCredentialsInput {
@@ -670,6 +1582,23 @@ export namespace MyNS {
 		authType: ImportSourceCredentialsInputAuthType;
 		shouldOverwrite?: boolean | null;
 	}
+	export interface ImportSourceCredentialsInputFormProperties {
+		username: FormControl<string | null | undefined>,
+		token: FormControl<string | null | undefined>,
+		serverType: FormControl<ImportSourceCredentialsInputServerType | null | undefined>,
+		authType: FormControl<ImportSourceCredentialsInputAuthType | null | undefined>,
+		shouldOverwrite: FormControl<boolean | null | undefined>,
+	}
+	export function CreateImportSourceCredentialsInputFormGroup() {
+		return new FormGroup<ImportSourceCredentialsInputFormProperties>({
+			username: new FormControl<string | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+			serverType: new FormControl<ImportSourceCredentialsInputServerType | null | undefined>(undefined),
+			authType: new FormControl<ImportSourceCredentialsInputAuthType | null | undefined>(undefined),
+			shouldOverwrite: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ImportSourceCredentialsInputServerType { GITHUB = 0, BITBUCKET = 1, GITHUB_ENTERPRISE = 2 }
 
@@ -677,26 +1606,71 @@ export namespace MyNS {
 
 	export interface InvalidateProjectCacheOutput {
 	}
+	export interface InvalidateProjectCacheOutputFormProperties {
+	}
+	export function CreateInvalidateProjectCacheOutputFormGroup() {
+		return new FormGroup<InvalidateProjectCacheOutputFormProperties>({
+		});
+
+	}
 
 	export interface InvalidateProjectCacheInput {
 		projectName: string;
 	}
+	export interface InvalidateProjectCacheInputFormProperties {
+		projectName: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidateProjectCacheInputFormGroup() {
+		return new FormGroup<InvalidateProjectCacheInputFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListBuildsOutput {
-		ids?: Array<string> | null;
+		ids?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListBuildsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBuildsOutputFormGroup() {
+		return new FormGroup<ListBuildsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListBuildsInput {
 		sortOrder?: ListBuildsInputSortOrder | null;
 		nextToken?: string | null;
 	}
+	export interface ListBuildsInputFormProperties {
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBuildsInputFormGroup() {
+		return new FormGroup<ListBuildsInputFormProperties>({
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListBuildsInputSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface ListBuildsForProjectOutput {
-		ids?: Array<string> | null;
+		ids?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListBuildsForProjectOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBuildsForProjectOutputFormGroup() {
+		return new FormGroup<ListBuildsForProjectOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListBuildsForProjectInput {
@@ -704,16 +1678,47 @@ export namespace MyNS {
 		sortOrder?: ListBuildsInputSortOrder | null;
 		nextToken?: string | null;
 	}
+	export interface ListBuildsForProjectInputFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBuildsForProjectInputFormGroup() {
+		return new FormGroup<ListBuildsForProjectInputFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListCuratedEnvironmentImagesOutput {
-		platforms?: Array<EnvironmentPlatform> | null;
+		platforms?: Array<EnvironmentPlatform>;
+	}
+	export interface ListCuratedEnvironmentImagesOutputFormProperties {
+	}
+	export function CreateListCuratedEnvironmentImagesOutputFormGroup() {
+		return new FormGroup<ListCuratedEnvironmentImagesOutputFormProperties>({
+		});
+
 	}
 
 
 	/** A set of Docker images that are related by platform and are managed by AWS CodeBuild. */
 	export interface EnvironmentPlatform {
 		platform?: EnvironmentPlatformPlatform | null;
-		languages?: Array<EnvironmentLanguage> | null;
+		languages?: Array<EnvironmentLanguage>;
+	}
+
+	/** A set of Docker images that are related by platform and are managed by AWS CodeBuild. */
+	export interface EnvironmentPlatformFormProperties {
+		platform: FormControl<EnvironmentPlatformPlatform | null | undefined>,
+	}
+	export function CreateEnvironmentPlatformFormGroup() {
+		return new FormGroup<EnvironmentPlatformFormProperties>({
+			platform: new FormControl<EnvironmentPlatformPlatform | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentPlatformPlatform { DEBIAN = 0, AMAZON_LINUX = 1, UBUNTU = 2, WINDOWS_SERVER = 3 }
@@ -722,7 +1727,18 @@ export namespace MyNS {
 	/** A set of Docker images that are related by programming language and are managed by AWS CodeBuild. */
 	export interface EnvironmentLanguage {
 		language?: EnvironmentLanguageLanguage | null;
-		images?: Array<EnvironmentImage> | null;
+		images?: Array<EnvironmentImage>;
+	}
+
+	/** A set of Docker images that are related by programming language and are managed by AWS CodeBuild. */
+	export interface EnvironmentLanguageFormProperties {
+		language: FormControl<EnvironmentLanguageLanguage | null | undefined>,
+	}
+	export function CreateEnvironmentLanguageFormGroup() {
+		return new FormGroup<EnvironmentLanguageFormProperties>({
+			language: new FormControl<EnvironmentLanguageLanguage | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentLanguageLanguage { JAVA = 0, PYTHON = 1, NODE_JS = 2, RUBY = 3, GOLANG = 4, DOCKER = 5, ANDROID = 6, DOTNET = 7, BASE = 8, PHP = 9 }
@@ -732,15 +1748,44 @@ export namespace MyNS {
 	export interface EnvironmentImage {
 		name?: string | null;
 		description?: string | null;
-		versions?: Array<string> | null;
+		versions?: Array<string>;
+	}
+
+	/** Information about a Docker image that is managed by AWS CodeBuild. */
+	export interface EnvironmentImageFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentImageFormGroup() {
+		return new FormGroup<EnvironmentImageFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCuratedEnvironmentImagesInput {
 	}
+	export interface ListCuratedEnvironmentImagesInputFormProperties {
+	}
+	export function CreateListCuratedEnvironmentImagesInputFormGroup() {
+		return new FormGroup<ListCuratedEnvironmentImagesInputFormProperties>({
+		});
+
+	}
 
 	export interface ListProjectsOutput {
 		nextToken?: string | null;
-		projects?: Array<string> | null;
+		projects?: Array<string>;
+	}
+	export interface ListProjectsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsOutputFormGroup() {
+		return new FormGroup<ListProjectsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListProjectsInput {
@@ -748,12 +1793,34 @@ export namespace MyNS {
 		sortOrder?: ListBuildsInputSortOrder | null;
 		nextToken?: string | null;
 	}
+	export interface ListProjectsInputFormProperties {
+		sortBy: FormControl<ListProjectsInputSortBy | null | undefined>,
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsInputFormGroup() {
+		return new FormGroup<ListProjectsInputFormProperties>({
+			sortBy: new FormControl<ListProjectsInputSortBy | null | undefined>(undefined),
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListProjectsInputSortBy { NAME = 0, CREATED_TIME = 1, LAST_MODIFIED_TIME = 2 }
 
 	export interface ListReportGroupsOutput {
 		nextToken?: string | null;
-		reportGroups?: Array<string> | null;
+		reportGroups?: Array<string>;
+	}
+	export interface ListReportGroupsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListReportGroupsOutputFormGroup() {
+		return new FormGroup<ListReportGroupsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListReportGroupsInput {
@@ -762,10 +1829,34 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListReportGroupsInputFormProperties {
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		sortBy: FormControl<ListProjectsInputSortBy | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListReportGroupsInputFormGroup() {
+		return new FormGroup<ListReportGroupsInputFormProperties>({
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			sortBy: new FormControl<ListProjectsInputSortBy | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListReportsOutput {
 		nextToken?: string | null;
-		reports?: Array<string> | null;
+		reports?: Array<string>;
+	}
+	export interface ListReportsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListReportsOutputFormGroup() {
+		return new FormGroup<ListReportsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListReportsInput {
@@ -774,7 +1865,20 @@ export namespace MyNS {
 		maxResults?: number | null;
 
 		/** A filter used to return reports with the status specified by the input <code>status</code> parameter. */
-		filter?: ReportFilter | null;
+		filter?: ReportFilter;
+	}
+	export interface ListReportsInputFormProperties {
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListReportsInputFormGroup() {
+		return new FormGroup<ListReportsInputFormProperties>({
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -783,9 +1887,29 @@ export namespace MyNS {
 		status?: ReportStatus | null;
 	}
 
+	/**  A filter used to return reports with the status specified by the input <code>status</code> parameter.  */
+	export interface ReportFilterFormProperties {
+		status: FormControl<ReportStatus | null | undefined>,
+	}
+	export function CreateReportFilterFormGroup() {
+		return new FormGroup<ReportFilterFormProperties>({
+			status: new FormControl<ReportStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListReportsForReportGroupOutput {
 		nextToken?: string | null;
-		reports?: Array<string> | null;
+		reports?: Array<string>;
+	}
+	export interface ListReportsForReportGroupOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListReportsForReportGroupOutputFormGroup() {
+		return new FormGroup<ListReportsForReportGroupOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListReportsForReportGroupInput {
@@ -795,12 +1919,36 @@ export namespace MyNS {
 		maxResults?: number | null;
 
 		/** A filter used to return reports with the status specified by the input <code>status</code> parameter. */
-		filter?: ReportFilter | null;
+		filter?: ReportFilter;
+	}
+	export interface ListReportsForReportGroupInputFormProperties {
+		reportGroupArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListReportsForReportGroupInputFormGroup() {
+		return new FormGroup<ListReportsForReportGroupInputFormProperties>({
+			reportGroupArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSharedProjectsOutput {
 		nextToken?: string | null;
-		projects?: Array<string> | null;
+		projects?: Array<string>;
+	}
+	export interface ListSharedProjectsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSharedProjectsOutputFormGroup() {
+		return new FormGroup<ListSharedProjectsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSharedProjectsInput {
@@ -809,12 +1957,36 @@ export namespace MyNS {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListSharedProjectsInputFormProperties {
+		sortBy: FormControl<ListSharedProjectsInputSortBy | null | undefined>,
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSharedProjectsInputFormGroup() {
+		return new FormGroup<ListSharedProjectsInputFormProperties>({
+			sortBy: new FormControl<ListSharedProjectsInputSortBy | null | undefined>(undefined),
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListSharedProjectsInputSortBy { ARN = 0, MODIFIED_TIME = 1 }
 
 	export interface ListSharedReportGroupsOutput {
 		nextToken?: string | null;
-		reportGroups?: Array<string> | null;
+		reportGroups?: Array<string>;
+	}
+	export interface ListSharedReportGroupsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSharedReportGroupsOutputFormGroup() {
+		return new FormGroup<ListSharedReportGroupsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSharedReportGroupsInput {
@@ -823,9 +1995,31 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListSharedReportGroupsInputFormProperties {
+		sortOrder: FormControl<ListBuildsInputSortOrder | null | undefined>,
+		sortBy: FormControl<ListSharedProjectsInputSortBy | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListSharedReportGroupsInputFormGroup() {
+		return new FormGroup<ListSharedReportGroupsInputFormProperties>({
+			sortOrder: new FormControl<ListBuildsInputSortOrder | null | undefined>(undefined),
+			sortBy: new FormControl<ListSharedProjectsInputSortBy | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSourceCredentialsOutput {
-		sourceCredentialsInfos?: Array<SourceCredentialsInfo> | null;
+		sourceCredentialsInfos?: Array<SourceCredentialsInfo>;
+	}
+	export interface ListSourceCredentialsOutputFormProperties {
+	}
+	export function CreateListSourceCredentialsOutputFormGroup() {
+		return new FormGroup<ListSourceCredentialsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -836,43 +2030,92 @@ export namespace MyNS {
 		authType?: ImportSourceCredentialsInputAuthType | null;
 	}
 
+	/**  Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.  */
+	export interface SourceCredentialsInfoFormProperties {
+		arn: FormControl<string | null | undefined>,
+		serverType: FormControl<ImportSourceCredentialsInputServerType | null | undefined>,
+		authType: FormControl<ImportSourceCredentialsInputAuthType | null | undefined>,
+	}
+	export function CreateSourceCredentialsInfoFormGroup() {
+		return new FormGroup<SourceCredentialsInfoFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			serverType: new FormControl<ImportSourceCredentialsInputServerType | null | undefined>(undefined),
+			authType: new FormControl<ImportSourceCredentialsInputAuthType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSourceCredentialsInput {
+	}
+	export interface ListSourceCredentialsInputFormProperties {
+	}
+	export function CreateListSourceCredentialsInputFormGroup() {
+		return new FormGroup<ListSourceCredentialsInputFormProperties>({
+		});
+
 	}
 
 	export interface PutResourcePolicyOutput {
 		resourceArn?: string | null;
+	}
+	export interface PutResourcePolicyOutputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyOutputFormGroup() {
+		return new FormGroup<PutResourcePolicyOutputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutResourcePolicyInput {
 		policy: string;
 		resourceArn: string;
 	}
+	export interface PutResourcePolicyInputFormProperties {
+		policy: FormControl<string | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyInputFormGroup() {
+		return new FormGroup<PutResourcePolicyInputFormProperties>({
+			policy: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartBuildOutput {
 
 		/** Information about a build. */
-		build?: Build | null;
+		build?: Build;
+	}
+	export interface StartBuildOutputFormProperties {
+	}
+	export function CreateStartBuildOutputFormGroup() {
+		return new FormGroup<StartBuildOutputFormProperties>({
+		});
+
 	}
 
 	export interface StartBuildInput {
 		projectName: string;
-		secondarySourcesOverride?: Array<ProjectSource> | null;
-		secondarySourcesVersionOverride?: Array<ProjectSourceVersion> | null;
+		secondarySourcesOverride?: Array<ProjectSource>;
+		secondarySourcesVersionOverride?: Array<ProjectSourceVersion>;
 		sourceVersion?: string | null;
 
 		/** Information about the build output artifacts for the build project. */
-		artifactsOverride?: ProjectArtifacts | null;
-		secondaryArtifactsOverride?: Array<ProjectArtifacts> | null;
-		environmentVariablesOverride?: Array<EnvironmentVariable> | null;
+		artifactsOverride?: ProjectArtifacts;
+		secondaryArtifactsOverride?: Array<ProjectArtifacts>;
+		environmentVariablesOverride?: Array<EnvironmentVariable>;
 		sourceTypeOverride?: ProjectSourceType | null;
 		sourceLocationOverride?: string | null;
 
 		/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
-		sourceAuthOverride?: SourceAuth | null;
+		sourceAuthOverride?: SourceAuth;
 		gitCloneDepthOverride?: number | null;
 
 		/** Information about the Git submodules configuration for an AWS CodeBuild build project. */
-		gitSubmodulesConfigOverride?: GitSubmodulesConfig | null;
+		gitSubmodulesConfigOverride?: GitSubmodulesConfig;
 		buildspecOverride?: string | null;
 		insecureSslOverride?: boolean | null;
 		reportBuildStatusOverride?: boolean | null;
@@ -882,7 +2125,7 @@ export namespace MyNS {
 		certificateOverride?: string | null;
 
 		/** Information about the cache for the build project. */
-		cacheOverride?: ProjectCache | null;
+		cacheOverride?: ProjectCache;
 		serviceRoleOverride?: string | null;
 		privilegedModeOverride?: boolean | null;
 		timeoutInMinutesOverride?: number | null;
@@ -890,27 +2133,93 @@ export namespace MyNS {
 		encryptionKeyOverride?: string | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfigOverride?: LogsConfig | null;
+		logsConfigOverride?: LogsConfig;
 
 		/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
-		registryCredentialOverride?: RegistryCredential | null;
+		registryCredentialOverride?: RegistryCredential;
 		imagePullCredentialsTypeOverride?: ProjectEnvironmentImagePullCredentialsType | null;
+	}
+	export interface StartBuildInputFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		sourceVersion: FormControl<string | null | undefined>,
+		sourceTypeOverride: FormControl<ProjectSourceType | null | undefined>,
+		sourceLocationOverride: FormControl<string | null | undefined>,
+		gitCloneDepthOverride: FormControl<number | null | undefined>,
+		buildspecOverride: FormControl<string | null | undefined>,
+		insecureSslOverride: FormControl<boolean | null | undefined>,
+		reportBuildStatusOverride: FormControl<boolean | null | undefined>,
+		environmentTypeOverride: FormControl<ProjectEnvironmentType | null | undefined>,
+		imageOverride: FormControl<string | null | undefined>,
+		computeTypeOverride: FormControl<ProjectEnvironmentComputeType | null | undefined>,
+		certificateOverride: FormControl<string | null | undefined>,
+		serviceRoleOverride: FormControl<string | null | undefined>,
+		privilegedModeOverride: FormControl<boolean | null | undefined>,
+		timeoutInMinutesOverride: FormControl<number | null | undefined>,
+		queuedTimeoutInMinutesOverride: FormControl<number | null | undefined>,
+		encryptionKeyOverride: FormControl<string | null | undefined>,
+		imagePullCredentialsTypeOverride: FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>,
+	}
+	export function CreateStartBuildInputFormGroup() {
+		return new FormGroup<StartBuildInputFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined),
+			sourceTypeOverride: new FormControl<ProjectSourceType | null | undefined>(undefined),
+			sourceLocationOverride: new FormControl<string | null | undefined>(undefined),
+			gitCloneDepthOverride: new FormControl<number | null | undefined>(undefined),
+			buildspecOverride: new FormControl<string | null | undefined>(undefined),
+			insecureSslOverride: new FormControl<boolean | null | undefined>(undefined),
+			reportBuildStatusOverride: new FormControl<boolean | null | undefined>(undefined),
+			environmentTypeOverride: new FormControl<ProjectEnvironmentType | null | undefined>(undefined),
+			imageOverride: new FormControl<string | null | undefined>(undefined),
+			computeTypeOverride: new FormControl<ProjectEnvironmentComputeType | null | undefined>(undefined),
+			certificateOverride: new FormControl<string | null | undefined>(undefined),
+			serviceRoleOverride: new FormControl<string | null | undefined>(undefined),
+			privilegedModeOverride: new FormControl<boolean | null | undefined>(undefined),
+			timeoutInMinutesOverride: new FormControl<number | null | undefined>(undefined),
+			queuedTimeoutInMinutesOverride: new FormControl<number | null | undefined>(undefined),
+			encryptionKeyOverride: new FormControl<string | null | undefined>(undefined),
+			imagePullCredentialsTypeOverride: new FormControl<ProjectEnvironmentImagePullCredentialsType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopBuildOutput {
 
 		/** Information about a build. */
-		build?: Build | null;
+		build?: Build;
+	}
+	export interface StopBuildOutputFormProperties {
+	}
+	export function CreateStopBuildOutputFormGroup() {
+		return new FormGroup<StopBuildOutputFormProperties>({
+		});
+
 	}
 
 	export interface StopBuildInput {
 		id: string;
 	}
+	export interface StopBuildInputFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateStopBuildInputFormGroup() {
+		return new FormGroup<StopBuildInputFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateProjectOutput {
 
 		/** Information about a build project. */
-		project?: Project | null;
+		project?: Project;
+	}
+	export interface UpdateProjectOutputFormProperties {
+	}
+	export function CreateUpdateProjectOutputFormGroup() {
+		return new FormGroup<UpdateProjectOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateProjectInput {
@@ -918,60 +2227,119 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Information about the build input source code for the build project. */
-		source?: ProjectSource | null;
-		secondarySources?: Array<ProjectSource> | null;
+		source?: ProjectSource;
+		secondarySources?: Array<ProjectSource>;
 		sourceVersion?: string | null;
-		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion>;
 
 		/** Information about the build output artifacts for the build project. */
-		artifacts?: ProjectArtifacts | null;
-		secondaryArtifacts?: Array<ProjectArtifacts> | null;
+		artifacts?: ProjectArtifacts;
+		secondaryArtifacts?: Array<ProjectArtifacts>;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache | null;
+		cache?: ProjectCache;
 
 		/** Information about the build environment of the build project. */
-		environment?: ProjectEnvironment | null;
+		environment?: ProjectEnvironment;
 		serviceRole?: string | null;
 		timeoutInMinutes?: number | null;
 		queuedTimeoutInMinutes?: number | null;
 		encryptionKey?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig | null;
+		vpcConfig?: VpcConfig;
 		badgeEnabled?: boolean | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfig?: LogsConfig | null;
-		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
+		logsConfig?: LogsConfig;
+		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+	}
+	export interface UpdateProjectInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		sourceVersion: FormControl<string | null | undefined>,
+		serviceRole: FormControl<string | null | undefined>,
+		timeoutInMinutes: FormControl<number | null | undefined>,
+		queuedTimeoutInMinutes: FormControl<number | null | undefined>,
+		encryptionKey: FormControl<string | null | undefined>,
+		badgeEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateProjectInputFormGroup() {
+		return new FormGroup<UpdateProjectInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			sourceVersion: new FormControl<string | null | undefined>(undefined),
+			serviceRole: new FormControl<string | null | undefined>(undefined),
+			timeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			queuedTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			encryptionKey: new FormControl<string | null | undefined>(undefined),
+			badgeEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateReportGroupOutput {
 
 		/** A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files. */
-		reportGroup?: ReportGroup | null;
+		reportGroup?: ReportGroup;
+	}
+	export interface UpdateReportGroupOutputFormProperties {
+	}
+	export function CreateUpdateReportGroupOutputFormGroup() {
+		return new FormGroup<UpdateReportGroupOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateReportGroupInput {
 		arn: string;
 
 		/** Information about the location where the run of a report is exported. */
-		exportConfig?: ReportExportConfig | null;
-		tags?: Array<Tag> | null;
+		exportConfig?: ReportExportConfig;
+		tags?: Array<Tag>;
+	}
+	export interface UpdateReportGroupInputFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateReportGroupInputFormGroup() {
+		return new FormGroup<UpdateReportGroupInputFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateWebhookOutput {
 
 		/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
-		webhook?: Webhook | null;
+		webhook?: Webhook;
+	}
+	export interface UpdateWebhookOutputFormProperties {
+	}
+	export function CreateUpdateWebhookOutputFormGroup() {
+		return new FormGroup<UpdateWebhookOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateWebhookInput {
 		projectName: string;
 		branchFilter?: string | null;
 		rotateSecret?: boolean | null;
-		filterGroups?: Array<Array<WebhookFilter>> | null;
+		filterGroups?: Array<Array<WebhookFilter>>;
+	}
+	export interface UpdateWebhookInputFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		branchFilter: FormControl<string | null | undefined>,
+		rotateSecret: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateWebhookInputFormGroup() {
+		return new FormGroup<UpdateWebhookInputFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			branchFilter: new FormControl<string | null | undefined>(undefined),
+			rotateSecret: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ArtifactNamespace { NONE = 0, BUILD_ID = 1 }

@@ -1,16 +1,30 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A complex type that contains recommendations and information on how to configure Promoted Listings ad campaigns. */
 	export interface Ad {
 
 		/** This field returns information that you can use to configure the bidPercentage field in a Promoted Listings campaign. While this field returns an array, TRENDING is currently the only supported bid percentage type, so the array is populated with just a single element. The TRENDING bid percentage is calculated by reviewing the average ad rates of other similar promoted listings in the marketplace. Setting the bidPercentage of your ad campaign to this rate will help the items in the campaign be competitive with other items in the marketplace by improving their chances of being displayed more often in the marketplace. */
-		bidPercentages?: Array<BidPercentages> | null;
+		bidPercentages?: Array<BidPercentages>;
 
 		/** An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign. */
-		promoteWithAd?: PromoteWithAd | null;
+		promoteWithAd?: PromoteWithAd;
+	}
+
+	/** A complex type that contains recommendations and information on how to configure Promoted Listings ad campaigns. */
+	export interface AdFormProperties {
+
+		/** An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign. */
+		promoteWithAd: FormControl<PromoteWithAd | null | undefined>,
+	}
+	export function CreateAdFormGroup() {
+		return new FormGroup<AdFormProperties>({
+			promoteWithAd: new FormControl<PromoteWithAd | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -18,10 +32,27 @@ export namespace MyNS {
 	export interface BidPercentages {
 
 		/** An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis. */
-		basis?: Basis | null;
+		basis?: Basis;
 
 		/** The bid percentage data is a single precision value, as calculated by the associated basis. A TRENDING value is calculated by taking into account the average bid percentages of similar promoted listings in the associated marketplace. In Promoted listings ad campaigns, the bid percentage (also known as the ad rate) is a user-defined value that sets the level that eBay raises the visibility of the listing in the marketplace. It is also the rate that is used to calculate the Promoted Listings fee. Minimum value: 1.0 &nbsp; Maximum value: 100.0 */
 		value?: string | null;
+	}
+
+	/** A complex type that returns data related to Promoted Listings bid percentages. */
+	export interface BidPercentagesFormProperties {
+
+		/** An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis. */
+		basis: FormControl<Basis | null | undefined>,
+
+		/** The bid percentage data is a single precision value, as calculated by the associated basis. A TRENDING value is calculated by taking into account the average bid percentages of similar promoted listings in the associated marketplace. In Promoted listings ad campaigns, the bid percentage (also known as the ad rate) is a user-defined value that sets the level that eBay raises the visibility of the listing in the marketplace. It is also the rate that is used to calculate the Promoted Listings fee. Minimum value: 1.0 &nbsp; Maximum value: 100.0 */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateBidPercentagesFormGroup() {
+		return new FormGroup<BidPercentagesFormProperties>({
+			basis: new FormControl<Basis | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -46,7 +77,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** A more detailed explanation of the error. */
 		longMessage?: string | null;
@@ -55,13 +86,46 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** An array of request elements most closely associated to the error. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
 		subdomain?: string | null;
+	}
+
+	/** This type defines the fields that can be returned in an error. */
+	export interface ErrorFormProperties {
+
+		/** Identifies the type of erro. */
+		category: FormControl<string | null | undefined>,
+
+		/** Name for the primary system where the error occurred. This is relevant for application errors. */
+		domain: FormControl<string | null | undefined>,
+
+		/** A unique number to identify the error. */
+		errorId: FormControl<number | null | undefined>,
+
+		/** A more detailed explanation of the error. */
+		longMessage: FormControl<string | null | undefined>,
+
+		/** Information on how to correct the problem, in the end user's terms and language where applicable. */
+		message: FormControl<string | null | undefined>,
+
+		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
+		subdomain: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			errorId: new FormControl<number | null | undefined>(undefined),
+			longMessage: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			subdomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ErrorParameter {
@@ -72,13 +136,37 @@ export namespace MyNS {
 		/** The value of the object. */
 		value?: string | null;
 	}
+	export interface ErrorParameterFormProperties {
+
+		/** The object of the error. */
+		name: FormControl<string | null | undefined>,
+
+		/** The value of the object. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorParameterFormGroup() {
+		return new FormGroup<ErrorParameterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** An list of listing ID values for which you want Promoted Listings ad configuration information. */
 	export interface FindListingRecommendationRequest {
 
 		/** A comma-separated list of listing IDs for which you want Promoted Listings ad configuration information. Currently, this method accepts only listingId values from the Trading API. Max: 500 listing IDs */
-		listingIds?: Array<string> | null;
+		listingIds?: Array<string>;
+	}
+
+	/** An list of listing ID values for which you want Promoted Listings ad configuration information. */
+	export interface FindListingRecommendationRequestFormProperties {
+	}
+	export function CreateFindListingRecommendationRequestFormGroup() {
+		return new FormGroup<FindListingRecommendationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -89,7 +177,20 @@ export namespace MyNS {
 		listingId?: string | null;
 
 		/** A complex type that contains information about how a seller can improve their listing configurations. The AD object contains Promoted Listings recommendations and information, which the seller can use to improve buyer conversions. The response can also contain an optional message about the returned data. */
-		marketing?: MarketingRecommendation | null;
+		marketing?: MarketingRecommendation;
+	}
+
+	/** A complex type that contains the ID of an actively listed item and a set of related listing recommendations. The recommendations contain information the seller can use to optimize their listing configurations. */
+	export interface ListingRecommendationFormProperties {
+
+		/** An ID that identifies the active listing associated with the eBay recommendations. */
+		listingId: FormControl<string | null | undefined>,
+	}
+	export function CreateListingRecommendationFormGroup() {
+		return new FormGroup<ListingRecommendationFormProperties>({
+			listingId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -97,10 +198,23 @@ export namespace MyNS {
 	export interface MarketingRecommendation {
 
 		/** A complex type that contains recommendations and information on how to configure Promoted Listings ad campaigns. */
-		ad?: Ad | null;
+		ad?: Ad;
 
 		/** A message that can conditionally accompany the listing information. */
 		message?: string | null;
+	}
+
+	/** A complex type that contains information about how a seller can improve their listing configurations. The AD object contains Promoted Listings recommendations and information, which the seller can use to improve buyer conversions. The response can also contain an optional message about the returned data. */
+	export interface MarketingRecommendationFormProperties {
+
+		/** A message that can conditionally accompany the listing information. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateMarketingRecommendationFormGroup() {
+		return new FormGroup<MarketingRecommendationFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -114,7 +228,7 @@ export namespace MyNS {
 		limit?: number | null;
 
 		/** Returns a list of listingRecommendations, where each element in the list offers recommendations for the associated listing ID. */
-		listingRecommendations?: Array<ListingRecommendation> | null;
+		listingRecommendations?: Array<ListingRecommendation>;
 
 		/** The URI for the next page of results. This value is returned only if there is an additional page of results in the result set. Max length: 2048 */
 		next?: string | null;
@@ -127,6 +241,39 @@ export namespace MyNS {
 
 		/** The total number of items in the result set. */
 		total?: number | null;
+	}
+
+	/** The high-level object used to return a set of Promoted Listings ad recommendations. */
+	export interface PagedListingRecommendationCollectionFormProperties {
+
+		/** The URI of the current page of results from the result set. */
+		href: FormControl<string | null | undefined>,
+
+		/** The number of items returned on a single page from the result set. This value can be set with the limit request parameter. */
+		limit: FormControl<number | null | undefined>,
+
+		/** The URI for the next page of results. This value is returned only if there is an additional page of results in the result set. Max length: 2048 */
+		next: FormControl<string | null | undefined>,
+
+		/** The number of results skipped in the result set before listing the first returned result. This value can be set with the offset request parameter. */
+		offset: FormControl<number | null | undefined>,
+
+		/** The URI for the previous page of results. This value is returned only if there is a previous page of results in the result set. Max length: 2048 */
+		prev: FormControl<string | null | undefined>,
+
+		/** The total number of items in the result set. */
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreatePagedListingRecommendationCollectionFormGroup() {
+		return new FormGroup<PagedListingRecommendationCollectionFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			prev: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

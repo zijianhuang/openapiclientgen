@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A complex type that describes the value of a monetary amount as represented by a global currency. */
@@ -11,6 +12,23 @@ export namespace MyNS {
 
 		/** The value of the monetary amount in the specified currency. */
 		value?: string | null;
+	}
+
+	/** A complex type that describes the value of a monetary amount as represented by a global currency. */
+	export interface AmountFormProperties {
+
+		/** The base currency applied to the value field to establish a monetary amount. The currency is represented as a 3-letter ISO4217 currency code. For example, the code for the Canadian Dollar is CAD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/CurrencyCodeEnum.html'>eBay API documentation</a> */
+		currency: FormControl<string | null | undefined>,
+
+		/** The value of the monetary amount in the specified currency. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateAmountFormGroup() {
+		return new FormGroup<AmountFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -24,18 +42,44 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** The category type discerns whether the policy covers the sale of motor vehicles (via eBay Motors), or the sale of everything except motor vehicles. Each business policy can be associated with either or both categories ('MOTORS_VEHICLES' and 'ALL_EXCLUDING_MOTORS_VEHICLES'); however,the 'MOTORS_VEHICLES' category type is not valid for return policies&ndash;return policies cannot be used with motor vehicle listings. */
+	export interface CategoryTypeFormProperties {
+
+		/** Sellers can create multiple policies for any marketplaceId and categoryTypes.name combination. For example, you can create multiple fulfillment policies for one marketplace, where they all target the same category type name. However, only one policy can be the default for any marketplaceId and name combination, and eBay designates the first policy created for a combination as the default. If set to true, this policy is the default policy for the associated categoryTypes.name and marketplaceId pair. Note: eBay considers the status of this field only when you create listings through the Web flow. If you create listings using the APIs, you must specifically set the policies you want applied to a listing in the payload of the call you use to create the listing. If you use the Web flow to create item listings, eBay uses the default policy for the marketplace and category type specified, unless you override the default. For more on default policies, see Changing the default policy for a category type. */
+		default: FormControl<boolean | null | undefined>,
+
+		/** The category type to which the policy applies (motor vehicles or non-motor vehicles). Note for return policies: The 'MOTORS_VEHICLES' category type is not valid for return policies because eBay flows do not support the return of motor vehicles. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/CategoryTypeEnum.html'>eBay API documentation</a> */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryTypeFormGroup() {
+		return new FormGroup<CategoryTypeFormProperties>({
+			default: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A container that describes the details of a deposit. Used only with motor listings. */
 	export interface Deposit {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		dueIn?: TimeDuration | null;
+		dueIn?: TimeDuration;
 
 		/** A list of accepted payment methods. For deposits (which are applicable to only motor listings), the paymentMethodType must be set to 'PayPal' */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
+	}
+
+	/** A container that describes the details of a deposit. Used only with motor listings. */
+	export interface DepositFormProperties {
+	}
+	export function CreateDepositFormGroup() {
+		return new FormGroup<DepositFormProperties>({
+		});
+
 	}
 
 
@@ -49,18 +93,48 @@ export namespace MyNS {
 		value?: number | null;
 	}
 
+	/** A complex type that specifies a period of time using a specified time-measurement unit. */
+	export interface TimeDurationFormProperties {
+
+		/** Required in the TimeDuration container. A time-measurement unit used to specify a period of time. Time-measurement units can be years, months, days, hours, minutes, and other time units (see TimeDurationUnitEnum for a complete list of possible units). The unit is applied to the number in the value field to define a span of time. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/TimeDurationUnitEnum.html'>eBay API documentation</a> */
+		unit: FormControl<string | null | undefined>,
+
+		/** Required in the TimeDuration container. An amount of time, as measured by the time-measurement units specified in the unit field. Supported values for this field vary according to the object using the time duration. See the containing object for details and call GeteBayDetails in the Trading API to get the allowable values for the specific object you're configuring. */
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeDurationFormGroup() {
+		return new FormGroup<TimeDurationFormProperties>({
+			unit: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container specifying a payment method that is accepted by the seller. Specify multiple payment methods by repeating this container. For more on payment methods, see Accepted payments policy. Note that payment methods are not applicable to classified ad listings &ndash; all classified ad payments are handled off of the eBay platform. */
 	export interface PaymentMethod {
 
 		/** Required if paymentMethodType is set to CREDIT_CARD. A list of credit card brands accepted by the seller. It's important to note that the credit card brands Visa and MasterCard must both be listed if either one is listed, as is shown in the following code fragment: &quot;paymentMethods&quot;: [{ &quot;brands&quot;: [VISA, MASTERCARD] }] ... Note: Different eBay marketplaces may or may not support this field. Use the Trading API GetCategoryFeatures call with FeatureID set to PaymentMethods and DetailLevel set to ReturnAll to see what credit card brands different marketplaces support. If the GetCategoryFeatures call returns details on credit card brands for the categories in which you sell, then you can use this field to list the credit card brands the seller accepts. If, on the other hand, GetCategoryFeatures does not enumerate credit card brands for your target site (for example, if it returns PaymentMethod set to CCAccepted), then you cannot enumerate specific credit card brands with this field for that marketplace. */
-		brands?: Array<string> | null;
+		brands?: Array<string>;
 
 		/** The payment method, selected from the supported payment method types. Use GetCategoryFeatures in the Trading API to retrieve the payment methods allowed for a category on a specific marketplace, as well as the default payment method for that marketplace (review the SiteDefaults.PaymentMethod field). For example, the response from GetCategoryFeatures shows that on the US marketplace, most categories allow only electronic payments via credit cards, PayPal, and the like. Also, note that GeteBayDetails does not return payment method information. Note: If you create item listings using the Inventory API, you must set this field to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items where the only supported paymentMethod is PayPal). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentMethodTypeEnum.html'>eBay API documentation</a> */
 		paymentMethodType?: string | null;
 
 		/** Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
-		recipientAccountReference?: RecipientAccountReference | null;
+		recipientAccountReference?: RecipientAccountReference;
+	}
+
+	/** Container specifying a payment method that is accepted by the seller. Specify multiple payment methods by repeating this container. For more on payment methods, see Accepted payments policy. Note that payment methods are not applicable to classified ad listings &ndash; all classified ad payments are handled off of the eBay platform. */
+	export interface PaymentMethodFormProperties {
+
+		/** The payment method, selected from the supported payment method types. Use GetCategoryFeatures in the Trading API to retrieve the payment methods allowed for a category on a specific marketplace, as well as the default payment method for that marketplace (review the SiteDefaults.PaymentMethod field). For example, the response from GetCategoryFeatures shows that on the US marketplace, most categories allow only electronic payments via credit cards, PayPal, and the like. Also, note that GeteBayDetails does not return payment method information. Note: If you create item listings using the Inventory API, you must set this field to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items where the only supported paymentMethod is PayPal). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentMethodTypeEnum.html'>eBay API documentation</a> */
+		paymentMethodType: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentMethodFormGroup() {
+		return new FormGroup<PaymentMethodFormProperties>({
+			paymentMethodType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -74,12 +148,29 @@ export namespace MyNS {
 		referenceType?: string | null;
 	}
 
+	/** Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
+	export interface RecipientAccountReferenceFormProperties {
+
+		/** Contains the PayPal email address of the recipient (buyer) if referenceType is set to PAYPAL_EMAIL. */
+		referenceId: FormControl<string | null | undefined>,
+
+		/** A reference a recipient's account. Currently only PAYPAL_EMAIL is valid. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RecipientAccountReferenceTypeEnum.html'>eBay API documentation</a> */
+		referenceType: FormControl<string | null | undefined>,
+	}
+	export function CreateRecipientAccountReferenceFormGroup() {
+		return new FormGroup<RecipientAccountReferenceFormProperties>({
+			referenceId: new FormControl<string | null | undefined>(undefined),
+			referenceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This root container defines a seller's fulfillment policy for a specific marketplace and category type. fulfillmentPolicy encapsulates a seller's terms for fulfilling an order and includes the shipping carriers and services used for shipment and time the seller takes to ship an order. While each seller must define at least one fulfillment policy for every marketplace into which they sell, sellers can define multiple fulfillment policies for a single marketplace by specifying different configurations for the unique policies. */
 	export interface FulfillmentPolicy {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -94,7 +185,7 @@ export namespace MyNS {
 		globalShipping?: boolean | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		handlingTime?: TimeDuration | null;
+		handlingTime?: TimeDuration;
 
 		/** If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false */
 		localPickup?: boolean | null;
@@ -109,10 +200,51 @@ export namespace MyNS {
 		pickupDropOff?: boolean | null;
 
 		/** A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. shippingOptions is a list with a single element if the seller ships to only domestic locations. If the seller also ships internationally, the list contains a second element that defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, any rate tables the seller wants to associate with the shipping services, plus other details (such as the shippingServices offered for domestic or international shipments). */
-		shippingOptions?: Array<ShippingOption> | null;
+		shippingOptions?: Array<ShippingOption>;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
+	}
+
+	/** This root container defines a seller's fulfillment policy for a specific marketplace and category type. fulfillmentPolicy encapsulates a seller's terms for fulfilling an order and includes the shipping carriers and services used for shipment and time the seller takes to ship an order. While each seller must define at least one fulfillment policy for every marketplace into which they sell, sellers can define multiple fulfillment policies for a single marketplace by specifying different configurations for the unique policies. */
+	export interface FulfillmentPolicyFormProperties {
+
+		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers freight shipping. Default: false */
+		freightShipping: FormControl<boolean | null | undefined>,
+
+		/** A unique eBay-assigned ID for the fulfillment policy. This ID is generated when the policy is created. */
+		fulfillmentPolicyId: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller has opted-in to the eBay Global Shipping Program and that they use that service for their international shipments. Setting this value automatically sets the international shipping service for the policy to International Priority Shipping and the buyer does not need to set any other shipping services for their INTERNATIONAL shipping options (unless they sell items not covered by the Global Shipping Program). If this value is set to false, the seller is responsible for manually specifying the international shipping services, as described in Setting up worldwide shipping. To opt-in to the Global Shipping Program, log in to eBay and navigate to My Account &gt; Site Preferences &gt; Shipping preferences. Default: false */
+		globalShipping: FormControl<boolean | null | undefined>,
+
+		/** If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false */
+		localPickup: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this fulfillment policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers the &quot;Click and Collect&quot; feature. Click and Collect is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable &quot;Click and Collect&quot;, a seller (1) must be eligible for Click and Collect and (2) must set this boolean field to 'true'. Currently, Click and Collect is available to only large retail merchants selling in the eBay AU and UK marketplaces. In addition to setting this field, the merchant must also do the following to enable the &quot;Click and Collect&quot; option on a listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Set the immediatePay flag in the payment policy to 'true'. Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a UK merchant successfully lists an item with Click and Collect, prospective buyers within a reasonable distance from one of the merchant's stores (that has stock available) will see the &quot;Available for Click and Collect&quot; option on the listing, along with information on the closest store that has the item.Default: false */
+		pickupDropOff: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFulfillmentPolicyFormGroup() {
+		return new FormGroup<FulfillmentPolicyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			freightShipping: new FormControl<boolean | null | undefined>(undefined),
+			fulfillmentPolicyId: new FormControl<string | null | undefined>(undefined),
+			globalShipping: new FormControl<boolean | null | undefined>(undefined),
+			localPickup: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			pickupDropOff: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -123,7 +255,7 @@ export namespace MyNS {
 		costType?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		insuranceFee?: Amount | null;
+		insuranceFee?: Amount;
 
 		/** If set to true, the seller offers buyer-paid shipping insurance. The optionType shows whether this is for either a domestic or international shipment. Buyer-paid shipping insurance is currently supported in only Australia (AU), France (FR), and Italy (IT). */
 		insuranceOffered?: boolean | null;
@@ -132,13 +264,38 @@ export namespace MyNS {
 		optionType?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		packageHandlingCost?: Amount | null;
+		packageHandlingCost?: Amount;
 
 		/** A unique eBay-assigned ID associated with a user-created shipping rate table. The locality of a shipping rate table can be either DOMESTIC or INTERNATIONAL and you must ensure the value specified in this field references a shipping rate table that matches the type specified in the shippingOptions.optionType field. If you mismatch the types, eBay responds with a 20403 error. Call getRateTable to retrieve information (including rateTableId values) on the rate tables configured by a seller. For information on creating rate tables, see Using shipping rate tables. */
 		rateTableId?: string | null;
 
 		/** Required if the policy offers shipping options using a shippingOptions container. Contains a list of shipping services offered for either DOMESTIC or INTERNATIONAL shipments. Sellers can specify up to four domestic shipping services and up to five international shipping services by using separate shippingService containers for each. Note that if the seller is opted in to the Global Shipping Program, they can specify only four other international shipping services, regardless of whether or not Global Shipping is offered as one of the services. */
-		shippingServices?: Array<ShippingService> | null;
+		shippingServices?: Array<ShippingService>;
+	}
+
+	/** This complex type defines a seller's shipping configuration for either a DOMESTIC or INTERNATIONAL shipping option. Shipping options configure the high-level settings for shipments, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the policy. Each shippingOption element has a shippingServices container that defines the list of shipping carriers and services that are available for the parent shipping option (that is, for either DOMESTIC or INTERNATIONAL shipping). If a seller offers an international shipping option, they must also offer a domestic shipping option. Note that costType (FLAT_RATE or CALCULATED) is set in shippingOptions and that all associated shipping services must be able to support this cost type. */
+	export interface ShippingOptionFormProperties {
+
+		/** Required if the policy offers shipping options using a shippingOptions container. Defines whether the shipping cost is FLAT_RATE, CALCULATED, or NOT_SPECIFIED (for use with freight shipping and local pickup). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingCostTypeEnum.html'>eBay API documentation</a> */
+		costType: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers buyer-paid shipping insurance. The optionType shows whether this is for either a domestic or international shipment. Buyer-paid shipping insurance is currently supported in only Australia (AU), France (FR), and Italy (IT). */
+		insuranceOffered: FormControl<boolean | null | undefined>,
+
+		/** Required if the policy offers shipping options using a shippingOptions container. Use this field to set the ShippingOption element to either DOMESTIC or INTERNATIONAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingOptionTypeEnum.html'>eBay API documentation</a> */
+		optionType: FormControl<string | null | undefined>,
+
+		/** A unique eBay-assigned ID associated with a user-created shipping rate table. The locality of a shipping rate table can be either DOMESTIC or INTERNATIONAL and you must ensure the value specified in this field references a shipping rate table that matches the type specified in the shippingOptions.optionType field. If you mismatch the types, eBay responds with a 20403 error. Call getRateTable to retrieve information (including rateTableId values) on the rate tables configured by a seller. For information on creating rate tables, see Using shipping rate tables. */
+		rateTableId: FormControl<string | null | undefined>,
+	}
+	export function CreateShippingOptionFormGroup() {
+		return new FormGroup<ShippingOptionFormProperties>({
+			costType: new FormControl<string | null | undefined>(undefined),
+			insuranceOffered: new FormControl<boolean | null | undefined>(undefined),
+			optionType: new FormControl<string | null | undefined>(undefined),
+			rateTableId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -146,7 +303,7 @@ export namespace MyNS {
 	export interface ShippingService {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		additionalShippingCost?: Amount | null;
+		additionalShippingCost?: Amount;
 
 		/** This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
 		buyerResponsibleForPickup?: boolean | null;
@@ -155,7 +312,7 @@ export namespace MyNS {
 		buyerResponsibleForShipping?: boolean | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		cashOnDeliveryFee?: Amount | null;
+		cashOnDeliveryFee?: Amount;
 
 		/** If set to true, the seller offers free shipping to the buyer. This field can only be included and set to 'true' for the first domestic shipping service option specified in the shippingServices container (it is ignored if set for subsequent shipping services). The first specified shipping service option has a sortOrder value of 1 or (if the sortOrderId field is not used) it is the shipping service option that's specified first in the shippingServices container. */
 		freeShipping?: boolean | null;
@@ -164,19 +321,52 @@ export namespace MyNS {
 		shippingCarrierCode?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		shippingCost?: Amount | null;
+		shippingCost?: Amount;
 
 		/** The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For details on configuring shipping services, see Setting the shipping carrier and shipping service values. */
 		shippingServiceCode?: string | null;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
 
 		/** This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
 		sortOrder?: number | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		surcharge?: Amount | null;
+		surcharge?: Amount;
+	}
+
+	/** A complex type that defines the available shipping services offered in the parent shippingOptions container. The shipping services specified here must be able to accommodate the optionType defined in the parent shippingOption container (either DOMESTIC or INTERNATIONAL). Tip: For more on setting up shipping services, see Setting the shipping carrier and shipping service values. */
+	export interface ShippingServiceFormProperties {
+
+		/** This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
+		buyerResponsibleForPickup: FormControl<boolean | null | undefined>,
+
+		/** This field is applicable for only items listed in vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for the shipment of the vehicle. Otherwise, the seller should specify the vehicle shipping arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
+		buyerResponsibleForShipping: FormControl<boolean | null | undefined>,
+
+		/** If set to true, the seller offers free shipping to the buyer. This field can only be included and set to 'true' for the first domestic shipping service option specified in the shippingServices container (it is ignored if set for subsequent shipping services). The first specified shipping service option has a sortOrder value of 1 or (if the sortOrderId field is not used) it is the shipping service option that's specified first in the shippingServices container. */
+		freeShipping: FormControl<boolean | null | undefined>,
+
+		/** The shipping carrier, such as 'USPS', 'FedEx', 'UPS', and so on. */
+		shippingCarrierCode: FormControl<string | null | undefined>,
+
+		/** The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For details on configuring shipping services, see Setting the shipping carrier and shipping service values. */
+		shippingServiceCode: FormControl<string | null | undefined>,
+
+		/** This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
+		sortOrder: FormControl<number | null | undefined>,
+	}
+	export function CreateShippingServiceFormGroup() {
+		return new FormGroup<ShippingServiceFormProperties>({
+			buyerResponsibleForPickup: new FormControl<boolean | null | undefined>(undefined),
+			buyerResponsibleForShipping: new FormControl<boolean | null | undefined>(undefined),
+			freeShipping: new FormControl<boolean | null | undefined>(undefined),
+			shippingCarrierCode: new FormControl<string | null | undefined>(undefined),
+			shippingServiceCode: new FormControl<string | null | undefined>(undefined),
+			sortOrder: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -184,10 +374,19 @@ export namespace MyNS {
 	export interface RegionSet {
 
 		/** A list of one or more regionsName fields that specify the areas to where a seller does not ship. Populate regionExcluded in only the top-level shipToLocations container (do not populate this field within the shippingOptions container). Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options and they don't have a need to exclude any regions from their ship-to locations. With this, there's no reason to set regionExclude fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's located within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region, from the larger world area they ship to. To retrieve the regions you can specify in the associated regionName field, call GeteBayDetails with DetailName set to ExcludeShippingLocationDetails, then review the Location fields in the response for the strings that you can specify regionExcluded.regionName. Note that if a buyer's primary ship-to location is a region that a seller has excluded in their fulfillment policy (or if the buyer does not have a primary ship-to location), they will receive an error message if they attempt to buy or place a bid on an item that uses that fulfillment policy. For details on setting this field, see Excluding specific regions from included shipping areas. */
-		regionExcluded?: Array<Region> | null;
+		regionExcluded?: Array<Region>;
 
 		/** Required if optionType set to INTERNATIONAL. A list of one or more regionsName fields that specify the areas to where a seller ships. Important: Populate this field only when the parent shipToLocations object is located within a shippingOptions container (that is, the parent shipTolocations object must not be the one at the top-level of the policy). Also, this field needs to be populated only when the associated shippingOptions container has optionType set to INTERNATIONAL. Withing an international shipping option, set this value to Worldwide to indicate the seller ships to all world regions. If needed, use the regionExcluded field to exclude any regions in the world to where the seller does not ship. Each eBay marketplace supports its own set of allowable shipping locations. Obtain the valid 'Ship-To Locations' for a marketplace by calling GeteBayDetails with DetailName set to ShippingLocationDetails, then review the ShippingLocation fields in the response for the strings that you can specify in the regionIncluded.regionName field. For DOMESTIC shipping options, eBay automatically uses the seller's listing country as the default regionIncluded country. For details on setting this field, see How to set up worldwide shipping. This field is always returned in the shipping policy response. */
-		regionIncluded?: Array<Region> | null;
+		regionIncluded?: Array<Region>;
+	}
+
+	/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
+	export interface RegionSetFormProperties {
+	}
+	export function CreateRegionSetFormGroup() {
+		return new FormGroup<RegionSetFormProperties>({
+		});
+
 	}
 
 
@@ -201,12 +400,29 @@ export namespace MyNS {
 		regionType?: string | null;
 	}
 
+	/** This type defines information for a region. */
+	export interface RegionFormProperties {
+
+		/** A string that indicates the name of a region, as defined by eBay. A &quot;region&quot; can be either a 'world region' (e.g., the &quot;Middle East&quot; or &quot;Southeast Asia&quot;) or a country, as represented with a two-letter country code. Use GeteBayDetails to get the values accepted by this field. The values that you're allowed to use for a specific regionName field depend on the context in which you are setting the value. For details on how to set the values for this field, see The shipToLocations container. */
+		regionName: FormControl<string | null | undefined>,
+
+		/** Reserved for future use. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RegionTypeEnum.html'>eBay API documentation</a> */
+		regionType: FormControl<string | null | undefined>,
+	}
+	export function CreateRegionFormGroup() {
+		return new FormGroup<RegionFormProperties>({
+			regionName: new FormControl<string | null | undefined>(undefined),
+			regionType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This root container defines a seller's fulfillment policy for a specific marketplace and category type. Used when creating or updating a fulfillment policy, fulfillmentPolicyRequest encapsulates a seller's terms for fulfilling an order and includes the shipping carriers and services used for shipment and time the seller takes to ship an order. While each seller must define at least one fulfillment policy for every marketplace into which they sell, sellers can define multiple fulfillment policies for a single marketplace by specifying different configurations for the unique policies. A successful call returns a fulfillmentPolicyId, plus the Location response header contains the URI to the resource. Policy instructions can be localized by providing a locale in the Content-Language HTTP request header. For example: Content-Language: de-DE. Tip: For more on using business policies, see eBay business policies. */
 	export interface FulfillmentPolicyRequest {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -218,7 +434,7 @@ export namespace MyNS {
 		globalShipping?: boolean | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		handlingTime?: TimeDuration | null;
+		handlingTime?: TimeDuration;
 
 		/** If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false */
 		localPickup?: boolean | null;
@@ -233,10 +449,47 @@ export namespace MyNS {
 		pickupDropOff?: boolean | null;
 
 		/** A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. shippingOptions is a list with a single element if the seller ships to only domestic locations. If the seller also ships internationally, the list contains a second element that defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, any rate tables the seller wants to associate with the shipping services, plus other details (such as the shippingServices offered for domestic or international shipments). */
-		shippingOptions?: Array<ShippingOption> | null;
+		shippingOptions?: Array<ShippingOption>;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
+	}
+
+	/** This root container defines a seller's fulfillment policy for a specific marketplace and category type. Used when creating or updating a fulfillment policy, fulfillmentPolicyRequest encapsulates a seller's terms for fulfilling an order and includes the shipping carriers and services used for shipment and time the seller takes to ship an order. While each seller must define at least one fulfillment policy for every marketplace into which they sell, sellers can define multiple fulfillment policies for a single marketplace by specifying different configurations for the unique policies. A successful call returns a fulfillmentPolicyId, plus the Location response header contains the URI to the resource. Policy instructions can be localized by providing a locale in the Content-Language HTTP request header. For example: Content-Language: de-DE. Tip: For more on using business policies, see eBay business policies. */
+	export interface FulfillmentPolicyRequestFormProperties {
+
+		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers freight shipping. Default: false */
+		freightShipping: FormControl<boolean | null | undefined>,
+
+		/** If set to true, the seller has opted-in to the eBay Global Shipping Program and that they use that service for their international shipments. Setting this value automatically sets the international shipping service for the policy to International Priority Shipping and the buyer does not need to set any other shipping services for their INTERNATIONAL shipping options (unless they sell items not covered by the Global Shipping Program). If this value is set to false, the seller is responsible for manually specifying the international shipping services, as described in Setting up worldwide shipping. To opt-in to the Global Shipping Program, log in to eBay and navigate to My Account &gt; Site Preferences &gt; Shipping preferences. Default: false */
+		globalShipping: FormControl<boolean | null | undefined>,
+
+		/** If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false */
+		localPickup: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this fulfillment policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers the &quot;Click and Collect&quot; feature. Click and Collect is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable &quot;Click and Collect&quot;, a seller (1) must be eligible for Click and Collect and (2) must set this boolean field to 'true'. Currently, Click and Collect is available to only large retail merchants selling in the eBay AU and UK marketplaces. In addition to setting this field, the merchant must also do the following to enable the &quot;Click and Collect&quot; option on a listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Set the immediatePay flag in the payment policy to 'true'. Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a UK merchant successfully lists an item with Click and Collect, prospective buyers within a reasonable distance from one of the merchant's stores (that has stock available) will see the &quot;Available for Click and Collect&quot; option on the listing, along with information on the closest store that has the item.Default: false */
+		pickupDropOff: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFulfillmentPolicyRequestFormGroup() {
+		return new FormGroup<FulfillmentPolicyRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			freightShipping: new FormControl<boolean | null | undefined>(undefined),
+			globalShipping: new FormControl<boolean | null | undefined>(undefined),
+			localPickup: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			pickupDropOff: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -244,7 +497,7 @@ export namespace MyNS {
 	export interface FulfillmentPolicyResponse {
 
 		/** A list of the seller's fulfillment policies. */
-		fulfillmentPolicies?: Array<FulfillmentPolicy> | null;
+		fulfillmentPolicies?: Array<FulfillmentPolicy>;
 
 		/** Returns a URL link to the result set. */
 		href?: string | null;
@@ -265,6 +518,39 @@ export namespace MyNS {
 		total?: number | null;
 	}
 
+	/** The response payload for requests that return a list of fulfillment policies. */
+	export interface FulfillmentPolicyResponseFormProperties {
+
+		/** Returns a URL link to the result set. */
+		href: FormControl<string | null | undefined>,
+
+		/** Returns the maximum number of results that can be returned in result set. */
+		limit: FormControl<number | null | undefined>,
+
+		/** Returns a URL link to the next set of results. */
+		next: FormControl<string | null | undefined>,
+
+		/** Returns how many result sets were skipped before the currently returned result set. */
+		offset: FormControl<number | null | undefined>,
+
+		/** Returns a URL link to the previous set of results. */
+		prev: FormControl<string | null | undefined>,
+
+		/** Returns the total number of result sets in the paginated collection. */
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreateFulfillmentPolicyResponseFormGroup() {
+		return new FormGroup<FulfillmentPolicyResponseFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			prev: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
 	export interface InternationalReturnOverrideType {
@@ -273,7 +559,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** Required if the seller wants to set an international return policy that differs from their domestic return policy. If set to true, the seller allows international returns. If set to false, the seller does not accept international returns. */
 		returnsAccepted?: boolean | null;
@@ -282,21 +568,42 @@ export namespace MyNS {
 		returnShippingCostPayer?: string | null;
 	}
 
+	/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
+	export interface InternationalReturnOverrideTypeFormProperties {
+
+		/** Valid in the US marketplace only, this optional field indicates additional services (other than money-back) that sellers can offer buyers for remorse returns. As of version 1.2.0, the only accepted value for this field is REPLACEMENT. This field is valid in only the US marketplace, any supplied value is ignored in other marketplaces. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnMethodEnum.html'>eBay API documentation</a> */
+		returnMethod: FormControl<string | null | undefined>,
+
+		/** Required if the seller wants to set an international return policy that differs from their domestic return policy. If set to true, the seller allows international returns. If set to false, the seller does not accept international returns. */
+		returnsAccepted: FormControl<boolean | null | undefined>,
+
+		/** Required if the internationalOverride.returnsAccepted field is set to true. This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a> */
+		returnShippingCostPayer: FormControl<string | null | undefined>,
+	}
+	export function CreateInternationalReturnOverrideTypeFormGroup() {
+		return new FormGroup<InternationalReturnOverrideTypeFormProperties>({
+			returnMethod: new FormControl<string | null | undefined>(undefined),
+			returnsAccepted: new FormControl<boolean | null | undefined>(undefined),
+			returnShippingCostPayer: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Root container that defines the fields for a seller's payment policy. The paymentPolicy encapsulates a seller's payment terms and consists of payment details for the seller, the name and description of the policy, and the marketplace and category group(s) covered by the payment policy. While each seller must define at least one payment policy for every marketplace into which they sell, sellers can define multiple payment policies for a single marketplace by specifying different configurations for the unique policies. */
 	export interface PaymentPolicy {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** A container that describes the details of a deposit. Used only with motor listings. */
-		deposit?: Deposit | null;
+		deposit?: Deposit;
 
 		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		fullPaymentDueIn?: TimeDuration | null;
+		fullPaymentDueIn?: TimeDuration;
 
 		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false */
 		immediatePay?: boolean | null;
@@ -311,10 +618,43 @@ export namespace MyNS {
 		paymentInstructions?: string | null;
 
 		/** A list of the payment methods accepted by the seller. Each payment policy must specify at least one payment method. Note: Each eBay marketplace supports and requires its own set of payment methods, and not all marketplaces allow all payment methods. Check the specifics of the marketplaces where you list items to ensure your payment policies meet the payment method requirements needed for any specific listing. Note: Item listings created with the Inventory API must reference a payment policy that has this value set to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items with immediate pay (which required payments to be made via PayPal). Payment policies used with motor vehicle listings that require a deposit must have PayPal listed has a payment method (deposits require PayPal as the payment method). Also, in order for a buyer to make a full payment on a US or CA motor vehicle, the payment policy must specify at least one of the following as a payment method: CashOnPickup LoanCheck MOCC (money order or cashier's check) PaymentSeeDescription (payment instructions are in the paymentInstructions field) PersonalCheck */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
 
 		/** A unique eBay-assigned ID for a payment policy. This ID is generated when the policy is created. */
 		paymentPolicyId?: string | null;
+	}
+
+	/** Root container that defines the fields for a seller's payment policy. The paymentPolicy encapsulates a seller's payment terms and consists of payment details for the seller, the name and description of the policy, and the marketplace and category group(s) covered by the payment policy. While each seller must define at least one payment policy for every marketplace into which they sell, sellers can define multiple payment policies for a single marketplace by specifying different configurations for the unique policies. */
+	export interface PaymentPolicyFormProperties {
+
+		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false */
+		immediatePay: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which the payment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this payment policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** This user-defined field allows the seller to give payment instructions to the buyer. These instructions appear on the eBay View Item and Checkout pages. eBay recommends the seller use this field to clarify payment policies for motor vehicles (eBay Motors US and CA). For example, sellers can include the specifics on the deposit (if required), pickup/delivery arrangements, and full payment details on the vehicle. Max length: 500 */
+		paymentInstructions: FormControl<string | null | undefined>,
+
+		/** A unique eBay-assigned ID for a payment policy. This ID is generated when the policy is created. */
+		paymentPolicyId: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentPolicyFormGroup() {
+		return new FormGroup<PaymentPolicyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			immediatePay: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			paymentInstructions: new FormControl<string | null | undefined>(undefined),
+			paymentPolicyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -322,16 +662,16 @@ export namespace MyNS {
 	export interface PaymentPolicyRequest {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** A container that describes the details of a deposit. Used only with motor listings. */
-		deposit?: Deposit | null;
+		deposit?: Deposit;
 
 		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		fullPaymentDueIn?: TimeDuration | null;
+		fullPaymentDueIn?: TimeDuration;
 
 		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false */
 		immediatePay?: boolean | null;
@@ -346,7 +686,36 @@ export namespace MyNS {
 		paymentInstructions?: string | null;
 
 		/** A list of the payment methods accepted by the seller. Each payment policy must specify at least one payment method. Note: Each eBay marketplace supports and requires its own set of payment methods, and not all marketplaces allow all payment methods. Check the specifics of the marketplaces where you list items to ensure your payment policies meet the payment method requirements needed for any specific listing. Note: Item listings created with the Inventory API must reference a payment policy that has this value set to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items with immediate pay (which required payments to be made via PayPal). Payment policies used with motor vehicle listings that require a deposit must have PayPal listed has a payment method (deposits require PayPal as the payment method). Also, in order for a buyer to make a full payment on a US or CA motor vehicle, the payment policy must specify at least one of the following as a payment method: CashOnPickup LoanCheck MOCC (money order or cashier's check) PaymentSeeDescription (payment instructions are in the paymentInstructions field) PersonalCheck */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
+	}
+
+	/** This root container defines a seller's payment policy for a specific marketplace and category type. Used when creating or updating a payment policy, paymentPolicyRequest encapsulates a seller's terms for how buyers can pay for the items they buy. While each seller must define at least one payment policy for every marketplace into which they sell, sellers can define multiple payment policies for a single marketplace by specifying different configurations for the unique policies. A successful call returns a paymentPolicyId, plus the Location response header contains the URI to the resource. Policy instructions can be localized by providing a locale in the Content-Language HTTP request header. For example: Content-Language: de-DE. Tip: For more on using business policies, see eBay business policies. */
+	export interface PaymentPolicyRequestFormProperties {
+
+		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false */
+		immediatePay: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which the payment policy applies. If this value is not specified, the value defaults to the eBay registration site of the seller. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this payment policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** This user-defined field allows the seller to give payment instructions to the buyer. These instructions appear on the eBay View Item and Checkout pages. eBay recommends the seller use this field to clarify payment policies for motor vehicles (eBay Motors US and CA). For example, sellers can include the specifics on the deposit (if required), pickup/delivery arrangements, and full payment details on the vehicle. Max length: 500 */
+		paymentInstructions: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentPolicyRequestFormGroup() {
+		return new FormGroup<PaymentPolicyRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			immediatePay: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			paymentInstructions: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,13 +735,46 @@ export namespace MyNS {
 		offset?: number | null;
 
 		/** A list of the seller's payment policies. */
-		paymentPolicies?: Array<PaymentPolicy> | null;
+		paymentPolicies?: Array<PaymentPolicy>;
 
 		/** Returns a URL link to the previous set of results. */
 		prev?: string | null;
 
 		/** Returns the total number of result sets in the paginated collection. */
 		total?: number | null;
+	}
+
+	/** The response payload for payment policy requests. */
+	export interface PaymentPolicyResponseFormProperties {
+
+		/** Returns a URL link to the current result set. */
+		href: FormControl<string | null | undefined>,
+
+		/** Returns the maximum number of results that can be returned in result set. */
+		limit: FormControl<number | null | undefined>,
+
+		/** Returns a URL link to the next set of results. */
+		next: FormControl<string | null | undefined>,
+
+		/** Returns how many result sets were skipped before the currently returned result set. */
+		offset: FormControl<number | null | undefined>,
+
+		/** Returns a URL link to the previous set of results. */
+		prev: FormControl<string | null | undefined>,
+
+		/** Returns the total number of result sets in the paginated collection. */
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreatePaymentPolicyResponseFormGroup() {
+		return new FormGroup<PaymentPolicyResponseFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			prev: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -392,6 +794,31 @@ export namespace MyNS {
 		wasPreviouslyOptedIn?: boolean | null;
 	}
 
+	/** The response object containing the sellers status with regards to the specified payment program. */
+	export interface PaymentsProgramResponseFormProperties {
+
+		/** The ID of the eBay marketplace to which the payment policy applies. If this value is not specified in the request, the value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** This path parameter specifies the payment program whose status is returned by the call. Currently the only supported payments program is EBAY_PAYMENTS. For details on the program, see Payments Terms of Use. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentsProgramType.html'>eBay API documentation</a> */
+		paymentsProgramType: FormControl<string | null | undefined>,
+
+		/** For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentsProgramStatus.html'>eBay API documentation</a> */
+		status: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller was at one point opted-in to the associated payment program, but they later opted out of the program. A value of false indicates the seller never opted-in to the program or if they did opt-in to the program, they never opted-out of it. It's important to note that the setting of this field does not indicate the seller's current status regarding the payment program. It is possible for this field to return true while the status field returns OPTED_IN. */
+		wasPreviouslyOptedIn: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePaymentsProgramResponseFormGroup() {
+		return new FormGroup<PaymentsProgramResponseFormProperties>({
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			paymentsProgramType: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			wasPreviouslyOptedIn: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A seller program in to which a seller can opt-in. */
 	export interface Program {
@@ -400,12 +827,34 @@ export namespace MyNS {
 		programType?: string | null;
 	}
 
+	/** A seller program in to which a seller can opt-in. */
+	export interface ProgramFormProperties {
+
+		/** A seller program in to which a seller can opt-in. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ProgramTypeEnum.html'>eBay API documentation</a> */
+		programType: FormControl<string | null | undefined>,
+	}
+	export function CreateProgramFormGroup() {
+		return new FormGroup<ProgramFormProperties>({
+			programType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of the supported seller programs. */
 	export interface Programs {
 
 		/** A list of seller programs. */
-		programs?: Array<Program> | null;
+		programs?: Array<Program>;
+	}
+
+	/** A list of the supported seller programs. */
+	export interface ProgramsFormProperties {
+	}
+	export function CreateProgramsFormGroup() {
+		return new FormGroup<ProgramsFormProperties>({
+		});
+
 	}
 
 
@@ -425,12 +874,46 @@ export namespace MyNS {
 		rateTableId?: string | null;
 	}
 
+	/** A complex type that contains information pertaining to a shipping rate table. */
+	export interface RateTableFormProperties {
+
+		/** A two-letter ISO 3166-1 Alpha-2 country code representing the eBay marketplace where an item is listed. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html'>eBay API documentation</a> */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** The region covered by the shipping rate table, either DOMESTIC or INTERNATIONAL. DOMESTIC indicates that the shipping rate table applies to regions within the country where an item is listed (the source country) while INTERNATIONAL indicates that the shipping rate table applies to regions outside of the country where an item is listed. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ShippingOptionTypeEnum.html'>eBay API documentation</a> */
+		locality: FormControl<string | null | undefined>,
+
+		/** The user-defined name for the shipping rate table. Sellers can access Seller Hub (or My eBay &gt; Account &gt; Site Preferences &gt; Shipping preferences) to create and assign names to their shipping rate tables. */
+		name: FormControl<string | null | undefined>,
+
+		/** A unique eBay-assigned ID for a seller's shipping rate table. Call getRateTables to retrieve the seller's current rate table IDs. */
+		rateTableId: FormControl<string | null | undefined>,
+	}
+	export function CreateRateTableFormGroup() {
+		return new FormGroup<RateTableFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			locality: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			rateTableId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response container for with information on a seller's shipping rate tables. */
 	export interface RateTableResponse {
 
 		/** A list of elements that provide information on the seller-defined shipping rate tables. */
-		rateTables?: Array<RateTable> | null;
+		rateTables?: Array<RateTable>;
+	}
+
+	/** The response container for with information on a seller's shipping rate tables. */
+	export interface RateTableResponseFormProperties {
+	}
+	export function CreateRateTableResponseFormGroup() {
+		return new FormGroup<RateTableResponseFormProperties>({
+		});
+
 	}
 
 
@@ -438,7 +921,7 @@ export namespace MyNS {
 	export interface ReturnPolicy {
 
 		/** For return policies, this field can be set to only ALL_EXCLUDING_MOTORS_VEHICLES (returns on motor vehicles are not processed through eBay flows) Default: ALL_EXCLUDING_MOTORS_VEHICLES (for return policies only) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -447,7 +930,7 @@ export namespace MyNS {
 		extendedHolidayReturnsOffered?: boolean | null;
 
 		/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
-		internationalOverride?: InternationalReturnOverrideType | null;
+		internationalOverride?: InternationalReturnOverrideType;
 
 		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -468,7 +951,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** A unique eBay-assigned ID for this policy. This ID value is appended to the end of the Location URI that is returned as a response header when you call createReturnPolicy). */
 		returnPolicyId?: string | null;
@@ -480,12 +963,65 @@ export namespace MyNS {
 		returnShippingCostPayer?: string | null;
 	}
 
+	/** Root container that defines the fields for a seller's return policy. The returnPolicy encapsulates a seller's terms for how they handle item returns, the name and description of the policy, and the marketplace and category group(s) to which the return policy is applied. While each seller must define at least one return policy for every marketplace into which they sell, sellers can define multiple return policies for a single marketplace by specifying different configurations for the unique policies. */
+	export interface ReturnPolicyFormProperties {
+
+		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is neither read nor returned. If set to true, the seller offers an Extended Holiday Returns policy for their listings. IMPORTANT: Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the Returns on eBay page before the holiday season begins. If the feature is not enabled for the season, this field is ignored. The extended holiday returns period is defined by three dates: The start date = start of November. The purchase cutoff date = end of the year. The end date = end of January. The above dates may vary by a few days each year. Sellers are notified of the current dates on their eBay marketplace before the holiday period starts. Sellers can specify Extended Holiday Returns (as well as their regular non-holiday returns period) for chosen listings at any time during the year. The Extended Holiday Returns offer is not visible in listings until the start date of current year's holiday returns period, at which point it overrides the non-holiday returns policy. Buyers can see the Extended Holiday Returns offer in listings displayed through the purchase cutoff date and are able to return those purchases until the end date of the period. After the purchase cutoff date, the Extended Holiday Returns offer automatically disappears from the listings and the seller's non-holiday returns period reappears. Purchases made from that point on are subject to the non-holiday returns period, while purchases made before the cutoff date still have until the end of the period to return under the program. If the value of holidayReturns is false for an item, the return period specified by the returnsWithinOption field applies, regardless of the purchase date. If the item is listed with a policy of no returns, holidayReturns is automatically reset to false. */
+		extendedHolidayReturnsOffered: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this return policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** Important! this field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value other than MONEY_BACK will be treated as MONEY_BACK (although for a period of time, eBay will store and return the legacy values to preserve backwards compatibility). Indicates the method the seller uses to compensate the buyer for returned items. The return method specified applies only to remorse returns. Each eBay marketplace may support different sets of refund methods and marketplaces can also have differing default values for this field. Sellers are obligated to honor the refund method displayed in their listings. Call GeteBayDetails in the Trading API to see the refund methods supported by the marketplaces you sell into. We recommend you set this field to the value of your preferred refund method and that you use the description field to detail the seller's return policy (such as indicating how quickly the seller will process a refund, whether the seller must receive the item before processing a refund, and other similar useful details). You cannot modify this value in a Revise item call if (1) the listing has bids or (2) the listing ends within 12 hours. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RefundMethodEnum.html'>eBay API documentation</a> */
+		refundMethod: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. Sellers who accept returns should include this field if they charge buyers a restocking fee when items are returned. A restocking fee comes into play only when an item is returned due to buyer remorse and/or a purchasing mistake, but sellers cannot charge a restocking fee for SNAD-related returns. The total amount returned to the buyer is reduced by the cost of the item multiplied by the percentage indicated by this field. Allowable restocking fee values are: 0.0: No restocking fee is charged to the buyer 10.0: 10 percent of the item price is charged to the buyer 15.0: 15 percent of the item price is charged to the buyer 20.0: Up to 20 percent of the item price is charged to the buyer */
+		restockingFeePercentage: FormControl<string | null | undefined>,
+
+		/** Important! This field is being deprecated on many marketplaces. Once deprecated, this field will be ignored on marketplaces where it is not supported and it will neither be read nor returned. This optional field contains the seller's detailed explanation for their return policy and is displayed in the Return Policy section of the View Item page. This field is valid in only the following marketplaces (the field is otherwise ignored): Germany (DE) Spain (ES) France (FR) Italy (IT) Where valid, sellers can use this field to add details about their return policies. eBay uses this text string as-is in the Return Policy section of the View Item page. Avoid HTML and avoid character entity references (such as &amp;amp;pound; or &amp;amp;#163;). To include special characters in the return policy description, use the literal UTF-8 or ISO-8559-1 character (e.g. &amp;#163;). Max length: 5000 (8000 for DE) */
+		returnInstructions: FormControl<string | null | undefined>,
+
+		/** Valid in the US marketplace only, this optional field indicates additional services (other than money-back) that sellers can offer buyers for remorse returns. As of version 1.2.0, the only accepted value for this field is REPLACEMENT. This field is valid in only the US marketplace, any supplied value is ignored in other marketplaces. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnMethodEnum.html'>eBay API documentation</a> */
+		returnMethod: FormControl<string | null | undefined>,
+
+		/** A unique eBay-assigned ID for this policy. This ID value is appended to the end of the Location URI that is returned as a response header when you call createReturnPolicy). */
+		returnPolicyId: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller accepts returns. Call the getReturnPolicies in the Metadata API to see what categories require returns to be offered for listings in each category. Also, note that some European marketplaces (for example, UK, IE, and DE) require sellers to accept returns for fixed-price items and auctions listed with Buy It Now. For details, see Returns and the Law (UK). Note:Top-Rated sellers must accept item returns and the handlingTime should be set to zero days or one day for a listing to receive a Top-Rated Plus badge on the View Item or search result pages. For more information on eBay's Top-Rated seller program, see Becoming a Top Rated Seller and qualifying for Top Rated Plus benefits. */
+		returnsAccepted: FormControl<boolean | null | undefined>,
+
+		/** This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a> */
+		returnShippingCostPayer: FormControl<string | null | undefined>,
+	}
+	export function CreateReturnPolicyFormGroup() {
+		return new FormGroup<ReturnPolicyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			extendedHolidayReturnsOffered: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			refundMethod: new FormControl<string | null | undefined>(undefined),
+			restockingFeePercentage: new FormControl<string | null | undefined>(undefined),
+			returnInstructions: new FormControl<string | null | undefined>(undefined),
+			returnMethod: new FormControl<string | null | undefined>(undefined),
+			returnPolicyId: new FormControl<string | null | undefined>(undefined),
+			returnsAccepted: new FormControl<boolean | null | undefined>(undefined),
+			returnShippingCostPayer: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This root container defines a seller's return policy for a specific marketplace and category type. Used when creating or updating a return policy, returnPolicyRequest encapsulates a seller's terms for how buyers can return items. While each seller must define at least one payment policy for every marketplace into which they sell, sellers can define multiple payment policies for a single marketplace by specifying different configurations for the unique policies. A successful call returns a paymentPolicyId, plus the Location response header contains the URI to the resource. Use the Metadata API method to determine which categories in the marketplace(s) require you to provide a return policy. Also note that some marketplaces require you to provide a specific return policy for vehicle listings. Policy instructions can be localized by providing a locale in the Content-Language HTTP request header. For example: Content-Language: de-DE. Tip: For more on using business policies, see eBay business policies. */
 	export interface ReturnPolicyRequest {
 
 		/** For return policies, this field can be set to only ALL_EXCLUDING_MOTORS_VEHICLES (returns on motor vehicles are not processed through eBay flows.) Default: ALL_EXCLUDING_MOTORS_VEHICLES (for return policies only) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -494,7 +1030,7 @@ export namespace MyNS {
 		extendedHolidayReturnsOffered?: boolean | null;
 
 		/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
-		internationalOverride?: InternationalReturnOverrideType | null;
+		internationalOverride?: InternationalReturnOverrideType;
 
 		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -515,13 +1051,62 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** If set to true, the seller accepts returns. Call the getReturnPolicies in the Metadata API to see what categories require returns to be offered for listings in each category. Also, note that some European marketplaces (for example, UK, IE, and DE) require sellers to accept returns for fixed-price items and auctions listed with Buy It Now. For details, see Returns and the Law (UK). Note:Top-Rated sellers must accept item returns and the handlingTime should be set to zero days or one day for a listing to receive a Top-Rated Plus badge on the View Item or search result pages. For more information on eBay's Top-Rated seller program, see Becoming a Top Rated Seller and qualifying for Top Rated Plus benefits. */
 		returnsAccepted?: boolean | null;
 
 		/** Required if returnsAccepted is set to true. This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a> */
 		returnShippingCostPayer?: string | null;
+	}
+
+	/** This root container defines a seller's return policy for a specific marketplace and category type. Used when creating or updating a return policy, returnPolicyRequest encapsulates a seller's terms for how buyers can return items. While each seller must define at least one payment policy for every marketplace into which they sell, sellers can define multiple payment policies for a single marketplace by specifying different configurations for the unique policies. A successful call returns a paymentPolicyId, plus the Location response header contains the URI to the resource. Use the Metadata API method to determine which categories in the marketplace(s) require you to provide a return policy. Also note that some marketplaces require you to provide a specific return policy for vehicle listings. Policy instructions can be localized by providing a locale in the Content-Language HTTP request header. For example: Content-Language: de-DE. Tip: For more on using business policies, see eBay business policies. */
+	export interface ReturnPolicyRequestFormProperties {
+
+		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. If set to true, the seller offers an Extended Holiday Returns policy for their listings. IMPORTANT: Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the Returns on eBay page before the holiday season begins. If the feature is not enabled for the season, this field is ignored. The extended holiday returns period is defined by three dates: The start date = start of November. The purchase cutoff date = end of the year. The end date = end of January. The above dates may vary by a few days each year. Sellers are notified of the current dates on their eBay marketplace before the holiday period starts. Sellers can specify Extended Holiday Returns (as well as their regular non-holiday returns period) for chosen listings at any time during the year. The Extended Holiday Returns offer is not visible in listings until the start date of current year's holiday returns period, at which point it overrides the non-holiday returns policy. Buyers can see the Extended Holiday Returns offer in listings displayed through the purchase cutoff date and are able to return those purchases until the end date of the period. After the purchase cutoff date, the Extended Holiday Returns offer automatically disappears from the listings and the seller's non-holiday returns period reappears. Purchases made from that point on are subject to the non-holiday returns period, while purchases made before the cutoff date still have until the end of the period to return under the program. If the value of holidayReturns is false for an item, the return period specified by the returnsWithinOption field applies, regardless of the purchase date. If the item is listed with a policy of no returns, holidayReturns is automatically reset to false. */
+		extendedHolidayReturnsOffered: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this return policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** Important! this field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value other than MONEY_BACK will be treated as MONEY_BACK (although for a period of time, eBay will store and return the legacy values to preserve backwards compatibility). Indicates the method the seller uses to compensate the buyer for returned items. The return method specified applies only to remorse returns. Note that each eBay marketplace can support different sets of refund methods. Also, each eBay marketplace has a default setting for this value and if you do not specifically set this value, sellers are obligated to honor the setting that displays in their listings. Call GeteBayDetails in the Trading API to see what refund methods the marketplaces you sell into support. We recommend you set this field to the value of your preferred refund method and that you use the description field to detail the seller's return policy (such as indicating how quickly the seller will process a refund, whether the seller must receive the item before processing a refund, and other similar useful details). You cannot modify this value in a Revise item call if (1) the listing has bids or (2) the listing ends within 12 hours. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RefundMethodEnum.html'>eBay API documentation</a> */
+		refundMethod: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. Sellers who accept returns should include this field if they charge buyers a restocking fee when items are returned. A restocking fee comes into play only when an item is returned due to buyer remorse and/or a purchasing mistake, but sellers cannot charge a restocking fee for SNAD-related returns. The total amount returned to the buyer is reduced by the cost of the item multiplied by the percentage indicated by this field. Allowable restocking fee values are: 0.0: No restocking fee is charged to the buyer 10.0: 10 percent of the item price is charged to the buyer 15.0: 15 percent of the item price is charged to the buyer 20.0: Up to 20 percent of the item price is charged to the buyer */
+		restockingFeePercentage: FormControl<string | null | undefined>,
+
+		/** Important! This field is being deprecated on many marketplaces. Once deprecated, this field will be ignored on marketplaces where it is not supported and it will neither be read nor returned. This optional field contains the seller's detailed explanation for their return policy and is displayed in the Return Policy section of the View Item page. This field is valid in only the following marketplaces (the field is otherwise ignored): Germany (DE) Spain (ES) France (FR) Italy (IT) Where valid, sellers can use this field to add details about their return policies. eBay uses this text string as-is in the Return Policy section of the View Item page. Avoid HTML and avoid character entity references (such as &amp;amp;pound; or &amp;amp;#163;). To include special characters in the return policy description, use the literal UTF-8 or ISO-8559-1 character (e.g. &amp;#163;). Max length: 5000 (8000 for DE) */
+		returnInstructions: FormControl<string | null | undefined>,
+
+		/** Valid in the US marketplace only, this optional field indicates additional services (other than money-back) that sellers can offer buyers for remorse returns. As of version 1.2.0, the only accepted value for this field is REPLACEMENT. This field is valid in only the US marketplace, any supplied value is ignored in other marketplaces. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnMethodEnum.html'>eBay API documentation</a> */
+		returnMethod: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller accepts returns. Call the getReturnPolicies in the Metadata API to see what categories require returns to be offered for listings in each category. Also, note that some European marketplaces (for example, UK, IE, and DE) require sellers to accept returns for fixed-price items and auctions listed with Buy It Now. For details, see Returns and the Law (UK). Note:Top-Rated sellers must accept item returns and the handlingTime should be set to zero days or one day for a listing to receive a Top-Rated Plus badge on the View Item or search result pages. For more information on eBay's Top-Rated seller program, see Becoming a Top Rated Seller and qualifying for Top Rated Plus benefits. */
+		returnsAccepted: FormControl<boolean | null | undefined>,
+
+		/** Required if returnsAccepted is set to true. This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a> */
+		returnShippingCostPayer: FormControl<string | null | undefined>,
+	}
+	export function CreateReturnPolicyRequestFormGroup() {
+		return new FormGroup<ReturnPolicyRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			extendedHolidayReturnsOffered: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			refundMethod: new FormControl<string | null | undefined>(undefined),
+			restockingFeePercentage: new FormControl<string | null | undefined>(undefined),
+			returnInstructions: new FormControl<string | null | undefined>(undefined),
+			returnMethod: new FormControl<string | null | undefined>(undefined),
+			returnsAccepted: new FormControl<boolean | null | undefined>(undefined),
+			returnShippingCostPayer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -544,10 +1129,43 @@ export namespace MyNS {
 		prev?: string | null;
 
 		/** A list of the seller's return policies. */
-		returnPolicies?: Array<ReturnPolicy> | null;
+		returnPolicies?: Array<ReturnPolicy>;
 
 		/** Returns the total number of result sets in the paginated collection. */
 		total?: number | null;
+	}
+
+	/** The response payload for return policy requests. */
+	export interface ReturnPolicyResponseFormProperties {
+
+		/** Returns a URL link to the current result set. */
+		href: FormControl<string | null | undefined>,
+
+		/** Returns the maximum number of results that can be returned in result set. */
+		limit: FormControl<number | null | undefined>,
+
+		/** Returns a URL link to the next set of results. */
+		next: FormControl<string | null | undefined>,
+
+		/** Returns how many result sets were skipped before the currently returned result set. */
+		offset: FormControl<number | null | undefined>,
+
+		/** Returns a URL link to the previous set of results. */
+		prev: FormControl<string | null | undefined>,
+
+		/** Returns the total number of result sets in the paginated collection. */
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreateReturnPolicyResponseFormGroup() {
+		return new FormGroup<ReturnPolicyResponseFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			prev: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -567,6 +1185,31 @@ export namespace MyNS {
 		shippingAndHandlingTaxed?: boolean | null;
 	}
 
+	/** The applicable sales tax rate, as a percentage of the sale amount, for a given country and sales tax jurisdiction within that country. */
+	export interface SalesTaxFormProperties {
+
+		/** The country code identifying the country to which this tax rate applies. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/CountryCodeEnum.html'>eBay API documentation</a> */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** A unique ID that identifies the sales tax jurisdiction to which the tax rate applies (for example a state within the United States). */
+		salesTaxJurisdictionId: FormControl<string | null | undefined>,
+
+		/** The sales tax rate (as a percentage of the sale) applied to sales transactions made in this country and sales tax jurisdiction. */
+		salesTaxPercentage: FormControl<string | null | undefined>,
+
+		/** If set to true, shipping and handling charges are taxed. */
+		shippingAndHandlingTaxed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSalesTaxFormGroup() {
+		return new FormGroup<SalesTaxFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			salesTaxJurisdictionId: new FormControl<string | null | undefined>(undefined),
+			salesTaxPercentage: new FormControl<string | null | undefined>(undefined),
+			shippingAndHandlingTaxed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A container that describes the how the sales tax rate is calculated. */
 	export interface SalesTaxBase {
@@ -578,12 +1221,38 @@ export namespace MyNS {
 		shippingAndHandlingTaxed?: boolean | null;
 	}
 
+	/** A container that describes the how the sales tax rate is calculated. */
+	export interface SalesTaxBaseFormProperties {
+
+		/** The sales tax rate, as a percentage of the sale. */
+		salesTaxPercentage: FormControl<string | null | undefined>,
+
+		/** If set to true, shipping and handling charges are taxed. */
+		shippingAndHandlingTaxed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSalesTaxBaseFormGroup() {
+		return new FormGroup<SalesTaxBaseFormProperties>({
+			salesTaxPercentage: new FormControl<string | null | undefined>(undefined),
+			shippingAndHandlingTaxed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of sales tax tables. */
 	export interface SalesTaxes {
 
 		/** A list of sales tax tables that have been set up by a seller. */
-		salesTaxes?: Array<SalesTax> | null;
+		salesTaxes?: Array<SalesTax>;
+	}
+
+	/** A list of sales tax tables. */
+	export interface SalesTaxesFormProperties {
+	}
+	export function CreateSalesTaxesFormGroup() {
+		return new FormGroup<SalesTaxesFormProperties>({
+		});
+
 	}
 
 
@@ -591,10 +1260,23 @@ export namespace MyNS {
 	export interface SellingLimit {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items. */
 		quantity?: number | null;
+	}
+
+	/** Defines the selling limit applied to an eBay seller's account. */
+	export interface SellingLimitFormProperties {
+
+		/** The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items. */
+		quantity: FormControl<number | null | undefined>,
+	}
+	export function CreateSellingLimitFormGroup() {
+		return new FormGroup<SellingLimitFormProperties>({
+			quantity: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -605,7 +1287,20 @@ export namespace MyNS {
 		sellerRegistrationCompleted?: boolean | null;
 
 		/** Defines the selling limit applied to an eBay seller's account. */
-		sellingLimit?: SellingLimit | null;
+		sellingLimit?: SellingLimit;
+	}
+
+	/** A merchant's selling limit, and the status of their account registration. */
+	export interface SellingPrivilegesFormProperties {
+
+		/** If set to true, the seller's registration is completed. */
+		sellerRegistrationCompleted: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSellingPrivilegesFormGroup() {
+		return new FormGroup<SellingPrivilegesFormProperties>({
+			sellerRegistrationCompleted: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -613,7 +1308,7 @@ export namespace MyNS {
 	export interface SetFulfillmentPolicyResponse {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -628,7 +1323,7 @@ export namespace MyNS {
 		globalShipping?: boolean | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		handlingTime?: TimeDuration | null;
+		handlingTime?: TimeDuration;
 
 		/** If set to true, the seller offers local pickup of their items. */
 		localPickup?: boolean | null;
@@ -643,13 +1338,54 @@ export namespace MyNS {
 		pickupDropOff?: boolean | null;
 
 		/** A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. The list has a single element if the seller ships to only domestic locations. If the seller also ships internationally, a second element defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the shipping services. Each shippingOption element has a shippingServices container that defines the list of shipping services (domestic or international) offered with this fulfillment policy. */
-		shippingOptions?: Array<ShippingOption> | null;
+		shippingOptions?: Array<ShippingOption>;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
 
 		/** A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+
+	/** Complex type that that gets populated with a response containing a fulfillment policy. */
+	export interface SetFulfillmentPolicyResponseFormProperties {
+
+		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
+		description: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers freight shipping. */
+		freightShipping: FormControl<boolean | null | undefined>,
+
+		/** A unique eBay-assigned ID for a fulfillment policy. This ID is generated when the policy is created. */
+		fulfillmentPolicyId: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller has opted-in to the Global Shipping Program and eBay automatically sets the international shipping service options to International Priority Shipping. If the value of globalShipping is false, the seller is responsible for specifying one or more international shipping service options if they want to ship internationally. */
+		globalShipping: FormControl<boolean | null | undefined>,
+
+		/** If set to true, the seller offers local pickup of their items. */
+		localPickup: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this fulfillment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this fulfillment policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller offers the &quot;Click and Collect&quot; option. Currently, &quot;Click and Collect&quot; is available only to large retail merchants the eBay AU and UK marketplaces. */
+		pickupDropOff: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSetFulfillmentPolicyResponseFormGroup() {
+		return new FormGroup<SetFulfillmentPolicyResponseFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			freightShipping: new FormControl<boolean | null | undefined>(undefined),
+			fulfillmentPolicyId: new FormControl<string | null | undefined>(undefined),
+			globalShipping: new FormControl<boolean | null | undefined>(undefined),
+			localPickup: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			pickupDropOff: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -666,7 +1402,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
 		longMessage?: string | null;
@@ -675,13 +1411,46 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** This optional complex field type contains a list of one or more context-specific ErrorParameter objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
 		subdomain?: string | null;
+	}
+
+	/** A container that defines the elements of error and warning messages. */
+	export interface ErrorFormProperties {
+
+		/** The category type for this error or warning. It takes a string that can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship item to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on. */
+		category: FormControl<string | null | undefined>,
+
+		/** Name of the domain containing the service or application. */
+		domain: FormControl<string | null | undefined>,
+
+		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		errorId: FormControl<number | null | undefined>,
+
+		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
+		longMessage: FormControl<string | null | undefined>,
+
+		/** An end user and app developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale. */
+		message: FormControl<string | null | undefined>,
+
+		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
+		subdomain: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			errorId: new FormControl<number | null | undefined>(undefined),
+			longMessage: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			subdomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -695,21 +1464,38 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** Container for an error parameter. */
+	export interface ErrorParameterFormProperties {
+
+		/** Name of the entity that threw the error. */
+		name: FormControl<string | null | undefined>,
+
+		/** A description of the error. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorParameterFormGroup() {
+		return new FormGroup<ErrorParameterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Complex type that that gets populated with a response containing a payment policy. */
 	export interface SetPaymentPolicyResponse {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** A container that describes the details of a deposit. Used only with motor listings. */
-		deposit?: Deposit | null;
+		deposit?: Deposit;
 
 		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). */
 		description?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		fullPaymentDueIn?: TimeDuration | null;
+		fullPaymentDueIn?: TimeDuration;
 
 		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). Your items will be available for other buyers until payment is complete. This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. Default: false */
 		immediatePay?: boolean | null;
@@ -724,13 +1510,46 @@ export namespace MyNS {
 		paymentInstructions?: string | null;
 
 		/** A list of the payment methods accepted by the seller. Each payment policy must specify at least one payment method. Payment policies used with motor vehicle listings that require a deposit must have PayPal listed has a payment method (deposits require PayPal as the payment method). Also, in order for a buyer to make a full payment on a US or CA motor vehicle, the payment policy must specify at least one of the following as a payment method: CashOnPickup LoanCheck MOCC (money order or cashier's check) PaymentSeeDescription (payment instructions are in the paymentInstructions field) PersonalCheck */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
 
 		/** A unique eBay-assigned ID for a payment policy. This ID is generated when the policy is created. */
 		paymentPolicyId?: string | null;
 
 		/** A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+
+	/** Complex type that that gets populated with a response containing a payment policy. */
+	export interface SetPaymentPolicyResponseFormProperties {
+
+		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). */
+		description: FormControl<string | null | undefined>,
+
+		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). Your items will be available for other buyers until payment is complete. This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. Default: false */
+		immediatePay: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this payment policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this payment policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** This user-defined field allows the seller to give payment instructions to the buyer. These instructions appear on the eBay View Item and Checkout pages. eBay recommends the seller use this field to clarify payment policies for motor vehicles (eBay Motors US and CA). For example, sellers can include the specifics on the deposit (if required), pickup/delivery arrangements, and full payment details on the vehicle. Max length: 500 */
+		paymentInstructions: FormControl<string | null | undefined>,
+
+		/** A unique eBay-assigned ID for a payment policy. This ID is generated when the policy is created. */
+		paymentPolicyId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetPaymentPolicyResponseFormGroup() {
+		return new FormGroup<SetPaymentPolicyResponseFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			immediatePay: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			paymentInstructions: new FormControl<string | null | undefined>(undefined),
+			paymentPolicyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -738,7 +1557,7 @@ export namespace MyNS {
 	export interface SetReturnPolicyResponse {
 
 		/** For return policies, this field always returns ALL_EXCLUDING_MOTORS_VEHICLES (returns on motor vehicles are not processed through eBay flows.) Default: ALL_EXCLUDING_MOTORS_VEHICLES (for return policies only) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). */
 		description?: string | null;
@@ -747,7 +1566,7 @@ export namespace MyNS {
 		extendedHolidayReturnsOffered?: boolean | null;
 
 		/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
-		internationalOverride?: InternationalReturnOverrideType | null;
+		internationalOverride?: InternationalReturnOverrideType;
 
 		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -768,7 +1587,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** A unique eBay-assigned ID for a return policy. This ID is generated when the policy is created. */
 		returnPolicyId?: string | null;
@@ -780,7 +1599,60 @@ export namespace MyNS {
 		returnShippingCostPayer?: string | null;
 
 		/** A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+
+	/** Complex type that that gets populated with a response containing a return policy. */
+	export interface SetReturnPolicyResponseFormProperties {
+
+		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). */
+		description: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. If set to true, the seller offers an Extended Holiday Returns policy for their listings. IMPORTANT: Extended Holiday Returns is a seasonally available feature that is offered on some eBay marketplaces. To see if the feature is enabled in any given year, check the eBay Seller Center Returns on eBay page of before the holiday season begins. */
+		extendedHolidayReturnsOffered: FormControl<boolean | null | undefined>,
+
+		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
+		marketplaceId: FormControl<string | null | undefined>,
+
+		/** A user-defined name for this return policy. Names must be unique for policies assigned to the same marketplace. Max length: 64 */
+		name: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value other than MONEY_BACK will be treated as MONEY_BACK (although for a period of time, eBay will store and return the legacy values to preserve backwards compatibility). Indicates the method the seller uses to compensate the buyer for returned items. The return method specified applies only to remorse returns. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/RefundMethodEnum.html'>eBay API documentation</a> */
+		refundMethod: FormControl<string | null | undefined>,
+
+		/** Important! This field has been deprecated as of version 1.2.0, released on May 31, 2018. Any value supplied in this field is ignored, it is neither read nor returned. Optionally set by the seller, the percentage charged if the seller charges buyers a a restocking fee when items are returned due to buyer remorse and/or a purchasing mistake. The total amount charged to the buyer is the cost of the item multiplied by the percentage indicated in this field. */
+		restockingFeePercentage: FormControl<string | null | undefined>,
+
+		/** This field contains the seller's detailed explanation for their return policy and is displayed in the Return Policy section of the View Item page. This field is valid in only the following marketplaces (the field is otherwise ignored): Germany (DE) Spain (ES) France (FR) Italy (IT) */
+		returnInstructions: FormControl<string | null | undefined>,
+
+		/** This field indicates the method in which the seller handles non-money back return requests for remorse returns. This field is valid in only the US marketplace and the only valid value is REPLACEMENT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnMethodEnum.html'>eBay API documentation</a> */
+		returnMethod: FormControl<string | null | undefined>,
+
+		/** A unique eBay-assigned ID for a return policy. This ID is generated when the policy is created. */
+		returnPolicyId: FormControl<string | null | undefined>,
+
+		/** If set to true, the seller accepts returns. If set to false, this field indicates that the seller does not accept returns. */
+		returnsAccepted: FormControl<boolean | null | undefined>,
+
+		/** This field indicates who is responsible for paying for the shipping charges for returned items. The field can be set to either BUYER or SELLER. Depending on the return policy and specifics of the return, either the buyer or the seller can be responsible for the return shipping costs. Note that the seller is always responsible for return shipping costs for SNAD-related issues. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/ReturnShippingCostPayerEnum.html'>eBay API documentation</a> */
+		returnShippingCostPayer: FormControl<string | null | undefined>,
+	}
+	export function CreateSetReturnPolicyResponseFormGroup() {
+		return new FormGroup<SetReturnPolicyResponseFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			extendedHolidayReturnsOffered: new FormControl<boolean | null | undefined>(undefined),
+			marketplaceId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			refundMethod: new FormControl<string | null | undefined>(undefined),
+			restockingFeePercentage: new FormControl<string | null | undefined>(undefined),
+			returnInstructions: new FormControl<string | null | undefined>(undefined),
+			returnMethod: new FormControl<string | null | undefined>(undefined),
+			returnPolicyId: new FormControl<string | null | undefined>(undefined),
+			returnsAccepted: new FormControl<boolean | null | undefined>(undefined),
+			returnShippingCostPayer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

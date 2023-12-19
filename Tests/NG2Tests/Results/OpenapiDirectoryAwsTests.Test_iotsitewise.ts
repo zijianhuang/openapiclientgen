@@ -1,27 +1,77 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalFailureException {
+	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConflictingOperationException {
 	}
+	export interface ConflictingOperationExceptionFormProperties {
+	}
+	export function CreateConflictingOperationExceptionFormGroup() {
+		return new FormGroup<ConflictingOperationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchAssociateProjectAssetsResponse {
-		errors?: Array<AssetErrorDetails> | null;
+		errors?: Array<AssetErrorDetails>;
+	}
+	export interface BatchAssociateProjectAssetsResponseFormProperties {
+	}
+	export function CreateBatchAssociateProjectAssetsResponseFormGroup() {
+		return new FormGroup<BatchAssociateProjectAssetsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -32,14 +82,43 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Contains error details for the requested associate project asset action. */
+	export interface AssetErrorDetailsFormProperties {
+		assetId: FormControl<string | null | undefined>,
+		code: FormControl<AssetErrorDetailsCode | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetErrorDetailsFormGroup() {
+		return new FormGroup<AssetErrorDetailsFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<AssetErrorDetailsCode | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AssetErrorDetailsCode { INTERNAL_FAILURE = 0 }
 
 	export interface BatchDisassociateProjectAssetsResponse {
-		errors?: Array<AssetErrorDetails> | null;
+		errors?: Array<AssetErrorDetails>;
+	}
+	export interface BatchDisassociateProjectAssetsResponseFormProperties {
+	}
+	export function CreateBatchDisassociateProjectAssetsResponseFormGroup() {
+		return new FormGroup<BatchDisassociateProjectAssetsResponseFormProperties>({
+		});
+
 	}
 
 	export interface BatchPutAssetPropertyValueResponse {
 		errorEntries: Array<BatchPutAssetPropertyErrorEntry>;
+	}
+	export interface BatchPutAssetPropertyValueResponseFormProperties {
+	}
+	export function CreateBatchPutAssetPropertyValueResponseFormGroup() {
+		return new FormGroup<BatchPutAssetPropertyValueResponseFormProperties>({
+		});
+
 	}
 
 
@@ -49,12 +128,36 @@ export namespace MyNS {
 		errors: Array<BatchPutAssetPropertyError>;
 	}
 
+	/** Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API. */
+	export interface BatchPutAssetPropertyErrorEntryFormProperties {
+		entryId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPutAssetPropertyErrorEntryFormGroup() {
+		return new FormGroup<BatchPutAssetPropertyErrorEntryFormProperties>({
+			entryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains error information from updating a batch of asset property values. */
 	export interface BatchPutAssetPropertyError {
 		errorCode: BatchPutAssetPropertyErrorErrorCode;
 		errorMessage: string;
 		timestamps: Array<TimeInNanos>;
+	}
+
+	/** Contains error information from updating a batch of asset property values. */
+	export interface BatchPutAssetPropertyErrorFormProperties {
+		errorCode: FormControl<BatchPutAssetPropertyErrorErrorCode | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchPutAssetPropertyErrorFormGroup() {
+		return new FormGroup<BatchPutAssetPropertyErrorFormProperties>({
+			errorCode: new FormControl<BatchPutAssetPropertyErrorErrorCode | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BatchPutAssetPropertyErrorErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4, LimitExceededException = 5, ConflictingOperationException = 6, TimestampOutOfRangeException = 7, AccessDeniedException = 8 }
@@ -66,6 +169,19 @@ export namespace MyNS {
 		offsetInNanos?: number | null;
 	}
 
+	/** Contains a timestamp with optional nanosecond granularity. */
+	export interface TimeInNanosFormProperties {
+		timeInSeconds: FormControl<number | null | undefined>,
+		offsetInNanos: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeInNanosFormGroup() {
+		return new FormGroup<TimeInNanosFormProperties>({
+			timeInSeconds: new FormControl<number | null | undefined>(undefined),
+			offsetInNanos: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API. */
 	export interface PutAssetPropertyValueEntry {
@@ -74,6 +190,23 @@ export namespace MyNS {
 		propertyId?: string | null;
 		propertyAlias?: string | null;
 		propertyValues: Array<AssetPropertyValue>;
+	}
+
+	/** Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API. */
+	export interface PutAssetPropertyValueEntryFormProperties {
+		entryId: FormControl<string | null | undefined>,
+		assetId: FormControl<string | null | undefined>,
+		propertyId: FormControl<string | null | undefined>,
+		propertyAlias: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAssetPropertyValueEntryFormGroup() {
+		return new FormGroup<PutAssetPropertyValueEntryFormProperties>({
+			entryId: new FormControl<string | null | undefined>(undefined),
+			assetId: new FormControl<string | null | undefined>(undefined),
+			propertyId: new FormControl<string | null | undefined>(undefined),
+			propertyAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -94,6 +227,17 @@ export namespace MyNS {
 		quality?: AssetPropertyValueQuality | null;
 	}
 
+	/** Contains asset property value information. */
+	export interface AssetPropertyValueFormProperties {
+		quality: FormControl<AssetPropertyValueQuality | null | undefined>,
+	}
+	export function CreateAssetPropertyValueFormGroup() {
+		return new FormGroup<AssetPropertyValueFormProperties>({
+			quality: new FormControl<AssetPropertyValueQuality | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains an asset property value (of a single type only). */
 	export interface Variant {
@@ -103,14 +247,49 @@ export namespace MyNS {
 		booleanValue?: boolean | null;
 	}
 
+	/** Contains an asset property value (of a single type only). */
+	export interface VariantFormProperties {
+		stringValue: FormControl<string | null | undefined>,
+		integerValue: FormControl<number | null | undefined>,
+		doubleValue: FormControl<number | null | undefined>,
+		booleanValue: FormControl<boolean | null | undefined>,
+	}
+	export function CreateVariantFormGroup() {
+		return new FormGroup<VariantFormProperties>({
+			stringValue: new FormControl<string | null | undefined>(undefined),
+			integerValue: new FormControl<number | null | undefined>(undefined),
+			doubleValue: new FormControl<number | null | undefined>(undefined),
+			booleanValue: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AssetPropertyValueQuality { GOOD = 0, BAD = 1, UNCERTAIN = 2 }
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateAccessPolicyResponse {
 		accessPolicyId: string;
 		accessPolicyArn: string;
+	}
+	export interface CreateAccessPolicyResponseFormProperties {
+		accessPolicyId: FormControl<string | null | undefined>,
+		accessPolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPolicyResponseFormGroup() {
+		return new FormGroup<CreateAccessPolicyResponseFormProperties>({
+			accessPolicyId: new FormControl<string | null | undefined>(undefined),
+			accessPolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -119,10 +298,32 @@ export namespace MyNS {
 		id: string;
 	}
 
+	/** Contains information for a user identity in an access policy. */
+	export interface UserIdentityFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateUserIdentityFormGroup() {
+		return new FormGroup<UserIdentityFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information for a group identity in an access policy. */
 	export interface GroupIdentity {
 		id: string;
+	}
+
+	/** Contains information for a group identity in an access policy. */
+	export interface GroupIdentityFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupIdentityFormGroup() {
+		return new FormGroup<GroupIdentityFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -131,10 +332,32 @@ export namespace MyNS {
 		id: string;
 	}
 
+	/** Identifies an AWS IoT SiteWise Monitor portal. */
+	export interface PortalResourceFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreatePortalResourceFormGroup() {
+		return new FormGroup<PortalResourceFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Identifies a specific AWS IoT SiteWise Monitor project. */
 	export interface ProjectResource {
 		id: string;
+	}
+
+	/** Identifies a specific AWS IoT SiteWise Monitor project. */
+	export interface ProjectResourceFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectResourceFormGroup() {
+		return new FormGroup<ProjectResourceFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAssetResponse {
@@ -147,6 +370,17 @@ export namespace MyNS {
 		 */
 		assetStatus: AssetStatus;
 	}
+	export interface CreateAssetResponseFormProperties {
+		assetId: FormControl<string | null | undefined>,
+		assetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAssetResponseFormGroup() {
+		return new FormGroup<CreateAssetResponseFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			assetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
@@ -154,7 +388,18 @@ export namespace MyNS {
 		state: AssetStatusState;
 
 		/** Contains the details of an AWS IoT SiteWise error. */
-		error?: ErrorDetails | null;
+		error?: ErrorDetails;
+	}
+
+	/** Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+	export interface AssetStatusFormProperties {
+		state: FormControl<AssetStatusState | null | undefined>,
+	}
+	export function CreateAssetStatusFormGroup() {
+		return new FormGroup<AssetStatusFormProperties>({
+			state: new FormControl<AssetStatusState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssetStatusState { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
@@ -166,9 +411,29 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Contains the details of an AWS IoT SiteWise error. */
+	export interface ErrorDetailsFormProperties {
+		code: FormControl<ErrorDetailsCode | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailsFormGroup() {
+		return new FormGroup<ErrorDetailsFormProperties>({
+			code: new FormControl<ErrorDetailsCode | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ErrorDetailsCode { VALIDATION_ERROR = 0, INTERNAL_FAILURE = 1 }
 
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateAssetModelResponse {
@@ -181,6 +446,17 @@ export namespace MyNS {
 		 */
 		assetModelStatus: AssetModelStatus;
 	}
+	export interface CreateAssetModelResponseFormProperties {
+		assetModelId: FormControl<string | null | undefined>,
+		assetModelArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAssetModelResponseFormGroup() {
+		return new FormGroup<CreateAssetModelResponseFormProperties>({
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			assetModelArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
@@ -188,7 +464,18 @@ export namespace MyNS {
 		state: AssetModelStatusState;
 
 		/** Contains the details of an AWS IoT SiteWise error. */
-		error?: ErrorDetails | null;
+		error?: ErrorDetails;
+	}
+
+	/** Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model States</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+	export interface AssetModelStatusFormProperties {
+		state: FormControl<AssetModelStatusState | null | undefined>,
+	}
+	export function CreateAssetModelStatusFormGroup() {
+		return new FormGroup<AssetModelStatusFormProperties>({
+			state: new FormControl<AssetModelStatusState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssetModelStatusState { CREATING = 0, ACTIVE = 1, UPDATING = 2, PROPAGATING = 3, DELETING = 4, FAILED = 5 }
@@ -207,6 +494,21 @@ export namespace MyNS {
 		type: PropertyType;
 	}
 
+	/** Contains an asset model property definition. This property definition is applied to all assets created from the asset model. */
+	export interface AssetModelPropertyDefinitionFormProperties {
+		name: FormControl<string | null | undefined>,
+		dataType: FormControl<AssetModelPropertyDefinitionDataType | null | undefined>,
+		unit: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetModelPropertyDefinitionFormGroup() {
+		return new FormGroup<AssetModelPropertyDefinitionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined),
+			unit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AssetModelPropertyDefinitionDataType { STRING = 0, INTEGER = 1, DOUBLE = 2, BOOLEAN = 3 }
 
 
@@ -214,16 +516,25 @@ export namespace MyNS {
 	export interface PropertyType {
 
 		/** Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		attribute?: Attribute | null;
+		attribute?: Attribute;
 
 		/** Contains an asset measurement property. This structure is empty. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		measurement?: Measurement | null;
+		measurement?: Measurement;
 
 		/** <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		transform?: Transform | null;
+		transform?: Transform;
 
 		/** <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		metric?: Metric | null;
+		metric?: Metric;
+	}
+
+	/** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>. */
+	export interface PropertyTypeFormProperties {
+	}
+	export function CreatePropertyTypeFormGroup() {
+		return new FormGroup<PropertyTypeFormProperties>({
+		});
+
 	}
 
 
@@ -232,9 +543,29 @@ export namespace MyNS {
 		defaultValue?: string | null;
 	}
 
+	/** Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+	export interface AttributeFormProperties {
+		defaultValue: FormControl<string | null | undefined>,
+	}
+	export function CreateAttributeFormGroup() {
+		return new FormGroup<AttributeFormProperties>({
+			defaultValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains an asset measurement property. This structure is empty. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>AWS IoT SiteWise User Guide</i>. */
 	export interface Measurement {
+	}
+
+	/** Contains an asset measurement property. This structure is empty. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+	export interface MeasurementFormProperties {
+	}
+	export function CreateMeasurementFormGroup() {
+		return new FormGroup<MeasurementFormProperties>({
+		});
+
 	}
 
 
@@ -242,6 +573,17 @@ export namespace MyNS {
 	export interface Transform {
 		expression: string;
 		variables: Array<ExpressionVariable>;
+	}
+
+	/** <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
+	export interface TransformFormProperties {
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateTransformFormGroup() {
+		return new FormGroup<TransformFormProperties>({
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -256,11 +598,35 @@ export namespace MyNS {
 		value: VariableValue;
 	}
 
+	/** Contains expression variable information. */
+	export interface ExpressionVariableFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateExpressionVariableFormGroup() {
+		return new FormGroup<ExpressionVariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Identifies a property value used in an expression. */
 	export interface VariableValue {
 		propertyId: string;
 		hierarchyId?: string | null;
+	}
+
+	/** Identifies a property value used in an expression. */
+	export interface VariableValueFormProperties {
+		propertyId: FormControl<string | null | undefined>,
+		hierarchyId: FormControl<string | null | undefined>,
+	}
+	export function CreateVariableValueFormGroup() {
+		return new FormGroup<VariableValueFormProperties>({
+			propertyId: new FormControl<string | null | undefined>(undefined),
+			hierarchyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -276,18 +642,49 @@ export namespace MyNS {
 		window: MetricWindow;
 	}
 
+	/** <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
+	export interface MetricFormProperties {
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricFormGroup() {
+		return new FormGroup<MetricFormProperties>({
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on). */
 	export interface MetricWindow {
 
 		/** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations. */
-		tumbling?: TumblingWindow | null;
+		tumbling?: TumblingWindow;
+	}
+
+	/** Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on). */
+	export interface MetricWindowFormProperties {
+	}
+	export function CreateMetricWindowFormGroup() {
+		return new FormGroup<MetricWindowFormProperties>({
+		});
+
 	}
 
 
 	/** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations. */
 	export interface TumblingWindow {
 		interval: string;
+	}
+
+	/** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations. */
+	export interface TumblingWindowFormProperties {
+		interval: FormControl<string | null | undefined>,
+	}
+	export function CreateTumblingWindowFormGroup() {
+		return new FormGroup<TumblingWindowFormProperties>({
+			interval: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -297,20 +694,66 @@ export namespace MyNS {
 		childAssetModelId: string;
 	}
 
+	/** Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy. */
+	export interface AssetModelHierarchyDefinitionFormProperties {
+		name: FormControl<string | null | undefined>,
+		childAssetModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetModelHierarchyDefinitionFormGroup() {
+		return new FormGroup<AssetModelHierarchyDefinitionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			childAssetModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateDashboardResponse {
 		dashboardId: string;
 		dashboardArn: string;
+	}
+	export interface CreateDashboardResponseFormProperties {
+		dashboardId: FormControl<string | null | undefined>,
+		dashboardArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDashboardResponseFormGroup() {
+		return new FormGroup<CreateDashboardResponseFormProperties>({
+			dashboardId: new FormControl<string | null | undefined>(undefined),
+			dashboardArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGatewayResponse {
 		gatewayId: string;
 		gatewayArn: string;
 	}
+	export interface CreateGatewayResponseFormProperties {
+		gatewayId: FormControl<string | null | undefined>,
+		gatewayArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGatewayResponseFormGroup() {
+		return new FormGroup<CreateGatewayResponseFormProperties>({
+			gatewayId: new FormControl<string | null | undefined>(undefined),
+			gatewayArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>. */
 	export interface Greengrass {
 		groupArn: string;
+	}
+
+	/** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+	export interface GreengrassFormProperties {
+		groupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGreengrassFormGroup() {
+		return new FormGroup<GreengrassFormProperties>({
+			groupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePortalResponse {
@@ -325,6 +768,21 @@ export namespace MyNS {
 		portalStatus: PortalStatus;
 		ssoApplicationId: string;
 	}
+	export interface CreatePortalResponseFormProperties {
+		portalId: FormControl<string | null | undefined>,
+		portalArn: FormControl<string | null | undefined>,
+		portalStartUrl: FormControl<string | null | undefined>,
+		ssoApplicationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePortalResponseFormGroup() {
+		return new FormGroup<CreatePortalResponseFormProperties>({
+			portalId: new FormControl<string | null | undefined>(undefined),
+			portalArn: new FormControl<string | null | undefined>(undefined),
+			portalStartUrl: new FormControl<string | null | undefined>(undefined),
+			ssoApplicationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains information about the current status of a portal. */
@@ -332,7 +790,18 @@ export namespace MyNS {
 		state: PortalStatusState;
 
 		/** Contains AWS IoT SiteWise Monitor error details. */
-		error?: MonitorErrorDetails | null;
+		error?: MonitorErrorDetails;
+	}
+
+	/** Contains information about the current status of a portal. */
+	export interface PortalStatusFormProperties {
+		state: FormControl<PortalStatusState | null | undefined>,
+	}
+	export function CreatePortalStatusFormGroup() {
+		return new FormGroup<PortalStatusFormProperties>({
+			state: new FormControl<PortalStatusState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PortalStatusState { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3, FAILED = 4 }
@@ -344,14 +813,45 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Contains AWS IoT SiteWise Monitor error details. */
+	export interface MonitorErrorDetailsFormProperties {
+		code: FormControl<AssetErrorDetailsCode | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitorErrorDetailsFormGroup() {
+		return new FormGroup<MonitorErrorDetailsFormProperties>({
+			code: new FormControl<AssetErrorDetailsCode | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ImageFileType { PNG = 0 }
 
 	export interface CreateProjectResponse {
 		projectId: string;
 		projectArn: string;
 	}
+	export interface CreateProjectResponseFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		projectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectResponseFormGroup() {
+		return new FormGroup<CreateProjectResponseFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteAccessPolicyResponse {
+	}
+	export interface DeleteAccessPolicyResponseFormProperties {
+	}
+	export function CreateDeleteAccessPolicyResponseFormGroup() {
+		return new FormGroup<DeleteAccessPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAssetResponse {
@@ -362,6 +862,13 @@ export namespace MyNS {
 		 */
 		assetStatus: AssetStatus;
 	}
+	export interface DeleteAssetResponseFormProperties {
+	}
+	export function CreateDeleteAssetResponseFormGroup() {
+		return new FormGroup<DeleteAssetResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAssetModelResponse {
 
@@ -371,8 +878,22 @@ export namespace MyNS {
 		 */
 		assetModelStatus: AssetModelStatus;
 	}
+	export interface DeleteAssetModelResponseFormProperties {
+	}
+	export function CreateDeleteAssetModelResponseFormGroup() {
+		return new FormGroup<DeleteAssetModelResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDashboardResponse {
+	}
+	export interface DeleteDashboardResponseFormProperties {
+	}
+	export function CreateDeleteDashboardResponseFormGroup() {
+		return new FormGroup<DeleteDashboardResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeletePortalResponse {
@@ -383,8 +904,22 @@ export namespace MyNS {
 		 */
 		portalStatus: PortalStatus;
 	}
+	export interface DeletePortalResponseFormProperties {
+	}
+	export function CreateDeletePortalResponseFormGroup() {
+		return new FormGroup<DeletePortalResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProjectResponse {
+	}
+	export interface DeleteProjectResponseFormProperties {
+	}
+	export function CreateDeleteProjectResponseFormGroup() {
+		return new FormGroup<DeleteProjectResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAccessPolicyResponse {
@@ -406,16 +941,42 @@ export namespace MyNS {
 		accessPolicyCreationDate: Date;
 		accessPolicyLastUpdateDate: Date;
 	}
+	export interface DescribeAccessPolicyResponseFormProperties {
+		accessPolicyId: FormControl<string | null | undefined>,
+		accessPolicyArn: FormControl<string | null | undefined>,
+		accessPolicyPermission: FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>,
+		accessPolicyCreationDate: FormControl<Date | null | undefined>,
+		accessPolicyLastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeAccessPolicyResponseFormGroup() {
+		return new FormGroup<DescribeAccessPolicyResponseFormProperties>({
+			accessPolicyId: new FormControl<string | null | undefined>(undefined),
+			accessPolicyArn: new FormControl<string | null | undefined>(undefined),
+			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined),
+			accessPolicyCreationDate: new FormControl<Date | null | undefined>(undefined),
+			accessPolicyLastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
 	export interface Identity {
 
 		/** Contains information for a user identity in an access policy. */
-		user?: UserIdentity | null;
+		user?: UserIdentity;
 
 		/** Contains information for a group identity in an access policy. */
-		group?: GroupIdentity | null;
+		group?: GroupIdentity;
+	}
+
+	/** <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p> </note> */
+	export interface IdentityFormProperties {
+	}
+	export function CreateIdentityFormGroup() {
+		return new FormGroup<IdentityFormProperties>({
+		});
+
 	}
 
 
@@ -423,10 +984,19 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** Identifies an AWS IoT SiteWise Monitor portal. */
-		portal?: PortalResource | null;
+		portal?: PortalResource;
 
 		/** Identifies a specific AWS IoT SiteWise Monitor project. */
-		project?: ProjectResource | null;
+		project?: ProjectResource;
+	}
+
+	/** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project. */
+	export interface ResourceFormProperties {
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+		});
+
 	}
 
 	export enum DescribeAccessPolicyResponseAccessPolicyPermission { ADMINISTRATOR = 0, VIEWER = 1 }
@@ -447,6 +1017,25 @@ export namespace MyNS {
 		 */
 		assetStatus: AssetStatus;
 	}
+	export interface DescribeAssetResponseFormProperties {
+		assetId: FormControl<string | null | undefined>,
+		assetArn: FormControl<string | null | undefined>,
+		assetName: FormControl<string | null | undefined>,
+		assetModelId: FormControl<string | null | undefined>,
+		assetCreationDate: FormControl<Date | null | undefined>,
+		assetLastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeAssetResponseFormGroup() {
+		return new FormGroup<DescribeAssetResponseFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			assetArn: new FormControl<string | null | undefined>(undefined),
+			assetName: new FormControl<string | null | undefined>(undefined),
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			assetCreationDate: new FormControl<Date | null | undefined>(undefined),
+			assetLastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains asset property information. */
@@ -456,9 +1045,28 @@ export namespace MyNS {
 		alias?: string | null;
 
 		/** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		notification?: PropertyNotification | null;
+		notification?: PropertyNotification;
 		dataType: AssetModelPropertyDefinitionDataType;
 		unit?: string | null;
+	}
+
+	/** Contains asset property information. */
+	export interface AssetPropertyFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		alias: FormControl<string | null | undefined>,
+		dataType: FormControl<AssetModelPropertyDefinitionDataType | null | undefined>,
+		unit: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyFormGroup() {
+		return new FormGroup<AssetPropertyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			alias: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined),
+			unit: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -468,6 +1076,19 @@ export namespace MyNS {
 		state: PropertyNotificationState;
 	}
 
+	/** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+	export interface PropertyNotificationFormProperties {
+		topic: FormControl<string | null | undefined>,
+		state: FormControl<PropertyNotificationState | null | undefined>,
+	}
+	export function CreatePropertyNotificationFormGroup() {
+		return new FormGroup<PropertyNotificationFormProperties>({
+			topic: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<PropertyNotificationState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PropertyNotificationState { ENABLED = 0, DISABLED = 1 }
 
 
@@ -475,6 +1096,19 @@ export namespace MyNS {
 	export interface AssetHierarchy {
 		id?: string | null;
 		name: string;
+	}
+
+	/** Describes an asset hierarchy that contains a hierarchy's name and ID. */
+	export interface AssetHierarchyFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetHierarchyFormGroup() {
+		return new FormGroup<AssetHierarchyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAssetModelResponse {
@@ -493,6 +1127,25 @@ export namespace MyNS {
 		 */
 		assetModelStatus: AssetModelStatus;
 	}
+	export interface DescribeAssetModelResponseFormProperties {
+		assetModelId: FormControl<string | null | undefined>,
+		assetModelArn: FormControl<string | null | undefined>,
+		assetModelName: FormControl<string | null | undefined>,
+		assetModelDescription: FormControl<string | null | undefined>,
+		assetModelCreationDate: FormControl<Date | null | undefined>,
+		assetModelLastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeAssetModelResponseFormGroup() {
+		return new FormGroup<DescribeAssetModelResponseFormProperties>({
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			assetModelArn: new FormControl<string | null | undefined>(undefined),
+			assetModelName: new FormControl<string | null | undefined>(undefined),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined),
+			assetModelCreationDate: new FormControl<Date | null | undefined>(undefined),
+			assetModelLastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains information about an asset model property. */
@@ -509,12 +1162,44 @@ export namespace MyNS {
 		type: PropertyType;
 	}
 
+	/** Contains information about an asset model property. */
+	export interface AssetModelPropertyFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		dataType: FormControl<AssetModelPropertyDefinitionDataType | null | undefined>,
+		unit: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetModelPropertyFormGroup() {
+		return new FormGroup<AssetModelPropertyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined),
+			unit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy. */
 	export interface AssetModelHierarchy {
 		id?: string | null;
 		name: string;
 		childAssetModelId: string;
+	}
+
+	/** Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy. */
+	export interface AssetModelHierarchyFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		childAssetModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetModelHierarchyFormGroup() {
+		return new FormGroup<AssetModelHierarchyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			childAssetModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAssetPropertyResponse {
@@ -528,6 +1213,19 @@ export namespace MyNS {
 		 */
 		assetProperty: Property;
 	}
+	export interface DescribeAssetPropertyResponseFormProperties {
+		assetId: FormControl<string | null | undefined>,
+		assetName: FormControl<string | null | undefined>,
+		assetModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAssetPropertyResponseFormGroup() {
+		return new FormGroup<DescribeAssetPropertyResponseFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			assetName: new FormControl<string | null | undefined>(undefined),
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains asset property information. */
@@ -537,12 +1235,31 @@ export namespace MyNS {
 		alias?: string | null;
 
 		/** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		notification?: PropertyNotification | null;
+		notification?: PropertyNotification;
 		dataType: AssetModelPropertyDefinitionDataType;
 		unit?: string | null;
 
 		/** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>. */
-		type?: PropertyType | null;
+		type?: PropertyType;
+	}
+
+	/** Contains asset property information. */
+	export interface PropertyFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		alias: FormControl<string | null | undefined>,
+		dataType: FormControl<AssetModelPropertyDefinitionDataType | null | undefined>,
+		unit: FormControl<string | null | undefined>,
+	}
+	export function CreatePropertyFormGroup() {
+		return new FormGroup<PropertyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			alias: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined),
+			unit: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDashboardResponse {
@@ -555,6 +1272,29 @@ export namespace MyNS {
 		dashboardCreationDate: Date;
 		dashboardLastUpdateDate: Date;
 	}
+	export interface DescribeDashboardResponseFormProperties {
+		dashboardId: FormControl<string | null | undefined>,
+		dashboardArn: FormControl<string | null | undefined>,
+		dashboardName: FormControl<string | null | undefined>,
+		projectId: FormControl<string | null | undefined>,
+		dashboardDescription: FormControl<string | null | undefined>,
+		dashboardDefinition: FormControl<string | null | undefined>,
+		dashboardCreationDate: FormControl<Date | null | undefined>,
+		dashboardLastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeDashboardResponseFormGroup() {
+		return new FormGroup<DescribeDashboardResponseFormProperties>({
+			dashboardId: new FormControl<string | null | undefined>(undefined),
+			dashboardArn: new FormControl<string | null | undefined>(undefined),
+			dashboardName: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined),
+			dashboardCreationDate: new FormControl<Date | null | undefined>(undefined),
+			dashboardLastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeGatewayResponse {
 		gatewayId: string;
@@ -562,10 +1302,27 @@ export namespace MyNS {
 		gatewayArn: string;
 
 		/** Contains a gateway's platform information. */
-		gatewayPlatform?: GatewayPlatform | null;
+		gatewayPlatform?: GatewayPlatform;
 		gatewayCapabilitySummaries: Array<GatewayCapabilitySummary>;
 		creationDate: Date;
 		lastUpdateDate: Date;
+	}
+	export interface DescribeGatewayResponseFormProperties {
+		gatewayId: FormControl<string | null | undefined>,
+		gatewayName: FormControl<string | null | undefined>,
+		gatewayArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeGatewayResponseFormGroup() {
+		return new FormGroup<DescribeGatewayResponseFormProperties>({
+			gatewayId: new FormControl<string | null | undefined>(undefined),
+			gatewayName: new FormControl<string | null | undefined>(undefined),
+			gatewayArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -579,11 +1336,33 @@ export namespace MyNS {
 		greengrass: Greengrass;
 	}
 
+	/** Contains a gateway's platform information. */
+	export interface GatewayPlatformFormProperties {
+	}
+	export function CreateGatewayPlatformFormGroup() {
+		return new FormGroup<GatewayPlatformFormProperties>({
+		});
+
+	}
+
 
 	/** Contains a summary of a gateway capability configuration. */
 	export interface GatewayCapabilitySummary {
 		capabilityNamespace: string;
 		capabilitySyncStatus: GatewayCapabilitySummaryCapabilitySyncStatus;
+	}
+
+	/** Contains a summary of a gateway capability configuration. */
+	export interface GatewayCapabilitySummaryFormProperties {
+		capabilityNamespace: FormControl<string | null | undefined>,
+		capabilitySyncStatus: FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>,
+	}
+	export function CreateGatewayCapabilitySummaryFormGroup() {
+		return new FormGroup<GatewayCapabilitySummaryFormProperties>({
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined),
+			capabilitySyncStatus: new FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GatewayCapabilitySummaryCapabilitySyncStatus { IN_SYNC = 0, OUT_OF_SYNC = 1, SYNC_FAILED = 2 }
@@ -594,6 +1373,21 @@ export namespace MyNS {
 		capabilityConfiguration: string;
 		capabilitySyncStatus: GatewayCapabilitySummaryCapabilitySyncStatus;
 	}
+	export interface DescribeGatewayCapabilityConfigurationResponseFormProperties {
+		gatewayId: FormControl<string | null | undefined>,
+		capabilityNamespace: FormControl<string | null | undefined>,
+		capabilityConfiguration: FormControl<string | null | undefined>,
+		capabilitySyncStatus: FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>,
+	}
+	export function CreateDescribeGatewayCapabilityConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeGatewayCapabilityConfigurationResponseFormProperties>({
+			gatewayId: new FormControl<string | null | undefined>(undefined),
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined),
+			capabilityConfiguration: new FormControl<string | null | undefined>(undefined),
+			capabilitySyncStatus: new FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeLoggingOptionsResponse {
 
@@ -603,11 +1397,29 @@ export namespace MyNS {
 		 */
 		loggingOptions: LoggingOptions;
 	}
+	export interface DescribeLoggingOptionsResponseFormProperties {
+	}
+	export function CreateDescribeLoggingOptionsResponseFormGroup() {
+		return new FormGroup<DescribeLoggingOptionsResponseFormProperties>({
+		});
+
+	}
 
 
 	/** Contains logging options. */
 	export interface LoggingOptions {
 		level: LoggingOptionsLevel;
+	}
+
+	/** Contains logging options. */
+	export interface LoggingOptionsFormProperties {
+		level: FormControl<LoggingOptionsLevel | null | undefined>,
+	}
+	export function CreateLoggingOptionsFormGroup() {
+		return new FormGroup<LoggingOptionsFormProperties>({
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LoggingOptionsLevel { ERROR = 0, INFO = 1, OFF = 2 }
@@ -630,8 +1442,35 @@ export namespace MyNS {
 		portalLastUpdateDate: Date;
 
 		/** Contains an image that is uploaded to AWS IoT SiteWise and available at a URL. */
-		portalLogoImageLocation?: ImageLocation | null;
+		portalLogoImageLocation?: ImageLocation;
 		roleArn?: string | null;
+	}
+	export interface DescribePortalResponseFormProperties {
+		portalId: FormControl<string | null | undefined>,
+		portalArn: FormControl<string | null | undefined>,
+		portalName: FormControl<string | null | undefined>,
+		portalDescription: FormControl<string | null | undefined>,
+		portalClientId: FormControl<string | null | undefined>,
+		portalStartUrl: FormControl<string | null | undefined>,
+		portalContactEmail: FormControl<string | null | undefined>,
+		portalCreationDate: FormControl<Date | null | undefined>,
+		portalLastUpdateDate: FormControl<Date | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePortalResponseFormGroup() {
+		return new FormGroup<DescribePortalResponseFormProperties>({
+			portalId: new FormControl<string | null | undefined>(undefined),
+			portalArn: new FormControl<string | null | undefined>(undefined),
+			portalName: new FormControl<string | null | undefined>(undefined),
+			portalDescription: new FormControl<string | null | undefined>(undefined),
+			portalClientId: new FormControl<string | null | undefined>(undefined),
+			portalStartUrl: new FormControl<string | null | undefined>(undefined),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined),
+			portalCreationDate: new FormControl<Date | null | undefined>(undefined),
+			portalLastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -639,6 +1478,19 @@ export namespace MyNS {
 	export interface ImageLocation {
 		id: string;
 		url: string;
+	}
+
+	/** Contains an image that is uploaded to AWS IoT SiteWise and available at a URL. */
+	export interface ImageLocationFormProperties {
+		id: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateImageLocationFormGroup() {
+		return new FormGroup<ImageLocationFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeProjectResponse {
@@ -650,10 +1502,40 @@ export namespace MyNS {
 		projectCreationDate: Date;
 		projectLastUpdateDate: Date;
 	}
+	export interface DescribeProjectResponseFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		projectArn: FormControl<string | null | undefined>,
+		projectName: FormControl<string | null | undefined>,
+		portalId: FormControl<string | null | undefined>,
+		projectDescription: FormControl<string | null | undefined>,
+		projectCreationDate: FormControl<Date | null | undefined>,
+		projectLastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeProjectResponseFormGroup() {
+		return new FormGroup<DescribeProjectResponseFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			portalId: new FormControl<string | null | undefined>(undefined),
+			projectDescription: new FormControl<string | null | undefined>(undefined),
+			projectCreationDate: new FormControl<Date | null | undefined>(undefined),
+			projectLastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAssetPropertyAggregatesResponse {
 		aggregatedValues: Array<AggregatedValue>;
 		nextToken?: string | null;
+	}
+	export interface GetAssetPropertyAggregatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAssetPropertyAggregatesResponseFormGroup() {
+		return new FormGroup<GetAssetPropertyAggregatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -669,6 +1551,19 @@ export namespace MyNS {
 		value: Aggregates;
 	}
 
+	/** Contains aggregated asset property values (for example, average, minimum, and maximum). */
+	export interface AggregatedValueFormProperties {
+		timestamp: FormControl<Date | null | undefined>,
+		quality: FormControl<AssetPropertyValueQuality | null | undefined>,
+	}
+	export function CreateAggregatedValueFormGroup() {
+		return new FormGroup<AggregatedValueFormProperties>({
+			timestamp: new FormControl<Date | null | undefined>(undefined),
+			quality: new FormControl<AssetPropertyValueQuality | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the (pre-calculated) aggregate values for an asset property. */
 	export interface Aggregates {
@@ -680,6 +1575,27 @@ export namespace MyNS {
 		standardDeviation?: number | null;
 	}
 
+	/** Contains the (pre-calculated) aggregate values for an asset property. */
+	export interface AggregatesFormProperties {
+		average: FormControl<number | null | undefined>,
+		count: FormControl<number | null | undefined>,
+		maximum: FormControl<number | null | undefined>,
+		minimum: FormControl<number | null | undefined>,
+		sum: FormControl<number | null | undefined>,
+		standardDeviation: FormControl<number | null | undefined>,
+	}
+	export function CreateAggregatesFormGroup() {
+		return new FormGroup<AggregatesFormProperties>({
+			average: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+			maximum: new FormControl<number | null | undefined>(undefined),
+			minimum: new FormControl<number | null | undefined>(undefined),
+			sum: new FormControl<number | null | undefined>(undefined),
+			standardDeviation: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AggregateType { AVERAGE = 0, COUNT = 1, MAXIMUM = 2, MINIMUM = 3, SUM = 4, STANDARD_DEVIATION = 5 }
 
 	export enum Quality { GOOD = 0, BAD = 1, UNCERTAIN = 2 }
@@ -687,17 +1603,42 @@ export namespace MyNS {
 	export interface GetAssetPropertyValueResponse {
 
 		/** Contains asset property value information. */
-		propertyValue?: AssetPropertyValue | null;
+		propertyValue?: AssetPropertyValue;
+	}
+	export interface GetAssetPropertyValueResponseFormProperties {
+	}
+	export function CreateGetAssetPropertyValueResponseFormGroup() {
+		return new FormGroup<GetAssetPropertyValueResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetAssetPropertyValueHistoryResponse {
 		assetPropertyValueHistory: Array<AssetPropertyValue>;
 		nextToken?: string | null;
 	}
+	export interface GetAssetPropertyValueHistoryResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAssetPropertyValueHistoryResponseFormGroup() {
+		return new FormGroup<GetAssetPropertyValueHistoryResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAccessPoliciesResponse {
 		accessPolicySummaries: Array<AccessPolicySummary>;
 		nextToken?: string | null;
+	}
+	export interface ListAccessPoliciesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccessPoliciesResponseFormGroup() {
+		return new FormGroup<ListAccessPoliciesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -721,9 +1662,35 @@ export namespace MyNS {
 		lastUpdateDate?: Date | null;
 	}
 
+	/** Contains an access policy that defines an AWS SSO identity's access to an AWS IoT SiteWise Monitor resource. */
+	export interface AccessPolicySummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		permission: FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateAccessPolicySummaryFormGroup() {
+		return new FormGroup<AccessPolicySummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			permission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAssetModelsResponse {
 		assetModelSummaries: Array<AssetModelSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListAssetModelsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssetModelsResponseFormGroup() {
+		return new FormGroup<ListAssetModelsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -743,9 +1710,39 @@ export namespace MyNS {
 		status: AssetModelStatus;
 	}
 
+	/** Contains a summary of an asset model. */
+	export interface AssetModelSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateAssetModelSummaryFormGroup() {
+		return new FormGroup<AssetModelSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAssetsResponse {
 		assetSummaries: Array<AssetSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListAssetsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssetsResponseFormGroup() {
+		return new FormGroup<ListAssetsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -766,9 +1763,39 @@ export namespace MyNS {
 		hierarchies: Array<AssetHierarchy>;
 	}
 
+	/** Contains a summary of an asset. */
+	export interface AssetSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		assetModelId: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateAssetSummaryFormGroup() {
+		return new FormGroup<AssetSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAssociatedAssetsResponse {
 		assetSummaries: Array<AssociatedAssetsSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListAssociatedAssetsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssociatedAssetsResponseFormGroup() {
+		return new FormGroup<ListAssociatedAssetsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -789,9 +1816,39 @@ export namespace MyNS {
 		hierarchies: Array<AssetHierarchy>;
 	}
 
+	/** Contains a summary of an associated asset. */
+	export interface AssociatedAssetsSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		assetModelId: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateAssociatedAssetsSummaryFormGroup() {
+		return new FormGroup<AssociatedAssetsSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDashboardsResponse {
 		dashboardSummaries: Array<DashboardSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDashboardsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDashboardsResponseFormGroup() {
+		return new FormGroup<ListDashboardsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -804,9 +1861,37 @@ export namespace MyNS {
 		lastUpdateDate?: Date | null;
 	}
 
+	/** Contains a dashboard summary. */
+	export interface DashboardSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDashboardSummaryFormGroup() {
+		return new FormGroup<DashboardSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListGatewaysResponse {
 		gatewaySummaries: Array<GatewaySummary>;
 		nextToken?: string | null;
+	}
+	export interface ListGatewaysResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGatewaysResponseFormGroup() {
+		return new FormGroup<ListGatewaysResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -814,14 +1899,40 @@ export namespace MyNS {
 	export interface GatewaySummary {
 		gatewayId: string;
 		gatewayName: string;
-		gatewayCapabilitySummaries?: Array<GatewayCapabilitySummary> | null;
+		gatewayCapabilitySummaries?: Array<GatewayCapabilitySummary>;
 		creationDate: Date;
 		lastUpdateDate: Date;
 	}
 
+	/** Contains a summary of a gateway. */
+	export interface GatewaySummaryFormProperties {
+		gatewayId: FormControl<string | null | undefined>,
+		gatewayName: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGatewaySummaryFormGroup() {
+		return new FormGroup<GatewaySummaryFormProperties>({
+			gatewayId: new FormControl<string | null | undefined>(undefined),
+			gatewayName: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPortalsResponse {
-		portalSummaries?: Array<PortalSummary> | null;
+		portalSummaries?: Array<PortalSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListPortalsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPortalsResponseFormGroup() {
+		return new FormGroup<ListPortalsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -836,14 +1947,55 @@ export namespace MyNS {
 		roleArn?: string | null;
 	}
 
+	/** Contains a portal summary. */
+	export interface PortalSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		startUrl: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePortalSummaryFormGroup() {
+		return new FormGroup<PortalSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			startUrl: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProjectAssetsResponse {
 		assetIds: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListProjectAssetsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectAssetsResponseFormGroup() {
+		return new FormGroup<ListProjectAssetsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListProjectsResponse {
 		projectSummaries: Array<ProjectSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListProjectsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsResponseFormGroup() {
+		return new FormGroup<ListProjectsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -856,28 +2008,96 @@ export namespace MyNS {
 		lastUpdateDate?: Date | null;
 	}
 
+	/** Contains project summary information. */
+	export interface ProjectSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastUpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateProjectSummaryFormGroup() {
+		return new FormGroup<ProjectSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagMap {
 	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
+	}
 
 	export interface PutLoggingOptionsResponse {
+	}
+	export interface PutLoggingOptionsResponseFormProperties {
+	}
+	export function CreatePutLoggingOptionsResponseFormGroup() {
+		return new FormGroup<PutLoggingOptionsResponseFormProperties>({
+		});
+
 	}
 
 	export enum LoggingLevel { ERROR = 0, INFO = 1, OFF = 2 }
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceResponse {
 	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateAccessPolicyResponse {
+	}
+	export interface UpdateAccessPolicyResponseFormProperties {
+	}
+	export function CreateUpdateAccessPolicyResponseFormGroup() {
+		return new FormGroup<UpdateAccessPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAssetResponse {
@@ -888,6 +2108,13 @@ export namespace MyNS {
 		 */
 		assetStatus: AssetStatus;
 	}
+	export interface UpdateAssetResponseFormProperties {
+	}
+	export function CreateUpdateAssetResponseFormGroup() {
+		return new FormGroup<UpdateAssetResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateAssetModelResponse {
 
@@ -897,13 +2124,38 @@ export namespace MyNS {
 		 */
 		assetModelStatus: AssetModelStatus;
 	}
+	export interface UpdateAssetModelResponseFormProperties {
+	}
+	export function CreateUpdateAssetModelResponseFormGroup() {
+		return new FormGroup<UpdateAssetModelResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDashboardResponse {
+	}
+	export interface UpdateDashboardResponseFormProperties {
+	}
+	export function CreateUpdateDashboardResponseFormGroup() {
+		return new FormGroup<UpdateDashboardResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGatewayCapabilityConfigurationResponse {
 		capabilityNamespace: string;
 		capabilitySyncStatus: GatewayCapabilitySummaryCapabilitySyncStatus;
+	}
+	export interface UpdateGatewayCapabilityConfigurationResponseFormProperties {
+		capabilityNamespace: FormControl<string | null | undefined>,
+		capabilitySyncStatus: FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>,
+	}
+	export function CreateUpdateGatewayCapabilityConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateGatewayCapabilityConfigurationResponseFormProperties>({
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined),
+			capabilitySyncStatus: new FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePortalResponse {
@@ -914,6 +2166,13 @@ export namespace MyNS {
 		 */
 		portalStatus: PortalStatus;
 	}
+	export interface UpdatePortalResponseFormProperties {
+	}
+	export function CreateUpdatePortalResponseFormGroup() {
+		return new FormGroup<UpdatePortalResponseFormProperties>({
+		});
+
+	}
 
 
 	/** Contains an image file. */
@@ -922,7 +2181,27 @@ export namespace MyNS {
 		type: ImageFileType;
 	}
 
+	/** Contains an image file. */
+	export interface ImageFileFormProperties {
+		data: FormControl<string | null | undefined>,
+		type: FormControl<ImageFileType | null | undefined>,
+	}
+	export function CreateImageFileFormGroup() {
+		return new FormGroup<ImageFileFormProperties>({
+			data: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ImageFileType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateProjectResponse {
+	}
+	export interface UpdateProjectResponseFormProperties {
+	}
+	export function CreateUpdateProjectResponseFormGroup() {
+		return new FormGroup<UpdateProjectResponseFormProperties>({
+		});
+
 	}
 
 	export enum Permission { ADMINISTRATOR = 0, VIEWER = 1 }
@@ -940,21 +2219,59 @@ export namespace MyNS {
 		childAssetId: string;
 		clientToken?: string | null;
 	}
+	export interface AssociateAssetsRequestFormProperties {
+		hierarchyId: FormControl<string | null | undefined>,
+		childAssetId: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateAssetsRequestFormGroup() {
+		return new FormGroup<AssociateAssetsRequestFormProperties>({
+			hierarchyId: new FormControl<string | null | undefined>(undefined),
+			childAssetId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchAssociateProjectAssetsRequest {
 		assetIds: Array<string>;
 		clientToken?: string | null;
+	}
+	export interface BatchAssociateProjectAssetsRequestFormProperties {
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchAssociateProjectAssetsRequestFormGroup() {
+		return new FormGroup<BatchAssociateProjectAssetsRequestFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchDisassociateProjectAssetsRequest {
 		assetIds: Array<string>;
 		clientToken?: string | null;
 	}
+	export interface BatchDisassociateProjectAssetsRequestFormProperties {
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDisassociateProjectAssetsRequestFormGroup() {
+		return new FormGroup<BatchDisassociateProjectAssetsRequestFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum BatchPutAssetPropertyValueErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4, LimitExceededException = 5, ConflictingOperationException = 6, TimestampOutOfRangeException = 7, AccessDeniedException = 8 }
 
 	export interface BatchPutAssetPropertyValueRequest {
 		entries: Array<PutAssetPropertyValueEntry>;
+	}
+	export interface BatchPutAssetPropertyValueRequestFormProperties {
+	}
+	export function CreateBatchPutAssetPropertyValueRequestFormGroup() {
+		return new FormGroup<BatchPutAssetPropertyValueRequestFormProperties>({
+		});
+
 	}
 
 	export enum CapabilitySyncStatus { IN_SYNC = 0, OUT_OF_SYNC = 1, SYNC_FAILED = 2 }
@@ -974,23 +2291,60 @@ export namespace MyNS {
 		accessPolicyResource: Resource;
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 		clientToken?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateAccessPolicyRequestFormProperties {
+		accessPolicyPermission: FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPolicyRequestFormGroup() {
+		return new FormGroup<CreateAccessPolicyRequestFormProperties>({
+			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAssetModelRequest {
 		assetModelName: string;
 		assetModelDescription?: string | null;
-		assetModelProperties?: Array<AssetModelPropertyDefinition> | null;
-		assetModelHierarchies?: Array<AssetModelHierarchyDefinition> | null;
+		assetModelProperties?: Array<AssetModelPropertyDefinition>;
+		assetModelHierarchies?: Array<AssetModelHierarchyDefinition>;
 		clientToken?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateAssetModelRequestFormProperties {
+		assetModelName: FormControl<string | null | undefined>,
+		assetModelDescription: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAssetModelRequestFormGroup() {
+		return new FormGroup<CreateAssetModelRequestFormProperties>({
+			assetModelName: new FormControl<string | null | undefined>(undefined),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAssetRequest {
 		assetName: string;
 		assetModelId: string;
 		clientToken?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateAssetRequestFormProperties {
+		assetName: FormControl<string | null | undefined>,
+		assetModelId: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAssetRequestFormGroup() {
+		return new FormGroup<CreateAssetRequestFormProperties>({
+			assetName: new FormControl<string | null | undefined>(undefined),
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDashboardRequest {
@@ -999,7 +2353,24 @@ export namespace MyNS {
 		dashboardDescription?: string | null;
 		dashboardDefinition: string;
 		clientToken?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateDashboardRequestFormProperties {
+		projectId: FormControl<string | null | undefined>,
+		dashboardName: FormControl<string | null | undefined>,
+		dashboardDescription: FormControl<string | null | undefined>,
+		dashboardDefinition: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDashboardRequestFormGroup() {
+		return new FormGroup<CreateDashboardRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			dashboardName: new FormControl<string | null | undefined>(undefined),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGatewayRequest {
@@ -1010,7 +2381,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		gatewayPlatform: GatewayPlatform;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateGatewayRequestFormProperties {
+		gatewayName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGatewayRequestFormGroup() {
+		return new FormGroup<CreateGatewayRequestFormProperties>({
+			gatewayName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePortalRequest {
@@ -1020,9 +2400,26 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** Contains an image file. */
-		portalLogoImageFile?: ImageFile | null;
+		portalLogoImageFile?: ImageFile;
 		roleArn: string;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreatePortalRequestFormProperties {
+		portalName: FormControl<string | null | undefined>,
+		portalDescription: FormControl<string | null | undefined>,
+		portalContactEmail: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePortalRequestFormGroup() {
+		return new FormGroup<CreatePortalRequestFormProperties>({
+			portalName: new FormControl<string | null | undefined>(undefined),
+			portalDescription: new FormControl<string | null | undefined>(undefined),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProjectRequest {
@@ -1030,64 +2427,211 @@ export namespace MyNS {
 		projectName: string;
 		projectDescription?: string | null;
 		clientToken?: string | null;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface CreateProjectRequestFormProperties {
+		portalId: FormControl<string | null | undefined>,
+		projectName: FormControl<string | null | undefined>,
+		projectDescription: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			portalId: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			projectDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteAccessPolicyRequest {
 	}
+	export interface DeleteAccessPolicyRequestFormProperties {
+	}
+	export function CreateDeleteAccessPolicyRequestFormGroup() {
+		return new FormGroup<DeleteAccessPolicyRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAssetModelRequest {
+	}
+	export interface DeleteAssetModelRequestFormProperties {
+	}
+	export function CreateDeleteAssetModelRequestFormGroup() {
+		return new FormGroup<DeleteAssetModelRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAssetRequest {
 	}
+	export interface DeleteAssetRequestFormProperties {
+	}
+	export function CreateDeleteAssetRequestFormGroup() {
+		return new FormGroup<DeleteAssetRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDashboardRequest {
+	}
+	export interface DeleteDashboardRequestFormProperties {
+	}
+	export function CreateDeleteDashboardRequestFormGroup() {
+		return new FormGroup<DeleteDashboardRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteGatewayRequest {
 	}
+	export interface DeleteGatewayRequestFormProperties {
+	}
+	export function CreateDeleteGatewayRequestFormGroup() {
+		return new FormGroup<DeleteGatewayRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeletePortalRequest {
+	}
+	export interface DeletePortalRequestFormProperties {
+	}
+	export function CreateDeletePortalRequestFormGroup() {
+		return new FormGroup<DeletePortalRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProjectRequest {
 	}
+	export interface DeleteProjectRequestFormProperties {
+	}
+	export function CreateDeleteProjectRequestFormGroup() {
+		return new FormGroup<DeleteProjectRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAccessPolicyRequest {
+	}
+	export interface DescribeAccessPolicyRequestFormProperties {
+	}
+	export function CreateDescribeAccessPolicyRequestFormGroup() {
+		return new FormGroup<DescribeAccessPolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAssetModelRequest {
 	}
+	export interface DescribeAssetModelRequestFormProperties {
+	}
+	export function CreateDescribeAssetModelRequestFormGroup() {
+		return new FormGroup<DescribeAssetModelRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAssetPropertyRequest {
+	}
+	export interface DescribeAssetPropertyRequestFormProperties {
+	}
+	export function CreateDescribeAssetPropertyRequestFormGroup() {
+		return new FormGroup<DescribeAssetPropertyRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAssetRequest {
 	}
+	export interface DescribeAssetRequestFormProperties {
+	}
+	export function CreateDescribeAssetRequestFormGroup() {
+		return new FormGroup<DescribeAssetRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDashboardRequest {
+	}
+	export interface DescribeDashboardRequestFormProperties {
+	}
+	export function CreateDescribeDashboardRequestFormGroup() {
+		return new FormGroup<DescribeDashboardRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGatewayCapabilityConfigurationRequest {
 	}
+	export interface DescribeGatewayCapabilityConfigurationRequestFormProperties {
+	}
+	export function CreateDescribeGatewayCapabilityConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeGatewayCapabilityConfigurationRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeGatewayRequest {
+	}
+	export interface DescribeGatewayRequestFormProperties {
+	}
+	export function CreateDescribeGatewayRequestFormGroup() {
+		return new FormGroup<DescribeGatewayRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeLoggingOptionsRequest {
 	}
+	export interface DescribeLoggingOptionsRequestFormProperties {
+	}
+	export function CreateDescribeLoggingOptionsRequestFormGroup() {
+		return new FormGroup<DescribeLoggingOptionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribePortalRequest {
 	}
+	export interface DescribePortalRequestFormProperties {
+	}
+	export function CreateDescribePortalRequestFormGroup() {
+		return new FormGroup<DescribePortalRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeProjectRequest {
+	}
+	export interface DescribeProjectRequestFormProperties {
+	}
+	export function CreateDescribeProjectRequestFormGroup() {
+		return new FormGroup<DescribeProjectRequestFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateAssetsRequest {
 		hierarchyId: string;
 		childAssetId: string;
 		clientToken?: string | null;
+	}
+	export interface DisassociateAssetsRequestFormProperties {
+		hierarchyId: FormControl<string | null | undefined>,
+		childAssetId: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateAssetsRequestFormGroup() {
+		return new FormGroup<DisassociateAssetsRequestFormProperties>({
+			hierarchyId: new FormControl<string | null | undefined>(undefined),
+			childAssetId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ErrorCode { VALIDATION_ERROR = 0, INTERNAL_FAILURE = 1 }
@@ -1096,11 +2640,32 @@ export namespace MyNS {
 
 	export interface GetAssetPropertyAggregatesRequest {
 	}
+	export interface GetAssetPropertyAggregatesRequestFormProperties {
+	}
+	export function CreateGetAssetPropertyAggregatesRequestFormGroup() {
+		return new FormGroup<GetAssetPropertyAggregatesRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetAssetPropertyValueHistoryRequest {
 	}
+	export interface GetAssetPropertyValueHistoryRequestFormProperties {
+	}
+	export function CreateGetAssetPropertyValueHistoryRequestFormGroup() {
+		return new FormGroup<GetAssetPropertyValueHistoryRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetAssetPropertyValueRequest {
+	}
+	export interface GetAssetPropertyValueRequestFormProperties {
+	}
+	export function CreateGetAssetPropertyValueRequestFormGroup() {
+		return new FormGroup<GetAssetPropertyValueRequestFormProperties>({
+		});
+
 	}
 
 	export enum IdentityType { USER = 0, GROUP = 1 }
@@ -1111,41 +2676,122 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Contains an image file. */
-		file?: ImageFile | null;
+		file?: ImageFile;
+	}
+
+	/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
+	export interface ImageFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateImageFormGroup() {
+		return new FormGroup<ImageFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceType { PORTAL = 0, PROJECT = 1 }
 
 	export interface ListAccessPoliciesRequest {
 	}
+	export interface ListAccessPoliciesRequestFormProperties {
+	}
+	export function CreateListAccessPoliciesRequestFormGroup() {
+		return new FormGroup<ListAccessPoliciesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListAssetModelsRequest {
+	}
+	export interface ListAssetModelsRequestFormProperties {
+	}
+	export function CreateListAssetModelsRequestFormGroup() {
+		return new FormGroup<ListAssetModelsRequestFormProperties>({
+		});
+
 	}
 
 	export enum ListAssetsFilter { ALL = 0, TOP_LEVEL = 1 }
 
 	export interface ListAssetsRequest {
 	}
+	export interface ListAssetsRequestFormProperties {
+	}
+	export function CreateListAssetsRequestFormGroup() {
+		return new FormGroup<ListAssetsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListAssociatedAssetsRequest {
+	}
+	export interface ListAssociatedAssetsRequestFormProperties {
+	}
+	export function CreateListAssociatedAssetsRequestFormGroup() {
+		return new FormGroup<ListAssociatedAssetsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDashboardsRequest {
 	}
+	export interface ListDashboardsRequestFormProperties {
+	}
+	export function CreateListDashboardsRequestFormGroup() {
+		return new FormGroup<ListDashboardsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListGatewaysRequest {
+	}
+	export interface ListGatewaysRequestFormProperties {
+	}
+	export function CreateListGatewaysRequestFormGroup() {
+		return new FormGroup<ListGatewaysRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListPortalsRequest {
 	}
+	export interface ListPortalsRequestFormProperties {
+	}
+	export function CreateListPortalsRequestFormGroup() {
+		return new FormGroup<ListPortalsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListProjectAssetsRequest {
+	}
+	export interface ListProjectAssetsRequestFormProperties {
+	}
+	export function CreateListProjectAssetsRequestFormGroup() {
+		return new FormGroup<ListProjectAssetsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListProjectsRequest {
 	}
+	export interface ListProjectsRequestFormProperties {
+	}
+	export function CreateListProjectsRequestFormGroup() {
+		return new FormGroup<ListProjectsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum MonitorErrorCode { INTERNAL_FAILURE = 0 }
@@ -1160,12 +2806,33 @@ export namespace MyNS {
 		 */
 		loggingOptions: LoggingOptions;
 	}
+	export interface PutLoggingOptionsRequestFormProperties {
+	}
+	export function CreatePutLoggingOptionsRequestFormGroup() {
+		return new FormGroup<PutLoggingOptionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAccessPolicyRequest {
@@ -1184,13 +2851,37 @@ export namespace MyNS {
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
 		clientToken?: string | null;
 	}
+	export interface UpdateAccessPolicyRequestFormProperties {
+		accessPolicyPermission: FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAccessPolicyRequestFormGroup() {
+		return new FormGroup<UpdateAccessPolicyRequestFormProperties>({
+			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAssetModelRequest {
 		assetModelName: string;
 		assetModelDescription?: string | null;
-		assetModelProperties?: Array<AssetModelProperty> | null;
-		assetModelHierarchies?: Array<AssetModelHierarchy> | null;
+		assetModelProperties?: Array<AssetModelProperty>;
+		assetModelHierarchies?: Array<AssetModelHierarchy>;
 		clientToken?: string | null;
+	}
+	export interface UpdateAssetModelRequestFormProperties {
+		assetModelName: FormControl<string | null | undefined>,
+		assetModelDescription: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssetModelRequestFormGroup() {
+		return new FormGroup<UpdateAssetModelRequestFormProperties>({
+			assetModelName: new FormControl<string | null | undefined>(undefined),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAssetPropertyRequest {
@@ -1198,10 +2889,34 @@ export namespace MyNS {
 		propertyNotificationState?: PropertyNotificationState | null;
 		clientToken?: string | null;
 	}
+	export interface UpdateAssetPropertyRequestFormProperties {
+		propertyAlias: FormControl<string | null | undefined>,
+		propertyNotificationState: FormControl<PropertyNotificationState | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssetPropertyRequestFormGroup() {
+		return new FormGroup<UpdateAssetPropertyRequestFormProperties>({
+			propertyAlias: new FormControl<string | null | undefined>(undefined),
+			propertyNotificationState: new FormControl<PropertyNotificationState | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAssetRequest {
 		assetName: string;
 		clientToken?: string | null;
+	}
+	export interface UpdateAssetRequestFormProperties {
+		assetName: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssetRequestFormGroup() {
+		return new FormGroup<UpdateAssetRequestFormProperties>({
+			assetName: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDashboardRequest {
@@ -1210,14 +2925,49 @@ export namespace MyNS {
 		dashboardDefinition: string;
 		clientToken?: string | null;
 	}
+	export interface UpdateDashboardRequestFormProperties {
+		dashboardName: FormControl<string | null | undefined>,
+		dashboardDescription: FormControl<string | null | undefined>,
+		dashboardDefinition: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDashboardRequestFormGroup() {
+		return new FormGroup<UpdateDashboardRequestFormProperties>({
+			dashboardName: new FormControl<string | null | undefined>(undefined),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateGatewayCapabilityConfigurationRequest {
 		capabilityNamespace: string;
 		capabilityConfiguration: string;
 	}
+	export interface UpdateGatewayCapabilityConfigurationRequestFormProperties {
+		capabilityNamespace: FormControl<string | null | undefined>,
+		capabilityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewayCapabilityConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateGatewayCapabilityConfigurationRequestFormProperties>({
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined),
+			capabilityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateGatewayRequest {
 		gatewayName: string;
+	}
+	export interface UpdateGatewayRequestFormProperties {
+		gatewayName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewayRequestFormGroup() {
+		return new FormGroup<UpdateGatewayRequestFormProperties>({
+			gatewayName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePortalRequest {
@@ -1226,15 +2976,45 @@ export namespace MyNS {
 		portalContactEmail: string;
 
 		/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
-		portalLogoImage?: Image | null;
+		portalLogoImage?: Image;
 		roleArn: string;
 		clientToken?: string | null;
+	}
+	export interface UpdatePortalRequestFormProperties {
+		portalName: FormControl<string | null | undefined>,
+		portalDescription: FormControl<string | null | undefined>,
+		portalContactEmail: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePortalRequestFormGroup() {
+		return new FormGroup<UpdatePortalRequestFormProperties>({
+			portalName: new FormControl<string | null | undefined>(undefined),
+			portalDescription: new FormControl<string | null | undefined>(undefined),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProjectRequest {
 		projectName: string;
 		projectDescription?: string | null;
 		clientToken?: string | null;
+	}
+	export interface UpdateProjectRequestFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		projectDescription: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectRequestFormGroup() {
+		return new FormGroup<UpdateProjectRequestFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			projectDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1699,7 +3479,7 @@ export namespace MyNS {
 		 * @return {GetAssetPropertyAggregatesResponse} Success
 		 */
 		GetAssetPropertyAggregates(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, aggregateTypes: Array<AggregateType>, resolution: string, qualities: Array<Quality> | null | undefined, startDate: Date, endDate: Date, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyAggregatesResponse> {
-			return this.http.get<GetAssetPropertyAggregatesResponse>(this.baseUri + 'properties/aggregates#aggregateTypes&resolution&startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&' + aggregateTypes.map(z => `aggregateTypes=${z}`).join('&') + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&' + qualities.map(z => `qualities=${z}`).join('&') + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
+			return this.http.get<GetAssetPropertyAggregatesResponse>(this.baseUri + 'properties/aggregates#aggregateTypes&resolution&startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&' + aggregateTypes.map(z => `aggregateTypes=${z}`).join('&') + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&' + qualities?.map(z => `qualities=${z}`).join('&') + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
 		/**
@@ -1729,7 +3509,7 @@ export namespace MyNS {
 		 * @return {GetAssetPropertyValueHistoryResponse} Success
 		 */
 		GetAssetPropertyValueHistory(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, startDate: Date, endDate: Date, qualities: Array<Quality> | null | undefined, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyValueHistoryResponse> {
-			return this.http.get<GetAssetPropertyValueHistoryResponse>(this.baseUri + 'properties/history#startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&' + qualities.map(z => `qualities=${z}`).join('&') + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
+			return this.http.get<GetAssetPropertyValueHistoryResponse>(this.baseUri + 'properties/history#startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&' + qualities?.map(z => `qualities=${z}`).join('&') + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
 		/**
@@ -1851,6 +3631,42 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface AssociateAssetsPostBodyFormProperties {
+
+		/**
+		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		hierarchyId: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the child asset to be associated.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		childAssetId: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateAssetsPostBodyFormGroup() {
+		return new FormGroup<AssociateAssetsPostBodyFormProperties>({
+			hierarchyId: new FormControl<string | null | undefined>(undefined),
+			childAssetId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchAssociateProjectAssetsPostBody {
 
@@ -1869,6 +3685,22 @@ export namespace MyNS {
 		 * Pattern: \S{36,64}
 		 */
 		clientToken?: string | null;
+	}
+	export interface BatchAssociateProjectAssetsPostBodyFormProperties {
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchAssociateProjectAssetsPostBodyFormGroup() {
+		return new FormGroup<BatchAssociateProjectAssetsPostBodyFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchDisassociateProjectAssetsPostBody {
@@ -1889,6 +3721,22 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface BatchDisassociateProjectAssetsPostBodyFormProperties {
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDisassociateProjectAssetsPostBodyFormGroup() {
+		return new FormGroup<BatchDisassociateProjectAssetsPostBodyFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchPutAssetPropertyValuePostBody {
 
@@ -1897,6 +3745,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		entries: Array<PutAssetPropertyValueEntry>;
+	}
+	export interface BatchPutAssetPropertyValuePostBodyFormProperties {
+	}
+	export function CreateBatchPutAssetPropertyValuePostBodyFormGroup() {
+		return new FormGroup<BatchPutAssetPropertyValuePostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateAccessPolicyPostBody {
@@ -1928,25 +3783,66 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateAccessPolicyPostBodyFormProperties {
+
+		/**
+		 * The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.
+		 * Required
+		 */
+		accessPolicyPermission: FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateAccessPolicyPostBodyFormGroup() {
+		return new FormGroup<CreateAccessPolicyPostBodyFormProperties>({
+			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAccessPolicyPostBodyAccessPolicyIdentity {
 
 		/** Contains information for a user identity in an access policy. */
-		user?: UserIdentity | null;
+		user?: UserIdentity;
 
 		/** Contains information for a group identity in an access policy. */
-		group?: GroupIdentity | null;
+		group?: GroupIdentity;
+	}
+	export interface CreateAccessPolicyPostBodyAccessPolicyIdentityFormProperties {
+	}
+	export function CreateCreateAccessPolicyPostBodyAccessPolicyIdentityFormGroup() {
+		return new FormGroup<CreateAccessPolicyPostBodyAccessPolicyIdentityFormProperties>({
+		});
+
 	}
 
 	export interface CreateAccessPolicyPostBodyAccessPolicyResource {
 
 		/** Identifies an AWS IoT SiteWise Monitor portal. */
-		portal?: PortalResource | null;
+		portal?: PortalResource;
 
 		/** Identifies a specific AWS IoT SiteWise Monitor project. */
-		project?: ProjectResource | null;
+		project?: ProjectResource;
+	}
+	export interface CreateAccessPolicyPostBodyAccessPolicyResourceFormProperties {
+	}
+	export function CreateCreateAccessPolicyPostBodyAccessPolicyResourceFormGroup() {
+		return new FormGroup<CreateAccessPolicyPostBodyAccessPolicyResourceFormProperties>({
+		});
+
 	}
 
 	export interface CreateAssetPostBody {
@@ -1978,7 +3874,47 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateAssetPostBodyFormProperties {
+
+		/**
+		 * A unique, friendly name for the asset.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		assetName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the asset model from which to create the asset.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		assetModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateAssetPostBodyFormGroup() {
+		return new FormGroup<CreateAssetPostBodyFormProperties>({
+			assetName: new FormControl<string | null | undefined>(undefined),
+			assetModelId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAssetModelPostBody {
@@ -2001,10 +3937,10 @@ export namespace MyNS {
 		assetModelDescription?: string | null;
 
 		/** <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelProperties?: Array<AssetModelPropertyDefinition> | null;
+		assetModelProperties?: Array<AssetModelPropertyDefinition>;
 
 		/** <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelHierarchies?: Array<AssetModelHierarchyDefinition> | null;
+		assetModelHierarchies?: Array<AssetModelHierarchyDefinition>;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2015,7 +3951,46 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateAssetModelPostBodyFormProperties {
+
+		/**
+		 * A unique, friendly name for the asset model.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		assetModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the asset model.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		assetModelDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateAssetModelPostBodyFormGroup() {
+		return new FormGroup<CreateAssetModelPostBodyFormProperties>({
+			assetModelName: new FormControl<string | null | undefined>(undefined),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDashboardPostBody {
@@ -2064,7 +4039,66 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateDashboardPostBodyFormProperties {
+
+		/**
+		 * The ID of the project in which to create the dashboard.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * A friendly name for the dashboard.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		dashboardName: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the dashboard.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		dashboardDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 204800
+		 * Min length: 0
+		 * Pattern: .+
+		 */
+		dashboardDefinition: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateDashboardPostBodyFormGroup() {
+		return new FormGroup<CreateDashboardPostBodyFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			dashboardName: new FormControl<string | null | undefined>(undefined),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGatewayPostBody {
@@ -2085,13 +4119,41 @@ export namespace MyNS {
 		gatewayPlatform: CreateGatewayPostBodyGatewayPlatform;
 
 		/** A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateGatewayPostBodyFormProperties {
+
+		/**
+		 * A unique, friendly name for the gateway.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		gatewayName: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateGatewayPostBodyFormGroup() {
+		return new FormGroup<CreateGatewayPostBodyFormProperties>({
+			gatewayName: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGatewayPostBodyGatewayPlatform {
 
 		/** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		greengrass?: Greengrass | null;
+		greengrass?: Greengrass;
+	}
+	export interface CreateGatewayPostBodyGatewayPlatformFormProperties {
+	}
+	export function CreateCreateGatewayPostBodyGatewayPlatformFormGroup() {
+		return new FormGroup<CreateGatewayPostBodyGatewayPlatformFormProperties>({
+		});
+
 	}
 
 	export interface CreatePortalPostBody {
@@ -2131,7 +4193,7 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** Contains an image file. */
-		portalLogoImageFile?: CreatePortalPostBodyPortalLogoImageFile | null;
+		portalLogoImageFile?: CreatePortalPostBodyPortalLogoImageFile;
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
@@ -2143,12 +4205,82 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreatePortalPostBodyFormProperties {
+
+		/**
+		 * A friendly name for the portal.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		portalName: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the portal.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		portalDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The AWS administrator's contact email address.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [^@]+@[^@]+
+		 */
+		portalContactEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: .*
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreatePortalPostBodyFormGroup() {
+		return new FormGroup<CreatePortalPostBodyFormProperties>({
+			portalName: new FormControl<string | null | undefined>(undefined),
+			portalDescription: new FormControl<string | null | undefined>(undefined),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePortalPostBodyPortalLogoImageFile {
 		data?: string | null;
 		type?: ImageFileType | null;
+	}
+	export interface CreatePortalPostBodyPortalLogoImageFileFormProperties {
+		data: FormControl<string | null | undefined>,
+		type: FormControl<ImageFileType | null | undefined>,
+	}
+	export function CreateCreatePortalPostBodyPortalLogoImageFileFormGroup() {
+		return new FormGroup<CreatePortalPostBodyPortalLogoImageFileFormProperties>({
+			data: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ImageFileType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProjectPostBody {
@@ -2188,7 +4320,56 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateProjectPostBodyFormProperties {
+
+		/**
+		 * The ID of the portal in which to create the project.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		portalId: FormControl<string | null | undefined>,
+
+		/**
+		 * A friendly name for the project.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		projectName: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the project.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		projectDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateProjectPostBodyFormGroup() {
+		return new FormGroup<CreateProjectPostBodyFormProperties>({
+			portalId: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			projectDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAccessPolicyPutBody {
@@ -2219,23 +4400,60 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface UpdateAccessPolicyPutBodyFormProperties {
+
+		/**
+		 * The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.
+		 * Required
+		 */
+		accessPolicyPermission: FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAccessPolicyPutBodyFormGroup() {
+		return new FormGroup<UpdateAccessPolicyPutBodyFormProperties>({
+			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAccessPolicyPutBodyAccessPolicyIdentity {
 
 		/** Contains information for a user identity in an access policy. */
-		user?: UserIdentity | null;
+		user?: UserIdentity;
 
 		/** Contains information for a group identity in an access policy. */
-		group?: GroupIdentity | null;
+		group?: GroupIdentity;
+	}
+	export interface UpdateAccessPolicyPutBodyAccessPolicyIdentityFormProperties {
+	}
+	export function CreateUpdateAccessPolicyPutBodyAccessPolicyIdentityFormGroup() {
+		return new FormGroup<UpdateAccessPolicyPutBodyAccessPolicyIdentityFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAccessPolicyPutBodyAccessPolicyResource {
 
 		/** Identifies an AWS IoT SiteWise Monitor portal. */
-		portal?: PortalResource | null;
+		portal?: PortalResource;
 
 		/** Identifies a specific AWS IoT SiteWise Monitor project. */
-		project?: ProjectResource | null;
+		project?: ProjectResource;
+	}
+	export interface UpdateAccessPolicyPutBodyAccessPolicyResourceFormProperties {
+	}
+	export function CreateUpdateAccessPolicyPutBodyAccessPolicyResourceFormGroup() {
+		return new FormGroup<UpdateAccessPolicyPutBodyAccessPolicyResourceFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAssetPutBody {
@@ -2256,6 +4474,32 @@ export namespace MyNS {
 		 * Pattern: \S{36,64}
 		 */
 		clientToken?: string | null;
+	}
+	export interface UpdateAssetPutBodyFormProperties {
+
+		/**
+		 * A unique, friendly name for the asset.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		assetName: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssetPutBodyFormGroup() {
+		return new FormGroup<UpdateAssetPutBodyFormProperties>({
+			assetName: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAssetModelPutBody {
@@ -2278,10 +4522,10 @@ export namespace MyNS {
 		assetModelDescription?: string | null;
 
 		/** <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelProperties?: Array<AssetModelProperty> | null;
+		assetModelProperties?: Array<AssetModelProperty>;
 
 		/** <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelHierarchies?: Array<AssetModelHierarchy> | null;
+		assetModelHierarchies?: Array<AssetModelHierarchy>;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2290,6 +4534,41 @@ export namespace MyNS {
 		 * Pattern: \S{36,64}
 		 */
 		clientToken?: string | null;
+	}
+	export interface UpdateAssetModelPutBodyFormProperties {
+
+		/**
+		 * A unique, friendly name for the asset model.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		assetModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the asset model.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		assetModelDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssetModelPutBodyFormGroup() {
+		return new FormGroup<UpdateAssetModelPutBodyFormProperties>({
+			assetModelName: new FormControl<string | null | undefined>(undefined),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDashboardPutBody {
@@ -2328,6 +4607,51 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface UpdateDashboardPutBodyFormProperties {
+
+		/**
+		 * A new friendly name for the dashboard.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		dashboardName: FormControl<string | null | undefined>,
+
+		/**
+		 * A new description for the dashboard.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		dashboardDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 204800
+		 * Min length: 0
+		 * Pattern: .+
+		 */
+		dashboardDefinition: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDashboardPutBodyFormGroup() {
+		return new FormGroup<UpdateDashboardPutBodyFormProperties>({
+			dashboardName: new FormControl<string | null | undefined>(undefined),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateGatewayPutBody {
 
@@ -2339,6 +4663,23 @@ export namespace MyNS {
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
 		gatewayName: string;
+	}
+	export interface UpdateGatewayPutBodyFormProperties {
+
+		/**
+		 * A unique, friendly name for the gateway.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		gatewayName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewayPutBodyFormGroup() {
+		return new FormGroup<UpdateGatewayPutBodyFormProperties>({
+			gatewayName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePortalPutBody {
@@ -2370,7 +4711,7 @@ export namespace MyNS {
 		portalContactEmail: string;
 
 		/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
-		portalLogoImage?: UpdatePortalPutBodyPortalLogoImage | null;
+		portalLogoImage?: UpdatePortalPutBodyPortalLogoImage;
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
@@ -2389,12 +4730,76 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface UpdatePortalPutBodyFormProperties {
+
+		/**
+		 * A new friendly name for the portal.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		portalName: FormControl<string | null | undefined>,
+
+		/**
+		 * A new description for the portal.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		portalDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The AWS administrator's contact email address.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [^@]+@[^@]+
+		 */
+		portalContactEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: .*
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePortalPutBodyFormGroup() {
+		return new FormGroup<UpdatePortalPutBodyFormProperties>({
+			portalName: new FormControl<string | null | undefined>(undefined),
+			portalDescription: new FormControl<string | null | undefined>(undefined),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdatePortalPutBodyPortalLogoImage {
 		id?: string | null;
 
 		/** Contains an image file. */
-		file?: ImageFile | null;
+		file?: ImageFile;
+	}
+	export interface UpdatePortalPutBodyPortalLogoImageFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePortalPutBodyPortalLogoImageFormGroup() {
+		return new FormGroup<UpdatePortalPutBodyPortalLogoImageFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProjectPutBody {
@@ -2424,6 +4829,41 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface UpdateProjectPutBodyFormProperties {
+
+		/**
+		 * A new friendly name for the project.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		projectName: FormControl<string | null | undefined>,
+
+		/**
+		 * A new description for the project.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		projectDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectPutBodyFormGroup() {
+		return new FormGroup<UpdateProjectPutBodyFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			projectDescription: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAssetPropertyPutBody {
 
@@ -2446,6 +4886,35 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface UpdateAssetPropertyPutBodyFormProperties {
+
+		/**
+		 * <p>The property alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the property.</p>
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [^\u0000-\u001F\u007F]+
+		 */
+		propertyAlias: FormControl<string | null | undefined>,
+
+		/** <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p> */
+		propertyNotificationState: FormControl<PropertyNotificationState | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssetPropertyPutBodyFormGroup() {
+		return new FormGroup<UpdateAssetPropertyPutBodyFormProperties>({
+			propertyAlias: new FormControl<string | null | undefined>(undefined),
+			propertyNotificationState: new FormControl<PropertyNotificationState | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutLoggingOptionsPutBody {
 
@@ -2455,9 +4924,25 @@ export namespace MyNS {
 		 */
 		loggingOptions: PutLoggingOptionsPutBodyLoggingOptions;
 	}
+	export interface PutLoggingOptionsPutBodyFormProperties {
+	}
+	export function CreatePutLoggingOptionsPutBodyFormGroup() {
+		return new FormGroup<PutLoggingOptionsPutBodyFormProperties>({
+		});
+
+	}
 
 	export interface PutLoggingOptionsPutBodyLoggingOptions {
 		level?: LoggingOptionsLevel | null;
+	}
+	export interface PutLoggingOptionsPutBodyLoggingOptionsFormProperties {
+		level: FormControl<LoggingOptionsLevel | null | undefined>,
+	}
+	export function CreatePutLoggingOptionsPutBodyLoggingOptionsFormGroup() {
+		return new FormGroup<PutLoggingOptionsPutBodyLoggingOptionsFormProperties>({
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateAssetsPostBody {
@@ -2488,6 +4973,42 @@ export namespace MyNS {
 		 */
 		clientToken?: string | null;
 	}
+	export interface DisassociateAssetsPostBodyFormProperties {
+
+		/**
+		 * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		hierarchyId: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the child asset to disassociate.
+		 * Required
+		 * Max length: 36
+		 * Min length: 36
+		 * Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
+		 */
+		childAssetId: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 * Max length: 64
+		 * Min length: 36
+		 * Pattern: \S{36,64}
+		 */
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateAssetsPostBodyFormGroup() {
+		return new FormGroup<DisassociateAssetsPostBodyFormProperties>({
+			hierarchyId: new FormControl<string | null | undefined>(undefined),
+			childAssetId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -2496,6 +5017,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGatewayCapabilityConfigurationPostBody {
@@ -2516,6 +5051,32 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		capabilityConfiguration: string;
+	}
+	export interface UpdateGatewayCapabilityConfigurationPostBodyFormProperties {
+
+		/**
+		 * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+		 * Required
+		 * Max length: 512
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$
+		 */
+		capabilityNamespace: FormControl<string | null | undefined>,
+
+		/**
+		 * The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+		 * Required
+		 * Max length: 204800
+		 * Min length: 1
+		 */
+		capabilityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewayCapabilityConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateGatewayCapabilityConfigurationPostBodyFormProperties>({
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined),
+			capabilityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateDelegateToResourceResponse {
+	}
+	export interface AssociateDelegateToResourceResponseFormProperties {
+	}
+	export function CreateAssociateDelegateToResourceResponseFormGroup() {
+		return new FormGroup<AssociateDelegateToResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateDelegateToResourceRequest {
@@ -10,23 +18,78 @@ export namespace MyNS {
 		ResourceId: string;
 		EntityId: string;
 	}
+	export interface AssociateDelegateToResourceRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDelegateToResourceRequestFormGroup() {
+		return new FormGroup<AssociateDelegateToResourceRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EntityNotFoundException {
+	}
+	export interface EntityNotFoundExceptionFormProperties {
+	}
+	export function CreateEntityNotFoundExceptionFormGroup() {
+		return new FormGroup<EntityNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EntityStateException {
 	}
+	export interface EntityStateExceptionFormProperties {
+	}
+	export function CreateEntityStateExceptionFormGroup() {
+		return new FormGroup<EntityStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OrganizationNotFoundException {
 	}
+	export interface OrganizationNotFoundExceptionFormProperties {
+	}
+	export function CreateOrganizationNotFoundExceptionFormGroup() {
+		return new FormGroup<OrganizationNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OrganizationStateException {
 	}
+	export interface OrganizationStateExceptionFormProperties {
+	}
+	export function CreateOrganizationStateExceptionFormGroup() {
+		return new FormGroup<OrganizationStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociateMemberToGroupResponse {
+	}
+	export interface AssociateMemberToGroupResponseFormProperties {
+	}
+	export function CreateAssociateMemberToGroupResponseFormGroup() {
+		return new FormGroup<AssociateMemberToGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateMemberToGroupRequest {
@@ -34,17 +97,58 @@ export namespace MyNS {
 		GroupId: string;
 		MemberId: string;
 	}
+	export interface AssociateMemberToGroupRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+		MemberId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateMemberToGroupRequestFormGroup() {
+		return new FormGroup<AssociateMemberToGroupRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DirectoryServiceAuthenticationFailedException {
+	}
+	export interface DirectoryServiceAuthenticationFailedExceptionFormProperties {
+	}
+	export function CreateDirectoryServiceAuthenticationFailedExceptionFormGroup() {
+		return new FormGroup<DirectoryServiceAuthenticationFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DirectoryUnavailableException {
 	}
+	export interface DirectoryUnavailableExceptionFormProperties {
+	}
+	export function CreateDirectoryUnavailableExceptionFormGroup() {
+		return new FormGroup<DirectoryUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedOperationException {
 	}
+	export interface UnsupportedOperationExceptionFormProperties {
+	}
+	export function CreateUnsupportedOperationExceptionFormGroup() {
+		return new FormGroup<UnsupportedOperationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateAliasResponse {
+	}
+	export interface CreateAliasResponseFormProperties {
+	}
+	export function CreateCreateAliasResponseFormGroup() {
+		return new FormGroup<CreateAliasResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateAliasRequest {
@@ -52,36 +156,120 @@ export namespace MyNS {
 		EntityId: string;
 		Alias: string;
 	}
+	export interface CreateAliasRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAliasRequestFormGroup() {
+		return new FormGroup<CreateAliasRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EmailAddressInUseException {
+	}
+	export interface EmailAddressInUseExceptionFormProperties {
+	}
+	export function CreateEmailAddressInUseExceptionFormGroup() {
+		return new FormGroup<EmailAddressInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MailDomainNotFoundException {
 	}
+	export interface MailDomainNotFoundExceptionFormProperties {
+	}
+	export function CreateMailDomainNotFoundExceptionFormGroup() {
+		return new FormGroup<MailDomainNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MailDomainStateException {
+	}
+	export interface MailDomainStateExceptionFormProperties {
+	}
+	export function CreateMailDomainStateExceptionFormGroup() {
+		return new FormGroup<MailDomainStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateGroupResponse {
 		GroupId?: string | null;
+	}
+	export interface CreateGroupResponseFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupResponseFormGroup() {
+		return new FormGroup<CreateGroupResponseFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupRequest {
 		OrganizationId: string;
 		Name: string;
 	}
+	export interface CreateGroupRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupRequestFormGroup() {
+		return new FormGroup<CreateGroupRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NameAvailabilityException {
+	}
+	export interface NameAvailabilityExceptionFormProperties {
+	}
+	export function CreateNameAvailabilityExceptionFormGroup() {
+		return new FormGroup<NameAvailabilityExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ReservedNameException {
 	}
+	export interface ReservedNameExceptionFormProperties {
+	}
+	export function CreateReservedNameExceptionFormGroup() {
+		return new FormGroup<ReservedNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateResourceResponse {
 		ResourceId?: string | null;
+	}
+	export interface CreateResourceResponseFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateResourceResponseFormGroup() {
+		return new FormGroup<CreateResourceResponseFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateResourceRequest {
@@ -89,11 +277,33 @@ export namespace MyNS {
 		Name: string;
 		Type: CreateResourceRequestType;
 	}
+	export interface CreateResourceRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<CreateResourceRequestType | null | undefined>,
+	}
+	export function CreateCreateResourceRequestFormGroup() {
+		return new FormGroup<CreateResourceRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateResourceRequestType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateResourceRequestType { ROOM = 0, EQUIPMENT = 1 }
 
 	export interface CreateUserResponse {
 		UserId?: string | null;
+	}
+	export interface CreateUserResponseFormProperties {
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserResponseFormGroup() {
+		return new FormGroup<CreateUserResponseFormProperties>({
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserRequest {
@@ -102,19 +312,66 @@ export namespace MyNS {
 		DisplayName: string;
 		Password: string;
 	}
+	export interface CreateUserRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserRequestFormGroup() {
+		return new FormGroup<CreateUserRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPasswordException {
 	}
+	export interface InvalidPasswordExceptionFormProperties {
+	}
+	export function CreateInvalidPasswordExceptionFormGroup() {
+		return new FormGroup<InvalidPasswordExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAccessControlRuleResponse {
+	}
+	export interface DeleteAccessControlRuleResponseFormProperties {
+	}
+	export function CreateDeleteAccessControlRuleResponseFormGroup() {
+		return new FormGroup<DeleteAccessControlRuleResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAccessControlRuleRequest {
 		OrganizationId: string;
 		Name: string;
 	}
+	export interface DeleteAccessControlRuleRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAccessControlRuleRequestFormGroup() {
+		return new FormGroup<DeleteAccessControlRuleRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteAliasResponse {
+	}
+	export interface DeleteAliasResponseFormProperties {
+	}
+	export function CreateDeleteAliasResponseFormGroup() {
+		return new FormGroup<DeleteAliasResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAliasRequest {
@@ -122,16 +379,54 @@ export namespace MyNS {
 		EntityId: string;
 		Alias: string;
 	}
+	export interface DeleteAliasRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAliasRequestFormGroup() {
+		return new FormGroup<DeleteAliasRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteGroupResponse {
+	}
+	export interface DeleteGroupResponseFormProperties {
+	}
+	export function CreateDeleteGroupResponseFormGroup() {
+		return new FormGroup<DeleteGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteGroupRequest {
 		OrganizationId: string;
 		GroupId: string;
 	}
+	export interface DeleteGroupRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGroupRequestFormGroup() {
+		return new FormGroup<DeleteGroupRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteMailboxPermissionsResponse {
+	}
+	export interface DeleteMailboxPermissionsResponseFormProperties {
+	}
+	export function CreateDeleteMailboxPermissionsResponseFormGroup() {
+		return new FormGroup<DeleteMailboxPermissionsResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteMailboxPermissionsRequest {
@@ -139,37 +434,122 @@ export namespace MyNS {
 		EntityId: string;
 		GranteeId: string;
 	}
+	export interface DeleteMailboxPermissionsRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		GranteeId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMailboxPermissionsRequestFormGroup() {
+		return new FormGroup<DeleteMailboxPermissionsRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			GranteeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteResourceResponse {
+	}
+	export interface DeleteResourceResponseFormProperties {
+	}
+	export function CreateDeleteResourceResponseFormGroup() {
+		return new FormGroup<DeleteResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourceRequest {
 		OrganizationId: string;
 		ResourceId: string;
 	}
+	export interface DeleteResourceRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourceRequestFormGroup() {
+		return new FormGroup<DeleteResourceRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteRetentionPolicyResponse {
+	}
+	export interface DeleteRetentionPolicyResponseFormProperties {
+	}
+	export function CreateDeleteRetentionPolicyResponseFormGroup() {
+		return new FormGroup<DeleteRetentionPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteRetentionPolicyRequest {
 		OrganizationId: string;
 		Id: string;
 	}
+	export interface DeleteRetentionPolicyRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRetentionPolicyRequestFormGroup() {
+		return new FormGroup<DeleteRetentionPolicyRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserResponse {
+	}
+	export interface DeleteUserResponseFormProperties {
+	}
+	export function CreateDeleteUserResponseFormGroup() {
+		return new FormGroup<DeleteUserResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteUserRequest {
 		OrganizationId: string;
 		UserId: string;
 	}
+	export interface DeleteUserRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserRequestFormGroup() {
+		return new FormGroup<DeleteUserRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeregisterFromWorkMailResponse {
+	}
+	export interface DeregisterFromWorkMailResponseFormProperties {
+	}
+	export function CreateDeregisterFromWorkMailResponseFormGroup() {
+		return new FormGroup<DeregisterFromWorkMailResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterFromWorkMailRequest {
 		OrganizationId: string;
 		EntityId: string;
+	}
+	export interface DeregisterFromWorkMailRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterFromWorkMailRequestFormGroup() {
+		return new FormGroup<DeregisterFromWorkMailRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeGroupResponse {
@@ -180,12 +560,42 @@ export namespace MyNS {
 		EnabledDate?: Date | null;
 		DisabledDate?: Date | null;
 	}
+	export interface DescribeGroupResponseFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeGroupResponseFormGroup() {
+		return new FormGroup<DescribeGroupResponseFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeGroupResponseState { ENABLED = 0, DISABLED = 1, DELETED = 2 }
 
 	export interface DescribeGroupRequest {
 		OrganizationId: string;
 		GroupId: string;
+	}
+	export interface DescribeGroupRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGroupRequestFormGroup() {
+		return new FormGroup<DescribeGroupRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeOrganizationResponse {
@@ -199,9 +609,43 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 		ARN?: string | null;
 	}
+	export interface DescribeOrganizationResponseFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		DirectoryId: FormControl<string | null | undefined>,
+		DirectoryType: FormControl<string | null | undefined>,
+		DefaultMailDomain: FormControl<string | null | undefined>,
+		CompletedDate: FormControl<Date | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeOrganizationResponseFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryType: new FormControl<string | null | undefined>(undefined),
+			DefaultMailDomain: new FormControl<string | null | undefined>(undefined),
+			CompletedDate: new FormControl<Date | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeOrganizationRequest {
 		OrganizationId: string;
+	}
+	export interface DescribeOrganizationRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrganizationRequestFormGroup() {
+		return new FormGroup<DescribeOrganizationRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeResourceResponse {
@@ -211,10 +655,31 @@ export namespace MyNS {
 		Type?: CreateResourceRequestType | null;
 
 		/** At least one delegate must be associated to the resource to disable automatic replies from the resource. */
-		BookingOptions?: BookingOptions | null;
+		BookingOptions?: BookingOptions;
 		State?: DescribeGroupResponseState | null;
 		EnabledDate?: Date | null;
 		DisabledDate?: Date | null;
+	}
+	export interface DescribeResourceResponseFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<CreateResourceRequestType | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeResourceResponseFormGroup() {
+		return new FormGroup<DescribeResourceResponseFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateResourceRequestType | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -225,9 +690,35 @@ export namespace MyNS {
 		AutoDeclineConflictingRequests?: boolean | null;
 	}
 
+	/** At least one delegate must be associated to the resource to disable automatic replies from the resource. */
+	export interface BookingOptionsFormProperties {
+		AutoAcceptRequests: FormControl<boolean | null | undefined>,
+		AutoDeclineRecurringRequests: FormControl<boolean | null | undefined>,
+		AutoDeclineConflictingRequests: FormControl<boolean | null | undefined>,
+	}
+	export function CreateBookingOptionsFormGroup() {
+		return new FormGroup<BookingOptionsFormProperties>({
+			AutoAcceptRequests: new FormControl<boolean | null | undefined>(undefined),
+			AutoDeclineRecurringRequests: new FormControl<boolean | null | undefined>(undefined),
+			AutoDeclineConflictingRequests: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeResourceRequest {
 		OrganizationId: string;
 		ResourceId: string;
+	}
+	export interface DescribeResourceRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeResourceRequestFormGroup() {
+		return new FormGroup<DescribeResourceRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUserResponse {
@@ -240,6 +731,29 @@ export namespace MyNS {
 		EnabledDate?: Date | null;
 		DisabledDate?: Date | null;
 	}
+	export interface DescribeUserResponseFormProperties {
+		UserId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		UserRole: FormControl<DescribeUserResponseUserRole | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeUserResponseFormGroup() {
+		return new FormGroup<DescribeUserResponseFormProperties>({
+			UserId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			UserRole: new FormControl<DescribeUserResponseUserRole | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeUserResponseUserRole { USER = 0, RESOURCE = 1, SYSTEM_USER = 2 }
 
@@ -247,8 +761,26 @@ export namespace MyNS {
 		OrganizationId: string;
 		UserId: string;
 	}
+	export interface DescribeUserRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserRequestFormGroup() {
+		return new FormGroup<DescribeUserRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateDelegateFromResourceResponse {
+	}
+	export interface DisassociateDelegateFromResourceResponseFormProperties {
+	}
+	export function CreateDisassociateDelegateFromResourceResponseFormGroup() {
+		return new FormGroup<DisassociateDelegateFromResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateDelegateFromResourceRequest {
@@ -256,8 +788,28 @@ export namespace MyNS {
 		ResourceId: string;
 		EntityId: string;
 	}
+	export interface DisassociateDelegateFromResourceRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateDelegateFromResourceRequestFormGroup() {
+		return new FormGroup<DisassociateDelegateFromResourceRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateMemberFromGroupResponse {
+	}
+	export interface DisassociateMemberFromGroupResponseFormProperties {
+	}
+	export function CreateDisassociateMemberFromGroupResponseFormGroup() {
+		return new FormGroup<DisassociateMemberFromGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateMemberFromGroupRequest {
@@ -265,10 +817,32 @@ export namespace MyNS {
 		GroupId: string;
 		MemberId: string;
 	}
+	export interface DisassociateMemberFromGroupRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+		MemberId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateMemberFromGroupRequestFormGroup() {
+		return new FormGroup<DisassociateMemberFromGroupRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAccessControlEffectResponse {
 		Effect?: GetAccessControlEffectResponseEffect | null;
-		MatchedRules?: Array<string> | null;
+		MatchedRules?: Array<string>;
+	}
+	export interface GetAccessControlEffectResponseFormProperties {
+		Effect: FormControl<GetAccessControlEffectResponseEffect | null | undefined>,
+	}
+	export function CreateGetAccessControlEffectResponseFormGroup() {
+		return new FormGroup<GetAccessControlEffectResponseFormProperties>({
+			Effect: new FormControl<GetAccessControlEffectResponseEffect | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetAccessControlEffectResponseEffect { ALLOW = 0, DENY = 1 }
@@ -279,12 +853,40 @@ export namespace MyNS {
 		Action: string;
 		UserId: string;
 	}
+	export interface GetAccessControlEffectRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		Action: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccessControlEffectRequestFormGroup() {
+		return new FormGroup<GetAccessControlEffectRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDefaultRetentionPolicyResponse {
 		Id?: string | null;
 		Name?: string | null;
 		Description?: string | null;
-		FolderConfigurations?: Array<FolderConfiguration> | null;
+		FolderConfigurations?: Array<FolderConfiguration>;
+	}
+	export interface GetDefaultRetentionPolicyResponseFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDefaultRetentionPolicyResponseFormGroup() {
+		return new FormGroup<GetDefaultRetentionPolicyResponseFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -295,6 +897,21 @@ export namespace MyNS {
 		Period?: number | null;
 	}
 
+	/** The configuration applied to an organization's folders by its retention policy. */
+	export interface FolderConfigurationFormProperties {
+		Name: FormControl<FolderConfigurationName | null | undefined>,
+		Action: FormControl<FolderConfigurationAction | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+	}
+	export function CreateFolderConfigurationFormGroup() {
+		return new FormGroup<FolderConfigurationFormProperties>({
+			Name: new FormControl<FolderConfigurationName | null | undefined>(undefined),
+			Action: new FormControl<FolderConfigurationAction | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FolderConfigurationName { INBOX = 0, DELETED_ITEMS = 1, SENT_ITEMS = 2, DRAFTS = 3, JUNK_EMAIL = 4 }
 
 	export enum FolderConfigurationAction { NONE = 0, DELETE = 1, PERMANENTLY_DELETE = 2 }
@@ -302,19 +919,57 @@ export namespace MyNS {
 	export interface GetDefaultRetentionPolicyRequest {
 		OrganizationId: string;
 	}
+	export interface GetDefaultRetentionPolicyRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDefaultRetentionPolicyRequestFormGroup() {
+		return new FormGroup<GetDefaultRetentionPolicyRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMailboxDetailsResponse {
 		MailboxQuota?: number | null;
 		MailboxSize?: number | null;
+	}
+	export interface GetMailboxDetailsResponseFormProperties {
+		MailboxQuota: FormControl<number | null | undefined>,
+		MailboxSize: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMailboxDetailsResponseFormGroup() {
+		return new FormGroup<GetMailboxDetailsResponseFormProperties>({
+			MailboxQuota: new FormControl<number | null | undefined>(undefined),
+			MailboxSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMailboxDetailsRequest {
 		OrganizationId: string;
 		UserId: string;
 	}
+	export interface GetMailboxDetailsRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMailboxDetailsRequestFormGroup() {
+		return new FormGroup<GetMailboxDetailsRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAccessControlRulesResponse {
-		Rules?: Array<AccessControlRule> | null;
+		Rules?: Array<AccessControlRule>;
+	}
+	export interface ListAccessControlRulesResponseFormProperties {
+	}
+	export function CreateListAccessControlRulesResponseFormGroup() {
+		return new FormGroup<ListAccessControlRulesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -323,23 +978,60 @@ export namespace MyNS {
 		Name?: string | null;
 		Effect?: GetAccessControlEffectResponseEffect | null;
 		Description?: string | null;
-		IpRanges?: Array<string> | null;
-		NotIpRanges?: Array<string> | null;
-		Actions?: Array<string> | null;
-		NotActions?: Array<string> | null;
-		UserIds?: Array<string> | null;
-		NotUserIds?: Array<string> | null;
+		IpRanges?: Array<string>;
+		NotIpRanges?: Array<string>;
+		Actions?: Array<string>;
+		NotActions?: Array<string>;
+		UserIds?: Array<string>;
+		NotUserIds?: Array<string>;
 		DateCreated?: Date | null;
 		DateModified?: Date | null;
+	}
+
+	/** A rule that controls access to an Amazon WorkMail organization. */
+	export interface AccessControlRuleFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Effect: FormControl<GetAccessControlEffectResponseEffect | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DateCreated: FormControl<Date | null | undefined>,
+		DateModified: FormControl<Date | null | undefined>,
+	}
+	export function CreateAccessControlRuleFormGroup() {
+		return new FormGroup<AccessControlRuleFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Effect: new FormControl<GetAccessControlEffectResponseEffect | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DateCreated: new FormControl<Date | null | undefined>(undefined),
+			DateModified: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAccessControlRulesRequest {
 		OrganizationId: string;
 	}
+	export interface ListAccessControlRulesRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccessControlRulesRequestFormGroup() {
+		return new FormGroup<ListAccessControlRulesRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAliasesResponse {
-		Aliases?: Array<string> | null;
+		Aliases?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListAliasesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAliasesResponseFormGroup() {
+		return new FormGroup<ListAliasesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAliasesRequest {
@@ -348,10 +1040,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListAliasesRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAliasesRequestFormGroup() {
+		return new FormGroup<ListAliasesRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGroupMembersResponse {
-		Members?: Array<Member> | null;
+		Members?: Array<Member>;
 		NextToken?: string | null;
+	}
+	export interface ListGroupMembersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupMembersResponseFormGroup() {
+		return new FormGroup<ListGroupMembersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -365,6 +1081,27 @@ export namespace MyNS {
 		DisabledDate?: Date | null;
 	}
 
+	/** The representation of a user or group. */
+	export interface MemberFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<MemberType | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateMemberFormGroup() {
+		return new FormGroup<MemberFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<MemberType | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MemberType { GROUP = 0, USER = 1 }
 
 	export interface ListGroupMembersRequest {
@@ -373,10 +1110,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListGroupMembersRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupMembersRequestFormGroup() {
+		return new FormGroup<ListGroupMembersRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGroupsResponse {
-		Groups?: Array<Group> | null;
+		Groups?: Array<Group>;
 		NextToken?: string | null;
+	}
+	export interface ListGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsResponseFormGroup() {
+		return new FormGroup<ListGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -390,15 +1151,58 @@ export namespace MyNS {
 		DisabledDate?: Date | null;
 	}
 
+	/** The representation of an Amazon WorkMail group. */
+	export interface GroupFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGroupFormGroup() {
+		return new FormGroup<GroupFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListGroupsRequest {
 		OrganizationId: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListGroupsRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupsRequestFormGroup() {
+		return new FormGroup<ListGroupsRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMailboxPermissionsResponse {
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
 		NextToken?: string | null;
+	}
+	export interface ListMailboxPermissionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMailboxPermissionsResponseFormGroup() {
+		return new FormGroup<ListMailboxPermissionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -409,6 +1213,19 @@ export namespace MyNS {
 		PermissionValues: Array<PermissionType>;
 	}
 
+	/** Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource mailbox. */
+	export interface PermissionFormProperties {
+		GranteeId: FormControl<string | null | undefined>,
+		GranteeType: FormControl<MemberType | null | undefined>,
+	}
+	export function CreatePermissionFormGroup() {
+		return new FormGroup<PermissionFormProperties>({
+			GranteeId: new FormControl<string | null | undefined>(undefined),
+			GranteeType: new FormControl<MemberType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PermissionType { FULL_ACCESS = 0, SEND_AS = 1, SEND_ON_BEHALF = 2 }
 
 	export interface ListMailboxPermissionsRequest {
@@ -417,10 +1234,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListMailboxPermissionsRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListMailboxPermissionsRequestFormGroup() {
+		return new FormGroup<ListMailboxPermissionsRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListOrganizationsResponse {
-		OrganizationSummaries?: Array<OrganizationSummary> | null;
+		OrganizationSummaries?: Array<OrganizationSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListOrganizationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOrganizationsResponseFormGroup() {
+		return new FormGroup<ListOrganizationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -432,14 +1273,51 @@ export namespace MyNS {
 		State?: string | null;
 	}
 
+	/** The representation of an organization. */
+	export interface OrganizationSummaryFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationSummaryFormGroup() {
+		return new FormGroup<OrganizationSummaryFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListOrganizationsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListOrganizationsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListOrganizationsRequestFormGroup() {
+		return new FormGroup<ListOrganizationsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListResourceDelegatesResponse {
-		Delegates?: Array<Delegate> | null;
+		Delegates?: Array<Delegate>;
 		NextToken?: string | null;
+	}
+	export interface ListResourceDelegatesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceDelegatesResponseFormGroup() {
+		return new FormGroup<ListResourceDelegatesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -449,16 +1327,53 @@ export namespace MyNS {
 		Type: MemberType;
 	}
 
+	/** The name of the attribute, which is one of the values defined in the UserAttribute enumeration. */
+	export interface DelegateFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<MemberType | null | undefined>,
+	}
+	export function CreateDelegateFormGroup() {
+		return new FormGroup<DelegateFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<MemberType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListResourceDelegatesRequest {
 		OrganizationId: string;
 		ResourceId: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListResourceDelegatesRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResourceDelegatesRequestFormGroup() {
+		return new FormGroup<ListResourceDelegatesRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListResourcesResponse {
-		Resources?: Array<Resource> | null;
+		Resources?: Array<Resource>;
 		NextToken?: string | null;
+	}
+	export interface ListResourcesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourcesResponseFormGroup() {
+		return new FormGroup<ListResourcesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -473,14 +1388,57 @@ export namespace MyNS {
 		DisabledDate?: Date | null;
 	}
 
+	/** The representation of a resource. */
+	export interface ResourceFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<CreateResourceRequestType | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CreateResourceRequestType | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListResourcesRequest {
 		OrganizationId: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListResourcesRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResourcesRequestFormGroup() {
+		return new FormGroup<ListResourcesRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -490,16 +1448,54 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Describes a tag applied to a resource. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceRequest {
 		ResourceARN: string;
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListUsersResponse {
-		Users?: Array<User> | null;
+		Users?: Array<User>;
 		NextToken?: string | null;
+	}
+	export interface ListUsersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUsersResponseFormGroup() {
+		return new FormGroup<ListUsersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -515,29 +1511,96 @@ export namespace MyNS {
 		DisabledDate?: Date | null;
 	}
 
+	/** The representation of an Amazon WorkMail user. */
+	export interface UserFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		State: FormControl<DescribeGroupResponseState | null | undefined>,
+		UserRole: FormControl<DescribeUserResponseUserRole | null | undefined>,
+		EnabledDate: FormControl<Date | null | undefined>,
+		DisabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
+			UserRole: new FormControl<DescribeUserResponseUserRole | null | undefined>(undefined),
+			EnabledDate: new FormControl<Date | null | undefined>(undefined),
+			DisabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListUsersRequest {
 		OrganizationId: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListUsersRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListUsersRequestFormGroup() {
+		return new FormGroup<ListUsersRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutAccessControlRuleResponse {
+	}
+	export interface PutAccessControlRuleResponseFormProperties {
+	}
+	export function CreatePutAccessControlRuleResponseFormGroup() {
+		return new FormGroup<PutAccessControlRuleResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutAccessControlRuleRequest {
 		Name: string;
 		Effect: GetAccessControlEffectResponseEffect;
 		Description: string;
-		IpRanges?: Array<string> | null;
-		NotIpRanges?: Array<string> | null;
-		Actions?: Array<string> | null;
-		NotActions?: Array<string> | null;
-		UserIds?: Array<string> | null;
-		NotUserIds?: Array<string> | null;
+		IpRanges?: Array<string>;
+		NotIpRanges?: Array<string>;
+		Actions?: Array<string>;
+		NotActions?: Array<string>;
+		UserIds?: Array<string>;
+		NotUserIds?: Array<string>;
 		OrganizationId: string;
+	}
+	export interface PutAccessControlRuleRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Effect: FormControl<GetAccessControlEffectResponseEffect | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		OrganizationId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAccessControlRuleRequestFormGroup() {
+		return new FormGroup<PutAccessControlRuleRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Effect: new FormControl<GetAccessControlEffectResponseEffect | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutMailboxPermissionsResponse {
+	}
+	export interface PutMailboxPermissionsResponseFormProperties {
+	}
+	export function CreatePutMailboxPermissionsResponseFormGroup() {
+		return new FormGroup<PutMailboxPermissionsResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutMailboxPermissionsRequest {
@@ -546,8 +1609,28 @@ export namespace MyNS {
 		GranteeId: string;
 		PermissionValues: Array<PermissionType>;
 	}
+	export interface PutMailboxPermissionsRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		GranteeId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutMailboxPermissionsRequestFormGroup() {
+		return new FormGroup<PutMailboxPermissionsRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			GranteeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutRetentionPolicyResponse {
+	}
+	export interface PutRetentionPolicyResponseFormProperties {
+	}
+	export function CreatePutRetentionPolicyResponseFormGroup() {
+		return new FormGroup<PutRetentionPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutRetentionPolicyRequest {
@@ -557,8 +1640,30 @@ export namespace MyNS {
 		Description?: string | null;
 		FolderConfigurations: Array<FolderConfiguration>;
 	}
+	export interface PutRetentionPolicyRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRetentionPolicyRequestFormGroup() {
+		return new FormGroup<PutRetentionPolicyRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterToWorkMailResponse {
+	}
+	export interface RegisterToWorkMailResponseFormProperties {
+	}
+	export function CreateRegisterToWorkMailResponseFormGroup() {
+		return new FormGroup<RegisterToWorkMailResponseFormProperties>({
+		});
+
 	}
 
 	export interface RegisterToWorkMailRequest {
@@ -566,11 +1671,38 @@ export namespace MyNS {
 		EntityId: string;
 		Email: string;
 	}
+	export interface RegisterToWorkMailRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterToWorkMailRequestFormGroup() {
+		return new FormGroup<RegisterToWorkMailRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EntityAlreadyRegisteredException {
 	}
+	export interface EntityAlreadyRegisteredExceptionFormProperties {
+	}
+	export function CreateEntityAlreadyRegisteredExceptionFormGroup() {
+		return new FormGroup<EntityAlreadyRegisteredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResetPasswordResponse {
+	}
+	export interface ResetPasswordResponseFormProperties {
+	}
+	export function CreateResetPasswordResponseFormGroup() {
+		return new FormGroup<ResetPasswordResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResetPasswordRequest {
@@ -578,27 +1710,86 @@ export namespace MyNS {
 		UserId: string;
 		Password: string;
 	}
+	export interface ResetPasswordRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateResetPasswordRequestFormGroup() {
+		return new FormGroup<ResetPasswordRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TooManyTagsException {
 	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceARN: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateMailboxQuotaResponse {
+	}
+	export interface UpdateMailboxQuotaResponseFormProperties {
+	}
+	export function CreateUpdateMailboxQuotaResponseFormGroup() {
+		return new FormGroup<UpdateMailboxQuotaResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateMailboxQuotaRequest {
@@ -606,8 +1797,28 @@ export namespace MyNS {
 		UserId: string;
 		MailboxQuota: number;
 	}
+	export interface UpdateMailboxQuotaRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+		MailboxQuota: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateMailboxQuotaRequestFormGroup() {
+		return new FormGroup<UpdateMailboxQuotaRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			MailboxQuota: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdatePrimaryEmailAddressResponse {
+	}
+	export interface UpdatePrimaryEmailAddressResponseFormProperties {
+	}
+	export function CreateUpdatePrimaryEmailAddressResponseFormGroup() {
+		return new FormGroup<UpdatePrimaryEmailAddressResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePrimaryEmailAddressRequest {
@@ -615,8 +1826,28 @@ export namespace MyNS {
 		EntityId: string;
 		Email: string;
 	}
+	export interface UpdatePrimaryEmailAddressRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		EntityId: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePrimaryEmailAddressRequestFormGroup() {
+		return new FormGroup<UpdatePrimaryEmailAddressRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			EntityId: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateResourceResponse {
+	}
+	export interface UpdateResourceResponseFormProperties {
+	}
+	export function CreateUpdateResourceResponseFormGroup() {
+		return new FormGroup<UpdateResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateResourceRequest {
@@ -625,10 +1856,30 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** At least one delegate must be associated to the resource to disable automatic replies from the resource. */
-		BookingOptions?: BookingOptions | null;
+		BookingOptions?: BookingOptions;
+	}
+	export interface UpdateResourceRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResourceRequestFormGroup() {
+		return new FormGroup<UpdateResourceRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidConfigurationException {
+	}
+	export interface InvalidConfigurationExceptionFormProperties {
+	}
+	export function CreateInvalidConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidConfigurationExceptionFormProperties>({
+		});
+
 	}
 
 	export enum AccessControlRuleEffect { ALLOW = 0, DENY = 1 }

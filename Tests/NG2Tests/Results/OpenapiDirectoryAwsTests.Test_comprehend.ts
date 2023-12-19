@@ -1,17 +1,36 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchDetectDominantLanguageResponse {
 		ResultList: Array<BatchDetectDominantLanguageItemResult>;
 		ErrorList: Array<BatchItemError>;
+	}
+	export interface BatchDetectDominantLanguageResponseFormProperties {
+	}
+	export function CreateBatchDetectDominantLanguageResponseFormGroup() {
+		return new FormGroup<BatchDetectDominantLanguageResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectDominantLanguageItemResult {
 		Index?: number | null;
-		Languages?: Array<DominantLanguage> | null;
+		Languages?: Array<DominantLanguage>;
+	}
+
+	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
+	export interface BatchDetectDominantLanguageItemResultFormProperties {
+		Index: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchDetectDominantLanguageItemResultFormGroup() {
+		return new FormGroup<BatchDetectDominantLanguageItemResultFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -19,6 +38,19 @@ export namespace MyNS {
 	export interface DominantLanguage {
 		LanguageCode?: string | null;
 		Score?: number | null;
+	}
+
+	/** Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection. */
+	export interface DominantLanguageFormProperties {
+		LanguageCode: FormControl<string | null | undefined>,
+		Score: FormControl<number | null | undefined>,
+	}
+	export function CreateDominantLanguageFormGroup() {
+		return new FormGroup<DominantLanguageFormProperties>({
+			LanguageCode: new FormControl<string | null | undefined>(undefined),
+			Score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -29,32 +61,100 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error. */
+	export interface BatchItemErrorFormProperties {
+		Index: FormControl<number | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchItemErrorFormGroup() {
+		return new FormGroup<BatchItemErrorFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDetectDominantLanguageRequest {
 		TextList: Array<string>;
+	}
+	export interface BatchDetectDominantLanguageRequestFormProperties {
+	}
+	export function CreateBatchDetectDominantLanguageRequestFormGroup() {
+		return new FormGroup<BatchDetectDominantLanguageRequestFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TextSizeLimitExceededException {
+	}
+	export interface TextSizeLimitExceededExceptionFormProperties {
+	}
+	export function CreateTextSizeLimitExceededExceptionFormGroup() {
+		return new FormGroup<TextSizeLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BatchSizeLimitExceededException {
 	}
+	export interface BatchSizeLimitExceededExceptionFormProperties {
+	}
+	export function CreateBatchSizeLimitExceededExceptionFormGroup() {
+		return new FormGroup<BatchSizeLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BatchDetectEntitiesResponse {
 		ResultList: Array<BatchDetectEntitiesItemResult>;
 		ErrorList: Array<BatchItemError>;
 	}
+	export interface BatchDetectEntitiesResponseFormProperties {
+	}
+	export function CreateBatchDetectEntitiesResponseFormGroup() {
+		return new FormGroup<BatchDetectEntitiesResponseFormProperties>({
+		});
+
+	}
 
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectEntitiesItemResult {
 		Index?: number | null;
-		Entities?: Array<Entity> | null;
+		Entities?: Array<Entity>;
+	}
+
+	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
+	export interface BatchDetectEntitiesItemResultFormProperties {
+		Index: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchDetectEntitiesItemResultFormGroup() {
+		return new FormGroup<BatchDetectEntitiesItemResultFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -67,28 +167,81 @@ export namespace MyNS {
 		EndOffset?: number | null;
 	}
 
+	/** <p>Provides information about an entity. </p> <p> </p> */
+	export interface EntityFormProperties {
+		Score: FormControl<number | null | undefined>,
+		Type: FormControl<EntityType | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		BeginOffset: FormControl<number | null | undefined>,
+		EndOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityFormGroup() {
+		return new FormGroup<EntityFormProperties>({
+			Score: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<EntityType | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			BeginOffset: new FormControl<number | null | undefined>(undefined),
+			EndOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EntityType { PERSON = 0, LOCATION = 1, ORGANIZATION = 2, COMMERCIAL_ITEM = 3, EVENT = 4, DATE = 5, QUANTITY = 6, TITLE = 7, OTHER = 8 }
 
 	export interface BatchDetectEntitiesRequest {
 		TextList: Array<string>;
 		LanguageCode: BatchDetectEntitiesRequestLanguageCode;
 	}
+	export interface BatchDetectEntitiesRequestFormProperties {
+		LanguageCode: FormControl<BatchDetectEntitiesRequestLanguageCode | null | undefined>,
+	}
+	export function CreateBatchDetectEntitiesRequestFormGroup() {
+		return new FormGroup<BatchDetectEntitiesRequestFormProperties>({
+			LanguageCode: new FormControl<BatchDetectEntitiesRequestLanguageCode | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum BatchDetectEntitiesRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface UnsupportedLanguageException {
+	}
+	export interface UnsupportedLanguageExceptionFormProperties {
+	}
+	export function CreateUnsupportedLanguageExceptionFormGroup() {
+		return new FormGroup<UnsupportedLanguageExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BatchDetectKeyPhrasesResponse {
 		ResultList: Array<BatchDetectKeyPhrasesItemResult>;
 		ErrorList: Array<BatchItemError>;
 	}
+	export interface BatchDetectKeyPhrasesResponseFormProperties {
+	}
+	export function CreateBatchDetectKeyPhrasesResponseFormGroup() {
+		return new FormGroup<BatchDetectKeyPhrasesResponseFormProperties>({
+		});
+
+	}
 
 
 	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
 	export interface BatchDetectKeyPhrasesItemResult {
 		Index?: number | null;
-		KeyPhrases?: Array<KeyPhrase> | null;
+		KeyPhrases?: Array<KeyPhrase>;
+	}
+
+	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
+	export interface BatchDetectKeyPhrasesItemResultFormProperties {
+		Index: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchDetectKeyPhrasesItemResultFormGroup() {
+		return new FormGroup<BatchDetectKeyPhrasesItemResultFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -100,9 +253,35 @@ export namespace MyNS {
 		EndOffset?: number | null;
 	}
 
+	/** Describes a key noun phrase. */
+	export interface KeyPhraseFormProperties {
+		Score: FormControl<number | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		BeginOffset: FormControl<number | null | undefined>,
+		EndOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateKeyPhraseFormGroup() {
+		return new FormGroup<KeyPhraseFormProperties>({
+			Score: new FormControl<number | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			BeginOffset: new FormControl<number | null | undefined>(undefined),
+			EndOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDetectKeyPhrasesRequest {
 		TextList: Array<string>;
 		LanguageCode: BatchDetectKeyPhrasesRequestLanguageCode;
+	}
+	export interface BatchDetectKeyPhrasesRequestFormProperties {
+		LanguageCode: FormControl<BatchDetectKeyPhrasesRequestLanguageCode | null | undefined>,
+	}
+	export function CreateBatchDetectKeyPhrasesRequestFormGroup() {
+		return new FormGroup<BatchDetectKeyPhrasesRequestFormProperties>({
+			LanguageCode: new FormControl<BatchDetectKeyPhrasesRequestLanguageCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BatchDetectKeyPhrasesRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -110,6 +289,13 @@ export namespace MyNS {
 	export interface BatchDetectSentimentResponse {
 		ResultList: Array<BatchDetectSentimentItemResult>;
 		ErrorList: Array<BatchItemError>;
+	}
+	export interface BatchDetectSentimentResponseFormProperties {
+	}
+	export function CreateBatchDetectSentimentResponseFormGroup() {
+		return new FormGroup<BatchDetectSentimentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -119,7 +305,20 @@ export namespace MyNS {
 		Sentiment?: BatchDetectSentimentItemResultSentiment | null;
 
 		/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
-		SentimentScore?: SentimentScore | null;
+		SentimentScore?: SentimentScore;
+	}
+
+	/** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation. */
+	export interface BatchDetectSentimentItemResultFormProperties {
+		Index: FormControl<number | null | undefined>,
+		Sentiment: FormControl<BatchDetectSentimentItemResultSentiment | null | undefined>,
+	}
+	export function CreateBatchDetectSentimentItemResultFormGroup() {
+		return new FormGroup<BatchDetectSentimentItemResultFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+			Sentiment: new FormControl<BatchDetectSentimentItemResultSentiment | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BatchDetectSentimentItemResultSentiment { POSITIVE = 0, NEGATIVE = 1, NEUTRAL = 2, MIXED = 3 }
@@ -133,9 +332,35 @@ export namespace MyNS {
 		Mixed?: number | null;
 	}
 
+	/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
+	export interface SentimentScoreFormProperties {
+		Positive: FormControl<number | null | undefined>,
+		Negative: FormControl<number | null | undefined>,
+		Neutral: FormControl<number | null | undefined>,
+		Mixed: FormControl<number | null | undefined>,
+	}
+	export function CreateSentimentScoreFormGroup() {
+		return new FormGroup<SentimentScoreFormProperties>({
+			Positive: new FormControl<number | null | undefined>(undefined),
+			Negative: new FormControl<number | null | undefined>(undefined),
+			Neutral: new FormControl<number | null | undefined>(undefined),
+			Mixed: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDetectSentimentRequest {
 		TextList: Array<string>;
 		LanguageCode: BatchDetectSentimentRequestLanguageCode;
+	}
+	export interface BatchDetectSentimentRequestFormProperties {
+		LanguageCode: FormControl<BatchDetectSentimentRequestLanguageCode | null | undefined>,
+	}
+	export function CreateBatchDetectSentimentRequestFormGroup() {
+		return new FormGroup<BatchDetectSentimentRequestFormProperties>({
+			LanguageCode: new FormControl<BatchDetectSentimentRequestLanguageCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BatchDetectSentimentRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -144,12 +369,30 @@ export namespace MyNS {
 		ResultList: Array<BatchDetectSyntaxItemResult>;
 		ErrorList: Array<BatchItemError>;
 	}
+	export interface BatchDetectSyntaxResponseFormProperties {
+	}
+	export function CreateBatchDetectSyntaxResponseFormGroup() {
+		return new FormGroup<BatchDetectSyntaxResponseFormProperties>({
+		});
+
+	}
 
 
 	/** The result of calling the operation. The operation returns one object that is successfully processed by the operation. */
 	export interface BatchDetectSyntaxItemResult {
 		Index?: number | null;
-		SyntaxTokens?: Array<SyntaxToken> | null;
+		SyntaxTokens?: Array<SyntaxToken>;
+	}
+
+	/** The result of calling the operation. The operation returns one object that is successfully processed by the operation. */
+	export interface BatchDetectSyntaxItemResultFormProperties {
+		Index: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchDetectSyntaxItemResultFormGroup() {
+		return new FormGroup<BatchDetectSyntaxItemResultFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -161,7 +404,24 @@ export namespace MyNS {
 		EndOffset?: number | null;
 
 		/** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>. */
-		PartOfSpeech?: PartOfSpeechTag | null;
+		PartOfSpeech?: PartOfSpeechTag;
+	}
+
+	/** Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text. */
+	export interface SyntaxTokenFormProperties {
+		TokenId: FormControl<number | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		BeginOffset: FormControl<number | null | undefined>,
+		EndOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateSyntaxTokenFormGroup() {
+		return new FormGroup<SyntaxTokenFormProperties>({
+			TokenId: new FormControl<number | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			BeginOffset: new FormControl<number | null | undefined>(undefined),
+			EndOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -171,18 +431,47 @@ export namespace MyNS {
 		Score?: number | null;
 	}
 
+	/** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>. */
+	export interface PartOfSpeechTagFormProperties {
+		Tag: FormControl<PartOfSpeechTagTag | null | undefined>,
+		Score: FormControl<number | null | undefined>,
+	}
+	export function CreatePartOfSpeechTagFormGroup() {
+		return new FormGroup<PartOfSpeechTagFormProperties>({
+			Tag: new FormControl<PartOfSpeechTagTag | null | undefined>(undefined),
+			Score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PartOfSpeechTagTag { ADJ = 0, ADP = 1, ADV = 2, AUX = 3, CONJ = 4, CCONJ = 5, DET = 6, INTJ = 7, NOUN = 8, NUM = 9, O = 10, PART = 11, PRON = 12, PROPN = 13, PUNCT = 14, SCONJ = 15, SYM = 16, VERB = 17 }
 
 	export interface BatchDetectSyntaxRequest {
 		TextList: Array<string>;
 		LanguageCode: BatchDetectSyntaxRequestLanguageCode;
 	}
+	export interface BatchDetectSyntaxRequestFormProperties {
+		LanguageCode: FormControl<BatchDetectSyntaxRequestLanguageCode | null | undefined>,
+	}
+	export function CreateBatchDetectSyntaxRequestFormGroup() {
+		return new FormGroup<BatchDetectSyntaxRequestFormProperties>({
+			LanguageCode: new FormControl<BatchDetectSyntaxRequestLanguageCode | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum BatchDetectSyntaxRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5 }
 
 	export interface ClassifyDocumentResponse {
-		Classes?: Array<DocumentClass> | null;
-		Labels?: Array<DocumentLabel> | null;
+		Classes?: Array<DocumentClass>;
+		Labels?: Array<DocumentLabel>;
+	}
+	export interface ClassifyDocumentResponseFormProperties {
+	}
+	export function CreateClassifyDocumentResponseFormGroup() {
+		return new FormGroup<ClassifyDocumentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -192,6 +481,19 @@ export namespace MyNS {
 		Score?: number | null;
 	}
 
+	/** Specifies the class that categorizes the document being analyzed */
+	export interface DocumentClassFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Score: FormControl<number | null | undefined>,
+	}
+	export function CreateDocumentClassFormGroup() {
+		return new FormGroup<DocumentClassFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies one of the label or labels that categorize the document being analyzed. */
 	export interface DocumentLabel {
@@ -199,22 +501,62 @@ export namespace MyNS {
 		Score?: number | null;
 	}
 
+	/** Specifies one of the label or labels that categorize the document being analyzed. */
+	export interface DocumentLabelFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Score: FormControl<number | null | undefined>,
+	}
+	export function CreateDocumentLabelFormGroup() {
+		return new FormGroup<DocumentLabelFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClassifyDocumentRequest {
 		Text: string;
 		EndpointArn: string;
 	}
+	export interface ClassifyDocumentRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateClassifyDocumentRequestFormGroup() {
+		return new FormGroup<ClassifyDocumentRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceUnavailableException {
+	}
+	export interface ResourceUnavailableExceptionFormProperties {
+	}
+	export function CreateResourceUnavailableExceptionFormGroup() {
+		return new FormGroup<ResourceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDocumentClassifierResponse {
 		DocumentClassifierArn?: string | null;
 	}
+	export interface CreateDocumentClassifierResponseFormProperties {
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDocumentClassifierResponseFormGroup() {
+		return new FormGroup<CreateDocumentClassifierResponseFormProperties>({
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDocumentClassifierRequest {
 		DocumentClassifierName: string;
 		DataAccessRoleArn: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p>
@@ -223,14 +565,33 @@ export namespace MyNS {
 		InputDataConfig: DocumentClassifierInputDataConfig;
 
 		/** Provides output results configuration parameters for custom classifier jobs. */
-		OutputDataConfig?: DocumentClassifierOutputDataConfig | null;
+		OutputDataConfig?: DocumentClassifierOutputDataConfig;
 		ClientRequestToken?: string | null;
 		LanguageCode: CreateDocumentClassifierRequestLanguageCode;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		Mode?: CreateDocumentClassifierRequestMode | null;
+	}
+	export interface CreateDocumentClassifierRequestFormProperties {
+		DocumentClassifierName: FormControl<string | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateDocumentClassifierRequestLanguageCode | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+		Mode: FormControl<CreateDocumentClassifierRequestMode | null | undefined>,
+	}
+	export function CreateCreateDocumentClassifierRequestFormGroup() {
+		return new FormGroup<CreateDocumentClassifierRequestFormProperties>({
+			DocumentClassifierName: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateDocumentClassifierRequestLanguageCode | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			Mode: new FormControl<CreateDocumentClassifierRequestMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -240,6 +601,19 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p> */
 	export interface DocumentClassifierInputDataConfig {
@@ -247,11 +621,37 @@ export namespace MyNS {
 		LabelDelimiter?: string | null;
 	}
 
+	/** <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p> */
+	export interface DocumentClassifierInputDataConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		LabelDelimiter: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentClassifierInputDataConfigFormGroup() {
+		return new FormGroup<DocumentClassifierInputDataConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			LabelDelimiter: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides output results configuration parameters for custom classifier jobs.  */
 	export interface DocumentClassifierOutputDataConfig {
 		S3Uri?: string | null;
 		KmsKeyId?: string | null;
+	}
+
+	/** Provides output results configuration parameters for custom classifier jobs.  */
+	export interface DocumentClassifierOutputDataConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentClassifierOutputDataConfigFormGroup() {
+		return new FormGroup<DocumentClassifierOutputDataConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDocumentClassifierRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -263,25 +663,78 @@ export namespace MyNS {
 		Subnets: Array<string>;
 	}
 
+	/**  Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.  */
+	export interface VpcConfigFormProperties {
+	}
+	export function CreateVpcConfigFormGroup() {
+		return new FormGroup<VpcConfigFormProperties>({
+		});
+
+	}
+
 	export enum CreateDocumentClassifierRequestMode { MULTI_CLASS = 0, MULTI_LABEL = 1 }
 
 	export interface ResourceInUseException {
 	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceLimitExceededException {
+	}
+	export interface ResourceLimitExceededExceptionFormProperties {
+	}
+	export function CreateResourceLimitExceededExceptionFormGroup() {
+		return new FormGroup<ResourceLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface KmsKeyValidationException {
 	}
+	export interface KmsKeyValidationExceptionFormProperties {
+	}
+	export function CreateKmsKeyValidationExceptionFormGroup() {
+		return new FormGroup<KmsKeyValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateEndpointResponse {
 		EndpointArn?: string | null;
+	}
+	export interface CreateEndpointResponseFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointResponseFormGroup() {
+		return new FormGroup<CreateEndpointResponseFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEndpointRequest {
@@ -289,20 +742,51 @@ export namespace MyNS {
 		ModelArn: string;
 		DesiredInferenceUnits: number;
 		ClientRequestToken?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateEndpointRequestFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		ModelArn: FormControl<string | null | undefined>,
+		DesiredInferenceUnits: FormControl<number | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointRequestFormGroup() {
+		return new FormGroup<CreateEndpointRequestFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			ModelArn: new FormControl<string | null | undefined>(undefined),
+			DesiredInferenceUnits: new FormControl<number | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateEntityRecognizerResponse {
 		EntityRecognizerArn?: string | null;
 	}
+	export interface CreateEntityRecognizerResponseFormProperties {
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEntityRecognizerResponseFormGroup() {
+		return new FormGroup<CreateEntityRecognizerResponseFormProperties>({
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateEntityRecognizerRequest {
 		RecognizerName: string;
 		DataAccessRoleArn: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * Specifies the format and location of the input data.
@@ -314,7 +798,24 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface CreateEntityRecognizerRequestFormProperties {
+		RecognizerName: FormControl<string | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateEntityRecognizerRequestLanguageCode | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEntityRecognizerRequestFormGroup() {
+		return new FormGroup<CreateEntityRecognizerRequestFormProperties>({
+			RecognizerName: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateEntityRecognizerRequestLanguageCode | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -329,10 +830,19 @@ export namespace MyNS {
 		Documents: EntityRecognizerDocuments;
 
 		/** Describes the annotations associated with a entity recognizer. */
-		Annotations?: EntityRecognizerAnnotations | null;
+		Annotations?: EntityRecognizerAnnotations;
 
 		/** Describes the entity recognizer submitted with an entity recognizer. */
-		EntityList?: EntityRecognizerEntityList | null;
+		EntityList?: EntityRecognizerEntityList;
+	}
+
+	/** Specifies the format and location of the input data. */
+	export interface EntityRecognizerInputDataConfigFormProperties {
+	}
+	export function CreateEntityRecognizerInputDataConfigFormGroup() {
+		return new FormGroup<EntityRecognizerInputDataConfigFormProperties>({
+		});
+
 	}
 
 
@@ -341,10 +851,32 @@ export namespace MyNS {
 		Type: string;
 	}
 
+	/** Information about an individual item on a list of entity types. */
+	export interface EntityTypesListItemFormProperties {
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityTypesListItemFormGroup() {
+		return new FormGroup<EntityTypesListItemFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the training documents submitted with an entity recognizer. */
 	export interface EntityRecognizerDocuments {
 		S3Uri: string;
+	}
+
+	/** Describes the training documents submitted with an entity recognizer. */
+	export interface EntityRecognizerDocumentsFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityRecognizerDocumentsFormGroup() {
+		return new FormGroup<EntityRecognizerDocumentsFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -353,39 +885,116 @@ export namespace MyNS {
 		S3Uri: string;
 	}
 
+	/** Describes the annotations associated with a entity recognizer. */
+	export interface EntityRecognizerAnnotationsFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityRecognizerAnnotationsFormGroup() {
+		return new FormGroup<EntityRecognizerAnnotationsFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the entity recognizer submitted with an entity recognizer. */
 	export interface EntityRecognizerEntityList {
 		S3Uri: string;
 	}
 
+	/** Describes the entity recognizer submitted with an entity recognizer. */
+	export interface EntityRecognizerEntityListFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityRecognizerEntityListFormGroup() {
+		return new FormGroup<EntityRecognizerEntityListFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateEntityRecognizerRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface DeleteDocumentClassifierResponse {
+	}
+	export interface DeleteDocumentClassifierResponseFormProperties {
+	}
+	export function CreateDeleteDocumentClassifierResponseFormGroup() {
+		return new FormGroup<DeleteDocumentClassifierResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDocumentClassifierRequest {
 		DocumentClassifierArn: string;
 	}
+	export interface DeleteDocumentClassifierRequestFormProperties {
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDocumentClassifierRequestFormGroup() {
+		return new FormGroup<DeleteDocumentClassifierRequestFormProperties>({
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEndpointResponse {
+	}
+	export interface DeleteEndpointResponseFormProperties {
+	}
+	export function CreateDeleteEndpointResponseFormGroup() {
+		return new FormGroup<DeleteEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteEndpointRequest {
 		EndpointArn: string;
 	}
+	export interface DeleteEndpointRequestFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEndpointRequestFormGroup() {
+		return new FormGroup<DeleteEndpointRequestFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEntityRecognizerResponse {
+	}
+	export interface DeleteEntityRecognizerResponseFormProperties {
+	}
+	export function CreateDeleteEntityRecognizerResponseFormGroup() {
+		return new FormGroup<DeleteEntityRecognizerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteEntityRecognizerRequest {
 		EntityRecognizerArn: string;
 	}
+	export interface DeleteEntityRecognizerRequestFormProperties {
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEntityRecognizerRequestFormGroup() {
+		return new FormGroup<DeleteEntityRecognizerRequestFormProperties>({
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDocumentClassificationJobResponse {
 
 		/** Provides information about a document classification job. */
-		DocumentClassificationJobProperties?: DocumentClassificationJobProperties | null;
+		DocumentClassificationJobProperties?: DocumentClassificationJobProperties;
+	}
+	export interface DescribeDocumentClassificationJobResponseFormProperties {
+	}
+	export function CreateDescribeDocumentClassificationJobResponseFormGroup() {
+		return new FormGroup<DescribeDocumentClassificationJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -400,15 +1009,42 @@ export namespace MyNS {
 		DocumentClassifierArn?: string | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Provides information about a document classification job. */
+	export interface DocumentClassificationJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentClassificationJobPropertiesFormGroup() {
+		return new FormGroup<DocumentClassificationJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DocumentClassificationJobPropertiesJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, FAILED = 3, STOP_REQUESTED = 4, STOPPED = 5 }
@@ -420,6 +1056,19 @@ export namespace MyNS {
 		InputFormat?: InputDataConfigInputFormat | null;
 	}
 
+	/** The input properties for a topic detection job. */
+	export interface InputDataConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		InputFormat: FormControl<InputDataConfigInputFormat | null | undefined>,
+	}
+	export function CreateInputDataConfigFormGroup() {
+		return new FormGroup<InputDataConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			InputFormat: new FormControl<InputDataConfigInputFormat | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InputDataConfigInputFormat { ONE_DOC_PER_FILE = 0, ONE_DOC_PER_LINE = 1 }
 
 
@@ -429,17 +1078,53 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 	}
 
+	/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
+	export interface OutputDataConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputDataConfigFormGroup() {
+		return new FormGroup<OutputDataConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDocumentClassificationJobRequest {
 		JobId: string;
 	}
+	export interface DescribeDocumentClassificationJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDocumentClassificationJobRequestFormGroup() {
+		return new FormGroup<DescribeDocumentClassificationJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface JobNotFoundException {
+	}
+	export interface JobNotFoundExceptionFormProperties {
+	}
+	export function CreateJobNotFoundExceptionFormGroup() {
+		return new FormGroup<JobNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDocumentClassifierResponse {
 
 		/** Provides information about a document classifier. */
-		DocumentClassifierProperties?: DocumentClassifierProperties | null;
+		DocumentClassifierProperties?: DocumentClassifierProperties;
+	}
+	export interface DescribeDocumentClassifierResponseFormProperties {
+	}
+	export function CreateDescribeDocumentClassifierResponseFormGroup() {
+		return new FormGroup<DescribeDocumentClassifierResponseFormProperties>({
+		});
+
 	}
 
 
@@ -455,19 +1140,50 @@ export namespace MyNS {
 		TrainingEndTime?: Date | null;
 
 		/** <p>The input properties for training a document classifier. </p> <p>For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>. </p> */
-		InputDataConfig?: DocumentClassifierInputDataConfig | null;
+		InputDataConfig?: DocumentClassifierInputDataConfig;
 
 		/** Provides output results configuration parameters for custom classifier jobs. */
-		OutputDataConfig?: DocumentClassifierOutputDataConfig | null;
+		OutputDataConfig?: DocumentClassifierOutputDataConfig;
 
 		/** Provides information about a document classifier. */
-		ClassifierMetadata?: ClassifierMetadata | null;
+		ClassifierMetadata?: ClassifierMetadata;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		Mode?: CreateDocumentClassifierRequestMode | null;
+	}
+
+	/** Provides information about a document classifier. */
+	export interface DocumentClassifierPropertiesFormProperties {
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<DocumentClassifierPropertiesLanguageCode | null | undefined>,
+		Status: FormControl<DocumentClassifierPropertiesStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		TrainingStartTime: FormControl<Date | null | undefined>,
+		TrainingEndTime: FormControl<Date | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+		Mode: FormControl<CreateDocumentClassifierRequestMode | null | undefined>,
+	}
+	export function CreateDocumentClassifierPropertiesFormGroup() {
+		return new FormGroup<DocumentClassifierPropertiesFormProperties>({
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<DocumentClassifierPropertiesLanguageCode | null | undefined>(undefined),
+			Status: new FormControl<DocumentClassifierPropertiesStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			Mode: new FormControl<CreateDocumentClassifierRequestMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DocumentClassifierPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -482,7 +1198,22 @@ export namespace MyNS {
 		NumberOfTestDocuments?: number | null;
 
 		/** Describes the result metrics for the test data associated with an documentation classifier. */
-		EvaluationMetrics?: ClassifierEvaluationMetrics | null;
+		EvaluationMetrics?: ClassifierEvaluationMetrics;
+	}
+
+	/** Provides information about a document classifier. */
+	export interface ClassifierMetadataFormProperties {
+		NumberOfLabels: FormControl<number | null | undefined>,
+		NumberOfTrainedDocuments: FormControl<number | null | undefined>,
+		NumberOfTestDocuments: FormControl<number | null | undefined>,
+	}
+	export function CreateClassifierMetadataFormGroup() {
+		return new FormGroup<ClassifierMetadataFormProperties>({
+			NumberOfLabels: new FormControl<number | null | undefined>(undefined),
+			NumberOfTrainedDocuments: new FormControl<number | null | undefined>(undefined),
+			NumberOfTestDocuments: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -498,14 +1229,55 @@ export namespace MyNS {
 		HammingLoss?: number | null;
 	}
 
+	/** Describes the result metrics for the test data associated with an documentation classifier. */
+	export interface ClassifierEvaluationMetricsFormProperties {
+		Accuracy: FormControl<number | null | undefined>,
+		Precision: FormControl<number | null | undefined>,
+		Recall: FormControl<number | null | undefined>,
+		F1Score: FormControl<number | null | undefined>,
+		MicroPrecision: FormControl<number | null | undefined>,
+		MicroRecall: FormControl<number | null | undefined>,
+		MicroF1Score: FormControl<number | null | undefined>,
+		HammingLoss: FormControl<number | null | undefined>,
+	}
+	export function CreateClassifierEvaluationMetricsFormGroup() {
+		return new FormGroup<ClassifierEvaluationMetricsFormProperties>({
+			Accuracy: new FormControl<number | null | undefined>(undefined),
+			Precision: new FormControl<number | null | undefined>(undefined),
+			Recall: new FormControl<number | null | undefined>(undefined),
+			F1Score: new FormControl<number | null | undefined>(undefined),
+			MicroPrecision: new FormControl<number | null | undefined>(undefined),
+			MicroRecall: new FormControl<number | null | undefined>(undefined),
+			MicroF1Score: new FormControl<number | null | undefined>(undefined),
+			HammingLoss: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDocumentClassifierRequest {
 		DocumentClassifierArn: string;
+	}
+	export interface DescribeDocumentClassifierRequestFormProperties {
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDocumentClassifierRequestFormGroup() {
+		return new FormGroup<DescribeDocumentClassifierRequestFormProperties>({
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDominantLanguageDetectionJobResponse {
 
 		/** Provides information about a dominant language detection job. */
-		DominantLanguageDetectionJobProperties?: DominantLanguageDetectionJobProperties | null;
+		DominantLanguageDetectionJobProperties?: DominantLanguageDetectionJobProperties;
+	}
+	export interface DescribeDominantLanguageDetectionJobResponseFormProperties {
+	}
+	export function CreateDescribeDominantLanguageDetectionJobResponseFormGroup() {
+		return new FormGroup<DescribeDominantLanguageDetectionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -519,25 +1291,66 @@ export namespace MyNS {
 		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Provides information about a dominant language detection job. */
+	export interface DominantLanguageDetectionJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDominantLanguageDetectionJobPropertiesFormGroup() {
+		return new FormGroup<DominantLanguageDetectionJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDominantLanguageDetectionJobRequest {
 		JobId: string;
 	}
+	export interface DescribeDominantLanguageDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDominantLanguageDetectionJobRequestFormGroup() {
+		return new FormGroup<DescribeDominantLanguageDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEndpointResponse {
 
 		/** Specifies information about the specified endpoint. */
-		EndpointProperties?: EndpointProperties | null;
+		EndpointProperties?: EndpointProperties;
+	}
+	export interface DescribeEndpointResponseFormProperties {
+	}
+	export function CreateDescribeEndpointResponseFormGroup() {
+		return new FormGroup<DescribeEndpointResponseFormProperties>({
+		});
+
 	}
 
 
@@ -553,16 +1366,57 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 	}
 
+	/** Specifies information about the specified endpoint. */
+	export interface EndpointPropertiesFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		Status: FormControl<EndpointPropertiesStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		ModelArn: FormControl<string | null | undefined>,
+		DesiredInferenceUnits: FormControl<number | null | undefined>,
+		CurrentInferenceUnits: FormControl<number | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateEndpointPropertiesFormGroup() {
+		return new FormGroup<EndpointPropertiesFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<EndpointPropertiesStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ModelArn: new FormControl<string | null | undefined>(undefined),
+			DesiredInferenceUnits: new FormControl<number | null | undefined>(undefined),
+			CurrentInferenceUnits: new FormControl<number | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EndpointPropertiesStatus { CREATING = 0, DELETING = 1, FAILED = 2, IN_SERVICE = 3, UPDATING = 4 }
 
 	export interface DescribeEndpointRequest {
 		EndpointArn: string;
 	}
+	export interface DescribeEndpointRequestFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointRequestFormGroup() {
+		return new FormGroup<DescribeEndpointRequestFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEntitiesDetectionJobResponse {
 
 		/** Provides information about an entities detection job. */
-		EntitiesDetectionJobProperties?: EntitiesDetectionJobProperties | null;
+		EntitiesDetectionJobProperties?: EntitiesDetectionJobProperties;
+	}
+	export interface DescribeEntitiesDetectionJobResponseFormProperties {
+	}
+	export function CreateDescribeEntitiesDetectionJobResponseFormGroup() {
+		return new FormGroup<DescribeEntitiesDetectionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -577,16 +1431,45 @@ export namespace MyNS {
 		EntityRecognizerArn?: string | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		LanguageCode?: EntitiesDetectionJobPropertiesLanguageCode | null;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Provides information about an entities detection job. */
+	export interface EntitiesDetectionJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<EntitiesDetectionJobPropertiesLanguageCode | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEntitiesDetectionJobPropertiesFormGroup() {
+		return new FormGroup<EntitiesDetectionJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<EntitiesDetectionJobPropertiesLanguageCode | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EntitiesDetectionJobPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -594,11 +1477,27 @@ export namespace MyNS {
 	export interface DescribeEntitiesDetectionJobRequest {
 		JobId: string;
 	}
+	export interface DescribeEntitiesDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEntitiesDetectionJobRequestFormGroup() {
+		return new FormGroup<DescribeEntitiesDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEntityRecognizerResponse {
 
 		/** Describes information about an entity recognizer. */
-		EntityRecognizerProperties?: EntityRecognizerProperties | null;
+		EntityRecognizerProperties?: EntityRecognizerProperties;
+	}
+	export interface DescribeEntityRecognizerResponseFormProperties {
+	}
+	export function CreateDescribeEntityRecognizerResponseFormGroup() {
+		return new FormGroup<DescribeEntityRecognizerResponseFormProperties>({
+		});
+
 	}
 
 
@@ -614,15 +1513,44 @@ export namespace MyNS {
 		TrainingEndTime?: Date | null;
 
 		/** Specifies the format and location of the input data. */
-		InputDataConfig?: EntityRecognizerInputDataConfig | null;
+		InputDataConfig?: EntityRecognizerInputDataConfig;
 
 		/** Detailed information about an entity recognizer. */
-		RecognizerMetadata?: EntityRecognizerMetadata | null;
+		RecognizerMetadata?: EntityRecognizerMetadata;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Describes information about an entity recognizer. */
+	export interface EntityRecognizerPropertiesFormProperties {
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<EntityRecognizerPropertiesLanguageCode | null | undefined>,
+		Status: FormControl<DocumentClassifierPropertiesStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		TrainingStartTime: FormControl<Date | null | undefined>,
+		TrainingEndTime: FormControl<Date | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityRecognizerPropertiesFormGroup() {
+		return new FormGroup<EntityRecognizerPropertiesFormProperties>({
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<EntityRecognizerPropertiesLanguageCode | null | undefined>(undefined),
+			Status: new FormControl<DocumentClassifierPropertiesStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EntityRecognizerPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -634,8 +1562,21 @@ export namespace MyNS {
 		NumberOfTestDocuments?: number | null;
 
 		/** Detailed information about the accuracy of an entity recognizer. */
-		EvaluationMetrics?: EntityRecognizerEvaluationMetrics | null;
-		EntityTypes?: Array<EntityRecognizerMetadataEntityTypesListItem> | null;
+		EvaluationMetrics?: EntityRecognizerEvaluationMetrics;
+		EntityTypes?: Array<EntityRecognizerMetadataEntityTypesListItem>;
+	}
+
+	/** Detailed information about an entity recognizer. */
+	export interface EntityRecognizerMetadataFormProperties {
+		NumberOfTrainedDocuments: FormControl<number | null | undefined>,
+		NumberOfTestDocuments: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityRecognizerMetadataFormGroup() {
+		return new FormGroup<EntityRecognizerMetadataFormProperties>({
+			NumberOfTrainedDocuments: new FormControl<number | null | undefined>(undefined),
+			NumberOfTestDocuments: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -646,14 +1587,42 @@ export namespace MyNS {
 		F1Score?: number | null;
 	}
 
+	/** Detailed information about the accuracy of an entity recognizer.  */
+	export interface EntityRecognizerEvaluationMetricsFormProperties {
+		Precision: FormControl<number | null | undefined>,
+		Recall: FormControl<number | null | undefined>,
+		F1Score: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityRecognizerEvaluationMetricsFormGroup() {
+		return new FormGroup<EntityRecognizerEvaluationMetricsFormProperties>({
+			Precision: new FormControl<number | null | undefined>(undefined),
+			Recall: new FormControl<number | null | undefined>(undefined),
+			F1Score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Individual item from the list of entity types in the metadata of an entity recognizer. */
 	export interface EntityRecognizerMetadataEntityTypesListItem {
 		Type?: string | null;
 
 		/** Detailed information about the accuracy of an entity recognizer for a specific entity type. */
-		EvaluationMetrics?: EntityTypesEvaluationMetrics | null;
+		EvaluationMetrics?: EntityTypesEvaluationMetrics;
 		NumberOfTrainMentions?: number | null;
+	}
+
+	/** Individual item from the list of entity types in the metadata of an entity recognizer. */
+	export interface EntityRecognizerMetadataEntityTypesListItemFormProperties {
+		Type: FormControl<string | null | undefined>,
+		NumberOfTrainMentions: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityRecognizerMetadataEntityTypesListItemFormGroup() {
+		return new FormGroup<EntityRecognizerMetadataEntityTypesListItemFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+			NumberOfTrainMentions: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -664,14 +1633,45 @@ export namespace MyNS {
 		F1Score?: number | null;
 	}
 
+	/** Detailed information about the accuracy of an entity recognizer for a specific entity type.  */
+	export interface EntityTypesEvaluationMetricsFormProperties {
+		Precision: FormControl<number | null | undefined>,
+		Recall: FormControl<number | null | undefined>,
+		F1Score: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityTypesEvaluationMetricsFormGroup() {
+		return new FormGroup<EntityTypesEvaluationMetricsFormProperties>({
+			Precision: new FormControl<number | null | undefined>(undefined),
+			Recall: new FormControl<number | null | undefined>(undefined),
+			F1Score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEntityRecognizerRequest {
 		EntityRecognizerArn: string;
+	}
+	export interface DescribeEntityRecognizerRequestFormProperties {
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEntityRecognizerRequestFormGroup() {
+		return new FormGroup<DescribeEntityRecognizerRequestFormProperties>({
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeKeyPhrasesDetectionJobResponse {
 
 		/** Provides information about a key phrases detection job. */
-		KeyPhrasesDetectionJobProperties?: KeyPhrasesDetectionJobProperties | null;
+		KeyPhrasesDetectionJobProperties?: KeyPhrasesDetectionJobProperties;
+	}
+	export interface DescribeKeyPhrasesDetectionJobResponseFormProperties {
+	}
+	export function CreateDescribeKeyPhrasesDetectionJobResponseFormGroup() {
+		return new FormGroup<DescribeKeyPhrasesDetectionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -685,16 +1685,43 @@ export namespace MyNS {
 		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		LanguageCode?: KeyPhrasesDetectionJobPropertiesLanguageCode | null;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Provides information about a key phrases detection job. */
+	export interface KeyPhrasesDetectionJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		LanguageCode: FormControl<KeyPhrasesDetectionJobPropertiesLanguageCode | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateKeyPhrasesDetectionJobPropertiesFormGroup() {
+		return new FormGroup<KeyPhrasesDetectionJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			LanguageCode: new FormControl<KeyPhrasesDetectionJobPropertiesLanguageCode | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum KeyPhrasesDetectionJobPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -702,11 +1729,27 @@ export namespace MyNS {
 	export interface DescribeKeyPhrasesDetectionJobRequest {
 		JobId: string;
 	}
+	export interface DescribeKeyPhrasesDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeKeyPhrasesDetectionJobRequestFormGroup() {
+		return new FormGroup<DescribeKeyPhrasesDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeSentimentDetectionJobResponse {
 
 		/** Provides information about a sentiment detection job. */
-		SentimentDetectionJobProperties?: SentimentDetectionJobProperties | null;
+		SentimentDetectionJobProperties?: SentimentDetectionJobProperties;
+	}
+	export interface DescribeSentimentDetectionJobResponseFormProperties {
+	}
+	export function CreateDescribeSentimentDetectionJobResponseFormGroup() {
+		return new FormGroup<DescribeSentimentDetectionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -720,16 +1763,43 @@ export namespace MyNS {
 		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		LanguageCode?: SentimentDetectionJobPropertiesLanguageCode | null;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Provides information about a sentiment detection job. */
+	export interface SentimentDetectionJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		LanguageCode: FormControl<SentimentDetectionJobPropertiesLanguageCode | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateSentimentDetectionJobPropertiesFormGroup() {
+		return new FormGroup<SentimentDetectionJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			LanguageCode: new FormControl<SentimentDetectionJobPropertiesLanguageCode | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SentimentDetectionJobPropertiesLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -737,11 +1807,27 @@ export namespace MyNS {
 	export interface DescribeSentimentDetectionJobRequest {
 		JobId: string;
 	}
+	export interface DescribeSentimentDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSentimentDetectionJobRequestFormGroup() {
+		return new FormGroup<DescribeSentimentDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeTopicsDetectionJobResponse {
 
 		/** Provides information about a topic detection job. */
-		TopicsDetectionJobProperties?: TopicsDetectionJobProperties | null;
+		TopicsDetectionJobProperties?: TopicsDetectionJobProperties;
+	}
+	export interface DescribeTopicsDetectionJobResponseFormProperties {
+	}
+	export function CreateDescribeTopicsDetectionJobResponseFormGroup() {
+		return new FormGroup<DescribeTopicsDetectionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -755,48 +1841,136 @@ export namespace MyNS {
 		EndTime?: Date | null;
 
 		/** The input properties for a topic detection job. */
-		InputDataConfig?: InputDataConfig | null;
+		InputDataConfig?: InputDataConfig;
 
 		/** <p>Provides configuration parameters for the output of topic detection jobs.</p> <p/> */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 		NumberOfTopics?: number | null;
 		DataAccessRoleArn?: string | null;
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Provides information about a topic detection job. */
+	export interface TopicsDetectionJobPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		NumberOfTopics: FormControl<number | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicsDetectionJobPropertiesFormGroup() {
+		return new FormGroup<TopicsDetectionJobPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			NumberOfTopics: new FormControl<number | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTopicsDetectionJobRequest {
 		JobId: string;
 	}
+	export interface DescribeTopicsDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTopicsDetectionJobRequestFormGroup() {
+		return new FormGroup<DescribeTopicsDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetectDominantLanguageResponse {
-		Languages?: Array<DominantLanguage> | null;
+		Languages?: Array<DominantLanguage>;
+	}
+	export interface DetectDominantLanguageResponseFormProperties {
+	}
+	export function CreateDetectDominantLanguageResponseFormGroup() {
+		return new FormGroup<DetectDominantLanguageResponseFormProperties>({
+		});
+
 	}
 
 	export interface DetectDominantLanguageRequest {
 		Text: string;
 	}
+	export interface DetectDominantLanguageRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectDominantLanguageRequestFormGroup() {
+		return new FormGroup<DetectDominantLanguageRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetectEntitiesResponse {
-		Entities?: Array<Entity> | null;
+		Entities?: Array<Entity>;
+	}
+	export interface DetectEntitiesResponseFormProperties {
+	}
+	export function CreateDetectEntitiesResponseFormGroup() {
+		return new FormGroup<DetectEntitiesResponseFormProperties>({
+		});
+
 	}
 
 	export interface DetectEntitiesRequest {
 		Text: string;
 		LanguageCode: DetectEntitiesRequestLanguageCode;
 	}
+	export interface DetectEntitiesRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<DetectEntitiesRequestLanguageCode | null | undefined>,
+	}
+	export function CreateDetectEntitiesRequestFormGroup() {
+		return new FormGroup<DetectEntitiesRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<DetectEntitiesRequestLanguageCode | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DetectEntitiesRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface DetectKeyPhrasesResponse {
-		KeyPhrases?: Array<KeyPhrase> | null;
+		KeyPhrases?: Array<KeyPhrase>;
+	}
+	export interface DetectKeyPhrasesResponseFormProperties {
+	}
+	export function CreateDetectKeyPhrasesResponseFormGroup() {
+		return new FormGroup<DetectKeyPhrasesResponseFormProperties>({
+		});
+
 	}
 
 	export interface DetectKeyPhrasesRequest {
 		Text: string;
 		LanguageCode: DetectKeyPhrasesRequestLanguageCode;
+	}
+	export interface DetectKeyPhrasesRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<DetectKeyPhrasesRequestLanguageCode | null | undefined>,
+	}
+	export function CreateDetectKeyPhrasesRequestFormGroup() {
+		return new FormGroup<DetectKeyPhrasesRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<DetectKeyPhrasesRequestLanguageCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DetectKeyPhrasesRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -805,36 +1979,94 @@ export namespace MyNS {
 		Sentiment?: BatchDetectSentimentItemResultSentiment | null;
 
 		/** Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments. */
-		SentimentScore?: SentimentScore | null;
+		SentimentScore?: SentimentScore;
+	}
+	export interface DetectSentimentResponseFormProperties {
+		Sentiment: FormControl<BatchDetectSentimentItemResultSentiment | null | undefined>,
+	}
+	export function CreateDetectSentimentResponseFormGroup() {
+		return new FormGroup<DetectSentimentResponseFormProperties>({
+			Sentiment: new FormControl<BatchDetectSentimentItemResultSentiment | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetectSentimentRequest {
 		Text: string;
 		LanguageCode: DetectSentimentRequestLanguageCode;
 	}
+	export interface DetectSentimentRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<DetectSentimentRequestLanguageCode | null | undefined>,
+	}
+	export function CreateDetectSentimentRequestFormGroup() {
+		return new FormGroup<DetectSentimentRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<DetectSentimentRequestLanguageCode | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DetectSentimentRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
 
 	export interface DetectSyntaxResponse {
-		SyntaxTokens?: Array<SyntaxToken> | null;
+		SyntaxTokens?: Array<SyntaxToken>;
+	}
+	export interface DetectSyntaxResponseFormProperties {
+	}
+	export function CreateDetectSyntaxResponseFormGroup() {
+		return new FormGroup<DetectSyntaxResponseFormProperties>({
+		});
+
 	}
 
 	export interface DetectSyntaxRequest {
 		Text: string;
 		LanguageCode: BatchDetectSyntaxRequestLanguageCode;
 	}
+	export interface DetectSyntaxRequestFormProperties {
+		Text: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<BatchDetectSyntaxRequestLanguageCode | null | undefined>,
+	}
+	export function CreateDetectSyntaxRequestFormGroup() {
+		return new FormGroup<DetectSyntaxRequestFormProperties>({
+			Text: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<BatchDetectSyntaxRequestLanguageCode | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDocumentClassificationJobsResponse {
-		DocumentClassificationJobPropertiesList?: Array<DocumentClassificationJobProperties> | null;
+		DocumentClassificationJobPropertiesList?: Array<DocumentClassificationJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListDocumentClassificationJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDocumentClassificationJobsResponseFormGroup() {
+		return new FormGroup<ListDocumentClassificationJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDocumentClassificationJobsRequest {
 
 		/** Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request. */
-		Filter?: DocumentClassificationJobFilter | null;
+		Filter?: DocumentClassificationJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListDocumentClassificationJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDocumentClassificationJobsRequestFormGroup() {
+		return new FormGroup<ListDocumentClassificationJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -846,20 +2078,64 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request. */
+	export interface DocumentClassificationJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateDocumentClassificationJobFilterFormGroup() {
+		return new FormGroup<DocumentClassificationJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidFilterException {
+	}
+	export interface InvalidFilterExceptionFormProperties {
+	}
+	export function CreateInvalidFilterExceptionFormGroup() {
+		return new FormGroup<InvalidFilterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListDocumentClassifiersResponse {
-		DocumentClassifierPropertiesList?: Array<DocumentClassifierProperties> | null;
+		DocumentClassifierPropertiesList?: Array<DocumentClassifierProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListDocumentClassifiersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDocumentClassifiersResponseFormGroup() {
+		return new FormGroup<ListDocumentClassifiersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDocumentClassifiersRequest {
 
 		/** Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation. */
-		Filter?: DocumentClassifierFilter | null;
+		Filter?: DocumentClassifierFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListDocumentClassifiersRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDocumentClassifiersRequestFormGroup() {
+		return new FormGroup<ListDocumentClassifiersRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -870,17 +2146,52 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation. */
+	export interface DocumentClassifierFilterFormProperties {
+		Status: FormControl<DocumentClassifierPropertiesStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateDocumentClassifierFilterFormGroup() {
+		return new FormGroup<DocumentClassifierFilterFormProperties>({
+			Status: new FormControl<DocumentClassifierPropertiesStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDominantLanguageDetectionJobsResponse {
-		DominantLanguageDetectionJobPropertiesList?: Array<DominantLanguageDetectionJobProperties> | null;
+		DominantLanguageDetectionJobPropertiesList?: Array<DominantLanguageDetectionJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListDominantLanguageDetectionJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDominantLanguageDetectionJobsResponseFormGroup() {
+		return new FormGroup<ListDominantLanguageDetectionJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDominantLanguageDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: DominantLanguageDetectionJobFilter | null;
+		Filter?: DominantLanguageDetectionJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListDominantLanguageDetectionJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDominantLanguageDetectionJobsRequestFormGroup() {
+		return new FormGroup<ListDominantLanguageDetectionJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -892,17 +2203,54 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
+	export interface DominantLanguageDetectionJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateDominantLanguageDetectionJobFilterFormGroup() {
+		return new FormGroup<DominantLanguageDetectionJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListEndpointsResponse {
-		EndpointPropertiesList?: Array<EndpointProperties> | null;
+		EndpointPropertiesList?: Array<EndpointProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListEndpointsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointsResponseFormGroup() {
+		return new FormGroup<ListEndpointsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEndpointsRequest {
 
 		/** The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. */
-		Filter?: EndpointFilter | null;
+		Filter?: EndpointFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListEndpointsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListEndpointsRequestFormGroup() {
+		return new FormGroup<ListEndpointsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -914,17 +2262,54 @@ export namespace MyNS {
 		CreationTimeAfter?: Date | null;
 	}
 
+	/** The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.  */
+	export interface EndpointFilterFormProperties {
+		ModelArn: FormControl<string | null | undefined>,
+		Status: FormControl<EndpointPropertiesStatus | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateEndpointFilterFormGroup() {
+		return new FormGroup<EndpointFilterFormProperties>({
+			ModelArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<EndpointPropertiesStatus | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListEntitiesDetectionJobsResponse {
-		EntitiesDetectionJobPropertiesList?: Array<EntitiesDetectionJobProperties> | null;
+		EntitiesDetectionJobPropertiesList?: Array<EntitiesDetectionJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListEntitiesDetectionJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEntitiesDetectionJobsResponseFormGroup() {
+		return new FormGroup<ListEntitiesDetectionJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEntitiesDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: EntitiesDetectionJobFilter | null;
+		Filter?: EntitiesDetectionJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListEntitiesDetectionJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListEntitiesDetectionJobsRequestFormGroup() {
+		return new FormGroup<ListEntitiesDetectionJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -936,17 +2321,54 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
+	export interface EntitiesDetectionJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateEntitiesDetectionJobFilterFormGroup() {
+		return new FormGroup<EntitiesDetectionJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListEntityRecognizersResponse {
-		EntityRecognizerPropertiesList?: Array<EntityRecognizerProperties> | null;
+		EntityRecognizerPropertiesList?: Array<EntityRecognizerProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListEntityRecognizersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEntityRecognizersResponseFormGroup() {
+		return new FormGroup<ListEntityRecognizersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEntityRecognizersRequest {
 
 		/** Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt; */
-		Filter?: EntityRecognizerFilter | null;
+		Filter?: EntityRecognizerFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListEntityRecognizersRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListEntityRecognizersRequestFormGroup() {
+		return new FormGroup<ListEntityRecognizersRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -957,17 +2379,52 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt; */
+	export interface EntityRecognizerFilterFormProperties {
+		Status: FormControl<DocumentClassifierPropertiesStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateEntityRecognizerFilterFormGroup() {
+		return new FormGroup<EntityRecognizerFilterFormProperties>({
+			Status: new FormControl<DocumentClassifierPropertiesStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListKeyPhrasesDetectionJobsResponse {
-		KeyPhrasesDetectionJobPropertiesList?: Array<KeyPhrasesDetectionJobProperties> | null;
+		KeyPhrasesDetectionJobPropertiesList?: Array<KeyPhrasesDetectionJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListKeyPhrasesDetectionJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListKeyPhrasesDetectionJobsResponseFormGroup() {
+		return new FormGroup<ListKeyPhrasesDetectionJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListKeyPhrasesDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: KeyPhrasesDetectionJobFilter | null;
+		Filter?: KeyPhrasesDetectionJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListKeyPhrasesDetectionJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListKeyPhrasesDetectionJobsRequestFormGroup() {
+		return new FormGroup<ListKeyPhrasesDetectionJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -979,17 +2436,54 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
+	export interface KeyPhrasesDetectionJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateKeyPhrasesDetectionJobFilterFormGroup() {
+		return new FormGroup<KeyPhrasesDetectionJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSentimentDetectionJobsResponse {
-		SentimentDetectionJobPropertiesList?: Array<SentimentDetectionJobProperties> | null;
+		SentimentDetectionJobPropertiesList?: Array<SentimentDetectionJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListSentimentDetectionJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSentimentDetectionJobsResponseFormGroup() {
+		return new FormGroup<ListSentimentDetectionJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSentimentDetectionJobsRequest {
 
 		/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
-		Filter?: SentimentDetectionJobFilter | null;
+		Filter?: SentimentDetectionJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListSentimentDetectionJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListSentimentDetectionJobsRequestFormGroup() {
+		return new FormGroup<ListSentimentDetectionJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1001,26 +2495,81 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation. */
+	export interface SentimentDetectionJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateSentimentDetectionJobFilterFormGroup() {
+		return new FormGroup<SentimentDetectionJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
 		ResourceArn?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTopicsDetectionJobsResponse {
-		TopicsDetectionJobPropertiesList?: Array<TopicsDetectionJobProperties> | null;
+		TopicsDetectionJobPropertiesList?: Array<TopicsDetectionJobProperties>;
 		NextToken?: string | null;
+	}
+	export interface ListTopicsDetectionJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTopicsDetectionJobsResponseFormGroup() {
+		return new FormGroup<ListTopicsDetectionJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTopicsDetectionJobsRequest {
 
 		/** Provides information for filtering topic detection jobs. For more information, see . */
-		Filter?: TopicsDetectionJobFilter | null;
+		Filter?: TopicsDetectionJobFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListTopicsDetectionJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTopicsDetectionJobsRequestFormGroup() {
+		return new FormGroup<ListTopicsDetectionJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1032,9 +2581,37 @@ export namespace MyNS {
 		SubmitTimeAfter?: Date | null;
 	}
 
+	/** Provides information for filtering topic detection jobs. For more information, see . */
+	export interface TopicsDetectionJobFilterFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+		SubmitTimeBefore: FormControl<Date | null | undefined>,
+		SubmitTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateTopicsDetectionJobFilterFormGroup() {
+		return new FormGroup<TopicsDetectionJobFilterFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StartDocumentClassificationJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+	}
+	export interface StartDocumentClassificationJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartDocumentClassificationJobResponseFormGroup() {
+		return new FormGroup<StartDocumentClassificationJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartDocumentClassificationJobRequest {
@@ -1057,12 +2634,40 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface StartDocumentClassificationJobRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartDocumentClassificationJobRequestFormGroup() {
+		return new FormGroup<StartDocumentClassificationJobRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartDominantLanguageDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+	}
+	export interface StartDominantLanguageDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartDominantLanguageDetectionJobResponseFormGroup() {
+		return new FormGroup<StartDominantLanguageDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartDominantLanguageDetectionJobRequest {
@@ -1084,12 +2689,38 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface StartDominantLanguageDetectionJobRequestFormProperties {
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartDominantLanguageDetectionJobRequestFormGroup() {
+		return new FormGroup<StartDominantLanguageDetectionJobRequestFormProperties>({
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartEntitiesDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+	}
+	export interface StartEntitiesDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartEntitiesDetectionJobResponseFormGroup() {
+		return new FormGroup<StartEntitiesDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartEntitiesDetectionJobRequest {
@@ -1113,7 +2744,26 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface StartEntitiesDetectionJobRequestFormProperties {
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<StartEntitiesDetectionJobRequestLanguageCode | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartEntitiesDetectionJobRequestFormGroup() {
+		return new FormGroup<StartEntitiesDetectionJobRequestFormProperties>({
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartEntitiesDetectionJobRequestLanguageCode | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartEntitiesDetectionJobRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -1121,6 +2771,17 @@ export namespace MyNS {
 	export interface StartKeyPhrasesDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+	}
+	export interface StartKeyPhrasesDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartKeyPhrasesDetectionJobResponseFormGroup() {
+		return new FormGroup<StartKeyPhrasesDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartKeyPhrasesDetectionJobRequest {
@@ -1143,7 +2804,24 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface StartKeyPhrasesDetectionJobRequestFormProperties {
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<StartKeyPhrasesDetectionJobRequestLanguageCode | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartKeyPhrasesDetectionJobRequestFormGroup() {
+		return new FormGroup<StartKeyPhrasesDetectionJobRequestFormProperties>({
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartKeyPhrasesDetectionJobRequestLanguageCode | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartKeyPhrasesDetectionJobRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -1151,6 +2829,17 @@ export namespace MyNS {
 	export interface StartSentimentDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+	}
+	export interface StartSentimentDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartSentimentDetectionJobResponseFormGroup() {
+		return new FormGroup<StartSentimentDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartSentimentDetectionJobRequest {
@@ -1173,7 +2862,24 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface StartSentimentDetectionJobRequestFormProperties {
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<StartSentimentDetectionJobRequestLanguageCode | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSentimentDetectionJobRequestFormGroup() {
+		return new FormGroup<StartSentimentDetectionJobRequestFormProperties>({
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartSentimentDetectionJobRequestLanguageCode | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartSentimentDetectionJobRequestLanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }
@@ -1181,6 +2887,17 @@ export namespace MyNS {
 	export interface StartTopicsDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
+	}
+	export interface StartTopicsDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStartTopicsDetectionJobResponseFormGroup() {
+		return new FormGroup<StartTopicsDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartTopicsDetectionJobRequest {
@@ -1203,87 +2920,280 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 
 		/** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+	export interface StartTopicsDetectionJobRequestFormProperties {
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		NumberOfTopics: FormControl<number | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTopicsDetectionJobRequestFormGroup() {
+		return new FormGroup<StartTopicsDetectionJobRequestFormProperties>({
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			NumberOfTopics: new FormControl<number | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopDominantLanguageDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
+	export interface StopDominantLanguageDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStopDominantLanguageDetectionJobResponseFormGroup() {
+		return new FormGroup<StopDominantLanguageDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopDominantLanguageDetectionJobRequest {
 		JobId: string;
+	}
+	export interface StopDominantLanguageDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopDominantLanguageDetectionJobRequestFormGroup() {
+		return new FormGroup<StopDominantLanguageDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopEntitiesDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
+	export interface StopEntitiesDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStopEntitiesDetectionJobResponseFormGroup() {
+		return new FormGroup<StopEntitiesDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopEntitiesDetectionJobRequest {
 		JobId: string;
+	}
+	export interface StopEntitiesDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopEntitiesDetectionJobRequestFormGroup() {
+		return new FormGroup<StopEntitiesDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopKeyPhrasesDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
+	export interface StopKeyPhrasesDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStopKeyPhrasesDetectionJobResponseFormGroup() {
+		return new FormGroup<StopKeyPhrasesDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopKeyPhrasesDetectionJobRequest {
 		JobId: string;
+	}
+	export interface StopKeyPhrasesDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopKeyPhrasesDetectionJobRequestFormGroup() {
+		return new FormGroup<StopKeyPhrasesDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopSentimentDetectionJobResponse {
 		JobId?: string | null;
 		JobStatus?: DocumentClassificationJobPropertiesJobStatus | null;
 	}
+	export interface StopSentimentDetectionJobResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobStatus: FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>,
+	}
+	export function CreateStopSentimentDetectionJobResponseFormGroup() {
+		return new FormGroup<StopSentimentDetectionJobResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobStatus: new FormControl<DocumentClassificationJobPropertiesJobStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopSentimentDetectionJobRequest {
 		JobId: string;
 	}
+	export interface StopSentimentDetectionJobRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopSentimentDetectionJobRequestFormGroup() {
+		return new FormGroup<StopSentimentDetectionJobRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopTrainingDocumentClassifierResponse {
+	}
+	export interface StopTrainingDocumentClassifierResponseFormProperties {
+	}
+	export function CreateStopTrainingDocumentClassifierResponseFormGroup() {
+		return new FormGroup<StopTrainingDocumentClassifierResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopTrainingDocumentClassifierRequest {
 		DocumentClassifierArn: string;
 	}
+	export interface StopTrainingDocumentClassifierRequestFormProperties {
+		DocumentClassifierArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTrainingDocumentClassifierRequestFormGroup() {
+		return new FormGroup<StopTrainingDocumentClassifierRequestFormProperties>({
+			DocumentClassifierArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopTrainingEntityRecognizerResponse {
+	}
+	export interface StopTrainingEntityRecognizerResponseFormProperties {
+	}
+	export function CreateStopTrainingEntityRecognizerResponseFormGroup() {
+		return new FormGroup<StopTrainingEntityRecognizerResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopTrainingEntityRecognizerRequest {
 		EntityRecognizerArn: string;
 	}
+	export interface StopTrainingEntityRecognizerRequestFormProperties {
+		EntityRecognizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTrainingEntityRecognizerRequestFormGroup() {
+		return new FormGroup<StopTrainingEntityRecognizerRequestFormProperties>({
+			EntityRecognizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TooManyTagKeysException {
 	}
+	export interface TooManyTagKeysExceptionFormProperties {
+	}
+	export function CreateTooManyTagKeysExceptionFormGroup() {
+		return new FormGroup<TooManyTagKeysExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UpdateEndpointResponse {
+	}
+	export interface UpdateEndpointResponseFormProperties {
+	}
+	export function CreateUpdateEndpointResponseFormGroup() {
+		return new FormGroup<UpdateEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateEndpointRequest {
 		EndpointArn: string;
 		DesiredInferenceUnits: number;
+	}
+	export interface UpdateEndpointRequestFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		DesiredInferenceUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateEndpointRequestFormGroup() {
+		return new FormGroup<UpdateEndpointRequestFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			DesiredInferenceUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LanguageCode { en = 0, es = 1, fr = 2, de = 3, it = 4, pt = 5, ar = 6, hi = 7, ja = 8, ko = 9, zh = 10, zh_TW = 11 }

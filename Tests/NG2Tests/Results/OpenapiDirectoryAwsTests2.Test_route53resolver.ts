@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateResolverEndpointIpAddressResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint | null;
+		ResolverEndpoint?: ResolverEndpoint;
+	}
+	export interface AssociateResolverEndpointIpAddressResponseFormProperties {
+	}
+	export function CreateAssociateResolverEndpointIpAddressResponseFormGroup() {
+		return new FormGroup<AssociateResolverEndpointIpAddressResponseFormProperties>({
+		});
+
 	}
 
 
@@ -15,7 +23,7 @@ export namespace MyNS {
 		CreatorRequestId?: string | null;
 		Arn?: string | null;
 		Name?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		Direction?: ResolverEndpointDirection | null;
 		IpAddressCount?: number | null;
 		HostVPCId?: string | null;
@@ -23,6 +31,37 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 		CreationTime?: string | null;
 		ModificationTime?: string | null;
+	}
+
+	/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
+	export interface ResolverEndpointFormProperties {
+		Id: FormControl<string | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Direction: FormControl<ResolverEndpointDirection | null | undefined>,
+		IpAddressCount: FormControl<number | null | undefined>,
+		HostVPCId: FormControl<string | null | undefined>,
+		Status: FormControl<ResolverEndpointStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		ModificationTime: FormControl<string | null | undefined>,
+	}
+	export function CreateResolverEndpointFormGroup() {
+		return new FormGroup<ResolverEndpointFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined),
+			IpAddressCount: new FormControl<number | null | undefined>(undefined),
+			HostVPCId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ResolverEndpointStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			ModificationTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResolverEndpointDirection { INBOUND = 0, OUTBOUND = 1 }
@@ -38,6 +77,15 @@ export namespace MyNS {
 		 */
 		IpAddress: IpAddressUpdate;
 	}
+	export interface AssociateResolverEndpointIpAddressRequestFormProperties {
+		ResolverEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateResolverEndpointIpAddressRequestFormGroup() {
+		return new FormGroup<AssociateResolverEndpointIpAddressRequestFormProperties>({
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
@@ -47,31 +95,102 @@ export namespace MyNS {
 		Ip?: string | null;
 	}
 
+	/** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update. */
+	export interface IpAddressUpdateFormProperties {
+		IpId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		Ip: FormControl<string | null | undefined>,
+	}
+	export function CreateIpAddressUpdateFormGroup() {
+		return new FormGroup<IpAddressUpdateFormProperties>({
+			IpId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			Ip: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceExistsException {
 	}
+	export interface ResourceExistsExceptionFormProperties {
+	}
+	export function CreateResourceExistsExceptionFormGroup() {
+		return new FormGroup<ResourceExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServiceErrorException {
+	}
+	export interface InternalServiceErrorExceptionFormProperties {
+	}
+	export function CreateInternalServiceErrorExceptionFormGroup() {
+		return new FormGroup<InternalServiceErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AssociateResolverRuleResponse {
 
 		/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
-		ResolverRuleAssociation?: ResolverRuleAssociation | null;
+		ResolverRuleAssociation?: ResolverRuleAssociation;
+	}
+	export interface AssociateResolverRuleResponseFormProperties {
+	}
+	export function CreateAssociateResolverRuleResponseFormGroup() {
+		return new FormGroup<AssociateResolverRuleResponseFormProperties>({
+		});
+
 	}
 
 
@@ -85,6 +204,27 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 	}
 
+	/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
+	export interface ResolverRuleAssociationFormProperties {
+		Id: FormControl<string | null | undefined>,
+		ResolverRuleId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VPCId: FormControl<string | null | undefined>,
+		Status: FormControl<ResolverRuleAssociationStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateResolverRuleAssociationFormGroup() {
+		return new FormGroup<ResolverRuleAssociationFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VPCId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ResolverRuleAssociationStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResolverRuleAssociationStatus { CREATING = 0, COMPLETE = 1, DELETING = 2, FAILED = 3, OVERRIDDEN = 4 }
 
 	export interface AssociateResolverRuleRequest {
@@ -92,14 +232,41 @@ export namespace MyNS {
 		Name?: string | null;
 		VPCId: string;
 	}
+	export interface AssociateResolverRuleRequestFormProperties {
+		ResolverRuleId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VPCId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateResolverRuleRequestFormGroup() {
+		return new FormGroup<AssociateResolverRuleRequestFormProperties>({
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VPCId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceUnavailableException {
+	}
+	export interface ResourceUnavailableExceptionFormProperties {
+	}
+	export function CreateResourceUnavailableExceptionFormGroup() {
+		return new FormGroup<ResourceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint | null;
+		ResolverEndpoint?: ResolverEndpoint;
+	}
+	export interface CreateResolverEndpointResponseFormProperties {
+	}
+	export function CreateCreateResolverEndpointResponseFormGroup() {
+		return new FormGroup<CreateResolverEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateResolverEndpointRequest {
@@ -108,7 +275,20 @@ export namespace MyNS {
 		SecurityGroupIds: Array<string>;
 		Direction: ResolverEndpointDirection;
 		IpAddresses: Array<IpAddressRequest>;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateResolverEndpointRequestFormProperties {
+		CreatorRequestId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Direction: FormControl<ResolverEndpointDirection | null | undefined>,
+	}
+	export function CreateCreateResolverEndpointRequestFormGroup() {
+		return new FormGroup<CreateResolverEndpointRequestFormProperties>({
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -118,6 +298,19 @@ export namespace MyNS {
 		Ip?: string | null;
 	}
 
+	/** In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries. */
+	export interface IpAddressRequestFormProperties {
+		SubnetId: FormControl<string | null | undefined>,
+		Ip: FormControl<string | null | undefined>,
+	}
+	export function CreateIpAddressRequestFormGroup() {
+		return new FormGroup<IpAddressRequestFormProperties>({
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			Ip: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>. */
 	export interface Tag {
@@ -125,10 +318,30 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule | null;
+		ResolverRule?: ResolverRule;
+	}
+	export interface CreateResolverRuleResponseFormProperties {
+	}
+	export function CreateCreateResolverRuleResponseFormGroup() {
+		return new FormGroup<CreateResolverRuleResponseFormProperties>({
+		});
+
 	}
 
 
@@ -142,10 +355,41 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 		RuleType?: ResolverRuleRuleType | null;
 		Name?: string | null;
-		TargetIps?: Array<TargetAddress> | null;
+		TargetIps?: Array<TargetAddress>;
 		ResolverEndpointId?: string | null;
 		OwnerId?: string | null;
 		ShareStatus?: ResolverRuleShareStatus | null;
+	}
+
+	/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
+	export interface ResolverRuleFormProperties {
+		Id: FormControl<string | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		Status: FormControl<ResolverRuleStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		RuleType: FormControl<ResolverRuleRuleType | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ResolverEndpointId: FormControl<string | null | undefined>,
+		OwnerId: FormControl<string | null | undefined>,
+		ShareStatus: FormControl<ResolverRuleShareStatus | null | undefined>,
+	}
+	export function CreateResolverRuleFormGroup() {
+		return new FormGroup<ResolverRuleFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ResolverRuleStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			ShareStatus: new FormControl<ResolverRuleShareStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResolverRuleStatus { COMPLETE = 0, DELETING = 1, UPDATING = 2, FAILED = 3 }
@@ -159,6 +403,19 @@ export namespace MyNS {
 		Port?: number | null;
 	}
 
+	/** In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to. */
+	export interface TargetAddressFormProperties {
+		Ip: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateTargetAddressFormGroup() {
+		return new FormGroup<TargetAddressFormProperties>({
+			Ip: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResolverRuleShareStatus { NOT_SHARED = 0, SHARED_WITH_ME = 1, SHARED_BY_ME = 2 }
 
 	export interface CreateResolverRuleRequest {
@@ -166,38 +423,101 @@ export namespace MyNS {
 		Name?: string | null;
 		RuleType: ResolverRuleRuleType;
 		DomainName: string;
-		TargetIps?: Array<TargetAddress> | null;
+		TargetIps?: Array<TargetAddress>;
 		ResolverEndpointId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateResolverRuleRequestFormProperties {
+		CreatorRequestId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		RuleType: FormControl<ResolverRuleRuleType | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		ResolverEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateResolverRuleRequestFormGroup() {
+		return new FormGroup<CreateResolverRuleRequestFormProperties>({
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint | null;
+		ResolverEndpoint?: ResolverEndpoint;
+	}
+	export interface DeleteResolverEndpointResponseFormProperties {
+	}
+	export function CreateDeleteResolverEndpointResponseFormGroup() {
+		return new FormGroup<DeleteResolverEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResolverEndpointRequest {
 		ResolverEndpointId: string;
 	}
+	export interface DeleteResolverEndpointRequestFormProperties {
+		ResolverEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResolverEndpointRequestFormGroup() {
+		return new FormGroup<DeleteResolverEndpointRequestFormProperties>({
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule | null;
+		ResolverRule?: ResolverRule;
+	}
+	export interface DeleteResolverRuleResponseFormProperties {
+	}
+	export function CreateDeleteResolverRuleResponseFormGroup() {
+		return new FormGroup<DeleteResolverRuleResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResolverRuleRequest {
 		ResolverRuleId: string;
 	}
+	export interface DeleteResolverRuleRequestFormProperties {
+		ResolverRuleId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResolverRuleRequestFormGroup() {
+		return new FormGroup<DeleteResolverRuleRequestFormProperties>({
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateResolverEndpointIpAddressResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint | null;
+		ResolverEndpoint?: ResolverEndpoint;
+	}
+	export interface DisassociateResolverEndpointIpAddressResponseFormProperties {
+	}
+	export function CreateDisassociateResolverEndpointIpAddressResponseFormGroup() {
+		return new FormGroup<DisassociateResolverEndpointIpAddressResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateResolverEndpointIpAddressRequest {
@@ -209,63 +529,174 @@ export namespace MyNS {
 		 */
 		IpAddress: IpAddressUpdate;
 	}
+	export interface DisassociateResolverEndpointIpAddressRequestFormProperties {
+		ResolverEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateResolverEndpointIpAddressRequestFormGroup() {
+		return new FormGroup<DisassociateResolverEndpointIpAddressRequestFormProperties>({
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateResolverRuleResponse {
 
 		/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
-		ResolverRuleAssociation?: ResolverRuleAssociation | null;
+		ResolverRuleAssociation?: ResolverRuleAssociation;
+	}
+	export interface DisassociateResolverRuleResponseFormProperties {
+	}
+	export function CreateDisassociateResolverRuleResponseFormGroup() {
+		return new FormGroup<DisassociateResolverRuleResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateResolverRuleRequest {
 		VPCId: string;
 		ResolverRuleId: string;
 	}
+	export interface DisassociateResolverRuleRequestFormProperties {
+		VPCId: FormControl<string | null | undefined>,
+		ResolverRuleId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateResolverRuleRequestFormGroup() {
+		return new FormGroup<DisassociateResolverRuleRequestFormProperties>({
+			VPCId: new FormControl<string | null | undefined>(undefined),
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint | null;
+		ResolverEndpoint?: ResolverEndpoint;
+	}
+	export interface GetResolverEndpointResponseFormProperties {
+	}
+	export function CreateGetResolverEndpointResponseFormGroup() {
+		return new FormGroup<GetResolverEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetResolverEndpointRequest {
 		ResolverEndpointId: string;
 	}
+	export interface GetResolverEndpointRequestFormProperties {
+		ResolverEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResolverEndpointRequestFormGroup() {
+		return new FormGroup<GetResolverEndpointRequestFormProperties>({
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule | null;
+		ResolverRule?: ResolverRule;
+	}
+	export interface GetResolverRuleResponseFormProperties {
+	}
+	export function CreateGetResolverRuleResponseFormGroup() {
+		return new FormGroup<GetResolverRuleResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetResolverRuleRequest {
 		ResolverRuleId: string;
 	}
+	export interface GetResolverRuleRequestFormProperties {
+		ResolverRuleId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResolverRuleRequestFormGroup() {
+		return new FormGroup<GetResolverRuleRequestFormProperties>({
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResolverRuleAssociationResponse {
 
 		/** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC. */
-		ResolverRuleAssociation?: ResolverRuleAssociation | null;
+		ResolverRuleAssociation?: ResolverRuleAssociation;
+	}
+	export interface GetResolverRuleAssociationResponseFormProperties {
+	}
+	export function CreateGetResolverRuleAssociationResponseFormGroup() {
+		return new FormGroup<GetResolverRuleAssociationResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetResolverRuleAssociationRequest {
 		ResolverRuleAssociationId: string;
 	}
+	export interface GetResolverRuleAssociationRequestFormProperties {
+		ResolverRuleAssociationId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResolverRuleAssociationRequestFormGroup() {
+		return new FormGroup<GetResolverRuleAssociationRequestFormProperties>({
+			ResolverRuleAssociationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResolverRulePolicyResponse {
 		ResolverRulePolicy?: string | null;
+	}
+	export interface GetResolverRulePolicyResponseFormProperties {
+		ResolverRulePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResolverRulePolicyResponseFormGroup() {
+		return new FormGroup<GetResolverRulePolicyResponseFormProperties>({
+			ResolverRulePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetResolverRulePolicyRequest {
 		Arn: string;
 	}
+	export interface GetResolverRulePolicyRequestFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResolverRulePolicyRequestFormGroup() {
+		return new FormGroup<GetResolverRulePolicyRequestFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnknownResourceException {
+	}
+	export interface UnknownResourceExceptionFormProperties {
+	}
+	export function CreateUnknownResourceExceptionFormGroup() {
+		return new FormGroup<UnknownResourceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListResolverEndpointIpAddressesResponse {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		IpAddresses?: Array<IpAddressResponse> | null;
+		IpAddresses?: Array<IpAddressResponse>;
+	}
+	export interface ListResolverEndpointIpAddressesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResolverEndpointIpAddressesResponseFormGroup() {
+		return new FormGroup<ListResolverEndpointIpAddressesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,6 +711,29 @@ export namespace MyNS {
 		ModificationTime?: string | null;
 	}
 
+	/** In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries. */
+	export interface IpAddressResponseFormProperties {
+		IpId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		Ip: FormControl<string | null | undefined>,
+		Status: FormControl<IpAddressResponseStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		ModificationTime: FormControl<string | null | undefined>,
+	}
+	export function CreateIpAddressResponseFormGroup() {
+		return new FormGroup<IpAddressResponseFormProperties>({
+			IpId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			Ip: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<IpAddressResponseStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			ModificationTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum IpAddressResponseStatus { CREATING = 0, FAILED_CREATION = 1, ATTACHING = 2, ATTACHED = 3, REMAP_DETACHING = 4, REMAP_ATTACHING = 5, DETACHING = 6, FAILED_RESOURCE_GONE = 7, DELETING = 8, DELETE_FAILED_FAS_EXPIRED = 9 }
 
 	export interface ListResolverEndpointIpAddressesRequest {
@@ -287,62 +741,181 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListResolverEndpointIpAddressesRequestFormProperties {
+		ResolverEndpointId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResolverEndpointIpAddressesRequestFormGroup() {
+		return new FormGroup<ListResolverEndpointIpAddressesRequestFormProperties>({
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListResolverEndpointsResponse {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		ResolverEndpoints?: Array<ResolverEndpoint> | null;
+		ResolverEndpoints?: Array<ResolverEndpoint>;
+	}
+	export interface ListResolverEndpointsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResolverEndpointsResponseFormGroup() {
+		return new FormGroup<ListResolverEndpointsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResolverEndpointsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListResolverEndpointsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResolverEndpointsRequestFormGroup() {
+		return new FormGroup<ListResolverEndpointsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules. */
 	export interface Filter {
 		Name?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules. */
+	export interface FilterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResolverRuleAssociationsResponse {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		ResolverRuleAssociations?: Array<ResolverRuleAssociation> | null;
+		ResolverRuleAssociations?: Array<ResolverRuleAssociation>;
+	}
+	export interface ListResolverRuleAssociationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResolverRuleAssociationsResponseFormGroup() {
+		return new FormGroup<ListResolverRuleAssociationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResolverRuleAssociationsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListResolverRuleAssociationsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResolverRuleAssociationsRequestFormGroup() {
+		return new FormGroup<ListResolverRuleAssociationsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResolverRulesResponse {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		ResolverRules?: Array<ResolverRule> | null;
+		ResolverRules?: Array<ResolverRule>;
+	}
+	export interface ListResolverRulesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListResolverRulesResponseFormGroup() {
+		return new FormGroup<ListResolverRulesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResolverRulesRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListResolverRulesRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResolverRulesRequestFormGroup() {
+		return new FormGroup<ListResolverRulesRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -351,48 +924,141 @@ export namespace MyNS {
 		ReturnValue?: boolean | null;
 	}
 
+	/** The response to a <code>PutResolverRulePolicy</code> request. */
+	export interface PutResolverRulePolicyResponseFormProperties {
+		ReturnValue: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutResolverRulePolicyResponseFormGroup() {
+		return new FormGroup<PutResolverRulePolicyResponseFormProperties>({
+			ReturnValue: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutResolverRulePolicyRequest {
 		Arn: string;
 		ResolverRulePolicy: string;
 	}
+	export interface PutResolverRulePolicyRequestFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		ResolverRulePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResolverRulePolicyRequestFormGroup() {
+		return new FormGroup<PutResolverRulePolicyRequestFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			ResolverRulePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPolicyDocument {
 	}
+	export interface InvalidPolicyDocumentFormProperties {
+	}
+	export function CreateInvalidPolicyDocumentFormGroup() {
+		return new FormGroup<InvalidPolicyDocumentFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidTagException {
 	}
+	export interface InvalidTagExceptionFormProperties {
+	}
+	export function CreateInvalidTagExceptionFormGroup() {
+		return new FormGroup<InvalidTagExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateResolverEndpointResponse {
 
 		/** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint. */
-		ResolverEndpoint?: ResolverEndpoint | null;
+		ResolverEndpoint?: ResolverEndpoint;
+	}
+	export interface UpdateResolverEndpointResponseFormProperties {
+	}
+	export function CreateUpdateResolverEndpointResponseFormGroup() {
+		return new FormGroup<UpdateResolverEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateResolverEndpointRequest {
 		ResolverEndpointId: string;
 		Name?: string | null;
 	}
+	export interface UpdateResolverEndpointRequestFormProperties {
+		ResolverEndpointId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResolverEndpointRequestFormGroup() {
+		return new FormGroup<UpdateResolverEndpointRequestFormProperties>({
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateResolverRuleResponse {
 
 		/** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request. */
-		ResolverRule?: ResolverRule | null;
+		ResolverRule?: ResolverRule;
+	}
+	export interface UpdateResolverRuleResponseFormProperties {
+	}
+	export function CreateUpdateResolverRuleResponseFormGroup() {
+		return new FormGroup<UpdateResolverRuleResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateResolverRuleRequest {
@@ -404,13 +1070,35 @@ export namespace MyNS {
 		 */
 		Config: ResolverRuleConfig;
 	}
+	export interface UpdateResolverRuleRequestFormProperties {
+		ResolverRuleId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResolverRuleRequestFormGroup() {
+		return new FormGroup<UpdateResolverRuleRequestFormProperties>({
+			ResolverRuleId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
 	export interface ResolverRuleConfig {
 		Name?: string | null;
-		TargetIps?: Array<TargetAddress> | null;
+		TargetIps?: Array<TargetAddress>;
 		ResolverEndpointId?: string | null;
+	}
+
+	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
+	export interface ResolverRuleConfigFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ResolverEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateResolverRuleConfigFormGroup() {
+		return new FormGroup<ResolverRuleConfigFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ResolverEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RuleTypeOption { FORWARD = 0, SYSTEM = 1, RECURSIVE = 2 }

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** This is a JSON template for achievement reset all response. */
@@ -10,7 +11,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The achievement reset results. */
-		results?: Array<AchievementResetResponse> | null;
+		results?: Array<AchievementResetResponse>;
+	}
+
+	/** This is a JSON template for achievement reset all response. */
+	export interface AchievementResetAllResponseFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetAllResponse. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAchievementResetAllResponseFormGroup() {
+		return new FormGroup<AchievementResetAllResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -36,15 +50,59 @@ export namespace MyNS {
 		updateOccurred?: boolean | null;
 	}
 
+	/** This is a JSON template for an achievement reset response. */
+	export interface AchievementResetResponseFormProperties {
+
+		/**
+		 * The current state of the achievement. This is the same as the initial state of the achievement.
+		 * Possible values are:
+		 * - "HIDDEN"- Achievement is hidden.
+		 * - "REVEALED" - Achievement is revealed.
+		 * - "UNLOCKED" - Achievement is unlocked.
+		 */
+		currentState: FormControl<string | null | undefined>,
+
+		/** The ID of an achievement for which player state has been updated. */
+		definitionId: FormControl<string | null | undefined>,
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetResponse. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Flag to indicate if the requested update actually occurred. */
+		updateOccurred: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAchievementResetResponseFormGroup() {
+		return new FormGroup<AchievementResetResponseFormProperties>({
+			currentState: new FormControl<string | null | undefined>(undefined),
+			definitionId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			updateOccurred: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This is a JSON template for multiple achievements reset all request. */
 	export interface AchievementResetMultipleForAllRequest {
 
 		/** The IDs of achievements to reset. */
-		achievement_ids?: Array<string> | null;
+		achievement_ids?: Array<string>;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetMultipleForAllRequest. */
 		kind?: string | null;
+	}
+
+	/** This is a JSON template for multiple achievements reset all request. */
+	export interface AchievementResetMultipleForAllRequestFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetMultipleForAllRequest. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAchievementResetMultipleForAllRequestFormGroup() {
+		return new FormGroup<AchievementResetMultipleForAllRequestFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -52,10 +110,23 @@ export namespace MyNS {
 	export interface EventsResetMultipleForAllRequest {
 
 		/** The IDs of events to reset. */
-		event_ids?: Array<string> | null;
+		event_ids?: Array<string>;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#eventsResetMultipleForAllRequest. */
 		kind?: string | null;
+	}
+
+	/** This is a JSON template for multiple events reset all request. */
+	export interface EventsResetMultipleForAllRequestFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#eventsResetMultipleForAllRequest. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateEventsResetMultipleForAllRequestFormGroup() {
+		return new FormGroup<EventsResetMultipleForAllRequestFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -69,6 +140,23 @@ export namespace MyNS {
 		timeMillis?: string | null;
 	}
 
+	/** This is a JSON template for metadata about a player playing a game with the currently authenticated user. */
+	export interface GamesPlayedResourceFormProperties {
+
+		/** True if the player was auto-matched with the currently authenticated user. */
+		autoMatched: FormControl<boolean | null | undefined>,
+
+		/** The last time the player played the game in milliseconds since the epoch in UTC. */
+		timeMillis: FormControl<string | null | undefined>,
+	}
+	export function CreateGamesPlayedResourceFormGroup() {
+		return new FormGroup<GamesPlayedResourceFormProperties>({
+			autoMatched: new FormControl<boolean | null | undefined>(undefined),
+			timeMillis: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This is a JSON template for 1P/3P metadata about the player's experience. */
 	export interface GamesPlayerExperienceInfoResource {
@@ -77,13 +165,30 @@ export namespace MyNS {
 		currentExperiencePoints?: string | null;
 
 		/** This is a JSON template for 1P/3P metadata about a user's level. */
-		currentLevel?: GamesPlayerLevelResource | null;
+		currentLevel?: GamesPlayerLevelResource;
 
 		/** The timestamp when the player was leveled up, in millis since Unix epoch UTC. */
 		lastLevelUpTimestampMillis?: string | null;
 
 		/** This is a JSON template for 1P/3P metadata about a user's level. */
-		nextLevel?: GamesPlayerLevelResource | null;
+		nextLevel?: GamesPlayerLevelResource;
+	}
+
+	/** This is a JSON template for 1P/3P metadata about the player's experience. */
+	export interface GamesPlayerExperienceInfoResourceFormProperties {
+
+		/** The current number of experience points for the player. */
+		currentExperiencePoints: FormControl<string | null | undefined>,
+
+		/** The timestamp when the player was leveled up, in millis since Unix epoch UTC. */
+		lastLevelUpTimestampMillis: FormControl<string | null | undefined>,
+	}
+	export function CreateGamesPlayerExperienceInfoResourceFormGroup() {
+		return new FormGroup<GamesPlayerExperienceInfoResourceFormProperties>({
+			currentExperiencePoints: new FormControl<string | null | undefined>(undefined),
+			lastLevelUpTimestampMillis: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -100,6 +205,27 @@ export namespace MyNS {
 		minExperiencePoints?: string | null;
 	}
 
+	/** This is a JSON template for 1P/3P metadata about a user's level. */
+	export interface GamesPlayerLevelResourceFormProperties {
+
+		/** The level for the user. */
+		level: FormControl<number | null | undefined>,
+
+		/** The maximum experience points for this level. */
+		maxExperiencePoints: FormControl<string | null | undefined>,
+
+		/** The minimum experience points for this level. */
+		minExperiencePoints: FormControl<string | null | undefined>,
+	}
+	export function CreateGamesPlayerLevelResourceFormGroup() {
+		return new FormGroup<GamesPlayerLevelResourceFormProperties>({
+			level: new FormControl<number | null | undefined>(undefined),
+			maxExperiencePoints: new FormControl<string | null | undefined>(undefined),
+			minExperiencePoints: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This is a JSON template for the HiddenPlayer resource. */
 	export interface HiddenPlayer {
@@ -111,7 +237,24 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** This is a JSON template for a Player resource. */
-		player?: Player | null;
+		player?: Player;
+	}
+
+	/** This is a JSON template for the HiddenPlayer resource. */
+	export interface HiddenPlayerFormProperties {
+
+		/** The time this player was hidden. */
+		hiddenTimeMillis: FormControl<string | null | undefined>,
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayer. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateHiddenPlayerFormGroup() {
+		return new FormGroup<HiddenPlayerFormProperties>({
+			hiddenTimeMillis: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -131,7 +274,7 @@ export namespace MyNS {
 		displayName?: string | null;
 
 		/** This is a JSON template for 1P/3P metadata about the player's experience. */
-		experienceInfo?: GamesPlayerExperienceInfoResource | null;
+		experienceInfo?: GamesPlayerExperienceInfoResource;
 
 		/** The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game. */
 		friendStatus?: string | null;
@@ -140,10 +283,10 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** This is a JSON template for metadata about a player playing a game with the currently authenticated user. */
-		lastPlayedWith?: GamesPlayedResource | null;
+		lastPlayedWith?: GamesPlayedResource;
 
 		/** An object representation of the individual components of the player's name. For some players, these fields may not be present. */
-		name?: PlayerName | null;
+		name?: PlayerName;
 
 		/** The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs. */
 		originalPlayerId?: string | null;
@@ -153,10 +296,57 @@ export namespace MyNS {
 		playerStattus?: string | null;
 
 		/** This is a JSON template for profile settings */
-		profileSettings?: ProfileSettings | null;
+		profileSettings?: ProfileSettings;
 
 		/** The player's title rewarded for their game activities. */
 		title?: string | null;
+	}
+
+	/** This is a JSON template for a Player resource. */
+	export interface PlayerFormProperties {
+
+		/** The base URL for the image that represents the player. */
+		avatarImageUrl: FormControl<string | null | undefined>,
+
+		/** The url to the landscape mode player banner image. */
+		bannerUrlLandscape: FormControl<string | null | undefined>,
+
+		/** The url to the portrait mode player banner image. */
+		bannerUrlPortrait: FormControl<string | null | undefined>,
+
+		/** The name to display for the player. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game. */
+		friendStatus: FormControl<string | null | undefined>,
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#player. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs. */
+		originalPlayerId: FormControl<string | null | undefined>,
+
+		/** The ID of the player. */
+		playerId: FormControl<string | null | undefined>,
+		playerStattus: FormControl<string | null | undefined>,
+
+		/** The player's title rewarded for their game activities. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayerFormGroup() {
+		return new FormGroup<PlayerFormProperties>({
+			avatarImageUrl: new FormControl<string | null | undefined>(undefined),
+			bannerUrlLandscape: new FormControl<string | null | undefined>(undefined),
+			bannerUrlPortrait: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			friendStatus: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			originalPlayerId: new FormControl<string | null | undefined>(undefined),
+			playerId: new FormControl<string | null | undefined>(undefined),
+			playerStattus: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PlayerName {
@@ -166,6 +356,21 @@ export namespace MyNS {
 
 		/** The given name of this player. In some places, this is known as the first name. */
 		givenName?: string | null;
+	}
+	export interface PlayerNameFormProperties {
+
+		/** The family name of this player. In some places, this is known as the last name. */
+		familyName: FormControl<string | null | undefined>,
+
+		/** The given name of this player. In some places, this is known as the first name. */
+		givenName: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayerNameFormGroup() {
+		return new FormGroup<PlayerNameFormProperties>({
+			familyName: new FormControl<string | null | undefined>(undefined),
+			givenName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -177,18 +382,50 @@ export namespace MyNS {
 		profileVisible?: boolean | null;
 	}
 
+	/** This is a JSON template for profile settings */
+	export interface ProfileSettingsFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#profileSettings. */
+		kind: FormControl<string | null | undefined>,
+		profileVisible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProfileSettingsFormGroup() {
+		return new FormGroup<ProfileSettingsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			profileVisible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This is a JSON template for a list of hidden players. */
 	export interface HiddenPlayerList {
 
 		/** The players. */
-		items?: Array<HiddenPlayer> | null;
+		items?: Array<HiddenPlayer>;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayerList. */
 		kind?: string | null;
 
 		/** The pagination token for the next page of results. */
 		nextPageToken?: string | null;
+	}
+
+	/** This is a JSON template for a list of hidden players. */
+	export interface HiddenPlayerListFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayerList. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The pagination token for the next page of results. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateHiddenPlayerListFormGroup() {
+		return new FormGroup<HiddenPlayerListFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -199,7 +436,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The leaderboard reset results. */
-		results?: Array<PlayerScoreResetResponse> | null;
+		results?: Array<PlayerScoreResetResponse>;
+	}
+
+	/** This is a JSON template for a list of leaderboard reset resources. */
+	export interface PlayerScoreResetAllResponseFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayerScoreResetAllResponseFormGroup() {
+		return new FormGroup<PlayerScoreResetAllResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -219,7 +469,24 @@ export namespace MyNS {
 		 * - "WEEKLY" - The score is a weekly score.
 		 * - "DAILY" - The score is a daily score.
 		 */
-		resetScoreTimeSpans?: Array<string> | null;
+		resetScoreTimeSpans?: Array<string>;
+	}
+
+	/** This is a JSON template for a list of reset leaderboard entry resources. */
+	export interface PlayerScoreResetResponseFormProperties {
+
+		/** The ID of an leaderboard for which player state has been updated. */
+		definitionId: FormControl<string | null | undefined>,
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayerScoreResetResponseFormGroup() {
+		return new FormGroup<PlayerScoreResetResponseFormProperties>({
+			definitionId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -230,7 +497,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The IDs of leaderboards to reset. */
-		leaderboard_ids?: Array<string> | null;
+		leaderboard_ids?: Array<string>;
+	}
+
+	/** This is a JSON template for multiple scores reset all request. */
+	export interface ScoresResetMultipleForAllRequestFormProperties {
+
+		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#scoresResetMultipleForAllRequest. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateScoresResetMultipleForAllRequestFormGroup() {
+		return new FormGroup<ScoresResetMultipleForAllRequestFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

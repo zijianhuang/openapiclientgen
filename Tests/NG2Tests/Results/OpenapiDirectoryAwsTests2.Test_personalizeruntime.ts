@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetPersonalizedRankingResponse {
-		personalizedRanking?: Array<PredictedItem> | null;
+		personalizedRanking?: Array<PredictedItem>;
+	}
+	export interface GetPersonalizedRankingResponseFormProperties {
+	}
+	export function CreateGetPersonalizedRankingResponseFormGroup() {
+		return new FormGroup<GetPersonalizedRankingResponseFormProperties>({
+		});
+
 	}
 
 
@@ -13,24 +21,76 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** <p>An object that identifies an item.</p> <p>The and APIs return a list of <code>PredictedItem</code>s.</p> */
+	export interface PredictedItemFormProperties {
+		itemId: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreatePredictedItemFormGroup() {
+		return new FormGroup<PredictedItemFormProperties>({
+			itemId: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GetRecommendationsResponse {
-		itemList?: Array<PredictedItem> | null;
+		itemList?: Array<PredictedItem>;
+	}
+	export interface GetRecommendationsResponseFormProperties {
+	}
+	export function CreateGetRecommendationsResponseFormGroup() {
+		return new FormGroup<GetRecommendationsResponseFormProperties>({
+		});
+
 	}
 
 	export interface Context {
+	}
+	export interface ContextFormProperties {
+	}
+	export function CreateContextFormGroup() {
+		return new FormGroup<ContextFormProperties>({
+		});
+
 	}
 
 	export interface GetPersonalizedRankingRequest {
 		campaignArn: string;
 		inputList: Array<string>;
 		userId: string;
-		context?: Context | null;
+		context?: Context;
+	}
+	export interface GetPersonalizedRankingRequestFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPersonalizedRankingRequestFormGroup() {
+		return new FormGroup<GetPersonalizedRankingRequestFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRecommendationsRequest {
@@ -38,8 +98,25 @@ export namespace MyNS {
 		itemId?: string | null;
 		userId?: string | null;
 		numResults?: number | null;
-		context?: Context | null;
+		context?: Context;
 		filterArn?: string | null;
+	}
+	export interface GetRecommendationsRequestFormProperties {
+		campaignArn: FormControl<string | null | undefined>,
+		itemId: FormControl<string | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+		numResults: FormControl<number | null | undefined>,
+		filterArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRecommendationsRequestFormGroup() {
+		return new FormGroup<GetRecommendationsRequestFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			itemId: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+			numResults: new FormControl<number | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -90,7 +167,35 @@ export namespace MyNS {
 		userId: string;
 
 		/** The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. */
-		context?: {[id: string]: string } | null;
+		context?: {[id: string]: string };
+	}
+	export interface GetPersonalizedRankingPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
+		campaignArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The user for which you want the campaign to provide a personalized ranking.
+		 * Required
+		 * Max length: 256
+		 */
+		userId: FormControl<string | null | undefined>,
+
+		/** The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. */
+		context: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateGetPersonalizedRankingPostBodyFormGroup() {
+		return new FormGroup<GetPersonalizedRankingPostBodyFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+			context: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRecommendationsPostBody {
@@ -122,7 +227,7 @@ export namespace MyNS {
 		numResults?: number | null;
 
 		/** The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. */
-		context?: {[id: string]: string } | null;
+		context?: {[id: string]: string };
 
 		/**
 		 * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.
@@ -130,6 +235,55 @@ export namespace MyNS {
 		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		filterArn?: string | null;
+	}
+	export interface GetRecommendationsPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.
+		 * Required
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
+		campaignArn: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The item ID to provide recommendations for.</p> <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
+		 * Max length: 256
+		 */
+		itemId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The user ID to provide recommendations for.</p> <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
+		 * Max length: 256
+		 */
+		userId: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of results to return. The default is 25. The maximum is 500.
+		 * Minimum: 0
+		 */
+		numResults: FormControl<number | null | undefined>,
+
+		/** The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. */
+		context: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.
+		 * Max length: 256
+		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
+		 */
+		filterArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRecommendationsPostBodyFormGroup() {
+		return new FormGroup<GetRecommendationsPostBodyFormProperties>({
+			campaignArn: new FormControl<string | null | undefined>(undefined),
+			itemId: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+			numResults: new FormControl<number | null | undefined>(undefined),
+			context: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			filterArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

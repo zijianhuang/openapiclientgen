@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateSignalingChannelOutput {
 		ChannelARN?: string | null;
+	}
+	export interface CreateSignalingChannelOutputFormProperties {
+		ChannelARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSignalingChannelOutputFormGroup() {
+		return new FormGroup<CreateSignalingChannelOutputFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -13,56 +23,183 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A key and value pair that is associated with the specified signaling channel. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ClientLimitExceededException {
 	}
+	export interface ClientLimitExceededExceptionFormProperties {
+	}
+	export function CreateClientLimitExceededExceptionFormGroup() {
+		return new FormGroup<ClientLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccountChannelLimitExceededException {
+	}
+	export interface AccountChannelLimitExceededExceptionFormProperties {
+	}
+	export function CreateAccountChannelLimitExceededExceptionFormGroup() {
+		return new FormGroup<AccountChannelLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceInUseException {
 	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagsPerResourceExceededLimitException {
+	}
+	export interface TagsPerResourceExceededLimitExceptionFormProperties {
+	}
+	export function CreateTagsPerResourceExceededLimitExceptionFormGroup() {
+		return new FormGroup<TagsPerResourceExceededLimitExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateStreamOutput {
 		StreamARN?: string | null;
 	}
+	export interface CreateStreamOutputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStreamOutputFormGroup() {
+		return new FormGroup<CreateStreamOutputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountStreamLimitExceededException {
+	}
+	export interface AccountStreamLimitExceededExceptionFormProperties {
+	}
+	export function CreateAccountStreamLimitExceededExceptionFormGroup() {
+		return new FormGroup<AccountStreamLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeviceStreamLimitExceededException {
 	}
+	export interface DeviceStreamLimitExceededExceptionFormProperties {
+	}
+	export function CreateDeviceStreamLimitExceededExceptionFormGroup() {
+		return new FormGroup<DeviceStreamLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDeviceException {
+	}
+	export interface InvalidDeviceExceptionFormProperties {
+	}
+	export function CreateInvalidDeviceExceptionFormGroup() {
+		return new FormGroup<InvalidDeviceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSignalingChannelOutput {
 	}
+	export interface DeleteSignalingChannelOutputFormProperties {
+	}
+	export function CreateDeleteSignalingChannelOutputFormGroup() {
+		return new FormGroup<DeleteSignalingChannelOutputFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface VersionMismatchException {
 	}
+	export interface VersionMismatchExceptionFormProperties {
+	}
+	export function CreateVersionMismatchExceptionFormGroup() {
+		return new FormGroup<VersionMismatchExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteStreamOutput {
 	}
+	export interface DeleteStreamOutputFormProperties {
+	}
+	export function CreateDeleteStreamOutputFormGroup() {
+		return new FormGroup<DeleteStreamOutputFormProperties>({
+		});
+
+	}
 
 	export interface NotAuthorizedException {
+	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSignalingChannelOutput {
 
 		/** A structure that encapsulates a signaling channel's metadata and properties. */
-		ChannelInfo?: ChannelInfo | null;
+		ChannelInfo?: ChannelInfo;
+	}
+	export interface DescribeSignalingChannelOutputFormProperties {
+	}
+	export function CreateDescribeSignalingChannelOutputFormGroup() {
+		return new FormGroup<DescribeSignalingChannelOutputFormProperties>({
+		});
+
 	}
 
 
@@ -75,8 +212,29 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: SingleMasterConfiguration | null;
+		SingleMasterConfiguration?: SingleMasterConfiguration;
 		Version?: string | null;
+	}
+
+	/** A structure that encapsulates a signaling channel's metadata and properties. */
+	export interface ChannelInfoFormProperties {
+		ChannelName: FormControl<string | null | undefined>,
+		ChannelARN: FormControl<string | null | undefined>,
+		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
+		ChannelStatus: FormControl<ChannelInfoChannelStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelInfoFormGroup() {
+		return new FormGroup<ChannelInfoFormProperties>({
+			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
+			ChannelStatus: new FormControl<ChannelInfoChannelStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChannelInfoChannelType { SINGLE_MASTER = 0 }
@@ -89,10 +247,28 @@ export namespace MyNS {
 		MessageTtlSeconds?: number | null;
 	}
 
+	/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
+	export interface SingleMasterConfigurationFormProperties {
+		MessageTtlSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateSingleMasterConfigurationFormGroup() {
+		return new FormGroup<SingleMasterConfigurationFormProperties>({
+			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStreamOutput {
 
 		/** An object describing a Kinesis video stream. */
-		StreamInfo?: StreamInfo | null;
+		StreamInfo?: StreamInfo;
+	}
+	export interface DescribeStreamOutputFormProperties {
+	}
+	export function CreateDescribeStreamOutputFormGroup() {
+		return new FormGroup<DescribeStreamOutputFormProperties>({
+		});
+
 	}
 
 
@@ -109,12 +285,55 @@ export namespace MyNS {
 		DataRetentionInHours?: number | null;
 	}
 
+	/** An object describing a Kinesis video stream. */
+	export interface StreamInfoFormProperties {
+		DeviceName: FormControl<string | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		MediaType: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		Status: FormControl<ChannelInfoChannelStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		DataRetentionInHours: FormControl<number | null | undefined>,
+	}
+	export function CreateStreamInfoFormGroup() {
+		return new FormGroup<StreamInfoFormProperties>({
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			MediaType: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ChannelInfoChannelStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDataEndpointOutput {
 		DataEndpoint?: string | null;
 	}
+	export interface GetDataEndpointOutputFormProperties {
+		DataEndpoint: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataEndpointOutputFormGroup() {
+		return new FormGroup<GetDataEndpointOutputFormProperties>({
+			DataEndpoint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetSignalingChannelEndpointOutput {
-		ResourceEndpointList?: Array<ResourceEndpointListItem> | null;
+		ResourceEndpointList?: Array<ResourceEndpointListItem>;
+	}
+	export interface GetSignalingChannelEndpointOutputFormProperties {
+	}
+	export function CreateGetSignalingChannelEndpointOutputFormGroup() {
+		return new FormGroup<GetSignalingChannelEndpointOutputFormProperties>({
+		});
+
 	}
 
 
@@ -124,6 +343,19 @@ export namespace MyNS {
 		ResourceEndpoint?: string | null;
 	}
 
+	/** An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API. */
+	export interface ResourceEndpointListItemFormProperties {
+		Protocol: FormControl<ResourceEndpointListItemProtocol | null | undefined>,
+		ResourceEndpoint: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceEndpointListItemFormGroup() {
+		return new FormGroup<ResourceEndpointListItemFormProperties>({
+			Protocol: new FormControl<ResourceEndpointListItemProtocol | null | undefined>(undefined),
+			ResourceEndpoint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceEndpointListItemProtocol { WSS = 0, HTTPS = 1 }
 
 	export enum ChannelProtocol { WSS = 0, HTTPS = 1 }
@@ -131,52 +363,151 @@ export namespace MyNS {
 	export enum ChannelRole { MASTER = 0, VIEWER = 1 }
 
 	export interface ListSignalingChannelsOutput {
-		ChannelInfoList?: Array<ChannelInfo> | null;
+		ChannelInfoList?: Array<ChannelInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListSignalingChannelsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSignalingChannelsOutputFormGroup() {
+		return new FormGroup<ListSignalingChannelsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ComparisonOperator { BEGINS_WITH = 0 }
 
 	export interface ListStreamsOutput {
-		StreamInfoList?: Array<StreamInfo> | null;
+		StreamInfoList?: Array<StreamInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListStreamsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamsOutputFormGroup() {
+		return new FormGroup<ListStreamsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceOutput {
 		NextToken?: string | null;
-		Tags?: ResourceTags | null;
+		Tags?: ResourceTags;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceTags {
 	}
+	export interface ResourceTagsFormProperties {
+	}
+	export function CreateResourceTagsFormGroup() {
+		return new FormGroup<ResourceTagsFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForStreamOutput {
 		NextToken?: string | null;
-		Tags?: ResourceTags | null;
+		Tags?: ResourceTags;
+	}
+	export interface ListTagsForStreamOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForStreamOutputFormGroup() {
+		return new FormGroup<ListTagsForStreamOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidResourceFormatException {
 	}
+	export interface InvalidResourceFormatExceptionFormProperties {
+	}
+	export function CreateInvalidResourceFormatExceptionFormGroup() {
+		return new FormGroup<InvalidResourceFormatExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagStreamOutput {
 	}
+	export interface TagStreamOutputFormProperties {
+	}
+	export function CreateTagStreamOutputFormGroup() {
+		return new FormGroup<TagStreamOutputFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagStreamOutput {
 	}
+	export interface UntagStreamOutputFormProperties {
+	}
+	export function CreateUntagStreamOutputFormGroup() {
+		return new FormGroup<UntagStreamOutputFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDataRetentionOutput {
+	}
+	export interface UpdateDataRetentionOutputFormProperties {
+	}
+	export function CreateUpdateDataRetentionOutputFormGroup() {
+		return new FormGroup<UpdateDataRetentionOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateSignalingChannelOutput {
 	}
+	export interface UpdateSignalingChannelOutputFormProperties {
+	}
+	export function CreateUpdateSignalingChannelOutputFormGroup() {
+		return new FormGroup<UpdateSignalingChannelOutputFormProperties>({
+		});
+
+	}
 
 	export interface UpdateStreamOutput {
+	}
+	export interface UpdateStreamOutputFormProperties {
+	}
+	export function CreateUpdateStreamOutputFormGroup() {
+		return new FormGroup<UpdateStreamOutputFormProperties>({
+		});
+
 	}
 
 	export enum APIName { PUT_MEDIA = 0, GET_MEDIA = 1, LIST_FRAGMENTS = 2, GET_MEDIA_FOR_FRAGMENT_LIST = 3, GET_HLS_STREAMING_SESSION_URL = 4, GET_DASH_STREAMING_SESSION_URL = 5, GET_CLIP = 6 }
@@ -192,13 +523,37 @@ export namespace MyNS {
 		ComparisonValue?: string | null;
 	}
 
+	/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
+	export interface ChannelNameConditionFormProperties {
+		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+		ComparisonValue: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelNameConditionFormGroup() {
+		return new FormGroup<ChannelNameConditionFormProperties>({
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateSignalingChannelInput {
 		ChannelName: string;
 		ChannelType?: ChannelInfoChannelType | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: SingleMasterConfiguration | null;
-		Tags?: Array<Tag> | null;
+		SingleMasterConfiguration?: SingleMasterConfiguration;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateSignalingChannelInputFormProperties {
+		ChannelName: FormControl<string | null | undefined>,
+		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
+	}
+	export function CreateCreateSignalingChannelInputFormGroup() {
+		return new FormGroup<CreateSignalingChannelInputFormProperties>({
+			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamInput {
@@ -207,27 +562,88 @@ export namespace MyNS {
 		MediaType?: string | null;
 		KmsKeyId?: string | null;
 		DataRetentionInHours?: number | null;
-		Tags?: ResourceTags | null;
+		Tags?: ResourceTags;
+	}
+	export interface CreateStreamInputFormProperties {
+		DeviceName: FormControl<string | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+		MediaType: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		DataRetentionInHours: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateStreamInputFormGroup() {
+		return new FormGroup<CreateStreamInputFormProperties>({
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			MediaType: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSignalingChannelInput {
 		ChannelARN: string;
 		CurrentVersion?: string | null;
 	}
+	export interface DeleteSignalingChannelInputFormProperties {
+		ChannelARN: FormControl<string | null | undefined>,
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSignalingChannelInputFormGroup() {
+		return new FormGroup<DeleteSignalingChannelInputFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteStreamInput {
 		StreamARN: string;
 		CurrentVersion?: string | null;
+	}
+	export interface DeleteStreamInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStreamInputFormGroup() {
+		return new FormGroup<DeleteStreamInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSignalingChannelInput {
 		ChannelName?: string | null;
 		ChannelARN?: string | null;
 	}
+	export interface DescribeSignalingChannelInputFormProperties {
+		ChannelName: FormControl<string | null | undefined>,
+		ChannelARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSignalingChannelInputFormGroup() {
+		return new FormGroup<DescribeSignalingChannelInputFormProperties>({
+			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeStreamInput {
 		StreamName?: string | null;
 		StreamARN?: string | null;
+	}
+	export interface DescribeStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamInputFormGroup() {
+		return new FormGroup<DescribeStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDataEndpointInput {
@@ -235,19 +651,52 @@ export namespace MyNS {
 		StreamARN?: string | null;
 		APIName: APIName;
 	}
+	export interface GetDataEndpointInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		APIName: FormControl<APIName | null | undefined>,
+	}
+	export function CreateGetDataEndpointInputFormGroup() {
+		return new FormGroup<GetDataEndpointInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			APIName: new FormControl<APIName | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.  */
 	export interface SingleMasterChannelEndpointConfiguration {
-		Protocols?: Array<ChannelProtocol> | null;
+		Protocols?: Array<ChannelProtocol>;
 		Role?: ChannelRole | null;
+	}
+
+	/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.  */
+	export interface SingleMasterChannelEndpointConfigurationFormProperties {
+		Role: FormControl<ChannelRole | null | undefined>,
+	}
+	export function CreateSingleMasterChannelEndpointConfigurationFormGroup() {
+		return new FormGroup<SingleMasterChannelEndpointConfigurationFormProperties>({
+			Role: new FormControl<ChannelRole | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSignalingChannelEndpointInput {
 		ChannelARN: string;
 
 		/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterChannelEndpointConfiguration?: SingleMasterChannelEndpointConfiguration | null;
+		SingleMasterChannelEndpointConfiguration?: SingleMasterChannelEndpointConfiguration;
+	}
+	export interface GetSignalingChannelEndpointInputFormProperties {
+		ChannelARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSignalingChannelEndpointInputFormGroup() {
+		return new FormGroup<GetSignalingChannelEndpointInputFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSignalingChannelsInput {
@@ -255,7 +704,18 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
-		ChannelNameCondition?: ChannelNameCondition | null;
+		ChannelNameCondition?: ChannelNameCondition;
+	}
+	export interface ListSignalingChannelsInputFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSignalingChannelsInputFormGroup() {
+		return new FormGroup<ListSignalingChannelsInputFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -265,17 +725,52 @@ export namespace MyNS {
 		ComparisonValue?: string | null;
 	}
 
+	/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.  */
+	export interface StreamNameConditionFormProperties {
+		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+		ComparisonValue: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamNameConditionFormGroup() {
+		return new FormGroup<StreamNameConditionFormProperties>({
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStreamsInput {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 
 		/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. */
-		StreamNameCondition?: StreamNameCondition | null;
+		StreamNameCondition?: StreamNameCondition;
+	}
+	export interface ListStreamsInputFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamsInputFormGroup() {
+		return new FormGroup<ListStreamsInputFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		NextToken?: string | null;
 		ResourceARN: string;
+	}
+	export interface ListTagsForResourceInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForStreamInput {
@@ -283,10 +778,32 @@ export namespace MyNS {
 		StreamARN?: string | null;
 		StreamName?: string | null;
 	}
+	export interface ListTagsForStreamInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForStreamInputFormGroup() {
+		return new FormGroup<ListTagsForStreamInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceInput {
 		ResourceARN: string;
 		Tags: Array<Tag>;
+	}
+	export interface TagResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagStreamInput {
@@ -294,16 +811,47 @@ export namespace MyNS {
 		StreamName?: string | null;
 		Tags: ResourceTags;
 	}
+	export interface TagStreamInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagStreamInputFormGroup() {
+		return new FormGroup<TagStreamInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceInput {
 		ResourceARN: string;
 		TagKeyList: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UntagStreamInput {
 		StreamARN?: string | null;
 		StreamName?: string | null;
 		TagKeyList: Array<string>;
+	}
+	export interface UntagStreamInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagStreamInputFormGroup() {
+		return new FormGroup<UntagStreamInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateDataRetentionOperation { INCREASE_DATA_RETENTION = 0, DECREASE_DATA_RETENTION = 1 }
@@ -315,13 +863,41 @@ export namespace MyNS {
 		Operation: UpdateDataRetentionOperation;
 		DataRetentionChangeInHours: number;
 	}
+	export interface UpdateDataRetentionInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		CurrentVersion: FormControl<string | null | undefined>,
+		Operation: FormControl<UpdateDataRetentionOperation | null | undefined>,
+		DataRetentionChangeInHours: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDataRetentionInputFormGroup() {
+		return new FormGroup<UpdateDataRetentionInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined),
+			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSignalingChannelInput {
 		ChannelARN: string;
 		CurrentVersion: string;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: SingleMasterConfiguration | null;
+		SingleMasterConfiguration?: SingleMasterConfiguration;
+	}
+	export interface UpdateSignalingChannelInputFormProperties {
+		ChannelARN: FormControl<string | null | undefined>,
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSignalingChannelInputFormGroup() {
+		return new FormGroup<UpdateSignalingChannelInputFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStreamInput {
@@ -330,6 +906,23 @@ export namespace MyNS {
 		CurrentVersion: string;
 		DeviceName?: string | null;
 		MediaType?: string | null;
+	}
+	export interface UpdateStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		CurrentVersion: FormControl<string | null | undefined>,
+		DeviceName: FormControl<string | null | undefined>,
+		MediaType: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStreamInputFormGroup() {
+		return new FormGroup<UpdateStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+			MediaType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -528,18 +1121,48 @@ export namespace MyNS {
 		ChannelType?: ChannelInfoChannelType | null;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: CreateSignalingChannelPostBodySingleMasterConfiguration | null;
+		SingleMasterConfiguration?: CreateSignalingChannelPostBodySingleMasterConfiguration;
 
 		/**
 		 * A set of tags (key-value pairs) that you want to associate with this channel.
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateSignalingChannelPostBodyFormProperties {
+
+		/**
+		 * A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		ChannelName: FormControl<string | null | undefined>,
+
+		/** A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. */
+		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
+	}
+	export function CreateCreateSignalingChannelPostBodyFormGroup() {
+		return new FormGroup<CreateSignalingChannelPostBodyFormProperties>({
+			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSignalingChannelPostBodySingleMasterConfiguration {
 		MessageTtlSeconds?: number | null;
+	}
+	export interface CreateSignalingChannelPostBodySingleMasterConfigurationFormProperties {
+		MessageTtlSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateSignalingChannelPostBodySingleMasterConfigurationFormGroup() {
+		return new FormGroup<CreateSignalingChannelPostBodySingleMasterConfigurationFormProperties>({
+			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamPostBody {
@@ -584,7 +1207,62 @@ export namespace MyNS {
 		DataRetentionInHours?: number | null;
 
 		/** A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional). */
-		Tags?: {[id: string]: string } | null;
+		Tags?: {[id: string]: string };
+	}
+	export interface CreateStreamPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		DeviceName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p> <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
+		MediaType: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: .+
+		 */
+		KmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> <p>The default value is 0, indicating that the stream does not persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
+		 * Minimum: 0
+		 */
+		DataRetentionInHours: FormControl<number | null | undefined>,
+
+		/** A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional). */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateStreamPostBodyFormGroup() {
+		return new FormGroup<CreateStreamPostBodyFormProperties>({
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			MediaType: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			DataRetentionInHours: new FormControl<number | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSignalingChannelPostBody {
@@ -606,6 +1284,32 @@ export namespace MyNS {
 		 */
 		CurrentVersion?: string | null;
 	}
+	export interface DeleteSignalingChannelPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSignalingChannelPostBodyFormGroup() {
+		return new FormGroup<DeleteSignalingChannelPostBodyFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteStreamPostBody {
 
@@ -626,6 +1330,32 @@ export namespace MyNS {
 		 */
 		CurrentVersion?: string | null;
 	}
+	export interface DeleteStreamPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the stream that you want to delete.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStreamPostBodyFormGroup() {
+		return new FormGroup<DeleteStreamPostBodyFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeSignalingChannelPostBody {
 
@@ -645,6 +1375,31 @@ export namespace MyNS {
 		 */
 		ChannelARN?: string | null;
 	}
+	export interface DescribeSignalingChannelPostBodyFormProperties {
+
+		/**
+		 * The name of the signaling channel that you want to describe.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		ChannelName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the signaling channel that you want to describe.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ChannelARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSignalingChannelPostBodyFormGroup() {
+		return new FormGroup<DescribeSignalingChannelPostBodyFormProperties>({
+			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeStreamPostBody {
 
@@ -663,6 +1418,31 @@ export namespace MyNS {
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
+	}
+	export interface DescribeStreamPostBodyFormProperties {
+
+		/**
+		 * The name of the stream.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the stream.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamPostBodyFormGroup() {
+		return new FormGroup<DescribeStreamPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDataEndpointPostBody {
@@ -689,6 +1469,38 @@ export namespace MyNS {
 		 */
 		APIName: APIName;
 	}
+	export interface GetDataEndpointPostBodyFormProperties {
+
+		/**
+		 * The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the API action for which to get an endpoint.
+		 * Required
+		 */
+		APIName: FormControl<APIName | null | undefined>,
+	}
+	export function CreateGetDataEndpointPostBodyFormGroup() {
+		return new FormGroup<GetDataEndpointPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			APIName: new FormControl<APIName | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetSignalingChannelEndpointPostBody {
 
@@ -702,12 +1514,38 @@ export namespace MyNS {
 		ChannelARN: string;
 
 		/** An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterChannelEndpointConfiguration?: GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration | null;
+		SingleMasterChannelEndpointConfiguration?: GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration;
+	}
+	export interface GetSignalingChannelEndpointPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ChannelARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSignalingChannelEndpointPostBodyFormGroup() {
+		return new FormGroup<GetSignalingChannelEndpointPostBodyFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfiguration {
-		Protocols?: Array<ChannelProtocol> | null;
+		Protocols?: Array<ChannelProtocol>;
 		Role?: ChannelRole | null;
+	}
+	export interface GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfigurationFormProperties {
+		Role: FormControl<ChannelRole | null | undefined>,
+	}
+	export function CreateGetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfigurationFormGroup() {
+		return new FormGroup<GetSignalingChannelEndpointPostBodySingleMasterChannelEndpointConfigurationFormProperties>({
+			Role: new FormControl<ChannelRole | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSignalingChannelsPostBody {
@@ -728,12 +1566,47 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>. */
-		ChannelNameCondition?: ListSignalingChannelsPostBodyChannelNameCondition | null;
+		ChannelNameCondition?: ListSignalingChannelsPostBodyChannelNameCondition;
+	}
+	export interface ListSignalingChannelsPostBodyFormProperties {
+
+		/**
+		 * The maximum number of channels to return in the response. The default is 500.
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSignalingChannelsPostBodyFormGroup() {
+		return new FormGroup<ListSignalingChannelsPostBodyFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSignalingChannelsPostBodyChannelNameCondition {
 		ComparisonOperator?: ComparisonOperator | null;
 		ComparisonValue?: string | null;
+	}
+	export interface ListSignalingChannelsPostBodyChannelNameConditionFormProperties {
+		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+		ComparisonValue: FormControl<string | null | undefined>,
+	}
+	export function CreateListSignalingChannelsPostBodyChannelNameConditionFormGroup() {
+		return new FormGroup<ListSignalingChannelsPostBodyChannelNameConditionFormProperties>({
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListStreamsPostBody {
@@ -754,12 +1627,47 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. */
-		StreamNameCondition?: ListStreamsPostBodyStreamNameCondition | null;
+		StreamNameCondition?: ListStreamsPostBodyStreamNameCondition;
+	}
+	export interface ListStreamsPostBodyFormProperties {
+
+		/**
+		 * The maximum number of streams to return in the response. The default is 10,000.
+		 * Minimum: 1
+		 * Maximum: 10000
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamsPostBodyFormGroup() {
+		return new FormGroup<ListStreamsPostBodyFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListStreamsPostBodyStreamNameCondition {
 		ComparisonOperator?: ComparisonOperator | null;
 		ComparisonValue?: string | null;
+	}
+	export interface ListStreamsPostBodyStreamNameConditionFormProperties {
+		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+		ComparisonValue: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamsPostBodyStreamNameConditionFormGroup() {
+		return new FormGroup<ListStreamsPostBodyStreamNameConditionFormProperties>({
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourcePostBody {
@@ -780,6 +1688,32 @@ export namespace MyNS {
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
+	}
+	export interface ListTagsForResourcePostBodyFormProperties {
+
+		/**
+		 * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourcePostBodyFormGroup() {
+		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForStreamPostBody {
@@ -808,6 +1742,40 @@ export namespace MyNS {
 		 */
 		StreamName?: string | null;
 	}
+	export interface ListTagsForStreamPostBodyFormProperties {
+
+		/**
+		 * If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
+		 * Max length: 512
+		 * Min length: 0
+		 * Pattern: [a-zA-Z0-9+/=]*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the stream that you want to list tags for.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the stream that you want to list tags for.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForStreamPostBodyFormGroup() {
+		return new FormGroup<ListTagsForStreamPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -827,6 +1795,23 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		Tags: Array<Tag>;
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagStreamPostBody {
@@ -853,6 +1838,38 @@ export namespace MyNS {
 		 */
 		Tags: {[id: string]: string };
 	}
+	export interface TagStreamPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the stream that you want to add the tag or tags to.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+		 * Required
+		 */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagStreamPostBodyFormGroup() {
+		return new FormGroup<TagStreamPostBodyFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourcePostBody {
 
@@ -872,6 +1889,23 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		TagKeyList: Array<string>;
+	}
+	export interface UntagResourcePostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourcePostBodyFormGroup() {
+		return new FormGroup<UntagResourcePostBodyFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UntagStreamPostBody {
@@ -899,6 +1933,31 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		TagKeyList: Array<string>;
+	}
+	export interface UntagStreamPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the stream that you want to remove tags from.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the stream that you want to remove tags from.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagStreamPostBodyFormGroup() {
+		return new FormGroup<UntagStreamPostBodyFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataRetentionPostBody {
@@ -941,6 +2000,56 @@ export namespace MyNS {
 		 */
 		DataRetentionChangeInHours: number;
 	}
+	export interface UpdateDataRetentionPostBodyFormProperties {
+
+		/**
+		 * The name of the stream whose retention period you want to change.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
+		CurrentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Indicates whether you want to increase or decrease the retention period.
+		 * Required
+		 */
+		Operation: FormControl<UpdateDataRetentionOperation | null | undefined>,
+
+		/**
+		 * The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).
+		 * Required
+		 * Minimum: 1
+		 */
+		DataRetentionChangeInHours: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDataRetentionPostBodyFormGroup() {
+		return new FormGroup<UpdateDataRetentionPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined),
+			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSignalingChannelPostBody {
 
@@ -963,11 +2072,47 @@ export namespace MyNS {
 		CurrentVersion: string;
 
 		/** A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type. */
-		SingleMasterConfiguration?: UpdateSignalingChannelPostBodySingleMasterConfiguration | null;
+		SingleMasterConfiguration?: UpdateSignalingChannelPostBodySingleMasterConfiguration;
+	}
+	export interface UpdateSignalingChannelPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The current version of the signaling channel that you want to update.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSignalingChannelPostBodyFormGroup() {
+		return new FormGroup<UpdateSignalingChannelPostBodyFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSignalingChannelPostBodySingleMasterConfiguration {
 		MessageTtlSeconds?: number | null;
+	}
+	export interface UpdateSignalingChannelPostBodySingleMasterConfigurationFormProperties {
+		MessageTtlSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateSignalingChannelPostBodySingleMasterConfigurationFormGroup() {
+		return new FormGroup<UpdateSignalingChannelPostBodySingleMasterConfigurationFormProperties>({
+			MessageTtlSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStreamPostBody {
@@ -1012,6 +2157,59 @@ export namespace MyNS {
 		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType?: string | null;
+	}
+	export interface UpdateStreamPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the stream whose metadata you want to update.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The version of the stream whose metadata you want to update.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9]+
+		 */
+		CurrentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		DeviceName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
+		 */
+		MediaType: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStreamPostBodyFormGroup() {
+		return new FormGroup<UpdateStreamPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+			MediaType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,29 +1,79 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface EntityNotExistsException {
+	}
+	export interface EntityNotExistsExceptionFormProperties {
+	}
+	export function CreateEntityNotExistsExceptionFormGroup() {
+		return new FormGroup<EntityNotExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ProhibitedStateException {
 	}
+	export interface ProhibitedStateExceptionFormProperties {
+	}
+	export function CreateProhibitedStateExceptionFormGroup() {
+		return new FormGroup<ProhibitedStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnauthorizedOperationException {
+	}
+	export interface UnauthorizedOperationExceptionFormProperties {
+	}
+	export function CreateUnauthorizedOperationExceptionFormGroup() {
+		return new FormGroup<UnauthorizedOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnauthorizedResourceAccessException {
 	}
+	export interface UnauthorizedResourceAccessExceptionFormProperties {
+	}
+	export function CreateUnauthorizedResourceAccessExceptionFormGroup() {
+		return new FormGroup<UnauthorizedResourceAccessExceptionFormProperties>({
+		});
+
+	}
 
 	export interface FailedDependencyException {
 	}
+	export interface FailedDependencyExceptionFormProperties {
+	}
+	export function CreateFailedDependencyExceptionFormGroup() {
+		return new FormGroup<FailedDependencyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ActivateUserResponse {
 
 		/** Describes a user. */
-		User?: User | null;
+		User?: User;
+	}
+	export interface ActivateUserResponseFormProperties {
+	}
+	export function CreateActivateUserResponseFormGroup() {
+		return new FormGroup<ActivateUserResponseFormProperties>({
+		});
+
 	}
 
 
@@ -45,7 +95,44 @@ export namespace MyNS {
 		Locale?: UserLocale | null;
 
 		/** Describes the storage for a user. */
-		Storage?: UserStorageMetadata | null;
+		Storage?: UserStorageMetadata;
+	}
+
+	/** Describes a user. */
+	export interface UserFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		EmailAddress: FormControl<string | null | undefined>,
+		GivenName: FormControl<string | null | undefined>,
+		Surname: FormControl<string | null | undefined>,
+		OrganizationId: FormControl<string | null | undefined>,
+		RootFolderId: FormControl<string | null | undefined>,
+		RecycleBinFolderId: FormControl<string | null | undefined>,
+		Status: FormControl<UserStatus | null | undefined>,
+		Type: FormControl<UserType | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		ModifiedTimestamp: FormControl<Date | null | undefined>,
+		TimeZoneId: FormControl<string | null | undefined>,
+		Locale: FormControl<UserLocale | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			RootFolderId: new FormControl<string | null | undefined>(undefined),
+			RecycleBinFolderId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<UserStatus | null | undefined>(undefined),
+			Type: new FormControl<UserType | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined),
+			Locale: new FormControl<UserLocale | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UserStatus { ACTIVE = 0, INACTIVE = 1, PENDING = 2 }
@@ -60,7 +147,18 @@ export namespace MyNS {
 		StorageUtilizedInBytes?: number | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: StorageRuleType | null;
+		StorageRule?: StorageRuleType;
+	}
+
+	/** Describes the storage for a user. */
+	export interface UserStorageMetadataFormProperties {
+		StorageUtilizedInBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateUserStorageMetadataFormGroup() {
+		return new FormGroup<UserStorageMetadataFormProperties>({
+			StorageUtilizedInBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -70,10 +168,30 @@ export namespace MyNS {
 		StorageType?: StorageRuleTypeStorageType | null;
 	}
 
+	/** Describes the storage for a user. */
+	export interface StorageRuleTypeFormProperties {
+		StorageAllocatedInBytes: FormControl<number | null | undefined>,
+		StorageType: FormControl<StorageRuleTypeStorageType | null | undefined>,
+	}
+	export function CreateStorageRuleTypeFormGroup() {
+		return new FormGroup<StorageRuleTypeFormProperties>({
+			StorageAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
+			StorageType: new FormControl<StorageRuleTypeStorageType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StorageRuleTypeStorageType { UNLIMITED = 0, QUOTA = 1 }
 
 	export interface AddResourcePermissionsResponse {
-		ShareResults?: Array<ShareResult> | null;
+		ShareResults?: Array<ShareResult>;
+	}
+	export interface AddResourcePermissionsResponseFormProperties {
+	}
+	export function CreateAddResourcePermissionsResponseFormGroup() {
+		return new FormGroup<AddResourcePermissionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -85,6 +203,27 @@ export namespace MyNS {
 		Status?: ShareResultStatus | null;
 		ShareId?: string | null;
 		StatusMessage?: string | null;
+	}
+
+	/** Describes the share results of a resource. */
+	export interface ShareResultFormProperties {
+		PrincipalId: FormControl<string | null | undefined>,
+		InviteePrincipalId: FormControl<string | null | undefined>,
+		Role: FormControl<ShareResultRole | null | undefined>,
+		Status: FormControl<ShareResultStatus | null | undefined>,
+		ShareId: FormControl<string | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateShareResultFormGroup() {
+		return new FormGroup<ShareResultFormProperties>({
+			PrincipalId: new FormControl<string | null | undefined>(undefined),
+			InviteePrincipalId: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<ShareResultRole | null | undefined>(undefined),
+			Status: new FormControl<ShareResultStatus | null | undefined>(undefined),
+			ShareId: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ShareResultRole { VIEWER = 0, CONTRIBUTOR = 1, OWNER = 2, COOWNER = 3 }
@@ -99,12 +238,34 @@ export namespace MyNS {
 		Role: ShareResultRole;
 	}
 
+	/** Describes the recipient type and ID, if available. */
+	export interface SharePrincipalFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<SharePrincipalType | null | undefined>,
+		Role: FormControl<ShareResultRole | null | undefined>,
+	}
+	export function CreateSharePrincipalFormGroup() {
+		return new FormGroup<SharePrincipalFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<SharePrincipalType | null | undefined>(undefined),
+			Role: new FormControl<ShareResultRole | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SharePrincipalType { USER = 0, GROUP = 1, INVITE = 2, ANONYMOUS = 3, ORGANIZATION = 4 }
 
 	export interface CreateCommentResponse {
 
 		/** Describes a comment. */
-		Comment?: Comment | null;
+		Comment?: Comment;
+	}
+	export interface CreateCommentResponseFormProperties {
+	}
+	export function CreateCreateCommentResponseFormGroup() {
+		return new FormGroup<CreateCommentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -116,11 +277,36 @@ export namespace MyNS {
 		Text?: string | null;
 
 		/** Describes a user. */
-		Contributor?: User | null;
+		Contributor?: User;
 		CreatedTimestamp?: Date | null;
 		Status?: CommentStatus | null;
 		Visibility?: CommentVisibility | null;
 		RecipientId?: string | null;
+	}
+
+	/** Describes a comment. */
+	export interface CommentFormProperties {
+		CommentId: FormControl<string | null | undefined>,
+		ParentId: FormControl<string | null | undefined>,
+		ThreadId: FormControl<string | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		Status: FormControl<CommentStatus | null | undefined>,
+		Visibility: FormControl<CommentVisibility | null | undefined>,
+		RecipientId: FormControl<string | null | undefined>,
+	}
+	export function CreateCommentFormGroup() {
+		return new FormGroup<CommentFormProperties>({
+			CommentId: new FormControl<string | null | undefined>(undefined),
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			ThreadId: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<CommentStatus | null | undefined>(undefined),
+			Visibility: new FormControl<CommentVisibility | null | undefined>(undefined),
+			RecipientId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CommentStatus { DRAFT = 0, PUBLISHED = 1, DELETED = 2 }
@@ -129,20 +315,55 @@ export namespace MyNS {
 
 	export interface DocumentLockedForCommentsException {
 	}
+	export interface DocumentLockedForCommentsExceptionFormProperties {
+	}
+	export function CreateDocumentLockedForCommentsExceptionFormGroup() {
+		return new FormGroup<DocumentLockedForCommentsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidCommentOperationException {
+	}
+	export interface InvalidCommentOperationExceptionFormProperties {
+	}
+	export function CreateInvalidCommentOperationExceptionFormGroup() {
+		return new FormGroup<InvalidCommentOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateCustomMetadataResponse {
 	}
+	export interface CreateCustomMetadataResponseFormProperties {
+	}
+	export function CreateCreateCustomMetadataResponseFormGroup() {
+		return new FormGroup<CreateCustomMetadataResponseFormProperties>({
+		});
+
+	}
 
 	export interface CustomMetadataLimitExceededException {
+	}
+	export interface CustomMetadataLimitExceededExceptionFormProperties {
+	}
+	export function CreateCustomMetadataLimitExceededExceptionFormGroup() {
+		return new FormGroup<CustomMetadataLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateFolderResponse {
 
 		/** Describes a folder. */
-		Metadata?: FolderMetadata | null;
+		Metadata?: FolderMetadata;
+	}
+	export interface CreateFolderResponseFormProperties {
+	}
+	export function CreateCreateFolderResponseFormGroup() {
+		return new FormGroup<CreateFolderResponseFormProperties>({
+		});
+
 	}
 
 
@@ -156,32 +377,103 @@ export namespace MyNS {
 		ModifiedTimestamp?: Date | null;
 		ResourceState?: FolderMetadataResourceState | null;
 		Signature?: string | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		Size?: number | null;
 		LatestVersionSize?: number | null;
+	}
+
+	/** Describes a folder. */
+	export interface FolderMetadataFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreatorId: FormControl<string | null | undefined>,
+		ParentFolderId: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		ModifiedTimestamp: FormControl<Date | null | undefined>,
+		ResourceState: FormControl<FolderMetadataResourceState | null | undefined>,
+		Signature: FormControl<string | null | undefined>,
+		Size: FormControl<number | null | undefined>,
+		LatestVersionSize: FormControl<number | null | undefined>,
+	}
+	export function CreateFolderMetadataFormGroup() {
+		return new FormGroup<FolderMetadataFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatorId: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined),
+			Size: new FormControl<number | null | undefined>(undefined),
+			LatestVersionSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FolderMetadataResourceState { ACTIVE = 0, RESTORING = 1, RECYCLING = 2, RECYCLED = 3 }
 
 	export interface EntityAlreadyExistsException {
 	}
+	export interface EntityAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateEntityAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<EntityAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictingOperationException {
+	}
+	export interface ConflictingOperationExceptionFormProperties {
+	}
+	export function CreateConflictingOperationExceptionFormGroup() {
+		return new FormGroup<ConflictingOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateLabelsResponse {
 	}
+	export interface CreateLabelsResponseFormProperties {
+	}
+	export function CreateCreateLabelsResponseFormGroup() {
+		return new FormGroup<CreateLabelsResponseFormProperties>({
+		});
+
+	}
 
 	export interface TooManyLabelsException {
+	}
+	export interface TooManyLabelsExceptionFormProperties {
+	}
+	export function CreateTooManyLabelsExceptionFormGroup() {
+		return new FormGroup<TooManyLabelsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateNotificationSubscriptionResponse {
 
 		/** Describes a subscription. */
-		Subscription?: Subscription | null;
+		Subscription?: Subscription;
+	}
+	export interface CreateNotificationSubscriptionResponseFormProperties {
+	}
+	export function CreateCreateNotificationSubscriptionResponseFormGroup() {
+		return new FormGroup<CreateNotificationSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -192,31 +484,90 @@ export namespace MyNS {
 		Protocol?: SubscriptionProtocol | null;
 	}
 
+	/** Describes a subscription. */
+	export interface SubscriptionFormProperties {
+		SubscriptionId: FormControl<string | null | undefined>,
+		EndPoint: FormControl<string | null | undefined>,
+		Protocol: FormControl<SubscriptionProtocol | null | undefined>,
+	}
+	export function CreateSubscriptionFormGroup() {
+		return new FormGroup<SubscriptionFormProperties>({
+			SubscriptionId: new FormControl<string | null | undefined>(undefined),
+			EndPoint: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<SubscriptionProtocol | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SubscriptionProtocol { HTTPS = 0 }
 
 	export interface TooManySubscriptionsException {
+	}
+	export interface TooManySubscriptionsExceptionFormProperties {
+	}
+	export function CreateTooManySubscriptionsExceptionFormGroup() {
+		return new FormGroup<TooManySubscriptionsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateUserResponse {
 
 		/** Describes a user. */
-		User?: User | null;
+		User?: User;
+	}
+	export interface CreateUserResponseFormProperties {
+	}
+	export function CreateCreateUserResponseFormGroup() {
+		return new FormGroup<CreateUserResponseFormProperties>({
+		});
+
 	}
 
 	export enum StorageType { UNLIMITED = 0, QUOTA = 1 }
 
 	export interface DeleteCustomMetadataResponse {
 	}
+	export interface DeleteCustomMetadataResponseFormProperties {
+	}
+	export function CreateDeleteCustomMetadataResponseFormGroup() {
+		return new FormGroup<DeleteCustomMetadataResponseFormProperties>({
+		});
+
+	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteLabelsResponse {
 	}
+	export interface DeleteLabelsResponseFormProperties {
+	}
+	export function CreateDeleteLabelsResponseFormGroup() {
+		return new FormGroup<DeleteLabelsResponseFormProperties>({
+		});
+
+	}
 
 	export interface DescribeActivitiesResponse {
-		UserActivities?: Array<Activity> | null;
+		UserActivities?: Array<Activity>;
 		Marker?: string | null;
+	}
+	export interface DescribeActivitiesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeActivitiesResponseFormGroup() {
+		return new FormGroup<DescribeActivitiesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -228,19 +579,36 @@ export namespace MyNS {
 		OrganizationId?: string | null;
 
 		/** Describes the metadata of the user. */
-		Initiator?: UserMetadata | null;
+		Initiator?: UserMetadata;
 
 		/** Describes the users or user groups. */
-		Participants?: Participants | null;
+		Participants?: Participants;
 
 		/** Describes the metadata of a resource. */
-		ResourceMetadata?: ResourceMetadata | null;
+		ResourceMetadata?: ResourceMetadata;
 
 		/** Describes the metadata of a resource. */
-		OriginalParent?: ResourceMetadata | null;
+		OriginalParent?: ResourceMetadata;
 
 		/** Describes the metadata of a comment. */
-		CommentMetadata?: CommentMetadata | null;
+		CommentMetadata?: CommentMetadata;
+	}
+
+	/** Describes the activity information. */
+	export interface ActivityFormProperties {
+		Type: FormControl<ActivityType | null | undefined>,
+		TimeStamp: FormControl<Date | null | undefined>,
+		IsIndirectActivity: FormControl<boolean | null | undefined>,
+		OrganizationId: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityFormGroup() {
+		return new FormGroup<ActivityFormProperties>({
+			Type: new FormControl<ActivityType | null | undefined>(undefined),
+			TimeStamp: new FormControl<Date | null | undefined>(undefined),
+			IsIndirectActivity: new FormControl<boolean | null | undefined>(undefined),
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActivityType { DOCUMENT_CHECKED_IN = 0, DOCUMENT_CHECKED_OUT = 1, DOCUMENT_RENAMED = 2, DOCUMENT_VERSION_UPLOADED = 3, DOCUMENT_VERSION_DELETED = 4, DOCUMENT_VERSION_VIEWED = 5, DOCUMENT_VERSION_DOWNLOADED = 6, DOCUMENT_RECYCLED = 7, DOCUMENT_RESTORED = 8, DOCUMENT_REVERTED = 9, DOCUMENT_SHARED = 10, DOCUMENT_UNSHARED = 11, DOCUMENT_SHARE_PERMISSION_CHANGED = 12, DOCUMENT_SHAREABLE_LINK_CREATED = 13, DOCUMENT_SHAREABLE_LINK_REMOVED = 14, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = 15, DOCUMENT_MOVED = 16, DOCUMENT_COMMENT_ADDED = 17, DOCUMENT_COMMENT_DELETED = 18, DOCUMENT_ANNOTATION_ADDED = 19, DOCUMENT_ANNOTATION_DELETED = 20, FOLDER_CREATED = 21, FOLDER_DELETED = 22, FOLDER_RENAMED = 23, FOLDER_RECYCLED = 24, FOLDER_RESTORED = 25, FOLDER_SHARED = 26, FOLDER_UNSHARED = 27, FOLDER_SHARE_PERMISSION_CHANGED = 28, FOLDER_SHAREABLE_LINK_CREATED = 29, FOLDER_SHAREABLE_LINK_REMOVED = 30, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = 31, FOLDER_MOVED = 32 }
@@ -255,11 +623,39 @@ export namespace MyNS {
 		EmailAddress?: string | null;
 	}
 
+	/** Describes the metadata of the user. */
+	export interface UserMetadataFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		GivenName: FormControl<string | null | undefined>,
+		Surname: FormControl<string | null | undefined>,
+		EmailAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataFormGroup() {
+		return new FormGroup<UserMetadataFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the users or user groups. */
 	export interface Participants {
-		Users?: Array<UserMetadata> | null;
-		Groups?: Array<GroupMetadata> | null;
+		Users?: Array<UserMetadata>;
+		Groups?: Array<GroupMetadata>;
+	}
+
+	/** Describes the users or user groups. */
+	export interface ParticipantsFormProperties {
+	}
+	export function CreateParticipantsFormGroup() {
+		return new FormGroup<ParticipantsFormProperties>({
+		});
+
 	}
 
 
@@ -267,6 +663,19 @@ export namespace MyNS {
 	export interface GroupMetadata {
 		Id?: string | null;
 		Name?: string | null;
+	}
+
+	/** Describes the metadata of a user group. */
+	export interface GroupMetadataFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupMetadataFormGroup() {
+		return new FormGroup<GroupMetadataFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -279,8 +688,29 @@ export namespace MyNS {
 		VersionId?: string | null;
 
 		/** Describes the metadata of the user. */
-		Owner?: UserMetadata | null;
+		Owner?: UserMetadata;
 		ParentId?: string | null;
+	}
+
+	/** Describes the metadata of a resource. */
+	export interface ResourceMetadataFormProperties {
+		Type: FormControl<ResourceMetadataType | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		OriginalName: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		ParentId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceMetadataFormGroup() {
+		return new FormGroup<ResourceMetadataFormProperties>({
+			Type: new FormControl<ResourceMetadataType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			OriginalName: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			ParentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceMetadataType { FOLDER = 0, DOCUMENT = 1 }
@@ -291,23 +721,65 @@ export namespace MyNS {
 		CommentId?: string | null;
 
 		/** Describes a user. */
-		Contributor?: User | null;
+		Contributor?: User;
 		CreatedTimestamp?: Date | null;
 		CommentStatus?: CommentStatus | null;
 		RecipientId?: string | null;
 	}
 
+	/** Describes the metadata of a comment. */
+	export interface CommentMetadataFormProperties {
+		CommentId: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		CommentStatus: FormControl<CommentStatus | null | undefined>,
+		RecipientId: FormControl<string | null | undefined>,
+	}
+	export function CreateCommentMetadataFormGroup() {
+		return new FormGroup<CommentMetadataFormProperties>({
+			CommentId: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			CommentStatus: new FormControl<CommentStatus | null | undefined>(undefined),
+			RecipientId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCommentsResponse {
-		Comments?: Array<Comment> | null;
+		Comments?: Array<Comment>;
 		Marker?: string | null;
+	}
+	export interface DescribeCommentsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCommentsResponseFormGroup() {
+		return new FormGroup<DescribeCommentsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDocumentVersionsResponse {
-		DocumentVersions?: Array<DocumentVersionMetadata> | null;
+		DocumentVersions?: Array<DocumentVersionMetadata>;
 		Marker?: string | null;
+	}
+	export interface DescribeDocumentVersionsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDocumentVersionsResponseFormGroup() {
+		return new FormGroup<DescribeDocumentVersionsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -324,22 +796,76 @@ export namespace MyNS {
 		ContentCreatedTimestamp?: Date | null;
 		ContentModifiedTimestamp?: Date | null;
 		CreatorId?: string | null;
-		Thumbnail?: DocumentThumbnailUrlMap | null;
-		Source?: DocumentSourceUrlMap | null;
+		Thumbnail?: DocumentThumbnailUrlMap;
+		Source?: DocumentSourceUrlMap;
+	}
+
+	/** Describes a version of a document. */
+	export interface DocumentVersionMetadataFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+		Size: FormControl<number | null | undefined>,
+		Signature: FormControl<string | null | undefined>,
+		Status: FormControl<DocumentVersionMetadataStatus | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		ModifiedTimestamp: FormControl<Date | null | undefined>,
+		ContentCreatedTimestamp: FormControl<Date | null | undefined>,
+		ContentModifiedTimestamp: FormControl<Date | null | undefined>,
+		CreatorId: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentVersionMetadataFormGroup() {
+		return new FormGroup<DocumentVersionMetadataFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Size: new FormControl<number | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DocumentVersionMetadataStatus | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContentCreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContentModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			CreatorId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DocumentVersionMetadataStatus { INITIALIZED = 0, ACTIVE = 1 }
 
 	export interface DocumentThumbnailUrlMap {
 	}
+	export interface DocumentThumbnailUrlMapFormProperties {
+	}
+	export function CreateDocumentThumbnailUrlMapFormGroup() {
+		return new FormGroup<DocumentThumbnailUrlMapFormProperties>({
+		});
+
+	}
 
 	export interface DocumentSourceUrlMap {
 	}
+	export interface DocumentSourceUrlMapFormProperties {
+	}
+	export function CreateDocumentSourceUrlMapFormGroup() {
+		return new FormGroup<DocumentSourceUrlMapFormProperties>({
+		});
+
+	}
 
 	export interface DescribeFolderContentsResponse {
-		Folders?: Array<FolderMetadata> | null;
-		Documents?: Array<DocumentMetadata> | null;
+		Folders?: Array<FolderMetadata>;
+		Documents?: Array<DocumentMetadata>;
 		Marker?: string | null;
+	}
+	export interface DescribeFolderContentsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFolderContentsResponseFormGroup() {
+		return new FormGroup<DescribeFolderContentsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -352,24 +878,72 @@ export namespace MyNS {
 		ModifiedTimestamp?: Date | null;
 
 		/** Describes a version of a document. */
-		LatestVersionMetadata?: DocumentVersionMetadata | null;
+		LatestVersionMetadata?: DocumentVersionMetadata;
 		ResourceState?: FolderMetadataResourceState | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
+	}
+
+	/** Describes the document. */
+	export interface DocumentMetadataFormProperties {
+		Id: FormControl<string | null | undefined>,
+		CreatorId: FormControl<string | null | undefined>,
+		ParentFolderId: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		ModifiedTimestamp: FormControl<Date | null | undefined>,
+		ResourceState: FormControl<FolderMetadataResourceState | null | undefined>,
+	}
+	export function CreateDocumentMetadataFormGroup() {
+		return new FormGroup<DocumentMetadataFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			CreatorId: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeGroupsResponse {
-		Groups?: Array<GroupMetadata> | null;
+		Groups?: Array<GroupMetadata>;
 		Marker?: string | null;
+	}
+	export interface DescribeGroupsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGroupsResponseFormGroup() {
+		return new FormGroup<DescribeGroupsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeNotificationSubscriptionsResponse {
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
 		Marker?: string | null;
+	}
+	export interface DescribeNotificationSubscriptionsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNotificationSubscriptionsResponseFormGroup() {
+		return new FormGroup<DescribeNotificationSubscriptionsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeResourcePermissionsResponse {
-		Principals?: Array<Principal> | null;
+		Principals?: Array<Principal>;
 		Marker?: string | null;
+	}
+	export interface DescribeResourcePermissionsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeResourcePermissionsResponseFormGroup() {
+		return new FormGroup<DescribeResourcePermissionsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -377,7 +951,20 @@ export namespace MyNS {
 	export interface Principal {
 		Id?: string | null;
 		Type?: SharePrincipalType | null;
-		Roles?: Array<PermissionInfo> | null;
+		Roles?: Array<PermissionInfo>;
+	}
+
+	/** Describes a resource. */
+	export interface PrincipalFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<SharePrincipalType | null | undefined>,
+	}
+	export function CreatePrincipalFormGroup() {
+		return new FormGroup<PrincipalFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<SharePrincipalType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -387,51 +974,135 @@ export namespace MyNS {
 		Type?: PermissionInfoType | null;
 	}
 
+	/** Describes the permissions. */
+	export interface PermissionInfoFormProperties {
+		Role: FormControl<ShareResultRole | null | undefined>,
+		Type: FormControl<PermissionInfoType | null | undefined>,
+	}
+	export function CreatePermissionInfoFormGroup() {
+		return new FormGroup<PermissionInfoFormProperties>({
+			Role: new FormControl<ShareResultRole | null | undefined>(undefined),
+			Type: new FormControl<PermissionInfoType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PermissionInfoType { DIRECT = 0, INHERITED = 1 }
 
 	export interface DescribeRootFoldersResponse {
-		Folders?: Array<FolderMetadata> | null;
+		Folders?: Array<FolderMetadata>;
 		Marker?: string | null;
+	}
+	export interface DescribeRootFoldersResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRootFoldersResponseFormGroup() {
+		return new FormGroup<DescribeRootFoldersResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUsersResponse {
-		Users?: Array<User> | null;
+		Users?: Array<User>;
 		TotalNumberOfUsers?: number | null;
 		Marker?: string | null;
 	}
+	export interface DescribeUsersResponseFormProperties {
+		TotalNumberOfUsers: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUsersResponseFormGroup() {
+		return new FormGroup<DescribeUsersResponseFormProperties>({
+			TotalNumberOfUsers: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RequestedEntityTooLargeException {
+	}
+	export interface RequestedEntityTooLargeExceptionFormProperties {
+	}
+	export function CreateRequestedEntityTooLargeExceptionFormGroup() {
+		return new FormGroup<RequestedEntityTooLargeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetCurrentUserResponse {
 
 		/** Describes a user. */
-		User?: User | null;
+		User?: User;
+	}
+	export interface GetCurrentUserResponseFormProperties {
+	}
+	export function CreateGetCurrentUserResponseFormGroup() {
+		return new FormGroup<GetCurrentUserResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetDocumentResponse {
 
 		/** Describes the document. */
-		Metadata?: DocumentMetadata | null;
-		CustomMetadata?: CustomMetadataMap | null;
+		Metadata?: DocumentMetadata;
+		CustomMetadata?: CustomMetadataMap;
+	}
+	export interface GetDocumentResponseFormProperties {
+	}
+	export function CreateGetDocumentResponseFormGroup() {
+		return new FormGroup<GetDocumentResponseFormProperties>({
+		});
+
 	}
 
 	export interface CustomMetadataMap {
 	}
+	export interface CustomMetadataMapFormProperties {
+	}
+	export function CreateCustomMetadataMapFormGroup() {
+		return new FormGroup<CustomMetadataMapFormProperties>({
+		});
+
+	}
 
 	export interface InvalidPasswordException {
+	}
+	export interface InvalidPasswordExceptionFormProperties {
+	}
+	export function CreateInvalidPasswordExceptionFormGroup() {
+		return new FormGroup<InvalidPasswordExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetDocumentPathResponse {
 
 		/** Describes the path information of a resource. */
-		Path?: ResourcePath | null;
+		Path?: ResourcePath;
+	}
+	export interface GetDocumentPathResponseFormProperties {
+	}
+	export function CreateGetDocumentPathResponseFormGroup() {
+		return new FormGroup<GetDocumentPathResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the path information of a resource. */
 	export interface ResourcePath {
-		Components?: Array<ResourcePathComponent> | null;
+		Components?: Array<ResourcePathComponent>;
+	}
+
+	/** Describes the path information of a resource. */
+	export interface ResourcePathFormProperties {
+	}
+	export function CreateResourcePathFormGroup() {
+		return new FormGroup<ResourcePathFormProperties>({
+		});
+
 	}
 
 
@@ -441,82 +1112,220 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Describes the resource path. */
+	export interface ResourcePathComponentFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateResourcePathComponentFormGroup() {
+		return new FormGroup<ResourcePathComponentFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDocumentVersionResponse {
 
 		/** Describes a version of a document. */
-		Metadata?: DocumentVersionMetadata | null;
-		CustomMetadata?: CustomMetadataMap | null;
+		Metadata?: DocumentVersionMetadata;
+		CustomMetadata?: CustomMetadataMap;
+	}
+	export interface GetDocumentVersionResponseFormProperties {
+	}
+	export function CreateGetDocumentVersionResponseFormGroup() {
+		return new FormGroup<GetDocumentVersionResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetFolderResponse {
 
 		/** Describes a folder. */
-		Metadata?: FolderMetadata | null;
-		CustomMetadata?: CustomMetadataMap | null;
+		Metadata?: FolderMetadata;
+		CustomMetadata?: CustomMetadataMap;
+	}
+	export interface GetFolderResponseFormProperties {
+	}
+	export function CreateGetFolderResponseFormGroup() {
+		return new FormGroup<GetFolderResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetFolderPathResponse {
 
 		/** Describes the path information of a resource. */
-		Path?: ResourcePath | null;
+		Path?: ResourcePath;
+	}
+	export interface GetFolderPathResponseFormProperties {
+	}
+	export function CreateGetFolderPathResponseFormGroup() {
+		return new FormGroup<GetFolderPathResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetResourcesResponse {
-		Folders?: Array<FolderMetadata> | null;
-		Documents?: Array<DocumentMetadata> | null;
+		Folders?: Array<FolderMetadata>;
+		Documents?: Array<DocumentMetadata>;
 		Marker?: string | null;
+	}
+	export interface GetResourcesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourcesResponseFormGroup() {
+		return new FormGroup<GetResourcesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InitiateDocumentVersionUploadResponse {
 
 		/** Describes the document. */
-		Metadata?: DocumentMetadata | null;
+		Metadata?: DocumentMetadata;
 
 		/** Describes the upload. */
-		UploadMetadata?: UploadMetadata | null;
+		UploadMetadata?: UploadMetadata;
+	}
+	export interface InitiateDocumentVersionUploadResponseFormProperties {
+	}
+	export function CreateInitiateDocumentVersionUploadResponseFormGroup() {
+		return new FormGroup<InitiateDocumentVersionUploadResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the upload. */
 	export interface UploadMetadata {
 		UploadUrl?: string | null;
-		SignedHeaders?: SignedHeaderMap | null;
+		SignedHeaders?: SignedHeaderMap;
+	}
+
+	/** Describes the upload. */
+	export interface UploadMetadataFormProperties {
+		UploadUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadMetadataFormGroup() {
+		return new FormGroup<UploadMetadataFormProperties>({
+			UploadUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SignedHeaderMap {
 	}
+	export interface SignedHeaderMapFormProperties {
+	}
+	export function CreateSignedHeaderMapFormGroup() {
+		return new FormGroup<SignedHeaderMapFormProperties>({
+		});
+
+	}
 
 	export interface StorageLimitExceededException {
+	}
+	export interface StorageLimitExceededExceptionFormProperties {
+	}
+	export function CreateStorageLimitExceededExceptionFormGroup() {
+		return new FormGroup<StorageLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StorageLimitWillExceedException {
 	}
+	export interface StorageLimitWillExceedExceptionFormProperties {
+	}
+	export function CreateStorageLimitWillExceedExceptionFormGroup() {
+		return new FormGroup<StorageLimitWillExceedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DraftUploadOutOfSyncException {
+	}
+	export interface DraftUploadOutOfSyncExceptionFormProperties {
+	}
+	export function CreateDraftUploadOutOfSyncExceptionFormGroup() {
+		return new FormGroup<DraftUploadOutOfSyncExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceAlreadyCheckedOutException {
 	}
+	export interface ResourceAlreadyCheckedOutExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyCheckedOutExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyCheckedOutExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidOperationException {
+	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateUserResponse {
 
 		/** Describes a user. */
-		User?: User | null;
+		User?: User;
+	}
+	export interface UpdateUserResponseFormProperties {
+	}
+	export function CreateUpdateUserResponseFormGroup() {
+		return new FormGroup<UpdateUserResponseFormProperties>({
+		});
+
 	}
 
 	export interface IllegalUserStateException {
 	}
+	export interface IllegalUserStateExceptionFormProperties {
+	}
+	export function CreateIllegalUserStateExceptionFormGroup() {
+		return new FormGroup<IllegalUserStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeactivatingLastSystemUserException {
+	}
+	export interface DeactivatingLastSystemUserExceptionFormProperties {
+	}
+	export function CreateDeactivatingLastSystemUserExceptionFormGroup() {
+		return new FormGroup<DeactivatingLastSystemUserExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AbortDocumentVersionUploadRequest {
 	}
+	export interface AbortDocumentVersionUploadRequestFormProperties {
+	}
+	export function CreateAbortDocumentVersionUploadRequestFormGroup() {
+		return new FormGroup<AbortDocumentVersionUploadRequestFormProperties>({
+		});
+
+	}
 
 	export interface ActivateUserRequest {
+	}
+	export interface ActivateUserRequestFormProperties {
+	}
+	export function CreateActivateUserRequestFormGroup() {
+		return new FormGroup<ActivateUserRequestFormProperties>({
+		});
+
 	}
 
 
@@ -526,11 +1335,31 @@ export namespace MyNS {
 		EmailMessage?: string | null;
 	}
 
+	/** Set of options which defines notification preferences of given action. */
+	export interface NotificationOptionsFormProperties {
+		SendEmail: FormControl<boolean | null | undefined>,
+		EmailMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationOptionsFormGroup() {
+		return new FormGroup<NotificationOptionsFormProperties>({
+			SendEmail: new FormControl<boolean | null | undefined>(undefined),
+			EmailMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AddResourcePermissionsRequest {
 		Principals: Array<SharePrincipal>;
 
 		/** Set of options which defines notification preferences of given action. */
-		NotificationOptions?: NotificationOptions | null;
+		NotificationOptions?: NotificationOptions;
+	}
+	export interface AddResourcePermissionsRequestFormProperties {
+	}
+	export function CreateAddResourcePermissionsRequestFormGroup() {
+		return new FormGroup<AddResourcePermissionsRequestFormProperties>({
+		});
+
 	}
 
 	export enum BooleanEnumType { TRUE = 0, FALSE = 1 }
@@ -546,18 +1375,60 @@ export namespace MyNS {
 		Visibility?: CommentVisibility | null;
 		NotifyCollaborators?: boolean | null;
 	}
+	export interface CreateCommentRequestFormProperties {
+		ParentId: FormControl<string | null | undefined>,
+		ThreadId: FormControl<string | null | undefined>,
+		Text: FormControl<string | null | undefined>,
+		Visibility: FormControl<CommentVisibility | null | undefined>,
+		NotifyCollaborators: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateCommentRequestFormGroup() {
+		return new FormGroup<CreateCommentRequestFormProperties>({
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			ThreadId: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			Visibility: new FormControl<CommentVisibility | null | undefined>(undefined),
+			NotifyCollaborators: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateCustomMetadataRequest {
 		CustomMetadata: CustomMetadataMap;
+	}
+	export interface CreateCustomMetadataRequestFormProperties {
+	}
+	export function CreateCreateCustomMetadataRequestFormGroup() {
+		return new FormGroup<CreateCustomMetadataRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateFolderRequest {
 		Name?: string | null;
 		ParentFolderId: string;
 	}
+	export interface CreateFolderRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ParentFolderId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFolderRequestFormGroup() {
+		return new FormGroup<CreateFolderRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateLabelsRequest {
 		Labels: Array<string>;
+	}
+	export interface CreateLabelsRequestFormProperties {
+	}
+	export function CreateCreateLabelsRequestFormGroup() {
+		return new FormGroup<CreateLabelsRequestFormProperties>({
+		});
+
 	}
 
 	export enum SubscriptionProtocolType { HTTPS = 0 }
@@ -568,6 +1439,19 @@ export namespace MyNS {
 		Endpoint: string;
 		Protocol: SubscriptionProtocol;
 		SubscriptionType: SubscriptionType;
+	}
+	export interface CreateNotificationSubscriptionRequestFormProperties {
+		Endpoint: FormControl<string | null | undefined>,
+		Protocol: FormControl<SubscriptionProtocol | null | undefined>,
+		SubscriptionType: FormControl<SubscriptionType | null | undefined>,
+	}
+	export function CreateCreateNotificationSubscriptionRequestFormGroup() {
+		return new FormGroup<CreateNotificationSubscriptionRequestFormProperties>({
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<SubscriptionProtocol | null | undefined>(undefined),
+			SubscriptionType: new FormControl<SubscriptionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserRequest {
@@ -580,43 +1464,148 @@ export namespace MyNS {
 		TimeZoneId?: string | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: StorageRuleType | null;
+		StorageRule?: StorageRuleType;
+	}
+	export interface CreateUserRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		EmailAddress: FormControl<string | null | undefined>,
+		GivenName: FormControl<string | null | undefined>,
+		Surname: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		TimeZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserRequestFormGroup() {
+		return new FormGroup<CreateUserRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeactivateUserRequest {
 	}
+	export interface DeactivateUserRequestFormProperties {
+	}
+	export function CreateDeactivateUserRequestFormGroup() {
+		return new FormGroup<DeactivateUserRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteCommentRequest {
+	}
+	export interface DeleteCommentRequestFormProperties {
+	}
+	export function CreateDeleteCommentRequestFormGroup() {
+		return new FormGroup<DeleteCommentRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCustomMetadataRequest {
 	}
+	export interface DeleteCustomMetadataRequestFormProperties {
+	}
+	export function CreateDeleteCustomMetadataRequestFormGroup() {
+		return new FormGroup<DeleteCustomMetadataRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDocumentRequest {
+	}
+	export interface DeleteDocumentRequestFormProperties {
+	}
+	export function CreateDeleteDocumentRequestFormGroup() {
+		return new FormGroup<DeleteDocumentRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFolderContentsRequest {
 	}
+	export interface DeleteFolderContentsRequestFormProperties {
+	}
+	export function CreateDeleteFolderContentsRequestFormGroup() {
+		return new FormGroup<DeleteFolderContentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteFolderRequest {
+	}
+	export interface DeleteFolderRequestFormProperties {
+	}
+	export function CreateDeleteFolderRequestFormGroup() {
+		return new FormGroup<DeleteFolderRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteLabelsRequest {
 	}
+	export interface DeleteLabelsRequestFormProperties {
+	}
+	export function CreateDeleteLabelsRequestFormGroup() {
+		return new FormGroup<DeleteLabelsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteNotificationSubscriptionRequest {
+	}
+	export interface DeleteNotificationSubscriptionRequestFormProperties {
+	}
+	export function CreateDeleteNotificationSubscriptionRequestFormGroup() {
+		return new FormGroup<DeleteNotificationSubscriptionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteUserRequest {
 	}
+	export interface DeleteUserRequestFormProperties {
+	}
+	export function CreateDeleteUserRequestFormGroup() {
+		return new FormGroup<DeleteUserRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeActivitiesRequest {
+	}
+	export interface DescribeActivitiesRequestFormProperties {
+	}
+	export function CreateDescribeActivitiesRequestFormGroup() {
+		return new FormGroup<DescribeActivitiesRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCommentsRequest {
 	}
+	export interface DescribeCommentsRequestFormProperties {
+	}
+	export function CreateDescribeCommentsRequestFormGroup() {
+		return new FormGroup<DescribeCommentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDocumentVersionsRequest {
+	}
+	export interface DescribeDocumentVersionsRequestFormProperties {
+	}
+	export function CreateDescribeDocumentVersionsRequestFormGroup() {
+		return new FormGroup<DescribeDocumentVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export enum ResourceSortType { DATE = 0, NAME = 1 }
@@ -627,17 +1616,52 @@ export namespace MyNS {
 
 	export interface DescribeFolderContentsRequest {
 	}
+	export interface DescribeFolderContentsRequestFormProperties {
+	}
+	export function CreateDescribeFolderContentsRequestFormGroup() {
+		return new FormGroup<DescribeFolderContentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeGroupsRequest {
+	}
+	export interface DescribeGroupsRequestFormProperties {
+	}
+	export function CreateDescribeGroupsRequestFormGroup() {
+		return new FormGroup<DescribeGroupsRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeNotificationSubscriptionsRequest {
 	}
+	export interface DescribeNotificationSubscriptionsRequestFormProperties {
+	}
+	export function CreateDescribeNotificationSubscriptionsRequestFormGroup() {
+		return new FormGroup<DescribeNotificationSubscriptionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeResourcePermissionsRequest {
 	}
+	export interface DescribeResourcePermissionsRequestFormProperties {
+	}
+	export function CreateDescribeResourcePermissionsRequestFormGroup() {
+		return new FormGroup<DescribeResourcePermissionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeRootFoldersRequest {
+	}
+	export interface DescribeRootFoldersRequestFormProperties {
+	}
+	export function CreateDescribeRootFoldersRequestFormGroup() {
+		return new FormGroup<DescribeRootFoldersRequestFormProperties>({
+		});
+
 	}
 
 	export enum UserFilterType { ALL = 0, ACTIVE_PENDING = 1 }
@@ -645,6 +1669,13 @@ export namespace MyNS {
 	export enum UserSortType { USER_NAME = 0, FULL_NAME = 1, STORAGE_LIMIT = 2, USER_STATUS = 3, STORAGE_USED = 4 }
 
 	export interface DescribeUsersRequest {
+	}
+	export interface DescribeUsersRequestFormProperties {
+	}
+	export function CreateDescribeUsersRequestFormGroup() {
+		return new FormGroup<DescribeUsersRequestFormProperties>({
+		});
+
 	}
 
 	export enum ResourceStateType { ACTIVE = 0, RESTORING = 1, RECYCLING = 2, RECYCLED = 3 }
@@ -659,25 +1690,74 @@ export namespace MyNS {
 
 	export interface GetCurrentUserRequest {
 	}
+	export interface GetCurrentUserRequestFormProperties {
+	}
+	export function CreateGetCurrentUserRequestFormGroup() {
+		return new FormGroup<GetCurrentUserRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDocumentPathRequest {
+	}
+	export interface GetDocumentPathRequestFormProperties {
+	}
+	export function CreateGetDocumentPathRequestFormGroup() {
+		return new FormGroup<GetDocumentPathRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDocumentRequest {
 	}
+	export interface GetDocumentRequestFormProperties {
+	}
+	export function CreateGetDocumentRequestFormGroup() {
+		return new FormGroup<GetDocumentRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDocumentVersionRequest {
+	}
+	export interface GetDocumentVersionRequestFormProperties {
+	}
+	export function CreateGetDocumentVersionRequestFormGroup() {
+		return new FormGroup<GetDocumentVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetFolderPathRequest {
 	}
+	export interface GetFolderPathRequestFormProperties {
+	}
+	export function CreateGetFolderPathRequestFormGroup() {
+		return new FormGroup<GetFolderPathRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetFolderRequest {
+	}
+	export interface GetFolderRequestFormProperties {
+	}
+	export function CreateGetFolderRequestFormGroup() {
+		return new FormGroup<GetFolderRequestFormProperties>({
+		});
+
 	}
 
 	export enum ResourceCollectionType { SHARED_WITH_ME = 0 }
 
 	export interface GetResourcesRequest {
+	}
+	export interface GetResourcesRequestFormProperties {
+	}
+	export function CreateGetResourcesRequestFormGroup() {
+		return new FormGroup<GetResourcesRequestFormProperties>({
+		});
+
 	}
 
 	export interface InitiateDocumentVersionUploadRequest {
@@ -688,6 +1768,27 @@ export namespace MyNS {
 		ContentType?: string | null;
 		DocumentSizeInBytes?: number | null;
 		ParentFolderId: string;
+	}
+	export interface InitiateDocumentVersionUploadRequestFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ContentCreatedTimestamp: FormControl<Date | null | undefined>,
+		ContentModifiedTimestamp: FormControl<Date | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+		DocumentSizeInBytes: FormControl<number | null | undefined>,
+		ParentFolderId: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateDocumentVersionUploadRequestFormGroup() {
+		return new FormGroup<InitiateDocumentVersionUploadRequestFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ContentCreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContentModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			DocumentSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LocaleType { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
@@ -700,8 +1801,22 @@ export namespace MyNS {
 
 	export interface RemoveAllResourcePermissionsRequest {
 	}
+	export interface RemoveAllResourcePermissionsRequestFormProperties {
+	}
+	export function CreateRemoveAllResourcePermissionsRequestFormGroup() {
+		return new FormGroup<RemoveAllResourcePermissionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface RemoveResourcePermissionRequest {
+	}
+	export interface RemoveResourcePermissionRequestFormProperties {
+	}
+	export function CreateRemoveResourcePermissionRequestFormGroup() {
+		return new FormGroup<RemoveResourcePermissionRequestFormProperties>({
+		});
+
 	}
 
 	export enum ResourceType { FOLDER = 0, DOCUMENT = 1 }
@@ -713,15 +1828,50 @@ export namespace MyNS {
 		ParentFolderId?: string | null;
 		ResourceState?: FolderMetadataResourceState | null;
 	}
+	export interface UpdateDocumentRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ParentFolderId: FormControl<string | null | undefined>,
+		ResourceState: FormControl<FolderMetadataResourceState | null | undefined>,
+	}
+	export function CreateUpdateDocumentRequestFormGroup() {
+		return new FormGroup<UpdateDocumentRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDocumentVersionRequest {
 		VersionStatus?: DocumentVersionStatus | null;
+	}
+	export interface UpdateDocumentVersionRequestFormProperties {
+		VersionStatus: FormControl<DocumentVersionStatus | null | undefined>,
+	}
+	export function CreateUpdateDocumentVersionRequestFormGroup() {
+		return new FormGroup<UpdateDocumentVersionRequestFormProperties>({
+			VersionStatus: new FormControl<DocumentVersionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFolderRequest {
 		Name?: string | null;
 		ParentFolderId?: string | null;
 		ResourceState?: FolderMetadataResourceState | null;
+	}
+	export interface UpdateFolderRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ParentFolderId: FormControl<string | null | undefined>,
+		ResourceState: FormControl<FolderMetadataResourceState | null | undefined>,
+	}
+	export function CreateUpdateFolderRequestFormGroup() {
+		return new FormGroup<UpdateFolderRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateUserRequest {
@@ -730,10 +1880,29 @@ export namespace MyNS {
 		Type?: UserType | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: StorageRuleType | null;
+		StorageRule?: StorageRuleType;
 		TimeZoneId?: string | null;
 		Locale?: UpdateUserRequestLocale | null;
 		GrantPoweruserPrivileges?: BooleanEnumType | null;
+	}
+	export interface UpdateUserRequestFormProperties {
+		GivenName: FormControl<string | null | undefined>,
+		Surname: FormControl<string | null | undefined>,
+		Type: FormControl<UserType | null | undefined>,
+		TimeZoneId: FormControl<string | null | undefined>,
+		Locale: FormControl<UpdateUserRequestLocale | null | undefined>,
+		GrantPoweruserPrivileges: FormControl<BooleanEnumType | null | undefined>,
+	}
+	export function CreateUpdateUserRequestFormGroup() {
+		return new FormGroup<UpdateUserRequestFormProperties>({
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<UserType | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined),
+			Locale: new FormControl<UpdateUserRequestLocale | null | undefined>(undefined),
+			GrantPoweruserPrivileges: new FormControl<BooleanEnumType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateUserRequestLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
@@ -865,7 +2034,7 @@ export namespace MyNS {
 		 * @return {DeleteCustomMetadataResponse} Success
 		 */
 		DeleteCustomMetadata(ResourceId: string, versionId: string | null | undefined, keys: Array<string> | null | undefined, deleteAll: boolean | null | undefined): Observable<DeleteCustomMetadataResponse> {
-			return this.http.delete<DeleteCustomMetadataResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/customMetadata&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)) + '&' + keys.map(z => `keys=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
+			return this.http.delete<DeleteCustomMetadataResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/customMetadata&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)) + '&' + keys?.map(z => `keys=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
 		}
 
 		/**
@@ -896,7 +2065,7 @@ export namespace MyNS {
 		 * @return {DeleteLabelsResponse} Success
 		 */
 		DeleteLabels(ResourceId: string, labels: Array<string> | null | undefined, deleteAll: boolean | null | undefined): Observable<DeleteLabelsResponse> {
-			return this.http.delete<DeleteLabelsResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/labels&' + labels.map(z => `labels=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
+			return this.http.delete<DeleteLabelsResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/labels&' + labels?.map(z => `labels=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
 		}
 
 		/**
@@ -1098,7 +2267,7 @@ export namespace MyNS {
 		 * @return {DescribeActivitiesResponse} Success
 		 */
 		DescribeActivities(startTime: Date | null | undefined, endTime: Date | null | undefined, organizationId: string | null | undefined, activityTypes: string | null | undefined, resourceId: string | null | undefined, userId: string | null | undefined, includeIndirectActivities: boolean | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeActivitiesResponse> {
-			return this.http.get<DescribeActivitiesResponse>(this.baseUri + 'api/v1/activities?startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString() + '&organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&activityTypes=' + (activityTypes == null ? '' : encodeURIComponent(activityTypes)) + '&resourceId=' + (resourceId == null ? '' : encodeURIComponent(resourceId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&includeIndirectActivities=' + includeIndirectActivities + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
+			return this.http.get<DescribeActivitiesResponse>(this.baseUri + 'api/v1/activities?startTime=' + startTime?.toISOString() + '&endTime=' + endTime?.toISOString() + '&organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&activityTypes=' + (activityTypes == null ? '' : encodeURIComponent(activityTypes)) + '&resourceId=' + (resourceId == null ? '' : encodeURIComponent(resourceId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&includeIndirectActivities=' + includeIndirectActivities + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
 		/**
@@ -1229,6 +2398,17 @@ export namespace MyNS {
 		/** The status of the version. */
 		VersionStatus?: DocumentVersionStatus | null;
 	}
+	export interface UpdateDocumentVersionPatchBodyFormProperties {
+
+		/** The status of the version. */
+		VersionStatus: FormControl<DocumentVersionStatus | null | undefined>,
+	}
+	export function CreateUpdateDocumentVersionPatchBodyFormGroup() {
+		return new FormGroup<UpdateDocumentVersionPatchBodyFormProperties>({
+			VersionStatus: new FormControl<DocumentVersionStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddResourcePermissionsPostBody {
 
@@ -1239,12 +2419,30 @@ export namespace MyNS {
 		Principals: Array<SharePrincipal>;
 
 		/** Set of options which defines notification preferences of given action. */
-		NotificationOptions?: AddResourcePermissionsPostBodyNotificationOptions | null;
+		NotificationOptions?: AddResourcePermissionsPostBodyNotificationOptions;
+	}
+	export interface AddResourcePermissionsPostBodyFormProperties {
+	}
+	export function CreateAddResourcePermissionsPostBodyFormGroup() {
+		return new FormGroup<AddResourcePermissionsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface AddResourcePermissionsPostBodyNotificationOptions {
 		SendEmail?: boolean | null;
 		EmailMessage?: string | null;
+	}
+	export interface AddResourcePermissionsPostBodyNotificationOptionsFormProperties {
+		SendEmail: FormControl<boolean | null | undefined>,
+		EmailMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateAddResourcePermissionsPostBodyNotificationOptionsFormGroup() {
+		return new FormGroup<AddResourcePermissionsPostBodyNotificationOptionsFormProperties>({
+			SendEmail: new FormControl<boolean | null | undefined>(undefined),
+			EmailMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCommentPostBody {
@@ -1279,6 +2477,48 @@ export namespace MyNS {
 		/** Set this parameter to TRUE to send an email out to the document collaborators after the comment is created. */
 		NotifyCollaborators?: boolean | null;
 	}
+	export interface CreateCommentPostBodyFormProperties {
+
+		/**
+		 * The ID of the parent comment.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		ParentId: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the root comment in the thread.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		ThreadId: FormControl<string | null | undefined>,
+
+		/**
+		 * The text of the comment.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
+		Text: FormControl<string | null | undefined>,
+
+		/** The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors. */
+		Visibility: FormControl<CommentVisibility | null | undefined>,
+
+		/** Set this parameter to TRUE to send an email out to the document collaborators after the comment is created. */
+		NotifyCollaborators: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateCommentPostBodyFormGroup() {
+		return new FormGroup<CreateCommentPostBodyFormProperties>({
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			ThreadId: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined),
+			Visibility: new FormControl<CommentVisibility | null | undefined>(undefined),
+			NotifyCollaborators: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateCustomMetadataPutBody {
 
@@ -1287,6 +2527,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		CustomMetadata: {[id: string]: string };
+	}
+	export interface CreateCustomMetadataPutBodyFormProperties {
+
+		/**
+		 * Custom metadata in the form of name-value pairs.
+		 * Required
+		 */
+		CustomMetadata: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateCustomMetadataPutBodyFormGroup() {
+		return new FormGroup<CreateCustomMetadataPutBodyFormProperties>({
+			CustomMetadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFolderPostBody {
@@ -1308,6 +2562,32 @@ export namespace MyNS {
 		 */
 		ParentFolderId: string;
 	}
+	export interface CreateFolderPostBodyFormProperties {
+
+		/**
+		 * The name of the new folder.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the parent folder.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		ParentFolderId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFolderPostBodyFormGroup() {
+		return new FormGroup<CreateFolderPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateLabelsPutBody {
 
@@ -1317,6 +2597,13 @@ export namespace MyNS {
 		 * Maximum items: 20
 		 */
 		Labels: Array<string>;
+	}
+	export interface CreateLabelsPutBodyFormProperties {
+	}
+	export function CreateCreateLabelsPutBodyFormGroup() {
+		return new FormGroup<CreateLabelsPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateNotificationSubscriptionPostBody {
@@ -1340,6 +2627,36 @@ export namespace MyNS {
 		 * Required
 		 */
 		SubscriptionType: SubscriptionType;
+	}
+	export interface CreateNotificationSubscriptionPostBodyFormProperties {
+
+		/**
+		 * The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		Endpoint: FormControl<string | null | undefined>,
+
+		/**
+		 * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
+		 * Required
+		 */
+		Protocol: FormControl<SubscriptionProtocol | null | undefined>,
+
+		/**
+		 * The notification type.
+		 * Required
+		 */
+		SubscriptionType: FormControl<SubscriptionType | null | undefined>,
+	}
+	export function CreateCreateNotificationSubscriptionPostBodyFormGroup() {
+		return new FormGroup<CreateNotificationSubscriptionPostBodyFormProperties>({
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<SubscriptionProtocol | null | undefined>(undefined),
+			SubscriptionType: new FormControl<SubscriptionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserPostBody {
@@ -1402,12 +2719,94 @@ export namespace MyNS {
 		TimeZoneId?: string | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: CreateUserPostBodyStorageRule | null;
+		StorageRule?: CreateUserPostBodyStorageRule;
+	}
+	export interface CreateUserPostBodyFormProperties {
+
+		/**
+		 * The ID of the organization.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [&\w+-.@]+
+		 */
+		OrganizationId: FormControl<string | null | undefined>,
+
+		/**
+		 * The login name of the user.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?
+		 */
+		Username: FormControl<string | null | undefined>,
+
+		/**
+		 * The email address of the user.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+		 */
+		EmailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * The given name of the user.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		GivenName: FormControl<string | null | undefined>,
+
+		/**
+		 * The surname of the user.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		Surname: FormControl<string | null | undefined>,
+
+		/**
+		 * The password of the user.
+		 * Required
+		 * Max length: 32
+		 * Min length: 4
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		Password: FormControl<string | null | undefined>,
+
+		/**
+		 * The time zone ID of the user.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		TimeZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserPostBodyFormGroup() {
+		return new FormGroup<CreateUserPostBodyFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserPostBodyStorageRule {
 		StorageAllocatedInBytes?: number | null;
 		StorageType?: StorageRuleTypeStorageType | null;
+	}
+	export interface CreateUserPostBodyStorageRuleFormProperties {
+		StorageAllocatedInBytes: FormControl<number | null | undefined>,
+		StorageType: FormControl<StorageRuleTypeStorageType | null | undefined>,
+	}
+	export function CreateCreateUserPostBodyStorageRuleFormGroup() {
+		return new FormGroup<CreateUserPostBodyStorageRuleFormProperties>({
+			StorageAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
+			StorageType: new FormControl<StorageRuleTypeStorageType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDocumentPatchBody {
@@ -1431,6 +2830,35 @@ export namespace MyNS {
 		/** The resource state of the document. Only ACTIVE and RECYCLED are supported. */
 		ResourceState?: FolderMetadataResourceState | null;
 	}
+	export interface UpdateDocumentPatchBodyFormProperties {
+
+		/**
+		 * The name of the document.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the parent folder.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		ParentFolderId: FormControl<string | null | undefined>,
+
+		/** The resource state of the document. Only ACTIVE and RECYCLED are supported. */
+		ResourceState: FormControl<FolderMetadataResourceState | null | undefined>,
+	}
+	export function CreateUpdateDocumentPatchBodyFormGroup() {
+		return new FormGroup<UpdateDocumentPatchBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFolderPatchBody {
 
@@ -1453,6 +2881,35 @@ export namespace MyNS {
 		/** The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API. */
 		ResourceState?: FolderMetadataResourceState | null;
 	}
+	export interface UpdateFolderPatchBodyFormProperties {
+
+		/**
+		 * The name of the folder.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the parent folder.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		ParentFolderId: FormControl<string | null | undefined>,
+
+		/** The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API. */
+		ResourceState: FormControl<FolderMetadataResourceState | null | undefined>,
+	}
+	export function CreateUpdateFolderPatchBodyFormGroup() {
+		return new FormGroup<UpdateFolderPatchBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateUserPatchBody {
 
@@ -1474,7 +2931,7 @@ export namespace MyNS {
 		Type?: UserType | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: UpdateUserPatchBodyStorageRule | null;
+		StorageRule?: UpdateUserPatchBodyStorageRule;
 
 		/**
 		 * The time zone ID of the user.
@@ -1489,10 +2946,64 @@ export namespace MyNS {
 		/** Boolean value to determine whether the user is granted Poweruser privileges. */
 		GrantPoweruserPrivileges?: BooleanEnumType | null;
 	}
+	export interface UpdateUserPatchBodyFormProperties {
+
+		/**
+		 * The given name of the user.
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		GivenName: FormControl<string | null | undefined>,
+
+		/**
+		 * The surname of the user.
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		Surname: FormControl<string | null | undefined>,
+
+		/** The type of the user. */
+		Type: FormControl<UserType | null | undefined>,
+
+		/**
+		 * The time zone ID of the user.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		TimeZoneId: FormControl<string | null | undefined>,
+
+		/** The locale of the user. */
+		Locale: FormControl<UpdateUserPatchBodyLocale | null | undefined>,
+
+		/** Boolean value to determine whether the user is granted Poweruser privileges. */
+		GrantPoweruserPrivileges: FormControl<BooleanEnumType | null | undefined>,
+	}
+	export function CreateUpdateUserPatchBodyFormGroup() {
+		return new FormGroup<UpdateUserPatchBodyFormProperties>({
+			GivenName: new FormControl<string | null | undefined>(undefined),
+			Surname: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<UserType | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined),
+			Locale: new FormControl<UpdateUserPatchBodyLocale | null | undefined>(undefined),
+			GrantPoweruserPrivileges: new FormControl<BooleanEnumType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateUserPatchBodyStorageRule {
 		StorageAllocatedInBytes?: number | null;
 		StorageType?: StorageRuleTypeStorageType | null;
+	}
+	export interface UpdateUserPatchBodyStorageRuleFormProperties {
+		StorageAllocatedInBytes: FormControl<number | null | undefined>,
+		StorageType: FormControl<StorageRuleTypeStorageType | null | undefined>,
+	}
+	export function CreateUpdateUserPatchBodyStorageRuleFormGroup() {
+		return new FormGroup<UpdateUserPatchBodyStorageRuleFormProperties>({
+			StorageAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
+			StorageType: new FormControl<StorageRuleTypeStorageType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateUserPatchBodyLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
@@ -1539,6 +3050,61 @@ export namespace MyNS {
 		 * Pattern: [\w+-.@]+
 		 */
 		ParentFolderId: string;
+	}
+	export interface InitiateDocumentVersionUploadPostBodyFormProperties {
+
+		/**
+		 * The ID of the document.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		Id: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the document.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** The timestamp when the content of the document was originally created. */
+		ContentCreatedTimestamp: FormControl<Date | null | undefined>,
+
+		/** The timestamp when the content of the document was modified. */
+		ContentModifiedTimestamp: FormControl<Date | null | undefined>,
+
+		/**
+		 * The content type of the document.
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		ContentType: FormControl<string | null | undefined>,
+
+		/** The size of the document, in bytes. */
+		DocumentSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * The ID of the parent folder.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w+-.@]+
+		 */
+		ParentFolderId: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateDocumentVersionUploadPostBodyFormGroup() {
+		return new FormGroup<InitiateDocumentVersionUploadPostBodyFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ContentCreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContentModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			DocumentSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake | null;
+		Handshake?: Handshake;
+	}
+	export interface AcceptHandshakeResponseFormProperties {
+	}
+	export function CreateAcceptHandshakeResponseFormGroup() {
+		return new FormGroup<AcceptHandshakeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -13,12 +21,33 @@ export namespace MyNS {
 	export interface Handshake {
 		Id?: string | null;
 		Arn?: string | null;
-		Parties?: Array<HandshakeParty> | null;
+		Parties?: Array<HandshakeParty>;
 		State?: HandshakeState | null;
 		RequestedTimestamp?: Date | null;
 		ExpirationTimestamp?: Date | null;
 		Action?: HandshakeAction | null;
-		Resources?: Array<HandshakeResource> | null;
+		Resources?: Array<HandshakeResource>;
+	}
+
+	/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
+	export interface HandshakeFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		State: FormControl<HandshakeState | null | undefined>,
+		RequestedTimestamp: FormControl<Date | null | undefined>,
+		ExpirationTimestamp: FormControl<Date | null | undefined>,
+		Action: FormControl<HandshakeAction | null | undefined>,
+	}
+	export function CreateHandshakeFormGroup() {
+		return new FormGroup<HandshakeFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<HandshakeState | null | undefined>(undefined),
+			RequestedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ExpirationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			Action: new FormControl<HandshakeAction | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -26,6 +55,19 @@ export namespace MyNS {
 	export interface HandshakeParty {
 		Id: string;
 		Type: HandshakePartyType;
+	}
+
+	/** Identifies a participant in a handshake. */
+	export interface HandshakePartyFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<HandshakePartyType | null | undefined>,
+	}
+	export function CreateHandshakePartyFormGroup() {
+		return new FormGroup<HandshakePartyFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<HandshakePartyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HandshakePartyType { ACCOUNT = 0, ORGANIZATION = 1, EMAIL = 2 }
@@ -39,7 +81,20 @@ export namespace MyNS {
 	export interface HandshakeResource {
 		Value?: string | null;
 		Type?: HandshakeResourceType | null;
-		Resources?: Array<HandshakeResource> | null;
+		Resources?: Array<HandshakeResource>;
+	}
+
+	/** Contains additional data that is needed to process a handshake. */
+	export interface HandshakeResourceFormProperties {
+		Value: FormControl<string | null | undefined>,
+		Type: FormControl<HandshakeResourceType | null | undefined>,
+	}
+	export function CreateHandshakeResourceFormGroup() {
+		return new FormGroup<HandshakeResourceFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<HandshakeResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HandshakeResourceType { ACCOUNT = 0, ORGANIZATION = 1, ORGANIZATION_FEATURE_SET = 2, EMAIL = 3, MASTER_EMAIL = 4, MASTER_NAME = 5, NOTES = 6, PARENT_HANDSHAKE = 7 }
@@ -47,80 +102,249 @@ export namespace MyNS {
 	export interface AcceptHandshakeRequest {
 		HandshakeId: string;
 	}
+	export interface AcceptHandshakeRequestFormProperties {
+		HandshakeId: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptHandshakeRequestFormGroup() {
+		return new FormGroup<AcceptHandshakeRequestFormProperties>({
+			HandshakeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AWSOrganizationsNotInUseException {
 	}
+	export interface AWSOrganizationsNotInUseExceptionFormProperties {
+	}
+	export function CreateAWSOrganizationsNotInUseExceptionFormGroup() {
+		return new FormGroup<AWSOrganizationsNotInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface HandshakeConstraintViolationException {
+	}
+	export interface HandshakeConstraintViolationExceptionFormProperties {
+	}
+	export function CreateHandshakeConstraintViolationExceptionFormGroup() {
+		return new FormGroup<HandshakeConstraintViolationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface HandshakeNotFoundException {
 	}
+	export interface HandshakeNotFoundExceptionFormProperties {
+	}
+	export function CreateHandshakeNotFoundExceptionFormGroup() {
+		return new FormGroup<HandshakeNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidHandshakeTransitionException {
+	}
+	export interface InvalidHandshakeTransitionExceptionFormProperties {
+	}
+	export function CreateInvalidHandshakeTransitionExceptionFormGroup() {
+		return new FormGroup<InvalidHandshakeTransitionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface HandshakeAlreadyInStateException {
 	}
+	export interface HandshakeAlreadyInStateExceptionFormProperties {
+	}
+	export function CreateHandshakeAlreadyInStateExceptionFormGroup() {
+		return new FormGroup<HandshakeAlreadyInStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceException {
+	}
+	export interface ServiceExceptionFormProperties {
+	}
+	export function CreateServiceExceptionFormGroup() {
+		return new FormGroup<ServiceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedForDependencyException {
+	}
+	export interface AccessDeniedForDependencyExceptionFormProperties {
+	}
+	export function CreateAccessDeniedForDependencyExceptionFormGroup() {
+		return new FormGroup<AccessDeniedForDependencyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AttachPolicyRequest {
 		PolicyId: string;
 		TargetId: string;
 	}
+	export interface AttachPolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		TargetId: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachPolicyRequestFormGroup() {
+		return new FormGroup<AttachPolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConstraintViolationException {
+	}
+	export interface ConstraintViolationExceptionFormProperties {
+	}
+	export function CreateConstraintViolationExceptionFormGroup() {
+		return new FormGroup<ConstraintViolationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DuplicatePolicyAttachmentException {
 	}
+	export interface DuplicatePolicyAttachmentExceptionFormProperties {
+	}
+	export function CreateDuplicatePolicyAttachmentExceptionFormGroup() {
+		return new FormGroup<DuplicatePolicyAttachmentExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PolicyNotFoundException {
+	}
+	export interface PolicyNotFoundExceptionFormProperties {
+	}
+	export function CreatePolicyNotFoundExceptionFormGroup() {
+		return new FormGroup<PolicyNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PolicyTypeNotEnabledException {
 	}
+	export interface PolicyTypeNotEnabledExceptionFormProperties {
+	}
+	export function CreatePolicyTypeNotEnabledExceptionFormGroup() {
+		return new FormGroup<PolicyTypeNotEnabledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TargetNotFoundException {
+	}
+	export interface TargetNotFoundExceptionFormProperties {
+	}
+	export function CreateTargetNotFoundExceptionFormGroup() {
+		return new FormGroup<TargetNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedAPIEndpointException {
 	}
+	export interface UnsupportedAPIEndpointExceptionFormProperties {
+	}
+	export function CreateUnsupportedAPIEndpointExceptionFormGroup() {
+		return new FormGroup<UnsupportedAPIEndpointExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PolicyChangesInProgressException {
+	}
+	export interface PolicyChangesInProgressExceptionFormProperties {
+	}
+	export function CreatePolicyChangesInProgressExceptionFormGroup() {
+		return new FormGroup<PolicyChangesInProgressExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CancelHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake | null;
+		Handshake?: Handshake;
+	}
+	export interface CancelHandshakeResponseFormProperties {
+	}
+	export function CreateCancelHandshakeResponseFormGroup() {
+		return new FormGroup<CancelHandshakeResponseFormProperties>({
+		});
+
 	}
 
 	export interface CancelHandshakeRequest {
 		HandshakeId: string;
 	}
+	export interface CancelHandshakeRequestFormProperties {
+		HandshakeId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelHandshakeRequestFormGroup() {
+		return new FormGroup<CancelHandshakeRequestFormProperties>({
+			HandshakeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateAccountResponse {
 
 		/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
-		CreateAccountStatus?: CreateAccountStatus | null;
+		CreateAccountStatus?: CreateAccountStatus;
+	}
+	export interface CreateAccountResponseFormProperties {
+	}
+	export function CreateCreateAccountResponseFormGroup() {
+		return new FormGroup<CreateAccountResponseFormProperties>({
+		});
+
 	}
 
 
@@ -136,6 +360,31 @@ export namespace MyNS {
 		FailureReason?: CreateAccountStatusFailureReason | null;
 	}
 
+	/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
+	export interface CreateAccountStatusFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AccountName: FormControl<string | null | undefined>,
+		State: FormControl<CreateAccountStatusState | null | undefined>,
+		RequestedTimestamp: FormControl<Date | null | undefined>,
+		CompletedTimestamp: FormControl<Date | null | undefined>,
+		AccountId: FormControl<string | null | undefined>,
+		GovCloudAccountId: FormControl<string | null | undefined>,
+		FailureReason: FormControl<CreateAccountStatusFailureReason | null | undefined>,
+	}
+	export function CreateCreateAccountStatusFormGroup() {
+		return new FormGroup<CreateAccountStatusFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateAccountStatusState | null | undefined>(undefined),
+			RequestedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			CompletedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			GovCloudAccountId: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<CreateAccountStatusFailureReason | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateAccountStatusState { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
 
 	export enum CreateAccountStatusFailureReason { ACCOUNT_LIMIT_EXCEEDED = 0, EMAIL_ALREADY_EXISTS = 1, INVALID_ADDRESS = 2, INVALID_EMAIL = 3, CONCURRENT_ACCOUNT_MODIFICATION = 4, INTERNAL_FAILURE = 5, GOVCLOUD_ACCOUNT_ALREADY_EXISTS = 6 }
@@ -146,16 +395,45 @@ export namespace MyNS {
 		RoleName?: string | null;
 		IamUserAccessToBilling?: CreateAccountRequestIamUserAccessToBilling | null;
 	}
+	export interface CreateAccountRequestFormProperties {
+		Email: FormControl<string | null | undefined>,
+		AccountName: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+		IamUserAccessToBilling: FormControl<CreateAccountRequestIamUserAccessToBilling | null | undefined>,
+	}
+	export function CreateCreateAccountRequestFormGroup() {
+		return new FormGroup<CreateAccountRequestFormProperties>({
+			Email: new FormControl<string | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			IamUserAccessToBilling: new FormControl<CreateAccountRequestIamUserAccessToBilling | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateAccountRequestIamUserAccessToBilling { ALLOW = 0, DENY = 1 }
 
 	export interface FinalizingOrganizationException {
 	}
+	export interface FinalizingOrganizationExceptionFormProperties {
+	}
+	export function CreateFinalizingOrganizationExceptionFormGroup() {
+		return new FormGroup<FinalizingOrganizationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateGovCloudAccountResponse {
 
 		/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
-		CreateAccountStatus?: CreateAccountStatus | null;
+		CreateAccountStatus?: CreateAccountStatus;
+	}
+	export interface CreateGovCloudAccountResponseFormProperties {
+	}
+	export function CreateCreateGovCloudAccountResponseFormGroup() {
+		return new FormGroup<CreateGovCloudAccountResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateGovCloudAccountRequest {
@@ -164,11 +442,33 @@ export namespace MyNS {
 		RoleName?: string | null;
 		IamUserAccessToBilling?: CreateAccountRequestIamUserAccessToBilling | null;
 	}
+	export interface CreateGovCloudAccountRequestFormProperties {
+		Email: FormControl<string | null | undefined>,
+		AccountName: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+		IamUserAccessToBilling: FormControl<CreateAccountRequestIamUserAccessToBilling | null | undefined>,
+	}
+	export function CreateCreateGovCloudAccountRequestFormGroup() {
+		return new FormGroup<CreateGovCloudAccountRequestFormProperties>({
+			Email: new FormControl<string | null | undefined>(undefined),
+			AccountName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			IamUserAccessToBilling: new FormControl<CreateAccountRequestIamUserAccessToBilling | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateOrganizationResponse {
 
 		/** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies . */
-		Organization?: Organization | null;
+		Organization?: Organization;
+	}
+	export interface CreateOrganizationResponseFormProperties {
+	}
+	export function CreateCreateOrganizationResponseFormGroup() {
+		return new FormGroup<CreateOrganizationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -180,7 +480,28 @@ export namespace MyNS {
 		MasterAccountArn?: string | null;
 		MasterAccountId?: string | null;
 		MasterAccountEmail?: string | null;
-		AvailablePolicyTypes?: Array<PolicyTypeSummary> | null;
+		AvailablePolicyTypes?: Array<PolicyTypeSummary>;
+	}
+
+	/** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies . */
+	export interface OrganizationFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		FeatureSet: FormControl<OrganizationFeatureSet | null | undefined>,
+		MasterAccountArn: FormControl<string | null | undefined>,
+		MasterAccountId: FormControl<string | null | undefined>,
+		MasterAccountEmail: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationFormGroup() {
+		return new FormGroup<OrganizationFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			FeatureSet: new FormControl<OrganizationFeatureSet | null | undefined>(undefined),
+			MasterAccountArn: new FormControl<string | null | undefined>(undefined),
+			MasterAccountId: new FormControl<string | null | undefined>(undefined),
+			MasterAccountEmail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OrganizationFeatureSet { ALL = 0, CONSOLIDATED_BILLING = 1 }
@@ -192,6 +513,19 @@ export namespace MyNS {
 		Status?: PolicyTypeSummaryStatus | null;
 	}
 
+	/** Contains information about a policy type and its status in the associated root. */
+	export interface PolicyTypeSummaryFormProperties {
+		Type: FormControl<PolicyTypeSummaryType | null | undefined>,
+		Status: FormControl<PolicyTypeSummaryStatus | null | undefined>,
+	}
+	export function CreatePolicyTypeSummaryFormGroup() {
+		return new FormGroup<PolicyTypeSummaryFormProperties>({
+			Type: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+			Status: new FormControl<PolicyTypeSummaryStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PolicyTypeSummaryType { SERVICE_CONTROL_POLICY = 0, TAG_POLICY = 1 }
 
 	export enum PolicyTypeSummaryStatus { ENABLED = 0, PENDING_ENABLE = 1, PENDING_DISABLE = 2 }
@@ -199,14 +533,37 @@ export namespace MyNS {
 	export interface CreateOrganizationRequest {
 		FeatureSet?: OrganizationFeatureSet | null;
 	}
+	export interface CreateOrganizationRequestFormProperties {
+		FeatureSet: FormControl<OrganizationFeatureSet | null | undefined>,
+	}
+	export function CreateCreateOrganizationRequestFormGroup() {
+		return new FormGroup<CreateOrganizationRequestFormProperties>({
+			FeatureSet: new FormControl<OrganizationFeatureSet | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlreadyInOrganizationException {
+	}
+	export interface AlreadyInOrganizationExceptionFormProperties {
+	}
+	export function CreateAlreadyInOrganizationExceptionFormGroup() {
+		return new FormGroup<AlreadyInOrganizationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateOrganizationalUnitResponse {
 
 		/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
-		OrganizationalUnit?: OrganizationalUnit | null;
+		OrganizationalUnit?: OrganizationalUnit;
+	}
+	export interface CreateOrganizationalUnitResponseFormProperties {
+	}
+	export function CreateCreateOrganizationalUnitResponseFormGroup() {
+		return new FormGroup<CreateOrganizationalUnitResponseFormProperties>({
+		});
+
 	}
 
 
@@ -217,21 +574,68 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
+	export interface OrganizationalUnitFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationalUnitFormGroup() {
+		return new FormGroup<OrganizationalUnitFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateOrganizationalUnitRequest {
 		ParentId: string;
 		Name: string;
 	}
+	export interface CreateOrganizationalUnitRequestFormProperties {
+		ParentId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOrganizationalUnitRequestFormGroup() {
+		return new FormGroup<CreateOrganizationalUnitRequestFormProperties>({
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DuplicateOrganizationalUnitException {
 	}
+	export interface DuplicateOrganizationalUnitExceptionFormProperties {
+	}
+	export function CreateDuplicateOrganizationalUnitExceptionFormGroup() {
+		return new FormGroup<DuplicateOrganizationalUnitExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ParentNotFoundException {
+	}
+	export interface ParentNotFoundExceptionFormProperties {
+	}
+	export function CreateParentNotFoundExceptionFormGroup() {
+		return new FormGroup<ParentNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreatePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
-		Policy?: Policy | null;
+		Policy?: Policy;
+	}
+	export interface CreatePolicyResponseFormProperties {
+	}
+	export function CreateCreatePolicyResponseFormGroup() {
+		return new FormGroup<CreatePolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -239,8 +643,19 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>. */
-		PolicySummary?: PolicySummary | null;
+		PolicySummary?: PolicySummary;
 		Content?: string | null;
+	}
+
+	/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
+	export interface PolicyFormProperties {
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -254,67 +669,218 @@ export namespace MyNS {
 		AwsManaged?: boolean | null;
 	}
 
+	/** Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>. */
+	export interface PolicySummaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<PolicyTypeSummaryType | null | undefined>,
+		AwsManaged: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePolicySummaryFormGroup() {
+		return new FormGroup<PolicySummaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+			AwsManaged: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreatePolicyRequest {
 		Content: string;
 		Description: string;
 		Name: string;
 		Type: PolicyTypeSummaryType;
 	}
+	export interface CreatePolicyRequestFormProperties {
+		Content: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<PolicyTypeSummaryType | null | undefined>,
+	}
+	export function CreateCreatePolicyRequestFormGroup() {
+		return new FormGroup<CreatePolicyRequestFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DuplicatePolicyException {
+	}
+	export interface DuplicatePolicyExceptionFormProperties {
+	}
+	export function CreateDuplicatePolicyExceptionFormGroup() {
+		return new FormGroup<DuplicatePolicyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MalformedPolicyDocumentException {
 	}
+	export interface MalformedPolicyDocumentExceptionFormProperties {
+	}
+	export function CreateMalformedPolicyDocumentExceptionFormGroup() {
+		return new FormGroup<MalformedPolicyDocumentExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PolicyTypeNotAvailableForOrganizationException {
+	}
+	export interface PolicyTypeNotAvailableForOrganizationExceptionFormProperties {
+	}
+	export function CreatePolicyTypeNotAvailableForOrganizationExceptionFormGroup() {
+		return new FormGroup<PolicyTypeNotAvailableForOrganizationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeclineHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake | null;
+		Handshake?: Handshake;
+	}
+	export interface DeclineHandshakeResponseFormProperties {
+	}
+	export function CreateDeclineHandshakeResponseFormGroup() {
+		return new FormGroup<DeclineHandshakeResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeclineHandshakeRequest {
 		HandshakeId: string;
 	}
+	export interface DeclineHandshakeRequestFormProperties {
+		HandshakeId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeclineHandshakeRequestFormGroup() {
+		return new FormGroup<DeclineHandshakeRequestFormProperties>({
+			HandshakeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface OrganizationNotEmptyException {
+	}
+	export interface OrganizationNotEmptyExceptionFormProperties {
+	}
+	export function CreateOrganizationNotEmptyExceptionFormGroup() {
+		return new FormGroup<OrganizationNotEmptyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteOrganizationalUnitRequest {
 		OrganizationalUnitId: string;
 	}
+	export interface DeleteOrganizationalUnitRequestFormProperties {
+		OrganizationalUnitId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteOrganizationalUnitRequestFormGroup() {
+		return new FormGroup<DeleteOrganizationalUnitRequestFormProperties>({
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface OrganizationalUnitNotEmptyException {
 	}
+	export interface OrganizationalUnitNotEmptyExceptionFormProperties {
+	}
+	export function CreateOrganizationalUnitNotEmptyExceptionFormGroup() {
+		return new FormGroup<OrganizationalUnitNotEmptyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OrganizationalUnitNotFoundException {
+	}
+	export interface OrganizationalUnitNotFoundExceptionFormProperties {
+	}
+	export function CreateOrganizationalUnitNotFoundExceptionFormGroup() {
+		return new FormGroup<OrganizationalUnitNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeletePolicyRequest {
 		PolicyId: string;
 	}
+	export interface DeletePolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePolicyRequestFormGroup() {
+		return new FormGroup<DeletePolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PolicyInUseException {
+	}
+	export interface PolicyInUseExceptionFormProperties {
+	}
+	export function CreatePolicyInUseExceptionFormGroup() {
+		return new FormGroup<PolicyInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterDelegatedAdministratorRequest {
 		AccountId: string;
 		ServicePrincipal: string;
 	}
+	export interface DeregisterDelegatedAdministratorRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		ServicePrincipal: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterDelegatedAdministratorRequestFormGroup() {
+		return new FormGroup<DeregisterDelegatedAdministratorRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountNotFoundException {
 	}
+	export interface AccountNotFoundExceptionFormProperties {
+	}
+	export function CreateAccountNotFoundExceptionFormGroup() {
+		return new FormGroup<AccountNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccountNotRegisteredException {
+	}
+	export interface AccountNotRegisteredExceptionFormProperties {
+	}
+	export function CreateAccountNotRegisteredExceptionFormGroup() {
+		return new FormGroup<AccountNotRegisteredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAccountResponse {
 
 		/** Contains information about an AWS account that is a member of an organization. */
-		Account?: Account | null;
+		Account?: Account;
+	}
+	export interface DescribeAccountResponseFormProperties {
+	}
+	export function CreateDescribeAccountResponseFormGroup() {
+		return new FormGroup<DescribeAccountResponseFormProperties>({
+		});
+
 	}
 
 
@@ -329,6 +895,29 @@ export namespace MyNS {
 		JoinedTimestamp?: Date | null;
 	}
 
+	/** Contains information about an AWS account that is a member of an organization. */
+	export interface AccountFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<AccountStatus | null | undefined>,
+		JoinedMethod: FormControl<AccountJoinedMethod | null | undefined>,
+		JoinedTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccountStatus | null | undefined>(undefined),
+			JoinedMethod: new FormControl<AccountJoinedMethod | null | undefined>(undefined),
+			JoinedTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccountStatus { ACTIVE = 0, SUSPENDED = 1 }
 
 	export enum AccountJoinedMethod { INVITED = 0, CREATED = 1 }
@@ -336,24 +925,63 @@ export namespace MyNS {
 	export interface DescribeAccountRequest {
 		AccountId: string;
 	}
+	export interface DescribeAccountRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountRequestFormGroup() {
+		return new FormGroup<DescribeAccountRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCreateAccountStatusResponse {
 
 		/** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization. */
-		CreateAccountStatus?: CreateAccountStatus | null;
+		CreateAccountStatus?: CreateAccountStatus;
+	}
+	export interface DescribeCreateAccountStatusResponseFormProperties {
+	}
+	export function CreateDescribeCreateAccountStatusResponseFormGroup() {
+		return new FormGroup<DescribeCreateAccountStatusResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCreateAccountStatusRequest {
 		CreateAccountRequestId: string;
 	}
+	export interface DescribeCreateAccountStatusRequestFormProperties {
+		CreateAccountRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCreateAccountStatusRequestFormGroup() {
+		return new FormGroup<DescribeCreateAccountStatusRequestFormProperties>({
+			CreateAccountRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateAccountStatusNotFoundException {
+	}
+	export interface CreateAccountStatusNotFoundExceptionFormProperties {
+	}
+	export function CreateCreateAccountStatusNotFoundExceptionFormGroup() {
+		return new FormGroup<CreateAccountStatusNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEffectivePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account. */
-		EffectivePolicy?: EffectivePolicy | null;
+		EffectivePolicy?: EffectivePolicy;
+	}
+	export interface DescribeEffectivePolicyResponseFormProperties {
+	}
+	export function CreateDescribeEffectivePolicyResponseFormGroup() {
+		return new FormGroup<DescribeEffectivePolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -365,68 +993,192 @@ export namespace MyNS {
 		PolicyType?: EffectivePolicyPolicyType | null;
 	}
 
+	/** Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account. */
+	export interface EffectivePolicyFormProperties {
+		PolicyContent: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<Date | null | undefined>,
+		TargetId: FormControl<string | null | undefined>,
+		PolicyType: FormControl<EffectivePolicyPolicyType | null | undefined>,
+	}
+	export function CreateEffectivePolicyFormGroup() {
+		return new FormGroup<EffectivePolicyFormProperties>({
+			PolicyContent: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined),
+			PolicyType: new FormControl<EffectivePolicyPolicyType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EffectivePolicyPolicyType { TAG_POLICY = 0 }
 
 	export interface DescribeEffectivePolicyRequest {
 		PolicyType: EffectivePolicyPolicyType;
 		TargetId?: string | null;
 	}
+	export interface DescribeEffectivePolicyRequestFormProperties {
+		PolicyType: FormControl<EffectivePolicyPolicyType | null | undefined>,
+		TargetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEffectivePolicyRequestFormGroup() {
+		return new FormGroup<DescribeEffectivePolicyRequestFormProperties>({
+			PolicyType: new FormControl<EffectivePolicyPolicyType | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EffectivePolicyNotFoundException {
+	}
+	export interface EffectivePolicyNotFoundExceptionFormProperties {
+	}
+	export function CreateEffectivePolicyNotFoundExceptionFormGroup() {
+		return new FormGroup<EffectivePolicyNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeHandshakeResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake | null;
+		Handshake?: Handshake;
+	}
+	export interface DescribeHandshakeResponseFormProperties {
+	}
+	export function CreateDescribeHandshakeResponseFormGroup() {
+		return new FormGroup<DescribeHandshakeResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeHandshakeRequest {
 		HandshakeId: string;
 	}
+	export interface DescribeHandshakeRequestFormProperties {
+		HandshakeId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHandshakeRequestFormGroup() {
+		return new FormGroup<DescribeHandshakeRequestFormProperties>({
+			HandshakeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeOrganizationResponse {
 
 		/** Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies . */
-		Organization?: Organization | null;
+		Organization?: Organization;
+	}
+	export interface DescribeOrganizationResponseFormProperties {
+	}
+	export function CreateDescribeOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeOrganizationResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeOrganizationalUnitResponse {
 
 		/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
-		OrganizationalUnit?: OrganizationalUnit | null;
+		OrganizationalUnit?: OrganizationalUnit;
+	}
+	export interface DescribeOrganizationalUnitResponseFormProperties {
+	}
+	export function CreateDescribeOrganizationalUnitResponseFormGroup() {
+		return new FormGroup<DescribeOrganizationalUnitResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeOrganizationalUnitRequest {
 		OrganizationalUnitId: string;
 	}
+	export interface DescribeOrganizationalUnitRequestFormProperties {
+		OrganizationalUnitId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrganizationalUnitRequestFormGroup() {
+		return new FormGroup<DescribeOrganizationalUnitRequestFormProperties>({
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
-		Policy?: Policy | null;
+		Policy?: Policy;
+	}
+	export interface DescribePolicyResponseFormProperties {
+	}
+	export function CreateDescribePolicyResponseFormGroup() {
+		return new FormGroup<DescribePolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribePolicyRequest {
 		PolicyId: string;
+	}
+	export interface DescribePolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePolicyRequestFormGroup() {
+		return new FormGroup<DescribePolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetachPolicyRequest {
 		PolicyId: string;
 		TargetId: string;
 	}
+	export interface DetachPolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		TargetId: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachPolicyRequestFormGroup() {
+		return new FormGroup<DetachPolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PolicyNotAttachedException {
+	}
+	export interface PolicyNotAttachedExceptionFormProperties {
+	}
+	export function CreatePolicyNotAttachedExceptionFormGroup() {
+		return new FormGroup<PolicyNotAttachedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DisableAWSServiceAccessRequest {
 		ServicePrincipal: string;
 	}
+	export interface DisableAWSServiceAccessRequestFormProperties {
+		ServicePrincipal: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableAWSServiceAccessRequestFormGroup() {
+		return new FormGroup<DisableAWSServiceAccessRequestFormProperties>({
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisablePolicyTypeResponse {
 
 		/** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root. */
-		Root?: Root | null;
+		Root?: Root;
+	}
+	export interface DisablePolicyTypeResponseFormProperties {
+	}
+	export function CreateDisablePolicyTypeResponseFormGroup() {
+		return new FormGroup<DisablePolicyTypeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -435,48 +1187,136 @@ export namespace MyNS {
 		Id?: string | null;
 		Arn?: string | null;
 		Name?: string | null;
-		PolicyTypes?: Array<PolicyTypeSummary> | null;
+		PolicyTypes?: Array<PolicyTypeSummary>;
+	}
+
+	/** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root. */
+	export interface RootFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateRootFormGroup() {
+		return new FormGroup<RootFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisablePolicyTypeRequest {
 		RootId: string;
 		PolicyType: PolicyTypeSummaryType;
 	}
+	export interface DisablePolicyTypeRequestFormProperties {
+		RootId: FormControl<string | null | undefined>,
+		PolicyType: FormControl<PolicyTypeSummaryType | null | undefined>,
+	}
+	export function CreateDisablePolicyTypeRequestFormGroup() {
+		return new FormGroup<DisablePolicyTypeRequestFormProperties>({
+			RootId: new FormControl<string | null | undefined>(undefined),
+			PolicyType: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RootNotFoundException {
+	}
+	export interface RootNotFoundExceptionFormProperties {
+	}
+	export function CreateRootNotFoundExceptionFormGroup() {
+		return new FormGroup<RootNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EnableAWSServiceAccessRequest {
 		ServicePrincipal: string;
 	}
+	export interface EnableAWSServiceAccessRequestFormProperties {
+		ServicePrincipal: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableAWSServiceAccessRequestFormGroup() {
+		return new FormGroup<EnableAWSServiceAccessRequestFormProperties>({
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableAllFeaturesResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake | null;
+		Handshake?: Handshake;
+	}
+	export interface EnableAllFeaturesResponseFormProperties {
+	}
+	export function CreateEnableAllFeaturesResponseFormGroup() {
+		return new FormGroup<EnableAllFeaturesResponseFormProperties>({
+		});
+
 	}
 
 	export interface EnableAllFeaturesRequest {
+	}
+	export interface EnableAllFeaturesRequestFormProperties {
+	}
+	export function CreateEnableAllFeaturesRequestFormGroup() {
+		return new FormGroup<EnableAllFeaturesRequestFormProperties>({
+		});
+
 	}
 
 	export interface EnablePolicyTypeResponse {
 
 		/** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root. */
-		Root?: Root | null;
+		Root?: Root;
+	}
+	export interface EnablePolicyTypeResponseFormProperties {
+	}
+	export function CreateEnablePolicyTypeResponseFormGroup() {
+		return new FormGroup<EnablePolicyTypeResponseFormProperties>({
+		});
+
 	}
 
 	export interface EnablePolicyTypeRequest {
 		RootId: string;
 		PolicyType: PolicyTypeSummaryType;
 	}
+	export interface EnablePolicyTypeRequestFormProperties {
+		RootId: FormControl<string | null | undefined>,
+		PolicyType: FormControl<PolicyTypeSummaryType | null | undefined>,
+	}
+	export function CreateEnablePolicyTypeRequestFormGroup() {
+		return new FormGroup<EnablePolicyTypeRequestFormProperties>({
+			RootId: new FormControl<string | null | undefined>(undefined),
+			PolicyType: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PolicyTypeAlreadyEnabledException {
+	}
+	export interface PolicyTypeAlreadyEnabledExceptionFormProperties {
+	}
+	export function CreatePolicyTypeAlreadyEnabledExceptionFormGroup() {
+		return new FormGroup<PolicyTypeAlreadyEnabledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InviteAccountToOrganizationResponse {
 
 		/** <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> <p> <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.</p> */
-		Handshake?: Handshake | null;
+		Handshake?: Handshake;
+	}
+	export interface InviteAccountToOrganizationResponseFormProperties {
+	}
+	export function CreateInviteAccountToOrganizationResponseFormGroup() {
+		return new FormGroup<InviteAccountToOrganizationResponseFormProperties>({
+		});
+
 	}
 
 	export interface InviteAccountToOrganizationRequest {
@@ -488,19 +1328,58 @@ export namespace MyNS {
 		Target: HandshakeParty;
 		Notes?: string | null;
 	}
+	export interface InviteAccountToOrganizationRequestFormProperties {
+		Notes: FormControl<string | null | undefined>,
+	}
+	export function CreateInviteAccountToOrganizationRequestFormGroup() {
+		return new FormGroup<InviteAccountToOrganizationRequestFormProperties>({
+			Notes: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountOwnerNotVerifiedException {
+	}
+	export interface AccountOwnerNotVerifiedExceptionFormProperties {
+	}
+	export function CreateAccountOwnerNotVerifiedExceptionFormGroup() {
+		return new FormGroup<AccountOwnerNotVerifiedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DuplicateHandshakeException {
 	}
+	export interface DuplicateHandshakeExceptionFormProperties {
+	}
+	export function CreateDuplicateHandshakeExceptionFormGroup() {
+		return new FormGroup<DuplicateHandshakeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MasterCannotLeaveOrganizationException {
 	}
+	export interface MasterCannotLeaveOrganizationExceptionFormProperties {
+	}
+	export function CreateMasterCannotLeaveOrganizationExceptionFormGroup() {
+		return new FormGroup<MasterCannotLeaveOrganizationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListAWSServiceAccessForOrganizationResponse {
-		EnabledServicePrincipals?: Array<EnabledServicePrincipal> | null;
+		EnabledServicePrincipals?: Array<EnabledServicePrincipal>;
 		NextToken?: string | null;
+	}
+	export interface ListAWSServiceAccessForOrganizationResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAWSServiceAccessForOrganizationResponseFormGroup() {
+		return new FormGroup<ListAWSServiceAccessForOrganizationResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -510,24 +1389,77 @@ export namespace MyNS {
 		DateEnabled?: Date | null;
 	}
 
+	/** A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations. */
+	export interface EnabledServicePrincipalFormProperties {
+		ServicePrincipal: FormControl<string | null | undefined>,
+		DateEnabled: FormControl<Date | null | undefined>,
+	}
+	export function CreateEnabledServicePrincipalFormGroup() {
+		return new FormGroup<EnabledServicePrincipalFormProperties>({
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+			DateEnabled: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAWSServiceAccessForOrganizationRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListAWSServiceAccessForOrganizationRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAWSServiceAccessForOrganizationRequestFormGroup() {
+		return new FormGroup<ListAWSServiceAccessForOrganizationRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAccountsResponse {
-		Accounts?: Array<Account> | null;
+		Accounts?: Array<Account>;
 		NextToken?: string | null;
+	}
+	export interface ListAccountsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccountsResponseFormGroup() {
+		return new FormGroup<ListAccountsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAccountsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListAccountsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAccountsRequestFormGroup() {
+		return new FormGroup<ListAccountsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAccountsForParentResponse {
-		Accounts?: Array<Account> | null;
+		Accounts?: Array<Account>;
 		NextToken?: string | null;
+	}
+	export interface ListAccountsForParentResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccountsForParentResponseFormGroup() {
+		return new FormGroup<ListAccountsForParentResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAccountsForParentRequest {
@@ -535,10 +1467,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListAccountsForParentRequestFormProperties {
+		ParentId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAccountsForParentRequestFormGroup() {
+		return new FormGroup<ListAccountsForParentRequestFormProperties>({
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListChildrenResponse {
-		Children?: Array<Child> | null;
+		Children?: Array<Child>;
 		NextToken?: string | null;
+	}
+	export interface ListChildrenResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListChildrenResponseFormGroup() {
+		return new FormGroup<ListChildrenResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -546,6 +1500,19 @@ export namespace MyNS {
 	export interface Child {
 		Id?: string | null;
 		Type?: ChildType | null;
+	}
+
+	/** Contains a list of child entities, either OUs or accounts. */
+	export interface ChildFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<ChildType | null | undefined>,
+	}
+	export function CreateChildFormGroup() {
+		return new FormGroup<ChildFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ChildType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChildType { ACCOUNT = 0, ORGANIZATIONAL_UNIT = 1 }
@@ -556,23 +1523,67 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListChildrenRequestFormProperties {
+		ParentId: FormControl<string | null | undefined>,
+		ChildType: FormControl<ChildType | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListChildrenRequestFormGroup() {
+		return new FormGroup<ListChildrenRequestFormProperties>({
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			ChildType: new FormControl<ChildType | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListCreateAccountStatusResponse {
-		CreateAccountStatuses?: Array<CreateAccountStatus> | null;
+		CreateAccountStatuses?: Array<CreateAccountStatus>;
 		NextToken?: string | null;
+	}
+	export interface ListCreateAccountStatusResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCreateAccountStatusResponseFormGroup() {
+		return new FormGroup<ListCreateAccountStatusResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCreateAccountStatusRequest {
-		States?: Array<CreateAccountState> | null;
+		States?: Array<CreateAccountState>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListCreateAccountStatusRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListCreateAccountStatusRequestFormGroup() {
+		return new FormGroup<ListCreateAccountStatusRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateAccountState { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
 
 	export interface ListDelegatedAdministratorsResponse {
-		DelegatedAdministrators?: Array<DelegatedAdministrator> | null;
+		DelegatedAdministrators?: Array<DelegatedAdministrator>;
 		NextToken?: string | null;
+	}
+	export interface ListDelegatedAdministratorsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDelegatedAdministratorsResponseFormGroup() {
+		return new FormGroup<ListDelegatedAdministratorsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -588,15 +1599,62 @@ export namespace MyNS {
 		DelegationEnabledDate?: Date | null;
 	}
 
+	/** Contains information about the delegated administrator. */
+	export interface DelegatedAdministratorFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<AccountStatus | null | undefined>,
+		JoinedMethod: FormControl<AccountJoinedMethod | null | undefined>,
+		JoinedTimestamp: FormControl<Date | null | undefined>,
+		DelegationEnabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDelegatedAdministratorFormGroup() {
+		return new FormGroup<DelegatedAdministratorFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccountStatus | null | undefined>(undefined),
+			JoinedMethod: new FormControl<AccountJoinedMethod | null | undefined>(undefined),
+			JoinedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			DelegationEnabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDelegatedAdministratorsRequest {
 		ServicePrincipal?: string | null;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDelegatedAdministratorsRequestFormProperties {
+		ServicePrincipal: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDelegatedAdministratorsRequestFormGroup() {
+		return new FormGroup<ListDelegatedAdministratorsRequestFormProperties>({
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDelegatedServicesForAccountResponse {
-		DelegatedServices?: Array<DelegatedService> | null;
+		DelegatedServices?: Array<DelegatedService>;
 		NextToken?: string | null;
+	}
+	export interface ListDelegatedServicesForAccountResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDelegatedServicesForAccountResponseFormGroup() {
+		return new FormGroup<ListDelegatedServicesForAccountResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -606,23 +1664,69 @@ export namespace MyNS {
 		DelegationEnabledDate?: Date | null;
 	}
 
+	/** Contains information about the AWS service for which the account is a delegated administrator. */
+	export interface DelegatedServiceFormProperties {
+		ServicePrincipal: FormControl<string | null | undefined>,
+		DelegationEnabledDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDelegatedServiceFormGroup() {
+		return new FormGroup<DelegatedServiceFormProperties>({
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+			DelegationEnabledDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDelegatedServicesForAccountRequest {
 		AccountId: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDelegatedServicesForAccountRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDelegatedServicesForAccountRequestFormGroup() {
+		return new FormGroup<ListDelegatedServicesForAccountRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListHandshakesForAccountResponse {
-		Handshakes?: Array<Handshake> | null;
+		Handshakes?: Array<Handshake>;
 		NextToken?: string | null;
+	}
+	export interface ListHandshakesForAccountResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListHandshakesForAccountResponseFormGroup() {
+		return new FormGroup<ListHandshakesForAccountResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListHandshakesForAccountRequest {
 
 		/** Specifies the criteria that are used to select the handshakes for the operation. */
-		Filter?: HandshakeFilter | null;
+		Filter?: HandshakeFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListHandshakesForAccountRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHandshakesForAccountRequestFormGroup() {
+		return new FormGroup<ListHandshakesForAccountRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -632,22 +1736,64 @@ export namespace MyNS {
 		ParentHandshakeId?: string | null;
 	}
 
+	/** Specifies the criteria that are used to select the handshakes for the operation. */
+	export interface HandshakeFilterFormProperties {
+		ActionType: FormControl<HandshakeAction | null | undefined>,
+		ParentHandshakeId: FormControl<string | null | undefined>,
+	}
+	export function CreateHandshakeFilterFormGroup() {
+		return new FormGroup<HandshakeFilterFormProperties>({
+			ActionType: new FormControl<HandshakeAction | null | undefined>(undefined),
+			ParentHandshakeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListHandshakesForOrganizationResponse {
-		Handshakes?: Array<Handshake> | null;
+		Handshakes?: Array<Handshake>;
 		NextToken?: string | null;
+	}
+	export interface ListHandshakesForOrganizationResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListHandshakesForOrganizationResponseFormGroup() {
+		return new FormGroup<ListHandshakesForOrganizationResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListHandshakesForOrganizationRequest {
 
 		/** Specifies the criteria that are used to select the handshakes for the operation. */
-		Filter?: HandshakeFilter | null;
+		Filter?: HandshakeFilter;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListHandshakesForOrganizationRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHandshakesForOrganizationRequestFormGroup() {
+		return new FormGroup<ListHandshakesForOrganizationRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListOrganizationalUnitsForParentResponse {
-		OrganizationalUnits?: Array<OrganizationalUnit> | null;
+		OrganizationalUnits?: Array<OrganizationalUnit>;
 		NextToken?: string | null;
+	}
+	export interface ListOrganizationalUnitsForParentResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOrganizationalUnitsForParentResponseFormGroup() {
+		return new FormGroup<ListOrganizationalUnitsForParentResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListOrganizationalUnitsForParentRequest {
@@ -655,10 +1801,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListOrganizationalUnitsForParentRequestFormProperties {
+		ParentId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListOrganizationalUnitsForParentRequestFormGroup() {
+		return new FormGroup<ListOrganizationalUnitsForParentRequestFormProperties>({
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListParentsResponse {
-		Parents?: Array<Parent> | null;
+		Parents?: Array<Parent>;
 		NextToken?: string | null;
+	}
+	export interface ListParentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListParentsResponseFormGroup() {
+		return new FormGroup<ListParentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -668,6 +1836,19 @@ export namespace MyNS {
 		Type?: ParentType | null;
 	}
 
+	/** Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization. */
+	export interface ParentFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<ParentType | null | undefined>,
+	}
+	export function CreateParentFormGroup() {
+		return new FormGroup<ParentFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ParentType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ParentType { ROOT = 0, ORGANIZATIONAL_UNIT = 1 }
 
 	export interface ListParentsRequest {
@@ -675,13 +1856,42 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListParentsRequestFormProperties {
+		ChildId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListParentsRequestFormGroup() {
+		return new FormGroup<ListParentsRequestFormProperties>({
+			ChildId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ChildNotFoundException {
 	}
+	export interface ChildNotFoundExceptionFormProperties {
+	}
+	export function CreateChildNotFoundExceptionFormGroup() {
+		return new FormGroup<ChildNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListPoliciesResponse {
-		Policies?: Array<PolicySummary> | null;
+		Policies?: Array<PolicySummary>;
 		NextToken?: string | null;
+	}
+	export interface ListPoliciesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesResponseFormGroup() {
+		return new FormGroup<ListPoliciesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPoliciesRequest {
@@ -689,10 +1899,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListPoliciesRequestFormProperties {
+		Filter: FormControl<PolicyTypeSummaryType | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListPoliciesRequestFormGroup() {
+		return new FormGroup<ListPoliciesRequestFormProperties>({
+			Filter: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPoliciesForTargetResponse {
-		Policies?: Array<PolicySummary> | null;
+		Policies?: Array<PolicySummary>;
 		NextToken?: string | null;
+	}
+	export interface ListPoliciesForTargetResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesForTargetResponseFormGroup() {
+		return new FormGroup<ListPoliciesForTargetResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPoliciesForTargetRequest {
@@ -701,20 +1933,64 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListPoliciesForTargetRequestFormProperties {
+		TargetId: FormControl<string | null | undefined>,
+		Filter: FormControl<PolicyTypeSummaryType | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListPoliciesForTargetRequestFormGroup() {
+		return new FormGroup<ListPoliciesForTargetRequestFormProperties>({
+			TargetId: new FormControl<string | null | undefined>(undefined),
+			Filter: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRootsResponse {
-		Roots?: Array<Root> | null;
+		Roots?: Array<Root>;
 		NextToken?: string | null;
+	}
+	export interface ListRootsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRootsResponseFormGroup() {
+		return new FormGroup<ListRootsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRootsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListRootsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListRootsRequestFormGroup() {
+		return new FormGroup<ListRootsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -724,14 +2000,47 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A custom key-value pair associated with a resource such as an account within your organization.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceRequest {
 		ResourceId: string;
 		NextToken?: string | null;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTargetsForPolicyResponse {
-		Targets?: Array<PolicyTargetSummary> | null;
+		Targets?: Array<PolicyTargetSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTargetsForPolicyResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTargetsForPolicyResponseFormGroup() {
+		return new FormGroup<ListTargetsForPolicyResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -743,6 +2052,23 @@ export namespace MyNS {
 		Type?: PolicyTargetSummaryType | null;
 	}
 
+	/** Contains information about a root, OU, or account that a policy is attached to. */
+	export interface PolicyTargetSummaryFormProperties {
+		TargetId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<PolicyTargetSummaryType | null | undefined>,
+	}
+	export function CreatePolicyTargetSummaryFormGroup() {
+		return new FormGroup<PolicyTargetSummaryFormProperties>({
+			TargetId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<PolicyTargetSummaryType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PolicyTargetSummaryType { ACCOUNT = 0, ORGANIZATIONAL_UNIT = 1, ROOT = 2 }
 
 	export interface ListTargetsForPolicyRequest {
@@ -750,59 +2076,176 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTargetsForPolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTargetsForPolicyRequestFormGroup() {
+		return new FormGroup<ListTargetsForPolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface MoveAccountRequest {
 		AccountId: string;
 		SourceParentId: string;
 		DestinationParentId: string;
 	}
+	export interface MoveAccountRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		SourceParentId: FormControl<string | null | undefined>,
+		DestinationParentId: FormControl<string | null | undefined>,
+	}
+	export function CreateMoveAccountRequestFormGroup() {
+		return new FormGroup<MoveAccountRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			SourceParentId: new FormControl<string | null | undefined>(undefined),
+			DestinationParentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SourceParentNotFoundException {
+	}
+	export interface SourceParentNotFoundExceptionFormProperties {
+	}
+	export function CreateSourceParentNotFoundExceptionFormGroup() {
+		return new FormGroup<SourceParentNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DestinationParentNotFoundException {
 	}
+	export interface DestinationParentNotFoundExceptionFormProperties {
+	}
+	export function CreateDestinationParentNotFoundExceptionFormGroup() {
+		return new FormGroup<DestinationParentNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DuplicateAccountException {
+	}
+	export interface DuplicateAccountExceptionFormProperties {
+	}
+	export function CreateDuplicateAccountExceptionFormGroup() {
+		return new FormGroup<DuplicateAccountExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RegisterDelegatedAdministratorRequest {
 		AccountId: string;
 		ServicePrincipal: string;
 	}
+	export interface RegisterDelegatedAdministratorRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		ServicePrincipal: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterDelegatedAdministratorRequestFormGroup() {
+		return new FormGroup<RegisterDelegatedAdministratorRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountAlreadyRegisteredException {
+	}
+	export interface AccountAlreadyRegisteredExceptionFormProperties {
+	}
+	export function CreateAccountAlreadyRegisteredExceptionFormGroup() {
+		return new FormGroup<AccountAlreadyRegisteredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RemoveAccountFromOrganizationRequest {
 		AccountId: string;
+	}
+	export interface RemoveAccountFromOrganizationRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveAccountFromOrganizationRequestFormGroup() {
+		return new FormGroup<RemoveAccountFromOrganizationRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceId: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceRequest {
 		ResourceId: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateOrganizationalUnitResponse {
 
 		/** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs. */
-		OrganizationalUnit?: OrganizationalUnit | null;
+		OrganizationalUnit?: OrganizationalUnit;
+	}
+	export interface UpdateOrganizationalUnitResponseFormProperties {
+	}
+	export function CreateUpdateOrganizationalUnitResponseFormGroup() {
+		return new FormGroup<UpdateOrganizationalUnitResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateOrganizationalUnitRequest {
 		OrganizationalUnitId: string;
 		Name?: string | null;
 	}
+	export interface UpdateOrganizationalUnitRequestFormProperties {
+		OrganizationalUnitId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateOrganizationalUnitRequestFormGroup() {
+		return new FormGroup<UpdateOrganizationalUnitRequestFormProperties>({
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdatePolicyResponse {
 
 		/** Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies. */
-		Policy?: Policy | null;
+		Policy?: Policy;
+	}
+	export interface UpdatePolicyResponseFormProperties {
+	}
+	export function CreateUpdatePolicyResponseFormGroup() {
+		return new FormGroup<UpdatePolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePolicyRequest {
@@ -810,6 +2253,21 @@ export namespace MyNS {
 		Name?: string | null;
 		Description?: string | null;
 		Content?: string | null;
+	}
+	export interface UpdatePolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePolicyRequestFormGroup() {
+		return new FormGroup<UpdatePolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActionType { INVITE = 0, ENABLE_ALL_FEATURES = 1, APPROVE_ALL_FEATURES = 2, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = 3 }

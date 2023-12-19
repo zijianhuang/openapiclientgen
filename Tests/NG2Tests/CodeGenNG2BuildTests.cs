@@ -8,7 +8,7 @@ namespace SwagTests
 	{
 		public CodeGenNG2BuildTests(ITestOutputHelper output)
 		{
-			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
+			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output);
 		}
 
 		readonly NG2TestHelper helper;
@@ -156,6 +156,12 @@ namespace SwagTests
 		public void Testxero_payroll_uk()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\xero-payroll-uk.yaml", "NG2BuildResults\\xero-payroll-uk.ts");
+		}
+
+		[Fact]
+		public void TestGoogleBooks()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "NG2BuildResults\\googleBooksOpenApi.ts");
 		}
 
 		//[Fact]

@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface TokenAlreadyExistsException {
+	}
+	export interface TokenAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateTokenAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<TokenAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -10,11 +18,33 @@ export namespace MyNS {
 	export interface ContinueUpdateRollbackOutput {
 	}
 
+	/** The output for a <a>ContinueUpdateRollback</a> action. */
+	export interface ContinueUpdateRollbackOutputFormProperties {
+	}
+	export function CreateContinueUpdateRollbackOutputFormGroup() {
+		return new FormGroup<ContinueUpdateRollbackOutputFormProperties>({
+		});
+
+	}
+
 
 	/** The output for the <a>CreateChangeSet</a> action. */
 	export interface CreateChangeSetOutput {
 		Id?: string | null;
 		StackId?: string | null;
+	}
+
+	/** The output for the <a>CreateChangeSet</a> action. */
+	export interface CreateChangeSetOutputFormProperties {
+		Id: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateChangeSetOutputFormGroup() {
+		return new FormGroup<CreateChangeSetOutputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -26,6 +56,23 @@ export namespace MyNS {
 		ResolvedValue?: string | null;
 	}
 
+	/** The Parameter data type. */
+	export interface ParameterFormProperties {
+		ParameterKey: FormControl<string | null | undefined>,
+		ParameterValue: FormControl<string | null | undefined>,
+		UsePreviousValue: FormControl<boolean | null | undefined>,
+		ResolvedValue: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterFormGroup() {
+		return new FormGroup<ParameterFormProperties>({
+			ParameterKey: new FormControl<string | null | undefined>(undefined),
+			ParameterValue: new FormControl<string | null | undefined>(undefined),
+			UsePreviousValue: new FormControl<boolean | null | undefined>(undefined),
+			ResolvedValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Capability { CAPABILITY_IAM = 0, CAPABILITY_NAMED_IAM = 1, CAPABILITY_AUTO_EXPAND = 2 }
 
 
@@ -35,11 +82,37 @@ export namespace MyNS {
 		Type: string;
 	}
 
+	/** A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.  */
+	export interface RollbackTriggerFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateRollbackTriggerFormGroup() {
+		return new FormGroup<RollbackTriggerFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack. */
 	export interface Tag {
 		Key: string;
 		Value: string;
+	}
+
+	/** The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -50,16 +123,57 @@ export namespace MyNS {
 		ResourceIdentifier: ResourceIdentifierProperties;
 	}
 
+	/** Describes the target resource of an import operation. */
+	export interface ResourceToImportFormProperties {
+		ResourceType: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceToImportFormGroup() {
+		return new FormGroup<ResourceToImportFormProperties>({
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceIdentifierProperties {
+	}
+	export interface ResourceIdentifierPropertiesFormProperties {
+	}
+	export function CreateResourceIdentifierPropertiesFormGroup() {
+		return new FormGroup<ResourceIdentifierPropertiesFormProperties>({
+		});
+
 	}
 
 	export interface AlreadyExistsException {
 	}
+	export interface AlreadyExistsExceptionFormProperties {
+	}
+	export function CreateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<AlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InsufficientCapabilitiesException {
 	}
+	export interface InsufficientCapabilitiesExceptionFormProperties {
+	}
+	export function CreateInsufficientCapabilitiesExceptionFormGroup() {
+		return new FormGroup<InsufficientCapabilitiesExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -68,33 +182,111 @@ export namespace MyNS {
 		StackId?: string | null;
 	}
 
+	/** The output for a <a>CreateStack</a> action. */
+	export interface CreateStackOutputFormProperties {
+		StackId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStackOutputFormGroup() {
+		return new FormGroup<CreateStackOutputFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateStackInstancesOutput {
 		OperationId?: string | null;
+	}
+	export interface CreateStackInstancesOutputFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStackInstancesOutputFormGroup() {
+		return new FormGroup<CreateStackInstancesOutputFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StackSetNotFoundException {
 	}
+	export interface StackSetNotFoundExceptionFormProperties {
+	}
+	export function CreateStackSetNotFoundExceptionFormGroup() {
+		return new FormGroup<StackSetNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OperationInProgressException {
+	}
+	export interface OperationInProgressExceptionFormProperties {
+	}
+	export function CreateOperationInProgressExceptionFormGroup() {
+		return new FormGroup<OperationInProgressExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationIdAlreadyExistsException {
 	}
+	export interface OperationIdAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateOperationIdAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<OperationIdAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StaleRequestException {
 	}
+	export interface StaleRequestExceptionFormProperties {
+	}
+	export function CreateStaleRequestExceptionFormGroup() {
+		return new FormGroup<StaleRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidOperationException {
+	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateStackSetOutput {
 		StackSetId?: string | null;
 	}
+	export interface CreateStackSetOutputFormProperties {
+		StackSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStackSetOutputFormGroup() {
+		return new FormGroup<CreateStackSetOutputFormProperties>({
+			StackSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NameAlreadyExistsException {
 	}
+	export interface NameAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateNameAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<NameAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreatedButModifiedException {
+	}
+	export interface CreatedButModifiedExceptionFormProperties {
+	}
+	export function CreateCreatedButModifiedExceptionFormGroup() {
+		return new FormGroup<CreatedButModifiedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -102,33 +294,104 @@ export namespace MyNS {
 	export interface DeleteChangeSetOutput {
 	}
 
+	/** The output for the <a>DeleteChangeSet</a> action. */
+	export interface DeleteChangeSetOutputFormProperties {
+	}
+	export function CreateDeleteChangeSetOutputFormGroup() {
+		return new FormGroup<DeleteChangeSetOutputFormProperties>({
+		});
+
+	}
+
 	export interface InvalidChangeSetStatusException {
+	}
+	export interface InvalidChangeSetStatusExceptionFormProperties {
+	}
+	export function CreateInvalidChangeSetStatusExceptionFormGroup() {
+		return new FormGroup<InvalidChangeSetStatusExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteStackInstancesOutput {
 		OperationId?: string | null;
 	}
+	export interface DeleteStackInstancesOutputFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStackInstancesOutputFormGroup() {
+		return new FormGroup<DeleteStackInstancesOutputFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteStackSetOutput {
+	}
+	export interface DeleteStackSetOutputFormProperties {
+	}
+	export function CreateDeleteStackSetOutputFormGroup() {
+		return new FormGroup<DeleteStackSetOutputFormProperties>({
+		});
+
 	}
 
 	export interface StackSetNotEmptyException {
 	}
+	export interface StackSetNotEmptyExceptionFormProperties {
+	}
+	export function CreateStackSetNotEmptyExceptionFormGroup() {
+		return new FormGroup<StackSetNotEmptyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeregisterTypeOutput {
+	}
+	export interface DeregisterTypeOutputFormProperties {
+	}
+	export function CreateDeregisterTypeOutputFormGroup() {
+		return new FormGroup<DeregisterTypeOutputFormProperties>({
+		});
+
 	}
 
 	export interface CFNRegistryException {
 	}
+	export interface CFNRegistryExceptionFormProperties {
+	}
+	export function CreateCFNRegistryExceptionFormGroup() {
+		return new FormGroup<CFNRegistryExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TypeNotFoundException {
+	}
+	export interface TypeNotFoundExceptionFormProperties {
+	}
+	export function CreateTypeNotFoundExceptionFormGroup() {
+		return new FormGroup<TypeNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The output for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsOutput {
-		AccountLimits?: Array<AccountLimit> | null;
+		AccountLimits?: Array<AccountLimit>;
 		NextToken?: string | null;
+	}
+
+	/** The output for the <a>DescribeAccountLimits</a> action. */
+	export interface DescribeAccountLimitsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountLimitsOutputFormGroup() {
+		return new FormGroup<DescribeAccountLimitsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -136,6 +399,19 @@ export namespace MyNS {
 	export interface AccountLimit {
 		Name?: string | null;
 		Value?: number | null;
+	}
+
+	/** <p>The AccountLimit data type. </p> <p>CloudFormation has the following limits per account:</p> <ul> <li> <p>Number of concurrent resources</p> </li> <li> <p>Number of stacks</p> </li> <li> <p>Number of stack outputs</p> </li> </ul> <p>For more information about these account limits, and other CloudFormation limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS CloudFormation Limits</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
+	export interface AccountLimitFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountLimitFormGroup() {
+		return new FormGroup<AccountLimitFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -146,19 +422,48 @@ export namespace MyNS {
 		StackId?: string | null;
 		StackName?: string | null;
 		Description?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
 		CreationTime?: Date | null;
 		ExecutionStatus?: DescribeChangeSetOutputExecutionStatus | null;
 		Status?: DescribeChangeSetOutputStatus | null;
 		StatusReason?: string | null;
-		NotificationARNs?: Array<string> | null;
+		NotificationARNs?: Array<string>;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration | null;
-		Capabilities?: Array<Capability> | null;
-		Tags?: Array<Tag> | null;
-		Changes?: Array<Change> | null;
+		RollbackConfiguration?: RollbackConfiguration;
+		Capabilities?: Array<Capability>;
+		Tags?: Array<Tag>;
+		Changes?: Array<Change>;
 		NextToken?: string | null;
+	}
+
+	/** The output for the <a>DescribeChangeSet</a> action. */
+	export interface DescribeChangeSetOutputFormProperties {
+		ChangeSetName: FormControl<string | null | undefined>,
+		ChangeSetId: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ExecutionStatus: FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>,
+		Status: FormControl<DescribeChangeSetOutputStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeChangeSetOutputFormGroup() {
+		return new FormGroup<DescribeChangeSetOutputFormProperties>({
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ExecutionStatus: new FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>(undefined),
+			Status: new FormControl<DescribeChangeSetOutputStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeChangeSetOutputExecutionStatus { UNAVAILABLE = 0, AVAILABLE = 1, EXECUTE_IN_PROGRESS = 2, EXECUTE_COMPLETE = 3, EXECUTE_FAILED = 4, OBSOLETE = 5 }
@@ -168,8 +473,19 @@ export namespace MyNS {
 
 	/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
 	export interface RollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger> | null;
+		RollbackTriggers?: Array<RollbackTrigger>;
 		MonitoringTimeInMinutes?: number | null;
+	}
+
+	/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
+	export interface RollbackConfigurationFormProperties {
+		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateRollbackConfigurationFormGroup() {
+		return new FormGroup<RollbackConfigurationFormProperties>({
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -178,7 +494,18 @@ export namespace MyNS {
 		Type?: ChangeType | null;
 
 		/** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set. */
-		ResourceChange?: ResourceChange | null;
+		ResourceChange?: ResourceChange;
+	}
+
+	/** The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set. */
+	export interface ChangeFormProperties {
+		Type: FormControl<ChangeType | null | undefined>,
+	}
+	export function CreateChangeFormGroup() {
+		return new FormGroup<ChangeFormProperties>({
+			Type: new FormControl<ChangeType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChangeType { Resource = 0 }
@@ -191,8 +518,27 @@ export namespace MyNS {
 		PhysicalResourceId?: string | null;
 		ResourceType?: string | null;
 		Replacement?: ResourceChangeReplacement | null;
-		Scope?: Array<ResourceAttribute> | null;
-		Details?: Array<ResourceChangeDetail> | null;
+		Scope?: Array<ResourceAttribute>;
+		Details?: Array<ResourceChangeDetail>;
+	}
+
+	/** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set. */
+	export interface ResourceChangeFormProperties {
+		Action: FormControl<ResourceChangeAction | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		Replacement: FormControl<ResourceChangeReplacement | null | undefined>,
+	}
+	export function CreateResourceChangeFormGroup() {
+		return new FormGroup<ResourceChangeFormProperties>({
+			Action: new FormControl<ResourceChangeAction | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			Replacement: new FormControl<ResourceChangeReplacement | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceChangeAction { Add = 0, Modify = 1, Remove = 2, Import = 3 }
@@ -206,10 +552,25 @@ export namespace MyNS {
 	export interface ResourceChangeDetail {
 
 		/** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated. */
-		Target?: ResourceTargetDefinition | null;
+		Target?: ResourceTargetDefinition;
 		Evaluation?: ResourceChangeDetailEvaluation | null;
 		ChangeSource?: ResourceChangeDetailChangeSource | null;
 		CausingEntity?: string | null;
+	}
+
+	/** For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes AWS CloudFormation will make to that resource. */
+	export interface ResourceChangeDetailFormProperties {
+		Evaluation: FormControl<ResourceChangeDetailEvaluation | null | undefined>,
+		ChangeSource: FormControl<ResourceChangeDetailChangeSource | null | undefined>,
+		CausingEntity: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceChangeDetailFormGroup() {
+		return new FormGroup<ResourceChangeDetailFormProperties>({
+			Evaluation: new FormControl<ResourceChangeDetailEvaluation | null | undefined>(undefined),
+			ChangeSource: new FormControl<ResourceChangeDetailChangeSource | null | undefined>(undefined),
+			CausingEntity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -220,6 +581,21 @@ export namespace MyNS {
 		RequiresRecreation?: ResourceTargetDefinitionRequiresRecreation | null;
 	}
 
+	/** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated. */
+	export interface ResourceTargetDefinitionFormProperties {
+		Attribute: FormControl<ResourceAttribute | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		RequiresRecreation: FormControl<ResourceTargetDefinitionRequiresRecreation | null | undefined>,
+	}
+	export function CreateResourceTargetDefinitionFormGroup() {
+		return new FormGroup<ResourceTargetDefinitionFormProperties>({
+			Attribute: new FormControl<ResourceAttribute | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			RequiresRecreation: new FormControl<ResourceTargetDefinitionRequiresRecreation | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceTargetDefinitionRequiresRecreation { Never = 0, Conditionally = 1, Always = 2 }
 
 	export enum ResourceChangeDetailEvaluation { Static = 0, Dynamic = 1 }
@@ -227,6 +603,13 @@ export namespace MyNS {
 	export enum ResourceChangeDetailChangeSource { ResourceReference = 0, ParameterReference = 1, ResourceAttribute = 2, DirectModification = 3, Automatic = 4 }
 
 	export interface ChangeSetNotFoundException {
+	}
+	export interface ChangeSetNotFoundExceptionFormProperties {
+	}
+	export function CreateChangeSetNotFoundExceptionFormGroup() {
+		return new FormGroup<ChangeSetNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeStackDriftDetectionStatusOutput {
@@ -238,6 +621,27 @@ export namespace MyNS {
 		DriftedStackResourceCount?: number | null;
 		Timestamp: Date;
 	}
+	export interface DescribeStackDriftDetectionStatusOutputFormProperties {
+		StackId: FormControl<string | null | undefined>,
+		StackDriftDetectionId: FormControl<string | null | undefined>,
+		StackDriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+		DetectionStatus: FormControl<DescribeStackDriftDetectionStatusOutputDetectionStatus | null | undefined>,
+		DetectionStatusReason: FormControl<string | null | undefined>,
+		DriftedStackResourceCount: FormControl<number | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeStackDriftDetectionStatusOutputFormGroup() {
+		return new FormGroup<DescribeStackDriftDetectionStatusOutputFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined),
+			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			DetectionStatus: new FormControl<DescribeStackDriftDetectionStatusOutputDetectionStatus | null | undefined>(undefined),
+			DetectionStatusReason: new FormControl<string | null | undefined>(undefined),
+			DriftedStackResourceCount: new FormControl<number | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeStackDriftDetectionStatusOutputStackDriftStatus { DRIFTED = 0, IN_SYNC = 1, UNKNOWN = 2, NOT_CHECKED = 3 }
 
@@ -246,8 +650,19 @@ export namespace MyNS {
 
 	/** The output for a <a>DescribeStackEvents</a> action. */
 	export interface DescribeStackEventsOutput {
-		StackEvents?: Array<StackEvent> | null;
+		StackEvents?: Array<StackEvent>;
 		NextToken?: string | null;
+	}
+
+	/** The output for a <a>DescribeStackEvents</a> action. */
+	export interface DescribeStackEventsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackEventsOutputFormGroup() {
+		return new FormGroup<DescribeStackEventsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -266,12 +681,50 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 	}
 
+	/** The StackEvent data type. */
+	export interface StackEventFormProperties {
+		StackId: FormControl<string | null | undefined>,
+		EventId: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
+		ResourceStatusReason: FormControl<string | null | undefined>,
+		ResourceProperties: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStackEventFormGroup() {
+		return new FormGroup<StackEventFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+			EventId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
+			ResourceProperties: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackEventResourceStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4, DELETE_COMPLETE = 5, DELETE_SKIPPED = 6, UPDATE_IN_PROGRESS = 7, UPDATE_FAILED = 8, UPDATE_COMPLETE = 9, IMPORT_FAILED = 10, IMPORT_COMPLETE = 11, IMPORT_IN_PROGRESS = 12, IMPORT_ROLLBACK_IN_PROGRESS = 13, IMPORT_ROLLBACK_FAILED = 14, IMPORT_ROLLBACK_COMPLETE = 15 }
 
 	export interface DescribeStackInstanceOutput {
 
 		/** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. */
-		StackInstance?: StackInstance | null;
+		StackInstance?: StackInstance;
+	}
+	export interface DescribeStackInstanceOutputFormProperties {
+	}
+	export function CreateDescribeStackInstanceOutputFormGroup() {
+		return new FormGroup<DescribeStackInstanceOutputFormProperties>({
+		});
+
 	}
 
 
@@ -281,7 +734,7 @@ export namespace MyNS {
 		Region?: string | null;
 		Account?: string | null;
 		StackId?: string | null;
-		ParameterOverrides?: Array<Parameter> | null;
+		ParameterOverrides?: Array<Parameter>;
 		Status?: StackInstanceStatus | null;
 		StatusReason?: string | null;
 		OrganizationalUnitId?: string | null;
@@ -289,9 +742,43 @@ export namespace MyNS {
 		LastDriftCheckTimestamp?: Date | null;
 	}
 
+	/** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. */
+	export interface StackInstanceFormProperties {
+		StackSetId: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		Account: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+		Status: FormControl<StackInstanceStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		OrganizationalUnitId: FormControl<string | null | undefined>,
+		DriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackInstanceFormGroup() {
+		return new FormGroup<StackInstanceFormProperties>({
+			StackSetId: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<StackInstanceStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+			DriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			LastDriftCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackInstanceStatus { CURRENT = 0, OUTDATED = 1, INOPERABLE = 2 }
 
 	export interface StackInstanceNotFoundException {
+	}
+	export interface StackInstanceNotFoundExceptionFormProperties {
+	}
+	export function CreateStackInstanceNotFoundExceptionFormGroup() {
+		return new FormGroup<StackInstanceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -299,7 +786,16 @@ export namespace MyNS {
 	export interface DescribeStackResourceOutput {
 
 		/** Contains detailed information about the specified stack resource. */
-		StackResourceDetail?: StackResourceDetail | null;
+		StackResourceDetail?: StackResourceDetail;
+	}
+
+	/** The output for a <a>DescribeStackResource</a> action. */
+	export interface DescribeStackResourceOutputFormProperties {
+	}
+	export function CreateDescribeStackResourceOutputFormGroup() {
+		return new FormGroup<DescribeStackResourceOutputFormProperties>({
+		});
+
 	}
 
 
@@ -317,7 +813,36 @@ export namespace MyNS {
 		Metadata?: string | null;
 
 		/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
-		DriftInformation?: StackResourceDriftInformation | null;
+		DriftInformation?: StackResourceDriftInformation;
+	}
+
+	/** Contains detailed information about the specified stack resource. */
+	export interface StackResourceDetailFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<Date | null | undefined>,
+		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
+		ResourceStatusReason: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Metadata: FormControl<string | null | undefined>,
+	}
+	export function CreateStackResourceDetailFormGroup() {
+		return new FormGroup<StackResourceDetailFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Metadata: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -327,11 +852,33 @@ export namespace MyNS {
 		LastCheckTimestamp?: Date | null;
 	}
 
+	/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
+	export interface StackResourceDriftInformationFormProperties {
+		StackResourceDriftStatus: FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>,
+		LastCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackResourceDriftInformationFormGroup() {
+		return new FormGroup<StackResourceDriftInformationFormProperties>({
+			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined),
+			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackResourceDriftInformationStackResourceDriftStatus { IN_SYNC = 0, MODIFIED = 1, DELETED = 2, NOT_CHECKED = 3 }
 
 	export interface DescribeStackResourceDriftsOutput {
 		StackResourceDrifts: Array<StackResourceDrift>;
 		NextToken?: string | null;
+	}
+	export interface DescribeStackResourceDriftsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackResourceDriftsOutputFormGroup() {
+		return new FormGroup<DescribeStackResourceDriftsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -340,13 +887,38 @@ export namespace MyNS {
 		StackId: string;
 		LogicalResourceId: string;
 		PhysicalResourceId?: string | null;
-		PhysicalResourceIdContext?: Array<PhysicalResourceIdContextKeyValuePair> | null;
+		PhysicalResourceIdContext?: Array<PhysicalResourceIdContextKeyValuePair>;
 		ResourceType: string;
 		ExpectedProperties?: string | null;
 		ActualProperties?: string | null;
-		PropertyDifferences?: Array<PropertyDifference> | null;
+		PropertyDifferences?: Array<PropertyDifference>;
 		StackResourceDriftStatus: StackResourceDriftInformationStackResourceDriftStatus;
 		Timestamp: Date;
+	}
+
+	/** <p>Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.</p> */
+	export interface StackResourceDriftFormProperties {
+		StackId: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		ExpectedProperties: FormControl<string | null | undefined>,
+		ActualProperties: FormControl<string | null | undefined>,
+		StackResourceDriftStatus: FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackResourceDriftFormGroup() {
+		return new FormGroup<StackResourceDriftFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ExpectedProperties: new FormControl<string | null | undefined>(undefined),
+			ActualProperties: new FormControl<string | null | undefined>(undefined),
+			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -354,6 +926,19 @@ export namespace MyNS {
 	export interface PhysicalResourceIdContextKeyValuePair {
 		Key: string;
 		Value: string;
+	}
+
+	/** Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource. */
+	export interface PhysicalResourceIdContextKeyValuePairFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreatePhysicalResourceIdContextKeyValuePairFormGroup() {
+		return new FormGroup<PhysicalResourceIdContextKeyValuePairFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -365,6 +950,23 @@ export namespace MyNS {
 		DifferenceType: PropertyDifferenceDifferenceType;
 	}
 
+	/** Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>. */
+	export interface PropertyDifferenceFormProperties {
+		PropertyPath: FormControl<string | null | undefined>,
+		ExpectedValue: FormControl<string | null | undefined>,
+		ActualValue: FormControl<string | null | undefined>,
+		DifferenceType: FormControl<PropertyDifferenceDifferenceType | null | undefined>,
+	}
+	export function CreatePropertyDifferenceFormGroup() {
+		return new FormGroup<PropertyDifferenceFormProperties>({
+			PropertyPath: new FormControl<string | null | undefined>(undefined),
+			ExpectedValue: new FormControl<string | null | undefined>(undefined),
+			ActualValue: new FormControl<string | null | undefined>(undefined),
+			DifferenceType: new FormControl<PropertyDifferenceDifferenceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PropertyDifferenceDifferenceType { ADD = 0, REMOVE = 1, NOT_EQUAL = 2 }
 
 	export enum StackResourceDriftStatus { IN_SYNC = 0, MODIFIED = 1, DELETED = 2, NOT_CHECKED = 3 }
@@ -372,7 +974,16 @@ export namespace MyNS {
 
 	/** The output for a <a>DescribeStackResources</a> action. */
 	export interface DescribeStackResourcesOutput {
-		StackResources?: Array<StackResource> | null;
+		StackResources?: Array<StackResource>;
+	}
+
+	/** The output for a <a>DescribeStackResources</a> action. */
+	export interface DescribeStackResourcesOutputFormProperties {
+	}
+	export function CreateDescribeStackResourcesOutputFormGroup() {
+		return new FormGroup<DescribeStackResourcesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -389,13 +1000,47 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
-		DriftInformation?: StackResourceDriftInformation | null;
+		DriftInformation?: StackResourceDriftInformation;
+	}
+
+	/** The StackResource data type. */
+	export interface StackResourceFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
+		ResourceStatusReason: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateStackResourceFormGroup() {
+		return new FormGroup<StackResourceFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeStackSetOutput {
 
 		/** A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires. */
-		StackSet?: StackSet | null;
+		StackSet?: StackSet;
+	}
+	export interface DescribeStackSetOutputFormProperties {
+	}
+	export function CreateDescribeStackSetOutputFormGroup() {
+		return new FormGroup<DescribeStackSetOutputFormProperties>({
+		});
+
 	}
 
 
@@ -406,20 +1051,47 @@ export namespace MyNS {
 		Description?: string | null;
 		Status?: StackSetStatus | null;
 		TemplateBody?: string | null;
-		Parameters?: Array<Parameter> | null;
-		Capabilities?: Array<Capability> | null;
-		Tags?: Array<Tag> | null;
+		Parameters?: Array<Parameter>;
+		Capabilities?: Array<Capability>;
+		Tags?: Array<Tag>;
 		StackSetARN?: string | null;
 		AdministrationRoleARN?: string | null;
 		ExecutionRoleName?: string | null;
 
 		/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
-		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails | null;
+		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment | null;
+		AutoDeployment?: AutoDeployment;
 		PermissionModel?: StackSetPermissionModel | null;
-		OrganizationalUnitIds?: Array<string> | null;
+		OrganizationalUnitIds?: Array<string>;
+	}
+
+	/** A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.  */
+	export interface StackSetFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		StackSetId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Status: FormControl<StackSetStatus | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		StackSetARN: FormControl<string | null | undefined>,
+		AdministrationRoleARN: FormControl<string | null | undefined>,
+		ExecutionRoleName: FormControl<string | null | undefined>,
+		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
+	}
+	export function CreateStackSetFormGroup() {
+		return new FormGroup<StackSetFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			StackSetId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<StackSetStatus | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			StackSetARN: new FormControl<string | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackSetStatus { ACTIVE = 0, DELETED = 1 }
@@ -437,6 +1109,31 @@ export namespace MyNS {
 		FailedStackInstancesCount?: number | null;
 	}
 
+	/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
+	export interface StackSetDriftDetectionDetailsFormProperties {
+		DriftStatus: FormControl<StackSetDriftDetectionDetailsDriftStatus | null | undefined>,
+		DriftDetectionStatus: FormControl<StackSetDriftDetectionDetailsDriftDetectionStatus | null | undefined>,
+		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
+		TotalStackInstancesCount: FormControl<number | null | undefined>,
+		DriftedStackInstancesCount: FormControl<number | null | undefined>,
+		InSyncStackInstancesCount: FormControl<number | null | undefined>,
+		InProgressStackInstancesCount: FormControl<number | null | undefined>,
+		FailedStackInstancesCount: FormControl<number | null | undefined>,
+	}
+	export function CreateStackSetDriftDetectionDetailsFormGroup() {
+		return new FormGroup<StackSetDriftDetectionDetailsFormProperties>({
+			DriftStatus: new FormControl<StackSetDriftDetectionDetailsDriftStatus | null | undefined>(undefined),
+			DriftDetectionStatus: new FormControl<StackSetDriftDetectionDetailsDriftDetectionStatus | null | undefined>(undefined),
+			LastDriftCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+			TotalStackInstancesCount: new FormControl<number | null | undefined>(undefined),
+			DriftedStackInstancesCount: new FormControl<number | null | undefined>(undefined),
+			InSyncStackInstancesCount: new FormControl<number | null | undefined>(undefined),
+			InProgressStackInstancesCount: new FormControl<number | null | undefined>(undefined),
+			FailedStackInstancesCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackSetDriftDetectionDetailsDriftStatus { DRIFTED = 0, IN_SYNC = 1, NOT_CHECKED = 2 }
 
 	export enum StackSetDriftDetectionDetailsDriftDetectionStatus { COMPLETED = 0, FAILED = 1, PARTIAL_SUCCESS = 2, IN_PROGRESS = 3, STOPPED = 4 }
@@ -448,12 +1145,32 @@ export namespace MyNS {
 		RetainStacksOnAccountRemoval?: boolean | null;
 	}
 
+	/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
+	export interface AutoDeploymentFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		RetainStacksOnAccountRemoval: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAutoDeploymentFormGroup() {
+		return new FormGroup<AutoDeploymentFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			RetainStacksOnAccountRemoval: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackSetPermissionModel { SERVICE_MANAGED = 0, SELF_MANAGED = 1 }
 
 	export interface DescribeStackSetOperationOutput {
 
 		/** The structure that contains information about a stack set operation. */
-		StackSetOperation?: StackSetOperation | null;
+		StackSetOperation?: StackSetOperation;
+	}
+	export interface DescribeStackSetOperationOutputFormProperties {
+	}
+	export function CreateDescribeStackSetOperationOutputFormGroup() {
+		return new FormGroup<DescribeStackSetOperationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -465,7 +1182,7 @@ export namespace MyNS {
 		Status?: StackSetOperationStatus | null;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationPreferences?: StackSetOperationPreferences;
 		RetainStacks?: boolean | null;
 		AdministrationRoleARN?: string | null;
 		ExecutionRoleName?: string | null;
@@ -473,10 +1190,37 @@ export namespace MyNS {
 		EndTimestamp?: Date | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets | null;
+		DeploymentTargets?: DeploymentTargets;
 
 		/** <p>Detailed information about the drift status of the stack set.</p> <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p> <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
-		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails | null;
+		StackSetDriftDetectionDetails?: StackSetDriftDetectionDetails;
+	}
+
+	/** The structure that contains information about a stack set operation.  */
+	export interface StackSetOperationFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+		StackSetId: FormControl<string | null | undefined>,
+		Action: FormControl<StackSetOperationAction | null | undefined>,
+		Status: FormControl<StackSetOperationStatus | null | undefined>,
+		RetainStacks: FormControl<boolean | null | undefined>,
+		AdministrationRoleARN: FormControl<string | null | undefined>,
+		ExecutionRoleName: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<Date | null | undefined>,
+		EndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackSetOperationFormGroup() {
+		return new FormGroup<StackSetOperationFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+			StackSetId: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<StackSetOperationAction | null | undefined>(undefined),
+			Status: new FormControl<StackSetOperationStatus | null | undefined>(undefined),
+			RetainStacks: new FormControl<boolean | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackSetOperationAction { CREATE = 0, UPDATE = 1, DELETE = 2, DETECT_DRIFT = 3 }
@@ -486,28 +1230,72 @@ export namespace MyNS {
 
 	/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
 	export interface StackSetOperationPreferences {
-		RegionOrder?: Array<string> | null;
+		RegionOrder?: Array<string>;
 		FailureToleranceCount?: number | null;
 		FailureTolerancePercentage?: number | null;
 		MaxConcurrentCount?: number | null;
 		MaxConcurrentPercentage?: number | null;
 	}
 
+	/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
+	export interface StackSetOperationPreferencesFormProperties {
+		FailureToleranceCount: FormControl<number | null | undefined>,
+		FailureTolerancePercentage: FormControl<number | null | undefined>,
+		MaxConcurrentCount: FormControl<number | null | undefined>,
+		MaxConcurrentPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateStackSetOperationPreferencesFormGroup() {
+		return new FormGroup<StackSetOperationPreferencesFormProperties>({
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
 	export interface DeploymentTargets {
-		Accounts?: Array<string> | null;
-		OrganizationalUnitIds?: Array<string> | null;
+		Accounts?: Array<string>;
+		OrganizationalUnitIds?: Array<string>;
+	}
+
+	/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
+	export interface DeploymentTargetsFormProperties {
+	}
+	export function CreateDeploymentTargetsFormGroup() {
+		return new FormGroup<DeploymentTargetsFormProperties>({
+		});
+
 	}
 
 	export interface OperationNotFoundException {
+	}
+	export interface OperationNotFoundExceptionFormProperties {
+	}
+	export function CreateOperationNotFoundExceptionFormGroup() {
+		return new FormGroup<OperationNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The output for a <a>DescribeStacks</a> action. */
 	export interface DescribeStacksOutput {
-		Stacks?: Array<Stack> | null;
+		Stacks?: Array<Stack>;
 		NextToken?: string | null;
+	}
+
+	/** The output for a <a>DescribeStacks</a> action. */
+	export interface DescribeStacksOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStacksOutputFormGroup() {
+		return new FormGroup<DescribeStacksOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -517,28 +1305,67 @@ export namespace MyNS {
 		StackName: string;
 		ChangeSetId?: string | null;
 		Description?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
 		CreationTime: Date;
 		DeletionTime?: Date | null;
 		LastUpdatedTime?: Date | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration | null;
+		RollbackConfiguration?: RollbackConfiguration;
 		StackStatus: StackStackStatus;
 		StackStatusReason?: string | null;
 		DisableRollback?: boolean | null;
-		NotificationARNs?: Array<string> | null;
+		NotificationARNs?: Array<string>;
 		TimeoutInMinutes?: number | null;
-		Capabilities?: Array<Capability> | null;
-		Outputs?: Array<Output> | null;
+		Capabilities?: Array<Capability>;
+		Outputs?: Array<Output>;
 		RoleARN?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		EnableTerminationProtection?: boolean | null;
 		ParentId?: string | null;
 		RootId?: string | null;
 
 		/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
-		DriftInformation?: StackDriftInformation | null;
+		DriftInformation?: StackDriftInformation;
+	}
+
+	/** The Stack data type. */
+	export interface StackFormProperties {
+		StackId: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		ChangeSetId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		DeletionTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		StackStatus: FormControl<StackStackStatus | null | undefined>,
+		StackStatusReason: FormControl<string | null | undefined>,
+		DisableRollback: FormControl<boolean | null | undefined>,
+		TimeoutInMinutes: FormControl<number | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		EnableTerminationProtection: FormControl<boolean | null | undefined>,
+		ParentId: FormControl<string | null | undefined>,
+		RootId: FormControl<string | null | undefined>,
+	}
+	export function CreateStackFormGroup() {
+		return new FormGroup<StackFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			DeletionTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			StackStatus: new FormControl<StackStackStatus | null | undefined>(undefined),
+			StackStatusReason: new FormControl<string | null | undefined>(undefined),
+			DisableRollback: new FormControl<boolean | null | undefined>(undefined),
+			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined),
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			RootId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackStackStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, ROLLBACK_IN_PROGRESS = 3, ROLLBACK_FAILED = 4, ROLLBACK_COMPLETE = 5, DELETE_IN_PROGRESS = 6, DELETE_FAILED = 7, DELETE_COMPLETE = 8, UPDATE_IN_PROGRESS = 9, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = 10, UPDATE_COMPLETE = 11, UPDATE_ROLLBACK_IN_PROGRESS = 12, UPDATE_ROLLBACK_FAILED = 13, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = 14, UPDATE_ROLLBACK_COMPLETE = 15, REVIEW_IN_PROGRESS = 16, IMPORT_IN_PROGRESS = 17, IMPORT_COMPLETE = 18, IMPORT_ROLLBACK_IN_PROGRESS = 19, IMPORT_ROLLBACK_FAILED = 20, IMPORT_ROLLBACK_COMPLETE = 21 }
@@ -552,11 +1379,41 @@ export namespace MyNS {
 		ExportName?: string | null;
 	}
 
+	/** The Output data type. */
+	export interface OutputFormProperties {
+		OutputKey: FormControl<string | null | undefined>,
+		OutputValue: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ExportName: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputFormGroup() {
+		return new FormGroup<OutputFormProperties>({
+			OutputKey: new FormControl<string | null | undefined>(undefined),
+			OutputValue: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ExportName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
 	export interface StackDriftInformation {
 		StackDriftStatus: DescribeStackDriftDetectionStatusOutputStackDriftStatus;
 		LastCheckTimestamp?: Date | null;
+	}
+
+	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
+	export interface StackDriftInformationFormProperties {
+		StackDriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+		LastCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackDriftInformationFormGroup() {
+		return new FormGroup<StackDriftInformationFormProperties>({
+			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTypeOutput {
@@ -571,13 +1428,50 @@ export namespace MyNS {
 		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 
 		/** Contains logging configuration information for a type. */
-		LoggingConfig?: LoggingConfig | null;
+		LoggingConfig?: LoggingConfig;
 		ExecutionRoleArn?: string | null;
 		Visibility?: DescribeTypeOutputVisibility | null;
 		SourceUrl?: string | null;
 		DocumentationUrl?: string | null;
 		LastUpdated?: Date | null;
 		TimeCreated?: Date | null;
+	}
+	export interface DescribeTypeOutputFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		DefaultVersionId: FormControl<string | null | undefined>,
+		IsDefaultVersion: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Schema: FormControl<string | null | undefined>,
+		ProvisioningType: FormControl<DescribeTypeOutputProvisioningType | null | undefined>,
+		DeprecatedStatus: FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>,
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		Visibility: FormControl<DescribeTypeOutputVisibility | null | undefined>,
+		SourceUrl: FormControl<string | null | undefined>,
+		DocumentationUrl: FormControl<string | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		TimeCreated: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeTypeOutputFormGroup() {
+		return new FormGroup<DescribeTypeOutputFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
+			IsDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+			ProvisioningType: new FormControl<DescribeTypeOutputProvisioningType | null | undefined>(undefined),
+			DeprecatedStatus: new FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			Visibility: new FormControl<DescribeTypeOutputVisibility | null | undefined>(undefined),
+			SourceUrl: new FormControl<string | null | undefined>(undefined),
+			DocumentationUrl: new FormControl<string | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			TimeCreated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeTypeOutputType { RESOURCE = 0 }
@@ -593,6 +1487,19 @@ export namespace MyNS {
 		LogGroupName: string;
 	}
 
+	/** Contains logging configuration information for a type. */
+	export interface LoggingConfigFormProperties {
+		LogRoleArn: FormControl<string | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateLoggingConfigFormGroup() {
+		return new FormGroup<LoggingConfigFormProperties>({
+			LogRoleArn: new FormControl<string | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DescribeTypeOutputVisibility { PUBLIC = 0, PRIVATE = 1 }
 
 	export interface DescribeTypeRegistrationOutput {
@@ -601,11 +1508,35 @@ export namespace MyNS {
 		TypeArn?: string | null;
 		TypeVersionArn?: string | null;
 	}
+	export interface DescribeTypeRegistrationOutputFormProperties {
+		ProgressStatus: FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		TypeArn: FormControl<string | null | undefined>,
+		TypeVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTypeRegistrationOutputFormGroup() {
+		return new FormGroup<DescribeTypeRegistrationOutputFormProperties>({
+			ProgressStatus: new FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			TypeArn: new FormControl<string | null | undefined>(undefined),
+			TypeVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeTypeRegistrationOutputProgressStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
 
 	export interface DetectStackDriftOutput {
 		StackDriftDetectionId: string;
+	}
+	export interface DetectStackDriftOutputFormProperties {
+		StackDriftDetectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectStackDriftOutputFormGroup() {
+		return new FormGroup<DetectStackDriftOutputFormProperties>({
+			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetectStackResourceDriftOutput {
@@ -616,9 +1547,25 @@ export namespace MyNS {
 		 */
 		StackResourceDrift: StackResourceDrift;
 	}
+	export interface DetectStackResourceDriftOutputFormProperties {
+	}
+	export function CreateDetectStackResourceDriftOutputFormGroup() {
+		return new FormGroup<DetectStackResourceDriftOutputFormProperties>({
+		});
+
+	}
 
 	export interface DetectStackSetDriftOutput {
 		OperationId?: string | null;
+	}
+	export interface DetectStackSetDriftOutputFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectStackSetDriftOutputFormGroup() {
+		return new FormGroup<DetectStackSetDriftOutputFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -627,9 +1574,29 @@ export namespace MyNS {
 		Url?: string | null;
 	}
 
+	/** The output for a <a>EstimateTemplateCost</a> action. */
+	export interface EstimateTemplateCostOutputFormProperties {
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateEstimateTemplateCostOutputFormGroup() {
+		return new FormGroup<EstimateTemplateCostOutputFormProperties>({
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output for the <a>ExecuteChangeSet</a> action. */
 	export interface ExecuteChangeSetOutput {
+	}
+
+	/** The output for the <a>ExecuteChangeSet</a> action. */
+	export interface ExecuteChangeSetOutputFormProperties {
+	}
+	export function CreateExecuteChangeSetOutputFormGroup() {
+		return new FormGroup<ExecuteChangeSetOutputFormProperties>({
+		});
+
 	}
 
 
@@ -638,11 +1605,33 @@ export namespace MyNS {
 		StackPolicyBody?: string | null;
 	}
 
+	/** The output for the <a>GetStackPolicy</a> action. */
+	export interface GetStackPolicyOutputFormProperties {
+		StackPolicyBody: FormControl<string | null | undefined>,
+	}
+	export function CreateGetStackPolicyOutputFormGroup() {
+		return new FormGroup<GetStackPolicyOutputFormProperties>({
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output for <a>GetTemplate</a> action. */
 	export interface GetTemplateOutput {
 		TemplateBody?: string | null;
-		StagesAvailable?: Array<TemplateStage> | null;
+		StagesAvailable?: Array<TemplateStage>;
+	}
+
+	/** The output for <a>GetTemplate</a> action. */
+	export interface GetTemplateOutputFormProperties {
+		TemplateBody: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTemplateOutputFormGroup() {
+		return new FormGroup<GetTemplateOutputFormProperties>({
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TemplateStage { Original = 0, Processed = 1 }
@@ -650,15 +1639,32 @@ export namespace MyNS {
 
 	/** The output for the <a>GetTemplateSummary</a> action. */
 	export interface GetTemplateSummaryOutput {
-		Parameters?: Array<ParameterDeclaration> | null;
+		Parameters?: Array<ParameterDeclaration>;
 		Description?: string | null;
-		Capabilities?: Array<Capability> | null;
+		Capabilities?: Array<Capability>;
 		CapabilitiesReason?: string | null;
-		ResourceTypes?: Array<string> | null;
+		ResourceTypes?: Array<string>;
 		Version?: string | null;
 		Metadata?: string | null;
-		DeclaredTransforms?: Array<string> | null;
-		ResourceIdentifierSummaries?: Array<ResourceIdentifierSummary> | null;
+		DeclaredTransforms?: Array<string>;
+		ResourceIdentifierSummaries?: Array<ResourceIdentifierSummary>;
+	}
+
+	/** The output for the <a>GetTemplateSummary</a> action. */
+	export interface GetTemplateSummaryOutputFormProperties {
+		Description: FormControl<string | null | undefined>,
+		CapabilitiesReason: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		Metadata: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTemplateSummaryOutputFormGroup() {
+		return new FormGroup<GetTemplateSummaryOutputFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			CapabilitiesReason: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			Metadata: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -671,28 +1677,78 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property. */
-		ParameterConstraints?: ParameterConstraints | null;
+		ParameterConstraints?: ParameterConstraints;
+	}
+
+	/** The ParameterDeclaration data type. */
+	export interface ParameterDeclarationFormProperties {
+		ParameterKey: FormControl<string | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+		ParameterType: FormControl<string | null | undefined>,
+		NoEcho: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterDeclarationFormGroup() {
+		return new FormGroup<ParameterDeclarationFormProperties>({
+			ParameterKey: new FormControl<string | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			ParameterType: new FormControl<string | null | undefined>(undefined),
+			NoEcho: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property. */
 	export interface ParameterConstraints {
-		AllowedValues?: Array<string> | null;
+		AllowedValues?: Array<string>;
+	}
+
+	/** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property. */
+	export interface ParameterConstraintsFormProperties {
+	}
+	export function CreateParameterConstraintsFormGroup() {
+		return new FormGroup<ParameterConstraintsFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type. */
 	export interface ResourceIdentifierSummary {
 		ResourceType?: string | null;
-		LogicalResourceIds?: Array<string> | null;
-		ResourceIdentifiers?: Array<string> | null;
+		LogicalResourceIds?: Array<string>;
+		ResourceIdentifiers?: Array<string>;
+	}
+
+	/** Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type. */
+	export interface ResourceIdentifierSummaryFormProperties {
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceIdentifierSummaryFormGroup() {
+		return new FormGroup<ResourceIdentifierSummaryFormProperties>({
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output for the <a>ListChangeSets</a> action. */
 	export interface ListChangeSetsOutput {
-		Summaries?: Array<ChangeSetSummary> | null;
+		Summaries?: Array<ChangeSetSummary>;
 		NextToken?: string | null;
+	}
+
+	/** The output for the <a>ListChangeSets</a> action. */
+	export interface ListChangeSetsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListChangeSetsOutputFormGroup() {
+		return new FormGroup<ListChangeSetsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -709,9 +1765,45 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated. */
+	export interface ChangeSetSummaryFormProperties {
+		StackId: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		ChangeSetId: FormControl<string | null | undefined>,
+		ChangeSetName: FormControl<string | null | undefined>,
+		ExecutionStatus: FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>,
+		Status: FormControl<DescribeChangeSetOutputStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateChangeSetSummaryFormGroup() {
+		return new FormGroup<ChangeSetSummaryFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			ExecutionStatus: new FormControl<DescribeChangeSetOutputExecutionStatus | null | undefined>(undefined),
+			Status: new FormControl<DescribeChangeSetOutputStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListExportsOutput {
-		Exports?: Array<Export> | null;
+		Exports?: Array<Export>;
 		NextToken?: string | null;
+	}
+	export interface ListExportsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListExportsOutputFormGroup() {
+		return new FormGroup<ListExportsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -722,14 +1814,47 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** The <code>Export</code> structure describes the exported output values for a stack. */
+	export interface ExportFormProperties {
+		ExportingStackId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateExportFormGroup() {
+		return new FormGroup<ExportFormProperties>({
+			ExportingStackId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListImportsOutput {
-		Imports?: Array<string> | null;
+		Imports?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListImportsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListImportsOutputFormGroup() {
+		return new FormGroup<ListImportsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListStackInstancesOutput {
-		Summaries?: Array<StackInstanceSummary> | null;
+		Summaries?: Array<StackInstanceSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListStackInstancesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackInstancesOutputFormGroup() {
+		return new FormGroup<ListStackInstancesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -746,11 +1871,49 @@ export namespace MyNS {
 		LastDriftCheckTimestamp?: Date | null;
 	}
 
+	/** The structure that contains summary information about a stack instance. */
+	export interface StackInstanceSummaryFormProperties {
+		StackSetId: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		Account: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+		Status: FormControl<StackInstanceStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		OrganizationalUnitId: FormControl<string | null | undefined>,
+		DriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackInstanceSummaryFormGroup() {
+		return new FormGroup<StackInstanceSummaryFormProperties>({
+			StackSetId: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<StackInstanceStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+			DriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			LastDriftCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output for a <a>ListStackResources</a> action. */
 	export interface ListStackResourcesOutput {
-		StackResourceSummaries?: Array<StackResourceSummary> | null;
+		StackResourceSummaries?: Array<StackResourceSummary>;
 		NextToken?: string | null;
+	}
+
+	/** The output for a <a>ListStackResources</a> action. */
+	export interface ListStackResourcesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackResourcesOutputFormGroup() {
+		return new FormGroup<ListStackResourcesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -764,7 +1927,28 @@ export namespace MyNS {
 		ResourceStatusReason?: string | null;
 
 		/** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
-		DriftInformation?: StackResourceDriftInformationSummary | null;
+		DriftInformation?: StackResourceDriftInformationSummary;
+	}
+
+	/** Contains high-level information about the specified stack resource. */
+	export interface StackResourceSummaryFormProperties {
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<Date | null | undefined>,
+		ResourceStatus: FormControl<StackEventResourceStatus | null | undefined>,
+		ResourceStatusReason: FormControl<string | null | undefined>,
+	}
+	export function CreateStackResourceSummaryFormGroup() {
+		return new FormGroup<StackResourceSummaryFormProperties>({
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ResourceStatus: new FormControl<StackEventResourceStatus | null | undefined>(undefined),
+			ResourceStatusReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -774,9 +1958,31 @@ export namespace MyNS {
 		LastCheckTimestamp?: Date | null;
 	}
 
+	/** Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration. */
+	export interface StackResourceDriftInformationSummaryFormProperties {
+		StackResourceDriftStatus: FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>,
+		LastCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackResourceDriftInformationSummaryFormGroup() {
+		return new FormGroup<StackResourceDriftInformationSummaryFormProperties>({
+			StackResourceDriftStatus: new FormControl<StackResourceDriftInformationStackResourceDriftStatus | null | undefined>(undefined),
+			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStackSetOperationResultsOutput {
-		Summaries?: Array<StackSetOperationResultSummary> | null;
+		Summaries?: Array<StackSetOperationResultSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListStackSetOperationResultsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackSetOperationResultsOutputFormGroup() {
+		return new FormGroup<ListStackSetOperationResultsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -788,8 +1994,27 @@ export namespace MyNS {
 		StatusReason?: string | null;
 
 		/** <p>Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> <p>For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p> */
-		AccountGateResult?: AccountGateResult | null;
+		AccountGateResult?: AccountGateResult;
 		OrganizationalUnitId?: string | null;
+	}
+
+	/** The structure that contains information about a specified operation's results for a given account in a given Region. */
+	export interface StackSetOperationResultSummaryFormProperties {
+		Account: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		Status: FormControl<StackSetOperationResultSummaryStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		OrganizationalUnitId: FormControl<string | null | undefined>,
+	}
+	export function CreateStackSetOperationResultSummaryFormGroup() {
+		return new FormGroup<StackSetOperationResultSummaryFormProperties>({
+			Account: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<StackSetOperationResultSummaryStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackSetOperationResultSummaryStatus { PENDING = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
@@ -801,11 +2026,33 @@ export namespace MyNS {
 		StatusReason?: string | null;
 	}
 
+	/** <p>Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> <p>For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p> */
+	export interface AccountGateResultFormProperties {
+		Status: FormControl<AccountGateResultStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountGateResultFormGroup() {
+		return new FormGroup<AccountGateResultFormProperties>({
+			Status: new FormControl<AccountGateResultStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccountGateResultStatus { SUCCEEDED = 0, FAILED = 1, SKIPPED = 2 }
 
 	export interface ListStackSetOperationsOutput {
-		Summaries?: Array<StackSetOperationSummary> | null;
+		Summaries?: Array<StackSetOperationSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListStackSetOperationsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackSetOperationsOutputFormGroup() {
+		return new FormGroup<ListStackSetOperationsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -818,9 +2065,37 @@ export namespace MyNS {
 		EndTimestamp?: Date | null;
 	}
 
+	/** The structures that contain summary information about the specified operation. */
+	export interface StackSetOperationSummaryFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+		Action: FormControl<StackSetOperationAction | null | undefined>,
+		Status: FormControl<StackSetOperationStatus | null | undefined>,
+		CreationTimestamp: FormControl<Date | null | undefined>,
+		EndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackSetOperationSummaryFormGroup() {
+		return new FormGroup<StackSetOperationSummaryFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<StackSetOperationAction | null | undefined>(undefined),
+			Status: new FormControl<StackSetOperationStatus | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStackSetsOutput {
-		Summaries?: Array<StackSetSummary> | null;
+		Summaries?: Array<StackSetSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListStackSetsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackSetsOutputFormGroup() {
+		return new FormGroup<ListStackSetsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -832,17 +2107,51 @@ export namespace MyNS {
 		Status?: StackSetStatus | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment | null;
+		AutoDeployment?: AutoDeployment;
 		PermissionModel?: StackSetPermissionModel | null;
 		DriftStatus?: DescribeStackDriftDetectionStatusOutputStackDriftStatus | null;
 		LastDriftCheckTimestamp?: Date | null;
 	}
 
+	/** The structures that contain summary information about the specified stack set. */
+	export interface StackSetSummaryFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		StackSetId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Status: FormControl<StackSetStatus | null | undefined>,
+		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
+		DriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+		LastDriftCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackSetSummaryFormGroup() {
+		return new FormGroup<StackSetSummaryFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			StackSetId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<StackSetStatus | null | undefined>(undefined),
+			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
+			DriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			LastDriftCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output for <a>ListStacks</a> action. */
 	export interface ListStacksOutput {
-		StackSummaries?: Array<StackSummary> | null;
+		StackSummaries?: Array<StackSummary>;
 		NextToken?: string | null;
+	}
+
+	/** The output for <a>ListStacks</a> action. */
+	export interface ListStacksOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStacksOutputFormGroup() {
+		return new FormGroup<ListStacksOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -860,7 +2169,36 @@ export namespace MyNS {
 		RootId?: string | null;
 
 		/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
-		DriftInformation?: StackDriftInformationSummary | null;
+		DriftInformation?: StackDriftInformationSummary;
+	}
+
+	/** The StackSummary Data Type */
+	export interface StackSummaryFormProperties {
+		StackId: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		TemplateDescription: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		DeletionTime: FormControl<Date | null | undefined>,
+		StackStatus: FormControl<StackStackStatus | null | undefined>,
+		StackStatusReason: FormControl<string | null | undefined>,
+		ParentId: FormControl<string | null | undefined>,
+		RootId: FormControl<string | null | undefined>,
+	}
+	export function CreateStackSummaryFormGroup() {
+		return new FormGroup<StackSummaryFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			TemplateDescription: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			DeletionTime: new FormControl<Date | null | undefined>(undefined),
+			StackStatus: new FormControl<StackStackStatus | null | undefined>(undefined),
+			StackStatusReason: new FormControl<string | null | undefined>(undefined),
+			ParentId: new FormControl<string | null | undefined>(undefined),
+			RootId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -870,16 +2208,47 @@ export namespace MyNS {
 		LastCheckTimestamp?: Date | null;
 	}
 
+	/** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted. */
+	export interface StackDriftInformationSummaryFormProperties {
+		StackDriftStatus: FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>,
+		LastCheckTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStackDriftInformationSummaryFormGroup() {
+		return new FormGroup<StackDriftInformationSummaryFormProperties>({
+			StackDriftStatus: new FormControl<DescribeStackDriftDetectionStatusOutputStackDriftStatus | null | undefined>(undefined),
+			LastCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackStatus { CREATE_IN_PROGRESS = 0, CREATE_FAILED = 1, CREATE_COMPLETE = 2, ROLLBACK_IN_PROGRESS = 3, ROLLBACK_FAILED = 4, ROLLBACK_COMPLETE = 5, DELETE_IN_PROGRESS = 6, DELETE_FAILED = 7, DELETE_COMPLETE = 8, UPDATE_IN_PROGRESS = 9, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = 10, UPDATE_COMPLETE = 11, UPDATE_ROLLBACK_IN_PROGRESS = 12, UPDATE_ROLLBACK_FAILED = 13, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = 14, UPDATE_ROLLBACK_COMPLETE = 15, REVIEW_IN_PROGRESS = 16, IMPORT_IN_PROGRESS = 17, IMPORT_COMPLETE = 18, IMPORT_ROLLBACK_IN_PROGRESS = 19, IMPORT_ROLLBACK_FAILED = 20, IMPORT_ROLLBACK_COMPLETE = 21 }
 
 	export interface ListTypeRegistrationsOutput {
-		RegistrationTokenList?: Array<string> | null;
+		RegistrationTokenList?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListTypeRegistrationsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTypeRegistrationsOutputFormGroup() {
+		return new FormGroup<ListTypeRegistrationsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTypeVersionsOutput {
-		TypeVersionSummaries?: Array<TypeVersionSummary> | null;
+		TypeVersionSummaries?: Array<TypeVersionSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTypeVersionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTypeVersionsOutputFormGroup() {
+		return new FormGroup<ListTypeVersionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -894,9 +2263,41 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Contains summary information about a specific version of a CloudFormation type. */
+	export interface TypeVersionSummaryFormProperties {
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		IsDefaultVersion: FormControl<boolean | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		TimeCreated: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateTypeVersionSummaryFormGroup() {
+		return new FormGroup<TypeVersionSummaryFormProperties>({
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			IsDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			TimeCreated: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTypesOutput {
-		TypeSummaries?: Array<TypeSummary> | null;
+		TypeSummaries?: Array<TypeSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTypesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTypesOutputFormGroup() {
+		return new FormGroup<ListTypesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -910,23 +2311,88 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Contains summary information about the specified CloudFormation type. */
+	export interface TypeSummaryFormProperties {
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		DefaultVersionId: FormControl<string | null | undefined>,
+		TypeArn: FormControl<string | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateTypeSummaryFormGroup() {
+		return new FormGroup<TypeSummaryFormProperties>({
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
+			TypeArn: new FormControl<string | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RecordHandlerProgressOutput {
+	}
+	export interface RecordHandlerProgressOutputFormProperties {
+	}
+	export function CreateRecordHandlerProgressOutputFormGroup() {
+		return new FormGroup<RecordHandlerProgressOutputFormProperties>({
+		});
+
 	}
 
 	export interface InvalidStateTransitionException {
 	}
+	export interface InvalidStateTransitionExceptionFormProperties {
+	}
+	export function CreateInvalidStateTransitionExceptionFormGroup() {
+		return new FormGroup<InvalidStateTransitionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OperationStatusCheckFailedException {
+	}
+	export interface OperationStatusCheckFailedExceptionFormProperties {
+	}
+	export function CreateOperationStatusCheckFailedExceptionFormGroup() {
+		return new FormGroup<OperationStatusCheckFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RegisterTypeOutput {
 		RegistrationToken?: string | null;
 	}
+	export interface RegisterTypeOutputFormProperties {
+		RegistrationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterTypeOutputFormGroup() {
+		return new FormGroup<RegisterTypeOutputFormProperties>({
+			RegistrationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetTypeDefaultVersionOutput {
 	}
+	export interface SetTypeDefaultVersionOutputFormProperties {
+	}
+	export function CreateSetTypeDefaultVersionOutputFormGroup() {
+		return new FormGroup<SetTypeDefaultVersionOutputFormProperties>({
+		});
+
+	}
 
 	export interface StopStackSetOperationOutput {
+	}
+	export interface StopStackSetOperationOutputFormProperties {
+	}
+	export function CreateStopStackSetOperationOutputFormGroup() {
+		return new FormGroup<StopStackSetOperationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -935,26 +2401,77 @@ export namespace MyNS {
 		StackId?: string | null;
 	}
 
+	/** The output for an <a>UpdateStack</a> action. */
+	export interface UpdateStackOutputFormProperties {
+		StackId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackOutputFormGroup() {
+		return new FormGroup<UpdateStackOutputFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateStackInstancesOutput {
 		OperationId?: string | null;
+	}
+	export interface UpdateStackInstancesOutputFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackInstancesOutputFormGroup() {
+		return new FormGroup<UpdateStackInstancesOutputFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStackSetOutput {
 		OperationId?: string | null;
 	}
+	export interface UpdateStackSetOutputFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackSetOutputFormGroup() {
+		return new FormGroup<UpdateStackSetOutputFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTerminationProtectionOutput {
 		StackId?: string | null;
+	}
+	export interface UpdateTerminationProtectionOutputFormProperties {
+		StackId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTerminationProtectionOutputFormGroup() {
+		return new FormGroup<UpdateTerminationProtectionOutputFormProperties>({
+			StackId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output for <a>ValidateTemplate</a> action. */
 	export interface ValidateTemplateOutput {
-		Parameters?: Array<TemplateParameter> | null;
+		Parameters?: Array<TemplateParameter>;
 		Description?: string | null;
-		Capabilities?: Array<Capability> | null;
+		Capabilities?: Array<Capability>;
 		CapabilitiesReason?: string | null;
-		DeclaredTransforms?: Array<string> | null;
+		DeclaredTransforms?: Array<string>;
+	}
+
+	/** The output for <a>ValidateTemplate</a> action. */
+	export interface ValidateTemplateOutputFormProperties {
+		Description: FormControl<string | null | undefined>,
+		CapabilitiesReason: FormControl<string | null | undefined>,
+	}
+	export function CreateValidateTemplateOutputFormGroup() {
+		return new FormGroup<ValidateTemplateOutputFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			CapabilitiesReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -966,6 +2483,23 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** The TemplateParameter data type. */
+	export interface TemplateParameterFormProperties {
+		ParameterKey: FormControl<string | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+		NoEcho: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateParameterFormGroup() {
+		return new FormGroup<TemplateParameterFormProperties>({
+			ParameterKey: new FormControl<string | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			NoEcho: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccountGateStatus { SUCCEEDED = 0, FAILED = 1, SKIPPED = 2 }
 
 
@@ -973,6 +2507,19 @@ export namespace MyNS {
 	export interface CancelUpdateStackInput {
 		StackName: string;
 		ClientRequestToken?: string | null;
+	}
+
+	/** The input for the <a>CancelUpdateStack</a> action. */
+	export interface CancelUpdateStackInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelUpdateStackInputFormGroup() {
+		return new FormGroup<CancelUpdateStackInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChangeAction { Add = 0, Modify = 1, Remove = 2, Import = 3 }
@@ -990,8 +2537,23 @@ export namespace MyNS {
 	export interface ContinueUpdateRollbackInput {
 		StackName: string;
 		RoleARN?: string | null;
-		ResourcesToSkip?: Array<string> | null;
+		ResourcesToSkip?: Array<string>;
 		ClientRequestToken?: string | null;
+	}
+
+	/** The input for the <a>ContinueUpdateRollback</a> action. */
+	export interface ContinueUpdateRollbackInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateContinueUpdateRollbackInputFormGroup() {
+		return new FormGroup<ContinueUpdateRollbackInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1001,20 +2563,47 @@ export namespace MyNS {
 		TemplateBody?: string | null;
 		TemplateURL?: string | null;
 		UsePreviousTemplate?: boolean | null;
-		Parameters?: Array<Parameter> | null;
-		Capabilities?: Array<Capability> | null;
-		ResourceTypes?: Array<string> | null;
+		Parameters?: Array<Parameter>;
+		Capabilities?: Array<Capability>;
+		ResourceTypes?: Array<string>;
 		RoleARN?: string | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration | null;
-		NotificationARNs?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		RollbackConfiguration?: RollbackConfiguration;
+		NotificationARNs?: Array<string>;
+		Tags?: Array<Tag>;
 		ChangeSetName: string;
 		ClientToken?: string | null;
 		Description?: string | null;
 		ChangeSetType?: ChangeSetType | null;
-		ResourcesToImport?: Array<ResourceToImport> | null;
+		ResourcesToImport?: Array<ResourceToImport>;
+	}
+
+	/** The input for the <a>CreateChangeSet</a> action. */
+	export interface CreateChangeSetInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+		UsePreviousTemplate: FormControl<boolean | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		ChangeSetName: FormControl<string | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ChangeSetType: FormControl<ChangeSetType | null | undefined>,
+	}
+	export function CreateCreateChangeSetInputFormGroup() {
+		return new FormGroup<CreateChangeSetInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			UsePreviousTemplate: new FormControl<boolean | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ChangeSetType: new FormControl<ChangeSetType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OnFailure { DO_NOTHING = 0, ROLLBACK = 1, DELETE = 2 }
@@ -1025,36 +2614,78 @@ export namespace MyNS {
 		StackName: string;
 		TemplateBody?: string | null;
 		TemplateURL?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
 		DisableRollback?: boolean | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration | null;
+		RollbackConfiguration?: RollbackConfiguration;
 		TimeoutInMinutes?: number | null;
-		NotificationARNs?: Array<string> | null;
-		Capabilities?: Array<Capability> | null;
-		ResourceTypes?: Array<string> | null;
+		NotificationARNs?: Array<string>;
+		Capabilities?: Array<Capability>;
+		ResourceTypes?: Array<string>;
 		RoleARN?: string | null;
 		OnFailure?: OnFailure | null;
 		StackPolicyBody?: string | null;
 		StackPolicyURL?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		ClientRequestToken?: string | null;
 		EnableTerminationProtection?: boolean | null;
 	}
 
+	/** The input for <a>CreateStack</a> action. */
+	export interface CreateStackInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+		DisableRollback: FormControl<boolean | null | undefined>,
+		TimeoutInMinutes: FormControl<number | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		OnFailure: FormControl<OnFailure | null | undefined>,
+		StackPolicyBody: FormControl<string | null | undefined>,
+		StackPolicyURL: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		EnableTerminationProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateStackInputFormGroup() {
+		return new FormGroup<CreateStackInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			DisableRollback: new FormControl<boolean | null | undefined>(undefined),
+			TimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			OnFailure: new FormControl<OnFailure | null | undefined>(undefined),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
+			StackPolicyURL: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateStackInstancesInput {
 		StackSetName: string;
-		Accounts?: Array<string> | null;
+		Accounts?: Array<string>;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets | null;
+		DeploymentTargets?: DeploymentTargets;
 		Regions: Array<string>;
-		ParameterOverrides?: Array<Parameter> | null;
+		ParameterOverrides?: Array<Parameter>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationPreferences?: StackSetOperationPreferences;
 		OperationId?: string | null;
+	}
+	export interface CreateStackInstancesInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStackInstancesInputFormGroup() {
+		return new FormGroup<CreateStackInstancesInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PermissionModels { SERVICE_MANAGED = 0, SELF_MANAGED = 1 }
@@ -1064,16 +2695,39 @@ export namespace MyNS {
 		Description?: string | null;
 		TemplateBody?: string | null;
 		TemplateURL?: string | null;
-		Parameters?: Array<Parameter> | null;
-		Capabilities?: Array<Capability> | null;
-		Tags?: Array<Tag> | null;
+		Parameters?: Array<Parameter>;
+		Capabilities?: Array<Capability>;
+		Tags?: Array<Tag>;
 		AdministrationRoleARN?: string | null;
 		ExecutionRoleName?: string | null;
 		PermissionModel?: StackSetPermissionModel | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment | null;
+		AutoDeployment?: AutoDeployment;
 		ClientRequestToken?: string | null;
+	}
+	export interface CreateStackSetInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+		AdministrationRoleARN: FormControl<string | null | undefined>,
+		ExecutionRoleName: FormControl<string | null | undefined>,
+		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStackSetInputFormGroup() {
+		return new FormGroup<CreateStackSetInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1083,31 +2737,81 @@ export namespace MyNS {
 		StackName?: string | null;
 	}
 
+	/** The input for the <a>DeleteChangeSet</a> action. */
+	export interface DeleteChangeSetInputFormProperties {
+		ChangeSetName: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteChangeSetInputFormGroup() {
+		return new FormGroup<DeleteChangeSetInputFormProperties>({
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for <a>DeleteStack</a> action. */
 	export interface DeleteStackInput {
 		StackName: string;
-		RetainResources?: Array<string> | null;
+		RetainResources?: Array<string>;
 		RoleARN?: string | null;
 		ClientRequestToken?: string | null;
 	}
 
+	/** The input for <a>DeleteStack</a> action. */
+	export interface DeleteStackInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStackInputFormGroup() {
+		return new FormGroup<DeleteStackInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteStackInstancesInput {
 		StackSetName: string;
-		Accounts?: Array<string> | null;
+		Accounts?: Array<string>;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets | null;
+		DeploymentTargets?: DeploymentTargets;
 		Regions: Array<string>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationPreferences?: StackSetOperationPreferences;
 		RetainStacks: boolean;
 		OperationId?: string | null;
+	}
+	export interface DeleteStackInstancesInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		RetainStacks: FormControl<boolean | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStackInstancesInputFormGroup() {
+		return new FormGroup<DeleteStackInstancesInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			RetainStacks: new FormControl<boolean | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteStackSetInput {
 		StackSetName: string;
+	}
+	export interface DeleteStackSetInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStackSetInputFormGroup() {
+		return new FormGroup<DeleteStackSetInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeprecatedStatus { LIVE = 0, DEPRECATED = 1 }
@@ -1120,11 +2824,37 @@ export namespace MyNS {
 		TypeName?: string | null;
 		VersionId?: string | null;
 	}
+	export interface DeregisterTypeInputFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterTypeInputFormGroup() {
+		return new FormGroup<DeregisterTypeInputFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input for the <a>DescribeAccountLimits</a> action. */
 	export interface DescribeAccountLimitsInput {
 		NextToken?: string | null;
+	}
+
+	/** The input for the <a>DescribeAccountLimits</a> action. */
+	export interface DescribeAccountLimitsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountLimitsInputFormGroup() {
+		return new FormGroup<DescribeAccountLimitsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1135,8 +2865,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The input for the <a>DescribeChangeSet</a> action. */
+	export interface DescribeChangeSetInputFormProperties {
+		ChangeSetName: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeChangeSetInputFormGroup() {
+		return new FormGroup<DescribeChangeSetInputFormProperties>({
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStackDriftDetectionStatusInput {
 		StackDriftDetectionId: string;
+	}
+	export interface DescribeStackDriftDetectionStatusInputFormProperties {
+		StackDriftDetectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackDriftDetectionStatusInputFormGroup() {
+		return new FormGroup<DescribeStackDriftDetectionStatusInputFormProperties>({
+			StackDriftDetectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackDriftStatus { DRIFTED = 0, IN_SYNC = 1, UNKNOWN = 2, NOT_CHECKED = 3 }
@@ -1150,17 +2904,56 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The input for <a>DescribeStackEvents</a> action. */
+	export interface DescribeStackEventsInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackEventsInputFormGroup() {
+		return new FormGroup<DescribeStackEventsInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStackInstanceInput {
 		StackSetName: string;
 		StackInstanceAccount: string;
 		StackInstanceRegion: string;
 	}
+	export interface DescribeStackInstanceInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		StackInstanceAccount: FormControl<string | null | undefined>,
+		StackInstanceRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackInstanceInputFormGroup() {
+		return new FormGroup<DescribeStackInstanceInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			StackInstanceAccount: new FormControl<string | null | undefined>(undefined),
+			StackInstanceRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeStackResourceDriftsInput {
 		StackName: string;
-		StackResourceDriftStatusFilters?: Array<StackResourceDriftStatus> | null;
+		StackResourceDriftStatusFilters?: Array<StackResourceDriftStatus>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeStackResourceDriftsInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeStackResourceDriftsInputFormGroup() {
+		return new FormGroup<DescribeStackResourceDriftsInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1168,6 +2961,19 @@ export namespace MyNS {
 	export interface DescribeStackResourceInput {
 		StackName: string;
 		LogicalResourceId: string;
+	}
+
+	/** The input for <a>DescribeStackResource</a> action. */
+	export interface DescribeStackResourceInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackResourceInputFormGroup() {
+		return new FormGroup<DescribeStackResourceInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1178,13 +2984,48 @@ export namespace MyNS {
 		PhysicalResourceId?: string | null;
 	}
 
+	/** The input for <a>DescribeStackResources</a> action. */
+	export interface DescribeStackResourcesInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackResourcesInputFormGroup() {
+		return new FormGroup<DescribeStackResourcesInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStackSetInput {
 		StackSetName: string;
+	}
+	export interface DescribeStackSetInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackSetInputFormGroup() {
+		return new FormGroup<DescribeStackSetInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeStackSetOperationInput {
 		StackSetName: string;
 		OperationId: string;
+	}
+	export interface DescribeStackSetOperationInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStackSetOperationInputFormGroup() {
+		return new FormGroup<DescribeStackSetOperationInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1194,11 +3035,39 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The input for <a>DescribeStacks</a> action. */
+	export interface DescribeStacksInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStacksInputFormGroup() {
+		return new FormGroup<DescribeStacksInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTypeInput {
 		Type?: DescribeTypeOutputType | null;
 		TypeName?: string | null;
 		Arn?: string | null;
 		VersionId?: string | null;
+	}
+	export interface DescribeTypeInputFormProperties {
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTypeInputFormGroup() {
+		return new FormGroup<DescribeTypeInputFormProperties>({
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProvisioningType { NON_PROVISIONABLE = 0, IMMUTABLE = 1, FULLY_MUTABLE = 2 }
@@ -1208,25 +3077,65 @@ export namespace MyNS {
 	export interface DescribeTypeRegistrationInput {
 		RegistrationToken: string;
 	}
+	export interface DescribeTypeRegistrationInputFormProperties {
+		RegistrationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTypeRegistrationInputFormGroup() {
+		return new FormGroup<DescribeTypeRegistrationInputFormProperties>({
+			RegistrationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum RegistrationStatus { COMPLETE = 0, IN_PROGRESS = 1, FAILED = 2 }
 
 	export interface DetectStackDriftInput {
 		StackName: string;
-		LogicalResourceIds?: Array<string> | null;
+		LogicalResourceIds?: Array<string>;
+	}
+	export interface DetectStackDriftInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectStackDriftInputFormGroup() {
+		return new FormGroup<DetectStackDriftInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetectStackResourceDriftInput {
 		StackName: string;
 		LogicalResourceId: string;
 	}
+	export interface DetectStackResourceDriftInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectStackResourceDriftInputFormGroup() {
+		return new FormGroup<DetectStackResourceDriftInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetectStackSetDriftInput {
 		StackSetName: string;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationPreferences?: StackSetOperationPreferences;
 		OperationId?: string | null;
+	}
+	export interface DetectStackSetDriftInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectStackSetDriftInputFormGroup() {
+		return new FormGroup<DetectStackSetDriftInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DifferenceType { ADD = 0, REMOVE = 1, NOT_EQUAL = 2 }
@@ -1236,7 +3145,20 @@ export namespace MyNS {
 	export interface EstimateTemplateCostInput {
 		TemplateBody?: string | null;
 		TemplateURL?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+
+	/** The input for an <a>EstimateTemplateCost</a> action. */
+	export interface EstimateTemplateCostInputFormProperties {
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+	}
+	export function CreateEstimateTemplateCostInputFormGroup() {
+		return new FormGroup<EstimateTemplateCostInputFormProperties>({
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EvaluationType { Static = 0, Dynamic = 1 }
@@ -1249,10 +3171,36 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 	}
 
+	/** The input for the <a>ExecuteChangeSet</a> action. */
+	export interface ExecuteChangeSetInputFormProperties {
+		ChangeSetName: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateExecuteChangeSetInputFormGroup() {
+		return new FormGroup<ExecuteChangeSetInputFormProperties>({
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the <a>GetStackPolicy</a> action. */
 	export interface GetStackPolicyInput {
 		StackName: string;
+	}
+
+	/** The input for the <a>GetStackPolicy</a> action. */
+	export interface GetStackPolicyInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetStackPolicyInputFormGroup() {
+		return new FormGroup<GetStackPolicyInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1261,6 +3209,21 @@ export namespace MyNS {
 		StackName?: string | null;
 		ChangeSetName?: string | null;
 		TemplateStage?: TemplateStage | null;
+	}
+
+	/** The input for a <a>GetTemplate</a> action. */
+	export interface GetTemplateInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		ChangeSetName: FormControl<string | null | undefined>,
+		TemplateStage: FormControl<TemplateStage | null | undefined>,
+	}
+	export function CreateGetTemplateInputFormGroup() {
+		return new FormGroup<GetTemplateInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			TemplateStage: new FormControl<TemplateStage | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1272,6 +3235,23 @@ export namespace MyNS {
 		StackSetName?: string | null;
 	}
 
+	/** The input for the <a>GetTemplateSummary</a> action. */
+	export interface GetTemplateSummaryInputFormProperties {
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		StackSetName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTemplateSummaryInputFormGroup() {
+		return new FormGroup<GetTemplateSummaryInputFormProperties>({
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HandlerErrorCode { NotUpdatable = 0, InvalidRequest = 1, AccessDenied = 2, InvalidCredentials = 3, AlreadyExists = 4, NotFound = 5, ResourceConflict = 6, Throttling = 7, ServiceLimitExceeded = 8, NotStabilized = 9, GeneralServiceException = 10, ServiceInternalError = 11, NetworkFailure = 12, InternalFailure = 13 }
 
 
@@ -1281,13 +3261,46 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The input for the <a>ListChangeSets</a> action. */
+	export interface ListChangeSetsInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListChangeSetsInputFormGroup() {
+		return new FormGroup<ListChangeSetsInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListExportsInput {
 		NextToken?: string | null;
+	}
+	export interface ListExportsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListExportsInputFormGroup() {
+		return new FormGroup<ListExportsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListImportsInput {
 		ExportName: string;
 		NextToken?: string | null;
+	}
+	export interface ListImportsInputFormProperties {
+		ExportName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListImportsInputFormGroup() {
+		return new FormGroup<ListImportsInputFormProperties>({
+			ExportName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListStackInstancesInput {
@@ -1297,6 +3310,23 @@ export namespace MyNS {
 		StackInstanceAccount?: string | null;
 		StackInstanceRegion?: string | null;
 	}
+	export interface ListStackInstancesInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		StackInstanceAccount: FormControl<string | null | undefined>,
+		StackInstanceRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackInstancesInputFormGroup() {
+		return new FormGroup<ListStackInstancesInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StackInstanceAccount: new FormControl<string | null | undefined>(undefined),
+			StackInstanceRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input for the <a>ListStackResource</a> action. */
@@ -1305,11 +3335,39 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The input for the <a>ListStackResource</a> action. */
+	export interface ListStackResourcesInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackResourcesInputFormGroup() {
+		return new FormGroup<ListStackResourcesInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStackSetOperationResultsInput {
 		StackSetName: string;
 		OperationId: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListStackSetOperationResultsInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListStackSetOperationResultsInputFormGroup() {
+		return new FormGroup<ListStackSetOperationResultsInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListStackSetOperationsInput {
@@ -1317,18 +3375,55 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListStackSetOperationsInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListStackSetOperationsInputFormGroup() {
+		return new FormGroup<ListStackSetOperationsInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListStackSetsInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 		Status?: StackSetStatus | null;
 	}
+	export interface ListStackSetsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		Status: FormControl<StackSetStatus | null | undefined>,
+	}
+	export function CreateListStackSetsInputFormGroup() {
+		return new FormGroup<ListStackSetsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<StackSetStatus | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input for <a>ListStacks</a> action. */
 	export interface ListStacksInput {
 		NextToken?: string | null;
-		StackStatusFilter?: Array<StackStatus> | null;
+		StackStatusFilter?: Array<StackStatus>;
+	}
+
+	/** The input for <a>ListStacks</a> action. */
+	export interface ListStacksInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStacksInputFormGroup() {
+		return new FormGroup<ListStacksInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTypeRegistrationsInput {
@@ -1339,6 +3434,25 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListTypeRegistrationsInputFormProperties {
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		TypeArn: FormControl<string | null | undefined>,
+		RegistrationStatusFilter: FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTypeRegistrationsInputFormGroup() {
+		return new FormGroup<ListTypeRegistrationsInputFormProperties>({
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			TypeArn: new FormControl<string | null | undefined>(undefined),
+			RegistrationStatusFilter: new FormControl<DescribeTypeRegistrationOutputProgressStatus | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTypeVersionsInput {
 		Type?: DescribeTypeOutputType | null;
@@ -1348,6 +3462,25 @@ export namespace MyNS {
 		NextToken?: string | null;
 		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 	}
+	export interface ListTypeVersionsInputFormProperties {
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		DeprecatedStatus: FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>,
+	}
+	export function CreateListTypeVersionsInputFormGroup() {
+		return new FormGroup<ListTypeVersionsInputFormProperties>({
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			DeprecatedStatus: new FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTypesInput {
 		Visibility?: DescribeTypeOutputVisibility | null;
@@ -1355,6 +3488,23 @@ export namespace MyNS {
 		DeprecatedStatus?: DescribeTypeOutputDeprecatedStatus | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface ListTypesInputFormProperties {
+		Visibility: FormControl<DescribeTypeOutputVisibility | null | undefined>,
+		ProvisioningType: FormControl<DescribeTypeOutputProvisioningType | null | undefined>,
+		DeprecatedStatus: FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTypesInputFormGroup() {
+		return new FormGroup<ListTypesInputFormProperties>({
+			Visibility: new FormControl<DescribeTypeOutputVisibility | null | undefined>(undefined),
+			ProvisioningType: new FormControl<DescribeTypeOutputProvisioningType | null | undefined>(undefined),
+			DeprecatedStatus: new FormControl<DescribeTypeOutputDeprecatedStatus | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OperationStatus { PENDING = 0, IN_PROGRESS = 1, SUCCESS = 2, FAILED = 3 }
@@ -1368,6 +3518,27 @@ export namespace MyNS {
 		ResourceModel?: string | null;
 		ClientRequestToken?: string | null;
 	}
+	export interface RecordHandlerProgressInputFormProperties {
+		BearerToken: FormControl<string | null | undefined>,
+		OperationStatus: FormControl<OperationStatus | null | undefined>,
+		CurrentOperationStatus: FormControl<OperationStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<HandlerErrorCode | null | undefined>,
+		ResourceModel: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordHandlerProgressInputFormGroup() {
+		return new FormGroup<RecordHandlerProgressInputFormProperties>({
+			BearerToken: new FormControl<string | null | undefined>(undefined),
+			OperationStatus: new FormControl<OperationStatus | null | undefined>(undefined),
+			CurrentOperationStatus: new FormControl<OperationStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<HandlerErrorCode | null | undefined>(undefined),
+			ResourceModel: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterTypeInput {
 		Type?: DescribeTypeOutputType | null;
@@ -1375,9 +3546,26 @@ export namespace MyNS {
 		SchemaHandlerPackage: string;
 
 		/** Contains logging configuration information for a type. */
-		LoggingConfig?: LoggingConfig | null;
+		LoggingConfig?: LoggingConfig;
 		ExecutionRoleArn?: string | null;
 		ClientRequestToken?: string | null;
+	}
+	export interface RegisterTypeInputFormProperties {
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		SchemaHandlerPackage: FormControl<string | null | undefined>,
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterTypeInputFormGroup() {
+		return new FormGroup<RegisterTypeInputFormProperties>({
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			SchemaHandlerPackage: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Replacement { True = 0, False = 1, Conditional = 2 }
@@ -1396,11 +3584,41 @@ export namespace MyNS {
 		StackPolicyURL?: string | null;
 	}
 
+	/** The input for the <a>SetStackPolicy</a> action. */
+	export interface SetStackPolicyInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		StackPolicyBody: FormControl<string | null | undefined>,
+		StackPolicyURL: FormControl<string | null | undefined>,
+	}
+	export function CreateSetStackPolicyInputFormGroup() {
+		return new FormGroup<SetStackPolicyInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
+			StackPolicyURL: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SetTypeDefaultVersionInput {
 		Arn?: string | null;
 		Type?: DescribeTypeOutputType | null;
 		TypeName?: string | null;
 		VersionId?: string | null;
+	}
+	export interface SetTypeDefaultVersionInputFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<DescribeTypeOutputType | null | undefined>,
+		TypeName: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetTypeDefaultVersionInputFormGroup() {
+		return new FormGroup<SetTypeDefaultVersionInputFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DescribeTypeOutputType | null | undefined>(undefined),
+			TypeName: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1410,6 +3628,23 @@ export namespace MyNS {
 		LogicalResourceId: string;
 		UniqueId: string;
 		Status: ResourceSignalStatus;
+	}
+
+	/** The input for the <a>SignalResource</a> action. */
+	export interface SignalResourceInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		UniqueId: FormControl<string | null | undefined>,
+		Status: FormControl<ResourceSignalStatus | null | undefined>,
+	}
+	export function CreateSignalResourceInputFormGroup() {
+		return new FormGroup<SignalResourceInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			UniqueId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ResourceSignalStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StackSetDriftStatus { DRIFTED = 0, IN_SYNC = 1, NOT_CHECKED = 2 }
@@ -1422,6 +3657,17 @@ export namespace MyNS {
 		StackSetName: string;
 		OperationId: string;
 	}
+	export interface StopStackSetOperationInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopStackSetOperationInputFormGroup() {
+		return new FormGroup<StopStackSetOperationInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input for an <a>UpdateStack</a> action. */
@@ -1432,32 +3678,72 @@ export namespace MyNS {
 		UsePreviousTemplate?: boolean | null;
 		StackPolicyDuringUpdateBody?: string | null;
 		StackPolicyDuringUpdateURL?: string | null;
-		Parameters?: Array<Parameter> | null;
-		Capabilities?: Array<Capability> | null;
-		ResourceTypes?: Array<string> | null;
+		Parameters?: Array<Parameter>;
+		Capabilities?: Array<Capability>;
+		ResourceTypes?: Array<string>;
 		RoleARN?: string | null;
 
 		/** <p>Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> <p>Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p> */
-		RollbackConfiguration?: RollbackConfiguration | null;
+		RollbackConfiguration?: RollbackConfiguration;
 		StackPolicyBody?: string | null;
 		StackPolicyURL?: string | null;
-		NotificationARNs?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		NotificationARNs?: Array<string>;
+		Tags?: Array<Tag>;
 		ClientRequestToken?: string | null;
+	}
+
+	/** The input for an <a>UpdateStack</a> action. */
+	export interface UpdateStackInputFormProperties {
+		StackName: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+		UsePreviousTemplate: FormControl<boolean | null | undefined>,
+		StackPolicyDuringUpdateBody: FormControl<string | null | undefined>,
+		StackPolicyDuringUpdateURL: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+		StackPolicyBody: FormControl<string | null | undefined>,
+		StackPolicyURL: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackInputFormGroup() {
+		return new FormGroup<UpdateStackInputFormProperties>({
+			StackName: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			UsePreviousTemplate: new FormControl<boolean | null | undefined>(undefined),
+			StackPolicyDuringUpdateBody: new FormControl<string | null | undefined>(undefined),
+			StackPolicyDuringUpdateURL: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			StackPolicyBody: new FormControl<string | null | undefined>(undefined),
+			StackPolicyURL: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStackInstancesInput {
 		StackSetName: string;
-		Accounts?: Array<string> | null;
+		Accounts?: Array<string>;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets | null;
+		DeploymentTargets?: DeploymentTargets;
 		Regions: Array<string>;
-		ParameterOverrides?: Array<Parameter> | null;
+		ParameterOverrides?: Array<Parameter>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationPreferences?: StackSetOperationPreferences;
 		OperationId?: string | null;
+	}
+	export interface UpdateStackInstancesInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackInstancesInputFormGroup() {
+		return new FormGroup<UpdateStackInstancesInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStackSetInput {
@@ -1466,29 +3752,65 @@ export namespace MyNS {
 		TemplateBody?: string | null;
 		TemplateURL?: string | null;
 		UsePreviousTemplate?: boolean | null;
-		Parameters?: Array<Parameter> | null;
-		Capabilities?: Array<Capability> | null;
-		Tags?: Array<Tag> | null;
+		Parameters?: Array<Parameter>;
+		Capabilities?: Array<Capability>;
+		Tags?: Array<Tag>;
 
 		/** <p>The user-specified preferences for how AWS CloudFormation performs a stack set operation. </p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p> */
-		OperationPreferences?: StackSetOperationPreferences | null;
+		OperationPreferences?: StackSetOperationPreferences;
 		AdministrationRoleARN?: string | null;
 		ExecutionRoleName?: string | null;
 
 		/** <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.</p> <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p> */
-		DeploymentTargets?: DeploymentTargets | null;
+		DeploymentTargets?: DeploymentTargets;
 		PermissionModel?: StackSetPermissionModel | null;
 
 		/** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU). */
-		AutoDeployment?: AutoDeployment | null;
+		AutoDeployment?: AutoDeployment;
 		OperationId?: string | null;
-		Accounts?: Array<string> | null;
-		Regions?: Array<string> | null;
+		Accounts?: Array<string>;
+		Regions?: Array<string>;
+	}
+	export interface UpdateStackSetInputFormProperties {
+		StackSetName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+		UsePreviousTemplate: FormControl<boolean | null | undefined>,
+		AdministrationRoleARN: FormControl<string | null | undefined>,
+		ExecutionRoleName: FormControl<string | null | undefined>,
+		PermissionModel: FormControl<StackSetPermissionModel | null | undefined>,
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStackSetInputFormGroup() {
+		return new FormGroup<UpdateStackSetInputFormProperties>({
+			StackSetName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+			UsePreviousTemplate: new FormControl<boolean | null | undefined>(undefined),
+			AdministrationRoleARN: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleName: new FormControl<string | null | undefined>(undefined),
+			PermissionModel: new FormControl<StackSetPermissionModel | null | undefined>(undefined),
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTerminationProtectionInput {
 		EnableTerminationProtection: boolean;
 		StackName: string;
+	}
+	export interface UpdateTerminationProtectionInputFormProperties {
+		EnableTerminationProtection: FormControl<boolean | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTerminationProtectionInputFormGroup() {
+		return new FormGroup<UpdateTerminationProtectionInputFormProperties>({
+			EnableTerminationProtection: new FormControl<boolean | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1496,6 +3818,19 @@ export namespace MyNS {
 	export interface ValidateTemplateInput {
 		TemplateBody?: string | null;
 		TemplateURL?: string | null;
+	}
+
+	/** The input for <a>ValidateTemplate</a> action. */
+	export interface ValidateTemplateInputFormProperties {
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateURL: FormControl<string | null | undefined>,
+	}
+	export function CreateValidateTemplateInputFormGroup() {
+		return new FormGroup<ValidateTemplateInputFormProperties>({
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1524,7 +3859,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ContinueUpdateRollback(StackName: string, RoleARN: string | null | undefined, ResourcesToSkip: Array<string> | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_ContinueUpdateRollbackAction, Version: GET_ContinueUpdateRollbackVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ContinueUpdateRollback?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&' + ResourcesToSkip.map(z => `ResourcesToSkip=${encodeURIComponent(z)}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ContinueUpdateRollback?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&' + ResourcesToSkip?.map(z => `ResourcesToSkip=${encodeURIComponent(z)}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1549,7 +3884,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateChangeSet(StackName: string, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, UsePreviousTemplate: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, ResourceTypes: Array<string> | null | undefined, RoleARN: string | null | undefined, RollbackConfiguration: GET_CreateChangeSetRollbackConfiguration | null | undefined, NotificationARNs: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, ChangeSetName: string, ClientToken: string | null | undefined, Description: string | null | undefined, ChangeSetType: ChangeSetType | null | undefined, ResourcesToImport: Array<ResourceToImport> | null | undefined, Action: GET_CreateChangeSetAction, Version: GET_CreateChangeSetVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateChangeSet?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&RollbackConfiguration=' + RollbackConfiguration + '&' + NotificationARNs.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&ClientToken=' + (ClientToken == null ? '' : encodeURIComponent(ClientToken)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&ChangeSetType=' + ChangeSetType + '&' + ResourcesToImport.map(z => `ResourcesToImport=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateChangeSet?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities?.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes?.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&RollbackConfiguration=' + RollbackConfiguration + '&' + NotificationARNs?.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&ChangeSetName=' + (ChangeSetName == null ? '' : encodeURIComponent(ChangeSetName)) + '&ClientToken=' + (ClientToken == null ? '' : encodeURIComponent(ClientToken)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&ChangeSetType=' + ChangeSetType + '&' + ResourcesToImport?.map(z => `ResourcesToImport=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1575,7 +3910,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateStack(StackName: string, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, DisableRollback: boolean | null | undefined, RollbackConfiguration: GET_CreateStackRollbackConfiguration | null | undefined, TimeoutInMinutes: number | null | undefined, NotificationARNs: Array<string> | null | undefined, Capabilities: Array<Capability> | null | undefined, ResourceTypes: Array<string> | null | undefined, RoleARN: string | null | undefined, OnFailure: OnFailure | null | undefined, StackPolicyBody: string | null | undefined, StackPolicyURL: string | null | undefined, Tags: Array<Tag> | null | undefined, ClientRequestToken: string | null | undefined, EnableTerminationProtection: boolean | null | undefined, Action: GET_CreateStackAction, Version: GET_CreateStackVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&DisableRollback=' + DisableRollback + '&RollbackConfiguration=' + RollbackConfiguration + '&TimeoutInMinutes=' + TimeoutInMinutes + '&' + NotificationARNs.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&OnFailure=' + OnFailure + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&EnableTerminationProtection=' + EnableTerminationProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&DisableRollback=' + DisableRollback + '&RollbackConfiguration=' + RollbackConfiguration + '&TimeoutInMinutes=' + TimeoutInMinutes + '&' + NotificationARNs?.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Capabilities?.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes?.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&OnFailure=' + OnFailure + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&EnableTerminationProtection=' + EnableTerminationProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1591,7 +3926,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateStackInstances(StackSetName: string, Accounts: Array<string> | null | undefined, DeploymentTargets: GET_CreateStackInstancesDeploymentTargets | null | undefined, Regions: Array<string>, ParameterOverrides: Array<Parameter> | null | undefined, OperationPreferences: GET_CreateStackInstancesOperationPreferences | null | undefined, OperationId: string | null | undefined, Action: GET_CreateStackInstancesAction, Version: GET_CreateStackInstancesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&' + ParameterOverrides.map(z => `ParameterOverrides=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts?.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&' + ParameterOverrides?.map(z => `ParameterOverrides=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1612,7 +3947,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateStackSet(StackSetName: string, Description: string | null | undefined, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, Tags: Array<Tag> | null | undefined, AdministrationRoleARN: string | null | undefined, ExecutionRoleName: string | null | undefined, PermissionModel: StackSetPermissionModel | null | undefined, AutoDeployment: GET_CreateStackSetAutoDeployment | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_CreateStackSetAction, Version: GET_CreateStackSetVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateStackSet?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&AdministrationRoleARN=' + (AdministrationRoleARN == null ? '' : encodeURIComponent(AdministrationRoleARN)) + '&ExecutionRoleName=' + (ExecutionRoleName == null ? '' : encodeURIComponent(ExecutionRoleName)) + '&PermissionModel=' + PermissionModel + '&AutoDeployment=' + AutoDeployment + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateStackSet?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities?.map(z => `Capabilities=${z}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&AdministrationRoleARN=' + (AdministrationRoleARN == null ? '' : encodeURIComponent(AdministrationRoleARN)) + '&ExecutionRoleName=' + (ExecutionRoleName == null ? '' : encodeURIComponent(ExecutionRoleName)) + '&PermissionModel=' + PermissionModel + '&AutoDeployment=' + AutoDeployment + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1636,7 +3971,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DeleteStack(StackName: string, RetainResources: Array<string> | null | undefined, RoleARN: string | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_DeleteStackAction, Version: GET_DeleteStackVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DeleteStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + RetainResources.map(z => `RetainResources=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DeleteStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + RetainResources?.map(z => `RetainResources=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1652,7 +3987,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DeleteStackInstances(StackSetName: string, Accounts: Array<string> | null | undefined, DeploymentTargets: GET_DeleteStackInstancesDeploymentTargets | null | undefined, Regions: Array<string>, OperationPreferences: GET_DeleteStackInstancesOperationPreferences | null | undefined, RetainStacks: boolean, OperationId: string | null | undefined, Action: GET_DeleteStackInstancesAction, Version: GET_DeleteStackInstancesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DeleteStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&RetainStacks=' + RetainStacks + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DeleteStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts?.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&RetainStacks=' + RetainStacks + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1754,7 +4089,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeStackResourceDrifts(StackName: string, StackResourceDriftStatusFilters: Array<StackResourceDriftStatus> | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_DescribeStackResourceDriftsAction, Version: GET_DescribeStackResourceDriftsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeStackResourceDrifts?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + StackResourceDriftStatusFilters.map(z => `StackResourceDriftStatusFilters=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeStackResourceDrifts?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + StackResourceDriftStatusFilters?.map(z => `StackResourceDriftStatusFilters=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1832,7 +4167,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DetectStackDrift(StackName: string, LogicalResourceIds: Array<string> | null | undefined, Action: GET_DetectStackDriftAction, Version: GET_DetectStackDriftVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DetectStackDrift?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + LogicalResourceIds.map(z => `LogicalResourceIds=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DetectStackDrift?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&' + LogicalResourceIds?.map(z => `LogicalResourceIds=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1866,7 +4201,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_EstimateTemplateCost(TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_EstimateTemplateCostAction, Version: GET_EstimateTemplateCostVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=EstimateTemplateCost?TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=EstimateTemplateCost?TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2018,7 +4353,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ListStacks(NextToken: string | null | undefined, StackStatusFilter: Array<StackStatus> | null | undefined, Action: GET_ListStacksAction, Version: GET_ListStacksVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ListStacks?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&' + StackStatusFilter.map(z => `StackStatusFilter=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ListStacks?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&' + StackStatusFilter?.map(z => `StackStatusFilter=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2167,7 +4502,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_UpdateStack(StackName: string, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, UsePreviousTemplate: boolean | null | undefined, StackPolicyDuringUpdateBody: string | null | undefined, StackPolicyDuringUpdateURL: string | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, ResourceTypes: Array<string> | null | undefined, RoleARN: string | null | undefined, RollbackConfiguration: GET_UpdateStackRollbackConfiguration | null | undefined, StackPolicyBody: string | null | undefined, StackPolicyURL: string | null | undefined, NotificationARNs: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, ClientRequestToken: string | null | undefined, Action: GET_UpdateStackAction, Version: GET_UpdateStackVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=UpdateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&StackPolicyDuringUpdateBody=' + (StackPolicyDuringUpdateBody == null ? '' : encodeURIComponent(StackPolicyDuringUpdateBody)) + '&StackPolicyDuringUpdateURL=' + (StackPolicyDuringUpdateURL == null ? '' : encodeURIComponent(StackPolicyDuringUpdateURL)) + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&RollbackConfiguration=' + RollbackConfiguration + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&' + NotificationARNs.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=UpdateStack?StackName=' + (StackName == null ? '' : encodeURIComponent(StackName)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&StackPolicyDuringUpdateBody=' + (StackPolicyDuringUpdateBody == null ? '' : encodeURIComponent(StackPolicyDuringUpdateBody)) + '&StackPolicyDuringUpdateURL=' + (StackPolicyDuringUpdateURL == null ? '' : encodeURIComponent(StackPolicyDuringUpdateURL)) + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities?.map(z => `Capabilities=${z}`).join('&') + '&' + ResourceTypes?.map(z => `ResourceTypes=${encodeURIComponent(z)}`).join('&') + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&RollbackConfiguration=' + RollbackConfiguration + '&StackPolicyBody=' + (StackPolicyBody == null ? '' : encodeURIComponent(StackPolicyBody)) + '&StackPolicyURL=' + (StackPolicyURL == null ? '' : encodeURIComponent(StackPolicyURL)) + '&' + NotificationARNs?.map(z => `NotificationARNs=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&ClientRequestToken=' + (ClientRequestToken == null ? '' : encodeURIComponent(ClientRequestToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2183,7 +4518,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_UpdateStackInstances(StackSetName: string, Accounts: Array<string> | null | undefined, DeploymentTargets: GET_UpdateStackInstancesDeploymentTargets | null | undefined, Regions: Array<string>, ParameterOverrides: Array<Parameter> | null | undefined, OperationPreferences: GET_UpdateStackInstancesOperationPreferences | null | undefined, OperationId: string | null | undefined, Action: GET_UpdateStackInstancesAction, Version: GET_UpdateStackInstancesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=UpdateStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&' + ParameterOverrides.map(z => `ParameterOverrides=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=UpdateStackInstances?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&' + Accounts?.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&DeploymentTargets=' + DeploymentTargets + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&' + ParameterOverrides?.map(z => `ParameterOverrides=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2209,7 +4544,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_UpdateStackSet(StackSetName: string, Description: string | null | undefined, TemplateBody: string | null | undefined, TemplateURL: string | null | undefined, UsePreviousTemplate: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Capabilities: Array<Capability> | null | undefined, Tags: Array<Tag> | null | undefined, OperationPreferences: GET_UpdateStackSetOperationPreferences | null | undefined, AdministrationRoleARN: string | null | undefined, ExecutionRoleName: string | null | undefined, DeploymentTargets: GET_UpdateStackSetDeploymentTargets | null | undefined, PermissionModel: StackSetPermissionModel | null | undefined, AutoDeployment: GET_UpdateStackSetAutoDeployment | null | undefined, OperationId: string | null | undefined, Accounts: Array<string> | null | undefined, Regions: Array<string> | null | undefined, Action: GET_UpdateStackSetAction, Version: GET_UpdateStackSetVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=UpdateStackSet?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities.map(z => `Capabilities=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&AdministrationRoleARN=' + (AdministrationRoleARN == null ? '' : encodeURIComponent(AdministrationRoleARN)) + '&ExecutionRoleName=' + (ExecutionRoleName == null ? '' : encodeURIComponent(ExecutionRoleName)) + '&DeploymentTargets=' + DeploymentTargets + '&PermissionModel=' + PermissionModel + '&AutoDeployment=' + AutoDeployment + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&' + Accounts.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&' + Regions.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=UpdateStackSet?StackSetName=' + (StackSetName == null ? '' : encodeURIComponent(StackSetName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&TemplateBody=' + (TemplateBody == null ? '' : encodeURIComponent(TemplateBody)) + '&TemplateURL=' + (TemplateURL == null ? '' : encodeURIComponent(TemplateURL)) + '&UsePreviousTemplate=' + UsePreviousTemplate + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&' + Capabilities?.map(z => `Capabilities=${z}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&OperationPreferences=' + OperationPreferences + '&AdministrationRoleARN=' + (AdministrationRoleARN == null ? '' : encodeURIComponent(AdministrationRoleARN)) + '&ExecutionRoleName=' + (ExecutionRoleName == null ? '' : encodeURIComponent(ExecutionRoleName)) + '&DeploymentTargets=' + DeploymentTargets + '&PermissionModel=' + PermissionModel + '&AutoDeployment=' + AutoDeployment + '&OperationId=' + (OperationId == null ? '' : encodeURIComponent(OperationId)) + '&' + Accounts?.map(z => `Accounts=${encodeURIComponent(z)}`).join('&') + '&' + Regions?.map(z => `Regions=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2248,8 +4583,17 @@ export namespace MyNS {
 	export enum POST_ContinueUpdateRollbackVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateChangeSetRollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger> | null;
+		RollbackTriggers?: Array<RollbackTrigger>;
 		MonitoringTimeInMinutes?: number | null;
+	}
+	export interface GET_CreateChangeSetRollbackConfigurationFormProperties {
+		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_CreateChangeSetRollbackConfigurationFormGroup() {
+		return new FormGroup<GET_CreateChangeSetRollbackConfigurationFormProperties>({
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateChangeSetAction { CreateChangeSet = 0 }
@@ -2259,8 +4603,17 @@ export namespace MyNS {
 	export enum POST_CreateChangeSetVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateStackRollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger> | null;
+		RollbackTriggers?: Array<RollbackTrigger>;
 		MonitoringTimeInMinutes?: number | null;
+	}
+	export interface GET_CreateStackRollbackConfigurationFormProperties {
+		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_CreateStackRollbackConfigurationFormGroup() {
+		return new FormGroup<GET_CreateStackRollbackConfigurationFormProperties>({
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateStackAction { CreateStack = 0 }
@@ -2270,16 +4623,38 @@ export namespace MyNS {
 	export enum POST_CreateStackVersion { _2010_05_15 = 0 }
 
 	export interface GET_CreateStackInstancesDeploymentTargets {
-		Accounts?: Array<string> | null;
-		OrganizationalUnitIds?: Array<string> | null;
+		Accounts?: Array<string>;
+		OrganizationalUnitIds?: Array<string>;
+	}
+	export interface GET_CreateStackInstancesDeploymentTargetsFormProperties {
+	}
+	export function CreateGET_CreateStackInstancesDeploymentTargetsFormGroup() {
+		return new FormGroup<GET_CreateStackInstancesDeploymentTargetsFormProperties>({
+		});
+
 	}
 
 	export interface GET_CreateStackInstancesOperationPreferences {
-		RegionOrder?: Array<string> | null;
+		RegionOrder?: Array<string>;
 		FailureToleranceCount?: number | null;
 		FailureTolerancePercentage?: number | null;
 		MaxConcurrentCount?: number | null;
 		MaxConcurrentPercentage?: number | null;
+	}
+	export interface GET_CreateStackInstancesOperationPreferencesFormProperties {
+		FailureToleranceCount: FormControl<number | null | undefined>,
+		FailureTolerancePercentage: FormControl<number | null | undefined>,
+		MaxConcurrentCount: FormControl<number | null | undefined>,
+		MaxConcurrentPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_CreateStackInstancesOperationPreferencesFormGroup() {
+		return new FormGroup<GET_CreateStackInstancesOperationPreferencesFormProperties>({
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateStackInstancesAction { CreateStackInstances = 0 }
@@ -2291,6 +4666,17 @@ export namespace MyNS {
 	export interface GET_CreateStackSetAutoDeployment {
 		Enabled?: boolean | null;
 		RetainStacksOnAccountRemoval?: boolean | null;
+	}
+	export interface GET_CreateStackSetAutoDeploymentFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		RetainStacksOnAccountRemoval: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGET_CreateStackSetAutoDeploymentFormGroup() {
+		return new FormGroup<GET_CreateStackSetAutoDeploymentFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			RetainStacksOnAccountRemoval: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_CreateStackSetAction { CreateStackSet = 0 }
@@ -2312,16 +4698,38 @@ export namespace MyNS {
 	export enum POST_DeleteStackVersion { _2010_05_15 = 0 }
 
 	export interface GET_DeleteStackInstancesDeploymentTargets {
-		Accounts?: Array<string> | null;
-		OrganizationalUnitIds?: Array<string> | null;
+		Accounts?: Array<string>;
+		OrganizationalUnitIds?: Array<string>;
+	}
+	export interface GET_DeleteStackInstancesDeploymentTargetsFormProperties {
+	}
+	export function CreateGET_DeleteStackInstancesDeploymentTargetsFormGroup() {
+		return new FormGroup<GET_DeleteStackInstancesDeploymentTargetsFormProperties>({
+		});
+
 	}
 
 	export interface GET_DeleteStackInstancesOperationPreferences {
-		RegionOrder?: Array<string> | null;
+		RegionOrder?: Array<string>;
 		FailureToleranceCount?: number | null;
 		FailureTolerancePercentage?: number | null;
 		MaxConcurrentCount?: number | null;
 		MaxConcurrentPercentage?: number | null;
+	}
+	export interface GET_DeleteStackInstancesOperationPreferencesFormProperties {
+		FailureToleranceCount: FormControl<number | null | undefined>,
+		FailureTolerancePercentage: FormControl<number | null | undefined>,
+		MaxConcurrentCount: FormControl<number | null | undefined>,
+		MaxConcurrentPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_DeleteStackInstancesOperationPreferencesFormGroup() {
+		return new FormGroup<GET_DeleteStackInstancesOperationPreferencesFormProperties>({
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_DeleteStackInstancesAction { DeleteStackInstances = 0 }
@@ -2433,11 +4841,26 @@ export namespace MyNS {
 	export enum POST_DetectStackResourceDriftVersion { _2010_05_15 = 0 }
 
 	export interface GET_DetectStackSetDriftOperationPreferences {
-		RegionOrder?: Array<string> | null;
+		RegionOrder?: Array<string>;
 		FailureToleranceCount?: number | null;
 		FailureTolerancePercentage?: number | null;
 		MaxConcurrentCount?: number | null;
 		MaxConcurrentPercentage?: number | null;
+	}
+	export interface GET_DetectStackSetDriftOperationPreferencesFormProperties {
+		FailureToleranceCount: FormControl<number | null | undefined>,
+		FailureTolerancePercentage: FormControl<number | null | undefined>,
+		MaxConcurrentCount: FormControl<number | null | undefined>,
+		MaxConcurrentPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_DetectStackSetDriftOperationPreferencesFormGroup() {
+		return new FormGroup<GET_DetectStackSetDriftOperationPreferencesFormProperties>({
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_DetectStackSetDriftAction { DetectStackSetDrift = 0 }
@@ -2558,6 +4981,17 @@ export namespace MyNS {
 		LogRoleArn: string;
 		LogGroupName: string;
 	}
+	export interface GET_RegisterTypeLoggingConfigFormProperties {
+		LogRoleArn: FormControl<string | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_RegisterTypeLoggingConfigFormGroup() {
+		return new FormGroup<GET_RegisterTypeLoggingConfigFormProperties>({
+			LogRoleArn: new FormControl<string | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GET_RegisterTypeAction { RegisterType = 0 }
 
@@ -2590,8 +5024,17 @@ export namespace MyNS {
 	export enum POST_StopStackSetOperationVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackRollbackConfiguration {
-		RollbackTriggers?: Array<RollbackTrigger> | null;
+		RollbackTriggers?: Array<RollbackTrigger>;
 		MonitoringTimeInMinutes?: number | null;
+	}
+	export interface GET_UpdateStackRollbackConfigurationFormProperties {
+		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_UpdateStackRollbackConfigurationFormGroup() {
+		return new FormGroup<GET_UpdateStackRollbackConfigurationFormProperties>({
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_UpdateStackAction { UpdateStack = 0 }
@@ -2601,16 +5044,38 @@ export namespace MyNS {
 	export enum POST_UpdateStackVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackInstancesDeploymentTargets {
-		Accounts?: Array<string> | null;
-		OrganizationalUnitIds?: Array<string> | null;
+		Accounts?: Array<string>;
+		OrganizationalUnitIds?: Array<string>;
+	}
+	export interface GET_UpdateStackInstancesDeploymentTargetsFormProperties {
+	}
+	export function CreateGET_UpdateStackInstancesDeploymentTargetsFormGroup() {
+		return new FormGroup<GET_UpdateStackInstancesDeploymentTargetsFormProperties>({
+		});
+
 	}
 
 	export interface GET_UpdateStackInstancesOperationPreferences {
-		RegionOrder?: Array<string> | null;
+		RegionOrder?: Array<string>;
 		FailureToleranceCount?: number | null;
 		FailureTolerancePercentage?: number | null;
 		MaxConcurrentCount?: number | null;
 		MaxConcurrentPercentage?: number | null;
+	}
+	export interface GET_UpdateStackInstancesOperationPreferencesFormProperties {
+		FailureToleranceCount: FormControl<number | null | undefined>,
+		FailureTolerancePercentage: FormControl<number | null | undefined>,
+		MaxConcurrentCount: FormControl<number | null | undefined>,
+		MaxConcurrentPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_UpdateStackInstancesOperationPreferencesFormGroup() {
+		return new FormGroup<GET_UpdateStackInstancesOperationPreferencesFormProperties>({
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_UpdateStackInstancesAction { UpdateStackInstances = 0 }
@@ -2620,21 +5085,54 @@ export namespace MyNS {
 	export enum POST_UpdateStackInstancesVersion { _2010_05_15 = 0 }
 
 	export interface GET_UpdateStackSetOperationPreferences {
-		RegionOrder?: Array<string> | null;
+		RegionOrder?: Array<string>;
 		FailureToleranceCount?: number | null;
 		FailureTolerancePercentage?: number | null;
 		MaxConcurrentCount?: number | null;
 		MaxConcurrentPercentage?: number | null;
 	}
+	export interface GET_UpdateStackSetOperationPreferencesFormProperties {
+		FailureToleranceCount: FormControl<number | null | undefined>,
+		FailureTolerancePercentage: FormControl<number | null | undefined>,
+		MaxConcurrentCount: FormControl<number | null | undefined>,
+		MaxConcurrentPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_UpdateStackSetOperationPreferencesFormGroup() {
+		return new FormGroup<GET_UpdateStackSetOperationPreferencesFormProperties>({
+			FailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			FailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentCount: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GET_UpdateStackSetDeploymentTargets {
-		Accounts?: Array<string> | null;
-		OrganizationalUnitIds?: Array<string> | null;
+		Accounts?: Array<string>;
+		OrganizationalUnitIds?: Array<string>;
+	}
+	export interface GET_UpdateStackSetDeploymentTargetsFormProperties {
+	}
+	export function CreateGET_UpdateStackSetDeploymentTargetsFormGroup() {
+		return new FormGroup<GET_UpdateStackSetDeploymentTargetsFormProperties>({
+		});
+
 	}
 
 	export interface GET_UpdateStackSetAutoDeployment {
 		Enabled?: boolean | null;
 		RetainStacksOnAccountRemoval?: boolean | null;
+	}
+	export interface GET_UpdateStackSetAutoDeploymentFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		RetainStacksOnAccountRemoval: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGET_UpdateStackSetAutoDeploymentFormGroup() {
+		return new FormGroup<GET_UpdateStackSetAutoDeploymentFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			RetainStacksOnAccountRemoval: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_UpdateStackSetAction { UpdateStackSet = 0 }

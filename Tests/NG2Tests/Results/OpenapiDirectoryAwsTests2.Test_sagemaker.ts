@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AddTagsOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface AddTagsOutputFormProperties {
+	}
+	export function CreateAddTagsOutputFormGroup() {
+		return new FormGroup<AddTagsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -13,29 +21,96 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Describes a tag.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AddTagsInput {
 		ResourceArn: string;
 		Tags: Array<Tag>;
+	}
+	export interface AddTagsInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsInputFormGroup() {
+		return new FormGroup<AddTagsInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateTrialComponentResponse {
 		TrialComponentArn?: string | null;
 		TrialArn?: string | null;
 	}
+	export interface AssociateTrialComponentResponseFormProperties {
+		TrialComponentArn: FormControl<string | null | undefined>,
+		TrialArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTrialComponentResponseFormGroup() {
+		return new FormGroup<AssociateTrialComponentResponseFormProperties>({
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateTrialComponentRequest {
 		TrialComponentName: string;
 		TrialName: string;
 	}
+	export interface AssociateTrialComponentRequestFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		TrialName: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTrialComponentRequestFormGroup() {
+		return new FormGroup<AssociateTrialComponentRequestFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			TrialName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFound {
+	}
+	export interface ResourceNotFoundFormProperties {
+	}
+	export function CreateResourceNotFoundFormGroup() {
+		return new FormGroup<ResourceNotFoundFormProperties>({
+		});
+
 	}
 
 	export interface ResourceLimitExceeded {
 	}
+	export interface ResourceLimitExceededFormProperties {
+	}
+	export function CreateResourceLimitExceededFormGroup() {
+		return new FormGroup<ResourceLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface CreateAlgorithmOutput {
 		AlgorithmArn: string;
+	}
+	export interface CreateAlgorithmOutputFormProperties {
+		AlgorithmArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAlgorithmOutputFormGroup() {
+		return new FormGroup<CreateAlgorithmOutputFormProperties>({
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAlgorithmInput {
@@ -49,11 +124,24 @@ export namespace MyNS {
 		TrainingSpecification: TrainingSpecification;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification | null;
+		InferenceSpecification?: InferenceSpecification;
 
 		/** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm. */
-		ValidationSpecification?: AlgorithmValidationSpecification | null;
+		ValidationSpecification?: AlgorithmValidationSpecification;
 		CertifyForMarketplace?: boolean | null;
+	}
+	export interface CreateAlgorithmInputFormProperties {
+		AlgorithmName: FormControl<string | null | undefined>,
+		AlgorithmDescription: FormControl<string | null | undefined>,
+		CertifyForMarketplace: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateAlgorithmInputFormGroup() {
+		return new FormGroup<CreateAlgorithmInputFormProperties>({
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+			AlgorithmDescription: new FormControl<string | null | undefined>(undefined),
+			CertifyForMarketplace: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -61,12 +149,27 @@ export namespace MyNS {
 	export interface TrainingSpecification {
 		TrainingImage: string;
 		TrainingImageDigest?: string | null;
-		SupportedHyperParameters?: Array<HyperParameterSpecification> | null;
+		SupportedHyperParameters?: Array<HyperParameterSpecification>;
 		SupportedTrainingInstanceTypes: Array<TrainingInstanceType>;
 		SupportsDistributedTraining?: boolean | null;
-		MetricDefinitions?: Array<MetricDefinition> | null;
+		MetricDefinitions?: Array<MetricDefinition>;
 		TrainingChannels: Array<ChannelSpecification>;
-		SupportedTuningJobObjectiveMetrics?: Array<HyperParameterTuningJobObjective> | null;
+		SupportedTuningJobObjectiveMetrics?: Array<HyperParameterTuningJobObjective>;
+	}
+
+	/** Defines how the algorithm is used for a training job. */
+	export interface TrainingSpecificationFormProperties {
+		TrainingImage: FormControl<string | null | undefined>,
+		TrainingImageDigest: FormControl<string | null | undefined>,
+		SupportsDistributedTraining: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTrainingSpecificationFormGroup() {
+		return new FormGroup<TrainingSpecificationFormProperties>({
+			TrainingImage: new FormControl<string | null | undefined>(undefined),
+			TrainingImageDigest: new FormControl<string | null | undefined>(undefined),
+			SupportsDistributedTraining: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -77,10 +180,31 @@ export namespace MyNS {
 		Type: HyperParameterSpecificationType;
 
 		/** Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm. */
-		Range?: ParameterRange | null;
+		Range?: ParameterRange;
 		IsTunable?: boolean | null;
 		IsRequired?: boolean | null;
 		DefaultValue?: string | null;
+	}
+
+	/** Defines a hyperparameter to be used by an algorithm. */
+	export interface HyperParameterSpecificationFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<HyperParameterSpecificationType | null | undefined>,
+		IsTunable: FormControl<boolean | null | undefined>,
+		IsRequired: FormControl<boolean | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+	}
+	export function CreateHyperParameterSpecificationFormGroup() {
+		return new FormGroup<HyperParameterSpecificationFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<HyperParameterSpecificationType | null | undefined>(undefined),
+			IsTunable: new FormControl<boolean | null | undefined>(undefined),
+			IsRequired: new FormControl<boolean | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HyperParameterSpecificationType { Integer = 0, Continuous = 1, Categorical = 2, FreeText = 3 }
@@ -90,13 +214,22 @@ export namespace MyNS {
 	export interface ParameterRange {
 
 		/** Defines the possible values for an integer hyperparameter. */
-		IntegerParameterRangeSpecification?: IntegerParameterRangeSpecification | null;
+		IntegerParameterRangeSpecification?: IntegerParameterRangeSpecification;
 
 		/** Defines the possible values for a continuous hyperparameter. */
-		ContinuousParameterRangeSpecification?: ContinuousParameterRangeSpecification | null;
+		ContinuousParameterRangeSpecification?: ContinuousParameterRangeSpecification;
 
 		/** Defines the possible values for a categorical hyperparameter. */
-		CategoricalParameterRangeSpecification?: CategoricalParameterRangeSpecification | null;
+		CategoricalParameterRangeSpecification?: CategoricalParameterRangeSpecification;
+	}
+
+	/** Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm. */
+	export interface ParameterRangeFormProperties {
+	}
+	export function CreateParameterRangeFormGroup() {
+		return new FormGroup<ParameterRangeFormProperties>({
+		});
+
 	}
 
 
@@ -106,6 +239,19 @@ export namespace MyNS {
 		MaxValue: string;
 	}
 
+	/** Defines the possible values for an integer hyperparameter. */
+	export interface IntegerParameterRangeSpecificationFormProperties {
+		MinValue: FormControl<string | null | undefined>,
+		MaxValue: FormControl<string | null | undefined>,
+	}
+	export function CreateIntegerParameterRangeSpecificationFormGroup() {
+		return new FormGroup<IntegerParameterRangeSpecificationFormProperties>({
+			MinValue: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Defines the possible values for a continuous hyperparameter. */
 	export interface ContinuousParameterRangeSpecification {
@@ -113,10 +259,32 @@ export namespace MyNS {
 		MaxValue: string;
 	}
 
+	/** Defines the possible values for a continuous hyperparameter. */
+	export interface ContinuousParameterRangeSpecificationFormProperties {
+		MinValue: FormControl<string | null | undefined>,
+		MaxValue: FormControl<string | null | undefined>,
+	}
+	export function CreateContinuousParameterRangeSpecificationFormGroup() {
+		return new FormGroup<ContinuousParameterRangeSpecificationFormProperties>({
+			MinValue: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Defines the possible values for a categorical hyperparameter. */
 	export interface CategoricalParameterRangeSpecification {
 		Values: Array<string>;
+	}
+
+	/** Defines the possible values for a categorical hyperparameter. */
+	export interface CategoricalParameterRangeSpecificationFormProperties {
+	}
+	export function CreateCategoricalParameterRangeSpecificationFormGroup() {
+		return new FormGroup<CategoricalParameterRangeSpecificationFormProperties>({
+		});
+
 	}
 
 	export enum TrainingInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_g4dn_xlarge = 5, ml_g4dn_2xlarge = 6, ml_g4dn_4xlarge = 7, ml_g4dn_8xlarge = 8, ml_g4dn_12xlarge = 9, ml_g4dn_16xlarge = 10, ml_m5_large = 11, ml_m5_xlarge = 12, ml_m5_2xlarge = 13, ml_m5_4xlarge = 14, ml_m5_12xlarge = 15, ml_m5_24xlarge = 16, ml_c4_xlarge = 17, ml_c4_2xlarge = 18, ml_c4_4xlarge = 19, ml_c4_8xlarge = 20, ml_p2_xlarge = 21, ml_p2_8xlarge = 22, ml_p2_16xlarge = 23, ml_p3_2xlarge = 24, ml_p3_8xlarge = 25, ml_p3_16xlarge = 26, ml_p3dn_24xlarge = 27, ml_c5_xlarge = 28, ml_c5_2xlarge = 29, ml_c5_4xlarge = 30, ml_c5_9xlarge = 31, ml_c5_18xlarge = 32, ml_c5n_xlarge = 33, ml_c5n_2xlarge = 34, ml_c5n_4xlarge = 35, ml_c5n_9xlarge = 36, ml_c5n_18xlarge = 37 }
@@ -128,6 +296,19 @@ export namespace MyNS {
 		Regex: string;
 	}
 
+	/** Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code> . Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job. */
+	export interface MetricDefinitionFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Regex: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricDefinitionFormGroup() {
+		return new FormGroup<MetricDefinitionFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Regex: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Defines a named input source, called a channel, to be used by an algorithm. */
 	export interface ChannelSpecification {
@@ -135,8 +316,23 @@ export namespace MyNS {
 		Description?: string | null;
 		IsRequired?: boolean | null;
 		SupportedContentTypes: Array<string>;
-		SupportedCompressionTypes?: Array<CompressionType> | null;
+		SupportedCompressionTypes?: Array<CompressionType>;
 		SupportedInputModes: Array<TrainingInputMode>;
+	}
+
+	/** Defines a named input source, called a channel, to be used by an algorithm. */
+	export interface ChannelSpecificationFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		IsRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreateChannelSpecificationFormGroup() {
+		return new FormGroup<ChannelSpecificationFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IsRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CompressionType { None = 0, Gzip = 1 }
@@ -148,6 +344,19 @@ export namespace MyNS {
 	export interface HyperParameterTuningJobObjective {
 		Type: HyperParameterTuningJobObjectiveType;
 		MetricName: string;
+	}
+
+	/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
+	export interface HyperParameterTuningJobObjectiveFormProperties {
+		Type: FormControl<HyperParameterTuningJobObjectiveType | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+	}
+	export function CreateHyperParameterTuningJobObjectiveFormGroup() {
+		return new FormGroup<HyperParameterTuningJobObjectiveFormProperties>({
+			Type: new FormControl<HyperParameterTuningJobObjectiveType | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HyperParameterTuningJobObjectiveType { Maximize = 0, Minimize = 1 }
@@ -162,6 +371,15 @@ export namespace MyNS {
 		SupportedResponseMIMETypes: Array<string>;
 	}
 
+	/** Defines how to perform inference generation after a training job is run. */
+	export interface InferenceSpecificationFormProperties {
+	}
+	export function CreateInferenceSpecificationFormGroup() {
+		return new FormGroup<InferenceSpecificationFormProperties>({
+		});
+
+	}
+
 
 	/** Describes the Docker container for the model package. */
 	export interface ModelPackageContainerDefinition {
@@ -170,6 +388,25 @@ export namespace MyNS {
 		ImageDigest?: string | null;
 		ModelDataUrl?: string | null;
 		ProductId?: string | null;
+	}
+
+	/** Describes the Docker container for the model package. */
+	export interface ModelPackageContainerDefinitionFormProperties {
+		ContainerHostname: FormControl<string | null | undefined>,
+		Image: FormControl<string | null | undefined>,
+		ImageDigest: FormControl<string | null | undefined>,
+		ModelDataUrl: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+	}
+	export function CreateModelPackageContainerDefinitionFormGroup() {
+		return new FormGroup<ModelPackageContainerDefinitionFormProperties>({
+			ContainerHostname: new FormControl<string | null | undefined>(undefined),
+			Image: new FormControl<string | null | undefined>(undefined),
+			ImageDigest: new FormControl<string | null | undefined>(undefined),
+			ModelDataUrl: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TransformInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_c4_xlarge = 5, ml_c4_2xlarge = 6, ml_c4_4xlarge = 7, ml_c4_8xlarge = 8, ml_p2_xlarge = 9, ml_p2_8xlarge = 10, ml_p2_16xlarge = 11, ml_p3_2xlarge = 12, ml_p3_8xlarge = 13, ml_p3_16xlarge = 14, ml_c5_xlarge = 15, ml_c5_2xlarge = 16, ml_c5_4xlarge = 17, ml_c5_9xlarge = 18, ml_c5_18xlarge = 19, ml_m5_large = 20, ml_m5_xlarge = 21, ml_m5_2xlarge = 22, ml_m5_4xlarge = 23, ml_m5_12xlarge = 24, ml_m5_24xlarge = 25 }
@@ -181,6 +418,17 @@ export namespace MyNS {
 	export interface AlgorithmValidationSpecification {
 		ValidationRole: string;
 		ValidationProfiles: Array<AlgorithmValidationProfile>;
+	}
+
+	/** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm. */
+	export interface AlgorithmValidationSpecificationFormProperties {
+		ValidationRole: FormControl<string | null | undefined>,
+	}
+	export function CreateAlgorithmValidationSpecificationFormGroup() {
+		return new FormGroup<AlgorithmValidationSpecificationFormProperties>({
+			ValidationRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -195,14 +443,25 @@ export namespace MyNS {
 		TrainingJobDefinition: TrainingJobDefinition;
 
 		/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
-		TransformJobDefinition?: TransformJobDefinition | null;
+		TransformJobDefinition?: TransformJobDefinition;
+	}
+
+	/** <p>Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.</p> <p>The data provided in the validation profile is made available to your buyers on AWS Marketplace.</p> */
+	export interface AlgorithmValidationProfileFormProperties {
+		ProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateAlgorithmValidationProfileFormGroup() {
+		return new FormGroup<AlgorithmValidationProfileFormProperties>({
+			ProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Defines the input needed to run a training job using the algorithm. */
 	export interface TrainingJobDefinition {
 		TrainingInputMode: TrainingInputMode;
-		HyperParameters?: HyperParameters | null;
+		HyperParameters?: HyperParameters;
 		InputDataConfig: Array<Channel>;
 
 		/**
@@ -224,7 +483,25 @@ export namespace MyNS {
 		StoppingCondition: StoppingCondition;
 	}
 
+	/** Defines the input needed to run a training job using the algorithm. */
+	export interface TrainingJobDefinitionFormProperties {
+		TrainingInputMode: FormControl<TrainingInputMode | null | undefined>,
+	}
+	export function CreateTrainingJobDefinitionFormGroup() {
+		return new FormGroup<TrainingJobDefinitionFormProperties>({
+			TrainingInputMode: new FormControl<TrainingInputMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface HyperParameters {
+	}
+	export interface HyperParametersFormProperties {
+	}
+	export function CreateHyperParametersFormGroup() {
+		return new FormGroup<HyperParametersFormProperties>({
+		});
+
 	}
 
 
@@ -243,7 +520,26 @@ export namespace MyNS {
 		InputMode?: TrainingInputMode | null;
 
 		/** <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p> <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p> */
-		ShuffleConfig?: ShuffleConfig | null;
+		ShuffleConfig?: ShuffleConfig;
+	}
+
+	/** A channel is a named input source that training algorithms can consume.  */
+	export interface ChannelFormProperties {
+		ChannelName: FormControl<string | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+		CompressionType: FormControl<CompressionType | null | undefined>,
+		RecordWrapperType: FormControl<ChannelRecordWrapperType | null | undefined>,
+		InputMode: FormControl<TrainingInputMode | null | undefined>,
+	}
+	export function CreateChannelFormGroup() {
+		return new FormGroup<ChannelFormProperties>({
+			ChannelName: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			CompressionType: new FormControl<CompressionType | null | undefined>(undefined),
+			RecordWrapperType: new FormControl<ChannelRecordWrapperType | null | undefined>(undefined),
+			InputMode: new FormControl<TrainingInputMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -251,10 +547,19 @@ export namespace MyNS {
 	export interface DataSource {
 
 		/** Describes the S3 data source. */
-		S3DataSource?: S3DataSource | null;
+		S3DataSource?: S3DataSource;
 
 		/** Specifies a file system data source for a channel. */
-		FileSystemDataSource?: FileSystemDataSource | null;
+		FileSystemDataSource?: FileSystemDataSource;
+	}
+
+	/** Describes the location of the channel data. */
+	export interface DataSourceFormProperties {
+	}
+	export function CreateDataSourceFormGroup() {
+		return new FormGroup<DataSourceFormProperties>({
+		});
+
 	}
 
 
@@ -263,7 +568,22 @@ export namespace MyNS {
 		S3DataType: S3DataSourceS3DataType;
 		S3Uri: string;
 		S3DataDistributionType?: S3DataSourceS3DataDistributionType | null;
-		AttributeNames?: Array<string> | null;
+		AttributeNames?: Array<string>;
+	}
+
+	/** Describes the S3 data source. */
+	export interface S3DataSourceFormProperties {
+		S3DataType: FormControl<S3DataSourceS3DataType | null | undefined>,
+		S3Uri: FormControl<string | null | undefined>,
+		S3DataDistributionType: FormControl<S3DataSourceS3DataDistributionType | null | undefined>,
+	}
+	export function CreateS3DataSourceFormGroup() {
+		return new FormGroup<S3DataSourceFormProperties>({
+			S3DataType: new FormControl<S3DataSourceS3DataType | null | undefined>(undefined),
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			S3DataDistributionType: new FormControl<S3DataSourceS3DataDistributionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3DataSourceS3DataType { ManifestFile = 0, S3Prefix = 1, AugmentedManifestFile = 2 }
@@ -279,6 +599,23 @@ export namespace MyNS {
 		DirectoryPath: string;
 	}
 
+	/** Specifies a file system data source for a channel. */
+	export interface FileSystemDataSourceFormProperties {
+		FileSystemId: FormControl<string | null | undefined>,
+		FileSystemAccessMode: FormControl<FileSystemDataSourceFileSystemAccessMode | null | undefined>,
+		FileSystemType: FormControl<FileSystemDataSourceFileSystemType | null | undefined>,
+		DirectoryPath: FormControl<string | null | undefined>,
+	}
+	export function CreateFileSystemDataSourceFormGroup() {
+		return new FormGroup<FileSystemDataSourceFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			FileSystemAccessMode: new FormControl<FileSystemDataSourceFileSystemAccessMode | null | undefined>(undefined),
+			FileSystemType: new FormControl<FileSystemDataSourceFileSystemType | null | undefined>(undefined),
+			DirectoryPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FileSystemDataSourceFileSystemAccessMode { rw = 0, ro = 1 }
 
 	export enum FileSystemDataSourceFileSystemType { EFS = 0, FSxLustre = 1 }
@@ -291,11 +628,35 @@ export namespace MyNS {
 		Seed: number;
 	}
 
+	/** <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p> <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p> */
+	export interface ShuffleConfigFormProperties {
+		Seed: FormControl<number | null | undefined>,
+	}
+	export function CreateShuffleConfigFormGroup() {
+		return new FormGroup<ShuffleConfigFormProperties>({
+			Seed: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides information about how to store model training results (model artifacts). */
 	export interface OutputDataConfig {
 		KmsKeyId?: string | null;
 		S3OutputPath: string;
+	}
+
+	/** Provides information about how to store model training results (model artifacts). */
+	export interface OutputDataConfigFormProperties {
+		KmsKeyId: FormControl<string | null | undefined>,
+		S3OutputPath: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputDataConfigFormGroup() {
+		return new FormGroup<OutputDataConfigFormProperties>({
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -307,6 +668,23 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 	}
 
+	/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training.  */
+	export interface ResourceConfigFormProperties {
+		InstanceType: FormControl<ResourceConfigInstanceType | null | undefined>,
+		InstanceCount: FormControl<number | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceConfigFormGroup() {
+		return new FormGroup<ResourceConfigFormProperties>({
+			InstanceType: new FormControl<ResourceConfigInstanceType | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceConfigInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_g4dn_xlarge = 5, ml_g4dn_2xlarge = 6, ml_g4dn_4xlarge = 7, ml_g4dn_8xlarge = 8, ml_g4dn_12xlarge = 9, ml_g4dn_16xlarge = 10, ml_m5_large = 11, ml_m5_xlarge = 12, ml_m5_2xlarge = 13, ml_m5_4xlarge = 14, ml_m5_12xlarge = 15, ml_m5_24xlarge = 16, ml_c4_xlarge = 17, ml_c4_2xlarge = 18, ml_c4_4xlarge = 19, ml_c4_8xlarge = 20, ml_p2_xlarge = 21, ml_p2_8xlarge = 22, ml_p2_16xlarge = 23, ml_p3_2xlarge = 24, ml_p3_8xlarge = 25, ml_p3_16xlarge = 26, ml_p3dn_24xlarge = 27, ml_c5_xlarge = 28, ml_c5_2xlarge = 29, ml_c5_4xlarge = 30, ml_c5_9xlarge = 31, ml_c5_18xlarge = 32, ml_c5n_xlarge = 33, ml_c5n_2xlarge = 34, ml_c5n_4xlarge = 35, ml_c5n_9xlarge = 36, ml_c5n_18xlarge = 37 }
 
 
@@ -316,13 +694,26 @@ export namespace MyNS {
 		MaxWaitTimeInSeconds?: number | null;
 	}
 
+	/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
+	export interface StoppingConditionFormProperties {
+		MaxRuntimeInSeconds: FormControl<number | null | undefined>,
+		MaxWaitTimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateStoppingConditionFormGroup() {
+		return new FormGroup<StoppingConditionFormProperties>({
+			MaxRuntimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaxWaitTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
 	export interface TransformJobDefinition {
 		MaxConcurrentTransforms?: number | null;
 		MaxPayloadInMB?: number | null;
 		BatchStrategy?: TransformJobDefinitionBatchStrategy | null;
-		Environment?: TransformEnvironmentMap | null;
+		Environment?: TransformEnvironmentMap;
 
 		/**
 		 * Describes the input source of a transform job and the way the transform job consumes it.
@@ -343,9 +734,31 @@ export namespace MyNS {
 		TransformResources: TransformResources;
 	}
 
+	/** Defines the input needed to run a transform job using the inference specification specified in the algorithm. */
+	export interface TransformJobDefinitionFormProperties {
+		MaxConcurrentTransforms: FormControl<number | null | undefined>,
+		MaxPayloadInMB: FormControl<number | null | undefined>,
+		BatchStrategy: FormControl<TransformJobDefinitionBatchStrategy | null | undefined>,
+	}
+	export function CreateTransformJobDefinitionFormGroup() {
+		return new FormGroup<TransformJobDefinitionFormProperties>({
+			MaxConcurrentTransforms: new FormControl<number | null | undefined>(undefined),
+			MaxPayloadInMB: new FormControl<number | null | undefined>(undefined),
+			BatchStrategy: new FormControl<TransformJobDefinitionBatchStrategy | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TransformJobDefinitionBatchStrategy { MultiRecord = 0, SingleRecord = 1 }
 
 	export interface TransformEnvironmentMap {
+	}
+	export interface TransformEnvironmentMapFormProperties {
+	}
+	export function CreateTransformEnvironmentMapFormGroup() {
+		return new FormGroup<TransformEnvironmentMapFormProperties>({
+		});
+
 	}
 
 
@@ -362,6 +775,21 @@ export namespace MyNS {
 		SplitType?: TransformInputSplitType | null;
 	}
 
+	/** Describes the input source of a transform job and the way the transform job consumes it. */
+	export interface TransformInputFormProperties {
+		ContentType: FormControl<string | null | undefined>,
+		CompressionType: FormControl<CompressionType | null | undefined>,
+		SplitType: FormControl<TransformInputSplitType | null | undefined>,
+	}
+	export function CreateTransformInputFormGroup() {
+		return new FormGroup<TransformInputFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			CompressionType: new FormControl<CompressionType | null | undefined>(undefined),
+			SplitType: new FormControl<TransformInputSplitType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the location of the channel data. */
 	export interface TransformDataSource {
@@ -373,11 +801,33 @@ export namespace MyNS {
 		S3DataSource: TransformS3DataSource;
 	}
 
+	/** Describes the location of the channel data. */
+	export interface TransformDataSourceFormProperties {
+	}
+	export function CreateTransformDataSourceFormGroup() {
+		return new FormGroup<TransformDataSourceFormProperties>({
+		});
+
+	}
+
 
 	/** Describes the S3 data source. */
 	export interface TransformS3DataSource {
 		S3DataType: S3DataSourceS3DataType;
 		S3Uri: string;
+	}
+
+	/** Describes the S3 data source. */
+	export interface TransformS3DataSourceFormProperties {
+		S3DataType: FormControl<S3DataSourceS3DataType | null | undefined>,
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateTransformS3DataSourceFormGroup() {
+		return new FormGroup<TransformS3DataSourceFormProperties>({
+			S3DataType: new FormControl<S3DataSourceS3DataType | null | undefined>(undefined),
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TransformInputSplitType { None = 0, Line = 1, RecordIO = 2, TFRecord = 3 }
@@ -391,6 +841,23 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 	}
 
+	/** Describes the results of a transform job. */
+	export interface TransformOutputFormProperties {
+		S3OutputPath: FormControl<string | null | undefined>,
+		Accept: FormControl<string | null | undefined>,
+		AssembleWith: FormControl<TransformOutputAssembleWith | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransformOutputFormGroup() {
+		return new FormGroup<TransformOutputFormProperties>({
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+			Accept: new FormControl<string | null | undefined>(undefined),
+			AssembleWith: new FormControl<TransformOutputAssembleWith | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TransformOutputAssembleWith { None = 0, Line = 1 }
 
 
@@ -401,10 +868,34 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 	}
 
+	/** Describes the resources, including ML instance types and ML instance count, to use for transform job. */
+	export interface TransformResourcesFormProperties {
+		InstanceType: FormControl<TransformResourcesInstanceType | null | undefined>,
+		InstanceCount: FormControl<number | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransformResourcesFormGroup() {
+		return new FormGroup<TransformResourcesFormProperties>({
+			InstanceType: new FormControl<TransformResourcesInstanceType | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TransformResourcesInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_c4_xlarge = 5, ml_c4_2xlarge = 6, ml_c4_4xlarge = 7, ml_c4_8xlarge = 8, ml_p2_xlarge = 9, ml_p2_8xlarge = 10, ml_p2_16xlarge = 11, ml_p3_2xlarge = 12, ml_p3_8xlarge = 13, ml_p3_16xlarge = 14, ml_c5_xlarge = 15, ml_c5_2xlarge = 16, ml_c5_4xlarge = 17, ml_c5_9xlarge = 18, ml_c5_18xlarge = 19, ml_m5_large = 20, ml_m5_xlarge = 21, ml_m5_2xlarge = 22, ml_m5_4xlarge = 23, ml_m5_12xlarge = 24, ml_m5_24xlarge = 25 }
 
 	export interface CreateAppResponse {
 		AppArn?: string | null;
+	}
+	export interface CreateAppResponseFormProperties {
+		AppArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAppResponseFormGroup() {
+		return new FormGroup<CreateAppResponseFormProperties>({
+			AppArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAppRequest {
@@ -412,10 +903,25 @@ export namespace MyNS {
 		UserProfileName: string;
 		AppType: CreateAppRequestAppType;
 		AppName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		ResourceSpec?: ResourceSpec | null;
+		ResourceSpec?: ResourceSpec;
+	}
+	export interface CreateAppRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		AppType: FormControl<CreateAppRequestAppType | null | undefined>,
+		AppName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAppRequestFormGroup() {
+		return new FormGroup<CreateAppRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			AppType: new FormControl<CreateAppRequestAppType | null | undefined>(undefined),
+			AppName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateAppRequestAppType { JupyterServer = 0, KernelGateway = 1, TensorBoard = 2 }
@@ -427,13 +933,42 @@ export namespace MyNS {
 		InstanceType?: ResourceSpecInstanceType | null;
 	}
 
+	/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
+	export interface ResourceSpecFormProperties {
+		SageMakerImageArn: FormControl<string | null | undefined>,
+		InstanceType: FormControl<ResourceSpecInstanceType | null | undefined>,
+	}
+	export function CreateResourceSpecFormGroup() {
+		return new FormGroup<ResourceSpecFormProperties>({
+			SageMakerImageArn: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<ResourceSpecInstanceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceSpecInstanceType { system = 0, ml_t3_micro = 1, ml_t3_small = 2, ml_t3_medium = 3, ml_t3_large = 4, ml_t3_xlarge = 5, ml_t3_2xlarge = 6, ml_m5_large = 7, ml_m5_xlarge = 8, ml_m5_2xlarge = 9, ml_m5_4xlarge = 10, ml_m5_8xlarge = 11, ml_m5_12xlarge = 12, ml_m5_16xlarge = 13, ml_m5_24xlarge = 14, ml_c5_large = 15, ml_c5_xlarge = 16, ml_c5_2xlarge = 17, ml_c5_4xlarge = 18, ml_c5_9xlarge = 19, ml_c5_12xlarge = 20, ml_c5_18xlarge = 21, ml_c5_24xlarge = 22, ml_p3_2xlarge = 23, ml_p3_8xlarge = 24, ml_p3_16xlarge = 25, ml_g4dn_xlarge = 26, ml_g4dn_2xlarge = 27, ml_g4dn_4xlarge = 28, ml_g4dn_8xlarge = 29, ml_g4dn_12xlarge = 30, ml_g4dn_16xlarge = 31 }
 
 	export interface ResourceInUse {
 	}
+	export interface ResourceInUseFormProperties {
+	}
+	export function CreateResourceInUseFormGroup() {
+		return new FormGroup<ResourceInUseFormProperties>({
+		});
+
+	}
 
 	export interface CreateAutoMLJobResponse {
 		AutoMLJobArn: string;
+	}
+	export interface CreateAutoMLJobResponseFormProperties {
+		AutoMLJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAutoMLJobResponseFormGroup() {
+		return new FormGroup<CreateAutoMLJobResponseFormProperties>({
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAutoMLJobRequest {
@@ -448,13 +983,28 @@ export namespace MyNS {
 		ProblemType?: CreateAutoMLJobRequestProblemType | null;
 
 		/** Applies a metric to minimize or maximize for the job's objective. */
-		AutoMLJobObjective?: AutoMLJobObjective | null;
+		AutoMLJobObjective?: AutoMLJobObjective;
 
 		/** A collection of settings used for a job. */
-		AutoMLJobConfig?: AutoMLJobConfig | null;
+		AutoMLJobConfig?: AutoMLJobConfig;
 		RoleArn: string;
 		GenerateCandidateDefinitionsOnly?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateAutoMLJobRequestFormProperties {
+		AutoMLJobName: FormControl<string | null | undefined>,
+		ProblemType: FormControl<CreateAutoMLJobRequestProblemType | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		GenerateCandidateDefinitionsOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateAutoMLJobRequestFormGroup() {
+		return new FormGroup<CreateAutoMLJobRequestFormProperties>({
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined),
+			ProblemType: new FormControl<CreateAutoMLJobRequestProblemType | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			GenerateCandidateDefinitionsOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -470,6 +1020,19 @@ export namespace MyNS {
 		TargetAttributeName: string;
 	}
 
+	/** Similar to Channel. A channel is a named input source that training algorithms can consume. Refer to Channel for detailed descriptions. */
+	export interface AutoMLChannelFormProperties {
+		CompressionType: FormControl<CompressionType | null | undefined>,
+		TargetAttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLChannelFormGroup() {
+		return new FormGroup<AutoMLChannelFormProperties>({
+			CompressionType: new FormControl<CompressionType | null | undefined>(undefined),
+			TargetAttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The data source for the AutoPilot job. */
 	export interface AutoMLDataSource {
@@ -481,11 +1044,33 @@ export namespace MyNS {
 		S3DataSource: AutoMLS3DataSource;
 	}
 
+	/** The data source for the AutoPilot job. */
+	export interface AutoMLDataSourceFormProperties {
+	}
+	export function CreateAutoMLDataSourceFormGroup() {
+		return new FormGroup<AutoMLDataSourceFormProperties>({
+		});
+
+	}
+
 
 	/** The Amazon S3 data source. */
 	export interface AutoMLS3DataSource {
 		S3DataType: AutoMLS3DataSourceS3DataType;
 		S3Uri: string;
+	}
+
+	/** The Amazon S3 data source. */
+	export interface AutoMLS3DataSourceFormProperties {
+		S3DataType: FormControl<AutoMLS3DataSourceS3DataType | null | undefined>,
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLS3DataSourceFormGroup() {
+		return new FormGroup<AutoMLS3DataSourceFormProperties>({
+			S3DataType: new FormControl<AutoMLS3DataSourceS3DataType | null | undefined>(undefined),
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AutoMLS3DataSourceS3DataType { ManifestFile = 0, S3Prefix = 1 }
@@ -497,12 +1082,36 @@ export namespace MyNS {
 		S3OutputPath: string;
 	}
 
+	/** The output data configuration. */
+	export interface AutoMLOutputDataConfigFormProperties {
+		KmsKeyId: FormControl<string | null | undefined>,
+		S3OutputPath: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLOutputDataConfigFormGroup() {
+		return new FormGroup<AutoMLOutputDataConfigFormProperties>({
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateAutoMLJobRequestProblemType { BinaryClassification = 0, MulticlassClassification = 1, Regression = 2 }
 
 
 	/** Applies a metric to minimize or maximize for the job's objective. */
 	export interface AutoMLJobObjective {
 		MetricName: AutoMLJobObjectiveMetricName;
+	}
+
+	/** Applies a metric to minimize or maximize for the job's objective. */
+	export interface AutoMLJobObjectiveFormProperties {
+		MetricName: FormControl<AutoMLJobObjectiveMetricName | null | undefined>,
+	}
+	export function CreateAutoMLJobObjectiveFormGroup() {
+		return new FormGroup<AutoMLJobObjectiveFormProperties>({
+			MetricName: new FormControl<AutoMLJobObjectiveMetricName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AutoMLJobObjectiveMetricName { Accuracy = 0, MSE = 1, F1 = 2, F1macro = 3 }
@@ -512,10 +1121,19 @@ export namespace MyNS {
 	export interface AutoMLJobConfig {
 
 		/** How long a job is allowed to run, or how many candidates a job is allowed to generate. */
-		CompletionCriteria?: AutoMLJobCompletionCriteria | null;
+		CompletionCriteria?: AutoMLJobCompletionCriteria;
 
 		/** Security options. */
-		SecurityConfig?: AutoMLSecurityConfig | null;
+		SecurityConfig?: AutoMLSecurityConfig;
+	}
+
+	/** A collection of settings used for a job. */
+	export interface AutoMLJobConfigFormProperties {
+	}
+	export function CreateAutoMLJobConfigFormGroup() {
+		return new FormGroup<AutoMLJobConfigFormProperties>({
+		});
+
 	}
 
 
@@ -526,6 +1144,21 @@ export namespace MyNS {
 		MaxAutoMLJobRuntimeInSeconds?: number | null;
 	}
 
+	/** How long a job is allowed to run, or how many candidates a job is allowed to generate. */
+	export interface AutoMLJobCompletionCriteriaFormProperties {
+		MaxCandidates: FormControl<number | null | undefined>,
+		MaxRuntimePerTrainingJobInSeconds: FormControl<number | null | undefined>,
+		MaxAutoMLJobRuntimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateAutoMLJobCompletionCriteriaFormGroup() {
+		return new FormGroup<AutoMLJobCompletionCriteriaFormProperties>({
+			MaxCandidates: new FormControl<number | null | undefined>(undefined),
+			MaxRuntimePerTrainingJobInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaxAutoMLJobRuntimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Security options. */
 	export interface AutoMLSecurityConfig {
@@ -533,7 +1166,20 @@ export namespace MyNS {
 		EnableInterContainerTrafficEncryption?: boolean | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Security options. */
+	export interface AutoMLSecurityConfigFormProperties {
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+		EnableInterContainerTrafficEncryption: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAutoMLSecurityConfigFormGroup() {
+		return new FormGroup<AutoMLSecurityConfigFormProperties>({
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -543,8 +1189,26 @@ export namespace MyNS {
 		Subnets: Array<string>;
 	}
 
+	/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.  */
+	export interface VpcConfigFormProperties {
+	}
+	export function CreateVpcConfigFormGroup() {
+		return new FormGroup<VpcConfigFormProperties>({
+		});
+
+	}
+
 	export interface CreateCodeRepositoryOutput {
 		CodeRepositoryArn: string;
+	}
+	export interface CreateCodeRepositoryOutputFormProperties {
+		CodeRepositoryArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCodeRepositoryOutputFormGroup() {
+		return new FormGroup<CreateCodeRepositoryOutputFormProperties>({
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCodeRepositoryInput {
@@ -556,6 +1220,15 @@ export namespace MyNS {
 		 */
 		GitConfig: GitConfig;
 	}
+	export interface CreateCodeRepositoryInputFormProperties {
+		CodeRepositoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCodeRepositoryInputFormGroup() {
+		return new FormGroup<CreateCodeRepositoryInputFormProperties>({
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Specifies configuration details for a Git repository in your AWS account. */
@@ -565,8 +1238,32 @@ export namespace MyNS {
 		SecretArn?: string | null;
 	}
 
+	/** Specifies configuration details for a Git repository in your AWS account. */
+	export interface GitConfigFormProperties {
+		RepositoryUrl: FormControl<string | null | undefined>,
+		Branch: FormControl<string | null | undefined>,
+		SecretArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGitConfigFormGroup() {
+		return new FormGroup<GitConfigFormProperties>({
+			RepositoryUrl: new FormControl<string | null | undefined>(undefined),
+			Branch: new FormControl<string | null | undefined>(undefined),
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateCompilationJobResponse {
 		CompilationJobArn: string;
+	}
+	export interface CreateCompilationJobResponseFormProperties {
+		CompilationJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCompilationJobResponseFormGroup() {
+		return new FormGroup<CreateCompilationJobResponseFormProperties>({
+			CompilationJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCompilationJobRequest {
@@ -591,6 +1288,17 @@ export namespace MyNS {
 		 */
 		StoppingCondition: StoppingCondition;
 	}
+	export interface CreateCompilationJobRequestFormProperties {
+		CompilationJobName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCompilationJobRequestFormGroup() {
+		return new FormGroup<CreateCompilationJobRequestFormProperties>({
+			CompilationJobName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained. */
@@ -598,6 +1306,21 @@ export namespace MyNS {
 		S3Uri: string;
 		DataInputConfig: string;
 		Framework: InputConfigFramework;
+	}
+
+	/** Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained. */
+	export interface InputConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		DataInputConfig: FormControl<string | null | undefined>,
+		Framework: FormControl<InputConfigFramework | null | undefined>,
+	}
+	export function CreateInputConfigFormGroup() {
+		return new FormGroup<InputConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			DataInputConfig: new FormControl<string | null | undefined>(undefined),
+			Framework: new FormControl<InputConfigFramework | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InputConfigFramework { TENSORFLOW = 0, KERAS = 1, MXNET = 2, ONNX = 3, PYTORCH = 4, XGBOOST = 5, TFLITE = 6 }
@@ -609,11 +1332,35 @@ export namespace MyNS {
 		TargetDevice: OutputConfigTargetDevice;
 	}
 
+	/** Contains information about the output location for the compiled model and the device (target) that the model runs on. */
+	export interface OutputConfigFormProperties {
+		S3OutputLocation: FormControl<string | null | undefined>,
+		TargetDevice: FormControl<OutputConfigTargetDevice | null | undefined>,
+	}
+	export function CreateOutputConfigFormGroup() {
+		return new FormGroup<OutputConfigFormProperties>({
+			S3OutputLocation: new FormControl<string | null | undefined>(undefined),
+			TargetDevice: new FormControl<OutputConfigTargetDevice | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OutputConfigTargetDevice { lambda = 0, ml_m4 = 1, ml_m5 = 2, ml_c4 = 3, ml_c5 = 4, ml_p2 = 5, ml_p3 = 6, ml_inf1 = 7, jetson_tx1 = 8, jetson_tx2 = 9, jetson_nano = 10, jetson_xavier = 11, rasp3b = 12, imx8qm = 13, deeplens = 14, rk3399 = 15, rk3288 = 16, aisage = 17, sbe_c = 18, qcs605 = 19, qcs603 = 20, sitara_am57x = 21, amba_cv22 = 22 }
 
 	export interface CreateDomainResponse {
 		DomainArn?: string | null;
 		Url?: string | null;
+	}
+	export interface CreateDomainResponseFormProperties {
+		DomainArn: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDomainResponseFormGroup() {
+		return new FormGroup<CreateDomainResponseFormProperties>({
+			DomainArn: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDomainRequest {
@@ -627,8 +1374,23 @@ export namespace MyNS {
 		DefaultUserSettings: UserSettings;
 		SubnetIds: Array<string>;
 		VpcId: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		HomeEfsFileSystemKmsKeyId?: string | null;
+	}
+	export interface CreateDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		AuthMode: FormControl<CreateDomainRequestAuthMode | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		HomeEfsFileSystemKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDomainRequestFormGroup() {
+		return new FormGroup<CreateDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AuthMode: new FormControl<CreateDomainRequestAuthMode | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			HomeEfsFileSystemKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDomainRequestAuthMode { SSO = 0, IAM = 1 }
@@ -637,19 +1399,30 @@ export namespace MyNS {
 	/** A collection of settings. */
 	export interface UserSettings {
 		ExecutionRole?: string | null;
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
 
 		/** Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called. */
-		SharingSettings?: SharingSettings | null;
+		SharingSettings?: SharingSettings;
 
 		/** Jupyter server's app settings. */
-		JupyterServerAppSettings?: JupyterServerAppSettings | null;
+		JupyterServerAppSettings?: JupyterServerAppSettings;
 
 		/** The kernel gateway app settings. */
-		KernelGatewayAppSettings?: KernelGatewayAppSettings | null;
+		KernelGatewayAppSettings?: KernelGatewayAppSettings;
 
 		/** The TensorBoard app settings. */
-		TensorBoardAppSettings?: TensorBoardAppSettings | null;
+		TensorBoardAppSettings?: TensorBoardAppSettings;
+	}
+
+	/** A collection of settings. */
+	export interface UserSettingsFormProperties {
+		ExecutionRole: FormControl<string | null | undefined>,
+	}
+	export function CreateUserSettingsFormGroup() {
+		return new FormGroup<UserSettingsFormProperties>({
+			ExecutionRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -660,6 +1433,21 @@ export namespace MyNS {
 		S3KmsKeyId?: string | null;
 	}
 
+	/** Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called. */
+	export interface SharingSettingsFormProperties {
+		NotebookOutputOption: FormControl<SharingSettingsNotebookOutputOption | null | undefined>,
+		S3OutputPath: FormControl<string | null | undefined>,
+		S3KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateSharingSettingsFormGroup() {
+		return new FormGroup<SharingSettingsFormProperties>({
+			NotebookOutputOption: new FormControl<SharingSettingsNotebookOutputOption | null | undefined>(undefined),
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+			S3KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SharingSettingsNotebookOutputOption { Allowed = 0, Disabled = 1 }
 
 
@@ -667,7 +1455,16 @@ export namespace MyNS {
 	export interface JupyterServerAppSettings {
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		DefaultResourceSpec?: ResourceSpec | null;
+		DefaultResourceSpec?: ResourceSpec;
+	}
+
+	/** Jupyter server's app settings. */
+	export interface JupyterServerAppSettingsFormProperties {
+	}
+	export function CreateJupyterServerAppSettingsFormGroup() {
+		return new FormGroup<JupyterServerAppSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -675,7 +1472,16 @@ export namespace MyNS {
 	export interface KernelGatewayAppSettings {
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		DefaultResourceSpec?: ResourceSpec | null;
+		DefaultResourceSpec?: ResourceSpec;
+	}
+
+	/** The kernel gateway app settings. */
+	export interface KernelGatewayAppSettingsFormProperties {
+	}
+	export function CreateKernelGatewayAppSettingsFormGroup() {
+		return new FormGroup<KernelGatewayAppSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -683,21 +1489,59 @@ export namespace MyNS {
 	export interface TensorBoardAppSettings {
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		DefaultResourceSpec?: ResourceSpec | null;
+		DefaultResourceSpec?: ResourceSpec;
+	}
+
+	/** The TensorBoard app settings. */
+	export interface TensorBoardAppSettingsFormProperties {
+	}
+	export function CreateTensorBoardAppSettingsFormGroup() {
+		return new FormGroup<TensorBoardAppSettingsFormProperties>({
+		});
+
 	}
 
 	export interface CreateEndpointOutput {
 		EndpointArn: string;
 	}
+	export interface CreateEndpointOutputFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointOutputFormGroup() {
+		return new FormGroup<CreateEndpointOutputFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateEndpointInput {
 		EndpointName: string;
 		EndpointConfigName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateEndpointInputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		EndpointConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointInputFormGroup() {
+		return new FormGroup<CreateEndpointInputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEndpointConfigOutput {
 		EndpointConfigArn: string;
+	}
+	export interface CreateEndpointConfigOutputFormProperties {
+		EndpointConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointConfigOutputFormGroup() {
+		return new FormGroup<CreateEndpointConfigOutputFormProperties>({
+			EndpointConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEndpointConfigInput {
@@ -705,9 +1549,20 @@ export namespace MyNS {
 		ProductionVariants: Array<ProductionVariant>;
 
 		/** <p/> */
-		DataCaptureConfig?: DataCaptureConfig | null;
-		Tags?: Array<Tag> | null;
+		DataCaptureConfig?: DataCaptureConfig;
+		Tags?: Array<Tag>;
 		KmsKeyId?: string | null;
+	}
+	export interface CreateEndpointConfigInputFormProperties {
+		EndpointConfigName: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointConfigInputFormGroup() {
+		return new FormGroup<CreateEndpointConfigInputFormProperties>({
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -719,6 +1574,27 @@ export namespace MyNS {
 		InstanceType: ProductionVariantInstanceType;
 		InitialVariantWeight?: number | null;
 		AcceleratorType?: ProductionVariantAcceleratorType | null;
+	}
+
+	/** Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.  */
+	export interface ProductionVariantFormProperties {
+		VariantName: FormControl<string | null | undefined>,
+		ModelName: FormControl<string | null | undefined>,
+		InitialInstanceCount: FormControl<number | null | undefined>,
+		InstanceType: FormControl<ProductionVariantInstanceType | null | undefined>,
+		InitialVariantWeight: FormControl<number | null | undefined>,
+		AcceleratorType: FormControl<ProductionVariantAcceleratorType | null | undefined>,
+	}
+	export function CreateProductionVariantFormGroup() {
+		return new FormGroup<ProductionVariantFormProperties>({
+			VariantName: new FormControl<string | null | undefined>(undefined),
+			ModelName: new FormControl<string | null | undefined>(undefined),
+			InitialInstanceCount: new FormControl<number | null | undefined>(undefined),
+			InstanceType: new FormControl<ProductionVariantInstanceType | null | undefined>(undefined),
+			InitialVariantWeight: new FormControl<number | null | undefined>(undefined),
+			AcceleratorType: new FormControl<ProductionVariantAcceleratorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProductionVariantAcceleratorType { ml_eia1_medium = 0, ml_eia1_large = 1, ml_eia1_xlarge = 2, ml_eia2_medium = 3, ml_eia2_large = 4, ml_eia2_xlarge = 5 }
@@ -733,7 +1609,24 @@ export namespace MyNS {
 		CaptureOptions: Array<CaptureOption>;
 
 		/** <p/> */
-		CaptureContentTypeHeader?: CaptureContentTypeHeader | null;
+		CaptureContentTypeHeader?: CaptureContentTypeHeader;
+	}
+
+	/** <p/> */
+	export interface DataCaptureConfigFormProperties {
+		EnableCapture: FormControl<boolean | null | undefined>,
+		InitialSamplingPercentage: FormControl<number | null | undefined>,
+		DestinationS3Uri: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDataCaptureConfigFormGroup() {
+		return new FormGroup<DataCaptureConfigFormProperties>({
+			EnableCapture: new FormControl<boolean | null | undefined>(undefined),
+			InitialSamplingPercentage: new FormControl<number | null | undefined>(undefined),
+			DestinationS3Uri: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -742,38 +1635,89 @@ export namespace MyNS {
 		CaptureMode: CaptureOptionCaptureMode;
 	}
 
+	/** <p/> */
+	export interface CaptureOptionFormProperties {
+		CaptureMode: FormControl<CaptureOptionCaptureMode | null | undefined>,
+	}
+	export function CreateCaptureOptionFormGroup() {
+		return new FormGroup<CaptureOptionFormProperties>({
+			CaptureMode: new FormControl<CaptureOptionCaptureMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CaptureOptionCaptureMode { Input = 0, Output = 1 }
 
 
 	/** <p/> */
 	export interface CaptureContentTypeHeader {
-		CsvContentTypes?: Array<string> | null;
-		JsonContentTypes?: Array<string> | null;
+		CsvContentTypes?: Array<string>;
+		JsonContentTypes?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface CaptureContentTypeHeaderFormProperties {
+	}
+	export function CreateCaptureContentTypeHeaderFormGroup() {
+		return new FormGroup<CaptureContentTypeHeaderFormProperties>({
+		});
+
 	}
 
 	export interface CreateExperimentResponse {
 		ExperimentArn?: string | null;
+	}
+	export interface CreateExperimentResponseFormProperties {
+		ExperimentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateExperimentResponseFormGroup() {
+		return new FormGroup<CreateExperimentResponseFormProperties>({
+			ExperimentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateExperimentRequest {
 		ExperimentName: string;
 		DisplayName?: string | null;
 		Description?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateExperimentRequestFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateExperimentRequestFormGroup() {
+		return new FormGroup<CreateExperimentRequestFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFlowDefinitionResponse {
 		FlowDefinitionArn: string;
+	}
+	export interface CreateFlowDefinitionResponseFormProperties {
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFlowDefinitionResponseFormGroup() {
+		return new FormGroup<CreateFlowDefinitionResponseFormProperties>({
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFlowDefinitionRequest {
 		FlowDefinitionName: string;
 
 		/** Container for configuring the source of human task requests. */
-		HumanLoopRequestSource?: HumanLoopRequestSource | null;
+		HumanLoopRequestSource?: HumanLoopRequestSource;
 
 		/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
-		HumanLoopActivationConfig?: HumanLoopActivationConfig | null;
+		HumanLoopActivationConfig?: HumanLoopActivationConfig;
 
 		/**
 		 * Describes the work to be performed by human workers.
@@ -787,13 +1731,35 @@ export namespace MyNS {
 		 */
 		OutputConfig: FlowDefinitionOutputConfig;
 		RoleArn: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateFlowDefinitionRequestFormProperties {
+		FlowDefinitionName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFlowDefinitionRequestFormGroup() {
+		return new FormGroup<CreateFlowDefinitionRequestFormProperties>({
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Container for configuring the source of human task requests. */
 	export interface HumanLoopRequestSource {
 		AwsManagedHumanLoopRequestSource: HumanLoopRequestSourceAwsManagedHumanLoopRequestSource;
+	}
+
+	/** Container for configuring the source of human task requests. */
+	export interface HumanLoopRequestSourceFormProperties {
+		AwsManagedHumanLoopRequestSource: FormControl<HumanLoopRequestSourceAwsManagedHumanLoopRequestSource | null | undefined>,
+	}
+	export function CreateHumanLoopRequestSourceFormGroup() {
+		return new FormGroup<HumanLoopRequestSourceFormProperties>({
+			AwsManagedHumanLoopRequestSource: new FormControl<HumanLoopRequestSourceAwsManagedHumanLoopRequestSource | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HumanLoopRequestSourceAwsManagedHumanLoopRequestSource { AWS_Rekognition_DetectModerationLabels_Image_V3 = 0, AWS_Textract_AnalyzeDocument_Forms_V1 = 1 }
@@ -809,10 +1775,30 @@ export namespace MyNS {
 		HumanLoopActivationConditionsConfig: HumanLoopActivationConditionsConfig;
 	}
 
+	/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
+	export interface HumanLoopActivationConfigFormProperties {
+	}
+	export function CreateHumanLoopActivationConfigFormGroup() {
+		return new FormGroup<HumanLoopActivationConfigFormProperties>({
+		});
+
+	}
+
 
 	/** Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions. */
 	export interface HumanLoopActivationConditionsConfig {
 		HumanLoopActivationConditions: string;
+	}
+
+	/** Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions. */
+	export interface HumanLoopActivationConditionsConfigFormProperties {
+		HumanLoopActivationConditions: FormControl<string | null | undefined>,
+	}
+	export function CreateHumanLoopActivationConditionsConfigFormGroup() {
+		return new FormGroup<HumanLoopActivationConditionsConfigFormProperties>({
+			HumanLoopActivationConditions: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -825,10 +1811,33 @@ export namespace MyNS {
 		TaskCount: number;
 		TaskAvailabilityLifetimeInSeconds?: number | null;
 		TaskTimeLimitInSeconds?: number | null;
-		TaskKeywords?: Array<string> | null;
+		TaskKeywords?: Array<string>;
 
 		/** <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p> <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p> <ul> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p> <ul> <li> <p>0.012</p> </li> <li> <p>0.024</p> </li> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p> <ul> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>2.400 </p> </li> <li> <p>2.280 </p> </li> <li> <p>2.160 </p> </li> <li> <p>2.040 </p> </li> <li> <p>1.920 </p> </li> <li> <p>1.800 </p> </li> <li> <p>1.680 </p> </li> <li> <p>1.560 </p> </li> <li> <p>1.440 </p> </li> <li> <p>1.320 </p> </li> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> */
-		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice | null;
+		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice;
+	}
+
+	/** Describes the work to be performed by human workers. */
+	export interface HumanLoopConfigFormProperties {
+		WorkteamArn: FormControl<string | null | undefined>,
+		HumanTaskUiArn: FormControl<string | null | undefined>,
+		TaskTitle: FormControl<string | null | undefined>,
+		TaskDescription: FormControl<string | null | undefined>,
+		TaskCount: FormControl<number | null | undefined>,
+		TaskAvailabilityLifetimeInSeconds: FormControl<number | null | undefined>,
+		TaskTimeLimitInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateHumanLoopConfigFormGroup() {
+		return new FormGroup<HumanLoopConfigFormProperties>({
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined),
+			TaskTitle: new FormControl<string | null | undefined>(undefined),
+			TaskDescription: new FormControl<string | null | undefined>(undefined),
+			TaskCount: new FormControl<number | null | undefined>(undefined),
+			TaskAvailabilityLifetimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			TaskTimeLimitInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -836,7 +1845,16 @@ export namespace MyNS {
 	export interface PublicWorkforceTaskPrice {
 
 		/** Represents an amount of money in United States dollars/ */
-		AmountInUsd?: USD | null;
+		AmountInUsd?: USD;
+	}
+
+	/** <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p> <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p> <ul> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p> <ul> <li> <p>0.012</p> </li> <li> <p>0.024</p> </li> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p> <ul> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>2.400 </p> </li> <li> <p>2.280 </p> </li> <li> <p>2.160 </p> </li> <li> <p>2.040 </p> </li> <li> <p>1.920 </p> </li> <li> <p>1.800 </p> </li> <li> <p>1.680 </p> </li> <li> <p>1.560 </p> </li> <li> <p>1.440 </p> </li> <li> <p>1.320 </p> </li> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> */
+	export interface PublicWorkforceTaskPriceFormProperties {
+	}
+	export function CreatePublicWorkforceTaskPriceFormGroup() {
+		return new FormGroup<PublicWorkforceTaskPriceFormProperties>({
+		});
+
 	}
 
 
@@ -847,6 +1865,21 @@ export namespace MyNS {
 		TenthFractionsOfACent?: number | null;
 	}
 
+	/** Represents an amount of money in United States dollars/ */
+	export interface USDFormProperties {
+		Dollars: FormControl<number | null | undefined>,
+		Cents: FormControl<number | null | undefined>,
+		TenthFractionsOfACent: FormControl<number | null | undefined>,
+	}
+	export function CreateUSDFormGroup() {
+		return new FormGroup<USDFormProperties>({
+			Dollars: new FormControl<number | null | undefined>(undefined),
+			Cents: new FormControl<number | null | undefined>(undefined),
+			TenthFractionsOfACent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about where human output will be stored. */
 	export interface FlowDefinitionOutputConfig {
@@ -854,8 +1887,30 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 	}
 
+	/** Contains information about where human output will be stored. */
+	export interface FlowDefinitionOutputConfigFormProperties {
+		S3OutputPath: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateFlowDefinitionOutputConfigFormGroup() {
+		return new FormGroup<FlowDefinitionOutputConfigFormProperties>({
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateHumanTaskUiResponse {
 		HumanTaskUiArn: string;
+	}
+	export interface CreateHumanTaskUiResponseFormProperties {
+		HumanTaskUiArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHumanTaskUiResponseFormGroup() {
+		return new FormGroup<CreateHumanTaskUiResponseFormProperties>({
+			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateHumanTaskUiRequest {
@@ -866,7 +1921,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		UiTemplate: UiTemplate;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateHumanTaskUiRequestFormProperties {
+		HumanTaskUiName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHumanTaskUiRequestFormGroup() {
+		return new FormGroup<CreateHumanTaskUiRequestFormProperties>({
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -875,8 +1939,28 @@ export namespace MyNS {
 		Content: string;
 	}
 
+	/** The Liquid template for the worker user interface. */
+	export interface UiTemplateFormProperties {
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreateUiTemplateFormGroup() {
+		return new FormGroup<UiTemplateFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateHyperParameterTuningJobResponse {
 		HyperParameterTuningJobArn: string;
+	}
+	export interface CreateHyperParameterTuningJobResponseFormProperties {
+		HyperParameterTuningJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHyperParameterTuningJobResponseFormGroup() {
+		return new FormGroup<CreateHyperParameterTuningJobResponseFormProperties>({
+			HyperParameterTuningJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateHyperParameterTuningJobRequest {
@@ -889,12 +1973,21 @@ export namespace MyNS {
 		HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
 
 		/** Defines the training jobs launched by a hyperparameter tuning job. */
-		TrainingJobDefinition?: HyperParameterTrainingJobDefinition | null;
-		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition> | null;
+		TrainingJobDefinition?: HyperParameterTrainingJobDefinition;
+		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition>;
 
 		/** <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note> */
-		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig | null;
-		Tags?: Array<Tag> | null;
+		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateHyperParameterTuningJobRequestFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHyperParameterTuningJobRequestFormGroup() {
+		return new FormGroup<CreateHyperParameterTuningJobRequestFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -908,7 +2001,7 @@ export namespace MyNS {
 		Strategy: HyperParameterTuningJobConfigStrategy;
 
 		/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
-		HyperParameterTuningJobObjective?: HyperParameterTuningJobObjective | null;
+		HyperParameterTuningJobObjective?: HyperParameterTuningJobObjective;
 
 		/**
 		 * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
@@ -917,11 +2010,29 @@ export namespace MyNS {
 		ResourceLimits: ResourceLimits;
 
 		/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
-		ParameterRanges?: ParameterRanges | null;
+		ParameterRanges?: ParameterRanges;
 		TrainingJobEarlyStoppingType?: HyperParameterTuningJobConfigTrainingJobEarlyStoppingType | null;
 
 		/** The job completion criteria. */
-		TuningJobCompletionCriteria?: TuningJobCompletionCriteria | null;
+		TuningJobCompletionCriteria?: TuningJobCompletionCriteria;
+	}
+
+	/** Configures a hyperparameter tuning job. */
+	export interface HyperParameterTuningJobConfigFormProperties {
+
+		/**
+		 * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
+		 * Required
+		 */
+		Strategy: FormControl<HyperParameterTuningJobConfigStrategy | null | undefined>,
+		TrainingJobEarlyStoppingType: FormControl<HyperParameterTuningJobConfigTrainingJobEarlyStoppingType | null | undefined>,
+	}
+	export function CreateHyperParameterTuningJobConfigFormGroup() {
+		return new FormGroup<HyperParameterTuningJobConfigFormProperties>({
+			Strategy: new FormControl<HyperParameterTuningJobConfigStrategy | null | undefined>(undefined),
+			TrainingJobEarlyStoppingType: new FormControl<HyperParameterTuningJobConfigTrainingJobEarlyStoppingType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HyperParameterTuningJobConfigStrategy { Bayesian = 0, Random = 1 }
@@ -933,12 +2044,34 @@ export namespace MyNS {
 		MaxParallelTrainingJobs: number;
 	}
 
+	/** Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch. */
+	export interface ResourceLimitsFormProperties {
+		MaxNumberOfTrainingJobs: FormControl<number | null | undefined>,
+		MaxParallelTrainingJobs: FormControl<number | null | undefined>,
+	}
+	export function CreateResourceLimitsFormGroup() {
+		return new FormGroup<ResourceLimitsFormProperties>({
+			MaxNumberOfTrainingJobs: new FormControl<number | null | undefined>(undefined),
+			MaxParallelTrainingJobs: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
 	export interface ParameterRanges {
-		IntegerParameterRanges?: Array<IntegerParameterRange> | null;
-		ContinuousParameterRanges?: Array<ContinuousParameterRange> | null;
-		CategoricalParameterRanges?: Array<CategoricalParameterRange> | null;
+		IntegerParameterRanges?: Array<IntegerParameterRange>;
+		ContinuousParameterRanges?: Array<ContinuousParameterRange>;
+		CategoricalParameterRanges?: Array<CategoricalParameterRange>;
+	}
+
+	/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
+	export interface ParameterRangesFormProperties {
+	}
+	export function CreateParameterRangesFormGroup() {
+		return new FormGroup<ParameterRangesFormProperties>({
+		});
+
 	}
 
 
@@ -948,6 +2081,23 @@ export namespace MyNS {
 		MinValue: string;
 		MaxValue: string;
 		ScalingType?: IntegerParameterRangeScalingType | null;
+	}
+
+	/** For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches. */
+	export interface IntegerParameterRangeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		MinValue: FormControl<string | null | undefined>,
+		MaxValue: FormControl<string | null | undefined>,
+		ScalingType: FormControl<IntegerParameterRangeScalingType | null | undefined>,
+	}
+	export function CreateIntegerParameterRangeFormGroup() {
+		return new FormGroup<IntegerParameterRangeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			MinValue: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<string | null | undefined>(undefined),
+			ScalingType: new FormControl<IntegerParameterRangeScalingType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IntegerParameterRangeScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
@@ -961,11 +2111,39 @@ export namespace MyNS {
 		ScalingType?: IntegerParameterRangeScalingType | null;
 	}
 
+	/** A list of continuous hyperparameters to tune. */
+	export interface ContinuousParameterRangeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		MinValue: FormControl<string | null | undefined>,
+		MaxValue: FormControl<string | null | undefined>,
+		ScalingType: FormControl<IntegerParameterRangeScalingType | null | undefined>,
+	}
+	export function CreateContinuousParameterRangeFormGroup() {
+		return new FormGroup<ContinuousParameterRangeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			MinValue: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<string | null | undefined>(undefined),
+			ScalingType: new FormControl<IntegerParameterRangeScalingType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of categorical hyperparameters to tune. */
 	export interface CategoricalParameterRange {
 		Name: string;
 		Values: Array<string>;
+	}
+
+	/** A list of categorical hyperparameters to tune. */
+	export interface CategoricalParameterRangeFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoricalParameterRangeFormGroup() {
+		return new FormGroup<CategoricalParameterRangeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HyperParameterTuningJobConfigTrainingJobEarlyStoppingType { Off = 0, Auto = 1 }
@@ -976,17 +2154,28 @@ export namespace MyNS {
 		TargetObjectiveMetricValue: number;
 	}
 
+	/** The job completion criteria. */
+	export interface TuningJobCompletionCriteriaFormProperties {
+		TargetObjectiveMetricValue: FormControl<number | null | undefined>,
+	}
+	export function CreateTuningJobCompletionCriteriaFormGroup() {
+		return new FormGroup<TuningJobCompletionCriteriaFormProperties>({
+			TargetObjectiveMetricValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Defines the training jobs launched by a hyperparameter tuning job. */
 	export interface HyperParameterTrainingJobDefinition {
 		DefinitionName?: string | null;
 
 		/** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter. */
-		TuningObjective?: HyperParameterTuningJobObjective | null;
+		TuningObjective?: HyperParameterTuningJobObjective;
 
 		/** <p>Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.</p> <note> <p>You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.</p> </note> */
-		HyperParameterRanges?: ParameterRanges | null;
-		StaticHyperParameters?: HyperParameters | null;
+		HyperParameterRanges?: ParameterRanges;
+		StaticHyperParameters?: HyperParameters;
 
 		/**
 		 * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
@@ -994,10 +2183,10 @@ export namespace MyNS {
 		 */
 		AlgorithmSpecification: HyperParameterAlgorithmSpecification;
 		RoleArn: string;
-		InputDataConfig?: Array<Channel> | null;
+		InputDataConfig?: Array<Channel>;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 
 		/**
 		 * Provides information about how to store model training results (model artifacts).
@@ -1021,7 +2210,26 @@ export namespace MyNS {
 		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig | null;
+		CheckpointConfig?: CheckpointConfig;
+	}
+
+	/** Defines the training jobs launched by a hyperparameter tuning job. */
+	export interface HyperParameterTrainingJobDefinitionFormProperties {
+		DefinitionName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+		EnableInterContainerTrafficEncryption: FormControl<boolean | null | undefined>,
+		EnableManagedSpotTraining: FormControl<boolean | null | undefined>,
+	}
+	export function CreateHyperParameterTrainingJobDefinitionFormGroup() {
+		return new FormGroup<HyperParameterTrainingJobDefinitionFormProperties>({
+			DefinitionName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
+			EnableManagedSpotTraining: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1030,7 +2238,22 @@ export namespace MyNS {
 		TrainingImage?: string | null;
 		TrainingInputMode: TrainingInputMode;
 		AlgorithmName?: string | null;
-		MetricDefinitions?: Array<MetricDefinition> | null;
+		MetricDefinitions?: Array<MetricDefinition>;
+	}
+
+	/** Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor. */
+	export interface HyperParameterAlgorithmSpecificationFormProperties {
+		TrainingImage: FormControl<string | null | undefined>,
+		TrainingInputMode: FormControl<TrainingInputMode | null | undefined>,
+		AlgorithmName: FormControl<string | null | undefined>,
+	}
+	export function CreateHyperParameterAlgorithmSpecificationFormGroup() {
+		return new FormGroup<HyperParameterAlgorithmSpecificationFormProperties>({
+			TrainingImage: new FormControl<string | null | undefined>(undefined),
+			TrainingInputMode: new FormControl<TrainingInputMode | null | undefined>(undefined),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1040,11 +2263,35 @@ export namespace MyNS {
 		LocalPath?: string | null;
 	}
 
+	/** Contains information about the output location for managed spot training checkpoint data.  */
+	export interface CheckpointConfigFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		LocalPath: FormControl<string | null | undefined>,
+	}
+	export function CreateCheckpointConfigFormGroup() {
+		return new FormGroup<CheckpointConfigFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note> */
 	export interface HyperParameterTuningJobWarmStartConfig {
 		ParentHyperParameterTuningJobs: Array<ParentHyperParameterTuningJob>;
 		WarmStartType: HyperParameterTuningJobWarmStartConfigWarmStartType;
+	}
+
+	/** <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note> */
+	export interface HyperParameterTuningJobWarmStartConfigFormProperties {
+		WarmStartType: FormControl<HyperParameterTuningJobWarmStartConfigWarmStartType | null | undefined>,
+	}
+	export function CreateHyperParameterTuningJobWarmStartConfigFormGroup() {
+		return new FormGroup<HyperParameterTuningJobWarmStartConfigFormProperties>({
+			WarmStartType: new FormControl<HyperParameterTuningJobWarmStartConfigWarmStartType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1053,10 +2300,30 @@ export namespace MyNS {
 		HyperParameterTuningJobName?: string | null;
 	}
 
+	/** A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job. */
+	export interface ParentHyperParameterTuningJobFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateParentHyperParameterTuningJobFormGroup() {
+		return new FormGroup<ParentHyperParameterTuningJobFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HyperParameterTuningJobWarmStartConfigWarmStartType { IdenticalDataAndAlgorithm = 0, TransferLearning = 1 }
 
 	export interface CreateLabelingJobResponse {
 		LabelingJobArn: string;
+	}
+	export interface CreateLabelingJobResponseFormProperties {
+		LabelingJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLabelingJobResponseFormGroup() {
+		return new FormGroup<CreateLabelingJobResponseFormProperties>({
+			LabelingJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLabelingJobRequest {
@@ -1078,17 +2345,32 @@ export namespace MyNS {
 		LabelCategoryConfigS3Uri?: string | null;
 
 		/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
-		StoppingConditions?: LabelingJobStoppingConditions | null;
+		StoppingConditions?: LabelingJobStoppingConditions;
 
 		/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
-		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig | null;
+		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
 
 		/**
 		 * Information required for human workers to complete a labeling task.
 		 * Required
 		 */
 		HumanTaskConfig: HumanTaskConfig;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateLabelingJobRequestFormProperties {
+		LabelingJobName: FormControl<string | null | undefined>,
+		LabelAttributeName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		LabelCategoryConfigS3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLabelingJobRequestFormGroup() {
+		return new FormGroup<CreateLabelingJobRequestFormProperties>({
+			LabelingJobName: new FormControl<string | null | undefined>(undefined),
+			LabelAttributeName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			LabelCategoryConfigS3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1102,7 +2384,16 @@ export namespace MyNS {
 		DataSource: LabelingJobDataSource;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: LabelingJobDataAttributes | null;
+		DataAttributes?: LabelingJobDataAttributes;
+	}
+
+	/** Input configuration information for a labeling job. */
+	export interface LabelingJobInputConfigFormProperties {
+	}
+	export function CreateLabelingJobInputConfigFormGroup() {
+		return new FormGroup<LabelingJobInputConfigFormProperties>({
+		});
+
 	}
 
 
@@ -1116,16 +2407,45 @@ export namespace MyNS {
 		S3DataSource: LabelingJobS3DataSource;
 	}
 
+	/** Provides information about the location of input data. */
+	export interface LabelingJobDataSourceFormProperties {
+	}
+	export function CreateLabelingJobDataSourceFormGroup() {
+		return new FormGroup<LabelingJobDataSourceFormProperties>({
+		});
+
+	}
+
 
 	/** The Amazon S3 location of the input data objects. */
 	export interface LabelingJobS3DataSource {
 		ManifestS3Uri: string;
 	}
 
+	/** The Amazon S3 location of the input data objects. */
+	export interface LabelingJobS3DataSourceFormProperties {
+		ManifestS3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingJobS3DataSourceFormGroup() {
+		return new FormGroup<LabelingJobS3DataSourceFormProperties>({
+			ManifestS3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
 	export interface LabelingJobDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier> | null;
+		ContentClassifiers?: Array<ContentClassifier>;
+	}
+
+	/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
+	export interface LabelingJobDataAttributesFormProperties {
+	}
+	export function CreateLabelingJobDataAttributesFormGroup() {
+		return new FormGroup<LabelingJobDataAttributesFormProperties>({
+		});
+
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
@@ -1137,11 +2457,37 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 	}
 
+	/** Output configuration information for a labeling job. */
+	export interface LabelingJobOutputConfigFormProperties {
+		S3OutputPath: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingJobOutputConfigFormGroup() {
+		return new FormGroup<LabelingJobOutputConfigFormProperties>({
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
 	export interface LabelingJobStoppingConditions {
 		MaxHumanLabeledObjectCount?: number | null;
 		MaxPercentageOfInputDatasetLabeled?: number | null;
+	}
+
+	/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
+	export interface LabelingJobStoppingConditionsFormProperties {
+		MaxHumanLabeledObjectCount: FormControl<number | null | undefined>,
+		MaxPercentageOfInputDatasetLabeled: FormControl<number | null | undefined>,
+	}
+	export function CreateLabelingJobStoppingConditionsFormGroup() {
+		return new FormGroup<LabelingJobStoppingConditionsFormProperties>({
+			MaxHumanLabeledObjectCount: new FormControl<number | null | undefined>(undefined),
+			MaxPercentageOfInputDatasetLabeled: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1151,13 +2497,37 @@ export namespace MyNS {
 		InitialActiveLearningModelArn?: string | null;
 
 		/** Provides configuration information for labeling jobs. */
-		LabelingJobResourceConfig?: LabelingJobResourceConfig | null;
+		LabelingJobResourceConfig?: LabelingJobResourceConfig;
+	}
+
+	/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
+	export interface LabelingJobAlgorithmsConfigFormProperties {
+		LabelingJobAlgorithmSpecificationArn: FormControl<string | null | undefined>,
+		InitialActiveLearningModelArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingJobAlgorithmsConfigFormGroup() {
+		return new FormGroup<LabelingJobAlgorithmsConfigFormProperties>({
+			LabelingJobAlgorithmSpecificationArn: new FormControl<string | null | undefined>(undefined),
+			InitialActiveLearningModelArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Provides configuration information for labeling jobs. */
 	export interface LabelingJobResourceConfig {
 		VolumeKmsKeyId?: string | null;
+	}
+
+	/** Provides configuration information for labeling jobs. */
+	export interface LabelingJobResourceConfigFormProperties {
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingJobResourceConfigFormGroup() {
+		return new FormGroup<LabelingJobResourceConfigFormProperties>({
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1171,7 +2541,7 @@ export namespace MyNS {
 		 */
 		UiConfig: UiConfig;
 		PreHumanTaskLambdaArn: string;
-		TaskKeywords?: Array<string> | null;
+		TaskKeywords?: Array<string>;
 		TaskTitle: string;
 		TaskDescription: string;
 		NumberOfHumanWorkersPerDataObject: number;
@@ -1186,7 +2556,32 @@ export namespace MyNS {
 		AnnotationConsolidationConfig: AnnotationConsolidationConfig;
 
 		/** <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p> <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p> <ul> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.</p> <ul> <li> <p>0.012</p> </li> <li> <p>0.024</p> </li> <li> <p>0.036</p> </li> <li> <p>0.048</p> </li> <li> <p>0.060</p> </li> <li> <p>0.072</p> </li> <li> <p>0.120</p> </li> <li> <p>0.240</p> </li> <li> <p>0.360</p> </li> <li> <p>0.480</p> </li> <li> <p>0.600</p> </li> <li> <p>0.720</p> </li> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.</p> <ul> <li> <p>0.840</p> </li> <li> <p>0.960</p> </li> <li> <p>1.080</p> </li> <li> <p>1.200</p> </li> </ul> <p>Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>2.400 </p> </li> <li> <p>2.280 </p> </li> <li> <p>2.160 </p> </li> <li> <p>2.040 </p> </li> <li> <p>1.920 </p> </li> <li> <p>1.800 </p> </li> <li> <p>1.680 </p> </li> <li> <p>1.560 </p> </li> <li> <p>1.440 </p> </li> <li> <p>1.320 </p> </li> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> <p>Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.</p> <ul> <li> <p>1.200 </p> </li> <li> <p>1.080 </p> </li> <li> <p>0.960 </p> </li> <li> <p>0.840 </p> </li> <li> <p>0.720 </p> </li> <li> <p>0.600 </p> </li> <li> <p>0.480 </p> </li> <li> <p>0.360 </p> </li> <li> <p>0.240 </p> </li> <li> <p>0.120 </p> </li> <li> <p>0.072 </p> </li> <li> <p>0.060 </p> </li> <li> <p>0.048 </p> </li> <li> <p>0.036 </p> </li> <li> <p>0.024 </p> </li> <li> <p>0.012 </p> </li> </ul> */
-		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice | null;
+		PublicWorkforceTaskPrice?: PublicWorkforceTaskPrice;
+	}
+
+	/** Information required for human workers to complete a labeling task. */
+	export interface HumanTaskConfigFormProperties {
+		WorkteamArn: FormControl<string | null | undefined>,
+		PreHumanTaskLambdaArn: FormControl<string | null | undefined>,
+		TaskTitle: FormControl<string | null | undefined>,
+		TaskDescription: FormControl<string | null | undefined>,
+		NumberOfHumanWorkersPerDataObject: FormControl<number | null | undefined>,
+		TaskTimeLimitInSeconds: FormControl<number | null | undefined>,
+		TaskAvailabilityLifetimeInSeconds: FormControl<number | null | undefined>,
+		MaxConcurrentTaskCount: FormControl<number | null | undefined>,
+	}
+	export function CreateHumanTaskConfigFormGroup() {
+		return new FormGroup<HumanTaskConfigFormProperties>({
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+			PreHumanTaskLambdaArn: new FormControl<string | null | undefined>(undefined),
+			TaskTitle: new FormControl<string | null | undefined>(undefined),
+			TaskDescription: new FormControl<string | null | undefined>(undefined),
+			NumberOfHumanWorkersPerDataObject: new FormControl<number | null | undefined>(undefined),
+			TaskTimeLimitInSeconds: new FormControl<number | null | undefined>(undefined),
+			TaskAvailabilityLifetimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			MaxConcurrentTaskCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1196,28 +2591,74 @@ export namespace MyNS {
 		HumanTaskUiArn?: string | null;
 	}
 
+	/** Provided configuration information for the worker UI for a labeling job.  */
+	export interface UiConfigFormProperties {
+		UiTemplateS3Uri: FormControl<string | null | undefined>,
+		HumanTaskUiArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUiConfigFormGroup() {
+		return new FormGroup<UiConfigFormProperties>({
+			UiTemplateS3Uri: new FormControl<string | null | undefined>(undefined),
+			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configures how labels are consolidated across human workers. */
 	export interface AnnotationConsolidationConfig {
 		AnnotationConsolidationLambdaArn: string;
 	}
 
+	/** Configures how labels are consolidated across human workers. */
+	export interface AnnotationConsolidationConfigFormProperties {
+		AnnotationConsolidationLambdaArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAnnotationConsolidationConfigFormGroup() {
+		return new FormGroup<AnnotationConsolidationConfigFormProperties>({
+			AnnotationConsolidationLambdaArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateModelOutput {
 		ModelArn: string;
+	}
+	export interface CreateModelOutputFormProperties {
+		ModelArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelOutputFormGroup() {
+		return new FormGroup<CreateModelOutputFormProperties>({
+			ModelArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateModelInput {
 		ModelName: string;
 
 		/** Describes the container, as part of model definition. */
-		PrimaryContainer?: ContainerDefinition | null;
-		Containers?: Array<ContainerDefinition> | null;
+		PrimaryContainer?: ContainerDefinition;
+		Containers?: Array<ContainerDefinition>;
 		ExecutionRoleArn: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		EnableNetworkIsolation?: boolean | null;
+	}
+	export interface CreateModelInputFormProperties {
+		ModelName: FormControl<string | null | undefined>,
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateModelInputFormGroup() {
+		return new FormGroup<CreateModelInputFormProperties>({
+			ModelName: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1227,17 +2668,52 @@ export namespace MyNS {
 		Image?: string | null;
 		Mode?: ContainerDefinitionMode | null;
 		ModelDataUrl?: string | null;
-		Environment?: EnvironmentMap | null;
+		Environment?: EnvironmentMap;
 		ModelPackageName?: string | null;
+	}
+
+	/** Describes the container, as part of model definition. */
+	export interface ContainerDefinitionFormProperties {
+		ContainerHostname: FormControl<string | null | undefined>,
+		Image: FormControl<string | null | undefined>,
+		Mode: FormControl<ContainerDefinitionMode | null | undefined>,
+		ModelDataUrl: FormControl<string | null | undefined>,
+		ModelPackageName: FormControl<string | null | undefined>,
+	}
+	export function CreateContainerDefinitionFormGroup() {
+		return new FormGroup<ContainerDefinitionFormProperties>({
+			ContainerHostname: new FormControl<string | null | undefined>(undefined),
+			Image: new FormControl<string | null | undefined>(undefined),
+			Mode: new FormControl<ContainerDefinitionMode | null | undefined>(undefined),
+			ModelDataUrl: new FormControl<string | null | undefined>(undefined),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContainerDefinitionMode { SingleModel = 0, MultiModel = 1 }
 
 	export interface EnvironmentMap {
 	}
+	export interface EnvironmentMapFormProperties {
+	}
+	export function CreateEnvironmentMapFormGroup() {
+		return new FormGroup<EnvironmentMapFormProperties>({
+		});
+
+	}
 
 	export interface CreateModelPackageOutput {
 		ModelPackageArn: string;
+	}
+	export interface CreateModelPackageOutputFormProperties {
+		ModelPackageArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelPackageOutputFormGroup() {
+		return new FormGroup<CreateModelPackageOutputFormProperties>({
+			ModelPackageArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateModelPackageInput {
@@ -1245,14 +2721,27 @@ export namespace MyNS {
 		ModelPackageDescription?: string | null;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification | null;
+		InferenceSpecification?: InferenceSpecification;
 
 		/** Specifies batch transform jobs that Amazon SageMaker runs to validate your model package. */
-		ValidationSpecification?: ModelPackageValidationSpecification | null;
+		ValidationSpecification?: ModelPackageValidationSpecification;
 
 		/** A list of algorithms that were used to create a model package. */
-		SourceAlgorithmSpecification?: SourceAlgorithmSpecification | null;
+		SourceAlgorithmSpecification?: SourceAlgorithmSpecification;
 		CertifyForMarketplace?: boolean | null;
+	}
+	export interface CreateModelPackageInputFormProperties {
+		ModelPackageName: FormControl<string | null | undefined>,
+		ModelPackageDescription: FormControl<string | null | undefined>,
+		CertifyForMarketplace: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateModelPackageInputFormGroup() {
+		return new FormGroup<CreateModelPackageInputFormProperties>({
+			ModelPackageName: new FormControl<string | null | undefined>(undefined),
+			ModelPackageDescription: new FormControl<string | null | undefined>(undefined),
+			CertifyForMarketplace: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1260,6 +2749,17 @@ export namespace MyNS {
 	export interface ModelPackageValidationSpecification {
 		ValidationRole: string;
 		ValidationProfiles: Array<ModelPackageValidationProfile>;
+	}
+
+	/** Specifies batch transform jobs that Amazon SageMaker runs to validate your model package. */
+	export interface ModelPackageValidationSpecificationFormProperties {
+		ValidationRole: FormControl<string | null | undefined>,
+	}
+	export function CreateModelPackageValidationSpecificationFormGroup() {
+		return new FormGroup<ModelPackageValidationSpecificationFormProperties>({
+			ValidationRole: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1274,10 +2774,30 @@ export namespace MyNS {
 		TransformJobDefinition: TransformJobDefinition;
 	}
 
+	/** <p>Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.</p> <p>The data provided in the validation profile is made available to your buyers on AWS Marketplace.</p> */
+	export interface ModelPackageValidationProfileFormProperties {
+		ProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateModelPackageValidationProfileFormGroup() {
+		return new FormGroup<ModelPackageValidationProfileFormProperties>({
+			ProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of algorithms that were used to create a model package. */
 	export interface SourceAlgorithmSpecification {
 		SourceAlgorithms: Array<SourceAlgorithm>;
+	}
+
+	/** A list of algorithms that were used to create a model package. */
+	export interface SourceAlgorithmSpecificationFormProperties {
+	}
+	export function CreateSourceAlgorithmSpecificationFormGroup() {
+		return new FormGroup<SourceAlgorithmSpecificationFormProperties>({
+		});
+
 	}
 
 
@@ -1287,8 +2807,30 @@ export namespace MyNS {
 		AlgorithmName: string;
 	}
 
+	/** Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to. */
+	export interface SourceAlgorithmFormProperties {
+		ModelDataUrl: FormControl<string | null | undefined>,
+		AlgorithmName: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceAlgorithmFormGroup() {
+		return new FormGroup<SourceAlgorithmFormProperties>({
+			ModelDataUrl: new FormControl<string | null | undefined>(undefined),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateMonitoringScheduleResponse {
 		MonitoringScheduleArn: string;
+	}
+	export interface CreateMonitoringScheduleResponseFormProperties {
+		MonitoringScheduleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMonitoringScheduleResponseFormGroup() {
+		return new FormGroup<CreateMonitoringScheduleResponseFormProperties>({
+			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMonitoringScheduleRequest {
@@ -1299,7 +2841,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateMonitoringScheduleRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMonitoringScheduleRequestFormGroup() {
+		return new FormGroup<CreateMonitoringScheduleRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1307,7 +2858,7 @@ export namespace MyNS {
 	export interface MonitoringScheduleConfig {
 
 		/** Configuration details about the monitoring schedule. */
-		ScheduleConfig?: ScheduleConfig | null;
+		ScheduleConfig?: ScheduleConfig;
 
 		/**
 		 * Defines the monitoring job.
@@ -1316,10 +2867,30 @@ export namespace MyNS {
 		MonitoringJobDefinition: MonitoringJobDefinition;
 	}
 
+	/** Configures the monitoring schedule and defines the monitoring job. */
+	export interface MonitoringScheduleConfigFormProperties {
+	}
+	export function CreateMonitoringScheduleConfigFormGroup() {
+		return new FormGroup<MonitoringScheduleConfigFormProperties>({
+		});
+
+	}
+
 
 	/** Configuration details about the monitoring schedule. */
 	export interface ScheduleConfig {
 		ScheduleExpression: string;
+	}
+
+	/** Configuration details about the monitoring schedule. */
+	export interface ScheduleConfigFormProperties {
+		ScheduleExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduleConfigFormGroup() {
+		return new FormGroup<ScheduleConfigFormProperties>({
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1327,7 +2898,7 @@ export namespace MyNS {
 	export interface MonitoringJobDefinition {
 
 		/** Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically. */
-		BaselineConfig?: MonitoringBaselineConfig | null;
+		BaselineConfig?: MonitoringBaselineConfig;
 		MonitoringInputs: Array<MonitoringInput>;
 
 		/**
@@ -1349,12 +2920,23 @@ export namespace MyNS {
 		MonitoringAppSpecification: MonitoringAppSpecification;
 
 		/** A time limit for how long the monitoring job is allowed to run before stopping. */
-		StoppingCondition?: MonitoringStoppingCondition | null;
-		Environment?: MonitoringEnvironmentMap | null;
+		StoppingCondition?: MonitoringStoppingCondition;
+		Environment?: MonitoringEnvironmentMap;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig | null;
+		NetworkConfig?: NetworkConfig;
 		RoleArn: string;
+	}
+
+	/** Defines the monitoring job. */
+	export interface MonitoringJobDefinitionFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringJobDefinitionFormGroup() {
+		return new FormGroup<MonitoringJobDefinitionFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1362,10 +2944,19 @@ export namespace MyNS {
 	export interface MonitoringBaselineConfig {
 
 		/** The constraints resource for a monitoring job. */
-		ConstraintsResource?: MonitoringConstraintsResource | null;
+		ConstraintsResource?: MonitoringConstraintsResource;
 
 		/** The statistics resource for a monitoring job. */
-		StatisticsResource?: MonitoringStatisticsResource | null;
+		StatisticsResource?: MonitoringStatisticsResource;
+	}
+
+	/** Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically. */
+	export interface MonitoringBaselineConfigFormProperties {
+	}
+	export function CreateMonitoringBaselineConfigFormGroup() {
+		return new FormGroup<MonitoringBaselineConfigFormProperties>({
+		});
+
 	}
 
 
@@ -1374,10 +2965,32 @@ export namespace MyNS {
 		S3Uri?: string | null;
 	}
 
+	/** The constraints resource for a monitoring job. */
+	export interface MonitoringConstraintsResourceFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringConstraintsResourceFormGroup() {
+		return new FormGroup<MonitoringConstraintsResourceFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The statistics resource for a monitoring job. */
 	export interface MonitoringStatisticsResource {
 		S3Uri?: string | null;
+	}
+
+	/** The statistics resource for a monitoring job. */
+	export interface MonitoringStatisticsResourceFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringStatisticsResourceFormGroup() {
+		return new FormGroup<MonitoringStatisticsResourceFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1391,6 +3004,15 @@ export namespace MyNS {
 		EndpointInput: EndpointInput;
 	}
 
+	/** The inputs for a monitoring job. */
+	export interface MonitoringInputFormProperties {
+	}
+	export function CreateMonitoringInputFormGroup() {
+		return new FormGroup<MonitoringInputFormProperties>({
+		});
+
+	}
+
 
 	/** Input object for the endpoint */
 	export interface EndpointInput {
@@ -1400,11 +3022,39 @@ export namespace MyNS {
 		S3DataDistributionType?: S3DataSourceS3DataDistributionType | null;
 	}
 
+	/** Input object for the endpoint */
+	export interface EndpointInputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		LocalPath: FormControl<string | null | undefined>,
+		S3InputMode: FormControl<TrainingInputMode | null | undefined>,
+		S3DataDistributionType: FormControl<S3DataSourceS3DataDistributionType | null | undefined>,
+	}
+	export function CreateEndpointInputFormGroup() {
+		return new FormGroup<EndpointInputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3InputMode: new FormControl<TrainingInputMode | null | undefined>(undefined),
+			S3DataDistributionType: new FormControl<S3DataSourceS3DataDistributionType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output configuration for monitoring jobs. */
 	export interface MonitoringOutputConfig {
 		MonitoringOutputs: Array<MonitoringOutput>;
 		KmsKeyId?: string | null;
+	}
+
+	/** The output configuration for monitoring jobs. */
+	export interface MonitoringOutputConfigFormProperties {
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringOutputConfigFormGroup() {
+		return new FormGroup<MonitoringOutputConfigFormProperties>({
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1418,12 +3068,36 @@ export namespace MyNS {
 		S3Output: MonitoringS3Output;
 	}
 
+	/** The output object for a monitoring job. */
+	export interface MonitoringOutputFormProperties {
+	}
+	export function CreateMonitoringOutputFormGroup() {
+		return new FormGroup<MonitoringOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Information about where and how you want to store the results of a monitoring job. */
 	export interface MonitoringS3Output {
 		S3Uri: string;
 		LocalPath: string;
 		S3UploadMode?: MonitoringS3OutputS3UploadMode | null;
+	}
+
+	/** Information about where and how you want to store the results of a monitoring job. */
+	export interface MonitoringS3OutputFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		LocalPath: FormControl<string | null | undefined>,
+		S3UploadMode: FormControl<MonitoringS3OutputS3UploadMode | null | undefined>,
+	}
+	export function CreateMonitoringS3OutputFormGroup() {
+		return new FormGroup<MonitoringS3OutputFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3UploadMode: new FormControl<MonitoringS3OutputS3UploadMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MonitoringS3OutputS3UploadMode { Continuous = 0, EndOfJob = 1 }
@@ -1439,6 +3113,15 @@ export namespace MyNS {
 		ClusterConfig: MonitoringClusterConfig;
 	}
 
+	/** Identifies the resources to deploy for a monitoring job. */
+	export interface MonitoringResourcesFormProperties {
+	}
+	export function CreateMonitoringResourcesFormGroup() {
+		return new FormGroup<MonitoringResourcesFormProperties>({
+		});
+
+	}
+
 
 	/** Configuration for the cluster used to run model monitoring jobs. */
 	export interface MonitoringClusterConfig {
@@ -1448,16 +3131,48 @@ export namespace MyNS {
 		VolumeKmsKeyId?: string | null;
 	}
 
+	/** Configuration for the cluster used to run model monitoring jobs. */
+	export interface MonitoringClusterConfigFormProperties {
+		InstanceCount: FormControl<number | null | undefined>,
+		InstanceType: FormControl<MonitoringClusterConfigInstanceType | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringClusterConfigFormGroup() {
+		return new FormGroup<MonitoringClusterConfigFormProperties>({
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			InstanceType: new FormControl<MonitoringClusterConfigInstanceType | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MonitoringClusterConfigInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
 
 
 	/** Container image configuration object for the monitoring job. */
 	export interface MonitoringAppSpecification {
 		ImageUri: string;
-		ContainerEntrypoint?: Array<string> | null;
-		ContainerArguments?: Array<string> | null;
+		ContainerEntrypoint?: Array<string>;
+		ContainerArguments?: Array<string>;
 		RecordPreprocessorSourceUri?: string | null;
 		PostAnalyticsProcessorSourceUri?: string | null;
+	}
+
+	/** Container image configuration object for the monitoring job. */
+	export interface MonitoringAppSpecificationFormProperties {
+		ImageUri: FormControl<string | null | undefined>,
+		RecordPreprocessorSourceUri: FormControl<string | null | undefined>,
+		PostAnalyticsProcessorSourceUri: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringAppSpecificationFormGroup() {
+		return new FormGroup<MonitoringAppSpecificationFormProperties>({
+			ImageUri: new FormControl<string | null | undefined>(undefined),
+			RecordPreprocessorSourceUri: new FormControl<string | null | undefined>(undefined),
+			PostAnalyticsProcessorSourceUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1466,7 +3181,25 @@ export namespace MyNS {
 		MaxRuntimeInSeconds: number;
 	}
 
+	/** A time limit for how long the monitoring job is allowed to run before stopping. */
+	export interface MonitoringStoppingConditionFormProperties {
+		MaxRuntimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateMonitoringStoppingConditionFormGroup() {
+		return new FormGroup<MonitoringStoppingConditionFormProperties>({
+			MaxRuntimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MonitoringEnvironmentMap {
+	}
+	export interface MonitoringEnvironmentMapFormProperties {
+	}
+	export function CreateMonitoringEnvironmentMapFormGroup() {
+		return new FormGroup<MonitoringEnvironmentMapFormProperties>({
+		});
+
 	}
 
 
@@ -1476,28 +3209,77 @@ export namespace MyNS {
 		EnableNetworkIsolation?: boolean | null;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
+	}
+
+	/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
+	export interface NetworkConfigFormProperties {
+		EnableInterContainerTrafficEncryption: FormControl<boolean | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNetworkConfigFormGroup() {
+		return new FormGroup<NetworkConfigFormProperties>({
+			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateNotebookInstanceOutput {
 		NotebookInstanceArn?: string | null;
+	}
+	export interface CreateNotebookInstanceOutputFormProperties {
+		NotebookInstanceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNotebookInstanceOutputFormGroup() {
+		return new FormGroup<CreateNotebookInstanceOutputFormProperties>({
+			NotebookInstanceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateNotebookInstanceInput {
 		NotebookInstanceName: string;
 		InstanceType: CreateNotebookInstanceInputInstanceType;
 		SubnetId?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		RoleArn: string;
 		KmsKeyId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		LifecycleConfigName?: string | null;
 		DirectInternetAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
 		VolumeSizeInGB?: number | null;
-		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType> | null;
+		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType>;
 		DefaultCodeRepository?: string | null;
-		AdditionalCodeRepositories?: Array<string> | null;
+		AdditionalCodeRepositories?: Array<string>;
 		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
+	}
+	export interface CreateNotebookInstanceInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+		InstanceType: FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		LifecycleConfigName: FormControl<string | null | undefined>,
+		DirectInternetAccess: FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+		DefaultCodeRepository: FormControl<string | null | undefined>,
+		RootAccess: FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>,
+	}
+	export function CreateCreateNotebookInstanceInputFormGroup() {
+		return new FormGroup<CreateNotebookInstanceInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			LifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+			DirectInternetAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined),
+			RootAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateNotebookInstanceInputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
@@ -1509,11 +3291,29 @@ export namespace MyNS {
 	export interface CreateNotebookInstanceLifecycleConfigOutput {
 		NotebookInstanceLifecycleConfigArn?: string | null;
 	}
+	export interface CreateNotebookInstanceLifecycleConfigOutputFormProperties {
+		NotebookInstanceLifecycleConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNotebookInstanceLifecycleConfigOutputFormGroup() {
+		return new FormGroup<CreateNotebookInstanceLifecycleConfigOutputFormProperties>({
+			NotebookInstanceLifecycleConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateNotebookInstanceLifecycleConfigInput {
 		NotebookInstanceLifecycleConfigName: string;
-		OnCreate?: Array<NotebookInstanceLifecycleHook> | null;
-		OnStart?: Array<NotebookInstanceLifecycleHook> | null;
+		OnCreate?: Array<NotebookInstanceLifecycleHook>;
+		OnStart?: Array<NotebookInstanceLifecycleHook>;
+	}
+	export interface CreateNotebookInstanceLifecycleConfigInputFormProperties {
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNotebookInstanceLifecycleConfigInputFormGroup() {
+		return new FormGroup<CreateNotebookInstanceLifecycleConfigInputFormProperties>({
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1522,8 +3322,28 @@ export namespace MyNS {
 		Content?: string | null;
 	}
 
+	/** <p>Contains the notebook instance lifecycle configuration script.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p> */
+	export interface NotebookInstanceLifecycleHookFormProperties {
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreateNotebookInstanceLifecycleHookFormGroup() {
+		return new FormGroup<NotebookInstanceLifecycleHookFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreatePresignedDomainUrlResponse {
 		AuthorizedUrl?: string | null;
+	}
+	export interface CreatePresignedDomainUrlResponseFormProperties {
+		AuthorizedUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresignedDomainUrlResponseFormGroup() {
+		return new FormGroup<CreatePresignedDomainUrlResponseFormProperties>({
+			AuthorizedUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresignedDomainUrlRequest {
@@ -1531,25 +3351,67 @@ export namespace MyNS {
 		UserProfileName: string;
 		SessionExpirationDurationInSeconds?: number | null;
 	}
+	export interface CreatePresignedDomainUrlRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		SessionExpirationDurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreatePresignedDomainUrlRequestFormGroup() {
+		return new FormGroup<CreatePresignedDomainUrlRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			SessionExpirationDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePresignedNotebookInstanceUrlOutput {
 		AuthorizedUrl?: string | null;
+	}
+	export interface CreatePresignedNotebookInstanceUrlOutputFormProperties {
+		AuthorizedUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresignedNotebookInstanceUrlOutputFormGroup() {
+		return new FormGroup<CreatePresignedNotebookInstanceUrlOutputFormProperties>({
+			AuthorizedUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresignedNotebookInstanceUrlInput {
 		NotebookInstanceName: string;
 		SessionExpirationDurationInSeconds?: number | null;
 	}
+	export interface CreatePresignedNotebookInstanceUrlInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+		SessionExpirationDurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreatePresignedNotebookInstanceUrlInputFormGroup() {
+		return new FormGroup<CreatePresignedNotebookInstanceUrlInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+			SessionExpirationDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateProcessingJobResponse {
 		ProcessingJobArn: string;
 	}
+	export interface CreateProcessingJobResponseFormProperties {
+		ProcessingJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProcessingJobResponseFormGroup() {
+		return new FormGroup<CreateProcessingJobResponseFormProperties>({
+			ProcessingJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateProcessingJobRequest {
-		ProcessingInputs?: Array<ProcessingInput> | null;
+		ProcessingInputs?: Array<ProcessingInput>;
 
 		/** The output configuration for the processing job. */
-		ProcessingOutputConfig?: ProcessingOutputConfig | null;
+		ProcessingOutputConfig?: ProcessingOutputConfig;
 		ProcessingJobName: string;
 
 		/**
@@ -1559,22 +3421,33 @@ export namespace MyNS {
 		ProcessingResources: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
-		StoppingCondition?: ProcessingStoppingCondition | null;
+		StoppingCondition?: ProcessingStoppingCondition;
 
 		/**
 		 * Configuration to run a processing job in a specified container image.
 		 * Required
 		 */
 		AppSpecification: AppSpecification;
-		Environment?: ProcessingEnvironmentMap | null;
+		Environment?: ProcessingEnvironmentMap;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig | null;
+		NetworkConfig?: NetworkConfig;
 		RoleArn: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
+		ExperimentConfig?: ExperimentConfig;
+	}
+	export interface CreateProcessingJobRequestFormProperties {
+		ProcessingJobName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProcessingJobRequestFormGroup() {
+		return new FormGroup<CreateProcessingJobRequestFormProperties>({
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1589,6 +3462,17 @@ export namespace MyNS {
 		S3Input: ProcessingS3Input;
 	}
 
+	/** The inputs for a processing job. */
+	export interface ProcessingInputFormProperties {
+		InputName: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessingInputFormGroup() {
+		return new FormGroup<ProcessingInputFormProperties>({
+			InputName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about where and how you want to obtain the inputs for an processing job. */
 	export interface ProcessingS3Input {
@@ -1600,11 +3484,43 @@ export namespace MyNS {
 		S3CompressionType?: CompressionType | null;
 	}
 
+	/** Information about where and how you want to obtain the inputs for an processing job. */
+	export interface ProcessingS3InputFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		LocalPath: FormControl<string | null | undefined>,
+		S3DataType: FormControl<AutoMLS3DataSourceS3DataType | null | undefined>,
+		S3InputMode: FormControl<TrainingInputMode | null | undefined>,
+		S3DataDistributionType: FormControl<S3DataSourceS3DataDistributionType | null | undefined>,
+		S3CompressionType: FormControl<CompressionType | null | undefined>,
+	}
+	export function CreateProcessingS3InputFormGroup() {
+		return new FormGroup<ProcessingS3InputFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3DataType: new FormControl<AutoMLS3DataSourceS3DataType | null | undefined>(undefined),
+			S3InputMode: new FormControl<TrainingInputMode | null | undefined>(undefined),
+			S3DataDistributionType: new FormControl<S3DataSourceS3DataDistributionType | null | undefined>(undefined),
+			S3CompressionType: new FormControl<CompressionType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output configuration for the processing job. */
 	export interface ProcessingOutputConfig {
 		Outputs: Array<ProcessingOutput>;
 		KmsKeyId?: string | null;
+	}
+
+	/** The output configuration for the processing job. */
+	export interface ProcessingOutputConfigFormProperties {
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessingOutputConfigFormGroup() {
+		return new FormGroup<ProcessingOutputConfigFormProperties>({
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1619,12 +3535,38 @@ export namespace MyNS {
 		S3Output: ProcessingS3Output;
 	}
 
+	/** Describes the results of a processing job. */
+	export interface ProcessingOutputFormProperties {
+		OutputName: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessingOutputFormGroup() {
+		return new FormGroup<ProcessingOutputFormProperties>({
+			OutputName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about where and how you want to store the results of an processing job. */
 	export interface ProcessingS3Output {
 		S3Uri: string;
 		LocalPath: string;
 		S3UploadMode: MonitoringS3OutputS3UploadMode;
+	}
+
+	/** Information about where and how you want to store the results of an processing job. */
+	export interface ProcessingS3OutputFormProperties {
+		S3Uri: FormControl<string | null | undefined>,
+		LocalPath: FormControl<string | null | undefined>,
+		S3UploadMode: FormControl<MonitoringS3OutputS3UploadMode | null | undefined>,
+	}
+	export function CreateProcessingS3OutputFormGroup() {
+		return new FormGroup<ProcessingS3OutputFormProperties>({
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3UploadMode: new FormControl<MonitoringS3OutputS3UploadMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1638,6 +3580,15 @@ export namespace MyNS {
 		ClusterConfig: ProcessingClusterConfig;
 	}
 
+	/** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance. */
+	export interface ProcessingResourcesFormProperties {
+	}
+	export function CreateProcessingResourcesFormGroup() {
+		return new FormGroup<ProcessingResourcesFormProperties>({
+		});
+
+	}
+
 
 	/** Configuration for the cluster used to run a processing job. */
 	export interface ProcessingClusterConfig {
@@ -1645,6 +3596,23 @@ export namespace MyNS {
 		InstanceType: ProcessingClusterConfigInstanceType;
 		VolumeSizeInGB: number;
 		VolumeKmsKeyId?: string | null;
+	}
+
+	/** Configuration for the cluster used to run a processing job. */
+	export interface ProcessingClusterConfigFormProperties {
+		InstanceCount: FormControl<number | null | undefined>,
+		InstanceType: FormControl<ProcessingClusterConfigInstanceType | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+		VolumeKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessingClusterConfigFormGroup() {
+		return new FormGroup<ProcessingClusterConfigFormProperties>({
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			InstanceType: new FormControl<ProcessingClusterConfigInstanceType | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProcessingClusterConfigInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
@@ -1655,15 +3623,44 @@ export namespace MyNS {
 		MaxRuntimeInSeconds: number;
 	}
 
+	/** Specifies a time limit for how long the processing job is allowed to run. */
+	export interface ProcessingStoppingConditionFormProperties {
+		MaxRuntimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateProcessingStoppingConditionFormGroup() {
+		return new FormGroup<ProcessingStoppingConditionFormProperties>({
+			MaxRuntimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configuration to run a processing job in a specified container image. */
 	export interface AppSpecification {
 		ImageUri: string;
-		ContainerEntrypoint?: Array<string> | null;
-		ContainerArguments?: Array<string> | null;
+		ContainerEntrypoint?: Array<string>;
+		ContainerArguments?: Array<string>;
+	}
+
+	/** Configuration to run a processing job in a specified container image. */
+	export interface AppSpecificationFormProperties {
+		ImageUri: FormControl<string | null | undefined>,
+	}
+	export function CreateAppSpecificationFormGroup() {
+		return new FormGroup<AppSpecificationFormProperties>({
+			ImageUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ProcessingEnvironmentMap {
+	}
+	export interface ProcessingEnvironmentMapFormProperties {
+	}
+	export function CreateProcessingEnvironmentMapFormGroup() {
+		return new FormGroup<ProcessingEnvironmentMapFormProperties>({
+		});
+
 	}
 
 
@@ -1674,13 +3671,37 @@ export namespace MyNS {
 		TrialComponentDisplayName?: string | null;
 	}
 
+	/** Configuration for the experiment. */
+	export interface ExperimentConfigFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		TrialName: FormControl<string | null | undefined>,
+		TrialComponentDisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateExperimentConfigFormGroup() {
+		return new FormGroup<ExperimentConfigFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			TrialComponentDisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateTrainingJobResponse {
 		TrainingJobArn: string;
+	}
+	export interface CreateTrainingJobResponseFormProperties {
+		TrainingJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrainingJobResponseFormGroup() {
+		return new FormGroup<CreateTrainingJobResponseFormProperties>({
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTrainingJobRequest {
 		TrainingJobName: string;
-		HyperParameters?: HyperParameters | null;
+		HyperParameters?: HyperParameters;
 
 		/**
 		 * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
@@ -1688,7 +3709,7 @@ export namespace MyNS {
 		 */
 		AlgorithmSpecification: AlgorithmSpecification;
 		RoleArn: string;
-		InputDataConfig?: Array<Channel> | null;
+		InputDataConfig?: Array<Channel>;
 
 		/**
 		 * Provides information about how to store model training results (model artifacts).
@@ -1703,30 +3724,47 @@ export namespace MyNS {
 		ResourceConfig: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 
 		/**
 		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
 		 * Required
 		 */
 		StoppingCondition: StoppingCondition;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		EnableNetworkIsolation?: boolean | null;
 		EnableInterContainerTrafficEncryption?: boolean | null;
 		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig | null;
+		CheckpointConfig?: CheckpointConfig;
 
 		/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
-		DebugHookConfig?: DebugHookConfig | null;
-		DebugRuleConfigurations?: Array<DebugRuleConfiguration> | null;
+		DebugHookConfig?: DebugHookConfig;
+		DebugRuleConfigurations?: Array<DebugRuleConfiguration>;
 
 		/** Configuration of storage locations for TensorBoard output. */
-		TensorBoardOutputConfig?: TensorBoardOutputConfig | null;
+		TensorBoardOutputConfig?: TensorBoardOutputConfig;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
+		ExperimentConfig?: ExperimentConfig;
+	}
+	export interface CreateTrainingJobRequestFormProperties {
+		TrainingJobName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+		EnableInterContainerTrafficEncryption: FormControl<boolean | null | undefined>,
+		EnableManagedSpotTraining: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateTrainingJobRequestFormGroup() {
+		return new FormGroup<CreateTrainingJobRequestFormProperties>({
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
+			EnableManagedSpotTraining: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1735,8 +3773,25 @@ export namespace MyNS {
 		TrainingImage?: string | null;
 		AlgorithmName?: string | null;
 		TrainingInputMode: TrainingInputMode;
-		MetricDefinitions?: Array<MetricDefinition> | null;
+		MetricDefinitions?: Array<MetricDefinition>;
 		EnableSageMakerMetricsTimeSeries?: boolean | null;
+	}
+
+	/** <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> */
+	export interface AlgorithmSpecificationFormProperties {
+		TrainingImage: FormControl<string | null | undefined>,
+		AlgorithmName: FormControl<string | null | undefined>,
+		TrainingInputMode: FormControl<TrainingInputMode | null | undefined>,
+		EnableSageMakerMetricsTimeSeries: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAlgorithmSpecificationFormGroup() {
+		return new FormGroup<AlgorithmSpecificationFormProperties>({
+			TrainingImage: new FormControl<string | null | undefined>(undefined),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+			TrainingInputMode: new FormControl<TrainingInputMode | null | undefined>(undefined),
+			EnableSageMakerMetricsTimeSeries: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1744,21 +3799,59 @@ export namespace MyNS {
 	export interface DebugHookConfig {
 		LocalPath?: string | null;
 		S3OutputPath: string;
-		HookParameters?: HookParameters | null;
-		CollectionConfigurations?: Array<CollectionConfiguration> | null;
+		HookParameters?: HookParameters;
+		CollectionConfigurations?: Array<CollectionConfiguration>;
+	}
+
+	/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
+	export interface DebugHookConfigFormProperties {
+		LocalPath: FormControl<string | null | undefined>,
+		S3OutputPath: FormControl<string | null | undefined>,
+	}
+	export function CreateDebugHookConfigFormGroup() {
+		return new FormGroup<DebugHookConfigFormProperties>({
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface HookParameters {
+	}
+	export interface HookParametersFormProperties {
+	}
+	export function CreateHookParametersFormGroup() {
+		return new FormGroup<HookParametersFormProperties>({
+		});
+
 	}
 
 
 	/** Configuration information for tensor collections. */
 	export interface CollectionConfiguration {
 		CollectionName?: string | null;
-		CollectionParameters?: CollectionParameters | null;
+		CollectionParameters?: CollectionParameters;
+	}
+
+	/** Configuration information for tensor collections. */
+	export interface CollectionConfigurationFormProperties {
+		CollectionName: FormControl<string | null | undefined>,
+	}
+	export function CreateCollectionConfigurationFormGroup() {
+		return new FormGroup<CollectionConfigurationFormProperties>({
+			CollectionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CollectionParameters {
+	}
+	export interface CollectionParametersFormProperties {
+	}
+	export function CreateCollectionParametersFormGroup() {
+		return new FormGroup<CollectionParametersFormProperties>({
+		});
+
 	}
 
 
@@ -1770,12 +3863,40 @@ export namespace MyNS {
 		RuleEvaluatorImage: string;
 		InstanceType?: DebugRuleConfigurationInstanceType | null;
 		VolumeSizeInGB?: number | null;
-		RuleParameters?: RuleParameters | null;
+		RuleParameters?: RuleParameters;
+	}
+
+	/** Configuration information for debugging rules. */
+	export interface DebugRuleConfigurationFormProperties {
+		RuleConfigurationName: FormControl<string | null | undefined>,
+		LocalPath: FormControl<string | null | undefined>,
+		S3OutputPath: FormControl<string | null | undefined>,
+		RuleEvaluatorImage: FormControl<string | null | undefined>,
+		InstanceType: FormControl<DebugRuleConfigurationInstanceType | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+	}
+	export function CreateDebugRuleConfigurationFormGroup() {
+		return new FormGroup<DebugRuleConfigurationFormProperties>({
+			RuleConfigurationName: new FormControl<string | null | undefined>(undefined),
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+			RuleEvaluatorImage: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<DebugRuleConfigurationInstanceType | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DebugRuleConfigurationInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
 
 	export interface RuleParameters {
+	}
+	export interface RuleParametersFormProperties {
+	}
+	export function CreateRuleParametersFormGroup() {
+		return new FormGroup<RuleParametersFormProperties>({
+		});
+
 	}
 
 
@@ -1785,8 +3906,30 @@ export namespace MyNS {
 		S3OutputPath: string;
 	}
 
+	/** Configuration of storage locations for TensorBoard output. */
+	export interface TensorBoardOutputConfigFormProperties {
+		LocalPath: FormControl<string | null | undefined>,
+		S3OutputPath: FormControl<string | null | undefined>,
+	}
+	export function CreateTensorBoardOutputConfigFormGroup() {
+		return new FormGroup<TensorBoardOutputConfigFormProperties>({
+			LocalPath: new FormControl<string | null | undefined>(undefined),
+			S3OutputPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateTransformJobResponse {
 		TransformJobArn: string;
+	}
+	export interface CreateTransformJobResponseFormProperties {
+		TransformJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTransformJobResponseFormGroup() {
+		return new FormGroup<CreateTransformJobResponseFormProperties>({
+			TransformJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTransformJobRequest {
@@ -1795,7 +3938,7 @@ export namespace MyNS {
 		MaxConcurrentTransforms?: number | null;
 		MaxPayloadInMB?: number | null;
 		BatchStrategy?: TransformJobDefinitionBatchStrategy | null;
-		Environment?: TransformEnvironmentMap | null;
+		Environment?: TransformEnvironmentMap;
 
 		/**
 		 * Describes the input source of a transform job and the way the transform job consumes it.
@@ -1816,11 +3959,28 @@ export namespace MyNS {
 		TransformResources: TransformResources;
 
 		/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
-		DataProcessing?: DataProcessing | null;
-		Tags?: Array<Tag> | null;
+		DataProcessing?: DataProcessing;
+		Tags?: Array<Tag>;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
+		ExperimentConfig?: ExperimentConfig;
+	}
+	export interface CreateTransformJobRequestFormProperties {
+		TransformJobName: FormControl<string | null | undefined>,
+		ModelName: FormControl<string | null | undefined>,
+		MaxConcurrentTransforms: FormControl<number | null | undefined>,
+		MaxPayloadInMB: FormControl<number | null | undefined>,
+		BatchStrategy: FormControl<TransformJobDefinitionBatchStrategy | null | undefined>,
+	}
+	export function CreateCreateTransformJobRequestFormGroup() {
+		return new FormGroup<CreateTransformJobRequestFormProperties>({
+			TransformJobName: new FormControl<string | null | undefined>(undefined),
+			ModelName: new FormControl<string | null | undefined>(undefined),
+			MaxConcurrentTransforms: new FormControl<number | null | undefined>(undefined),
+			MaxPayloadInMB: new FormControl<number | null | undefined>(undefined),
+			BatchStrategy: new FormControl<TransformJobDefinitionBatchStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1831,21 +3991,67 @@ export namespace MyNS {
 		JoinSource?: DataProcessingJoinSource | null;
 	}
 
+	/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
+	export interface DataProcessingFormProperties {
+		InputFilter: FormControl<string | null | undefined>,
+		OutputFilter: FormControl<string | null | undefined>,
+		JoinSource: FormControl<DataProcessingJoinSource | null | undefined>,
+	}
+	export function CreateDataProcessingFormGroup() {
+		return new FormGroup<DataProcessingFormProperties>({
+			InputFilter: new FormControl<string | null | undefined>(undefined),
+			OutputFilter: new FormControl<string | null | undefined>(undefined),
+			JoinSource: new FormControl<DataProcessingJoinSource | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DataProcessingJoinSource { Input = 0, None = 1 }
 
 	export interface CreateTrialResponse {
 		TrialArn?: string | null;
+	}
+	export interface CreateTrialResponseFormProperties {
+		TrialArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrialResponseFormGroup() {
+		return new FormGroup<CreateTrialResponseFormProperties>({
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTrialRequest {
 		TrialName: string;
 		DisplayName?: string | null;
 		ExperimentName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateTrialRequestFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		ExperimentName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrialRequestFormGroup() {
+		return new FormGroup<CreateTrialRequestFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTrialComponentResponse {
 		TrialComponentArn?: string | null;
+	}
+	export interface CreateTrialComponentResponseFormProperties {
+		TrialComponentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrialComponentResponseFormGroup() {
+		return new FormGroup<CreateTrialComponentResponseFormProperties>({
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTrialComponentRequest {
@@ -1853,13 +4059,28 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus | null;
+		Status?: TrialComponentStatus;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
-		Parameters?: TrialComponentParameters | null;
-		InputArtifacts?: TrialComponentArtifacts | null;
-		OutputArtifacts?: TrialComponentArtifacts | null;
-		Tags?: Array<Tag> | null;
+		Parameters?: TrialComponentParameters;
+		InputArtifacts?: TrialComponentArtifacts;
+		OutputArtifacts?: TrialComponentArtifacts;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateTrialComponentRequestFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateTrialComponentRequestFormGroup() {
+		return new FormGroup<CreateTrialComponentRequestFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1869,16 +4090,52 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** The status of the trial component. */
+	export interface TrialComponentStatusFormProperties {
+		PrimaryStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateTrialComponentStatusFormGroup() {
+		return new FormGroup<TrialComponentStatusFormProperties>({
+			PrimaryStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TrialComponentStatusPrimaryStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }
 
 	export interface TrialComponentParameters {
 	}
+	export interface TrialComponentParametersFormProperties {
+	}
+	export function CreateTrialComponentParametersFormGroup() {
+		return new FormGroup<TrialComponentParametersFormProperties>({
+		});
+
+	}
 
 	export interface TrialComponentArtifacts {
+	}
+	export interface TrialComponentArtifactsFormProperties {
+	}
+	export function CreateTrialComponentArtifactsFormGroup() {
+		return new FormGroup<TrialComponentArtifactsFormProperties>({
+		});
+
 	}
 
 	export interface CreateUserProfileResponse {
 		UserProfileArn?: string | null;
+	}
+	export interface CreateUserProfileResponseFormProperties {
+		UserProfileArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserProfileResponseFormGroup() {
+		return new FormGroup<CreateUserProfileResponseFormProperties>({
+			UserProfileArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserProfileRequest {
@@ -1886,14 +4143,38 @@ export namespace MyNS {
 		UserProfileName: string;
 		SingleSignOnUserIdentifier?: string | null;
 		SingleSignOnUserValue?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** A collection of settings. */
-		UserSettings?: UserSettings | null;
+		UserSettings?: UserSettings;
+	}
+	export interface CreateUserProfileRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		SingleSignOnUserIdentifier: FormControl<string | null | undefined>,
+		SingleSignOnUserValue: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserProfileRequestFormGroup() {
+		return new FormGroup<CreateUserProfileRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnUserValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateWorkteamResponse {
 		WorkteamArn?: string | null;
+	}
+	export interface CreateWorkteamResponseFormProperties {
+		WorkteamArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWorkteamResponseFormGroup() {
+		return new FormGroup<CreateWorkteamResponseFormProperties>({
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateWorkteamRequest {
@@ -1902,8 +4183,19 @@ export namespace MyNS {
 		Description: string;
 
 		/** Configures SNS notifications of available or expiring work items for work teams. */
-		NotificationConfiguration?: NotificationConfiguration | null;
-		Tags?: Array<Tag> | null;
+		NotificationConfiguration?: NotificationConfiguration;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateWorkteamRequestFormProperties {
+		WorkteamName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWorkteamRequestFormGroup() {
+		return new FormGroup<CreateWorkteamRequestFormProperties>({
+			WorkteamName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1911,7 +4203,16 @@ export namespace MyNS {
 	export interface MemberDefinition {
 
 		/** Identifies a Amazon Cognito user group. A user group can be used in on or more work teams. */
-		CognitoMemberDefinition?: CognitoMemberDefinition | null;
+		CognitoMemberDefinition?: CognitoMemberDefinition;
+	}
+
+	/** Defines the Amazon Cognito user group that is part of a work team. */
+	export interface MemberDefinitionFormProperties {
+	}
+	export function CreateMemberDefinitionFormGroup() {
+		return new FormGroup<MemberDefinitionFormProperties>({
+		});
+
 	}
 
 
@@ -1922,14 +4223,49 @@ export namespace MyNS {
 		ClientId: string;
 	}
 
+	/** Identifies a Amazon Cognito user group. A user group can be used in on or more work teams. */
+	export interface CognitoMemberDefinitionFormProperties {
+		UserPool: FormControl<string | null | undefined>,
+		UserGroup: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateCognitoMemberDefinitionFormGroup() {
+		return new FormGroup<CognitoMemberDefinitionFormProperties>({
+			UserPool: new FormControl<string | null | undefined>(undefined),
+			UserGroup: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configures SNS notifications of available or expiring work items for work teams. */
 	export interface NotificationConfiguration {
 		NotificationTopicArn?: string | null;
 	}
 
+	/** Configures SNS notifications of available or expiring work items for work teams. */
+	export interface NotificationConfigurationFormProperties {
+		NotificationTopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationConfigurationFormGroup() {
+		return new FormGroup<NotificationConfigurationFormProperties>({
+			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteAlgorithmInput {
 		AlgorithmName: string;
+	}
+	export interface DeleteAlgorithmInputFormProperties {
+		AlgorithmName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAlgorithmInputFormGroup() {
+		return new FormGroup<DeleteAlgorithmInputFormProperties>({
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteAppRequest {
@@ -1938,16 +4274,49 @@ export namespace MyNS {
 		AppType: CreateAppRequestAppType;
 		AppName: string;
 	}
+	export interface DeleteAppRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		AppType: FormControl<CreateAppRequestAppType | null | undefined>,
+		AppName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAppRequestFormGroup() {
+		return new FormGroup<DeleteAppRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			AppType: new FormControl<CreateAppRequestAppType | null | undefined>(undefined),
+			AppName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteCodeRepositoryInput {
 		CodeRepositoryName: string;
+	}
+	export interface DeleteCodeRepositoryInputFormProperties {
+		CodeRepositoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCodeRepositoryInputFormGroup() {
+		return new FormGroup<DeleteCodeRepositoryInputFormProperties>({
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDomainRequest {
 		DomainId: string;
 
 		/** The retention policy for data stored on an Amazon Elastic File System (EFS) volume. */
-		RetentionPolicy?: RetentionPolicy | null;
+		RetentionPolicy?: RetentionPolicy;
+	}
+	export interface DeleteDomainRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDomainRequestFormGroup() {
+		return new FormGroup<DeleteDomainRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1956,86 +4325,275 @@ export namespace MyNS {
 		HomeEfsFileSystem?: RetentionPolicyHomeEfsFileSystem | null;
 	}
 
+	/** The retention policy for data stored on an Amazon Elastic File System (EFS) volume. */
+	export interface RetentionPolicyFormProperties {
+		HomeEfsFileSystem: FormControl<RetentionPolicyHomeEfsFileSystem | null | undefined>,
+	}
+	export function CreateRetentionPolicyFormGroup() {
+		return new FormGroup<RetentionPolicyFormProperties>({
+			HomeEfsFileSystem: new FormControl<RetentionPolicyHomeEfsFileSystem | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RetentionPolicyHomeEfsFileSystem { Retain = 0, Delete = 1 }
 
 	export interface DeleteEndpointInput {
 		EndpointName: string;
 	}
+	export interface DeleteEndpointInputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEndpointInputFormGroup() {
+		return new FormGroup<DeleteEndpointInputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEndpointConfigInput {
 		EndpointConfigName: string;
+	}
+	export interface DeleteEndpointConfigInputFormProperties {
+		EndpointConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEndpointConfigInputFormGroup() {
+		return new FormGroup<DeleteEndpointConfigInputFormProperties>({
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteExperimentResponse {
 		ExperimentArn?: string | null;
 	}
+	export interface DeleteExperimentResponseFormProperties {
+		ExperimentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteExperimentResponseFormGroup() {
+		return new FormGroup<DeleteExperimentResponseFormProperties>({
+			ExperimentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteExperimentRequest {
 		ExperimentName: string;
 	}
+	export interface DeleteExperimentRequestFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteExperimentRequestFormGroup() {
+		return new FormGroup<DeleteExperimentRequestFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteFlowDefinitionResponse {
+	}
+	export interface DeleteFlowDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteFlowDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteFlowDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFlowDefinitionRequest {
 		FlowDefinitionName: string;
 	}
+	export interface DeleteFlowDefinitionRequestFormProperties {
+		FlowDefinitionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFlowDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteFlowDefinitionRequestFormProperties>({
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteModelInput {
 		ModelName: string;
+	}
+	export interface DeleteModelInputFormProperties {
+		ModelName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteModelInputFormGroup() {
+		return new FormGroup<DeleteModelInputFormProperties>({
+			ModelName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteModelPackageInput {
 		ModelPackageName: string;
 	}
+	export interface DeleteModelPackageInputFormProperties {
+		ModelPackageName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteModelPackageInputFormGroup() {
+		return new FormGroup<DeleteModelPackageInputFormProperties>({
+			ModelPackageName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteMonitoringScheduleRequest {
 		MonitoringScheduleName: string;
+	}
+	export interface DeleteMonitoringScheduleRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMonitoringScheduleRequestFormGroup() {
+		return new FormGroup<DeleteMonitoringScheduleRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteNotebookInstanceInput {
 		NotebookInstanceName: string;
 	}
+	export interface DeleteNotebookInstanceInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteNotebookInstanceInputFormGroup() {
+		return new FormGroup<DeleteNotebookInstanceInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteNotebookInstanceLifecycleConfigInput {
 		NotebookInstanceLifecycleConfigName: string;
 	}
+	export interface DeleteNotebookInstanceLifecycleConfigInputFormProperties {
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteNotebookInstanceLifecycleConfigInputFormGroup() {
+		return new FormGroup<DeleteNotebookInstanceLifecycleConfigInputFormProperties>({
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTagsOutput {
+	}
+	export interface DeleteTagsOutputFormProperties {
+	}
+	export function CreateDeleteTagsOutputFormGroup() {
+		return new FormGroup<DeleteTagsOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTagsInput {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface DeleteTagsInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTagsInputFormGroup() {
+		return new FormGroup<DeleteTagsInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTrialResponse {
 		TrialArn?: string | null;
+	}
+	export interface DeleteTrialResponseFormProperties {
+		TrialArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTrialResponseFormGroup() {
+		return new FormGroup<DeleteTrialResponseFormProperties>({
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteTrialRequest {
 		TrialName: string;
 	}
+	export interface DeleteTrialRequestFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTrialRequestFormGroup() {
+		return new FormGroup<DeleteTrialRequestFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTrialComponentResponse {
 		TrialComponentArn?: string | null;
 	}
+	export interface DeleteTrialComponentResponseFormProperties {
+		TrialComponentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTrialComponentResponseFormGroup() {
+		return new FormGroup<DeleteTrialComponentResponseFormProperties>({
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTrialComponentRequest {
 		TrialComponentName: string;
+	}
+	export interface DeleteTrialComponentRequestFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTrialComponentRequestFormGroup() {
+		return new FormGroup<DeleteTrialComponentRequestFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteUserProfileRequest {
 		DomainId: string;
 		UserProfileName: string;
 	}
+	export interface DeleteUserProfileRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserProfileRequestFormGroup() {
+		return new FormGroup<DeleteUserProfileRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWorkteamResponse {
 		Success: boolean;
 	}
+	export interface DeleteWorkteamResponseFormProperties {
+		Success: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteWorkteamResponseFormGroup() {
+		return new FormGroup<DeleteWorkteamResponseFormProperties>({
+			Success: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWorkteamRequest {
 		WorkteamName: string;
+	}
+	export interface DeleteWorkteamRequestFormProperties {
+		WorkteamName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWorkteamRequestFormGroup() {
+		return new FormGroup<DeleteWorkteamRequestFormProperties>({
+			WorkteamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAlgorithmOutput {
@@ -2051,10 +4609,10 @@ export namespace MyNS {
 		TrainingSpecification: TrainingSpecification;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification | null;
+		InferenceSpecification?: InferenceSpecification;
 
 		/** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm. */
-		ValidationSpecification?: AlgorithmValidationSpecification | null;
+		ValidationSpecification?: AlgorithmValidationSpecification;
 		AlgorithmStatus: DescribeAlgorithmOutputAlgorithmStatus;
 
 		/**
@@ -2065,14 +4623,44 @@ export namespace MyNS {
 		ProductId?: string | null;
 		CertifyForMarketplace?: boolean | null;
 	}
+	export interface DescribeAlgorithmOutputFormProperties {
+		AlgorithmName: FormControl<string | null | undefined>,
+		AlgorithmArn: FormControl<string | null | undefined>,
+		AlgorithmDescription: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		AlgorithmStatus: FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		CertifyForMarketplace: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeAlgorithmOutputFormGroup() {
+		return new FormGroup<DescribeAlgorithmOutputFormProperties>({
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+			AlgorithmDescription: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			AlgorithmStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			CertifyForMarketplace: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeAlgorithmOutputAlgorithmStatus { Pending = 0, InProgress = 1, Completed = 2, Failed = 3, Deleting = 4 }
 
 
 	/** Specifies the validation and image scan statuses of the algorithm. */
 	export interface AlgorithmStatusDetails {
-		ValidationStatuses?: Array<AlgorithmStatusItem> | null;
-		ImageScanStatuses?: Array<AlgorithmStatusItem> | null;
+		ValidationStatuses?: Array<AlgorithmStatusItem>;
+		ImageScanStatuses?: Array<AlgorithmStatusItem>;
+	}
+
+	/** Specifies the validation and image scan statuses of the algorithm. */
+	export interface AlgorithmStatusDetailsFormProperties {
+	}
+	export function CreateAlgorithmStatusDetailsFormGroup() {
+		return new FormGroup<AlgorithmStatusDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -2083,10 +4671,34 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Represents the overall status of an algorithm. */
+	export interface AlgorithmStatusItemFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<AlgorithmStatusItemStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateAlgorithmStatusItemFormGroup() {
+		return new FormGroup<AlgorithmStatusItemFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AlgorithmStatusItemStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AlgorithmStatusItemStatus { NotStarted = 0, InProgress = 1, Completed = 2, Failed = 3 }
 
 	export interface DescribeAlgorithmInput {
 		AlgorithmName: string;
+	}
+	export interface DescribeAlgorithmInputFormProperties {
+		AlgorithmName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAlgorithmInputFormGroup() {
+		return new FormGroup<DescribeAlgorithmInputFormProperties>({
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAppResponse {
@@ -2102,7 +4714,34 @@ export namespace MyNS {
 		FailureReason?: string | null;
 
 		/** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks. */
-		ResourceSpec?: ResourceSpec | null;
+		ResourceSpec?: ResourceSpec;
+	}
+	export interface DescribeAppResponseFormProperties {
+		AppArn: FormControl<string | null | undefined>,
+		AppType: FormControl<CreateAppRequestAppType | null | undefined>,
+		AppName: FormControl<string | null | undefined>,
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeAppResponseStatus | null | undefined>,
+		LastHealthCheckTimestamp: FormControl<Date | null | undefined>,
+		LastUserActivityTimestamp: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAppResponseFormGroup() {
+		return new FormGroup<DescribeAppResponseFormProperties>({
+			AppArn: new FormControl<string | null | undefined>(undefined),
+			AppType: new FormControl<CreateAppRequestAppType | null | undefined>(undefined),
+			AppName: new FormControl<string | null | undefined>(undefined),
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeAppResponseStatus | null | undefined>(undefined),
+			LastHealthCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+			LastUserActivityTimestamp: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAppResponseStatus { Deleted = 0, Deleting = 1, Failed = 2, InService = 3, Pending = 4 }
@@ -2112,6 +4751,21 @@ export namespace MyNS {
 		UserProfileName: string;
 		AppType: CreateAppRequestAppType;
 		AppName: string;
+	}
+	export interface DescribeAppRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		AppType: FormControl<CreateAppRequestAppType | null | undefined>,
+		AppName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAppRequestFormGroup() {
+		return new FormGroup<DescribeAppRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			AppType: new FormControl<CreateAppRequestAppType | null | undefined>(undefined),
+			AppName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAutoMLJobResponse {
@@ -2127,27 +4781,56 @@ export namespace MyNS {
 		RoleArn: string;
 
 		/** Applies a metric to minimize or maximize for the job's objective. */
-		AutoMLJobObjective?: AutoMLJobObjective | null;
+		AutoMLJobObjective?: AutoMLJobObjective;
 		ProblemType?: CreateAutoMLJobRequestProblemType | null;
 
 		/** A collection of settings used for a job. */
-		AutoMLJobConfig?: AutoMLJobConfig | null;
+		AutoMLJobConfig?: AutoMLJobConfig;
 		CreationTime: Date;
 		EndTime?: Date | null;
 		LastModifiedTime: Date;
 		FailureReason?: string | null;
 
 		/** An AutoPilot job will return recommendations, or candidates. Each candidate has futher details about the steps involed, and the status. */
-		BestCandidate?: AutoMLCandidate | null;
+		BestCandidate?: AutoMLCandidate;
 		AutoMLJobStatus: AutoMLCandidateCandidateStatus;
 		AutoMLJobSecondaryStatus: DescribeAutoMLJobResponseAutoMLJobSecondaryStatus;
 		GenerateCandidateDefinitionsOnly?: boolean | null;
 
 		/** Artifacts that are generation during a job. */
-		AutoMLJobArtifacts?: AutoMLJobArtifacts | null;
+		AutoMLJobArtifacts?: AutoMLJobArtifacts;
 
 		/** The resolved attributes. */
-		ResolvedAttributes?: ResolvedAttributes | null;
+		ResolvedAttributes?: ResolvedAttributes;
+	}
+	export interface DescribeAutoMLJobResponseFormProperties {
+		AutoMLJobName: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ProblemType: FormControl<CreateAutoMLJobRequestProblemType | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		AutoMLJobStatus: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+		AutoMLJobSecondaryStatus: FormControl<DescribeAutoMLJobResponseAutoMLJobSecondaryStatus | null | undefined>,
+		GenerateCandidateDefinitionsOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeAutoMLJobResponseFormGroup() {
+		return new FormGroup<DescribeAutoMLJobResponseFormProperties>({
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ProblemType: new FormControl<CreateAutoMLJobRequestProblemType | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			AutoMLJobSecondaryStatus: new FormControl<DescribeAutoMLJobResponseAutoMLJobSecondaryStatus | null | undefined>(undefined),
+			GenerateCandidateDefinitionsOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2156,15 +4839,38 @@ export namespace MyNS {
 		CandidateName: string;
 
 		/** The candidate result from a job. */
-		FinalAutoMLJobObjectiveMetric?: FinalAutoMLJobObjectiveMetric | null;
+		FinalAutoMLJobObjectiveMetric?: FinalAutoMLJobObjectiveMetric;
 		ObjectiveStatus: AutoMLCandidateObjectiveStatus;
 		CandidateSteps: Array<AutoMLCandidateStep>;
 		CandidateStatus: AutoMLCandidateCandidateStatus;
-		InferenceContainers?: Array<AutoMLContainerDefinition> | null;
+		InferenceContainers?: Array<AutoMLContainerDefinition>;
 		CreationTime: Date;
 		EndTime?: Date | null;
 		LastModifiedTime: Date;
 		FailureReason?: string | null;
+	}
+
+	/** An AutoPilot job will return recommendations, or candidates. Each candidate has futher details about the steps involed, and the status. */
+	export interface AutoMLCandidateFormProperties {
+		CandidateName: FormControl<string | null | undefined>,
+		ObjectiveStatus: FormControl<AutoMLCandidateObjectiveStatus | null | undefined>,
+		CandidateStatus: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLCandidateFormGroup() {
+		return new FormGroup<AutoMLCandidateFormProperties>({
+			CandidateName: new FormControl<string | null | undefined>(undefined),
+			ObjectiveStatus: new FormControl<AutoMLCandidateObjectiveStatus | null | undefined>(undefined),
+			CandidateStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2173,6 +4879,21 @@ export namespace MyNS {
 		Type?: HyperParameterTuningJobObjectiveType | null;
 		MetricName: AutoMLJobObjectiveMetricName;
 		Value: number;
+	}
+
+	/** The candidate result from a job. */
+	export interface FinalAutoMLJobObjectiveMetricFormProperties {
+		Type: FormControl<HyperParameterTuningJobObjectiveType | null | undefined>,
+		MetricName: FormControl<AutoMLJobObjectiveMetricName | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateFinalAutoMLJobObjectiveMetricFormGroup() {
+		return new FormGroup<FinalAutoMLJobObjectiveMetricFormProperties>({
+			Type: new FormControl<HyperParameterTuningJobObjectiveType | null | undefined>(undefined),
+			MetricName: new FormControl<AutoMLJobObjectiveMetricName | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AutoMLCandidateObjectiveStatus { Succeeded = 0, Pending = 1, Failed = 2 }
@@ -2185,6 +4906,21 @@ export namespace MyNS {
 		CandidateStepName: string;
 	}
 
+	/** Information about the steps for a Candidate, and what step it is working on. */
+	export interface AutoMLCandidateStepFormProperties {
+		CandidateStepType: FormControl<AutoMLCandidateStepCandidateStepType | null | undefined>,
+		CandidateStepArn: FormControl<string | null | undefined>,
+		CandidateStepName: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLCandidateStepFormGroup() {
+		return new FormGroup<AutoMLCandidateStepFormProperties>({
+			CandidateStepType: new FormControl<AutoMLCandidateStepCandidateStepType | null | undefined>(undefined),
+			CandidateStepArn: new FormControl<string | null | undefined>(undefined),
+			CandidateStepName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AutoMLCandidateStepCandidateStepType { AWSSageMakerTrainingJob = 0, AWSSageMakerTransformJob = 1, AWSSageMakerProcessingJob = 2 }
 
 	export enum AutoMLCandidateCandidateStatus { Completed = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4 }
@@ -2194,7 +4930,20 @@ export namespace MyNS {
 	export interface AutoMLContainerDefinition {
 		Image: string;
 		ModelDataUrl: string;
-		Environment?: EnvironmentMap | null;
+		Environment?: EnvironmentMap;
+	}
+
+	/** A list of container definitions that describe the different containers that make up one AutoML candidate. Refer to ContainerDefinition for more details. */
+	export interface AutoMLContainerDefinitionFormProperties {
+		Image: FormControl<string | null | undefined>,
+		ModelDataUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLContainerDefinitionFormGroup() {
+		return new FormGroup<AutoMLContainerDefinitionFormProperties>({
+			Image: new FormControl<string | null | undefined>(undefined),
+			ModelDataUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAutoMLJobResponseAutoMLJobSecondaryStatus { Starting = 0, AnalyzingData = 1, FeatureEngineering = 2, ModelTuning = 3, MaxCandidatesReached = 4, Failed = 5, Stopped = 6, MaxAutoMLJobRuntimeReached = 7, Stopping = 8, CandidateDefinitionsGenerated = 9 }
@@ -2206,20 +4955,53 @@ export namespace MyNS {
 		DataExplorationNotebookLocation?: string | null;
 	}
 
+	/** Artifacts that are generation during a job. */
+	export interface AutoMLJobArtifactsFormProperties {
+		CandidateDefinitionNotebookLocation: FormControl<string | null | undefined>,
+		DataExplorationNotebookLocation: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLJobArtifactsFormGroup() {
+		return new FormGroup<AutoMLJobArtifactsFormProperties>({
+			CandidateDefinitionNotebookLocation: new FormControl<string | null | undefined>(undefined),
+			DataExplorationNotebookLocation: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The resolved attributes. */
 	export interface ResolvedAttributes {
 
 		/** Applies a metric to minimize or maximize for the job's objective. */
-		AutoMLJobObjective?: AutoMLJobObjective | null;
+		AutoMLJobObjective?: AutoMLJobObjective;
 		ProblemType?: CreateAutoMLJobRequestProblemType | null;
 
 		/** How long a job is allowed to run, or how many candidates a job is allowed to generate. */
-		CompletionCriteria?: AutoMLJobCompletionCriteria | null;
+		CompletionCriteria?: AutoMLJobCompletionCriteria;
+	}
+
+	/** The resolved attributes. */
+	export interface ResolvedAttributesFormProperties {
+		ProblemType: FormControl<CreateAutoMLJobRequestProblemType | null | undefined>,
+	}
+	export function CreateResolvedAttributesFormGroup() {
+		return new FormGroup<ResolvedAttributesFormProperties>({
+			ProblemType: new FormControl<CreateAutoMLJobRequestProblemType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAutoMLJobRequest {
 		AutoMLJobName: string;
+	}
+	export interface DescribeAutoMLJobRequestFormProperties {
+		AutoMLJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAutoMLJobRequestFormGroup() {
+		return new FormGroup<DescribeAutoMLJobRequestFormProperties>({
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCodeRepositoryOutput {
@@ -2229,11 +5011,35 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 
 		/** Specifies configuration details for a Git repository in your AWS account. */
-		GitConfig?: GitConfig | null;
+		GitConfig?: GitConfig;
+	}
+	export interface DescribeCodeRepositoryOutputFormProperties {
+		CodeRepositoryName: FormControl<string | null | undefined>,
+		CodeRepositoryArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeCodeRepositoryOutputFormGroup() {
+		return new FormGroup<DescribeCodeRepositoryOutputFormProperties>({
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined),
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCodeRepositoryInput {
 		CodeRepositoryName: string;
+	}
+	export interface DescribeCodeRepositoryInputFormProperties {
+		CodeRepositoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCodeRepositoryInputFormGroup() {
+		return new FormGroup<DescribeCodeRepositoryInputFormProperties>({
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCompilationJobResponse {
@@ -2271,6 +5077,31 @@ export namespace MyNS {
 		 */
 		OutputConfig: OutputConfig;
 	}
+	export interface DescribeCompilationJobResponseFormProperties {
+		CompilationJobName: FormControl<string | null | undefined>,
+		CompilationJobArn: FormControl<string | null | undefined>,
+		CompilationJobStatus: FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>,
+		CompilationStartTime: FormControl<Date | null | undefined>,
+		CompilationEndTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCompilationJobResponseFormGroup() {
+		return new FormGroup<DescribeCompilationJobResponseFormProperties>({
+			CompilationJobName: new FormControl<string | null | undefined>(undefined),
+			CompilationJobArn: new FormControl<string | null | undefined>(undefined),
+			CompilationJobStatus: new FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>(undefined),
+			CompilationStartTime: new FormControl<Date | null | undefined>(undefined),
+			CompilationEndTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeCompilationJobResponseCompilationJobStatus { INPROGRESS = 0, COMPLETED = 1, FAILED = 2, STARTING = 3, STOPPING = 4, STOPPED = 5 }
 
@@ -2280,8 +5111,28 @@ export namespace MyNS {
 		S3ModelArtifacts: string;
 	}
 
+	/** <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p> */
+	export interface ModelArtifactsFormProperties {
+		S3ModelArtifacts: FormControl<string | null | undefined>,
+	}
+	export function CreateModelArtifactsFormGroup() {
+		return new FormGroup<ModelArtifactsFormProperties>({
+			S3ModelArtifacts: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCompilationJobRequest {
 		CompilationJobName: string;
+	}
+	export interface DescribeCompilationJobRequestFormProperties {
+		CompilationJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCompilationJobRequestFormGroup() {
+		return new FormGroup<DescribeCompilationJobRequestFormProperties>({
+			CompilationJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDomainResponse {
@@ -2297,11 +5148,44 @@ export namespace MyNS {
 		AuthMode?: CreateDomainRequestAuthMode | null;
 
 		/** A collection of settings. */
-		DefaultUserSettings?: UserSettings | null;
+		DefaultUserSettings?: UserSettings;
 		HomeEfsFileSystemKmsKeyId?: string | null;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 		Url?: string | null;
 		VpcId?: string | null;
+	}
+	export interface DescribeDomainResponseFormProperties {
+		DomainArn: FormControl<string | null | undefined>,
+		DomainId: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		HomeEfsFileSystemId: FormControl<string | null | undefined>,
+		SingleSignOnManagedApplicationInstanceId: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeDomainResponseStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		AuthMode: FormControl<CreateDomainRequestAuthMode | null | undefined>,
+		HomeEfsFileSystemKmsKeyId: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDomainResponseFormGroup() {
+		return new FormGroup<DescribeDomainResponseFormProperties>({
+			DomainArn: new FormControl<string | null | undefined>(undefined),
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			HomeEfsFileSystemId: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnManagedApplicationInstanceId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeDomainResponseStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			AuthMode: new FormControl<CreateDomainRequestAuthMode | null | undefined>(undefined),
+			HomeEfsFileSystemKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeDomainResponseStatus { Deleting = 0, Failed = 1, InService = 2, Pending = 3 }
@@ -2309,30 +5193,79 @@ export namespace MyNS {
 	export interface DescribeDomainRequest {
 		DomainId: string;
 	}
+	export interface DescribeDomainRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDomainRequestFormGroup() {
+		return new FormGroup<DescribeDomainRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEndpointOutput {
 		EndpointName: string;
 		EndpointArn: string;
 		EndpointConfigName: string;
-		ProductionVariants?: Array<ProductionVariantSummary> | null;
+		ProductionVariants?: Array<ProductionVariantSummary>;
 
 		/** <p/> */
-		DataCaptureConfig?: DataCaptureConfigSummary | null;
+		DataCaptureConfig?: DataCaptureConfigSummary;
 		EndpointStatus: DescribeEndpointOutputEndpointStatus;
 		FailureReason?: string | null;
 		CreationTime: Date;
 		LastModifiedTime: Date;
+	}
+	export interface DescribeEndpointOutputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		EndpointArn: FormControl<string | null | undefined>,
+		EndpointConfigName: FormControl<string | null | undefined>,
+		EndpointStatus: FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeEndpointOutputFormGroup() {
+		return new FormGroup<DescribeEndpointOutputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+			EndpointStatus: new FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.  */
 	export interface ProductionVariantSummary {
 		VariantName: string;
-		DeployedImages?: Array<DeployedImage> | null;
+		DeployedImages?: Array<DeployedImage>;
 		CurrentWeight?: number | null;
 		DesiredWeight?: number | null;
 		CurrentInstanceCount?: number | null;
 		DesiredInstanceCount?: number | null;
+	}
+
+	/** Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.  */
+	export interface ProductionVariantSummaryFormProperties {
+		VariantName: FormControl<string | null | undefined>,
+		CurrentWeight: FormControl<number | null | undefined>,
+		DesiredWeight: FormControl<number | null | undefined>,
+		CurrentInstanceCount: FormControl<number | null | undefined>,
+		DesiredInstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreateProductionVariantSummaryFormGroup() {
+		return new FormGroup<ProductionVariantSummaryFormProperties>({
+			VariantName: new FormControl<string | null | undefined>(undefined),
+			CurrentWeight: new FormControl<number | null | undefined>(undefined),
+			DesiredWeight: new FormControl<number | null | undefined>(undefined),
+			CurrentInstanceCount: new FormControl<number | null | undefined>(undefined),
+			DesiredInstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2341,6 +5274,21 @@ export namespace MyNS {
 		SpecifiedImage?: string | null;
 		ResolvedImage?: string | null;
 		ResolutionTime?: Date | null;
+	}
+
+	/** <p>Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.</p> <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p> */
+	export interface DeployedImageFormProperties {
+		SpecifiedImage: FormControl<string | null | undefined>,
+		ResolvedImage: FormControl<string | null | undefined>,
+		ResolutionTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDeployedImageFormGroup() {
+		return new FormGroup<DeployedImageFormProperties>({
+			SpecifiedImage: new FormControl<string | null | undefined>(undefined),
+			ResolvedImage: new FormControl<string | null | undefined>(undefined),
+			ResolutionTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2353,12 +5301,40 @@ export namespace MyNS {
 		KmsKeyId: string;
 	}
 
+	/** <p/> */
+	export interface DataCaptureConfigSummaryFormProperties {
+		EnableCapture: FormControl<boolean | null | undefined>,
+		CaptureStatus: FormControl<DataCaptureConfigSummaryCaptureStatus | null | undefined>,
+		CurrentSamplingPercentage: FormControl<number | null | undefined>,
+		DestinationS3Uri: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDataCaptureConfigSummaryFormGroup() {
+		return new FormGroup<DataCaptureConfigSummaryFormProperties>({
+			EnableCapture: new FormControl<boolean | null | undefined>(undefined),
+			CaptureStatus: new FormControl<DataCaptureConfigSummaryCaptureStatus | null | undefined>(undefined),
+			CurrentSamplingPercentage: new FormControl<number | null | undefined>(undefined),
+			DestinationS3Uri: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DataCaptureConfigSummaryCaptureStatus { Started = 0, Stopped = 1 }
 
 	export enum DescribeEndpointOutputEndpointStatus { OutOfService = 0, Creating = 1, Updating = 2, SystemUpdating = 3, RollingBack = 4, InService = 5, Deleting = 6, Failed = 7 }
 
 	export interface DescribeEndpointInput {
 		EndpointName: string;
+	}
+	export interface DescribeEndpointInputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointInputFormGroup() {
+		return new FormGroup<DescribeEndpointInputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEndpointConfigOutput {
@@ -2367,13 +5343,37 @@ export namespace MyNS {
 		ProductionVariants: Array<ProductionVariant>;
 
 		/** <p/> */
-		DataCaptureConfig?: DataCaptureConfig | null;
+		DataCaptureConfig?: DataCaptureConfig;
 		KmsKeyId?: string | null;
 		CreationTime: Date;
+	}
+	export interface DescribeEndpointConfigOutputFormProperties {
+		EndpointConfigName: FormControl<string | null | undefined>,
+		EndpointConfigArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeEndpointConfigOutputFormGroup() {
+		return new FormGroup<DescribeEndpointConfigOutputFormProperties>({
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+			EndpointConfigArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEndpointConfigInput {
 		EndpointConfigName: string;
+	}
+	export interface DescribeEndpointConfigInputFormProperties {
+		EndpointConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointConfigInputFormGroup() {
+		return new FormGroup<DescribeEndpointConfigInputFormProperties>({
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeExperimentResponse {
@@ -2382,16 +5382,35 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The source of the experiment. */
-		Source?: ExperimentSource | null;
+		Source?: ExperimentSource;
 		Description?: string | null;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
+		LastModifiedBy?: UserContext;
+	}
+	export interface DescribeExperimentResponseFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		ExperimentArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeExperimentResponseFormGroup() {
+		return new FormGroup<DescribeExperimentResponseFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			ExperimentArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2399,6 +5418,19 @@ export namespace MyNS {
 	export interface ExperimentSource {
 		SourceArn: string;
 		SourceType?: string | null;
+	}
+
+	/** The source of the experiment. */
+	export interface ExperimentSourceFormProperties {
+		SourceArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateExperimentSourceFormGroup() {
+		return new FormGroup<ExperimentSourceFormProperties>({
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2409,8 +5441,32 @@ export namespace MyNS {
 		DomainId?: string | null;
 	}
 
+	/** Information about the user who created or modified an experiment, trial, or trial component. */
+	export interface UserContextFormProperties {
+		UserProfileArn: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		DomainId: FormControl<string | null | undefined>,
+	}
+	export function CreateUserContextFormGroup() {
+		return new FormGroup<UserContextFormProperties>({
+			UserProfileArn: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			DomainId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeExperimentRequest {
 		ExperimentName: string;
+	}
+	export interface DescribeExperimentRequestFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeExperimentRequestFormGroup() {
+		return new FormGroup<DescribeExperimentRequestFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeFlowDefinitionResponse {
@@ -2420,10 +5476,10 @@ export namespace MyNS {
 		CreationTime: Date;
 
 		/** Container for configuring the source of human task requests. */
-		HumanLoopRequestSource?: HumanLoopRequestSource | null;
+		HumanLoopRequestSource?: HumanLoopRequestSource;
 
 		/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
-		HumanLoopActivationConfig?: HumanLoopActivationConfig | null;
+		HumanLoopActivationConfig?: HumanLoopActivationConfig;
 
 		/**
 		 * Describes the work to be performed by human workers.
@@ -2439,11 +5495,39 @@ export namespace MyNS {
 		RoleArn: string;
 		FailureReason?: string | null;
 	}
+	export interface DescribeFlowDefinitionResponseFormProperties {
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+		FlowDefinitionName: FormControl<string | null | undefined>,
+		FlowDefinitionStatus: FormControl<DescribeFlowDefinitionResponseFlowDefinitionStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFlowDefinitionResponseFormGroup() {
+		return new FormGroup<DescribeFlowDefinitionResponseFormProperties>({
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionStatus: new FormControl<DescribeFlowDefinitionResponseFlowDefinitionStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeFlowDefinitionResponseFlowDefinitionStatus { Initializing = 0, Active = 1, Failed = 2, Deleting = 3 }
 
 	export interface DescribeFlowDefinitionRequest {
 		FlowDefinitionName: string;
+	}
+	export interface DescribeFlowDefinitionRequestFormProperties {
+		FlowDefinitionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFlowDefinitionRequestFormGroup() {
+		return new FormGroup<DescribeFlowDefinitionRequestFormProperties>({
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeHumanTaskUiResponse {
@@ -2457,6 +5541,19 @@ export namespace MyNS {
 		 */
 		UiTemplate: UiTemplateInfo;
 	}
+	export interface DescribeHumanTaskUiResponseFormProperties {
+		HumanTaskUiArn: FormControl<string | null | undefined>,
+		HumanTaskUiName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeHumanTaskUiResponseFormGroup() {
+		return new FormGroup<DescribeHumanTaskUiResponseFormProperties>({
+			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined),
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Container for user interface template information. */
@@ -2465,8 +5562,30 @@ export namespace MyNS {
 		ContentSha256?: string | null;
 	}
 
+	/** Container for user interface template information. */
+	export interface UiTemplateInfoFormProperties {
+		Url: FormControl<string | null | undefined>,
+		ContentSha256: FormControl<string | null | undefined>,
+	}
+	export function CreateUiTemplateInfoFormGroup() {
+		return new FormGroup<UiTemplateInfoFormProperties>({
+			Url: new FormControl<string | null | undefined>(undefined),
+			ContentSha256: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeHumanTaskUiRequest {
 		HumanTaskUiName: string;
+	}
+	export interface DescribeHumanTaskUiRequestFormProperties {
+		HumanTaskUiName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHumanTaskUiRequestFormGroup() {
+		return new FormGroup<DescribeHumanTaskUiRequestFormProperties>({
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeHyperParameterTuningJobResponse {
@@ -2480,8 +5599,8 @@ export namespace MyNS {
 		HyperParameterTuningJobConfig: HyperParameterTuningJobConfig;
 
 		/** Defines the training jobs launched by a hyperparameter tuning job. */
-		TrainingJobDefinition?: HyperParameterTrainingJobDefinition | null;
-		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition> | null;
+		TrainingJobDefinition?: HyperParameterTrainingJobDefinition;
+		TrainingJobDefinitions?: Array<HyperParameterTrainingJobDefinition>;
 		HyperParameterTuningJobStatus: AutoMLCandidateCandidateStatus;
 		CreationTime: Date;
 		HyperParameterTuningEndTime?: Date | null;
@@ -2500,14 +5619,35 @@ export namespace MyNS {
 		ObjectiveStatusCounters: ObjectiveStatusCounters;
 
 		/** Specifies summary information about a training job. */
-		BestTrainingJob?: HyperParameterTrainingJobSummary | null;
+		BestTrainingJob?: HyperParameterTrainingJobSummary;
 
 		/** Specifies summary information about a training job. */
-		OverallBestTrainingJob?: HyperParameterTrainingJobSummary | null;
+		OverallBestTrainingJob?: HyperParameterTrainingJobSummary;
 
 		/** <p>Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p> <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note> <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p> </note> */
-		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig | null;
+		WarmStartConfig?: HyperParameterTuningJobWarmStartConfig;
 		FailureReason?: string | null;
+	}
+	export interface DescribeHyperParameterTuningJobResponseFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+		HyperParameterTuningJobArn: FormControl<string | null | undefined>,
+		HyperParameterTuningJobStatus: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		HyperParameterTuningEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHyperParameterTuningJobResponseFormGroup() {
+		return new FormGroup<DescribeHyperParameterTuningJobResponseFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+			HyperParameterTuningJobArn: new FormControl<string | null | undefined>(undefined),
+			HyperParameterTuningJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			HyperParameterTuningEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2520,12 +5660,46 @@ export namespace MyNS {
 		Stopped?: number | null;
 	}
 
+	/** The numbers of training jobs launched by a hyperparameter tuning job, categorized by status. */
+	export interface TrainingJobStatusCountersFormProperties {
+		Completed: FormControl<number | null | undefined>,
+		InProgress: FormControl<number | null | undefined>,
+		RetryableError: FormControl<number | null | undefined>,
+		NonRetryableError: FormControl<number | null | undefined>,
+		Stopped: FormControl<number | null | undefined>,
+	}
+	export function CreateTrainingJobStatusCountersFormGroup() {
+		return new FormGroup<TrainingJobStatusCountersFormProperties>({
+			Completed: new FormControl<number | null | undefined>(undefined),
+			InProgress: new FormControl<number | null | undefined>(undefined),
+			RetryableError: new FormControl<number | null | undefined>(undefined),
+			NonRetryableError: new FormControl<number | null | undefined>(undefined),
+			Stopped: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process. */
 	export interface ObjectiveStatusCounters {
 		Succeeded?: number | null;
 		Pending?: number | null;
 		Failed?: number | null;
+	}
+
+	/** Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process. */
+	export interface ObjectiveStatusCountersFormProperties {
+		Succeeded: FormControl<number | null | undefined>,
+		Pending: FormControl<number | null | undefined>,
+		Failed: FormControl<number | null | undefined>,
+	}
+	export function CreateObjectiveStatusCountersFormGroup() {
+		return new FormGroup<ObjectiveStatusCountersFormProperties>({
+			Succeeded: new FormControl<number | null | undefined>(undefined),
+			Pending: new FormControl<number | null | undefined>(undefined),
+			Failed: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2543,8 +5717,37 @@ export namespace MyNS {
 		FailureReason?: string | null;
 
 		/** Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>. */
-		FinalHyperParameterTuningJobObjectiveMetric?: FinalHyperParameterTuningJobObjectiveMetric | null;
+		FinalHyperParameterTuningJobObjectiveMetric?: FinalHyperParameterTuningJobObjectiveMetric;
 		ObjectiveStatus?: AutoMLCandidateObjectiveStatus | null;
+	}
+
+	/** Specifies summary information about a training job. */
+	export interface HyperParameterTrainingJobSummaryFormProperties {
+		TrainingJobDefinitionName: FormControl<string | null | undefined>,
+		TrainingJobName: FormControl<string | null | undefined>,
+		TrainingJobArn: FormControl<string | null | undefined>,
+		TuningJobName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TrainingStartTime: FormControl<Date | null | undefined>,
+		TrainingEndTime: FormControl<Date | null | undefined>,
+		TrainingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		ObjectiveStatus: FormControl<AutoMLCandidateObjectiveStatus | null | undefined>,
+	}
+	export function CreateHyperParameterTrainingJobSummaryFormGroup() {
+		return new FormGroup<HyperParameterTrainingJobSummaryFormProperties>({
+			TrainingJobDefinitionName: new FormControl<string | null | undefined>(undefined),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+			TuningJobName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			ObjectiveStatus: new FormControl<AutoMLCandidateObjectiveStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2555,8 +5758,32 @@ export namespace MyNS {
 		Value: number;
 	}
 
+	/** Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>. */
+	export interface FinalHyperParameterTuningJobObjectiveMetricFormProperties {
+		Type: FormControl<HyperParameterTuningJobObjectiveType | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateFinalHyperParameterTuningJobObjectiveMetricFormGroup() {
+		return new FormGroup<FinalHyperParameterTuningJobObjectiveMetricFormProperties>({
+			Type: new FormControl<HyperParameterTuningJobObjectiveType | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeHyperParameterTuningJobRequest {
 		HyperParameterTuningJobName: string;
+	}
+	export interface DescribeHyperParameterTuningJobRequestFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHyperParameterTuningJobRequestFormGroup() {
+		return new FormGroup<DescribeHyperParameterTuningJobRequestFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeLabelingJobResponse {
@@ -2590,20 +5817,47 @@ export namespace MyNS {
 		LabelCategoryConfigS3Uri?: string | null;
 
 		/** <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p> <note> <p>Labeling jobs fail after 30 days with an appropriate client error message.</p> </note> */
-		StoppingConditions?: LabelingJobStoppingConditions | null;
+		StoppingConditions?: LabelingJobStoppingConditions;
 
 		/** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling. */
-		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig | null;
+		LabelingJobAlgorithmsConfig?: LabelingJobAlgorithmsConfig;
 
 		/**
 		 * Information required for human workers to complete a labeling task.
 		 * Required
 		 */
 		HumanTaskConfig: HumanTaskConfig;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** Specifies the location of the output produced by the labeling job. */
-		LabelingJobOutput?: LabelingJobOutput | null;
+		LabelingJobOutput?: LabelingJobOutput;
+	}
+	export interface DescribeLabelingJobResponseFormProperties {
+		LabelingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		JobReferenceCode: FormControl<string | null | undefined>,
+		LabelingJobName: FormControl<string | null | undefined>,
+		LabelingJobArn: FormControl<string | null | undefined>,
+		LabelAttributeName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		LabelCategoryConfigS3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLabelingJobResponseFormGroup() {
+		return new FormGroup<DescribeLabelingJobResponseFormProperties>({
+			LabelingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			JobReferenceCode: new FormControl<string | null | undefined>(undefined),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined),
+			LabelingJobArn: new FormControl<string | null | undefined>(undefined),
+			LabelAttributeName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			LabelCategoryConfigS3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2616,6 +5870,25 @@ export namespace MyNS {
 		Unlabeled?: number | null;
 	}
 
+	/** Provides a breakdown of the number of objects labeled. */
+	export interface LabelCountersFormProperties {
+		TotalLabeled: FormControl<number | null | undefined>,
+		HumanLabeled: FormControl<number | null | undefined>,
+		MachineLabeled: FormControl<number | null | undefined>,
+		FailedNonRetryableError: FormControl<number | null | undefined>,
+		Unlabeled: FormControl<number | null | undefined>,
+	}
+	export function CreateLabelCountersFormGroup() {
+		return new FormGroup<LabelCountersFormProperties>({
+			TotalLabeled: new FormControl<number | null | undefined>(undefined),
+			HumanLabeled: new FormControl<number | null | undefined>(undefined),
+			MachineLabeled: new FormControl<number | null | undefined>(undefined),
+			FailedNonRetryableError: new FormControl<number | null | undefined>(undefined),
+			Unlabeled: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the location of the output produced by the labeling job.  */
 	export interface LabelingJobOutput {
@@ -2623,27 +5896,75 @@ export namespace MyNS {
 		FinalActiveLearningModelArn?: string | null;
 	}
 
+	/** Specifies the location of the output produced by the labeling job.  */
+	export interface LabelingJobOutputFormProperties {
+		OutputDatasetS3Uri: FormControl<string | null | undefined>,
+		FinalActiveLearningModelArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingJobOutputFormGroup() {
+		return new FormGroup<LabelingJobOutputFormProperties>({
+			OutputDatasetS3Uri: new FormControl<string | null | undefined>(undefined),
+			FinalActiveLearningModelArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeLabelingJobRequest {
 		LabelingJobName: string;
+	}
+	export interface DescribeLabelingJobRequestFormProperties {
+		LabelingJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLabelingJobRequestFormGroup() {
+		return new FormGroup<DescribeLabelingJobRequestFormProperties>({
+			LabelingJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeModelOutput {
 		ModelName: string;
 
 		/** Describes the container, as part of model definition. */
-		PrimaryContainer?: ContainerDefinition | null;
-		Containers?: Array<ContainerDefinition> | null;
+		PrimaryContainer?: ContainerDefinition;
+		Containers?: Array<ContainerDefinition>;
 		ExecutionRoleArn: string;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 		CreationTime: Date;
 		ModelArn: string;
 		EnableNetworkIsolation?: boolean | null;
 	}
+	export interface DescribeModelOutputFormProperties {
+		ModelName: FormControl<string | null | undefined>,
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ModelArn: FormControl<string | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeModelOutputFormGroup() {
+		return new FormGroup<DescribeModelOutputFormProperties>({
+			ModelName: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ModelArn: new FormControl<string | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeModelInput {
 		ModelName: string;
+	}
+	export interface DescribeModelInputFormProperties {
+		ModelName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeModelInputFormGroup() {
+		return new FormGroup<DescribeModelInputFormProperties>({
+			ModelName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeModelPackageOutput {
@@ -2653,13 +5974,13 @@ export namespace MyNS {
 		CreationTime: Date;
 
 		/** Defines how to perform inference generation after a training job is run. */
-		InferenceSpecification?: InferenceSpecification | null;
+		InferenceSpecification?: InferenceSpecification;
 
 		/** A list of algorithms that were used to create a model package. */
-		SourceAlgorithmSpecification?: SourceAlgorithmSpecification | null;
+		SourceAlgorithmSpecification?: SourceAlgorithmSpecification;
 
 		/** Specifies batch transform jobs that Amazon SageMaker runs to validate your model package. */
-		ValidationSpecification?: ModelPackageValidationSpecification | null;
+		ValidationSpecification?: ModelPackageValidationSpecification;
 		ModelPackageStatus: DescribeAlgorithmOutputAlgorithmStatus;
 
 		/**
@@ -2669,12 +5990,40 @@ export namespace MyNS {
 		ModelPackageStatusDetails: ModelPackageStatusDetails;
 		CertifyForMarketplace?: boolean | null;
 	}
+	export interface DescribeModelPackageOutputFormProperties {
+		ModelPackageName: FormControl<string | null | undefined>,
+		ModelPackageArn: FormControl<string | null | undefined>,
+		ModelPackageDescription: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ModelPackageStatus: FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>,
+		CertifyForMarketplace: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeModelPackageOutputFormGroup() {
+		return new FormGroup<DescribeModelPackageOutputFormProperties>({
+			ModelPackageName: new FormControl<string | null | undefined>(undefined),
+			ModelPackageArn: new FormControl<string | null | undefined>(undefined),
+			ModelPackageDescription: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ModelPackageStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined),
+			CertifyForMarketplace: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Specifies the validation and image scan statuses of the model package. */
 	export interface ModelPackageStatusDetails {
 		ValidationStatuses: Array<ModelPackageStatusItem>;
-		ImageScanStatuses?: Array<ModelPackageStatusItem> | null;
+		ImageScanStatuses?: Array<ModelPackageStatusItem>;
+	}
+
+	/** Specifies the validation and image scan statuses of the model package. */
+	export interface ModelPackageStatusDetailsFormProperties {
+	}
+	export function CreateModelPackageStatusDetailsFormGroup() {
+		return new FormGroup<ModelPackageStatusDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -2685,8 +6034,32 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Represents the overall status of a model package. */
+	export interface ModelPackageStatusItemFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<AlgorithmStatusItemStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateModelPackageStatusItemFormGroup() {
+		return new FormGroup<ModelPackageStatusItemFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AlgorithmStatusItemStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeModelPackageInput {
 		ModelPackageName: string;
+	}
+	export interface DescribeModelPackageInputFormProperties {
+		ModelPackageName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeModelPackageInputFormGroup() {
+		return new FormGroup<DescribeModelPackageInputFormProperties>({
+			ModelPackageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeMonitoringScheduleResponse {
@@ -2705,7 +6078,28 @@ export namespace MyNS {
 		EndpointName?: string | null;
 
 		/** Summary of information about the last monitoring job to run. */
-		LastMonitoringExecutionSummary?: MonitoringExecutionSummary | null;
+		LastMonitoringExecutionSummary?: MonitoringExecutionSummary;
+	}
+	export interface DescribeMonitoringScheduleResponseFormProperties {
+		MonitoringScheduleArn: FormControl<string | null | undefined>,
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+		MonitoringScheduleStatus: FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMonitoringScheduleResponseFormGroup() {
+		return new FormGroup<DescribeMonitoringScheduleResponseFormProperties>({
+			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+			MonitoringScheduleStatus: new FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeMonitoringScheduleResponseMonitoringScheduleStatus { Pending = 0, Failed = 1, Scheduled = 2, Stopped = 3 }
@@ -2723,10 +6117,44 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Summary of information about the last monitoring job to run. */
+	export interface MonitoringExecutionSummaryFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+		ScheduledTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		MonitoringExecutionStatus: FormControl<MonitoringExecutionSummaryMonitoringExecutionStatus | null | undefined>,
+		ProcessingJobArn: FormControl<string | null | undefined>,
+		EndpointName: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringExecutionSummaryFormGroup() {
+		return new FormGroup<MonitoringExecutionSummaryFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+			ScheduledTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			MonitoringExecutionStatus: new FormControl<MonitoringExecutionSummaryMonitoringExecutionStatus | null | undefined>(undefined),
+			ProcessingJobArn: new FormControl<string | null | undefined>(undefined),
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MonitoringExecutionSummaryMonitoringExecutionStatus { Pending = 0, Completed = 1, CompletedWithViolations = 2, InProgress = 3, Failed = 4, Stopping = 5, Stopped = 6 }
 
 	export interface DescribeMonitoringScheduleRequest {
 		MonitoringScheduleName: string;
+	}
+	export interface DescribeMonitoringScheduleRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMonitoringScheduleRequestFormGroup() {
+		return new FormGroup<DescribeMonitoringScheduleRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeNotebookInstanceOutput {
@@ -2737,7 +6165,7 @@ export namespace MyNS {
 		Url?: string | null;
 		InstanceType?: DescribeNotebookInstanceOutputInstanceType | null;
 		SubnetId?: string | null;
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
 		RoleArn?: string | null;
 		KmsKeyId?: string | null;
 		NetworkInterfaceId?: string | null;
@@ -2746,10 +6174,51 @@ export namespace MyNS {
 		NotebookInstanceLifecycleConfigName?: string | null;
 		DirectInternetAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
 		VolumeSizeInGB?: number | null;
-		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType> | null;
+		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType>;
 		DefaultCodeRepository?: string | null;
-		AdditionalCodeRepositories?: Array<string> | null;
+		AdditionalCodeRepositories?: Array<string>;
 		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
+	}
+	export interface DescribeNotebookInstanceOutputFormProperties {
+		NotebookInstanceArn: FormControl<string | null | undefined>,
+		NotebookInstanceName: FormControl<string | null | undefined>,
+		NotebookInstanceStatus: FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+		InstanceType: FormControl<DescribeNotebookInstanceOutputInstanceType | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+		DirectInternetAccess: FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+		DefaultCodeRepository: FormControl<string | null | undefined>,
+		RootAccess: FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>,
+	}
+	export function CreateDescribeNotebookInstanceOutputFormGroup() {
+		return new FormGroup<DescribeNotebookInstanceOutputFormProperties>({
+			NotebookInstanceArn: new FormControl<string | null | undefined>(undefined),
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+			NotebookInstanceStatus: new FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<DescribeNotebookInstanceOutputInstanceType | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+			DirectInternetAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined),
+			RootAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeNotebookInstanceOutputNotebookInstanceStatus { Pending = 0, InService = 1, Stopping = 2, Stopped = 3, Failed = 4, Deleting = 5, Updating = 6 }
@@ -2759,25 +6228,58 @@ export namespace MyNS {
 	export interface DescribeNotebookInstanceInput {
 		NotebookInstanceName: string;
 	}
+	export interface DescribeNotebookInstanceInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNotebookInstanceInputFormGroup() {
+		return new FormGroup<DescribeNotebookInstanceInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeNotebookInstanceLifecycleConfigOutput {
 		NotebookInstanceLifecycleConfigArn?: string | null;
 		NotebookInstanceLifecycleConfigName?: string | null;
-		OnCreate?: Array<NotebookInstanceLifecycleHook> | null;
-		OnStart?: Array<NotebookInstanceLifecycleHook> | null;
+		OnCreate?: Array<NotebookInstanceLifecycleHook>;
+		OnStart?: Array<NotebookInstanceLifecycleHook>;
 		LastModifiedTime?: Date | null;
 		CreationTime?: Date | null;
+	}
+	export interface DescribeNotebookInstanceLifecycleConfigOutputFormProperties {
+		NotebookInstanceLifecycleConfigArn: FormControl<string | null | undefined>,
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeNotebookInstanceLifecycleConfigOutputFormGroup() {
+		return new FormGroup<DescribeNotebookInstanceLifecycleConfigOutputFormProperties>({
+			NotebookInstanceLifecycleConfigArn: new FormControl<string | null | undefined>(undefined),
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeNotebookInstanceLifecycleConfigInput {
 		NotebookInstanceLifecycleConfigName: string;
 	}
+	export interface DescribeNotebookInstanceLifecycleConfigInputFormProperties {
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNotebookInstanceLifecycleConfigInputFormGroup() {
+		return new FormGroup<DescribeNotebookInstanceLifecycleConfigInputFormProperties>({
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProcessingJobResponse {
-		ProcessingInputs?: Array<ProcessingInput> | null;
+		ProcessingInputs?: Array<ProcessingInput>;
 
 		/** The output configuration for the processing job. */
-		ProcessingOutputConfig?: ProcessingOutputConfig | null;
+		ProcessingOutputConfig?: ProcessingOutputConfig;
 		ProcessingJobName: string;
 
 		/**
@@ -2787,21 +6289,21 @@ export namespace MyNS {
 		ProcessingResources: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
-		StoppingCondition?: ProcessingStoppingCondition | null;
+		StoppingCondition?: ProcessingStoppingCondition;
 
 		/**
 		 * Configuration to run a processing job in a specified container image.
 		 * Required
 		 */
 		AppSpecification: AppSpecification;
-		Environment?: ProcessingEnvironmentMap | null;
+		Environment?: ProcessingEnvironmentMap;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig | null;
+		NetworkConfig?: NetworkConfig;
 		RoleArn?: string | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
+		ExperimentConfig?: ExperimentConfig;
 		ProcessingJobArn: string;
 		ProcessingJobStatus: TrialComponentStatusPrimaryStatus;
 		ExitMessage?: string | null;
@@ -2814,9 +6316,51 @@ export namespace MyNS {
 		AutoMLJobArn?: string | null;
 		TrainingJobArn?: string | null;
 	}
+	export interface DescribeProcessingJobResponseFormProperties {
+		ProcessingJobName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ProcessingJobArn: FormControl<string | null | undefined>,
+		ProcessingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		ExitMessage: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		ProcessingEndTime: FormControl<Date | null | undefined>,
+		ProcessingStartTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		MonitoringScheduleArn: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+		TrainingJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProcessingJobResponseFormGroup() {
+		return new FormGroup<DescribeProcessingJobResponseFormProperties>({
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ProcessingJobArn: new FormControl<string | null | undefined>(undefined),
+			ProcessingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			ExitMessage: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			ProcessingEndTime: new FormControl<Date | null | undefined>(undefined),
+			ProcessingStartTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProcessingJobRequest {
 		ProcessingJobName: string;
+	}
+	export interface DescribeProcessingJobRequestFormProperties {
+		ProcessingJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProcessingJobRequestFormGroup() {
+		return new FormGroup<DescribeProcessingJobRequestFormProperties>({
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSubscribedWorkteamResponse {
@@ -2826,6 +6370,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		SubscribedWorkteam: SubscribedWorkteam;
+	}
+	export interface DescribeSubscribedWorkteamResponseFormProperties {
+	}
+	export function CreateDescribeSubscribedWorkteamResponseFormGroup() {
+		return new FormGroup<DescribeSubscribedWorkteamResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2838,8 +6389,36 @@ export namespace MyNS {
 		ListingId?: string | null;
 	}
 
+	/** Describes a work team of a vendor that does the a labelling job. */
+	export interface SubscribedWorkteamFormProperties {
+		WorkteamArn: FormControl<string | null | undefined>,
+		MarketplaceTitle: FormControl<string | null | undefined>,
+		SellerName: FormControl<string | null | undefined>,
+		MarketplaceDescription: FormControl<string | null | undefined>,
+		ListingId: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscribedWorkteamFormGroup() {
+		return new FormGroup<SubscribedWorkteamFormProperties>({
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+			MarketplaceTitle: new FormControl<string | null | undefined>(undefined),
+			SellerName: new FormControl<string | null | undefined>(undefined),
+			MarketplaceDescription: new FormControl<string | null | undefined>(undefined),
+			ListingId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeSubscribedWorkteamRequest {
 		WorkteamArn: string;
+	}
+	export interface DescribeSubscribedWorkteamRequestFormProperties {
+		WorkteamArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSubscribedWorkteamRequestFormGroup() {
+		return new FormGroup<DescribeSubscribedWorkteamRequestFormProperties>({
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTrainingJobResponse {
@@ -2857,7 +6436,7 @@ export namespace MyNS {
 		TrainingJobStatus: TrialComponentStatusPrimaryStatus;
 		SecondaryStatus: DescribeTrainingJobResponseSecondaryStatus;
 		FailureReason?: string | null;
-		HyperParameters?: HyperParameters | null;
+		HyperParameters?: HyperParameters;
 
 		/**
 		 * <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
@@ -2865,10 +6444,10 @@ export namespace MyNS {
 		 */
 		AlgorithmSpecification: AlgorithmSpecification;
 		RoleArn?: string | null;
-		InputDataConfig?: Array<Channel> | null;
+		InputDataConfig?: Array<Channel>;
 
 		/** Provides information about how to store model training results (model artifacts). */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 
 		/**
 		 * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
@@ -2877,7 +6456,7 @@ export namespace MyNS {
 		ResourceConfig: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 
 		/**
 		 * <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note>
@@ -2888,27 +6467,70 @@ export namespace MyNS {
 		TrainingStartTime?: Date | null;
 		TrainingEndTime?: Date | null;
 		LastModifiedTime?: Date | null;
-		SecondaryStatusTransitions?: Array<SecondaryStatusTransition> | null;
-		FinalMetricDataList?: Array<MetricData> | null;
+		SecondaryStatusTransitions?: Array<SecondaryStatusTransition>;
+		FinalMetricDataList?: Array<MetricData>;
 		EnableNetworkIsolation?: boolean | null;
 		EnableInterContainerTrafficEncryption?: boolean | null;
 		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig | null;
+		CheckpointConfig?: CheckpointConfig;
 		TrainingTimeInSeconds?: number | null;
 		BillableTimeInSeconds?: number | null;
 
 		/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
-		DebugHookConfig?: DebugHookConfig | null;
+		DebugHookConfig?: DebugHookConfig;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
-		DebugRuleConfigurations?: Array<DebugRuleConfiguration> | null;
+		ExperimentConfig?: ExperimentConfig;
+		DebugRuleConfigurations?: Array<DebugRuleConfiguration>;
 
 		/** Configuration of storage locations for TensorBoard output. */
-		TensorBoardOutputConfig?: TensorBoardOutputConfig | null;
-		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus> | null;
+		TensorBoardOutputConfig?: TensorBoardOutputConfig;
+		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus>;
+	}
+	export interface DescribeTrainingJobResponseFormProperties {
+		TrainingJobName: FormControl<string | null | undefined>,
+		TrainingJobArn: FormControl<string | null | undefined>,
+		TuningJobArn: FormControl<string | null | undefined>,
+		LabelingJobArn: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+		TrainingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		SecondaryStatus: FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TrainingStartTime: FormControl<Date | null | undefined>,
+		TrainingEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+		EnableInterContainerTrafficEncryption: FormControl<boolean | null | undefined>,
+		EnableManagedSpotTraining: FormControl<boolean | null | undefined>,
+		TrainingTimeInSeconds: FormControl<number | null | undefined>,
+		BillableTimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTrainingJobResponseFormGroup() {
+		return new FormGroup<DescribeTrainingJobResponseFormProperties>({
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+			TuningJobArn: new FormControl<string | null | undefined>(undefined),
+			LabelingJobArn: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+			TrainingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			SecondaryStatus: new FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
+			EnableManagedSpotTraining: new FormControl<boolean | null | undefined>(undefined),
+			TrainingTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			BillableTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeTrainingJobResponseSecondaryStatus { Starting = 0, LaunchingMLInstances = 1, PreparingTrainingStack = 2, Downloading = 3, DownloadingTrainingImage = 4, Training = 5, Uploading = 6, Stopping = 7, Stopped = 8, MaxRuntimeExceeded = 9, Completed = 10, Failed = 11, Interrupted = 12, MaxWaitTimeExceeded = 13 }
@@ -2922,12 +6544,44 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 	}
 
+	/** <p>An array element of <a>DescribeTrainingJobResponse$SecondaryStatusTransitions</a>. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status. </p> <p/> */
+	export interface SecondaryStatusTransitionFormProperties {
+		Status: FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateSecondaryStatusTransitionFormGroup() {
+		return new FormGroup<SecondaryStatusTransitionFormProperties>({
+			Status: new FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The name, value, and date and time of a metric that was emitted to Amazon CloudWatch. */
 	export interface MetricData {
 		MetricName?: string | null;
 		Value?: number | null;
 		Timestamp?: Date | null;
+	}
+
+	/** The name, value, and date and time of a metric that was emitted to Amazon CloudWatch. */
+	export interface MetricDataFormProperties {
+		MetricName: FormControl<string | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateMetricDataFormGroup() {
+		return new FormGroup<MetricDataFormProperties>({
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2940,10 +6594,38 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 	}
 
+	/** Information about the status of the rule evaluation. */
+	export interface DebugRuleEvaluationStatusFormProperties {
+		RuleConfigurationName: FormControl<string | null | undefined>,
+		RuleEvaluationJobArn: FormControl<string | null | undefined>,
+		RuleEvaluationStatus: FormControl<DebugRuleEvaluationStatusRuleEvaluationStatus | null | undefined>,
+		StatusDetails: FormControl<string | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDebugRuleEvaluationStatusFormGroup() {
+		return new FormGroup<DebugRuleEvaluationStatusFormProperties>({
+			RuleConfigurationName: new FormControl<string | null | undefined>(undefined),
+			RuleEvaluationJobArn: new FormControl<string | null | undefined>(undefined),
+			RuleEvaluationStatus: new FormControl<DebugRuleEvaluationStatusRuleEvaluationStatus | null | undefined>(undefined),
+			StatusDetails: new FormControl<string | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DebugRuleEvaluationStatusRuleEvaluationStatus { InProgress = 0, NoIssuesFound = 1, IssuesFound = 2, Error = 3, Stopping = 4, Stopped = 5 }
 
 	export interface DescribeTrainingJobRequest {
 		TrainingJobName: string;
+	}
+	export interface DescribeTrainingJobRequestFormProperties {
+		TrainingJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTrainingJobRequestFormGroup() {
+		return new FormGroup<DescribeTrainingJobRequestFormProperties>({
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTransformJobResponse {
@@ -2955,7 +6637,7 @@ export namespace MyNS {
 		MaxConcurrentTransforms?: number | null;
 		MaxPayloadInMB?: number | null;
 		BatchStrategy?: TransformJobDefinitionBatchStrategy | null;
-		Environment?: TransformEnvironmentMap | null;
+		Environment?: TransformEnvironmentMap;
 
 		/**
 		 * Describes the input source of a transform job and the way the transform job consumes it.
@@ -2964,7 +6646,7 @@ export namespace MyNS {
 		TransformInput: TransformInput;
 
 		/** Describes the results of a transform job. */
-		TransformOutput?: TransformOutput | null;
+		TransformOutput?: TransformOutput;
 
 		/**
 		 * Describes the resources, including ML instance types and ML instance count, to use for transform job.
@@ -2978,14 +6660,56 @@ export namespace MyNS {
 		AutoMLJobArn?: string | null;
 
 		/** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>. */
-		DataProcessing?: DataProcessing | null;
+		DataProcessing?: DataProcessing;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
+		ExperimentConfig?: ExperimentConfig;
+	}
+	export interface DescribeTransformJobResponseFormProperties {
+		TransformJobName: FormControl<string | null | undefined>,
+		TransformJobArn: FormControl<string | null | undefined>,
+		TransformJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		ModelName: FormControl<string | null | undefined>,
+		MaxConcurrentTransforms: FormControl<number | null | undefined>,
+		MaxPayloadInMB: FormControl<number | null | undefined>,
+		BatchStrategy: FormControl<TransformJobDefinitionBatchStrategy | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TransformStartTime: FormControl<Date | null | undefined>,
+		TransformEndTime: FormControl<Date | null | undefined>,
+		LabelingJobArn: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTransformJobResponseFormGroup() {
+		return new FormGroup<DescribeTransformJobResponseFormProperties>({
+			TransformJobName: new FormControl<string | null | undefined>(undefined),
+			TransformJobArn: new FormControl<string | null | undefined>(undefined),
+			TransformJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			ModelName: new FormControl<string | null | undefined>(undefined),
+			MaxConcurrentTransforms: new FormControl<number | null | undefined>(undefined),
+			MaxPayloadInMB: new FormControl<number | null | undefined>(undefined),
+			BatchStrategy: new FormControl<TransformJobDefinitionBatchStrategy | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TransformStartTime: new FormControl<Date | null | undefined>(undefined),
+			TransformEndTime: new FormControl<Date | null | undefined>(undefined),
+			LabelingJobArn: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTransformJobRequest {
 		TransformJobName: string;
+	}
+	export interface DescribeTransformJobRequestFormProperties {
+		TransformJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTransformJobRequestFormGroup() {
+		return new FormGroup<DescribeTransformJobRequestFormProperties>({
+			TransformJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTrialResponse {
@@ -2995,15 +6719,34 @@ export namespace MyNS {
 		ExperimentName?: string | null;
 
 		/** The source of the trial. */
-		Source?: TrialSource | null;
+		Source?: TrialSource;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
+		LastModifiedBy?: UserContext;
+	}
+	export interface DescribeTrialResponseFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+		TrialArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		ExperimentName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeTrialResponseFormGroup() {
+		return new FormGroup<DescribeTrialResponseFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3013,8 +6756,30 @@ export namespace MyNS {
 		SourceType?: string | null;
 	}
 
+	/** The source of the trial. */
+	export interface TrialSourceFormProperties {
+		SourceArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateTrialSourceFormGroup() {
+		return new FormGroup<TrialSourceFormProperties>({
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTrialRequest {
 		TrialName: string;
+	}
+	export interface DescribeTrialRequestFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTrialRequestFormGroup() {
+		return new FormGroup<DescribeTrialRequestFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTrialComponentResponse {
@@ -3023,24 +6788,45 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		Source?: TrialComponentSource | null;
+		Source?: TrialComponentSource;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus | null;
+		Status?: TrialComponentStatus;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
-		Parameters?: TrialComponentParameters | null;
-		InputArtifacts?: TrialComponentArtifacts | null;
-		OutputArtifacts?: TrialComponentArtifacts | null;
-		Metrics?: Array<TrialComponentMetricSummary> | null;
+		LastModifiedBy?: UserContext;
+		Parameters?: TrialComponentParameters;
+		InputArtifacts?: TrialComponentArtifacts;
+		OutputArtifacts?: TrialComponentArtifacts;
+		Metrics?: Array<TrialComponentMetricSummary>;
+	}
+	export interface DescribeTrialComponentResponseFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		TrialComponentArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeTrialComponentResponseFormGroup() {
+		return new FormGroup<DescribeTrialComponentResponseFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3048,6 +6834,19 @@ export namespace MyNS {
 	export interface TrialComponentSource {
 		SourceArn: string;
 		SourceType?: string | null;
+	}
+
+	/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
+	export interface TrialComponentSourceFormProperties {
+		SourceArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateTrialComponentSourceFormGroup() {
+		return new FormGroup<TrialComponentSourceFormProperties>({
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3064,8 +6863,44 @@ export namespace MyNS {
 		StdDev?: number | null;
 	}
 
+	/** A summary of the metrics of a trial component. */
+	export interface TrialComponentMetricSummaryFormProperties {
+		MetricName: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		TimeStamp: FormControl<Date | null | undefined>,
+		Max: FormControl<number | null | undefined>,
+		Min: FormControl<number | null | undefined>,
+		Last: FormControl<number | null | undefined>,
+		Count: FormControl<number | null | undefined>,
+		Avg: FormControl<number | null | undefined>,
+		StdDev: FormControl<number | null | undefined>,
+	}
+	export function CreateTrialComponentMetricSummaryFormGroup() {
+		return new FormGroup<TrialComponentMetricSummaryFormProperties>({
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			TimeStamp: new FormControl<Date | null | undefined>(undefined),
+			Max: new FormControl<number | null | undefined>(undefined),
+			Min: new FormControl<number | null | undefined>(undefined),
+			Last: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined),
+			Avg: new FormControl<number | null | undefined>(undefined),
+			StdDev: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTrialComponentRequest {
 		TrialComponentName: string;
+	}
+	export interface DescribeTrialComponentRequestFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTrialComponentRequestFormGroup() {
+		return new FormGroup<DescribeTrialComponentRequestFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUserProfileResponse {
@@ -3081,12 +6916,50 @@ export namespace MyNS {
 		SingleSignOnUserValue?: string | null;
 
 		/** A collection of settings. */
-		UserSettings?: UserSettings | null;
+		UserSettings?: UserSettings;
+	}
+	export interface DescribeUserProfileResponseFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileArn: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		HomeEfsFileSystemUid: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeDomainResponseStatus | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		SingleSignOnUserIdentifier: FormControl<string | null | undefined>,
+		SingleSignOnUserValue: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserProfileResponseFormGroup() {
+		return new FormGroup<DescribeUserProfileResponseFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileArn: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			HomeEfsFileSystemUid: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeDomainResponseStatus | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnUserValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUserProfileRequest {
 		DomainId: string;
 		UserProfileName: string;
+	}
+	export interface DescribeUserProfileRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserProfileRequestFormGroup() {
+		return new FormGroup<DescribeUserProfileRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeWorkforceResponse {
@@ -3097,6 +6970,13 @@ export namespace MyNS {
 		 */
 		Workforce: Workforce;
 	}
+	export interface DescribeWorkforceResponseFormProperties {
+	}
+	export function CreateDescribeWorkforceResponseFormGroup() {
+		return new FormGroup<DescribeWorkforceResponseFormProperties>({
+		});
+
+	}
 
 
 	/** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>. */
@@ -3106,7 +6986,22 @@ export namespace MyNS {
 		LastUpdatedDate?: Date | null;
 
 		/** A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. For more information, see . */
-		SourceIpConfig?: SourceIpConfig | null;
+		SourceIpConfig?: SourceIpConfig;
+	}
+
+	/** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>. */
+	export interface WorkforceFormProperties {
+		WorkforceName: FormControl<string | null | undefined>,
+		WorkforceArn: FormControl<string | null | undefined>,
+		LastUpdatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkforceFormGroup() {
+		return new FormGroup<WorkforceFormProperties>({
+			WorkforceName: new FormControl<string | null | undefined>(undefined),
+			WorkforceArn: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3115,8 +7010,26 @@ export namespace MyNS {
 		Cidrs: Array<string>;
 	}
 
+	/** A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. For more information, see . */
+	export interface SourceIpConfigFormProperties {
+	}
+	export function CreateSourceIpConfigFormGroup() {
+		return new FormGroup<SourceIpConfigFormProperties>({
+		});
+
+	}
+
 	export interface DescribeWorkforceRequest {
 		WorkforceName: string;
+	}
+	export interface DescribeWorkforceRequestFormProperties {
+		WorkforceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkforceRequestFormGroup() {
+		return new FormGroup<DescribeWorkforceRequestFormProperties>({
+			WorkforceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeWorkteamResponse {
@@ -3127,6 +7040,13 @@ export namespace MyNS {
 		 */
 		Workteam: Workteam;
 	}
+	export interface DescribeWorkteamResponseFormProperties {
+	}
+	export function CreateDescribeWorkteamResponseFormGroup() {
+		return new FormGroup<DescribeWorkteamResponseFormProperties>({
+		});
+
+	}
 
 
 	/** Provides details about a labeling work team. */
@@ -3134,32 +7054,91 @@ export namespace MyNS {
 		WorkteamName: string;
 		MemberDefinitions: Array<MemberDefinition>;
 		WorkteamArn: string;
-		ProductListingIds?: Array<string> | null;
+		ProductListingIds?: Array<string>;
 		Description: string;
 		SubDomain?: string | null;
 		CreateDate?: Date | null;
 		LastUpdatedDate?: Date | null;
 
 		/** Configures SNS notifications of available or expiring work items for work teams. */
-		NotificationConfiguration?: NotificationConfiguration | null;
+		NotificationConfiguration?: NotificationConfiguration;
+	}
+
+	/** Provides details about a labeling work team. */
+	export interface WorkteamFormProperties {
+		WorkteamName: FormControl<string | null | undefined>,
+		WorkteamArn: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SubDomain: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		LastUpdatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkteamFormGroup() {
+		return new FormGroup<WorkteamFormProperties>({
+			WorkteamName: new FormControl<string | null | undefined>(undefined),
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SubDomain: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeWorkteamRequest {
 		WorkteamName: string;
+	}
+	export interface DescribeWorkteamRequestFormProperties {
+		WorkteamName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkteamRequestFormGroup() {
+		return new FormGroup<DescribeWorkteamRequestFormProperties>({
+			WorkteamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateTrialComponentResponse {
 		TrialComponentArn?: string | null;
 		TrialArn?: string | null;
 	}
+	export interface DisassociateTrialComponentResponseFormProperties {
+		TrialComponentArn: FormControl<string | null | undefined>,
+		TrialArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateTrialComponentResponseFormGroup() {
+		return new FormGroup<DisassociateTrialComponentResponseFormProperties>({
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateTrialComponentRequest {
 		TrialComponentName: string;
 		TrialName: string;
 	}
+	export interface DisassociateTrialComponentRequestFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		TrialName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateTrialComponentRequestFormGroup() {
+		return new FormGroup<DisassociateTrialComponentRequestFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			TrialName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetSearchSuggestionsResponse {
-		PropertyNameSuggestions?: Array<PropertyNameSuggestion> | null;
+		PropertyNameSuggestions?: Array<PropertyNameSuggestion>;
+	}
+	export interface GetSearchSuggestionsResponseFormProperties {
+	}
+	export function CreateGetSearchSuggestionsResponseFormGroup() {
+		return new FormGroup<GetSearchSuggestionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -3168,11 +7147,31 @@ export namespace MyNS {
 		PropertyName?: string | null;
 	}
 
+	/** A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field. */
+	export interface PropertyNameSuggestionFormProperties {
+		PropertyName: FormControl<string | null | undefined>,
+	}
+	export function CreatePropertyNameSuggestionFormGroup() {
+		return new FormGroup<PropertyNameSuggestionFormProperties>({
+			PropertyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetSearchSuggestionsRequest {
 		Resource: GetSearchSuggestionsRequestResource;
 
 		/** Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that are included in the response. */
-		SuggestionQuery?: SuggestionQuery | null;
+		SuggestionQuery?: SuggestionQuery;
+	}
+	export interface GetSearchSuggestionsRequestFormProperties {
+		Resource: FormControl<GetSearchSuggestionsRequestResource | null | undefined>,
+	}
+	export function CreateGetSearchSuggestionsRequestFormGroup() {
+		return new FormGroup<GetSearchSuggestionsRequestFormProperties>({
+			Resource: new FormControl<GetSearchSuggestionsRequestResource | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetSearchSuggestionsRequestResource { TrainingJob = 0, Experiment = 1, ExperimentTrial = 2, ExperimentTrialComponent = 3 }
@@ -3182,7 +7181,16 @@ export namespace MyNS {
 	export interface SuggestionQuery {
 
 		/** Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text. */
-		PropertyNameQuery?: PropertyNameQuery | null;
+		PropertyNameQuery?: PropertyNameQuery;
+	}
+
+	/** Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that are included in the response. */
+	export interface SuggestionQueryFormProperties {
+	}
+	export function CreateSuggestionQueryFormGroup() {
+		return new FormGroup<SuggestionQueryFormProperties>({
+		});
+
 	}
 
 
@@ -3191,9 +7199,29 @@ export namespace MyNS {
 		PropertyNameHint: string;
 	}
 
+	/** Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text. */
+	export interface PropertyNameQueryFormProperties {
+		PropertyNameHint: FormControl<string | null | undefined>,
+	}
+	export function CreatePropertyNameQueryFormGroup() {
+		return new FormGroup<PropertyNameQueryFormProperties>({
+			PropertyNameHint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAlgorithmsOutput {
 		AlgorithmSummaryList: Array<AlgorithmSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListAlgorithmsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAlgorithmsOutputFormGroup() {
+		return new FormGroup<ListAlgorithmsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3206,6 +7234,25 @@ export namespace MyNS {
 		AlgorithmStatus: DescribeAlgorithmOutputAlgorithmStatus;
 	}
 
+	/** Provides summary information about an algorithm. */
+	export interface AlgorithmSummaryFormProperties {
+		AlgorithmName: FormControl<string | null | undefined>,
+		AlgorithmArn: FormControl<string | null | undefined>,
+		AlgorithmDescription: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		AlgorithmStatus: FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>,
+	}
+	export function CreateAlgorithmSummaryFormGroup() {
+		return new FormGroup<AlgorithmSummaryFormProperties>({
+			AlgorithmName: new FormControl<string | null | undefined>(undefined),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined),
+			AlgorithmDescription: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			AlgorithmStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAlgorithmsInput {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3215,14 +7262,44 @@ export namespace MyNS {
 		SortBy?: ListAlgorithmsInputSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListAlgorithmsInputFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListAlgorithmsInputFormGroup() {
+		return new FormGroup<ListAlgorithmsInputFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListAlgorithmsInputSortBy { Name = 0, CreationTime = 1 }
 
 	export enum ListAlgorithmsInputSortOrder { Ascending = 0, Descending = 1 }
 
 	export interface ListAppsResponse {
-		Apps?: Array<AppDetails> | null;
+		Apps?: Array<AppDetails>;
 		NextToken?: string | null;
+	}
+	export interface ListAppsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAppsResponseFormGroup() {
+		return new FormGroup<ListAppsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3236,6 +7313,27 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 	}
 
+	/** The app's details. */
+	export interface AppDetailsFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		AppType: FormControl<CreateAppRequestAppType | null | undefined>,
+		AppName: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeAppResponseStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateAppDetailsFormGroup() {
+		return new FormGroup<AppDetailsFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			AppType: new FormControl<CreateAppRequestAppType | null | undefined>(undefined),
+			AppName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeAppResponseStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAppsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
@@ -3244,12 +7342,40 @@ export namespace MyNS {
 		DomainIdEquals?: string | null;
 		UserProfileNameEquals?: string | null;
 	}
+	export interface ListAppsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		SortBy: FormControl<ListAppsRequestSortBy | null | undefined>,
+		DomainIdEquals: FormControl<string | null | undefined>,
+		UserProfileNameEquals: FormControl<string | null | undefined>,
+	}
+	export function CreateListAppsRequestFormGroup() {
+		return new FormGroup<ListAppsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			SortBy: new FormControl<ListAppsRequestSortBy | null | undefined>(undefined),
+			DomainIdEquals: new FormControl<string | null | undefined>(undefined),
+			UserProfileNameEquals: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListAppsRequestSortBy { CreationTime = 0 }
 
 	export interface ListAutoMLJobsResponse {
 		AutoMLJobSummaries: Array<AutoMLJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListAutoMLJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAutoMLJobsResponseFormGroup() {
+		return new FormGroup<ListAutoMLJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3265,6 +7391,31 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Provides a summary about a job. */
+	export interface AutoMLJobSummaryFormProperties {
+		AutoMLJobName: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+		AutoMLJobStatus: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+		AutoMLJobSecondaryStatus: FormControl<DescribeAutoMLJobResponseAutoMLJobSecondaryStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoMLJobSummaryFormGroup() {
+		return new FormGroup<AutoMLJobSummaryFormProperties>({
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			AutoMLJobSecondaryStatus: new FormControl<DescribeAutoMLJobResponseAutoMLJobSecondaryStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAutoMLJobsRequest {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3277,12 +7428,48 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListAutoMLJobsRequestFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		StatusEquals: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAutoMLJobsRequestFormGroup() {
+		return new FormGroup<ListAutoMLJobsRequestFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			StatusEquals: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListAutoMLJobsRequestSortBy { Name = 0, CreationTime = 1, Status = 2 }
 
 	export interface ListCandidatesForAutoMLJobResponse {
 		Candidates: Array<AutoMLCandidate>;
 		NextToken?: string | null;
+	}
+	export interface ListCandidatesForAutoMLJobResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCandidatesForAutoMLJobResponseFormGroup() {
+		return new FormGroup<ListCandidatesForAutoMLJobResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCandidatesForAutoMLJobRequest {
@@ -3294,12 +7481,42 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListCandidatesForAutoMLJobRequestFormProperties {
+		AutoMLJobName: FormControl<string | null | undefined>,
+		StatusEquals: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+		CandidateNameEquals: FormControl<string | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		SortBy: FormControl<ListCandidatesForAutoMLJobRequestSortBy | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCandidatesForAutoMLJobRequestFormGroup() {
+		return new FormGroup<ListCandidatesForAutoMLJobRequestFormProperties>({
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined),
+			StatusEquals: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			CandidateNameEquals: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			SortBy: new FormControl<ListCandidatesForAutoMLJobRequestSortBy | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListCandidatesForAutoMLJobRequestSortBy { CreationTime = 0, Status = 1, FinalObjectiveMetricValue = 2 }
 
 	export interface ListCodeRepositoriesOutput {
 		CodeRepositorySummaryList: Array<CodeRepositorySummary>;
 		NextToken?: string | null;
+	}
+	export interface ListCodeRepositoriesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCodeRepositoriesOutputFormGroup() {
+		return new FormGroup<ListCodeRepositoriesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3311,7 +7528,24 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 
 		/** Specifies configuration details for a Git repository in your AWS account. */
-		GitConfig?: GitConfig | null;
+		GitConfig?: GitConfig;
+	}
+
+	/** Specifies summary information about a Git repository. */
+	export interface CodeRepositorySummaryFormProperties {
+		CodeRepositoryName: FormControl<string | null | undefined>,
+		CodeRepositoryArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCodeRepositorySummaryFormGroup() {
+		return new FormGroup<CodeRepositorySummaryFormProperties>({
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined),
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCodeRepositoriesInput {
@@ -3325,12 +7559,46 @@ export namespace MyNS {
 		SortBy?: ListCodeRepositoriesInputSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListCodeRepositoriesInputFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListCodeRepositoriesInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListCodeRepositoriesInputFormGroup() {
+		return new FormGroup<ListCodeRepositoriesInputFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListCodeRepositoriesInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListCodeRepositoriesInputSortBy { Name = 0, CreationTime = 1, LastModifiedTime = 2 }
 
 	export interface ListCompilationJobsResponse {
 		CompilationJobSummaries: Array<CompilationJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListCompilationJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCompilationJobsResponseFormGroup() {
+		return new FormGroup<ListCompilationJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3346,6 +7614,31 @@ export namespace MyNS {
 		CompilationJobStatus: DescribeCompilationJobResponseCompilationJobStatus;
 	}
 
+	/** A summary of a model compilation job. */
+	export interface CompilationJobSummaryFormProperties {
+		CompilationJobName: FormControl<string | null | undefined>,
+		CompilationJobArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		CompilationStartTime: FormControl<Date | null | undefined>,
+		CompilationEndTime: FormControl<Date | null | undefined>,
+		CompilationTargetDevice: FormControl<OutputConfigTargetDevice | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		CompilationJobStatus: FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>,
+	}
+	export function CreateCompilationJobSummaryFormGroup() {
+		return new FormGroup<CompilationJobSummaryFormProperties>({
+			CompilationJobName: new FormControl<string | null | undefined>(undefined),
+			CompilationJobArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CompilationStartTime: new FormControl<Date | null | undefined>(undefined),
+			CompilationEndTime: new FormControl<Date | null | undefined>(undefined),
+			CompilationTargetDevice: new FormControl<OutputConfigTargetDevice | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			CompilationJobStatus: new FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCompilationJobsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
@@ -3358,10 +7651,46 @@ export namespace MyNS {
 		SortBy?: ListAutoMLJobsRequestSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListCompilationJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		StatusEquals: FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListCompilationJobsRequestFormGroup() {
+		return new FormGroup<ListCompilationJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			StatusEquals: new FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDomainsResponse {
-		Domains?: Array<DomainDetails> | null;
+		Domains?: Array<DomainDetails>;
 		NextToken?: string | null;
+	}
+	export interface ListDomainsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDomainsResponseFormGroup() {
+		return new FormGroup<ListDomainsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3376,14 +7705,57 @@ export namespace MyNS {
 		Url?: string | null;
 	}
 
+	/** The domain's details. */
+	export interface DomainDetailsFormProperties {
+		DomainArn: FormControl<string | null | undefined>,
+		DomainId: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeDomainResponseStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainDetailsFormGroup() {
+		return new FormGroup<DomainDetailsFormProperties>({
+			DomainArn: new FormControl<string | null | undefined>(undefined),
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeDomainResponseStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDomainsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListDomainsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDomainsRequestFormGroup() {
+		return new FormGroup<ListDomainsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEndpointConfigsOutput {
 		EndpointConfigs: Array<EndpointConfigSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListEndpointConfigsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointConfigsOutputFormGroup() {
+		return new FormGroup<ListEndpointConfigsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3392,6 +7764,21 @@ export namespace MyNS {
 		EndpointConfigName: string;
 		EndpointConfigArn: string;
 		CreationTime: Date;
+	}
+
+	/** Provides summary information for an endpoint configuration. */
+	export interface EndpointConfigSummaryFormProperties {
+		EndpointConfigName: FormControl<string | null | undefined>,
+		EndpointConfigArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateEndpointConfigSummaryFormGroup() {
+		return new FormGroup<EndpointConfigSummaryFormProperties>({
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+			EndpointConfigArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEndpointConfigsInput {
@@ -3403,10 +7790,40 @@ export namespace MyNS {
 		CreationTimeBefore?: Date | null;
 		CreationTimeAfter?: Date | null;
 	}
+	export interface ListEndpointConfigsInputFormProperties {
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateListEndpointConfigsInputFormGroup() {
+		return new FormGroup<ListEndpointConfigsInputFormProperties>({
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListEndpointsOutput {
 		Endpoints: Array<EndpointSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListEndpointsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointsOutputFormGroup() {
+		return new FormGroup<ListEndpointsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3417,6 +7834,25 @@ export namespace MyNS {
 		CreationTime: Date;
 		LastModifiedTime: Date;
 		EndpointStatus: DescribeEndpointOutputEndpointStatus;
+	}
+
+	/** Provides summary information for an endpoint. */
+	export interface EndpointSummaryFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		EndpointArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		EndpointStatus: FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>,
+	}
+	export function CreateEndpointSummaryFormGroup() {
+		return new FormGroup<EndpointSummaryFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			EndpointStatus: new FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEndpointsInput {
@@ -3431,10 +7867,46 @@ export namespace MyNS {
 		LastModifiedTimeAfter?: Date | null;
 		StatusEquals?: DescribeEndpointOutputEndpointStatus | null;
 	}
+	export interface ListEndpointsInputFormProperties {
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		StatusEquals: FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>,
+	}
+	export function CreateListEndpointsInputFormGroup() {
+		return new FormGroup<ListEndpointsInputFormProperties>({
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			StatusEquals: new FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListExperimentsResponse {
-		ExperimentSummaries?: Array<ExperimentSummary> | null;
+		ExperimentSummaries?: Array<ExperimentSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListExperimentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListExperimentsResponseFormGroup() {
+		return new FormGroup<ListExperimentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3445,9 +7917,28 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The source of the experiment. */
-		ExperimentSource?: ExperimentSource | null;
+		ExperimentSource?: ExperimentSource;
 		CreationTime?: Date | null;
 		LastModifiedTime?: Date | null;
+	}
+
+	/** A summary of the properties of an experiment. To get the complete set of properties, call the <a>DescribeExperiment</a> API and provide the <code>ExperimentName</code>. */
+	export interface ExperimentSummaryFormProperties {
+		ExperimentArn: FormControl<string | null | undefined>,
+		ExperimentName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateExperimentSummaryFormGroup() {
+		return new FormGroup<ExperimentSummaryFormProperties>({
+			ExperimentArn: new FormControl<string | null | undefined>(undefined),
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListExperimentsRequest {
@@ -3458,10 +7949,38 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListExperimentsRequestFormProperties {
+		CreatedAfter: FormControl<Date | null | undefined>,
+		CreatedBefore: FormControl<Date | null | undefined>,
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListExperimentsRequestFormGroup() {
+		return new FormGroup<ListExperimentsRequestFormProperties>({
+			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
+			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFlowDefinitionsResponse {
 		FlowDefinitionSummaries: Array<FlowDefinitionSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListFlowDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFlowDefinitionsResponseFormGroup() {
+		return new FormGroup<ListFlowDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3474,6 +7993,25 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Contains summary information about the flow definition. */
+	export interface FlowDefinitionSummaryFormProperties {
+		FlowDefinitionName: FormControl<string | null | undefined>,
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+		FlowDefinitionStatus: FormControl<DescribeFlowDefinitionResponseFlowDefinitionStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateFlowDefinitionSummaryFormGroup() {
+		return new FormGroup<FlowDefinitionSummaryFormProperties>({
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionStatus: new FormControl<DescribeFlowDefinitionResponseFlowDefinitionStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListFlowDefinitionsRequest {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3481,10 +8019,36 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListFlowDefinitionsRequestFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListFlowDefinitionsRequestFormGroup() {
+		return new FormGroup<ListFlowDefinitionsRequestFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListHumanTaskUisResponse {
 		HumanTaskUiSummaries: Array<HumanTaskUiSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListHumanTaskUisResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListHumanTaskUisResponseFormGroup() {
+		return new FormGroup<ListHumanTaskUisResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3495,6 +8059,21 @@ export namespace MyNS {
 		CreationTime: Date;
 	}
 
+	/** Container for human task user interface information. */
+	export interface HumanTaskUiSummaryFormProperties {
+		HumanTaskUiName: FormControl<string | null | undefined>,
+		HumanTaskUiArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateHumanTaskUiSummaryFormGroup() {
+		return new FormGroup<HumanTaskUiSummaryFormProperties>({
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined),
+			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListHumanTaskUisRequest {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3502,10 +8081,36 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListHumanTaskUisRequestFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHumanTaskUisRequestFormGroup() {
+		return new FormGroup<ListHumanTaskUisRequestFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListHyperParameterTuningJobsResponse {
 		HyperParameterTuningJobSummaries: Array<HyperParameterTuningJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListHyperParameterTuningJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListHyperParameterTuningJobsResponseFormGroup() {
+		return new FormGroup<ListHyperParameterTuningJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3537,7 +8142,35 @@ export namespace MyNS {
 		ObjectiveStatusCounters: ObjectiveStatusCounters;
 
 		/** Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch. */
-		ResourceLimits?: ResourceLimits | null;
+		ResourceLimits?: ResourceLimits;
+	}
+
+	/** Provides summary information about a hyperparameter tuning job. */
+	export interface HyperParameterTuningJobSummaryFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+		HyperParameterTuningJobArn: FormControl<string | null | undefined>,
+		HyperParameterTuningJobStatus: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+
+		/**
+		 * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
+		 * Required
+		 */
+		Strategy: FormControl<HyperParameterTuningJobConfigStrategy | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		HyperParameterTuningEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateHyperParameterTuningJobSummaryFormGroup() {
+		return new FormGroup<HyperParameterTuningJobSummaryFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+			HyperParameterTuningJobArn: new FormControl<string | null | undefined>(undefined),
+			HyperParameterTuningJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+			Strategy: new FormControl<HyperParameterTuningJobConfigStrategy | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			HyperParameterTuningEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListHyperParameterTuningJobsRequest {
@@ -3552,12 +8185,48 @@ export namespace MyNS {
 		LastModifiedTimeBefore?: Date | null;
 		StatusEquals?: AutoMLCandidateCandidateStatus | null;
 	}
+	export interface ListHyperParameterTuningJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		SortBy: FormControl<ListHyperParameterTuningJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		StatusEquals: FormControl<AutoMLCandidateCandidateStatus | null | undefined>,
+	}
+	export function CreateListHyperParameterTuningJobsRequestFormGroup() {
+		return new FormGroup<ListHyperParameterTuningJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			SortBy: new FormControl<ListHyperParameterTuningJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			StatusEquals: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListHyperParameterTuningJobsRequestSortBy { Name = 0, Status = 1, CreationTime = 2 }
 
 	export interface ListLabelingJobsResponse {
-		LabelingJobSummaryList?: Array<LabelingJobSummary> | null;
+		LabelingJobSummaryList?: Array<LabelingJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListLabelingJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLabelingJobsResponseFormGroup() {
+		return new FormGroup<ListLabelingJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3580,10 +8249,37 @@ export namespace MyNS {
 		FailureReason?: string | null;
 
 		/** Specifies the location of the output produced by the labeling job. */
-		LabelingJobOutput?: LabelingJobOutput | null;
+		LabelingJobOutput?: LabelingJobOutput;
 
 		/** Input configuration information for a labeling job. */
-		InputConfig?: LabelingJobInputConfig | null;
+		InputConfig?: LabelingJobInputConfig;
+	}
+
+	/** Provides summary information about a labeling job. */
+	export interface LabelingJobSummaryFormProperties {
+		LabelingJobName: FormControl<string | null | undefined>,
+		LabelingJobArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		LabelingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		WorkteamArn: FormControl<string | null | undefined>,
+		PreHumanTaskLambdaArn: FormControl<string | null | undefined>,
+		AnnotationConsolidationLambdaArn: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingJobSummaryFormGroup() {
+		return new FormGroup<LabelingJobSummaryFormProperties>({
+			LabelingJobName: new FormControl<string | null | undefined>(undefined),
+			LabelingJobArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			LabelingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+			PreHumanTaskLambdaArn: new FormControl<string | null | undefined>(undefined),
+			AnnotationConsolidationLambdaArn: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListLabelingJobsRequest {
@@ -3598,10 +8294,46 @@ export namespace MyNS {
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 		StatusEquals?: TrialComponentStatusPrimaryStatus | null;
 	}
+	export interface ListLabelingJobsRequestFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		StatusEquals: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+	}
+	export function CreateListLabelingJobsRequestFormGroup() {
+		return new FormGroup<ListLabelingJobsRequestFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			StatusEquals: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListLabelingJobsForWorkteamResponse {
 		LabelingJobSummaryList: Array<LabelingJobForWorkteamSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListLabelingJobsForWorkteamResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLabelingJobsForWorkteamResponseFormGroup() {
+		return new FormGroup<ListLabelingJobsForWorkteamResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3613,8 +8345,27 @@ export namespace MyNS {
 		CreationTime: Date;
 
 		/** Provides counts for human-labeled tasks in the labeling job. */
-		LabelCounters?: LabelCountersForWorkteam | null;
+		LabelCounters?: LabelCountersForWorkteam;
 		NumberOfHumanWorkersPerDataObject?: number | null;
+	}
+
+	/** Provides summary information for a work team. */
+	export interface LabelingJobForWorkteamSummaryFormProperties {
+		LabelingJobName: FormControl<string | null | undefined>,
+		JobReferenceCode: FormControl<string | null | undefined>,
+		WorkRequesterAccountId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		NumberOfHumanWorkersPerDataObject: FormControl<number | null | undefined>,
+	}
+	export function CreateLabelingJobForWorkteamSummaryFormGroup() {
+		return new FormGroup<LabelingJobForWorkteamSummaryFormProperties>({
+			LabelingJobName: new FormControl<string | null | undefined>(undefined),
+			JobReferenceCode: new FormControl<string | null | undefined>(undefined),
+			WorkRequesterAccountId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			NumberOfHumanWorkersPerDataObject: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3623,6 +8374,21 @@ export namespace MyNS {
 		HumanLabeled?: number | null;
 		PendingHuman?: number | null;
 		Total?: number | null;
+	}
+
+	/** Provides counts for human-labeled tasks in the labeling job. */
+	export interface LabelCountersForWorkteamFormProperties {
+		HumanLabeled: FormControl<number | null | undefined>,
+		PendingHuman: FormControl<number | null | undefined>,
+		Total: FormControl<number | null | undefined>,
+	}
+	export function CreateLabelCountersForWorkteamFormGroup() {
+		return new FormGroup<LabelCountersForWorkteamFormProperties>({
+			HumanLabeled: new FormControl<number | null | undefined>(undefined),
+			PendingHuman: new FormControl<number | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListLabelingJobsForWorkteamRequest {
@@ -3635,10 +8401,42 @@ export namespace MyNS {
 		SortBy?: ListAppsRequestSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListLabelingJobsForWorkteamRequestFormProperties {
+		WorkteamArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		JobReferenceCodeContains: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListAppsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListLabelingJobsForWorkteamRequestFormGroup() {
+		return new FormGroup<ListLabelingJobsForWorkteamRequestFormProperties>({
+			WorkteamArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			JobReferenceCodeContains: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListAppsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListModelPackagesOutput {
 		ModelPackageSummaryList: Array<ModelPackageSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListModelPackagesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListModelPackagesOutputFormGroup() {
+		return new FormGroup<ListModelPackagesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3651,6 +8449,25 @@ export namespace MyNS {
 		ModelPackageStatus: DescribeAlgorithmOutputAlgorithmStatus;
 	}
 
+	/** Provides summary information about a model package. */
+	export interface ModelPackageSummaryFormProperties {
+		ModelPackageName: FormControl<string | null | undefined>,
+		ModelPackageArn: FormControl<string | null | undefined>,
+		ModelPackageDescription: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ModelPackageStatus: FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>,
+	}
+	export function CreateModelPackageSummaryFormGroup() {
+		return new FormGroup<ModelPackageSummaryFormProperties>({
+			ModelPackageName: new FormControl<string | null | undefined>(undefined),
+			ModelPackageArn: new FormControl<string | null | undefined>(undefined),
+			ModelPackageDescription: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ModelPackageStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListModelPackagesInput {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3660,10 +8477,40 @@ export namespace MyNS {
 		SortBy?: ListAlgorithmsInputSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListModelPackagesInputFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListModelPackagesInputFormGroup() {
+		return new FormGroup<ListModelPackagesInputFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListModelsOutput {
 		Models: Array<ModelSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListModelsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListModelsOutputFormGroup() {
+		return new FormGroup<ListModelsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3672,6 +8519,21 @@ export namespace MyNS {
 		ModelName: string;
 		ModelArn: string;
 		CreationTime: Date;
+	}
+
+	/** Provides summary information about a model. */
+	export interface ModelSummaryFormProperties {
+		ModelName: FormControl<string | null | undefined>,
+		ModelArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateModelSummaryFormGroup() {
+		return new FormGroup<ModelSummaryFormProperties>({
+			ModelName: new FormControl<string | null | undefined>(undefined),
+			ModelArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListModelsInput {
@@ -3683,10 +8545,40 @@ export namespace MyNS {
 		CreationTimeBefore?: Date | null;
 		CreationTimeAfter?: Date | null;
 	}
+	export interface ListModelsInputFormProperties {
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateListModelsInputFormGroup() {
+		return new FormGroup<ListModelsInputFormProperties>({
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMonitoringExecutionsResponse {
 		MonitoringExecutionSummaries: Array<MonitoringExecutionSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListMonitoringExecutionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMonitoringExecutionsResponseFormGroup() {
+		return new FormGroup<ListMonitoringExecutionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMonitoringExecutionsRequest {
@@ -3704,12 +8596,54 @@ export namespace MyNS {
 		LastModifiedTimeAfter?: Date | null;
 		StatusEquals?: MonitoringExecutionSummaryMonitoringExecutionStatus | null;
 	}
+	export interface ListMonitoringExecutionsRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+		EndpointName: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListMonitoringExecutionsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		ScheduledTimeBefore: FormControl<Date | null | undefined>,
+		ScheduledTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		StatusEquals: FormControl<MonitoringExecutionSummaryMonitoringExecutionStatus | null | undefined>,
+	}
+	export function CreateListMonitoringExecutionsRequestFormGroup() {
+		return new FormGroup<ListMonitoringExecutionsRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListMonitoringExecutionsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ScheduledTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			ScheduledTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			StatusEquals: new FormControl<MonitoringExecutionSummaryMonitoringExecutionStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListMonitoringExecutionsRequestSortBy { CreationTime = 0, ScheduledTime = 1, Status = 2 }
 
 	export interface ListMonitoringSchedulesResponse {
 		MonitoringScheduleSummaries: Array<MonitoringScheduleSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListMonitoringSchedulesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMonitoringSchedulesResponseFormGroup() {
+		return new FormGroup<ListMonitoringSchedulesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3721,6 +8655,27 @@ export namespace MyNS {
 		LastModifiedTime: Date;
 		MonitoringScheduleStatus: DescribeMonitoringScheduleResponseMonitoringScheduleStatus;
 		EndpointName?: string | null;
+	}
+
+	/** Summarizes the monitoring schedule. */
+	export interface MonitoringScheduleSummaryFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+		MonitoringScheduleArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		MonitoringScheduleStatus: FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>,
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateMonitoringScheduleSummaryFormGroup() {
+		return new FormGroup<MonitoringScheduleSummaryFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			MonitoringScheduleStatus: new FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>(undefined),
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMonitoringSchedulesRequest {
@@ -3736,10 +8691,48 @@ export namespace MyNS {
 		LastModifiedTimeAfter?: Date | null;
 		StatusEquals?: DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null;
 	}
+	export interface ListMonitoringSchedulesRequestFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		StatusEquals: FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>,
+	}
+	export function CreateListMonitoringSchedulesRequestFormGroup() {
+		return new FormGroup<ListMonitoringSchedulesRequestFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			StatusEquals: new FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListNotebookInstanceLifecycleConfigsOutput {
 		NextToken?: string | null;
-		NotebookInstanceLifecycleConfigs?: Array<NotebookInstanceLifecycleConfigSummary> | null;
+		NotebookInstanceLifecycleConfigs?: Array<NotebookInstanceLifecycleConfigSummary>;
+	}
+	export interface ListNotebookInstanceLifecycleConfigsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNotebookInstanceLifecycleConfigsOutputFormGroup() {
+		return new FormGroup<ListNotebookInstanceLifecycleConfigsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3749,6 +8742,23 @@ export namespace MyNS {
 		NotebookInstanceLifecycleConfigArn: string;
 		CreationTime?: Date | null;
 		LastModifiedTime?: Date | null;
+	}
+
+	/** Provides a summary of a notebook instance lifecycle configuration. */
+	export interface NotebookInstanceLifecycleConfigSummaryFormProperties {
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+		NotebookInstanceLifecycleConfigArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateNotebookInstanceLifecycleConfigSummaryFormGroup() {
+		return new FormGroup<NotebookInstanceLifecycleConfigSummaryFormProperties>({
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+			NotebookInstanceLifecycleConfigArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListNotebookInstanceLifecycleConfigsInput {
@@ -3762,10 +8772,44 @@ export namespace MyNS {
 		LastModifiedTimeBefore?: Date | null;
 		LastModifiedTimeAfter?: Date | null;
 	}
+	export interface ListNotebookInstanceLifecycleConfigsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		SortBy: FormControl<ListCodeRepositoriesInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateListNotebookInstanceLifecycleConfigsInputFormGroup() {
+		return new FormGroup<ListNotebookInstanceLifecycleConfigsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			SortBy: new FormControl<ListCodeRepositoriesInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListNotebookInstancesOutput {
 		NextToken?: string | null;
-		NotebookInstances?: Array<NotebookInstanceSummary> | null;
+		NotebookInstances?: Array<NotebookInstanceSummary>;
+	}
+	export interface ListNotebookInstancesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNotebookInstancesOutputFormGroup() {
+		return new FormGroup<ListNotebookInstancesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3780,7 +8824,34 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 		NotebookInstanceLifecycleConfigName?: string | null;
 		DefaultCodeRepository?: string | null;
-		AdditionalCodeRepositories?: Array<string> | null;
+		AdditionalCodeRepositories?: Array<string>;
+	}
+
+	/** Provides summary information for an Amazon SageMaker notebook instance. */
+	export interface NotebookInstanceSummaryFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+		NotebookInstanceArn: FormControl<string | null | undefined>,
+		NotebookInstanceStatus: FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+		InstanceType: FormControl<NotebookInstanceSummaryInstanceType | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+		DefaultCodeRepository: FormControl<string | null | undefined>,
+	}
+	export function CreateNotebookInstanceSummaryFormGroup() {
+		return new FormGroup<NotebookInstanceSummaryFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+			NotebookInstanceArn: new FormControl<string | null | undefined>(undefined),
+			NotebookInstanceStatus: new FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<NotebookInstanceSummaryInstanceType | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NotebookInstanceSummaryInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
@@ -3800,10 +8871,52 @@ export namespace MyNS {
 		DefaultCodeRepositoryContains?: string | null;
 		AdditionalCodeRepositoryEquals?: string | null;
 	}
+	export interface ListNotebookInstancesInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		StatusEquals: FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>,
+		NotebookInstanceLifecycleConfigNameContains: FormControl<string | null | undefined>,
+		DefaultCodeRepositoryContains: FormControl<string | null | undefined>,
+		AdditionalCodeRepositoryEquals: FormControl<string | null | undefined>,
+	}
+	export function CreateListNotebookInstancesInputFormGroup() {
+		return new FormGroup<ListNotebookInstancesInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			StatusEquals: new FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>(undefined),
+			NotebookInstanceLifecycleConfigNameContains: new FormControl<string | null | undefined>(undefined),
+			DefaultCodeRepositoryContains: new FormControl<string | null | undefined>(undefined),
+			AdditionalCodeRepositoryEquals: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListProcessingJobsResponse {
 		ProcessingJobSummaries: Array<ProcessingJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListProcessingJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProcessingJobsResponseFormGroup() {
+		return new FormGroup<ListProcessingJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3819,6 +8932,31 @@ export namespace MyNS {
 		ExitMessage?: string | null;
 	}
 
+	/** Summary of information about a processing job. */
+	export interface ProcessingJobSummaryFormProperties {
+		ProcessingJobName: FormControl<string | null | undefined>,
+		ProcessingJobArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ProcessingEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		ProcessingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		ExitMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessingJobSummaryFormGroup() {
+		return new FormGroup<ProcessingJobSummaryFormProperties>({
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined),
+			ProcessingJobArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ProcessingEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			ProcessingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			ExitMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProcessingJobsRequest {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3831,10 +8969,46 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListProcessingJobsRequestFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		StatusEquals: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListProcessingJobsRequestFormGroup() {
+		return new FormGroup<ListProcessingJobsRequestFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			StatusEquals: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSubscribedWorkteamsResponse {
 		SubscribedWorkteams: Array<SubscribedWorkteam>;
 		NextToken?: string | null;
+	}
+	export interface ListSubscribedWorkteamsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscribedWorkteamsResponseFormGroup() {
+		return new FormGroup<ListSubscribedWorkteamsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSubscribedWorkteamsRequest {
@@ -3842,10 +9016,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListSubscribedWorkteamsRequestFormProperties {
+		NameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListSubscribedWorkteamsRequestFormGroup() {
+		return new FormGroup<ListSubscribedWorkteamsRequestFormProperties>({
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsOutputFormGroup() {
+		return new FormGroup<ListTagsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsInput {
@@ -3853,10 +9049,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTagsInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsInputFormGroup() {
+		return new FormGroup<ListTagsInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTrainingJobsResponse {
 		TrainingJobSummaries: Array<TrainingJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTrainingJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrainingJobsResponseFormGroup() {
+		return new FormGroup<ListTrainingJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3868,6 +9086,27 @@ export namespace MyNS {
 		TrainingEndTime?: Date | null;
 		LastModifiedTime?: Date | null;
 		TrainingJobStatus: TrialComponentStatusPrimaryStatus;
+	}
+
+	/** Provides summary information about a training job. */
+	export interface TrainingJobSummaryFormProperties {
+		TrainingJobName: FormControl<string | null | undefined>,
+		TrainingJobArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TrainingEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		TrainingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+	}
+	export function CreateTrainingJobSummaryFormGroup() {
+		return new FormGroup<TrainingJobSummaryFormProperties>({
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTrainingJobsRequest {
@@ -3882,10 +9121,46 @@ export namespace MyNS {
 		SortBy?: ListAutoMLJobsRequestSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListTrainingJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		StatusEquals: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListTrainingJobsRequestFormGroup() {
+		return new FormGroup<ListTrainingJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			StatusEquals: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTrainingJobsForHyperParameterTuningJobResponse {
 		TrainingJobSummaries: Array<HyperParameterTrainingJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTrainingJobsForHyperParameterTuningJobResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrainingJobsForHyperParameterTuningJobResponseFormGroup() {
+		return new FormGroup<ListTrainingJobsForHyperParameterTuningJobResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTrainingJobsForHyperParameterTuningJobRequest {
@@ -3896,12 +9171,40 @@ export namespace MyNS {
 		SortBy?: ListTrainingJobsForHyperParameterTuningJobRequestSortBy | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 	}
+	export interface ListTrainingJobsForHyperParameterTuningJobRequestFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		StatusEquals: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		SortBy: FormControl<ListTrainingJobsForHyperParameterTuningJobRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+	}
+	export function CreateListTrainingJobsForHyperParameterTuningJobRequestFormGroup() {
+		return new FormGroup<ListTrainingJobsForHyperParameterTuningJobRequestFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StatusEquals: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			SortBy: new FormControl<ListTrainingJobsForHyperParameterTuningJobRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListTrainingJobsForHyperParameterTuningJobRequestSortBy { Name = 0, CreationTime = 1, Status = 2, FinalObjectiveMetricValue = 3 }
 
 	export interface ListTransformJobsResponse {
 		TransformJobSummaries: Array<TransformJobSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTransformJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTransformJobsResponseFormGroup() {
+		return new FormGroup<ListTransformJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3916,6 +9219,29 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Provides a summary of a transform job. Multiple <code>TransformJobSummary</code> objects are returned as a list after in response to a <a>ListTransformJobs</a> call. */
+	export interface TransformJobSummaryFormProperties {
+		TransformJobName: FormControl<string | null | undefined>,
+		TransformJobArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TransformEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		TransformJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateTransformJobSummaryFormGroup() {
+		return new FormGroup<TransformJobSummaryFormProperties>({
+			TransformJobName: new FormControl<string | null | undefined>(undefined),
+			TransformJobArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TransformEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			TransformJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTransformJobsRequest {
 		CreationTimeAfter?: Date | null;
 		CreationTimeBefore?: Date | null;
@@ -3928,10 +9254,46 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTransformJobsRequestFormProperties {
+		CreationTimeAfter: FormControl<Date | null | undefined>,
+		CreationTimeBefore: FormControl<Date | null | undefined>,
+		LastModifiedTimeAfter: FormControl<Date | null | undefined>,
+		LastModifiedTimeBefore: FormControl<Date | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		StatusEquals: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		SortBy: FormControl<ListAutoMLJobsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTransformJobsRequestFormGroup() {
+		return new FormGroup<ListTransformJobsRequestFormProperties>({
+			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			StatusEquals: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			SortBy: new FormControl<ListAutoMLJobsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTrialComponentsResponse {
-		TrialComponentSummaries?: Array<TrialComponentSummary> | null;
+		TrialComponentSummaries?: Array<TrialComponentSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTrialComponentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrialComponentsResponseFormGroup() {
+		return new FormGroup<ListTrialComponentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3942,20 +9304,43 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		TrialComponentSource?: TrialComponentSource | null;
+		TrialComponentSource?: TrialComponentSource;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus | null;
+		Status?: TrialComponentStatus;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
+		LastModifiedBy?: UserContext;
+	}
+
+	/** A summary of the properties of a trial component. To get all the properties, call the <a>DescribeTrialComponent</a> API and provide the <code>TrialComponentName</code>. */
+	export interface TrialComponentSummaryFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		TrialComponentArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTrialComponentSummaryFormGroup() {
+		return new FormGroup<TrialComponentSummaryFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTrialComponentsRequest {
@@ -3969,10 +9354,44 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListTrialComponentsRequestFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		TrialName: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		CreatedAfter: FormControl<Date | null | undefined>,
+		CreatedBefore: FormControl<Date | null | undefined>,
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrialComponentsRequestFormGroup() {
+		return new FormGroup<ListTrialComponentsRequestFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
+			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTrialsResponse {
-		TrialSummaries?: Array<TrialSummary> | null;
+		TrialSummaries?: Array<TrialSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListTrialsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrialsResponseFormGroup() {
+		return new FormGroup<ListTrialsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3983,9 +9402,28 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The source of the trial. */
-		TrialSource?: TrialSource | null;
+		TrialSource?: TrialSource;
 		CreationTime?: Date | null;
 		LastModifiedTime?: Date | null;
+	}
+
+	/** A summary of the properties of a trial. To get the complete set of properties, call the <a>DescribeTrial</a> API and provide the <code>TrialName</code>. */
+	export interface TrialSummaryFormProperties {
+		TrialArn: FormControl<string | null | undefined>,
+		TrialName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTrialSummaryFormGroup() {
+		return new FormGroup<TrialSummaryFormProperties>({
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTrialsRequest {
@@ -3998,10 +9436,42 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListTrialsRequestFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		TrialComponentName: FormControl<string | null | undefined>,
+		CreatedAfter: FormControl<Date | null | undefined>,
+		CreatedBefore: FormControl<Date | null | undefined>,
+		SortBy: FormControl<ListAlgorithmsInputSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTrialsRequestFormGroup() {
+		return new FormGroup<ListTrialsRequestFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
+			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
+			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListUserProfilesResponse {
-		UserProfiles?: Array<UserProfileDetails> | null;
+		UserProfiles?: Array<UserProfileDetails>;
 		NextToken?: string | null;
+	}
+	export interface ListUserProfilesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserProfilesResponseFormGroup() {
+		return new FormGroup<ListUserProfilesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4014,6 +9484,25 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 	}
 
+	/** The user profile details. */
+	export interface UserProfileDetailsFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeDomainResponseStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateUserProfileDetailsFormGroup() {
+		return new FormGroup<UserProfileDetailsFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeDomainResponseStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListUserProfilesRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
@@ -4022,12 +9511,40 @@ export namespace MyNS {
 		DomainIdEquals?: string | null;
 		UserProfileNameContains?: string | null;
 	}
+	export interface ListUserProfilesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		SortBy: FormControl<ListUserProfilesRequestSortBy | null | undefined>,
+		DomainIdEquals: FormControl<string | null | undefined>,
+		UserProfileNameContains: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserProfilesRequestFormGroup() {
+		return new FormGroup<ListUserProfilesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			SortBy: new FormControl<ListUserProfilesRequestSortBy | null | undefined>(undefined),
+			DomainIdEquals: new FormControl<string | null | undefined>(undefined),
+			UserProfileNameContains: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListUserProfilesRequestSortBy { CreationTime = 0, LastModifiedTime = 1 }
 
 	export interface ListWorkteamsResponse {
 		Workteams: Array<Workteam>;
 		NextToken?: string | null;
+	}
+	export interface ListWorkteamsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWorkteamsResponseFormGroup() {
+		return new FormGroup<ListWorkteamsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListWorkteamsRequest {
@@ -4037,12 +9554,38 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListWorkteamsRequestFormProperties {
+		SortBy: FormControl<ListWorkteamsRequestSortBy | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkteamsRequestFormGroup() {
+		return new FormGroup<ListWorkteamsRequestFormProperties>({
+			SortBy: new FormControl<ListWorkteamsRequestSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListWorkteamsRequestSortBy { Name = 0, CreateDate = 1 }
 
 	export interface RenderUiTemplateResponse {
 		RenderedContent: string;
 		Errors: Array<RenderingError>;
+	}
+	export interface RenderUiTemplateResponseFormProperties {
+		RenderedContent: FormControl<string | null | undefined>,
+	}
+	export function CreateRenderUiTemplateResponseFormGroup() {
+		return new FormGroup<RenderUiTemplateResponseFormProperties>({
+			RenderedContent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4052,10 +9595,23 @@ export namespace MyNS {
 		Message: string;
 	}
 
+	/** A description of an error that occurred while rendering the template. */
+	export interface RenderingErrorFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateRenderingErrorFormGroup() {
+		return new FormGroup<RenderingErrorFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RenderUiTemplateRequest {
 
 		/** The Liquid template for the worker user interface. */
-		UiTemplate?: UiTemplate | null;
+		UiTemplate?: UiTemplate;
 
 		/**
 		 * Contains input values for a task.
@@ -4065,6 +9621,17 @@ export namespace MyNS {
 		RoleArn: string;
 		HumanTaskUiArn?: string | null;
 	}
+	export interface RenderUiTemplateRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		HumanTaskUiArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRenderUiTemplateRequestFormGroup() {
+		return new FormGroup<RenderUiTemplateRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains input values for a task. */
@@ -4072,9 +9639,29 @@ export namespace MyNS {
 		Input: string;
 	}
 
+	/** Contains input values for a task. */
+	export interface RenderableTaskFormProperties {
+		Input: FormControl<string | null | undefined>,
+	}
+	export function CreateRenderableTaskFormGroup() {
+		return new FormGroup<RenderableTaskFormProperties>({
+			Input: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SearchResponse {
-		Results?: Array<SearchRecord> | null;
+		Results?: Array<SearchRecord>;
 		NextToken?: string | null;
+	}
+	export interface SearchResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchResponseFormGroup() {
+		return new FormGroup<SearchResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4082,16 +9669,25 @@ export namespace MyNS {
 	export interface SearchRecord {
 
 		/** Contains information about a training job. */
-		TrainingJob?: TrainingJob | null;
+		TrainingJob?: TrainingJob;
 
 		/** The properties of an experiment as returned by the <a>Search</a> API. */
-		Experiment?: Experiment | null;
+		Experiment?: Experiment;
 
 		/** The properties of a trial as returned by the <a>Search</a> API. */
-		Trial?: Trial | null;
+		Trial?: Trial;
 
 		/** The properties of a trial component as returned by the <a>Search</a> API. */
-		TrialComponent?: TrialComponent | null;
+		TrialComponent?: TrialComponent;
+	}
+
+	/** A single resource returned as part of the <a>Search</a> API response. */
+	export interface SearchRecordFormProperties {
+	}
+	export function CreateSearchRecordFormGroup() {
+		return new FormGroup<SearchRecordFormProperties>({
+		});
+
 	}
 
 
@@ -4104,54 +9700,99 @@ export namespace MyNS {
 		AutoMLJobArn?: string | null;
 
 		/** <p>Provides information about the location that is configured for storing model artifacts. </p> <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.</p> */
-		ModelArtifacts?: ModelArtifacts | null;
+		ModelArtifacts?: ModelArtifacts;
 		TrainingJobStatus?: TrialComponentStatusPrimaryStatus | null;
 		SecondaryStatus?: DescribeTrainingJobResponseSecondaryStatus | null;
 		FailureReason?: string | null;
-		HyperParameters?: HyperParameters | null;
+		HyperParameters?: HyperParameters;
 
 		/** <p>Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.</p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> */
-		AlgorithmSpecification?: AlgorithmSpecification | null;
+		AlgorithmSpecification?: AlgorithmSpecification;
 		RoleArn?: string | null;
-		InputDataConfig?: Array<Channel> | null;
+		InputDataConfig?: Array<Channel>;
 
 		/** Provides information about how to store model training results (model artifacts). */
-		OutputDataConfig?: OutputDataConfig | null;
+		OutputDataConfig?: OutputDataConfig;
 
 		/** Describes the resources, including ML compute instances and ML storage volumes, to use for model training. */
-		ResourceConfig?: ResourceConfig | null;
+		ResourceConfig?: ResourceConfig;
 
 		/** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. */
-		VpcConfig?: VpcConfig | null;
+		VpcConfig?: VpcConfig;
 
 		/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
-		StoppingCondition?: StoppingCondition | null;
+		StoppingCondition?: StoppingCondition;
 		CreationTime?: Date | null;
 		TrainingStartTime?: Date | null;
 		TrainingEndTime?: Date | null;
 		LastModifiedTime?: Date | null;
-		SecondaryStatusTransitions?: Array<SecondaryStatusTransition> | null;
-		FinalMetricDataList?: Array<MetricData> | null;
+		SecondaryStatusTransitions?: Array<SecondaryStatusTransition>;
+		FinalMetricDataList?: Array<MetricData>;
 		EnableNetworkIsolation?: boolean | null;
 		EnableInterContainerTrafficEncryption?: boolean | null;
 		EnableManagedSpotTraining?: boolean | null;
 
 		/** Contains information about the output location for managed spot training checkpoint data. */
-		CheckpointConfig?: CheckpointConfig | null;
+		CheckpointConfig?: CheckpointConfig;
 		TrainingTimeInSeconds?: number | null;
 		BillableTimeInSeconds?: number | null;
 
 		/** Configuration information for the debug hook parameters, collection configuration, and storage paths. */
-		DebugHookConfig?: DebugHookConfig | null;
+		DebugHookConfig?: DebugHookConfig;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
-		DebugRuleConfigurations?: Array<DebugRuleConfiguration> | null;
+		ExperimentConfig?: ExperimentConfig;
+		DebugRuleConfigurations?: Array<DebugRuleConfiguration>;
 
 		/** Configuration of storage locations for TensorBoard output. */
-		TensorBoardOutputConfig?: TensorBoardOutputConfig | null;
-		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus> | null;
-		Tags?: Array<Tag> | null;
+		TensorBoardOutputConfig?: TensorBoardOutputConfig;
+		DebugRuleEvaluationStatuses?: Array<DebugRuleEvaluationStatus>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Contains information about a training job. */
+	export interface TrainingJobFormProperties {
+		TrainingJobName: FormControl<string | null | undefined>,
+		TrainingJobArn: FormControl<string | null | undefined>,
+		TuningJobArn: FormControl<string | null | undefined>,
+		LabelingJobArn: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+		TrainingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		SecondaryStatus: FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TrainingStartTime: FormControl<Date | null | undefined>,
+		TrainingEndTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		EnableNetworkIsolation: FormControl<boolean | null | undefined>,
+		EnableInterContainerTrafficEncryption: FormControl<boolean | null | undefined>,
+		EnableManagedSpotTraining: FormControl<boolean | null | undefined>,
+		TrainingTimeInSeconds: FormControl<number | null | undefined>,
+		BillableTimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTrainingJobFormGroup() {
+		return new FormGroup<TrainingJobFormProperties>({
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+			TuningJobArn: new FormControl<string | null | undefined>(undefined),
+			LabelingJobArn: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+			TrainingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			SecondaryStatus: new FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
+			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
+			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
+			EnableManagedSpotTraining: new FormControl<boolean | null | undefined>(undefined),
+			TrainingTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			BillableTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4162,17 +9803,38 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The source of the experiment. */
-		Source?: ExperimentSource | null;
+		Source?: ExperimentSource;
 		Description?: string | null;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
-		Tags?: Array<Tag> | null;
+		LastModifiedBy?: UserContext;
+		Tags?: Array<Tag>;
+	}
+
+	/** The properties of an experiment as returned by the <a>Search</a> API. */
+	export interface ExperimentFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		ExperimentArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateExperimentFormGroup() {
+		return new FormGroup<ExperimentFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			ExperimentArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4184,17 +9846,38 @@ export namespace MyNS {
 		ExperimentName?: string | null;
 
 		/** The source of the trial. */
-		Source?: TrialSource | null;
+		Source?: TrialSource;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
-		Tags?: Array<Tag> | null;
-		TrialComponentSummaries?: Array<TrialComponentSimpleSummary> | null;
+		LastModifiedBy?: UserContext;
+		Tags?: Array<Tag>;
+		TrialComponentSummaries?: Array<TrialComponentSimpleSummary>;
+	}
+
+	/** The properties of a trial as returned by the <a>Search</a> API. */
+	export interface TrialFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+		TrialArn: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		ExperimentName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTrialFormGroup() {
+		return new FormGroup<TrialFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4204,11 +9887,26 @@ export namespace MyNS {
 		TrialComponentArn?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		TrialComponentSource?: TrialComponentSource | null;
+		TrialComponentSource?: TrialComponentSource;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
+	}
+
+	/** A short summary of a trial component. */
+	export interface TrialComponentSimpleSummaryFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		TrialComponentArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTrialComponentSimpleSummaryFormGroup() {
+		return new FormGroup<TrialComponentSimpleSummaryFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4219,29 +9917,52 @@ export namespace MyNS {
 		TrialComponentArn?: string | null;
 
 		/** The Amazon Resource Name (ARN) and job type of the source of a trial component. */
-		Source?: TrialComponentSource | null;
+		Source?: TrialComponentSource;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus | null;
+		Status?: TrialComponentStatus;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		CreationTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		CreatedBy?: UserContext | null;
+		CreatedBy?: UserContext;
 		LastModifiedTime?: Date | null;
 
 		/** Information about the user who created or modified an experiment, trial, or trial component. */
-		LastModifiedBy?: UserContext | null;
-		Parameters?: TrialComponentParameters | null;
-		InputArtifacts?: TrialComponentArtifacts | null;
-		OutputArtifacts?: TrialComponentArtifacts | null;
-		Metrics?: Array<TrialComponentMetricSummary> | null;
+		LastModifiedBy?: UserContext;
+		Parameters?: TrialComponentParameters;
+		InputArtifacts?: TrialComponentArtifacts;
+		OutputArtifacts?: TrialComponentArtifacts;
+		Metrics?: Array<TrialComponentMetricSummary>;
 
 		/** Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned. */
-		SourceDetail?: TrialComponentSourceDetail | null;
-		Tags?: Array<Tag> | null;
-		Parents?: Array<Parent> | null;
+		SourceDetail?: TrialComponentSourceDetail;
+		Tags?: Array<Tag>;
+		Parents?: Array<Parent>;
+	}
+
+	/** The properties of a trial component as returned by the <a>Search</a> API. */
+	export interface TrialComponentFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		TrialComponentArn: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTrialComponentFormGroup() {
+		return new FormGroup<TrialComponentFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4250,37 +9971,48 @@ export namespace MyNS {
 		SourceArn?: string | null;
 
 		/** Contains information about a training job. */
-		TrainingJob?: TrainingJob | null;
+		TrainingJob?: TrainingJob;
 
 		/** An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html">Process Data and Evaluate Models</a>. */
-		ProcessingJob?: ProcessingJob | null;
+		ProcessingJob?: ProcessingJob;
+	}
+
+	/** Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned. */
+	export interface TrialComponentSourceDetailFormProperties {
+		SourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTrialComponentSourceDetailFormGroup() {
+		return new FormGroup<TrialComponentSourceDetailFormProperties>({
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html">Process Data and Evaluate Models</a>. */
 	export interface ProcessingJob {
-		ProcessingInputs?: Array<ProcessingInput> | null;
+		ProcessingInputs?: Array<ProcessingInput>;
 
 		/** The output configuration for the processing job. */
-		ProcessingOutputConfig?: ProcessingOutputConfig | null;
+		ProcessingOutputConfig?: ProcessingOutputConfig;
 		ProcessingJobName?: string | null;
 
 		/** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance. */
-		ProcessingResources?: ProcessingResources | null;
+		ProcessingResources?: ProcessingResources;
 
 		/** Specifies a time limit for how long the processing job is allowed to run. */
-		StoppingCondition?: ProcessingStoppingCondition | null;
+		StoppingCondition?: ProcessingStoppingCondition;
 
 		/** Configuration to run a processing job in a specified container image. */
-		AppSpecification?: AppSpecification | null;
-		Environment?: ProcessingEnvironmentMap | null;
+		AppSpecification?: AppSpecification;
+		Environment?: ProcessingEnvironmentMap;
 
 		/** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs. */
-		NetworkConfig?: NetworkConfig | null;
+		NetworkConfig?: NetworkConfig;
 		RoleArn?: string | null;
 
 		/** Configuration for the experiment. */
-		ExperimentConfig?: ExperimentConfig | null;
+		ExperimentConfig?: ExperimentConfig;
 		ProcessingJobArn?: string | null;
 		ProcessingJobStatus?: TrialComponentStatusPrimaryStatus | null;
 		ExitMessage?: string | null;
@@ -4292,7 +10024,42 @@ export namespace MyNS {
 		MonitoringScheduleArn?: string | null;
 		AutoMLJobArn?: string | null;
 		TrainingJobArn?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html">Process Data and Evaluate Models</a>. */
+	export interface ProcessingJobFormProperties {
+		ProcessingJobName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ProcessingJobArn: FormControl<string | null | undefined>,
+		ProcessingJobStatus: FormControl<TrialComponentStatusPrimaryStatus | null | undefined>,
+		ExitMessage: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		ProcessingEndTime: FormControl<Date | null | undefined>,
+		ProcessingStartTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		MonitoringScheduleArn: FormControl<string | null | undefined>,
+		AutoMLJobArn: FormControl<string | null | undefined>,
+		TrainingJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateProcessingJobFormGroup() {
+		return new FormGroup<ProcessingJobFormProperties>({
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ProcessingJobArn: new FormControl<string | null | undefined>(undefined),
+			ProcessingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
+			ExitMessage: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			ProcessingEndTime: new FormControl<Date | null | undefined>(undefined),
+			ProcessingStartTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined),
+			TrainingJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4302,24 +10069,65 @@ export namespace MyNS {
 		ExperimentName?: string | null;
 	}
 
+	/** The trial that a trial component is associated with and the experiment the trial is part of. A component might not be associated with a trial. A component can be associated with multiple trials. */
+	export interface ParentFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+		ExperimentName: FormControl<string | null | undefined>,
+	}
+	export function CreateParentFormGroup() {
+		return new FormGroup<ParentFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SearchRequest {
 		Resource: GetSearchSuggestionsRequestResource;
 
 		/** <p>A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.</p> <p>A <code>SearchExpression</code> contains the following components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one <code>Contains</code> operator.</p> </li> <li> <p>A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.</p> </li> <li> <p>A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.</p> </li> <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul> */
-		SearchExpression?: SearchExpression | null;
+		SearchExpression?: SearchExpression;
 		SortBy?: string | null;
 		SortOrder?: ListAlgorithmsInputSortOrder | null;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface SearchRequestFormProperties {
+		Resource: FormControl<GetSearchSuggestionsRequestResource | null | undefined>,
+		SortBy: FormControl<string | null | undefined>,
+		SortOrder: FormControl<ListAlgorithmsInputSortOrder | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchRequestFormGroup() {
+		return new FormGroup<SearchRequestFormProperties>({
+			Resource: new FormControl<GetSearchSuggestionsRequestResource | null | undefined>(undefined),
+			SortBy: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.</p> <p>A <code>SearchExpression</code> contains the following components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one <code>Contains</code> operator.</p> </li> <li> <p>A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.</p> </li> <li> <p>A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.</p> </li> <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul> */
 	export interface SearchExpression {
-		Filters?: Array<Filter> | null;
-		NestedFilters?: Array<NestedFilters> | null;
-		SubExpressions?: Array<SearchExpression> | null;
+		Filters?: Array<Filter>;
+		NestedFilters?: Array<NestedFilters>;
+		SubExpressions?: Array<SearchExpression>;
 		Operator?: SearchExpressionOperator | null;
+	}
+
+	/** <p>A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.</p> <p>A <code>SearchExpression</code> contains the following components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one <code>Contains</code> operator.</p> </li> <li> <p>A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.</p> </li> <li> <p>A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.</p> </li> <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul> */
+	export interface SearchExpressionFormProperties {
+		Operator: FormControl<SearchExpressionOperator | null | undefined>,
+	}
+	export function CreateSearchExpressionFormGroup() {
+		return new FormGroup<SearchExpressionFormProperties>({
+			Operator: new FormControl<SearchExpressionOperator | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4328,6 +10136,21 @@ export namespace MyNS {
 		Name: string;
 		Operator?: FilterOperator | null;
 		Value?: string | null;
+	}
+
+	/** <p>A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value. Resources that match the statement are returned in the results from the <a>Search</a> API.</p> <p>If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.</p> <p>In search, there are several property types:</p> <dl> <dt>Metrics</dt> <dd> <p>To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:</p> <p> <code>{</code> </p> <p> <code>"Name": "Metrics.accuracy",</code> </p> <p> <code>"Operator": "GreaterThan",</code> </p> <p> <code>"Value": "0.9"</code> </p> <p> <code>}</code> </p> </dd> <dt>HyperParameters</dt> <dd> <p>To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:</p> <p> <code> {</code> </p> <p> <code> "Name": "HyperParameters.learning_rate",</code> </p> <p> <code> "Operator": "LessThan",</code> </p> <p> <code> "Value": "0.5"</code> </p> <p> <code> }</code> </p> </dd> <dt>Tags</dt> <dd> <p>To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.</p> </dd> </dl> */
+	export interface FilterFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Operator: FormControl<FilterOperator | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Operator: new FormControl<FilterOperator | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterOperator { Equals = 0, NotEquals = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, LessThan = 4, LessThanOrEqualTo = 5, Contains = 6, Exists = 7, NotExists = 8, In = 9 }
@@ -4339,61 +10162,189 @@ export namespace MyNS {
 		Filters: Array<Filter>;
 	}
 
+	/** <p>A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API.</p> <p>For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:</p> <ul> <li> <p> <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code> </p> </li> <li> <p> <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code> </p> </li> </ul> */
+	export interface NestedFiltersFormProperties {
+		NestedPropertyName: FormControl<string | null | undefined>,
+	}
+	export function CreateNestedFiltersFormGroup() {
+		return new FormGroup<NestedFiltersFormProperties>({
+			NestedPropertyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SearchExpressionOperator { And = 0, Or = 1 }
 
 	export interface StartMonitoringScheduleRequest {
 		MonitoringScheduleName: string;
 	}
+	export interface StartMonitoringScheduleRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMonitoringScheduleRequestFormGroup() {
+		return new FormGroup<StartMonitoringScheduleRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartNotebookInstanceInput {
 		NotebookInstanceName: string;
+	}
+	export interface StartNotebookInstanceInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartNotebookInstanceInputFormGroup() {
+		return new FormGroup<StartNotebookInstanceInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopAutoMLJobRequest {
 		AutoMLJobName: string;
 	}
+	export interface StopAutoMLJobRequestFormProperties {
+		AutoMLJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopAutoMLJobRequestFormGroup() {
+		return new FormGroup<StopAutoMLJobRequestFormProperties>({
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopCompilationJobRequest {
 		CompilationJobName: string;
+	}
+	export interface StopCompilationJobRequestFormProperties {
+		CompilationJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopCompilationJobRequestFormGroup() {
+		return new FormGroup<StopCompilationJobRequestFormProperties>({
+			CompilationJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopHyperParameterTuningJobRequest {
 		HyperParameterTuningJobName: string;
 	}
+	export interface StopHyperParameterTuningJobRequestFormProperties {
+		HyperParameterTuningJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopHyperParameterTuningJobRequestFormGroup() {
+		return new FormGroup<StopHyperParameterTuningJobRequestFormProperties>({
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopLabelingJobRequest {
 		LabelingJobName: string;
+	}
+	export interface StopLabelingJobRequestFormProperties {
+		LabelingJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopLabelingJobRequestFormGroup() {
+		return new FormGroup<StopLabelingJobRequestFormProperties>({
+			LabelingJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopMonitoringScheduleRequest {
 		MonitoringScheduleName: string;
 	}
+	export interface StopMonitoringScheduleRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopMonitoringScheduleRequestFormGroup() {
+		return new FormGroup<StopMonitoringScheduleRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopNotebookInstanceInput {
 		NotebookInstanceName: string;
+	}
+	export interface StopNotebookInstanceInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopNotebookInstanceInputFormGroup() {
+		return new FormGroup<StopNotebookInstanceInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopProcessingJobRequest {
 		ProcessingJobName: string;
 	}
+	export interface StopProcessingJobRequestFormProperties {
+		ProcessingJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopProcessingJobRequestFormGroup() {
+		return new FormGroup<StopProcessingJobRequestFormProperties>({
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopTrainingJobRequest {
 		TrainingJobName: string;
+	}
+	export interface StopTrainingJobRequestFormProperties {
+		TrainingJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTrainingJobRequestFormGroup() {
+		return new FormGroup<StopTrainingJobRequestFormProperties>({
+			TrainingJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopTransformJobRequest {
 		TransformJobName: string;
 	}
+	export interface StopTransformJobRequestFormProperties {
+		TransformJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTransformJobRequestFormGroup() {
+		return new FormGroup<StopTransformJobRequestFormProperties>({
+			TransformJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCodeRepositoryOutput {
 		CodeRepositoryArn: string;
+	}
+	export interface UpdateCodeRepositoryOutputFormProperties {
+		CodeRepositoryArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCodeRepositoryOutputFormGroup() {
+		return new FormGroup<UpdateCodeRepositoryOutputFormProperties>({
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCodeRepositoryInput {
 		CodeRepositoryName: string;
 
 		/** Specifies configuration details for a Git repository when the repository is updated. */
-		GitConfig?: GitConfigForUpdate | null;
+		GitConfig?: GitConfigForUpdate;
+	}
+	export interface UpdateCodeRepositoryInputFormProperties {
+		CodeRepositoryName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCodeRepositoryInputFormGroup() {
+		return new FormGroup<UpdateCodeRepositoryInputFormProperties>({
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4402,26 +10353,77 @@ export namespace MyNS {
 		SecretArn?: string | null;
 	}
 
+	/** Specifies configuration details for a Git repository when the repository is updated. */
+	export interface GitConfigForUpdateFormProperties {
+		SecretArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGitConfigForUpdateFormGroup() {
+		return new FormGroup<GitConfigForUpdateFormProperties>({
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateDomainResponse {
 		DomainArn?: string | null;
+	}
+	export interface UpdateDomainResponseFormProperties {
+		DomainArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainResponseFormGroup() {
+		return new FormGroup<UpdateDomainResponseFormProperties>({
+			DomainArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDomainRequest {
 		DomainId: string;
 
 		/** A collection of settings. */
-		DefaultUserSettings?: UserSettings | null;
+		DefaultUserSettings?: UserSettings;
+	}
+	export interface UpdateDomainRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainRequestFormGroup() {
+		return new FormGroup<UpdateDomainRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateEndpointOutput {
 		EndpointArn: string;
+	}
+	export interface UpdateEndpointOutputFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEndpointOutputFormGroup() {
+		return new FormGroup<UpdateEndpointOutputFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateEndpointInput {
 		EndpointName: string;
 		EndpointConfigName: string;
 		RetainAllVariantProperties?: boolean | null;
-		ExcludeRetainedVariantProperties?: Array<VariantProperty> | null;
+		ExcludeRetainedVariantProperties?: Array<VariantProperty>;
+	}
+	export interface UpdateEndpointInputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		EndpointConfigName: FormControl<string | null | undefined>,
+		RetainAllVariantProperties: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateEndpointInputFormGroup() {
+		return new FormGroup<UpdateEndpointInputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			EndpointConfigName: new FormControl<string | null | undefined>(undefined),
+			RetainAllVariantProperties: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4430,15 +10432,44 @@ export namespace MyNS {
 		VariantPropertyType: VariantPropertyVariantPropertyType;
 	}
 
+	/** <p>Specifies a production variant property type for an Endpoint.</p> <p>If you are updating an endpoint with the <a>UpdateEndpointInput$RetainAllVariantProperties</a> option set to <code>true</code>, the <code>VariantProperty</code> objects listed in <a>UpdateEndpointInput$ExcludeRetainedVariantProperties</a> override the existing variant properties of the endpoint.</p> */
+	export interface VariantPropertyFormProperties {
+		VariantPropertyType: FormControl<VariantPropertyVariantPropertyType | null | undefined>,
+	}
+	export function CreateVariantPropertyFormGroup() {
+		return new FormGroup<VariantPropertyFormProperties>({
+			VariantPropertyType: new FormControl<VariantPropertyVariantPropertyType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VariantPropertyVariantPropertyType { DesiredInstanceCount = 0, DesiredWeight = 1, DataCaptureConfig = 2 }
 
 	export interface UpdateEndpointWeightsAndCapacitiesOutput {
 		EndpointArn: string;
 	}
+	export interface UpdateEndpointWeightsAndCapacitiesOutputFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEndpointWeightsAndCapacitiesOutputFormGroup() {
+		return new FormGroup<UpdateEndpointWeightsAndCapacitiesOutputFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEndpointWeightsAndCapacitiesInput {
 		EndpointName: string;
 		DesiredWeightsAndCapacities: Array<DesiredWeightAndCapacity>;
+	}
+	export interface UpdateEndpointWeightsAndCapacitiesInputFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEndpointWeightsAndCapacitiesInputFormGroup() {
+		return new FormGroup<UpdateEndpointWeightsAndCapacitiesInputFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4449,8 +10480,32 @@ export namespace MyNS {
 		DesiredInstanceCount?: number | null;
 	}
 
+	/** Specifies weight and capacity values for a production variant. */
+	export interface DesiredWeightAndCapacityFormProperties {
+		VariantName: FormControl<string | null | undefined>,
+		DesiredWeight: FormControl<number | null | undefined>,
+		DesiredInstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreateDesiredWeightAndCapacityFormGroup() {
+		return new FormGroup<DesiredWeightAndCapacityFormProperties>({
+			VariantName: new FormControl<string | null | undefined>(undefined),
+			DesiredWeight: new FormControl<number | null | undefined>(undefined),
+			DesiredInstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateExperimentResponse {
 		ExperimentArn?: string | null;
+	}
+	export interface UpdateExperimentResponseFormProperties {
+		ExperimentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateExperimentResponseFormGroup() {
+		return new FormGroup<UpdateExperimentResponseFormProperties>({
+			ExperimentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateExperimentRequest {
@@ -4458,12 +10513,41 @@ export namespace MyNS {
 		DisplayName?: string | null;
 		Description?: string | null;
 	}
+	export interface UpdateExperimentRequestFormProperties {
+		ExperimentName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateExperimentRequestFormGroup() {
+		return new FormGroup<UpdateExperimentRequestFormProperties>({
+			ExperimentName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateMonitoringScheduleResponse {
 		MonitoringScheduleArn: string;
+	}
+	export interface UpdateMonitoringScheduleResponseFormProperties {
+		MonitoringScheduleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMonitoringScheduleResponseFormGroup() {
+		return new FormGroup<UpdateMonitoringScheduleResponseFormProperties>({
+			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMonitoringScheduleRequest {
@@ -4475,8 +10559,24 @@ export namespace MyNS {
 		 */
 		MonitoringScheduleConfig: MonitoringScheduleConfig;
 	}
+	export interface UpdateMonitoringScheduleRequestFormProperties {
+		MonitoringScheduleName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMonitoringScheduleRequestFormGroup() {
+		return new FormGroup<UpdateMonitoringScheduleRequestFormProperties>({
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateNotebookInstanceOutput {
+	}
+	export interface UpdateNotebookInstanceOutputFormProperties {
+	}
+	export function CreateUpdateNotebookInstanceOutputFormGroup() {
+		return new FormGroup<UpdateNotebookInstanceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNotebookInstanceInput {
@@ -4487,36 +10587,110 @@ export namespace MyNS {
 		DisassociateLifecycleConfig?: boolean | null;
 		VolumeSizeInGB?: number | null;
 		DefaultCodeRepository?: string | null;
-		AdditionalCodeRepositories?: Array<string> | null;
-		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType> | null;
+		AdditionalCodeRepositories?: Array<string>;
+		AcceleratorTypes?: Array<NotebookInstanceAcceleratorType>;
 		DisassociateAcceleratorTypes?: boolean | null;
 		DisassociateDefaultCodeRepository?: boolean | null;
 		DisassociateAdditionalCodeRepositories?: boolean | null;
 		RootAccess?: CreateNotebookInstanceInputDirectInternetAccess | null;
+	}
+	export interface UpdateNotebookInstanceInputFormProperties {
+		NotebookInstanceName: FormControl<string | null | undefined>,
+		InstanceType: FormControl<UpdateNotebookInstanceInputInstanceType | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		LifecycleConfigName: FormControl<string | null | undefined>,
+		DisassociateLifecycleConfig: FormControl<boolean | null | undefined>,
+		VolumeSizeInGB: FormControl<number | null | undefined>,
+		DefaultCodeRepository: FormControl<string | null | undefined>,
+		DisassociateAcceleratorTypes: FormControl<boolean | null | undefined>,
+		DisassociateDefaultCodeRepository: FormControl<boolean | null | undefined>,
+		DisassociateAdditionalCodeRepositories: FormControl<boolean | null | undefined>,
+		RootAccess: FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>,
+	}
+	export function CreateUpdateNotebookInstanceInputFormGroup() {
+		return new FormGroup<UpdateNotebookInstanceInputFormProperties>({
+			NotebookInstanceName: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<UpdateNotebookInstanceInputInstanceType | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			LifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+			DisassociateLifecycleConfig: new FormControl<boolean | null | undefined>(undefined),
+			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined),
+			DisassociateAcceleratorTypes: new FormControl<boolean | null | undefined>(undefined),
+			DisassociateDefaultCodeRepository: new FormControl<boolean | null | undefined>(undefined),
+			DisassociateAdditionalCodeRepositories: new FormControl<boolean | null | undefined>(undefined),
+			RootAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateNotebookInstanceInputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
 
 	export interface UpdateNotebookInstanceLifecycleConfigOutput {
 	}
+	export interface UpdateNotebookInstanceLifecycleConfigOutputFormProperties {
+	}
+	export function CreateUpdateNotebookInstanceLifecycleConfigOutputFormGroup() {
+		return new FormGroup<UpdateNotebookInstanceLifecycleConfigOutputFormProperties>({
+		});
+
+	}
 
 	export interface UpdateNotebookInstanceLifecycleConfigInput {
 		NotebookInstanceLifecycleConfigName: string;
-		OnCreate?: Array<NotebookInstanceLifecycleHook> | null;
-		OnStart?: Array<NotebookInstanceLifecycleHook> | null;
+		OnCreate?: Array<NotebookInstanceLifecycleHook>;
+		OnStart?: Array<NotebookInstanceLifecycleHook>;
+	}
+	export interface UpdateNotebookInstanceLifecycleConfigInputFormProperties {
+		NotebookInstanceLifecycleConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNotebookInstanceLifecycleConfigInputFormGroup() {
+		return new FormGroup<UpdateNotebookInstanceLifecycleConfigInputFormProperties>({
+			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTrialResponse {
 		TrialArn?: string | null;
+	}
+	export interface UpdateTrialResponseFormProperties {
+		TrialArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTrialResponseFormGroup() {
+		return new FormGroup<UpdateTrialResponseFormProperties>({
+			TrialArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTrialRequest {
 		TrialName: string;
 		DisplayName?: string | null;
 	}
+	export interface UpdateTrialRequestFormProperties {
+		TrialName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTrialRequestFormGroup() {
+		return new FormGroup<UpdateTrialRequestFormProperties>({
+			TrialName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTrialComponentResponse {
 		TrialComponentArn?: string | null;
+	}
+	export interface UpdateTrialComponentResponseFormProperties {
+		TrialComponentArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTrialComponentResponseFormGroup() {
+		return new FormGroup<UpdateTrialComponentResponseFormProperties>({
+			TrialComponentArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTrialComponentRequest {
@@ -4524,19 +10698,43 @@ export namespace MyNS {
 		DisplayName?: string | null;
 
 		/** The status of the trial component. */
-		Status?: TrialComponentStatus | null;
+		Status?: TrialComponentStatus;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
-		Parameters?: TrialComponentParameters | null;
-		ParametersToRemove?: Array<string> | null;
-		InputArtifacts?: TrialComponentArtifacts | null;
-		InputArtifactsToRemove?: Array<string> | null;
-		OutputArtifacts?: TrialComponentArtifacts | null;
-		OutputArtifactsToRemove?: Array<string> | null;
+		Parameters?: TrialComponentParameters;
+		ParametersToRemove?: Array<string>;
+		InputArtifacts?: TrialComponentArtifacts;
+		InputArtifactsToRemove?: Array<string>;
+		OutputArtifacts?: TrialComponentArtifacts;
+		OutputArtifactsToRemove?: Array<string>;
+	}
+	export interface UpdateTrialComponentRequestFormProperties {
+		TrialComponentName: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateTrialComponentRequestFormGroup() {
+		return new FormGroup<UpdateTrialComponentRequestFormProperties>({
+			TrialComponentName: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateUserProfileResponse {
 		UserProfileArn?: string | null;
+	}
+	export interface UpdateUserProfileResponseFormProperties {
+		UserProfileArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserProfileResponseFormGroup() {
+		return new FormGroup<UpdateUserProfileResponseFormProperties>({
+			UserProfileArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateUserProfileRequest {
@@ -4544,7 +10742,18 @@ export namespace MyNS {
 		UserProfileName: string;
 
 		/** A collection of settings. */
-		UserSettings?: UserSettings | null;
+		UserSettings?: UserSettings;
+	}
+	export interface UpdateUserProfileRequestFormProperties {
+		DomainId: FormControl<string | null | undefined>,
+		UserProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserProfileRequestFormGroup() {
+		return new FormGroup<UpdateUserProfileRequestFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			UserProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateWorkforceResponse {
@@ -4555,12 +10764,28 @@ export namespace MyNS {
 		 */
 		Workforce: Workforce;
 	}
+	export interface UpdateWorkforceResponseFormProperties {
+	}
+	export function CreateUpdateWorkforceResponseFormGroup() {
+		return new FormGroup<UpdateWorkforceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateWorkforceRequest {
 		WorkforceName: string;
 
 		/** A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. For more information, see . */
-		SourceIpConfig?: SourceIpConfig | null;
+		SourceIpConfig?: SourceIpConfig;
+	}
+	export interface UpdateWorkforceRequestFormProperties {
+		WorkforceName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateWorkforceRequestFormGroup() {
+		return new FormGroup<UpdateWorkforceRequestFormProperties>({
+			WorkforceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateWorkteamResponse {
@@ -4571,14 +10796,32 @@ export namespace MyNS {
 		 */
 		Workteam: Workteam;
 	}
+	export interface UpdateWorkteamResponseFormProperties {
+	}
+	export function CreateUpdateWorkteamResponseFormGroup() {
+		return new FormGroup<UpdateWorkteamResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateWorkteamRequest {
 		WorkteamName: string;
-		MemberDefinitions?: Array<MemberDefinition> | null;
+		MemberDefinitions?: Array<MemberDefinition>;
 		Description?: string | null;
 
 		/** Configures SNS notifications of available or expiring work items for work teams. */
-		NotificationConfiguration?: NotificationConfiguration | null;
+		NotificationConfiguration?: NotificationConfiguration;
+	}
+	export interface UpdateWorkteamRequestFormProperties {
+		WorkteamName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateWorkteamRequestFormGroup() {
+		return new FormGroup<UpdateWorkteamRequestFormProperties>({
+			WorkteamName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AlgorithmSortBy { Name = 0, CreationTime = 1 }
@@ -4782,11 +11025,37 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p>Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code> as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters in the <a>CreateTrialComponent</a> request.</p> <p>Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.</p> */
+	export interface TrialComponentArtifactFormProperties {
+		MediaType: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTrialComponentArtifactFormGroup() {
+		return new FormGroup<TrialComponentArtifactFormProperties>({
+			MediaType: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.</p> <p>This object is specified in the <a>CreateTrialComponent</a> request.</p> */
 	export interface TrialComponentParameterValue {
 		StringValue?: string | null;
 		NumberValue?: number | null;
+	}
+
+	/** <p>The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.</p> <p>This object is specified in the <a>CreateTrialComponent</a> request.</p> */
+	export interface TrialComponentParameterValueFormProperties {
+		StringValue: FormControl<string | null | undefined>,
+		NumberValue: FormControl<number | null | undefined>,
+	}
+	export function CreateTrialComponentParameterValueFormGroup() {
+		return new FormGroup<TrialComponentParameterValueFormProperties>({
+			StringValue: new FormControl<string | null | undefined>(undefined),
+			NumberValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TrialComponentPrimaryStatus { InProgress = 0, Completed = 1, Failed = 2, Stopping = 3, Stopped = 4 }

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
 	export class MyClient {
@@ -27,6 +28,25 @@ export namespace MyNS {
 		Credits?: string | null;
 		Locale?: string | null;
 		PrimaryCity?: string | null;
+	}
+	export interface GetareacodefromnumberGetByLicenseAndNumberReturnFormProperties {
+		Abbreviation: FormControl<string | null | undefined>,
+		AreaCode: FormControl<string | null | undefined>,
+		Code: FormControl<string | null | undefined>,
+		Credits: FormControl<string | null | undefined>,
+		Locale: FormControl<string | null | undefined>,
+		PrimaryCity: FormControl<string | null | undefined>,
+	}
+	export function CreateGetareacodefromnumberGetByLicenseAndNumberReturnFormGroup() {
+		return new FormGroup<GetareacodefromnumberGetByLicenseAndNumberReturnFormProperties>({
+			Abbreviation: new FormControl<string | null | undefined>(undefined),
+			AreaCode: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+			Credits: new FormControl<string | null | undefined>(undefined),
+			Locale: new FormControl<string | null | undefined>(undefined),
+			PrimaryCity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

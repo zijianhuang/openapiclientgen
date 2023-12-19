@@ -1,35 +1,106 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NoSuchEntityException {
 	}
+	export interface NoSuchEntityExceptionFormProperties {
+	}
+	export function CreateNoSuchEntityExceptionFormGroup() {
+		return new FormGroup<NoSuchEntityExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ServiceFailureException {
 	}
+	export interface ServiceFailureExceptionFormProperties {
+	}
+	export function CreateServiceFailureExceptionFormGroup() {
+		return new FormGroup<ServiceFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface EntityAlreadyExistsException {
+	}
+	export interface EntityAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateEntityAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<EntityAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnmodifiableEntityException {
 	}
+	export interface UnmodifiableEntityExceptionFormProperties {
+	}
+	export function CreateUnmodifiableEntityExceptionFormGroup() {
+		return new FormGroup<UnmodifiableEntityExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PolicyNotAttachableException {
+	}
+	export interface PolicyNotAttachableExceptionFormProperties {
+	}
+	export function CreatePolicyNotAttachableExceptionFormGroup() {
+		return new FormGroup<PolicyNotAttachableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidUserTypeException {
 	}
+	export interface InvalidUserTypeExceptionFormProperties {
+	}
+	export function CreateInvalidUserTypeExceptionFormGroup() {
+		return new FormGroup<InvalidUserTypeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface EntityTemporarilyUnmodifiableException {
 	}
+	export interface EntityTemporarilyUnmodifiableExceptionFormProperties {
+	}
+	export function CreateEntityTemporarilyUnmodifiableExceptionFormGroup() {
+		return new FormGroup<EntityTemporarilyUnmodifiableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PasswordPolicyViolationException {
+	}
+	export interface PasswordPolicyViolationExceptionFormProperties {
+	}
+	export function CreatePasswordPolicyViolationExceptionFormGroup() {
+		return new FormGroup<PasswordPolicyViolationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -43,6 +114,15 @@ export namespace MyNS {
 		AccessKey: AccessKey;
 	}
 
+	/** Contains the response to a successful <a>CreateAccessKey</a> request.  */
+	export interface CreateAccessKeyResponseFormProperties {
+	}
+	export function CreateCreateAccessKeyResponseFormGroup() {
+		return new FormGroup<CreateAccessKeyResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note> */
 	export interface AccessKey {
@@ -51,6 +131,25 @@ export namespace MyNS {
 		Status: AccessKeyStatus;
 		SecretAccessKey: string;
 		CreateDate?: Date | null;
+	}
+
+	/** <p>Contains information about an AWS access key.</p> <p> This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.</p> </note> */
+	export interface AccessKeyFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AccessKeyId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+		SecretAccessKey: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateAccessKeyFormGroup() {
+		return new FormGroup<AccessKeyFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			SecretAccessKey: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccessKeyStatus { Active = 0, Inactive = 1 }
@@ -64,6 +163,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Group: Group;
+	}
+
+	/** Contains the response to a successful <a>CreateGroup</a> request.  */
+	export interface CreateGroupResponseFormProperties {
+	}
+	export function CreateCreateGroupResponseFormGroup() {
+		return new FormGroup<CreateGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -83,6 +191,32 @@ export namespace MyNS {
 		CreateDate: Date;
 	}
 
+	/** <p>Contains information about an IAM group entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p> <a>ListGroups</a> </p> </li> </ul> */
+	export interface GroupFormProperties {
+		Path: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGroupFormGroup() {
+		return new FormGroup<GroupFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>CreateInstanceProfile</a> request.  */
 	export interface CreateInstanceProfileResponse {
@@ -92,6 +226,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		InstanceProfile: InstanceProfile;
+	}
+
+	/** Contains the response to a successful <a>CreateInstanceProfile</a> request.  */
+	export interface CreateInstanceProfileResponseFormProperties {
+	}
+	export function CreateCreateInstanceProfileResponseFormGroup() {
+		return new FormGroup<CreateInstanceProfileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -117,6 +260,32 @@ export namespace MyNS {
 		Roles: Array<Role>;
 	}
 
+	/** <p>Contains information about an instance profile.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateInstanceProfile</a> </p> </li> <li> <p> <a>GetInstanceProfile</a> </p> </li> <li> <p> <a>ListInstanceProfiles</a> </p> </li> <li> <p> <a>ListInstanceProfilesForRole</a> </p> </li> </ul> */
+	export interface InstanceProfileFormProperties {
+		Path: FormControl<string | null | undefined>,
+		InstanceProfileName: FormControl<string | null | undefined>,
+		InstanceProfileId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateInstanceProfileFormGroup() {
+		return new FormGroup<InstanceProfileFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+			InstanceProfileId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
 	export interface Role {
@@ -137,11 +306,43 @@ export namespace MyNS {
 		MaxSessionDuration?: number | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary | null;
-		Tags?: Array<Tag> | null;
+		PermissionsBoundary?: AttachedPermissionsBoundary;
+		Tags?: Array<Tag>;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
-		RoleLastUsed?: RoleLastUsed | null;
+		RoleLastUsed?: RoleLastUsed;
+	}
+
+	/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
+	export interface RoleFormProperties {
+		Path: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+		RoleId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		MaxSessionDuration: FormControl<number | null | undefined>,
+	}
+	export function CreateRoleFormGroup() {
+		return new FormGroup<RoleFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -157,6 +358,25 @@ export namespace MyNS {
 		PermissionsBoundaryArn?: string | null;
 	}
 
+	/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
+	export interface AttachedPermissionsBoundaryFormProperties {
+		PermissionsBoundaryType: FormControl<AttachedPermissionsBoundaryPermissionsBoundaryType | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PermissionsBoundaryArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachedPermissionsBoundaryFormGroup() {
+		return new FormGroup<AttachedPermissionsBoundaryFormProperties>({
+			PermissionsBoundaryType: new FormControl<AttachedPermissionsBoundaryPermissionsBoundaryType | null | undefined>(undefined),
+			PermissionsBoundaryArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AttachedPermissionsBoundaryPermissionsBoundaryType { PermissionsBoundaryPolicy = 0 }
 
 
@@ -166,11 +386,37 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
 	export interface RoleLastUsed {
 		LastUsedDate?: Date | null;
 		Region?: string | null;
+	}
+
+	/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
+	export interface RoleLastUsedFormProperties {
+		LastUsedDate: FormControl<Date | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+	}
+	export function CreateRoleLastUsedFormGroup() {
+		return new FormGroup<RoleLastUsedFormProperties>({
+			LastUsedDate: new FormControl<Date | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -184,12 +430,36 @@ export namespace MyNS {
 		LoginProfile: LoginProfile;
 	}
 
+	/** Contains the response to a successful <a>CreateLoginProfile</a> request.  */
+	export interface CreateLoginProfileResponseFormProperties {
+	}
+	export function CreateCreateLoginProfileResponseFormGroup() {
+		return new FormGroup<CreateLoginProfileResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p> */
 	export interface LoginProfile {
 		UserName: string;
 		CreateDate: Date;
 		PasswordResetRequired?: boolean | null;
+	}
+
+	/** <p>Contains the user name and password create date for a user.</p> <p> This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations. </p> */
+	export interface LoginProfileFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		PasswordResetRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLoginProfileFormGroup() {
+		return new FormGroup<LoginProfileFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			PasswordResetRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -204,12 +474,38 @@ export namespace MyNS {
 		OpenIDConnectProviderArn?: string | null;
 	}
 
+	/** Contains the response to a successful <a>CreateOpenIDConnectProvider</a> request.  */
+	export interface CreateOpenIDConnectProviderResponseFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOpenIDConnectProviderResponseFormGroup() {
+		return new FormGroup<CreateOpenIDConnectProviderResponseFormProperties>({
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>CreatePolicy</a> request.  */
 	export interface CreatePolicyResponse {
 
 		/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		Policy?: Policy | null;
+		Policy?: Policy;
+	}
+
+	/** Contains the response to a successful <a>CreatePolicy</a> request.  */
+	export interface CreatePolicyResponseFormProperties {
+	}
+	export function CreateCreatePolicyResponseFormGroup() {
+		return new FormGroup<CreatePolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -234,7 +530,51 @@ export namespace MyNS {
 		UpdateDate?: Date | null;
 	}
 
+	/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface PolicyFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+		DefaultVersionId: FormControl<string | null | undefined>,
+		AttachmentCount: FormControl<number | null | undefined>,
+		PermissionsBoundaryUsageCount: FormControl<number | null | undefined>,
+		IsAttachable: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		UpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
+			AttachmentCount: new FormControl<number | null | undefined>(undefined),
+			PermissionsBoundaryUsageCount: new FormControl<number | null | undefined>(undefined),
+			IsAttachable: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			UpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MalformedPolicyDocumentException {
+	}
+	export interface MalformedPolicyDocumentExceptionFormProperties {
+	}
+	export function CreateMalformedPolicyDocumentExceptionFormGroup() {
+		return new FormGroup<MalformedPolicyDocumentExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -242,7 +582,16 @@ export namespace MyNS {
 	export interface CreatePolicyVersionResponse {
 
 		/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		PolicyVersion?: PolicyVersion | null;
+		PolicyVersion?: PolicyVersion;
+	}
+
+	/** Contains the response to a successful <a>CreatePolicyVersion</a> request.  */
+	export interface CreatePolicyVersionResponseFormProperties {
+	}
+	export function CreateCreatePolicyVersionResponseFormGroup() {
+		return new FormGroup<CreatePolicyVersionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -252,6 +601,23 @@ export namespace MyNS {
 		VersionId?: string | null;
 		IsDefaultVersion?: boolean | null;
 		CreateDate?: Date | null;
+	}
+
+	/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface PolicyVersionFormProperties {
+		Document: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		IsDefaultVersion: FormControl<boolean | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePolicyVersionFormGroup() {
+		return new FormGroup<PolicyVersionFormProperties>({
+			Document: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			IsDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -265,7 +631,23 @@ export namespace MyNS {
 		Role: Role;
 	}
 
+	/** Contains the response to a successful <a>CreateRole</a> request.  */
+	export interface CreateRoleResponseFormProperties {
+	}
+	export function CreateCreateRoleResponseFormGroup() {
+		return new FormGroup<CreateRoleResponseFormProperties>({
+		});
+
+	}
+
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -280,16 +662,47 @@ export namespace MyNS {
 		SAMLProviderArn?: string | null;
 	}
 
+	/** Contains the response to a successful <a>CreateSAMLProvider</a> request.  */
+	export interface CreateSAMLProviderResponseFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		SAMLProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSAMLProviderResponseFormGroup() {
+		return new FormGroup<CreateSAMLProviderResponseFormProperties>({
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateServiceLinkedRoleResponse {
 
 		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
-		Role?: Role | null;
+		Role?: Role;
+	}
+	export interface CreateServiceLinkedRoleResponseFormProperties {
+	}
+	export function CreateCreateServiceLinkedRoleResponseFormGroup() {
+		return new FormGroup<CreateServiceLinkedRoleResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateServiceSpecificCredentialResponse {
 
 		/** Contains the details of a service-specific credential. */
-		ServiceSpecificCredential?: ServiceSpecificCredential | null;
+		ServiceSpecificCredential?: ServiceSpecificCredential;
+	}
+	export interface CreateServiceSpecificCredentialResponseFormProperties {
+	}
+	export function CreateCreateServiceSpecificCredentialResponseFormGroup() {
+		return new FormGroup<CreateServiceSpecificCredentialResponseFormProperties>({
+		});
+
 	}
 
 
@@ -304,7 +717,37 @@ export namespace MyNS {
 		Status: AccessKeyStatus;
 	}
 
+	/** Contains the details of a service-specific credential. */
+	export interface ServiceSpecificCredentialFormProperties {
+		CreateDate: FormControl<Date | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		ServiceUserName: FormControl<string | null | undefined>,
+		ServicePassword: FormControl<string | null | undefined>,
+		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+	}
+	export function CreateServiceSpecificCredentialFormGroup() {
+		return new FormGroup<ServiceSpecificCredentialFormProperties>({
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			ServiceUserName: new FormControl<string | null | undefined>(undefined),
+			ServicePassword: new FormControl<string | null | undefined>(undefined),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ServiceNotSupportedException {
+	}
+	export interface ServiceNotSupportedExceptionFormProperties {
+	}
+	export function CreateServiceNotSupportedExceptionFormGroup() {
+		return new FormGroup<ServiceNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -312,7 +755,16 @@ export namespace MyNS {
 	export interface CreateUserResponse {
 
 		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
-		User?: User | null;
+		User?: User;
+	}
+
+	/** Contains the response to a successful <a>CreateUser</a> request.  */
+	export interface CreateUserResponseFormProperties {
+	}
+	export function CreateCreateUserResponseFormGroup() {
+		return new FormGroup<CreateUserResponseFormProperties>({
+		});
+
 	}
 
 
@@ -333,8 +785,36 @@ export namespace MyNS {
 		PasswordLastUsed?: Date | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary | null;
-		Tags?: Array<Tag> | null;
+		PermissionsBoundary?: AttachedPermissionsBoundary;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
+	export interface UserFormProperties {
+		Path: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		PasswordLastUsed: FormControl<Date | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			PasswordLastUsed: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -348,6 +828,15 @@ export namespace MyNS {
 		VirtualMFADevice: VirtualMFADevice;
 	}
 
+	/** Contains the response to a successful <a>CreateVirtualMFADevice</a> request.  */
+	export interface CreateVirtualMFADeviceResponseFormProperties {
+	}
+	export function CreateCreateVirtualMFADeviceResponseFormGroup() {
+		return new FormGroup<CreateVirtualMFADeviceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Contains information about a virtual MFA device. */
 	export interface VirtualMFADevice {
@@ -356,18 +845,58 @@ export namespace MyNS {
 		QRCodePNG?: string | null;
 
 		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
-		User?: User | null;
+		User?: User;
 		EnableDate?: Date | null;
 	}
 
+	/** Contains information about a virtual MFA device. */
+	export interface VirtualMFADeviceFormProperties {
+		SerialNumber: FormControl<string | null | undefined>,
+		Base32StringSeed: FormControl<string | null | undefined>,
+		QRCodePNG: FormControl<string | null | undefined>,
+		EnableDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateVirtualMFADeviceFormGroup() {
+		return new FormGroup<VirtualMFADeviceFormProperties>({
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			Base32StringSeed: new FormControl<string | null | undefined>(undefined),
+			QRCodePNG: new FormControl<string | null | undefined>(undefined),
+			EnableDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteConflictException {
+	}
+	export interface DeleteConflictExceptionFormProperties {
+	}
+	export function CreateDeleteConflictExceptionFormGroup() {
+		return new FormGroup<DeleteConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteServiceLinkedRoleResponse {
 		DeletionTaskId: string;
 	}
+	export interface DeleteServiceLinkedRoleResponseFormProperties {
+		DeletionTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServiceLinkedRoleResponseFormGroup() {
+		return new FormGroup<DeleteServiceLinkedRoleResponseFormProperties>({
+			DeletionTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidAuthenticationCodeException {
+	}
+	export interface InvalidAuthenticationCodeExceptionFormProperties {
+	}
+	export function CreateInvalidAuthenticationCodeExceptionFormGroup() {
+		return new FormGroup<InvalidAuthenticationCodeExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -377,17 +906,55 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Contains the response to a successful <a>GenerateCredentialReport</a> request.  */
+	export interface GenerateCredentialReportResponseFormProperties {
+		State: FormControl<GenerateCredentialReportResponseState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateCredentialReportResponseFormGroup() {
+		return new FormGroup<GenerateCredentialReportResponseFormProperties>({
+			State: new FormControl<GenerateCredentialReportResponseState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GenerateCredentialReportResponseState { STARTED = 0, INPROGRESS = 1, COMPLETE = 2 }
 
 	export interface GenerateOrganizationsAccessReportResponse {
 		JobId?: string | null;
 	}
+	export interface GenerateOrganizationsAccessReportResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateOrganizationsAccessReportResponseFormGroup() {
+		return new FormGroup<GenerateOrganizationsAccessReportResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReportGenerationLimitExceededException {
+	}
+	export interface ReportGenerationLimitExceededExceptionFormProperties {
+	}
+	export function CreateReportGenerationLimitExceededExceptionFormGroup() {
+		return new FormGroup<ReportGenerationLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GenerateServiceLastAccessedDetailsResponse {
 		JobId?: string | null;
+	}
+	export interface GenerateServiceLastAccessedDetailsResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateServiceLastAccessedDetailsResponseFormGroup() {
+		return new FormGroup<GenerateServiceLastAccessedDetailsResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -396,7 +963,18 @@ export namespace MyNS {
 		UserName?: string | null;
 
 		/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
-		AccessKeyLastUsed?: AccessKeyLastUsed | null;
+		AccessKeyLastUsed?: AccessKeyLastUsed;
+	}
+
+	/** Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action. */
+	export interface GetAccessKeyLastUsedResponseFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccessKeyLastUsedResponseFormGroup() {
+		return new FormGroup<GetAccessKeyLastUsedResponseFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -407,15 +985,43 @@ export namespace MyNS {
 		Region: string;
 	}
 
+	/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
+	export interface AccessKeyLastUsedFormProperties {
+		LastUsedDate: FormControl<Date | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessKeyLastUsedFormGroup() {
+		return new FormGroup<AccessKeyLastUsedFormProperties>({
+			LastUsedDate: new FormControl<Date | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request.  */
 	export interface GetAccountAuthorizationDetailsResponse {
-		UserDetailList?: Array<UserDetail> | null;
-		GroupDetailList?: Array<GroupDetail> | null;
-		RoleDetailList?: Array<RoleDetail> | null;
-		Policies?: Array<ManagedPolicyDetail> | null;
+		UserDetailList?: Array<UserDetail>;
+		GroupDetailList?: Array<GroupDetail>;
+		RoleDetailList?: Array<RoleDetail>;
+		Policies?: Array<ManagedPolicyDetail>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request.  */
+	export interface GetAccountAuthorizationDetailsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccountAuthorizationDetailsResponseFormGroup() {
+		return new FormGroup<GetAccountAuthorizationDetailsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -432,13 +1038,38 @@ export namespace MyNS {
 		 */
 		Arn?: string | null;
 		CreateDate?: Date | null;
-		UserPolicyList?: Array<PolicyDetail> | null;
-		GroupList?: Array<string> | null;
-		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
+		UserPolicyList?: Array<PolicyDetail>;
+		GroupList?: Array<string>;
+		AttachedManagedPolicies?: Array<AttachedPolicy>;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary | null;
-		Tags?: Array<Tag> | null;
+		PermissionsBoundary?: AttachedPermissionsBoundary;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
+	export interface UserDetailFormProperties {
+		Path: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUserDetailFormGroup() {
+		return new FormGroup<UserDetailFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -446,6 +1077,19 @@ export namespace MyNS {
 	export interface PolicyDetail {
 		PolicyName?: string | null;
 		PolicyDocument?: string | null;
+	}
+
+	/** <p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
+	export interface PolicyDetailFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyDetailFormGroup() {
+		return new FormGroup<PolicyDetailFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -459,6 +1103,25 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn?: string | null;
+	}
+
+	/** <p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface AttachedPolicyFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachedPolicyFormGroup() {
+		return new FormGroup<AttachedPolicyFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -475,8 +1138,33 @@ export namespace MyNS {
 		 */
 		Arn?: string | null;
 		CreateDate?: Date | null;
-		GroupPolicyList?: Array<PolicyDetail> | null;
-		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
+		GroupPolicyList?: Array<PolicyDetail>;
+		AttachedManagedPolicies?: Array<AttachedPolicy>;
+	}
+
+	/** <p>Contains information about an IAM group, including all of the group's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
+	export interface GroupDetailFormProperties {
+		Path: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGroupDetailFormGroup() {
+		return new FormGroup<GroupDetailFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -496,16 +1184,43 @@ export namespace MyNS {
 		AssumeRolePolicyDocument?: string | null;
 
 		/** Contains a list of instance profiles. */
-		InstanceProfileList?: Array<InstanceProfile> | null;
-		RolePolicyList?: Array<PolicyDetail> | null;
-		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
+		InstanceProfileList?: Array<InstanceProfile>;
+		RolePolicyList?: Array<PolicyDetail>;
+		AttachedManagedPolicies?: Array<AttachedPolicy>;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary | null;
-		Tags?: Array<Tag> | null;
+		PermissionsBoundary?: AttachedPermissionsBoundary;
+		Tags?: Array<Tag>;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
-		RoleLastUsed?: RoleLastUsed | null;
+		RoleLastUsed?: RoleLastUsed;
+	}
+
+	/** <p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
+	export interface RoleDetailFormProperties {
+		Path: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+		RoleId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateRoleDetailFormGroup() {
+		return new FormGroup<RoleDetailFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -528,7 +1243,44 @@ export namespace MyNS {
 		Description?: string | null;
 		CreateDate?: Date | null;
 		UpdateDate?: Date | null;
-		PolicyVersionList?: Array<PolicyVersion> | null;
+		PolicyVersionList?: Array<PolicyVersion>;
+	}
+
+	/** <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface ManagedPolicyDetailFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+		DefaultVersionId: FormControl<string | null | undefined>,
+		AttachmentCount: FormControl<number | null | undefined>,
+		PermissionsBoundaryUsageCount: FormControl<number | null | undefined>,
+		IsAttachable: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		UpdateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateManagedPolicyDetailFormGroup() {
+		return new FormGroup<ManagedPolicyDetailFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+			DefaultVersionId: new FormControl<string | null | undefined>(undefined),
+			AttachmentCount: new FormControl<number | null | undefined>(undefined),
+			PermissionsBoundaryUsageCount: new FormControl<number | null | undefined>(undefined),
+			IsAttachable: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			UpdateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EntityType { User = 0, Role = 1, Group = 2, LocalManagedPolicy = 3, AWSManagedPolicy = 4 }
@@ -542,6 +1294,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		PasswordPolicy: PasswordPolicy;
+	}
+
+	/** Contains the response to a successful <a>GetAccountPasswordPolicy</a> request.  */
+	export interface GetAccountPasswordPolicyResponseFormProperties {
+	}
+	export function CreateGetAccountPasswordPolicyResponseFormGroup() {
+		return new FormGroup<GetAccountPasswordPolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -559,19 +1320,73 @@ export namespace MyNS {
 		HardExpiry?: boolean | null;
 	}
 
+	/** <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p> */
+	export interface PasswordPolicyFormProperties {
+		MinimumPasswordLength: FormControl<number | null | undefined>,
+		RequireSymbols: FormControl<boolean | null | undefined>,
+		RequireNumbers: FormControl<boolean | null | undefined>,
+		RequireUppercaseCharacters: FormControl<boolean | null | undefined>,
+		RequireLowercaseCharacters: FormControl<boolean | null | undefined>,
+		AllowUsersToChangePassword: FormControl<boolean | null | undefined>,
+		ExpirePasswords: FormControl<boolean | null | undefined>,
+		MaxPasswordAge: FormControl<number | null | undefined>,
+		PasswordReusePrevention: FormControl<number | null | undefined>,
+		HardExpiry: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePasswordPolicyFormGroup() {
+		return new FormGroup<PasswordPolicyFormProperties>({
+			MinimumPasswordLength: new FormControl<number | null | undefined>(undefined),
+			RequireSymbols: new FormControl<boolean | null | undefined>(undefined),
+			RequireNumbers: new FormControl<boolean | null | undefined>(undefined),
+			RequireUppercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
+			RequireLowercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
+			AllowUsersToChangePassword: new FormControl<boolean | null | undefined>(undefined),
+			ExpirePasswords: new FormControl<boolean | null | undefined>(undefined),
+			MaxPasswordAge: new FormControl<number | null | undefined>(undefined),
+			PasswordReusePrevention: new FormControl<number | null | undefined>(undefined),
+			HardExpiry: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetAccountSummary</a> request.  */
 	export interface GetAccountSummaryResponse {
-		SummaryMap?: SummaryMapType | null;
+		SummaryMap?: SummaryMapType;
+	}
+
+	/** Contains the response to a successful <a>GetAccountSummary</a> request.  */
+	export interface GetAccountSummaryResponseFormProperties {
+	}
+	export function CreateGetAccountSummaryResponseFormGroup() {
+		return new FormGroup<GetAccountSummaryResponseFormProperties>({
+		});
+
 	}
 
 	export interface SummaryMapType {
+	}
+	export interface SummaryMapTypeFormProperties {
+	}
+	export function CreateSummaryMapTypeFormGroup() {
+		return new FormGroup<SummaryMapTypeFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request.  */
 	export interface GetContextKeysForPolicyResponse {
-		ContextKeyNames?: Array<string> | null;
+		ContextKeyNames?: Array<string>;
+	}
+
+	/** Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request.  */
+	export interface GetContextKeysForPolicyResponseFormProperties {
+	}
+	export function CreateGetContextKeysForPolicyResponseFormGroup() {
+		return new FormGroup<GetContextKeysForPolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -582,15 +1397,51 @@ export namespace MyNS {
 		GeneratedTime?: Date | null;
 	}
 
+	/** Contains the response to a successful <a>GetCredentialReport</a> request.  */
+	export interface GetCredentialReportResponseFormProperties {
+		Content: FormControl<string | null | undefined>,
+		ReportFormat: FormControl<GetCredentialReportResponseReportFormat | null | undefined>,
+		GeneratedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetCredentialReportResponseFormGroup() {
+		return new FormGroup<GetCredentialReportResponseFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+			ReportFormat: new FormControl<GetCredentialReportResponseReportFormat | null | undefined>(undefined),
+			GeneratedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GetCredentialReportResponseReportFormat { text_csv = 0 }
 
 	export interface CredentialReportNotPresentException {
 	}
+	export interface CredentialReportNotPresentExceptionFormProperties {
+	}
+	export function CreateCredentialReportNotPresentExceptionFormGroup() {
+		return new FormGroup<CredentialReportNotPresentExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CredentialReportExpiredException {
 	}
+	export interface CredentialReportExpiredExceptionFormProperties {
+	}
+	export function CreateCredentialReportExpiredExceptionFormGroup() {
+		return new FormGroup<CredentialReportExpiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CredentialReportNotReadyException {
+	}
+	export interface CredentialReportNotReadyExceptionFormProperties {
+	}
+	export function CreateCredentialReportNotReadyExceptionFormGroup() {
+		return new FormGroup<CredentialReportNotReadyExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -612,12 +1463,40 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>GetGroup</a> request.  */
+	export interface GetGroupResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupResponseFormGroup() {
+		return new FormGroup<GetGroupResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetGroupPolicy</a> request.  */
 	export interface GetGroupPolicyResponse {
 		GroupName: string;
 		PolicyName: string;
 		PolicyDocument: string;
+	}
+
+	/** Contains the response to a successful <a>GetGroupPolicy</a> request.  */
+	export interface GetGroupPolicyResponseFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupPolicyResponseFormGroup() {
+		return new FormGroup<GetGroupPolicyResponseFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -631,6 +1510,15 @@ export namespace MyNS {
 		InstanceProfile: InstanceProfile;
 	}
 
+	/** Contains the response to a successful <a>GetInstanceProfile</a> request.  */
+	export interface GetInstanceProfileResponseFormProperties {
+	}
+	export function CreateGetInstanceProfileResponseFormGroup() {
+		return new FormGroup<GetInstanceProfileResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetLoginProfile</a> request.  */
 	export interface GetLoginProfileResponse {
@@ -640,6 +1528,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		LoginProfile: LoginProfile;
+	}
+
+	/** Contains the response to a successful <a>GetLoginProfile</a> request.  */
+	export interface GetLoginProfileResponseFormProperties {
+	}
+	export function CreateGetLoginProfileResponseFormGroup() {
+		return new FormGroup<GetLoginProfileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -652,11 +1549,30 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Url?: string | null;
-		ClientIDList?: Array<string> | null;
+		ClientIDList?: Array<string>;
 
 		/** Contains a list of thumbprints of identity provider server certificates. */
-		ThumbprintList?: Array<string> | null;
+		ThumbprintList?: Array<string>;
 		CreateDate?: Date | null;
+	}
+
+	/** Contains the response to a successful <a>GetOpenIDConnectProvider</a> request.  */
+	export interface GetOpenIDConnectProviderResponseFormProperties {
+
+		/**
+		 * Contains a URL that specifies the endpoint for an OpenID Connect provider.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Url: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetOpenIDConnectProviderResponseFormGroup() {
+		return new FormGroup<GetOpenIDConnectProviderResponseFormProperties>({
+			Url: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetOrganizationsAccessReportResponse {
@@ -665,12 +1581,33 @@ export namespace MyNS {
 		JobCompletionDate?: Date | null;
 		NumberOfServicesAccessible?: number | null;
 		NumberOfServicesNotAccessed?: number | null;
-		AccessDetails?: Array<AccessDetail> | null;
+		AccessDetails?: Array<AccessDetail>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		ErrorDetails?: ErrorDetails | null;
+		ErrorDetails?: ErrorDetails;
+	}
+	export interface GetOrganizationsAccessReportResponseFormProperties {
+		JobStatus: FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>,
+		JobCreationDate: FormControl<Date | null | undefined>,
+		JobCompletionDate: FormControl<Date | null | undefined>,
+		NumberOfServicesAccessible: FormControl<number | null | undefined>,
+		NumberOfServicesNotAccessed: FormControl<number | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOrganizationsAccessReportResponseFormGroup() {
+		return new FormGroup<GetOrganizationsAccessReportResponseFormProperties>({
+			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined),
+			JobCreationDate: new FormControl<Date | null | undefined>(undefined),
+			JobCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			NumberOfServicesAccessible: new FormControl<number | null | undefined>(undefined),
+			NumberOfServicesNotAccessed: new FormControl<number | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetOrganizationsAccessReportResponseJobStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
@@ -686,6 +1623,27 @@ export namespace MyNS {
 		TotalAuthenticatedEntities?: number | null;
 	}
 
+	/** <p>An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity.</p> <p>This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.</p> */
+	export interface AccessDetailFormProperties {
+		ServiceName: FormControl<string | null | undefined>,
+		ServiceNamespace: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		EntityPath: FormControl<string | null | undefined>,
+		LastAuthenticatedTime: FormControl<Date | null | undefined>,
+		TotalAuthenticatedEntities: FormControl<number | null | undefined>,
+	}
+	export function CreateAccessDetailFormGroup() {
+		return new FormGroup<AccessDetailFormProperties>({
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			EntityPath: new FormControl<string | null | undefined>(undefined),
+			LastAuthenticatedTime: new FormControl<Date | null | undefined>(undefined),
+			TotalAuthenticatedEntities: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
 	export interface ErrorDetails {
@@ -693,12 +1651,34 @@ export namespace MyNS {
 		Code: string;
 	}
 
+	/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
+	export interface ErrorDetailsFormProperties {
+		Message: FormControl<string | null | undefined>,
+		Code: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailsFormGroup() {
+		return new FormGroup<ErrorDetailsFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetPolicy</a> request.  */
 	export interface GetPolicyResponse {
 
 		/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		Policy?: Policy | null;
+		Policy?: Policy;
+	}
+
+	/** Contains the response to a successful <a>GetPolicy</a> request.  */
+	export interface GetPolicyResponseFormProperties {
+	}
+	export function CreateGetPolicyResponseFormGroup() {
+		return new FormGroup<GetPolicyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -706,7 +1686,16 @@ export namespace MyNS {
 	export interface GetPolicyVersionResponse {
 
 		/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		PolicyVersion?: PolicyVersion | null;
+		PolicyVersion?: PolicyVersion;
+	}
+
+	/** Contains the response to a successful <a>GetPolicyVersion</a> request.  */
+	export interface GetPolicyVersionResponseFormProperties {
+	}
+	export function CreateGetPolicyVersionResponseFormGroup() {
+		return new FormGroup<GetPolicyVersionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -720,12 +1709,36 @@ export namespace MyNS {
 		Role: Role;
 	}
 
+	/** Contains the response to a successful <a>GetRole</a> request.  */
+	export interface GetRoleResponseFormProperties {
+	}
+	export function CreateGetRoleResponseFormGroup() {
+		return new FormGroup<GetRoleResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetRolePolicy</a> request.  */
 	export interface GetRolePolicyResponse {
 		RoleName: string;
 		PolicyName: string;
 		PolicyDocument: string;
+	}
+
+	/** Contains the response to a successful <a>GetRolePolicy</a> request.  */
+	export interface GetRolePolicyResponseFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRolePolicyResponseFormGroup() {
+		return new FormGroup<GetRolePolicyResponseFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -736,12 +1749,36 @@ export namespace MyNS {
 		ValidUntil?: Date | null;
 	}
 
+	/** Contains the response to a successful <a>GetSAMLProvider</a> request.  */
+	export interface GetSAMLProviderResponseFormProperties {
+		SAMLMetadataDocument: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		ValidUntil: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetSAMLProviderResponseFormGroup() {
+		return new FormGroup<GetSAMLProviderResponseFormProperties>({
+			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			ValidUntil: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetSSHPublicKey</a> request. */
 	export interface GetSSHPublicKeyResponse {
 
 		/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
-		SSHPublicKey?: SSHPublicKey | null;
+		SSHPublicKey?: SSHPublicKey;
+	}
+
+	/** Contains the response to a successful <a>GetSSHPublicKey</a> request. */
+	export interface GetSSHPublicKeyResponseFormProperties {
+	}
+	export function CreateGetSSHPublicKeyResponseFormGroup() {
+		return new FormGroup<GetSSHPublicKeyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -755,7 +1792,35 @@ export namespace MyNS {
 		UploadDate?: Date | null;
 	}
 
+	/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
+	export interface SSHPublicKeyFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SSHPublicKeyId: FormControl<string | null | undefined>,
+		Fingerprint: FormControl<string | null | undefined>,
+		SSHPublicKeyBody: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+		UploadDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateSSHPublicKeyFormGroup() {
+		return new FormGroup<SSHPublicKeyFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
+			Fingerprint: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyBody: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UploadDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UnrecognizedPublicKeyEncodingException {
+	}
+	export interface UnrecognizedPublicKeyEncodingExceptionFormProperties {
+	}
+	export function CreateUnrecognizedPublicKeyEncodingExceptionFormGroup() {
+		return new FormGroup<UnrecognizedPublicKeyEncodingExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -769,6 +1834,15 @@ export namespace MyNS {
 		ServerCertificate: ServerCertificate;
 	}
 
+	/** Contains the response to a successful <a>GetServerCertificate</a> request.  */
+	export interface GetServerCertificateResponseFormProperties {
+	}
+	export function CreateGetServerCertificateResponseFormGroup() {
+		return new FormGroup<GetServerCertificateResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> operation. </p> */
 	export interface ServerCertificate {
@@ -780,6 +1854,19 @@ export namespace MyNS {
 		ServerCertificateMetadata: ServerCertificateMetadata;
 		CertificateBody: string;
 		CertificateChain?: string | null;
+	}
+
+	/** <p>Contains information about a server certificate.</p> <p> This data type is used as a response element in the <a>GetServerCertificate</a> operation. </p> */
+	export interface ServerCertificateFormProperties {
+		CertificateBody: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateServerCertificateFormGroup() {
+		return new FormGroup<ServerCertificateFormProperties>({
+			CertificateBody: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -800,6 +1887,34 @@ export namespace MyNS {
 		Expiration?: Date | null;
 	}
 
+	/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
+	export interface ServerCertificateMetadataFormProperties {
+		Path: FormControl<string | null | undefined>,
+		ServerCertificateName: FormControl<string | null | undefined>,
+		ServerCertificateId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		UploadDate: FormControl<Date | null | undefined>,
+		Expiration: FormControl<Date | null | undefined>,
+	}
+	export function CreateServerCertificateMetadataFormGroup() {
+		return new FormGroup<ServerCertificateMetadataFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+			ServerCertificateId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			UploadDate: new FormControl<Date | null | undefined>(undefined),
+			Expiration: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetServiceLastAccessedDetailsResponse {
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
 		JobType?: GetServiceLastAccessedDetailsResponseJobType | null;
@@ -810,7 +1925,26 @@ export namespace MyNS {
 		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		Error?: ErrorDetails | null;
+		Error?: ErrorDetails;
+	}
+	export interface GetServiceLastAccessedDetailsResponseFormProperties {
+		JobStatus: FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>,
+		JobType: FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>,
+		JobCreationDate: FormControl<Date | null | undefined>,
+		JobCompletionDate: FormControl<Date | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceLastAccessedDetailsResponseFormGroup() {
+		return new FormGroup<GetServiceLastAccessedDetailsResponseFormProperties>({
+			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined),
+			JobType: new FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>(undefined),
+			JobCreationDate: new FormControl<Date | null | undefined>(undefined),
+			JobCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetServiceLastAccessedDetailsResponseJobType { SERVICE_LEVEL = 0, ACTION_LEVEL = 1 }
@@ -830,7 +1964,34 @@ export namespace MyNS {
 		LastAuthenticatedEntity?: string | null;
 		LastAuthenticatedRegion?: string | null;
 		TotalAuthenticatedEntities?: number | null;
-		TrackedActionsLastAccessed?: Array<TrackedActionLastAccessed> | null;
+		TrackedActionsLastAccessed?: Array<TrackedActionLastAccessed>;
+	}
+
+	/** <p>Contains details about the most recent attempt to access the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
+	export interface ServiceLastAccessedFormProperties {
+		ServiceName: FormControl<string | null | undefined>,
+		LastAuthenticated: FormControl<Date | null | undefined>,
+		ServiceNamespace: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		LastAuthenticatedEntity: FormControl<string | null | undefined>,
+		LastAuthenticatedRegion: FormControl<string | null | undefined>,
+		TotalAuthenticatedEntities: FormControl<number | null | undefined>,
+	}
+	export function CreateServiceLastAccessedFormGroup() {
+		return new FormGroup<ServiceLastAccessedFormProperties>({
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			LastAuthenticated: new FormControl<Date | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
+			LastAuthenticatedEntity: new FormControl<string | null | undefined>(undefined),
+			LastAuthenticatedRegion: new FormControl<string | null | undefined>(undefined),
+			TotalAuthenticatedEntities: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -848,6 +2009,29 @@ export namespace MyNS {
 		LastAccessedRegion?: string | null;
 	}
 
+	/** <p>Contains details about the most recent attempt to access an action within the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
+	export interface TrackedActionLastAccessedFormProperties {
+		ActionName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		LastAccessedEntity: FormControl<string | null | undefined>,
+		LastAccessedTime: FormControl<Date | null | undefined>,
+		LastAccessedRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateTrackedActionLastAccessedFormGroup() {
+		return new FormGroup<TrackedActionLastAccessedFormProperties>({
+			ActionName: new FormControl<string | null | undefined>(undefined),
+			LastAccessedEntity: new FormControl<string | null | undefined>(undefined),
+			LastAccessedTime: new FormControl<Date | null | undefined>(undefined),
+			LastAccessedRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetServiceLastAccessedDetailsWithEntitiesResponse {
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
 		JobCreationDate: Date;
@@ -857,7 +2041,24 @@ export namespace MyNS {
 		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		Error?: ErrorDetails | null;
+		Error?: ErrorDetails;
+	}
+	export interface GetServiceLastAccessedDetailsWithEntitiesResponseFormProperties {
+		JobStatus: FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>,
+		JobCreationDate: FormControl<Date | null | undefined>,
+		JobCompletionDate: FormControl<Date | null | undefined>,
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceLastAccessedDetailsWithEntitiesResponseFormGroup() {
+		return new FormGroup<GetServiceLastAccessedDetailsWithEntitiesResponseFormProperties>({
+			JobStatus: new FormControl<GetOrganizationsAccessReportResponseJobStatus | null | undefined>(undefined),
+			JobCreationDate: new FormControl<Date | null | undefined>(undefined),
+			JobCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -870,6 +2071,17 @@ export namespace MyNS {
 		 */
 		EntityInfo: EntityInfo;
 		LastAuthenticated?: Date | null;
+	}
+
+	/** <p>An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service.</p> <p>This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.</p> */
+	export interface EntityDetailsFormProperties {
+		LastAuthenticated: FormControl<Date | null | undefined>,
+	}
+	export function CreateEntityDetailsFormGroup() {
+		return new FormGroup<EntityDetailsFormProperties>({
+			LastAuthenticated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -889,13 +2101,48 @@ export namespace MyNS {
 		Path?: string | null;
 	}
 
+	/** <p>Contains details about the specified entity (user or role).</p> <p>This data type is an element of the <a>EntityDetails</a> object.</p> */
+	export interface EntityInfoFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<EntityInfoType | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityInfoFormGroup() {
+		return new FormGroup<EntityInfoFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<EntityInfoType | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EntityInfoType { USER = 0, ROLE = 1, GROUP = 2 }
 
 	export interface GetServiceLinkedRoleDeletionStatusResponse {
 		Status: GetServiceLinkedRoleDeletionStatusResponseStatus;
 
 		/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
-		Reason?: DeletionTaskFailureReasonType | null;
+		Reason?: DeletionTaskFailureReasonType;
+	}
+	export interface GetServiceLinkedRoleDeletionStatusResponseFormProperties {
+		Status: FormControl<GetServiceLinkedRoleDeletionStatusResponseStatus | null | undefined>,
+	}
+	export function CreateGetServiceLinkedRoleDeletionStatusResponseFormGroup() {
+		return new FormGroup<GetServiceLinkedRoleDeletionStatusResponseFormProperties>({
+			Status: new FormControl<GetServiceLinkedRoleDeletionStatusResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetServiceLinkedRoleDeletionStatusResponseStatus { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2, NOT_STARTED = 3 }
@@ -904,14 +2151,36 @@ export namespace MyNS {
 	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface DeletionTaskFailureReasonType {
 		Reason?: string | null;
-		RoleUsageList?: Array<RoleUsageType> | null;
+		RoleUsageList?: Array<RoleUsageType>;
+	}
+
+	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
+	export interface DeletionTaskFailureReasonTypeFormProperties {
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletionTaskFailureReasonTypeFormGroup() {
+		return new FormGroup<DeletionTaskFailureReasonTypeFormProperties>({
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface RoleUsageType {
 		Region?: string | null;
-		Resources?: Array<string> | null;
+		Resources?: Array<string>;
+	}
+
+	/** <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
+	export interface RoleUsageTypeFormProperties {
+		Region: FormControl<string | null | undefined>,
+	}
+	export function CreateRoleUsageTypeFormGroup() {
+		return new FormGroup<RoleUsageTypeFormProperties>({
+			Region: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -925,12 +2194,36 @@ export namespace MyNS {
 		User: User;
 	}
 
+	/** Contains the response to a successful <a>GetUser</a> request.  */
+	export interface GetUserResponseFormProperties {
+	}
+	export function CreateGetUserResponseFormGroup() {
+		return new FormGroup<GetUserResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetUserPolicy</a> request.  */
 	export interface GetUserPolicyResponse {
 		UserName: string;
 		PolicyName: string;
 		PolicyDocument: string;
+	}
+
+	/** Contains the response to a successful <a>GetUserPolicy</a> request.  */
+	export interface GetUserPolicyResponseFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserPolicyResponseFormGroup() {
+		return new FormGroup<GetUserPolicyResponseFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -946,6 +2239,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListAccessKeys</a> request.  */
+	export interface ListAccessKeysResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccessKeysResponseFormGroup() {
+		return new FormGroup<ListAccessKeysResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
 	export interface AccessKeyMetadata {
@@ -953,6 +2259,23 @@ export namespace MyNS {
 		AccessKeyId?: string | null;
 		Status?: AccessKeyStatus | null;
 		CreateDate?: Date | null;
+	}
+
+	/** <p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
+	export interface AccessKeyMetadataFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AccessKeyId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateAccessKeyMetadataFormGroup() {
+		return new FormGroup<AccessKeyMetadataFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -963,38 +2286,103 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListAccountAliases</a> request.  */
+	export interface ListAccountAliasesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccountAliasesResponseFormGroup() {
+		return new FormGroup<ListAccountAliasesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListAttachedGroupPolicies</a> request.  */
 	export interface ListAttachedGroupPoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy> | null;
+		AttachedPolicies?: Array<AttachedPolicy>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListAttachedGroupPolicies</a> request.  */
+	export interface ListAttachedGroupPoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttachedGroupPoliciesResponseFormGroup() {
+		return new FormGroup<ListAttachedGroupPoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedRolePolicies</a> request.  */
 	export interface ListAttachedRolePoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy> | null;
+		AttachedPolicies?: Array<AttachedPolicy>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListAttachedRolePolicies</a> request.  */
+	export interface ListAttachedRolePoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttachedRolePoliciesResponseFormGroup() {
+		return new FormGroup<ListAttachedRolePoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedUserPolicies</a> request.  */
 	export interface ListAttachedUserPoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy> | null;
+		AttachedPolicies?: Array<AttachedPolicy>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListAttachedUserPolicies</a> request.  */
+	export interface ListAttachedUserPoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttachedUserPoliciesResponseFormGroup() {
+		return new FormGroup<ListAttachedUserPoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the response to a successful <a>ListEntitiesForPolicy</a> request.  */
 	export interface ListEntitiesForPolicyResponse {
-		PolicyGroups?: Array<PolicyGroup> | null;
-		PolicyUsers?: Array<PolicyUser> | null;
-		PolicyRoles?: Array<PolicyRole> | null;
+		PolicyGroups?: Array<PolicyGroup>;
+		PolicyUsers?: Array<PolicyUser>;
+		PolicyRoles?: Array<PolicyRole>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListEntitiesForPolicy</a> request.  */
+	export interface ListEntitiesForPolicyResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListEntitiesForPolicyResponseFormGroup() {
+		return new FormGroup<ListEntitiesForPolicyResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1004,6 +2392,19 @@ export namespace MyNS {
 		GroupId?: string | null;
 	}
 
+	/** <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface PolicyGroupFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyGroupFormGroup() {
+		return new FormGroup<PolicyGroupFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyUser {
@@ -1011,11 +2412,37 @@ export namespace MyNS {
 		UserId?: string | null;
 	}
 
+	/** <p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface PolicyUserFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyUserFormGroup() {
+		return new FormGroup<PolicyUserFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyRole {
 		RoleName?: string | null;
 		RoleId?: string | null;
+	}
+
+	/** <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
+	export interface PolicyRoleFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		RoleId: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyRoleFormGroup() {
+		return new FormGroup<PolicyRoleFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			RoleId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1031,6 +2458,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListGroupPolicies</a> request.  */
+	export interface ListGroupPoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupPoliciesResponseFormGroup() {
+		return new FormGroup<ListGroupPoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListGroups</a> request.  */
 	export interface ListGroupsResponse {
@@ -1042,6 +2482,19 @@ export namespace MyNS {
 		Groups: Array<Group>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListGroups</a> request.  */
+	export interface ListGroupsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsResponseFormGroup() {
+		return new FormGroup<ListGroupsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1057,6 +2510,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListGroupsForUser</a> request.  */
+	export interface ListGroupsForUserResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsForUserResponseFormGroup() {
+		return new FormGroup<ListGroupsForUserResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListInstanceProfiles</a> request.  */
 	export interface ListInstanceProfilesResponse {
@@ -1068,6 +2534,19 @@ export namespace MyNS {
 		InstanceProfiles: Array<InstanceProfile>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListInstanceProfiles</a> request.  */
+	export interface ListInstanceProfilesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListInstanceProfilesResponseFormGroup() {
+		return new FormGroup<ListInstanceProfilesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1083,6 +2562,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListInstanceProfilesForRole</a> request.  */
+	export interface ListInstanceProfilesForRoleResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListInstanceProfilesForRoleResponseFormGroup() {
+		return new FormGroup<ListInstanceProfilesForRoleResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListMFADevices</a> request.  */
 	export interface ListMFADevicesResponse {
@@ -1096,6 +2588,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListMFADevices</a> request.  */
+	export interface ListMFADevicesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListMFADevicesResponseFormGroup() {
+		return new FormGroup<ListMFADevicesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> operation.</p> */
 	export interface MFADevice {
@@ -1104,12 +2609,36 @@ export namespace MyNS {
 		EnableDate: Date;
 	}
 
+	/** <p>Contains information about an MFA device.</p> <p>This data type is used as a response element in the <a>ListMFADevices</a> operation.</p> */
+	export interface MFADeviceFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+		EnableDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateMFADeviceFormGroup() {
+		return new FormGroup<MFADeviceFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			EnableDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListOpenIDConnectProviders</a> request.  */
 	export interface ListOpenIDConnectProvidersResponse {
 
 		/** Contains a list of IAM OpenID Connect providers. */
-		OpenIDConnectProviderList?: Array<OpenIDConnectProviderListEntry> | null;
+		OpenIDConnectProviderList?: Array<OpenIDConnectProviderListEntry>;
+	}
+
+	/** Contains the response to a successful <a>ListOpenIDConnectProviders</a> request.  */
+	export interface ListOpenIDConnectProvidersResponseFormProperties {
+	}
+	export function CreateListOpenIDConnectProvidersResponseFormGroup() {
+		return new FormGroup<ListOpenIDConnectProvidersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1124,12 +2653,42 @@ export namespace MyNS {
 		Arn?: string | null;
 	}
 
+	/** Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider. */
+	export interface OpenIDConnectProviderListEntryFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateOpenIDConnectProviderListEntryFormGroup() {
+		return new FormGroup<OpenIDConnectProviderListEntryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListPolicies</a> request.  */
 	export interface ListPoliciesResponse {
-		Policies?: Array<Policy> | null;
+		Policies?: Array<Policy>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListPolicies</a> request.  */
+	export interface ListPoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesResponseFormGroup() {
+		return new FormGroup<ListPoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPoliciesGrantingServiceAccessResponse {
@@ -1137,12 +2696,34 @@ export namespace MyNS {
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
 	}
+	export interface ListPoliciesGrantingServiceAccessResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesGrantingServiceAccessResponseFormGroup() {
+		return new FormGroup<ListPoliciesGrantingServiceAccessResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.</p> */
 	export interface ListPoliciesGrantingServiceAccessEntry {
 		ServiceNamespace?: string | null;
-		Policies?: Array<PolicyGrantingServiceAccess> | null;
+		Policies?: Array<PolicyGrantingServiceAccess>;
+	}
+
+	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.</p> */
+	export interface ListPoliciesGrantingServiceAccessEntryFormProperties {
+		ServiceNamespace: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesGrantingServiceAccessEntryFormGroup() {
+		return new FormGroup<ListPoliciesGrantingServiceAccessEntryFormProperties>({
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1161,14 +2742,52 @@ export namespace MyNS {
 		EntityName?: string | null;
 	}
 
+	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.</p> */
+	export interface PolicyGrantingServiceAccessFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyType: FormControl<PolicyGrantingServiceAccessPolicyType | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		EntityType: FormControl<EntityInfoType | null | undefined>,
+		EntityName: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyGrantingServiceAccessFormGroup() {
+		return new FormGroup<PolicyGrantingServiceAccessFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyType: new FormControl<PolicyGrantingServiceAccessPolicyType | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			EntityType: new FormControl<EntityInfoType | null | undefined>(undefined),
+			EntityName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PolicyGrantingServiceAccessPolicyType { INLINE = 0, MANAGED = 1 }
 
 
 	/** Contains the response to a successful <a>ListPolicyVersions</a> request.  */
 	export interface ListPolicyVersionsResponse {
-		Versions?: Array<PolicyVersion> | null;
+		Versions?: Array<PolicyVersion>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListPolicyVersions</a> request.  */
+	export interface ListPolicyVersionsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPolicyVersionsResponseFormGroup() {
+		return new FormGroup<ListPolicyVersionsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1184,10 +2803,34 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListRolePolicies</a> request.  */
+	export interface ListRolePoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListRolePoliciesResponseFormGroup() {
+		return new FormGroup<ListRolePoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRoleTagsResponse {
 		Tags: Array<Tag>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+	export interface ListRoleTagsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListRoleTagsResponseFormGroup() {
+		return new FormGroup<ListRoleTagsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1203,10 +2846,32 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListRoles</a> request.  */
+	export interface ListRolesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListRolesResponseFormGroup() {
+		return new FormGroup<ListRolesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListSAMLProviders</a> request.  */
 	export interface ListSAMLProvidersResponse {
-		SAMLProviderList?: Array<SAMLProviderListEntry> | null;
+		SAMLProviderList?: Array<SAMLProviderListEntry>;
+	}
+
+	/** Contains the response to a successful <a>ListSAMLProviders</a> request.  */
+	export interface ListSAMLProvidersResponseFormProperties {
+	}
+	export function CreateListSAMLProvidersResponseFormGroup() {
+		return new FormGroup<ListSAMLProvidersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1223,12 +2888,46 @@ export namespace MyNS {
 		CreateDate?: Date | null;
 	}
 
+	/** Contains the list of SAML providers for this account. */
+	export interface SAMLProviderListEntryFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		ValidUntil: FormControl<Date | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateSAMLProviderListEntryFormGroup() {
+		return new FormGroup<SAMLProviderListEntryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			ValidUntil: new FormControl<Date | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListSSHPublicKeys</a> request. */
 	export interface ListSSHPublicKeysResponse {
-		SSHPublicKeys?: Array<SSHPublicKeyMetadata> | null;
+		SSHPublicKeys?: Array<SSHPublicKeyMetadata>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>ListSSHPublicKeys</a> request. */
+	export interface ListSSHPublicKeysResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListSSHPublicKeysResponseFormGroup() {
+		return new FormGroup<ListSSHPublicKeysResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1240,6 +2939,23 @@ export namespace MyNS {
 		UploadDate: Date;
 	}
 
+	/** <p>Contains information about an SSH public key, without the key's body or fingerprint.</p> <p>This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.</p> */
+	export interface SSHPublicKeyMetadataFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SSHPublicKeyId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+		UploadDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateSSHPublicKeyMetadataFormGroup() {
+		return new FormGroup<SSHPublicKeyMetadataFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UploadDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListServerCertificates</a> request.  */
 	export interface ListServerCertificatesResponse {
@@ -1248,8 +2964,28 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListServerCertificates</a> request.  */
+	export interface ListServerCertificatesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListServerCertificatesResponseFormGroup() {
+		return new FormGroup<ListServerCertificatesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListServiceSpecificCredentialsResponse {
-		ServiceSpecificCredentials?: Array<ServiceSpecificCredentialMetadata> | null;
+		ServiceSpecificCredentials?: Array<ServiceSpecificCredentialMetadata>;
+	}
+	export interface ListServiceSpecificCredentialsResponseFormProperties {
+	}
+	export function CreateListServiceSpecificCredentialsResponseFormGroup() {
+		return new FormGroup<ListServiceSpecificCredentialsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1261,6 +2997,27 @@ export namespace MyNS {
 		CreateDate: Date;
 		ServiceSpecificCredentialId: string;
 		ServiceName: string;
+	}
+
+	/** Contains additional details about a service-specific credential. */
+	export interface ServiceSpecificCredentialMetadataFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+		ServiceUserName: FormControl<string | null | undefined>,
+		CreateDate: FormControl<Date | null | undefined>,
+		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceSpecificCredentialMetadataFormGroup() {
+		return new FormGroup<ServiceSpecificCredentialMetadataFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			ServiceUserName: new FormControl<string | null | undefined>(undefined),
+			CreateDate: new FormControl<Date | null | undefined>(undefined),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1276,6 +3033,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListSigningCertificates</a> request.  */
+	export interface ListSigningCertificatesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListSigningCertificatesResponseFormGroup() {
+		return new FormGroup<ListSigningCertificatesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations. </p> */
 	export interface SigningCertificate {
@@ -1284,6 +3054,25 @@ export namespace MyNS {
 		CertificateBody: string;
 		Status: AccessKeyStatus;
 		UploadDate?: Date | null;
+	}
+
+	/** <p>Contains information about an X.509 signing certificate.</p> <p>This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations. </p> */
+	export interface SigningCertificateFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		CertificateId: FormControl<string | null | undefined>,
+		CertificateBody: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+		UploadDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateSigningCertificateFormGroup() {
+		return new FormGroup<SigningCertificateFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+			CertificateBody: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+			UploadDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1299,10 +3088,34 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListUserPolicies</a> request.  */
+	export interface ListUserPoliciesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserPoliciesResponseFormGroup() {
+		return new FormGroup<ListUserPoliciesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListUserTagsResponse {
 		Tags: Array<Tag>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+	export interface ListUserTagsResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserTagsResponseFormGroup() {
+		return new FormGroup<ListUserTagsResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1318,6 +3131,19 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListUsers</a> request.  */
+	export interface ListUsersResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListUsersResponseFormGroup() {
+		return new FormGroup<ListUsersResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>ListVirtualMFADevices</a> request.  */
 	export interface ListVirtualMFADevicesResponse {
@@ -1326,18 +3152,51 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** Contains the response to a successful <a>ListVirtualMFADevices</a> request.  */
+	export interface ListVirtualMFADevicesResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListVirtualMFADevicesResponseFormGroup() {
+		return new FormGroup<ListVirtualMFADevicesResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResetServiceSpecificCredentialResponse {
 
 		/** Contains the details of a service-specific credential. */
-		ServiceSpecificCredential?: ServiceSpecificCredential | null;
+		ServiceSpecificCredential?: ServiceSpecificCredential;
+	}
+	export interface ResetServiceSpecificCredentialResponseFormProperties {
+	}
+	export function CreateResetServiceSpecificCredentialResponseFormGroup() {
+		return new FormGroup<ResetServiceSpecificCredentialResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request. */
 	export interface SimulatePolicyResponse {
-		EvaluationResults?: Array<EvaluationResult> | null;
+		EvaluationResults?: Array<EvaluationResult>;
 		IsTruncated?: boolean | null;
 		Marker?: string | null;
+	}
+
+	/** Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request. */
+	export interface SimulatePolicyResponseFormProperties {
+		IsTruncated: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateSimulatePolicyResponseFormGroup() {
+		return new FormGroup<SimulatePolicyResponseFormProperties>({
+			IsTruncated: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1346,16 +3205,31 @@ export namespace MyNS {
 		EvalActionName: string;
 		EvalResourceName?: string | null;
 		EvalDecision: EvaluationResultEvalDecision;
-		MatchedStatements?: Array<Statement> | null;
-		MissingContextValues?: Array<string> | null;
+		MatchedStatements?: Array<Statement>;
+		MissingContextValues?: Array<string>;
 
 		/** Contains information about the effect that Organizations has on a policy simulation. */
-		OrganizationsDecisionDetail?: OrganizationsDecisionDetail | null;
+		OrganizationsDecisionDetail?: OrganizationsDecisionDetail;
 
 		/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
-		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail | null;
-		EvalDecisionDetails?: EvalDecisionDetailsType | null;
-		ResourceSpecificResults?: Array<ResourceSpecificResult> | null;
+		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail;
+		EvalDecisionDetails?: EvalDecisionDetailsType;
+		ResourceSpecificResults?: Array<ResourceSpecificResult>;
+	}
+
+	/** <p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.</p> */
+	export interface EvaluationResultFormProperties {
+		EvalActionName: FormControl<string | null | undefined>,
+		EvalResourceName: FormControl<string | null | undefined>,
+		EvalDecision: FormControl<EvaluationResultEvalDecision | null | undefined>,
+	}
+	export function CreateEvaluationResultFormGroup() {
+		return new FormGroup<EvaluationResultFormProperties>({
+			EvalActionName: new FormControl<string | null | undefined>(undefined),
+			EvalResourceName: new FormControl<string | null | undefined>(undefined),
+			EvalDecision: new FormControl<EvaluationResultEvalDecision | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EvaluationResultEvalDecision { allowed = 0, explicitDeny = 1, implicitDeny = 2 }
@@ -1367,10 +3241,23 @@ export namespace MyNS {
 		SourcePolicyType?: StatementSourcePolicyType | null;
 
 		/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
-		StartPosition?: Position | null;
+		StartPosition?: Position;
 
 		/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
-		EndPosition?: Position | null;
+		EndPosition?: Position;
+	}
+
+	/** <p>Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.</p> <p>This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.</p> */
+	export interface StatementFormProperties {
+		SourcePolicyId: FormControl<string | null | undefined>,
+		SourcePolicyType: FormControl<StatementSourcePolicyType | null | undefined>,
+	}
+	export function CreateStatementFormGroup() {
+		return new FormGroup<StatementFormProperties>({
+			SourcePolicyId: new FormControl<string | null | undefined>(undefined),
+			SourcePolicyType: new FormControl<StatementSourcePolicyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StatementSourcePolicyType { user = 0, group = 1, role = 2, aws_managed = 3, user_managed = 4, resource = 5, none = 6 }
@@ -1382,10 +3269,34 @@ export namespace MyNS {
 		Column?: number | null;
 	}
 
+	/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
+	export interface PositionFormProperties {
+		Line: FormControl<number | null | undefined>,
+		Column: FormControl<number | null | undefined>,
+	}
+	export function CreatePositionFormGroup() {
+		return new FormGroup<PositionFormProperties>({
+			Line: new FormControl<number | null | undefined>(undefined),
+			Column: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about the effect that Organizations has on a policy simulation. */
 	export interface OrganizationsDecisionDetail {
 		AllowedByOrganizations?: boolean | null;
+	}
+
+	/** Contains information about the effect that Organizations has on a policy simulation. */
+	export interface OrganizationsDecisionDetailFormProperties {
+		AllowedByOrganizations: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOrganizationsDecisionDetailFormGroup() {
+		return new FormGroup<OrganizationsDecisionDetailFormProperties>({
+			AllowedByOrganizations: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1394,7 +3305,25 @@ export namespace MyNS {
 		AllowedByPermissionsBoundary?: boolean | null;
 	}
 
+	/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
+	export interface PermissionsBoundaryDecisionDetailFormProperties {
+		AllowedByPermissionsBoundary: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePermissionsBoundaryDecisionDetailFormGroup() {
+		return new FormGroup<PermissionsBoundaryDecisionDetailFormProperties>({
+			AllowedByPermissionsBoundary: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface EvalDecisionDetailsType {
+	}
+	export interface EvalDecisionDetailsTypeFormProperties {
+	}
+	export function CreateEvalDecisionDetailsTypeFormGroup() {
+		return new FormGroup<EvalDecisionDetailsTypeFormProperties>({
+		});
+
 	}
 
 
@@ -1402,34 +3331,81 @@ export namespace MyNS {
 	export interface ResourceSpecificResult {
 		EvalResourceName: string;
 		EvalResourceDecision: EvaluationResultEvalDecision;
-		MatchedStatements?: Array<Statement> | null;
-		MissingContextValues?: Array<string> | null;
-		EvalDecisionDetails?: EvalDecisionDetailsType | null;
+		MatchedStatements?: Array<Statement>;
+		MissingContextValues?: Array<string>;
+		EvalDecisionDetails?: EvalDecisionDetailsType;
 
 		/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
-		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail | null;
+		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail;
+	}
+
+	/** <p>Contains the result of the simulation of a single API operation call on a single resource.</p> <p>This data type is used by a member of the <a>EvaluationResult</a> data type.</p> */
+	export interface ResourceSpecificResultFormProperties {
+		EvalResourceName: FormControl<string | null | undefined>,
+		EvalResourceDecision: FormControl<EvaluationResultEvalDecision | null | undefined>,
+	}
+	export function CreateResourceSpecificResultFormGroup() {
+		return new FormGroup<ResourceSpecificResultFormProperties>({
+			EvalResourceName: new FormControl<string | null | undefined>(undefined),
+			EvalResourceDecision: new FormControl<EvaluationResultEvalDecision | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.</p> */
 	export interface ContextEntry {
 		ContextKeyName?: string | null;
-		ContextKeyValues?: Array<string> | null;
+		ContextKeyValues?: Array<string>;
 		ContextKeyType?: ContextEntryContextKeyType | null;
+	}
+
+	/** <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.</p> */
+	export interface ContextEntryFormProperties {
+		ContextKeyName: FormControl<string | null | undefined>,
+		ContextKeyType: FormControl<ContextEntryContextKeyType | null | undefined>,
+	}
+	export function CreateContextEntryFormGroup() {
+		return new FormGroup<ContextEntryFormProperties>({
+			ContextKeyName: new FormControl<string | null | undefined>(undefined),
+			ContextKeyType: new FormControl<ContextEntryContextKeyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContextEntryContextKeyType { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
 
 	export interface PolicyEvaluationException {
 	}
+	export interface PolicyEvaluationExceptionFormProperties {
+	}
+	export function CreatePolicyEvaluationExceptionFormGroup() {
+		return new FormGroup<PolicyEvaluationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UpdateRoleResponse {
+	}
+	export interface UpdateRoleResponseFormProperties {
+	}
+	export function CreateUpdateRoleResponseFormGroup() {
+		return new FormGroup<UpdateRoleResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRoleDescriptionResponse {
 
 		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
-		Role?: Role | null;
+		Role?: Role;
+	}
+	export interface UpdateRoleDescriptionResponseFormProperties {
+	}
+	export function CreateUpdateRoleDescriptionResponseFormGroup() {
+		return new FormGroup<UpdateRoleDescriptionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1444,18 +3420,58 @@ export namespace MyNS {
 		SAMLProviderArn?: string | null;
 	}
 
+	/** Contains the response to a successful <a>UpdateSAMLProvider</a> request.  */
+	export interface UpdateSAMLProviderResponseFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		SAMLProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSAMLProviderResponseFormGroup() {
+		return new FormGroup<UpdateSAMLProviderResponseFormProperties>({
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>UploadSSHPublicKey</a> request. */
 	export interface UploadSSHPublicKeyResponse {
 
 		/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
-		SSHPublicKey?: SSHPublicKey | null;
+		SSHPublicKey?: SSHPublicKey;
+	}
+
+	/** Contains the response to a successful <a>UploadSSHPublicKey</a> request. */
+	export interface UploadSSHPublicKeyResponseFormProperties {
+	}
+	export function CreateUploadSSHPublicKeyResponseFormGroup() {
+		return new FormGroup<UploadSSHPublicKeyResponseFormProperties>({
+		});
+
 	}
 
 	export interface InvalidPublicKeyException {
 	}
+	export interface InvalidPublicKeyExceptionFormProperties {
+	}
+	export function CreateInvalidPublicKeyExceptionFormGroup() {
+		return new FormGroup<InvalidPublicKeyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DuplicateSSHPublicKeyException {
+	}
+	export interface DuplicateSSHPublicKeyExceptionFormProperties {
+	}
+	export function CreateDuplicateSSHPublicKeyExceptionFormGroup() {
+		return new FormGroup<DuplicateSSHPublicKeyExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1463,13 +3479,36 @@ export namespace MyNS {
 	export interface UploadServerCertificateResponse {
 
 		/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
-		ServerCertificateMetadata?: ServerCertificateMetadata | null;
+		ServerCertificateMetadata?: ServerCertificateMetadata;
+	}
+
+	/** Contains the response to a successful <a>UploadServerCertificate</a> request.  */
+	export interface UploadServerCertificateResponseFormProperties {
+	}
+	export function CreateUploadServerCertificateResponseFormGroup() {
+		return new FormGroup<UploadServerCertificateResponseFormProperties>({
+		});
+
 	}
 
 	export interface MalformedCertificateException {
 	}
+	export interface MalformedCertificateExceptionFormProperties {
+	}
+	export function CreateMalformedCertificateExceptionFormGroup() {
+		return new FormGroup<MalformedCertificateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KeyPairMismatchException {
+	}
+	export interface KeyPairMismatchExceptionFormProperties {
+	}
+	export function CreateKeyPairMismatchExceptionFormGroup() {
+		return new FormGroup<KeyPairMismatchExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1483,10 +3522,33 @@ export namespace MyNS {
 		Certificate: SigningCertificate;
 	}
 
+	/** Contains the response to a successful <a>UploadSigningCertificate</a> request.  */
+	export interface UploadSigningCertificateResponseFormProperties {
+	}
+	export function CreateUploadSigningCertificateResponseFormGroup() {
+		return new FormGroup<UploadSigningCertificateResponseFormProperties>({
+		});
+
+	}
+
 	export interface InvalidCertificateException {
+	}
+	export interface InvalidCertificateExceptionFormProperties {
+	}
+	export function CreateInvalidCertificateExceptionFormGroup() {
+		return new FormGroup<InvalidCertificateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DuplicateCertificateException {
+	}
+	export interface DuplicateCertificateExceptionFormProperties {
+	}
+	export function CreateDuplicateCertificateExceptionFormGroup() {
+		return new FormGroup<DuplicateCertificateExceptionFormProperties>({
+		});
+
 	}
 
 	export enum AccessAdvisorUsageGranularityType { SERVICE_LEVEL = 0, ACTION_LEVEL = 1 }
@@ -1504,15 +3566,55 @@ export namespace MyNS {
 		OpenIDConnectProviderArn: string;
 		ClientID: string;
 	}
+	export interface AddClientIDToOpenIDConnectProviderRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+		ClientID: FormControl<string | null | undefined>,
+	}
+	export function CreateAddClientIDToOpenIDConnectProviderRequestFormGroup() {
+		return new FormGroup<AddClientIDToOpenIDConnectProviderRequestFormProperties>({
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+			ClientID: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddRoleToInstanceProfileRequest {
 		InstanceProfileName: string;
 		RoleName: string;
 	}
+	export interface AddRoleToInstanceProfileRequestFormProperties {
+		InstanceProfileName: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateAddRoleToInstanceProfileRequestFormGroup() {
+		return new FormGroup<AddRoleToInstanceProfileRequestFormProperties>({
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddUserToGroupRequest {
 		GroupName: string;
 		UserName: string;
+	}
+	export interface AddUserToGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateAddUserToGroupRequestFormGroup() {
+		return new FormGroup<AddUserToGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AttachGroupPolicyRequest {
@@ -1526,6 +3628,24 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 	}
+	export interface AttachGroupPolicyRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachGroupPolicyRequestFormGroup() {
+		return new FormGroup<AttachGroupPolicyRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AttachRolePolicyRequest {
 		RoleName: string;
@@ -1537,6 +3657,24 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+	}
+	export interface AttachRolePolicyRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachRolePolicyRequestFormGroup() {
+		return new FormGroup<AttachRolePolicyRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AttachUserPolicyRequest {
@@ -1550,6 +3688,24 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 	}
+	export interface AttachUserPolicyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachUserPolicyRequestFormGroup() {
+		return new FormGroup<AttachUserPolicyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PermissionsBoundaryAttachmentType { PermissionsBoundaryPolicy = 0 }
 
@@ -1557,31 +3713,95 @@ export namespace MyNS {
 		OldPassword: string;
 		NewPassword: string;
 	}
+	export interface ChangePasswordRequestFormProperties {
+		OldPassword: FormControl<string | null | undefined>,
+		NewPassword: FormControl<string | null | undefined>,
+	}
+	export function CreateChangePasswordRequestFormGroup() {
+		return new FormGroup<ChangePasswordRequestFormProperties>({
+			OldPassword: new FormControl<string | null | undefined>(undefined),
+			NewPassword: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ContextKeyTypeEnum { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
 
 	export interface CreateAccessKeyRequest {
 		UserName?: string | null;
 	}
+	export interface CreateAccessKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessKeyRequestFormGroup() {
+		return new FormGroup<CreateAccessKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateAccountAliasRequest {
 		AccountAlias: string;
+	}
+	export interface CreateAccountAliasRequestFormProperties {
+		AccountAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccountAliasRequestFormGroup() {
+		return new FormGroup<CreateAccountAliasRequestFormProperties>({
+			AccountAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupRequest {
 		Path?: string | null;
 		GroupName: string;
 	}
+	export interface CreateGroupRequestFormProperties {
+		Path: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupRequestFormGroup() {
+		return new FormGroup<CreateGroupRequestFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateInstanceProfileRequest {
 		InstanceProfileName: string;
 		Path?: string | null;
+	}
+	export interface CreateInstanceProfileRequestFormProperties {
+		InstanceProfileName: FormControl<string | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateInstanceProfileRequestFormGroup() {
+		return new FormGroup<CreateInstanceProfileRequestFormProperties>({
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLoginProfileRequest {
 		UserName: string;
 		Password: string;
 		PasswordResetRequired?: boolean | null;
+	}
+	export interface CreateLoginProfileRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		PasswordResetRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateLoginProfileRequestFormGroup() {
+		return new FormGroup<CreateLoginProfileRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			PasswordResetRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateOpenIDConnectProviderRequest {
@@ -1593,7 +3813,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Url: string;
-		ClientIDList?: Array<string> | null;
+		ClientIDList?: Array<string>;
 
 		/**
 		 * Contains a list of thumbprints of identity provider server certificates.
@@ -1601,12 +3821,43 @@ export namespace MyNS {
 		 */
 		ThumbprintList: Array<string>;
 	}
+	export interface CreateOpenIDConnectProviderRequestFormProperties {
+
+		/**
+		 * Contains a URL that specifies the endpoint for an OpenID Connect provider.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOpenIDConnectProviderRequestFormGroup() {
+		return new FormGroup<CreateOpenIDConnectProviderRequestFormProperties>({
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePolicyRequest {
 		PolicyName: string;
 		Path?: string | null;
 		PolicyDocument: string;
 		Description?: string | null;
+	}
+	export interface CreatePolicyRequestFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePolicyRequestFormGroup() {
+		return new FormGroup<CreatePolicyRequestFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePolicyVersionRequest {
@@ -1620,6 +3871,26 @@ export namespace MyNS {
 		PolicyArn: string;
 		PolicyDocument: string;
 		SetAsDefault?: boolean | null;
+	}
+	export interface CreatePolicyVersionRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+		SetAsDefault: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreatePolicyVersionRequestFormGroup() {
+		return new FormGroup<CreatePolicyVersionRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+			SetAsDefault: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateRoleRequest {
@@ -1635,12 +3906,48 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PermissionsBoundary?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateRoleRequestFormProperties {
+		Path: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		MaxSessionDuration: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PermissionsBoundary: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRoleRequestFormGroup() {
+		return new FormGroup<CreateRoleRequestFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSAMLProviderRequest {
 		SAMLMetadataDocument: string;
 		Name: string;
+	}
+	export interface CreateSAMLProviderRequestFormProperties {
+		SAMLMetadataDocument: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSAMLProviderRequestFormGroup() {
+		return new FormGroup<CreateSAMLProviderRequestFormProperties>({
+			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateServiceLinkedRoleRequest {
@@ -1648,10 +3955,34 @@ export namespace MyNS {
 		Description?: string | null;
 		CustomSuffix?: string | null;
 	}
+	export interface CreateServiceLinkedRoleRequestFormProperties {
+		AWSServiceName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CustomSuffix: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateServiceLinkedRoleRequestFormGroup() {
+		return new FormGroup<CreateServiceLinkedRoleRequestFormProperties>({
+			AWSServiceName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CustomSuffix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateServiceSpecificCredentialRequest {
 		UserName: string;
 		ServiceName: string;
+	}
+	export interface CreateServiceSpecificCredentialRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateServiceSpecificCredentialRequestFormGroup() {
+		return new FormGroup<CreateServiceSpecificCredentialRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserRequest {
@@ -1664,43 +3995,142 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PermissionsBoundary?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateUserRequestFormProperties {
+		Path: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PermissionsBoundary: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserRequestFormGroup() {
+		return new FormGroup<CreateUserRequestFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateVirtualMFADeviceRequest {
 		Path?: string | null;
 		VirtualMFADeviceName: string;
 	}
+	export interface CreateVirtualMFADeviceRequestFormProperties {
+		Path: FormControl<string | null | undefined>,
+		VirtualMFADeviceName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVirtualMFADeviceRequestFormGroup() {
+		return new FormGroup<CreateVirtualMFADeviceRequestFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			VirtualMFADeviceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeactivateMFADeviceRequest {
 		UserName: string;
 		SerialNumber: string;
+	}
+	export interface DeactivateMFADeviceRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateDeactivateMFADeviceRequestFormGroup() {
+		return new FormGroup<DeactivateMFADeviceRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteAccessKeyRequest {
 		UserName?: string | null;
 		AccessKeyId: string;
 	}
+	export interface DeleteAccessKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AccessKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAccessKeyRequestFormGroup() {
+		return new FormGroup<DeleteAccessKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteAccountAliasRequest {
 		AccountAlias: string;
+	}
+	export interface DeleteAccountAliasRequestFormProperties {
+		AccountAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAccountAliasRequestFormGroup() {
+		return new FormGroup<DeleteAccountAliasRequestFormProperties>({
+			AccountAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteGroupPolicyRequest {
 		GroupName: string;
 		PolicyName: string;
 	}
+	export interface DeleteGroupPolicyRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGroupPolicyRequestFormGroup() {
+		return new FormGroup<DeleteGroupPolicyRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteGroupRequest {
 		GroupName: string;
+	}
+	export interface DeleteGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGroupRequestFormGroup() {
+		return new FormGroup<DeleteGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteInstanceProfileRequest {
 		InstanceProfileName: string;
 	}
+	export interface DeleteInstanceProfileRequestFormProperties {
+		InstanceProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteInstanceProfileRequestFormGroup() {
+		return new FormGroup<DeleteInstanceProfileRequestFormProperties>({
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteLoginProfileRequest {
 		UserName: string;
+	}
+	export interface DeleteLoginProfileRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLoginProfileRequestFormGroup() {
+		return new FormGroup<DeleteLoginProfileRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteOpenIDConnectProviderRequest {
@@ -1713,6 +4143,22 @@ export namespace MyNS {
 		 */
 		OpenIDConnectProviderArn: string;
 	}
+	export interface DeleteOpenIDConnectProviderRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteOpenIDConnectProviderRequestFormGroup() {
+		return new FormGroup<DeleteOpenIDConnectProviderRequestFormProperties>({
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeletePolicyRequest {
 
@@ -1723,6 +4169,22 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+	}
+	export interface DeletePolicyRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePolicyRequestFormGroup() {
+		return new FormGroup<DeletePolicyRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeletePolicyVersionRequest {
@@ -1736,18 +4198,65 @@ export namespace MyNS {
 		PolicyArn: string;
 		VersionId: string;
 	}
+	export interface DeletePolicyVersionRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePolicyVersionRequestFormGroup() {
+		return new FormGroup<DeletePolicyVersionRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteRolePermissionsBoundaryRequest {
 		RoleName: string;
+	}
+	export interface DeleteRolePermissionsBoundaryRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRolePermissionsBoundaryRequestFormGroup() {
+		return new FormGroup<DeleteRolePermissionsBoundaryRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteRolePolicyRequest {
 		RoleName: string;
 		PolicyName: string;
 	}
+	export interface DeleteRolePolicyRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRolePolicyRequestFormGroup() {
+		return new FormGroup<DeleteRolePolicyRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteRoleRequest {
 		RoleName: string;
+	}
+	export interface DeleteRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRoleRequestFormGroup() {
+		return new FormGroup<DeleteRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSAMLProviderRequest {
@@ -1760,45 +4269,150 @@ export namespace MyNS {
 		 */
 		SAMLProviderArn: string;
 	}
+	export interface DeleteSAMLProviderRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		SAMLProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSAMLProviderRequestFormGroup() {
+		return new FormGroup<DeleteSAMLProviderRequestFormProperties>({
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSSHPublicKeyRequest {
 		UserName: string;
 		SSHPublicKeyId: string;
 	}
+	export interface DeleteSSHPublicKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SSHPublicKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSSHPublicKeyRequestFormGroup() {
+		return new FormGroup<DeleteSSHPublicKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteServerCertificateRequest {
 		ServerCertificateName: string;
 	}
+	export interface DeleteServerCertificateRequestFormProperties {
+		ServerCertificateName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServerCertificateRequestFormGroup() {
+		return new FormGroup<DeleteServerCertificateRequestFormProperties>({
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteServiceLinkedRoleRequest {
 		RoleName: string;
+	}
+	export interface DeleteServiceLinkedRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServiceLinkedRoleRequestFormGroup() {
+		return new FormGroup<DeleteServiceLinkedRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteServiceSpecificCredentialRequest {
 		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 	}
+	export interface DeleteServiceSpecificCredentialRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServiceSpecificCredentialRequestFormGroup() {
+		return new FormGroup<DeleteServiceSpecificCredentialRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSigningCertificateRequest {
 		UserName?: string | null;
 		CertificateId: string;
 	}
+	export interface DeleteSigningCertificateRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		CertificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSigningCertificateRequestFormGroup() {
+		return new FormGroup<DeleteSigningCertificateRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserPermissionsBoundaryRequest {
 		UserName: string;
+	}
+	export interface DeleteUserPermissionsBoundaryRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserPermissionsBoundaryRequestFormGroup() {
+		return new FormGroup<DeleteUserPermissionsBoundaryRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteUserPolicyRequest {
 		UserName: string;
 		PolicyName: string;
 	}
+	export interface DeleteUserPolicyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserPolicyRequestFormGroup() {
+		return new FormGroup<DeleteUserPolicyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserRequest {
 		UserName: string;
 	}
+	export interface DeleteUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserRequestFormGroup() {
+		return new FormGroup<DeleteUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteVirtualMFADeviceRequest {
 		SerialNumber: string;
+	}
+	export interface DeleteVirtualMFADeviceRequestFormProperties {
+		SerialNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVirtualMFADeviceRequestFormGroup() {
+		return new FormGroup<DeleteVirtualMFADeviceRequestFormProperties>({
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeletionTaskStatusType { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2, NOT_STARTED = 3 }
@@ -1814,6 +4428,24 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 	}
+	export interface DetachGroupPolicyRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachGroupPolicyRequestFormGroup() {
+		return new FormGroup<DetachGroupPolicyRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetachRolePolicyRequest {
 		RoleName: string;
@@ -1825,6 +4457,24 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
+	}
+	export interface DetachRolePolicyRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachRolePolicyRequestFormGroup() {
+		return new FormGroup<DetachRolePolicyRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetachUserPolicyRequest {
@@ -1838,12 +4488,45 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 	}
+	export interface DetachUserPolicyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachUserPolicyRequestFormGroup() {
+		return new FormGroup<DetachUserPolicyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableMFADeviceRequest {
 		UserName: string;
 		SerialNumber: string;
 		AuthenticationCode1: string;
 		AuthenticationCode2: string;
+	}
+	export interface EnableMFADeviceRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+		AuthenticationCode1: FormControl<string | null | undefined>,
+		AuthenticationCode2: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableMFADeviceRequestFormGroup() {
+		return new FormGroup<EnableMFADeviceRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			AuthenticationCode1: new FormControl<string | null | undefined>(undefined),
+			AuthenticationCode2: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PolicyOwnerEntityType { USER = 0, ROLE = 1, GROUP = 2 }
@@ -1855,6 +4538,17 @@ export namespace MyNS {
 	export interface GenerateOrganizationsAccessReportRequest {
 		EntityPath: string;
 		OrganizationsPolicyId?: string | null;
+	}
+	export interface GenerateOrganizationsAccessReportRequestFormProperties {
+		EntityPath: FormControl<string | null | undefined>,
+		OrganizationsPolicyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateOrganizationsAccessReportRequestFormGroup() {
+		return new FormGroup<GenerateOrganizationsAccessReportRequestFormProperties>({
+			EntityPath: new FormControl<string | null | undefined>(undefined),
+			OrganizationsPolicyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateServiceLastAccessedDetailsRequest {
@@ -1868,19 +4562,64 @@ export namespace MyNS {
 		Arn: string;
 		Granularity?: GetServiceLastAccessedDetailsResponseJobType | null;
 	}
+	export interface GenerateServiceLastAccessedDetailsRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+		Granularity: FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>,
+	}
+	export function CreateGenerateServiceLastAccessedDetailsRequestFormGroup() {
+		return new FormGroup<GenerateServiceLastAccessedDetailsRequestFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Granularity: new FormControl<GetServiceLastAccessedDetailsResponseJobType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAccessKeyLastUsedRequest {
 		AccessKeyId: string;
 	}
+	export interface GetAccessKeyLastUsedRequestFormProperties {
+		AccessKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccessKeyLastUsedRequestFormGroup() {
+		return new FormGroup<GetAccessKeyLastUsedRequestFormProperties>({
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAccountAuthorizationDetailsRequest {
-		Filter?: Array<EntityType> | null;
+		Filter?: Array<EntityType>;
 		MaxItems?: number | null;
 		Marker?: string | null;
+	}
+	export interface GetAccountAuthorizationDetailsRequestFormProperties {
+		MaxItems: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccountAuthorizationDetailsRequestFormGroup() {
+		return new FormGroup<GetAccountAuthorizationDetailsRequestFormProperties>({
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetContextKeysForCustomPolicyRequest {
 		PolicyInputList: Array<string>;
+	}
+	export interface GetContextKeysForCustomPolicyRequestFormProperties {
+	}
+	export function CreateGetContextKeysForCustomPolicyRequestFormGroup() {
+		return new FormGroup<GetContextKeysForCustomPolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetContextKeysForPrincipalPolicyRequest {
@@ -1892,7 +4631,23 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: string;
-		PolicyInputList?: Array<string> | null;
+		PolicyInputList?: Array<string>;
+	}
+	export interface GetContextKeysForPrincipalPolicyRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicySourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetContextKeysForPrincipalPolicyRequestFormGroup() {
+		return new FormGroup<GetContextKeysForPrincipalPolicyRequestFormProperties>({
+			PolicySourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportFormatType { text_csv = 0 }
@@ -1901,19 +4656,61 @@ export namespace MyNS {
 		GroupName: string;
 		PolicyName: string;
 	}
+	export interface GetGroupPolicyRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupPolicyRequestFormGroup() {
+		return new FormGroup<GetGroupPolicyRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetGroupRequest {
 		GroupName: string;
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface GetGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateGetGroupRequestFormGroup() {
+		return new FormGroup<GetGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetInstanceProfileRequest {
 		InstanceProfileName: string;
 	}
+	export interface GetInstanceProfileRequestFormProperties {
+		InstanceProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetInstanceProfileRequestFormGroup() {
+		return new FormGroup<GetInstanceProfileRequestFormProperties>({
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetLoginProfileRequest {
 		UserName: string;
+	}
+	export interface GetLoginProfileRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLoginProfileRequestFormGroup() {
+		return new FormGroup<GetLoginProfileRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetOpenIDConnectProviderRequest {
@@ -1926,6 +4723,22 @@ export namespace MyNS {
 		 */
 		OpenIDConnectProviderArn: string;
 	}
+	export interface GetOpenIDConnectProviderRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOpenIDConnectProviderRequestFormGroup() {
+		return new FormGroup<GetOpenIDConnectProviderRequestFormProperties>({
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum SortKeyType { SERVICE_NAMESPACE_ASCENDING = 0, SERVICE_NAMESPACE_DESCENDING = 1, LAST_AUTHENTICATED_TIME_ASCENDING = 2, LAST_AUTHENTICATED_TIME_DESCENDING = 3 }
 
@@ -1934,6 +4747,21 @@ export namespace MyNS {
 		MaxItems?: number | null;
 		Marker?: string | null;
 		SortKey?: SortKeyType | null;
+	}
+	export interface GetOrganizationsAccessReportRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		SortKey: FormControl<SortKeyType | null | undefined>,
+	}
+	export function CreateGetOrganizationsAccessReportRequestFormGroup() {
+		return new FormGroup<GetOrganizationsAccessReportRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			SortKey: new FormControl<SortKeyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobStatusType { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
@@ -1948,6 +4776,22 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 	}
+	export interface GetPolicyRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPolicyRequestFormGroup() {
+		return new FormGroup<GetPolicyRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetPolicyVersionRequest {
 
@@ -1960,14 +4804,52 @@ export namespace MyNS {
 		PolicyArn: string;
 		VersionId: string;
 	}
+	export interface GetPolicyVersionRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPolicyVersionRequestFormGroup() {
+		return new FormGroup<GetPolicyVersionRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRolePolicyRequest {
 		RoleName: string;
 		PolicyName: string;
 	}
+	export interface GetRolePolicyRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRolePolicyRequestFormGroup() {
+		return new FormGroup<GetRolePolicyRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRoleRequest {
 		RoleName: string;
+	}
+	export interface GetRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRoleRequestFormGroup() {
+		return new FormGroup<GetRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSAMLProviderRequest {
@@ -1980,6 +4862,22 @@ export namespace MyNS {
 		 */
 		SAMLProviderArn: string;
 	}
+	export interface GetSAMLProviderRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		SAMLProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSAMLProviderRequestFormGroup() {
+		return new FormGroup<GetSAMLProviderRequestFormProperties>({
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum EncodingType { SSH = 0, PEM = 1 }
 
@@ -1988,15 +4886,50 @@ export namespace MyNS {
 		SSHPublicKeyId: string;
 		Encoding: EncodingType;
 	}
+	export interface GetSSHPublicKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SSHPublicKeyId: FormControl<string | null | undefined>,
+		Encoding: FormControl<EncodingType | null | undefined>,
+	}
+	export function CreateGetSSHPublicKeyRequestFormGroup() {
+		return new FormGroup<GetSSHPublicKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
+			Encoding: new FormControl<EncodingType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetServerCertificateRequest {
 		ServerCertificateName: string;
+	}
+	export interface GetServerCertificateRequestFormProperties {
+		ServerCertificateName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServerCertificateRequestFormGroup() {
+		return new FormGroup<GetServerCertificateRequestFormProperties>({
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetServiceLastAccessedDetailsRequest {
 		JobId: string;
 		MaxItems?: number | null;
 		Marker?: string | null;
+	}
+	export interface GetServiceLastAccessedDetailsRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceLastAccessedDetailsRequestFormGroup() {
+		return new FormGroup<GetServiceLastAccessedDetailsRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesRequest {
@@ -2005,18 +4938,62 @@ export namespace MyNS {
 		MaxItems?: number | null;
 		Marker?: string | null;
 	}
+	export interface GetServiceLastAccessedDetailsWithEntitiesRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		ServiceNamespace: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceLastAccessedDetailsWithEntitiesRequestFormGroup() {
+		return new FormGroup<GetServiceLastAccessedDetailsWithEntitiesRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetServiceLinkedRoleDeletionStatusRequest {
 		DeletionTaskId: string;
+	}
+	export interface GetServiceLinkedRoleDeletionStatusRequestFormProperties {
+		DeletionTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceLinkedRoleDeletionStatusRequestFormGroup() {
+		return new FormGroup<GetServiceLinkedRoleDeletionStatusRequestFormProperties>({
+			DeletionTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUserPolicyRequest {
 		UserName: string;
 		PolicyName: string;
 	}
+	export interface GetUserPolicyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserPolicyRequestFormGroup() {
+		return new FormGroup<GetUserPolicyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetUserRequest {
 		UserName?: string | null;
+	}
+	export interface GetUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserRequestFormGroup() {
+		return new FormGroup<GetUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAccessKeysRequest {
@@ -2024,10 +5001,34 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListAccessKeysRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListAccessKeysRequestFormGroup() {
+		return new FormGroup<ListAccessKeysRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAccountAliasesRequest {
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListAccountAliasesRequestFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListAccountAliasesRequestFormGroup() {
+		return new FormGroup<ListAccountAliasesRequestFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAttachedGroupPoliciesRequest {
@@ -2036,6 +5037,21 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListAttachedGroupPoliciesRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListAttachedGroupPoliciesRequestFormGroup() {
+		return new FormGroup<ListAttachedGroupPoliciesRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAttachedRolePoliciesRequest {
 		RoleName: string;
@@ -2043,12 +5059,42 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListAttachedRolePoliciesRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListAttachedRolePoliciesRequestFormGroup() {
+		return new FormGroup<ListAttachedRolePoliciesRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAttachedUserPoliciesRequest {
 		UserName: string;
 		PathPrefix?: string | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListAttachedUserPoliciesRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListAttachedUserPoliciesRequestFormGroup() {
+		return new FormGroup<ListAttachedUserPoliciesRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2072,11 +5118,52 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListEntitiesForPolicyRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		EntityFilter: FormControl<EntityType | null | undefined>,
+		PathPrefix: FormControl<string | null | undefined>,
+
+		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
+		PolicyUsageFilter: FormControl<PolicyUsageType | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListEntitiesForPolicyRequestFormGroup() {
+		return new FormGroup<ListEntitiesForPolicyRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			EntityFilter: new FormControl<EntityType | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			PolicyUsageFilter: new FormControl<PolicyUsageType | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGroupPoliciesRequest {
 		GroupName: string;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListGroupPoliciesRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupPoliciesRequestFormGroup() {
+		return new FormGroup<ListGroupPoliciesRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGroupsForUserRequest {
@@ -2084,11 +5171,37 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListGroupsForUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupsForUserRequestFormGroup() {
+		return new FormGroup<ListGroupsForUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGroupsRequest {
 		PathPrefix?: string | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListGroupsRequestFormProperties {
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupsRequestFormGroup() {
+		return new FormGroup<ListGroupsRequestFormProperties>({
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListInstanceProfilesForRoleRequest {
@@ -2096,11 +5209,37 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListInstanceProfilesForRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListInstanceProfilesForRoleRequestFormGroup() {
+		return new FormGroup<ListInstanceProfilesForRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListInstanceProfilesRequest {
 		PathPrefix?: string | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListInstanceProfilesRequestFormProperties {
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListInstanceProfilesRequestFormGroup() {
+		return new FormGroup<ListInstanceProfilesRequestFormProperties>({
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMFADevicesRequest {
@@ -2108,8 +5247,28 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListMFADevicesRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListMFADevicesRequestFormGroup() {
+		return new FormGroup<ListMFADevicesRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListOpenIDConnectProvidersRequest {
+	}
+	export interface ListOpenIDConnectProvidersRequestFormProperties {
+	}
+	export function CreateListOpenIDConnectProvidersRequestFormGroup() {
+		return new FormGroup<ListOpenIDConnectProvidersRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListPoliciesGrantingServiceAccessRequest {
@@ -2124,6 +5283,24 @@ export namespace MyNS {
 		Arn: string;
 		ServiceNamespaces: Array<string>;
 	}
+	export interface ListPoliciesGrantingServiceAccessRequestFormProperties {
+		Marker: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesGrantingServiceAccessRequestFormGroup() {
+		return new FormGroup<ListPoliciesGrantingServiceAccessRequestFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PolicyScopeType { All = 0, AWS = 1, Local = 2 }
 
@@ -2136,6 +5313,27 @@ export namespace MyNS {
 		PolicyUsageFilter?: PolicyUsageType | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListPoliciesRequestFormProperties {
+		Scope: FormControl<PolicyScopeType | null | undefined>,
+		OnlyAttached: FormControl<boolean | null | undefined>,
+		PathPrefix: FormControl<string | null | undefined>,
+
+		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
+		PolicyUsageFilter: FormControl<PolicyUsageType | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListPoliciesRequestFormGroup() {
+		return new FormGroup<ListPoliciesRequestFormProperties>({
+			Scope: new FormControl<PolicyScopeType | null | undefined>(undefined),
+			OnlyAttached: new FormControl<boolean | null | undefined>(undefined),
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			PolicyUsageFilter: new FormControl<PolicyUsageType | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPolicyVersionsRequest {
@@ -2150,11 +5348,44 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListPolicyVersionsRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListPolicyVersionsRequestFormGroup() {
+		return new FormGroup<ListPolicyVersionsRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRolePoliciesRequest {
 		RoleName: string;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListRolePoliciesRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListRolePoliciesRequestFormGroup() {
+		return new FormGroup<ListRolePoliciesRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRoleTagsRequest {
@@ -2162,14 +5393,47 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListRoleTagsRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListRoleTagsRequestFormGroup() {
+		return new FormGroup<ListRoleTagsRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRolesRequest {
 		PathPrefix?: string | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListRolesRequestFormProperties {
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListRolesRequestFormGroup() {
+		return new FormGroup<ListRolesRequestFormProperties>({
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSAMLProvidersRequest {
+	}
+	export interface ListSAMLProvidersRequestFormProperties {
+	}
+	export function CreateListSAMLProvidersRequestFormGroup() {
+		return new FormGroup<ListSAMLProvidersRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListSSHPublicKeysRequest {
@@ -2177,16 +5441,53 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListSSHPublicKeysRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListSSHPublicKeysRequestFormGroup() {
+		return new FormGroup<ListSSHPublicKeysRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServerCertificatesRequest {
 		PathPrefix?: string | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListServerCertificatesRequestFormProperties {
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListServerCertificatesRequestFormGroup() {
+		return new FormGroup<ListServerCertificatesRequestFormProperties>({
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServiceSpecificCredentialsRequest {
 		UserName?: string | null;
 		ServiceName?: string | null;
+	}
+	export interface ListServiceSpecificCredentialsRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceSpecificCredentialsRequestFormGroup() {
+		return new FormGroup<ListServiceSpecificCredentialsRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSigningCertificatesRequest {
@@ -2194,11 +5495,37 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListSigningCertificatesRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListSigningCertificatesRequestFormGroup() {
+		return new FormGroup<ListSigningCertificatesRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListUserPoliciesRequest {
 		UserName: string;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListUserPoliciesRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListUserPoliciesRequestFormGroup() {
+		return new FormGroup<ListUserPoliciesRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListUserTagsRequest {
@@ -2206,11 +5533,37 @@ export namespace MyNS {
 		Marker?: string | null;
 		MaxItems?: number | null;
 	}
+	export interface ListUserTagsRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListUserTagsRequestFormGroup() {
+		return new FormGroup<ListUserTagsRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListUsersRequest {
 		PathPrefix?: string | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListUsersRequestFormProperties {
+		PathPrefix: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListUsersRequestFormGroup() {
+		return new FormGroup<ListUsersRequestFormProperties>({
+			PathPrefix: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssignmentStatusType { Assigned = 0, Unassigned = 1, Any = 2 }
@@ -2219,6 +5572,19 @@ export namespace MyNS {
 		AssignmentStatus?: AssignmentStatusType | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+	export interface ListVirtualMFADevicesRequestFormProperties {
+		AssignmentStatus: FormControl<AssignmentStatusType | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListVirtualMFADevicesRequestFormGroup() {
+		return new FormGroup<ListVirtualMFADevicesRequestFormProperties>({
+			AssignmentStatus: new FormControl<AssignmentStatusType | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PolicyType { INLINE = 0, MANAGED = 1 }
@@ -2229,6 +5595,19 @@ export namespace MyNS {
 		GroupName: string;
 		PolicyName: string;
 		PolicyDocument: string;
+	}
+	export interface PutGroupPolicyRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreatePutGroupPolicyRequestFormGroup() {
+		return new FormGroup<PutGroupPolicyRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutRolePermissionsBoundaryRequest {
@@ -2242,11 +5621,42 @@ export namespace MyNS {
 		 */
 		PermissionsBoundary: string;
 	}
+	export interface PutRolePermissionsBoundaryRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PermissionsBoundary: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRolePermissionsBoundaryRequestFormGroup() {
+		return new FormGroup<PutRolePermissionsBoundaryRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutRolePolicyRequest {
 		RoleName: string;
 		PolicyName: string;
 		PolicyDocument: string;
+	}
+	export interface PutRolePolicyRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRolePolicyRequestFormGroup() {
+		return new FormGroup<PutRolePolicyRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutUserPermissionsBoundaryRequest {
@@ -2260,11 +5670,42 @@ export namespace MyNS {
 		 */
 		PermissionsBoundary: string;
 	}
+	export interface PutUserPermissionsBoundaryRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PermissionsBoundary: FormControl<string | null | undefined>,
+	}
+	export function CreatePutUserPermissionsBoundaryRequestFormGroup() {
+		return new FormGroup<PutUserPermissionsBoundaryRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PermissionsBoundary: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutUserPolicyRequest {
 		UserName: string;
 		PolicyName: string;
 		PolicyDocument: string;
+	}
+	export interface PutUserPolicyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreatePutUserPolicyRequestFormGroup() {
+		return new FormGroup<PutUserPolicyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemoveClientIDFromOpenIDConnectProviderRequest {
@@ -2278,20 +5719,71 @@ export namespace MyNS {
 		OpenIDConnectProviderArn: string;
 		ClientID: string;
 	}
+	export interface RemoveClientIDFromOpenIDConnectProviderRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+		ClientID: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveClientIDFromOpenIDConnectProviderRequestFormGroup() {
+		return new FormGroup<RemoveClientIDFromOpenIDConnectProviderRequestFormProperties>({
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+			ClientID: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveRoleFromInstanceProfileRequest {
 		InstanceProfileName: string;
 		RoleName: string;
+	}
+	export interface RemoveRoleFromInstanceProfileRequestFormProperties {
+		InstanceProfileName: FormControl<string | null | undefined>,
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveRoleFromInstanceProfileRequestFormGroup() {
+		return new FormGroup<RemoveRoleFromInstanceProfileRequestFormProperties>({
+			InstanceProfileName: new FormControl<string | null | undefined>(undefined),
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemoveUserFromGroupRequest {
 		GroupName: string;
 		UserName: string;
 	}
+	export interface RemoveUserFromGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveUserFromGroupRequestFormGroup() {
+		return new FormGroup<RemoveUserFromGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResetServiceSpecificCredentialRequest {
 		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
+	}
+	export interface ResetServiceSpecificCredentialRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+	}
+	export function CreateResetServiceSpecificCredentialRequestFormGroup() {
+		return new FormGroup<ResetServiceSpecificCredentialRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResyncMFADeviceRequest {
@@ -2299,6 +5791,21 @@ export namespace MyNS {
 		SerialNumber: string;
 		AuthenticationCode1: string;
 		AuthenticationCode2: string;
+	}
+	export interface ResyncMFADeviceRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+		AuthenticationCode1: FormControl<string | null | undefined>,
+		AuthenticationCode2: FormControl<string | null | undefined>,
+	}
+	export function CreateResyncMFADeviceRequestFormGroup() {
+		return new FormGroup<ResyncMFADeviceRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			AuthenticationCode1: new FormControl<string | null | undefined>(undefined),
+			AuthenticationCode2: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetDefaultPolicyVersionRequest {
@@ -2312,25 +5819,71 @@ export namespace MyNS {
 		PolicyArn: string;
 		VersionId: string;
 	}
+	export interface SetDefaultPolicyVersionRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicyArn: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetDefaultPolicyVersionRequestFormGroup() {
+		return new FormGroup<SetDefaultPolicyVersionRequestFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GlobalEndpointTokenVersion { v1Token = 0, v2Token = 1 }
 
 	export interface SetSecurityTokenServicePreferencesRequest {
 		GlobalEndpointTokenVersion: GlobalEndpointTokenVersion;
 	}
+	export interface SetSecurityTokenServicePreferencesRequestFormProperties {
+		GlobalEndpointTokenVersion: FormControl<GlobalEndpointTokenVersion | null | undefined>,
+	}
+	export function CreateSetSecurityTokenServicePreferencesRequestFormGroup() {
+		return new FormGroup<SetSecurityTokenServicePreferencesRequestFormProperties>({
+			GlobalEndpointTokenVersion: new FormControl<GlobalEndpointTokenVersion | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SimulateCustomPolicyRequest {
 		PolicyInputList: Array<string>;
-		PermissionsBoundaryPolicyInputList?: Array<string> | null;
+		PermissionsBoundaryPolicyInputList?: Array<string>;
 		ActionNames: Array<string>;
-		ResourceArns?: Array<string> | null;
+		ResourceArns?: Array<string>;
 		ResourcePolicy?: string | null;
 		ResourceOwner?: string | null;
 		CallerArn?: string | null;
-		ContextEntries?: Array<ContextEntry> | null;
+		ContextEntries?: Array<ContextEntry>;
 		ResourceHandlingOption?: string | null;
 		MaxItems?: number | null;
 		Marker?: string | null;
+	}
+	export interface SimulateCustomPolicyRequestFormProperties {
+		ResourcePolicy: FormControl<string | null | undefined>,
+		ResourceOwner: FormControl<string | null | undefined>,
+		CallerArn: FormControl<string | null | undefined>,
+		ResourceHandlingOption: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateSimulateCustomPolicyRequestFormGroup() {
+		return new FormGroup<SimulateCustomPolicyRequestFormProperties>({
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
+			ResourceOwner: new FormControl<string | null | undefined>(undefined),
+			CallerArn: new FormControl<string | null | undefined>(undefined),
+			ResourceHandlingOption: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SimulatePrincipalPolicyRequest {
@@ -2342,43 +5895,120 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: string;
-		PolicyInputList?: Array<string> | null;
-		PermissionsBoundaryPolicyInputList?: Array<string> | null;
+		PolicyInputList?: Array<string>;
+		PermissionsBoundaryPolicyInputList?: Array<string>;
 		ActionNames: Array<string>;
-		ResourceArns?: Array<string> | null;
+		ResourceArns?: Array<string>;
 		ResourcePolicy?: string | null;
 		ResourceOwner?: string | null;
 		CallerArn?: string | null;
-		ContextEntries?: Array<ContextEntry> | null;
+		ContextEntries?: Array<ContextEntry>;
 		ResourceHandlingOption?: string | null;
 		MaxItems?: number | null;
 		Marker?: string | null;
+	}
+	export interface SimulatePrincipalPolicyRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		PolicySourceArn: FormControl<string | null | undefined>,
+		ResourcePolicy: FormControl<string | null | undefined>,
+		ResourceOwner: FormControl<string | null | undefined>,
+		CallerArn: FormControl<string | null | undefined>,
+		ResourceHandlingOption: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateSimulatePrincipalPolicyRequestFormGroup() {
+		return new FormGroup<SimulatePrincipalPolicyRequestFormProperties>({
+			PolicySourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
+			ResourceOwner: new FormControl<string | null | undefined>(undefined),
+			CallerArn: new FormControl<string | null | undefined>(undefined),
+			ResourceHandlingOption: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagRoleRequest {
 		RoleName: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagRoleRequestFormGroup() {
+		return new FormGroup<TagRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagUserRequest {
 		UserName: string;
 		Tags: Array<Tag>;
+	}
+	export interface TagUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagUserRequestFormGroup() {
+		return new FormGroup<TagUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UntagRoleRequest {
 		RoleName: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagRoleRequestFormGroup() {
+		return new FormGroup<UntagRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagUserRequest {
 		UserName: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagUserRequestFormGroup() {
+		return new FormGroup<UntagUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAccessKeyRequest {
 		UserName?: string | null;
 		AccessKeyId: string;
 		Status: AccessKeyStatus;
+	}
+	export interface UpdateAccessKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		AccessKeyId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+	}
+	export function CreateUpdateAccessKeyRequestFormGroup() {
+		return new FormGroup<UpdateAccessKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAccountPasswordPolicyRequest {
@@ -2392,10 +6022,46 @@ export namespace MyNS {
 		PasswordReusePrevention?: number | null;
 		HardExpiry?: boolean | null;
 	}
+	export interface UpdateAccountPasswordPolicyRequestFormProperties {
+		MinimumPasswordLength: FormControl<number | null | undefined>,
+		RequireSymbols: FormControl<boolean | null | undefined>,
+		RequireNumbers: FormControl<boolean | null | undefined>,
+		RequireUppercaseCharacters: FormControl<boolean | null | undefined>,
+		RequireLowercaseCharacters: FormControl<boolean | null | undefined>,
+		AllowUsersToChangePassword: FormControl<boolean | null | undefined>,
+		MaxPasswordAge: FormControl<number | null | undefined>,
+		PasswordReusePrevention: FormControl<number | null | undefined>,
+		HardExpiry: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateAccountPasswordPolicyRequestFormGroup() {
+		return new FormGroup<UpdateAccountPasswordPolicyRequestFormProperties>({
+			MinimumPasswordLength: new FormControl<number | null | undefined>(undefined),
+			RequireSymbols: new FormControl<boolean | null | undefined>(undefined),
+			RequireNumbers: new FormControl<boolean | null | undefined>(undefined),
+			RequireUppercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
+			RequireLowercaseCharacters: new FormControl<boolean | null | undefined>(undefined),
+			AllowUsersToChangePassword: new FormControl<boolean | null | undefined>(undefined),
+			MaxPasswordAge: new FormControl<number | null | undefined>(undefined),
+			PasswordReusePrevention: new FormControl<number | null | undefined>(undefined),
+			HardExpiry: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAssumeRolePolicyRequest {
 		RoleName: string;
 		PolicyDocument: string;
+	}
+	export interface UpdateAssumeRolePolicyRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		PolicyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAssumeRolePolicyRequestFormGroup() {
+		return new FormGroup<UpdateAssumeRolePolicyRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			PolicyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGroupRequest {
@@ -2403,11 +6069,37 @@ export namespace MyNS {
 		NewPath?: string | null;
 		NewGroupName?: string | null;
 	}
+	export interface UpdateGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		NewPath: FormControl<string | null | undefined>,
+		NewGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupRequestFormGroup() {
+		return new FormGroup<UpdateGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			NewPath: new FormControl<string | null | undefined>(undefined),
+			NewGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateLoginProfileRequest {
 		UserName: string;
 		Password?: string | null;
 		PasswordResetRequired?: boolean | null;
+	}
+	export interface UpdateLoginProfileRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		PasswordResetRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateLoginProfileRequestFormGroup() {
+		return new FormGroup<UpdateLoginProfileRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			PasswordResetRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateOpenIDConnectProviderThumbprintRequest {
@@ -2426,16 +6118,56 @@ export namespace MyNS {
 		 */
 		ThumbprintList: Array<string>;
 	}
+	export interface UpdateOpenIDConnectProviderThumbprintRequestFormProperties {
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		OpenIDConnectProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateOpenIDConnectProviderThumbprintRequestFormGroup() {
+		return new FormGroup<UpdateOpenIDConnectProviderThumbprintRequestFormProperties>({
+			OpenIDConnectProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRoleDescriptionRequest {
 		RoleName: string;
 		Description: string;
+	}
+	export interface UpdateRoleDescriptionRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRoleDescriptionRequestFormGroup() {
+		return new FormGroup<UpdateRoleDescriptionRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateRoleRequest {
 		RoleName: string;
 		Description?: string | null;
 		MaxSessionDuration?: number | null;
+	}
+	export interface UpdateRoleRequestFormProperties {
+		RoleName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		MaxSessionDuration: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateRoleRequestFormGroup() {
+		return new FormGroup<UpdateRoleRequestFormProperties>({
+			RoleName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSAMLProviderRequest {
@@ -2449,11 +6181,42 @@ export namespace MyNS {
 		 */
 		SAMLProviderArn: string;
 	}
+	export interface UpdateSAMLProviderRequestFormProperties {
+		SAMLMetadataDocument: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		SAMLProviderArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSAMLProviderRequestFormGroup() {
+		return new FormGroup<UpdateSAMLProviderRequestFormProperties>({
+			SAMLMetadataDocument: new FormControl<string | null | undefined>(undefined),
+			SAMLProviderArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSSHPublicKeyRequest {
 		UserName: string;
 		SSHPublicKeyId: string;
 		Status: AccessKeyStatus;
+	}
+	export interface UpdateSSHPublicKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SSHPublicKeyId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+	}
+	export function CreateUpdateSSHPublicKeyRequestFormGroup() {
+		return new FormGroup<UpdateSSHPublicKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateServerCertificateRequest {
@@ -2461,11 +6224,37 @@ export namespace MyNS {
 		NewPath?: string | null;
 		NewServerCertificateName?: string | null;
 	}
+	export interface UpdateServerCertificateRequestFormProperties {
+		ServerCertificateName: FormControl<string | null | undefined>,
+		NewPath: FormControl<string | null | undefined>,
+		NewServerCertificateName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateServerCertificateRequestFormGroup() {
+		return new FormGroup<UpdateServerCertificateRequestFormProperties>({
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+			NewPath: new FormControl<string | null | undefined>(undefined),
+			NewServerCertificateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateServiceSpecificCredentialRequest {
 		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 		Status: AccessKeyStatus;
+	}
+	export interface UpdateServiceSpecificCredentialRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		ServiceSpecificCredentialId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+	}
+	export function CreateUpdateServiceSpecificCredentialRequestFormGroup() {
+		return new FormGroup<UpdateServiceSpecificCredentialRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			ServiceSpecificCredentialId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSigningCertificateRequest {
@@ -2473,16 +6262,53 @@ export namespace MyNS {
 		CertificateId: string;
 		Status: AccessKeyStatus;
 	}
+	export interface UpdateSigningCertificateRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		CertificateId: FormControl<string | null | undefined>,
+		Status: FormControl<AccessKeyStatus | null | undefined>,
+	}
+	export function CreateUpdateSigningCertificateRequestFormGroup() {
+		return new FormGroup<UpdateSigningCertificateRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AccessKeyStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateUserRequest {
 		UserName: string;
 		NewPath?: string | null;
 		NewUserName?: string | null;
 	}
+	export interface UpdateUserRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		NewPath: FormControl<string | null | undefined>,
+		NewUserName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserRequestFormGroup() {
+		return new FormGroup<UpdateUserRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			NewPath: new FormControl<string | null | undefined>(undefined),
+			NewUserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UploadSSHPublicKeyRequest {
 		UserName: string;
 		SSHPublicKeyBody: string;
+	}
+	export interface UploadSSHPublicKeyRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		SSHPublicKeyBody: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadSSHPublicKeyRequestFormGroup() {
+		return new FormGroup<UploadSSHPublicKeyRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			SSHPublicKeyBody: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UploadServerCertificateRequest {
@@ -2492,10 +6318,38 @@ export namespace MyNS {
 		PrivateKey: string;
 		CertificateChain?: string | null;
 	}
+	export interface UploadServerCertificateRequestFormProperties {
+		Path: FormControl<string | null | undefined>,
+		ServerCertificateName: FormControl<string | null | undefined>,
+		CertificateBody: FormControl<string | null | undefined>,
+		PrivateKey: FormControl<string | null | undefined>,
+		CertificateChain: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadServerCertificateRequestFormGroup() {
+		return new FormGroup<UploadServerCertificateRequestFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+			ServerCertificateName: new FormControl<string | null | undefined>(undefined),
+			CertificateBody: new FormControl<string | null | undefined>(undefined),
+			PrivateKey: new FormControl<string | null | undefined>(undefined),
+			CertificateChain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UploadSigningCertificateRequest {
 		UserName?: string | null;
 		CertificateBody: string;
+	}
+	export interface UploadSigningCertificateRequestFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		CertificateBody: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadSigningCertificateRequestFormGroup() {
+		return new FormGroup<UploadSigningCertificateRequestFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			CertificateBody: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SummaryKeyType { Users = 0, UsersQuota = 1, Groups = 2, GroupsQuota = 3, ServerCertificates = 4, ServerCertificatesQuota = 5, UserPolicySizeQuota = 6, GroupPolicySizeQuota = 7, GroupsPerUserQuota = 8, SigningCertificatesPerUserQuota = 9, AccessKeysPerUserQuota = 10, MFADevices = 11, MFADevicesInUse = 12, AccountMFAEnabled = 13, AccountAccessKeysPresent = 14, AccountSigningCertificatesPresent = 15, AttachedPoliciesPerGroupQuota = 16, AttachedPoliciesPerRoleQuota = 17, AttachedPoliciesPerUserQuota = 18, Policies = 19, PoliciesQuota = 20, PolicySizeQuota = 21, PolicyVersionsInUse = 22, PolicyVersionsInUseQuota = 23, VersionsPerPolicyQuota = 24, GlobalEndpointTokenVersion = 25 }
@@ -2645,7 +6499,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateOpenIDConnectProvider(Url: string, ClientIDList: Array<string> | null | undefined, ThumbprintList: Array<string>, Action: GET_CreateOpenIDConnectProviderAction, Version: GET_CreateOpenIDConnectProviderVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateOpenIDConnectProvider?Url=' + (Url == null ? '' : encodeURIComponent(Url)) + '&' + ClientIDList.map(z => `ClientIDList=${encodeURIComponent(z)}`).join('&') + '&' + ThumbprintList.map(z => `ThumbprintList=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateOpenIDConnectProvider?Url=' + (Url == null ? '' : encodeURIComponent(Url)) + '&' + ClientIDList?.map(z => `ClientIDList=${encodeURIComponent(z)}`).join('&') + '&' + ThumbprintList.map(z => `ThumbprintList=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2686,7 +6540,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateRole(Path: string | null | undefined, RoleName: string, AssumeRolePolicyDocument: string, Description: string | null | undefined, MaxSessionDuration: number | null | undefined, PermissionsBoundary: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateRoleAction, Version: GET_CreateRoleVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateRole?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&AssumeRolePolicyDocument=' + (AssumeRolePolicyDocument == null ? '' : encodeURIComponent(AssumeRolePolicyDocument)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&MaxSessionDuration=' + MaxSessionDuration + '&PermissionsBoundary=' + (PermissionsBoundary == null ? '' : encodeURIComponent(PermissionsBoundary)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateRole?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&AssumeRolePolicyDocument=' + (AssumeRolePolicyDocument == null ? '' : encodeURIComponent(AssumeRolePolicyDocument)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&MaxSessionDuration=' + MaxSessionDuration + '&PermissionsBoundary=' + (PermissionsBoundary == null ? '' : encodeURIComponent(PermissionsBoundary)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2733,7 +6587,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateUser(Path: string | null | undefined, UserName: string, PermissionsBoundary: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateUserAction, Version: GET_CreateUserVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateUser?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&PermissionsBoundary=' + (PermissionsBoundary == null ? '' : encodeURIComponent(PermissionsBoundary)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateUser?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&PermissionsBoundary=' + (PermissionsBoundary == null ? '' : encodeURIComponent(PermissionsBoundary)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3109,7 +6963,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetAccountAuthorizationDetails(Filter: Array<EntityType> | null | undefined, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_GetAccountAuthorizationDetailsAction, Version: GET_GetAccountAuthorizationDetailsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetAccountAuthorizationDetails?' + Filter.map(z => `Filter=${z}`).join('&') + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetAccountAuthorizationDetails?' + Filter?.map(z => `Filter=${z}`).join('&') + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3166,7 +7020,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetContextKeysForPrincipalPolicy(PolicySourceArn: string, PolicyInputList: Array<string> | null | undefined, Action: GET_GetContextKeysForPrincipalPolicyAction, Version: GET_GetContextKeysForPrincipalPolicyVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetContextKeysForPrincipalPolicy?PolicySourceArn=' + (PolicySourceArn == null ? '' : encodeURIComponent(PolicySourceArn)) + '&' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetContextKeysForPrincipalPolicy?PolicySourceArn=' + (PolicySourceArn == null ? '' : encodeURIComponent(PolicySourceArn)) + '&' + PolicyInputList?.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3873,7 +7727,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_SimulateCustomPolicy(PolicyInputList: Array<string>, PermissionsBoundaryPolicyInputList: Array<string> | null | undefined, ActionNames: Array<string>, ResourceArns: Array<string> | null | undefined, ResourcePolicy: string | null | undefined, ResourceOwner: string | null | undefined, CallerArn: string | null | undefined, ContextEntries: Array<ContextEntry> | null | undefined, ResourceHandlingOption: string | null | undefined, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_SimulateCustomPolicyAction, Version: GET_SimulateCustomPolicyVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=SimulateCustomPolicy?' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + PermissionsBoundaryPolicyInputList.map(z => `PermissionsBoundaryPolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + ActionNames.map(z => `ActionNames=${encodeURIComponent(z)}`).join('&') + '&' + ResourceArns.map(z => `ResourceArns=${encodeURIComponent(z)}`).join('&') + '&ResourcePolicy=' + (ResourcePolicy == null ? '' : encodeURIComponent(ResourcePolicy)) + '&ResourceOwner=' + (ResourceOwner == null ? '' : encodeURIComponent(ResourceOwner)) + '&CallerArn=' + (CallerArn == null ? '' : encodeURIComponent(CallerArn)) + '&' + ContextEntries.map(z => `ContextEntries=${z}`).join('&') + '&ResourceHandlingOption=' + (ResourceHandlingOption == null ? '' : encodeURIComponent(ResourceHandlingOption)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=SimulateCustomPolicy?' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + PermissionsBoundaryPolicyInputList?.map(z => `PermissionsBoundaryPolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + ActionNames.map(z => `ActionNames=${encodeURIComponent(z)}`).join('&') + '&' + ResourceArns?.map(z => `ResourceArns=${encodeURIComponent(z)}`).join('&') + '&ResourcePolicy=' + (ResourcePolicy == null ? '' : encodeURIComponent(ResourcePolicy)) + '&ResourceOwner=' + (ResourceOwner == null ? '' : encodeURIComponent(ResourceOwner)) + '&CallerArn=' + (CallerArn == null ? '' : encodeURIComponent(CallerArn)) + '&' + ContextEntries?.map(z => `ContextEntries=${z}`).join('&') + '&ResourceHandlingOption=' + (ResourceHandlingOption == null ? '' : encodeURIComponent(ResourceHandlingOption)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3894,7 +7748,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_SimulatePrincipalPolicy(PolicySourceArn: string, PolicyInputList: Array<string> | null | undefined, PermissionsBoundaryPolicyInputList: Array<string> | null | undefined, ActionNames: Array<string>, ResourceArns: Array<string> | null | undefined, ResourcePolicy: string | null | undefined, ResourceOwner: string | null | undefined, CallerArn: string | null | undefined, ContextEntries: Array<ContextEntry> | null | undefined, ResourceHandlingOption: string | null | undefined, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_SimulatePrincipalPolicyAction, Version: GET_SimulatePrincipalPolicyVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=SimulatePrincipalPolicy?PolicySourceArn=' + (PolicySourceArn == null ? '' : encodeURIComponent(PolicySourceArn)) + '&' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + PermissionsBoundaryPolicyInputList.map(z => `PermissionsBoundaryPolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + ActionNames.map(z => `ActionNames=${encodeURIComponent(z)}`).join('&') + '&' + ResourceArns.map(z => `ResourceArns=${encodeURIComponent(z)}`).join('&') + '&ResourcePolicy=' + (ResourcePolicy == null ? '' : encodeURIComponent(ResourcePolicy)) + '&ResourceOwner=' + (ResourceOwner == null ? '' : encodeURIComponent(ResourceOwner)) + '&CallerArn=' + (CallerArn == null ? '' : encodeURIComponent(CallerArn)) + '&' + ContextEntries.map(z => `ContextEntries=${z}`).join('&') + '&ResourceHandlingOption=' + (ResourceHandlingOption == null ? '' : encodeURIComponent(ResourceHandlingOption)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=SimulatePrincipalPolicy?PolicySourceArn=' + (PolicySourceArn == null ? '' : encodeURIComponent(PolicySourceArn)) + '&' + PolicyInputList?.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + PermissionsBoundaryPolicyInputList?.map(z => `PermissionsBoundaryPolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + ActionNames.map(z => `ActionNames=${encodeURIComponent(z)}`).join('&') + '&' + ResourceArns?.map(z => `ResourceArns=${encodeURIComponent(z)}`).join('&') + '&ResourcePolicy=' + (ResourcePolicy == null ? '' : encodeURIComponent(ResourcePolicy)) + '&ResourceOwner=' + (ResourceOwner == null ? '' : encodeURIComponent(ResourceOwner)) + '&CallerArn=' + (CallerArn == null ? '' : encodeURIComponent(CallerArn)) + '&' + ContextEntries?.map(z => `ContextEntries=${z}`).join('&') + '&ResourceHandlingOption=' + (ResourceHandlingOption == null ? '' : encodeURIComponent(ResourceHandlingOption)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**

@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AddFlowOutputsResponse {
 		FlowArn?: string | null;
-		Outputs?: Array<Output> | null;
+		Outputs?: Array<Output>;
+	}
+	export interface AddFlowOutputsResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddFlowOutputsResponseFormGroup() {
+		return new FormGroup<AddFlowOutputsResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -15,7 +25,7 @@ export namespace MyNS {
 		Destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 		EntitlementArn?: string | null;
 		MediaLiveInputArn?: string | null;
 		Name: string;
@@ -23,10 +33,35 @@ export namespace MyNS {
 		Port?: number | null;
 
 		/** Attributes related to the transport stream that are used in a source or output. */
-		Transport?: Transport | null;
+		Transport?: Transport;
 
 		/** The settings for attaching a VPC interface to an output. */
-		VpcInterfaceAttachment?: VpcInterfaceAttachment | null;
+		VpcInterfaceAttachment?: VpcInterfaceAttachment;
+	}
+
+	/** The settings for an output. */
+	export interface OutputFormProperties {
+		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		MediaLiveInputArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		OutputArn: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateOutputFormGroup() {
+		return new FormGroup<OutputFormProperties>({
+			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			MediaLiveInputArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			OutputArn: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,6 +78,33 @@ export namespace MyNS {
 		Url?: string | null;
 	}
 
+	/** Information about the encryption of the flow. */
+	export interface EncryptionFormProperties {
+		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+		KeyType: FormControl<EncryptionKeyType | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SecretArn: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionFormGroup() {
+		return new FormGroup<EncryptionFormProperties>({
+			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<EncryptionKeyType | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EncryptionAlgorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
 
 	export enum EncryptionKeyType { speke = 0, static_key = 1 }
@@ -50,13 +112,34 @@ export namespace MyNS {
 
 	/** Attributes related to the transport stream that are used in a source or output. */
 	export interface Transport {
-		CidrAllowList?: Array<string> | null;
+		CidrAllowList?: Array<string>;
 		MaxBitrate?: number | null;
 		MaxLatency?: number | null;
 		Protocol: TransportProtocol;
 		RemoteId?: string | null;
 		SmoothingLatency?: number | null;
 		StreamId?: string | null;
+	}
+
+	/** Attributes related to the transport stream that are used in a source or output. */
+	export interface TransportFormProperties {
+		MaxBitrate: FormControl<number | null | undefined>,
+		MaxLatency: FormControl<number | null | undefined>,
+		Protocol: FormControl<TransportProtocol | null | undefined>,
+		RemoteId: FormControl<string | null | undefined>,
+		SmoothingLatency: FormControl<number | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransportFormGroup() {
+		return new FormGroup<TransportFormProperties>({
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MaxLatency: new FormControl<number | null | undefined>(undefined),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
+			RemoteId: new FormControl<string | null | undefined>(undefined),
+			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TransportProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -67,15 +150,26 @@ export namespace MyNS {
 		VpcInterfaceName?: string | null;
 	}
 
+	/** The settings for attaching a VPC interface to an output. */
+	export interface VpcInterfaceAttachmentFormProperties {
+		VpcInterfaceName: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcInterfaceAttachmentFormGroup() {
+		return new FormGroup<VpcInterfaceAttachmentFormProperties>({
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output that you want to add to this flow. */
 	export interface AddOutputRequest {
-		CidrAllowList?: Array<string> | null;
+		CidrAllowList?: Array<string>;
 		Description?: string | null;
 		Destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 		MaxLatency?: number | null;
 		Name?: string | null;
 		Port?: number | null;
@@ -85,35 +179,120 @@ export namespace MyNS {
 		StreamId?: string | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		VpcInterfaceAttachment?: VpcInterfaceAttachment | null;
+		VpcInterfaceAttachment?: VpcInterfaceAttachment;
+	}
+
+	/** The output that you want to add to this flow. */
+	export interface AddOutputRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+		MaxLatency: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Protocol: FormControl<AddOutputRequestProtocol | null | undefined>,
+		RemoteId: FormControl<string | null | undefined>,
+		SmoothingLatency: FormControl<number | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddOutputRequestFormGroup() {
+		return new FormGroup<AddOutputRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			MaxLatency: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Protocol: new FormControl<AddOutputRequestProtocol | null | undefined>(undefined),
+			RemoteId: new FormControl<string | null | undefined>(undefined),
+			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AddOutputRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface AddFlowOutputs420Exception {
 	}
+	export interface AddFlowOutputs420ExceptionFormProperties {
+	}
+	export function CreateAddFlowOutputs420ExceptionFormGroup() {
+		return new FormGroup<AddFlowOutputs420ExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BadRequestException {
+	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerErrorException {
 	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ForbiddenException {
+	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotFoundException {
 	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AddFlowSourcesResponse {
 		FlowArn?: string | null;
-		Sources?: Array<Source> | null;
+		Sources?: Array<Source>;
+	}
+	export interface AddFlowSourcesResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddFlowSourcesResponseFormGroup() {
+		return new FormGroup<AddFlowSourcesResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -122,7 +301,7 @@ export namespace MyNS {
 		DataTransferSubscriberFeePercent?: number | null;
 
 		/** Information about the encryption of the flow. */
-		Decryption?: Encryption | null;
+		Decryption?: Encryption;
 		Description?: string | null;
 		EntitlementArn?: string | null;
 		IngestIp?: string | null;
@@ -131,9 +310,36 @@ export namespace MyNS {
 		SourceArn: string;
 
 		/** Attributes related to the transport stream that are used in a source or output. */
-		Transport?: Transport | null;
+		Transport?: Transport;
 		VpcInterfaceName?: string | null;
 		WhitelistCidr?: string | null;
+	}
+
+	/** The settings for the source of the flow. */
+	export interface SourceFormProperties {
+		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		IngestIp: FormControl<string | null | undefined>,
+		IngestPort: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		VpcInterfaceName: FormControl<string | null | undefined>,
+		WhitelistCidr: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceFormGroup() {
+		return new FormGroup<SourceFormProperties>({
+			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			IngestIp: new FormControl<string | null | undefined>(undefined),
+			IngestPort: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -141,7 +347,7 @@ export namespace MyNS {
 	export interface SetSourceRequest {
 
 		/** Information about the encryption of the flow. */
-		Decryption?: Encryption | null;
+		Decryption?: Encryption;
 		Description?: string | null;
 		EntitlementArn?: string | null;
 		IngestPort?: number | null;
@@ -154,11 +360,49 @@ export namespace MyNS {
 		WhitelistCidr?: string | null;
 	}
 
+	/** The settings for the source of the flow. */
+	export interface SetSourceRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		IngestPort: FormControl<number | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		MaxLatency: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Protocol: FormControl<SetSourceRequestProtocol | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+		VpcInterfaceName: FormControl<string | null | undefined>,
+		WhitelistCidr: FormControl<string | null | undefined>,
+	}
+	export function CreateSetSourceRequestFormGroup() {
+		return new FormGroup<SetSourceRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			IngestPort: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MaxLatency: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<SetSourceRequestProtocol | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SetSourceRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface AddFlowVpcInterfacesResponse {
 		FlowArn?: string | null;
-		VpcInterfaces?: Array<VpcInterface> | null;
+		VpcInterfaces?: Array<VpcInterface>;
+	}
+	export interface AddFlowVpcInterfacesResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddFlowVpcInterfacesResponseFormGroup() {
+		return new FormGroup<AddFlowVpcInterfacesResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -171,6 +415,21 @@ export namespace MyNS {
 		SubnetId: string;
 	}
 
+	/** The settings for a VPC Source. */
+	export interface VpcInterfaceFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcInterfaceFormGroup() {
+		return new FormGroup<VpcInterfaceFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Desired VPC Interface for a Flow */
 	export interface VpcInterfaceRequest {
@@ -180,10 +439,32 @@ export namespace MyNS {
 		SubnetId: string;
 	}
 
+	/** Desired VPC Interface for a Flow */
+	export interface VpcInterfaceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcInterfaceRequestFormGroup() {
+		return new FormGroup<VpcInterfaceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateFlowResponse {
 
 		/** The settings for a flow, including its source, outputs, and entitlements. */
-		Flow?: Flow | null;
+		Flow?: Flow;
+	}
+	export interface CreateFlowResponseFormProperties {
+	}
+	export function CreateCreateFlowResponseFormGroup() {
+		return new FormGroup<CreateFlowResponseFormProperties>({
+		});
+
 	}
 
 
@@ -204,10 +485,31 @@ export namespace MyNS {
 		Source: Source;
 
 		/** The settings for source failover */
-		SourceFailoverConfig?: FailoverConfig | null;
-		Sources?: Array<Source> | null;
+		SourceFailoverConfig?: FailoverConfig;
+		Sources?: Array<Source>;
 		Status: FlowStatus;
-		VpcInterfaces?: Array<VpcInterface> | null;
+		VpcInterfaces?: Array<VpcInterface>;
+	}
+
+	/** The settings for a flow, including its source, outputs, and entitlements. */
+	export interface FlowFormProperties {
+		AvailabilityZone: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		EgressIp: FormControl<string | null | undefined>,
+		FlowArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<FlowStatus | null | undefined>,
+	}
+	export function CreateFlowFormGroup() {
+		return new FormGroup<FlowFormProperties>({
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			EgressIp: new FormControl<string | null | undefined>(undefined),
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -217,10 +519,27 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 		EntitlementArn: string;
 		Name: string;
 		Subscribers: Array<string>;
+	}
+
+	/** The settings for a flow entitlement. */
+	export interface EntitlementFormProperties {
+		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateEntitlementFormGroup() {
+		return new FormGroup<EntitlementFormProperties>({
+			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -228,6 +547,19 @@ export namespace MyNS {
 	export interface FailoverConfig {
 		RecoveryWindow?: number | null;
 		State?: FailoverConfigState | null;
+	}
+
+	/** The settings for source failover */
+	export interface FailoverConfigFormProperties {
+		RecoveryWindow: FormControl<number | null | undefined>,
+		State: FormControl<FailoverConfigState | null | undefined>,
+	}
+	export function CreateFailoverConfigFormGroup() {
+		return new FormGroup<FailoverConfigFormProperties>({
+			RecoveryWindow: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<FailoverConfigState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FailoverConfigState { ENABLED = 0, DISABLED = 1 }
@@ -241,9 +573,24 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 		Name?: string | null;
 		Subscribers: Array<string>;
+	}
+
+	/** The entitlements that you want to grant on a flow. */
+	export interface GrantEntitlementRequestFormProperties {
+		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGrantEntitlementRequestFormGroup() {
+		return new FormGroup<GrantEntitlementRequestFormProperties>({
+			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Protocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -252,19 +599,44 @@ export namespace MyNS {
 
 	export interface CreateFlow420Exception {
 	}
+	export interface CreateFlow420ExceptionFormProperties {
+	}
+	export function CreateCreateFlow420ExceptionFormGroup() {
+		return new FormGroup<CreateFlow420ExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteFlowResponse {
 		FlowArn?: string | null;
 		Status?: FlowStatus | null;
 	}
+	export interface DeleteFlowResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+		Status: FormControl<FlowStatus | null | undefined>,
+	}
+	export function CreateDeleteFlowResponseFormGroup() {
+		return new FormGroup<DeleteFlowResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeFlowResponse {
 
 		/** The settings for a flow, including its source, outputs, and entitlements. */
-		Flow?: Flow | null;
+		Flow?: Flow;
 
 		/** Messages that provide the state of the flow. */
-		Messages?: Messages | null;
+		Messages?: Messages;
+	}
+	export interface DescribeFlowResponseFormProperties {
+	}
+	export function CreateDescribeFlowResponseFormGroup() {
+		return new FormGroup<DescribeFlowResponseFormProperties>({
+		});
+
 	}
 
 
@@ -273,17 +645,51 @@ export namespace MyNS {
 		Errors: Array<string>;
 	}
 
+	/** Messages that provide the state of the flow. */
+	export interface MessagesFormProperties {
+	}
+	export function CreateMessagesFormGroup() {
+		return new FormGroup<MessagesFormProperties>({
+		});
+
+	}
+
 	export interface GrantFlowEntitlementsResponse {
-		Entitlements?: Array<Entitlement> | null;
+		Entitlements?: Array<Entitlement>;
 		FlowArn?: string | null;
+	}
+	export interface GrantFlowEntitlementsResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGrantFlowEntitlementsResponseFormGroup() {
+		return new FormGroup<GrantFlowEntitlementsResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GrantFlowEntitlements420Exception {
 	}
+	export interface GrantFlowEntitlements420ExceptionFormProperties {
+	}
+	export function CreateGrantFlowEntitlements420ExceptionFormGroup() {
+		return new FormGroup<GrantFlowEntitlements420ExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListEntitlementsResponse {
-		Entitlements?: Array<ListedEntitlement> | null;
+		Entitlements?: Array<ListedEntitlement>;
 		NextToken?: string | null;
+	}
+	export interface ListEntitlementsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEntitlementsResponseFormGroup() {
+		return new FormGroup<ListEntitlementsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -294,9 +700,33 @@ export namespace MyNS {
 		EntitlementName: string;
 	}
 
+	/** An entitlement that has been granted to you from other AWS accounts. */
+	export interface ListedEntitlementFormProperties {
+		DataTransferSubscriberFeePercent: FormControl<number | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		EntitlementName: FormControl<string | null | undefined>,
+	}
+	export function CreateListedEntitlementFormGroup() {
+		return new FormGroup<ListedEntitlementFormProperties>({
+			DataTransferSubscriberFeePercent: new FormControl<number | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			EntitlementName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListFlowsResponse {
-		Flows?: Array<ListedFlow> | null;
+		Flows?: Array<ListedFlow>;
 		NextToken?: string | null;
+	}
+	export interface ListFlowsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFlowsResponseFormGroup() {
+		return new FormGroup<ListFlowsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -310,57 +740,174 @@ export namespace MyNS {
 		Status: FlowStatus;
 	}
 
+	/** Provides a summary of a flow, including its ARN, Availability Zone, and source type. */
+	export interface ListedFlowFormProperties {
+		AvailabilityZone: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		FlowArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		SourceType: FormControl<ListedFlowSourceType | null | undefined>,
+		Status: FormControl<FlowStatus | null | undefined>,
+	}
+	export function CreateListedFlowFormGroup() {
+		return new FormGroup<ListedFlowFormProperties>({
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<ListedFlowSourceType | null | undefined>(undefined),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ListedFlowSourceType { OWNED = 0, ENTITLED = 1 }
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface __mapOf__string {
+	}
+	export interface __mapOf__stringFormProperties {
+	}
+	export function Create__mapOf__stringFormGroup() {
+		return new FormGroup<__mapOf__stringFormProperties>({
+		});
+
 	}
 
 	export interface RemoveFlowOutputResponse {
 		FlowArn?: string | null;
 		OutputArn?: string | null;
 	}
+	export interface RemoveFlowOutputResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+		OutputArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveFlowOutputResponseFormGroup() {
+		return new FormGroup<RemoveFlowOutputResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			OutputArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveFlowSourceResponse {
 		FlowArn?: string | null;
 		SourceArn?: string | null;
 	}
+	export interface RemoveFlowSourceResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveFlowSourceResponseFormGroup() {
+		return new FormGroup<RemoveFlowSourceResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveFlowVpcInterfaceResponse {
 		FlowArn?: string | null;
-		NonDeletedNetworkInterfaceIds?: Array<string> | null;
+		NonDeletedNetworkInterfaceIds?: Array<string>;
 		VpcInterfaceName?: string | null;
+	}
+	export interface RemoveFlowVpcInterfaceResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+		VpcInterfaceName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveFlowVpcInterfaceResponseFormGroup() {
+		return new FormGroup<RemoveFlowVpcInterfaceResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RevokeFlowEntitlementResponse {
 		EntitlementArn?: string | null;
 		FlowArn?: string | null;
 	}
+	export interface RevokeFlowEntitlementResponseFormProperties {
+		EntitlementArn: FormControl<string | null | undefined>,
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeFlowEntitlementResponseFormGroup() {
+		return new FormGroup<RevokeFlowEntitlementResponseFormProperties>({
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartFlowResponse {
 		FlowArn?: string | null;
 		Status?: FlowStatus | null;
+	}
+	export interface StartFlowResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+		Status: FormControl<FlowStatus | null | undefined>,
+	}
+	export function CreateStartFlowResponseFormGroup() {
+		return new FormGroup<StartFlowResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopFlowResponse {
 		FlowArn?: string | null;
 		Status?: FlowStatus | null;
 	}
+	export interface StopFlowResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+		Status: FormControl<FlowStatus | null | undefined>,
+	}
+	export function CreateStopFlowResponseFormGroup() {
+		return new FormGroup<StopFlowResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<FlowStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFlowResponse {
 
 		/** The settings for a flow, including its source, outputs, and entitlements. */
-		Flow?: Flow | null;
+		Flow?: Flow;
+	}
+	export interface UpdateFlowResponseFormProperties {
+	}
+	export function CreateUpdateFlowResponseFormGroup() {
+		return new FormGroup<UpdateFlowResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFlowEntitlementResponse {
 
 		/** The settings for a flow entitlement. */
-		Entitlement?: Entitlement | null;
+		Entitlement?: Entitlement;
 		FlowArn?: string | null;
+	}
+	export interface UpdateFlowEntitlementResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowEntitlementResponseFormGroup() {
+		return new FormGroup<UpdateFlowEntitlementResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Algorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
@@ -371,14 +918,32 @@ export namespace MyNS {
 		FlowArn?: string | null;
 
 		/** The settings for an output. */
-		Output?: Output | null;
+		Output?: Output;
+	}
+	export interface UpdateFlowOutputResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowOutputResponseFormGroup() {
+		return new FormGroup<UpdateFlowOutputResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFlowSourceResponse {
 		FlowArn?: string | null;
 
 		/** The settings for the source of the flow. */
-		Source?: Source | null;
+		Source?: Source;
+	}
+	export interface UpdateFlowSourceResponseFormProperties {
+		FlowArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowSourceResponseFormGroup() {
+		return new FormGroup<UpdateFlowSourceResponseFormProperties>({
+			FlowArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -387,10 +952,28 @@ export namespace MyNS {
 		Outputs: Array<AddOutputRequest>;
 	}
 
+	/** A request to add outputs to the specified flow. */
+	export interface AddFlowOutputsRequestFormProperties {
+	}
+	export function CreateAddFlowOutputsRequestFormGroup() {
+		return new FormGroup<AddFlowOutputsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to add sources to the flow. */
 	export interface AddFlowSourcesRequest {
 		Sources: Array<SetSourceRequest>;
+	}
+
+	/** A request to add sources to the flow. */
+	export interface AddFlowSourcesRequestFormProperties {
+	}
+	export function CreateAddFlowSourcesRequestFormGroup() {
+		return new FormGroup<AddFlowSourcesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -399,29 +982,65 @@ export namespace MyNS {
 		VpcInterfaces: Array<VpcInterfaceRequest>;
 	}
 
+	/** A request to add VPC interfaces to the flow. */
+	export interface AddFlowVpcInterfacesRequestFormProperties {
+	}
+	export function CreateAddFlowVpcInterfacesRequestFormGroup() {
+		return new FormGroup<AddFlowVpcInterfacesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50). */
 	export interface CreateFlowRequest {
 		AvailabilityZone?: string | null;
-		Entitlements?: Array<GrantEntitlementRequest> | null;
+		Entitlements?: Array<GrantEntitlementRequest>;
 		Name: string;
-		Outputs?: Array<AddOutputRequest> | null;
+		Outputs?: Array<AddOutputRequest>;
 
 		/** The settings for the source of the flow. */
-		Source?: SetSourceRequest | null;
+		Source?: SetSourceRequest;
 
 		/** The settings for source failover */
-		SourceFailoverConfig?: FailoverConfig | null;
-		Sources?: Array<SetSourceRequest> | null;
-		VpcInterfaces?: Array<VpcInterfaceRequest> | null;
+		SourceFailoverConfig?: FailoverConfig;
+		Sources?: Array<SetSourceRequest>;
+		VpcInterfaces?: Array<VpcInterfaceRequest>;
+	}
+
+	/** Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50). */
+	export interface CreateFlowRequestFormProperties {
+		AvailabilityZone: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFlowRequestFormGroup() {
+		return new FormGroup<CreateFlowRequestFormProperties>({
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteFlowRequest {
+	}
+	export interface DeleteFlowRequestFormProperties {
+	}
+	export function CreateDeleteFlowRequestFormGroup() {
+		return new FormGroup<DeleteFlowRequestFormProperties>({
+		});
+
 	}
 
 	export enum Status { STANDBY = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, STARTING = 4, STOPPING = 5, ERROR = 6 }
 
 	export interface DescribeFlowRequest {
+	}
+	export interface DescribeFlowRequestFormProperties {
+	}
+	export function CreateDescribeFlowRequestFormGroup() {
+		return new FormGroup<DescribeFlowRequestFormProperties>({
+		});
+
 	}
 
 
@@ -430,33 +1049,105 @@ export namespace MyNS {
 		Entitlements: Array<GrantEntitlementRequest>;
 	}
 
+	/** A request to grant entitlements on a flow. */
+	export interface GrantFlowEntitlementsRequestFormProperties {
+	}
+	export function CreateGrantFlowEntitlementsRequestFormGroup() {
+		return new FormGroup<GrantFlowEntitlementsRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListEntitlementsRequest {
+	}
+	export interface ListEntitlementsRequestFormProperties {
+	}
+	export function CreateListEntitlementsRequestFormGroup() {
+		return new FormGroup<ListEntitlementsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListFlowsRequest {
 	}
+	export interface ListFlowsRequestFormProperties {
+	}
+	export function CreateListFlowsRequestFormGroup() {
+		return new FormGroup<ListFlowsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum SourceType { OWNED = 0, ENTITLED = 1 }
 
 	export interface RemoveFlowOutputRequest {
 	}
+	export interface RemoveFlowOutputRequestFormProperties {
+	}
+	export function CreateRemoveFlowOutputRequestFormGroup() {
+		return new FormGroup<RemoveFlowOutputRequestFormProperties>({
+		});
+
+	}
 
 	export interface RemoveFlowSourceRequest {
+	}
+	export interface RemoveFlowSourceRequestFormProperties {
+	}
+	export function CreateRemoveFlowSourceRequestFormGroup() {
+		return new FormGroup<RemoveFlowSourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface RemoveFlowVpcInterfaceRequest {
 	}
+	export interface RemoveFlowVpcInterfaceRequestFormProperties {
+	}
+	export function CreateRemoveFlowVpcInterfaceRequestFormGroup() {
+		return new FormGroup<RemoveFlowVpcInterfaceRequestFormProperties>({
+		});
+
+	}
 
 	export interface RevokeFlowEntitlementRequest {
+	}
+	export interface RevokeFlowEntitlementRequestFormProperties {
+	}
+	export function CreateRevokeFlowEntitlementRequestFormGroup() {
+		return new FormGroup<RevokeFlowEntitlementRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartFlowRequest {
 	}
+	export interface StartFlowRequestFormProperties {
+	}
+	export function CreateStartFlowRequestFormGroup() {
+		return new FormGroup<StartFlowRequestFormProperties>({
+		});
+
+	}
 
 	export interface StopFlowRequest {
+	}
+	export interface StopFlowRequestFormProperties {
+	}
+	export function CreateStopFlowRequestFormGroup() {
+		return new FormGroup<StopFlowRequestFormProperties>({
+		});
+
 	}
 
 
@@ -465,7 +1156,23 @@ export namespace MyNS {
 		Tags: __mapOf__string;
 	}
 
+	/** The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
+
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -482,6 +1189,33 @@ export namespace MyNS {
 		Url?: string | null;
 	}
 
+	/** Information about the encryption of the flow. */
+	export interface UpdateEncryptionFormProperties {
+		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+		KeyType: FormControl<UpdateEncryptionKeyType | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SecretArn: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEncryptionFormGroup() {
+		return new FormGroup<UpdateEncryptionFormProperties>({
+			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<UpdateEncryptionKeyType | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UpdateEncryptionKeyType { speke = 0, static_key = 1 }
 
 
@@ -491,25 +1225,49 @@ export namespace MyNS {
 		State?: FailoverConfigState | null;
 	}
 
+	/** The settings for source failover */
+	export interface UpdateFailoverConfigFormProperties {
+		RecoveryWindow: FormControl<number | null | undefined>,
+		State: FormControl<FailoverConfigState | null | undefined>,
+	}
+	export function CreateUpdateFailoverConfigFormGroup() {
+		return new FormGroup<UpdateFailoverConfigFormProperties>({
+			RecoveryWindow: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<FailoverConfigState | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The entitlement fields that you want to update. */
 	export interface UpdateFlowEntitlementRequest {
 		Description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: UpdateEncryption | null;
-		Subscribers?: Array<string> | null;
+		Encryption?: UpdateEncryption;
+		Subscribers?: Array<string>;
+	}
+
+	/** The entitlement fields that you want to update. */
+	export interface UpdateFlowEntitlementRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowEntitlementRequestFormGroup() {
+		return new FormGroup<UpdateFlowEntitlementRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The fields that you want to update in the output. */
 	export interface UpdateFlowOutputRequest {
-		CidrAllowList?: Array<string> | null;
+		CidrAllowList?: Array<string>;
 		Description?: string | null;
 		Destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: UpdateEncryption | null;
+		Encryption?: UpdateEncryption;
 		MaxLatency?: number | null;
 		Port?: number | null;
 		Protocol?: UpdateFlowOutputRequestProtocol | null;
@@ -518,7 +1276,32 @@ export namespace MyNS {
 		StreamId?: string | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		VpcInterfaceAttachment?: VpcInterfaceAttachment | null;
+		VpcInterfaceAttachment?: VpcInterfaceAttachment;
+	}
+
+	/** The fields that you want to update in the output. */
+	export interface UpdateFlowOutputRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+		MaxLatency: FormControl<number | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Protocol: FormControl<UpdateFlowOutputRequestProtocol | null | undefined>,
+		RemoteId: FormControl<string | null | undefined>,
+		SmoothingLatency: FormControl<number | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowOutputRequestFormGroup() {
+		return new FormGroup<UpdateFlowOutputRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			MaxLatency: new FormControl<number | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Protocol: new FormControl<UpdateFlowOutputRequestProtocol | null | undefined>(undefined),
+			RemoteId: new FormControl<string | null | undefined>(undefined),
+			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateFlowOutputRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -528,7 +1311,16 @@ export namespace MyNS {
 	export interface UpdateFlowRequest {
 
 		/** The settings for source failover */
-		SourceFailoverConfig?: UpdateFailoverConfig | null;
+		SourceFailoverConfig?: UpdateFailoverConfig;
+	}
+
+	/** A request to update flow. */
+	export interface UpdateFlowRequestFormProperties {
+	}
+	export function CreateUpdateFlowRequestFormGroup() {
+		return new FormGroup<UpdateFlowRequestFormProperties>({
+		});
+
 	}
 
 
@@ -536,7 +1328,7 @@ export namespace MyNS {
 	export interface UpdateFlowSourceRequest {
 
 		/** Information about the encryption of the flow. */
-		Decryption?: UpdateEncryption | null;
+		Decryption?: UpdateEncryption;
 		Description?: string | null;
 		EntitlementArn?: string | null;
 		IngestPort?: number | null;
@@ -546,6 +1338,33 @@ export namespace MyNS {
 		StreamId?: string | null;
 		VpcInterfaceName?: string | null;
 		WhitelistCidr?: string | null;
+	}
+
+	/** A request to update the source of a flow. */
+	export interface UpdateFlowSourceRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		IngestPort: FormControl<number | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		MaxLatency: FormControl<number | null | undefined>,
+		Protocol: FormControl<UpdateFlowSourceRequestProtocol | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+		VpcInterfaceName: FormControl<string | null | undefined>,
+		WhitelistCidr: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowSourceRequestFormGroup() {
+		return new FormGroup<UpdateFlowSourceRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			IngestPort: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MaxLatency: new FormControl<number | null | undefined>(undefined),
+			Protocol: new FormControl<UpdateFlowSourceRequestProtocol | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateFlowSourceRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -797,6 +1616,13 @@ export namespace MyNS {
 		 */
 		outputs: Array<AddOutputRequest>;
 	}
+	export interface AddFlowOutputsPostBodyFormProperties {
+	}
+	export function CreateAddFlowOutputsPostBodyFormGroup() {
+		return new FormGroup<AddFlowOutputsPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface AddFlowSourcesPostBody {
 
@@ -805,6 +1631,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		sources: Array<SetSourceRequest>;
+	}
+	export interface AddFlowSourcesPostBodyFormProperties {
+	}
+	export function CreateAddFlowSourcesPostBodyFormGroup() {
+		return new FormGroup<AddFlowSourcesPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface AddFlowVpcInterfacesPostBody {
@@ -815,6 +1648,13 @@ export namespace MyNS {
 		 */
 		vpcInterfaces: Array<VpcInterfaceRequest>;
 	}
+	export interface AddFlowVpcInterfacesPostBodyFormProperties {
+	}
+	export function CreateAddFlowVpcInterfacesPostBodyFormGroup() {
+		return new FormGroup<AddFlowVpcInterfacesPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface CreateFlowPostBody {
 
@@ -822,7 +1662,7 @@ export namespace MyNS {
 		availabilityZone?: string | null;
 
 		/** The entitlements that you want to grant on a flow. */
-		entitlements?: Array<GrantEntitlementRequest> | null;
+		entitlements?: Array<GrantEntitlementRequest>;
 
 		/**
 		 * The name of the flow.
@@ -831,23 +1671,41 @@ export namespace MyNS {
 		name: string;
 
 		/** The outputs that you want to add to this flow. */
-		outputs?: Array<AddOutputRequest> | null;
+		outputs?: Array<AddOutputRequest>;
 
 		/** The settings for the source of the flow. */
-		source?: CreateFlowPostBodySource | null;
+		source?: CreateFlowPostBodySource;
 
 		/** The settings for source failover */
-		sourceFailoverConfig?: CreateFlowPostBodySourceFailoverConfig | null;
-		sources?: Array<SetSourceRequest> | null;
+		sourceFailoverConfig?: CreateFlowPostBodySourceFailoverConfig;
+		sources?: Array<SetSourceRequest>;
 
 		/** The VPC interfaces you want on the flow. */
-		vpcInterfaces?: Array<VpcInterfaceRequest> | null;
+		vpcInterfaces?: Array<VpcInterfaceRequest>;
+	}
+	export interface CreateFlowPostBodyFormProperties {
+
+		/** The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region. */
+		availabilityZone: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the flow.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFlowPostBodyFormGroup() {
+		return new FormGroup<CreateFlowPostBodyFormProperties>({
+			availabilityZone: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFlowPostBodySource {
 
 		/** Information about the encryption of the flow. */
-		Decryption?: Encryption | null;
+		Decryption?: Encryption;
 		Description?: string | null;
 		EntitlementArn?: string | null;
 		IngestPort?: number | null;
@@ -859,6 +1717,33 @@ export namespace MyNS {
 		VpcInterfaceName?: string | null;
 		WhitelistCidr?: string | null;
 	}
+	export interface CreateFlowPostBodySourceFormProperties {
+		Description: FormControl<string | null | undefined>,
+		EntitlementArn: FormControl<string | null | undefined>,
+		IngestPort: FormControl<number | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		MaxLatency: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Protocol: FormControl<CreateFlowPostBodySourceProtocol | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+		VpcInterfaceName: FormControl<string | null | undefined>,
+		WhitelistCidr: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFlowPostBodySourceFormGroup() {
+		return new FormGroup<CreateFlowPostBodySourceFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			EntitlementArn: new FormControl<string | null | undefined>(undefined),
+			IngestPort: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MaxLatency: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<CreateFlowPostBodySourceProtocol | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateFlowPostBodySourceProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
@@ -866,16 +1751,45 @@ export namespace MyNS {
 		RecoveryWindow?: number | null;
 		State?: FailoverConfigState | null;
 	}
+	export interface CreateFlowPostBodySourceFailoverConfigFormProperties {
+		RecoveryWindow: FormControl<number | null | undefined>,
+		State: FormControl<FailoverConfigState | null | undefined>,
+	}
+	export function CreateCreateFlowPostBodySourceFailoverConfigFormGroup() {
+		return new FormGroup<CreateFlowPostBodySourceFailoverConfigFormProperties>({
+			RecoveryWindow: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<FailoverConfigState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFlowPutBody {
 
 		/** The settings for source failover */
-		sourceFailoverConfig?: UpdateFlowPutBodySourceFailoverConfig | null;
+		sourceFailoverConfig?: UpdateFlowPutBodySourceFailoverConfig;
+	}
+	export interface UpdateFlowPutBodyFormProperties {
+	}
+	export function CreateUpdateFlowPutBodyFormGroup() {
+		return new FormGroup<UpdateFlowPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFlowPutBodySourceFailoverConfig {
 		RecoveryWindow?: number | null;
 		State?: FailoverConfigState | null;
+	}
+	export interface UpdateFlowPutBodySourceFailoverConfigFormProperties {
+		RecoveryWindow: FormControl<number | null | undefined>,
+		State: FormControl<FailoverConfigState | null | undefined>,
+	}
+	export function CreateUpdateFlowPutBodySourceFailoverConfigFormGroup() {
+		return new FormGroup<UpdateFlowPutBodySourceFailoverConfigFormProperties>({
+			RecoveryWindow: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<FailoverConfigState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GrantFlowEntitlementsPostBody {
@@ -886,6 +1800,13 @@ export namespace MyNS {
 		 */
 		entitlements: Array<GrantEntitlementRequest>;
 	}
+	export interface GrantFlowEntitlementsPostBodyFormProperties {
+	}
+	export function CreateGrantFlowEntitlementsPostBodyFormGroup() {
+		return new FormGroup<GrantFlowEntitlementsPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -895,11 +1816,25 @@ export namespace MyNS {
 		 */
 		tags: {[id: string]: string };
 	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFlowOutputPutBody {
 
 		/** The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. */
-		cidrAllowList?: Array<string> | null;
+		cidrAllowList?: Array<string>;
 
 		/** A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user. */
 		description?: string | null;
@@ -908,7 +1843,7 @@ export namespace MyNS {
 		destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		encryption?: UpdateFlowOutputPutBodyEncryption | null;
+		encryption?: UpdateFlowOutputPutBodyEncryption;
 
 		/** The maximum latency in milliseconds for Zixi-based streams. */
 		maxLatency?: number | null;
@@ -929,7 +1864,46 @@ export namespace MyNS {
 		streamId?: string | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		vpcInterfaceAttachment?: UpdateFlowOutputPutBodyVpcInterfaceAttachment | null;
+		vpcInterfaceAttachment?: UpdateFlowOutputPutBodyVpcInterfaceAttachment;
+	}
+	export interface UpdateFlowOutputPutBodyFormProperties {
+
+		/** A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user. */
+		description: FormControl<string | null | undefined>,
+
+		/** The IP address where you want to send the output. */
+		destination: FormControl<string | null | undefined>,
+
+		/** The maximum latency in milliseconds for Zixi-based streams. */
+		maxLatency: FormControl<number | null | undefined>,
+
+		/** The port to use when content is distributed to this output. */
+		port: FormControl<number | null | undefined>,
+
+		/** The protocol to use for the output. */
+		protocol: FormControl<UpdateFlowOutputPutBodyProtocol | null | undefined>,
+
+		/** The remote ID for the Zixi-pull stream. */
+		remoteId: FormControl<string | null | undefined>,
+
+		/** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
+		smoothingLatency: FormControl<number | null | undefined>,
+
+		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
+		streamId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowOutputPutBodyFormGroup() {
+		return new FormGroup<UpdateFlowOutputPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			destination: new FormControl<string | null | undefined>(undefined),
+			maxLatency: new FormControl<number | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined),
+			protocol: new FormControl<UpdateFlowOutputPutBodyProtocol | null | undefined>(undefined),
+			remoteId: new FormControl<string | null | undefined>(undefined),
+			smoothingLatency: new FormControl<number | null | undefined>(undefined),
+			streamId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFlowOutputPutBodyEncryption {
@@ -943,6 +1917,31 @@ export namespace MyNS {
 		SecretArn?: string | null;
 		Url?: string | null;
 	}
+	export interface UpdateFlowOutputPutBodyEncryptionFormProperties {
+		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+		KeyType: FormControl<UpdateFlowOutputPutBodyEncryptionKeyType | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SecretArn: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowOutputPutBodyEncryptionFormGroup() {
+		return new FormGroup<UpdateFlowOutputPutBodyEncryptionFormProperties>({
+			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<UpdateFlowOutputPutBodyEncryptionKeyType | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateFlowOutputPutBodyEncryptionKeyType { speke = 0, static_key = 1 }
 
@@ -951,11 +1950,20 @@ export namespace MyNS {
 	export interface UpdateFlowOutputPutBodyVpcInterfaceAttachment {
 		VpcInterfaceName?: string | null;
 	}
+	export interface UpdateFlowOutputPutBodyVpcInterfaceAttachmentFormProperties {
+		VpcInterfaceName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowOutputPutBodyVpcInterfaceAttachmentFormGroup() {
+		return new FormGroup<UpdateFlowOutputPutBodyVpcInterfaceAttachmentFormProperties>({
+			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFlowSourcePutBody {
 
 		/** Information about the encryption of the flow. */
-		decryption?: UpdateFlowSourcePutBodyDecryption | null;
+		decryption?: UpdateFlowSourcePutBodyDecryption;
 
 		/** A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account. */
 		description?: string | null;
@@ -984,6 +1992,49 @@ export namespace MyNS {
 		/** The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. */
 		whitelistCidr?: string | null;
 	}
+	export interface UpdateFlowSourcePutBodyFormProperties {
+
+		/** A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account. */
+		description: FormControl<string | null | undefined>,
+
+		/** The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow. */
+		entitlementArn: FormControl<string | null | undefined>,
+
+		/** The port that the flow will be listening on for incoming content. */
+		ingestPort: FormControl<number | null | undefined>,
+
+		/** The smoothing max bitrate for RIST, RTP, and RTP-FEC streams. */
+		maxBitrate: FormControl<number | null | undefined>,
+
+		/** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
+		maxLatency: FormControl<number | null | undefined>,
+
+		/** The protocol that is used by the source. */
+		protocol: FormControl<UpdateFlowSourcePutBodyProtocol | null | undefined>,
+
+		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
+		streamId: FormControl<string | null | undefined>,
+
+		/** The name of the VPC Interface to configure this Source with. */
+		vpcInterfaceName: FormControl<string | null | undefined>,
+
+		/** The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. */
+		whitelistCidr: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowSourcePutBodyFormGroup() {
+		return new FormGroup<UpdateFlowSourcePutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			entitlementArn: new FormControl<string | null | undefined>(undefined),
+			ingestPort: new FormControl<number | null | undefined>(undefined),
+			maxBitrate: new FormControl<number | null | undefined>(undefined),
+			maxLatency: new FormControl<number | null | undefined>(undefined),
+			protocol: new FormControl<UpdateFlowSourcePutBodyProtocol | null | undefined>(undefined),
+			streamId: new FormControl<string | null | undefined>(undefined),
+			vpcInterfaceName: new FormControl<string | null | undefined>(undefined),
+			whitelistCidr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFlowSourcePutBodyDecryption {
 		Algorithm?: EncryptionAlgorithm | null;
@@ -996,6 +2047,31 @@ export namespace MyNS {
 		SecretArn?: string | null;
 		Url?: string | null;
 	}
+	export interface UpdateFlowSourcePutBodyDecryptionFormProperties {
+		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+		KeyType: FormControl<UpdateFlowSourcePutBodyDecryptionKeyType | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SecretArn: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowSourcePutBodyDecryptionFormGroup() {
+		return new FormGroup<UpdateFlowSourcePutBodyDecryptionFormProperties>({
+			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<UpdateFlowSourcePutBodyDecryptionKeyType | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateFlowSourcePutBodyDecryptionKeyType { speke = 0, static_key = 1 }
 
@@ -1007,10 +2083,21 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		encryption?: UpdateFlowEntitlementPutBodyEncryption | null;
+		encryption?: UpdateFlowEntitlementPutBodyEncryption;
 
 		/** The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source. */
-		subscribers?: Array<string> | null;
+		subscribers?: Array<string>;
+	}
+	export interface UpdateFlowEntitlementPutBodyFormProperties {
+
+		/** A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user. */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowEntitlementPutBodyFormGroup() {
+		return new FormGroup<UpdateFlowEntitlementPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFlowEntitlementPutBodyEncryption {
@@ -1023,6 +2110,31 @@ export namespace MyNS {
 		RoleArn?: string | null;
 		SecretArn?: string | null;
 		Url?: string | null;
+	}
+	export interface UpdateFlowEntitlementPutBodyEncryptionFormProperties {
+		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+		DeviceId: FormControl<string | null | undefined>,
+		KeyType: FormControl<UpdateFlowEntitlementPutBodyEncryptionKeyType | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SecretArn: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFlowEntitlementPutBodyEncryptionFormGroup() {
+		return new FormGroup<UpdateFlowEntitlementPutBodyEncryptionFormProperties>({
+			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<UpdateFlowEntitlementPutBodyEncryptionKeyType | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SecretArn: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateFlowEntitlementPutBodyEncryptionKeyType { speke = 0, static_key = 1 }

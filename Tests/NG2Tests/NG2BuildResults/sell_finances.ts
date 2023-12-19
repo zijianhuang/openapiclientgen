@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
@@ -13,12 +14,42 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
+	export interface AmountFormProperties {
+
+		/** A three-letter ISO 4217 code that indicates the currency of the amount in the value field. This field is always returned with the amount container. Default: The currency of the authenticated user's country. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/CurrencyCodeEnum.html'>eBay API documentation</a> */
+		currency: FormControl<string | null | undefined>,
+
+		/** The monetary amount, in the currency specified by the currency field. This field is always returned with the amount container. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateAmountFormGroup() {
+		return new FormGroup<AmountFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This type is used to express details about the buyer associated with an order. At this time, the only field in this type is the eBay user ID of the buyer, but more fields may get added at a later date. */
 	export interface Buyer {
 
 		/** The eBay user ID of the order's buyer. */
 		username?: string | null;
+	}
+
+	/** This type is used to express details about the buyer associated with an order. At this time, the only field in this type is the eBay user ID of the buyer, but more fields may get added at a later date. */
+	export interface BuyerFormProperties {
+
+		/** The eBay user ID of the order's buyer. */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateBuyerFormGroup() {
+		return new FormGroup<BuyerFormProperties>({
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -35,7 +66,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** A more detailed explanation of the error. */
 		longMessage?: string | null;
@@ -44,13 +75,46 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** An array of request elements most closely associated to the error. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
 		subdomain?: string | null;
+	}
+
+	/** This type defines the fields that can be returned in an error. */
+	export interface ErrorFormProperties {
+
+		/** Identifies the type of erro. */
+		category: FormControl<string | null | undefined>,
+
+		/** Name for the primary system where the error occurred. This is relevant for application errors. */
+		domain: FormControl<string | null | undefined>,
+
+		/** A unique number to identify the error. */
+		errorId: FormControl<number | null | undefined>,
+
+		/** A more detailed explanation of the error. */
+		longMessage: FormControl<string | null | undefined>,
+
+		/** Information on how to correct the problem, in the end user's terms and language where applicable. */
+		message: FormControl<string | null | undefined>,
+
+		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
+		subdomain: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			errorId: new FormControl<number | null | undefined>(undefined),
+			longMessage: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			subdomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ErrorParameter {
@@ -61,13 +125,28 @@ export namespace MyNS {
 		/** The value of the object. */
 		value?: string | null;
 	}
+	export interface ErrorParameterFormProperties {
+
+		/** The object of the error. */
+		name: FormControl<string | null | undefined>,
+
+		/** The value of the object. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorParameterFormGroup() {
+		return new FormGroup<ErrorParameterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** This type is used to express the details of one seller payout that is returned with the getPayout or getPayouts methods. */
 	export interface Payout {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** This timestamp indicates when the seller payout began processing. The following format is used: YYYY-MM-DDTHH:MM:SS.SSSZ. For example, 2015-08-04T19:09:02.768Z. This field is still returned even if the payout was pending but failed (payoutStatus value shows RETRYABLE_FAILED or TERMINAL_FAILED). */
 		payoutDate?: string | null;
@@ -76,7 +155,7 @@ export namespace MyNS {
 		payoutId?: string | null;
 
 		/** This type provides details about the seller's account that received (or is scheduled to receive) a payout. */
-		payoutInstrument?: PayoutInstrument | null;
+		payoutInstrument?: PayoutInstrument;
 
 		/** This enumeration value indicates the current status of the seller payout. For a successful payout, the value returned will be SUCCEEDED. See the PayoutStatusEnum type for more details on each payout status value. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/PayoutStatusEnum.html'>eBay API documentation</a> */
 		payoutStatus?: string | null;
@@ -86,6 +165,35 @@ export namespace MyNS {
 
 		/** This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout. */
 		transactionCount?: number | null;
+	}
+
+	/** This type is used to express the details of one seller payout that is returned with the getPayout or getPayouts methods. */
+	export interface PayoutFormProperties {
+
+		/** This timestamp indicates when the seller payout began processing. The following format is used: YYYY-MM-DDTHH:MM:SS.SSSZ. For example, 2015-08-04T19:09:02.768Z. This field is still returned even if the payout was pending but failed (payoutStatus value shows RETRYABLE_FAILED or TERMINAL_FAILED). */
+		payoutDate: FormControl<string | null | undefined>,
+
+		/** The unique identifier of the seller payout. This identifier is generated once eBay begins processing the payout to the seller's bank account. */
+		payoutId: FormControl<string | null | undefined>,
+
+		/** This enumeration value indicates the current status of the seller payout. For a successful payout, the value returned will be SUCCEEDED. See the PayoutStatusEnum type for more details on each payout status value. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/PayoutStatusEnum.html'>eBay API documentation</a> */
+		payoutStatus: FormControl<string | null | undefined>,
+
+		/** This field provides more details about the current status of payout. The description returned here will correspond with enumeration value returned in the payoutStatus field. The following shows what description text might appear based on the different payoutStatus values: INITIATED: Preparing to send SUCCEEDED: Funds sent REVERSED: Waiting to retry : Money rejected by seller's bank RETRYABLE_FAILED: Waiting to retry TERMINAL_FAILED: Payout failed */
+		payoutStatusDescription: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the number of monetary transactions (all orders, refunds, and credits, etc.) that have occurred with the corresponding payout. Its value should always be at least 1, since there is at least one order per seller payout. */
+		transactionCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePayoutFormGroup() {
+		return new FormGroup<PayoutFormProperties>({
+			payoutDate: new FormControl<string | null | undefined>(undefined),
+			payoutId: new FormControl<string | null | undefined>(undefined),
+			payoutStatus: new FormControl<string | null | undefined>(undefined),
+			payoutStatusDescription: new FormControl<string | null | undefined>(undefined),
+			transactionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -102,18 +210,56 @@ export namespace MyNS {
 		nickname?: string | null;
 	}
 
+	/** This type provides details about the seller's account that received (or is scheduled to receive) a payout. */
+	export interface PayoutInstrumentFormProperties {
+
+		/** This string value is the last four digits of the seller's account number. */
+		accountLastFourDigits: FormControl<string | null | undefined>,
+
+		/** This string value indicates the type of account that received the payout. At this time, seller payouts can only be distributed to bank acounts, so the string value returned in this field will always be BankAccount. */
+		instrumentType: FormControl<string | null | undefined>,
+
+		/** This string value is a seller-provided nickname that the seller uses to represent the bank account. */
+		nickname: FormControl<string | null | undefined>,
+	}
+	export function CreatePayoutInstrumentFormGroup() {
+		return new FormGroup<PayoutInstrumentFormProperties>({
+			accountLastFourDigits: new FormControl<string | null | undefined>(undefined),
+			instrumentType: new FormControl<string | null | undefined>(undefined),
+			nickname: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This type is the base response type of the getPayoutSummary method, and contains the total count of seller payouts (that match the input criteria), the total count of monetary transactions (order payment, buyer refunds, or seller credits) associated with those payouts, and the total value of those seller payouts. */
 	export interface PayoutSummaryResponse {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). */
 		payoutCount?: number | null;
 
 		/** This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1. */
 		transactionCount?: number | null;
+	}
+
+	/** This type is the base response type of the getPayoutSummary method, and contains the total count of seller payouts (that match the input criteria), the total count of monetary transactions (order payment, buyer refunds, or seller credits) associated with those payouts, and the total value of those seller payouts. */
+	export interface PayoutSummaryResponseFormProperties {
+
+		/** This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). */
+		payoutCount: FormControl<number | null | undefined>,
+
+		/** This integer value indicates the total count of monetary transactions (order payments, buyer refunds, and seller credits) associated with the payouts that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). If there is at least one payout that matches the input criteria, the value in this field will be at least 1. */
+		transactionCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePayoutSummaryResponseFormGroup() {
+		return new FormGroup<PayoutSummaryResponseFormProperties>({
+			payoutCount: new FormControl<number | null | undefined>(undefined),
+			transactionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,7 +279,7 @@ export namespace MyNS {
 		offset?: number | null;
 
 		/** An array of one or more payouts that match the input criteria. Details for each payout include the unique identifier of the payout, the status of the payout, the amount of the payout, and the number of monetary transactions associated with the payout. */
-		payouts?: Array<Payout> | null;
+		payouts?: Array<Payout>;
 
 		/** The getPayouts call URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
 		prev?: string | null;
@@ -142,21 +288,63 @@ export namespace MyNS {
 		total?: number | null;
 	}
 
+	/** This type is the base response type of the getPayouts method, and contains an array of one or more payouts (that match the input criteria), the total count of payouts in the response, and various pagination data for the results set. */
+	export interface PayoutsFormProperties {
+
+		/** The URI of the getPayouts call request that produced the current page of the result set. */
+		href: FormControl<string | null | undefined>,
+
+		/** The maximum number of payouts that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer payouts than the limit value. To determine the number of pages in a result set, divide the total value (total number of payouts matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total payouts) and the limit value was 50 (show 50 payouts per page), the total number of pages in the result set is three, so the seller would have to make three separate getPayouts calls to view all payouts matching the input criteria. Maximum: 200 Default: 20 */
+		limit: FormControl<number | null | undefined>,
+
+		/** The getPayouts call URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria. */
+		next: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the actual position that the first payout returned on the current page has in the results set. So, if you wanted to view the 11th payout of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the call retrieves payouts 31 thru 40 from the resulting collection of payouts. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero) */
+		offset: FormControl<number | null | undefined>,
+
+		/** The getPayouts call URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
+		prev: FormControl<string | null | undefined>,
+
+		/** This integer value is the total number of payouts in the results set based on the current input criteria. Based on the total number of payouts that match the criteria, and on the limit and offset values, there may be additional pages in the results set. */
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreatePayoutsFormGroup() {
+		return new FormGroup<PayoutsFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			prev: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This type is used by the response payload of the getSellerFundsSummary method. All of the funds returned in getSellerFundsSummary are funds that have not yet been paid to the seller through a seller payout. If there are no funds that are pending, on hold, or being processed for the seller's account, no response payload is returned, and an http status code of 204 - No Content is returned instead. */
 	export interface SellerFundsSummaryResponse {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		availableFunds?: Amount | null;
+		availableFunds?: Amount;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		fundsOnHold?: Amount | null;
+		fundsOnHold?: Amount;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		processingFunds?: Amount | null;
+		processingFunds?: Amount;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		totalFunds?: Amount | null;
+		totalFunds?: Amount;
+	}
+
+	/** This type is used by the response payload of the getSellerFundsSummary method. All of the funds returned in getSellerFundsSummary are funds that have not yet been paid to the seller through a seller payout. If there are no funds that are pending, on hold, or being processed for the seller's account, no response payload is returned, and an http status code of 204 - No Content is returned instead. */
+	export interface SellerFundsSummaryResponseFormProperties {
+	}
+	export function CreateSellerFundsSummaryResponseFormGroup() {
+		return new FormGroup<SellerFundsSummaryResponseFormProperties>({
+		});
+
 	}
 
 
@@ -164,13 +352,13 @@ export namespace MyNS {
 	export interface Transaction {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** The enumeration value returned in this field indicates if the monetary transaction amount is a (CREDIT) or a (DEBIT) to the seller's account. Typically, the SALE and CREDIT transaction types are credits to the seller's account, and the REFUND, DISPUTE, and SHIPPING_LABEL transaction types are debits to the seller's account. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		bookingEntry?: string | null;
 
 		/** This type is used to express details about the buyer associated with an order. At this time, the only field in this type is the eBay user ID of the buyer, but more fields may get added at a later date. */
-		buyer?: Buyer | null;
+		buyer?: Buyer;
 
 		/** The unique identifier of the order associated with the monetary transaction. Note: eBay rolled out a new Order ID format in June 2019. Until April 2020, the legacy APIs still support both the old and new order ID format, but only the new order ID format is supported in REST-based APIs. */
 		orderId?: string | null;
@@ -197,12 +385,57 @@ export namespace MyNS {
 		transactionType?: string | null;
 	}
 
+	/** This type is used to express the details of one of the following monetary transactions: a buyer's payment for an order, a refund to the buyer for a returned item or cancelled order, or a credit issued by eBay to the seller's account. */
+	export interface TransactionFormProperties {
+
+		/** The enumeration value returned in this field indicates if the monetary transaction amount is a (CREDIT) or a (DEBIT) to the seller's account. Typically, the SALE and CREDIT transaction types are credits to the seller's account, and the REFUND, DISPUTE, and SHIPPING_LABEL transaction types are debits to the seller's account. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
+		bookingEntry: FormControl<string | null | undefined>,
+
+		/** The unique identifier of the order associated with the monetary transaction. Note: eBay rolled out a new Order ID format in June 2019. Until April 2020, the legacy APIs still support both the old and new order ID format, but only the new order ID format is supported in REST-based APIs. */
+		orderId: FormControl<string | null | undefined>,
+
+		/** The unique identifier of the seller payout associated with the monetary transaction. This identifier is generated once eBay begins processing the payout for the corresponding order. This field will not be returned if eBay has not yet begun processing the payout for an order. */
+		payoutId: FormControl<string | null | undefined>,
+
+		/** The Sales Record Number associated with a sales order. Sales Record Numbers are Selling Manager/Selling Manager Pro identifiers that are created at order checkout. Note: For all orders originating after February 1, 2020, a value of 0 will be returned in this field. The Sales Record Number field has also been removed from Seller Hub. Instead of salesRecordReference, depend on orderId instead as the identifier of the order. The salesRecordReference field has been scheduled for deprecation, and a date for when this field will no longer be returned at all will be announced soon. */
+		salesRecordReference: FormControl<string | null | undefined>,
+
+		/** This timestamp indicates when the monetary transaction (order purchase, buyer refund, seller credit) occurred. The following format is used: YYYY-MM-DDTHH:MM:SS.SSSZ. For example, 2015-08-04T19:09:02.768Z. */
+		transactionDate: FormControl<string | null | undefined>,
+
+		/** The unique identifier of the monetary transaction. A monetary transaction can be a sales order, an order refund to the buyer, a credit to the seller's account, a debit to the seller for the purchase of a shipping label, or a transaction where eBay recouped money from the seller if the seller lost a buyer-initiated payment dispute. */
+		transactionId: FormControl<string | null | undefined>,
+
+		/** This field provides more details on a shipping label transaction, such as a purchase, a refund, or a price adjustment to the cost of the shipping label. This field is only returned if applicable/available. Currently, this field is only used for shipping label transactions, but it is possible that it will be used for other transaction types in the future. */
+		transactionMemo: FormControl<string | null | undefined>,
+
+		/** This enumeration value indicates the current status of the seller payout associated with the monetary transaction. See the TransactionStatusEnum type for more information on the different states. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/TransactionStatusEnum.html'>eBay API documentation</a> */
+		transactionStatus: FormControl<string | null | undefined>,
+
+		/** This enumeration value indicates whether the monetary transaction is a buyer's payment for an order, a refund to the buyer for a returned item or cancelled order, a credit issued by eBay to the seller's account, a payment dispute between the buyer and seller, or where eBay is billing the seller for an eBay shipping label. Note that the shipping label functionality will initially only be available to a select number of sellers. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/TransactionTypeEnum.html'>eBay API documentation</a> */
+		transactionType: FormControl<string | null | undefined>,
+	}
+	export function CreateTransactionFormGroup() {
+		return new FormGroup<TransactionFormProperties>({
+			bookingEntry: new FormControl<string | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+			payoutId: new FormControl<string | null | undefined>(undefined),
+			salesRecordReference: new FormControl<string | null | undefined>(undefined),
+			transactionDate: new FormControl<string | null | undefined>(undefined),
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			transactionMemo: new FormControl<string | null | undefined>(undefined),
+			transactionStatus: new FormControl<string | null | undefined>(undefined),
+			transactionType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This type is the base response type of the getTransactionSummary method, and based on the filters that are used in the getTransactionSummary call URI, the response may include total count and amount of the seller's sales and credits, total count and amount of buyer refunds, and total count and amount of seller payment holds. */
 	export interface TransactionSummaryResponse {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		creditAmount?: Amount | null;
+		creditAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the creditAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		creditBookingEntry?: string | null;
@@ -211,7 +444,7 @@ export namespace MyNS {
 		creditCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		disputeAmount?: Amount | null;
+		disputeAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the disputeAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, but its possible that CREDIT could be returned if the seller contested one or more payment disputes and won the dispute. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		disputeBookingEntry?: string | null;
@@ -220,7 +453,7 @@ export namespace MyNS {
 		disputeCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		onHoldAmount?: Amount | null;
+		onHoldAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the onHoldAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT, since on-hold funds should eventually be released as part of a payout to the seller once the hold is cleared. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		onHoldBookingEntry?: string | null;
@@ -229,7 +462,7 @@ export namespace MyNS {
 		onHoldCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		refundAmount?: Amount | null;
+		refundAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the refundAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT since this a refund from the seller to the buyer. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		refundBookingEntry?: string | null;
@@ -238,13 +471,62 @@ export namespace MyNS {
 		refundCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		shippingLabelAmount?: Amount | null;
+		shippingLabelAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the shippingLabelAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, as eBay will charge the seller when eBay shipping labels are purchased, but it can be CREDIT if the seller was refunded for a shipping label or was possibly overcharged for a shipping label. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		shippingLabelBookingEntry?: string | null;
 
 		/** This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria. */
 		shippingLabelCount?: number | null;
+	}
+
+	/** This type is the base response type of the getTransactionSummary method, and based on the filters that are used in the getTransactionSummary call URI, the response may include total count and amount of the seller's sales and credits, total count and amount of buyer refunds, and total count and amount of seller payment holds. */
+	export interface TransactionSummaryResponseFormProperties {
+
+		/** The enumeration value indicates whether the dollar amount in the creditAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
+		creditBookingEntry: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the total number of the seller's sales and/or credits that match the input criteria. Note: Unless the transactionType filter is used in the request to retrieve a specific type of monetary transaction (sale, buyer refund, or seller credit), the creditCount and creditAmount fields account for both order sales and seller credits (the count and value is not distinguished between the two monetary transaction types). This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to either REFUND, DISPUTE, or SHIPPING_LABEL. */
+		creditCount: FormControl<number | null | undefined>,
+
+		/** The enumeration value indicates whether the dollar amount in the disputeAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, but its possible that CREDIT could be returned if the seller contested one or more payment disputes and won the dispute. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
+		disputeBookingEntry: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the total number of payment disputes that have been initiated by one or more buyers. Only the orders that match the input criteria are considered. The Payment Disputes methods in the Fulfillment API can be used by the seller to retrieve more information about any payment disputes. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than DISPUTE. */
+		disputeCount: FormControl<number | null | undefined>,
+
+		/** The enumeration value indicates whether the dollar amount in the onHoldAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT, since on-hold funds should eventually be released as part of a payout to the seller once the hold is cleared. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
+		onHoldBookingEntry: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the total number of order sales where the associated funds are on hold. Only the orders that match the input criteria are considered. This field is generally returned, even if 0, but it will not be returned if a transactionStatus filter is used, and its value is set to any value other than FUNDS_ON_HOLD. */
+		onHoldCount: FormControl<number | null | undefined>,
+
+		/** The enumeration value indicates whether the dollar amount in the refundAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT since this a refund from the seller to the buyer. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
+		refundBookingEntry: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the total number of buyer refunds that match the input criteria. This field is generally returned, even if 0, but it will not be returned if a transactionType filter is used, and its value is set to any value other than REFUND. */
+		refundCount: FormControl<number | null | undefined>,
+
+		/** The enumeration value indicates whether the dollar amount in the shippingLabelAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, as eBay will charge the seller when eBay shipping labels are purchased, but it can be CREDIT if the seller was refunded for a shipping label or was possibly overcharged for a shipping label. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
+		shippingLabelBookingEntry: FormControl<string | null | undefined>,
+
+		/** This is the total number of eBay shipping labels purchased by the seller. The count returned here may depend on the specified input criteria. */
+		shippingLabelCount: FormControl<number | null | undefined>,
+	}
+	export function CreateTransactionSummaryResponseFormGroup() {
+		return new FormGroup<TransactionSummaryResponseFormProperties>({
+			creditBookingEntry: new FormControl<string | null | undefined>(undefined),
+			creditCount: new FormControl<number | null | undefined>(undefined),
+			disputeBookingEntry: new FormControl<string | null | undefined>(undefined),
+			disputeCount: new FormControl<number | null | undefined>(undefined),
+			onHoldBookingEntry: new FormControl<string | null | undefined>(undefined),
+			onHoldCount: new FormControl<number | null | undefined>(undefined),
+			refundBookingEntry: new FormControl<string | null | undefined>(undefined),
+			refundCount: new FormControl<number | null | undefined>(undefined),
+			shippingLabelBookingEntry: new FormControl<string | null | undefined>(undefined),
+			shippingLabelCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -270,7 +552,40 @@ export namespace MyNS {
 		total?: number | null;
 
 		/** An array of one or more monetary transactions that match the input criteria. Details for each monetary transaction may include the unique identifier of the order associated with the monetary transaction, the status of the transaction, the amount of the order, the order's buyer, and the unique identifier of the payout (if a payout has been initiated/issued for the order). */
-		transactions?: Array<Transaction> | null;
+		transactions?: Array<Transaction>;
+	}
+
+	/** This is the base response type of the getTransactions method. The getTransactions response includes details on one or more monetary transactions that match the input criteria, as well as pagination data. */
+	export interface TransactionsFormProperties {
+
+		/** The URI of the getTransactions method request that produced the current page of the result set. */
+		href: FormControl<string | null | undefined>,
+
+		/** The maximum number of monetary transactions that may be returned per page of the result set. The limit value can be passed in as a query parameter, or if omitted, its value defaults to 20. Note: If this is the last or only page of the result set, the page may contain fewer monetary transactions than the limit value. To determine the number of pages in a result set, divide the total value (total number of monetary transactions matching input criteria) by this limit value, and then round up to the next integer. For example, if the total value was 120 (120 total monetary transactions) and the limit value was 50 (show 50 monetary transactions per page), the total number of pages in the result set is three, so the seller would have to make three separate getTransactions calls to view all monetary transactions matching the input criteria. Maximum: 200 Default: 20 */
+		limit: FormControl<number | null | undefined>,
+
+		/** The getTransactions method URI to use if you wish to view the next page of the result set. This field is only returned if there is a next page of results to view based on the current input criteria. */
+		next: FormControl<string | null | undefined>,
+
+		/** This integer value indicates the actual position that the first monetary transaction returned on the current page has in the results set. So, if you wanted to view the 11th monetary transaction of the result set, you would set the offset value in the request to 10. In the request, you can use the offset parameter in conjunction with the limit parameter to control the pagination of the output. For example, if offset is set to 30 and limit is set to 10, the method retrieves monetary transactions 31 thru 40 from the resulting collection of monetary transactions. Note: This feature employs a zero-based list, where the first item in the list has an offset of 0. Default: 0 (zero) */
+		offset: FormControl<number | null | undefined>,
+
+		/** The getTransactions method URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
+		prev: FormControl<string | null | undefined>,
+
+		/** This integer value is the total amount of monetary transactions in the result set based on the current input criteria. Based on the total number of monetary transactions that match the criteria, and on the limit and offset values, there may be additional pages in the results set. */
+		total: FormControl<number | null | undefined>,
+	}
+	export function CreateTransactionsFormGroup() {
+		return new FormGroup<TransactionsFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			next: new FormControl<string | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			prev: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

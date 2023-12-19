@@ -110,7 +110,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
     <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 

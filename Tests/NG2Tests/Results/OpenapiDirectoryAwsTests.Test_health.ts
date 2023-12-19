@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DescribeAffectedAccountsForOrganizationResponse {
-		affectedAccounts?: Array<string> | null;
+		affectedAccounts?: Array<string>;
 		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null;
 		nextToken?: string | null;
+	}
+	export interface DescribeAffectedAccountsForOrganizationResponseFormProperties {
+		eventScopeCode: FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAffectedAccountsForOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeAffectedAccountsForOrganizationResponseFormProperties>({
+			eventScopeCode: new FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAffectedAccountsForOrganizationResponseEventScopeCode { PUBLIC = 0, ACCOUNT_SPECIFIC = 1, NONE = 2 }
@@ -15,13 +27,42 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface DescribeAffectedAccountsForOrganizationRequestFormProperties {
+		eventArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeAffectedAccountsForOrganizationRequestFormGroup() {
+		return new FormGroup<DescribeAffectedAccountsForOrganizationRequestFormProperties>({
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPaginationToken {
 	}
+	export interface InvalidPaginationTokenFormProperties {
+	}
+	export function CreateInvalidPaginationTokenFormGroup() {
+		return new FormGroup<InvalidPaginationTokenFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAffectedEntitiesResponse {
-		entities?: Array<AffectedEntity> | null;
+		entities?: Array<AffectedEntity>;
 		nextToken?: string | null;
+	}
+	export interface DescribeAffectedEntitiesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAffectedEntitiesResponseFormGroup() {
+		return new FormGroup<DescribeAffectedEntitiesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -34,12 +75,42 @@ export namespace MyNS {
 		awsAccountId?: string | null;
 		lastUpdatedTime?: Date | null;
 		statusCode?: AffectedEntityStatusCode | null;
-		tags?: TagSet | null;
+		tags?: TagSet;
+	}
+
+	/** Information about an entity that is affected by a Health event. */
+	export interface AffectedEntityFormProperties {
+		entityArn: FormControl<string | null | undefined>,
+		eventArn: FormControl<string | null | undefined>,
+		entityValue: FormControl<string | null | undefined>,
+		entityUrl: FormControl<string | null | undefined>,
+		awsAccountId: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<Date | null | undefined>,
+		statusCode: FormControl<AffectedEntityStatusCode | null | undefined>,
+	}
+	export function CreateAffectedEntityFormGroup() {
+		return new FormGroup<AffectedEntityFormProperties>({
+			entityArn: new FormControl<string | null | undefined>(undefined),
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			entityValue: new FormControl<string | null | undefined>(undefined),
+			entityUrl: new FormControl<string | null | undefined>(undefined),
+			awsAccountId: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			statusCode: new FormControl<AffectedEntityStatusCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AffectedEntityStatusCode { IMPAIRED = 0, UNIMPAIRED = 1, UNKNOWN = 2 }
 
 	export interface TagSet {
+	}
+	export interface TagSetFormProperties {
+	}
+	export function CreateTagSetFormGroup() {
+		return new FormGroup<TagSetFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAffectedEntitiesRequest {
@@ -53,16 +124,38 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface DescribeAffectedEntitiesRequestFormProperties {
+		locale: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeAffectedEntitiesRequestFormGroup() {
+		return new FormGroup<DescribeAffectedEntitiesRequestFormProperties>({
+			locale: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The values to use to filter results from the <a>DescribeAffectedEntities</a> operation. */
 	export interface EntityFilter {
 		eventArns: Array<string>;
-		entityArns?: Array<string> | null;
-		entityValues?: Array<string> | null;
-		lastUpdatedTimes?: Array<DateTimeRange> | null;
-		tags?: Array<TagSet> | null;
-		statusCodes?: Array<EntityStatusCode> | null;
+		entityArns?: Array<string>;
+		entityValues?: Array<string>;
+		lastUpdatedTimes?: Array<DateTimeRange>;
+		tags?: Array<TagSet>;
+		statusCodes?: Array<EntityStatusCode>;
+	}
+
+	/** The values to use to filter results from the <a>DescribeAffectedEntities</a> operation. */
+	export interface EntityFilterFormProperties {
+	}
+	export function CreateEntityFilterFormGroup() {
+		return new FormGroup<EntityFilterFormProperties>({
+		});
+
 	}
 
 
@@ -72,15 +165,44 @@ export namespace MyNS {
 		to?: Date | null;
 	}
 
+	/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
+	export interface DateTimeRangeFormProperties {
+		from: FormControl<Date | null | undefined>,
+		to: FormControl<Date | null | undefined>,
+	}
+	export function CreateDateTimeRangeFormGroup() {
+		return new FormGroup<DateTimeRangeFormProperties>({
+			from: new FormControl<Date | null | undefined>(undefined),
+			to: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EntityStatusCode { IMPAIRED = 0, UNIMPAIRED = 1, UNKNOWN = 2 }
 
 	export interface UnsupportedLocale {
 	}
+	export interface UnsupportedLocaleFormProperties {
+	}
+	export function CreateUnsupportedLocaleFormGroup() {
+		return new FormGroup<UnsupportedLocaleFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAffectedEntitiesForOrganizationResponse {
-		entities?: Array<AffectedEntity> | null;
-		failedSet?: Array<OrganizationAffectedEntitiesErrorItem> | null;
+		entities?: Array<AffectedEntity>;
+		failedSet?: Array<OrganizationAffectedEntitiesErrorItem>;
 		nextToken?: string | null;
+	}
+	export interface DescribeAffectedEntitiesForOrganizationResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAffectedEntitiesForOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeAffectedEntitiesForOrganizationResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -92,11 +214,41 @@ export namespace MyNS {
 		errorMessage?: string | null;
 	}
 
+	/** Error information returned when a <a>DescribeAffectedEntitiesForOrganization</a> operation cannot find or process a specific entity. */
+	export interface OrganizationAffectedEntitiesErrorItemFormProperties {
+		awsAccountId: FormControl<string | null | undefined>,
+		eventArn: FormControl<string | null | undefined>,
+		errorName: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationAffectedEntitiesErrorItemFormGroup() {
+		return new FormGroup<OrganizationAffectedEntitiesErrorItemFormProperties>({
+			awsAccountId: new FormControl<string | null | undefined>(undefined),
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			errorName: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeAffectedEntitiesForOrganizationRequest {
 		organizationEntityFilters: Array<EventAccountFilter>;
 		locale?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface DescribeAffectedEntitiesForOrganizationRequestFormProperties {
+		locale: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeAffectedEntitiesForOrganizationRequestFormGroup() {
+		return new FormGroup<DescribeAffectedEntitiesForOrganizationRequestFormProperties>({
+			locale: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -106,8 +258,28 @@ export namespace MyNS {
 		awsAccountId?: string | null;
 	}
 
+	/** The values used to filter results from the <a>DescribeEventDetailsForOrganization</a> and <a>DescribeAffectedEntitiesForOrganization</a> operations. */
+	export interface EventAccountFilterFormProperties {
+		eventArn: FormControl<string | null | undefined>,
+		awsAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateEventAccountFilterFormGroup() {
+		return new FormGroup<EventAccountFilterFormProperties>({
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			awsAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEntityAggregatesResponse {
-		entityAggregates?: Array<EntityAggregate> | null;
+		entityAggregates?: Array<EntityAggregate>;
+	}
+	export interface DescribeEntityAggregatesResponseFormProperties {
+	}
+	export function CreateDescribeEntityAggregatesResponseFormGroup() {
+		return new FormGroup<DescribeEntityAggregatesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -117,13 +289,42 @@ export namespace MyNS {
 		count?: number | null;
 	}
 
+	/** The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation. */
+	export interface EntityAggregateFormProperties {
+		eventArn: FormControl<string | null | undefined>,
+		count: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityAggregateFormGroup() {
+		return new FormGroup<EntityAggregateFormProperties>({
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEntityAggregatesRequest {
-		eventArns?: Array<string> | null;
+		eventArns?: Array<string>;
+	}
+	export interface DescribeEntityAggregatesRequestFormProperties {
+	}
+	export function CreateDescribeEntityAggregatesRequestFormGroup() {
+		return new FormGroup<DescribeEntityAggregatesRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEventAggregatesResponse {
-		eventAggregates?: Array<EventAggregate> | null;
+		eventAggregates?: Array<EventAggregate>;
 		nextToken?: string | null;
+	}
+	export interface DescribeEventAggregatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventAggregatesResponseFormGroup() {
+		return new FormGroup<DescribeEventAggregatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,31 +334,66 @@ export namespace MyNS {
 		count?: number | null;
 	}
 
+	/** The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation. */
+	export interface EventAggregateFormProperties {
+		aggregateValue: FormControl<string | null | undefined>,
+		count: FormControl<number | null | undefined>,
+	}
+	export function CreateEventAggregateFormGroup() {
+		return new FormGroup<EventAggregateFormProperties>({
+			aggregateValue: new FormControl<string | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventAggregatesRequest {
 
 		/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
-		filter?: EventFilter | null;
+		filter?: EventFilter;
 		aggregateField: DescribeEventAggregatesRequestAggregateField;
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface DescribeEventAggregatesRequestFormProperties {
+		aggregateField: FormControl<DescribeEventAggregatesRequestAggregateField | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventAggregatesRequestFormGroup() {
+		return new FormGroup<DescribeEventAggregatesRequestFormProperties>({
+			aggregateField: new FormControl<DescribeEventAggregatesRequestAggregateField | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
 	export interface EventFilter {
-		eventArns?: Array<string> | null;
-		eventTypeCodes?: Array<string> | null;
-		services?: Array<string> | null;
-		regions?: Array<string> | null;
-		availabilityZones?: Array<string> | null;
-		startTimes?: Array<DateTimeRange> | null;
-		endTimes?: Array<DateTimeRange> | null;
-		lastUpdatedTimes?: Array<DateTimeRange> | null;
-		entityArns?: Array<string> | null;
-		entityValues?: Array<string> | null;
-		eventTypeCategories?: Array<EventTypeCategory> | null;
-		tags?: Array<TagSet> | null;
-		eventStatusCodes?: Array<EventStatusCode> | null;
+		eventArns?: Array<string>;
+		eventTypeCodes?: Array<string>;
+		services?: Array<string>;
+		regions?: Array<string>;
+		availabilityZones?: Array<string>;
+		startTimes?: Array<DateTimeRange>;
+		endTimes?: Array<DateTimeRange>;
+		lastUpdatedTimes?: Array<DateTimeRange>;
+		entityArns?: Array<string>;
+		entityValues?: Array<string>;
+		eventTypeCategories?: Array<EventTypeCategory>;
+		tags?: Array<TagSet>;
+		eventStatusCodes?: Array<EventStatusCode>;
+	}
+
+	/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
+	export interface EventFilterFormProperties {
+	}
+	export function CreateEventFilterFormGroup() {
+		return new FormGroup<EventFilterFormProperties>({
+		});
+
 	}
 
 	export enum EventTypeCategory { issue = 0, accountNotification = 1, scheduledChange = 2, investigation = 3 }
@@ -167,8 +403,15 @@ export namespace MyNS {
 	export enum DescribeEventAggregatesRequestAggregateField { eventTypeCategory = 0 }
 
 	export interface DescribeEventDetailsResponse {
-		successfulSet?: Array<EventDetails> | null;
-		failedSet?: Array<EventDetailsErrorItem> | null;
+		successfulSet?: Array<EventDetails>;
+		failedSet?: Array<EventDetailsErrorItem>;
+	}
+	export interface DescribeEventDetailsResponseFormProperties {
+	}
+	export function CreateDescribeEventDetailsResponseFormGroup() {
+		return new FormGroup<DescribeEventDetailsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -176,11 +419,20 @@ export namespace MyNS {
 	export interface EventDetails {
 
 		/** Summary information about an AWS Health event. */
-		event?: Event | null;
+		event?: Event;
 
 		/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
-		eventDescription?: EventDescription | null;
-		eventMetadata?: EventMetadata | null;
+		eventDescription?: EventDescription;
+		eventMetadata?: EventMetadata;
+	}
+
+	/** Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation. */
+	export interface EventDetailsFormProperties {
+	}
+	export function CreateEventDetailsFormGroup() {
+		return new FormGroup<EventDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -199,13 +451,62 @@ export namespace MyNS {
 		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null;
 	}
 
+	/** Summary information about an AWS Health event. */
+	export interface EventFormProperties {
+		arn: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		eventTypeCode: FormControl<string | null | undefined>,
+		eventTypeCategory: FormControl<EventTypeCategory | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		availabilityZone: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		lastUpdatedTime: FormControl<Date | null | undefined>,
+		statusCode: FormControl<EventStatusCode | null | undefined>,
+		eventScopeCode: FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			eventTypeCode: new FormControl<string | null | undefined>(undefined),
+			eventTypeCategory: new FormControl<EventTypeCategory | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			availabilityZone: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			statusCode: new FormControl<EventStatusCode | null | undefined>(undefined),
+			eventScopeCode: new FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
 	export interface EventDescription {
 		latestDescription?: string | null;
 	}
 
+	/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
+	export interface EventDescriptionFormProperties {
+		latestDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateEventDescriptionFormGroup() {
+		return new FormGroup<EventDescriptionFormProperties>({
+			latestDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface EventMetadata {
+	}
+	export interface EventMetadataFormProperties {
+	}
+	export function CreateEventMetadataFormGroup() {
+		return new FormGroup<EventMetadataFormProperties>({
+		});
+
 	}
 
 
@@ -216,14 +517,45 @@ export namespace MyNS {
 		errorMessage?: string | null;
 	}
 
+	/** Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event. */
+	export interface EventDetailsErrorItemFormProperties {
+		eventArn: FormControl<string | null | undefined>,
+		errorName: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateEventDetailsErrorItemFormGroup() {
+		return new FormGroup<EventDetailsErrorItemFormProperties>({
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			errorName: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventDetailsRequest {
 		eventArns: Array<string>;
 		locale?: string | null;
 	}
+	export interface DescribeEventDetailsRequestFormProperties {
+		locale: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventDetailsRequestFormGroup() {
+		return new FormGroup<DescribeEventDetailsRequestFormProperties>({
+			locale: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEventDetailsForOrganizationResponse {
-		successfulSet?: Array<OrganizationEventDetails> | null;
-		failedSet?: Array<OrganizationEventDetailsErrorItem> | null;
+		successfulSet?: Array<OrganizationEventDetails>;
+		failedSet?: Array<OrganizationEventDetailsErrorItem>;
+	}
+	export interface DescribeEventDetailsForOrganizationResponseFormProperties {
+	}
+	export function CreateDescribeEventDetailsForOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeEventDetailsForOrganizationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -232,11 +564,22 @@ export namespace MyNS {
 		awsAccountId?: string | null;
 
 		/** Summary information about an AWS Health event. */
-		event?: Event | null;
+		event?: Event;
 
 		/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
-		eventDescription?: EventDescription | null;
-		eventMetadata?: EventMetadata | null;
+		eventDescription?: EventDescription;
+		eventMetadata?: EventMetadata;
+	}
+
+	/** Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetailsForOrganization</a> operation. */
+	export interface OrganizationEventDetailsFormProperties {
+		awsAccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationEventDetailsFormGroup() {
+		return new FormGroup<OrganizationEventDetailsFormProperties>({
+			awsAccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -248,14 +591,49 @@ export namespace MyNS {
 		errorMessage?: string | null;
 	}
 
+	/** Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified event. */
+	export interface OrganizationEventDetailsErrorItemFormProperties {
+		awsAccountId: FormControl<string | null | undefined>,
+		eventArn: FormControl<string | null | undefined>,
+		errorName: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationEventDetailsErrorItemFormGroup() {
+		return new FormGroup<OrganizationEventDetailsErrorItemFormProperties>({
+			awsAccountId: new FormControl<string | null | undefined>(undefined),
+			eventArn: new FormControl<string | null | undefined>(undefined),
+			errorName: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventDetailsForOrganizationRequest {
 		organizationEventDetailFilters: Array<EventAccountFilter>;
 		locale?: string | null;
 	}
+	export interface DescribeEventDetailsForOrganizationRequestFormProperties {
+		locale: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventDetailsForOrganizationRequestFormGroup() {
+		return new FormGroup<DescribeEventDetailsForOrganizationRequestFormProperties>({
+			locale: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEventTypesResponse {
-		eventTypes?: Array<EventType> | null;
+		eventTypes?: Array<EventType>;
 		nextToken?: string | null;
+	}
+	export interface DescribeEventTypesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventTypesResponseFormGroup() {
+		return new FormGroup<DescribeEventTypesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -266,40 +644,108 @@ export namespace MyNS {
 		category?: EventTypeCategory | null;
 	}
 
+	/** Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>). */
+	export interface EventTypeFormProperties {
+		service: FormControl<string | null | undefined>,
+		code: FormControl<string | null | undefined>,
+		category: FormControl<EventTypeCategory | null | undefined>,
+	}
+	export function CreateEventTypeFormGroup() {
+		return new FormGroup<EventTypeFormProperties>({
+			service: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
+			category: new FormControl<EventTypeCategory | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventTypesRequest {
 
 		/** The values to use to filter results from the <a>DescribeEventTypes</a> operation. */
-		filter?: EventTypeFilter | null;
+		filter?: EventTypeFilter;
 		locale?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface DescribeEventTypesRequestFormProperties {
+		locale: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeEventTypesRequestFormGroup() {
+		return new FormGroup<DescribeEventTypesRequestFormProperties>({
+			locale: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The values to use to filter results from the <a>DescribeEventTypes</a> operation. */
 	export interface EventTypeFilter {
-		eventTypeCodes?: Array<string> | null;
-		services?: Array<string> | null;
-		eventTypeCategories?: Array<EventTypeCategory> | null;
+		eventTypeCodes?: Array<string>;
+		services?: Array<string>;
+		eventTypeCategories?: Array<EventTypeCategory>;
+	}
+
+	/** The values to use to filter results from the <a>DescribeEventTypes</a> operation. */
+	export interface EventTypeFilterFormProperties {
+	}
+	export function CreateEventTypeFilterFormGroup() {
+		return new FormGroup<EventTypeFilterFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEventsResponse {
-		events?: Array<Event> | null;
+		events?: Array<Event>;
 		nextToken?: string | null;
+	}
+	export interface DescribeEventsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsResponseFormGroup() {
+		return new FormGroup<DescribeEventsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEventsRequest {
 
 		/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
-		filter?: EventFilter | null;
+		filter?: EventFilter;
 		nextToken?: string | null;
 		maxResults?: number | null;
 		locale?: string | null;
 	}
+	export interface DescribeEventsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		locale: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsRequestFormGroup() {
+		return new FormGroup<DescribeEventsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEventsForOrganizationResponse {
-		events?: Array<OrganizationEvent> | null;
+		events?: Array<OrganizationEvent>;
 		nextToken?: string | null;
+	}
+	export interface DescribeEventsForOrganizationResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsForOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeEventsForOrganizationResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -317,42 +763,109 @@ export namespace MyNS {
 		statusCode?: EventStatusCode | null;
 	}
 
+	/** Summary information about an event, returned by the <a>DescribeEventsForOrganization</a> operation. */
+	export interface OrganizationEventFormProperties {
+		arn: FormControl<string | null | undefined>,
+		service: FormControl<string | null | undefined>,
+		eventTypeCode: FormControl<string | null | undefined>,
+		eventTypeCategory: FormControl<EventTypeCategory | null | undefined>,
+		eventScopeCode: FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		lastUpdatedTime: FormControl<Date | null | undefined>,
+		statusCode: FormControl<EventStatusCode | null | undefined>,
+	}
+	export function CreateOrganizationEventFormGroup() {
+		return new FormGroup<OrganizationEventFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+			eventTypeCode: new FormControl<string | null | undefined>(undefined),
+			eventTypeCategory: new FormControl<EventTypeCategory | null | undefined>(undefined),
+			eventScopeCode: new FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			statusCode: new FormControl<EventStatusCode | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventsForOrganizationRequest {
 
 		/** The values to filter results from the <a>DescribeEventsForOrganization</a> operation. */
-		filter?: OrganizationEventFilter | null;
+		filter?: OrganizationEventFilter;
 		nextToken?: string | null;
 		maxResults?: number | null;
 		locale?: string | null;
+	}
+	export interface DescribeEventsForOrganizationRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		locale: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsForOrganizationRequestFormGroup() {
+		return new FormGroup<DescribeEventsForOrganizationRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The values to filter results from the <a>DescribeEventsForOrganization</a> operation. */
 	export interface OrganizationEventFilter {
-		eventTypeCodes?: Array<string> | null;
-		awsAccountIds?: Array<string> | null;
-		services?: Array<string> | null;
-		regions?: Array<string> | null;
+		eventTypeCodes?: Array<string>;
+		awsAccountIds?: Array<string>;
+		services?: Array<string>;
+		regions?: Array<string>;
 
 		/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
-		startTime?: DateTimeRange | null;
+		startTime?: DateTimeRange;
 
 		/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
-		endTime?: DateTimeRange | null;
+		endTime?: DateTimeRange;
 
 		/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
-		lastUpdatedTime?: DateTimeRange | null;
-		entityArns?: Array<string> | null;
-		entityValues?: Array<string> | null;
-		eventTypeCategories?: Array<EventTypeCategory> | null;
-		eventStatusCodes?: Array<EventStatusCode> | null;
+		lastUpdatedTime?: DateTimeRange;
+		entityArns?: Array<string>;
+		entityValues?: Array<string>;
+		eventTypeCategories?: Array<EventTypeCategory>;
+		eventStatusCodes?: Array<EventStatusCode>;
+	}
+
+	/** The values to filter results from the <a>DescribeEventsForOrganization</a> operation. */
+	export interface OrganizationEventFilterFormProperties {
+	}
+	export function CreateOrganizationEventFilterFormGroup() {
+		return new FormGroup<OrganizationEventFilterFormProperties>({
+		});
+
 	}
 
 	export interface DescribeHealthServiceStatusForOrganizationResponse {
 		healthServiceAccessStatusForOrganization?: string | null;
 	}
+	export interface DescribeHealthServiceStatusForOrganizationResponseFormProperties {
+		healthServiceAccessStatusForOrganization: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHealthServiceStatusForOrganizationResponseFormGroup() {
+		return new FormGroup<DescribeHealthServiceStatusForOrganizationResponseFormProperties>({
+			healthServiceAccessStatusForOrganization: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 	export enum EventScopeCode { PUBLIC = 0, ACCOUNT_SPECIFIC = 1, NONE = 2 }

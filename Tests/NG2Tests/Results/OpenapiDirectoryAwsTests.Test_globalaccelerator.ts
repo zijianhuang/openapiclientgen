@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AdvertiseByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr | null;
+		ByoipCidr?: ByoipCidr;
+	}
+	export interface AdvertiseByoipCidrResponseFormProperties {
+	}
+	export function CreateAdvertiseByoipCidrResponseFormGroup() {
+		return new FormGroup<AdvertiseByoipCidrResponseFormProperties>({
+		});
+
 	}
 
 
@@ -13,7 +21,20 @@ export namespace MyNS {
 	export interface ByoipCidr {
 		Cidr?: string | null;
 		State?: ByoipCidrState | null;
-		Events?: Array<ByoipCidrEvent> | null;
+		Events?: Array<ByoipCidrEvent>;
+	}
+
+	/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
+	export interface ByoipCidrFormProperties {
+		Cidr: FormControl<string | null | undefined>,
+		State: FormControl<ByoipCidrState | null | undefined>,
+	}
+	export function CreateByoipCidrFormGroup() {
+		return new FormGroup<ByoipCidrFormProperties>({
+			Cidr: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ByoipCidrState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ByoipCidrState { PENDING_PROVISIONING = 0, READY = 1, PENDING_ADVERTISING = 2, ADVERTISING = 3, PENDING_WITHDRAWING = 4, PENDING_DEPROVISIONING = 5, DEPROVISIONED = 6, FAILED_PROVISION = 7, FAILED_ADVERTISING = 8, FAILED_WITHDRAW = 9, FAILED_DEPROVISION = 10 }
@@ -25,29 +46,93 @@ export namespace MyNS {
 		Timestamp?: Date | null;
 	}
 
+	/** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP). */
+	export interface ByoipCidrEventFormProperties {
+		Message: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateByoipCidrEventFormGroup() {
+		return new FormGroup<ByoipCidrEventFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdvertiseByoipCidrRequest {
 		Cidr: string;
+	}
+	export interface AdvertiseByoipCidrRequestFormProperties {
+		Cidr: FormControl<string | null | undefined>,
+	}
+	export function CreateAdvertiseByoipCidrRequestFormGroup() {
+		return new FormGroup<AdvertiseByoipCidrRequestFormProperties>({
+			Cidr: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InternalServiceErrorException {
 	}
+	export interface InternalServiceErrorExceptionFormProperties {
+	}
+	export function CreateInternalServiceErrorExceptionFormGroup() {
+		return new FormGroup<InternalServiceErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ByoipCidrNotFoundException {
 	}
+	export interface ByoipCidrNotFoundExceptionFormProperties {
+	}
+	export function CreateByoipCidrNotFoundExceptionFormGroup() {
+		return new FormGroup<ByoipCidrNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IncorrectCidrStateException {
+	}
+	export interface IncorrectCidrStateExceptionFormProperties {
+	}
+	export function CreateIncorrectCidrStateExceptionFormGroup() {
+		return new FormGroup<IncorrectCidrStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateAcceleratorResponse {
 
 		/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
-		Accelerator?: Accelerator | null;
+		Accelerator?: Accelerator;
+	}
+	export interface CreateAcceleratorResponseFormProperties {
+	}
+	export function CreateCreateAcceleratorResponseFormGroup() {
+		return new FormGroup<CreateAcceleratorResponseFormProperties>({
+		});
+
 	}
 
 
@@ -57,11 +142,36 @@ export namespace MyNS {
 		Name?: string | null;
 		IpAddressType?: AcceleratorIpAddressType | null;
 		Enabled?: boolean | null;
-		IpSets?: Array<IpSet> | null;
+		IpSets?: Array<IpSet>;
 		DnsName?: string | null;
 		Status?: AcceleratorStatus | null;
 		CreatedTime?: Date | null;
 		LastModifiedTime?: Date | null;
+	}
+
+	/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
+	export interface AcceleratorFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		IpAddressType: FormControl<AcceleratorIpAddressType | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		DnsName: FormControl<string | null | undefined>,
+		Status: FormControl<AcceleratorStatus | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateAcceleratorFormGroup() {
+		return new FormGroup<AcceleratorFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			IpAddressType: new FormControl<AcceleratorIpAddressType | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			DnsName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<AcceleratorStatus | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AcceleratorIpAddressType { IPV4 = 0 }
@@ -70,7 +180,18 @@ export namespace MyNS {
 	/** A complex type for the set of IP addresses for an accelerator. */
 	export interface IpSet {
 		IpFamily?: string | null;
-		IpAddresses?: Array<string> | null;
+		IpAddresses?: Array<string>;
+	}
+
+	/** A complex type for the set of IP addresses for an accelerator. */
+	export interface IpSetFormProperties {
+		IpFamily: FormControl<string | null | undefined>,
+	}
+	export function CreateIpSetFormGroup() {
+		return new FormGroup<IpSetFormProperties>({
+			IpFamily: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AcceleratorStatus { DEPLOYED = 0, IN_PROGRESS = 1 }
@@ -78,10 +199,25 @@ export namespace MyNS {
 	export interface CreateAcceleratorRequest {
 		Name: string;
 		IpAddressType?: AcceleratorIpAddressType | null;
-		IpAddresses?: Array<string> | null;
+		IpAddresses?: Array<string>;
 		Enabled?: boolean | null;
 		IdempotencyToken: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateAcceleratorRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		IpAddressType: FormControl<AcceleratorIpAddressType | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAcceleratorRequestFormGroup() {
+		return new FormGroup<CreateAcceleratorRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			IpAddressType: new FormControl<AcceleratorIpAddressType | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -91,13 +227,40 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A complex type that contains a <code>Tag</code> key and <code>Tag</code> value. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateEndpointGroupResponse {
 
 		/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. */
-		EndpointGroup?: EndpointGroup | null;
+		EndpointGroup?: EndpointGroup;
+	}
+	export interface CreateEndpointGroupResponseFormProperties {
+	}
+	export function CreateCreateEndpointGroupResponseFormGroup() {
+		return new FormGroup<CreateEndpointGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -105,13 +268,38 @@ export namespace MyNS {
 	export interface EndpointGroup {
 		EndpointGroupArn?: string | null;
 		EndpointGroupRegion?: string | null;
-		EndpointDescriptions?: Array<EndpointDescription> | null;
+		EndpointDescriptions?: Array<EndpointDescription>;
 		TrafficDialPercentage?: number | null;
 		HealthCheckPort?: number | null;
 		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
 		HealthCheckPath?: string | null;
 		HealthCheckIntervalSeconds?: number | null;
 		ThresholdCount?: number | null;
+	}
+
+	/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.  */
+	export interface EndpointGroupFormProperties {
+		EndpointGroupArn: FormControl<string | null | undefined>,
+		EndpointGroupRegion: FormControl<string | null | undefined>,
+		TrafficDialPercentage: FormControl<number | null | undefined>,
+		HealthCheckPort: FormControl<number | null | undefined>,
+		HealthCheckProtocol: FormControl<EndpointGroupHealthCheckProtocol | null | undefined>,
+		HealthCheckPath: FormControl<string | null | undefined>,
+		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+		ThresholdCount: FormControl<number | null | undefined>,
+	}
+	export function CreateEndpointGroupFormGroup() {
+		return new FormGroup<EndpointGroupFormProperties>({
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+			EndpointGroupRegion: new FormControl<string | null | undefined>(undefined),
+			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined),
+			HealthCheckPort: new FormControl<number | null | undefined>(undefined),
+			HealthCheckProtocol: new FormControl<EndpointGroupHealthCheckProtocol | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
+			ThresholdCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -124,6 +312,25 @@ export namespace MyNS {
 		ClientIPPreservationEnabled?: boolean | null;
 	}
 
+	/** A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers. */
+	export interface EndpointDescriptionFormProperties {
+		EndpointId: FormControl<string | null | undefined>,
+		Weight: FormControl<number | null | undefined>,
+		HealthState: FormControl<EndpointDescriptionHealthState | null | undefined>,
+		HealthReason: FormControl<string | null | undefined>,
+		ClientIPPreservationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEndpointDescriptionFormGroup() {
+		return new FormGroup<EndpointDescriptionFormProperties>({
+			EndpointId: new FormControl<string | null | undefined>(undefined),
+			Weight: new FormControl<number | null | undefined>(undefined),
+			HealthState: new FormControl<EndpointDescriptionHealthState | null | undefined>(undefined),
+			HealthReason: new FormControl<string | null | undefined>(undefined),
+			ClientIPPreservationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EndpointDescriptionHealthState { INITIAL = 0, HEALTHY = 1, UNHEALTHY = 2 }
 
 	export enum EndpointGroupHealthCheckProtocol { TCP = 0, HTTP = 1, HTTPS = 2 }
@@ -131,7 +338,7 @@ export namespace MyNS {
 	export interface CreateEndpointGroupRequest {
 		ListenerArn: string;
 		EndpointGroupRegion: string;
-		EndpointConfigurations?: Array<EndpointConfiguration> | null;
+		EndpointConfigurations?: Array<EndpointConfiguration>;
 		TrafficDialPercentage?: number | null;
 		HealthCheckPort?: number | null;
 		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
@@ -139,6 +346,31 @@ export namespace MyNS {
 		HealthCheckIntervalSeconds?: number | null;
 		ThresholdCount?: number | null;
 		IdempotencyToken: string;
+	}
+	export interface CreateEndpointGroupRequestFormProperties {
+		ListenerArn: FormControl<string | null | undefined>,
+		EndpointGroupRegion: FormControl<string | null | undefined>,
+		TrafficDialPercentage: FormControl<number | null | undefined>,
+		HealthCheckPort: FormControl<number | null | undefined>,
+		HealthCheckProtocol: FormControl<EndpointGroupHealthCheckProtocol | null | undefined>,
+		HealthCheckPath: FormControl<string | null | undefined>,
+		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+		ThresholdCount: FormControl<number | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointGroupRequestFormGroup() {
+		return new FormGroup<CreateEndpointGroupRequestFormProperties>({
+			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			EndpointGroupRegion: new FormControl<string | null | undefined>(undefined),
+			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined),
+			HealthCheckPort: new FormControl<number | null | undefined>(undefined),
+			HealthCheckProtocol: new FormControl<EndpointGroupHealthCheckProtocol | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
+			ThresholdCount: new FormControl<number | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -149,28 +381,86 @@ export namespace MyNS {
 		ClientIPPreservationEnabled?: boolean | null;
 	}
 
+	/** A complex type for endpoints. */
+	export interface EndpointConfigurationFormProperties {
+		EndpointId: FormControl<string | null | undefined>,
+		Weight: FormControl<number | null | undefined>,
+		ClientIPPreservationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEndpointConfigurationFormGroup() {
+		return new FormGroup<EndpointConfigurationFormProperties>({
+			EndpointId: new FormControl<string | null | undefined>(undefined),
+			Weight: new FormControl<number | null | undefined>(undefined),
+			ClientIPPreservationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AcceleratorNotFoundException {
+	}
+	export interface AcceleratorNotFoundExceptionFormProperties {
+	}
+	export function CreateAcceleratorNotFoundExceptionFormGroup() {
+		return new FormGroup<AcceleratorNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EndpointGroupAlreadyExistsException {
 	}
+	export interface EndpointGroupAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateEndpointGroupAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<EndpointGroupAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListenerNotFoundException {
+	}
+	export interface ListenerNotFoundExceptionFormProperties {
+	}
+	export function CreateListenerNotFoundExceptionFormGroup() {
+		return new FormGroup<ListenerNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateListenerResponse {
 
 		/** A complex type for a listener. */
-		Listener?: Listener | null;
+		Listener?: Listener;
+	}
+	export interface CreateListenerResponseFormProperties {
+	}
+	export function CreateCreateListenerResponseFormGroup() {
+		return new FormGroup<CreateListenerResponseFormProperties>({
+		});
+
 	}
 
 
 	/** A complex type for a listener. */
 	export interface Listener {
 		ListenerArn?: string | null;
-		PortRanges?: Array<PortRange> | null;
+		PortRanges?: Array<PortRange>;
 		Protocol?: ListenerProtocol | null;
 		ClientAffinity?: ListenerClientAffinity | null;
+	}
+
+	/** A complex type for a listener. */
+	export interface ListenerFormProperties {
+		ListenerArn: FormControl<string | null | undefined>,
+		Protocol: FormControl<ListenerProtocol | null | undefined>,
+		ClientAffinity: FormControl<ListenerClientAffinity | null | undefined>,
+	}
+	export function CreateListenerFormGroup() {
+		return new FormGroup<ListenerFormProperties>({
+			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
+			ClientAffinity: new FormControl<ListenerClientAffinity | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -178,6 +468,19 @@ export namespace MyNS {
 	export interface PortRange {
 		FromPort?: number | null;
 		ToPort?: number | null;
+	}
+
+	/** A complex type for a range of ports for a listener. */
+	export interface PortRangeFormProperties {
+		FromPort: FormControl<number | null | undefined>,
+		ToPort: FormControl<number | null | undefined>,
+	}
+	export function CreatePortRangeFormGroup() {
+		return new FormGroup<PortRangeFormProperties>({
+			FromPort: new FormControl<number | null | undefined>(undefined),
+			ToPort: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ListenerProtocol { TCP = 0, UDP = 1 }
@@ -191,58 +494,174 @@ export namespace MyNS {
 		ClientAffinity?: ListenerClientAffinity | null;
 		IdempotencyToken: string;
 	}
+	export interface CreateListenerRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+		Protocol: FormControl<ListenerProtocol | null | undefined>,
+		ClientAffinity: FormControl<ListenerClientAffinity | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateListenerRequestFormGroup() {
+		return new FormGroup<CreateListenerRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
+			ClientAffinity: new FormControl<ListenerClientAffinity | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPortRangeException {
+	}
+	export interface InvalidPortRangeExceptionFormProperties {
+	}
+	export function CreateInvalidPortRangeExceptionFormGroup() {
+		return new FormGroup<InvalidPortRangeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAcceleratorRequest {
 		AcceleratorArn: string;
 	}
+	export interface DeleteAcceleratorRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAcceleratorRequestFormGroup() {
+		return new FormGroup<DeleteAcceleratorRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AcceleratorNotDisabledException {
 	}
+	export interface AcceleratorNotDisabledExceptionFormProperties {
+	}
+	export function CreateAcceleratorNotDisabledExceptionFormGroup() {
+		return new FormGroup<AcceleratorNotDisabledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociatedListenerFoundException {
+	}
+	export interface AssociatedListenerFoundExceptionFormProperties {
+	}
+	export function CreateAssociatedListenerFoundExceptionFormGroup() {
+		return new FormGroup<AssociatedListenerFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteEndpointGroupRequest {
 		EndpointGroupArn: string;
 	}
+	export interface DeleteEndpointGroupRequestFormProperties {
+		EndpointGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEndpointGroupRequestFormGroup() {
+		return new FormGroup<DeleteEndpointGroupRequestFormProperties>({
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EndpointGroupNotFoundException {
+	}
+	export interface EndpointGroupNotFoundExceptionFormProperties {
+	}
+	export function CreateEndpointGroupNotFoundExceptionFormGroup() {
+		return new FormGroup<EndpointGroupNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteListenerRequest {
 		ListenerArn: string;
 	}
+	export interface DeleteListenerRequestFormProperties {
+		ListenerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteListenerRequestFormGroup() {
+		return new FormGroup<DeleteListenerRequestFormProperties>({
+			ListenerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociatedEndpointGroupFoundException {
+	}
+	export interface AssociatedEndpointGroupFoundExceptionFormProperties {
+	}
+	export function CreateAssociatedEndpointGroupFoundExceptionFormGroup() {
+		return new FormGroup<AssociatedEndpointGroupFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeprovisionByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr | null;
+		ByoipCidr?: ByoipCidr;
+	}
+	export interface DeprovisionByoipCidrResponseFormProperties {
+	}
+	export function CreateDeprovisionByoipCidrResponseFormGroup() {
+		return new FormGroup<DeprovisionByoipCidrResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeprovisionByoipCidrRequest {
 		Cidr: string;
 	}
+	export interface DeprovisionByoipCidrRequestFormProperties {
+		Cidr: FormControl<string | null | undefined>,
+	}
+	export function CreateDeprovisionByoipCidrRequestFormGroup() {
+		return new FormGroup<DeprovisionByoipCidrRequestFormProperties>({
+			Cidr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAcceleratorResponse {
 
 		/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
-		Accelerator?: Accelerator | null;
+		Accelerator?: Accelerator;
+	}
+	export interface DescribeAcceleratorResponseFormProperties {
+	}
+	export function CreateDescribeAcceleratorResponseFormGroup() {
+		return new FormGroup<DescribeAcceleratorResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAcceleratorRequest {
 		AcceleratorArn: string;
 	}
+	export interface DescribeAcceleratorRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAcceleratorRequestFormGroup() {
+		return new FormGroup<DescribeAcceleratorRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAcceleratorAttributesResponse {
 
 		/** Attributes of an accelerator. */
-		AcceleratorAttributes?: AcceleratorAttributes | null;
+		AcceleratorAttributes?: AcceleratorAttributes;
+	}
+	export interface DescribeAcceleratorAttributesResponseFormProperties {
+	}
+	export function CreateDescribeAcceleratorAttributesResponseFormGroup() {
+		return new FormGroup<DescribeAcceleratorAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -253,56 +672,168 @@ export namespace MyNS {
 		FlowLogsS3Prefix?: string | null;
 	}
 
+	/** Attributes of an accelerator. */
+	export interface AcceleratorAttributesFormProperties {
+		FlowLogsEnabled: FormControl<boolean | null | undefined>,
+		FlowLogsS3Bucket: FormControl<string | null | undefined>,
+		FlowLogsS3Prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceleratorAttributesFormGroup() {
+		return new FormGroup<AcceleratorAttributesFormProperties>({
+			FlowLogsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			FlowLogsS3Bucket: new FormControl<string | null | undefined>(undefined),
+			FlowLogsS3Prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeAcceleratorAttributesRequest {
 		AcceleratorArn: string;
+	}
+	export interface DescribeAcceleratorAttributesRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAcceleratorAttributesRequestFormGroup() {
+		return new FormGroup<DescribeAcceleratorAttributesRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEndpointGroupResponse {
 
 		/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. */
-		EndpointGroup?: EndpointGroup | null;
+		EndpointGroup?: EndpointGroup;
+	}
+	export interface DescribeEndpointGroupResponseFormProperties {
+	}
+	export function CreateDescribeEndpointGroupResponseFormGroup() {
+		return new FormGroup<DescribeEndpointGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEndpointGroupRequest {
 		EndpointGroupArn: string;
 	}
+	export interface DescribeEndpointGroupRequestFormProperties {
+		EndpointGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointGroupRequestFormGroup() {
+		return new FormGroup<DescribeEndpointGroupRequestFormProperties>({
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeListenerResponse {
 
 		/** A complex type for a listener. */
-		Listener?: Listener | null;
+		Listener?: Listener;
+	}
+	export interface DescribeListenerResponseFormProperties {
+	}
+	export function CreateDescribeListenerResponseFormGroup() {
+		return new FormGroup<DescribeListenerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeListenerRequest {
 		ListenerArn: string;
 	}
+	export interface DescribeListenerRequestFormProperties {
+		ListenerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeListenerRequestFormGroup() {
+		return new FormGroup<DescribeListenerRequestFormProperties>({
+			ListenerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAcceleratorsResponse {
-		Accelerators?: Array<Accelerator> | null;
+		Accelerators?: Array<Accelerator>;
 		NextToken?: string | null;
+	}
+	export interface ListAcceleratorsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAcceleratorsResponseFormGroup() {
+		return new FormGroup<ListAcceleratorsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAcceleratorsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListAcceleratorsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAcceleratorsRequestFormGroup() {
+		return new FormGroup<ListAcceleratorsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListByoipCidrsResponse {
-		ByoipCidrs?: Array<ByoipCidr> | null;
+		ByoipCidrs?: Array<ByoipCidr>;
 		NextToken?: string | null;
+	}
+	export interface ListByoipCidrsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListByoipCidrsResponseFormGroup() {
+		return new FormGroup<ListByoipCidrsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListByoipCidrsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListByoipCidrsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListByoipCidrsRequestFormGroup() {
+		return new FormGroup<ListByoipCidrsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListEndpointGroupsResponse {
-		EndpointGroups?: Array<EndpointGroup> | null;
+		EndpointGroups?: Array<EndpointGroup>;
 		NextToken?: string | null;
+	}
+	export interface ListEndpointGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointGroupsResponseFormGroup() {
+		return new FormGroup<ListEndpointGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListEndpointGroupsRequest {
@@ -310,10 +841,32 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListEndpointGroupsRequestFormProperties {
+		ListenerArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointGroupsRequestFormGroup() {
+		return new FormGroup<ListEndpointGroupsRequestFormProperties>({
+			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListListenersResponse {
-		Listeners?: Array<Listener> | null;
+		Listeners?: Array<Listener>;
 		NextToken?: string | null;
+	}
+	export interface ListListenersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListListenersResponseFormGroup() {
+		return new FormGroup<ListListenersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListListenersRequest {
@@ -321,19 +874,55 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListListenersRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListListenersRequestFormGroup() {
+		return new FormGroup<ListListenersRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ProvisionByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr | null;
+		ByoipCidr?: ByoipCidr;
+	}
+	export interface ProvisionByoipCidrResponseFormProperties {
+	}
+	export function CreateProvisionByoipCidrResponseFormGroup() {
+		return new FormGroup<ProvisionByoipCidrResponseFormProperties>({
+		});
+
 	}
 
 	export interface ProvisionByoipCidrRequest {
@@ -345,6 +934,15 @@ export namespace MyNS {
 		 */
 		CidrAuthorizationContext: CidrAuthorizationContext;
 	}
+	export interface ProvisionByoipCidrRequestFormProperties {
+		Cidr: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionByoipCidrRequestFormGroup() {
+		return new FormGroup<ProvisionByoipCidrRequestFormProperties>({
+			Cidr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). </p> <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p> */
@@ -353,26 +951,78 @@ export namespace MyNS {
 		Signature: string;
 	}
 
+	/** <p>Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). </p> <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p> */
+	export interface CidrAuthorizationContextFormProperties {
+		Message: FormControl<string | null | undefined>,
+		Signature: FormControl<string | null | undefined>,
+	}
+	export function CreateCidrAuthorizationContextFormGroup() {
+		return new FormGroup<CidrAuthorizationContextFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAcceleratorResponse {
 
 		/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
-		Accelerator?: Accelerator | null;
+		Accelerator?: Accelerator;
+	}
+	export interface UpdateAcceleratorResponseFormProperties {
+	}
+	export function CreateUpdateAcceleratorResponseFormGroup() {
+		return new FormGroup<UpdateAcceleratorResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAcceleratorRequest {
@@ -381,11 +1031,33 @@ export namespace MyNS {
 		IpAddressType?: AcceleratorIpAddressType | null;
 		Enabled?: boolean | null;
 	}
+	export interface UpdateAcceleratorRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		IpAddressType: FormControl<AcceleratorIpAddressType | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateAcceleratorRequestFormGroup() {
+		return new FormGroup<UpdateAcceleratorRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			IpAddressType: new FormControl<AcceleratorIpAddressType | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAcceleratorAttributesResponse {
 
 		/** Attributes of an accelerator. */
-		AcceleratorAttributes?: AcceleratorAttributes | null;
+		AcceleratorAttributes?: AcceleratorAttributes;
+	}
+	export interface UpdateAcceleratorAttributesResponseFormProperties {
+	}
+	export function CreateUpdateAcceleratorAttributesResponseFormGroup() {
+		return new FormGroup<UpdateAcceleratorAttributesResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAcceleratorAttributesRequest {
@@ -394,16 +1066,38 @@ export namespace MyNS {
 		FlowLogsS3Bucket?: string | null;
 		FlowLogsS3Prefix?: string | null;
 	}
+	export interface UpdateAcceleratorAttributesRequestFormProperties {
+		AcceleratorArn: FormControl<string | null | undefined>,
+		FlowLogsEnabled: FormControl<boolean | null | undefined>,
+		FlowLogsS3Bucket: FormControl<string | null | undefined>,
+		FlowLogsS3Prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAcceleratorAttributesRequestFormGroup() {
+		return new FormGroup<UpdateAcceleratorAttributesRequestFormProperties>({
+			AcceleratorArn: new FormControl<string | null | undefined>(undefined),
+			FlowLogsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			FlowLogsS3Bucket: new FormControl<string | null | undefined>(undefined),
+			FlowLogsS3Prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEndpointGroupResponse {
 
 		/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. */
-		EndpointGroup?: EndpointGroup | null;
+		EndpointGroup?: EndpointGroup;
+	}
+	export interface UpdateEndpointGroupResponseFormProperties {
+	}
+	export function CreateUpdateEndpointGroupResponseFormGroup() {
+		return new FormGroup<UpdateEndpointGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateEndpointGroupRequest {
 		EndpointGroupArn: string;
-		EndpointConfigurations?: Array<EndpointConfiguration> | null;
+		EndpointConfigurations?: Array<EndpointConfiguration>;
 		TrafficDialPercentage?: number | null;
 		HealthCheckPort?: number | null;
 		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
@@ -411,28 +1105,85 @@ export namespace MyNS {
 		HealthCheckIntervalSeconds?: number | null;
 		ThresholdCount?: number | null;
 	}
+	export interface UpdateEndpointGroupRequestFormProperties {
+		EndpointGroupArn: FormControl<string | null | undefined>,
+		TrafficDialPercentage: FormControl<number | null | undefined>,
+		HealthCheckPort: FormControl<number | null | undefined>,
+		HealthCheckProtocol: FormControl<EndpointGroupHealthCheckProtocol | null | undefined>,
+		HealthCheckPath: FormControl<string | null | undefined>,
+		HealthCheckIntervalSeconds: FormControl<number | null | undefined>,
+		ThresholdCount: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateEndpointGroupRequestFormGroup() {
+		return new FormGroup<UpdateEndpointGroupRequestFormProperties>({
+			EndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+			TrafficDialPercentage: new FormControl<number | null | undefined>(undefined),
+			HealthCheckPort: new FormControl<number | null | undefined>(undefined),
+			HealthCheckProtocol: new FormControl<EndpointGroupHealthCheckProtocol | null | undefined>(undefined),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined),
+			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined),
+			ThresholdCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateListenerResponse {
 
 		/** A complex type for a listener. */
-		Listener?: Listener | null;
+		Listener?: Listener;
+	}
+	export interface UpdateListenerResponseFormProperties {
+	}
+	export function CreateUpdateListenerResponseFormGroup() {
+		return new FormGroup<UpdateListenerResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateListenerRequest {
 		ListenerArn: string;
-		PortRanges?: Array<PortRange> | null;
+		PortRanges?: Array<PortRange>;
 		Protocol?: ListenerProtocol | null;
 		ClientAffinity?: ListenerClientAffinity | null;
+	}
+	export interface UpdateListenerRequestFormProperties {
+		ListenerArn: FormControl<string | null | undefined>,
+		Protocol: FormControl<ListenerProtocol | null | undefined>,
+		ClientAffinity: FormControl<ListenerClientAffinity | null | undefined>,
+	}
+	export function CreateUpdateListenerRequestFormGroup() {
+		return new FormGroup<UpdateListenerRequestFormProperties>({
+			ListenerArn: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
+			ClientAffinity: new FormControl<ListenerClientAffinity | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface WithdrawByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr | null;
+		ByoipCidr?: ByoipCidr;
+	}
+	export interface WithdrawByoipCidrResponseFormProperties {
+	}
+	export function CreateWithdrawByoipCidrResponseFormGroup() {
+		return new FormGroup<WithdrawByoipCidrResponseFormProperties>({
+		});
+
 	}
 
 	export interface WithdrawByoipCidrRequest {
 		Cidr: string;
+	}
+	export interface WithdrawByoipCidrRequestFormProperties {
+		Cidr: FormControl<string | null | undefined>,
+	}
+	export function CreateWithdrawByoipCidrRequestFormGroup() {
+		return new FormGroup<WithdrawByoipCidrRequestFormProperties>({
+			Cidr: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IpAddressType { IPV4 = 0 }

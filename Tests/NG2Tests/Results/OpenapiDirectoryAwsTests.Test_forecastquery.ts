@@ -1,20 +1,44 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface QueryForecastResponse {
 
 		/** Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response. */
-		Forecast?: Forecast | null;
+		Forecast?: Forecast;
+	}
+	export interface QueryForecastResponseFormProperties {
+	}
+	export function CreateQueryForecastResponseFormGroup() {
+		return new FormGroup<QueryForecastResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response. */
 	export interface Forecast {
-		Predictions?: Predictions | null;
+		Predictions?: Predictions;
+	}
+
+	/** Provides information about a forecast. Returned as part of the <a>QueryForecast</a> response. */
+	export interface ForecastFormProperties {
+	}
+	export function CreateForecastFormGroup() {
+		return new FormGroup<ForecastFormProperties>({
+		});
+
 	}
 
 	export interface Predictions {
+	}
+	export interface PredictionsFormProperties {
+	}
+	export function CreatePredictionsFormGroup() {
+		return new FormGroup<PredictionsFormProperties>({
+		});
+
 	}
 
 	export interface QueryForecastRequest {
@@ -24,23 +48,80 @@ export namespace MyNS {
 		Filters: Filters;
 		NextToken?: string | null;
 	}
+	export interface QueryForecastRequestFormProperties {
+		ForecastArn: FormControl<string | null | undefined>,
+		StartDate: FormControl<string | null | undefined>,
+		EndDate: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryForecastRequestFormGroup() {
+		return new FormGroup<QueryForecastRequestFormProperties>({
+			ForecastArn: new FormControl<string | null | undefined>(undefined),
+			StartDate: new FormControl<string | null | undefined>(undefined),
+			EndDate: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Filters {
+	}
+	export interface FiltersFormProperties {
+	}
+	export function CreateFiltersFormGroup() {
+		return new FormGroup<FiltersFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidInputException {
 	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -48,6 +129,19 @@ export namespace MyNS {
 	export interface DataPoint {
 		Timestamp?: string | null;
 		Value?: number | null;
+	}
+
+	/** The forecast value for a specific date. Part of the <a>Forecast</a> object. */
+	export interface DataPointFormProperties {
+		Timestamp: FormControl<string | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateDataPointFormGroup() {
+		return new FormGroup<DataPointFormProperties>({
+			Timestamp: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

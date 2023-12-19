@@ -1,17 +1,46 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalErrorException {
 	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AuthorizationErrorException {
 	}
+	export interface AuthorizationErrorExceptionFormProperties {
+	}
+	export function CreateAuthorizationErrorExceptionFormGroup() {
+		return new FormGroup<AuthorizationErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -20,7 +49,25 @@ export namespace MyNS {
 		isOptedOut?: boolean | null;
 	}
 
+	/** The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
+	export interface CheckIfPhoneNumberIsOptedOutResponseFormProperties {
+		isOptedOut: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCheckIfPhoneNumberIsOptedOutResponseFormGroup() {
+		return new FormGroup<CheckIfPhoneNumberIsOptedOutResponseFormProperties>({
+			isOptedOut: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ThrottledException {
+	}
+	export interface ThrottledExceptionFormProperties {
+	}
+	export function CreateThrottledExceptionFormGroup() {
+		return new FormGroup<ThrottledExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -29,10 +76,35 @@ export namespace MyNS {
 		SubscriptionArn?: string | null;
 	}
 
+	/** Response for ConfirmSubscriptions action. */
+	export interface ConfirmSubscriptionResponseFormProperties {
+		SubscriptionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmSubscriptionResponseFormGroup() {
+		return new FormGroup<ConfirmSubscriptionResponseFormProperties>({
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SubscriptionLimitExceededException {
+	}
+	export interface SubscriptionLimitExceededExceptionFormProperties {
+	}
+	export function CreateSubscriptionLimitExceededExceptionFormGroup() {
+		return new FormGroup<SubscriptionLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface FilterPolicyLimitExceededException {
+	}
+	export interface FilterPolicyLimitExceededExceptionFormProperties {
+	}
+	export function CreateFilterPolicyLimitExceededExceptionFormGroup() {
+		return new FormGroup<FilterPolicyLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -41,16 +113,49 @@ export namespace MyNS {
 		PlatformApplicationArn?: string | null;
 	}
 
+	/** Response from CreatePlatformApplication action. */
+	export interface CreatePlatformApplicationResponseFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlatformApplicationResponseFormGroup() {
+		return new FormGroup<CreatePlatformApplicationResponseFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response from CreateEndpoint action. */
 	export interface CreateEndpointResponse {
 		EndpointArn?: string | null;
 	}
 
+	/** Response from CreateEndpoint action. */
+	export interface CreateEndpointResponseFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointResponseFormGroup() {
+		return new FormGroup<CreateEndpointResponseFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response from CreateTopic action. */
 	export interface CreateTopicResponse {
 		TopicArn?: string | null;
+	}
+
+	/** Response from CreateTopic action. */
+	export interface CreateTopicResponseFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTopicResponseFormGroup() {
+		return new FormGroup<CreateTopicResponseFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -60,103 +165,290 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** The list of tags to be added to the specified topic. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TopicLimitExceededException {
+	}
+	export interface TopicLimitExceededExceptionFormProperties {
+	}
+	export function CreateTopicLimitExceededExceptionFormGroup() {
+		return new FormGroup<TopicLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSecurityException {
 	}
+	export interface InvalidSecurityExceptionFormProperties {
+	}
+	export function CreateInvalidSecurityExceptionFormGroup() {
+		return new FormGroup<InvalidSecurityExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagLimitExceededException {
+	}
+	export interface TagLimitExceededExceptionFormProperties {
+	}
+	export function CreateTagLimitExceededExceptionFormGroup() {
+		return new FormGroup<TagLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StaleTagException {
 	}
+	export interface StaleTagExceptionFormProperties {
+	}
+	export function CreateStaleTagExceptionFormGroup() {
+		return new FormGroup<StaleTagExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagPolicyException {
 	}
+	export interface TagPolicyExceptionFormProperties {
+	}
+	export function CreateTagPolicyExceptionFormGroup() {
+		return new FormGroup<TagPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConcurrentAccessException {
+	}
+	export interface ConcurrentAccessExceptionFormProperties {
+	}
+	export function CreateConcurrentAccessExceptionFormGroup() {
+		return new FormGroup<ConcurrentAccessExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Response from GetEndpointAttributes of the EndpointArn. */
 	export interface GetEndpointAttributesResponse {
-		Attributes?: MapStringToString | null;
+		Attributes?: MapStringToString;
+	}
+
+	/** Response from GetEndpointAttributes of the EndpointArn. */
+	export interface GetEndpointAttributesResponseFormProperties {
+	}
+	export function CreateGetEndpointAttributesResponseFormGroup() {
+		return new FormGroup<GetEndpointAttributesResponseFormProperties>({
+		});
+
 	}
 
 	export interface MapStringToString {
+	}
+	export interface MapStringToStringFormProperties {
+	}
+	export function CreateMapStringToStringFormGroup() {
+		return new FormGroup<MapStringToStringFormProperties>({
+		});
+
 	}
 
 
 	/** Response for GetPlatformApplicationAttributes action. */
 	export interface GetPlatformApplicationAttributesResponse {
-		Attributes?: MapStringToString | null;
+		Attributes?: MapStringToString;
+	}
+
+	/** Response for GetPlatformApplicationAttributes action. */
+	export interface GetPlatformApplicationAttributesResponseFormProperties {
+	}
+	export function CreateGetPlatformApplicationAttributesResponseFormGroup() {
+		return new FormGroup<GetPlatformApplicationAttributesResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The response from the <code>GetSMSAttributes</code> request. */
 	export interface GetSMSAttributesResponse {
-		attributes?: MapStringToString | null;
+		attributes?: MapStringToString;
+	}
+
+	/** The response from the <code>GetSMSAttributes</code> request. */
+	export interface GetSMSAttributesResponseFormProperties {
+	}
+	export function CreateGetSMSAttributesResponseFormGroup() {
+		return new FormGroup<GetSMSAttributesResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Response for GetSubscriptionAttributes action. */
 	export interface GetSubscriptionAttributesResponse {
-		Attributes?: SubscriptionAttributesMap | null;
+		Attributes?: SubscriptionAttributesMap;
+	}
+
+	/** Response for GetSubscriptionAttributes action. */
+	export interface GetSubscriptionAttributesResponseFormProperties {
+	}
+	export function CreateGetSubscriptionAttributesResponseFormGroup() {
+		return new FormGroup<GetSubscriptionAttributesResponseFormProperties>({
+		});
+
 	}
 
 	export interface SubscriptionAttributesMap {
+	}
+	export interface SubscriptionAttributesMapFormProperties {
+	}
+	export function CreateSubscriptionAttributesMapFormGroup() {
+		return new FormGroup<SubscriptionAttributesMapFormProperties>({
+		});
+
 	}
 
 
 	/** Response for GetTopicAttributes action. */
 	export interface GetTopicAttributesResponse {
-		Attributes?: TopicAttributesMap | null;
+		Attributes?: TopicAttributesMap;
+	}
+
+	/** Response for GetTopicAttributes action. */
+	export interface GetTopicAttributesResponseFormProperties {
+	}
+	export function CreateGetTopicAttributesResponseFormGroup() {
+		return new FormGroup<GetTopicAttributesResponseFormProperties>({
+		});
+
 	}
 
 	export interface TopicAttributesMap {
+	}
+	export interface TopicAttributesMapFormProperties {
+	}
+	export function CreateTopicAttributesMapFormGroup() {
+		return new FormGroup<TopicAttributesMapFormProperties>({
+		});
+
 	}
 
 
 	/** Response for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationResponse {
-		Endpoints?: Array<Endpoint> | null;
+		Endpoints?: Array<Endpoint>;
 		NextToken?: string | null;
+	}
+
+	/** Response for ListEndpointsByPlatformApplication action. */
+	export interface ListEndpointsByPlatformApplicationResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointsByPlatformApplicationResponseFormGroup() {
+		return new FormGroup<ListEndpointsByPlatformApplicationResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Endpoint for mobile app and device. */
 	export interface Endpoint {
 		EndpointArn?: string | null;
-		Attributes?: MapStringToString | null;
+		Attributes?: MapStringToString;
+	}
+
+	/** Endpoint for mobile app and device. */
+	export interface EndpointFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The response from the <code>ListPhoneNumbersOptedOut</code> action. */
 	export interface ListPhoneNumbersOptedOutResponse {
-		phoneNumbers?: Array<string> | null;
+		phoneNumbers?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** The response from the <code>ListPhoneNumbersOptedOut</code> action. */
+	export interface ListPhoneNumbersOptedOutResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPhoneNumbersOptedOutResponseFormGroup() {
+		return new FormGroup<ListPhoneNumbersOptedOutResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Response for ListPlatformApplications action. */
 	export interface ListPlatformApplicationsResponse {
-		PlatformApplications?: Array<PlatformApplication> | null;
+		PlatformApplications?: Array<PlatformApplication>;
 		NextToken?: string | null;
+	}
+
+	/** Response for ListPlatformApplications action. */
+	export interface ListPlatformApplicationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlatformApplicationsResponseFormGroup() {
+		return new FormGroup<ListPlatformApplicationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Platform application object. */
 	export interface PlatformApplication {
 		PlatformApplicationArn?: string | null;
-		Attributes?: MapStringToString | null;
+		Attributes?: MapStringToString;
+	}
+
+	/** Platform application object. */
+	export interface PlatformApplicationFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformApplicationFormGroup() {
+		return new FormGroup<PlatformApplicationFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Response for ListSubscriptions action */
 	export interface ListSubscriptionsResponse {
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
 		NextToken?: string | null;
+	}
+
+	/** Response for ListSubscriptions action */
+	export interface ListSubscriptionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscriptionsResponseFormGroup() {
+		return new FormGroup<ListSubscriptionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -169,25 +461,80 @@ export namespace MyNS {
 		TopicArn?: string | null;
 	}
 
+	/** A wrapper type for the attributes of an Amazon SNS subscription. */
+	export interface SubscriptionFormProperties {
+		SubscriptionArn: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		Protocol: FormControl<string | null | undefined>,
+		Endpoint: FormControl<string | null | undefined>,
+		TopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionFormGroup() {
+		return new FormGroup<SubscriptionFormProperties>({
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicResponse {
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
 		NextToken?: string | null;
 	}
 
+	/** Response for ListSubscriptionsByTopic action. */
+	export interface ListSubscriptionsByTopicResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscriptionsByTopicResponseFormGroup() {
+		return new FormGroup<ListSubscriptionsByTopicResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Response for ListTopics action. */
 	export interface ListTopicsResponse {
-		Topics?: Array<Topic> | null;
+		Topics?: Array<Topic>;
 		NextToken?: string | null;
+	}
+
+	/** Response for ListTopics action. */
+	export interface ListTopicsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTopicsResponseFormGroup() {
+		return new FormGroup<ListTopicsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -196,15 +543,46 @@ export namespace MyNS {
 		TopicArn?: string | null;
 	}
 
+	/** A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>. */
+	export interface TopicFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicFormGroup() {
+		return new FormGroup<TopicFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for the OptInPhoneNumber action. */
 	export interface OptInPhoneNumberResponse {
+	}
+
+	/** The response for the OptInPhoneNumber action. */
+	export interface OptInPhoneNumberResponseFormProperties {
+	}
+	export function CreateOptInPhoneNumberResponseFormGroup() {
+		return new FormGroup<OptInPhoneNumberResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Response for Publish action. */
 	export interface PublishResponse {
 		MessageId?: string | null;
+	}
+
+	/** Response for Publish action. */
+	export interface PublishResponseFormProperties {
+		MessageId: FormControl<string | null | undefined>,
+	}
+	export function CreatePublishResponseFormGroup() {
+		return new FormGroup<PublishResponseFormProperties>({
+			MessageId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -215,36 +593,123 @@ export namespace MyNS {
 		BinaryValue?: string | null;
 	}
 
+	/** <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p> */
+	export interface MessageAttributeValueFormProperties {
+		DataType: FormControl<string | null | undefined>,
+		StringValue: FormControl<string | null | undefined>,
+		BinaryValue: FormControl<string | null | undefined>,
+	}
+	export function CreateMessageAttributeValueFormGroup() {
+		return new FormGroup<MessageAttributeValueFormProperties>({
+			DataType: new FormControl<string | null | undefined>(undefined),
+			StringValue: new FormControl<string | null | undefined>(undefined),
+			BinaryValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidParameterValueException {
+	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EndpointDisabledException {
 	}
+	export interface EndpointDisabledExceptionFormProperties {
+	}
+	export function CreateEndpointDisabledExceptionFormGroup() {
+		return new FormGroup<EndpointDisabledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PlatformApplicationDisabledException {
+	}
+	export interface PlatformApplicationDisabledExceptionFormProperties {
+	}
+	export function CreatePlatformApplicationDisabledExceptionFormGroup() {
+		return new FormGroup<PlatformApplicationDisabledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface KMSDisabledException {
 	}
+	export interface KMSDisabledExceptionFormProperties {
+	}
+	export function CreateKMSDisabledExceptionFormGroup() {
+		return new FormGroup<KMSDisabledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KMSInvalidStateException {
+	}
+	export interface KMSInvalidStateExceptionFormProperties {
+	}
+	export function CreateKMSInvalidStateExceptionFormGroup() {
+		return new FormGroup<KMSInvalidStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface KMSNotFoundException {
 	}
+	export interface KMSNotFoundExceptionFormProperties {
+	}
+	export function CreateKMSNotFoundExceptionFormGroup() {
+		return new FormGroup<KMSNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KMSOptInRequired {
+	}
+	export interface KMSOptInRequiredFormProperties {
+	}
+	export function CreateKMSOptInRequiredFormGroup() {
+		return new FormGroup<KMSOptInRequiredFormProperties>({
+		});
+
 	}
 
 	export interface KMSThrottlingException {
 	}
+	export interface KMSThrottlingExceptionFormProperties {
+	}
+	export function CreateKMSThrottlingExceptionFormGroup() {
+		return new FormGroup<KMSThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface KMSAccessDeniedException {
+	}
+	export interface KMSAccessDeniedExceptionFormProperties {
+	}
+	export function CreateKMSAccessDeniedExceptionFormGroup() {
+		return new FormGroup<KMSAccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The response for the SetSMSAttributes action. */
 	export interface SetSMSAttributesResponse {
+	}
+
+	/** The response for the SetSMSAttributes action. */
+	export interface SetSMSAttributesResponseFormProperties {
+	}
+	export function CreateSetSMSAttributesResponseFormGroup() {
+		return new FormGroup<SetSMSAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -253,10 +718,35 @@ export namespace MyNS {
 		SubscriptionArn?: string | null;
 	}
 
+	/** Response for Subscribe action. */
+	export interface SubscribeResponseFormProperties {
+		SubscriptionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscribeResponseFormGroup() {
+		return new FormGroup<SubscribeResponseFormProperties>({
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface AddPermissionInput {
@@ -265,11 +755,33 @@ export namespace MyNS {
 		AWSAccountId: Array<string>;
 		ActionName: Array<string>;
 	}
+	export interface AddPermissionInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+	}
+	export function CreateAddPermissionInputFormGroup() {
+		return new FormGroup<AddPermissionInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
 	export interface CheckIfPhoneNumberIsOptedOutInput {
 		phoneNumber: string;
+	}
+
+	/** The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
+	export interface CheckIfPhoneNumberIsOptedOutInputFormProperties {
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateCheckIfPhoneNumberIsOptedOutInputFormGroup() {
+		return new FormGroup<CheckIfPhoneNumberIsOptedOutInputFormProperties>({
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,6 +792,21 @@ export namespace MyNS {
 		AuthenticateOnUnsubscribe?: string | null;
 	}
 
+	/** Input for ConfirmSubscription action. */
+	export interface ConfirmSubscriptionInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		Token: FormControl<string | null | undefined>,
+		AuthenticateOnUnsubscribe: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmSubscriptionInputFormGroup() {
+		return new FormGroup<ConfirmSubscriptionInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			Token: new FormControl<string | null | undefined>(undefined),
+			AuthenticateOnUnsubscribe: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for CreatePlatformApplication action. */
 	export interface CreatePlatformApplicationInput {
@@ -288,21 +815,60 @@ export namespace MyNS {
 		Attributes: MapStringToString;
 	}
 
+	/** Input for CreatePlatformApplication action. */
+	export interface CreatePlatformApplicationInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Platform: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlatformApplicationInputFormGroup() {
+		return new FormGroup<CreatePlatformApplicationInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for CreatePlatformEndpoint action. */
 	export interface CreatePlatformEndpointInput {
 		PlatformApplicationArn: string;
 		Token: string;
 		CustomUserData?: string | null;
-		Attributes?: MapStringToString | null;
+		Attributes?: MapStringToString;
+	}
+
+	/** Input for CreatePlatformEndpoint action. */
+	export interface CreatePlatformEndpointInputFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+		Token: FormControl<string | null | undefined>,
+		CustomUserData: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlatformEndpointInputFormGroup() {
+		return new FormGroup<CreatePlatformEndpointInputFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+			Token: new FormControl<string | null | undefined>(undefined),
+			CustomUserData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Input for CreateTopic action. */
 	export interface CreateTopicInput {
 		Name: string;
-		Attributes?: TopicAttributesMap | null;
-		Tags?: Array<Tag> | null;
+		Attributes?: TopicAttributesMap;
+		Tags?: Array<Tag>;
+	}
+
+	/** Input for CreateTopic action. */
+	export interface CreateTopicInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTopicInputFormGroup() {
+		return new FormGroup<CreateTopicInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -311,14 +877,45 @@ export namespace MyNS {
 		EndpointArn: string;
 	}
 
+	/** Input for DeleteEndpoint action. */
+	export interface DeleteEndpointInputFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEndpointInputFormGroup() {
+		return new FormGroup<DeleteEndpointInputFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for DeletePlatformApplication action. */
 	export interface DeletePlatformApplicationInput {
 		PlatformApplicationArn: string;
 	}
 
+	/** Input for DeletePlatformApplication action. */
+	export interface DeletePlatformApplicationInputFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePlatformApplicationInputFormGroup() {
+		return new FormGroup<DeletePlatformApplicationInputFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteTopicInput {
 		TopicArn: string;
+	}
+	export interface DeleteTopicInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTopicInputFormGroup() {
+		return new FormGroup<DeleteTopicInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -327,16 +924,47 @@ export namespace MyNS {
 		EndpointArn: string;
 	}
 
+	/** Input for GetEndpointAttributes action. */
+	export interface GetEndpointAttributesInputFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEndpointAttributesInputFormGroup() {
+		return new FormGroup<GetEndpointAttributesInputFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for GetPlatformApplicationAttributes action. */
 	export interface GetPlatformApplicationAttributesInput {
 		PlatformApplicationArn: string;
 	}
 
+	/** Input for GetPlatformApplicationAttributes action. */
+	export interface GetPlatformApplicationAttributesInputFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPlatformApplicationAttributesInputFormGroup() {
+		return new FormGroup<GetPlatformApplicationAttributesInputFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the <code>GetSMSAttributes</code> request. */
 	export interface GetSMSAttributesInput {
-		attributes?: Array<string> | null;
+		attributes?: Array<string>;
+	}
+
+	/** The input for the <code>GetSMSAttributes</code> request. */
+	export interface GetSMSAttributesInputFormProperties {
+	}
+	export function CreateGetSMSAttributesInputFormGroup() {
+		return new FormGroup<GetSMSAttributesInputFormProperties>({
+		});
+
 	}
 
 
@@ -345,10 +973,32 @@ export namespace MyNS {
 		SubscriptionArn: string;
 	}
 
+	/** Input for GetSubscriptionAttributes. */
+	export interface GetSubscriptionAttributesInputFormProperties {
+		SubscriptionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSubscriptionAttributesInputFormGroup() {
+		return new FormGroup<GetSubscriptionAttributesInputFormProperties>({
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for GetTopicAttributes action. */
 	export interface GetTopicAttributesInput {
 		TopicArn: string;
+	}
+
+	/** Input for GetTopicAttributes action. */
+	export interface GetTopicAttributesInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTopicAttributesInputFormGroup() {
+		return new FormGroup<GetTopicAttributesInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -358,16 +1008,51 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Input for ListEndpointsByPlatformApplication action. */
+	export interface ListEndpointsByPlatformApplicationInputFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEndpointsByPlatformApplicationInputFormGroup() {
+		return new FormGroup<ListEndpointsByPlatformApplicationInputFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the <code>ListPhoneNumbersOptedOut</code> action. */
 	export interface ListPhoneNumbersOptedOutInput {
 		nextToken?: string | null;
 	}
 
+	/** The input for the <code>ListPhoneNumbersOptedOut</code> action. */
+	export interface ListPhoneNumbersOptedOutInputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPhoneNumbersOptedOutInputFormGroup() {
+		return new FormGroup<ListPhoneNumbersOptedOutInputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for ListPlatformApplications action. */
 	export interface ListPlatformApplicationsInput {
 		NextToken?: string | null;
+	}
+
+	/** Input for ListPlatformApplications action. */
+	export interface ListPlatformApplicationsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlatformApplicationsInputFormGroup() {
+		return new FormGroup<ListPlatformApplicationsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -377,27 +1062,87 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Input for ListSubscriptionsByTopic action. */
+	export interface ListSubscriptionsByTopicInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscriptionsByTopicInputFormGroup() {
+		return new FormGroup<ListSubscriptionsByTopicInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for ListSubscriptions action. */
 	export interface ListSubscriptionsInput {
 		NextToken?: string | null;
 	}
 
+	/** Input for ListSubscriptions action. */
+	export interface ListSubscriptionsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscriptionsInputFormGroup() {
+		return new FormGroup<ListSubscriptionsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTopicsInput {
 		NextToken?: string | null;
 	}
+	export interface ListTopicsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTopicsInputFormGroup() {
+		return new FormGroup<ListTopicsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface MessageAttributeMap {
+	}
+	export interface MessageAttributeMapFormProperties {
+	}
+	export function CreateMessageAttributeMapFormGroup() {
+		return new FormGroup<MessageAttributeMapFormProperties>({
+		});
+
 	}
 
 
 	/** Input for the OptInPhoneNumber action. */
 	export interface OptInPhoneNumberInput {
 		phoneNumber: string;
+	}
+
+	/** Input for the OptInPhoneNumber action. */
+	export interface OptInPhoneNumberInputFormProperties {
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateOptInPhoneNumberInputFormGroup() {
+		return new FormGroup<OptInPhoneNumberInputFormProperties>({
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -409,7 +1154,28 @@ export namespace MyNS {
 		Message: string;
 		Subject?: string | null;
 		MessageStructure?: string | null;
-		MessageAttributes?: MessageAttributeMap | null;
+		MessageAttributes?: MessageAttributeMap;
+	}
+
+	/** Input for Publish action. */
+	export interface PublishInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		TargetArn: FormControl<string | null | undefined>,
+		PhoneNumber: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		Subject: FormControl<string | null | undefined>,
+		MessageStructure: FormControl<string | null | undefined>,
+	}
+	export function CreatePublishInputFormGroup() {
+		return new FormGroup<PublishInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TargetArn: new FormControl<string | null | undefined>(undefined),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			Subject: new FormControl<string | null | undefined>(undefined),
+			MessageStructure: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -419,11 +1185,35 @@ export namespace MyNS {
 		Label: string;
 	}
 
+	/** Input for RemovePermission action. */
+	export interface RemovePermissionInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+	}
+	export function CreateRemovePermissionInputFormGroup() {
+		return new FormGroup<RemovePermissionInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for SetEndpointAttributes action. */
 	export interface SetEndpointAttributesInput {
 		EndpointArn: string;
 		Attributes: MapStringToString;
+	}
+
+	/** Input for SetEndpointAttributes action. */
+	export interface SetEndpointAttributesInputFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSetEndpointAttributesInputFormGroup() {
+		return new FormGroup<SetEndpointAttributesInputFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -433,10 +1223,30 @@ export namespace MyNS {
 		Attributes: MapStringToString;
 	}
 
+	/** Input for SetPlatformApplicationAttributes action. */
+	export interface SetPlatformApplicationAttributesInputFormProperties {
+		PlatformApplicationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSetPlatformApplicationAttributesInputFormGroup() {
+		return new FormGroup<SetPlatformApplicationAttributesInputFormProperties>({
+			PlatformApplicationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the SetSMSAttributes action. */
 	export interface SetSMSAttributesInput {
 		attributes: MapStringToString;
+	}
+
+	/** The input for the SetSMSAttributes action. */
+	export interface SetSMSAttributesInputFormProperties {
+	}
+	export function CreateSetSMSAttributesInputFormGroup() {
+		return new FormGroup<SetSMSAttributesInputFormProperties>({
+		});
+
 	}
 
 
@@ -447,6 +1257,21 @@ export namespace MyNS {
 		AttributeValue?: string | null;
 	}
 
+	/** Input for SetSubscriptionAttributes action. */
+	export interface SetSubscriptionAttributesInputFormProperties {
+		SubscriptionArn: FormControl<string | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreateSetSubscriptionAttributesInputFormGroup() {
+		return new FormGroup<SetSubscriptionAttributesInputFormProperties>({
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for SetTopicAttributes action. */
 	export interface SetTopicAttributesInput {
@@ -455,19 +1280,60 @@ export namespace MyNS {
 		AttributeValue?: string | null;
 	}
 
+	/** Input for SetTopicAttributes action. */
+	export interface SetTopicAttributesInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreateSetTopicAttributesInputFormGroup() {
+		return new FormGroup<SetTopicAttributesInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input for Subscribe action. */
 	export interface SubscribeInput {
 		TopicArn: string;
 		Protocol: string;
 		Endpoint?: string | null;
-		Attributes?: SubscriptionAttributesMap | null;
+		Attributes?: SubscriptionAttributesMap;
 		ReturnSubscriptionArn?: boolean | null;
+	}
+
+	/** Input for Subscribe action. */
+	export interface SubscribeInputFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		Protocol: FormControl<string | null | undefined>,
+		Endpoint: FormControl<string | null | undefined>,
+		ReturnSubscriptionArn: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSubscribeInputFormGroup() {
+		return new FormGroup<SubscribeInputFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			ReturnSubscriptionArn: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: Array<Tag>;
+	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -476,9 +1342,29 @@ export namespace MyNS {
 		SubscriptionArn: string;
 	}
 
+	/** Input for Unsubscribe action. */
+	export interface UnsubscribeInputFormProperties {
+		SubscriptionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUnsubscribeInputFormGroup() {
+		return new FormGroup<UnsubscribeInputFormProperties>({
+			SubscriptionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -555,7 +1441,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateTopic(Name: string, Attributes: {[id: string]: string } | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateTopicAction, Version: GET_CreateTopicVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateTopic?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&Attributes=' + Attributes + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateTopic?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&Attributes=' + Attributes + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -615,7 +1501,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetSMSAttributes(attributes: Array<string> | null | undefined, Action: GET_GetSMSAttributesAction, Version: GET_GetSMSAttributesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetSMSAttributes?' + attributes.map(z => `attributes=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetSMSAttributes?' + attributes?.map(z => `attributes=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**

@@ -1,12 +1,24 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export enum CaseType { LowerCase = 0, UpperCase = 1, SentenceCase = 2, TitleCase = 3 }
 
 	export interface GetHash {
 		key?: number | null;
 		text: string;
+	}
+	export interface GetHashFormProperties {
+		key: FormControl<number | null | undefined>,
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGetHashFormGroup() {
+		return new FormGroup<GetHashFormProperties>({
+			key: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HashType { md5 = 0, sha1 = 1, sha256 = 2, sha384 = 3, sha512 = 4, crc32 = 5, caesarencryption = 6, caesardecryption = 7 }
@@ -19,6 +31,15 @@ export namespace MyNS {
 
 	export interface TextDto {
 		text?: string | null;
+	}
+	export interface TextDtoFormProperties {
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateTextDtoFormGroup() {
+		return new FormGroup<TextDtoFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TextType { paragraphs = 0, words = 1 }

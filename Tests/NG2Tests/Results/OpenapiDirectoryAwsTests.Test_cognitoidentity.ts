@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** An object representing an Amazon Cognito identity pool. */
@@ -9,15 +10,41 @@ export namespace MyNS {
 		IdentityPoolName: string;
 		AllowUnauthenticatedIdentities: boolean;
 		AllowClassicFlow?: boolean | null;
-		SupportedLoginProviders?: IdentityProviders | null;
+		SupportedLoginProviders?: IdentityProviders;
 		DeveloperProviderName?: string | null;
-		OpenIdConnectProviderARNs?: Array<string> | null;
-		CognitoIdentityProviders?: Array<CognitoIdentityProvider> | null;
-		SamlProviderARNs?: Array<string> | null;
-		IdentityPoolTags?: IdentityPoolTagsType | null;
+		OpenIdConnectProviderARNs?: Array<string>;
+		CognitoIdentityProviders?: Array<CognitoIdentityProvider>;
+		SamlProviderARNs?: Array<string>;
+		IdentityPoolTags?: IdentityPoolTagsType;
+	}
+
+	/** An object representing an Amazon Cognito identity pool. */
+	export interface IdentityPoolFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		IdentityPoolName: FormControl<string | null | undefined>,
+		AllowUnauthenticatedIdentities: FormControl<boolean | null | undefined>,
+		AllowClassicFlow: FormControl<boolean | null | undefined>,
+		DeveloperProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateIdentityPoolFormGroup() {
+		return new FormGroup<IdentityPoolFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined),
+			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined),
+			AllowClassicFlow: new FormControl<boolean | null | undefined>(undefined),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface IdentityProviders {
+	}
+	export interface IdentityProvidersFormProperties {
+	}
+	export function CreateIdentityProvidersFormGroup() {
+		return new FormGroup<IdentityProvidersFormProperties>({
+		});
+
 	}
 
 
@@ -28,7 +55,29 @@ export namespace MyNS {
 		ServerSideTokenCheck?: boolean | null;
 	}
 
+	/** A provider representing an Amazon Cognito user pool and its client ID. */
+	export interface CognitoIdentityProviderFormProperties {
+		ProviderName: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		ServerSideTokenCheck: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCognitoIdentityProviderFormGroup() {
+		return new FormGroup<CognitoIdentityProviderFormProperties>({
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			ServerSideTokenCheck: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface IdentityPoolTagsType {
+	}
+	export interface IdentityPoolTagsTypeFormProperties {
+	}
+	export function CreateIdentityPoolTagsTypeFormGroup() {
+		return new FormGroup<IdentityPoolTagsTypeFormProperties>({
+		});
+
 	}
 
 
@@ -37,36 +86,104 @@ export namespace MyNS {
 		IdentityPoolName: string;
 		AllowUnauthenticatedIdentities: boolean;
 		AllowClassicFlow?: boolean | null;
-		SupportedLoginProviders?: IdentityProviders | null;
+		SupportedLoginProviders?: IdentityProviders;
 		DeveloperProviderName?: string | null;
-		OpenIdConnectProviderARNs?: Array<string> | null;
-		CognitoIdentityProviders?: Array<CognitoIdentityProvider> | null;
-		SamlProviderARNs?: Array<string> | null;
-		IdentityPoolTags?: IdentityPoolTagsType | null;
+		OpenIdConnectProviderARNs?: Array<string>;
+		CognitoIdentityProviders?: Array<CognitoIdentityProvider>;
+		SamlProviderARNs?: Array<string>;
+		IdentityPoolTags?: IdentityPoolTagsType;
+	}
+
+	/** Input to the CreateIdentityPool action. */
+	export interface CreateIdentityPoolInputFormProperties {
+		IdentityPoolName: FormControl<string | null | undefined>,
+		AllowUnauthenticatedIdentities: FormControl<boolean | null | undefined>,
+		AllowClassicFlow: FormControl<boolean | null | undefined>,
+		DeveloperProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIdentityPoolInputFormGroup() {
+		return new FormGroup<CreateIdentityPoolInputFormProperties>({
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined),
+			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined),
+			AllowClassicFlow: new FormControl<boolean | null | undefined>(undefined),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotAuthorizedException {
+	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceConflictException {
 	}
+	export interface ResourceConflictExceptionFormProperties {
+	}
+	export function CreateResourceConflictExceptionFormGroup() {
+		return new FormGroup<ResourceConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalErrorException {
 	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Returned in response to a successful <code>DeleteIdentities</code> operation. */
 	export interface DeleteIdentitiesResponse {
-		UnprocessedIdentityIds?: Array<UnprocessedIdentityId> | null;
+		UnprocessedIdentityIds?: Array<UnprocessedIdentityId>;
+	}
+
+	/** Returned in response to a successful <code>DeleteIdentities</code> operation. */
+	export interface DeleteIdentitiesResponseFormProperties {
+	}
+	export function CreateDeleteIdentitiesResponseFormGroup() {
+		return new FormGroup<DeleteIdentitiesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -74,6 +191,19 @@ export namespace MyNS {
 	export interface UnprocessedIdentityId {
 		IdentityId?: string | null;
 		ErrorCode?: UnprocessedIdentityIdErrorCode | null;
+	}
+
+	/** An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId. */
+	export interface UnprocessedIdentityIdFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<UnprocessedIdentityIdErrorCode | null | undefined>,
+	}
+	export function CreateUnprocessedIdentityIdFormGroup() {
+		return new FormGroup<UnprocessedIdentityIdFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<UnprocessedIdentityIdErrorCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UnprocessedIdentityIdErrorCode { AccessDenied = 0, InternalServerError = 1 }
@@ -84,22 +214,64 @@ export namespace MyNS {
 		IdentityIdsToDelete: Array<string>;
 	}
 
+	/** Input to the <code>DeleteIdentities</code> action. */
+	export interface DeleteIdentitiesInputFormProperties {
+	}
+	export function CreateDeleteIdentitiesInputFormGroup() {
+		return new FormGroup<DeleteIdentitiesInputFormProperties>({
+		});
+
+	}
+
 
 	/** Input to the DeleteIdentityPool action. */
 	export interface DeleteIdentityPoolInput {
 		IdentityPoolId: string;
 	}
 
+	/** Input to the DeleteIdentityPool action. */
+	export interface DeleteIdentityPoolInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteIdentityPoolInputFormGroup() {
+		return new FormGroup<DeleteIdentityPoolInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** A description of the identity. */
 	export interface IdentityDescription {
 		IdentityId?: string | null;
-		Logins?: Array<string> | null;
+		Logins?: Array<string>;
 		CreationDate?: Date | null;
 		LastModifiedDate?: Date | null;
+	}
+
+	/** A description of the identity. */
+	export interface IdentityDescriptionFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateIdentityDescriptionFormGroup() {
+		return new FormGroup<IdentityDescriptionFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -108,10 +280,32 @@ export namespace MyNS {
 		IdentityId: string;
 	}
 
+	/** Input to the <code>DescribeIdentity</code> action. */
+	export interface DescribeIdentityInputFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIdentityInputFormGroup() {
+		return new FormGroup<DescribeIdentityInputFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the DescribeIdentityPool action. */
 	export interface DescribeIdentityPoolInput {
 		IdentityPoolId: string;
+	}
+
+	/** Input to the DescribeIdentityPool action. */
+	export interface DescribeIdentityPoolInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIdentityPoolInputFormGroup() {
+		return new FormGroup<DescribeIdentityPoolInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -120,7 +314,18 @@ export namespace MyNS {
 		IdentityId?: string | null;
 
 		/** Credentials for the provided identity ID. */
-		Credentials?: Credentials | null;
+		Credentials?: Credentials;
+	}
+
+	/** Returned in response to a successful <code>GetCredentialsForIdentity</code> operation. */
+	export interface GetCredentialsForIdentityResponseFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCredentialsForIdentityResponseFormGroup() {
+		return new FormGroup<GetCredentialsForIdentityResponseFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -132,21 +337,72 @@ export namespace MyNS {
 		Expiration?: Date | null;
 	}
 
+	/** Credentials for the provided identity ID. */
+	export interface CredentialsFormProperties {
+		AccessKeyId: FormControl<string | null | undefined>,
+		SecretKey: FormControl<string | null | undefined>,
+		SessionToken: FormControl<string | null | undefined>,
+		Expiration: FormControl<Date | null | undefined>,
+	}
+	export function CreateCredentialsFormGroup() {
+		return new FormGroup<CredentialsFormProperties>({
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			SecretKey: new FormControl<string | null | undefined>(undefined),
+			SessionToken: new FormControl<string | null | undefined>(undefined),
+			Expiration: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the <code>GetCredentialsForIdentity</code> action. */
 	export interface GetCredentialsForIdentityInput {
 		IdentityId: string;
-		Logins?: LoginsMap | null;
+		Logins?: LoginsMap;
 		CustomRoleArn?: string | null;
+	}
+
+	/** Input to the <code>GetCredentialsForIdentity</code> action. */
+	export interface GetCredentialsForIdentityInputFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		CustomRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCredentialsForIdentityInputFormGroup() {
+		return new FormGroup<GetCredentialsForIdentityInputFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			CustomRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LoginsMap {
 	}
+	export interface LoginsMapFormProperties {
+	}
+	export function CreateLoginsMapFormGroup() {
+		return new FormGroup<LoginsMapFormProperties>({
+		});
+
+	}
 
 	export interface InvalidIdentityPoolConfigurationException {
 	}
+	export interface InvalidIdentityPoolConfigurationExceptionFormProperties {
+	}
+	export function CreateInvalidIdentityPoolConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidIdentityPoolConfigurationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ExternalServiceException {
+	}
+	export interface ExternalServiceExceptionFormProperties {
+	}
+	export function CreateExternalServiceExceptionFormGroup() {
+		return new FormGroup<ExternalServiceExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -155,32 +411,92 @@ export namespace MyNS {
 		IdentityId?: string | null;
 	}
 
+	/** Returned in response to a GetId request. */
+	export interface GetIdResponseFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIdResponseFormGroup() {
+		return new FormGroup<GetIdResponseFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the GetId action. */
 	export interface GetIdInput {
 		AccountId?: string | null;
 		IdentityPoolId: string;
-		Logins?: LoginsMap | null;
+		Logins?: LoginsMap;
+	}
+
+	/** Input to the GetId action. */
+	export interface GetIdInputFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIdInputFormGroup() {
+		return new FormGroup<GetIdInputFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Returned in response to a successful <code>GetIdentityPoolRoles</code> operation. */
 	export interface GetIdentityPoolRolesResponse {
 		IdentityPoolId?: string | null;
-		Roles?: RolesMap | null;
-		RoleMappings?: RoleMappingMap | null;
+		Roles?: RolesMap;
+		RoleMappings?: RoleMappingMap;
+	}
+
+	/** Returned in response to a successful <code>GetIdentityPoolRoles</code> operation. */
+	export interface GetIdentityPoolRolesResponseFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIdentityPoolRolesResponseFormGroup() {
+		return new FormGroup<GetIdentityPoolRolesResponseFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RolesMap {
 	}
+	export interface RolesMapFormProperties {
+	}
+	export function CreateRolesMapFormGroup() {
+		return new FormGroup<RolesMapFormProperties>({
+		});
+
+	}
 
 	export interface RoleMappingMap {
+	}
+	export interface RoleMappingMapFormProperties {
+	}
+	export function CreateRoleMappingMapFormGroup() {
+		return new FormGroup<RoleMappingMapFormProperties>({
+		});
+
 	}
 
 
 	/** Input to the <code>GetIdentityPoolRoles</code> action. */
 	export interface GetIdentityPoolRolesInput {
 		IdentityPoolId: string;
+	}
+
+	/** Input to the <code>GetIdentityPoolRoles</code> action. */
+	export interface GetIdentityPoolRolesInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIdentityPoolRolesInputFormGroup() {
+		return new FormGroup<GetIdentityPoolRolesInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -190,11 +506,35 @@ export namespace MyNS {
 		Token?: string | null;
 	}
 
+	/** Returned in response to a successful GetOpenIdToken request. */
+	export interface GetOpenIdTokenResponseFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		Token: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOpenIdTokenResponseFormGroup() {
+		return new FormGroup<GetOpenIdTokenResponseFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			Token: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the GetOpenIdToken action. */
 	export interface GetOpenIdTokenInput {
 		IdentityId: string;
-		Logins?: LoginsMap | null;
+		Logins?: LoginsMap;
+	}
+
+	/** Input to the GetOpenIdToken action. */
+	export interface GetOpenIdTokenInputFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOpenIdTokenInputFormGroup() {
+		return new FormGroup<GetOpenIdTokenInputFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -202,6 +542,19 @@ export namespace MyNS {
 	export interface GetOpenIdTokenForDeveloperIdentityResponse {
 		IdentityId?: string | null;
 		Token?: string | null;
+	}
+
+	/** Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code> request. */
+	export interface GetOpenIdTokenForDeveloperIdentityResponseFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		Token: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOpenIdTokenForDeveloperIdentityResponseFormGroup() {
+		return new FormGroup<GetOpenIdTokenForDeveloperIdentityResponseFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			Token: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -213,15 +566,50 @@ export namespace MyNS {
 		TokenDuration?: number | null;
 	}
 
+	/** Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action. */
+	export interface GetOpenIdTokenForDeveloperIdentityInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		IdentityId: FormControl<string | null | undefined>,
+		TokenDuration: FormControl<number | null | undefined>,
+	}
+	export function CreateGetOpenIdTokenForDeveloperIdentityInputFormGroup() {
+		return new FormGroup<GetOpenIdTokenForDeveloperIdentityInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			TokenDuration: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeveloperUserAlreadyRegisteredException {
+	}
+	export interface DeveloperUserAlreadyRegisteredExceptionFormProperties {
+	}
+	export function CreateDeveloperUserAlreadyRegisteredExceptionFormGroup() {
+		return new FormGroup<DeveloperUserAlreadyRegisteredExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The response to a ListIdentities request. */
 	export interface ListIdentitiesResponse {
 		IdentityPoolId?: string | null;
-		Identities?: Array<IdentityDescription> | null;
+		Identities?: Array<IdentityDescription>;
 		NextToken?: string | null;
+	}
+
+	/** The response to a ListIdentities request. */
+	export interface ListIdentitiesResponseFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIdentitiesResponseFormGroup() {
+		return new FormGroup<ListIdentitiesResponseFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -233,11 +621,39 @@ export namespace MyNS {
 		HideDisabled?: boolean | null;
 	}
 
+	/** Input to the ListIdentities action. */
+	export interface ListIdentitiesInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		HideDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListIdentitiesInputFormGroup() {
+		return new FormGroup<ListIdentitiesInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			HideDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a successful ListIdentityPools action. */
 	export interface ListIdentityPoolsResponse {
-		IdentityPools?: Array<IdentityPoolShortDescription> | null;
+		IdentityPools?: Array<IdentityPoolShortDescription>;
 		NextToken?: string | null;
+	}
+
+	/** The result of a successful ListIdentityPools action. */
+	export interface ListIdentityPoolsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIdentityPoolsResponseFormGroup() {
+		return new FormGroup<ListIdentityPoolsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -247,6 +663,19 @@ export namespace MyNS {
 		IdentityPoolName?: string | null;
 	}
 
+	/** A description of the identity pool. */
+	export interface IdentityPoolShortDescriptionFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		IdentityPoolName: FormControl<string | null | undefined>,
+	}
+	export function CreateIdentityPoolShortDescriptionFormGroup() {
+		return new FormGroup<IdentityPoolShortDescriptionFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the ListIdentityPools action. */
 	export interface ListIdentityPoolsInput {
@@ -254,20 +683,62 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Input to the ListIdentityPools action. */
+	export interface ListIdentityPoolsInputFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIdentityPoolsInputFormGroup() {
+		return new FormGroup<ListIdentityPoolsInputFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: IdentityPoolTagsType | null;
+		Tags?: IdentityPoolTagsType;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		ResourceArn: string;
+	}
+	export interface ListTagsForResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Returned in response to a successful <code>LookupDeveloperIdentity</code> action. */
 	export interface LookupDeveloperIdentityResponse {
 		IdentityId?: string | null;
-		DeveloperUserIdentifierList?: Array<string> | null;
+		DeveloperUserIdentifierList?: Array<string>;
 		NextToken?: string | null;
+	}
+
+	/** Returned in response to a successful <code>LookupDeveloperIdentity</code> action. */
+	export interface LookupDeveloperIdentityResponseFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupDeveloperIdentityResponseFormGroup() {
+		return new FormGroup<LookupDeveloperIdentityResponseFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,10 +751,40 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Input to the <code>LookupDeveloperIdentityInput</code> action. */
+	export interface LookupDeveloperIdentityInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		IdentityId: FormControl<string | null | undefined>,
+		DeveloperUserIdentifier: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupDeveloperIdentityInputFormGroup() {
+		return new FormGroup<LookupDeveloperIdentityInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Returned in response to a successful <code>MergeDeveloperIdentities</code> action. */
 	export interface MergeDeveloperIdentitiesResponse {
 		IdentityId?: string | null;
+	}
+
+	/** Returned in response to a successful <code>MergeDeveloperIdentities</code> action. */
+	export interface MergeDeveloperIdentitiesResponseFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+	}
+	export function CreateMergeDeveloperIdentitiesResponseFormGroup() {
+		return new FormGroup<MergeDeveloperIdentitiesResponseFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -295,23 +796,74 @@ export namespace MyNS {
 		IdentityPoolId: string;
 	}
 
+	/** Input to the <code>MergeDeveloperIdentities</code> action. */
+	export interface MergeDeveloperIdentitiesInputFormProperties {
+		SourceUserIdentifier: FormControl<string | null | undefined>,
+		DestinationUserIdentifier: FormControl<string | null | undefined>,
+		DeveloperProviderName: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateMergeDeveloperIdentitiesInputFormGroup() {
+		return new FormGroup<MergeDeveloperIdentitiesInputFormProperties>({
+			SourceUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			DestinationUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the <code>SetIdentityPoolRoles</code> action. */
 	export interface SetIdentityPoolRolesInput {
 		IdentityPoolId: string;
 		Roles: RolesMap;
-		RoleMappings?: RoleMappingMap | null;
+		RoleMappings?: RoleMappingMap;
+	}
+
+	/** Input to the <code>SetIdentityPoolRoles</code> action. */
+	export interface SetIdentityPoolRolesInputFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetIdentityPoolRolesInputFormGroup() {
+		return new FormGroup<SetIdentityPoolRolesInputFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		ResourceArn: string;
 		Tags: IdentityPoolTagsType;
+	}
+	export interface TagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -323,6 +875,23 @@ export namespace MyNS {
 		DeveloperUserIdentifier: string;
 	}
 
+	/** Input to the <code>UnlinkDeveloperIdentity</code> action. */
+	export interface UnlinkDeveloperIdentityInputFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+		DeveloperProviderName: FormControl<string | null | undefined>,
+		DeveloperUserIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateUnlinkDeveloperIdentityInputFormGroup() {
+		return new FormGroup<UnlinkDeveloperIdentityInputFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined),
+			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input to the UnlinkIdentity action. */
 	export interface UnlinkIdentityInput {
@@ -331,12 +900,39 @@ export namespace MyNS {
 		LoginsToRemove: Array<string>;
 	}
 
+	/** Input to the UnlinkIdentity action. */
+	export interface UnlinkIdentityInputFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnlinkIdentityInputFormGroup() {
+		return new FormGroup<UnlinkIdentityInputFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		ResourceArn: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AmbiguousRoleResolutionType { AuthenticatedRole = 0, Deny = 1 }
@@ -354,12 +950,38 @@ export namespace MyNS {
 		RoleARN: string;
 	}
 
+	/** A rule that maps a claim name, a claim value, and a match type to a role ARN. */
+	export interface MappingRuleFormProperties {
+		Claim: FormControl<string | null | undefined>,
+		MatchType: FormControl<MappingRuleMatchType | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		RoleARN: FormControl<string | null | undefined>,
+	}
+	export function CreateMappingRuleFormGroup() {
+		return new FormGroup<MappingRuleFormProperties>({
+			Claim: new FormControl<string | null | undefined>(undefined),
+			MatchType: new FormControl<MappingRuleMatchType | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RoleMappingType { Token = 0, Rules = 1 }
 
 
 	/** A container for rules. */
 	export interface RulesConfigurationType {
 		Rules: Array<MappingRule>;
+	}
+
+	/** A container for rules. */
+	export interface RulesConfigurationTypeFormProperties {
+	}
+	export function CreateRulesConfigurationTypeFormGroup() {
+		return new FormGroup<RulesConfigurationTypeFormProperties>({
+		});
+
 	}
 
 
@@ -369,7 +991,20 @@ export namespace MyNS {
 		AmbiguousRoleResolution?: AmbiguousRoleResolutionType | null;
 
 		/** A container for rules. */
-		RulesConfiguration?: RulesConfigurationType | null;
+		RulesConfiguration?: RulesConfigurationType;
+	}
+
+	/** A role mapping. */
+	export interface RoleMappingFormProperties {
+		Type: FormControl<RoleMappingType | null | undefined>,
+		AmbiguousRoleResolution: FormControl<AmbiguousRoleResolutionType | null | undefined>,
+	}
+	export function CreateRoleMappingFormGroup() {
+		return new FormGroup<RoleMappingFormProperties>({
+			Type: new FormControl<RoleMappingType | null | undefined>(undefined),
+			AmbiguousRoleResolution: new FormControl<AmbiguousRoleResolutionType | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

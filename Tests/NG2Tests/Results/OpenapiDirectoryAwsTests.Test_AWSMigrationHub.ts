@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateCreatedArtifactResult {
+	}
+	export interface AssociateCreatedArtifactResultFormProperties {
+	}
+	export function CreateAssociateCreatedArtifactResultFormGroup() {
+		return new FormGroup<AssociateCreatedArtifactResultFormProperties>({
+		});
+
 	}
 
 	export interface AssociateCreatedArtifactRequest {
@@ -16,6 +24,19 @@ export namespace MyNS {
 		CreatedArtifact: CreatedArtifact;
 		DryRun?: boolean | null;
 	}
+	export interface AssociateCreatedArtifactRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAssociateCreatedArtifactRequestFormGroup() {
+		return new FormGroup<AssociateCreatedArtifactRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.). */
@@ -24,34 +45,117 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.). */
+	export interface CreatedArtifactFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatedArtifactFormGroup() {
+		return new FormGroup<CreatedArtifactFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerError {
+	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DryRunOperation {
+	}
+	export interface DryRunOperationFormProperties {
+	}
+	export function CreateDryRunOperationFormGroup() {
+		return new FormGroup<DryRunOperationFormProperties>({
+		});
+
 	}
 
 	export interface UnauthorizedOperation {
 	}
+	export interface UnauthorizedOperationFormProperties {
+	}
+	export function CreateUnauthorizedOperationFormGroup() {
+		return new FormGroup<UnauthorizedOperationFormProperties>({
+		});
+
+	}
 
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface HomeRegionNotSetException {
 	}
+	export interface HomeRegionNotSetExceptionFormProperties {
+	}
+	export function CreateHomeRegionNotSetExceptionFormGroup() {
+		return new FormGroup<HomeRegionNotSetExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociateDiscoveredResourceResult {
+	}
+	export interface AssociateDiscoveredResourceResultFormProperties {
+	}
+	export function CreateAssociateDiscoveredResourceResultFormGroup() {
+		return new FormGroup<AssociateDiscoveredResourceResultFormProperties>({
+		});
+
 	}
 
 	export interface AssociateDiscoveredResourceRequest {
@@ -65,6 +169,19 @@ export namespace MyNS {
 		DiscoveredResource: DiscoveredResource;
 		DryRun?: boolean | null;
 	}
+	export interface AssociateDiscoveredResourceRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAssociateDiscoveredResourceRequestFormGroup() {
+		return new FormGroup<AssociateDiscoveredResourceRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Object representing the on-premises resource being migrated. */
@@ -73,28 +190,95 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Object representing the on-premises resource being migrated. */
+	export interface DiscoveredResourceFormProperties {
+		ConfigurationId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateDiscoveredResourceFormGroup() {
+		return new FormGroup<DiscoveredResourceFormProperties>({
+			ConfigurationId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PolicyErrorException {
+	}
+	export interface PolicyErrorExceptionFormProperties {
+	}
+	export function CreatePolicyErrorExceptionFormGroup() {
+		return new FormGroup<PolicyErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateProgressUpdateStreamResult {
+	}
+	export interface CreateProgressUpdateStreamResultFormProperties {
+	}
+	export function CreateCreateProgressUpdateStreamResultFormGroup() {
+		return new FormGroup<CreateProgressUpdateStreamResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateProgressUpdateStreamRequest {
 		ProgressUpdateStreamName: string;
 		DryRun?: boolean | null;
 	}
+	export interface CreateProgressUpdateStreamRequestFormProperties {
+		ProgressUpdateStreamName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateProgressUpdateStreamRequestFormGroup() {
+		return new FormGroup<CreateProgressUpdateStreamRequestFormProperties>({
+			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteProgressUpdateStreamResult {
+	}
+	export interface DeleteProgressUpdateStreamResultFormProperties {
+	}
+	export function CreateDeleteProgressUpdateStreamResultFormGroup() {
+		return new FormGroup<DeleteProgressUpdateStreamResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProgressUpdateStreamRequest {
 		ProgressUpdateStreamName: string;
 		DryRun?: boolean | null;
 	}
+	export interface DeleteProgressUpdateStreamRequestFormProperties {
+		ProgressUpdateStreamName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteProgressUpdateStreamRequestFormGroup() {
+		return new FormGroup<DeleteProgressUpdateStreamRequestFormProperties>({
+			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeApplicationStateResult {
 		ApplicationStatus?: DescribeApplicationStateResultApplicationStatus | null;
 		LastUpdatedTime?: Date | null;
+	}
+	export interface DescribeApplicationStateResultFormProperties {
+		ApplicationStatus: FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeApplicationStateResultFormGroup() {
+		return new FormGroup<DescribeApplicationStateResultFormProperties>({
+			ApplicationStatus: new FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeApplicationStateResultApplicationStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }
@@ -102,11 +286,27 @@ export namespace MyNS {
 	export interface DescribeApplicationStateRequest {
 		ApplicationId: string;
 	}
+	export interface DescribeApplicationStateRequestFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeApplicationStateRequestFormGroup() {
+		return new FormGroup<DescribeApplicationStateRequestFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeMigrationTaskResult {
 
 		/** Represents a migration task in a migration tool. */
-		MigrationTask?: MigrationTask | null;
+		MigrationTask?: MigrationTask;
+	}
+	export interface DescribeMigrationTaskResultFormProperties {
+	}
+	export function CreateDescribeMigrationTaskResultFormGroup() {
+		return new FormGroup<DescribeMigrationTaskResultFormProperties>({
+		});
+
 	}
 
 
@@ -116,9 +316,24 @@ export namespace MyNS {
 		MigrationTaskName?: string | null;
 
 		/** Task object encapsulating task information. */
-		Task?: Task_ | null;
+		Task?: Task_;
 		UpdateDateTime?: Date | null;
-		ResourceAttributeList?: Array<ResourceAttribute> | null;
+		ResourceAttributeList?: Array<ResourceAttribute>;
+	}
+
+	/** Represents a migration task in a migration tool. */
+	export interface MigrationTaskFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		UpdateDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateMigrationTaskFormGroup() {
+		return new FormGroup<MigrationTaskFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -127,6 +342,21 @@ export namespace MyNS {
 		Status: Task_Status;
 		StatusDetail?: string | null;
 		ProgressPercent?: number | null;
+	}
+
+	/** Task object encapsulating task information. */
+	export interface Task_FormProperties {
+		Status: FormControl<Task_Status | null | undefined>,
+		StatusDetail: FormControl<string | null | undefined>,
+		ProgressPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateTask_FormGroup() {
+		return new FormGroup<Task_FormProperties>({
+			Status: new FormControl<Task_Status | null | undefined>(undefined),
+			StatusDetail: new FormControl<string | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Task_Status { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
@@ -138,14 +368,45 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p>Attribute associated with a resource.</p> <p>Note the corresponding format required per type listed below:</p> <dl> <dt>IPV4</dt> <dd> <p> <code>x.x.x.x</code> </p> <p> <i>where x is an integer in the range [0,255]</i> </p> </dd> <dt>IPV6</dt> <dd> <p> <code>y : y : y : y : y : y : y : y</code> </p> <p> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </p> </dd> <dt>MAC_ADDRESS</dt> <dd> <p> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> </p> </dd> <dt>FQDN</dt> <dd> <p> <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> </p> </dd> </dl> */
+	export interface ResourceAttributeFormProperties {
+		Type: FormControl<ResourceAttributeType | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceAttributeFormGroup() {
+		return new FormGroup<ResourceAttributeFormProperties>({
+			Type: new FormControl<ResourceAttributeType | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceAttributeType { IPV4_ADDRESS = 0, IPV6_ADDRESS = 1, MAC_ADDRESS = 2, FQDN = 3, VM_MANAGER_ID = 4, VM_MANAGED_OBJECT_REFERENCE = 5, VM_NAME = 6, VM_PATH = 7, BIOS_ID = 8, MOTHERBOARD_SERIAL_NUMBER = 9 }
 
 	export interface DescribeMigrationTaskRequest {
 		ProgressUpdateStream: string;
 		MigrationTaskName: string;
 	}
+	export interface DescribeMigrationTaskRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMigrationTaskRequestFormGroup() {
+		return new FormGroup<DescribeMigrationTaskRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateCreatedArtifactResult {
+	}
+	export interface DisassociateCreatedArtifactResultFormProperties {
+	}
+	export function CreateDisassociateCreatedArtifactResultFormGroup() {
+		return new FormGroup<DisassociateCreatedArtifactResultFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateCreatedArtifactRequest {
@@ -154,8 +415,30 @@ export namespace MyNS {
 		CreatedArtifactName: string;
 		DryRun?: boolean | null;
 	}
+	export interface DisassociateCreatedArtifactRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		CreatedArtifactName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDisassociateCreatedArtifactRequestFormGroup() {
+		return new FormGroup<DisassociateCreatedArtifactRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			CreatedArtifactName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateDiscoveredResourceResult {
+	}
+	export interface DisassociateDiscoveredResourceResultFormProperties {
+	}
+	export function CreateDisassociateDiscoveredResourceResultFormGroup() {
+		return new FormGroup<DisassociateDiscoveredResourceResultFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateDiscoveredResourceRequest {
@@ -164,8 +447,30 @@ export namespace MyNS {
 		ConfigurationId: string;
 		DryRun?: boolean | null;
 	}
+	export interface DisassociateDiscoveredResourceRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		ConfigurationId: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDisassociateDiscoveredResourceRequestFormGroup() {
+		return new FormGroup<DisassociateDiscoveredResourceRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			ConfigurationId: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ImportMigrationTaskResult {
+	}
+	export interface ImportMigrationTaskResultFormProperties {
+	}
+	export function CreateImportMigrationTaskResultFormGroup() {
+		return new FormGroup<ImportMigrationTaskResultFormProperties>({
+		});
+
 	}
 
 	export interface ImportMigrationTaskRequest {
@@ -173,10 +478,32 @@ export namespace MyNS {
 		MigrationTaskName: string;
 		DryRun?: boolean | null;
 	}
+	export interface ImportMigrationTaskRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateImportMigrationTaskRequestFormGroup() {
+		return new FormGroup<ImportMigrationTaskRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListApplicationStatesResult {
-		ApplicationStateList?: Array<ApplicationState> | null;
+		ApplicationStateList?: Array<ApplicationState>;
 		NextToken?: string | null;
+	}
+	export interface ListApplicationStatesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationStatesResultFormGroup() {
+		return new FormGroup<ListApplicationStatesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -187,15 +514,50 @@ export namespace MyNS {
 		LastUpdatedTime?: Date | null;
 	}
 
+	/** The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent. */
+	export interface ApplicationStateFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		ApplicationStatus: FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateApplicationStateFormGroup() {
+		return new FormGroup<ApplicationStateFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ApplicationStatus: new FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListApplicationStatesRequest {
-		ApplicationIds?: Array<string> | null;
+		ApplicationIds?: Array<string>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListApplicationStatesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListApplicationStatesRequestFormGroup() {
+		return new FormGroup<ListApplicationStatesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCreatedArtifactsResult {
 		NextToken?: string | null;
-		CreatedArtifactList?: Array<CreatedArtifact> | null;
+		CreatedArtifactList?: Array<CreatedArtifact>;
+	}
+	export interface ListCreatedArtifactsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCreatedArtifactsResultFormGroup() {
+		return new FormGroup<ListCreatedArtifactsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCreatedArtifactsRequest {
@@ -204,10 +566,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListCreatedArtifactsRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListCreatedArtifactsRequestFormGroup() {
+		return new FormGroup<ListCreatedArtifactsRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDiscoveredResourcesResult {
 		NextToken?: string | null;
-		DiscoveredResourceList?: Array<DiscoveredResource> | null;
+		DiscoveredResourceList?: Array<DiscoveredResource>;
+	}
+	export interface ListDiscoveredResourcesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDiscoveredResourcesResultFormGroup() {
+		return new FormGroup<ListDiscoveredResourcesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDiscoveredResourcesRequest {
@@ -216,10 +602,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListDiscoveredResourcesRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDiscoveredResourcesRequestFormGroup() {
+		return new FormGroup<ListDiscoveredResourcesRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMigrationTasksResult {
 		NextToken?: string | null;
-		MigrationTaskSummaryList?: Array<MigrationTaskSummary> | null;
+		MigrationTaskSummaryList?: Array<MigrationTaskSummary>;
+	}
+	export interface ListMigrationTasksResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMigrationTasksResultFormGroup() {
+		return new FormGroup<ListMigrationTasksResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -233,15 +643,58 @@ export namespace MyNS {
 		UpdateDateTime?: Date | null;
 	}
 
+	/** MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task. */
+	export interface MigrationTaskSummaryFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		Status: FormControl<Task_Status | null | undefined>,
+		ProgressPercent: FormControl<number | null | undefined>,
+		StatusDetail: FormControl<string | null | undefined>,
+		UpdateDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateMigrationTaskSummaryFormGroup() {
+		return new FormGroup<MigrationTaskSummaryFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<Task_Status | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+			StatusDetail: new FormControl<string | null | undefined>(undefined),
+			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListMigrationTasksRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 		ResourceName?: string | null;
 	}
+	export interface ListMigrationTasksRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateListMigrationTasksRequestFormGroup() {
+		return new FormGroup<ListMigrationTasksRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListProgressUpdateStreamsResult {
-		ProgressUpdateStreamSummaryList?: Array<ProgressUpdateStreamSummary> | null;
+		ProgressUpdateStreamSummaryList?: Array<ProgressUpdateStreamSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListProgressUpdateStreamsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProgressUpdateStreamsResultFormGroup() {
+		return new FormGroup<ListProgressUpdateStreamsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -250,12 +703,41 @@ export namespace MyNS {
 		ProgressUpdateStreamName?: string | null;
 	}
 
+	/** Summary of the AWS resource used for access control that is implicitly linked to your AWS account. */
+	export interface ProgressUpdateStreamSummaryFormProperties {
+		ProgressUpdateStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateProgressUpdateStreamSummaryFormGroup() {
+		return new FormGroup<ProgressUpdateStreamSummaryFormProperties>({
+			ProgressUpdateStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProgressUpdateStreamsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListProgressUpdateStreamsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListProgressUpdateStreamsRequestFormGroup() {
+		return new FormGroup<ListProgressUpdateStreamsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotifyApplicationStateResult {
+	}
+	export interface NotifyApplicationStateResultFormProperties {
+	}
+	export function CreateNotifyApplicationStateResultFormGroup() {
+		return new FormGroup<NotifyApplicationStateResultFormProperties>({
+		});
+
 	}
 
 	export interface NotifyApplicationStateRequest {
@@ -264,8 +746,30 @@ export namespace MyNS {
 		UpdateDateTime?: Date | null;
 		DryRun?: boolean | null;
 	}
+	export interface NotifyApplicationStateRequestFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>,
+		UpdateDateTime: FormControl<Date | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNotifyApplicationStateRequestFormGroup() {
+		return new FormGroup<NotifyApplicationStateRequestFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeApplicationStateResultApplicationStatus | null | undefined>(undefined),
+			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotifyMigrationTaskStateResult {
+	}
+	export interface NotifyMigrationTaskStateResultFormProperties {
+	}
+	export function CreateNotifyMigrationTaskStateResultFormGroup() {
+		return new FormGroup<NotifyMigrationTaskStateResultFormProperties>({
+		});
+
 	}
 
 	export interface NotifyMigrationTaskStateRequest {
@@ -281,8 +785,32 @@ export namespace MyNS {
 		NextUpdateSeconds: number;
 		DryRun?: boolean | null;
 	}
+	export interface NotifyMigrationTaskStateRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		UpdateDateTime: FormControl<Date | null | undefined>,
+		NextUpdateSeconds: FormControl<number | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNotifyMigrationTaskStateRequestFormGroup() {
+		return new FormGroup<NotifyMigrationTaskStateRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			UpdateDateTime: new FormControl<Date | null | undefined>(undefined),
+			NextUpdateSeconds: new FormControl<number | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutResourceAttributesResult {
+	}
+	export interface PutResourceAttributesResultFormProperties {
+	}
+	export function CreatePutResourceAttributesResultFormGroup() {
+		return new FormGroup<PutResourceAttributesResultFormProperties>({
+		});
+
 	}
 
 	export interface PutResourceAttributesRequest {
@@ -290,6 +818,19 @@ export namespace MyNS {
 		MigrationTaskName: string;
 		ResourceAttributeList: Array<ResourceAttribute>;
 		DryRun?: boolean | null;
+	}
+	export interface PutResourceAttributesRequestFormProperties {
+		ProgressUpdateStream: FormControl<string | null | undefined>,
+		MigrationTaskName: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutResourceAttributesRequestFormGroup() {
+		return new FormGroup<PutResourceAttributesRequestFormProperties>({
+			ProgressUpdateStream: new FormControl<string | null | undefined>(undefined),
+			MigrationTaskName: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ApplicationStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2 }

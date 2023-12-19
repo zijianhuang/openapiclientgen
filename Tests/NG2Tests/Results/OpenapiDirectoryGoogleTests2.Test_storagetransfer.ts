@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -20,6 +21,30 @@ export namespace MyNS {
 		secretAccessKey?: string | null;
 	}
 
+	/**
+	 * AWS access key (see
+	 * [AWS Security
+	 * Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
+	 */
+	export interface AwsAccessKeyFormProperties {
+
+		/** Required. AWS access key ID. */
+		accessKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. AWS secret access key. This field is not returned in RPC
+		 * responses.
+		 */
+		secretAccessKey: FormControl<string | null | undefined>,
+	}
+	export function CreateAwsAccessKeyFormGroup() {
+		return new FormGroup<AwsAccessKeyFormProperties>({
+			accessKeyId: new FormControl<string | null | undefined>(undefined),
+			secretAccessKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * An AwsS3Data resource can be a data source, but not a data sink.
@@ -32,7 +57,7 @@ export namespace MyNS {
 		 * [AWS Security
 		 * Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
 		 */
-		awsAccessKey?: AwsAccessKey | null;
+		awsAccessKey?: AwsAccessKey;
 
 		/**
 		 * Required. S3 Bucket name (see
@@ -40,6 +65,26 @@ export namespace MyNS {
 		 * bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
 		 */
 		bucketName?: string | null;
+	}
+
+	/**
+	 * An AwsS3Data resource can be a data source, but not a data sink.
+	 * In an AwsS3Data resource, an object's name is the S3 object's key name.
+	 */
+	export interface AwsS3DataFormProperties {
+
+		/**
+		 * Required. S3 Bucket name (see
+		 * [Creating a
+		 * bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
+		 */
+		bucketName: FormControl<string | null | undefined>,
+	}
+	export function CreateAwsS3DataFormGroup() {
+		return new FormGroup<AwsS3DataFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -55,13 +100,38 @@ export namespace MyNS {
 	export interface AzureBlobStorageData {
 
 		/** Azure credentials */
-		azureCredentials?: AzureCredentials | null;
+		azureCredentials?: AzureCredentials;
 
 		/** Required. The container to transfer from the Azure Storage account. */
 		container?: string | null;
 
 		/** Required. The name of the Azure Storage account. */
 		storageAccount?: string | null;
+	}
+
+	/**
+	 * An AzureBlobStorageData resource can be a data source, but not a data sink.
+	 * An AzureBlobStorageData resource represents one Azure container. The storage
+	 * account determines the [Azure
+	 * endpoint](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account#storage-account-endpoints).
+	 * In an AzureBlobStorageData resource, a blobs's name is the [Azure Blob
+	 * Storage blob's key
+	 * name](https://docs.microsoft.com/en-us/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#blob-names).
+	 */
+	export interface AzureBlobStorageDataFormProperties {
+
+		/** Required. The container to transfer from the Azure Storage account. */
+		container: FormControl<string | null | undefined>,
+
+		/** Required. The name of the Azure Storage account. */
+		storageAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateAzureBlobStorageDataFormGroup() {
+		return new FormGroup<AzureBlobStorageDataFormProperties>({
+			container: new FormControl<string | null | undefined>(undefined),
+			storageAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -75,6 +145,24 @@ export namespace MyNS {
 		 * (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)).
 		 */
 		sasToken?: string | null;
+	}
+
+	/** Azure credentials */
+	export interface AzureCredentialsFormProperties {
+
+		/**
+		 * Required. Azure shared access signature. (see
+		 * [Grant limited access to Azure Storage resources using shared access
+		 * signatures
+		 * (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)).
+		 */
+		sasToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAzureCredentialsFormGroup() {
+		return new FormGroup<AzureCredentialsFormProperties>({
+			sasToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -110,6 +198,46 @@ export namespace MyNS {
 		year?: number | null;
 	}
 
+	/**
+	 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
+	 * and time zone are either specified elsewhere or are not significant. The date
+	 * is relative to the Proleptic Gregorian Calendar. This can represent:
+	 * * A full date, with non-zero year, month and day values
+	 * * A month and day value, with a zero year, e.g. an anniversary
+	 * * A year on its own, with zero month and day values
+	 * * A year and month value, with a zero day, e.g. a credit card expiration date
+	 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
+	 */
+	export interface DateFormProperties {
+
+		/**
+		 * Day of month. Must be from 1 to 31 and valid for the year and month, or 0
+		 * if specifying a year by itself or a year and month where the day is not
+		 * significant.
+		 */
+		day: FormControl<number | null | undefined>,
+
+		/**
+		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
+		 * month and day.
+		 */
+		month: FormControl<number | null | undefined>,
+
+		/**
+		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+		 * a year.
+		 */
+		year: FormControl<number | null | undefined>,
+	}
+	export function CreateDateFormGroup() {
+		return new FormGroup<DateFormProperties>({
+			day: new FormControl<number | null | undefined>(undefined),
+			month: new FormControl<number | null | undefined>(undefined),
+			year: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A generic empty message that you can re-use to avoid defining duplicated
@@ -123,18 +251,51 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** An entry describing an error that has occurred. */
 	export interface ErrorLogEntry {
 
 		/** A list of messages that carry the error details. */
-		errorDetails?: Array<string> | null;
+		errorDetails?: Array<string>;
 
 		/**
 		 * Required. A URL that refers to the target (a data source, a data sink,
 		 * or an object) with which the error is associated.
 		 */
 		url?: string | null;
+	}
+
+	/** An entry describing an error that has occurred. */
+	export interface ErrorLogEntryFormProperties {
+
+		/**
+		 * Required. A URL that refers to the target (a data source, a data sink,
+		 * or an object) with which the error is associated.
+		 */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorLogEntryFormGroup() {
+		return new FormGroup<ErrorLogEntryFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -155,7 +316,27 @@ export namespace MyNS {
 		 * At most 5 error log entries will be recorded for a given
 		 * error code for a single transfer operation.
 		 */
-		errorLogEntries?: Array<ErrorLogEntry> | null;
+		errorLogEntries?: Array<ErrorLogEntry>;
+	}
+
+	/**
+	 * A summary of errors by error code, plus a count and sample error log
+	 * entries.
+	 */
+	export interface ErrorSummaryFormProperties {
+
+		/** Required. */
+		errorCode: FormControl<ErrorSummaryErrorCode | null | undefined>,
+
+		/** Required. Count of this type of error. */
+		errorCount: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorSummaryFormGroup() {
+		return new FormGroup<ErrorSummaryFormProperties>({
+			errorCode: new FormControl<ErrorSummaryErrorCode | null | undefined>(undefined),
+			errorCount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ErrorSummaryErrorCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
@@ -177,12 +358,47 @@ export namespace MyNS {
 		bucketName?: string | null;
 	}
 
+	/**
+	 * In a GcsData resource, an object's name is the Cloud Storage object's
+	 * name and its "last modification time" refers to the object's `updated`
+	 * property of Cloud Storage objects, which changes when the content or the
+	 * metadata of the object is updated.
+	 */
+	export interface GcsDataFormProperties {
+
+		/**
+		 * Required. Cloud Storage bucket name (see
+		 * [Bucket Name
+		 * Requirements](https://cloud.google.com/storage/docs/naming#requirements)).
+		 */
+		bucketName: FormControl<string | null | undefined>,
+	}
+	export function CreateGcsDataFormGroup() {
+		return new FormGroup<GcsDataFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Google service account */
 	export interface GoogleServiceAccount {
 
 		/** Email address of the service account. */
 		accountEmail?: string | null;
+	}
+
+	/** Google service account */
+	export interface GoogleServiceAccountFormProperties {
+
+		/** Email address of the service account. */
+		accountEmail: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleServiceAccountFormGroup() {
+		return new FormGroup<GoogleServiceAccountFormProperties>({
+			accountEmail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -229,6 +445,55 @@ export namespace MyNS {
 		listUrl?: string | null;
 	}
 
+	/**
+	 * An HttpData resource specifies a list of objects on the web to be transferred
+	 * over HTTP.  The information of the objects to be transferred is contained in
+	 * a file referenced by a URL. The first line in the file must be
+	 * `"TsvHttpData-1.0"`, which specifies the format of the file.  Subsequent
+	 * lines specify the information of the list of objects, one object per list
+	 * entry. Each entry has the following tab-delimited fields:
+	 * * **HTTP URL** — The location of the object.
+	 * * **Length** — The size of the object in bytes.
+	 * * **MD5** — The base64-encoded MD5 hash of the object.
+	 * For an example of a valid TSV file, see
+	 * [Transferring data from
+	 * URLs](https://cloud.google.com/storage-transfer/docs/create-url-list).
+	 * When transferring data based on a URL list, keep the following in mind:
+	 * * When an object located at `http(s)://hostname:port/<URL-path>` is
+	 * transferred to a data sink, the name of the object at the data sink is
+	 * `<hostname>/<URL-path>`.
+	 * * If the specified size of an object does not match the actual size of the
+	 * object fetched, the object will not be transferred.
+	 * * If the specified MD5 does not match the MD5 computed from the transferred
+	 * bytes, the object transfer will fail. For more information, see
+	 * [Generating MD5
+	 * hashes](https://cloud.google.com/storage-transfer/docs/create-url-list#md5)
+	 * * Ensure that each URL you specify is publicly accessible. For
+	 * example, in Cloud Storage you can
+	 * [share an object publicly]
+	 * (https://cloud.google.com/storage/docs/cloud-console#_sharingdata) and get
+	 * a link to it.
+	 * * Storage Transfer Service obeys `robots.txt` rules and requires the source
+	 * HTTP server to support `Range` requests and to return a `Content-Length`
+	 * header in each response.
+	 * * ObjectConditions have no effect when filtering objects to transfer.
+	 */
+	export interface HttpDataFormProperties {
+
+		/**
+		 * Required. The URL that points to the file that stores the object list
+		 * entries. This file must allow public access.  Currently, only URLs with
+		 * HTTP and HTTPS schemes are supported.
+		 */
+		listUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpDataFormGroup() {
+		return new FormGroup<HttpDataFormProperties>({
+			listUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response message for Operations.ListOperations. */
 	export interface ListOperationsResponse {
@@ -237,7 +502,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -262,10 +540,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/** Represents the transfer operation object. */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should have the format of `transferOperations/some/unique/name`. */
 		name?: string | null;
@@ -280,7 +558,48 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/** Represents the transfer operation object. */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should have the format of `transferOperations/some/unique/name`. */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -301,7 +620,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -309,6 +628,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -319,7 +666,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of transfer jobs. */
-		transferJobs?: Array<TransferJob> | null;
+		transferJobs?: Array<TransferJob>;
+	}
+
+	/** Response from ListTransferJobs. */
+	export interface ListTransferJobsResponseFormProperties {
+
+		/** The list next page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTransferJobsResponseFormGroup() {
+		return new FormGroup<ListTransferJobsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -375,13 +735,13 @@ export namespace MyNS {
 		 * The `PubsubMessage.data` will contain a TransferOperation resource
 		 * formatted according to the specified `PayloadFormat`.
 		 */
-		notificationConfig?: NotificationConfig | null;
+		notificationConfig?: NotificationConfig;
 
 		/** The ID of the Google Cloud Platform Project that owns the job. */
 		projectId?: string | null;
 
 		/** Transfers can be scheduled to recur or to run just once. */
-		schedule?: Schedule | null;
+		schedule?: Schedule;
 
 		/**
 		 * Status of the job. This value MUST be specified for
@@ -395,7 +755,70 @@ export namespace MyNS {
 		status?: TransferJobStatus | null;
 
 		/** Configuration for running a transfer. */
-		transferSpec?: TransferSpec | null;
+		transferSpec?: TransferSpec;
+	}
+
+	/**
+	 * This resource represents the configuration of a transfer job that runs
+	 * periodically.
+	 */
+	export interface TransferJobFormProperties {
+
+		/** Output only. The time that the transfer job was created. */
+		creationTime: FormControl<string | null | undefined>,
+
+		/** Output only. The time that the transfer job was deleted. */
+		deletionTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A description provided by the user for the job. Its max length is 1024
+		 * bytes when Unicode-encoded.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** Output only. The time that the transfer job was last modified. */
+		lastModificationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique name (within the transfer project) assigned when the job is
+		 * created.  If this field is empty in a CreateTransferJobRequest, Storage
+		 * Transfer Service will assign a unique name. Otherwise, the specified name
+		 * is used as the unique name for this job.
+		 * If the specified name is in use by a job, the creation request fails with
+		 * an ALREADY_EXISTS error.
+		 * This name must start with `"transferJobs/"` prefix and end with a letter or
+		 * a number, and should be no more than 128 characters.
+		 * Example: `"transferJobs/[A-Za-z0-9-._~]*[A-Za-z0-9]$"`
+		 * Invalid job names will fail with an
+		 * INVALID_ARGUMENT error.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The ID of the Google Cloud Platform Project that owns the job. */
+		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Status of the job. This value MUST be specified for
+		 * `CreateTransferJobRequests`.
+		 * **Note:** The effect of the new job status takes place during a subsequent
+		 * job run. For example, if you change the job status from
+		 * ENABLED to DISABLED, and an operation
+		 * spawned by the transfer is running, the status change would not affect the
+		 * current operation.
+		 */
+		status: FormControl<TransferJobStatus | null | undefined>,
+	}
+	export function CreateTransferJobFormGroup() {
+		return new FormGroup<TransferJobFormProperties>({
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			deletionTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastModificationTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TransferJobStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -421,7 +844,7 @@ export namespace MyNS {
 		 * Event types for which a notification is desired. If empty, send
 		 * notifications for all event types.
 		 */
-		eventTypes?: Array<string> | null;
+		eventTypes?: Array<string>;
 
 		/** Required. The desired format of the notification message payloads. */
 		payloadFormat?: NotificationConfigPayloadFormat | null;
@@ -433,6 +856,43 @@ export namespace MyNS {
 		 * INVALID_ARGUMENT error.
 		 */
 		pubsubTopic?: string | null;
+	}
+
+	/**
+	 * Specification to configure notifications published to Cloud Pub/Sub.
+	 * Notifications will be published to the customer-provided topic using the
+	 * following `PubsubMessage.attributes`:
+	 * * `"eventType"`: one of the EventType values
+	 * * `"payloadFormat"`: one of the PayloadFormat values
+	 * * `"projectId"`: the project_id of the
+	 * `TransferOperation`
+	 * * `"transferJobName"`: the
+	 * transfer_job_name of the
+	 * `TransferOperation`
+	 * * `"transferOperationName"`: the name of the
+	 * `TransferOperation`
+	 * The `PubsubMessage.data` will contain a TransferOperation resource
+	 * formatted according to the specified `PayloadFormat`.
+	 */
+	export interface NotificationConfigFormProperties {
+
+		/** Required. The desired format of the notification message payloads. */
+		payloadFormat: FormControl<NotificationConfigPayloadFormat | null | undefined>,
+
+		/**
+		 * Required. The `Topic.name` of the Cloud Pub/Sub topic to which to publish
+		 * notifications. Must be of the format: `projects/{project}/topics/{topic}`.
+		 * Not matching this format will result in an
+		 * INVALID_ARGUMENT error.
+		 */
+		pubsubTopic: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationConfigFormGroup() {
+		return new FormGroup<NotificationConfigFormProperties>({
+			payloadFormat: new FormControl<NotificationConfigPayloadFormat | null | undefined>(undefined),
+			pubsubTopic: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NotificationConfigPayloadFormat { PAYLOAD_FORMAT_UNSPECIFIED = 0, NONE = 1, JSON = 2 }
@@ -451,7 +911,7 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		scheduleEndDate?: Date | null;
+		scheduleEndDate?: Date;
 
 		/**
 		 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -463,14 +923,23 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		scheduleStartDate?: Date | null;
+		scheduleStartDate?: Date;
 
 		/**
 		 * Represents a time of day. The date and time zone are either not significant
 		 * or are specified elsewhere. An API may choose to allow leap seconds. Related
 		 * types are google.type.Date and `google.protobuf.Timestamp`.
 		 */
-		startTimeOfDay?: TimeOfDay | null;
+		startTimeOfDay?: TimeOfDay;
+	}
+
+	/** Transfers can be scheduled to recur or to run just once. */
+	export interface ScheduleFormProperties {
+	}
+	export function CreateScheduleFormGroup() {
+		return new FormGroup<ScheduleFormProperties>({
+		});
+
 	}
 
 
@@ -500,6 +969,41 @@ export namespace MyNS {
 		seconds?: number | null;
 	}
 
+	/**
+	 * Represents a time of day. The date and time zone are either not significant
+	 * or are specified elsewhere. An API may choose to allow leap seconds. Related
+	 * types are google.type.Date and `google.protobuf.Timestamp`.
+	 */
+	export interface TimeOfDayFormProperties {
+
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
+		 * to allow the value "24:00:00" for scenarios like business closing time.
+		 */
+		hours: FormControl<number | null | undefined>,
+
+		/** Minutes of hour of day. Must be from 0 to 59. */
+		minutes: FormControl<number | null | undefined>,
+
+		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		nanos: FormControl<number | null | undefined>,
+
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may
+		 * allow the value 60 if it allows leap-seconds.
+		 */
+		seconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeOfDayFormGroup() {
+		return new FormGroup<TimeOfDayFormProperties>({
+			hours: new FormControl<number | null | undefined>(undefined),
+			minutes: new FormControl<number | null | undefined>(undefined),
+			nanos: new FormControl<number | null | undefined>(undefined),
+			seconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TransferJobStatus { STATUS_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, DELETED = 3 }
 
 
@@ -510,7 +1014,7 @@ export namespace MyNS {
 		 * An AwsS3Data resource can be a data source, but not a data sink.
 		 * In an AwsS3Data resource, an object's name is the S3 object's key name.
 		 */
-		awsS3DataSource?: AwsS3Data | null;
+		awsS3DataSource?: AwsS3Data;
 
 		/**
 		 * An AzureBlobStorageData resource can be a data source, but not a data sink.
@@ -521,7 +1025,7 @@ export namespace MyNS {
 		 * Storage blob's key
 		 * name](https://docs.microsoft.com/en-us/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#blob-names).
 		 */
-		azureBlobStorageDataSource?: AzureBlobStorageData | null;
+		azureBlobStorageDataSource?: AzureBlobStorageData;
 
 		/**
 		 * In a GcsData resource, an object's name is the Cloud Storage object's
@@ -529,7 +1033,7 @@ export namespace MyNS {
 		 * property of Cloud Storage objects, which changes when the content or the
 		 * metadata of the object is updated.
 		 */
-		gcsDataSink?: GcsData | null;
+		gcsDataSink?: GcsData;
 
 		/**
 		 * In a GcsData resource, an object's name is the Cloud Storage object's
@@ -537,7 +1041,7 @@ export namespace MyNS {
 		 * property of Cloud Storage objects, which changes when the content or the
 		 * metadata of the object is updated.
 		 */
-		gcsDataSource?: GcsData | null;
+		gcsDataSource?: GcsData;
 
 		/**
 		 * An HttpData resource specifies a list of objects on the web to be transferred
@@ -572,7 +1076,7 @@ export namespace MyNS {
 		 * header in each response.
 		 * * ObjectConditions have no effect when filtering objects to transfer.
 		 */
-		httpDataSource?: HttpData | null;
+		httpDataSource?: HttpData;
 
 		/**
 		 * Conditions that determine which objects will be transferred. Applies only
@@ -582,13 +1086,22 @@ export namespace MyNS {
 		 * the `updated` property of Cloud Storage objects and the `LastModified`
 		 * field of S3 objects.
 		 */
-		objectConditions?: ObjectConditions | null;
+		objectConditions?: ObjectConditions;
 
 		/**
 		 * TransferOptions uses three boolean parameters to define the actions
 		 * to be performed on objects in a transfer.
 		 */
-		transferOptions?: TransferOptions | null;
+		transferOptions?: TransferOptions;
+	}
+
+	/** Configuration for running a transfer. */
+	export interface TransferSpecFormProperties {
+	}
+	export function CreateTransferSpecFormGroup() {
+		return new FormGroup<TransferSpecFormProperties>({
+		});
+
 	}
 
 
@@ -607,7 +1120,7 @@ export namespace MyNS {
 		 * include_prefixes.
 		 * The max size of `exclude_prefixes` is 1000.
 		 */
-		excludePrefixes?: Array<string> | null;
+		excludePrefixes?: Array<string>;
 
 		/**
 		 * If `include_prefixes` is specified, objects that satisfy the object
@@ -637,7 +1150,7 @@ export namespace MyNS {
 		 * with the value of a path explicitly included by `include_prefixes`.
 		 * The max size of `include_prefixes` is 1000.
 		 */
-		includePrefixes?: Array<string> | null;
+		includePrefixes?: Array<string>;
 
 		/**
 		 * If specified, only objects with a "last modification time" before this
@@ -680,6 +1193,66 @@ export namespace MyNS {
 		minTimeElapsedSinceLastModification?: string | null;
 	}
 
+	/**
+	 * Conditions that determine which objects will be transferred. Applies only
+	 * to S3 and Cloud Storage objects.
+	 * The "last modification time" refers to the time of the
+	 * last change to the object's content or metadata — specifically, this is
+	 * the `updated` property of Cloud Storage objects and the `LastModified`
+	 * field of S3 objects.
+	 */
+	export interface ObjectConditionsFormProperties {
+
+		/**
+		 * If specified, only objects with a "last modification time" before this
+		 * timestamp and objects that don't have a "last modification time" will be
+		 * transferred.
+		 */
+		lastModifiedBefore: FormControl<string | null | undefined>,
+
+		/**
+		 * If specified, only objects with a "last modification time" on or after
+		 * this timestamp and objects that don't have a "last modification time" are
+		 * transferred.
+		 * The `last_modified_since` and `last_modified_before` fields can be used
+		 * together for chunked data processing. For example, consider a script that
+		 * processes each day's worth of data at a time. For that you'd set each
+		 * of the fields as follows:
+		 * *  `last_modified_since` to the start of the day
+		 * *  `last_modified_before` to the end of the day
+		 */
+		lastModifiedSince: FormControl<string | null | undefined>,
+
+		/**
+		 * If specified, only objects with a "last modification time" on or after
+		 * `NOW` - `max_time_elapsed_since_last_modification` and objects that don't
+		 * have a "last modification time" are transferred.
+		 * For each TransferOperation started by this TransferJob,
+		 * `NOW` refers to the start_time of the
+		 * `TransferOperation`.
+		 */
+		maxTimeElapsedSinceLastModification: FormControl<string | null | undefined>,
+
+		/**
+		 * If specified, only objects with a "last modification time" before
+		 * `NOW` - `min_time_elapsed_since_last_modification` and objects that don't
+		 * have a "last modification time" are transferred.
+		 * For each TransferOperation started by this TransferJob, `NOW`
+		 * refers to the start_time of the
+		 * `TransferOperation`.
+		 */
+		minTimeElapsedSinceLastModification: FormControl<string | null | undefined>,
+	}
+	export function CreateObjectConditionsFormGroup() {
+		return new FormGroup<ObjectConditionsFormProperties>({
+			lastModifiedBefore: new FormControl<string | null | undefined>(undefined),
+			lastModifiedSince: new FormControl<string | null | undefined>(undefined),
+			maxTimeElapsedSinceLastModification: new FormControl<string | null | undefined>(undefined),
+			minTimeElapsedSinceLastModification: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * TransferOptions uses three boolean parameters to define the actions
@@ -706,14 +1279,65 @@ export namespace MyNS {
 		overwriteObjectsAlreadyExistingInSink?: boolean | null;
 	}
 
+	/**
+	 * TransferOptions uses three boolean parameters to define the actions
+	 * to be performed on objects in a transfer.
+	 */
+	export interface TransferOptionsFormProperties {
+
+		/**
+		 * Whether objects should be deleted from the source after they are
+		 * transferred to the sink.
+		 * **Note:** This option and delete_objects_unique_in_sink are mutually
+		 * exclusive.
+		 */
+		deleteObjectsFromSourceAfterTransfer: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether objects that exist only in the sink should be deleted.
+		 * **Note:** This option and delete_objects_from_source_after_transfer are
+		 * mutually exclusive.
+		 */
+		deleteObjectsUniqueInSink: FormControl<boolean | null | undefined>,
+
+		/** Whether overwriting objects that already exist in the sink is allowed. */
+		overwriteObjectsAlreadyExistingInSink: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTransferOptionsFormGroup() {
+		return new FormGroup<TransferOptionsFormProperties>({
+			deleteObjectsFromSourceAfterTransfer: new FormControl<boolean | null | undefined>(undefined),
+			deleteObjectsUniqueInSink: new FormControl<boolean | null | undefined>(undefined),
+			overwriteObjectsAlreadyExistingInSink: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request passed to PauseTransferOperation. */
 	export interface PauseTransferOperationRequest {
 	}
 
+	/** Request passed to PauseTransferOperation. */
+	export interface PauseTransferOperationRequestFormProperties {
+	}
+	export function CreatePauseTransferOperationRequestFormGroup() {
+		return new FormGroup<PauseTransferOperationRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Request passed to ResumeTransferOperation. */
 	export interface ResumeTransferOperationRequest {
+	}
+
+	/** Request passed to ResumeTransferOperation. */
+	export interface ResumeTransferOperationRequestFormProperties {
+	}
+	export function CreateResumeTransferOperationRequestFormGroup() {
+		return new FormGroup<ResumeTransferOperationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -789,18 +1413,111 @@ export namespace MyNS {
 		objectsFromSourceSkippedBySync?: string | null;
 	}
 
+	/** A collection of counters that report the progress of a transfer operation. */
+	export interface TransferCountersFormProperties {
+
+		/** Bytes that are copied to the data sink. */
+		bytesCopiedToSink: FormControl<string | null | undefined>,
+
+		/** Bytes that are deleted from the data sink. */
+		bytesDeletedFromSink: FormControl<string | null | undefined>,
+
+		/** Bytes that are deleted from the data source. */
+		bytesDeletedFromSource: FormControl<string | null | undefined>,
+
+		/** Bytes that failed to be deleted from the data sink. */
+		bytesFailedToDeleteFromSink: FormControl<string | null | undefined>,
+
+		/**
+		 * Bytes found in the data source that are scheduled to be transferred,
+		 * excluding any that are filtered based on object conditions or skipped due
+		 * to sync.
+		 */
+		bytesFoundFromSource: FormControl<string | null | undefined>,
+
+		/** Bytes found only in the data sink that are scheduled to be deleted. */
+		bytesFoundOnlyFromSink: FormControl<string | null | undefined>,
+
+		/**
+		 * Bytes in the data source that failed to be transferred or that failed to
+		 * be deleted after being transferred.
+		 */
+		bytesFromSourceFailed: FormControl<string | null | undefined>,
+
+		/**
+		 * Bytes in the data source that are not transferred because they already
+		 * exist in the data sink.
+		 */
+		bytesFromSourceSkippedBySync: FormControl<string | null | undefined>,
+
+		/** Objects that are copied to the data sink. */
+		objectsCopiedToSink: FormControl<string | null | undefined>,
+
+		/** Objects that are deleted from the data sink. */
+		objectsDeletedFromSink: FormControl<string | null | undefined>,
+
+		/** Objects that are deleted from the data source. */
+		objectsDeletedFromSource: FormControl<string | null | undefined>,
+
+		/** Objects that failed to be deleted from the data sink. */
+		objectsFailedToDeleteFromSink: FormControl<string | null | undefined>,
+
+		/**
+		 * Objects found in the data source that are scheduled to be transferred,
+		 * excluding any that are filtered based on object conditions or skipped due
+		 * to sync.
+		 */
+		objectsFoundFromSource: FormControl<string | null | undefined>,
+
+		/** Objects found only in the data sink that are scheduled to be deleted. */
+		objectsFoundOnlyFromSink: FormControl<string | null | undefined>,
+
+		/**
+		 * Objects in the data source that failed to be transferred or that failed
+		 * to be deleted after being transferred.
+		 */
+		objectsFromSourceFailed: FormControl<string | null | undefined>,
+
+		/**
+		 * Objects in the data source that are not transferred because they already
+		 * exist in the data sink.
+		 */
+		objectsFromSourceSkippedBySync: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferCountersFormGroup() {
+		return new FormGroup<TransferCountersFormProperties>({
+			bytesCopiedToSink: new FormControl<string | null | undefined>(undefined),
+			bytesDeletedFromSink: new FormControl<string | null | undefined>(undefined),
+			bytesDeletedFromSource: new FormControl<string | null | undefined>(undefined),
+			bytesFailedToDeleteFromSink: new FormControl<string | null | undefined>(undefined),
+			bytesFoundFromSource: new FormControl<string | null | undefined>(undefined),
+			bytesFoundOnlyFromSink: new FormControl<string | null | undefined>(undefined),
+			bytesFromSourceFailed: new FormControl<string | null | undefined>(undefined),
+			bytesFromSourceSkippedBySync: new FormControl<string | null | undefined>(undefined),
+			objectsCopiedToSink: new FormControl<string | null | undefined>(undefined),
+			objectsDeletedFromSink: new FormControl<string | null | undefined>(undefined),
+			objectsDeletedFromSource: new FormControl<string | null | undefined>(undefined),
+			objectsFailedToDeleteFromSink: new FormControl<string | null | undefined>(undefined),
+			objectsFoundFromSource: new FormControl<string | null | undefined>(undefined),
+			objectsFoundOnlyFromSink: new FormControl<string | null | undefined>(undefined),
+			objectsFromSourceFailed: new FormControl<string | null | undefined>(undefined),
+			objectsFromSourceSkippedBySync: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A description of the execution of a transfer. */
 	export interface TransferOperation {
 
 		/** A collection of counters that report the progress of a transfer operation. */
-		counters?: TransferCounters | null;
+		counters?: TransferCounters;
 
 		/** End time of this transfer execution. */
 		endTime?: string | null;
 
 		/** Summarizes errors encountered with sample error log entries. */
-		errorBreakdowns?: Array<ErrorSummary> | null;
+		errorBreakdowns?: Array<ErrorSummary>;
 
 		/** A globally unique ID assigned by the system. */
 		name?: string | null;
@@ -821,7 +1538,7 @@ export namespace MyNS {
 		 * The `PubsubMessage.data` will contain a TransferOperation resource
 		 * formatted according to the specified `PayloadFormat`.
 		 */
-		notificationConfig?: NotificationConfig | null;
+		notificationConfig?: NotificationConfig;
 
 		/** The ID of the Google Cloud Platform Project that owns the operation. */
 		projectId?: string | null;
@@ -836,7 +1553,40 @@ export namespace MyNS {
 		transferJobName?: string | null;
 
 		/** Configuration for running a transfer. */
-		transferSpec?: TransferSpec | null;
+		transferSpec?: TransferSpec;
+	}
+
+	/** A description of the execution of a transfer. */
+	export interface TransferOperationFormProperties {
+
+		/** End time of this transfer execution. */
+		endTime: FormControl<string | null | undefined>,
+
+		/** A globally unique ID assigned by the system. */
+		name: FormControl<string | null | undefined>,
+
+		/** The ID of the Google Cloud Platform Project that owns the operation. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** Start time of this transfer execution. */
+		startTime: FormControl<string | null | undefined>,
+
+		/** Status of the transfer operation. */
+		status: FormControl<TransferOperationStatus | null | undefined>,
+
+		/** The name of the transfer job that triggers this transfer operation. */
+		transferJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferOperationFormGroup() {
+		return new FormGroup<TransferOperationFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TransferOperationStatus | null | undefined>(undefined),
+			transferJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TransferOperationStatus { STATUS_UNSPECIFIED = 0, IN_PROGRESS = 1, PAUSED = 2, SUCCESS = 3, FAILED = 4, ABORTED = 5, QUEUED = 6 }
@@ -855,7 +1605,7 @@ export namespace MyNS {
 		 * This resource represents the configuration of a transfer job that runs
 		 * periodically.
 		 */
-		transferJob?: TransferJob | null;
+		transferJob?: TransferJob;
 
 		/**
 		 * The field mask of the fields in `transferJob` that are to be updated in
@@ -869,6 +1619,36 @@ export namespace MyNS {
 		 * INVALID_ARGUMENT.
 		 */
 		updateTransferJobFieldMask?: string | null;
+	}
+
+	/** Request passed to UpdateTransferJob. */
+	export interface UpdateTransferJobRequestFormProperties {
+
+		/**
+		 * Required. The ID of the Google Cloud Platform Console project that owns the
+		 * job.
+		 */
+		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * The field mask of the fields in `transferJob` that are to be updated in
+		 * this request.  Fields in `transferJob` that can be updated are:
+		 * description,
+		 * transfer_spec,
+		 * notification_config, and
+		 * status.  To update the `transfer_spec` of the job, a
+		 * complete transfer specification must be provided. An incomplete
+		 * specification missing any required fields will be rejected with the error
+		 * INVALID_ARGUMENT.
+		 */
+		updateTransferJobFieldMask: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTransferJobRequestFormGroup() {
+		return new FormGroup<UpdateTransferJobRequestFormProperties>({
+			projectId: new FormControl<string | null | undefined>(undefined),
+			updateTransferJobFieldMask: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

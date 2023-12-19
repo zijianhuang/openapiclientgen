@@ -1,16 +1,30 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** This complex type contains information about a shipping option that can be purchased in addition to the base shipping cost of a recommended rate. Additional options for each rate are defined, named, and offered by the selected shipping carrier. Examples include shipping insurance or the requirement for a recipient signature. */
 	export interface AdditionalOption {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		additionalCost?: Amount | null;
+		additionalCost?: Amount;
 
 		/** The name of a shipping option that can be purchased in addition to the base shipping cost of this rate. The value supplied in this field must match exactly the option name as supplied by the selected rate. */
 		optionType?: string | null;
+	}
+
+	/** This complex type contains information about a shipping option that can be purchased in addition to the base shipping cost of a recommended rate. Additional options for each rate are defined, named, and offered by the selected shipping carrier. Examples include shipping insurance or the requirement for a recipient signature. */
+	export interface AdditionalOptionFormProperties {
+
+		/** The name of a shipping option that can be purchased in addition to the base shipping cost of this rate. The value supplied in this field must match exactly the option name as supplied by the selected rate. */
+		optionType: FormControl<string | null | undefined>,
+	}
+	export function CreateAdditionalOptionFormGroup() {
+		return new FormGroup<AdditionalOptionFormProperties>({
+			optionType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -24,6 +38,23 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A complex type that describes the value of a monetary amount as represented by a global currency. */
+	export interface AmountFormProperties {
+
+		/** The base currency applied to the value field to establish a monetary amount. The currency is represented as a 3-letter ISO4217 currency code. For example, the code for the Canadian Dollar is CAD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/CurrencyCodeEnum.html'>eBay API documentation</a> */
+		currency: FormControl<string | null | undefined>,
+
+		/** The value of the monetary amount in the specified currency. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateAmountFormGroup() {
+		return new FormGroup<AmountFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type contains contact information for an individual buyer or seller. */
 	export interface Contact {
@@ -32,13 +63,30 @@ export namespace MyNS {
 		companyName?: string | null;
 
 		/** This complex type specifies the details of a geographical address. */
-		contactAddress?: ContactAddress | null;
+		contactAddress?: ContactAddress;
 
 		/** The contact's full name. */
 		fullName?: string | null;
 
 		/** This complex type contains a string field representing a telephone number. */
-		primaryPhone?: PhoneNumber | null;
+		primaryPhone?: PhoneNumber;
+	}
+
+	/** This complex type contains contact information for an individual buyer or seller. */
+	export interface ContactFormProperties {
+
+		/** The company name with which the contact is associated. */
+		companyName: FormControl<string | null | undefined>,
+
+		/** The contact's full name. */
+		fullName: FormControl<string | null | undefined>,
+	}
+	export function CreateContactFormGroup() {
+		return new FormGroup<ContactFormProperties>({
+			companyName: new FormControl<string | null | undefined>(undefined),
+			fullName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -67,6 +115,43 @@ export namespace MyNS {
 		stateOrProvince?: string | null;
 	}
 
+	/** This complex type specifies the details of a geographical address. */
+	export interface ContactAddressFormProperties {
+
+		/** The first line of the street address. */
+		addressLine1: FormControl<string | null | undefined>,
+
+		/** The second line of the street address. Use this field for additional address information, such as a suite or apartment number. */
+		addressLine2: FormControl<string | null | undefined>,
+
+		/** The city in which the address is located. */
+		city: FormControl<string | null | undefined>,
+
+		/** The country of the address, represented as two-letter ISO 3166-1 Alpha-2 country code. For example, US represents the United States and DE represents Germany. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/CountryCodeEnum.html'>eBay API documentation</a> */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** The county (not country) in which the address is located. Counties typically contain multiple cities or towns. */
+		county: FormControl<string | null | undefined>,
+
+		/** The postal code of the address. */
+		postalCode: FormControl<string | null | undefined>,
+
+		/** The state or province in which the address is located. States and provinces often contain multiple counties. */
+		stateOrProvince: FormControl<string | null | undefined>,
+	}
+	export function CreateContactAddressFormGroup() {
+		return new FormGroup<ContactAddressFormProperties>({
+			addressLine1: new FormControl<string | null | undefined>(undefined),
+			addressLine2: new FormControl<string | null | undefined>(undefined),
+			city: new FormControl<string | null | undefined>(undefined),
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			county: new FormControl<string | null | undefined>(undefined),
+			postalCode: new FormControl<string | null | undefined>(undefined),
+			stateOrProvince: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type contains a string field representing a telephone number. */
 	export interface PhoneNumber {
@@ -75,12 +160,25 @@ export namespace MyNS {
 		phoneNumber?: string | null;
 	}
 
+	/** This complex type contains a string field representing a telephone number. */
+	export interface PhoneNumberFormProperties {
+
+		/** A telephone number. */
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreatePhoneNumberFormGroup() {
+		return new FormGroup<PhoneNumberFormProperties>({
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type contains the request payload for the createFromShippingQuote method. */
 	export interface CreateShipmentFromQuoteRequest {
 
 		/** Supply a list of one or more shipping options that the seller has purchased for this shipment. The total cost of the added options is added to the base shipping cost to determine the final cost for the shipment. All added options must be selected from the set of options offered by the selected rate (such as shipping insurance or the requirement for a recipient signature). The base rate of the shipment is the value of the baseShippingCost field that's associated with the rateId of the selected shipping rate. */
-		additionalOptions?: Array<AdditionalOption> | null;
+		additionalOptions?: Array<AdditionalOption>;
 
 		/** Optional text to be printed on the shipping label if the selected shipping carrier supports custom messages on their labels. */
 		labelCustomMessage?: string | null;
@@ -92,10 +190,35 @@ export namespace MyNS {
 		rateId?: string | null;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		returnTo?: Contact | null;
+		returnTo?: Contact;
 
 		/** The unique eBay-assigned ID of the shipping quote that was generated by a call to createShippingQuote. */
 		shippingQuoteId?: string | null;
+	}
+
+	/** This complex type contains the request payload for the createFromShippingQuote method. */
+	export interface CreateShipmentFromQuoteRequestFormProperties {
+
+		/** Optional text to be printed on the shipping label if the selected shipping carrier supports custom messages on their labels. */
+		labelCustomMessage: FormControl<string | null | undefined>,
+
+		/** The seller's desired label size. Any supplied value is applied only if the shipping carrier supports multiple label sizes, otherwise the carrier's default label size is used. 4&quot;x6&quot; */
+		labelSize: FormControl<string | null | undefined>,
+
+		/** The eBay-assigned ID of the shipping rate that the seller selected for the shipment. This value is generated by a call to createShippingQuote and is returned in the rates.rateId field. */
+		rateId: FormControl<string | null | undefined>,
+
+		/** The unique eBay-assigned ID of the shipping quote that was generated by a call to createShippingQuote. */
+		shippingQuoteId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateShipmentFromQuoteRequestFormGroup() {
+		return new FormGroup<CreateShipmentFromQuoteRequestFormProperties>({
+			labelCustomMessage: new FormControl<string | null | undefined>(undefined),
+			labelSize: new FormControl<string | null | undefined>(undefined),
+			rateId: new FormControl<string | null | undefined>(undefined),
+			shippingQuoteId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -115,6 +238,31 @@ export namespace MyNS {
 		width?: string | null;
 	}
 
+	/** This complex type defines the dimensions of a package to be shipped. */
+	export interface DimensionsFormProperties {
+
+		/** The numeric value of the height of the package. */
+		height: FormControl<string | null | undefined>,
+
+		/** The numeric value of the length of the package. */
+		length: FormControl<string | null | undefined>,
+
+		/** The unit of measure used to express the height, length, and width of the package. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/LengthUnitOfMeasureEnum.html'>eBay API documentation</a> */
+		unit: FormControl<string | null | undefined>,
+
+		/** The numeric value of the width of the package. */
+		width: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionsFormGroup() {
+		return new FormGroup<DimensionsFormProperties>({
+			height: new FormControl<string | null | undefined>(undefined),
+			length: new FormControl<string | null | undefined>(undefined),
+			unit: new FormControl<string | null | undefined>(undefined),
+			width: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type defines an order from which a seller is including one or more line items in a single package to be shipped. */
 	export interface Order {
@@ -126,15 +274,41 @@ export namespace MyNS {
 		orderId?: string | null;
 	}
 
+	/** This complex type defines an order from which a seller is including one or more line items in a single package to be shipped. */
+	export interface OrderFormProperties {
+
+		/** The e-commerce platform or environment where the order was created. Use the value EBAY to get the rates available for eBay orders. */
+		channel: FormControl<string | null | undefined>,
+
+		/** The unique ID of the order supplied by the channel of origin. For eBay orders, this would be the orderId. */
+		orderId: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderFormGroup() {
+		return new FormGroup<OrderFormProperties>({
+			channel: new FormControl<string | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type specifies the dimensions and weight of a package. */
 	export interface PackageSpecification {
 
 		/** This complex type defines the dimensions of a package to be shipped. */
-		dimensions?: Dimensions | null;
+		dimensions?: Dimensions;
 
 		/** This complex type contains information about the weight of an object such as a shipping package. */
-		weight?: Weight | null;
+		weight?: Weight;
+	}
+
+	/** This complex type specifies the dimensions and weight of a package. */
+	export interface PackageSpecificationFormProperties {
+	}
+	export function CreatePackageSpecificationFormGroup() {
+		return new FormGroup<PackageSpecificationFormProperties>({
+		});
+
 	}
 
 
@@ -146,6 +320,23 @@ export namespace MyNS {
 
 		/** The numeric value of the weight of the package, as measured by the value of unit. */
 		value?: string | null;
+	}
+
+	/** This complex type contains information about the weight of an object such as a shipping package. */
+	export interface WeightFormProperties {
+
+		/** The unit of measure used to express the weight of the package. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/WeightUnitOfMeasureEnum.html'>eBay API documentation</a> */
+		unit: FormControl<string | null | undefined>,
+
+		/** The numeric value of the weight of the package, as measured by the value of unit. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateWeightFormGroup() {
+		return new FormGroup<WeightFormProperties>({
+			unit: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -165,15 +356,40 @@ export namespace MyNS {
 		pickupSlotTimeZone?: string | null;
 	}
 
+	/** This complex type defines a time window for the pickup of a package. */
+	export interface PickupSlotFormProperties {
+
+		/** The date and time the pickup slot ends, formatted as an ISO 8601 UTC string. */
+		pickupSlotEndTime: FormControl<string | null | undefined>,
+
+		/** Seller-defined name for the pickup slot. */
+		pickupSlotId: FormControl<string | null | undefined>,
+
+		/** The date and time the pickup slot begins, formatted as an ISO 8601 UTC string. */
+		pickupSlotStartTime: FormControl<string | null | undefined>,
+
+		/** The time zone of the pickup location, returned as Time Zone Database ID (also know as an Olson time zone ID). */
+		pickupSlotTimeZone: FormControl<string | null | undefined>,
+	}
+	export function CreatePickupSlotFormGroup() {
+		return new FormGroup<PickupSlotFormProperties>({
+			pickupSlotEndTime: new FormControl<string | null | undefined>(undefined),
+			pickupSlotId: new FormControl<string | null | undefined>(undefined),
+			pickupSlotStartTime: new FormControl<string | null | undefined>(undefined),
+			pickupSlotTimeZone: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The &quot;rate&quot; that has been selected and purchased for the shipment, as referenced by the rateId value. */
 	export interface PurchasedRate {
 
 		/** An list of additional, optional features that have been purchased for the shipment. */
-		additionalOptions?: Array<AdditionalOption> | null;
+		additionalOptions?: Array<AdditionalOption>;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		baseShippingCost?: Amount | null;
+		baseShippingCost?: Amount;
 
 		/** The time zone of the destination according to Time Zone Database. For example, &quot;America/Los_Angeles&quot;. */
 		destinationTimeZone?: string | null;
@@ -185,7 +401,7 @@ export namespace MyNS {
 		minEstimatedDeliveryDate?: string | null;
 
 		/** A list of pickup networks compatible with the shipping service. */
-		pickupNetworks?: Array<string> | null;
+		pickupNetworks?: Array<string>;
 
 		/** This unique eBay-assigned ID value is returned only if the shipment has been configured for a scheduled pickup. */
 		pickupSlotId?: string | null;
@@ -212,7 +428,60 @@ export namespace MyNS {
 		shippingServiceName?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		totalShippingCost?: Amount | null;
+		totalShippingCost?: Amount;
+	}
+
+	/** The &quot;rate&quot; that has been selected and purchased for the shipment, as referenced by the rateId value. */
+	export interface PurchasedRateFormProperties {
+
+		/** The time zone of the destination according to Time Zone Database. For example, &quot;America/Los_Angeles&quot;. */
+		destinationTimeZone: FormControl<string | null | undefined>,
+
+		/** A string value representing maximum (latest) estimated delivery time, formatted as an ISO 8601 UTC string. */
+		maxEstimatedDeliveryDate: FormControl<string | null | undefined>,
+
+		/** A string value representing minimum (earliest) estimated delivery time, formatted as an ISO 8601 UTC string. */
+		minEstimatedDeliveryDate: FormControl<string | null | undefined>,
+
+		/** This unique eBay-assigned ID value is returned only if the shipment has been configured for a scheduled pickup. */
+		pickupSlotId: FormControl<string | null | undefined>,
+
+		/** The type of pickup or drop off configured for the shipment. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/PickupTypeEnum.html'>eBay API documentation</a> */
+		pickupType: FormControl<string | null | undefined>,
+
+		/** The eBay-generated ID of the shipping rate that the seller has chosen to purchase for the shipment. */
+		rateId: FormControl<string | null | undefined>,
+
+		/** The ID code for the carrier that was selected for the package shipment. */
+		shippingCarrierCode: FormControl<string | null | undefined>,
+
+		/** The name of the shipping carrier. */
+		shippingCarrierName: FormControl<string | null | undefined>,
+
+		/** The unique eBay-generated ID of the shipping quote from which the seller selected a shipping rate (rateId). */
+		shippingQuoteId: FormControl<string | null | undefined>,
+
+		/** String ID code for the shipping service selected for the package shipment. This is a service that the shipping carrier supplies. */
+		shippingServiceCode: FormControl<string | null | undefined>,
+
+		/** The name of the shipping service. */
+		shippingServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchasedRateFormGroup() {
+		return new FormGroup<PurchasedRateFormProperties>({
+			destinationTimeZone: new FormControl<string | null | undefined>(undefined),
+			maxEstimatedDeliveryDate: new FormControl<string | null | undefined>(undefined),
+			minEstimatedDeliveryDate: new FormControl<string | null | undefined>(undefined),
+			pickupSlotId: new FormControl<string | null | undefined>(undefined),
+			pickupType: new FormControl<string | null | undefined>(undefined),
+			rateId: new FormControl<string | null | undefined>(undefined),
+			shippingCarrierCode: new FormControl<string | null | undefined>(undefined),
+			shippingCarrierName: new FormControl<string | null | undefined>(undefined),
+			shippingQuoteId: new FormControl<string | null | undefined>(undefined),
+			shippingServiceCode: new FormControl<string | null | undefined>(undefined),
+			shippingServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -220,10 +489,10 @@ export namespace MyNS {
 	export interface Rate {
 
 		/** Contains service and pricing information for one or more shipping options that are offered by the carrier and can be purchased in addition to the base shipping service provided by this rate. Shipping options can include items such as INSURANCE and SIGNATURE. */
-		additionalOptions?: Array<AdditionalOption> | null;
+		additionalOptions?: Array<AdditionalOption>;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		baseShippingCost?: Amount | null;
+		baseShippingCost?: Amount;
 
 		/** The name of the time zone region, as defined in the IANA Time Zone Database, to which the package is being shipped. Delivery dates are calculated relative to this time zone. Note: This is different from a Coordinated Universal Time (UTC) offset. For example, the America/Los_Angeles time zone identifies a region with the UTC standard time offset of -08:00, but so do several other time zones, including America/Tijuana,America/Dawson, and Pacific/Pitcairn. */
 		destinationTimeZone?: string | null;
@@ -235,10 +504,10 @@ export namespace MyNS {
 		minEstimatedDeliveryDate?: string | null;
 
 		/** A list of pickup networks compatible with the shipping service. */
-		pickupNetworks?: Array<string> | null;
+		pickupNetworks?: Array<string>;
 
 		/** A list of available pickup slots for the package. */
-		pickupSlots?: Array<PickupSlot> | null;
+		pickupSlots?: Array<PickupSlot>;
 
 		/** The type of pickup or drop-off service associated with the pickupSlots time frames. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/PickupTypeEnum.html'>eBay API documentation</a> */
 		pickupType?: string | null;
@@ -247,7 +516,7 @@ export namespace MyNS {
 		rateId?: string | null;
 
 		/** A list of reasons this rate is recommended. Available values are: BUYER_CHOSEN &mdash; The rate meets or exceeds the requirements of the buyer's preferred shipping option. CHEAPEST_ON_TIME &mdash; The rate is the cheapest rate available that will provide delivery within the seller's time frame commitment. EBAY_PLUS_OK &mdash; The rate complies with the shipping requirements of the eBay Plus program. FASTEST_ON_TIME &mdash; The rate has the fastest shipping time, and will provide delivery within the seller's time frame commitment. GUARANTEED_DELIVERY_OK &mdash; The rate complies with the shipping requirements of the eBay Guaranteed Delivery program. */
-		rateRecommendation?: Array<string> | null;
+		rateRecommendation?: Array<string>;
 
 		/** The code name of the shipping carrier who will provide the service identified by shippingServiceCode. */
 		shippingCarrierCode?: string | null;
@@ -262,12 +531,57 @@ export namespace MyNS {
 		shippingServiceName?: string | null;
 	}
 
+	/** This complex type contains live quote information about a shipping service that's available for a given shipping quote request, including the shipping carrier and service, delivery window, shipping cost, and additional shipping options. */
+	export interface RateFormProperties {
+
+		/** The name of the time zone region, as defined in the IANA Time Zone Database, to which the package is being shipped. Delivery dates are calculated relative to this time zone. Note: This is different from a Coordinated Universal Time (UTC) offset. For example, the America/Los_Angeles time zone identifies a region with the UTC standard time offset of -08:00, but so do several other time zones, including America/Tijuana,America/Dawson, and Pacific/Pitcairn. */
+		destinationTimeZone: FormControl<string | null | undefined>,
+
+		/** The latest stated date and time the shipment will be delivered at this rate. The time stamp is formatted as an ISO 8601 string, which is based on the 24-hour Universal Coordinated Time (UTC) clock. Format: YYYY-MM-DDTHH:MM:SS.SSSZ Example: 2018-08-04T07:09:00.000Z */
+		maxEstimatedDeliveryDate: FormControl<string | null | undefined>,
+
+		/** The estimated earliest date and time the shipment will be delivered at this rate. The time stamp is formatted as an ISO 8601 UTC string. Format: YYYY-MM-DDTHH:MM:SS.SSSZ Example: 2018-08-06T01:00:00.000Z */
+		minEstimatedDeliveryDate: FormControl<string | null | undefined>,
+
+		/** The type of pickup or drop-off service associated with the pickupSlots time frames. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/PickupTypeEnum.html'>eBay API documentation</a> */
+		pickupType: FormControl<string | null | undefined>,
+
+		/** The unique eBay-assigned ID for this shipping rate. */
+		rateId: FormControl<string | null | undefined>,
+
+		/** The code name of the shipping carrier who will provide the service identified by shippingServiceCode. */
+		shippingCarrierCode: FormControl<string | null | undefined>,
+
+		/** The common name of the shipping carrier. */
+		shippingCarrierName: FormControl<string | null | undefined>,
+
+		/** The code name of the shipping service to be provided by the carrier identified by shippingCarrierCode. */
+		shippingServiceCode: FormControl<string | null | undefined>,
+
+		/** The common name of the shipping service. */
+		shippingServiceName: FormControl<string | null | undefined>,
+	}
+	export function CreateRateFormGroup() {
+		return new FormGroup<RateFormProperties>({
+			destinationTimeZone: new FormControl<string | null | undefined>(undefined),
+			maxEstimatedDeliveryDate: new FormControl<string | null | undefined>(undefined),
+			minEstimatedDeliveryDate: new FormControl<string | null | undefined>(undefined),
+			pickupType: new FormControl<string | null | undefined>(undefined),
+			rateId: new FormControl<string | null | undefined>(undefined),
+			shippingCarrierCode: new FormControl<string | null | undefined>(undefined),
+			shippingCarrierName: new FormControl<string | null | undefined>(undefined),
+			shippingServiceCode: new FormControl<string | null | undefined>(undefined),
+			shippingServiceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type defines a shipment for a specific package (for example, a box or letter). Shipments are always linked to a purchased shipping label. */
 	export interface Shipment {
 
 		/** This type defines a shipment cancellation by the date and time the cancellation request was made and the current status of the request. */
-		cancellation?: ShipmentCancellation | null;
+		cancellation?: ShipmentCancellation;
 
 		/** The date and time the shipment was created, formatted as an ISO 8601 UTC string. Format: YYYY-MM-DDTHH:MM:SS.SSSZ Example: 2018-08-06T01:00:00.000Z */
 		creationDate?: string | null;
@@ -282,19 +596,19 @@ export namespace MyNS {
 		labelSize?: string | null;
 
 		/** This list value is optionally assigned by the seller. When present, each element in the returned list contains seller-assigned information about an order (such as an order number). Because a package can contain all or part of one or more orders, this field provides a way for sellers to identify the packages that contain specific orders. */
-		orders?: Array<Order> | null;
+		orders?: Array<Order>;
 
 		/** This complex type specifies the dimensions and weight of a package. */
-		packageSpecification?: PackageSpecification | null;
+		packageSpecification?: PackageSpecification;
 
 		/** The &quot;rate&quot; that has been selected and purchased for the shipment, as referenced by the rateId value. */
-		rate?: PurchasedRate | null;
+		rate?: PurchasedRate;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		returnTo?: Contact | null;
+		returnTo?: Contact;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		shipFrom?: Contact | null;
+		shipFrom?: Contact;
 
 		/** The unique eBay-assigned ID for the shipment. The ID is generated when the shipment is created by a call to createFromShippingQuote. */
 		shipmentId?: string | null;
@@ -303,7 +617,40 @@ export namespace MyNS {
 		shipmentTrackingNumber?: string | null;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		shipTo?: Contact | null;
+		shipTo?: Contact;
+	}
+
+	/** This complex type defines a shipment for a specific package (for example, a box or letter). Shipments are always linked to a purchased shipping label. */
+	export interface ShipmentFormProperties {
+
+		/** The date and time the shipment was created, formatted as an ISO 8601 UTC string. Format: YYYY-MM-DDTHH:MM:SS.SSSZ Example: 2018-08-06T01:00:00.000Z */
+		creationDate: FormControl<string | null | undefined>,
+
+		/** If supported by the selected shipping carrier, this field can contain optional seller text to be printed on the shipping label. */
+		labelCustomMessage: FormControl<string | null | undefined>,
+
+		/** The direct URL the seller can use to download an image of the shipping label. By default, the file format is PDF. See downloadLabelFile for requesting different response file formats. */
+		labelDownloadUrl: FormControl<string | null | undefined>,
+
+		/** The seller's desired label size. The support for multi-sized labels is shipping-carrier specific and if the size requested in the creaateFromShippingQuote call matches a size the carrier supports, the value will be represented here in the shipment. Currently, the only valid value is: 4&quot;x6&quot; */
+		labelSize: FormControl<string | null | undefined>,
+
+		/** The unique eBay-assigned ID for the shipment. The ID is generated when the shipment is created by a call to createFromShippingQuote. */
+		shipmentId: FormControl<string | null | undefined>,
+
+		/** A unique carrier-assigned ID string that can be used to track the shipment. */
+		shipmentTrackingNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateShipmentFormGroup() {
+		return new FormGroup<ShipmentFormProperties>({
+			creationDate: new FormControl<string | null | undefined>(undefined),
+			labelCustomMessage: new FormControl<string | null | undefined>(undefined),
+			labelDownloadUrl: new FormControl<string | null | undefined>(undefined),
+			labelSize: new FormControl<string | null | undefined>(undefined),
+			shipmentId: new FormControl<string | null | undefined>(undefined),
+			shipmentTrackingNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -317,6 +664,23 @@ export namespace MyNS {
 		cancellationStatus?: string | null;
 	}
 
+	/** This type defines a shipment cancellation by the date and time the cancellation request was made and the current status of the request. */
+	export interface ShipmentCancellationFormProperties {
+
+		/** The time and date the request was made to cancel the shipment, formatted as an ISO 8601 UTC string. */
+		cancellationRequestedDate: FormControl<string | null | undefined>,
+
+		/** This enum specifies the current cancellation status of a shipment, if a cancellation request has been made. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/logistics/types/ShipmentCancellationStatusEnum.html'>eBay API documentation</a> */
+		cancellationStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateShipmentCancellationFormGroup() {
+		return new FormGroup<ShipmentCancellationFormProperties>({
+			cancellationRequestedDate: new FormControl<string | null | undefined>(undefined),
+			cancellationStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type describes a &quot;shipping quote,&quot; which contains the parameters for a package shipment. The shipping quote contains a list of &quot;live quotes&quot; or rates for the shipment. Rates are offerd by a carrier for a particular service, of set of services, for shipping the package. Included in the shipping quote are the package specifications, the shipment's origin and destination addresses, and the shipping parameters specified by the seller. Use the rateId value to select the specific service you want when you create a shipment by calling createFromShippingQuote. */
 	export interface ShippingQuote {
@@ -328,25 +692,46 @@ export namespace MyNS {
 		expirationDate?: string | null;
 
 		/** This list value is optionally assigned by the seller. When present, each element in the returned list contains seller-assigned information about an order (such as an order number). Because a package can contain all or part of one or more orders, this field provides a way for sellers to identify the packages that contain specific orders. */
-		orders?: Array<Order> | null;
+		orders?: Array<Order>;
 
 		/** This complex type specifies the dimensions and weight of a package. */
-		packageSpecification?: PackageSpecification | null;
+		packageSpecification?: PackageSpecification;
 
 		/** A list of rates where each rate, as identified by a rateId, contains information about a specific shipping service offered by a carrier. Rates include shipping carrier and service, the to and from locations, the pickup and delivery windows, the seller's shipping parameters, the service constraints, and the cost for the base service and a list of additional shipping options. Each rate offered is supported by a label service where you can purchase the rate, and associated shipping label, via a call to createFromShippingQuote. */
-		rates?: Array<Rate> | null;
+		rates?: Array<Rate>;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		shipFrom?: Contact | null;
+		shipFrom?: Contact;
 
 		/** The unique eBay-assigned ID for this shipping quote. The value of this field is associated with a specific package, based on its origin, destination, and size. */
 		shippingQuoteId?: string | null;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		shipTo?: Contact | null;
+		shipTo?: Contact;
 
 		/** A list of any warnings triggered by the request. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
+	}
+
+	/** This complex type describes a &quot;shipping quote,&quot; which contains the parameters for a package shipment. The shipping quote contains a list of &quot;live quotes&quot; or rates for the shipment. Rates are offerd by a carrier for a particular service, of set of services, for shipping the package. Included in the shipping quote are the package specifications, the shipment's origin and destination addresses, and the shipping parameters specified by the seller. Use the rateId value to select the specific service you want when you create a shipment by calling createFromShippingQuote. */
+	export interface ShippingQuoteFormProperties {
+
+		/** The date and time this quote was created, expressed as an ISO 8601 UTC string. */
+		creationDate: FormControl<string | null | undefined>,
+
+		/** The last date and time that this quote will be honored, expressed as an ISO 8601 UTC string. After this time the quote expires and the expressed rates can no longer be purchased. */
+		expirationDate: FormControl<string | null | undefined>,
+
+		/** The unique eBay-assigned ID for this shipping quote. The value of this field is associated with a specific package, based on its origin, destination, and size. */
+		shippingQuoteId: FormControl<string | null | undefined>,
+	}
+	export function CreateShippingQuoteFormGroup() {
+		return new FormGroup<ShippingQuoteFormProperties>({
+			creationDate: new FormControl<string | null | undefined>(undefined),
+			expirationDate: new FormControl<string | null | undefined>(undefined),
+			shippingQuoteId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -363,7 +748,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
 		longMessage?: string | null;
@@ -372,13 +757,46 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** This optional complex field type contains a list of one or more context-specific ErrorParameter objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
 		subdomain?: string | null;
+	}
+
+	/** A container that defines the elements of error and warning message. */
+	export interface ErrorFormProperties {
+
+		/** The category type for this error or warning. It takes a string that can have one of three values: Application: Indicates an exception or error occurred in the application code or at runtime. Examples include catching an exception in a service's business logic, system failures, or request errors from a dependency. Business: Used when your service or a dependent service refused to continue processing on the resource because of a business rule violation such as &quot;Seller does not ship item to Antarctica&quot; or &quot;Buyer ineligible to purchase an alcoholic item&quot;. Business errors are not syntactical input errors. Request: Used when there is anything wrong with the request, such as authentication, syntactical errors, rate limiting or missing headers, bad HTTP header values, and so on. */
+		category: FormControl<string | null | undefined>,
+
+		/** Name of the domain containing the service or application. */
+		domain: FormControl<string | null | undefined>,
+
+		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		errorId: FormControl<number | null | undefined>,
+
+		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
+		longMessage: FormControl<string | null | undefined>,
+
+		/** An end user and app-developer friendly device agnostic message. It explains what the error or warning is, and how to fix it (in a general sense). Its value is at most 50 characters long. If applicable, the value is localized in the end user's requested locale. */
+		message: FormControl<string | null | undefined>,
+
+		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
+		subdomain: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			errorId: new FormControl<number | null | undefined>(undefined),
+			longMessage: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			subdomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -392,21 +810,47 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** Container for an error parameter. */
+	export interface ErrorParameterFormProperties {
+
+		/** Name of the entity that threw the error. */
+		name: FormControl<string | null | undefined>,
+
+		/** A description of the error. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorParameterFormGroup() {
+		return new FormGroup<ErrorParameterFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This complex type defines the request body for createShippingQuote. Sellers request a quote for a shipment by defining the &quot;To&quot; and &quot;From&quot; addresses for the package, plus the package's size. Carriers respond by offering up a &quot;rate&quot; for the service of theirs that best fits seller's needs. */
 	export interface ShippingQuoteRequest {
 
 		/** A seller-defined list that contains information about the orders in the package. This allows sellers to include information about the line items in the package with the shipment information. A package can contain any number of line items from one or more orders, providing they all ship in the same package. Maximum list size: 10 */
-		orders?: Array<Order> | null;
+		orders?: Array<Order>;
 
 		/** This complex type specifies the dimensions and weight of a package. */
-		packageSpecification?: PackageSpecification | null;
+		packageSpecification?: PackageSpecification;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		shipFrom?: Contact | null;
+		shipFrom?: Contact;
 
 		/** This complex type contains contact information for an individual buyer or seller. */
-		shipTo?: Contact | null;
+		shipTo?: Contact;
+	}
+
+	/** This complex type defines the request body for createShippingQuote. Sellers request a quote for a shipment by defining the &quot;To&quot; and &quot;From&quot; addresses for the package, plus the package's size. Carriers respond by offering up a &quot;rate&quot; for the service of theirs that best fits seller's needs. */
+	export interface ShippingQuoteRequestFormProperties {
+	}
+	export function CreateShippingQuoteRequestFormGroup() {
+		return new FormGroup<ShippingQuoteRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()

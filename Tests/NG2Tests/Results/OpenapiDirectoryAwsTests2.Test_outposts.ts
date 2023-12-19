@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateOutpostOutput {
 
 		/** Information about an Outpost. */
-		Outpost?: Outpost | null;
+		Outpost?: Outpost;
+	}
+	export interface CreateOutpostOutputFormProperties {
+	}
+	export function CreateCreateOutpostOutputFormGroup() {
+		return new FormGroup<CreateOutpostOutputFormProperties>({
+		});
+
 	}
 
 
@@ -80,37 +88,178 @@ export namespace MyNS {
 		AvailabilityZoneId?: string | null;
 	}
 
+	/** Information about an Outpost. */
+	export interface OutpostFormProperties {
+
+		/**
+		 * The ID of the Outpost.
+		 * Max length: 180
+		 * Min length: 1
+		 * Pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
+		 */
+		OutpostId: FormControl<string | null | undefined>,
+
+		/**
+		 * The AWS account ID of the Outpost owner.
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: \d{12}
+		 */
+		OwnerId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Outpost.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$
+		 */
+		OutpostArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the site.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: os-[a-f0-9]{17}
+		 */
+		SiteId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the Outpost.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The Outpost description.
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/** The life cycle status. */
+		LifeCycleStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-z\d-]+
+		 */
+		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The ID of the Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-z]+[0-9]+-az[0-9]+
+		 */
+		AvailabilityZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateOutpostFormGroup() {
+		return new FormGroup<OutpostFormProperties>({
+			OutpostId: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			OutpostArn: new FormControl<string | null | undefined>(undefined),
+			SiteId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LifeCycleStatus: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotFoundException {
 	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerException {
 	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceQuotaExceededException {
+	}
+	export interface ServiceQuotaExceededExceptionFormProperties {
+	}
+	export function CreateServiceQuotaExceededExceptionFormGroup() {
+		return new FormGroup<ServiceQuotaExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteOutpostOutput {
 	}
+	export interface DeleteOutpostOutputFormProperties {
+	}
+	export function CreateDeleteOutpostOutputFormGroup() {
+		return new FormGroup<DeleteOutpostOutputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSiteOutput {
+	}
+	export interface DeleteSiteOutputFormProperties {
+	}
+	export function CreateDeleteSiteOutputFormGroup() {
+		return new FormGroup<DeleteSiteOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetOutpostOutput {
 
 		/** Information about an Outpost. */
-		Outpost?: Outpost | null;
+		Outpost?: Outpost;
+	}
+	export interface GetOutpostOutputFormProperties {
+	}
+	export function CreateGetOutpostOutputFormGroup() {
+		return new FormGroup<GetOutpostOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetOutpostInstanceTypesOutput {
 
 		/** Information about the instance types. */
-		InstanceTypes?: Array<InstanceTypeItem> | null;
+		InstanceTypes?: Array<InstanceTypeItem>;
 
 		/**
 		 * The pagination token.
@@ -136,6 +285,40 @@ export namespace MyNS {
 		 */
 		OutpostArn?: string | null;
 	}
+	export interface GetOutpostInstanceTypesOutputFormProperties {
+
+		/**
+		 * The pagination token.
+		 * Max length: 1005
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the Outpost.
+		 * Max length: 180
+		 * Min length: 1
+		 * Pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
+		 */
+		OutpostId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Outpost.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$
+		 */
+		OutpostArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOutpostInstanceTypesOutputFormGroup() {
+		return new FormGroup<GetOutpostInstanceTypesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			OutpostId: new FormControl<string | null | undefined>(undefined),
+			OutpostArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about an instance type. */
@@ -145,10 +328,23 @@ export namespace MyNS {
 		InstanceType?: string | null;
 	}
 
+	/** Information about an instance type. */
+	export interface InstanceTypeItemFormProperties {
+
+		/** The instance type. */
+		InstanceType: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceTypeItemFormGroup() {
+		return new FormGroup<InstanceTypeItemFormProperties>({
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListOutpostsOutput {
 
 		/** Information about the Outposts. */
-		Outposts?: Array<Outpost> | null;
+		Outposts?: Array<Outpost>;
 
 		/**
 		 * The pagination token.
@@ -158,11 +354,27 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 	}
+	export interface ListOutpostsOutputFormProperties {
+
+		/**
+		 * The pagination token.
+		 * Max length: 1005
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOutpostsOutputFormGroup() {
+		return new FormGroup<ListOutpostsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSitesOutput {
 
 		/** Information about the sites. */
-		Sites?: Array<Site> | null;
+		Sites?: Array<Site>;
 
 		/**
 		 * The pagination token.
@@ -171,6 +383,22 @@ export namespace MyNS {
 		 * Pattern: .*\S.*
 		 */
 		NextToken?: string | null;
+	}
+	export interface ListSitesOutputFormProperties {
+
+		/**
+		 * The pagination token.
+		 * Max length: 1005
+		 * Min length: 1
+		 * Pattern: .*\S.*
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSitesOutputFormGroup() {
+		return new FormGroup<ListSitesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -207,6 +435,50 @@ export namespace MyNS {
 		 * Pattern: ^[\S ]+$
 		 */
 		Description?: string | null;
+	}
+
+	/** Information about a site. */
+	export interface SiteFormProperties {
+
+		/**
+		 * The ID of the site.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: os-[a-f0-9]{17}
+		 */
+		SiteId: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the AWS account.
+		 * Max length: 12
+		 * Min length: 12
+		 */
+		AccountId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the site.
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The description of the site.
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateSiteFormGroup() {
+		return new FormGroup<SiteFormProperties>({
+			SiteId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateOutpostInput {
@@ -252,23 +524,118 @@ export namespace MyNS {
 		 */
 		AvailabilityZoneId?: string | null;
 	}
+	export interface CreateOutpostInputFormProperties {
+
+		/**
+		 * The name of the Outpost.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The Outpost description.
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the site.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: os-[a-f0-9]{17}
+		 */
+		SiteId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-z\d-]+
+		 */
+		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The ID of the Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-z]+[0-9]+-az[0-9]+
+		 */
+		AvailabilityZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutpostInputFormGroup() {
+		return new FormGroup<CreateOutpostInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SiteId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteOutpostInput {
+	}
+	export interface DeleteOutpostInputFormProperties {
+	}
+	export function CreateDeleteOutpostInputFormGroup() {
+		return new FormGroup<DeleteOutpostInputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSiteInput {
 	}
+	export interface DeleteSiteInputFormProperties {
+	}
+	export function CreateDeleteSiteInputFormGroup() {
+		return new FormGroup<DeleteSiteInputFormProperties>({
+		});
+
+	}
 
 	export interface GetOutpostInput {
+	}
+	export interface GetOutpostInputFormProperties {
+	}
+	export function CreateGetOutpostInputFormGroup() {
+		return new FormGroup<GetOutpostInputFormProperties>({
+		});
+
 	}
 
 	export interface GetOutpostInstanceTypesInput {
 	}
+	export interface GetOutpostInstanceTypesInputFormProperties {
+	}
+	export function CreateGetOutpostInstanceTypesInputFormGroup() {
+		return new FormGroup<GetOutpostInstanceTypesInputFormProperties>({
+		});
+
+	}
 
 	export interface ListOutpostsInput {
 	}
+	export interface ListOutpostsInputFormProperties {
+	}
+	export function CreateListOutpostsInputFormGroup() {
+		return new FormGroup<ListOutpostsInputFormProperties>({
+		});
+
+	}
 
 	export interface ListSitesInput {
+	}
+	export interface ListSitesInputFormProperties {
+	}
+	export function CreateListSitesInputFormGroup() {
+		return new FormGroup<ListSitesInputFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -382,6 +749,59 @@ export namespace MyNS {
 		 * Pattern: [a-z]+[0-9]+-az[0-9]+
 		 */
 		AvailabilityZoneId?: string | null;
+	}
+	export interface CreateOutpostPostBodyFormProperties {
+
+		/**
+		 * The name of the Outpost.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The Outpost description.
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: ^[\S ]+$
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the site.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: os-[a-f0-9]{17}
+		 */
+		SiteId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+		 * Max length: 1000
+		 * Min length: 1
+		 * Pattern: [a-z\d-]+
+		 */
+		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The ID of the Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: [a-z]+[0-9]+-az[0-9]+
+		 */
+		AvailabilityZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutpostPostBodyFormGroup() {
+		return new FormGroup<CreateOutpostPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SiteId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

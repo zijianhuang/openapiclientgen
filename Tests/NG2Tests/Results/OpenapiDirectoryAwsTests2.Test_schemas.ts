@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateDiscovererResponse {
 		Description?: string | null;
@@ -10,7 +11,24 @@ export namespace MyNS {
 		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface CreateDiscovererResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		DiscovererArn: FormControl<string | null | undefined>,
+		DiscovererId: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		State: FormControl<CreateDiscovererResponseState | null | undefined>,
+	}
+	export function CreateCreateDiscovererResponseFormGroup() {
+		return new FormGroup<CreateDiscovererResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			DiscovererArn: new FormControl<string | null | undefined>(undefined),
+			DiscovererId: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateDiscovererResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDiscovererResponseState { STARTED = 0, STOPPED = 1 }
@@ -20,22 +38,73 @@ export namespace MyNS {
 	export interface Tags {
 	}
 
+	/** Key-value pairs associated with a resource. */
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
+	}
+
 	export interface BadRequestException {
+	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerErrorException {
 	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnauthorizedException {
+	}
+	export interface UnauthorizedExceptionFormProperties {
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ForbiddenException {
 	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateRegistryResponse {
@@ -44,7 +113,20 @@ export namespace MyNS {
 		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface CreateRegistryResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		RegistryArn: FormControl<string | null | undefined>,
+		RegistryName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRegistryResponseFormGroup() {
+		return new FormGroup<CreateRegistryResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			RegistryArn: new FormControl<string | null | undefined>(undefined),
+			RegistryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSchemaResponse {
@@ -55,12 +137,40 @@ export namespace MyNS {
 		SchemaVersion?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 		Type?: string | null;
 		VersionCreatedDate?: Date | null;
 	}
+	export interface CreateSchemaResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		SchemaArn: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		VersionCreatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateSchemaResponseFormGroup() {
+		return new FormGroup<CreateSchemaResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			VersionCreatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCodeBindingResponse {
@@ -69,10 +179,32 @@ export namespace MyNS {
 		SchemaVersion?: string | null;
 		Status?: DescribeCodeBindingResponseStatus | null;
 	}
+	export interface DescribeCodeBindingResponseFormProperties {
+		CreationDate: FormControl<Date | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeCodeBindingResponseStatus | null | undefined>,
+	}
+	export function CreateDescribeCodeBindingResponseFormGroup() {
+		return new FormGroup<DescribeCodeBindingResponseFormProperties>({
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeCodeBindingResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeCodeBindingResponseStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2 }
 
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDiscovererResponse {
@@ -83,7 +215,24 @@ export namespace MyNS {
 		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface DescribeDiscovererResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		DiscovererArn: FormControl<string | null | undefined>,
+		DiscovererId: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		State: FormControl<CreateDiscovererResponseState | null | undefined>,
+	}
+	export function CreateDescribeDiscovererResponseFormGroup() {
+		return new FormGroup<DescribeDiscovererResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			DiscovererArn: new FormControl<string | null | undefined>(undefined),
+			DiscovererId: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateDiscovererResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRegistryResponse {
@@ -92,7 +241,20 @@ export namespace MyNS {
 		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface DescribeRegistryResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		RegistryArn: FormControl<string | null | undefined>,
+		RegistryName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRegistryResponseFormGroup() {
+		return new FormGroup<DescribeRegistryResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			RegistryArn: new FormControl<string | null | undefined>(undefined),
+			RegistryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSchemaResponse {
@@ -104,27 +266,88 @@ export namespace MyNS {
 		SchemaVersion?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 		Type?: string | null;
 		VersionCreatedDate?: Date | null;
+	}
+	export interface DescribeSchemaResponseFormProperties {
+		Content: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		SchemaArn: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		VersionCreatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeSchemaResponseFormGroup() {
+		return new FormGroup<DescribeSchemaResponseFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			VersionCreatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCodeBindingSourceResponse {
 		Body?: string | null;
 	}
+	export interface GetCodeBindingSourceResponseFormProperties {
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCodeBindingSourceResponseFormGroup() {
+		return new FormGroup<GetCodeBindingSourceResponseFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDiscoveredSchemaResponse {
 		Content?: string | null;
+	}
+	export interface GetDiscoveredSchemaResponseFormProperties {
+		Content: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDiscoveredSchemaResponseFormGroup() {
+		return new FormGroup<GetDiscoveredSchemaResponseFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetResourcePolicyResponse {
 		Policy?: string | null;
 		RevisionId?: string | null;
 	}
+	export interface GetResourcePolicyResponseFormProperties {
+		Policy: FormControl<string | null | undefined>,
+		RevisionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourcePolicyResponseFormGroup() {
+		return new FormGroup<GetResourcePolicyResponseFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			RevisionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDiscoverersResponse {
-		Discoverers?: Array<DiscovererSummary> | null;
+		Discoverers?: Array<DiscovererSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListDiscoverersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDiscoverersResponseFormGroup() {
+		return new FormGroup<ListDiscoverersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DiscovererSummary {
@@ -134,12 +357,36 @@ export namespace MyNS {
 		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface DiscovererSummaryFormProperties {
+		DiscovererArn: FormControl<string | null | undefined>,
+		DiscovererId: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		State: FormControl<CreateDiscovererResponseState | null | undefined>,
+	}
+	export function CreateDiscovererSummaryFormGroup() {
+		return new FormGroup<DiscovererSummaryFormProperties>({
+			DiscovererArn: new FormControl<string | null | undefined>(undefined),
+			DiscovererId: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateDiscovererResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRegistriesResponse {
 		NextToken?: string | null;
-		Registries?: Array<RegistrySummary> | null;
+		Registries?: Array<RegistrySummary>;
+	}
+	export interface ListRegistriesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRegistriesResponseFormGroup() {
+		return new FormGroup<ListRegistriesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegistrySummary {
@@ -147,12 +394,32 @@ export namespace MyNS {
 		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface RegistrySummaryFormProperties {
+		RegistryArn: FormControl<string | null | undefined>,
+		RegistryName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegistrySummaryFormGroup() {
+		return new FormGroup<RegistrySummaryFormProperties>({
+			RegistryArn: new FormControl<string | null | undefined>(undefined),
+			RegistryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSchemaVersionsResponse {
 		NextToken?: string | null;
-		SchemaVersions?: Array<SchemaVersionSummary> | null;
+		SchemaVersions?: Array<SchemaVersionSummary>;
+	}
+	export interface ListSchemaVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSchemaVersionsResponseFormGroup() {
+		return new FormGroup<ListSchemaVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SchemaVersionSummary {
@@ -160,10 +427,32 @@ export namespace MyNS {
 		SchemaName?: string | null;
 		SchemaVersion?: string | null;
 	}
+	export interface SchemaVersionSummaryFormProperties {
+		SchemaArn: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSchemaVersionSummaryFormGroup() {
+		return new FormGroup<SchemaVersionSummaryFormProperties>({
+			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSchemasResponse {
 		NextToken?: string | null;
-		Schemas?: Array<SchemaSummary> | null;
+		Schemas?: Array<SchemaSummary>;
+	}
+	export interface ListSchemasResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSchemasResponseFormGroup() {
+		return new FormGroup<ListSchemasResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -174,14 +463,38 @@ export namespace MyNS {
 		SchemaName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 		VersionCount?: number | null;
+	}
+
+	/** A summary of schema details. */
+	export interface SchemaSummaryFormProperties {
+		LastModified: FormControl<Date | null | undefined>,
+		SchemaArn: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+		VersionCount: FormControl<number | null | undefined>,
+	}
+	export function CreateSchemaSummaryFormGroup() {
+		return new FormGroup<SchemaSummaryFormProperties>({
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			VersionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutCodeBindingResponse {
@@ -190,43 +503,138 @@ export namespace MyNS {
 		SchemaVersion?: string | null;
 		Status?: DescribeCodeBindingResponseStatus | null;
 	}
+	export interface PutCodeBindingResponseFormProperties {
+		CreationDate: FormControl<Date | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeCodeBindingResponseStatus | null | undefined>,
+	}
+	export function CreatePutCodeBindingResponseFormGroup() {
+		return new FormGroup<PutCodeBindingResponseFormProperties>({
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeCodeBindingResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GoneException {
+	}
+	export interface GoneExceptionFormProperties {
+	}
+	export function CreateGoneExceptionFormGroup() {
+		return new FormGroup<GoneExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutResourcePolicyResponse {
 		Policy?: string | null;
 		RevisionId?: string | null;
 	}
+	export interface PutResourcePolicyResponseFormProperties {
+		Policy: FormControl<string | null | undefined>,
+		RevisionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyResponseFormGroup() {
+		return new FormGroup<PutResourcePolicyResponseFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			RevisionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PreconditionFailedException {
+	}
+	export interface PreconditionFailedExceptionFormProperties {
+	}
+	export function CreatePreconditionFailedExceptionFormGroup() {
+		return new FormGroup<PreconditionFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface SearchSchemasResponse {
 		NextToken?: string | null;
-		Schemas?: Array<SearchSchemaSummary> | null;
+		Schemas?: Array<SearchSchemaSummary>;
+	}
+	export interface SearchSchemasResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSchemasResponseFormGroup() {
+		return new FormGroup<SearchSchemasResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchSchemaSummary {
 		RegistryName?: string | null;
 		SchemaArn?: string | null;
 		SchemaName?: string | null;
-		SchemaVersions?: Array<SearchSchemaVersionSummary> | null;
+		SchemaVersions?: Array<SearchSchemaVersionSummary>;
+	}
+	export interface SearchSchemaSummaryFormProperties {
+		RegistryName: FormControl<string | null | undefined>,
+		SchemaArn: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSchemaSummaryFormGroup() {
+		return new FormGroup<SearchSchemaSummaryFormProperties>({
+			RegistryName: new FormControl<string | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchSchemaVersionSummary {
 		CreatedDate?: Date | null;
 		SchemaVersion?: string | null;
 	}
+	export interface SearchSchemaVersionSummaryFormProperties {
+		CreatedDate: FormControl<Date | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSchemaVersionSummaryFormGroup() {
+		return new FormGroup<SearchSchemaVersionSummaryFormProperties>({
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartDiscovererResponse {
 		DiscovererId?: string | null;
 		State?: CreateDiscovererResponseState | null;
 	}
+	export interface StartDiscovererResponseFormProperties {
+		DiscovererId: FormControl<string | null | undefined>,
+		State: FormControl<CreateDiscovererResponseState | null | undefined>,
+	}
+	export function CreateStartDiscovererResponseFormGroup() {
+		return new FormGroup<StartDiscovererResponseFormProperties>({
+			DiscovererId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateDiscovererResponseState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopDiscovererResponse {
 		DiscovererId?: string | null;
 		State?: CreateDiscovererResponseState | null;
+	}
+	export interface StopDiscovererResponseFormProperties {
+		DiscovererId: FormControl<string | null | undefined>,
+		State: FormControl<CreateDiscovererResponseState | null | undefined>,
+	}
+	export function CreateStopDiscovererResponseFormGroup() {
+		return new FormGroup<StopDiscovererResponseFormProperties>({
+			DiscovererId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateDiscovererResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDiscovererResponse {
@@ -237,7 +645,24 @@ export namespace MyNS {
 		State?: CreateDiscovererResponseState | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface UpdateDiscovererResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		DiscovererArn: FormControl<string | null | undefined>,
+		DiscovererId: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+		State: FormControl<CreateDiscovererResponseState | null | undefined>,
+	}
+	export function CreateUpdateDiscovererResponseFormGroup() {
+		return new FormGroup<UpdateDiscovererResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			DiscovererArn: new FormControl<string | null | undefined>(undefined),
+			DiscovererId: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateDiscovererResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateRegistryResponse {
@@ -246,7 +671,20 @@ export namespace MyNS {
 		RegistryName?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface UpdateRegistryResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		RegistryArn: FormControl<string | null | undefined>,
+		RegistryName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRegistryResponseFormGroup() {
+		return new FormGroup<UpdateRegistryResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			RegistryArn: new FormControl<string | null | undefined>(undefined),
+			RegistryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSchemaResponse {
@@ -257,9 +695,30 @@ export namespace MyNS {
 		SchemaVersion?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 		Type?: string | null;
 		VersionCreatedDate?: Date | null;
+	}
+	export interface UpdateSchemaResponseFormProperties {
+		Description: FormControl<string | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		SchemaArn: FormControl<string | null | undefined>,
+		SchemaName: FormControl<string | null | undefined>,
+		SchemaVersion: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		VersionCreatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateSchemaResponseFormGroup() {
+		return new FormGroup<UpdateSchemaResponseFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			SchemaArn: new FormControl<string | null | undefined>(undefined),
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			VersionCreatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CodeGenerationStatus { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2 }
@@ -269,7 +728,18 @@ export namespace MyNS {
 		SourceArn: string;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface CreateDiscovererRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDiscovererRequestFormGroup() {
+		return new FormGroup<CreateDiscovererRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DiscovererState { STARTED = 0, STOPPED = 1 }
@@ -278,7 +748,16 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface CreateRegistryRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRegistryRequestFormGroup() {
+		return new FormGroup<CreateRegistryRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Type { OpenApi3 = 0 }
@@ -288,64 +767,205 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		Tags?: Tags | null;
+		Tags?: Tags;
 		Type: Type;
+	}
+	export interface CreateSchemaRequestFormProperties {
+		Content: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<Type | null | undefined>,
+	}
+	export function CreateCreateSchemaRequestFormGroup() {
+		return new FormGroup<CreateSchemaRequestFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDiscovererRequest {
 	}
+	export interface DeleteDiscovererRequestFormProperties {
+	}
+	export function CreateDeleteDiscovererRequestFormGroup() {
+		return new FormGroup<DeleteDiscovererRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteRegistryRequest {
+	}
+	export interface DeleteRegistryRequestFormProperties {
+	}
+	export function CreateDeleteRegistryRequestFormGroup() {
+		return new FormGroup<DeleteRegistryRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourcePolicyRequest {
 	}
+	export interface DeleteResourcePolicyRequestFormProperties {
+	}
+	export function CreateDeleteResourcePolicyRequestFormGroup() {
+		return new FormGroup<DeleteResourcePolicyRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSchemaRequest {
+	}
+	export interface DeleteSchemaRequestFormProperties {
+	}
+	export function CreateDeleteSchemaRequestFormGroup() {
+		return new FormGroup<DeleteSchemaRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSchemaVersionRequest {
 	}
+	export interface DeleteSchemaVersionRequestFormProperties {
+	}
+	export function CreateDeleteSchemaVersionRequestFormGroup() {
+		return new FormGroup<DeleteSchemaVersionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeCodeBindingRequest {
+	}
+	export interface DescribeCodeBindingRequestFormProperties {
+	}
+	export function CreateDescribeCodeBindingRequestFormGroup() {
+		return new FormGroup<DescribeCodeBindingRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDiscovererRequest {
 	}
+	export interface DescribeDiscovererRequestFormProperties {
+	}
+	export function CreateDescribeDiscovererRequestFormGroup() {
+		return new FormGroup<DescribeDiscovererRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeRegistryRequest {
+	}
+	export interface DescribeRegistryRequestFormProperties {
+	}
+	export function CreateDescribeRegistryRequestFormGroup() {
+		return new FormGroup<DescribeRegistryRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSchemaRequest {
 	}
+	export interface DescribeSchemaRequestFormProperties {
+	}
+	export function CreateDescribeSchemaRequestFormGroup() {
+		return new FormGroup<DescribeSchemaRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetCodeBindingSourceRequest {
+	}
+	export interface GetCodeBindingSourceRequestFormProperties {
+	}
+	export function CreateGetCodeBindingSourceRequestFormGroup() {
+		return new FormGroup<GetCodeBindingSourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDiscoveredSchemaRequest {
 		Events: Array<string>;
 		Type: Type;
 	}
+	export interface GetDiscoveredSchemaRequestFormProperties {
+		Type: FormControl<Type | null | undefined>,
+	}
+	export function CreateGetDiscoveredSchemaRequestFormGroup() {
+		return new FormGroup<GetDiscoveredSchemaRequestFormProperties>({
+			Type: new FormControl<Type | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResourcePolicyRequest {
+	}
+	export interface GetResourcePolicyRequestFormProperties {
+	}
+	export function CreateGetResourcePolicyRequestFormGroup() {
+		return new FormGroup<GetResourcePolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDiscoverersRequest {
 	}
+	export interface ListDiscoverersRequestFormProperties {
+	}
+	export function CreateListDiscoverersRequestFormGroup() {
+		return new FormGroup<ListDiscoverersRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListRegistriesRequest {
+	}
+	export interface ListRegistriesRequestFormProperties {
+	}
+	export function CreateListRegistriesRequestFormGroup() {
+		return new FormGroup<ListRegistriesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListSchemaVersionsRequest {
 	}
+	export interface ListSchemaVersionsRequestFormProperties {
+	}
+	export function CreateListSchemaVersionsRequestFormGroup() {
+		return new FormGroup<ListSchemaVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListSchemasRequest {
+	}
+	export interface ListSchemasRequestFormProperties {
+	}
+	export function CreateListSchemasRequestFormGroup() {
+		return new FormGroup<ListSchemasRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface PutCodeBindingRequest {
+	}
+	export interface PutCodeBindingRequestFormProperties {
+	}
+	export function CreatePutCodeBindingRequestFormGroup() {
+		return new FormGroup<PutCodeBindingRequestFormProperties>({
+		});
+
 	}
 
 
@@ -355,13 +975,47 @@ export namespace MyNS {
 		RevisionId?: string | null;
 	}
 
+	/** The name of the policy. */
+	export interface PutResourcePolicyRequestFormProperties {
+		Policy: FormControl<string | null | undefined>,
+		RevisionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyRequestFormGroup() {
+		return new FormGroup<PutResourcePolicyRequestFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			RevisionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SearchSchemasRequest {
+	}
+	export interface SearchSchemasRequestFormProperties {
+	}
+	export function CreateSearchSchemasRequestFormGroup() {
+		return new FormGroup<SearchSchemasRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartDiscovererRequest {
 	}
+	export interface StartDiscovererRequestFormProperties {
+	}
+	export function CreateStartDiscovererRequestFormGroup() {
+		return new FormGroup<StartDiscovererRequestFormProperties>({
+		});
+
+	}
 
 	export interface StopDiscovererRequest {
+	}
+	export interface StopDiscovererRequestFormProperties {
+	}
+	export function CreateStopDiscovererRequestFormGroup() {
+		return new FormGroup<StopDiscovererRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
@@ -372,12 +1026,35 @@ export namespace MyNS {
 		 */
 		Tags: Tags;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDiscovererRequest {
 		Description?: string | null;
+	}
+	export interface UpdateDiscovererRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDiscovererRequestFormGroup() {
+		return new FormGroup<UpdateDiscovererRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -386,11 +1063,37 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Updates the registry. */
+	export interface UpdateRegistryRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRegistryRequestFormGroup() {
+		return new FormGroup<UpdateRegistryRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateSchemaRequest {
 		ClientTokenId?: string | null;
 		Content?: string | null;
 		Description?: string | null;
 		Type?: Type | null;
+	}
+	export interface UpdateSchemaRequestFormProperties {
+		ClientTokenId: FormControl<string | null | undefined>,
+		Content: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<Type | null | undefined>,
+	}
+	export function CreateUpdateSchemaRequestFormGroup() {
+		return new FormGroup<UpdateSchemaRequestFormProperties>({
+			ClientTokenId: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -752,7 +1455,35 @@ export namespace MyNS {
 		SourceArn: string;
 
 		/** Key-value pairs associated with a resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateDiscovererPostBodyFormProperties {
+
+		/**
+		 * A description for the discoverer.
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the event bus.
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 */
+		SourceArn: FormControl<string | null | undefined>,
+
+		/** Key-value pairs associated with a resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateDiscovererPostBodyFormGroup() {
+		return new FormGroup<CreateDiscovererPostBodyFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateRegistryPostBody {
@@ -765,7 +1496,26 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateRegistryPostBodyFormProperties {
+
+		/**
+		 * A description of the registry to be created.
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/** Key-value pairs associated with a resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateRegistryPostBodyFormGroup() {
+		return new FormGroup<CreateRegistryPostBodyFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateRegistryPutBody {
@@ -776,6 +1526,21 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		Description?: string | null;
+	}
+	export interface UpdateRegistryPutBodyFormProperties {
+
+		/**
+		 * The description of the registry to update.
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRegistryPutBodyFormGroup() {
+		return new FormGroup<UpdateRegistryPutBodyFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSchemaPostBody {
@@ -796,13 +1561,48 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Key-value pairs associated with a resource. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/**
 		 * The type of schema.
 		 * Required
 		 */
 		Type: Type;
+	}
+	export interface CreateSchemaPostBodyFormProperties {
+
+		/**
+		 * The source of the schema definition.
+		 * Required
+		 * Max length: 100000
+		 * Min length: 1
+		 */
+		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * A description of the schema.
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/** Key-value pairs associated with a resource. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The type of schema.
+		 * Required
+		 */
+		Type: FormControl<Type | null | undefined>,
+	}
+	export function CreateCreateSchemaPostBodyFormGroup() {
+		return new FormGroup<CreateSchemaPostBodyFormProperties>({
+			Content: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSchemaPutBody {
@@ -831,6 +1631,41 @@ export namespace MyNS {
 		/** The schema type for the events schema. */
 		Type?: Type | null;
 	}
+	export interface UpdateSchemaPutBodyFormProperties {
+
+		/**
+		 * The ID of the client token.
+		 * Max length: 36
+		 * Min length: 0
+		 */
+		ClientTokenId: FormControl<string | null | undefined>,
+
+		/**
+		 * The source of the schema definition.
+		 * Max length: 100000
+		 * Min length: 1
+		 */
+		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * The description of the schema.
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/** The schema type for the events schema. */
+		Type: FormControl<Type | null | undefined>,
+	}
+	export function CreateUpdateSchemaPutBodyFormGroup() {
+		return new FormGroup<UpdateSchemaPutBodyFormProperties>({
+			ClientTokenId: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<Type | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDiscovererPutBody {
 
@@ -840,6 +1675,21 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		Description?: string | null;
+	}
+	export interface UpdateDiscovererPutBodyFormProperties {
+
+		/**
+		 * The description of the discoverer to update.
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDiscovererPutBodyFormGroup() {
+		return new FormGroup<UpdateDiscovererPutBodyFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutResourcePolicyPutBody {
@@ -852,6 +1702,24 @@ export namespace MyNS {
 
 		/** The revision ID of the policy. */
 		RevisionId?: string | null;
+	}
+	export interface PutResourcePolicyPutBodyFormProperties {
+
+		/**
+		 * The resource-based policy.
+		 * Required
+		 */
+		Policy: FormControl<string | null | undefined>,
+
+		/** The revision ID of the policy. */
+		RevisionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyPutBodyFormGroup() {
+		return new FormGroup<PutResourcePolicyPutBodyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			RevisionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDiscoveredSchemaPostBody {
@@ -870,6 +1738,20 @@ export namespace MyNS {
 		 */
 		Type: Type;
 	}
+	export interface GetDiscoveredSchemaPostBodyFormProperties {
+
+		/**
+		 * The type of event.
+		 * Required
+		 */
+		Type: FormControl<Type | null | undefined>,
+	}
+	export function CreateGetDiscoveredSchemaPostBodyFormGroup() {
+		return new FormGroup<GetDiscoveredSchemaPostBodyFormProperties>({
+			Type: new FormControl<Type | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -878,6 +1760,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * Key-value pairs associated with a resource.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

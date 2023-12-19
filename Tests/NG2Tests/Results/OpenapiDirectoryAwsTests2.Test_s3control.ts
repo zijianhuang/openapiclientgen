@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateJobResult {
 		JobId?: string | null;
+	}
+	export interface CreateJobResultFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobResultFormGroup() {
+		return new FormGroup<CreateJobResultFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -12,18 +22,29 @@ export namespace MyNS {
 		FunctionArn?: string | null;
 	}
 
+	/** Contains the configuration parameters for a <code>Lambda Invoke</code> operation. */
+	export interface LambdaInvokeOperationFormProperties {
+		FunctionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaInvokeOperationFormGroup() {
+		return new FormGroup<LambdaInvokeOperationFormProperties>({
+			FunctionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
 	export interface S3CopyObjectOperation {
 		TargetResource?: string | null;
 		CannedAccessControlList?: S3CopyObjectOperationCannedAccessControlList | null;
-		AccessControlGrants?: Array<S3Grant> | null;
+		AccessControlGrants?: Array<S3Grant>;
 		MetadataDirective?: S3CopyObjectOperationMetadataDirective | null;
 		ModifiedSinceConstraint?: Date | null;
 
 		/** <p/> */
-		NewObjectMetadata?: S3ObjectMetadata | null;
-		NewObjectTagging?: Array<S3Tag> | null;
+		NewObjectMetadata?: S3ObjectMetadata;
+		NewObjectTagging?: Array<S3Tag>;
 		RedirectLocation?: string | null;
 		RequesterPays?: boolean | null;
 		StorageClass?: S3CopyObjectOperationStorageClass | null;
@@ -35,6 +56,41 @@ export namespace MyNS {
 		ObjectLockRetainUntilDate?: Date | null;
 	}
 
+	/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
+	export interface S3CopyObjectOperationFormProperties {
+		TargetResource: FormControl<string | null | undefined>,
+		CannedAccessControlList: FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>,
+		MetadataDirective: FormControl<S3CopyObjectOperationMetadataDirective | null | undefined>,
+		ModifiedSinceConstraint: FormControl<Date | null | undefined>,
+		RedirectLocation: FormControl<string | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+		StorageClass: FormControl<S3CopyObjectOperationStorageClass | null | undefined>,
+		UnModifiedSinceConstraint: FormControl<Date | null | undefined>,
+		SSEAwsKmsKeyId: FormControl<string | null | undefined>,
+		TargetKeyPrefix: FormControl<string | null | undefined>,
+		ObjectLockLegalHoldStatus: FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>,
+		ObjectLockMode: FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>,
+		ObjectLockRetainUntilDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateS3CopyObjectOperationFormGroup() {
+		return new FormGroup<S3CopyObjectOperationFormProperties>({
+			TargetResource: new FormControl<string | null | undefined>(undefined),
+			CannedAccessControlList: new FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>(undefined),
+			MetadataDirective: new FormControl<S3CopyObjectOperationMetadataDirective | null | undefined>(undefined),
+			ModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
+			RedirectLocation: new FormControl<string | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+			StorageClass: new FormControl<S3CopyObjectOperationStorageClass | null | undefined>(undefined),
+			UnModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
+			SSEAwsKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			TargetKeyPrefix: new FormControl<string | null | undefined>(undefined),
+			ObjectLockLegalHoldStatus: new FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>(undefined),
+			ObjectLockMode: new FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>(undefined),
+			ObjectLockRetainUntilDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum S3CopyObjectOperationCannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
 
 
@@ -42,8 +98,19 @@ export namespace MyNS {
 	export interface S3Grant {
 
 		/** <p/> */
-		Grantee?: S3Grantee | null;
+		Grantee?: S3Grantee;
 		Permission?: S3GrantPermission | null;
+	}
+
+	/** <p/> */
+	export interface S3GrantFormProperties {
+		Permission: FormControl<S3GrantPermission | null | undefined>,
+	}
+	export function CreateS3GrantFormGroup() {
+		return new FormGroup<S3GrantFormProperties>({
+			Permission: new FormControl<S3GrantPermission | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -52,6 +119,21 @@ export namespace MyNS {
 		TypeIdentifier?: S3GranteeTypeIdentifier | null;
 		Identifier?: string | null;
 		DisplayName?: string | null;
+	}
+
+	/** <p/> */
+	export interface S3GranteeFormProperties {
+		TypeIdentifier: FormControl<S3GranteeTypeIdentifier | null | undefined>,
+		Identifier: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateS3GranteeFormGroup() {
+		return new FormGroup<S3GranteeFormProperties>({
+			TypeIdentifier: new FormControl<S3GranteeTypeIdentifier | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3GranteeTypeIdentifier { id = 0, emailAddress = 1, uri = 2 }
@@ -67,7 +149,7 @@ export namespace MyNS {
 		ContentDisposition?: string | null;
 		ContentEncoding?: string | null;
 		ContentLanguage?: string | null;
-		UserMetadata?: S3UserMetadata | null;
+		UserMetadata?: S3UserMetadata;
 		ContentLength?: number | null;
 		ContentMD5?: string | null;
 		ContentType?: string | null;
@@ -76,7 +158,43 @@ export namespace MyNS {
 		SSEAlgorithm?: S3ObjectMetadataSSEAlgorithm | null;
 	}
 
+	/** <p/> */
+	export interface S3ObjectMetadataFormProperties {
+		CacheControl: FormControl<string | null | undefined>,
+		ContentDisposition: FormControl<string | null | undefined>,
+		ContentEncoding: FormControl<string | null | undefined>,
+		ContentLanguage: FormControl<string | null | undefined>,
+		ContentLength: FormControl<number | null | undefined>,
+		ContentMD5: FormControl<string | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+		HttpExpiresDate: FormControl<Date | null | undefined>,
+		RequesterCharged: FormControl<boolean | null | undefined>,
+		SSEAlgorithm: FormControl<S3ObjectMetadataSSEAlgorithm | null | undefined>,
+	}
+	export function CreateS3ObjectMetadataFormGroup() {
+		return new FormGroup<S3ObjectMetadataFormProperties>({
+			CacheControl: new FormControl<string | null | undefined>(undefined),
+			ContentDisposition: new FormControl<string | null | undefined>(undefined),
+			ContentEncoding: new FormControl<string | null | undefined>(undefined),
+			ContentLanguage: new FormControl<string | null | undefined>(undefined),
+			ContentLength: new FormControl<number | null | undefined>(undefined),
+			ContentMD5: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			HttpExpiresDate: new FormControl<Date | null | undefined>(undefined),
+			RequesterCharged: new FormControl<boolean | null | undefined>(undefined),
+			SSEAlgorithm: new FormControl<S3ObjectMetadataSSEAlgorithm | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface S3UserMetadata {
+	}
+	export interface S3UserMetadataFormProperties {
+	}
+	export function CreateS3UserMetadataFormGroup() {
+		return new FormGroup<S3UserMetadataFormProperties>({
+		});
+
 	}
 
 	export enum S3ObjectMetadataSSEAlgorithm { AES256 = 0, KMS = 1 }
@@ -86,6 +204,19 @@ export namespace MyNS {
 	export interface S3Tag {
 		Key: string;
 		Value: string;
+	}
+
+	/** <p/> */
+	export interface S3TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateS3TagFormGroup() {
+		return new FormGroup<S3TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3CopyObjectOperationStorageClass { STANDARD = 0, STANDARD_IA = 1, ONEZONE_IA = 2, GLACIER = 3, INTELLIGENT_TIERING = 4, DEEP_ARCHIVE = 5 }
@@ -99,7 +230,16 @@ export namespace MyNS {
 	export interface S3SetObjectAclOperation {
 
 		/** <p/> */
-		AccessControlPolicy?: S3AccessControlPolicy | null;
+		AccessControlPolicy?: S3AccessControlPolicy;
+	}
+
+	/** Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT Object acl</a>. */
+	export interface S3SetObjectAclOperationFormProperties {
+	}
+	export function CreateS3SetObjectAclOperationFormGroup() {
+		return new FormGroup<S3SetObjectAclOperationFormProperties>({
+		});
+
 	}
 
 
@@ -107,8 +247,19 @@ export namespace MyNS {
 	export interface S3AccessControlPolicy {
 
 		/** <p/> */
-		AccessControlList?: S3AccessControlList | null;
+		AccessControlList?: S3AccessControlList;
 		CannedAccessControlList?: S3AccessControlPolicyCannedAccessControlList | null;
+	}
+
+	/** <p/> */
+	export interface S3AccessControlPolicyFormProperties {
+		CannedAccessControlList: FormControl<S3AccessControlPolicyCannedAccessControlList | null | undefined>,
+	}
+	export function CreateS3AccessControlPolicyFormGroup() {
+		return new FormGroup<S3AccessControlPolicyFormProperties>({
+			CannedAccessControlList: new FormControl<S3AccessControlPolicyCannedAccessControlList | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -120,7 +271,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		Owner: S3ObjectOwner;
-		Grants?: Array<S3Grant> | null;
+		Grants?: Array<S3Grant>;
+	}
+
+	/** <p/> */
+	export interface S3AccessControlListFormProperties {
+	}
+	export function CreateS3AccessControlListFormGroup() {
+		return new FormGroup<S3AccessControlListFormProperties>({
+		});
+
 	}
 
 
@@ -130,12 +290,34 @@ export namespace MyNS {
 		DisplayName?: string | null;
 	}
 
+	/** <p/> */
+	export interface S3ObjectOwnerFormProperties {
+		ID: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ObjectOwnerFormGroup() {
+		return new FormGroup<S3ObjectOwnerFormProperties>({
+			ID: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum S3AccessControlPolicyCannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
 
 
 	/** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>. */
 	export interface S3SetObjectTaggingOperation {
-		TagSet?: Array<S3Tag> | null;
+		TagSet?: Array<S3Tag>;
+	}
+
+	/** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>. */
+	export interface S3SetObjectTaggingOperationFormProperties {
+	}
+	export function CreateS3SetObjectTaggingOperationFormGroup() {
+		return new FormGroup<S3SetObjectTaggingOperationFormProperties>({
+		});
+
 	}
 
 
@@ -143,6 +325,19 @@ export namespace MyNS {
 	export interface S3InitiateRestoreObjectOperation {
 		ExpirationInDays?: number | null;
 		GlacierJobTier?: S3InitiateRestoreObjectOperationGlacierJobTier | null;
+	}
+
+	/** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring Archives</a>. */
+	export interface S3InitiateRestoreObjectOperationFormProperties {
+		ExpirationInDays: FormControl<number | null | undefined>,
+		GlacierJobTier: FormControl<S3InitiateRestoreObjectOperationGlacierJobTier | null | undefined>,
+	}
+	export function CreateS3InitiateRestoreObjectOperationFormGroup() {
+		return new FormGroup<S3InitiateRestoreObjectOperationFormProperties>({
+			ExpirationInDays: new FormControl<number | null | undefined>(undefined),
+			GlacierJobTier: new FormControl<S3InitiateRestoreObjectOperationGlacierJobTier | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3InitiateRestoreObjectOperationGlacierJobTier { BULK = 0, STANDARD = 1 }
@@ -158,10 +353,30 @@ export namespace MyNS {
 		LegalHold: S3ObjectLockLegalHold;
 	}
 
+	/** Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT Object Legal Hold</a>. */
+	export interface S3SetObjectLegalHoldOperationFormProperties {
+	}
+	export function CreateS3SetObjectLegalHoldOperationFormGroup() {
+		return new FormGroup<S3SetObjectLegalHoldOperationFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface S3ObjectLockLegalHold {
 		Status: S3CopyObjectOperationObjectLockLegalHoldStatus;
+	}
+
+	/** <p/> */
+	export interface S3ObjectLockLegalHoldFormProperties {
+		Status: FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>,
+	}
+	export function CreateS3ObjectLockLegalHoldFormGroup() {
+		return new FormGroup<S3ObjectLockLegalHoldFormProperties>({
+			Status: new FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -176,11 +391,35 @@ export namespace MyNS {
 		Retention: S3Retention;
 	}
 
+	/** Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes">PUT Object Retention</a>. */
+	export interface S3SetObjectRetentionOperationFormProperties {
+		BypassGovernanceRetention: FormControl<boolean | null | undefined>,
+	}
+	export function CreateS3SetObjectRetentionOperationFormGroup() {
+		return new FormGroup<S3SetObjectRetentionOperationFormProperties>({
+			BypassGovernanceRetention: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface S3Retention {
 		RetainUntilDate?: Date | null;
 		Mode?: S3CopyObjectOperationObjectLockMode | null;
+	}
+
+	/** <p/> */
+	export interface S3RetentionFormProperties {
+		RetainUntilDate: FormControl<Date | null | undefined>,
+		Mode: FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>,
+	}
+	export function CreateS3RetentionFormGroup() {
+		return new FormGroup<S3RetentionFormProperties>({
+			RetainUntilDate: new FormControl<Date | null | undefined>(undefined),
+			Mode: new FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobReportFormat { Report_CSV_20180820 = 0 }
@@ -191,7 +430,18 @@ export namespace MyNS {
 	/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
 	export interface JobManifestSpec {
 		Format: JobManifestSpecFormat;
-		Fields?: Array<JobManifestFieldName> | null;
+		Fields?: Array<JobManifestFieldName>;
+	}
+
+	/** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest. */
+	export interface JobManifestSpecFormProperties {
+		Format: FormControl<JobManifestSpecFormat | null | undefined>,
+	}
+	export function CreateJobManifestSpecFormGroup() {
+		return new FormGroup<JobManifestSpecFormProperties>({
+			Format: new FormControl<JobManifestSpecFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobManifestSpecFormat { S3BatchOperations_CSV_20180820 = 0, S3InventoryReport_CSV_20161130 = 1 }
@@ -206,28 +456,92 @@ export namespace MyNS {
 		ETag: string;
 	}
 
+	/** Contains the information required to locate a manifest object. */
+	export interface JobManifestLocationFormProperties {
+		ObjectArn: FormControl<string | null | undefined>,
+		ObjectVersionId: FormControl<string | null | undefined>,
+		ETag: FormControl<string | null | undefined>,
+	}
+	export function CreateJobManifestLocationFormGroup() {
+		return new FormGroup<JobManifestLocationFormProperties>({
+			ObjectArn: new FormControl<string | null | undefined>(undefined),
+			ObjectVersionId: new FormControl<string | null | undefined>(undefined),
+			ETag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IdempotencyException {
+	}
+	export interface IdempotencyExceptionFormProperties {
+	}
+	export function CreateIdempotencyExceptionFormGroup() {
+		return new FormGroup<IdempotencyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServiceException {
 	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteJobTaggingResult {
 	}
+	export interface DeleteJobTaggingResultFormProperties {
+	}
+	export function CreateDeleteJobTaggingResultFormGroup() {
+		return new FormGroup<DeleteJobTaggingResultFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeJobResult {
 
 		/** A container element for the job configuration and status information returned by a <code>Describe Job</code> request. */
-		Job?: JobDescriptor | null;
+		Job?: JobDescriptor;
+	}
+	export interface DescribeJobResultFormProperties {
+	}
+	export function CreateDescribeJobResultFormGroup() {
+		return new FormGroup<DescribeJobResultFormProperties>({
+		});
+
 	}
 
 
@@ -240,24 +554,57 @@ export namespace MyNS {
 		Status?: JobDescriptorStatus | null;
 
 		/** Contains the configuration information for a job's manifest. */
-		Manifest?: JobManifest | null;
+		Manifest?: JobManifest;
 
 		/** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
-		Operation?: JobOperation | null;
+		Operation?: JobOperation;
 		Priority?: number | null;
 
 		/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
-		ProgressSummary?: JobProgressSummary | null;
+		ProgressSummary?: JobProgressSummary;
 		StatusUpdateReason?: string | null;
-		FailureReasons?: Array<JobFailure> | null;
+		FailureReasons?: Array<JobFailure>;
 
 		/** Contains the configuration parameters for a job-completion report. */
-		Report?: JobReport | null;
+		Report?: JobReport;
 		CreationTime?: Date | null;
 		TerminationDate?: Date | null;
 		RoleArn?: string | null;
 		SuspendedDate?: Date | null;
 		SuspendedCause?: string | null;
+	}
+
+	/** A container element for the job configuration and status information returned by a <code>Describe Job</code> request. */
+	export interface JobDescriptorFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		ConfirmationRequired: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		JobArn: FormControl<string | null | undefined>,
+		Status: FormControl<JobDescriptorStatus | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		StatusUpdateReason: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TerminationDate: FormControl<Date | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SuspendedDate: FormControl<Date | null | undefined>,
+		SuspendedCause: FormControl<string | null | undefined>,
+	}
+	export function CreateJobDescriptorFormGroup() {
+		return new FormGroup<JobDescriptorFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			JobArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			StatusUpdateReason: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TerminationDate: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SuspendedDate: new FormControl<Date | null | undefined>(undefined),
+			SuspendedCause: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobDescriptorStatus { Active = 0, Cancelled = 1, Cancelling = 2, Complete = 3, Completing = 4, Failed = 5, Failing = 6, New = 7, Paused = 8, Pausing = 9, Preparing = 10, Ready = 11, Suspended = 12 }
@@ -279,30 +626,48 @@ export namespace MyNS {
 		Location: JobManifestLocation;
 	}
 
+	/** Contains the configuration information for a job's manifest. */
+	export interface JobManifestFormProperties {
+	}
+	export function CreateJobManifestFormGroup() {
+		return new FormGroup<JobManifestFormProperties>({
+		});
+
+	}
+
 
 	/** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
 	export interface JobOperation {
 
 		/** Contains the configuration parameters for a <code>Lambda Invoke</code> operation. */
-		LambdaInvoke?: LambdaInvokeOperation | null;
+		LambdaInvoke?: LambdaInvokeOperation;
 
 		/** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>. */
-		S3PutObjectCopy?: S3CopyObjectOperation | null;
+		S3PutObjectCopy?: S3CopyObjectOperation;
 
 		/** Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT Object acl</a>. */
-		S3PutObjectAcl?: S3SetObjectAclOperation | null;
+		S3PutObjectAcl?: S3SetObjectAclOperation;
 
 		/** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>. */
-		S3PutObjectTagging?: S3SetObjectTaggingOperation | null;
+		S3PutObjectTagging?: S3SetObjectTaggingOperation;
 
 		/** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring Archives</a>. */
-		S3InitiateRestoreObject?: S3InitiateRestoreObjectOperation | null;
+		S3InitiateRestoreObject?: S3InitiateRestoreObjectOperation;
 
 		/** Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT Object Legal Hold</a>. */
-		S3PutObjectLegalHold?: S3SetObjectLegalHoldOperation | null;
+		S3PutObjectLegalHold?: S3SetObjectLegalHoldOperation;
 
 		/** Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes">PUT Object Retention</a>. */
-		S3PutObjectRetention?: S3SetObjectRetentionOperation | null;
+		S3PutObjectRetention?: S3SetObjectRetentionOperation;
+	}
+
+	/** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
+	export interface JobOperationFormProperties {
+	}
+	export function CreateJobOperationFormGroup() {
+		return new FormGroup<JobOperationFormProperties>({
+		});
+
 	}
 
 
@@ -313,11 +678,39 @@ export namespace MyNS {
 		NumberOfTasksFailed?: number | null;
 	}
 
+	/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
+	export interface JobProgressSummaryFormProperties {
+		TotalNumberOfTasks: FormControl<number | null | undefined>,
+		NumberOfTasksSucceeded: FormControl<number | null | undefined>,
+		NumberOfTasksFailed: FormControl<number | null | undefined>,
+	}
+	export function CreateJobProgressSummaryFormGroup() {
+		return new FormGroup<JobProgressSummaryFormProperties>({
+			TotalNumberOfTasks: new FormControl<number | null | undefined>(undefined),
+			NumberOfTasksSucceeded: new FormControl<number | null | undefined>(undefined),
+			NumberOfTasksFailed: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** If this job failed, this element indicates why the job failed. */
 	export interface JobFailure {
 		FailureCode?: string | null;
 		FailureReason?: string | null;
+	}
+
+	/** If this job failed, this element indicates why the job failed. */
+	export interface JobFailureFormProperties {
+		FailureCode: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateJobFailureFormGroup() {
+		return new FormGroup<JobFailureFormProperties>({
+			FailureCode: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -330,17 +723,51 @@ export namespace MyNS {
 		ReportScope?: JobReportScope | null;
 	}
 
+	/** Contains the configuration parameters for a job-completion report. */
+	export interface JobReportFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Format: FormControl<JobReportFormat | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+		ReportScope: FormControl<JobReportScope | null | undefined>,
+	}
+	export function CreateJobReportFormGroup() {
+		return new FormGroup<JobReportFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<JobReportFormat | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			ReportScope: new FormControl<JobReportScope | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetAccessPointResult {
 		Name?: string | null;
 		Bucket?: string | null;
 		NetworkOrigin?: GetAccessPointResultNetworkOrigin | null;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
-		VpcConfiguration?: VpcConfiguration | null;
+		VpcConfiguration?: VpcConfiguration;
 
 		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
-		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | null;
+		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
 		CreationDate?: Date | null;
+	}
+	export interface GetAccessPointResultFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Bucket: FormControl<string | null | undefined>,
+		NetworkOrigin: FormControl<GetAccessPointResultNetworkOrigin | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetAccessPointResultFormGroup() {
+		return new FormGroup<GetAccessPointResultFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetAccessPointResultNetworkOrigin { Internet = 0, VPC = 1 }
@@ -349,6 +776,17 @@ export namespace MyNS {
 	/** The virtual private cloud (VPC) configuration for an access point. */
 	export interface VpcConfiguration {
 		VpcId: string;
+	}
+
+	/** The virtual private cloud (VPC) configuration for an access point. */
+	export interface VpcConfigurationFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcConfigurationFormGroup() {
+		return new FormGroup<VpcConfigurationFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -360,14 +798,47 @@ export namespace MyNS {
 		RestrictPublicBuckets?: boolean | null;
 	}
 
+	/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
+	export interface PublicAccessBlockConfigurationFormProperties {
+		BlockPublicAcls: FormControl<boolean | null | undefined>,
+		IgnorePublicAcls: FormControl<boolean | null | undefined>,
+		BlockPublicPolicy: FormControl<boolean | null | undefined>,
+		RestrictPublicBuckets: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePublicAccessBlockConfigurationFormGroup() {
+		return new FormGroup<PublicAccessBlockConfigurationFormProperties>({
+			BlockPublicAcls: new FormControl<boolean | null | undefined>(undefined),
+			IgnorePublicAcls: new FormControl<boolean | null | undefined>(undefined),
+			BlockPublicPolicy: new FormControl<boolean | null | undefined>(undefined),
+			RestrictPublicBuckets: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetAccessPointPolicyResult {
 		Policy?: string | null;
+	}
+	export interface GetAccessPointPolicyResultFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccessPointPolicyResultFormGroup() {
+		return new FormGroup<GetAccessPointPolicyResultFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetAccessPointPolicyStatusResult {
 
 		/** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. */
-		PolicyStatus?: PolicyStatus | null;
+		PolicyStatus?: PolicyStatus;
+	}
+	export interface GetAccessPointPolicyStatusResultFormProperties {
+	}
+	export function CreateGetAccessPointPolicyStatusResultFormGroup() {
+		return new FormGroup<GetAccessPointPolicyStatusResultFormProperties>({
+		});
+
 	}
 
 
@@ -376,22 +847,63 @@ export namespace MyNS {
 		IsPublic?: boolean | null;
 	}
 
+	/** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.  */
+	export interface PolicyStatusFormProperties {
+		IsPublic: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePolicyStatusFormGroup() {
+		return new FormGroup<PolicyStatusFormProperties>({
+			IsPublic: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetJobTaggingResult {
-		Tags?: Array<S3Tag> | null;
+		Tags?: Array<S3Tag>;
+	}
+	export interface GetJobTaggingResultFormProperties {
+	}
+	export function CreateGetJobTaggingResultFormGroup() {
+		return new FormGroup<GetJobTaggingResultFormProperties>({
+		});
+
 	}
 
 	export interface GetPublicAccessBlockOutput {
 
 		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
-		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | null;
+		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
+	}
+	export interface GetPublicAccessBlockOutputFormProperties {
+	}
+	export function CreateGetPublicAccessBlockOutputFormGroup() {
+		return new FormGroup<GetPublicAccessBlockOutputFormProperties>({
+		});
+
 	}
 
 	export interface NoSuchPublicAccessBlockConfiguration {
 	}
+	export interface NoSuchPublicAccessBlockConfigurationFormProperties {
+	}
+	export function CreateNoSuchPublicAccessBlockConfigurationFormGroup() {
+		return new FormGroup<NoSuchPublicAccessBlockConfigurationFormProperties>({
+		});
+
+	}
 
 	export interface ListAccessPointsResult {
-		AccessPointList?: Array<AccessPoint> | null;
+		AccessPointList?: Array<AccessPoint>;
 		NextToken?: string | null;
+	}
+	export interface ListAccessPointsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccessPointsResultFormGroup() {
+		return new FormGroup<ListAccessPointsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -401,13 +913,37 @@ export namespace MyNS {
 		NetworkOrigin: GetAccessPointResultNetworkOrigin;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
-		VpcConfiguration?: VpcConfiguration | null;
+		VpcConfiguration?: VpcConfiguration;
 		Bucket: string;
+	}
+
+	/** An access point used to access a bucket. */
+	export interface AccessPointFormProperties {
+		Name: FormControl<string | null | undefined>,
+		NetworkOrigin: FormControl<GetAccessPointResultNetworkOrigin | null | undefined>,
+		Bucket: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessPointFormGroup() {
+		return new FormGroup<AccessPointFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJobsResult {
 		NextToken?: string | null;
-		Jobs?: Array<JobListDescriptor> | null;
+		Jobs?: Array<JobListDescriptor>;
+	}
+	export interface ListJobsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsResultFormGroup() {
+		return new FormGroup<ListJobsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -422,7 +958,30 @@ export namespace MyNS {
 		TerminationDate?: Date | null;
 
 		/** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed. */
-		ProgressSummary?: JobProgressSummary | null;
+		ProgressSummary?: JobProgressSummary;
+	}
+
+	/** Contains the configuration and status information for a single job retrieved as part of a job list. */
+	export interface JobListDescriptorFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Operation: FormControl<JobListDescriptorOperation | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		Status: FormControl<JobDescriptorStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		TerminationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateJobListDescriptorFormGroup() {
+		return new FormGroup<JobListDescriptorFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Operation: new FormControl<JobListDescriptorOperation | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			TerminationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobListDescriptorOperation { LambdaInvoke = 0, S3PutObjectCopy = 1, S3PutObjectAcl = 2, S3PutObjectTagging = 3, S3InitiateRestoreObject = 4, S3PutObjectLegalHold = 5, S3PutObjectRetention = 6 }
@@ -431,19 +990,58 @@ export namespace MyNS {
 
 	export interface InvalidRequestException {
 	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutJobTaggingResult {
 	}
+	export interface PutJobTaggingResultFormProperties {
+	}
+	export function CreatePutJobTaggingResultFormGroup() {
+		return new FormGroup<PutJobTaggingResultFormProperties>({
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateJobPriorityResult {
 		JobId: string;
 		Priority: number;
+	}
+	export interface UpdateJobPriorityResultFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateJobPriorityResultFormGroup() {
+		return new FormGroup<UpdateJobPriorityResultFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateJobStatusResult {
@@ -451,8 +1049,28 @@ export namespace MyNS {
 		Status?: JobDescriptorStatus | null;
 		StatusUpdateReason?: string | null;
 	}
+	export interface UpdateJobStatusResultFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		Status: FormControl<JobDescriptorStatus | null | undefined>,
+		StatusUpdateReason: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateJobStatusResultFormGroup() {
+		return new FormGroup<UpdateJobStatusResultFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
+			StatusUpdateReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface JobStatusException {
+	}
+	export interface JobStatusExceptionFormProperties {
+	}
+	export function CreateJobStatusExceptionFormGroup() {
+		return new FormGroup<JobStatusExceptionFormProperties>({
+		});
+
 	}
 
 	export enum NetworkOrigin { Internet = 0, VPC = 1 }
@@ -461,10 +1079,19 @@ export namespace MyNS {
 		Bucket: string;
 
 		/** The virtual private cloud (VPC) configuration for an access point. */
-		VpcConfiguration?: VpcConfiguration | null;
+		VpcConfiguration?: VpcConfiguration;
 
 		/** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide. */
-		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration | null;
+		PublicAccessBlockConfiguration?: PublicAccessBlockConfiguration;
+	}
+	export interface CreateAccessPointRequestFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPointRequestFormGroup() {
+		return new FormGroup<CreateAccessPointRequestFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobRequest {
@@ -491,37 +1118,124 @@ export namespace MyNS {
 		Description?: string | null;
 		Priority: number;
 		RoleArn: string;
-		Tags?: Array<S3Tag> | null;
+		Tags?: Array<S3Tag>;
+	}
+	export interface CreateJobRequestFormProperties {
+		ConfirmationRequired: FormControl<boolean | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobRequestFormGroup() {
+		return new FormGroup<CreateJobRequestFormProperties>({
+			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteAccessPointPolicyRequest {
 	}
+	export interface DeleteAccessPointPolicyRequestFormProperties {
+	}
+	export function CreateDeleteAccessPointPolicyRequestFormGroup() {
+		return new FormGroup<DeleteAccessPointPolicyRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAccessPointRequest {
+	}
+	export interface DeleteAccessPointRequestFormProperties {
+	}
+	export function CreateDeleteAccessPointRequestFormGroup() {
+		return new FormGroup<DeleteAccessPointRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteJobTaggingRequest {
 	}
+	export interface DeleteJobTaggingRequestFormProperties {
+	}
+	export function CreateDeleteJobTaggingRequestFormGroup() {
+		return new FormGroup<DeleteJobTaggingRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeletePublicAccessBlockRequest {
+	}
+	export interface DeletePublicAccessBlockRequestFormProperties {
+	}
+	export function CreateDeletePublicAccessBlockRequestFormGroup() {
+		return new FormGroup<DeletePublicAccessBlockRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeJobRequest {
 	}
+	export interface DescribeJobRequestFormProperties {
+	}
+	export function CreateDescribeJobRequestFormGroup() {
+		return new FormGroup<DescribeJobRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetAccessPointPolicyRequest {
+	}
+	export interface GetAccessPointPolicyRequestFormProperties {
+	}
+	export function CreateGetAccessPointPolicyRequestFormGroup() {
+		return new FormGroup<GetAccessPointPolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetAccessPointPolicyStatusRequest {
 	}
+	export interface GetAccessPointPolicyStatusRequestFormProperties {
+	}
+	export function CreateGetAccessPointPolicyStatusRequestFormGroup() {
+		return new FormGroup<GetAccessPointPolicyStatusRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetAccessPointRequest {
+	}
+	export interface GetAccessPointRequestFormProperties {
+	}
+	export function CreateGetAccessPointRequestFormGroup() {
+		return new FormGroup<GetAccessPointRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetJobTaggingRequest {
 	}
+	export interface GetJobTaggingRequestFormProperties {
+	}
+	export function CreateGetJobTaggingRequestFormGroup() {
+		return new FormGroup<GetJobTaggingRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetPublicAccessBlockRequest {
+	}
+	export interface GetPublicAccessBlockRequestFormProperties {
+	}
+	export function CreateGetPublicAccessBlockRequestFormGroup() {
+		return new FormGroup<GetPublicAccessBlockRequestFormProperties>({
+		});
+
 	}
 
 	export enum OperationName { LambdaInvoke = 0, S3PutObjectCopy = 1, S3PutObjectAcl = 2, S3PutObjectTagging = 3, S3InitiateRestoreObject = 4, S3PutObjectLegalHold = 5, S3PutObjectRetention = 6 }
@@ -530,16 +1244,46 @@ export namespace MyNS {
 
 	export interface ListAccessPointsRequest {
 	}
+	export interface ListAccessPointsRequestFormProperties {
+	}
+	export function CreateListAccessPointsRequestFormGroup() {
+		return new FormGroup<ListAccessPointsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListJobsRequest {
+	}
+	export interface ListJobsRequestFormProperties {
+	}
+	export function CreateListJobsRequestFormGroup() {
+		return new FormGroup<ListJobsRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutAccessPointPolicyRequest {
 		Policy: string;
 	}
+	export interface PutAccessPointPolicyRequestFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAccessPointPolicyRequestFormGroup() {
+		return new FormGroup<PutAccessPointPolicyRequestFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutJobTaggingRequest {
 		Tags: Array<S3Tag>;
+	}
+	export interface PutJobTaggingRequestFormProperties {
+	}
+	export function CreatePutJobTaggingRequestFormGroup() {
+		return new FormGroup<PutJobTaggingRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutPublicAccessBlockRequest {
@@ -549,6 +1293,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		PublicAccessBlockConfiguration: PublicAccessBlockConfiguration;
+	}
+	export interface PutPublicAccessBlockRequestFormProperties {
+	}
+	export function CreatePutPublicAccessBlockRequestFormGroup() {
+		return new FormGroup<PutPublicAccessBlockRequestFormProperties>({
+		});
+
 	}
 
 	export enum RequestedJobStatus { Cancelled = 0, Ready = 1 }
@@ -573,8 +1324,22 @@ export namespace MyNS {
 
 	export interface UpdateJobPriorityRequest {
 	}
+	export interface UpdateJobPriorityRequestFormProperties {
+	}
+	export function CreateUpdateJobPriorityRequestFormGroup() {
+		return new FormGroup<UpdateJobPriorityRequestFormProperties>({
+		});
+
+	}
 
 	export interface UpdateJobStatusRequest {
+	}
+	export interface UpdateJobStatusRequestFormProperties {
+	}
+	export function CreateUpdateJobStatusRequestFormGroup() {
+		return new FormGroup<UpdateJobStatusRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -613,7 +1378,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		ListJobs(jobStatuses: Array<JobStatus> | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v20180820/jobs#x-amz-account-id?' + jobStatuses.map(z => `jobStatuses=${z}`).join('&') + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v20180820/jobs#x-amz-account-id?' + jobStatuses?.map(z => `jobStatuses=${z}`).join('&') + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** <p/> */
 	export interface AddTagsToResourceResponse {
+	}
+
+	/** <p/> */
+	export interface AddTagsToResourceResponseFormProperties {
+	}
+	export function CreateAddTagsToResourceResponseFormGroup() {
+		return new FormGroup<AddTagsToResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -14,6 +24,17 @@ export namespace MyNS {
 		Tags: Array<Tag>;
 	}
 
+	/** Associates a set of tags with an AWS DMS resource. */
+	export interface AddTagsToResourceMessageFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToResourceMessageFormGroup() {
+		return new FormGroup<AddTagsToResourceMessageFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:</p> <ul> <li> <p> <code>AddTagsToResource</code> </p> </li> <li> <p> <code>ListTagsForResource</code> </p> </li> <li> <p> <code>RemoveTagsFromResource</code> </p> </li> </ul> */
 	export interface Tag {
@@ -21,7 +42,27 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** <p>A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:</p> <ul> <li> <p> <code>AddTagsToResource</code> </p> </li> <li> <p> <code>ListTagsForResource</code> </p> </li> <li> <p> <code>RemoveTagsFromResource</code> </p> </li> </ul> */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundFault {
+	}
+	export interface ResourceNotFoundFaultFormProperties {
+	}
+	export function CreateResourceNotFoundFaultFormGroup() {
+		return new FormGroup<ResourceNotFoundFaultFormProperties>({
+		});
+
 	}
 
 
@@ -29,14 +70,34 @@ export namespace MyNS {
 	export interface ApplyPendingMaintenanceActionResponse {
 
 		/** Identifies an AWS DMS resource and any pending actions for it. */
-		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions | null;
+		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions;
+	}
+
+	/** <p/> */
+	export interface ApplyPendingMaintenanceActionResponseFormProperties {
+	}
+	export function CreateApplyPendingMaintenanceActionResponseFormGroup() {
+		return new FormGroup<ApplyPendingMaintenanceActionResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Identifies an AWS DMS resource and any pending actions for it. */
 	export interface ResourcePendingMaintenanceActions {
 		ResourceIdentifier?: string | null;
-		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction> | null;
+		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction>;
+	}
+
+	/** Identifies an AWS DMS resource and any pending actions for it. */
+	export interface ResourcePendingMaintenanceActionsFormProperties {
+		ResourceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateResourcePendingMaintenanceActionsFormGroup() {
+		return new FormGroup<ResourcePendingMaintenanceActionsFormProperties>({
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -50,6 +111,27 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation. */
+	export interface PendingMaintenanceActionFormProperties {
+		Action: FormControl<string | null | undefined>,
+		AutoAppliedAfterDate: FormControl<Date | null | undefined>,
+		ForcedApplyDate: FormControl<Date | null | undefined>,
+		OptInStatus: FormControl<string | null | undefined>,
+		CurrentApplyDate: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreatePendingMaintenanceActionFormGroup() {
+		return new FormGroup<PendingMaintenanceActionFormProperties>({
+			Action: new FormControl<string | null | undefined>(undefined),
+			AutoAppliedAfterDate: new FormControl<Date | null | undefined>(undefined),
+			ForcedApplyDate: new FormControl<Date | null | undefined>(undefined),
+			OptInStatus: new FormControl<string | null | undefined>(undefined),
+			CurrentApplyDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ApplyPendingMaintenanceActionMessage {
@@ -58,12 +140,36 @@ export namespace MyNS {
 		OptInType: string;
 	}
 
+	/** <p/> */
+	export interface ApplyPendingMaintenanceActionMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		ApplyAction: FormControl<string | null | undefined>,
+		OptInType: FormControl<string | null | undefined>,
+	}
+	export function CreateApplyPendingMaintenanceActionMessageFormGroup() {
+		return new FormGroup<ApplyPendingMaintenanceActionMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ApplyAction: new FormControl<string | null | undefined>(undefined),
+			OptInType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface CreateEndpointResponse {
 
 		/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
-		Endpoint?: Endpoint | null;
+		Endpoint?: Endpoint;
+	}
+
+	/** <p/> */
+	export interface CreateEndpointResponseFormProperties {
+	}
+	export function CreateCreateEndpointResponseFormGroup() {
+		return new FormGroup<CreateEndpointResponseFormProperties>({
+		});
+
 	}
 
 
@@ -88,31 +194,74 @@ export namespace MyNS {
 		ExternalId?: string | null;
 
 		/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
-		DynamoDbSettings?: DynamoDbSettings | null;
+		DynamoDbSettings?: DynamoDbSettings;
 
 		/** Settings for exporting data to Amazon S3. */
-		S3Settings?: S3Settings | null;
+		S3Settings?: S3Settings;
 
 		/** The settings in JSON format for the DMS Transfer type source endpoint. */
-		DmsTransferSettings?: DmsTransferSettings | null;
+		DmsTransferSettings?: DmsTransferSettings;
 
 		/** Provides information that defines a MongoDB endpoint. */
-		MongoDbSettings?: MongoDbSettings | null;
+		MongoDbSettings?: MongoDbSettings;
 
 		/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KinesisSettings?: KinesisSettings | null;
+		KinesisSettings?: KinesisSettings;
 
 		/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KafkaSettings?: KafkaSettings | null;
+		KafkaSettings?: KafkaSettings;
 
 		/** Provides information that defines an Elasticsearch endpoint. */
-		ElasticsearchSettings?: ElasticsearchSettings | null;
+		ElasticsearchSettings?: ElasticsearchSettings;
 
 		/** Provides information that defines an Amazon Neptune endpoint. */
-		NeptuneSettings?: NeptuneSettings | null;
+		NeptuneSettings?: NeptuneSettings;
 
 		/** Provides information that defines an Amazon Redshift endpoint. */
-		RedshiftSettings?: RedshiftSettings | null;
+		RedshiftSettings?: RedshiftSettings;
+	}
+
+	/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
+	export interface EndpointFormProperties {
+		EndpointIdentifier: FormControl<string | null | undefined>,
+		EndpointType: FormControl<EndpointEndpointType | null | undefined>,
+		EngineName: FormControl<string | null | undefined>,
+		EngineDisplayName: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		ExtraConnectionAttributes: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		EndpointArn: FormControl<string | null | undefined>,
+		CertificateArn: FormControl<string | null | undefined>,
+		SslMode: FormControl<EndpointSslMode | null | undefined>,
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		ExternalTableDefinition: FormControl<string | null | undefined>,
+		ExternalId: FormControl<string | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			EndpointIdentifier: new FormControl<string | null | undefined>(undefined),
+			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined),
+			EngineName: new FormControl<string | null | undefined>(undefined),
+			EngineDisplayName: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			ExtraConnectionAttributes: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			SslMode: new FormControl<EndpointSslMode | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExternalTableDefinition: new FormControl<string | null | undefined>(undefined),
+			ExternalId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EndpointEndpointType { source = 0, target = 1 }
@@ -123,6 +272,17 @@ export namespace MyNS {
 	/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
 	export interface DynamoDbSettings {
 		ServiceAccessRoleArn: string;
+	}
+
+	/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
+	export interface DynamoDbSettingsFormProperties {
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamoDbSettingsFormGroup() {
+		return new FormGroup<DynamoDbSettingsFormProperties>({
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -151,6 +311,57 @@ export namespace MyNS {
 		CdcInsertsAndUpdates?: boolean | null;
 	}
 
+	/** Settings for exporting data to Amazon S3.  */
+	export interface S3SettingsFormProperties {
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		ExternalTableDefinition: FormControl<string | null | undefined>,
+		CsvRowDelimiter: FormControl<string | null | undefined>,
+		CsvDelimiter: FormControl<string | null | undefined>,
+		BucketFolder: FormControl<string | null | undefined>,
+		BucketName: FormControl<string | null | undefined>,
+		CompressionType: FormControl<S3SettingsCompressionType | null | undefined>,
+		EncryptionMode: FormControl<S3SettingsEncryptionMode | null | undefined>,
+		ServerSideEncryptionKmsKeyId: FormControl<string | null | undefined>,
+		DataFormat: FormControl<S3SettingsDataFormat | null | undefined>,
+		EncodingType: FormControl<S3SettingsEncodingType | null | undefined>,
+		DictPageSizeLimit: FormControl<number | null | undefined>,
+		RowGroupLength: FormControl<number | null | undefined>,
+		DataPageSize: FormControl<number | null | undefined>,
+		ParquetVersion: FormControl<S3SettingsParquetVersion | null | undefined>,
+		EnableStatistics: FormControl<boolean | null | undefined>,
+		IncludeOpForFullLoad: FormControl<boolean | null | undefined>,
+		CdcInsertsOnly: FormControl<boolean | null | undefined>,
+		TimestampColumnName: FormControl<string | null | undefined>,
+		ParquetTimestampInMillisecond: FormControl<boolean | null | undefined>,
+		CdcInsertsAndUpdates: FormControl<boolean | null | undefined>,
+	}
+	export function CreateS3SettingsFormGroup() {
+		return new FormGroup<S3SettingsFormProperties>({
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExternalTableDefinition: new FormControl<string | null | undefined>(undefined),
+			CsvRowDelimiter: new FormControl<string | null | undefined>(undefined),
+			CsvDelimiter: new FormControl<string | null | undefined>(undefined),
+			BucketFolder: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined),
+			CompressionType: new FormControl<S3SettingsCompressionType | null | undefined>(undefined),
+			EncryptionMode: new FormControl<S3SettingsEncryptionMode | null | undefined>(undefined),
+			ServerSideEncryptionKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			DataFormat: new FormControl<S3SettingsDataFormat | null | undefined>(undefined),
+			EncodingType: new FormControl<S3SettingsEncodingType | null | undefined>(undefined),
+			DictPageSizeLimit: new FormControl<number | null | undefined>(undefined),
+			RowGroupLength: new FormControl<number | null | undefined>(undefined),
+			DataPageSize: new FormControl<number | null | undefined>(undefined),
+			ParquetVersion: new FormControl<S3SettingsParquetVersion | null | undefined>(undefined),
+			EnableStatistics: new FormControl<boolean | null | undefined>(undefined),
+			IncludeOpForFullLoad: new FormControl<boolean | null | undefined>(undefined),
+			CdcInsertsOnly: new FormControl<boolean | null | undefined>(undefined),
+			TimestampColumnName: new FormControl<string | null | undefined>(undefined),
+			ParquetTimestampInMillisecond: new FormControl<boolean | null | undefined>(undefined),
+			CdcInsertsAndUpdates: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum S3SettingsCompressionType { none = 0, gzip = 1 }
 
 	export enum S3SettingsEncryptionMode { sse_s3 = 0, sse_kms = 1 }
@@ -168,6 +379,19 @@ export namespace MyNS {
 		BucketName?: string | null;
 	}
 
+	/**  The settings in JSON format for the DMS Transfer type source endpoint.  */
+	export interface DmsTransferSettingsFormProperties {
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		BucketName: FormControl<string | null | undefined>,
+	}
+	export function CreateDmsTransferSettingsFormGroup() {
+		return new FormGroup<DmsTransferSettingsFormProperties>({
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides information that defines a MongoDB endpoint. */
 	export interface MongoDbSettings {
@@ -183,6 +407,39 @@ export namespace MyNS {
 		DocsToInvestigate?: string | null;
 		AuthSource?: string | null;
 		KmsKeyId?: string | null;
+	}
+
+	/** Provides information that defines a MongoDB endpoint. */
+	export interface MongoDbSettingsFormProperties {
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		AuthType: FormControl<MongoDbSettingsAuthType | null | undefined>,
+		AuthMechanism: FormControl<MongoDbSettingsAuthMechanism | null | undefined>,
+		NestingLevel: FormControl<MongoDbSettingsNestingLevel | null | undefined>,
+		ExtractDocId: FormControl<string | null | undefined>,
+		DocsToInvestigate: FormControl<string | null | undefined>,
+		AuthSource: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateMongoDbSettingsFormGroup() {
+		return new FormGroup<MongoDbSettingsFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			AuthType: new FormControl<MongoDbSettingsAuthType | null | undefined>(undefined),
+			AuthMechanism: new FormControl<MongoDbSettingsAuthMechanism | null | undefined>(undefined),
+			NestingLevel: new FormControl<MongoDbSettingsNestingLevel | null | undefined>(undefined),
+			ExtractDocId: new FormControl<string | null | undefined>(undefined),
+			DocsToInvestigate: new FormControl<string | null | undefined>(undefined),
+			AuthSource: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MongoDbSettingsAuthType { no = 0, password = 1 }
@@ -204,6 +461,31 @@ export namespace MyNS {
 		IncludeControlDetails?: boolean | null;
 	}
 
+	/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
+	export interface KinesisSettingsFormProperties {
+		StreamArn: FormControl<string | null | undefined>,
+		MessageFormat: FormControl<KinesisSettingsMessageFormat | null | undefined>,
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		IncludeTransactionDetails: FormControl<boolean | null | undefined>,
+		IncludePartitionValue: FormControl<boolean | null | undefined>,
+		PartitionIncludeSchemaTable: FormControl<boolean | null | undefined>,
+		IncludeTableAlterOperations: FormControl<boolean | null | undefined>,
+		IncludeControlDetails: FormControl<boolean | null | undefined>,
+	}
+	export function CreateKinesisSettingsFormGroup() {
+		return new FormGroup<KinesisSettingsFormProperties>({
+			StreamArn: new FormControl<string | null | undefined>(undefined),
+			MessageFormat: new FormControl<KinesisSettingsMessageFormat | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			IncludeTransactionDetails: new FormControl<boolean | null | undefined>(undefined),
+			IncludePartitionValue: new FormControl<boolean | null | undefined>(undefined),
+			PartitionIncludeSchemaTable: new FormControl<boolean | null | undefined>(undefined),
+			IncludeTableAlterOperations: new FormControl<boolean | null | undefined>(undefined),
+			IncludeControlDetails: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum KinesisSettingsMessageFormat { json = 0, json_unformatted = 1 }
 
 
@@ -213,6 +495,19 @@ export namespace MyNS {
 		Topic?: string | null;
 	}
 
+	/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
+	export interface KafkaSettingsFormProperties {
+		Broker: FormControl<string | null | undefined>,
+		Topic: FormControl<string | null | undefined>,
+	}
+	export function CreateKafkaSettingsFormGroup() {
+		return new FormGroup<KafkaSettingsFormProperties>({
+			Broker: new FormControl<string | null | undefined>(undefined),
+			Topic: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides information that defines an Elasticsearch endpoint. */
 	export interface ElasticsearchSettings {
@@ -220,6 +515,23 @@ export namespace MyNS {
 		EndpointUri: string;
 		FullLoadErrorPercentage?: number | null;
 		ErrorRetryDuration?: number | null;
+	}
+
+	/** Provides information that defines an Elasticsearch endpoint. */
+	export interface ElasticsearchSettingsFormProperties {
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		EndpointUri: FormControl<string | null | undefined>,
+		FullLoadErrorPercentage: FormControl<number | null | undefined>,
+		ErrorRetryDuration: FormControl<number | null | undefined>,
+	}
+	export function CreateElasticsearchSettingsFormGroup() {
+		return new FormGroup<ElasticsearchSettingsFormProperties>({
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			EndpointUri: new FormControl<string | null | undefined>(undefined),
+			FullLoadErrorPercentage: new FormControl<number | null | undefined>(undefined),
+			ErrorRetryDuration: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -232,6 +544,29 @@ export namespace MyNS {
 		MaxFileSize?: number | null;
 		MaxRetryCount?: number | null;
 		IamAuthEnabled?: boolean | null;
+	}
+
+	/** Provides information that defines an Amazon Neptune endpoint. */
+	export interface NeptuneSettingsFormProperties {
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		S3BucketName: FormControl<string | null | undefined>,
+		S3BucketFolder: FormControl<string | null | undefined>,
+		ErrorRetryDuration: FormControl<number | null | undefined>,
+		MaxFileSize: FormControl<number | null | undefined>,
+		MaxRetryCount: FormControl<number | null | undefined>,
+		IamAuthEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNeptuneSettingsFormGroup() {
+		return new FormGroup<NeptuneSettingsFormProperties>({
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3BucketFolder: new FormControl<string | null | undefined>(undefined),
+			ErrorRetryDuration: new FormControl<number | null | undefined>(undefined),
+			MaxFileSize: new FormControl<number | null | undefined>(undefined),
+			MaxRetryCount: new FormControl<number | null | undefined>(undefined),
+			IamAuthEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -264,6 +599,65 @@ export namespace MyNS {
 		WriteBufferSize?: number | null;
 	}
 
+	/** Provides information that defines an Amazon Redshift endpoint. */
+	export interface RedshiftSettingsFormProperties {
+		AcceptAnyDate: FormControl<boolean | null | undefined>,
+		AfterConnectScript: FormControl<string | null | undefined>,
+		BucketFolder: FormControl<string | null | undefined>,
+		BucketName: FormControl<string | null | undefined>,
+		ConnectionTimeout: FormControl<number | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		DateFormat: FormControl<string | null | undefined>,
+		EmptyAsNull: FormControl<boolean | null | undefined>,
+		EncryptionMode: FormControl<RedshiftSettingsEncryptionMode | null | undefined>,
+		FileTransferUploadStreams: FormControl<number | null | undefined>,
+		LoadTimeout: FormControl<number | null | undefined>,
+		MaxFileSize: FormControl<number | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		RemoveQuotes: FormControl<boolean | null | undefined>,
+		ReplaceInvalidChars: FormControl<string | null | undefined>,
+		ReplaceChars: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		ServerSideEncryptionKmsKeyId: FormControl<string | null | undefined>,
+		TimeFormat: FormControl<string | null | undefined>,
+		TrimBlanks: FormControl<boolean | null | undefined>,
+		TruncateColumns: FormControl<boolean | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		WriteBufferSize: FormControl<number | null | undefined>,
+	}
+	export function CreateRedshiftSettingsFormGroup() {
+		return new FormGroup<RedshiftSettingsFormProperties>({
+			AcceptAnyDate: new FormControl<boolean | null | undefined>(undefined),
+			AfterConnectScript: new FormControl<string | null | undefined>(undefined),
+			BucketFolder: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined),
+			ConnectionTimeout: new FormControl<number | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			DateFormat: new FormControl<string | null | undefined>(undefined),
+			EmptyAsNull: new FormControl<boolean | null | undefined>(undefined),
+			EncryptionMode: new FormControl<RedshiftSettingsEncryptionMode | null | undefined>(undefined),
+			FileTransferUploadStreams: new FormControl<number | null | undefined>(undefined),
+			LoadTimeout: new FormControl<number | null | undefined>(undefined),
+			MaxFileSize: new FormControl<number | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			RemoveQuotes: new FormControl<boolean | null | undefined>(undefined),
+			ReplaceInvalidChars: new FormControl<string | null | undefined>(undefined),
+			ReplaceChars: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ServerSideEncryptionKmsKeyId: new FormControl<string | null | undefined>(undefined),
+			TimeFormat: new FormControl<string | null | undefined>(undefined),
+			TrimBlanks: new FormControl<boolean | null | undefined>(undefined),
+			TruncateColumns: new FormControl<boolean | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			WriteBufferSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RedshiftSettingsEncryptionMode { sse_s3 = 0, sse_kms = 1 }
 
 
@@ -279,55 +673,127 @@ export namespace MyNS {
 		DatabaseName?: string | null;
 		ExtraConnectionAttributes?: string | null;
 		KmsKeyId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		CertificateArn?: string | null;
 		SslMode?: CreateEndpointMessageSslMode | null;
 		ServiceAccessRoleArn?: string | null;
 		ExternalTableDefinition?: string | null;
 
 		/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
-		DynamoDbSettings?: DynamoDbSettings | null;
+		DynamoDbSettings?: DynamoDbSettings;
 
 		/** Settings for exporting data to Amazon S3. */
-		S3Settings?: S3Settings | null;
+		S3Settings?: S3Settings;
 
 		/** The settings in JSON format for the DMS Transfer type source endpoint. */
-		DmsTransferSettings?: DmsTransferSettings | null;
+		DmsTransferSettings?: DmsTransferSettings;
 
 		/** Provides information that defines a MongoDB endpoint. */
-		MongoDbSettings?: MongoDbSettings | null;
+		MongoDbSettings?: MongoDbSettings;
 
 		/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KinesisSettings?: KinesisSettings | null;
+		KinesisSettings?: KinesisSettings;
 
 		/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KafkaSettings?: KafkaSettings | null;
+		KafkaSettings?: KafkaSettings;
 
 		/** Provides information that defines an Elasticsearch endpoint. */
-		ElasticsearchSettings?: ElasticsearchSettings | null;
+		ElasticsearchSettings?: ElasticsearchSettings;
 
 		/** Provides information that defines an Amazon Neptune endpoint. */
-		NeptuneSettings?: NeptuneSettings | null;
+		NeptuneSettings?: NeptuneSettings;
 
 		/** Provides information that defines an Amazon Redshift endpoint. */
-		RedshiftSettings?: RedshiftSettings | null;
+		RedshiftSettings?: RedshiftSettings;
+	}
+
+	/** <p/> */
+	export interface CreateEndpointMessageFormProperties {
+		EndpointIdentifier: FormControl<string | null | undefined>,
+		EndpointType: FormControl<EndpointEndpointType | null | undefined>,
+		EngineName: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		ExtraConnectionAttributes: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		CertificateArn: FormControl<string | null | undefined>,
+		SslMode: FormControl<CreateEndpointMessageSslMode | null | undefined>,
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		ExternalTableDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEndpointMessageFormGroup() {
+		return new FormGroup<CreateEndpointMessageFormProperties>({
+			EndpointIdentifier: new FormControl<string | null | undefined>(undefined),
+			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined),
+			EngineName: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			ExtraConnectionAttributes: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			SslMode: new FormControl<CreateEndpointMessageSslMode | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExternalTableDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateEndpointMessageSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
 
 	export interface KMSKeyNotAccessibleFault {
 	}
+	export interface KMSKeyNotAccessibleFaultFormProperties {
+	}
+	export function CreateKMSKeyNotAccessibleFaultFormGroup() {
+		return new FormGroup<KMSKeyNotAccessibleFaultFormProperties>({
+		});
+
+	}
 
 	export interface ResourceAlreadyExistsFault {
+	}
+	export interface ResourceAlreadyExistsFaultFormProperties {
+	}
+	export function CreateResourceAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface ResourceQuotaExceededFault {
 	}
+	export interface ResourceQuotaExceededFaultFormProperties {
+	}
+	export function CreateResourceQuotaExceededFaultFormGroup() {
+		return new FormGroup<ResourceQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidResourceStateFault {
 	}
+	export interface InvalidResourceStateFaultFormProperties {
+	}
+	export function CreateInvalidResourceStateFaultFormGroup() {
+		return new FormGroup<InvalidResourceStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedFault {
+	}
+	export interface AccessDeniedFaultFormProperties {
+	}
+	export function CreateAccessDeniedFaultFormGroup() {
+		return new FormGroup<AccessDeniedFaultFormProperties>({
+		});
+
 	}
 
 
@@ -335,7 +801,16 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionResponse {
 
 		/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+
+	/** <p/> */
+	export interface CreateEventSubscriptionResponseFormProperties {
+	}
+	export function CreateCreateEventSubscriptionResponseFormGroup() {
+		return new FormGroup<CreateEventSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -347,9 +822,32 @@ export namespace MyNS {
 		Status?: string | null;
 		SubscriptionCreationTime?: string | null;
 		SourceType?: string | null;
-		SourceIdsList?: Array<string> | null;
-		EventCategoriesList?: Array<string> | null;
+		SourceIdsList?: Array<string>;
+		EventCategoriesList?: Array<string>;
 		Enabled?: boolean | null;
+	}
+
+	/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
+	export interface EventSubscriptionFormProperties {
+		CustomerAwsId: FormControl<string | null | undefined>,
+		CustSubscriptionId: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		SubscriptionCreationTime: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEventSubscriptionFormGroup() {
+		return new FormGroup<EventSubscriptionFormProperties>({
+			CustomerAwsId: new FormControl<string | null | undefined>(undefined),
+			CustSubscriptionId: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			SubscriptionCreationTime: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -358,31 +856,97 @@ export namespace MyNS {
 		SubscriptionName: string;
 		SnsTopicArn: string;
 		SourceType?: string | null;
-		EventCategories?: Array<string> | null;
-		SourceIds?: Array<string> | null;
+		EventCategories?: Array<string>;
+		SourceIds?: Array<string>;
 		Enabled?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateEventSubscriptionMessageFormGroup() {
+		return new FormGroup<CreateEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SNSInvalidTopicFault {
 	}
+	export interface SNSInvalidTopicFaultFormProperties {
+	}
+	export function CreateSNSInvalidTopicFaultFormGroup() {
+		return new FormGroup<SNSInvalidTopicFaultFormProperties>({
+		});
+
+	}
 
 	export interface SNSNoAuthorizationFault {
+	}
+	export interface SNSNoAuthorizationFaultFormProperties {
+	}
+	export function CreateSNSNoAuthorizationFaultFormGroup() {
+		return new FormGroup<SNSNoAuthorizationFaultFormProperties>({
+		});
+
 	}
 
 	export interface KMSAccessDeniedFault {
 	}
+	export interface KMSAccessDeniedFaultFormProperties {
+	}
+	export function CreateKMSAccessDeniedFaultFormGroup() {
+		return new FormGroup<KMSAccessDeniedFaultFormProperties>({
+		});
+
+	}
 
 	export interface KMSDisabledFault {
+	}
+	export interface KMSDisabledFaultFormProperties {
+	}
+	export function CreateKMSDisabledFaultFormGroup() {
+		return new FormGroup<KMSDisabledFaultFormProperties>({
+		});
+
 	}
 
 	export interface KMSInvalidStateFault {
 	}
+	export interface KMSInvalidStateFaultFormProperties {
+	}
+	export function CreateKMSInvalidStateFaultFormGroup() {
+		return new FormGroup<KMSInvalidStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface KMSNotFoundFault {
 	}
+	export interface KMSNotFoundFaultFormProperties {
+	}
+	export function CreateKMSNotFoundFaultFormGroup() {
+		return new FormGroup<KMSNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface KMSThrottlingFault {
+	}
+	export interface KMSThrottlingFaultFormProperties {
+	}
+	export function CreateKMSThrottlingFaultFormGroup() {
+		return new FormGroup<KMSThrottlingFaultFormProperties>({
+		});
+
 	}
 
 
@@ -390,7 +954,16 @@ export namespace MyNS {
 	export interface CreateReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance | null;
+		ReplicationInstance?: ReplicationInstance;
+	}
+
+	/** <p/> */
+	export interface CreateReplicationInstanceResponseFormProperties {
+	}
+	export function CreateCreateReplicationInstanceResponseFormGroup() {
+		return new FormGroup<CreateReplicationInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -401,15 +974,15 @@ export namespace MyNS {
 		ReplicationInstanceStatus?: string | null;
 		AllocatedStorage?: number | null;
 		InstanceCreateTime?: Date | null;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
 		AvailabilityZone?: string | null;
 
 		/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
-		ReplicationSubnetGroup?: ReplicationSubnetGroup | null;
+		ReplicationSubnetGroup?: ReplicationSubnetGroup;
 		PreferredMaintenanceWindow?: string | null;
 
 		/** Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type. */
-		PendingModifiedValues?: ReplicationPendingModifiedValues | null;
+		PendingModifiedValues?: ReplicationPendingModifiedValues;
 		MultiAZ?: boolean | null;
 		EngineVersion?: string | null;
 		AutoMinorVersionUpgrade?: boolean | null;
@@ -417,12 +990,57 @@ export namespace MyNS {
 		ReplicationInstanceArn?: string | null;
 		ReplicationInstancePublicIpAddress?: string | null;
 		ReplicationInstancePrivateIpAddress?: string | null;
-		ReplicationInstancePublicIpAddresses?: Array<string> | null;
-		ReplicationInstancePrivateIpAddresses?: Array<string> | null;
+		ReplicationInstancePublicIpAddresses?: Array<string>;
+		ReplicationInstancePrivateIpAddresses?: Array<string>;
 		PubliclyAccessible?: boolean | null;
 		SecondaryAvailabilityZone?: string | null;
 		FreeUntil?: Date | null;
 		DnsNameServers?: string | null;
+	}
+
+	/** Provides information that defines a replication instance. */
+	export interface ReplicationInstanceFormProperties {
+		ReplicationInstanceIdentifier: FormControl<string | null | undefined>,
+		ReplicationInstanceClass: FormControl<string | null | undefined>,
+		ReplicationInstanceStatus: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		InstanceCreateTime: FormControl<Date | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		ReplicationInstancePublicIpAddress: FormControl<string | null | undefined>,
+		ReplicationInstancePrivateIpAddress: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		SecondaryAvailabilityZone: FormControl<string | null | undefined>,
+		FreeUntil: FormControl<Date | null | undefined>,
+		DnsNameServers: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicationInstanceFormGroup() {
+		return new FormGroup<ReplicationInstanceFormProperties>({
+			ReplicationInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceStatus: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			InstanceCreateTime: new FormControl<Date | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstancePublicIpAddress: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstancePrivateIpAddress: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			SecondaryAvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			FreeUntil: new FormControl<Date | null | undefined>(undefined),
+			DnsNameServers: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -432,6 +1050,19 @@ export namespace MyNS {
 		Status?: string | null;
 	}
 
+	/** Describes status of a security group associated with the virtual private cloud hosting your replication and DB instances. */
+	export interface VpcSecurityGroupMembershipFormProperties {
+		VpcSecurityGroupId: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcSecurityGroupMembershipFormGroup() {
+		return new FormGroup<VpcSecurityGroupMembershipFormProperties>({
+			VpcSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
 	export interface ReplicationSubnetGroup {
@@ -439,7 +1070,24 @@ export namespace MyNS {
 		ReplicationSubnetGroupDescription?: string | null;
 		VpcId?: string | null;
 		SubnetGroupStatus?: string | null;
-		Subnets?: Array<Subnet> | null;
+		Subnets?: Array<Subnet>;
+	}
+
+	/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
+	export interface ReplicationSubnetGroupFormProperties {
+		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
+		ReplicationSubnetGroupDescription: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		SubnetGroupStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicationSubnetGroupFormGroup() {
+		return new FormGroup<ReplicationSubnetGroupFormProperties>({
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			SubnetGroupStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -448,14 +1096,38 @@ export namespace MyNS {
 		SubnetIdentifier?: string | null;
 
 		/** The name of the Availability Zone for use during database migration. */
-		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetAvailabilityZone?: AvailabilityZone;
 		SubnetStatus?: string | null;
+	}
+
+	/** In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status. */
+	export interface SubnetFormProperties {
+		SubnetIdentifier: FormControl<string | null | undefined>,
+		SubnetStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateSubnetFormGroup() {
+		return new FormGroup<SubnetFormProperties>({
+			SubnetIdentifier: new FormControl<string | null | undefined>(undefined),
+			SubnetStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The name of the Availability Zone for use during database migration. */
 	export interface AvailabilityZone {
 		Name?: string | null;
+	}
+
+	/** The name of the Availability Zone for use during database migration. */
+	export interface AvailabilityZoneFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAvailabilityZoneFormGroup() {
+		return new FormGroup<AvailabilityZoneFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -467,35 +1139,113 @@ export namespace MyNS {
 		EngineVersion?: string | null;
 	}
 
+	/** Provides information about the values of pending modifications to a replication instance. This data type is an object of the <code>ReplicationInstance</code> user-defined data type.  */
+	export interface ReplicationPendingModifiedValuesFormProperties {
+		ReplicationInstanceClass: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicationPendingModifiedValuesFormGroup() {
+		return new FormGroup<ReplicationPendingModifiedValuesFormProperties>({
+			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface CreateReplicationInstanceMessage {
 		ReplicationInstanceIdentifier: string;
 		AllocatedStorage?: number | null;
 		ReplicationInstanceClass: string;
-		VpcSecurityGroupIds?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string>;
 		AvailabilityZone?: string | null;
 		ReplicationSubnetGroupIdentifier?: string | null;
 		PreferredMaintenanceWindow?: string | null;
 		MultiAZ?: boolean | null;
 		EngineVersion?: string | null;
 		AutoMinorVersionUpgrade?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		KmsKeyId?: string | null;
 		PubliclyAccessible?: boolean | null;
 		DnsNameServers?: string | null;
 	}
 
+	/** <p/> */
+	export interface CreateReplicationInstanceMessageFormProperties {
+		ReplicationInstanceIdentifier: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		ReplicationInstanceClass: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		DnsNameServers: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateReplicationInstanceMessageFormGroup() {
+		return new FormGroup<CreateReplicationInstanceMessageFormProperties>({
+			ReplicationInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			DnsNameServers: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InsufficientResourceCapacityFault {
+	}
+	export interface InsufficientResourceCapacityFaultFormProperties {
+	}
+	export function CreateInsufficientResourceCapacityFaultFormGroup() {
+		return new FormGroup<InsufficientResourceCapacityFaultFormProperties>({
+		});
+
 	}
 
 	export interface StorageQuotaExceededFault {
 	}
+	export interface StorageQuotaExceededFaultFormProperties {
+	}
+	export function CreateStorageQuotaExceededFaultFormGroup() {
+		return new FormGroup<StorageQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ReplicationSubnetGroupDoesNotCoverEnoughAZs {
 	}
+	export interface ReplicationSubnetGroupDoesNotCoverEnoughAZsFormProperties {
+	}
+	export function CreateReplicationSubnetGroupDoesNotCoverEnoughAZsFormGroup() {
+		return new FormGroup<ReplicationSubnetGroupDoesNotCoverEnoughAZsFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSubnet {
+	}
+	export interface InvalidSubnetFormProperties {
+	}
+	export function CreateInvalidSubnetFormGroup() {
+		return new FormGroup<InvalidSubnetFormProperties>({
+		});
+
 	}
 
 
@@ -503,7 +1253,16 @@ export namespace MyNS {
 	export interface CreateReplicationSubnetGroupResponse {
 
 		/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
-		ReplicationSubnetGroup?: ReplicationSubnetGroup | null;
+		ReplicationSubnetGroup?: ReplicationSubnetGroup;
+	}
+
+	/** <p/> */
+	export interface CreateReplicationSubnetGroupResponseFormProperties {
+	}
+	export function CreateCreateReplicationSubnetGroupResponseFormGroup() {
+		return new FormGroup<CreateReplicationSubnetGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -512,7 +1271,20 @@ export namespace MyNS {
 		ReplicationSubnetGroupIdentifier: string;
 		ReplicationSubnetGroupDescription: string;
 		SubnetIds: Array<string>;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateReplicationSubnetGroupMessageFormProperties {
+		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
+		ReplicationSubnetGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateReplicationSubnetGroupMessageFormGroup() {
+		return new FormGroup<CreateReplicationSubnetGroupMessageFormProperties>({
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -520,7 +1292,16 @@ export namespace MyNS {
 	export interface CreateReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask | null;
+		ReplicationTask?: ReplicationTask;
+	}
+
+	/** <p/> */
+	export interface CreateReplicationTaskResponseFormProperties {
+	}
+	export function CreateCreateReplicationTaskResponseFormGroup() {
+		return new FormGroup<CreateReplicationTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -544,8 +1325,51 @@ export namespace MyNS {
 		ReplicationTaskArn?: string | null;
 
 		/** In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task. */
-		ReplicationTaskStats?: ReplicationTaskStats | null;
+		ReplicationTaskStats?: ReplicationTaskStats;
 		TaskData?: string | null;
+	}
+
+	/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
+	export interface ReplicationTaskFormProperties {
+		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
+		SourceEndpointArn: FormControl<string | null | undefined>,
+		TargetEndpointArn: FormControl<string | null | undefined>,
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		MigrationType: FormControl<ReplicationTaskMigrationType | null | undefined>,
+		TableMappings: FormControl<string | null | undefined>,
+		ReplicationTaskSettings: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		LastFailureMessage: FormControl<string | null | undefined>,
+		StopReason: FormControl<string | null | undefined>,
+		ReplicationTaskCreationDate: FormControl<Date | null | undefined>,
+		ReplicationTaskStartDate: FormControl<Date | null | undefined>,
+		CdcStartPosition: FormControl<string | null | undefined>,
+		CdcStopPosition: FormControl<string | null | undefined>,
+		RecoveryCheckpoint: FormControl<string | null | undefined>,
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		TaskData: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicationTaskFormGroup() {
+		return new FormGroup<ReplicationTaskFormProperties>({
+			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceEndpointArn: new FormControl<string | null | undefined>(undefined),
+			TargetEndpointArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			MigrationType: new FormControl<ReplicationTaskMigrationType | null | undefined>(undefined),
+			TableMappings: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskSettings: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			LastFailureMessage: new FormControl<string | null | undefined>(undefined),
+			StopReason: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskCreationDate: new FormControl<Date | null | undefined>(undefined),
+			ReplicationTaskStartDate: new FormControl<Date | null | undefined>(undefined),
+			CdcStartPosition: new FormControl<string | null | undefined>(undefined),
+			CdcStopPosition: new FormControl<string | null | undefined>(undefined),
+			RecoveryCheckpoint: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			TaskData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReplicationTaskMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
@@ -566,6 +1390,37 @@ export namespace MyNS {
 		FullLoadFinishDate?: Date | null;
 	}
 
+	/** In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task. */
+	export interface ReplicationTaskStatsFormProperties {
+		FullLoadProgressPercent: FormControl<number | null | undefined>,
+		ElapsedTimeMillis: FormControl<number | null | undefined>,
+		TablesLoaded: FormControl<number | null | undefined>,
+		TablesLoading: FormControl<number | null | undefined>,
+		TablesQueued: FormControl<number | null | undefined>,
+		TablesErrored: FormControl<number | null | undefined>,
+		FreshStartDate: FormControl<Date | null | undefined>,
+		StartDate: FormControl<Date | null | undefined>,
+		StopDate: FormControl<Date | null | undefined>,
+		FullLoadStartDate: FormControl<Date | null | undefined>,
+		FullLoadFinishDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateReplicationTaskStatsFormGroup() {
+		return new FormGroup<ReplicationTaskStatsFormProperties>({
+			FullLoadProgressPercent: new FormControl<number | null | undefined>(undefined),
+			ElapsedTimeMillis: new FormControl<number | null | undefined>(undefined),
+			TablesLoaded: new FormControl<number | null | undefined>(undefined),
+			TablesLoading: new FormControl<number | null | undefined>(undefined),
+			TablesQueued: new FormControl<number | null | undefined>(undefined),
+			TablesErrored: new FormControl<number | null | undefined>(undefined),
+			FreshStartDate: new FormControl<Date | null | undefined>(undefined),
+			StartDate: new FormControl<Date | null | undefined>(undefined),
+			StopDate: new FormControl<Date | null | undefined>(undefined),
+			FullLoadStartDate: new FormControl<Date | null | undefined>(undefined),
+			FullLoadFinishDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface CreateReplicationTaskMessage {
@@ -579,8 +1434,39 @@ export namespace MyNS {
 		CdcStartTime?: Date | null;
 		CdcStartPosition?: string | null;
 		CdcStopPosition?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		TaskData?: string | null;
+	}
+
+	/** <p/> */
+	export interface CreateReplicationTaskMessageFormProperties {
+		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
+		SourceEndpointArn: FormControl<string | null | undefined>,
+		TargetEndpointArn: FormControl<string | null | undefined>,
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		MigrationType: FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>,
+		TableMappings: FormControl<string | null | undefined>,
+		ReplicationTaskSettings: FormControl<string | null | undefined>,
+		CdcStartTime: FormControl<Date | null | undefined>,
+		CdcStartPosition: FormControl<string | null | undefined>,
+		CdcStopPosition: FormControl<string | null | undefined>,
+		TaskData: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateReplicationTaskMessageFormGroup() {
+		return new FormGroup<CreateReplicationTaskMessageFormProperties>({
+			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceEndpointArn: new FormControl<string | null | undefined>(undefined),
+			TargetEndpointArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			MigrationType: new FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>(undefined),
+			TableMappings: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskSettings: new FormControl<string | null | undefined>(undefined),
+			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
+			CdcStartPosition: new FormControl<string | null | undefined>(undefined),
+			CdcStopPosition: new FormControl<string | null | undefined>(undefined),
+			TaskData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateReplicationTaskMessageMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
@@ -588,7 +1474,14 @@ export namespace MyNS {
 	export interface DeleteCertificateResponse {
 
 		/** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance. */
-		Certificate?: Certificate | null;
+		Certificate?: Certificate;
+	}
+	export interface DeleteCertificateResponseFormProperties {
+	}
+	export function CreateDeleteCertificateResponseFormGroup() {
+		return new FormGroup<DeleteCertificateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -606,8 +1499,46 @@ export namespace MyNS {
 		KeyLength?: number | null;
 	}
 
+	/** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance. */
+	export interface CertificateFormProperties {
+		CertificateIdentifier: FormControl<string | null | undefined>,
+		CertificateCreationDate: FormControl<Date | null | undefined>,
+		CertificatePem: FormControl<string | null | undefined>,
+		CertificateWallet: FormControl<string | null | undefined>,
+		CertificateArn: FormControl<string | null | undefined>,
+		CertificateOwner: FormControl<string | null | undefined>,
+		ValidFromDate: FormControl<Date | null | undefined>,
+		ValidToDate: FormControl<Date | null | undefined>,
+		SigningAlgorithm: FormControl<string | null | undefined>,
+		KeyLength: FormControl<number | null | undefined>,
+	}
+	export function CreateCertificateFormGroup() {
+		return new FormGroup<CertificateFormProperties>({
+			CertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			CertificateCreationDate: new FormControl<Date | null | undefined>(undefined),
+			CertificatePem: new FormControl<string | null | undefined>(undefined),
+			CertificateWallet: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			CertificateOwner: new FormControl<string | null | undefined>(undefined),
+			ValidFromDate: new FormControl<Date | null | undefined>(undefined),
+			ValidToDate: new FormControl<Date | null | undefined>(undefined),
+			SigningAlgorithm: new FormControl<string | null | undefined>(undefined),
+			KeyLength: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteCertificateMessage {
 		CertificateArn: string;
+	}
+	export interface DeleteCertificateMessageFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCertificateMessageFormGroup() {
+		return new FormGroup<DeleteCertificateMessageFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -615,7 +1546,16 @@ export namespace MyNS {
 	export interface DeleteConnectionResponse {
 
 		/** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued. */
-		Connection?: Connection | null;
+		Connection?: Connection;
+	}
+
+	/** <p/> */
+	export interface DeleteConnectionResponseFormProperties {
+	}
+	export function CreateDeleteConnectionResponseFormGroup() {
+		return new FormGroup<DeleteConnectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -629,6 +1569,27 @@ export namespace MyNS {
 		ReplicationInstanceIdentifier?: string | null;
 	}
 
+	/** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued. */
+	export interface ConnectionFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		EndpointArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		LastFailureMessage: FormControl<string | null | undefined>,
+		EndpointIdentifier: FormControl<string | null | undefined>,
+		ReplicationInstanceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionFormGroup() {
+		return new FormGroup<ConnectionFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			LastFailureMessage: new FormControl<string | null | undefined>(undefined),
+			EndpointIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteConnectionMessage {
@@ -636,12 +1597,34 @@ export namespace MyNS {
 		ReplicationInstanceArn: string;
 	}
 
+	/** <p/> */
+	export interface DeleteConnectionMessageFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConnectionMessageFormGroup() {
+		return new FormGroup<DeleteConnectionMessageFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteEndpointResponse {
 
 		/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
-		Endpoint?: Endpoint | null;
+		Endpoint?: Endpoint;
+	}
+
+	/** <p/> */
+	export interface DeleteEndpointResponseFormProperties {
+	}
+	export function CreateDeleteEndpointResponseFormGroup() {
+		return new FormGroup<DeleteEndpointResponseFormProperties>({
+		});
+
 	}
 
 
@@ -650,12 +1633,32 @@ export namespace MyNS {
 		EndpointArn: string;
 	}
 
+	/** <p/> */
+	export interface DeleteEndpointMessageFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEndpointMessageFormGroup() {
+		return new FormGroup<DeleteEndpointMessageFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteEventSubscriptionResponse {
 
 		/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+
+	/** <p/> */
+	export interface DeleteEventSubscriptionResponseFormProperties {
+	}
+	export function CreateDeleteEventSubscriptionResponseFormGroup() {
+		return new FormGroup<DeleteEventSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -664,12 +1667,32 @@ export namespace MyNS {
 		SubscriptionName: string;
 	}
 
+	/** <p/> */
+	export interface DeleteEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEventSubscriptionMessageFormGroup() {
+		return new FormGroup<DeleteEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance | null;
+		ReplicationInstance?: ReplicationInstance;
+	}
+
+	/** <p/> */
+	export interface DeleteReplicationInstanceResponseFormProperties {
+	}
+	export function CreateDeleteReplicationInstanceResponseFormGroup() {
+		return new FormGroup<DeleteReplicationInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -678,9 +1701,29 @@ export namespace MyNS {
 		ReplicationInstanceArn: string;
 	}
 
+	/** <p/> */
+	export interface DeleteReplicationInstanceMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReplicationInstanceMessageFormGroup() {
+		return new FormGroup<DeleteReplicationInstanceMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteReplicationSubnetGroupResponse {
+	}
+
+	/** <p/> */
+	export interface DeleteReplicationSubnetGroupResponseFormProperties {
+	}
+	export function CreateDeleteReplicationSubnetGroupResponseFormGroup() {
+		return new FormGroup<DeleteReplicationSubnetGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -689,12 +1732,32 @@ export namespace MyNS {
 		ReplicationSubnetGroupIdentifier: string;
 	}
 
+	/** <p/> */
+	export interface DeleteReplicationSubnetGroupMessageFormProperties {
+		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReplicationSubnetGroupMessageFormGroup() {
+		return new FormGroup<DeleteReplicationSubnetGroupMessageFormProperties>({
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask | null;
+		ReplicationTask?: ReplicationTask;
+	}
+
+	/** <p/> */
+	export interface DeleteReplicationTaskResponseFormProperties {
+	}
+	export function CreateDeleteReplicationTaskResponseFormGroup() {
+		return new FormGroup<DeleteReplicationTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -703,11 +1766,33 @@ export namespace MyNS {
 		ReplicationTaskArn: string;
 	}
 
+	/** <p/> */
+	export interface DeleteReplicationTaskMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReplicationTaskMessageFormGroup() {
+		return new FormGroup<DeleteReplicationTaskMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeAccountAttributesResponse {
-		AccountQuotas?: Array<AccountQuota> | null;
+		AccountQuotas?: Array<AccountQuota>;
 		UniqueAccountIdentifier?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeAccountAttributesResponseFormProperties {
+		UniqueAccountIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountAttributesResponseFormGroup() {
+		return new FormGroup<DescribeAccountAttributesResponseFormProperties>({
+			UniqueAccountIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -718,20 +1803,64 @@ export namespace MyNS {
 		Max?: number | null;
 	}
 
+	/** Describes a quota for an AWS account, for example, the number of replication instances allowed. */
+	export interface AccountQuotaFormProperties {
+		AccountQuotaName: FormControl<string | null | undefined>,
+		Used: FormControl<number | null | undefined>,
+		Max: FormControl<number | null | undefined>,
+	}
+	export function CreateAccountQuotaFormGroup() {
+		return new FormGroup<AccountQuotaFormProperties>({
+			AccountQuotaName: new FormControl<string | null | undefined>(undefined),
+			Used: new FormControl<number | null | undefined>(undefined),
+			Max: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeAccountAttributesMessage {
 	}
 
+	/** <p/> */
+	export interface DescribeAccountAttributesMessageFormProperties {
+	}
+	export function CreateDescribeAccountAttributesMessageFormGroup() {
+		return new FormGroup<DescribeAccountAttributesMessageFormProperties>({
+		});
+
+	}
+
 	export interface DescribeCertificatesResponse {
 		Marker?: string | null;
-		Certificates?: Array<Certificate> | null;
+		Certificates?: Array<Certificate>;
+	}
+	export interface DescribeCertificatesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCertificatesResponseFormGroup() {
+		return new FormGroup<DescribeCertificatesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCertificatesMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeCertificatesMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCertificatesMessageFormGroup() {
+		return new FormGroup<DescribeCertificatesMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -741,26 +1870,72 @@ export namespace MyNS {
 		Values: Array<string>;
 	}
 
+	/** Identifies the name and value of a source filter object used to limit the number and type of records transferred from your source to your target. */
+	export interface FilterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeConnectionsResponse {
 		Marker?: string | null;
-		Connections?: Array<Connection> | null;
+		Connections?: Array<Connection>;
+	}
+
+	/** <p/> */
+	export interface DescribeConnectionsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConnectionsResponseFormGroup() {
+		return new FormGroup<DescribeConnectionsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeConnectionsMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeConnectionsMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConnectionsMessageFormGroup() {
+		return new FormGroup<DescribeConnectionsMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointTypesResponse {
 		Marker?: string | null;
-		SupportedEndpointTypes?: Array<SupportedEndpointType> | null;
+		SupportedEndpointTypes?: Array<SupportedEndpointType>;
+	}
+
+	/** <p/> */
+	export interface DescribeEndpointTypesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointTypesResponseFormGroup() {
+		return new FormGroup<DescribeEndpointTypesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -773,70 +1948,194 @@ export namespace MyNS {
 		EngineDisplayName?: string | null;
 	}
 
+	/** Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported. */
+	export interface SupportedEndpointTypeFormProperties {
+		EngineName: FormControl<string | null | undefined>,
+		SupportsCDC: FormControl<boolean | null | undefined>,
+		EndpointType: FormControl<EndpointEndpointType | null | undefined>,
+		ReplicationInstanceEngineMinimumVersion: FormControl<string | null | undefined>,
+		EngineDisplayName: FormControl<string | null | undefined>,
+	}
+	export function CreateSupportedEndpointTypeFormGroup() {
+		return new FormGroup<SupportedEndpointTypeFormProperties>({
+			EngineName: new FormControl<string | null | undefined>(undefined),
+			SupportsCDC: new FormControl<boolean | null | undefined>(undefined),
+			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined),
+			ReplicationInstanceEngineMinimumVersion: new FormControl<string | null | undefined>(undefined),
+			EngineDisplayName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeEndpointTypesMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeEndpointTypesMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointTypesMessageFormGroup() {
+		return new FormGroup<DescribeEndpointTypesMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointsResponse {
 		Marker?: string | null;
-		Endpoints?: Array<Endpoint> | null;
+		Endpoints?: Array<Endpoint>;
+	}
+
+	/** <p/> */
+	export interface DescribeEndpointsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointsResponseFormGroup() {
+		return new FormGroup<DescribeEndpointsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEndpointsMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeEndpointsMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointsMessageFormGroup() {
+		return new FormGroup<DescribeEndpointsMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventCategoriesResponse {
-		EventCategoryGroupList?: Array<EventCategoryGroup> | null;
+		EventCategoryGroupList?: Array<EventCategoryGroup>;
+	}
+
+	/** <p/> */
+	export interface DescribeEventCategoriesResponseFormProperties {
+	}
+	export function CreateDescribeEventCategoriesResponseFormGroup() {
+		return new FormGroup<DescribeEventCategoriesResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Lists categories of events subscribed to, and generated by, the applicable AWS DMS resource type. */
 	export interface EventCategoryGroup {
 		SourceType?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
+	}
+
+	/** Lists categories of events subscribed to, and generated by, the applicable AWS DMS resource type. */
+	export interface EventCategoryGroupFormProperties {
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateEventCategoryGroupFormGroup() {
+		return new FormGroup<EventCategoryGroupFormProperties>({
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventCategoriesMessage {
 		SourceType?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+
+	/** <p/> */
+	export interface DescribeEventCategoriesMessageFormProperties {
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventCategoriesMessageFormGroup() {
+		return new FormGroup<DescribeEventCategoriesMessageFormProperties>({
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventSubscriptionsResponse {
 		Marker?: string | null;
-		EventSubscriptionsList?: Array<EventSubscription> | null;
+		EventSubscriptionsList?: Array<EventSubscription>;
+	}
+
+	/** <p/> */
+	export interface DescribeEventSubscriptionsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventSubscriptionsResponseFormGroup() {
+		return new FormGroup<DescribeEventSubscriptionsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventSubscriptionsMessage {
 		SubscriptionName?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeEventSubscriptionsMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventSubscriptionsMessageFormGroup() {
+		return new FormGroup<DescribeEventSubscriptionsMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventsResponse {
 		Marker?: string | null;
-		Events?: Array<Event> | null;
+		Events?: Array<Event>;
+	}
+
+	/** <p/> */
+	export interface DescribeEventsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsResponseFormGroup() {
+		return new FormGroup<DescribeEventsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -845,8 +2144,25 @@ export namespace MyNS {
 		SourceIdentifier?: string | null;
 		SourceType?: EventSourceType | null;
 		Message?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
 		Date?: Date | null;
+	}
+
+	/** Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type. */
+	export interface EventFormProperties {
+		SourceIdentifier: FormControl<string | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		Date: FormControl<Date | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventSourceType { replication_instance = 0 }
@@ -859,10 +2175,33 @@ export namespace MyNS {
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Duration?: number | null;
-		EventCategories?: Array<string> | null;
-		Filters?: Array<Filter> | null;
+		EventCategories?: Array<string>;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeEventsMessageFormProperties {
+		SourceIdentifier: FormControl<string | null | undefined>,
+		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsMessageFormGroup() {
+		return new FormGroup<DescribeEventsMessageFormProperties>({
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeEventsMessageSourceType { replication_instance = 0 }
@@ -870,8 +2209,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOrderableReplicationInstancesResponse {
-		OrderableReplicationInstances?: Array<OrderableReplicationInstance> | null;
+		OrderableReplicationInstances?: Array<OrderableReplicationInstance>;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeOrderableReplicationInstancesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrderableReplicationInstancesResponseFormGroup() {
+		return new FormGroup<DescribeOrderableReplicationInstancesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -884,8 +2234,33 @@ export namespace MyNS {
 		MaxAllocatedStorage?: number | null;
 		DefaultAllocatedStorage?: number | null;
 		IncludedAllocatedStorage?: number | null;
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
 		ReleaseStatus?: OrderableReplicationInstanceReleaseStatus | null;
+	}
+
+	/** In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage. */
+	export interface OrderableReplicationInstanceFormProperties {
+		EngineVersion: FormControl<string | null | undefined>,
+		ReplicationInstanceClass: FormControl<string | null | undefined>,
+		StorageType: FormControl<string | null | undefined>,
+		MinAllocatedStorage: FormControl<number | null | undefined>,
+		MaxAllocatedStorage: FormControl<number | null | undefined>,
+		DefaultAllocatedStorage: FormControl<number | null | undefined>,
+		IncludedAllocatedStorage: FormControl<number | null | undefined>,
+		ReleaseStatus: FormControl<OrderableReplicationInstanceReleaseStatus | null | undefined>,
+	}
+	export function CreateOrderableReplicationInstanceFormGroup() {
+		return new FormGroup<OrderableReplicationInstanceFormProperties>({
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
+			StorageType: new FormControl<string | null | undefined>(undefined),
+			MinAllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			MaxAllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			DefaultAllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			IncludedAllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			ReleaseStatus: new FormControl<OrderableReplicationInstanceReleaseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OrderableReplicationInstanceReleaseStatus { beta = 0 }
@@ -897,20 +2272,59 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeOrderableReplicationInstancesMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrderableReplicationInstancesMessageFormGroup() {
+		return new FormGroup<DescribeOrderableReplicationInstancesMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribePendingMaintenanceActionsResponse {
-		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions> | null;
+		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions>;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribePendingMaintenanceActionsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePendingMaintenanceActionsResponseFormGroup() {
+		return new FormGroup<DescribePendingMaintenanceActionsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribePendingMaintenanceActionsMessage {
 		ReplicationInstanceArn?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		Marker?: string | null;
 		MaxRecords?: number | null;
+	}
+
+	/** <p/> */
+	export interface DescribePendingMaintenanceActionsMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribePendingMaintenanceActionsMessageFormGroup() {
+		return new FormGroup<DescribePendingMaintenanceActionsMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -918,7 +2332,16 @@ export namespace MyNS {
 	export interface DescribeRefreshSchemasStatusResponse {
 
 		/** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation. */
-		RefreshSchemasStatus?: RefreshSchemasStatus | null;
+		RefreshSchemasStatus?: RefreshSchemasStatus;
+	}
+
+	/** <p/> */
+	export interface DescribeRefreshSchemasStatusResponseFormProperties {
+	}
+	export function CreateDescribeRefreshSchemasStatusResponseFormGroup() {
+		return new FormGroup<DescribeRefreshSchemasStatusResponseFormProperties>({
+		});
+
 	}
 
 
@@ -931,6 +2354,25 @@ export namespace MyNS {
 		LastFailureMessage?: string | null;
 	}
 
+	/** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation. */
+	export interface RefreshSchemasStatusFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		Status: FormControl<RefreshSchemasStatusStatus | null | undefined>,
+		LastRefreshDate: FormControl<Date | null | undefined>,
+		LastFailureMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateRefreshSchemasStatusFormGroup() {
+		return new FormGroup<RefreshSchemasStatusFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<RefreshSchemasStatusStatus | null | undefined>(undefined),
+			LastRefreshDate: new FormControl<Date | null | undefined>(undefined),
+			LastFailureMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RefreshSchemasStatusStatus { successful = 0, failed = 1, refreshing = 2 }
 
 
@@ -939,10 +2381,32 @@ export namespace MyNS {
 		EndpointArn: string;
 	}
 
+	/** <p/> */
+	export interface DescribeRefreshSchemasStatusMessageFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRefreshSchemasStatusMessageFormGroup() {
+		return new FormGroup<DescribeRefreshSchemasStatusMessageFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeReplicationInstanceTaskLogsResponse {
 		ReplicationInstanceArn?: string | null;
-		ReplicationInstanceTaskLogs?: Array<ReplicationInstanceTaskLog> | null;
+		ReplicationInstanceTaskLogs?: Array<ReplicationInstanceTaskLog>;
 		Marker?: string | null;
+	}
+	export interface DescribeReplicationInstanceTaskLogsResponseFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationInstanceTaskLogsResponseFormGroup() {
+		return new FormGroup<DescribeReplicationInstanceTaskLogsResponseFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -953,40 +2417,116 @@ export namespace MyNS {
 		ReplicationInstanceTaskLogSize?: number | null;
 	}
 
+	/** Contains metadata for a replication instance task log. */
+	export interface ReplicationInstanceTaskLogFormProperties {
+		ReplicationTaskName: FormControl<string | null | undefined>,
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		ReplicationInstanceTaskLogSize: FormControl<number | null | undefined>,
+	}
+	export function CreateReplicationInstanceTaskLogFormGroup() {
+		return new FormGroup<ReplicationInstanceTaskLogFormProperties>({
+			ReplicationTaskName: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceTaskLogSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeReplicationInstanceTaskLogsMessage {
 		ReplicationInstanceArn: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeReplicationInstanceTaskLogsMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationInstanceTaskLogsMessageFormGroup() {
+		return new FormGroup<DescribeReplicationInstanceTaskLogsMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationInstancesResponse {
 		Marker?: string | null;
-		ReplicationInstances?: Array<ReplicationInstance> | null;
+		ReplicationInstances?: Array<ReplicationInstance>;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationInstancesResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationInstancesResponseFormGroup() {
+		return new FormGroup<DescribeReplicationInstancesResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationInstancesMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationInstancesMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationInstancesMessageFormGroup() {
+		return new FormGroup<DescribeReplicationInstancesMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationSubnetGroupsResponse {
 		Marker?: string | null;
-		ReplicationSubnetGroups?: Array<ReplicationSubnetGroup> | null;
+		ReplicationSubnetGroups?: Array<ReplicationSubnetGroup>;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationSubnetGroupsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationSubnetGroupsResponseFormGroup() {
+		return new FormGroup<DescribeReplicationSubnetGroupsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationSubnetGroupsMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationSubnetGroupsMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationSubnetGroupsMessageFormGroup() {
+		return new FormGroup<DescribeReplicationSubnetGroupsMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -994,7 +2534,20 @@ export namespace MyNS {
 	export interface DescribeReplicationTaskAssessmentResultsResponse {
 		Marker?: string | null;
 		BucketName?: string | null;
-		ReplicationTaskAssessmentResults?: Array<ReplicationTaskAssessmentResult> | null;
+		ReplicationTaskAssessmentResults?: Array<ReplicationTaskAssessmentResult>;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationTaskAssessmentResultsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		BucketName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationTaskAssessmentResultsResponseFormGroup() {
+		return new FormGroup<DescribeReplicationTaskAssessmentResultsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1009,6 +2562,29 @@ export namespace MyNS {
 		S3ObjectUrl?: string | null;
 	}
 
+	/**  The task assessment report in JSON format.  */
+	export interface ReplicationTaskAssessmentResultFormProperties {
+		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		ReplicationTaskLastAssessmentDate: FormControl<Date | null | undefined>,
+		AssessmentStatus: FormControl<string | null | undefined>,
+		AssessmentResultsFile: FormControl<string | null | undefined>,
+		AssessmentResults: FormControl<string | null | undefined>,
+		S3ObjectUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicationTaskAssessmentResultFormGroup() {
+		return new FormGroup<ReplicationTaskAssessmentResultFormProperties>({
+			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskLastAssessmentDate: new FormControl<Date | null | undefined>(undefined),
+			AssessmentStatus: new FormControl<string | null | undefined>(undefined),
+			AssessmentResultsFile: new FormControl<string | null | undefined>(undefined),
+			AssessmentResults: new FormControl<string | null | undefined>(undefined),
+			S3ObjectUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeReplicationTaskAssessmentResultsMessage {
@@ -1017,27 +2593,79 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeReplicationTaskAssessmentResultsMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationTaskAssessmentResultsMessageFormGroup() {
+		return new FormGroup<DescribeReplicationTaskAssessmentResultsMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeReplicationTasksResponse {
 		Marker?: string | null;
-		ReplicationTasks?: Array<ReplicationTask> | null;
+		ReplicationTasks?: Array<ReplicationTask>;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationTasksResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReplicationTasksResponseFormGroup() {
+		return new FormGroup<DescribeReplicationTasksResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeReplicationTasksMessage {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
 		WithoutSettings?: boolean | null;
+	}
+
+	/** <p/> */
+	export interface DescribeReplicationTasksMessageFormProperties {
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		WithoutSettings: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeReplicationTasksMessageFormGroup() {
+		return new FormGroup<DescribeReplicationTasksMessageFormProperties>({
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			WithoutSettings: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeSchemasResponse {
 		Marker?: string | null;
-		Schemas?: Array<string> | null;
+		Schemas?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeSchemasResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSchemasResponseFormGroup() {
+		return new FormGroup<DescribeSchemasResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1048,12 +2676,40 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeSchemasMessageFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSchemasMessageFormGroup() {
+		return new FormGroup<DescribeSchemasMessageFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeTableStatisticsResponse {
 		ReplicationTaskArn?: string | null;
-		TableStatistics?: Array<TableStatistics> | null;
+		TableStatistics?: Array<TableStatistics>;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeTableStatisticsResponseFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTableStatisticsResponseFormGroup() {
+		return new FormGroup<DescribeTableStatisticsResponseFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1080,35 +2736,133 @@ export namespace MyNS {
 		ValidationStateDetails?: string | null;
 	}
 
+	/** Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation. */
+	export interface TableStatisticsFormProperties {
+		SchemaName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		Inserts: FormControl<number | null | undefined>,
+		Deletes: FormControl<number | null | undefined>,
+		Updates: FormControl<number | null | undefined>,
+		Ddls: FormControl<number | null | undefined>,
+		FullLoadRows: FormControl<number | null | undefined>,
+		FullLoadCondtnlChkFailedRows: FormControl<number | null | undefined>,
+		FullLoadErrorRows: FormControl<number | null | undefined>,
+		FullLoadStartTime: FormControl<Date | null | undefined>,
+		FullLoadEndTime: FormControl<Date | null | undefined>,
+		FullLoadReloaded: FormControl<boolean | null | undefined>,
+		LastUpdateTime: FormControl<Date | null | undefined>,
+		TableState: FormControl<string | null | undefined>,
+		ValidationPendingRecords: FormControl<number | null | undefined>,
+		ValidationFailedRecords: FormControl<number | null | undefined>,
+		ValidationSuspendedRecords: FormControl<number | null | undefined>,
+		ValidationState: FormControl<string | null | undefined>,
+		ValidationStateDetails: FormControl<string | null | undefined>,
+	}
+	export function CreateTableStatisticsFormGroup() {
+		return new FormGroup<TableStatisticsFormProperties>({
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			Inserts: new FormControl<number | null | undefined>(undefined),
+			Deletes: new FormControl<number | null | undefined>(undefined),
+			Updates: new FormControl<number | null | undefined>(undefined),
+			Ddls: new FormControl<number | null | undefined>(undefined),
+			FullLoadRows: new FormControl<number | null | undefined>(undefined),
+			FullLoadCondtnlChkFailedRows: new FormControl<number | null | undefined>(undefined),
+			FullLoadErrorRows: new FormControl<number | null | undefined>(undefined),
+			FullLoadStartTime: new FormControl<Date | null | undefined>(undefined),
+			FullLoadEndTime: new FormControl<Date | null | undefined>(undefined),
+			FullLoadReloaded: new FormControl<boolean | null | undefined>(undefined),
+			LastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			TableState: new FormControl<string | null | undefined>(undefined),
+			ValidationPendingRecords: new FormControl<number | null | undefined>(undefined),
+			ValidationFailedRecords: new FormControl<number | null | undefined>(undefined),
+			ValidationSuspendedRecords: new FormControl<number | null | undefined>(undefined),
+			ValidationState: new FormControl<string | null | undefined>(undefined),
+			ValidationStateDetails: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeTableStatisticsMessage {
 		ReplicationTaskArn: string;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+
+	/** <p/> */
+	export interface DescribeTableStatisticsMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTableStatisticsMessageFormGroup() {
+		return new FormGroup<DescribeTableStatisticsMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportCertificateResponse {
 
 		/** The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance. */
-		Certificate?: Certificate | null;
+		Certificate?: Certificate;
+	}
+	export interface ImportCertificateResponseFormProperties {
+	}
+	export function CreateImportCertificateResponseFormGroup() {
+		return new FormGroup<ImportCertificateResponseFormProperties>({
+		});
+
 	}
 
 	export interface ImportCertificateMessage {
 		CertificateIdentifier: string;
 		CertificatePem?: string | null;
 		CertificateWallet?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ImportCertificateMessageFormProperties {
+		CertificateIdentifier: FormControl<string | null | undefined>,
+		CertificatePem: FormControl<string | null | undefined>,
+		CertificateWallet: FormControl<string | null | undefined>,
+	}
+	export function CreateImportCertificateMessageFormGroup() {
+		return new FormGroup<ImportCertificateMessageFormProperties>({
+			CertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			CertificatePem: new FormControl<string | null | undefined>(undefined),
+			CertificateWallet: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidCertificateFault {
+	}
+	export interface InvalidCertificateFaultFormProperties {
+	}
+	export function CreateInvalidCertificateFaultFormGroup() {
+		return new FormGroup<InvalidCertificateFaultFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface ListTagsForResourceResponse {
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1117,12 +2871,32 @@ export namespace MyNS {
 		ResourceArn: string;
 	}
 
+	/** <p/> */
+	export interface ListTagsForResourceMessageFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceMessageFormGroup() {
+		return new FormGroup<ListTagsForResourceMessageFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ModifyEndpointResponse {
 
 		/** <p>Describes an endpoint of a database instance in response to operations such as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpoint</code> </p> </li> <li> <p> <code>DescribeEndpointTypes</code> </p> </li> <li> <p> <code>ModifyEndpoint</code> </p> </li> </ul> */
-		Endpoint?: Endpoint | null;
+		Endpoint?: Endpoint;
+	}
+
+	/** <p/> */
+	export interface ModifyEndpointResponseFormProperties {
+	}
+	export function CreateModifyEndpointResponseFormGroup() {
+		return new FormGroup<ModifyEndpointResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1144,31 +2918,68 @@ export namespace MyNS {
 		ExternalTableDefinition?: string | null;
 
 		/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
-		DynamoDbSettings?: DynamoDbSettings | null;
+		DynamoDbSettings?: DynamoDbSettings;
 
 		/** Settings for exporting data to Amazon S3. */
-		S3Settings?: S3Settings | null;
+		S3Settings?: S3Settings;
 
 		/** The settings in JSON format for the DMS Transfer type source endpoint. */
-		DmsTransferSettings?: DmsTransferSettings | null;
+		DmsTransferSettings?: DmsTransferSettings;
 
 		/** Provides information that defines a MongoDB endpoint. */
-		MongoDbSettings?: MongoDbSettings | null;
+		MongoDbSettings?: MongoDbSettings;
 
 		/** Provides information that describes an Amazon Kinesis Data Stream endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KinesisSettings?: KinesisSettings | null;
+		KinesisSettings?: KinesisSettings;
 
 		/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
-		KafkaSettings?: KafkaSettings | null;
+		KafkaSettings?: KafkaSettings;
 
 		/** Provides information that defines an Elasticsearch endpoint. */
-		ElasticsearchSettings?: ElasticsearchSettings | null;
+		ElasticsearchSettings?: ElasticsearchSettings;
 
 		/** Provides information that defines an Amazon Neptune endpoint. */
-		NeptuneSettings?: NeptuneSettings | null;
+		NeptuneSettings?: NeptuneSettings;
 
 		/** Provides information that defines an Amazon Redshift endpoint. */
-		RedshiftSettings?: RedshiftSettings | null;
+		RedshiftSettings?: RedshiftSettings;
+	}
+
+	/** <p/> */
+	export interface ModifyEndpointMessageFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		EndpointIdentifier: FormControl<string | null | undefined>,
+		EndpointType: FormControl<EndpointEndpointType | null | undefined>,
+		EngineName: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		ExtraConnectionAttributes: FormControl<string | null | undefined>,
+		CertificateArn: FormControl<string | null | undefined>,
+		SslMode: FormControl<ModifyEndpointMessageSslMode | null | undefined>,
+		ServiceAccessRoleArn: FormControl<string | null | undefined>,
+		ExternalTableDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyEndpointMessageFormGroup() {
+		return new FormGroup<ModifyEndpointMessageFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			EndpointIdentifier: new FormControl<string | null | undefined>(undefined),
+			EndpointType: new FormControl<EndpointEndpointType | null | undefined>(undefined),
+			EngineName: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			ExtraConnectionAttributes: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			SslMode: new FormControl<ModifyEndpointMessageSslMode | null | undefined>(undefined),
+			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExternalTableDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ModifyEndpointMessageSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
@@ -1178,7 +2989,16 @@ export namespace MyNS {
 	export interface ModifyEventSubscriptionResponse {
 
 		/** Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+
+	/** <p/> */
+	export interface ModifyEventSubscriptionResponseFormProperties {
+	}
+	export function CreateModifyEventSubscriptionResponseFormGroup() {
+		return new FormGroup<ModifyEventSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1187,8 +3007,25 @@ export namespace MyNS {
 		SubscriptionName: string;
 		SnsTopicArn?: string | null;
 		SourceType?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
 		Enabled?: boolean | null;
+	}
+
+	/** <p/> */
+	export interface ModifyEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyEventSubscriptionMessageFormGroup() {
+		return new FormGroup<ModifyEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1196,7 +3033,16 @@ export namespace MyNS {
 	export interface ModifyReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance | null;
+		ReplicationInstance?: ReplicationInstance;
+	}
+
+	/** <p/> */
+	export interface ModifyReplicationInstanceResponseFormProperties {
+	}
+	export function CreateModifyReplicationInstanceResponseFormGroup() {
+		return new FormGroup<ModifyReplicationInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1206,7 +3052,7 @@ export namespace MyNS {
 		AllocatedStorage?: number | null;
 		ApplyImmediately?: boolean | null;
 		ReplicationInstanceClass?: string | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string>;
 		PreferredMaintenanceWindow?: string | null;
 		MultiAZ?: boolean | null;
 		EngineVersion?: string | null;
@@ -1215,7 +3061,43 @@ export namespace MyNS {
 		ReplicationInstanceIdentifier?: string | null;
 	}
 
+	/** <p/> */
+	export interface ModifyReplicationInstanceMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		ApplyImmediately: FormControl<boolean | null | undefined>,
+		ReplicationInstanceClass: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		AllowMajorVersionUpgrade: FormControl<boolean | null | undefined>,
+		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+		ReplicationInstanceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyReplicationInstanceMessageFormGroup() {
+		return new FormGroup<ModifyReplicationInstanceMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			ReplicationInstanceClass: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			AllowMajorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			ReplicationInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpgradeDependencyFailureFault {
+	}
+	export interface UpgradeDependencyFailureFaultFormProperties {
+	}
+	export function CreateUpgradeDependencyFailureFaultFormGroup() {
+		return new FormGroup<UpgradeDependencyFailureFaultFormProperties>({
+		});
+
 	}
 
 
@@ -1223,7 +3105,16 @@ export namespace MyNS {
 	export interface ModifyReplicationSubnetGroupResponse {
 
 		/** Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroup</code> operation. */
-		ReplicationSubnetGroup?: ReplicationSubnetGroup | null;
+		ReplicationSubnetGroup?: ReplicationSubnetGroup;
+	}
+
+	/** <p/> */
+	export interface ModifyReplicationSubnetGroupResponseFormProperties {
+	}
+	export function CreateModifyReplicationSubnetGroupResponseFormGroup() {
+		return new FormGroup<ModifyReplicationSubnetGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1234,7 +3125,27 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 	}
 
+	/** <p/> */
+	export interface ModifyReplicationSubnetGroupMessageFormProperties {
+		ReplicationSubnetGroupIdentifier: FormControl<string | null | undefined>,
+		ReplicationSubnetGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyReplicationSubnetGroupMessageFormGroup() {
+		return new FormGroup<ModifyReplicationSubnetGroupMessageFormProperties>({
+			ReplicationSubnetGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			ReplicationSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SubnetAlreadyInUse {
+	}
+	export interface SubnetAlreadyInUseFormProperties {
+	}
+	export function CreateSubnetAlreadyInUseFormGroup() {
+		return new FormGroup<SubnetAlreadyInUseFormProperties>({
+		});
+
 	}
 
 
@@ -1242,7 +3153,16 @@ export namespace MyNS {
 	export interface ModifyReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask | null;
+		ReplicationTask?: ReplicationTask;
+	}
+
+	/** <p/> */
+	export interface ModifyReplicationTaskResponseFormProperties {
+	}
+	export function CreateModifyReplicationTaskResponseFormGroup() {
+		return new FormGroup<ModifyReplicationTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1259,17 +3179,62 @@ export namespace MyNS {
 		TaskData?: string | null;
 	}
 
+	/** <p/> */
+	export interface ModifyReplicationTaskMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
+		MigrationType: FormControl<ModifyReplicationTaskMessageMigrationType | null | undefined>,
+		TableMappings: FormControl<string | null | undefined>,
+		ReplicationTaskSettings: FormControl<string | null | undefined>,
+		CdcStartTime: FormControl<Date | null | undefined>,
+		CdcStartPosition: FormControl<string | null | undefined>,
+		CdcStopPosition: FormControl<string | null | undefined>,
+		TaskData: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyReplicationTaskMessageFormGroup() {
+		return new FormGroup<ModifyReplicationTaskMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
+			MigrationType: new FormControl<ModifyReplicationTaskMessageMigrationType | null | undefined>(undefined),
+			TableMappings: new FormControl<string | null | undefined>(undefined),
+			ReplicationTaskSettings: new FormControl<string | null | undefined>(undefined),
+			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
+			CdcStartPosition: new FormControl<string | null | undefined>(undefined),
+			CdcStopPosition: new FormControl<string | null | undefined>(undefined),
+			TaskData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ModifyReplicationTaskMessageMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
 
 	export interface RebootReplicationInstanceResponse {
 
 		/** Provides information that defines a replication instance. */
-		ReplicationInstance?: ReplicationInstance | null;
+		ReplicationInstance?: ReplicationInstance;
+	}
+	export interface RebootReplicationInstanceResponseFormProperties {
+	}
+	export function CreateRebootReplicationInstanceResponseFormGroup() {
+		return new FormGroup<RebootReplicationInstanceResponseFormProperties>({
+		});
+
 	}
 
 	export interface RebootReplicationInstanceMessage {
 		ReplicationInstanceArn: string;
 		ForceFailover?: boolean | null;
+	}
+	export interface RebootReplicationInstanceMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		ForceFailover: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRebootReplicationInstanceMessageFormGroup() {
+		return new FormGroup<RebootReplicationInstanceMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			ForceFailover: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1277,7 +3242,16 @@ export namespace MyNS {
 	export interface RefreshSchemasResponse {
 
 		/** Provides information that describes status of a schema at an endpoint specified by the <code>DescribeRefreshSchemaStatus</code> operation. */
-		RefreshSchemasStatus?: RefreshSchemasStatus | null;
+		RefreshSchemasStatus?: RefreshSchemasStatus;
+	}
+
+	/** <p/> */
+	export interface RefreshSchemasResponseFormProperties {
+	}
+	export function CreateRefreshSchemasResponseFormGroup() {
+		return new FormGroup<RefreshSchemasResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1287,14 +3261,47 @@ export namespace MyNS {
 		ReplicationInstanceArn: string;
 	}
 
+	/** <p/> */
+	export interface RefreshSchemasMessageFormProperties {
+		EndpointArn: FormControl<string | null | undefined>,
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRefreshSchemasMessageFormGroup() {
+		return new FormGroup<RefreshSchemasMessageFormProperties>({
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ReloadTablesResponse {
 		ReplicationTaskArn?: string | null;
+	}
+	export interface ReloadTablesResponseFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateReloadTablesResponseFormGroup() {
+		return new FormGroup<ReloadTablesResponseFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReloadTablesMessage {
 		ReplicationTaskArn: string;
 		TablesToReload: Array<TableToReload>;
 		ReloadOption?: ReloadTablesMessageReloadOption | null;
+	}
+	export interface ReloadTablesMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		ReloadOption: FormControl<ReloadTablesMessageReloadOption | null | undefined>,
+	}
+	export function CreateReloadTablesMessageFormGroup() {
+		return new FormGroup<ReloadTablesMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			ReloadOption: new FormControl<ReloadTablesMessageReloadOption | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1304,11 +3311,33 @@ export namespace MyNS {
 		TableName?: string | null;
 	}
 
+	/** Provides the name of the schema and table to be reloaded. */
+	export interface TableToReloadFormProperties {
+		SchemaName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateTableToReloadFormGroup() {
+		return new FormGroup<TableToReloadFormProperties>({
+			SchemaName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ReloadTablesMessageReloadOption { data_reload = 0, validate_only = 1 }
 
 
 	/** <p/> */
 	export interface RemoveTagsFromResourceResponse {
+	}
+
+	/** <p/> */
+	export interface RemoveTagsFromResourceResponseFormProperties {
+	}
+	export function CreateRemoveTagsFromResourceResponseFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1318,12 +3347,32 @@ export namespace MyNS {
 		TagKeys: Array<string>;
 	}
 
+	/** Removes one or more tags from an AWS DMS resource. */
+	export interface RemoveTagsFromResourceMessageFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromResourceMessageFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceMessageFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface StartReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask | null;
+		ReplicationTask?: ReplicationTask;
+	}
+
+	/** <p/> */
+	export interface StartReplicationTaskResponseFormProperties {
+	}
+	export function CreateStartReplicationTaskResponseFormGroup() {
+		return new FormGroup<StartReplicationTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1336,6 +3385,25 @@ export namespace MyNS {
 		CdcStopPosition?: string | null;
 	}
 
+	/** <p/> */
+	export interface StartReplicationTaskMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+		StartReplicationTaskType: FormControl<StartReplicationTaskMessageStartReplicationTaskType | null | undefined>,
+		CdcStartTime: FormControl<Date | null | undefined>,
+		CdcStartPosition: FormControl<string | null | undefined>,
+		CdcStopPosition: FormControl<string | null | undefined>,
+	}
+	export function CreateStartReplicationTaskMessageFormGroup() {
+		return new FormGroup<StartReplicationTaskMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+			StartReplicationTaskType: new FormControl<StartReplicationTaskMessageStartReplicationTaskType | null | undefined>(undefined),
+			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
+			CdcStartPosition: new FormControl<string | null | undefined>(undefined),
+			CdcStopPosition: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StartReplicationTaskMessageStartReplicationTaskType { start_replication = 0, resume_processing = 1, reload_target = 2 }
 
 
@@ -1343,7 +3411,16 @@ export namespace MyNS {
 	export interface StartReplicationTaskAssessmentResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask | null;
+		ReplicationTask?: ReplicationTask;
+	}
+
+	/** <p/> */
+	export interface StartReplicationTaskAssessmentResponseFormProperties {
+	}
+	export function CreateStartReplicationTaskAssessmentResponseFormGroup() {
+		return new FormGroup<StartReplicationTaskAssessmentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1352,12 +3429,32 @@ export namespace MyNS {
 		ReplicationTaskArn: string;
 	}
 
+	/** <p/> */
+	export interface StartReplicationTaskAssessmentMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartReplicationTaskAssessmentMessageFormGroup() {
+		return new FormGroup<StartReplicationTaskAssessmentMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface StopReplicationTaskResponse {
 
 		/** Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation. */
-		ReplicationTask?: ReplicationTask | null;
+		ReplicationTask?: ReplicationTask;
+	}
+
+	/** <p/> */
+	export interface StopReplicationTaskResponseFormProperties {
+	}
+	export function CreateStopReplicationTaskResponseFormGroup() {
+		return new FormGroup<StopReplicationTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1366,12 +3463,32 @@ export namespace MyNS {
 		ReplicationTaskArn: string;
 	}
 
+	/** <p/> */
+	export interface StopReplicationTaskMessageFormProperties {
+		ReplicationTaskArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopReplicationTaskMessageFormGroup() {
+		return new FormGroup<StopReplicationTaskMessageFormProperties>({
+			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface TestConnectionResponse {
 
 		/** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued. */
-		Connection?: Connection | null;
+		Connection?: Connection;
+	}
+
+	/** <p/> */
+	export interface TestConnectionResponseFormProperties {
+	}
+	export function CreateTestConnectionResponseFormGroup() {
+		return new FormGroup<TestConnectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1379,6 +3496,19 @@ export namespace MyNS {
 	export interface TestConnectionMessage {
 		ReplicationInstanceArn: string;
 		EndpointArn: string;
+	}
+
+	/** <p/> */
+	export interface TestConnectionMessageFormProperties {
+		ReplicationInstanceArn: FormControl<string | null | undefined>,
+		EndpointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTestConnectionMessageFormGroup() {
+		return new FormGroup<TestConnectionMessageFormProperties>({
+			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined),
+			EndpointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuthMechanismValue { _default = 0, mongodb_cr = 1, scram_sha_1 = 2 }

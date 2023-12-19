@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateDetectorModelResponse {
 
 		/** Information about how the detector model is configured. */
-		detectorModelConfiguration?: DetectorModelConfiguration | null;
+		detectorModelConfiguration?: DetectorModelConfiguration;
+	}
+	export interface CreateDetectorModelResponseFormProperties {
+	}
+	export function CreateCreateDetectorModelResponseFormGroup() {
+		return new FormGroup<CreateDetectorModelResponseFormProperties>({
+		});
+
 	}
 
 
@@ -23,6 +31,35 @@ export namespace MyNS {
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
 
+	/** Information about how the detector model is configured. */
+	export interface DetectorModelConfigurationFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		detectorModelVersion: FormControl<string | null | undefined>,
+		detectorModelDescription: FormControl<string | null | undefined>,
+		detectorModelArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+		status: FormControl<DetectorModelConfigurationStatus | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
+	}
+	export function CreateDetectorModelConfigurationFormGroup() {
+		return new FormGroup<DetectorModelConfigurationFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			detectorModelArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DetectorModelConfigurationStatus | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DetectorModelConfigurationStatus { ACTIVE = 0, ACTIVATING = 1, INACTIVE = 2, DEPRECATED = 3, DRAFT = 4, PAUSED = 5, FAILED = 6 }
 
 	export enum DetectorModelConfigurationEvaluationMethod { BATCH = 0, SERIAL = 1 }
@@ -33,20 +70,40 @@ export namespace MyNS {
 		stateName: string;
 
 		/** Specifies the actions performed when the <code>condition</code> evaluates to TRUE. */
-		onInput?: OnInputLifecycle | null;
+		onInput?: OnInputLifecycle;
 
 		/** When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE. */
-		onEnter?: OnEnterLifecycle | null;
+		onEnter?: OnEnterLifecycle;
 
 		/** When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>. */
-		onExit?: OnExitLifecycle | null;
+		onExit?: OnExitLifecycle;
+	}
+
+	/** Information that defines a state of a detector. */
+	export interface StateFormProperties {
+		stateName: FormControl<string | null | undefined>,
+	}
+	export function CreateStateFormGroup() {
+		return new FormGroup<StateFormProperties>({
+			stateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Specifies the actions performed when the <code>condition</code> evaluates to TRUE. */
 	export interface OnInputLifecycle {
-		events?: Array<Event> | null;
-		transitionEvents?: Array<TransitionEvent> | null;
+		events?: Array<Event>;
+		transitionEvents?: Array<TransitionEvent>;
+	}
+
+	/** Specifies the actions performed when the <code>condition</code> evaluates to TRUE. */
+	export interface OnInputLifecycleFormProperties {
+	}
+	export function CreateOnInputLifecycleFormGroup() {
+		return new FormGroup<OnInputLifecycleFormProperties>({
+		});
+
 	}
 
 
@@ -54,7 +111,20 @@ export namespace MyNS {
 	export interface Event {
 		eventName: string;
 		condition?: string | null;
-		actions?: Array<Action> | null;
+		actions?: Array<Action>;
+	}
+
+	/** Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE. */
+	export interface EventFormProperties {
+		eventName: FormControl<string | null | undefined>,
+		condition: FormControl<string | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			eventName: new FormControl<string | null | undefined>(undefined),
+			condition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -62,43 +132,52 @@ export namespace MyNS {
 	export interface Action {
 
 		/** Information about the variable and its new value. */
-		setVariable?: SetVariableAction | null;
+		setVariable?: SetVariableAction;
 
 		/** Information required to publish the Amazon SNS message. */
-		sns?: SNSTopicPublishAction | null;
+		sns?: SNSTopicPublishAction;
 
 		/** Information required to publish the MQTT message through the AWS IoT message broker. */
-		iotTopicPublish?: IotTopicPublishAction | null;
+		iotTopicPublish?: IotTopicPublishAction;
 
 		/** Information needed to set the timer. */
-		setTimer?: SetTimerAction | null;
+		setTimer?: SetTimerAction;
 
 		/** Information needed to clear the timer. */
-		clearTimer?: ClearTimerAction | null;
+		clearTimer?: ClearTimerAction;
 
 		/** Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer. */
-		resetTimer?: ResetTimerAction | null;
+		resetTimer?: ResetTimerAction;
 
 		/** Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action. */
-		lambda?: LambdaAction | null;
+		lambda?: LambdaAction;
 
 		/** Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action. */
-		iotEvents?: IotEventsAction | null;
+		iotEvents?: IotEventsAction;
 
 		/** Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue. */
-		sqs?: SqsAction | null;
+		sqs?: SqsAction;
 
 		/** Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream. */
-		firehose?: FirehoseAction | null;
+		firehose?: FirehoseAction;
 
 		/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p> <p>The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table. </p> <note> <p>If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.</p> </note> <p/> <p>The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>${sql-expression}</code>.</p> <p>You can use expressions for parameters that are string data type. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> <note> <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.</p> </note> */
-		dynamoDB?: DynamoDBAction | null;
+		dynamoDB?: DynamoDBAction;
 
 		/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p> <important> <p>The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.</p> </important> <p>You can use expressions for parameters that are strings. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> */
-		dynamoDBv2?: DynamoDBv2Action | null;
+		dynamoDBv2?: DynamoDBv2Action;
 
 		/** <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p> <important> <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p> </important> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>propertyAlias</code> value can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
-		iotSiteWise?: IotSiteWiseAction | null;
+		iotSiteWise?: IotSiteWiseAction;
+	}
+
+	/** An action to be performed when the <code>condition</code> is TRUE. */
+	export interface ActionFormProperties {
+	}
+	export function CreateActionFormGroup() {
+		return new FormGroup<ActionFormProperties>({
+		});
+
 	}
 
 
@@ -108,13 +187,37 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** Information about the variable and its new value. */
+	export interface SetVariableActionFormProperties {
+		variableName: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateSetVariableActionFormGroup() {
+		return new FormGroup<SetVariableActionFormProperties>({
+			variableName: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information required to publish the Amazon SNS message. */
 	export interface SNSTopicPublishAction {
 		targetArn: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** Information required to publish the Amazon SNS message. */
+	export interface SNSTopicPublishActionFormProperties {
+		targetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSNSTopicPublishActionFormGroup() {
+		return new FormGroup<SNSTopicPublishActionFormProperties>({
+			targetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -122,6 +225,19 @@ export namespace MyNS {
 	export interface Payload {
 		contentExpression: string;
 		type: PayloadType;
+	}
+
+	/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
+	export interface PayloadFormProperties {
+		contentExpression: FormControl<string | null | undefined>,
+		type: FormControl<PayloadType | null | undefined>,
+	}
+	export function CreatePayloadFormGroup() {
+		return new FormGroup<PayloadFormProperties>({
+			contentExpression: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<PayloadType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PayloadType { STRING = 0, JSON = 1 }
@@ -132,7 +248,18 @@ export namespace MyNS {
 		mqttTopic: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** Information required to publish the MQTT message through the AWS IoT message broker. */
+	export interface IotTopicPublishActionFormProperties {
+		mqttTopic: FormControl<string | null | undefined>,
+	}
+	export function CreateIotTopicPublishActionFormGroup() {
+		return new FormGroup<IotTopicPublishActionFormProperties>({
+			mqttTopic: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -143,10 +270,36 @@ export namespace MyNS {
 		durationExpression?: string | null;
 	}
 
+	/** Information needed to set the timer. */
+	export interface SetTimerActionFormProperties {
+		timerName: FormControl<string | null | undefined>,
+		seconds: FormControl<number | null | undefined>,
+		durationExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateSetTimerActionFormGroup() {
+		return new FormGroup<SetTimerActionFormProperties>({
+			timerName: new FormControl<string | null | undefined>(undefined),
+			seconds: new FormControl<number | null | undefined>(undefined),
+			durationExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information needed to clear the timer. */
 	export interface ClearTimerAction {
 		timerName: string;
+	}
+
+	/** Information needed to clear the timer. */
+	export interface ClearTimerActionFormProperties {
+		timerName: FormControl<string | null | undefined>,
+	}
+	export function CreateClearTimerActionFormGroup() {
+		return new FormGroup<ClearTimerActionFormProperties>({
+			timerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -155,13 +308,35 @@ export namespace MyNS {
 		timerName: string;
 	}
 
+	/** Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer. */
+	export interface ResetTimerActionFormProperties {
+		timerName: FormControl<string | null | undefined>,
+	}
+	export function CreateResetTimerActionFormGroup() {
+		return new FormGroup<ResetTimerActionFormProperties>({
+			timerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action. */
 	export interface LambdaAction {
 		functionArn: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action. */
+	export interface LambdaActionFormProperties {
+		functionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaActionFormGroup() {
+		return new FormGroup<LambdaActionFormProperties>({
+			functionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -170,7 +345,18 @@ export namespace MyNS {
 		inputName: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action. */
+	export interface IotEventsActionFormProperties {
+		inputName: FormControl<string | null | undefined>,
+	}
+	export function CreateIotEventsActionFormGroup() {
+		return new FormGroup<IotEventsActionFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -180,7 +366,20 @@ export namespace MyNS {
 		useBase64?: boolean | null;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue. */
+	export interface SqsActionFormProperties {
+		queueUrl: FormControl<string | null | undefined>,
+		useBase64: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSqsActionFormGroup() {
+		return new FormGroup<SqsActionFormProperties>({
+			queueUrl: new FormControl<string | null | undefined>(undefined),
+			useBase64: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -190,7 +389,20 @@ export namespace MyNS {
 		separator?: string | null;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream. */
+	export interface FirehoseActionFormProperties {
+		deliveryStreamName: FormControl<string | null | undefined>,
+		separator: FormControl<string | null | undefined>,
+	}
+	export function CreateFirehoseActionFormGroup() {
+		return new FormGroup<FirehoseActionFormProperties>({
+			deliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			separator: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -207,7 +419,34 @@ export namespace MyNS {
 		tableName: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p> <p>The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table. </p> <note> <p>If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.</p> </note> <p/> <p>The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>${sql-expression}</code>.</p> <p>You can use expressions for parameters that are string data type. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> <note> <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.</p> </note> */
+	export interface DynamoDBActionFormProperties {
+		hashKeyType: FormControl<string | null | undefined>,
+		hashKeyField: FormControl<string | null | undefined>,
+		hashKeyValue: FormControl<string | null | undefined>,
+		rangeKeyType: FormControl<string | null | undefined>,
+		rangeKeyField: FormControl<string | null | undefined>,
+		rangeKeyValue: FormControl<string | null | undefined>,
+		operation: FormControl<string | null | undefined>,
+		payloadField: FormControl<string | null | undefined>,
+		tableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamoDBActionFormGroup() {
+		return new FormGroup<DynamoDBActionFormProperties>({
+			hashKeyType: new FormControl<string | null | undefined>(undefined),
+			hashKeyField: new FormControl<string | null | undefined>(undefined),
+			hashKeyValue: new FormControl<string | null | undefined>(undefined),
+			rangeKeyType: new FormControl<string | null | undefined>(undefined),
+			rangeKeyField: new FormControl<string | null | undefined>(undefined),
+			rangeKeyValue: new FormControl<string | null | undefined>(undefined),
+			operation: new FormControl<string | null | undefined>(undefined),
+			payloadField: new FormControl<string | null | undefined>(undefined),
+			tableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -216,7 +455,18 @@ export namespace MyNS {
 		tableName: string;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
-		payload?: Payload | null;
+		payload?: Payload;
+	}
+
+	/** <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p> <important> <p>The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.</p> </important> <p>You can use expressions for parameters that are strings. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> */
+	export interface DynamoDBv2ActionFormProperties {
+		tableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamoDBv2ActionFormGroup() {
+		return new FormGroup<DynamoDBv2ActionFormProperties>({
+			tableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -234,6 +484,23 @@ export namespace MyNS {
 		propertyValue: AssetPropertyValue;
 	}
 
+	/** <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p> <important> <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p> </important> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>propertyAlias</code> value can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
+	export interface IotSiteWiseActionFormProperties {
+		entryId: FormControl<string | null | undefined>,
+		assetId: FormControl<string | null | undefined>,
+		propertyId: FormControl<string | null | undefined>,
+		propertyAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateIotSiteWiseActionFormGroup() {
+		return new FormGroup<IotSiteWiseActionFormProperties>({
+			entryId: new FormControl<string | null | undefined>(undefined),
+			assetId: new FormControl<string | null | undefined>(undefined),
+			propertyId: new FormControl<string | null | undefined>(undefined),
+			propertyAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A structure that contains value information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>quality</code> value can be <code>$input.TemperatureInput.sensorData.quality</code> .</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
 	export interface AssetPropertyValue {
@@ -245,8 +512,19 @@ export namespace MyNS {
 		value: AssetPropertyVariant;
 
 		/** <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
-		timestamp?: AssetPropertyTimestamp | null;
+		timestamp?: AssetPropertyTimestamp;
 		quality?: string | null;
+	}
+
+	/** <p>A structure that contains value information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options: </p> <ul> <li> <p>Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>quality</code> value can be <code>$input.TemperatureInput.sensorData.quality</code> .</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
+	export interface AssetPropertyValueFormProperties {
+		quality: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyValueFormGroup() {
+		return new FormGroup<AssetPropertyValueFormProperties>({
+			quality: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -258,6 +536,23 @@ export namespace MyNS {
 		booleanValue?: string | null;
 	}
 
+	/** <p>A structure that contains an asset property value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html">Variant</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <important> <p>You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> </important> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>doubleValue</code> value can be <code>$input.TemperatureInput.sensorData.temperature</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
+	export interface AssetPropertyVariantFormProperties {
+		stringValue: FormControl<string | null | undefined>,
+		integerValue: FormControl<string | null | undefined>,
+		doubleValue: FormControl<string | null | undefined>,
+		booleanValue: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyVariantFormGroup() {
+		return new FormGroup<AssetPropertyVariantFormProperties>({
+			stringValue: new FormControl<string | null | undefined>(undefined),
+			integerValue: new FormControl<string | null | undefined>(undefined),
+			doubleValue: new FormControl<string | null | undefined>(undefined),
+			booleanValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
 	export interface AssetPropertyTimestamp {
@@ -265,25 +560,71 @@ export namespace MyNS {
 		offsetInNanos?: string | null;
 	}
 
+	/** <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> <p>For parameters that are string data type, you can specify the following options:</p> <ul> <li> <p>Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.</p> </li> <li> <p>Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'${$input.TemperatureInput.sensorData.timestamp/1000}'</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p> </li> </ul> */
+	export interface AssetPropertyTimestampFormProperties {
+		timeInSeconds: FormControl<string | null | undefined>,
+		offsetInNanos: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyTimestampFormGroup() {
+		return new FormGroup<AssetPropertyTimestampFormProperties>({
+			timeInSeconds: new FormControl<string | null | undefined>(undefined),
+			offsetInNanos: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE. */
 	export interface TransitionEvent {
 		eventName: string;
 		condition: string;
-		actions?: Array<Action> | null;
+		actions?: Array<Action>;
 		nextState: string;
+	}
+
+	/** Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE. */
+	export interface TransitionEventFormProperties {
+		eventName: FormControl<string | null | undefined>,
+		condition: FormControl<string | null | undefined>,
+		nextState: FormControl<string | null | undefined>,
+	}
+	export function CreateTransitionEventFormGroup() {
+		return new FormGroup<TransitionEventFormProperties>({
+			eventName: new FormControl<string | null | undefined>(undefined),
+			condition: new FormControl<string | null | undefined>(undefined),
+			nextState: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE. */
 	export interface OnEnterLifecycle {
-		events?: Array<Event> | null;
+		events?: Array<Event>;
+	}
+
+	/** When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE. */
+	export interface OnEnterLifecycleFormProperties {
+	}
+	export function CreateOnEnterLifecycleFormGroup() {
+		return new FormGroup<OnEnterLifecycleFormProperties>({
+		});
+
 	}
 
 
 	/** When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>. */
 	export interface OnExitLifecycle {
-		events?: Array<Event> | null;
+		events?: Array<Event>;
+	}
+
+	/** When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>. */
+	export interface OnExitLifecycleFormProperties {
+	}
+	export function CreateOnExitLifecycleFormGroup() {
+		return new FormGroup<OnExitLifecycleFormProperties>({
+		});
+
 	}
 
 
@@ -293,31 +634,100 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** Metadata that can be used to manage the resource. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceInUseException {
 	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateInputResponse {
 
 		/** Information about the configuration of an input. */
-		inputConfiguration?: InputConfiguration | null;
+		inputConfiguration?: InputConfiguration;
+	}
+	export interface CreateInputResponseFormProperties {
+	}
+	export function CreateCreateInputResponseFormGroup() {
+		return new FormGroup<CreateInputResponseFormProperties>({
+		});
+
 	}
 
 
@@ -331,6 +741,27 @@ export namespace MyNS {
 		status: InputConfigurationStatus;
 	}
 
+	/** Information about the configuration of an input. */
+	export interface InputConfigurationFormProperties {
+		inputName: FormControl<string | null | undefined>,
+		inputDescription: FormControl<string | null | undefined>,
+		inputArn: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+		status: FormControl<InputConfigurationStatus | null | undefined>,
+	}
+	export function CreateInputConfigurationFormGroup() {
+		return new FormGroup<InputConfigurationFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputArn: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<InputConfigurationStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InputConfigurationStatus { CREATING = 0, UPDATING = 1, ACTIVE = 2, DELETING = 3 }
 
 
@@ -339,19 +770,58 @@ export namespace MyNS {
 		jsonPath: string;
 	}
 
+	/** The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors.  */
+	export interface AttributeFormProperties {
+		jsonPath: FormControl<string | null | undefined>,
+	}
+	export function CreateAttributeFormGroup() {
+		return new FormGroup<AttributeFormProperties>({
+			jsonPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteDetectorModelResponse {
+	}
+	export interface DeleteDetectorModelResponseFormProperties {
+	}
+	export function CreateDeleteDetectorModelResponseFormGroup() {
+		return new FormGroup<DeleteDetectorModelResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteInputResponse {
+	}
+	export interface DeleteInputResponseFormProperties {
+	}
+	export function CreateDeleteInputResponseFormGroup() {
+		return new FormGroup<DeleteInputResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDetectorModelResponse {
 
 		/** Information about the detector model. */
-		detectorModel?: DetectorModel | null;
+		detectorModel?: DetectorModel;
+	}
+	export interface DescribeDetectorModelResponseFormProperties {
+	}
+	export function CreateDescribeDetectorModelResponseFormGroup() {
+		return new FormGroup<DescribeDetectorModelResponseFormProperties>({
+		});
+
 	}
 
 
@@ -359,10 +829,19 @@ export namespace MyNS {
 	export interface DetectorModel {
 
 		/** Information that defines how a detector operates. */
-		detectorModelDefinition?: DetectorModelDefinition | null;
+		detectorModelDefinition?: DetectorModelDefinition;
 
 		/** Information about how the detector model is configured. */
-		detectorModelConfiguration?: DetectorModelConfiguration | null;
+		detectorModelConfiguration?: DetectorModelConfiguration;
+	}
+
+	/** Information about the detector model. */
+	export interface DetectorModelFormProperties {
+	}
+	export function CreateDetectorModelFormGroup() {
+		return new FormGroup<DetectorModelFormProperties>({
+		});
+
 	}
 
 
@@ -372,10 +851,28 @@ export namespace MyNS {
 		initialStateName: string;
 	}
 
+	/** Information that defines how a detector operates. */
+	export interface DetectorModelDefinitionFormProperties {
+		initialStateName: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorModelDefinitionFormGroup() {
+		return new FormGroup<DetectorModelDefinitionFormProperties>({
+			initialStateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeInputResponse {
 
 		/** Information about the input. */
-		input?: Input | null;
+		input?: Input;
+	}
+	export interface DescribeInputResponseFormProperties {
+	}
+	export function CreateDescribeInputResponseFormGroup() {
+		return new FormGroup<DescribeInputResponseFormProperties>({
+		});
+
 	}
 
 
@@ -383,10 +880,19 @@ export namespace MyNS {
 	export interface Input {
 
 		/** Information about the configuration of an input. */
-		inputConfiguration?: InputConfiguration | null;
+		inputConfiguration?: InputConfiguration;
 
 		/** The definition of the input. */
-		inputDefinition?: InputDefinition | null;
+		inputDefinition?: InputDefinition;
+	}
+
+	/** Information about the input. */
+	export interface InputFormProperties {
+	}
+	export function CreateInputFormGroup() {
+		return new FormGroup<InputFormProperties>({
+		});
+
 	}
 
 
@@ -395,10 +901,26 @@ export namespace MyNS {
 		attributes: Array<Attribute>;
 	}
 
+	/** The definition of the input. */
+	export interface InputDefinitionFormProperties {
+	}
+	export function CreateInputDefinitionFormGroup() {
+		return new FormGroup<InputDefinitionFormProperties>({
+		});
+
+	}
+
 	export interface DescribeLoggingOptionsResponse {
 
 		/** The values of the AWS IoT Events logging options. */
-		loggingOptions?: LoggingOptions | null;
+		loggingOptions?: LoggingOptions;
+	}
+	export interface DescribeLoggingOptionsResponseFormProperties {
+	}
+	export function CreateDescribeLoggingOptionsResponseFormGroup() {
+		return new FormGroup<DescribeLoggingOptionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -407,7 +929,22 @@ export namespace MyNS {
 		roleArn: string;
 		level: LoggingOptionsLevel;
 		enabled: boolean;
-		detectorDebugOptions?: Array<DetectorDebugOption> | null;
+		detectorDebugOptions?: Array<DetectorDebugOption>;
+	}
+
+	/** The values of the AWS IoT Events logging options. */
+	export interface LoggingOptionsFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		level: FormControl<LoggingOptionsLevel | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLoggingOptionsFormGroup() {
+		return new FormGroup<LoggingOptionsFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LoggingOptionsLevel { ERROR = 0, INFO = 1, DEBUG = 2 }
@@ -419,12 +956,41 @@ export namespace MyNS {
 		keyValue?: string | null;
 	}
 
+	/** The detector model and the specific detectors (instances) for which the logging level is given. */
+	export interface DetectorDebugOptionFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		keyValue: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorDebugOptionFormGroup() {
+		return new FormGroup<DetectorDebugOptionFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			keyValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UnsupportedOperationException {
+	}
+	export interface UnsupportedOperationExceptionFormProperties {
+	}
+	export function CreateUnsupportedOperationExceptionFormGroup() {
+		return new FormGroup<UnsupportedOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListDetectorModelVersionsResponse {
-		detectorModelVersionSummaries?: Array<DetectorModelVersionSummary> | null;
+		detectorModelVersionSummaries?: Array<DetectorModelVersionSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDetectorModelVersionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDetectorModelVersionsResponseFormGroup() {
+		return new FormGroup<ListDetectorModelVersionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -440,9 +1006,43 @@ export namespace MyNS {
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
 
+	/** Information about the detector model version. */
+	export interface DetectorModelVersionSummaryFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		detectorModelVersion: FormControl<string | null | undefined>,
+		detectorModelArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+		status: FormControl<DetectorModelConfigurationStatus | null | undefined>,
+		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
+	}
+	export function CreateDetectorModelVersionSummaryFormGroup() {
+		return new FormGroup<DetectorModelVersionSummaryFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			detectorModelVersion: new FormControl<string | null | undefined>(undefined),
+			detectorModelArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DetectorModelConfigurationStatus | null | undefined>(undefined),
+			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDetectorModelsResponse {
-		detectorModelSummaries?: Array<DetectorModelSummary> | null;
+		detectorModelSummaries?: Array<DetectorModelSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListDetectorModelsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDetectorModelsResponseFormGroup() {
+		return new FormGroup<ListDetectorModelsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -453,9 +1053,33 @@ export namespace MyNS {
 		creationTime?: Date | null;
 	}
 
+	/** Information about the detector model. */
+	export interface DetectorModelSummaryFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		detectorModelDescription: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDetectorModelSummaryFormGroup() {
+		return new FormGroup<DetectorModelSummaryFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListInputsResponse {
-		inputSummaries?: Array<InputSummary> | null;
+		inputSummaries?: Array<InputSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListInputsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInputsResponseFormGroup() {
+		return new FormGroup<ListInputsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -469,28 +1093,84 @@ export namespace MyNS {
 		status?: InputConfigurationStatus | null;
 	}
 
+	/** Information about the input. */
+	export interface InputSummaryFormProperties {
+		inputName: FormControl<string | null | undefined>,
+		inputDescription: FormControl<string | null | undefined>,
+		inputArn: FormControl<string | null | undefined>,
+		creationTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+		status: FormControl<InputConfigurationStatus | null | undefined>,
+	}
+	export function CreateInputSummaryFormGroup() {
+		return new FormGroup<InputSummaryFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+			inputDescription: new FormControl<string | null | undefined>(undefined),
+			inputArn: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<InputConfigurationStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export enum LoggingLevel { ERROR = 0, INFO = 1, DEBUG = 2 }
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorModelResponse {
 
 		/** Information about how the detector model is configured. */
-		detectorModelConfiguration?: DetectorModelConfiguration | null;
+		detectorModelConfiguration?: DetectorModelConfiguration;
+	}
+	export interface UpdateDetectorModelResponseFormProperties {
+	}
+	export function CreateUpdateDetectorModelResponseFormGroup() {
+		return new FormGroup<UpdateDetectorModelResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateInputResponse {
 
 		/** Information about the configuration of an input. */
-		inputConfiguration?: InputConfiguration | null;
+		inputConfiguration?: InputConfiguration;
+	}
+	export interface UpdateInputResponseFormProperties {
+	}
+	export function CreateUpdateInputResponseFormGroup() {
+		return new FormGroup<UpdateInputResponseFormProperties>({
+		});
+
 	}
 
 	export enum EvaluationMethod { BATCH = 0, SERIAL = 1 }
@@ -506,8 +1186,25 @@ export namespace MyNS {
 		detectorModelDescription?: string | null;
 		key?: string | null;
 		roleArn: string;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
+	}
+	export interface CreateDetectorModelRequestFormProperties {
+		detectorModelName: FormControl<string | null | undefined>,
+		detectorModelDescription: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
+	}
+	export function CreateCreateDetectorModelRequestFormGroup() {
+		return new FormGroup<CreateDetectorModelRequestFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateInputRequest {
@@ -519,22 +1216,68 @@ export namespace MyNS {
 		 * Required
 		 */
 		inputDefinition: InputDefinition;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateInputRequestFormProperties {
+		inputName: FormControl<string | null | undefined>,
+		inputDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateInputRequestFormGroup() {
+		return new FormGroup<CreateInputRequestFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+			inputDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDetectorModelRequest {
 	}
+	export interface DeleteDetectorModelRequestFormProperties {
+	}
+	export function CreateDeleteDetectorModelRequestFormGroup() {
+		return new FormGroup<DeleteDetectorModelRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteInputRequest {
+	}
+	export interface DeleteInputRequestFormProperties {
+	}
+	export function CreateDeleteInputRequestFormGroup() {
+		return new FormGroup<DeleteInputRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDetectorModelRequest {
 	}
+	export interface DescribeDetectorModelRequestFormProperties {
+	}
+	export function CreateDescribeDetectorModelRequestFormGroup() {
+		return new FormGroup<DescribeDetectorModelRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeInputRequest {
 	}
+	export interface DescribeInputRequestFormProperties {
+	}
+	export function CreateDescribeInputRequestFormGroup() {
+		return new FormGroup<DescribeInputRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeLoggingOptionsRequest {
+	}
+	export interface DescribeLoggingOptionsRequestFormProperties {
+	}
+	export function CreateDescribeLoggingOptionsRequestFormGroup() {
+		return new FormGroup<DescribeLoggingOptionsRequestFormProperties>({
+		});
+
 	}
 
 	export enum DetectorModelVersionStatus { ACTIVE = 0, ACTIVATING = 1, INACTIVE = 2, DEPRECATED = 3, DRAFT = 4, PAUSED = 5, FAILED = 6 }
@@ -543,14 +1286,42 @@ export namespace MyNS {
 
 	export interface ListDetectorModelVersionsRequest {
 	}
+	export interface ListDetectorModelVersionsRequestFormProperties {
+	}
+	export function CreateListDetectorModelVersionsRequestFormGroup() {
+		return new FormGroup<ListDetectorModelVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDetectorModelsRequest {
+	}
+	export interface ListDetectorModelsRequestFormProperties {
+	}
+	export function CreateListDetectorModelsRequestFormGroup() {
+		return new FormGroup<ListDetectorModelsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListInputsRequest {
 	}
+	export interface ListInputsRequestFormProperties {
+	}
+	export function CreateListInputsRequestFormGroup() {
+		return new FormGroup<ListInputsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutLoggingOptionsRequest {
@@ -561,12 +1332,33 @@ export namespace MyNS {
 		 */
 		loggingOptions: LoggingOptions;
 	}
+	export interface PutLoggingOptionsRequestFormProperties {
+	}
+	export function CreatePutLoggingOptionsRequestFormGroup() {
+		return new FormGroup<PutLoggingOptionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorModelRequest {
@@ -580,6 +1372,19 @@ export namespace MyNS {
 		roleArn: string;
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
+	export interface UpdateDetectorModelRequestFormProperties {
+		detectorModelDescription: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
+	}
+	export function CreateUpdateDetectorModelRequestFormGroup() {
+		return new FormGroup<UpdateDetectorModelRequestFormProperties>({
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateInputRequest {
 		inputDescription?: string | null;
@@ -589,6 +1394,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		inputDefinition: InputDefinition;
+	}
+	export interface UpdateInputRequestFormProperties {
+		inputDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateInputRequestFormGroup() {
+		return new FormGroup<UpdateInputRequestFormProperties>({
+			inputDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -799,15 +1613,70 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** Metadata that can be used to manage the detector model. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Information about the order in which events are evaluated and how actions are executed. */
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
+	export interface CreateDetectorModelPostBodyFormProperties {
+
+		/**
+		 * The name of the detector model.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
+		detectorModelName: FormControl<string | null | undefined>,
+
+		/**
+		 * A brief description of the detector model.
+		 * Max length: 128
+		 */
+		detectorModelDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** Information about the order in which events are evaluated and how actions are executed. */
+		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
+	}
+	export function CreateCreateDetectorModelPostBodyFormGroup() {
+		return new FormGroup<CreateDetectorModelPostBodyFormProperties>({
+			detectorModelName: new FormControl<string | null | undefined>(undefined),
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDetectorModelPostBodyDetectorModelDefinition {
-		states?: Array<State> | null;
+		states?: Array<State>;
 		initialStateName?: string | null;
+	}
+	export interface CreateDetectorModelPostBodyDetectorModelDefinitionFormProperties {
+		initialStateName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDetectorModelPostBodyDetectorModelDefinitionFormGroup() {
+		return new FormGroup<CreateDetectorModelPostBodyDetectorModelDefinitionFormProperties>({
+			initialStateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateInputPostBody {
@@ -834,11 +1703,42 @@ export namespace MyNS {
 		inputDefinition: CreateInputPostBodyInputDefinition;
 
 		/** Metadata that can be used to manage the input. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateInputPostBodyFormProperties {
+
+		/**
+		 * The name you want to give to the input.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
+		 */
+		inputName: FormControl<string | null | undefined>,
+
+		/**
+		 * A brief description of the input.
+		 * Max length: 128
+		 */
+		inputDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateInputPostBodyFormGroup() {
+		return new FormGroup<CreateInputPostBodyFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+			inputDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateInputPostBodyInputDefinition {
-		attributes?: Array<Attribute> | null;
+		attributes?: Array<Attribute>;
+	}
+	export interface CreateInputPostBodyInputDefinitionFormProperties {
+	}
+	export function CreateCreateInputPostBodyInputDefinitionFormGroup() {
+		return new FormGroup<CreateInputPostBodyInputDefinitionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorModelPostBody {
@@ -866,10 +1766,46 @@ export namespace MyNS {
 		/** Information about the order in which events are evaluated and how actions are executed. */
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
 	}
+	export interface UpdateDetectorModelPostBodyFormProperties {
+
+		/**
+		 * A brief description of the detector model.
+		 * Max length: 128
+		 */
+		detectorModelDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** Information about the order in which events are evaluated and how actions are executed. */
+		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
+	}
+	export function CreateUpdateDetectorModelPostBodyFormGroup() {
+		return new FormGroup<UpdateDetectorModelPostBodyFormProperties>({
+			detectorModelDescription: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDetectorModelPostBodyDetectorModelDefinition {
-		states?: Array<State> | null;
+		states?: Array<State>;
 		initialStateName?: string | null;
+	}
+	export interface UpdateDetectorModelPostBodyDetectorModelDefinitionFormProperties {
+		initialStateName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDetectorModelPostBodyDetectorModelDefinitionFormGroup() {
+		return new FormGroup<UpdateDetectorModelPostBodyDetectorModelDefinitionFormProperties>({
+			initialStateName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateInputPutBody {
@@ -886,9 +1822,30 @@ export namespace MyNS {
 		 */
 		inputDefinition: UpdateInputPutBodyInputDefinition;
 	}
+	export interface UpdateInputPutBodyFormProperties {
+
+		/**
+		 * A brief description of the input.
+		 * Max length: 128
+		 */
+		inputDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateInputPutBodyFormGroup() {
+		return new FormGroup<UpdateInputPutBodyFormProperties>({
+			inputDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateInputPutBodyInputDefinition {
-		attributes?: Array<Attribute> | null;
+		attributes?: Array<Attribute>;
+	}
+	export interface UpdateInputPutBodyInputDefinitionFormProperties {
+	}
+	export function CreateUpdateInputPutBodyInputDefinitionFormGroup() {
+		return new FormGroup<UpdateInputPutBodyInputDefinitionFormProperties>({
+		});
+
 	}
 
 	export interface PutLoggingOptionsPutBody {
@@ -899,12 +1856,32 @@ export namespace MyNS {
 		 */
 		loggingOptions: PutLoggingOptionsPutBodyLoggingOptions;
 	}
+	export interface PutLoggingOptionsPutBodyFormProperties {
+	}
+	export function CreatePutLoggingOptionsPutBodyFormGroup() {
+		return new FormGroup<PutLoggingOptionsPutBodyFormProperties>({
+		});
+
+	}
 
 	export interface PutLoggingOptionsPutBodyLoggingOptions {
 		roleArn?: string | null;
 		level?: LoggingOptionsLevel | null;
 		enabled?: boolean | null;
-		detectorDebugOptions?: Array<DetectorDebugOption> | null;
+		detectorDebugOptions?: Array<DetectorDebugOption>;
+	}
+	export interface PutLoggingOptionsPutBodyLoggingOptionsFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		level: FormControl<LoggingOptionsLevel | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutLoggingOptionsPutBodyLoggingOptionsFormGroup() {
+		return new FormGroup<PutLoggingOptionsPutBodyLoggingOptionsFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<LoggingOptionsLevel | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -914,6 +1891,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: Array<Tag>;
+	}
+	export interface TagResourcePostBodyFormProperties {
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+		});
+
 	}
 
 }

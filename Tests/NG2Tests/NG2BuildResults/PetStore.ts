@@ -1,16 +1,41 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Pet {
 		id: number;
 		name: string;
 		tag?: string | null;
 	}
+	export interface PetFormProperties {
+		id: FormControl<number | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		tag: FormControl<string | null | undefined>,
+	}
+	export function CreatePetFormGroup() {
+		return new FormGroup<PetFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			tag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Error {
 		code: number;
 		message: string;
+	}
+	export interface ErrorFormProperties {
+		code: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

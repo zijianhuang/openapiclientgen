@@ -248,6 +248,13 @@ namespace SwagTests
 			helper.GenerateAndAssertBuild("SwagMock\\xero-payroll-uk.yaml", "NG2Results\\xero-payroll-uk.txt");
 		}
 
+		[Fact]
+		public void TestGoogleBooks()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "NG2Results\\googleBooksOpenApi.ts");
+		}
+
+
 	}
 
 }

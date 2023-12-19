@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -28,7 +29,31 @@ export namespace MyNS {
 		 * Note: this field must be non-empty when the evaluation_mode field specifies
 		 * REQUIRE_ATTESTATION, otherwise it must be empty.
 		 */
-		requireAttestationsBy?: Array<string> | null;
+		requireAttestationsBy?: Array<string>;
+	}
+
+	/**
+	 * An admission rule specifies either that all container images
+	 * used in a pod creation request must be attested to by one or more
+	 * attestors, that all pod creations will be allowed, or that all
+	 * pod creations will be denied.
+	 * Images matching an admission whitelist pattern
+	 * are exempted from admission rules and will never block a pod creation.
+	 */
+	export interface AdmissionRuleFormProperties {
+
+		/** Required. The action when a pod creation is denied by the admission rule. */
+		enforcementMode: FormControl<AdmissionRuleEnforcementMode | null | undefined>,
+
+		/** Required. How this admission rule will be evaluated. */
+		evaluationMode: FormControl<AdmissionRuleEvaluationMode | null | undefined>,
+	}
+	export function CreateAdmissionRuleFormGroup() {
+		return new FormGroup<AdmissionRuleFormProperties>({
+			enforcementMode: new FormControl<AdmissionRuleEnforcementMode | null | undefined>(undefined),
+			evaluationMode: new FormControl<AdmissionRuleEvaluationMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdmissionRuleEnforcementMode { ENFORCEMENT_MODE_UNSPECIFIED = 0, ENFORCED_BLOCK_AND_AUDIT_LOG = 1, DRYRUN_AUDIT_LOG_ONLY = 2 }
@@ -48,6 +73,26 @@ export namespace MyNS {
 		 * text after the `registry/` part.
 		 */
 		namePattern?: string | null;
+	}
+
+	/**
+	 * An admission whitelist pattern exempts images
+	 * from checks by admission rules.
+	 */
+	export interface AdmissionWhitelistPatternFormProperties {
+
+		/**
+		 * An image name pattern to whitelist, in the form `registry/path/to/image`.
+		 * This supports a trailing `*` as a wildcard, but this is allowed only in
+		 * text after the `registry/` part.
+		 */
+		namePattern: FormControl<string | null | undefined>,
+	}
+	export function CreateAdmissionWhitelistPatternFormGroup() {
+		return new FormGroup<AdmissionWhitelistPatternFormProperties>({
+			namePattern: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -77,7 +122,38 @@ export namespace MyNS {
 		 * An user owned Grafeas note references a Grafeas
 		 * Attestation.Authority Note created by the user.
 		 */
-		userOwnedGrafeasNote?: UserOwnedGrafeasNote | null;
+		userOwnedGrafeasNote?: UserOwnedGrafeasNote;
+	}
+
+	/**
+	 * An attestor that attests to container image
+	 * artifacts. An existing attestor cannot be modified except where
+	 * indicated.
+	 */
+	export interface AttestorFormProperties {
+
+		/**
+		 * Optional. A descriptive comment.  This field may be updated.
+		 * The field may be displayed in chooser dialogs.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The resource name, in the format:
+		 * `projects/attestors/*`. This field may not be updated.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Output only. Time when the attestor was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateAttestorFormGroup() {
+		return new FormGroup<AttestorFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -118,7 +194,43 @@ export namespace MyNS {
 		 * If this field is empty, this attestor always returns that no
 		 * valid attestations exist.
 		 */
-		publicKeys?: Array<AttestorPublicKey> | null;
+		publicKeys?: Array<AttestorPublicKey>;
+	}
+
+	/**
+	 * An user owned Grafeas note references a Grafeas
+	 * Attestation.Authority Note created by the user.
+	 */
+	export interface UserOwnedGrafeasNoteFormProperties {
+
+		/**
+		 * Output only. This field will contain the service account email address
+		 * that this Attestor will use as the principal when querying Container
+		 * Analysis. Attestor administrators must grant this service account the
+		 * IAM role needed to read attestations from the note_reference in
+		 * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+		 * This email address is fixed for the lifetime of the Attestor, but callers
+		 * should not make any other assumptions about the service account email;
+		 * future versions may use an email based on a different naming pattern.
+		 */
+		delegationServiceAccountEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The Grafeas resource name of a Attestation.Authority Note,
+		 * created by the user, in the format: `projects/notes/*`. This field may
+		 * not be updated.
+		 * An attestation by this attestor is stored as a Grafeas
+		 * Attestation.Authority Occurrence that names a container image and that
+		 * links to this Note. Grafeas is an external dependency.
+		 */
+		noteReference: FormControl<string | null | undefined>,
+	}
+	export function CreateUserOwnedGrafeasNoteFormGroup() {
+		return new FormGroup<UserOwnedGrafeasNoteFormProperties>({
+			delegationServiceAccountEmail: new FormControl<string | null | undefined>(undefined),
+			noteReference: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -160,7 +272,48 @@ export namespace MyNS {
 		 * Public keys of this type are typically textually encoded using the PEM
 		 * format.
 		 */
-		pkixPublicKey?: PkixPublicKey | null;
+		pkixPublicKey?: PkixPublicKey;
+	}
+
+	/**
+	 * An attestor public key that will be used to verify
+	 * attestations signed by this attestor.
+	 */
+	export interface AttestorPublicKeyFormProperties {
+
+		/**
+		 * ASCII-armored representation of a PGP public key, as the entire output by
+		 * the command `gpg --export --armor foo@example.com` (either LF or CRLF
+		 * line endings).
+		 * When using this field, `id` should be left blank.  The BinAuthz API
+		 * handlers will calculate the ID and fill it in automatically.  BinAuthz
+		 * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
+		 * upper-case hex.  If `id` is provided by the caller, it will be
+		 * overwritten by the API-calculated ID.
+		 */
+		asciiArmoredPgpPublicKey: FormControl<string | null | undefined>,
+
+		/** Optional. A descriptive comment. This field may be updated. */
+		comment: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of this public key.
+		 * Signatures verified by BinAuthz must include the ID of the public key that
+		 * can be used to verify them, and that ID must match the contents of this
+		 * field exactly.
+		 * Additional restrictions on this field can be imposed based on which public
+		 * key type is encapsulated. See the documentation on `public_key` cases below
+		 * for details.
+		 */
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateAttestorPublicKeyFormGroup() {
+		return new FormGroup<AttestorPublicKeyFormProperties>({
+			asciiArmoredPgpPublicKey: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -186,6 +339,37 @@ export namespace MyNS {
 		 * that of the public key).
 		 */
 		signatureAlgorithm?: PkixPublicKeySignatureAlgorithm | null;
+	}
+
+	/**
+	 * A public key in the PkixPublicKey format (see
+	 * https://tools.ietf.org/html/rfc5280#section-4.1.2.7 for details).
+	 * Public keys of this type are typically textually encoded using the PEM
+	 * format.
+	 */
+	export interface PkixPublicKeyFormProperties {
+
+		/**
+		 * A PEM-encoded public key, as described in
+		 * https://tools.ietf.org/html/rfc7468#section-13
+		 */
+		publicKeyPem: FormControl<string | null | undefined>,
+
+		/**
+		 * The signature algorithm used to verify a message against a signature using
+		 * this key.
+		 * These signature algorithm must match the structure and any object
+		 * identifiers encoded in `public_key_pem` (i.e. this algorithm must match
+		 * that of the public key).
+		 */
+		signatureAlgorithm: FormControl<PkixPublicKeySignatureAlgorithm | null | undefined>,
+	}
+	export function CreatePkixPublicKeyFormGroup() {
+		return new FormGroup<PkixPublicKeyFormProperties>({
+			publicKeyPem: new FormControl<string | null | undefined>(undefined),
+			signatureAlgorithm: new FormControl<PkixPublicKeySignatureAlgorithm | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PkixPublicKeySignatureAlgorithm { SIGNATURE_ALGORITHM_UNSPECIFIED = 0, RSA_PSS_2048_SHA256 = 1, RSA_PSS_3072_SHA256 = 2, RSA_PSS_4096_SHA256 = 3, RSA_PSS_4096_SHA512 = 4, RSA_SIGN_PKCS1_2048_SHA256 = 5, RSA_SIGN_PKCS1_3072_SHA256 = 6, RSA_SIGN_PKCS1_4096_SHA256 = 7, RSA_SIGN_PKCS1_4096_SHA512 = 8, ECDSA_P256_SHA256 = 9, ECDSA_P384_SHA384 = 10, ECDSA_P521_SHA512 = 11 }
@@ -218,7 +402,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -253,13 +437,29 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string> | null;
+		members?: Array<string>;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
 		role?: string | null;
+	}
+
+	/** Associates `members` with a `role`. */
+	export interface BindingFormProperties {
+
+		/**
+		 * Role that is assigned to `members`.
+		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+		 */
+		role: FormControl<string | null | undefined>,
+	}
+	export function CreateBindingFormGroup() {
+		return new FormGroup<BindingFormProperties>({
+			role: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -315,6 +515,67 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * Represents a textual expression in the Common Expression Language (CEL)
+	 * syntax. CEL is a C-like expression language. The syntax and semantics of CEL
+	 * are documented at https://github.com/google/cel-spec.
+	 * Example (Comparison):
+	 *     title: "Summary size limit"
+	 *     description: "Determines if a summary is less than 100 chars"
+	 *     expression: "document.summary.size() < 100"
+	 * Example (Equality):
+	 *     title: "Requestor is owner"
+	 *     description: "Determines if requestor is the document owner"
+	 *     expression: "document.owner == request.auth.claims.email"
+	 * Example (Logic):
+	 *     title: "Public documents"
+	 *     description: "Determine whether the document should be publicly visible"
+	 *     expression: "document.type != 'private' && document.type != 'internal'"
+	 * Example (Data Manipulation):
+	 *     title: "Notification string"
+	 *     description: "Create a notification string with a timestamp."
+	 *     expression: "'New message received at ' + string(document.create_time)"
+	 * The exact variables and functions that may be referenced within an expression
+	 * are determined by the service that evaluates it. See the service
+	 * documentation for additional information.
+	 */
+	export interface ExprFormProperties {
+
+		/**
+		 * Optional. Description of the expression. This is a longer text which
+		 * describes the expression, e.g. when hovered over it in a UI.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Textual representation of an expression in Common Expression Language
+		 * syntax.
+		 */
+		expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. String indicating the location of the expression for error
+		 * reporting, e.g. a file name and a position in the file.
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Title for the expression, i.e. a short string describing
+		 * its purpose. This can be used e.g. in UIs which allow to enter the
+		 * expression.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateExprFormGroup() {
+		return new FormGroup<ExprFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A generic empty message that you can re-use to avoid defining duplicated
@@ -326,6 +587,23 @@ export namespace MyNS {
 	 * The JSON representation for `Empty` is empty JSON object `{}`.
 	 */
 	export interface Empty {
+	}
+
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
 	}
 
 
@@ -393,7 +671,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding> | null;
+		bindings?: Array<Binding>;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -431,12 +709,114 @@ export namespace MyNS {
 		version?: number | null;
 	}
 
+	/**
+	 * An Identity and Access Management (IAM) policy, which specifies access
+	 * controls for Google Cloud resources.
+	 * A `Policy` is a collection of `bindings`. A `binding` binds one or more
+	 * `members` to a single `role`. Members can be user accounts, service accounts,
+	 * Google groups, and domains (such as G Suite). A `role` is a named list of
+	 * permissions; each `role` can be an IAM predefined role or a user-created
+	 * custom role.
+	 * Optionally, a `binding` can specify a `condition`, which is a logical
+	 * expression that allows access to a resource only if the expression evaluates
+	 * to `true`. A condition can add constraints based on attributes of the
+	 * request, the resource, or both.
+	 * **JSON example:**
+	 *     {
+	 *       "bindings": [
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationAdmin",
+	 *           "members": [
+	 *             "user:mike@example.com",
+	 *             "group:admins@example.com",
+	 *             "domain:google.com",
+	 *             "serviceAccount:my-project-id@appspot.gserviceaccount.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationViewer",
+	 *           "members": ["user:eve@example.com"],
+	 *           "condition": {
+	 *             "title": "expirable access",
+	 *             "description": "Does not grant access after Sep 2020",
+	 *             "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')",
+	 *           }
+	 *         }
+	 *       ],
+	 *       "etag": "BwWWja0YfJA=",
+	 *       "version": 3
+	 *     }
+	 * **YAML example:**
+	 *     bindings:
+	 *     - members:
+	 *       - user:mike@example.com
+	 *       - group:admins@example.com
+	 *       - domain:google.com
+	 *       - serviceAccount:my-project-id@appspot.gserviceaccount.com
+	 *       role: roles/resourcemanager.organizationAdmin
+	 *     - members:
+	 *       - user:eve@example.com
+	 *       role: roles/resourcemanager.organizationViewer
+	 *       condition:
+	 *         title: expirable access
+	 *         description: Does not grant access after Sep 2020
+	 *         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+	 *     - etag: BwWWja0YfJA=
+	 *     - version: 3
+	 * For a description of IAM and its features, see the
+	 * [IAM documentation](https://cloud.google.com/iam/docs/).
+	 */
+	export interface IamPolicyFormProperties {
+
+		/**
+		 * `etag` is used for optimistic concurrency control as a way to help
+		 * prevent simultaneous updates of a policy from overwriting each other.
+		 * It is strongly suggested that systems make use of the `etag` in the
+		 * read-modify-write cycle to perform policy updates in order to avoid race
+		 * conditions: An `etag` is returned in the response to `getIamPolicy`, and
+		 * systems are expected to put that etag in the request to `setIamPolicy` to
+		 * ensure that their change will be applied to the same version of the policy.
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the format of the policy.
+		 * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+		 * are rejected.
+		 * Any operation that affects conditional role bindings must specify version
+		 * `3`. This requirement applies to the following operations:
+		 * * Getting a policy that includes a conditional role binding
+		 * * Adding a conditional role binding to a policy
+		 * * Changing a conditional role binding in a policy
+		 * * Removing any role binding, with or without a condition, from a policy
+		 * that includes conditions
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 * If a policy does not include any conditions, operations on that policy may
+		 * specify any valid version or leave the field unset.
+		 */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateIamPolicyFormGroup() {
+		return new FormGroup<IamPolicyFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response message for BinauthzManagementService.ListAttestors. */
 	export interface ListAttestorsResponse {
 
 		/** The list of attestors. */
-		attestors?: Array<Attestor> | null;
+		attestors?: Array<Attestor>;
 
 		/**
 		 * A token to retrieve the next page of results. Pass this value in the
@@ -444,6 +824,23 @@ export namespace MyNS {
 		 * `ListAttestors` method to retrieve the next page of results.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response message for BinauthzManagementService.ListAttestors. */
+	export interface ListAttestorsResponseFormProperties {
+
+		/**
+		 * A token to retrieve the next page of results. Pass this value in the
+		 * ListAttestorsRequest.page_token field in the subsequent call to the
+		 * `ListAttestors` method to retrieve the next page of results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttestorsResponseFormGroup() {
+		return new FormGroup<ListAttestorsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -455,7 +852,7 @@ export namespace MyNS {
 		 * always be permitted. This feature is typically used to exclude Google or
 		 * third-party infrastructure images from Binary Authorization policies.
 		 */
-		admissionWhitelistPatterns?: Array<AdmissionWhitelistPattern> | null;
+		admissionWhitelistPatterns?: Array<AdmissionWhitelistPattern>;
 
 		/**
 		 * Optional. Per-cluster admission rules. Cluster spec format:
@@ -466,7 +863,7 @@ export namespace MyNS {
 		 * For `clusterId` syntax restrictions see
 		 * https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.
 		 */
-		clusterAdmissionRules?: {[id: string]: AdmissionRule } | null;
+		clusterAdmissionRules?: {[id: string]: AdmissionRule };
 
 		/**
 		 * An admission rule specifies either that all container images
@@ -476,7 +873,7 @@ export namespace MyNS {
 		 * Images matching an admission whitelist pattern
 		 * are exempted from admission rules and will never block a pod creation.
 		 */
-		defaultAdmissionRule?: AdmissionRule | null;
+		defaultAdmissionRule?: AdmissionRule;
 
 		/** Optional. A descriptive comment. */
 		description?: string | null;
@@ -497,6 +894,51 @@ export namespace MyNS {
 
 		/** Output only. Time when the policy was last updated. */
 		updateTime?: string | null;
+	}
+
+	/** A policy for container image binary authorization. */
+	export interface PolicyFormProperties {
+
+		/**
+		 * Optional. Per-cluster admission rules. Cluster spec format:
+		 * `location.clusterId`. There can be at most one admission rule per cluster
+		 * spec.
+		 * A `location` is either a compute zone (e.g. us-central1-a) or a region
+		 * (e.g. us-central1).
+		 * For `clusterId` syntax restrictions see
+		 * https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.
+		 */
+		clusterAdmissionRules: FormControl<{[id: string]: AdmissionRule } | null | undefined>,
+
+		/** Optional. A descriptive comment. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Controls the evaluation of a Google-maintained global admission
+		 * policy for common system-level images. Images not covered by the global
+		 * policy will be subject to the project admission policy. This setting
+		 * has no effect when specified inside a global admission policy.
+		 */
+		globalPolicyEvaluationMode: FormControl<PolicyGlobalPolicyEvaluationMode | null | undefined>,
+
+		/**
+		 * Output only. The resource name, in the format `projects/policy`. There is
+		 * at most one policy per project.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Output only. Time when the policy was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			clusterAdmissionRules: new FormControl<{[id: string]: AdmissionRule } | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			globalPolicyEvaluationMode: new FormControl<PolicyGlobalPolicyEvaluationMode | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PolicyGlobalPolicyEvaluationMode { GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0, ENABLE = 1, DISABLE = 2 }
@@ -562,7 +1004,16 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: IamPolicy | null;
+		policy?: IamPolicy;
+	}
+
+	/** Request message for `SetIamPolicy` method. */
+	export interface SetIamPolicyRequestFormProperties {
+	}
+	export function CreateSetIamPolicyRequestFormGroup() {
+		return new FormGroup<SetIamPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -575,7 +1026,16 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Request message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsRequestFormProperties {
+	}
+	export function CreateTestIamPermissionsRequestFormGroup() {
+		return new FormGroup<TestIamPermissionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -586,7 +1046,16 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Response message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsResponseFormProperties {
+	}
+	export function CreateTestIamPermissionsResponseFormGroup() {
+		return new FormGroup<TestIamPermissionsResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

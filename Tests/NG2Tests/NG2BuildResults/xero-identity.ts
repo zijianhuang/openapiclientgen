@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Connection {
 
@@ -25,6 +26,41 @@ export namespace MyNS {
 		/** The date when the user most recently connected this tenant to your app. May differ to the created date if the user has disconnected and subsequently reconnected this tenant to your app. */
 		updatedDateUtc?: Date | null;
 	}
+	export interface ConnectionFormProperties {
+
+		/** Xero identifier */
+		id: FormControl<string | null | undefined>,
+
+		/** Xero identifier of organisation */
+		tenantId: FormControl<string | null | undefined>,
+
+		/** Identifier shared across connections authorised at the same time */
+		authEventId: FormControl<string | null | undefined>,
+
+		/** Xero tenant type (i.e. ORGANISATION, PRACTICE) */
+		tenantType: FormControl<string | null | undefined>,
+
+		/** Xero tenant name */
+		tenantName: FormControl<string | null | undefined>,
+
+		/** The date when the user connected this tenant to your app */
+		createdDateUtc: FormControl<Date | null | undefined>,
+
+		/** The date when the user most recently connected this tenant to your app. May differ to the created date if the user has disconnected and subsequently reconnected this tenant to your app. */
+		updatedDateUtc: FormControl<Date | null | undefined>,
+	}
+	export function CreateConnectionFormGroup() {
+		return new FormGroup<ConnectionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			tenantId: new FormControl<string | null | undefined>(undefined),
+			authEventId: new FormControl<string | null | undefined>(undefined),
+			tenantType: new FormControl<string | null | undefined>(undefined),
+			tenantName: new FormControl<string | null | undefined>(undefined),
+			createdDateUtc: new FormControl<Date | null | undefined>(undefined),
+			updatedDateUtc: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RefreshToken {
 
@@ -39,6 +75,29 @@ export namespace MyNS {
 
 		/** client secret for Xero app 2 */
 		client_secret?: string | null;
+	}
+	export interface RefreshTokenFormProperties {
+
+		/** Xero grant type */
+		grant_type: FormControl<string | null | undefined>,
+
+		/** refresh token provided during authentication flow */
+		refresh_token: FormControl<string | null | undefined>,
+
+		/** client id for Xero app */
+		client_id: FormControl<string | null | undefined>,
+
+		/** client secret for Xero app 2 */
+		client_secret: FormControl<string | null | undefined>,
+	}
+	export function CreateRefreshTokenFormGroup() {
+		return new FormGroup<RefreshTokenFormProperties>({
+			grant_type: new FormControl<string | null | undefined>(undefined),
+			refresh_token: new FormControl<string | null | undefined>(undefined),
+			client_id: new FormControl<string | null | undefined>(undefined),
+			client_secret: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AccessToken {
@@ -57,6 +116,33 @@ export namespace MyNS {
 
 		/** token used to refresh an expired access token */
 		refresh_token?: string | null;
+	}
+	export interface AccessTokenFormProperties {
+
+		/** Xero unique identifier */
+		id_token: FormControl<string | null | undefined>,
+
+		/** access token provided during authentication flow */
+		access_token: FormControl<string | null | undefined>,
+
+		/** time in milliseconds until access token expires. */
+		expires_in: FormControl<string | null | undefined>,
+
+		/** type of token i.e. Bearer */
+		token_type: FormControl<string | null | undefined>,
+
+		/** token used to refresh an expired access token */
+		refresh_token: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessTokenFormGroup() {
+		return new FormGroup<AccessTokenFormProperties>({
+			id_token: new FormControl<string | null | undefined>(undefined),
+			access_token: new FormControl<string | null | undefined>(undefined),
+			expires_in: new FormControl<string | null | undefined>(undefined),
+			token_type: new FormControl<string | null | undefined>(undefined),
+			refresh_token: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

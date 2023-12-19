@@ -1,20 +1,56 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeleteHumanLoopResponse {
+	}
+	export interface DeleteHumanLoopResponseFormProperties {
+	}
+	export function CreateDeleteHumanLoopResponseFormGroup() {
+		return new FormGroup<DeleteHumanLoopResponseFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
 	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeHumanLoopResponse {
@@ -27,7 +63,28 @@ export namespace MyNS {
 		FlowDefinitionArn: string;
 
 		/** Information about where the human output will be stored. */
-		HumanLoopOutput?: HumanLoopOutput | null;
+		HumanLoopOutput?: HumanLoopOutput;
+	}
+	export interface DescribeHumanLoopResponseFormProperties {
+		CreationTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		FailureCode: FormControl<string | null | undefined>,
+		HumanLoopStatus: FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>,
+		HumanLoopName: FormControl<string | null | undefined>,
+		HumanLoopArn: FormControl<string | null | undefined>,
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHumanLoopResponseFormGroup() {
+		return new FormGroup<DescribeHumanLoopResponseFormProperties>({
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			FailureCode: new FormControl<string | null | undefined>(undefined),
+			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeHumanLoopResponseHumanLoopStatus { InProgress = 0, Failed = 1, Completed = 2, Stopped = 3, Stopping = 4 }
@@ -38,9 +95,29 @@ export namespace MyNS {
 		OutputS3Uri: string;
 	}
 
+	/** Information about where the human output will be stored. */
+	export interface HumanLoopOutputFormProperties {
+		OutputS3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateHumanLoopOutputFormGroup() {
+		return new FormGroup<HumanLoopOutputFormProperties>({
+			OutputS3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListHumanLoopsResponse {
 		HumanLoopSummaries: Array<HumanLoopSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListHumanLoopsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListHumanLoopsResponseFormGroup() {
+		return new FormGroup<ListHumanLoopsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -53,25 +130,88 @@ export namespace MyNS {
 		FlowDefinitionArn?: string | null;
 	}
 
+	/** Summary information about the human loop. */
+	export interface HumanLoopSummaryFormProperties {
+		HumanLoopName: FormControl<string | null | undefined>,
+		HumanLoopStatus: FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateHumanLoopSummaryFormGroup() {
+		return new FormGroup<HumanLoopSummaryFormProperties>({
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StartHumanLoopResponse {
 		HumanLoopArn?: string | null;
+	}
+	export interface StartHumanLoopResponseFormProperties {
+		HumanLoopArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartHumanLoopResponseFormGroup() {
+		return new FormGroup<StartHumanLoopResponseFormProperties>({
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
 
 	export interface ServiceQuotaExceededException {
 	}
+	export interface ServiceQuotaExceededExceptionFormProperties {
+	}
+	export function CreateServiceQuotaExceededExceptionFormGroup() {
+		return new FormGroup<ServiceQuotaExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StopHumanLoopResponse {
 	}
+	export interface StopHumanLoopResponseFormProperties {
+	}
+	export function CreateStopHumanLoopResponseFormGroup() {
+		return new FormGroup<StopHumanLoopResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteHumanLoopRequest {
 	}
+	export interface DeleteHumanLoopRequestFormProperties {
+	}
+	export function CreateDeleteHumanLoopRequestFormGroup() {
+		return new FormGroup<DeleteHumanLoopRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeHumanLoopRequest {
+	}
+	export interface DescribeHumanLoopRequestFormProperties {
+	}
+	export function CreateDescribeHumanLoopRequestFormGroup() {
+		return new FormGroup<DescribeHumanLoopRequestFormProperties>({
+		});
+
 	}
 
 	export enum HumanLoopStatus { InProgress = 0, Failed = 1, Completed = 2, Stopped = 3, Stopping = 4 }
@@ -82,15 +222,42 @@ export namespace MyNS {
 		ContentClassifiers: Array<ContentClassifier>;
 	}
 
+	/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
+	export interface HumanLoopDataAttributesFormProperties {
+	}
+	export function CreateHumanLoopDataAttributesFormGroup() {
+		return new FormGroup<HumanLoopDataAttributesFormProperties>({
+		});
+
+	}
+
 
 	/** An object containing the human loop input in JSON format. */
 	export interface HumanLoopInput {
 		InputContent: string;
 	}
 
+	/** An object containing the human loop input in JSON format. */
+	export interface HumanLoopInputFormProperties {
+		InputContent: FormControl<string | null | undefined>,
+	}
+	export function CreateHumanLoopInputFormGroup() {
+		return new FormGroup<HumanLoopInputFormProperties>({
+			InputContent: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SortOrder { Ascending = 0, Descending = 1 }
 
 	export interface ListHumanLoopsRequest {
+	}
+	export interface ListHumanLoopsRequestFormProperties {
+	}
+	export function CreateListHumanLoopsRequestFormGroup() {
+		return new FormGroup<ListHumanLoopsRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartHumanLoopRequest {
@@ -104,11 +271,31 @@ export namespace MyNS {
 		HumanLoopInput: HumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: HumanLoopDataAttributes | null;
+		DataAttributes?: HumanLoopDataAttributes;
+	}
+	export interface StartHumanLoopRequestFormProperties {
+		HumanLoopName: FormControl<string | null | undefined>,
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartHumanLoopRequestFormGroup() {
+		return new FormGroup<StartHumanLoopRequestFormProperties>({
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopHumanLoopRequest {
 		HumanLoopName: string;
+	}
+	export interface StopHumanLoopRequestFormProperties {
+		HumanLoopName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopHumanLoopRequestFormGroup() {
+		return new FormGroup<StopHumanLoopRequestFormProperties>({
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -148,7 +335,7 @@ export namespace MyNS {
 		 * @return {ListHumanLoopsResponse} Success
 		 */
 		ListHumanLoops(CreationTimeAfter: Date | null | undefined, CreationTimeBefore: Date | null | undefined, FlowDefinitionArn: string, SortOrder: SortOrder | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListHumanLoopsResponse> {
-			return this.http.get<ListHumanLoopsResponse>(this.baseUri + 'human-loops#FlowDefinitionArn?CreationTimeAfter=' + CreationTimeAfter.toISOString() + '&CreationTimeBefore=' + CreationTimeBefore.toISOString() + '&FlowDefinitionArn=' + (FlowDefinitionArn == null ? '' : encodeURIComponent(FlowDefinitionArn)) + '&SortOrder=' + SortOrder + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
+			return this.http.get<ListHumanLoopsResponse>(this.baseUri + 'human-loops#FlowDefinitionArn?CreationTimeAfter=' + CreationTimeAfter?.toISOString() + '&CreationTimeBefore=' + CreationTimeBefore?.toISOString() + '&FlowDefinitionArn=' + (FlowDefinitionArn == null ? '' : encodeURIComponent(FlowDefinitionArn)) + '&SortOrder=' + SortOrder + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
 		/**
@@ -196,15 +383,57 @@ export namespace MyNS {
 		HumanLoopInput: StartHumanLoopPostBodyHumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: StartHumanLoopPostBodyDataAttributes | null;
+		DataAttributes?: StartHumanLoopPostBodyDataAttributes;
+	}
+	export interface StartHumanLoopPostBodyFormProperties {
+
+		/**
+		 * The name of the human loop.
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
+		HumanLoopName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
+		 * Required
+		 * Max length: 1024
+		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
+		 */
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartHumanLoopPostBodyFormGroup() {
+		return new FormGroup<StartHumanLoopPostBodyFormProperties>({
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartHumanLoopPostBodyHumanLoopInput {
 		InputContent?: string | null;
 	}
+	export interface StartHumanLoopPostBodyHumanLoopInputFormProperties {
+		InputContent: FormControl<string | null | undefined>,
+	}
+	export function CreateStartHumanLoopPostBodyHumanLoopInputFormGroup() {
+		return new FormGroup<StartHumanLoopPostBodyHumanLoopInputFormProperties>({
+			InputContent: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartHumanLoopPostBodyDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier> | null;
+		ContentClassifiers?: Array<ContentClassifier>;
+	}
+	export interface StartHumanLoopPostBodyDataAttributesFormProperties {
+	}
+	export function CreateStartHumanLoopPostBodyDataAttributesFormGroup() {
+		return new FormGroup<StartHumanLoopPostBodyDataAttributesFormProperties>({
+		});
+
 	}
 
 	export interface StopHumanLoopPostBody {
@@ -217,6 +446,23 @@ export namespace MyNS {
 		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: string;
+	}
+	export interface StopHumanLoopPostBodyFormProperties {
+
+		/**
+		 * The name of the human loop that you want to stop.
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
+		 */
+		HumanLoopName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopHumanLoopPostBodyFormGroup() {
+		return new FormGroup<StopHumanLoopPostBodyFormProperties>({
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

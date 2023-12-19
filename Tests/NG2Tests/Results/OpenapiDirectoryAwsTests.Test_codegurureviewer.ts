@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateRepositoryResponse {
 
 		/** Information about a repository association. */
-		RepositoryAssociation?: RepositoryAssociation | null;
+		RepositoryAssociation?: RepositoryAssociation;
+	}
+	export interface AssociateRepositoryResponseFormProperties {
+	}
+	export function CreateAssociateRepositoryResponseFormGroup() {
+		return new FormGroup<AssociateRepositoryResponseFormProperties>({
+		});
+
 	}
 
 
@@ -23,6 +31,35 @@ export namespace MyNS {
 		CreatedTimeStamp?: Date | null;
 	}
 
+	/** Information about a repository association. */
+	export interface RepositoryAssociationFormProperties {
+		AssociationId: FormControl<string | null | undefined>,
+		AssociationArn: FormControl<string | null | undefined>,
+		ConnectionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
+		State: FormControl<RepositoryAssociationState | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
+		CreatedTimeStamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateRepositoryAssociationFormGroup() {
+		return new FormGroup<RepositoryAssociationFormProperties>({
+			AssociationId: new FormControl<string | null | undefined>(undefined),
+			AssociationArn: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
+			State: new FormControl<RepositoryAssociationState | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RepositoryAssociationProviderType { CodeCommit = 0, GitHub = 1, Bitbucket = 2 }
 
 	export enum RepositoryAssociationState { Associated = 0, Associating = 1, Failed = 2, Disassociating = 3 }
@@ -33,6 +70,17 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/** Information about an AWS CodeCommit repository. */
+	export interface CodeCommitRepositoryFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeCommitRepositoryFormGroup() {
+		return new FormGroup<CodeCommitRepositoryFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Information about a third party source repository connected through CodeStar Connections.  */
 	export interface ThirdPartySourceRepository {
@@ -41,25 +89,82 @@ export namespace MyNS {
 		Owner: string;
 	}
 
+	/**  Information about a third party source repository connected through CodeStar Connections.  */
+	export interface ThirdPartySourceRepositoryFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ConnectionArn: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+	}
+	export function CreateThirdPartySourceRepositoryFormGroup() {
+		return new FormGroup<ThirdPartySourceRepositoryFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
 	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCodeReviewResponse {
 
 		/** Information about a code review. */
-		CodeReview?: CodeReview | null;
+		CodeReview?: CodeReview;
+	}
+	export interface DescribeCodeReviewResponseFormProperties {
+	}
+	export function CreateDescribeCodeReviewResponseFormGroup() {
+		return new FormGroup<DescribeCodeReviewResponseFormProperties>({
+		});
+
 	}
 
 
@@ -78,10 +183,41 @@ export namespace MyNS {
 		PullRequestId?: string | null;
 
 		/** Information about the source code type. */
-		SourceCodeType?: SourceCodeType | null;
+		SourceCodeType?: SourceCodeType;
 
 		/** Information about the statistics from the code review. */
-		Metrics?: Metrics | null;
+		Metrics?: Metrics;
+	}
+
+	/**  Information about a code review.  */
+	export interface CodeReviewFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CodeReviewArn: FormControl<string | null | undefined>,
+		RepositoryName: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
+		State: FormControl<CodeReviewState | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		CreatedTimeStamp: FormControl<Date | null | undefined>,
+		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
+		Type: FormControl<CodeReviewType | null | undefined>,
+		PullRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeReviewFormGroup() {
+		return new FormGroup<CodeReviewFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
+			RepositoryName: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
+			State: new FormControl<CodeReviewState | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			Type: new FormControl<CodeReviewType | null | undefined>(undefined),
+			PullRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CodeReviewState { Completed = 0, Pending = 1, Failed = 2, Deleting = 3 }
@@ -93,7 +229,16 @@ export namespace MyNS {
 	export interface SourceCodeType {
 
 		/** The commit diff for the pull request. */
-		CommitDiff?: CommitDiffSourceCodeType | null;
+		CommitDiff?: CommitDiffSourceCodeType;
+	}
+
+	/**  Information about the source code type.  */
+	export interface SourceCodeTypeFormProperties {
+	}
+	export function CreateSourceCodeTypeFormGroup() {
+		return new FormGroup<SourceCodeTypeFormProperties>({
+		});
+
 	}
 
 
@@ -103,6 +248,19 @@ export namespace MyNS {
 		DestinationCommit?: string | null;
 	}
 
+	/**  The commit diff for the pull request.  */
+	export interface CommitDiffSourceCodeTypeFormProperties {
+		SourceCommit: FormControl<string | null | undefined>,
+		DestinationCommit: FormControl<string | null | undefined>,
+	}
+	export function CreateCommitDiffSourceCodeTypeFormGroup() {
+		return new FormGroup<CommitDiffSourceCodeTypeFormProperties>({
+			SourceCommit: new FormControl<string | null | undefined>(undefined),
+			DestinationCommit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Information about the statistics from the code review.  */
 	export interface Metrics {
@@ -110,13 +268,40 @@ export namespace MyNS {
 		FindingsCount?: number | null;
 	}
 
+	/**  Information about the statistics from the code review.  */
+	export interface MetricsFormProperties {
+		MeteredLinesOfCodeCount: FormControl<number | null | undefined>,
+		FindingsCount: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricsFormGroup() {
+		return new FormGroup<MetricsFormProperties>({
+			MeteredLinesOfCodeCount: new FormControl<number | null | undefined>(undefined),
+			FindingsCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeRecommendationFeedbackResponse {
 
 		/** Information about the recommendation feedback. */
-		RecommendationFeedback?: RecommendationFeedback | null;
+		RecommendationFeedback?: RecommendationFeedback;
+	}
+	export interface DescribeRecommendationFeedbackResponseFormProperties {
+	}
+	export function CreateDescribeRecommendationFeedbackResponseFormGroup() {
+		return new FormGroup<DescribeRecommendationFeedbackResponseFormProperties>({
+		});
+
 	}
 
 
@@ -124,10 +309,29 @@ export namespace MyNS {
 	export interface RecommendationFeedback {
 		CodeReviewArn?: string | null;
 		RecommendationId?: string | null;
-		Reactions?: Array<Reaction> | null;
+		Reactions?: Array<Reaction>;
 		UserId?: string | null;
 		CreatedTimeStamp?: Date | null;
 		LastUpdatedTimeStamp?: Date | null;
+	}
+
+	/**  Information about the recommendation feedback.  */
+	export interface RecommendationFeedbackFormProperties {
+		CodeReviewArn: FormControl<string | null | undefined>,
+		RecommendationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+		CreatedTimeStamp: FormControl<Date | null | undefined>,
+		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateRecommendationFeedbackFormGroup() {
+		return new FormGroup<RecommendationFeedbackFormProperties>({
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Reaction { ThumbsUp = 0, ThumbsDown = 1 }
@@ -135,21 +339,51 @@ export namespace MyNS {
 	export interface DescribeRepositoryAssociationResponse {
 
 		/** Information about a repository association. */
-		RepositoryAssociation?: RepositoryAssociation | null;
+		RepositoryAssociation?: RepositoryAssociation;
+	}
+	export interface DescribeRepositoryAssociationResponseFormProperties {
+	}
+	export function CreateDescribeRepositoryAssociationResponseFormGroup() {
+		return new FormGroup<DescribeRepositoryAssociationResponseFormProperties>({
+		});
+
 	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateRepositoryResponse {
 
 		/** Information about a repository association. */
-		RepositoryAssociation?: RepositoryAssociation | null;
+		RepositoryAssociation?: RepositoryAssociation;
+	}
+	export interface DisassociateRepositoryResponseFormProperties {
+	}
+	export function CreateDisassociateRepositoryResponseFormGroup() {
+		return new FormGroup<DisassociateRepositoryResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListCodeReviewsResponse {
-		CodeReviewSummaries?: Array<CodeReviewSummary> | null;
+		CodeReviewSummaries?: Array<CodeReviewSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListCodeReviewsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCodeReviewsResponseFormGroup() {
+		return new FormGroup<ListCodeReviewsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -167,7 +401,36 @@ export namespace MyNS {
 		PullRequestId?: string | null;
 
 		/** Information about metrics summaries. */
-		MetricsSummary?: MetricsSummary | null;
+		MetricsSummary?: MetricsSummary;
+	}
+
+	/**  Information about the summary of the code review.  */
+	export interface CodeReviewSummaryFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CodeReviewArn: FormControl<string | null | undefined>,
+		RepositoryName: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
+		State: FormControl<CodeReviewState | null | undefined>,
+		CreatedTimeStamp: FormControl<Date | null | undefined>,
+		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
+		Type: FormControl<CodeReviewType | null | undefined>,
+		PullRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeReviewSummaryFormGroup() {
+		return new FormGroup<CodeReviewSummaryFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
+			RepositoryName: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
+			State: new FormControl<CodeReviewState | null | undefined>(undefined),
+			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			Type: new FormControl<CodeReviewType | null | undefined>(undefined),
+			PullRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -177,26 +440,70 @@ export namespace MyNS {
 		FindingsCount?: number | null;
 	}
 
+	/**  Information about metrics summaries.  */
+	export interface MetricsSummaryFormProperties {
+		MeteredLinesOfCodeCount: FormControl<number | null | undefined>,
+		FindingsCount: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricsSummaryFormGroup() {
+		return new FormGroup<MetricsSummaryFormProperties>({
+			MeteredLinesOfCodeCount: new FormControl<number | null | undefined>(undefined),
+			FindingsCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProviderType { CodeCommit = 0, GitHub = 1, Bitbucket = 2 }
 
 	export enum JobState { Completed = 0, Pending = 1, Failed = 2, Deleting = 3 }
 
 	export interface ListRecommendationFeedbackResponse {
-		RecommendationFeedbackSummaries?: Array<RecommendationFeedbackSummary> | null;
+		RecommendationFeedbackSummaries?: Array<RecommendationFeedbackSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListRecommendationFeedbackResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecommendationFeedbackResponseFormGroup() {
+		return new FormGroup<ListRecommendationFeedbackResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  Information about recommendation feedback summaries.  */
 	export interface RecommendationFeedbackSummary {
 		RecommendationId?: string | null;
-		Reactions?: Array<Reaction> | null;
+		Reactions?: Array<Reaction>;
 		UserId?: string | null;
 	}
 
+	/**  Information about recommendation feedback summaries.  */
+	export interface RecommendationFeedbackSummaryFormProperties {
+		RecommendationId: FormControl<string | null | undefined>,
+		UserId: FormControl<string | null | undefined>,
+	}
+	export function CreateRecommendationFeedbackSummaryFormGroup() {
+		return new FormGroup<RecommendationFeedbackSummaryFormProperties>({
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRecommendationsResponse {
-		RecommendationSummaries?: Array<RecommendationSummary> | null;
+		RecommendationSummaries?: Array<RecommendationSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListRecommendationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecommendationsResponseFormGroup() {
+		return new FormGroup<ListRecommendationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -209,9 +516,37 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/**  Information about recommendations.  */
+	export interface RecommendationSummaryFormProperties {
+		FilePath: FormControl<string | null | undefined>,
+		RecommendationId: FormControl<string | null | undefined>,
+		StartLine: FormControl<number | null | undefined>,
+		EndLine: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateRecommendationSummaryFormGroup() {
+		return new FormGroup<RecommendationSummaryFormProperties>({
+			FilePath: new FormControl<string | null | undefined>(undefined),
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			StartLine: new FormControl<number | null | undefined>(undefined),
+			EndLine: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRepositoryAssociationsResponse {
-		RepositoryAssociationSummaries?: Array<RepositoryAssociationSummary> | null;
+		RepositoryAssociationSummaries?: Array<RepositoryAssociationSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListRepositoryAssociationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRepositoryAssociationsResponseFormGroup() {
+		return new FormGroup<ListRepositoryAssociationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -227,7 +562,39 @@ export namespace MyNS {
 		State?: RepositoryAssociationState | null;
 	}
 
+	/** Information about a repository association. */
+	export interface RepositoryAssociationSummaryFormProperties {
+		AssociationArn: FormControl<string | null | undefined>,
+		ConnectionArn: FormControl<string | null | undefined>,
+		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
+		AssociationId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
+		State: FormControl<RepositoryAssociationState | null | undefined>,
+	}
+	export function CreateRepositoryAssociationSummaryFormGroup() {
+		return new FormGroup<RepositoryAssociationSummaryFormProperties>({
+			AssociationArn: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+			AssociationId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
+			State: new FormControl<RepositoryAssociationState | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutRecommendationFeedbackResponse {
+	}
+	export interface PutRecommendationFeedbackResponseFormProperties {
+	}
+	export function CreatePutRecommendationFeedbackResponseFormGroup() {
+		return new FormGroup<PutRecommendationFeedbackResponseFormProperties>({
+		});
+
 	}
 
 
@@ -235,10 +602,19 @@ export namespace MyNS {
 	export interface Repository {
 
 		/** Information about an AWS CodeCommit repository. */
-		CodeCommit?: CodeCommitRepository | null;
+		CodeCommit?: CodeCommitRepository;
 
 		/** Information about a third party source repository connected through CodeStar Connections. */
-		Bitbucket?: ThirdPartySourceRepository | null;
+		Bitbucket?: ThirdPartySourceRepository;
+	}
+
+	/** Information about a repository. */
+	export interface RepositoryFormProperties {
+	}
+	export function CreateRepositoryFormGroup() {
+		return new FormGroup<RepositoryFormProperties>({
+		});
+
 	}
 
 	export interface AssociateRepositoryRequest {
@@ -250,37 +626,113 @@ export namespace MyNS {
 		Repository: Repository;
 		ClientRequestToken?: string | null;
 	}
+	export interface AssociateRepositoryRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateRepositoryRequestFormGroup() {
+		return new FormGroup<AssociateRepositoryRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum Type { PullRequest = 0 }
 
 	export interface DescribeCodeReviewRequest {
 	}
+	export interface DescribeCodeReviewRequestFormProperties {
+	}
+	export function CreateDescribeCodeReviewRequestFormGroup() {
+		return new FormGroup<DescribeCodeReviewRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeRecommendationFeedbackRequest {
+	}
+	export interface DescribeRecommendationFeedbackRequestFormProperties {
+	}
+	export function CreateDescribeRecommendationFeedbackRequestFormGroup() {
+		return new FormGroup<DescribeRecommendationFeedbackRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeRepositoryAssociationRequest {
 	}
+	export interface DescribeRepositoryAssociationRequestFormProperties {
+	}
+	export function CreateDescribeRepositoryAssociationRequestFormGroup() {
+		return new FormGroup<DescribeRepositoryAssociationRequestFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateRepositoryRequest {
+	}
+	export interface DisassociateRepositoryRequestFormProperties {
+	}
+	export function CreateDisassociateRepositoryRequestFormGroup() {
+		return new FormGroup<DisassociateRepositoryRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListCodeReviewsRequest {
 	}
+	export interface ListCodeReviewsRequestFormProperties {
+	}
+	export function CreateListCodeReviewsRequestFormGroup() {
+		return new FormGroup<ListCodeReviewsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListRecommendationFeedbackRequest {
+	}
+	export interface ListRecommendationFeedbackRequestFormProperties {
+	}
+	export function CreateListRecommendationFeedbackRequestFormGroup() {
+		return new FormGroup<ListRecommendationFeedbackRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListRecommendationsRequest {
 	}
+	export interface ListRecommendationsRequestFormProperties {
+	}
+	export function CreateListRecommendationsRequestFormGroup() {
+		return new FormGroup<ListRecommendationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListRepositoryAssociationsRequest {
+	}
+	export interface ListRepositoryAssociationsRequestFormProperties {
+	}
+	export function CreateListRepositoryAssociationsRequestFormGroup() {
+		return new FormGroup<ListRepositoryAssociationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutRecommendationFeedbackRequest {
 		CodeReviewArn: string;
 		RecommendationId: string;
 		Reactions: Array<Reaction>;
+	}
+	export interface PutRecommendationFeedbackRequestFormProperties {
+		CodeReviewArn: FormControl<string | null | undefined>,
+		RecommendationId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecommendationFeedbackRequestFormGroup() {
+		return new FormGroup<PutRecommendationFeedbackRequestFormProperties>({
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -309,7 +761,7 @@ export namespace MyNS {
 		 * @return {ListRepositoryAssociationsResponse} Success
 		 */
 		ListRepositoryAssociations(ProviderType: Array<ProviderType> | null | undefined, State: Array<RepositoryAssociationState> | null | undefined, Name: Array<string> | null | undefined, Owner: Array<string> | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListRepositoryAssociationsResponse> {
-			return this.http.get<ListRepositoryAssociationsResponse>(this.baseUri + 'associations?' + ProviderType.map(z => `ProviderType=${z}`).join('&') + '&' + State.map(z => `State=${z}`).join('&') + '&' + Name.map(z => `Name=${encodeURIComponent(z)}`).join('&') + '&' + Owner.map(z => `Owner=${encodeURIComponent(z)}`).join('&') + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
+			return this.http.get<ListRepositoryAssociationsResponse>(this.baseUri + 'associations?' + ProviderType?.map(z => `ProviderType=${z}`).join('&') + '&' + State?.map(z => `State=${z}`).join('&') + '&' + Name?.map(z => `Name=${encodeURIComponent(z)}`).join('&') + '&' + Owner?.map(z => `Owner=${encodeURIComponent(z)}`).join('&') + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
 		/**
@@ -366,7 +818,7 @@ export namespace MyNS {
 		 * @return {ListCodeReviewsResponse} Success
 		 */
 		ListCodeReviews(ProviderTypes: Array<ProviderType> | null | undefined, States: Array<JobState> | null | undefined, RepositoryNames: Array<string> | null | undefined, Type: CodeReviewType, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListCodeReviewsResponse> {
-			return this.http.get<ListCodeReviewsResponse>(this.baseUri + 'codereviews#Type?' + ProviderTypes.map(z => `ProviderTypes=${z}`).join('&') + '&' + States.map(z => `States=${z}`).join('&') + '&' + RepositoryNames.map(z => `RepositoryNames=${encodeURIComponent(z)}`).join('&') + '&Type=' + Type + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
+			return this.http.get<ListCodeReviewsResponse>(this.baseUri + 'codereviews#Type?' + ProviderTypes?.map(z => `ProviderTypes=${z}`).join('&') + '&' + States?.map(z => `States=${z}`).join('&') + '&' + RepositoryNames?.map(z => `RepositoryNames=${encodeURIComponent(z)}`).join('&') + '&Type=' + Type + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
 		/**
@@ -380,7 +832,7 @@ export namespace MyNS {
 		 * @return {ListRecommendationFeedbackResponse} Success
 		 */
 		ListRecommendationFeedback(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string, UserIds: Array<string> | null | undefined, RecommendationIds: Array<string> | null | undefined): Observable<ListRecommendationFeedbackResponse> {
-			return this.http.get<ListRecommendationFeedbackResponse>(this.baseUri + 'feedback/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '/RecommendationFeedback?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&' + UserIds.map(z => `UserIds=${encodeURIComponent(z)}`).join('&') + '&' + RecommendationIds.map(z => `RecommendationIds=${encodeURIComponent(z)}`).join('&'), {});
+			return this.http.get<ListRecommendationFeedbackResponse>(this.baseUri + 'feedback/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '/RecommendationFeedback?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&' + UserIds?.map(z => `UserIds=${encodeURIComponent(z)}`).join('&') + '&' + RecommendationIds?.map(z => `RecommendationIds=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
 		/**
@@ -421,14 +873,37 @@ export namespace MyNS {
 		 */
 		ClientRequestToken?: string | null;
 	}
+	export interface AssociateRepositoryPostBodyFormProperties {
+
+		/**
+		 * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p> <p>To add a new repository association, this parameter specifies a unique identifier for the new repository association that helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken yourself for new versions and include that value in the request.</p> <p>You typically interact with this value if you implement your own retry logic and want to ensure that a given repository association is not created twice. We recommend that you generate a UUID-type value to ensure uniqueness within the specified repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[\w-]+$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateRepositoryPostBodyFormGroup() {
+		return new FormGroup<AssociateRepositoryPostBodyFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateRepositoryPostBodyRepository {
 
 		/** Information about an AWS CodeCommit repository. */
-		CodeCommit?: CodeCommitRepository | null;
+		CodeCommit?: CodeCommitRepository;
 
 		/** Information about a third party source repository connected through CodeStar Connections. */
-		Bitbucket?: ThirdPartySourceRepository | null;
+		Bitbucket?: ThirdPartySourceRepository;
+	}
+	export interface AssociateRepositoryPostBodyRepositoryFormProperties {
+	}
+	export function CreateAssociateRepositoryPostBodyRepositoryFormGroup() {
+		return new FormGroup<AssociateRepositoryPostBodyRepositoryFormProperties>({
+		});
+
 	}
 
 	export interface PutRecommendationFeedbackPutBody {
@@ -457,6 +932,32 @@ export namespace MyNS {
 		 * Maximum items: 1
 		 */
 		Reactions: Array<Reaction>;
+	}
+	export interface PutRecommendationFeedbackPutBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) that identifies the code review.
+		 * Required
+		 * Max length: 1600
+		 * Min length: 1
+		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+		 */
+		CodeReviewArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		RecommendationId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecommendationFeedbackPutBodyFormGroup() {
+		return new FormGroup<PutRecommendationFeedbackPutBodyFormProperties>({
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined),
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

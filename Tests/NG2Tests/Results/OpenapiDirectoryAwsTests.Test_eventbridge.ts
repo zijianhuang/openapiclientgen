@@ -1,31 +1,89 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ActivateEventSourceRequest {
 		Name: string;
 	}
+	export interface ActivateEventSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateActivateEventSourceRequestFormGroup() {
+		return new FormGroup<ActivateEventSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidStateException {
 	}
+	export interface InvalidStateExceptionFormProperties {
+	}
+	export function CreateInvalidStateExceptionFormGroup() {
+		return new FormGroup<InvalidStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalException {
+	}
+	export interface InternalExceptionFormProperties {
+	}
+	export function CreateInternalExceptionFormGroup() {
+		return new FormGroup<InternalExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateEventBusResponse {
 		EventBusArn?: string | null;
 	}
+	export interface CreateEventBusResponseFormProperties {
+		EventBusArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEventBusResponseFormGroup() {
+		return new FormGroup<CreateEventBusResponseFormProperties>({
+			EventBusArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateEventBusRequest {
 		Name: string;
 		EventSourceName?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateEventBusRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		EventSourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEventBusRequestFormGroup() {
+		return new FormGroup<CreateEventBusRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			EventSourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -35,32 +93,108 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreatePartnerEventSourceResponse {
 		EventSourceArn?: string | null;
+	}
+	export interface CreatePartnerEventSourceResponseFormProperties {
+		EventSourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePartnerEventSourceResponseFormGroup() {
+		return new FormGroup<CreatePartnerEventSourceResponseFormProperties>({
+			EventSourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePartnerEventSourceRequest {
 		Name: string;
 		Account: string;
 	}
+	export interface CreatePartnerEventSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Account: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePartnerEventSourceRequestFormGroup() {
+		return new FormGroup<CreatePartnerEventSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeactivateEventSourceRequest {
 		Name: string;
+	}
+	export interface DeactivateEventSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeactivateEventSourceRequestFormGroup() {
+		return new FormGroup<DeactivateEventSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteEventBusRequest {
 		Name: string;
 	}
+	export interface DeleteEventBusRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEventBusRequestFormGroup() {
+		return new FormGroup<DeleteEventBusRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeletePartnerEventSourceRequest {
 		Name: string;
 		Account: string;
+	}
+	export interface DeletePartnerEventSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Account: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePartnerEventSourceRequestFormGroup() {
+		return new FormGroup<DeletePartnerEventSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteRuleRequest {
@@ -68,8 +202,28 @@ export namespace MyNS {
 		EventBusName?: string | null;
 		Force?: boolean | null;
 	}
+	export interface DeleteRuleRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+		Force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteRuleRequestFormGroup() {
+		return new FormGroup<DeleteRuleRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ManagedRuleException {
+	}
+	export interface ManagedRuleExceptionFormProperties {
+	}
+	export function CreateManagedRuleExceptionFormGroup() {
+		return new FormGroup<ManagedRuleExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEventBusResponse {
@@ -77,9 +231,31 @@ export namespace MyNS {
 		Arn?: string | null;
 		Policy?: string | null;
 	}
+	export interface DescribeEventBusResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventBusResponseFormGroup() {
+		return new FormGroup<DescribeEventBusResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEventBusRequest {
 		Name?: string | null;
+	}
+	export interface DescribeEventBusRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventBusRequestFormGroup() {
+		return new FormGroup<DescribeEventBusRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEventSourceResponse {
@@ -90,20 +266,68 @@ export namespace MyNS {
 		Name?: string | null;
 		State?: DescribeEventSourceResponseState | null;
 	}
+	export interface DescribeEventSourceResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreatedBy: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ExpirationTime: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<DescribeEventSourceResponseState | null | undefined>,
+	}
+	export function CreateDescribeEventSourceResponseFormGroup() {
+		return new FormGroup<DescribeEventSourceResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreatedBy: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeEventSourceResponseState | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeEventSourceResponseState { PENDING = 0, ACTIVE = 1, DELETED = 2 }
 
 	export interface DescribeEventSourceRequest {
 		Name: string;
 	}
+	export interface DescribeEventSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventSourceRequestFormGroup() {
+		return new FormGroup<DescribeEventSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribePartnerEventSourceResponse {
 		Arn?: string | null;
 		Name?: string | null;
 	}
+	export interface DescribePartnerEventSourceResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePartnerEventSourceResponseFormGroup() {
+		return new FormGroup<DescribePartnerEventSourceResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribePartnerEventSourceRequest {
 		Name: string;
+	}
+	export interface DescribePartnerEventSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePartnerEventSourceRequestFormGroup() {
+		return new FormGroup<DescribePartnerEventSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRuleResponse {
@@ -117,6 +341,31 @@ export namespace MyNS {
 		ManagedBy?: string | null;
 		EventBusName?: string | null;
 	}
+	export interface DescribeRuleResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		EventPattern: FormControl<string | null | undefined>,
+		ScheduleExpression: FormControl<string | null | undefined>,
+		State: FormControl<DescribeRuleResponseState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ManagedBy: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRuleResponseFormGroup() {
+		return new FormGroup<DescribeRuleResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			EventPattern: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ManagedBy: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeRuleResponseState { ENABLED = 0, DISABLED = 1 }
 
@@ -124,20 +373,62 @@ export namespace MyNS {
 		Name: string;
 		EventBusName?: string | null;
 	}
+	export interface DescribeRuleRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRuleRequestFormGroup() {
+		return new FormGroup<DescribeRuleRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisableRuleRequest {
 		Name: string;
 		EventBusName?: string | null;
+	}
+	export interface DisableRuleRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableRuleRequestFormGroup() {
+		return new FormGroup<DisableRuleRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EnableRuleRequest {
 		Name: string;
 		EventBusName?: string | null;
 	}
+	export interface EnableRuleRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableRuleRequestFormGroup() {
+		return new FormGroup<EnableRuleRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListEventBusesResponse {
-		EventBuses?: Array<EventBus> | null;
+		EventBuses?: Array<EventBus>;
 		NextToken?: string | null;
+	}
+	export interface ListEventBusesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEventBusesResponseFormGroup() {
+		return new FormGroup<ListEventBusesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -148,15 +439,52 @@ export namespace MyNS {
 		Policy?: string | null;
 	}
 
+	/** An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications. */
+	export interface EventBusFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateEventBusFormGroup() {
+		return new FormGroup<EventBusFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListEventBusesRequest {
 		NamePrefix?: string | null;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListEventBusesRequestFormProperties {
+		NamePrefix: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListEventBusesRequestFormGroup() {
+		return new FormGroup<ListEventBusesRequestFormProperties>({
+			NamePrefix: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListEventSourcesResponse {
-		EventSources?: Array<EventSource> | null;
+		EventSources?: Array<EventSource>;
 		NextToken?: string | null;
+	}
+	export interface ListEventSourcesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEventSourcesResponseFormGroup() {
+		return new FormGroup<ListEventSourcesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -170,15 +498,58 @@ export namespace MyNS {
 		State?: DescribeEventSourceResponseState | null;
 	}
 
+	/** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services. */
+	export interface EventSourceFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreatedBy: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ExpirationTime: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<DescribeEventSourceResponseState | null | undefined>,
+	}
+	export function CreateEventSourceFormGroup() {
+		return new FormGroup<EventSourceFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreatedBy: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeEventSourceResponseState | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListEventSourcesRequest {
 		NamePrefix?: string | null;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListEventSourcesRequestFormProperties {
+		NamePrefix: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListEventSourcesRequestFormGroup() {
+		return new FormGroup<ListEventSourcesRequestFormProperties>({
+			NamePrefix: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPartnerEventSourceAccountsResponse {
-		PartnerEventSourceAccounts?: Array<PartnerEventSourceAccount> | null;
+		PartnerEventSourceAccounts?: Array<PartnerEventSourceAccount>;
 		NextToken?: string | null;
+	}
+	export interface ListPartnerEventSourceAccountsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPartnerEventSourceAccountsResponseFormGroup() {
+		return new FormGroup<ListPartnerEventSourceAccountsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -190,15 +561,54 @@ export namespace MyNS {
 		State?: DescribeEventSourceResponseState | null;
 	}
 
+	/** The AWS account that a partner event source has been offered to. */
+	export interface PartnerEventSourceAccountFormProperties {
+		Account: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ExpirationTime: FormControl<Date | null | undefined>,
+		State: FormControl<DescribeEventSourceResponseState | null | undefined>,
+	}
+	export function CreatePartnerEventSourceAccountFormGroup() {
+		return new FormGroup<PartnerEventSourceAccountFormProperties>({
+			Account: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
+			State: new FormControl<DescribeEventSourceResponseState | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPartnerEventSourceAccountsRequest {
 		EventSourceName: string;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListPartnerEventSourceAccountsRequestFormProperties {
+		EventSourceName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListPartnerEventSourceAccountsRequestFormGroup() {
+		return new FormGroup<ListPartnerEventSourceAccountsRequestFormProperties>({
+			EventSourceName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPartnerEventSourcesResponse {
-		PartnerEventSources?: Array<PartnerEventSource> | null;
+		PartnerEventSources?: Array<PartnerEventSource>;
 		NextToken?: string | null;
+	}
+	export interface ListPartnerEventSourcesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPartnerEventSourcesResponseFormGroup() {
+		return new FormGroup<ListPartnerEventSourcesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -208,15 +618,50 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services. */
+	export interface PartnerEventSourceFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreatePartnerEventSourceFormGroup() {
+		return new FormGroup<PartnerEventSourceFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPartnerEventSourcesRequest {
 		NamePrefix: string;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListPartnerEventSourcesRequestFormProperties {
+		NamePrefix: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListPartnerEventSourcesRequestFormGroup() {
+		return new FormGroup<ListPartnerEventSourcesRequestFormProperties>({
+			NamePrefix: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRuleNamesByTargetResponse {
-		RuleNames?: Array<string> | null;
+		RuleNames?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListRuleNamesByTargetResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRuleNamesByTargetResponseFormGroup() {
+		return new FormGroup<ListRuleNamesByTargetResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRuleNamesByTargetRequest {
@@ -225,10 +670,34 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListRuleNamesByTargetRequestFormProperties {
+		TargetArn: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListRuleNamesByTargetRequestFormGroup() {
+		return new FormGroup<ListRuleNamesByTargetRequestFormProperties>({
+			TargetArn: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRulesResponse {
-		Rules?: Array<Rule> | null;
+		Rules?: Array<Rule>;
 		NextToken?: string | null;
+	}
+	export interface ListRulesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRulesResponseFormGroup() {
+		return new FormGroup<ListRulesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -245,24 +714,91 @@ export namespace MyNS {
 		EventBusName?: string | null;
 	}
 
+	/** Contains information about a rule in Amazon EventBridge. */
+	export interface RuleFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		EventPattern: FormControl<string | null | undefined>,
+		State: FormControl<DescribeRuleResponseState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ScheduleExpression: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ManagedBy: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleFormGroup() {
+		return new FormGroup<RuleFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			EventPattern: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ManagedBy: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRulesRequest {
 		NamePrefix?: string | null;
 		EventBusName?: string | null;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListRulesRequestFormProperties {
+		NamePrefix: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListRulesRequestFormGroup() {
+		return new FormGroup<ListRulesRequestFormProperties>({
+			NamePrefix: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceARN: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTargetsByRuleResponse {
-		Targets?: Array<Target> | null;
+		Targets?: Array<Target>;
 		NextToken?: string | null;
+	}
+	export interface ListTargetsByRuleResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTargetsByRuleResponseFormGroup() {
+		return new FormGroup<ListTargetsByRuleResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -275,32 +811,69 @@ export namespace MyNS {
 		InputPath?: string | null;
 
 		/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
-		InputTransformer?: InputTransformer | null;
+		InputTransformer?: InputTransformer;
 
 		/** This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key. */
-		KinesisParameters?: KinesisParameters | null;
+		KinesisParameters?: KinesisParameters;
 
 		/** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. */
-		RunCommandParameters?: RunCommandParameters | null;
+		RunCommandParameters?: RunCommandParameters;
 
 		/** The custom parameters to be used when the target is an Amazon ECS task. */
-		EcsParameters?: EcsParameters | null;
+		EcsParameters?: EcsParameters;
 
 		/** The custom parameters to be used when the target is an AWS Batch job. */
-		BatchParameters?: BatchParameters | null;
+		BatchParameters?: BatchParameters;
 
 		/** This structure includes the custom parameter to be used when the target is an SQS FIFO queue. */
-		SqsParameters?: SqsParameters | null;
+		SqsParameters?: SqsParameters;
+	}
+
+	/** <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p> */
+	export interface TargetFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		Input: FormControl<string | null | undefined>,
+		InputPath: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetFormGroup() {
+		return new FormGroup<TargetFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Input: new FormControl<string | null | undefined>(undefined),
+			InputPath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
 	export interface InputTransformer {
-		InputPathsMap?: TransformerPaths | null;
+		InputPathsMap?: TransformerPaths;
 		InputTemplate: string;
 	}
 
+	/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
+	export interface InputTransformerFormProperties {
+		InputTemplate: FormControl<string | null | undefined>,
+	}
+	export function CreateInputTransformerFormGroup() {
+		return new FormGroup<InputTransformerFormProperties>({
+			InputTemplate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TransformerPaths {
+	}
+	export interface TransformerPathsFormProperties {
+	}
+	export function CreateTransformerPathsFormGroup() {
+		return new FormGroup<TransformerPathsFormProperties>({
+		});
+
 	}
 
 
@@ -309,10 +882,30 @@ export namespace MyNS {
 		PartitionKeyPath: string;
 	}
 
+	/** This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key. */
+	export interface KinesisParametersFormProperties {
+		PartitionKeyPath: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisParametersFormGroup() {
+		return new FormGroup<KinesisParametersFormProperties>({
+			PartitionKeyPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.  */
 	export interface RunCommandParameters {
 		RunCommandTargets: Array<RunCommandTarget>;
+	}
+
+	/** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.  */
+	export interface RunCommandParametersFormProperties {
+	}
+	export function CreateRunCommandParametersFormGroup() {
+		return new FormGroup<RunCommandParametersFormProperties>({
+		});
+
 	}
 
 
@@ -320,6 +913,17 @@ export namespace MyNS {
 	export interface RunCommandTarget {
 		Key: string;
 		Values: Array<string>;
+	}
+
+	/** Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values. */
+	export interface RunCommandTargetFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateRunCommandTargetFormGroup() {
+		return new FormGroup<RunCommandTargetFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -330,9 +934,28 @@ export namespace MyNS {
 		LaunchType?: EcsParametersLaunchType | null;
 
 		/** This structure specifies the network configuration for an ECS task. */
-		NetworkConfiguration?: NetworkConfiguration | null;
+		NetworkConfiguration?: NetworkConfiguration;
 		PlatformVersion?: string | null;
 		Group?: string | null;
+	}
+
+	/** The custom parameters to be used when the target is an Amazon ECS task. */
+	export interface EcsParametersFormProperties {
+		TaskDefinitionArn: FormControl<string | null | undefined>,
+		TaskCount: FormControl<number | null | undefined>,
+		LaunchType: FormControl<EcsParametersLaunchType | null | undefined>,
+		PlatformVersion: FormControl<string | null | undefined>,
+		Group: FormControl<string | null | undefined>,
+	}
+	export function CreateEcsParametersFormGroup() {
+		return new FormGroup<EcsParametersFormProperties>({
+			TaskDefinitionArn: new FormControl<string | null | undefined>(undefined),
+			TaskCount: new FormControl<number | null | undefined>(undefined),
+			LaunchType: new FormControl<EcsParametersLaunchType | null | undefined>(undefined),
+			PlatformVersion: new FormControl<string | null | undefined>(undefined),
+			Group: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EcsParametersLaunchType { EC2 = 0, FARGATE = 1 }
@@ -342,15 +965,35 @@ export namespace MyNS {
 	export interface NetworkConfiguration {
 
 		/** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode. */
-		awsvpcConfiguration?: AwsVpcConfiguration | null;
+		awsvpcConfiguration?: AwsVpcConfiguration;
+	}
+
+	/** This structure specifies the network configuration for an ECS task. */
+	export interface NetworkConfigurationFormProperties {
+	}
+	export function CreateNetworkConfigurationFormGroup() {
+		return new FormGroup<NetworkConfigurationFormProperties>({
+		});
+
 	}
 
 
 	/** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode. */
 	export interface AwsVpcConfiguration {
 		Subnets: Array<string>;
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
 		AssignPublicIp?: DescribeRuleResponseState | null;
+	}
+
+	/** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode. */
+	export interface AwsVpcConfigurationFormProperties {
+		AssignPublicIp: FormControl<DescribeRuleResponseState | null | undefined>,
+	}
+	export function CreateAwsVpcConfigurationFormGroup() {
+		return new FormGroup<AwsVpcConfigurationFormProperties>({
+			AssignPublicIp: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -360,10 +1003,23 @@ export namespace MyNS {
 		JobName: string;
 
 		/** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. */
-		ArrayProperties?: BatchArrayProperties | null;
+		ArrayProperties?: BatchArrayProperties;
 
 		/** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition. */
-		RetryStrategy?: BatchRetryStrategy | null;
+		RetryStrategy?: BatchRetryStrategy;
+	}
+
+	/** The custom parameters to be used when the target is an AWS Batch job. */
+	export interface BatchParametersFormProperties {
+		JobDefinition: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchParametersFormGroup() {
+		return new FormGroup<BatchParametersFormProperties>({
+			JobDefinition: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -372,10 +1028,32 @@ export namespace MyNS {
 		Size?: number | null;
 	}
 
+	/** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. */
+	export interface BatchArrayPropertiesFormProperties {
+		Size: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchArrayPropertiesFormGroup() {
+		return new FormGroup<BatchArrayPropertiesFormProperties>({
+			Size: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition. */
 	export interface BatchRetryStrategy {
 		Attempts?: number | null;
+	}
+
+	/** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition. */
+	export interface BatchRetryStrategyFormProperties {
+		Attempts: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchRetryStrategyFormGroup() {
+		return new FormGroup<BatchRetryStrategyFormProperties>({
+			Attempts: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -384,16 +1062,51 @@ export namespace MyNS {
 		MessageGroupId?: string | null;
 	}
 
+	/** This structure includes the custom parameter to be used when the target is an SQS FIFO queue. */
+	export interface SqsParametersFormProperties {
+		MessageGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateSqsParametersFormGroup() {
+		return new FormGroup<SqsParametersFormProperties>({
+			MessageGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTargetsByRuleRequest {
 		Rule: string;
 		EventBusName?: string | null;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListTargetsByRuleRequestFormProperties {
+		Rule: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTargetsByRuleRequestFormGroup() {
+		return new FormGroup<ListTargetsByRuleRequestFormProperties>({
+			Rule: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutEventsResponse {
 		FailedEntryCount?: number | null;
-		Entries?: Array<PutEventsResultEntry> | null;
+		Entries?: Array<PutEventsResultEntry>;
+	}
+	export interface PutEventsResponseFormProperties {
+		FailedEntryCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePutEventsResponseFormGroup() {
+		return new FormGroup<PutEventsResponseFormProperties>({
+			FailedEntryCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -404,8 +1117,30 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Represents an event that failed to be submitted. */
+	export interface PutEventsResultEntryFormProperties {
+		EventId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreatePutEventsResultEntryFormGroup() {
+		return new FormGroup<PutEventsResultEntryFormProperties>({
+			EventId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutEventsRequest {
 		Entries: Array<PutEventsRequestEntry>;
+	}
+	export interface PutEventsRequestFormProperties {
+	}
+	export function CreatePutEventsRequestFormGroup() {
+		return new FormGroup<PutEventsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -413,15 +1148,43 @@ export namespace MyNS {
 	export interface PutEventsRequestEntry {
 		Time?: Date | null;
 		Source?: string | null;
-		Resources?: Array<string> | null;
+		Resources?: Array<string>;
 		DetailType?: string | null;
 		Detail?: string | null;
 		EventBusName?: string | null;
 	}
 
+	/** Represents an event to be submitted. */
+	export interface PutEventsRequestEntryFormProperties {
+		Time: FormControl<Date | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		DetailType: FormControl<string | null | undefined>,
+		Detail: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutEventsRequestEntryFormGroup() {
+		return new FormGroup<PutEventsRequestEntryFormProperties>({
+			Time: new FormControl<Date | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			DetailType: new FormControl<string | null | undefined>(undefined),
+			Detail: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutPartnerEventsResponse {
 		FailedEntryCount?: number | null;
-		Entries?: Array<PutPartnerEventsResultEntry> | null;
+		Entries?: Array<PutPartnerEventsResultEntry>;
+	}
+	export interface PutPartnerEventsResponseFormProperties {
+		FailedEntryCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePutPartnerEventsResponseFormGroup() {
+		return new FormGroup<PutPartnerEventsResponseFormProperties>({
+			FailedEntryCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -432,8 +1195,30 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Represents an event that a partner tried to generate, but failed. */
+	export interface PutPartnerEventsResultEntryFormProperties {
+		EventId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreatePutPartnerEventsResultEntryFormGroup() {
+		return new FormGroup<PutPartnerEventsResultEntryFormProperties>({
+			EventId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutPartnerEventsRequest {
 		Entries: Array<PutPartnerEventsRequestEntry>;
+	}
+	export interface PutPartnerEventsRequestFormProperties {
+	}
+	export function CreatePutPartnerEventsRequestFormGroup() {
+		return new FormGroup<PutPartnerEventsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -441,9 +1226,26 @@ export namespace MyNS {
 	export interface PutPartnerEventsRequestEntry {
 		Time?: Date | null;
 		Source?: string | null;
-		Resources?: Array<string> | null;
+		Resources?: Array<string>;
 		DetailType?: string | null;
 		Detail?: string | null;
+	}
+
+	/** The details about an event generated by an SaaS partner. */
+	export interface PutPartnerEventsRequestEntryFormProperties {
+		Time: FormControl<Date | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		DetailType: FormControl<string | null | undefined>,
+		Detail: FormControl<string | null | undefined>,
+	}
+	export function CreatePutPartnerEventsRequestEntryFormGroup() {
+		return new FormGroup<PutPartnerEventsRequestEntryFormProperties>({
+			Time: new FormControl<Date | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			DetailType: new FormControl<string | null | undefined>(undefined),
+			Detail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutPermissionRequest {
@@ -453,7 +1255,22 @@ export namespace MyNS {
 		StatementId: string;
 
 		/** <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p> */
-		Condition?: Condition | null;
+		Condition?: Condition;
+	}
+	export interface PutPermissionRequestFormProperties {
+		EventBusName: FormControl<string | null | undefined>,
+		Action: FormControl<string | null | undefined>,
+		Principal: FormControl<string | null | undefined>,
+		StatementId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutPermissionRequestFormGroup() {
+		return new FormGroup<PutPermissionRequestFormProperties>({
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Action: new FormControl<string | null | undefined>(undefined),
+			Principal: new FormControl<string | null | undefined>(undefined),
+			StatementId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -464,11 +1281,42 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p> */
+	export interface ConditionFormProperties {
+		Type: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateConditionFormGroup() {
+		return new FormGroup<ConditionFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PolicyLengthExceededException {
+	}
+	export interface PolicyLengthExceededExceptionFormProperties {
+	}
+	export function CreatePolicyLengthExceededExceptionFormGroup() {
+		return new FormGroup<PolicyLengthExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutRuleResponse {
 		RuleArn?: string | null;
+	}
+	export interface PutRuleResponseFormProperties {
+		RuleArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRuleResponseFormGroup() {
+		return new FormGroup<PutRuleResponseFormProperties>({
+			RuleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutRuleRequest {
@@ -478,16 +1326,53 @@ export namespace MyNS {
 		State?: DescribeRuleResponseState | null;
 		Description?: string | null;
 		RoleArn?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		EventBusName?: string | null;
+	}
+	export interface PutRuleRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ScheduleExpression: FormControl<string | null | undefined>,
+		EventPattern: FormControl<string | null | undefined>,
+		State: FormControl<DescribeRuleResponseState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRuleRequestFormGroup() {
+		return new FormGroup<PutRuleRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			EventPattern: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<DescribeRuleResponseState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidEventPatternException {
 	}
+	export interface InvalidEventPatternExceptionFormProperties {
+	}
+	export function CreateInvalidEventPatternExceptionFormGroup() {
+		return new FormGroup<InvalidEventPatternExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PutTargetsResponse {
 		FailedEntryCount?: number | null;
-		FailedEntries?: Array<PutTargetsResultEntry> | null;
+		FailedEntries?: Array<PutTargetsResultEntry>;
+	}
+	export interface PutTargetsResponseFormProperties {
+		FailedEntryCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePutTargetsResponseFormGroup() {
+		return new FormGroup<PutTargetsResponseFormProperties>({
+			FailedEntryCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -498,20 +1383,66 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Represents a target that failed to be added to a rule. */
+	export interface PutTargetsResultEntryFormProperties {
+		TargetId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreatePutTargetsResultEntryFormGroup() {
+		return new FormGroup<PutTargetsResultEntryFormProperties>({
+			TargetId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutTargetsRequest {
 		Rule: string;
 		EventBusName?: string | null;
 		Targets: Array<Target>;
+	}
+	export interface PutTargetsRequestFormProperties {
+		Rule: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutTargetsRequestFormGroup() {
+		return new FormGroup<PutTargetsRequestFormProperties>({
+			Rule: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemovePermissionRequest {
 		StatementId: string;
 		EventBusName?: string | null;
 	}
+	export interface RemovePermissionRequestFormProperties {
+		StatementId: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemovePermissionRequestFormGroup() {
+		return new FormGroup<RemovePermissionRequestFormProperties>({
+			StatementId: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveTargetsResponse {
 		FailedEntryCount?: number | null;
-		FailedEntries?: Array<RemoveTargetsResultEntry> | null;
+		FailedEntries?: Array<RemoveTargetsResultEntry>;
+	}
+	export interface RemoveTargetsResponseFormProperties {
+		FailedEntryCount: FormControl<number | null | undefined>,
+	}
+	export function CreateRemoveTargetsResponseFormGroup() {
+		return new FormGroup<RemoveTargetsResponseFormProperties>({
+			FailedEntryCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -522,36 +1453,116 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Represents a target that failed to be removed from a rule. */
+	export interface RemoveTargetsResultEntryFormProperties {
+		TargetId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTargetsResultEntryFormGroup() {
+		return new FormGroup<RemoveTargetsResultEntryFormProperties>({
+			TargetId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RemoveTargetsRequest {
 		Rule: string;
 		EventBusName?: string | null;
 		Ids: Array<string>;
 		Force?: boolean | null;
 	}
+	export interface RemoveTargetsRequestFormProperties {
+		Rule: FormControl<string | null | undefined>,
+		EventBusName: FormControl<string | null | undefined>,
+		Force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRemoveTargetsRequestFormGroup() {
+		return new FormGroup<RemoveTargetsRequestFormProperties>({
+			Rule: new FormControl<string | null | undefined>(undefined),
+			EventBusName: new FormControl<string | null | undefined>(undefined),
+			Force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TestEventPatternResponse {
 		Result?: boolean | null;
+	}
+	export interface TestEventPatternResponseFormProperties {
+		Result: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTestEventPatternResponseFormGroup() {
+		return new FormGroup<TestEventPatternResponseFormProperties>({
+			Result: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestEventPatternRequest {
 		EventPattern: string;
 		Event: string;
 	}
+	export interface TestEventPatternRequestFormProperties {
+		EventPattern: FormControl<string | null | undefined>,
+		Event: FormControl<string | null | undefined>,
+	}
+	export function CreateTestEventPatternRequestFormGroup() {
+		return new FormGroup<TestEventPatternRequestFormProperties>({
+			EventPattern: new FormControl<string | null | undefined>(undefined),
+			Event: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceARN: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }

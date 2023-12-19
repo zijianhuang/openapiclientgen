@@ -1,13 +1,32 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptQualificationRequestResponse {
+	}
+	export interface AcceptQualificationRequestResponseFormProperties {
+	}
+	export function CreateAcceptQualificationRequestResponseFormGroup() {
+		return new FormGroup<AcceptQualificationRequestResponseFormProperties>({
+		});
+
 	}
 
 	export interface AcceptQualificationRequestRequest {
 		QualificationRequestId: string;
 		IntegerValue?: number | null;
+	}
+	export interface AcceptQualificationRequestRequestFormProperties {
+		QualificationRequestId: FormControl<string | null | undefined>,
+		IntegerValue: FormControl<number | null | undefined>,
+	}
+	export function CreateAcceptQualificationRequestRequestFormGroup() {
+		return new FormGroup<AcceptQualificationRequestRequestFormProperties>({
+			QualificationRequestId: new FormControl<string | null | undefined>(undefined),
+			IntegerValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -17,6 +36,19 @@ export namespace MyNS {
 		TurkErrorCode?: string | null;
 	}
 
+	/** Amazon Mechanical Turk is temporarily unable to process your request. Try your call again. */
+	export interface ServiceFaultFormProperties {
+		Message: FormControl<string | null | undefined>,
+		TurkErrorCode: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceFaultFormGroup() {
+		return new FormGroup<ServiceFaultFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			TurkErrorCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Your request is invalid. */
 	export interface RequestError {
@@ -24,7 +56,27 @@ export namespace MyNS {
 		TurkErrorCode?: string | null;
 	}
 
+	/** Your request is invalid. */
+	export interface RequestErrorFormProperties {
+		Message: FormControl<string | null | undefined>,
+		TurkErrorCode: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestErrorFormGroup() {
+		return new FormGroup<RequestErrorFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			TurkErrorCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ApproveAssignmentResponse {
+	}
+	export interface ApproveAssignmentResponseFormProperties {
+	}
+	export function CreateApproveAssignmentResponseFormGroup() {
+		return new FormGroup<ApproveAssignmentResponseFormProperties>({
+		});
+
 	}
 
 	export interface ApproveAssignmentRequest {
@@ -32,8 +84,28 @@ export namespace MyNS {
 		RequesterFeedback?: string | null;
 		OverrideRejection?: boolean | null;
 	}
+	export interface ApproveAssignmentRequestFormProperties {
+		AssignmentId: FormControl<string | null | undefined>,
+		RequesterFeedback: FormControl<string | null | undefined>,
+		OverrideRejection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateApproveAssignmentRequestFormGroup() {
+		return new FormGroup<ApproveAssignmentRequestFormProperties>({
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			RequesterFeedback: new FormControl<string | null | undefined>(undefined),
+			OverrideRejection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateQualificationWithWorkerResponse {
+	}
+	export interface AssociateQualificationWithWorkerResponseFormProperties {
+	}
+	export function CreateAssociateQualificationWithWorkerResponseFormGroup() {
+		return new FormGroup<AssociateQualificationWithWorkerResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateQualificationWithWorkerRequest {
@@ -42,8 +114,30 @@ export namespace MyNS {
 		IntegerValue?: number | null;
 		SendNotification?: boolean | null;
 	}
+	export interface AssociateQualificationWithWorkerRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		WorkerId: FormControl<string | null | undefined>,
+		IntegerValue: FormControl<number | null | undefined>,
+		SendNotification: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAssociateQualificationWithWorkerRequestFormGroup() {
+		return new FormGroup<AssociateQualificationWithWorkerRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			IntegerValue: new FormControl<number | null | undefined>(undefined),
+			SendNotification: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateAdditionalAssignmentsForHITResponse {
+	}
+	export interface CreateAdditionalAssignmentsForHITResponseFormProperties {
+	}
+	export function CreateCreateAdditionalAssignmentsForHITResponseFormGroup() {
+		return new FormGroup<CreateAdditionalAssignmentsForHITResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateAdditionalAssignmentsForHITRequest {
@@ -51,11 +145,31 @@ export namespace MyNS {
 		NumberOfAdditionalAssignments: number;
 		UniqueRequestToken?: string | null;
 	}
+	export interface CreateAdditionalAssignmentsForHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		NumberOfAdditionalAssignments: FormControl<number | null | undefined>,
+		UniqueRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAdditionalAssignmentsForHITRequestFormGroup() {
+		return new FormGroup<CreateAdditionalAssignmentsForHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			NumberOfAdditionalAssignments: new FormControl<number | null | undefined>(undefined),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateHITResponse {
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT | null;
+		HIT?: HIT;
+	}
+	export interface CreateHITResponseFormProperties {
+	}
+	export function CreateCreateHITResponseFormGroup() {
+		return new FormGroup<CreateHITResponseFormProperties>({
+		});
+
 	}
 
 
@@ -82,11 +196,65 @@ export namespace MyNS {
 		Expiration?: Date | null;
 		AssignmentDurationInSeconds?: number | null;
 		RequesterAnnotation?: string | null;
-		QualificationRequirements?: Array<QualificationRequirement> | null;
+		QualificationRequirements?: Array<QualificationRequirement>;
 		HITReviewStatus?: HITHITReviewStatus | null;
 		NumberOfAssignmentsPending?: number | null;
 		NumberOfAssignmentsAvailable?: number | null;
 		NumberOfAssignmentsCompleted?: number | null;
+	}
+
+	/**  The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
+	export interface HITFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		HITTypeId: FormControl<string | null | undefined>,
+		HITGroupId: FormControl<string | null | undefined>,
+		HITLayoutId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Question: FormControl<string | null | undefined>,
+		Keywords: FormControl<string | null | undefined>,
+		HITStatus: FormControl<HITHITStatus | null | undefined>,
+		MaxAssignments: FormControl<number | null | undefined>,
+
+		/**
+		 * A string representing a currency amount.
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		Reward: FormControl<string | null | undefined>,
+		AutoApprovalDelayInSeconds: FormControl<number | null | undefined>,
+		Expiration: FormControl<Date | null | undefined>,
+		AssignmentDurationInSeconds: FormControl<number | null | undefined>,
+		RequesterAnnotation: FormControl<string | null | undefined>,
+		HITReviewStatus: FormControl<HITHITReviewStatus | null | undefined>,
+		NumberOfAssignmentsPending: FormControl<number | null | undefined>,
+		NumberOfAssignmentsAvailable: FormControl<number | null | undefined>,
+		NumberOfAssignmentsCompleted: FormControl<number | null | undefined>,
+	}
+	export function CreateHITFormGroup() {
+		return new FormGroup<HITFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			HITTypeId: new FormControl<string | null | undefined>(undefined),
+			HITGroupId: new FormControl<string | null | undefined>(undefined),
+			HITLayoutId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Question: new FormControl<string | null | undefined>(undefined),
+			Keywords: new FormControl<string | null | undefined>(undefined),
+			HITStatus: new FormControl<HITHITStatus | null | undefined>(undefined),
+			MaxAssignments: new FormControl<number | null | undefined>(undefined),
+			Reward: new FormControl<string | null | undefined>(undefined),
+			AutoApprovalDelayInSeconds: new FormControl<number | null | undefined>(undefined),
+			Expiration: new FormControl<Date | null | undefined>(undefined),
+			AssignmentDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			RequesterAnnotation: new FormControl<string | null | undefined>(undefined),
+			HITReviewStatus: new FormControl<HITHITReviewStatus | null | undefined>(undefined),
+			NumberOfAssignmentsPending: new FormControl<number | null | undefined>(undefined),
+			NumberOfAssignmentsAvailable: new FormControl<number | null | undefined>(undefined),
+			NumberOfAssignmentsCompleted: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HITHITStatus { Assignable = 0, Unassignable = 1, Reviewable = 2, Reviewing = 3, Disposed = 4 }
@@ -96,10 +264,27 @@ export namespace MyNS {
 	export interface QualificationRequirement {
 		QualificationTypeId: string;
 		Comparator: QualificationRequirementComparator;
-		IntegerValues?: Array<number> | null;
-		LocaleValues?: Array<Locale> | null;
+		IntegerValues?: Array<number>;
+		LocaleValues?: Array<Locale>;
 		RequiredToPreview?: boolean | null;
 		ActionsGuarded?: QualificationRequirementActionsGuarded | null;
+	}
+
+	/**  The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.  */
+	export interface QualificationRequirementFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		Comparator: FormControl<QualificationRequirementComparator | null | undefined>,
+		RequiredToPreview: FormControl<boolean | null | undefined>,
+		ActionsGuarded: FormControl<QualificationRequirementActionsGuarded | null | undefined>,
+	}
+	export function CreateQualificationRequirementFormGroup() {
+		return new FormGroup<QualificationRequirementFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			Comparator: new FormControl<QualificationRequirementComparator | null | undefined>(undefined),
+			RequiredToPreview: new FormControl<boolean | null | undefined>(undefined),
+			ActionsGuarded: new FormControl<QualificationRequirementActionsGuarded | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QualificationRequirementComparator { LessThan = 0, LessThanOrEqualTo = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, EqualTo = 4, NotEqualTo = 5, Exists = 6, DoesNotExist = 7, In = 8, NotIn = 9 }
@@ -109,6 +294,19 @@ export namespace MyNS {
 	export interface Locale {
 		Country: string;
 		Subdivision?: string | null;
+	}
+
+	/** The Locale data structure represents a geographical region or location. */
+	export interface LocaleFormProperties {
+		Country: FormControl<string | null | undefined>,
+		Subdivision: FormControl<string | null | undefined>,
+	}
+	export function CreateLocaleFormGroup() {
+		return new FormGroup<LocaleFormProperties>({
+			Country: new FormControl<string | null | undefined>(undefined),
+			Subdivision: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QualificationRequirementActionsGuarded { Accept = 0, PreviewAndAccept = 1, DiscoverPreviewAndAccept = 2 }
@@ -132,38 +330,108 @@ export namespace MyNS {
 		Description: string;
 		Question?: string | null;
 		RequesterAnnotation?: string | null;
-		QualificationRequirements?: Array<QualificationRequirement> | null;
+		QualificationRequirements?: Array<QualificationRequirement>;
 		UniqueRequestToken?: string | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		AssignmentReviewPolicy?: ReviewPolicy | null;
+		AssignmentReviewPolicy?: ReviewPolicy;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		HITReviewPolicy?: ReviewPolicy | null;
+		HITReviewPolicy?: ReviewPolicy;
 		HITLayoutId?: string | null;
-		HITLayoutParameters?: Array<HITLayoutParameter> | null;
+		HITLayoutParameters?: Array<HITLayoutParameter>;
+	}
+	export interface CreateHITRequestFormProperties {
+		MaxAssignments: FormControl<number | null | undefined>,
+		AutoApprovalDelayInSeconds: FormControl<number | null | undefined>,
+		LifetimeInSeconds: FormControl<number | null | undefined>,
+		AssignmentDurationInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * A string representing a currency amount.
+		 * Required
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		Reward: FormControl<string | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+		Keywords: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Question: FormControl<string | null | undefined>,
+		RequesterAnnotation: FormControl<string | null | undefined>,
+		UniqueRequestToken: FormControl<string | null | undefined>,
+		HITLayoutId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHITRequestFormGroup() {
+		return new FormGroup<CreateHITRequestFormProperties>({
+			MaxAssignments: new FormControl<number | null | undefined>(undefined),
+			AutoApprovalDelayInSeconds: new FormControl<number | null | undefined>(undefined),
+			LifetimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			AssignmentDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			Reward: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			Keywords: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Question: new FormControl<string | null | undefined>(undefined),
+			RequesterAnnotation: new FormControl<string | null | undefined>(undefined),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined),
+			HITLayoutId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.  */
 	export interface ReviewPolicy {
 		PolicyName: string;
-		Parameters?: Array<PolicyParameter> | null;
+		Parameters?: Array<PolicyParameter>;
+	}
+
+	/**  HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.  */
+	export interface ReviewPolicyFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateReviewPolicyFormGroup() {
+		return new FormGroup<ReviewPolicyFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  Name of the parameter from the Review policy.  */
 	export interface PolicyParameter {
 		Key?: string | null;
-		Values?: Array<string> | null;
-		MapEntries?: Array<ParameterMapEntry> | null;
+		Values?: Array<string>;
+		MapEntries?: Array<ParameterMapEntry>;
+	}
+
+	/**  Name of the parameter from the Review policy.  */
+	export interface PolicyParameterFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyParameterFormGroup() {
+		return new FormGroup<PolicyParameterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.  */
 	export interface ParameterMapEntry {
 		Key?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/**  This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.  */
+	export interface ParameterMapEntryFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterMapEntryFormGroup() {
+		return new FormGroup<ParameterMapEntryFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -173,8 +441,30 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/**  The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT.  */
+	export interface HITLayoutParameterFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateHITLayoutParameterFormGroup() {
+		return new FormGroup<HITLayoutParameterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateHITTypeResponse {
 		HITTypeId?: string | null;
+	}
+	export interface CreateHITTypeResponseFormProperties {
+		HITTypeId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHITTypeResponseFormGroup() {
+		return new FormGroup<CreateHITTypeResponseFormProperties>({
+			HITTypeId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateHITTypeRequest {
@@ -190,13 +480,45 @@ export namespace MyNS {
 		Title: string;
 		Keywords?: string | null;
 		Description: string;
-		QualificationRequirements?: Array<QualificationRequirement> | null;
+		QualificationRequirements?: Array<QualificationRequirement>;
+	}
+	export interface CreateHITTypeRequestFormProperties {
+		AutoApprovalDelayInSeconds: FormControl<number | null | undefined>,
+		AssignmentDurationInSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * A string representing a currency amount.
+		 * Required
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		Reward: FormControl<string | null | undefined>,
+		Title: FormControl<string | null | undefined>,
+		Keywords: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHITTypeRequestFormGroup() {
+		return new FormGroup<CreateHITTypeRequestFormProperties>({
+			AutoApprovalDelayInSeconds: new FormControl<number | null | undefined>(undefined),
+			AssignmentDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			Reward: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined),
+			Keywords: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateHITWithHITTypeResponse {
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT | null;
+		HIT?: HIT;
+	}
+	export interface CreateHITWithHITTypeResponseFormProperties {
+	}
+	export function CreateCreateHITWithHITTypeResponseFormGroup() {
+		return new FormGroup<CreateHITWithHITTypeResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateHITWithHITTypeRequest {
@@ -208,18 +530,46 @@ export namespace MyNS {
 		UniqueRequestToken?: string | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		AssignmentReviewPolicy?: ReviewPolicy | null;
+		AssignmentReviewPolicy?: ReviewPolicy;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		HITReviewPolicy?: ReviewPolicy | null;
+		HITReviewPolicy?: ReviewPolicy;
 		HITLayoutId?: string | null;
-		HITLayoutParameters?: Array<HITLayoutParameter> | null;
+		HITLayoutParameters?: Array<HITLayoutParameter>;
+	}
+	export interface CreateHITWithHITTypeRequestFormProperties {
+		HITTypeId: FormControl<string | null | undefined>,
+		MaxAssignments: FormControl<number | null | undefined>,
+		LifetimeInSeconds: FormControl<number | null | undefined>,
+		Question: FormControl<string | null | undefined>,
+		RequesterAnnotation: FormControl<string | null | undefined>,
+		UniqueRequestToken: FormControl<string | null | undefined>,
+		HITLayoutId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHITWithHITTypeRequestFormGroup() {
+		return new FormGroup<CreateHITWithHITTypeRequestFormProperties>({
+			HITTypeId: new FormControl<string | null | undefined>(undefined),
+			MaxAssignments: new FormControl<number | null | undefined>(undefined),
+			LifetimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			Question: new FormControl<string | null | undefined>(undefined),
+			RequesterAnnotation: new FormControl<string | null | undefined>(undefined),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined),
+			HITLayoutId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateQualificationTypeResponse {
 
 		/** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. */
-		QualificationType?: QualificationType | null;
+		QualificationType?: QualificationType;
+	}
+	export interface CreateQualificationTypeResponseFormProperties {
+	}
+	export function CreateCreateQualificationTypeResponseFormGroup() {
+		return new FormGroup<CreateQualificationTypeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -240,6 +590,41 @@ export namespace MyNS {
 		AutoGrantedValue?: number | null;
 	}
 
+	/**  The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.  */
+	export interface QualificationTypeFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Keywords: FormControl<string | null | undefined>,
+		QualificationTypeStatus: FormControl<QualificationTypeQualificationTypeStatus | null | undefined>,
+		Test: FormControl<string | null | undefined>,
+		TestDurationInSeconds: FormControl<number | null | undefined>,
+		AnswerKey: FormControl<string | null | undefined>,
+		RetryDelayInSeconds: FormControl<number | null | undefined>,
+		IsRequestable: FormControl<boolean | null | undefined>,
+		AutoGranted: FormControl<boolean | null | undefined>,
+		AutoGrantedValue: FormControl<number | null | undefined>,
+	}
+	export function CreateQualificationTypeFormGroup() {
+		return new FormGroup<QualificationTypeFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Keywords: new FormControl<string | null | undefined>(undefined),
+			QualificationTypeStatus: new FormControl<QualificationTypeQualificationTypeStatus | null | undefined>(undefined),
+			Test: new FormControl<string | null | undefined>(undefined),
+			TestDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			AnswerKey: new FormControl<string | null | undefined>(undefined),
+			RetryDelayInSeconds: new FormControl<number | null | undefined>(undefined),
+			IsRequestable: new FormControl<boolean | null | undefined>(undefined),
+			AutoGranted: new FormControl<boolean | null | undefined>(undefined),
+			AutoGrantedValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum QualificationTypeQualificationTypeStatus { Active = 0, Inactive = 1 }
 
 	export interface CreateQualificationTypeRequest {
@@ -254,44 +639,159 @@ export namespace MyNS {
 		AutoGranted?: boolean | null;
 		AutoGrantedValue?: number | null;
 	}
+	export interface CreateQualificationTypeRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Keywords: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		QualificationTypeStatus: FormControl<QualificationTypeQualificationTypeStatus | null | undefined>,
+		RetryDelayInSeconds: FormControl<number | null | undefined>,
+		Test: FormControl<string | null | undefined>,
+		AnswerKey: FormControl<string | null | undefined>,
+		TestDurationInSeconds: FormControl<number | null | undefined>,
+		AutoGranted: FormControl<boolean | null | undefined>,
+		AutoGrantedValue: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateQualificationTypeRequestFormGroup() {
+		return new FormGroup<CreateQualificationTypeRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Keywords: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			QualificationTypeStatus: new FormControl<QualificationTypeQualificationTypeStatus | null | undefined>(undefined),
+			RetryDelayInSeconds: new FormControl<number | null | undefined>(undefined),
+			Test: new FormControl<string | null | undefined>(undefined),
+			AnswerKey: new FormControl<string | null | undefined>(undefined),
+			TestDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			AutoGranted: new FormControl<boolean | null | undefined>(undefined),
+			AutoGrantedValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateWorkerBlockResponse {
+	}
+	export interface CreateWorkerBlockResponseFormProperties {
+	}
+	export function CreateCreateWorkerBlockResponseFormGroup() {
+		return new FormGroup<CreateWorkerBlockResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateWorkerBlockRequest {
 		WorkerId: string;
 		Reason: string;
 	}
+	export interface CreateWorkerBlockRequestFormProperties {
+		WorkerId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWorkerBlockRequestFormGroup() {
+		return new FormGroup<CreateWorkerBlockRequestFormProperties>({
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteHITResponse {
+	}
+	export interface DeleteHITResponseFormProperties {
+	}
+	export function CreateDeleteHITResponseFormGroup() {
+		return new FormGroup<DeleteHITResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteHITRequest {
 		HITId: string;
 	}
+	export interface DeleteHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteHITRequestFormGroup() {
+		return new FormGroup<DeleteHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteQualificationTypeResponse {
+	}
+	export interface DeleteQualificationTypeResponseFormProperties {
+	}
+	export function CreateDeleteQualificationTypeResponseFormGroup() {
+		return new FormGroup<DeleteQualificationTypeResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteQualificationTypeRequest {
 		QualificationTypeId: string;
 	}
+	export interface DeleteQualificationTypeRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteQualificationTypeRequestFormGroup() {
+		return new FormGroup<DeleteQualificationTypeRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWorkerBlockResponse {
+	}
+	export interface DeleteWorkerBlockResponseFormProperties {
+	}
+	export function CreateDeleteWorkerBlockResponseFormGroup() {
+		return new FormGroup<DeleteWorkerBlockResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteWorkerBlockRequest {
 		WorkerId: string;
 		Reason?: string | null;
 	}
+	export interface DeleteWorkerBlockRequestFormProperties {
+		WorkerId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWorkerBlockRequestFormGroup() {
+		return new FormGroup<DeleteWorkerBlockRequestFormProperties>({
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateQualificationFromWorkerResponse {
+	}
+	export interface DisassociateQualificationFromWorkerResponseFormProperties {
+	}
+	export function CreateDisassociateQualificationFromWorkerResponseFormGroup() {
+		return new FormGroup<DisassociateQualificationFromWorkerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateQualificationFromWorkerRequest {
 		WorkerId: string;
 		QualificationTypeId: string;
 		Reason?: string | null;
+	}
+	export interface DisassociateQualificationFromWorkerRequestFormProperties {
+		WorkerId: FormControl<string | null | undefined>,
+		QualificationTypeId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateQualificationFromWorkerRequestFormGroup() {
+		return new FormGroup<DisassociateQualificationFromWorkerRequestFormProperties>({
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetAccountBalanceResponse {
@@ -308,17 +808,52 @@ export namespace MyNS {
 		 */
 		OnHoldBalance?: string | null;
 	}
+	export interface GetAccountBalanceResponseFormProperties {
+
+		/**
+		 * A string representing a currency amount.
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		AvailableBalance: FormControl<string | null | undefined>,
+
+		/**
+		 * A string representing a currency amount.
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		OnHoldBalance: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccountBalanceResponseFormGroup() {
+		return new FormGroup<GetAccountBalanceResponseFormProperties>({
+			AvailableBalance: new FormControl<string | null | undefined>(undefined),
+			OnHoldBalance: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAccountBalanceRequest {
+	}
+	export interface GetAccountBalanceRequestFormProperties {
+	}
+	export function CreateGetAccountBalanceRequestFormGroup() {
+		return new FormGroup<GetAccountBalanceRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetAssignmentResponse {
 
 		/** The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval. */
-		Assignment?: Assignment | null;
+		Assignment?: Assignment;
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT | null;
+		HIT?: HIT;
+	}
+	export interface GetAssignmentResponseFormProperties {
+	}
+	export function CreateGetAssignmentResponseFormGroup() {
+		return new FormGroup<GetAssignmentResponseFormProperties>({
+		});
+
 	}
 
 
@@ -338,35 +873,120 @@ export namespace MyNS {
 		RequesterFeedback?: string | null;
 	}
 
+	/**  The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.  */
+	export interface AssignmentFormProperties {
+		AssignmentId: FormControl<string | null | undefined>,
+		WorkerId: FormControl<string | null | undefined>,
+		HITId: FormControl<string | null | undefined>,
+		AssignmentStatus: FormControl<AssignmentAssignmentStatus | null | undefined>,
+		AutoApprovalTime: FormControl<Date | null | undefined>,
+		AcceptTime: FormControl<Date | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+		ApprovalTime: FormControl<Date | null | undefined>,
+		RejectionTime: FormControl<Date | null | undefined>,
+		Deadline: FormControl<Date | null | undefined>,
+		Answer: FormControl<string | null | undefined>,
+		RequesterFeedback: FormControl<string | null | undefined>,
+	}
+	export function CreateAssignmentFormGroup() {
+		return new FormGroup<AssignmentFormProperties>({
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			HITId: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<AssignmentAssignmentStatus | null | undefined>(undefined),
+			AutoApprovalTime: new FormControl<Date | null | undefined>(undefined),
+			AcceptTime: new FormControl<Date | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+			ApprovalTime: new FormControl<Date | null | undefined>(undefined),
+			RejectionTime: new FormControl<Date | null | undefined>(undefined),
+			Deadline: new FormControl<Date | null | undefined>(undefined),
+			Answer: new FormControl<string | null | undefined>(undefined),
+			RequesterFeedback: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AssignmentAssignmentStatus { Submitted = 0, Approved = 1, Rejected = 2 }
 
 	export interface GetAssignmentRequest {
 		AssignmentId: string;
 	}
+	export interface GetAssignmentRequestFormProperties {
+		AssignmentId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAssignmentRequestFormGroup() {
+		return new FormGroup<GetAssignmentRequestFormProperties>({
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetFileUploadURLResponse {
 		FileUploadURL?: string | null;
+	}
+	export interface GetFileUploadURLResponseFormProperties {
+		FileUploadURL: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFileUploadURLResponseFormGroup() {
+		return new FormGroup<GetFileUploadURLResponseFormProperties>({
+			FileUploadURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFileUploadURLRequest {
 		AssignmentId: string;
 		QuestionIdentifier: string;
 	}
+	export interface GetFileUploadURLRequestFormProperties {
+		AssignmentId: FormControl<string | null | undefined>,
+		QuestionIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFileUploadURLRequestFormGroup() {
+		return new FormGroup<GetFileUploadURLRequestFormProperties>({
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			QuestionIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetHITResponse {
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT | null;
+		HIT?: HIT;
+	}
+	export interface GetHITResponseFormProperties {
+	}
+	export function CreateGetHITResponseFormGroup() {
+		return new FormGroup<GetHITResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetHITRequest {
 		HITId: string;
 	}
+	export interface GetHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetHITRequestFormGroup() {
+		return new FormGroup<GetHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetQualificationScoreResponse {
 
 		/** The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score). */
-		Qualification?: Qualification | null;
+		Qualification?: Qualification;
+	}
+	export interface GetQualificationScoreResponseFormProperties {
+	}
+	export function CreateGetQualificationScoreResponseFormGroup() {
+		return new FormGroup<GetQualificationScoreResponseFormProperties>({
+		});
+
 	}
 
 
@@ -378,8 +998,27 @@ export namespace MyNS {
 		IntegerValue?: number | null;
 
 		/** The Locale data structure represents a geographical region or location. */
-		LocaleValue?: Locale | null;
+		LocaleValue?: Locale;
 		Status?: QualificationStatus | null;
+	}
+
+	/** The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score). */
+	export interface QualificationFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		WorkerId: FormControl<string | null | undefined>,
+		GrantTime: FormControl<Date | null | undefined>,
+		IntegerValue: FormControl<number | null | undefined>,
+		Status: FormControl<QualificationStatus | null | undefined>,
+	}
+	export function CreateQualificationFormGroup() {
+		return new FormGroup<QualificationFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			GrantTime: new FormControl<Date | null | undefined>(undefined),
+			IntegerValue: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<QualificationStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QualificationStatus { Granted = 0, Revoked = 1 }
@@ -388,15 +1027,42 @@ export namespace MyNS {
 		QualificationTypeId: string;
 		WorkerId: string;
 	}
+	export interface GetQualificationScoreRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		WorkerId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetQualificationScoreRequestFormGroup() {
+		return new FormGroup<GetQualificationScoreRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetQualificationTypeResponse {
 
 		/** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. */
-		QualificationType?: QualificationType | null;
+		QualificationType?: QualificationType;
+	}
+	export interface GetQualificationTypeResponseFormProperties {
+	}
+	export function CreateGetQualificationTypeResponseFormGroup() {
+		return new FormGroup<GetQualificationTypeResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetQualificationTypeRequest {
 		QualificationTypeId: string;
+	}
+	export interface GetQualificationTypeRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetQualificationTypeRequestFormGroup() {
+		return new FormGroup<GetQualificationTypeRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAssignmentsForHITResponse {
@@ -408,7 +1074,24 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
-		Assignments?: Array<Assignment> | null;
+		Assignments?: Array<Assignment>;
+	}
+	export interface ListAssignmentsForHITResponseFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		NumResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAssignmentsForHITResponseFormGroup() {
+		return new FormGroup<ListAssignmentsForHITResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NumResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAssignmentsForHITRequest {
@@ -421,7 +1104,26 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		AssignmentStatuses?: Array<AssignmentStatus> | null;
+		AssignmentStatuses?: Array<AssignmentStatus>;
+	}
+	export interface ListAssignmentsForHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAssignmentsForHITRequestFormGroup() {
+		return new FormGroup<ListAssignmentsForHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssignmentStatus { Submitted = 0, Approved = 1, Rejected = 2 }
@@ -435,7 +1137,24 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		NextToken?: string | null;
-		BonusPayments?: Array<BonusPayment> | null;
+		BonusPayments?: Array<BonusPayment>;
+	}
+	export interface ListBonusPaymentsResponseFormProperties {
+		NumResults: FormControl<number | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBonusPaymentsResponseFormGroup() {
+		return new FormGroup<ListBonusPaymentsResponseFormProperties>({
+			NumResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -453,6 +1172,30 @@ export namespace MyNS {
 		GrantTime?: Date | null;
 	}
 
+	/** An object representing a Bonus payment paid to a Worker. */
+	export interface BonusPaymentFormProperties {
+		WorkerId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string representing a currency amount.
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		BonusAmount: FormControl<string | null | undefined>,
+		AssignmentId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+		GrantTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateBonusPaymentFormGroup() {
+		return new FormGroup<BonusPaymentFormProperties>({
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			BonusAmount: new FormControl<string | null | undefined>(undefined),
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+			GrantTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBonusPaymentsRequest {
 		HITId?: string | null;
 		AssignmentId?: string | null;
@@ -465,6 +1208,27 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListBonusPaymentsRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		AssignmentId: FormControl<string | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListBonusPaymentsRequestFormGroup() {
+		return new FormGroup<ListBonusPaymentsRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListHITsResponse {
 
@@ -475,7 +1239,24 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
-		HITs?: Array<HIT> | null;
+		HITs?: Array<HIT>;
+	}
+	export interface ListHITsResponseFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		NumResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHITsResponseFormGroup() {
+		return new FormGroup<ListHITsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NumResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListHITsRequest {
@@ -488,6 +1269,23 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListHITsRequestFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHITsRequestFormGroup() {
+		return new FormGroup<ListHITsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListHITsForQualificationTypeResponse {
 
@@ -498,7 +1296,24 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
-		HITs?: Array<HIT> | null;
+		HITs?: Array<HIT>;
+	}
+	export interface ListHITsForQualificationTypeResponseFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		NumResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHITsForQualificationTypeResponseFormGroup() {
+		return new FormGroup<ListHITsForQualificationTypeResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NumResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListHITsForQualificationTypeRequest {
@@ -512,6 +1327,25 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListHITsForQualificationTypeRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListHITsForQualificationTypeRequestFormGroup() {
+		return new FormGroup<ListHITsForQualificationTypeRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListQualificationRequestsResponse {
 		NumResults?: number | null;
@@ -522,7 +1356,24 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		NextToken?: string | null;
-		QualificationRequests?: Array<QualificationRequest> | null;
+		QualificationRequests?: Array<QualificationRequest>;
+	}
+	export interface ListQualificationRequestsResponseFormProperties {
+		NumResults: FormControl<number | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListQualificationRequestsResponseFormGroup() {
+		return new FormGroup<ListQualificationRequestsResponseFormProperties>({
+			NumResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -536,6 +1387,27 @@ export namespace MyNS {
 		SubmitTime?: Date | null;
 	}
 
+	/**  The QualificationRequest data structure represents a request a Worker has made for a Qualification.  */
+	export interface QualificationRequestFormProperties {
+		QualificationRequestId: FormControl<string | null | undefined>,
+		QualificationTypeId: FormControl<string | null | undefined>,
+		WorkerId: FormControl<string | null | undefined>,
+		Test: FormControl<string | null | undefined>,
+		Answer: FormControl<string | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateQualificationRequestFormGroup() {
+		return new FormGroup<QualificationRequestFormProperties>({
+			QualificationRequestId: new FormControl<string | null | undefined>(undefined),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			Test: new FormControl<string | null | undefined>(undefined),
+			Answer: new FormControl<string | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListQualificationRequestsRequest {
 		QualificationTypeId?: string | null;
 
@@ -547,6 +1419,25 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListQualificationRequestsRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListQualificationRequestsRequestFormGroup() {
+		return new FormGroup<ListQualificationRequestsRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListQualificationTypesResponse {
 		NumResults?: number | null;
@@ -557,7 +1448,24 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		NextToken?: string | null;
-		QualificationTypes?: Array<QualificationType> | null;
+		QualificationTypes?: Array<QualificationType>;
+	}
+	export interface ListQualificationTypesResponseFormProperties {
+		NumResults: FormControl<number | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListQualificationTypesResponseFormGroup() {
+		return new FormGroup<ListQualificationTypesResponseFormProperties>({
+			NumResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListQualificationTypesRequest {
@@ -573,21 +1481,44 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListQualificationTypesRequestFormProperties {
+		Query: FormControl<string | null | undefined>,
+		MustBeRequestable: FormControl<boolean | null | undefined>,
+		MustBeOwnedByCaller: FormControl<boolean | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListQualificationTypesRequestFormGroup() {
+		return new FormGroup<ListQualificationTypesRequestFormProperties>({
+			Query: new FormControl<string | null | undefined>(undefined),
+			MustBeRequestable: new FormControl<boolean | null | undefined>(undefined),
+			MustBeOwnedByCaller: new FormControl<boolean | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListReviewPolicyResultsForHITResponse {
 		HITId?: string | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		AssignmentReviewPolicy?: ReviewPolicy | null;
+		AssignmentReviewPolicy?: ReviewPolicy;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		HITReviewPolicy?: ReviewPolicy | null;
+		HITReviewPolicy?: ReviewPolicy;
 
 		/** Contains both ReviewResult and ReviewAction elements for a particular HIT. */
-		AssignmentReviewReport?: ReviewReport | null;
+		AssignmentReviewReport?: ReviewReport;
 
 		/** Contains both ReviewResult and ReviewAction elements for a particular HIT. */
-		HITReviewReport?: ReviewReport | null;
+		HITReviewReport?: ReviewReport;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
@@ -596,12 +1527,38 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 	}
+	export interface ListReviewPolicyResultsForHITResponseFormProperties {
+		HITId: FormControl<string | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListReviewPolicyResultsForHITResponseFormGroup() {
+		return new FormGroup<ListReviewPolicyResultsForHITResponseFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/**  Contains both ReviewResult and ReviewAction elements for a particular HIT.  */
 	export interface ReviewReport {
-		ReviewResults?: Array<ReviewResultDetail> | null;
-		ReviewActions?: Array<ReviewActionDetail> | null;
+		ReviewResults?: Array<ReviewResultDetail>;
+		ReviewActions?: Array<ReviewActionDetail>;
+	}
+
+	/**  Contains both ReviewResult and ReviewAction elements for a particular HIT.  */
+	export interface ReviewReportFormProperties {
+	}
+	export function CreateReviewReportFormGroup() {
+		return new FormGroup<ReviewReportFormProperties>({
+		});
+
 	}
 
 
@@ -613,6 +1570,27 @@ export namespace MyNS {
 		QuestionId?: string | null;
 		Key?: string | null;
 		Value?: string | null;
+	}
+
+	/**  This data structure is returned multiple times for each result specified in the Review Policy.  */
+	export interface ReviewResultDetailFormProperties {
+		ActionId: FormControl<string | null | undefined>,
+		SubjectId: FormControl<string | null | undefined>,
+		SubjectType: FormControl<string | null | undefined>,
+		QuestionId: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateReviewResultDetailFormGroup() {
+		return new FormGroup<ReviewResultDetailFormProperties>({
+			ActionId: new FormControl<string | null | undefined>(undefined),
+			SubjectId: new FormControl<string | null | undefined>(undefined),
+			SubjectType: new FormControl<string | null | undefined>(undefined),
+			QuestionId: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -628,11 +1606,36 @@ export namespace MyNS {
 		ErrorCode?: string | null;
 	}
 
+	/**  Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.  */
+	export interface ReviewActionDetailFormProperties {
+		ActionId: FormControl<string | null | undefined>,
+		ActionName: FormControl<string | null | undefined>,
+		TargetId: FormControl<string | null | undefined>,
+		TargetType: FormControl<string | null | undefined>,
+		Status: FormControl<ReviewActionDetailStatus | null | undefined>,
+		CompleteTime: FormControl<Date | null | undefined>,
+		Result: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+	}
+	export function CreateReviewActionDetailFormGroup() {
+		return new FormGroup<ReviewActionDetailFormProperties>({
+			ActionId: new FormControl<string | null | undefined>(undefined),
+			ActionName: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined),
+			TargetType: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ReviewActionDetailStatus | null | undefined>(undefined),
+			CompleteTime: new FormControl<Date | null | undefined>(undefined),
+			Result: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ReviewActionDetailStatus { Intended = 0, Succeeded = 1, Failed = 2, Cancelled = 3 }
 
 	export interface ListReviewPolicyResultsForHITRequest {
 		HITId: string;
-		PolicyLevels?: Array<ReviewPolicyLevel> | null;
+		PolicyLevels?: Array<ReviewPolicyLevel>;
 		RetrieveActions?: boolean | null;
 		RetrieveResults?: boolean | null;
 
@@ -643,6 +1646,29 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListReviewPolicyResultsForHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		RetrieveActions: FormControl<boolean | null | undefined>,
+		RetrieveResults: FormControl<boolean | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListReviewPolicyResultsForHITRequestFormGroup() {
+		return new FormGroup<ListReviewPolicyResultsForHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			RetrieveActions: new FormControl<boolean | null | undefined>(undefined),
+			RetrieveResults: new FormControl<boolean | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReviewPolicyLevel { Assignment = 0, HIT = 1 }
@@ -656,7 +1682,24 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
-		HITs?: Array<HIT> | null;
+		HITs?: Array<HIT>;
+	}
+	export interface ListReviewableHITsResponseFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		NumResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListReviewableHITsResponseFormGroup() {
+		return new FormGroup<ListReviewableHITsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NumResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListReviewableHITsRequest {
@@ -671,6 +1714,27 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListReviewableHITsRequestFormProperties {
+		HITTypeId: FormControl<string | null | undefined>,
+		Status: FormControl<ListReviewableHITsRequestStatus | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListReviewableHITsRequestFormGroup() {
+		return new FormGroup<ListReviewableHITsRequestFormProperties>({
+			HITTypeId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ListReviewableHITsRequestStatus | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListReviewableHITsRequestStatus { Reviewable = 0, Reviewing = 1 }
 
@@ -683,7 +1747,24 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
-		WorkerBlocks?: Array<WorkerBlock> | null;
+		WorkerBlocks?: Array<WorkerBlock>;
+	}
+	export interface ListWorkerBlocksResponseFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		NumResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkerBlocksResponseFormGroup() {
+		return new FormGroup<ListWorkerBlocksResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NumResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -691,6 +1772,19 @@ export namespace MyNS {
 	export interface WorkerBlock {
 		WorkerId?: string | null;
 		Reason?: string | null;
+	}
+
+	/**  The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.  */
+	export interface WorkerBlockFormProperties {
+		WorkerId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateWorkerBlockFormGroup() {
+		return new FormGroup<WorkerBlockFormProperties>({
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListWorkerBlocksRequest {
@@ -703,6 +1797,23 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListWorkerBlocksRequestFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkerBlocksRequestFormGroup() {
+		return new FormGroup<ListWorkerBlocksRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListWorkersWithQualificationTypeResponse {
 
@@ -713,7 +1824,24 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
-		Qualifications?: Array<Qualification> | null;
+		Qualifications?: Array<Qualification>;
+	}
+	export interface ListWorkersWithQualificationTypeResponseFormProperties {
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		NumResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkersWithQualificationTypeResponseFormGroup() {
+		return new FormGroup<ListWorkersWithQualificationTypeResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			NumResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListWorkersWithQualificationTypeRequest {
@@ -728,9 +1856,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListWorkersWithQualificationTypeRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		Status: FormControl<QualificationStatus | null | undefined>,
+
+		/**
+		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkersWithQualificationTypeRequestFormGroup() {
+		return new FormGroup<ListWorkersWithQualificationTypeRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<QualificationStatus | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotifyWorkersResponse {
-		NotifyWorkersFailureStatuses?: Array<NotifyWorkersFailureStatus> | null;
+		NotifyWorkersFailureStatuses?: Array<NotifyWorkersFailureStatus>;
+	}
+	export interface NotifyWorkersResponseFormProperties {
+	}
+	export function CreateNotifyWorkersResponseFormGroup() {
+		return new FormGroup<NotifyWorkersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -741,6 +1897,21 @@ export namespace MyNS {
 		WorkerId?: string | null;
 	}
 
+	/**  When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.  */
+	export interface NotifyWorkersFailureStatusFormProperties {
+		NotifyWorkersFailureCode: FormControl<NotifyWorkersFailureStatusNotifyWorkersFailureCode | null | undefined>,
+		NotifyWorkersFailureMessage: FormControl<string | null | undefined>,
+		WorkerId: FormControl<string | null | undefined>,
+	}
+	export function CreateNotifyWorkersFailureStatusFormGroup() {
+		return new FormGroup<NotifyWorkersFailureStatusFormProperties>({
+			NotifyWorkersFailureCode: new FormControl<NotifyWorkersFailureStatusNotifyWorkersFailureCode | null | undefined>(undefined),
+			NotifyWorkersFailureMessage: new FormControl<string | null | undefined>(undefined),
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum NotifyWorkersFailureStatusNotifyWorkersFailureCode { SoftFailure = 0, HardFailure = 1 }
 
 	export interface NotifyWorkersRequest {
@@ -748,24 +1919,78 @@ export namespace MyNS {
 		MessageText: string;
 		WorkerIds: Array<string>;
 	}
+	export interface NotifyWorkersRequestFormProperties {
+		Subject: FormControl<string | null | undefined>,
+		MessageText: FormControl<string | null | undefined>,
+	}
+	export function CreateNotifyWorkersRequestFormGroup() {
+		return new FormGroup<NotifyWorkersRequestFormProperties>({
+			Subject: new FormControl<string | null | undefined>(undefined),
+			MessageText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RejectAssignmentResponse {
+	}
+	export interface RejectAssignmentResponseFormProperties {
+	}
+	export function CreateRejectAssignmentResponseFormGroup() {
+		return new FormGroup<RejectAssignmentResponseFormProperties>({
+		});
+
 	}
 
 	export interface RejectAssignmentRequest {
 		AssignmentId: string;
 		RequesterFeedback: string;
 	}
+	export interface RejectAssignmentRequestFormProperties {
+		AssignmentId: FormControl<string | null | undefined>,
+		RequesterFeedback: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectAssignmentRequestFormGroup() {
+		return new FormGroup<RejectAssignmentRequestFormProperties>({
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			RequesterFeedback: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RejectQualificationRequestResponse {
+	}
+	export interface RejectQualificationRequestResponseFormProperties {
+	}
+	export function CreateRejectQualificationRequestResponseFormGroup() {
+		return new FormGroup<RejectQualificationRequestResponseFormProperties>({
+		});
+
 	}
 
 	export interface RejectQualificationRequestRequest {
 		QualificationRequestId: string;
 		Reason?: string | null;
 	}
+	export interface RejectQualificationRequestRequestFormProperties {
+		QualificationRequestId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectQualificationRequestRequestFormGroup() {
+		return new FormGroup<RejectQualificationRequestRequestFormProperties>({
+			QualificationRequestId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendBonusResponse {
+	}
+	export interface SendBonusResponseFormProperties {
+	}
+	export function CreateSendBonusResponseFormGroup() {
+		return new FormGroup<SendBonusResponseFormProperties>({
+		});
+
 	}
 
 	export interface SendBonusRequest {
@@ -781,8 +2006,38 @@ export namespace MyNS {
 		Reason: string;
 		UniqueRequestToken?: string | null;
 	}
+	export interface SendBonusRequestFormProperties {
+		WorkerId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string representing a currency amount.
+		 * Required
+		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
+		 */
+		BonusAmount: FormControl<string | null | undefined>,
+		AssignmentId: FormControl<string | null | undefined>,
+		Reason: FormControl<string | null | undefined>,
+		UniqueRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSendBonusRequestFormGroup() {
+		return new FormGroup<SendBonusRequestFormProperties>({
+			WorkerId: new FormControl<string | null | undefined>(undefined),
+			BonusAmount: new FormControl<string | null | undefined>(undefined),
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			Reason: new FormControl<string | null | undefined>(undefined),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendTestEventNotificationResponse {
+	}
+	export interface SendTestEventNotificationResponseFormProperties {
+	}
+	export function CreateSendTestEventNotificationResponseFormGroup() {
+		return new FormGroup<SendTestEventNotificationResponseFormProperties>({
+		});
+
 	}
 
 	export interface SendTestEventNotificationRequest {
@@ -794,6 +2049,15 @@ export namespace MyNS {
 		Notification: NotificationSpecification;
 		TestEventType: EventType;
 	}
+	export interface SendTestEventNotificationRequestFormProperties {
+		TestEventType: FormControl<EventType | null | undefined>,
+	}
+	export function CreateSendTestEventNotificationRequestFormGroup() {
+		return new FormGroup<SendTestEventNotificationRequestFormProperties>({
+			TestEventType: new FormControl<EventType | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The NotificationSpecification data structure describes a HIT event notification for a HIT type. */
@@ -804,49 +2068,143 @@ export namespace MyNS {
 		EventTypes: Array<EventType>;
 	}
 
+	/** The NotificationSpecification data structure describes a HIT event notification for a HIT type. */
+	export interface NotificationSpecificationFormProperties {
+		Destination: FormControl<string | null | undefined>,
+		Transport: FormControl<NotificationSpecificationTransport | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationSpecificationFormGroup() {
+		return new FormGroup<NotificationSpecificationFormProperties>({
+			Destination: new FormControl<string | null | undefined>(undefined),
+			Transport: new FormControl<NotificationSpecificationTransport | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum NotificationSpecificationTransport { Email = 0, SQS = 1, SNS = 2 }
 
 	export enum EventType { AssignmentAccepted = 0, AssignmentAbandoned = 1, AssignmentReturned = 2, AssignmentSubmitted = 3, AssignmentRejected = 4, AssignmentApproved = 5, HITCreated = 6, HITExpired = 7, HITReviewable = 8, HITExtended = 9, HITDisposed = 10, Ping = 11 }
 
 	export interface UpdateExpirationForHITResponse {
 	}
+	export interface UpdateExpirationForHITResponseFormProperties {
+	}
+	export function CreateUpdateExpirationForHITResponseFormGroup() {
+		return new FormGroup<UpdateExpirationForHITResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateExpirationForHITRequest {
 		HITId: string;
 		ExpireAt: Date;
 	}
+	export interface UpdateExpirationForHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		ExpireAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateExpirationForHITRequestFormGroup() {
+		return new FormGroup<UpdateExpirationForHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			ExpireAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateHITReviewStatusResponse {
+	}
+	export interface UpdateHITReviewStatusResponseFormProperties {
+	}
+	export function CreateUpdateHITReviewStatusResponseFormGroup() {
+		return new FormGroup<UpdateHITReviewStatusResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateHITReviewStatusRequest {
 		HITId: string;
 		Revert?: boolean | null;
 	}
+	export interface UpdateHITReviewStatusRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		Revert: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateHITReviewStatusRequestFormGroup() {
+		return new FormGroup<UpdateHITReviewStatusRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			Revert: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateHITTypeOfHITResponse {
+	}
+	export interface UpdateHITTypeOfHITResponseFormProperties {
+	}
+	export function CreateUpdateHITTypeOfHITResponseFormGroup() {
+		return new FormGroup<UpdateHITTypeOfHITResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateHITTypeOfHITRequest {
 		HITId: string;
 		HITTypeId: string;
 	}
+	export interface UpdateHITTypeOfHITRequestFormProperties {
+		HITId: FormControl<string | null | undefined>,
+		HITTypeId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateHITTypeOfHITRequestFormGroup() {
+		return new FormGroup<UpdateHITTypeOfHITRequestFormProperties>({
+			HITId: new FormControl<string | null | undefined>(undefined),
+			HITTypeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateNotificationSettingsResponse {
+	}
+	export interface UpdateNotificationSettingsResponseFormProperties {
+	}
+	export function CreateUpdateNotificationSettingsResponseFormGroup() {
+		return new FormGroup<UpdateNotificationSettingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNotificationSettingsRequest {
 		HITTypeId: string;
 
 		/** The NotificationSpecification data structure describes a HIT event notification for a HIT type. */
-		Notification?: NotificationSpecification | null;
+		Notification?: NotificationSpecification;
 		Active?: boolean | null;
+	}
+	export interface UpdateNotificationSettingsRequestFormProperties {
+		HITTypeId: FormControl<string | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateNotificationSettingsRequestFormGroup() {
+		return new FormGroup<UpdateNotificationSettingsRequestFormProperties>({
+			HITTypeId: new FormControl<string | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateQualificationTypeResponse {
 
 		/** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. */
-		QualificationType?: QualificationType | null;
+		QualificationType?: QualificationType;
+	}
+	export interface UpdateQualificationTypeResponseFormProperties {
+	}
+	export function CreateUpdateQualificationTypeResponseFormGroup() {
+		return new FormGroup<UpdateQualificationTypeResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateQualificationTypeRequest {
@@ -859,6 +2217,31 @@ export namespace MyNS {
 		RetryDelayInSeconds?: number | null;
 		AutoGranted?: boolean | null;
 		AutoGrantedValue?: number | null;
+	}
+	export interface UpdateQualificationTypeRequestFormProperties {
+		QualificationTypeId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		QualificationTypeStatus: FormControl<QualificationTypeQualificationTypeStatus | null | undefined>,
+		Test: FormControl<string | null | undefined>,
+		AnswerKey: FormControl<string | null | undefined>,
+		TestDurationInSeconds: FormControl<number | null | undefined>,
+		RetryDelayInSeconds: FormControl<number | null | undefined>,
+		AutoGranted: FormControl<boolean | null | undefined>,
+		AutoGrantedValue: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateQualificationTypeRequestFormGroup() {
+		return new FormGroup<UpdateQualificationTypeRequestFormProperties>({
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			QualificationTypeStatus: new FormControl<QualificationTypeQualificationTypeStatus | null | undefined>(undefined),
+			Test: new FormControl<string | null | undefined>(undefined),
+			AnswerKey: new FormControl<string | null | undefined>(undefined),
+			TestDurationInSeconds: new FormControl<number | null | undefined>(undefined),
+			RetryDelayInSeconds: new FormControl<number | null | undefined>(undefined),
+			AutoGranted: new FormControl<boolean | null | undefined>(undefined),
+			AutoGrantedValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Comparator { LessThan = 0, LessThanOrEqualTo = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, EqualTo = 4, NotEqualTo = 5, Exists = 6, DoesNotExist = 7, In = 8, NotIn = 9 }

@@ -1,33 +1,98 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateKmsKeyRequest {
 		logGroupName: string;
 		kmsKeyId: string;
 	}
+	export interface AssociateKmsKeyRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		kmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateKmsKeyRequestFormGroup() {
+		return new FormGroup<AssociateKmsKeyRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OperationAbortedException {
 	}
+	export interface OperationAbortedExceptionFormProperties {
+	}
+	export function CreateOperationAbortedExceptionFormGroup() {
+		return new FormGroup<OperationAbortedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CancelExportTaskRequest {
 		taskId: string;
 	}
+	export interface CancelExportTaskRequestFormProperties {
+		taskId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelExportTaskRequestFormGroup() {
+		return new FormGroup<CancelExportTaskRequestFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidOperationException {
+	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateExportTaskResponse {
 		taskId?: string | null;
+	}
+	export interface CreateExportTaskResponseFormProperties {
+		taskId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateExportTaskResponseFormGroup() {
+		return new FormGroup<CreateExportTaskResponseFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateExportTaskRequest {
@@ -39,74 +104,239 @@ export namespace MyNS {
 		destination: string;
 		destinationPrefix?: string | null;
 	}
+	export interface CreateExportTaskRequestFormProperties {
+		taskName: FormControl<string | null | undefined>,
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamNamePrefix: FormControl<string | null | undefined>,
+		from: FormControl<number | null | undefined>,
+		to: FormControl<number | null | undefined>,
+		destination: FormControl<string | null | undefined>,
+		destinationPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateExportTaskRequestFormGroup() {
+		return new FormGroup<CreateExportTaskRequestFormProperties>({
+			taskName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined),
+			from: new FormControl<number | null | undefined>(undefined),
+			to: new FormControl<number | null | undefined>(undefined),
+			destination: new FormControl<string | null | undefined>(undefined),
+			destinationPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateLogGroupRequest {
 		logGroupName: string;
 		kmsKeyId?: string | null;
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateLogGroupRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		kmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLogGroupRequestFormGroup() {
+		return new FormGroup<CreateLogGroupRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Tags {
+	}
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
 	}
 
 	export interface CreateLogStreamRequest {
 		logGroupName: string;
 		logStreamName: string;
 	}
+	export interface CreateLogStreamRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLogStreamRequestFormGroup() {
+		return new FormGroup<CreateLogStreamRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDestinationRequest {
 		destinationName: string;
 	}
+	export interface DeleteDestinationRequestFormProperties {
+		destinationName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDestinationRequestFormGroup() {
+		return new FormGroup<DeleteDestinationRequestFormProperties>({
+			destinationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteLogGroupRequest {
 		logGroupName: string;
+	}
+	export interface DeleteLogGroupRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLogGroupRequestFormGroup() {
+		return new FormGroup<DeleteLogGroupRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteLogStreamRequest {
 		logGroupName: string;
 		logStreamName: string;
 	}
+	export interface DeleteLogStreamRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLogStreamRequestFormGroup() {
+		return new FormGroup<DeleteLogStreamRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteMetricFilterRequest {
 		logGroupName: string;
 		filterName: string;
 	}
+	export interface DeleteMetricFilterRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		filterName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMetricFilterRequestFormGroup() {
+		return new FormGroup<DeleteMetricFilterRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteQueryDefinitionResponse {
 		success?: boolean | null;
+	}
+	export interface DeleteQueryDefinitionResponseFormProperties {
+		success: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteQueryDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteQueryDefinitionResponseFormProperties>({
+			success: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteQueryDefinitionRequest {
 		queryDefinitionId: string;
 	}
+	export interface DeleteQueryDefinitionRequestFormProperties {
+		queryDefinitionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteQueryDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteQueryDefinitionRequestFormProperties>({
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteResourcePolicyRequest {
 		policyName?: string | null;
 	}
+	export interface DeleteResourcePolicyRequestFormProperties {
+		policyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourcePolicyRequestFormGroup() {
+		return new FormGroup<DeleteResourcePolicyRequestFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteRetentionPolicyRequest {
 		logGroupName: string;
+	}
+	export interface DeleteRetentionPolicyRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRetentionPolicyRequestFormGroup() {
+		return new FormGroup<DeleteRetentionPolicyRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSubscriptionFilterRequest {
 		logGroupName: string;
 		filterName: string;
 	}
+	export interface DeleteSubscriptionFilterRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		filterName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSubscriptionFilterRequestFormGroup() {
+		return new FormGroup<DeleteSubscriptionFilterRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDestinationsResponse {
-		destinations?: Array<Destination> | null;
+		destinations?: Array<Destination>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeDestinationsResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDestinationsResponseFormGroup() {
+		return new FormGroup<DescribeDestinationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -120,6 +350,27 @@ export namespace MyNS {
 		creationTime?: number | null;
 	}
 
+	/** Represents a cross-account destination that receives subscription log events. */
+	export interface DestinationFormProperties {
+		destinationName: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		accessPolicy: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		creationTime: FormControl<number | null | undefined>,
+	}
+	export function CreateDestinationFormGroup() {
+		return new FormGroup<DestinationFormProperties>({
+			destinationName: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			accessPolicy: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDestinationsRequest {
 		DestinationNamePrefix?: string | null;
 
@@ -130,15 +381,47 @@ export namespace MyNS {
 		nextToken?: string | null;
 		limit?: number | null;
 	}
+	export interface DescribeDestinationsRequestFormProperties {
+		DestinationNamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDestinationsRequestFormGroup() {
+		return new FormGroup<DescribeDestinationsRequestFormProperties>({
+			DestinationNamePrefix: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeExportTasksResponse {
-		exportTasks?: Array<ExportTask> | null;
+		exportTasks?: Array<ExportTask>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeExportTasksResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeExportTasksResponseFormGroup() {
+		return new FormGroup<DescribeExportTasksResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -153,10 +436,33 @@ export namespace MyNS {
 		destinationPrefix?: string | null;
 
 		/** Represents the status of an export task. */
-		status?: ExportTaskStatus | null;
+		status?: ExportTaskStatus;
 
 		/** Represents the status of an export task. */
-		executionInfo?: ExportTaskExecutionInfo | null;
+		executionInfo?: ExportTaskExecutionInfo;
+	}
+
+	/** Represents an export task. */
+	export interface ExportTaskFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		taskName: FormControl<string | null | undefined>,
+		logGroupName: FormControl<string | null | undefined>,
+		from: FormControl<number | null | undefined>,
+		to: FormControl<number | null | undefined>,
+		destination: FormControl<string | null | undefined>,
+		destinationPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateExportTaskFormGroup() {
+		return new FormGroup<ExportTaskFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			taskName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			from: new FormControl<number | null | undefined>(undefined),
+			to: new FormControl<number | null | undefined>(undefined),
+			destination: new FormControl<string | null | undefined>(undefined),
+			destinationPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -166,6 +472,19 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Represents the status of an export task. */
+	export interface ExportTaskStatusFormProperties {
+		code: FormControl<ExportTaskStatusCode | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateExportTaskStatusFormGroup() {
+		return new FormGroup<ExportTaskStatusFormProperties>({
+			code: new FormControl<ExportTaskStatusCode | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ExportTaskStatusCode { CANCELLED = 0, COMPLETED = 1, FAILED = 2, PENDING = 3, PENDING_CANCEL = 4, RUNNING = 5 }
 
 
@@ -173,6 +492,19 @@ export namespace MyNS {
 	export interface ExportTaskExecutionInfo {
 		creationTime?: number | null;
 		completionTime?: number | null;
+	}
+
+	/** Represents the status of an export task. */
+	export interface ExportTaskExecutionInfoFormProperties {
+		creationTime: FormControl<number | null | undefined>,
+		completionTime: FormControl<number | null | undefined>,
+	}
+	export function CreateExportTaskExecutionInfoFormGroup() {
+		return new FormGroup<ExportTaskExecutionInfoFormProperties>({
+			creationTime: new FormControl<number | null | undefined>(undefined),
+			completionTime: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeExportTasksRequest {
@@ -186,15 +518,49 @@ export namespace MyNS {
 		nextToken?: string | null;
 		limit?: number | null;
 	}
+	export interface DescribeExportTasksRequestFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		statusCode: FormControl<ExportTaskStatusCode | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeExportTasksRequestFormGroup() {
+		return new FormGroup<DescribeExportTasksRequestFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			statusCode: new FormControl<ExportTaskStatusCode | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeLogGroupsResponse {
-		logGroups?: Array<LogGroup> | null;
+		logGroups?: Array<LogGroup>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeLogGroupsResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLogGroupsResponseFormGroup() {
+		return new FormGroup<DescribeLogGroupsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -211,6 +577,31 @@ export namespace MyNS {
 		kmsKeyId?: string | null;
 	}
 
+	/** Represents a log group. */
+	export interface LogGroupFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		creationTime: FormControl<number | null | undefined>,
+
+		/** The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653. */
+		retentionInDays: FormControl<number | null | undefined>,
+		metricFilterCount: FormControl<number | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		storedBytes: FormControl<number | null | undefined>,
+		kmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateLogGroupFormGroup() {
+		return new FormGroup<LogGroupFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined),
+			retentionInDays: new FormControl<number | null | undefined>(undefined),
+			metricFilterCount: new FormControl<number | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			storedBytes: new FormControl<number | null | undefined>(undefined),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeLogGroupsRequest {
 		logGroupNamePrefix?: string | null;
 
@@ -221,15 +612,47 @@ export namespace MyNS {
 		nextToken?: string | null;
 		limit?: number | null;
 	}
+	export interface DescribeLogGroupsRequestFormProperties {
+		logGroupNamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeLogGroupsRequestFormGroup() {
+		return new FormGroup<DescribeLogGroupsRequestFormProperties>({
+			logGroupNamePrefix: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeLogStreamsResponse {
-		logStreams?: Array<LogStream> | null;
+		logStreams?: Array<LogStream>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeLogStreamsResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLogStreamsResponseFormGroup() {
+		return new FormGroup<DescribeLogStreamsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -245,6 +668,31 @@ export namespace MyNS {
 		storedBytes?: number | null;
 	}
 
+	/** Represents a log stream, which is a sequence of log events from a single emitter of logs. */
+	export interface LogStreamFormProperties {
+		logStreamName: FormControl<string | null | undefined>,
+		creationTime: FormControl<number | null | undefined>,
+		firstEventTimestamp: FormControl<number | null | undefined>,
+		lastEventTimestamp: FormControl<number | null | undefined>,
+		lastIngestionTime: FormControl<number | null | undefined>,
+		uploadSequenceToken: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		storedBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateLogStreamFormGroup() {
+		return new FormGroup<LogStreamFormProperties>({
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined),
+			firstEventTimestamp: new FormControl<number | null | undefined>(undefined),
+			lastEventTimestamp: new FormControl<number | null | undefined>(undefined),
+			lastIngestionTime: new FormControl<number | null | undefined>(undefined),
+			uploadSequenceToken: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			storedBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeLogStreamsRequest {
 		logGroupName: string;
 		logStreamNamePrefix?: string | null;
@@ -258,17 +706,55 @@ export namespace MyNS {
 		nextToken?: string | null;
 		limit?: number | null;
 	}
+	export interface DescribeLogStreamsRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamNamePrefix: FormControl<string | null | undefined>,
+		orderBy: FormControl<DescribeLogStreamsRequestOrderBy | null | undefined>,
+		descending: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeLogStreamsRequestFormGroup() {
+		return new FormGroup<DescribeLogStreamsRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined),
+			orderBy: new FormControl<DescribeLogStreamsRequestOrderBy | null | undefined>(undefined),
+			descending: new FormControl<boolean | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeLogStreamsRequestOrderBy { LogStreamName = 0, LastEventTime = 1 }
 
 	export interface DescribeMetricFiltersResponse {
-		metricFilters?: Array<MetricFilter> | null;
+		metricFilters?: Array<MetricFilter>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeMetricFiltersResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMetricFiltersResponseFormGroup() {
+		return new FormGroup<DescribeMetricFiltersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -282,9 +768,32 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		filterPattern?: string | null;
-		metricTransformations?: Array<MetricTransformation> | null;
+		metricTransformations?: Array<MetricTransformation>;
 		creationTime?: number | null;
 		logGroupName?: string | null;
+	}
+
+	/** Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric. */
+	export interface MetricFilterFormProperties {
+		filterName: FormControl<string | null | undefined>,
+
+		/**
+		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		filterPattern: FormControl<string | null | undefined>,
+		creationTime: FormControl<number | null | undefined>,
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricFilterFormGroup() {
+		return new FormGroup<MetricFilterFormProperties>({
+			filterName: new FormControl<string | null | undefined>(undefined),
+			filterPattern: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -309,6 +818,36 @@ export namespace MyNS {
 		defaultValue?: number | null;
 	}
 
+	/** Indicates how to transform ingested log events to metric data in a CloudWatch metric. */
+	export interface MetricTransformationFormProperties {
+
+		/**
+		 * The name of the CloudWatch metric to which the monitored log information should be published. For example, you may publish to a metric called ErrorCount.
+		 * Required
+		 * Max length: 255
+		 * Pattern: [^:*$]*
+		 */
+		metricName: FormControl<string | null | undefined>,
+		metricNamespace: FormControl<string | null | undefined>,
+
+		/**
+		 * The value to publish to the CloudWatch metric. For example, if you're counting the occurrences of a term like "Error", the value is "1" for each occurrence. If you're counting the bytes transferred, the value is the value in the log event.
+		 * Required
+		 * Max length: 100
+		 */
+		metricValue: FormControl<string | null | undefined>,
+		defaultValue: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricTransformationFormGroup() {
+		return new FormGroup<MetricTransformationFormProperties>({
+			metricName: new FormControl<string | null | undefined>(undefined),
+			metricNamespace: new FormControl<string | null | undefined>(undefined),
+			metricValue: new FormControl<string | null | undefined>(undefined),
+			defaultValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeMetricFiltersRequest {
 		logGroupName?: string | null;
 		filterNamePrefix?: string | null;
@@ -328,15 +867,59 @@ export namespace MyNS {
 		metricName?: string | null;
 		metricNamespace?: string | null;
 	}
+	export interface DescribeMetricFiltersRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		filterNamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+
+		/**
+		 * The name of the CloudWatch metric to which the monitored log information should be published. For example, you may publish to a metric called ErrorCount.
+		 * Max length: 255
+		 * Pattern: [^:*$]*
+		 */
+		metricName: FormControl<string | null | undefined>,
+		metricNamespace: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMetricFiltersRequestFormGroup() {
+		return new FormGroup<DescribeMetricFiltersRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterNamePrefix: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			metricName: new FormControl<string | null | undefined>(undefined),
+			metricNamespace: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeQueriesResponse {
-		queries?: Array<QueryInfo> | null;
+		queries?: Array<QueryInfo>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeQueriesResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeQueriesResponseFormGroup() {
+		return new FormGroup<DescribeQueriesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -347,6 +930,25 @@ export namespace MyNS {
 		status?: QueryInfoStatus | null;
 		createTime?: number | null;
 		logGroupName?: string | null;
+	}
+
+	/** Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.  */
+	export interface QueryInfoFormProperties {
+		queryId: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		status: FormControl<QueryInfoStatus | null | undefined>,
+		createTime: FormControl<number | null | undefined>,
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryInfoFormGroup() {
+		return new FormGroup<QueryInfoFormProperties>({
+			queryId: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
+			createTime: new FormControl<number | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QueryInfoStatus { Scheduled = 0, Running = 1, Complete = 2, Failed = 3, Cancelled = 4 }
@@ -362,9 +964,29 @@ export namespace MyNS {
 		 */
 		nextToken?: string | null;
 	}
+	export interface DescribeQueriesRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		status: FormControl<QueryInfoStatus | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeQueriesRequestFormGroup() {
+		return new FormGroup<DescribeQueriesRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeQueryDefinitionsResponse {
-		queryDefinitions?: Array<QueryDefinition> | null;
+		queryDefinitions?: Array<QueryDefinition>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
@@ -372,13 +994,42 @@ export namespace MyNS {
 		 */
 		nextToken?: string | null;
 	}
+	export interface DescribeQueryDefinitionsResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeQueryDefinitionsResponseFormGroup() {
+		return new FormGroup<DescribeQueryDefinitionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface QueryDefinition {
 		queryDefinitionId?: string | null;
 		name?: string | null;
 		queryString?: string | null;
 		lastModified?: number | null;
-		logGroupNames?: Array<string> | null;
+		logGroupNames?: Array<string>;
+	}
+	export interface QueryDefinitionFormProperties {
+		queryDefinitionId: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		lastModified: FormControl<number | null | undefined>,
+	}
+	export function CreateQueryDefinitionFormGroup() {
+		return new FormGroup<QueryDefinitionFormProperties>({
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			lastModified: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeQueryDefinitionsRequest {
@@ -391,15 +1042,47 @@ export namespace MyNS {
 		 */
 		nextToken?: string | null;
 	}
+	export interface DescribeQueryDefinitionsRequestFormProperties {
+		queryDefinitionNamePrefix: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeQueryDefinitionsRequestFormGroup() {
+		return new FormGroup<DescribeQueryDefinitionsRequestFormProperties>({
+			queryDefinitionNamePrefix: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeResourcePoliciesResponse {
-		resourcePolicies?: Array<ResourcePolicy> | null;
+		resourcePolicies?: Array<ResourcePolicy>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeResourcePoliciesResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeResourcePoliciesResponseFormGroup() {
+		return new FormGroup<DescribeResourcePoliciesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -408,6 +1091,21 @@ export namespace MyNS {
 		policyName?: string | null;
 		policyDocument?: string | null;
 		lastUpdatedTime?: number | null;
+	}
+
+	/** A policy enabling one or more entities to put logs to a log group in this account. */
+	export interface ResourcePolicyFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<number | null | undefined>,
+	}
+	export function CreateResourcePolicyFormGroup() {
+		return new FormGroup<ResourcePolicyFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeResourcePoliciesRequest {
@@ -419,15 +1117,45 @@ export namespace MyNS {
 		nextToken?: string | null;
 		limit?: number | null;
 	}
+	export interface DescribeResourcePoliciesRequestFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeResourcePoliciesRequestFormGroup() {
+		return new FormGroup<DescribeResourcePoliciesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeSubscriptionFiltersResponse {
-		subscriptionFilters?: Array<SubscriptionFilter> | null;
+		subscriptionFilters?: Array<SubscriptionFilter>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface DescribeSubscriptionFiltersResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSubscriptionFiltersResponseFormGroup() {
+		return new FormGroup<DescribeSubscriptionFiltersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -450,6 +1178,37 @@ export namespace MyNS {
 		creationTime?: number | null;
 	}
 
+	/** Represents a subscription filter. */
+	export interface SubscriptionFilterFormProperties {
+		filterName: FormControl<string | null | undefined>,
+		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		filterPattern: FormControl<string | null | undefined>,
+		destinationArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+
+		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
+		distribution: FormControl<SubscriptionFilterDistribution | null | undefined>,
+		creationTime: FormControl<number | null | undefined>,
+	}
+	export function CreateSubscriptionFilterFormGroup() {
+		return new FormGroup<SubscriptionFilterFormProperties>({
+			filterName: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterPattern: new FormControl<string | null | undefined>(undefined),
+			destinationArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			distribution: new FormControl<SubscriptionFilterDistribution | null | undefined>(undefined),
+			creationTime: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SubscriptionFilterDistribution { Random = 0, ByLogStream = 1 }
 
 	export interface DescribeSubscriptionFiltersRequest {
@@ -463,20 +1222,63 @@ export namespace MyNS {
 		nextToken?: string | null;
 		limit?: number | null;
 	}
+	export interface DescribeSubscriptionFiltersRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		filterNamePrefix: FormControl<string | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeSubscriptionFiltersRequestFormGroup() {
+		return new FormGroup<DescribeSubscriptionFiltersRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterNamePrefix: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateKmsKeyRequest {
 		logGroupName: string;
 	}
+	export interface DisassociateKmsKeyRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateKmsKeyRequestFormGroup() {
+		return new FormGroup<DisassociateKmsKeyRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface FilterLogEventsResponse {
-		events?: Array<FilteredLogEvent> | null;
-		searchedLogStreams?: Array<SearchedLogStream> | null;
+		events?: Array<FilteredLogEvent>;
+		searchedLogStreams?: Array<SearchedLogStream>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
 		nextToken?: string | null;
+	}
+	export interface FilterLogEventsResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterLogEventsResponseFormGroup() {
+		return new FormGroup<FilterLogEventsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -489,6 +1291,25 @@ export namespace MyNS {
 		eventId?: string | null;
 	}
 
+	/** Represents a matched event. */
+	export interface FilteredLogEventFormProperties {
+		logStreamName: FormControl<string | null | undefined>,
+		timestamp: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		ingestionTime: FormControl<number | null | undefined>,
+		eventId: FormControl<string | null | undefined>,
+	}
+	export function CreateFilteredLogEventFormGroup() {
+		return new FormGroup<FilteredLogEventFormProperties>({
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+			timestamp: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			ingestionTime: new FormControl<number | null | undefined>(undefined),
+			eventId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the search status of a log stream. */
 	export interface SearchedLogStream {
@@ -496,9 +1317,22 @@ export namespace MyNS {
 		searchedCompletely?: boolean | null;
 	}
 
+	/** Represents the search status of a log stream. */
+	export interface SearchedLogStreamFormProperties {
+		logStreamName: FormControl<string | null | undefined>,
+		searchedCompletely: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSearchedLogStreamFormGroup() {
+		return new FormGroup<SearchedLogStreamFormProperties>({
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+			searchedCompletely: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface FilterLogEventsRequest {
 		logGroupName: string;
-		logStreamNames?: Array<string> | null;
+		logStreamNames?: Array<string>;
 		logStreamNamePrefix?: string | null;
 		startTime?: number | null;
 		endTime?: number | null;
@@ -518,9 +1352,43 @@ export namespace MyNS {
 		limit?: number | null;
 		interleaved?: boolean | null;
 	}
+	export interface FilterLogEventsRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamNamePrefix: FormControl<string | null | undefined>,
+		startTime: FormControl<number | null | undefined>,
+		endTime: FormControl<number | null | undefined>,
+
+		/**
+		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		filterPattern: FormControl<string | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+		interleaved: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFilterLogEventsRequestFormGroup() {
+		return new FormGroup<FilterLogEventsRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<number | null | undefined>(undefined),
+			endTime: new FormControl<number | null | undefined>(undefined),
+			filterPattern: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			interleaved: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetLogEventsResponse {
-		events?: Array<OutputLogEvent> | null;
+		events?: Array<OutputLogEvent>;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
@@ -534,6 +1402,27 @@ export namespace MyNS {
 		 */
 		nextBackwardToken?: string | null;
 	}
+	export interface GetLogEventsResponseFormProperties {
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextForwardToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextBackwardToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLogEventsResponseFormGroup() {
+		return new FormGroup<GetLogEventsResponseFormProperties>({
+			nextForwardToken: new FormControl<string | null | undefined>(undefined),
+			nextBackwardToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents a log event. */
@@ -541,6 +1430,21 @@ export namespace MyNS {
 		timestamp?: number | null;
 		message?: string | null;
 		ingestionTime?: number | null;
+	}
+
+	/** Represents a log event. */
+	export interface OutputLogEventFormProperties {
+		timestamp: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		ingestionTime: FormControl<number | null | undefined>,
+	}
+	export function CreateOutputLogEventFormGroup() {
+		return new FormGroup<OutputLogEventFormProperties>({
+			timestamp: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			ingestionTime: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetLogEventsRequest {
@@ -557,9 +1461,42 @@ export namespace MyNS {
 		limit?: number | null;
 		startFromHead?: boolean | null;
 	}
+	export interface GetLogEventsRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamName: FormControl<string | null | undefined>,
+		startTime: FormControl<number | null | undefined>,
+		endTime: FormControl<number | null | undefined>,
+
+		/**
+		 * The token for the next set of items to return. The token expires after 24 hours.
+		 * Min length: 1
+		 */
+		nextToken: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+		startFromHead: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetLogEventsRequestFormGroup() {
+		return new FormGroup<GetLogEventsRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<number | null | undefined>(undefined),
+			endTime: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			startFromHead: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetLogGroupFieldsResponse {
-		logGroupFields?: Array<LogGroupField> | null;
+		logGroupFields?: Array<LogGroupField>;
+	}
+	export interface GetLogGroupFieldsResponseFormProperties {
+	}
+	export function CreateGetLogGroupFieldsResponseFormGroup() {
+		return new FormGroup<GetLogGroupFieldsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -569,28 +1506,84 @@ export namespace MyNS {
 		percent?: number | null;
 	}
 
+	/** The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears. */
+	export interface LogGroupFieldFormProperties {
+		name: FormControl<string | null | undefined>,
+		percent: FormControl<number | null | undefined>,
+	}
+	export function CreateLogGroupFieldFormGroup() {
+		return new FormGroup<LogGroupFieldFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			percent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetLogGroupFieldsRequest {
 		logGroupName: string;
 		time?: number | null;
 	}
+	export interface GetLogGroupFieldsRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		time: FormControl<number | null | undefined>,
+	}
+	export function CreateGetLogGroupFieldsRequestFormGroup() {
+		return new FormGroup<GetLogGroupFieldsRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			time: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetLogRecordResponse {
-		logRecord?: LogRecord | null;
+		logRecord?: LogRecord;
+	}
+	export interface GetLogRecordResponseFormProperties {
+	}
+	export function CreateGetLogRecordResponseFormGroup() {
+		return new FormGroup<GetLogRecordResponseFormProperties>({
+		});
+
 	}
 
 	export interface LogRecord {
+	}
+	export interface LogRecordFormProperties {
+	}
+	export function CreateLogRecordFormGroup() {
+		return new FormGroup<LogRecordFormProperties>({
+		});
+
 	}
 
 	export interface GetLogRecordRequest {
 		logRecordPointer: string;
 	}
+	export interface GetLogRecordRequestFormProperties {
+		logRecordPointer: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLogRecordRequestFormGroup() {
+		return new FormGroup<GetLogRecordRequestFormProperties>({
+			logRecordPointer: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetQueryResultsResponse {
-		results?: Array<Array<ResultField>> | null;
+		results?: Array<Array<ResultField>>;
 
 		/** Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. */
-		statistics?: QueryStatistics | null;
+		statistics?: QueryStatistics;
 		status?: QueryInfoStatus | null;
+	}
+	export interface GetQueryResultsResponseFormProperties {
+		status: FormControl<QueryInfoStatus | null | undefined>,
+	}
+	export function CreateGetQueryResultsResponseFormGroup() {
+		return new FormGroup<GetQueryResultsResponseFormProperties>({
+			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -598,6 +1591,19 @@ export namespace MyNS {
 	export interface ResultField {
 		field?: string | null;
 		value?: string | null;
+	}
+
+	/** <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p> <p>For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p> */
+	export interface ResultFieldFormProperties {
+		field: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateResultFieldFormGroup() {
+		return new FormGroup<ResultFieldFormProperties>({
+			field: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -608,22 +1614,69 @@ export namespace MyNS {
 		bytesScanned?: number | null;
 	}
 
+	/** Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. */
+	export interface QueryStatisticsFormProperties {
+		recordsMatched: FormControl<number | null | undefined>,
+		recordsScanned: FormControl<number | null | undefined>,
+		bytesScanned: FormControl<number | null | undefined>,
+	}
+	export function CreateQueryStatisticsFormGroup() {
+		return new FormGroup<QueryStatisticsFormProperties>({
+			recordsMatched: new FormControl<number | null | undefined>(undefined),
+			recordsScanned: new FormControl<number | null | undefined>(undefined),
+			bytesScanned: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetQueryResultsRequest {
 		queryId: string;
 	}
+	export interface GetQueryResultsRequestFormProperties {
+		queryId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetQueryResultsRequestFormGroup() {
+		return new FormGroup<GetQueryResultsRequestFormProperties>({
+			queryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsLogGroupResponse {
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface ListTagsLogGroupResponseFormProperties {
+	}
+	export function CreateListTagsLogGroupResponseFormGroup() {
+		return new FormGroup<ListTagsLogGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsLogGroupRequest {
 		logGroupName: string;
 	}
+	export interface ListTagsLogGroupRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsLogGroupRequestFormGroup() {
+		return new FormGroup<ListTagsLogGroupRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutDestinationResponse {
 
 		/** Represents a cross-account destination that receives subscription log events. */
-		destination?: Destination | null;
+		destination?: Destination;
+	}
+	export interface PutDestinationResponseFormProperties {
+	}
+	export function CreatePutDestinationResponseFormGroup() {
+		return new FormGroup<PutDestinationResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutDestinationRequest {
@@ -631,17 +1684,50 @@ export namespace MyNS {
 		targetArn: string;
 		roleArn: string;
 	}
+	export interface PutDestinationRequestFormProperties {
+		destinationName: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutDestinationRequestFormGroup() {
+		return new FormGroup<PutDestinationRequestFormProperties>({
+			destinationName: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutDestinationPolicyRequest {
 		destinationName: string;
 		accessPolicy: string;
+	}
+	export interface PutDestinationPolicyRequestFormProperties {
+		destinationName: FormControl<string | null | undefined>,
+		accessPolicy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutDestinationPolicyRequestFormGroup() {
+		return new FormGroup<PutDestinationPolicyRequestFormProperties>({
+			destinationName: new FormControl<string | null | undefined>(undefined),
+			accessPolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutLogEventsResponse {
 		nextSequenceToken?: string | null;
 
 		/** Represents the rejected events. */
-		rejectedLogEventsInfo?: RejectedLogEventsInfo | null;
+		rejectedLogEventsInfo?: RejectedLogEventsInfo;
+	}
+	export interface PutLogEventsResponseFormProperties {
+		nextSequenceToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePutLogEventsResponseFormGroup() {
+		return new FormGroup<PutLogEventsResponseFormProperties>({
+			nextSequenceToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -652,11 +1738,39 @@ export namespace MyNS {
 		expiredLogEventEndIndex?: number | null;
 	}
 
+	/** Represents the rejected events. */
+	export interface RejectedLogEventsInfoFormProperties {
+		tooNewLogEventStartIndex: FormControl<number | null | undefined>,
+		tooOldLogEventEndIndex: FormControl<number | null | undefined>,
+		expiredLogEventEndIndex: FormControl<number | null | undefined>,
+	}
+	export function CreateRejectedLogEventsInfoFormGroup() {
+		return new FormGroup<RejectedLogEventsInfoFormProperties>({
+			tooNewLogEventStartIndex: new FormControl<number | null | undefined>(undefined),
+			tooOldLogEventEndIndex: new FormControl<number | null | undefined>(undefined),
+			expiredLogEventEndIndex: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutLogEventsRequest {
 		logGroupName: string;
 		logStreamName: string;
 		logEvents: Array<InputLogEvent>;
 		sequenceToken?: string | null;
+	}
+	export interface PutLogEventsRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		logStreamName: FormControl<string | null | undefined>,
+		sequenceToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePutLogEventsRequestFormGroup() {
+		return new FormGroup<PutLogEventsRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			logStreamName: new FormControl<string | null | undefined>(undefined),
+			sequenceToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -666,13 +1780,47 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Represents a log event, which is a record of activity that was recorded by the application or resource being monitored. */
+	export interface InputLogEventFormProperties {
+		timestamp: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInputLogEventFormGroup() {
+		return new FormGroup<InputLogEventFormProperties>({
+			timestamp: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidSequenceTokenException {
+	}
+	export interface InvalidSequenceTokenExceptionFormProperties {
+	}
+	export function CreateInvalidSequenceTokenExceptionFormGroup() {
+		return new FormGroup<InvalidSequenceTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DataAlreadyAcceptedException {
 	}
+	export interface DataAlreadyAcceptedExceptionFormProperties {
+	}
+	export function CreateDataAlreadyAcceptedExceptionFormGroup() {
+		return new FormGroup<DataAlreadyAcceptedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnrecognizedClientException {
+	}
+	export interface UnrecognizedClientExceptionFormProperties {
+	}
+	export function CreateUnrecognizedClientExceptionFormGroup() {
+		return new FormGroup<UnrecognizedClientExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutMetricFilterRequest {
@@ -688,27 +1836,87 @@ export namespace MyNS {
 		filterPattern: string;
 		metricTransformations: Array<MetricTransformation>;
 	}
+	export interface PutMetricFilterRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		filterName: FormControl<string | null | undefined>,
+
+		/**
+		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		filterPattern: FormControl<string | null | undefined>,
+	}
+	export function CreatePutMetricFilterRequestFormGroup() {
+		return new FormGroup<PutMetricFilterRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterName: new FormControl<string | null | undefined>(undefined),
+			filterPattern: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutQueryDefinitionResponse {
 		queryDefinitionId?: string | null;
+	}
+	export interface PutQueryDefinitionResponseFormProperties {
+		queryDefinitionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutQueryDefinitionResponseFormGroup() {
+		return new FormGroup<PutQueryDefinitionResponseFormProperties>({
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutQueryDefinitionRequest {
 		name: string;
 		queryDefinitionId?: string | null;
-		logGroupNames?: Array<string> | null;
+		logGroupNames?: Array<string>;
 		queryString: string;
+	}
+	export interface PutQueryDefinitionRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		queryDefinitionId: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+	}
+	export function CreatePutQueryDefinitionRequestFormGroup() {
+		return new FormGroup<PutQueryDefinitionRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutResourcePolicyResponse {
 
 		/** A policy enabling one or more entities to put logs to a log group in this account. */
-		resourcePolicy?: ResourcePolicy | null;
+		resourcePolicy?: ResourcePolicy;
+	}
+	export interface PutResourcePolicyResponseFormProperties {
+	}
+	export function CreatePutResourcePolicyResponseFormGroup() {
+		return new FormGroup<PutResourcePolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutResourcePolicyRequest {
 		policyName?: string | null;
 		policyDocument?: string | null;
+	}
+	export interface PutResourcePolicyRequestFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyRequestFormGroup() {
+		return new FormGroup<PutResourcePolicyRequestFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutRetentionPolicyRequest {
@@ -719,6 +1927,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		retentionInDays: number;
+	}
+	export interface PutRetentionPolicyRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.
+		 * Required
+		 */
+		retentionInDays: FormControl<number | null | undefined>,
+	}
+	export function CreatePutRetentionPolicyRequestFormGroup() {
+		return new FormGroup<PutRetentionPolicyRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			retentionInDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutSubscriptionFilterRequest {
@@ -738,38 +1962,133 @@ export namespace MyNS {
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
 		distribution?: SubscriptionFilterDistribution | null;
 	}
+	export interface PutSubscriptionFilterRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		filterName: FormControl<string | null | undefined>,
+
+		/**
+		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		filterPattern: FormControl<string | null | undefined>,
+		destinationArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+
+		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
+		distribution: FormControl<SubscriptionFilterDistribution | null | undefined>,
+	}
+	export function CreatePutSubscriptionFilterRequestFormGroup() {
+		return new FormGroup<PutSubscriptionFilterRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			filterName: new FormControl<string | null | undefined>(undefined),
+			filterPattern: new FormControl<string | null | undefined>(undefined),
+			destinationArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			distribution: new FormControl<SubscriptionFilterDistribution | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartQueryResponse {
 		queryId?: string | null;
 	}
+	export interface StartQueryResponseFormProperties {
+		queryId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartQueryResponseFormGroup() {
+		return new FormGroup<StartQueryResponseFormProperties>({
+			queryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartQueryRequest {
 		logGroupName?: string | null;
-		logGroupNames?: Array<string> | null;
+		logGroupNames?: Array<string>;
 		startTime: number;
 		endTime: number;
 		queryString: string;
 		limit?: number | null;
 	}
+	export interface StartQueryRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+		startTime: FormControl<number | null | undefined>,
+		endTime: FormControl<number | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateStartQueryRequestFormGroup() {
+		return new FormGroup<StartQueryRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<number | null | undefined>(undefined),
+			endTime: new FormControl<number | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface MalformedQueryException {
+	}
+	export interface MalformedQueryExceptionFormProperties {
+	}
+	export function CreateMalformedQueryExceptionFormGroup() {
+		return new FormGroup<MalformedQueryExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StopQueryResponse {
 		success?: boolean | null;
 	}
+	export interface StopQueryResponseFormProperties {
+		success: FormControl<boolean | null | undefined>,
+	}
+	export function CreateStopQueryResponseFormGroup() {
+		return new FormGroup<StopQueryResponseFormProperties>({
+			success: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopQueryRequest {
 		queryId: string;
+	}
+	export interface StopQueryRequestFormProperties {
+		queryId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopQueryRequestFormGroup() {
+		return new FormGroup<StopQueryRequestFormProperties>({
+			queryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagLogGroupRequest {
 		logGroupName: string;
 		tags: Tags;
 	}
+	export interface TagLogGroupRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagLogGroupRequestFormGroup() {
+		return new FormGroup<TagLogGroupRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TestMetricFilterResponse {
-		matches?: Array<MetricFilterMatchRecord> | null;
+		matches?: Array<MetricFilterMatchRecord>;
+	}
+	export interface TestMetricFilterResponseFormProperties {
+	}
+	export function CreateTestMetricFilterResponseFormGroup() {
+		return new FormGroup<TestMetricFilterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -777,10 +2096,30 @@ export namespace MyNS {
 	export interface MetricFilterMatchRecord {
 		eventNumber?: number | null;
 		eventMessage?: string | null;
-		extractedValues?: ExtractedValues | null;
+		extractedValues?: ExtractedValues;
+	}
+
+	/** Represents a matched event. */
+	export interface MetricFilterMatchRecordFormProperties {
+		eventNumber: FormControl<number | null | undefined>,
+		eventMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricFilterMatchRecordFormGroup() {
+		return new FormGroup<MetricFilterMatchRecordFormProperties>({
+			eventNumber: new FormControl<number | null | undefined>(undefined),
+			eventMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExtractedValues {
+	}
+	export interface ExtractedValuesFormProperties {
+	}
+	export function CreateExtractedValuesFormGroup() {
+		return new FormGroup<ExtractedValuesFormProperties>({
+		});
+
 	}
 
 	export interface TestMetricFilterRequest {
@@ -794,10 +2133,35 @@ export namespace MyNS {
 		filterPattern: string;
 		logEventMessages: Array<string>;
 	}
+	export interface TestMetricFilterRequestFormProperties {
+
+		/**
+		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		filterPattern: FormControl<string | null | undefined>,
+	}
+	export function CreateTestMetricFilterRequestFormGroup() {
+		return new FormGroup<TestMetricFilterRequestFormProperties>({
+			filterPattern: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagLogGroupRequest {
 		logGroupName: string;
 		tags: Array<string>;
+	}
+	export interface UntagLogGroupRequestFormProperties {
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagLogGroupRequestFormGroup() {
+		return new FormGroup<UntagLogGroupRequestFormProperties>({
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OrderBy { LogStreamName = 0, LastEventTime = 1 }

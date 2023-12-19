@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -11,14 +12,14 @@ export namespace MyNS {
 	export interface AccessLevel {
 
 		/** `BasicLevel` is an `AccessLevel` using a set of recommended features. */
-		basic?: BasicLevel | null;
+		basic?: BasicLevel;
 
 		/**
 		 * `CustomLevel` is an `AccessLevel` using the Cloud Common Expression Language
 		 * to represent the necessary conditions for the level to apply to a request.
 		 * See CEL spec at: https://github.com/google/cel-spec
 		 */
-		custom?: CustomLevel | null;
+		custom?: CustomLevel;
 
 		/** Description of the `AccessLevel` and its use. Does not affect behavior. */
 		description?: string | null;
@@ -35,6 +36,36 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * An `AccessLevel` is a label that can be applied to requests to Google Cloud
+	 * services, along with a list of requirements necessary for the label to be
+	 * applied.
+	 */
+	export interface AccessLevelFormProperties {
+
+		/** Description of the `AccessLevel` and its use. Does not affect behavior. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. Resource name for the Access Level. The `short_name` component
+		 * must begin with a letter and only include alphanumeric and '_'. Format:
+		 * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
+		 * of the `short_name` component is 50 characters.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Human readable title. Must be unique within the Policy. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessLevelFormGroup() {
+		return new FormGroup<AccessLevelFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** `BasicLevel` is an `AccessLevel` using a set of recommended features. */
 	export interface BasicLevel {
@@ -49,7 +80,26 @@ export namespace MyNS {
 		combiningFunction?: BasicLevelCombiningFunction | null;
 
 		/** Required. A list of requirements for the `AccessLevel` to be granted. */
-		conditions?: Array<Condition> | null;
+		conditions?: Array<Condition>;
+	}
+
+	/** `BasicLevel` is an `AccessLevel` using a set of recommended features. */
+	export interface BasicLevelFormProperties {
+
+		/**
+		 * How the `conditions` list should be combined to determine if a request is
+		 * granted this `AccessLevel`. If AND is used, each `Condition` in
+		 * `conditions` must be satisfied for the `AccessLevel` to be applied. If OR
+		 * is used, at least one `Condition` in `conditions` must be satisfied for the
+		 * `AccessLevel` to be applied. Default behavior is AND.
+		 */
+		combiningFunction: FormControl<BasicLevelCombiningFunction | null | undefined>,
+	}
+	export function CreateBasicLevelFormGroup() {
+		return new FormGroup<BasicLevelFormProperties>({
+			combiningFunction: new FormControl<BasicLevelCombiningFunction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BasicLevelCombiningFunction { AND = 0, OR = 1 }
@@ -75,7 +125,7 @@ export namespace MyNS {
 		 * true for requests originating from encrypted Linux desktops and encrypted
 		 * Windows desktops.
 		 */
-		devicePolicy?: DevicePolicy | null;
+		devicePolicy?: DevicePolicy;
 
 		/**
 		 * CIDR block IP subnetwork specification. May be IPv4 or IPv6. Note that for
@@ -87,7 +137,7 @@ export namespace MyNS {
 		 * the listed subnets in order for this Condition to be true. If empty, all IP
 		 * addresses are allowed.
 		 */
-		ipSubnetworks?: Array<string> | null;
+		ipSubnetworks?: Array<string>;
 
 		/**
 		 * The request must be made by one of the provided user or service
@@ -97,7 +147,7 @@ export namespace MyNS {
 		 * `serviceAccount:{emailid}`
 		 * If not specified, a request may come from any user.
 		 */
-		members?: Array<string> | null;
+		members?: Array<string>;
 
 		/**
 		 * Whether to negate the Condition. If true, the Condition becomes a NAND over
@@ -110,7 +160,7 @@ export namespace MyNS {
 		 * The request must originate from one of the provided countries/regions.
 		 * Must be valid ISO 3166-1 alpha-2 codes.
 		 */
-		regions?: Array<string> | null;
+		regions?: Array<string>;
 
 		/**
 		 * A list of other access levels defined in the same `Policy`, referenced by
@@ -119,7 +169,30 @@ export namespace MyNS {
 		 * to be true. Example:
 		 * "`accessPolicies/MY_POLICY/accessLevels/LEVEL_NAME"`
 		 */
-		requiredAccessLevels?: Array<string> | null;
+		requiredAccessLevels?: Array<string>;
+	}
+
+	/**
+	 * A condition necessary for an `AccessLevel` to be granted. The Condition is an
+	 * AND over its fields. So a Condition is true if: 1) the request IP is from one
+	 * of the listed subnetworks AND 2) the originating device complies with the
+	 * listed device policy AND 3) all listed access levels are granted AND 4) the
+	 * request was sent at a time allowed by the DateTimeRestriction.
+	 */
+	export interface ConditionFormProperties {
+
+		/**
+		 * Whether to negate the Condition. If true, the Condition becomes a NAND over
+		 * its non-empty fields, each field must be false for the Condition overall to
+		 * be satisfied. Defaults to false.
+		 */
+		negate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateConditionFormGroup() {
+		return new FormGroup<ConditionFormProperties>({
+			negate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -140,13 +213,13 @@ export namespace MyNS {
 		 * Allowed device management levels, an empty list allows all management
 		 * levels.
 		 */
-		allowedDeviceManagementLevels?: Array<string> | null;
+		allowedDeviceManagementLevels?: Array<string>;
 
 		/** Allowed encryptions statuses, an empty list allows all statuses. */
-		allowedEncryptionStatuses?: Array<string> | null;
+		allowedEncryptionStatuses?: Array<string>;
 
 		/** Allowed OS versions, an empty list allows all types and all versions. */
-		osConstraints?: Array<OsConstraint> | null;
+		osConstraints?: Array<OsConstraint>;
 
 		/** Whether the device needs to be approved by the customer admin. */
 		requireAdminApproval?: boolean | null;
@@ -159,6 +232,40 @@ export namespace MyNS {
 		 * Defaults to `false`.
 		 */
 		requireScreenlock?: boolean | null;
+	}
+
+	/**
+	 * `DevicePolicy` specifies device specific restrictions necessary to acquire a
+	 * given access level. A `DevicePolicy` specifies requirements for requests from
+	 * devices to be granted access levels, it does not do any enforcement on the
+	 * device. `DevicePolicy` acts as an AND over all specified fields, and each
+	 * repeated field is an OR over its elements. Any unset fields are ignored. For
+	 * example, if the proto is { os_type : DESKTOP_WINDOWS, os_type :
+	 * DESKTOP_LINUX, encryption_status: ENCRYPTED}, then the DevicePolicy will be
+	 * true for requests originating from encrypted Linux desktops and encrypted
+	 * Windows desktops.
+	 */
+	export interface DevicePolicyFormProperties {
+
+		/** Whether the device needs to be approved by the customer admin. */
+		requireAdminApproval: FormControl<boolean | null | undefined>,
+
+		/** Whether the device needs to be corp owned. */
+		requireCorpOwned: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether or not screenlock is required for the DevicePolicy to be true.
+		 * Defaults to `false`.
+		 */
+		requireScreenlock: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDevicePolicyFormGroup() {
+		return new FormGroup<DevicePolicyFormProperties>({
+			requireAdminApproval: new FormControl<boolean | null | undefined>(undefined),
+			requireCorpOwned: new FormControl<boolean | null | undefined>(undefined),
+			requireScreenlock: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -182,6 +289,36 @@ export namespace MyNS {
 		 * the API targeted by the request.
 		 */
 		requireVerifiedChromeOs?: boolean | null;
+	}
+
+	/** A restriction on the OS type and version of devices making requests. */
+	export interface OsConstraintFormProperties {
+
+		/**
+		 * The minimum allowed OS version. If not set, any version of this OS
+		 * satisfies the constraint. Format: `"major.minor.patch"`.
+		 * Examples: `"10.5.301"`, `"9.2.1"`.
+		 */
+		minimumVersion: FormControl<string | null | undefined>,
+
+		/** Required. The allowed OS type. */
+		osType: FormControl<OsConstraintOsType | null | undefined>,
+
+		/**
+		 * Only allows requests from devices with a verified Chrome OS.
+		 * Verifications includes requirements that the device is enterprise-managed,
+		 * conformant to domain policies, and the caller has permission to call
+		 * the API targeted by the request.
+		 */
+		requireVerifiedChromeOs: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOsConstraintFormGroup() {
+		return new FormGroup<OsConstraintFormProperties>({
+			minimumVersion: new FormControl<string | null | undefined>(undefined),
+			osType: new FormControl<OsConstraintOsType | null | undefined>(undefined),
+			requireVerifiedChromeOs: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OsConstraintOsType { OS_UNSPECIFIED = 0, DESKTOP_MAC = 1, DESKTOP_WINDOWS = 2, DESKTOP_LINUX = 3, DESKTOP_CHROME_OS = 4, ANDROID = 5, IOS = 6 }
@@ -218,7 +355,20 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		expr?: Expr | null;
+		expr?: Expr;
+	}
+
+	/**
+	 * `CustomLevel` is an `AccessLevel` using the Cloud Common Expression Language
+	 * to represent the necessary conditions for the level to apply to a request.
+	 * See CEL spec at: https://github.com/google/cel-spec
+	 */
+	export interface CustomLevelFormProperties {
+	}
+	export function CreateCustomLevelFormGroup() {
+		return new FormGroup<CustomLevelFormProperties>({
+		});
+
 	}
 
 
@@ -274,6 +424,67 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * Represents a textual expression in the Common Expression Language (CEL)
+	 * syntax. CEL is a C-like expression language. The syntax and semantics of CEL
+	 * are documented at https://github.com/google/cel-spec.
+	 * Example (Comparison):
+	 *     title: "Summary size limit"
+	 *     description: "Determines if a summary is less than 100 chars"
+	 *     expression: "document.summary.size() < 100"
+	 * Example (Equality):
+	 *     title: "Requestor is owner"
+	 *     description: "Determines if requestor is the document owner"
+	 *     expression: "document.owner == request.auth.claims.email"
+	 * Example (Logic):
+	 *     title: "Public documents"
+	 *     description: "Determine whether the document should be publicly visible"
+	 *     expression: "document.type != 'private' && document.type != 'internal'"
+	 * Example (Data Manipulation):
+	 *     title: "Notification string"
+	 *     description: "Create a notification string with a timestamp."
+	 *     expression: "'New message received at ' + string(document.create_time)"
+	 * The exact variables and functions that may be referenced within an expression
+	 * are determined by the service that evaluates it. See the service
+	 * documentation for additional information.
+	 */
+	export interface ExprFormProperties {
+
+		/**
+		 * Optional. Description of the expression. This is a longer text which
+		 * describes the expression, e.g. when hovered over it in a UI.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Textual representation of an expression in Common Expression Language
+		 * syntax.
+		 */
+		expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. String indicating the location of the expression for error
+		 * reporting, e.g. a file name and a position in the file.
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Title for the expression, i.e. a short string describing
+		 * its purpose. This can be used e.g. in UIs which allow to enter the
+		 * expression.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateExprFormGroup() {
+		return new FormGroup<ExprFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * `AccessPolicy` is a container for `AccessLevels` (which define the necessary
@@ -309,9 +520,61 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * `AccessPolicy` is a container for `AccessLevels` (which define the necessary
+	 * attributes to use Google Cloud services) and `ServicePerimeters` (which
+	 * define regions of services able to freely pass data within a perimeter). An
+	 * access policy is globally visible within an organization, and the
+	 * restrictions it specifies apply to all projects within an organization.
+	 */
+	export interface AccessPolicyFormProperties {
+
+		/**
+		 * Output only. An opaque identifier for the current version of the
+		 * `AccessPolicy`. This will always be a strongly validated etag, meaning that
+		 * two Access Polices will be identical if and only if their etags are
+		 * identical. Clients should not expect this to be in any specific format.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Resource name of the `AccessPolicy`. Format:
+		 * `accessPolicies/{policy_id}`
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The parent of this `AccessPolicy` in the Cloud Resource
+		 * Hierarchy. Currently immutable once created. Format:
+		 * `organizations/{organization_id}`
+		 */
+		parent: FormControl<string | null | undefined>,
+
+		/** Required. Human readable title. Does not affect behavior. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessPolicyFormGroup() {
+		return new FormGroup<AccessPolicyFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			parent: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request message for Operations.CancelOperation. */
 	export interface CancelOperationRequest {
+	}
+
+	/** The request message for Operations.CancelOperation. */
+	export interface CancelOperationRequestFormProperties {
+	}
+	export function CreateCancelOperationRequestFormGroup() {
+		return new FormGroup<CancelOperationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -332,6 +595,29 @@ export namespace MyNS {
 		etag?: string | null;
 	}
 
+	/**
+	 * A request to commit dry-run specs in all Service Perimeters belonging to
+	 * an Access Policy.
+	 */
+	export interface CommitServicePerimetersRequestFormProperties {
+
+		/**
+		 * Optional. The etag for the version of the Access Policy that this
+		 * commit operation is to be performed on. If, at the time of commit, the
+		 * etag for the Access Policy stored in Access Context Manager is different
+		 * from the specified etag, then the commit operation will not be performed
+		 * and the call will fail. This field is not required. If etag is not
+		 * provided, the operation will be performed as if a valid etag is provided.
+		 */
+		etag: FormControl<string | null | undefined>,
+	}
+	export function CreateCommitServicePerimetersRequestFormGroup() {
+		return new FormGroup<CommitServicePerimetersRequestFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A response to CommitServicePerimetersRequest. This will be put inside of
@@ -343,7 +629,19 @@ export namespace MyNS {
 		 * List of all the Service Perimeter instances in
 		 * the Access Policy.
 		 */
-		servicePerimeters?: Array<ServicePerimeter> | null;
+		servicePerimeters?: Array<ServicePerimeter>;
+	}
+
+	/**
+	 * A response to CommitServicePerimetersRequest. This will be put inside of
+	 * Operation.response field.
+	 */
+	export interface CommitServicePerimetersResponseFormProperties {
+	}
+	export function CreateCommitServicePerimetersResponseFormGroup() {
+		return new FormGroup<CommitServicePerimetersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -388,13 +686,13 @@ export namespace MyNS {
 		 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
 		 * describe specific Service Perimeter configuration.
 		 */
-		spec?: ServicePerimeterConfig | null;
+		spec?: ServicePerimeterConfig;
 
 		/**
 		 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
 		 * describe specific Service Perimeter configuration.
 		 */
-		status?: ServicePerimeterConfig | null;
+		status?: ServicePerimeterConfig;
 
 		/** Human readable title. Must be unique within the Policy. */
 		title?: string | null;
@@ -412,6 +710,71 @@ export namespace MyNS {
 		 * fields in the spec are set to non-default values.
 		 */
 		useExplicitDryRunSpec?: boolean | null;
+	}
+
+	/**
+	 * `ServicePerimeter` describes a set of Google Cloud resources which can freely
+	 * import and export data amongst themselves, but not export outside of the
+	 * `ServicePerimeter`. If a request with a source within this `ServicePerimeter`
+	 * has a target outside of the `ServicePerimeter`, the request will be blocked.
+	 * Otherwise the request is allowed. There are two types of Service Perimeter -
+	 * Regular and Bridge. Regular Service Perimeters cannot overlap, a single
+	 * Google Cloud project can only belong to a single regular Service Perimeter.
+	 * Service Perimeter Bridges can contain only Google Cloud projects as members,
+	 * a single Google Cloud project may belong to multiple Service Perimeter
+	 * Bridges.
+	 */
+	export interface ServicePerimeterFormProperties {
+
+		/**
+		 * Description of the `ServicePerimeter` and its use. Does not affect
+		 * behavior.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. Resource name for the ServicePerimeter.  The `short_name`
+		 * component must begin with a letter and only include alphanumeric and '_'.
+		 * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Perimeter type indicator. A single project is
+		 * allowed to be a member of single regular perimeter, but multiple service
+		 * perimeter bridges. A project cannot be a included in a perimeter bridge
+		 * without being included in regular perimeter. For perimeter bridges,
+		 * the restricted service list as well as access level lists must be
+		 * empty.
+		 */
+		perimeterType: FormControl<ServicePerimeterPerimeterType | null | undefined>,
+
+		/** Human readable title. Must be unique within the Policy. */
+		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Use explicit dry run spec flag. Ordinarily, a dry-run spec implicitly
+		 * exists  for all Service Perimeters, and that spec is identical to the
+		 * status for those Service Perimeters. When this flag is set, it inhibits the
+		 * generation of the implicit spec, thereby allowing the user to explicitly
+		 * provide a configuration ("spec") to use in a dry-run version of the Service
+		 * Perimeter. This allows the user to test changes to the enforced config
+		 * ("status") without actually enforcing them. This testing is done through
+		 * analyzing the differences between currently enforced and suggested
+		 * restrictions. use_explicit_dry_run_spec must bet set to True if any of the
+		 * fields in the spec are set to non-default values.
+		 */
+		useExplicitDryRunSpec: FormControl<boolean | null | undefined>,
+	}
+	export function CreateServicePerimeterFormGroup() {
+		return new FormGroup<ServicePerimeterFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			perimeterType: new FormControl<ServicePerimeterPerimeterType | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			useExplicitDryRunSpec: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ServicePerimeterPerimeterType { PERIMETER_TYPE_REGULAR = 0, PERIMETER_TYPE_BRIDGE = 1 }
@@ -433,13 +796,13 @@ export namespace MyNS {
 		 * `"accessPolicies/MY_POLICY/accessLevels/MY_LEVEL"`.
 		 * For Service Perimeter Bridge, must be empty.
 		 */
-		accessLevels?: Array<string> | null;
+		accessLevels?: Array<string>;
 
 		/**
 		 * A list of Google Cloud resources that are inside of the service perimeter.
 		 * Currently only projects are allowed. Format: `projects/{project_number}`
 		 */
-		resources?: Array<string> | null;
+		resources?: Array<string>;
 
 		/**
 		 * Google Cloud services that are subject to the Service Perimeter
@@ -447,13 +810,25 @@ export namespace MyNS {
 		 * to the storage buckets inside the perimeter must meet the perimeter's
 		 * access restrictions.
 		 */
-		restrictedServices?: Array<string> | null;
+		restrictedServices?: Array<string>;
 
 		/**
 		 * Specifies how APIs are allowed to communicate within the Service
 		 * Perimeter.
 		 */
-		vpcAccessibleServices?: VpcAccessibleServices | null;
+		vpcAccessibleServices?: VpcAccessibleServices;
+	}
+
+	/**
+	 * `ServicePerimeterConfig` specifies a set of Google Cloud resources that
+	 * describe specific Service Perimeter configuration.
+	 */
+	export interface ServicePerimeterConfigFormProperties {
+	}
+	export function CreateServicePerimeterConfigFormGroup() {
+		return new FormGroup<ServicePerimeterConfigFormProperties>({
+		});
+
 	}
 
 
@@ -467,13 +842,32 @@ export namespace MyNS {
 		 * The list of APIs usable within the Service Perimeter. Must be empty
 		 * unless 'enable_restriction' is True.
 		 */
-		allowedServices?: Array<string> | null;
+		allowedServices?: Array<string>;
 
 		/**
 		 * Whether to restrict API calls within the Service Perimeter to the list of
 		 * APIs specified in 'allowed_services'.
 		 */
 		enableRestriction?: boolean | null;
+	}
+
+	/**
+	 * Specifies how APIs are allowed to communicate within the Service
+	 * Perimeter.
+	 */
+	export interface VpcAccessibleServicesFormProperties {
+
+		/**
+		 * Whether to restrict API calls within the Service Perimeter to the list of
+		 * APIs specified in 'allowed_services'.
+		 */
+		enableRestriction: FormControl<boolean | null | undefined>,
+	}
+	export function CreateVpcAccessibleServicesFormGroup() {
+		return new FormGroup<VpcAccessibleServicesFormProperties>({
+			enableRestriction: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -489,12 +883,29 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** A response to `ListAccessLevelsRequest`. */
 	export interface ListAccessLevelsResponse {
 
 		/** List of the Access Level instances. */
-		accessLevels?: Array<AccessLevel> | null;
+		accessLevels?: Array<AccessLevel>;
 
 		/**
 		 * The pagination token to retrieve the next page of results. If the value is
@@ -503,18 +914,50 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** A response to `ListAccessLevelsRequest`. */
+	export interface ListAccessLevelsResponseFormProperties {
+
+		/**
+		 * The pagination token to retrieve the next page of results. If the value is
+		 * empty, no further results remain.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccessLevelsResponseFormGroup() {
+		return new FormGroup<ListAccessLevelsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A response to `ListAccessPoliciesRequest`. */
 	export interface ListAccessPoliciesResponse {
 
 		/** List of the AccessPolicy instances. */
-		accessPolicies?: Array<AccessPolicy> | null;
+		accessPolicies?: Array<AccessPolicy>;
 
 		/**
 		 * The pagination token to retrieve the next page of results. If the value is
 		 * empty, no further results remain.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** A response to `ListAccessPoliciesRequest`. */
+	export interface ListAccessPoliciesResponseFormProperties {
+
+		/**
+		 * The pagination token to retrieve the next page of results. If the value is
+		 * empty, no further results remain.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccessPoliciesResponseFormGroup() {
+		return new FormGroup<ListAccessPoliciesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -525,7 +968,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -550,7 +1006,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -558,7 +1014,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -577,7 +1033,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -598,7 +1104,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -606,6 +1112,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -619,7 +1153,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of the Service Perimeter instances. */
-		servicePerimeters?: Array<ServicePerimeter> | null;
+		servicePerimeters?: Array<ServicePerimeter>;
+	}
+
+	/** A response to `ListServicePerimetersRequest`. */
+	export interface ListServicePerimetersResponseFormProperties {
+
+		/**
+		 * The pagination token to retrieve the next page of results. If the value is
+		 * empty, no further results remain.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServicePerimetersResponseFormGroup() {
+		return new FormGroup<ListServicePerimetersResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -634,7 +1184,7 @@ export namespace MyNS {
 		 * replace all existing Access Levels in the
 		 * Access Policy.
 		 */
-		accessLevels?: Array<AccessLevel> | null;
+		accessLevels?: Array<AccessLevel>;
 
 		/**
 		 * Optional. The etag for the version of the Access Policy that this
@@ -647,6 +1197,29 @@ export namespace MyNS {
 		etag?: string | null;
 	}
 
+	/**
+	 * A request to replace all existing Access Levels in an Access Policy with
+	 * the Access Levels provided. This is done atomically.
+	 */
+	export interface ReplaceAccessLevelsRequestFormProperties {
+
+		/**
+		 * Optional. The etag for the version of the Access Policy that this
+		 * replace operation is to be performed on. If, at the time of replace, the
+		 * etag for the Access Policy stored in Access Context Manager is different
+		 * from the specified etag, then the replace operation will not be performed
+		 * and the call will fail. This field is not required. If etag is not
+		 * provided, the operation will be performed as if a valid etag is provided.
+		 */
+		etag: FormControl<string | null | undefined>,
+	}
+	export function CreateReplaceAccessLevelsRequestFormGroup() {
+		return new FormGroup<ReplaceAccessLevelsRequestFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A response to ReplaceAccessLevelsRequest. This will be put inside of
@@ -655,7 +1228,19 @@ export namespace MyNS {
 	export interface ReplaceAccessLevelsResponse {
 
 		/** List of the Access Level instances. */
-		accessLevels?: Array<AccessLevel> | null;
+		accessLevels?: Array<AccessLevel>;
+	}
+
+	/**
+	 * A response to ReplaceAccessLevelsRequest. This will be put inside of
+	 * Operation.response field.
+	 */
+	export interface ReplaceAccessLevelsResponseFormProperties {
+	}
+	export function CreateReplaceAccessLevelsResponseFormGroup() {
+		return new FormGroup<ReplaceAccessLevelsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -680,7 +1265,30 @@ export namespace MyNS {
 		 * replace all existing Service Perimeters in the
 		 * Access Policy.
 		 */
-		servicePerimeters?: Array<ServicePerimeter> | null;
+		servicePerimeters?: Array<ServicePerimeter>;
+	}
+
+	/**
+	 * A request to replace all existing Service Perimeters in an Access Policy
+	 * with the Service Perimeters provided. This is done atomically.
+	 */
+	export interface ReplaceServicePerimetersRequestFormProperties {
+
+		/**
+		 * Optional. The etag for the version of the Access Policy that this
+		 * replace operation is to be performed on. If, at the time of replace, the
+		 * etag for the Access Policy stored in Access Context Manager is different
+		 * from the specified etag, then the replace operation will not be performed
+		 * and the call will fail. This field is not required. If etag is not
+		 * provided, the operation will be performed as if a valid etag is provided.
+		 */
+		etag: FormControl<string | null | undefined>,
+	}
+	export function CreateReplaceServicePerimetersRequestFormGroup() {
+		return new FormGroup<ReplaceServicePerimetersRequestFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -691,7 +1299,19 @@ export namespace MyNS {
 	export interface ReplaceServicePerimetersResponse {
 
 		/** List of the Service Perimeter instances. */
-		servicePerimeters?: Array<ServicePerimeter> | null;
+		servicePerimeters?: Array<ServicePerimeter>;
+	}
+
+	/**
+	 * A response to ReplaceServicePerimetersRequest. This will be put inside of
+	 * Operation.response field.
+	 */
+	export interface ReplaceServicePerimetersResponseFormProperties {
+	}
+	export function CreateReplaceServicePerimetersResponseFormGroup() {
+		return new FormGroup<ReplaceServicePerimetersResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

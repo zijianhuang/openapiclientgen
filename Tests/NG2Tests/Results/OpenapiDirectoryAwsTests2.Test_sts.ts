@@ -1,17 +1,29 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface AssumeRoleResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials | null;
+		Credentials?: Credentials;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
-		AssumedRoleUser?: AssumedRoleUser | null;
+		AssumedRoleUser?: AssumedRoleUser;
 		PackedPolicySize?: number | null;
+	}
+
+	/** Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
+	export interface AssumeRoleResponseFormProperties {
+		PackedPolicySize: FormControl<number | null | undefined>,
+	}
+	export function CreateAssumeRoleResponseFormGroup() {
+		return new FormGroup<AssumeRoleResponseFormProperties>({
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -23,6 +35,23 @@ export namespace MyNS {
 		Expiration: Date;
 	}
 
+	/** AWS credentials for API authentication. */
+	export interface CredentialsFormProperties {
+		AccessKeyId: FormControl<string | null | undefined>,
+		SecretAccessKey: FormControl<string | null | undefined>,
+		SessionToken: FormControl<string | null | undefined>,
+		Expiration: FormControl<Date | null | undefined>,
+	}
+	export function CreateCredentialsFormGroup() {
+		return new FormGroup<CredentialsFormProperties>({
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+			SecretAccessKey: new FormControl<string | null | undefined>(undefined),
+			SessionToken: new FormControl<string | null | undefined>(undefined),
+			Expiration: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The identifiers for the temporary security credentials that the operation returns. */
 	export interface AssumedRoleUser {
@@ -30,10 +59,34 @@ export namespace MyNS {
 		Arn: string;
 	}
 
+	/** The identifiers for the temporary security credentials that the operation returns. */
+	export interface AssumedRoleUserFormProperties {
+		AssumedRoleId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssumedRoleUserFormGroup() {
+		return new FormGroup<AssumedRoleUserFormProperties>({
+			AssumedRoleId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session. */
 	export interface PolicyDescriptorType {
 		arn?: string | null;
+	}
+
+	/** A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session. */
+	export interface PolicyDescriptorTypeFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyDescriptorTypeFormGroup() {
+		return new FormGroup<PolicyDescriptorTypeFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,13 +96,47 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the <i>IAM User Guide</i>. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MalformedPolicyDocumentException {
+	}
+	export interface MalformedPolicyDocumentExceptionFormProperties {
+	}
+	export function CreateMalformedPolicyDocumentExceptionFormGroup() {
+		return new FormGroup<MalformedPolicyDocumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PackedPolicyTooLargeException {
 	}
+	export interface PackedPolicyTooLargeExceptionFormProperties {
+	}
+	export function CreatePackedPolicyTooLargeExceptionFormGroup() {
+		return new FormGroup<PackedPolicyTooLargeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface RegionDisabledException {
+	}
+	export interface RegionDisabledExceptionFormProperties {
+	}
+	export function CreateRegionDisabledExceptionFormGroup() {
+		return new FormGroup<RegionDisabledExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -57,10 +144,10 @@ export namespace MyNS {
 	export interface AssumeRoleWithSAMLResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials | null;
+		Credentials?: Credentials;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
-		AssumedRoleUser?: AssumedRoleUser | null;
+		AssumedRoleUser?: AssumedRoleUser;
 		PackedPolicySize?: number | null;
 		Subject?: string | null;
 		SubjectType?: string | null;
@@ -69,13 +156,55 @@ export namespace MyNS {
 		NameQualifier?: string | null;
 	}
 
+	/** Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
+	export interface AssumeRoleWithSAMLResponseFormProperties {
+		PackedPolicySize: FormControl<number | null | undefined>,
+		Subject: FormControl<string | null | undefined>,
+		SubjectType: FormControl<string | null | undefined>,
+		Issuer: FormControl<string | null | undefined>,
+		Audience: FormControl<string | null | undefined>,
+		NameQualifier: FormControl<string | null | undefined>,
+	}
+	export function CreateAssumeRoleWithSAMLResponseFormGroup() {
+		return new FormGroup<AssumeRoleWithSAMLResponseFormProperties>({
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+			Subject: new FormControl<string | null | undefined>(undefined),
+			SubjectType: new FormControl<string | null | undefined>(undefined),
+			Issuer: new FormControl<string | null | undefined>(undefined),
+			Audience: new FormControl<string | null | undefined>(undefined),
+			NameQualifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface IDPRejectedClaimException {
+	}
+	export interface IDPRejectedClaimExceptionFormProperties {
+	}
+	export function CreateIDPRejectedClaimExceptionFormGroup() {
+		return new FormGroup<IDPRejectedClaimExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidIdentityTokenException {
 	}
+	export interface InvalidIdentityTokenExceptionFormProperties {
+	}
+	export function CreateInvalidIdentityTokenExceptionFormGroup() {
+		return new FormGroup<InvalidIdentityTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ExpiredTokenException {
+	}
+	export interface ExpiredTokenExceptionFormProperties {
+	}
+	export function CreateExpiredTokenExceptionFormGroup() {
+		return new FormGroup<ExpiredTokenExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -83,17 +212,41 @@ export namespace MyNS {
 	export interface AssumeRoleWithWebIdentityResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials | null;
+		Credentials?: Credentials;
 		SubjectFromWebIdentityToken?: string | null;
 
 		/** The identifiers for the temporary security credentials that the operation returns. */
-		AssumedRoleUser?: AssumedRoleUser | null;
+		AssumedRoleUser?: AssumedRoleUser;
 		PackedPolicySize?: number | null;
 		Provider?: string | null;
 		Audience?: string | null;
 	}
 
+	/** Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
+	export interface AssumeRoleWithWebIdentityResponseFormProperties {
+		SubjectFromWebIdentityToken: FormControl<string | null | undefined>,
+		PackedPolicySize: FormControl<number | null | undefined>,
+		Provider: FormControl<string | null | undefined>,
+		Audience: FormControl<string | null | undefined>,
+	}
+	export function CreateAssumeRoleWithWebIdentityResponseFormGroup() {
+		return new FormGroup<AssumeRoleWithWebIdentityResponseFormProperties>({
+			SubjectFromWebIdentityToken: new FormControl<string | null | undefined>(undefined),
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+			Provider: new FormControl<string | null | undefined>(undefined),
+			Audience: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface IDPCommunicationErrorException {
+	}
+	export interface IDPCommunicationErrorExceptionFormProperties {
+	}
+	export function CreateIDPCommunicationErrorExceptionFormGroup() {
+		return new FormGroup<IDPCommunicationErrorExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -102,11 +255,38 @@ export namespace MyNS {
 		DecodedMessage?: string | null;
 	}
 
+	/** A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request. */
+	export interface DecodeAuthorizationMessageResponseFormProperties {
+		DecodedMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateDecodeAuthorizationMessageResponseFormGroup() {
+		return new FormGroup<DecodeAuthorizationMessageResponseFormProperties>({
+			DecodedMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidAuthorizationMessageException {
+	}
+	export interface InvalidAuthorizationMessageExceptionFormProperties {
+	}
+	export function CreateInvalidAuthorizationMessageExceptionFormGroup() {
+		return new FormGroup<InvalidAuthorizationMessageExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetAccessKeyInfoResponse {
 		Account?: string | null;
+	}
+	export interface GetAccessKeyInfoResponseFormProperties {
+		Account: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccessKeyInfoResponseFormGroup() {
+		return new FormGroup<GetAccessKeyInfoResponseFormProperties>({
+			Account: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -117,16 +297,42 @@ export namespace MyNS {
 		Arn?: string | null;
 	}
 
+	/** Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request. */
+	export interface GetCallerIdentityResponseFormProperties {
+		UserId: FormControl<string | null | undefined>,
+		Account: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCallerIdentityResponseFormGroup() {
+		return new FormGroup<GetCallerIdentityResponseFormProperties>({
+			UserId: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface GetFederationTokenResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials | null;
+		Credentials?: Credentials;
 
 		/** Identifiers for the federated user that is associated with the credentials. */
-		FederatedUser?: FederatedUser | null;
+		FederatedUser?: FederatedUser;
 		PackedPolicySize?: number | null;
+	}
+
+	/** Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
+	export interface GetFederationTokenResponseFormProperties {
+		PackedPolicySize: FormControl<number | null | undefined>,
+	}
+	export function CreateGetFederationTokenResponseFormGroup() {
+		return new FormGroup<GetFederationTokenResponseFormProperties>({
+			PackedPolicySize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -136,34 +342,94 @@ export namespace MyNS {
 		Arn: string;
 	}
 
+	/** Identifiers for the federated user that is associated with the credentials. */
+	export interface FederatedUserFormProperties {
+		FederatedUserId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateFederatedUserFormGroup() {
+		return new FormGroup<FederatedUserFormProperties>({
+			FederatedUserId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
 	export interface GetSessionTokenResponse {
 
 		/** AWS credentials for API authentication. */
-		Credentials?: Credentials | null;
+		Credentials?: Credentials;
+	}
+
+	/** Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests.  */
+	export interface GetSessionTokenResponseFormProperties {
+	}
+	export function CreateGetSessionTokenResponseFormGroup() {
+		return new FormGroup<GetSessionTokenResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssumeRoleRequest {
 		RoleArn: string;
 		RoleSessionName: string;
-		PolicyArns?: Array<PolicyDescriptorType> | null;
+		PolicyArns?: Array<PolicyDescriptorType>;
 		Policy?: string | null;
 		DurationSeconds?: number | null;
-		Tags?: Array<Tag> | null;
-		TransitiveTagKeys?: Array<string> | null;
+		Tags?: Array<Tag>;
+		TransitiveTagKeys?: Array<string>;
 		ExternalId?: string | null;
 		SerialNumber?: string | null;
 		TokenCode?: string | null;
+	}
+	export interface AssumeRoleRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		RoleSessionName: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+		DurationSeconds: FormControl<number | null | undefined>,
+		ExternalId: FormControl<string | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+		TokenCode: FormControl<string | null | undefined>,
+	}
+	export function CreateAssumeRoleRequestFormGroup() {
+		return new FormGroup<AssumeRoleRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleSessionName: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+			ExternalId: new FormControl<string | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			TokenCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssumeRoleWithSAMLRequest {
 		RoleArn: string;
 		PrincipalArn: string;
 		SAMLAssertion: string;
-		PolicyArns?: Array<PolicyDescriptorType> | null;
+		PolicyArns?: Array<PolicyDescriptorType>;
 		Policy?: string | null;
 		DurationSeconds?: number | null;
+	}
+	export interface AssumeRoleWithSAMLRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		PrincipalArn: FormControl<string | null | undefined>,
+		SAMLAssertion: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+		DurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateAssumeRoleWithSAMLRequestFormGroup() {
+		return new FormGroup<AssumeRoleWithSAMLRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			PrincipalArn: new FormControl<string | null | undefined>(undefined),
+			SAMLAssertion: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssumeRoleWithWebIdentityRequest {
@@ -171,34 +437,104 @@ export namespace MyNS {
 		RoleSessionName: string;
 		WebIdentityToken: string;
 		ProviderId?: string | null;
-		PolicyArns?: Array<PolicyDescriptorType> | null;
+		PolicyArns?: Array<PolicyDescriptorType>;
 		Policy?: string | null;
 		DurationSeconds?: number | null;
+	}
+	export interface AssumeRoleWithWebIdentityRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		RoleSessionName: FormControl<string | null | undefined>,
+		WebIdentityToken: FormControl<string | null | undefined>,
+		ProviderId: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+		DurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateAssumeRoleWithWebIdentityRequestFormGroup() {
+		return new FormGroup<AssumeRoleWithWebIdentityRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleSessionName: new FormControl<string | null | undefined>(undefined),
+			WebIdentityToken: new FormControl<string | null | undefined>(undefined),
+			ProviderId: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DecodeAuthorizationMessageRequest {
 		EncodedMessage: string;
 	}
+	export interface DecodeAuthorizationMessageRequestFormProperties {
+		EncodedMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateDecodeAuthorizationMessageRequestFormGroup() {
+		return new FormGroup<DecodeAuthorizationMessageRequestFormProperties>({
+			EncodedMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetAccessKeyInfoRequest {
 		AccessKeyId: string;
 	}
+	export interface GetAccessKeyInfoRequestFormProperties {
+		AccessKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAccessKeyInfoRequestFormGroup() {
+		return new FormGroup<GetAccessKeyInfoRequestFormProperties>({
+			AccessKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCallerIdentityRequest {
+	}
+	export interface GetCallerIdentityRequestFormProperties {
+	}
+	export function CreateGetCallerIdentityRequestFormGroup() {
+		return new FormGroup<GetCallerIdentityRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetFederationTokenRequest {
 		Name: string;
 		Policy?: string | null;
-		PolicyArns?: Array<PolicyDescriptorType> | null;
+		PolicyArns?: Array<PolicyDescriptorType>;
 		DurationSeconds?: number | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface GetFederationTokenRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+		DurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateGetFederationTokenRequestFormGroup() {
+		return new FormGroup<GetFederationTokenRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSessionTokenRequest {
 		DurationSeconds?: number | null;
 		SerialNumber?: string | null;
 		TokenCode?: string | null;
+	}
+	export interface GetSessionTokenRequestFormProperties {
+		DurationSeconds: FormControl<number | null | undefined>,
+		SerialNumber: FormControl<string | null | undefined>,
+		TokenCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSessionTokenRequestFormGroup() {
+		return new FormGroup<GetSessionTokenRequestFormProperties>({
+			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+			SerialNumber: new FormControl<string | null | undefined>(undefined),
+			TokenCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -222,7 +558,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_AssumeRole(RoleArn: string, RoleSessionName: string, PolicyArns: Array<PolicyDescriptorType> | null | undefined, Policy: string | null | undefined, DurationSeconds: number | null | undefined, Tags: Array<Tag> | null | undefined, TransitiveTagKeys: Array<string> | null | undefined, ExternalId: string | null | undefined, SerialNumber: string | null | undefined, TokenCode: string | null | undefined, Action: GET_AssumeRoleAction, Version: GET_AssumeRoleVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=AssumeRole?RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&RoleSessionName=' + (RoleSessionName == null ? '' : encodeURIComponent(RoleSessionName)) + '&' + PolicyArns.map(z => `PolicyArns=${z}`).join('&') + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&DurationSeconds=' + DurationSeconds + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&' + TransitiveTagKeys.map(z => `TransitiveTagKeys=${encodeURIComponent(z)}`).join('&') + '&ExternalId=' + (ExternalId == null ? '' : encodeURIComponent(ExternalId)) + '&SerialNumber=' + (SerialNumber == null ? '' : encodeURIComponent(SerialNumber)) + '&TokenCode=' + (TokenCode == null ? '' : encodeURIComponent(TokenCode)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=AssumeRole?RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&RoleSessionName=' + (RoleSessionName == null ? '' : encodeURIComponent(RoleSessionName)) + '&' + PolicyArns?.map(z => `PolicyArns=${z}`).join('&') + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&DurationSeconds=' + DurationSeconds + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&' + TransitiveTagKeys?.map(z => `TransitiveTagKeys=${encodeURIComponent(z)}`).join('&') + '&ExternalId=' + (ExternalId == null ? '' : encodeURIComponent(ExternalId)) + '&SerialNumber=' + (SerialNumber == null ? '' : encodeURIComponent(SerialNumber)) + '&TokenCode=' + (TokenCode == null ? '' : encodeURIComponent(TokenCode)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -237,7 +573,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_AssumeRoleWithSAML(RoleArn: string, PrincipalArn: string, SAMLAssertion: string, PolicyArns: Array<PolicyDescriptorType> | null | undefined, Policy: string | null | undefined, DurationSeconds: number | null | undefined, Action: GET_AssumeRoleWithSAMLAction, Version: GET_AssumeRoleWithSAMLVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=AssumeRoleWithSAML?RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&PrincipalArn=' + (PrincipalArn == null ? '' : encodeURIComponent(PrincipalArn)) + '&SAMLAssertion=' + (SAMLAssertion == null ? '' : encodeURIComponent(SAMLAssertion)) + '&' + PolicyArns.map(z => `PolicyArns=${z}`).join('&') + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&DurationSeconds=' + DurationSeconds + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=AssumeRoleWithSAML?RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&PrincipalArn=' + (PrincipalArn == null ? '' : encodeURIComponent(PrincipalArn)) + '&SAMLAssertion=' + (SAMLAssertion == null ? '' : encodeURIComponent(SAMLAssertion)) + '&' + PolicyArns?.map(z => `PolicyArns=${z}`).join('&') + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&DurationSeconds=' + DurationSeconds + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -253,7 +589,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_AssumeRoleWithWebIdentity(RoleArn: string, RoleSessionName: string, WebIdentityToken: string, ProviderId: string | null | undefined, PolicyArns: Array<PolicyDescriptorType> | null | undefined, Policy: string | null | undefined, DurationSeconds: number | null | undefined, Action: GET_AssumeRoleWithWebIdentityAction, Version: GET_AssumeRoleWithWebIdentityVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=AssumeRoleWithWebIdentity?RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&RoleSessionName=' + (RoleSessionName == null ? '' : encodeURIComponent(RoleSessionName)) + '&WebIdentityToken=' + (WebIdentityToken == null ? '' : encodeURIComponent(WebIdentityToken)) + '&ProviderId=' + (ProviderId == null ? '' : encodeURIComponent(ProviderId)) + '&' + PolicyArns.map(z => `PolicyArns=${z}`).join('&') + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&DurationSeconds=' + DurationSeconds + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=AssumeRoleWithWebIdentity?RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&RoleSessionName=' + (RoleSessionName == null ? '' : encodeURIComponent(RoleSessionName)) + '&WebIdentityToken=' + (WebIdentityToken == null ? '' : encodeURIComponent(WebIdentityToken)) + '&ProviderId=' + (ProviderId == null ? '' : encodeURIComponent(ProviderId)) + '&' + PolicyArns?.map(z => `PolicyArns=${z}`).join('&') + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&DurationSeconds=' + DurationSeconds + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -296,7 +632,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetFederationToken(Name: string, Policy: string | null | undefined, PolicyArns: Array<PolicyDescriptorType> | null | undefined, DurationSeconds: number | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_GetFederationTokenAction, Version: GET_GetFederationTokenVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetFederationToken?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&' + PolicyArns.map(z => `PolicyArns=${z}`).join('&') + '&DurationSeconds=' + DurationSeconds + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetFederationToken?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&Policy=' + (Policy == null ? '' : encodeURIComponent(Policy)) + '&' + PolicyArns?.map(z => `PolicyArns=${z}`).join('&') + '&DurationSeconds=' + DurationSeconds + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**

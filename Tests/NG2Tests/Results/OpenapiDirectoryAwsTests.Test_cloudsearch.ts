@@ -1,22 +1,53 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions. */
 	export interface BuildSuggestersResponse {
 
 		/** A list of field names. */
-		FieldNames?: Array<string> | null;
+		FieldNames?: Array<string>;
+	}
+
+	/** The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions. */
+	export interface BuildSuggestersResponseFormProperties {
+	}
+	export function CreateBuildSuggestersResponseFormGroup() {
+		return new FormGroup<BuildSuggestersResponseFormProperties>({
+		});
+
 	}
 
 	export interface BaseException {
 	}
+	export interface BaseExceptionFormProperties {
+	}
+	export function CreateBaseExceptionFormGroup() {
+		return new FormGroup<BaseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalException {
 	}
+	export interface InternalExceptionFormProperties {
+	}
+	export function CreateInternalExceptionFormGroup() {
+		return new FormGroup<InternalExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -24,7 +55,16 @@ export namespace MyNS {
 	export interface CreateDomainResponse {
 
 		/** The current status of the search domain. */
-		DomainStatus?: DomainStatus | null;
+		DomainStatus?: DomainStatus;
+	}
+
+	/** The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain. */
+	export interface CreateDomainResponseFormProperties {
+	}
+	export function CreateCreateDomainResponseFormGroup() {
+		return new FormGroup<CreateDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -54,10 +94,10 @@ export namespace MyNS {
 		Deleted?: boolean | null;
 
 		/** The endpoint to which service requests can be submitted. */
-		DocService?: ServiceEndpoint | null;
+		DocService?: ServiceEndpoint;
 
 		/** The endpoint to which service requests can be submitted. */
-		SearchService?: ServiceEndpoint | null;
+		SearchService?: ServiceEndpoint;
 		RequiresIndexDocuments: boolean;
 		Processing?: boolean | null;
 
@@ -70,7 +110,60 @@ export namespace MyNS {
 		 */
 		SearchPartitionCount?: number | null;
 		SearchInstanceCount?: number | null;
-		Limits?: Limits | null;
+		Limits?: Limits;
+	}
+
+	/** The current status of the search domain. */
+	export interface DomainStatusFormProperties {
+
+		/**
+		 * An internally generated unique identifier for a domain.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		DomainId: FormControl<string | null | undefined>,
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/** The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		ARN: FormControl<string | null | undefined>,
+		Created: FormControl<boolean | null | undefined>,
+		Deleted: FormControl<boolean | null | undefined>,
+		RequiresIndexDocuments: FormControl<boolean | null | undefined>,
+		Processing: FormControl<boolean | null | undefined>,
+
+		/** The instance type (such as <code>search.m1.small</code>) that is being used to process search requests. */
+		SearchInstanceType: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of partitions used to hold the domain's index.
+		 * Minimum: 1
+		 */
+		SearchPartitionCount: FormControl<number | null | undefined>,
+		SearchInstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreateDomainStatusFormGroup() {
+		return new FormGroup<DomainStatusFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Created: new FormControl<boolean | null | undefined>(undefined),
+			Deleted: new FormControl<boolean | null | undefined>(undefined),
+			RequiresIndexDocuments: new FormControl<boolean | null | undefined>(undefined),
+			Processing: new FormControl<boolean | null | undefined>(undefined),
+			SearchInstanceType: new FormControl<string | null | undefined>(undefined),
+			SearchPartitionCount: new FormControl<number | null | undefined>(undefined),
+			SearchInstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -81,12 +174,43 @@ export namespace MyNS {
 		Endpoint?: string | null;
 	}
 
+	/** The endpoint to which service requests can be submitted. */
+	export interface ServiceEndpointFormProperties {
+
+		/** The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>. */
+		Endpoint: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceEndpointFormGroup() {
+		return new FormGroup<ServiceEndpointFormProperties>({
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface Limits {
 		MaximumReplicationCount: number;
 		MaximumPartitionCount: number;
 	}
+	export interface LimitsFormProperties {
+		MaximumReplicationCount: FormControl<number | null | undefined>,
+		MaximumPartitionCount: FormControl<number | null | undefined>,
+	}
+	export function CreateLimitsFormGroup() {
+		return new FormGroup<LimitsFormProperties>({
+			MaximumReplicationCount: new FormControl<number | null | undefined>(undefined),
+			MaximumPartitionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -98,6 +222,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		AnalysisScheme: AnalysisSchemeStatus;
+	}
+
+	/** The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme. */
+	export interface DefineAnalysisSchemeResponseFormProperties {
+	}
+	export function CreateDefineAnalysisSchemeResponseFormGroup() {
+		return new FormGroup<DefineAnalysisSchemeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -115,6 +248,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/** The status and configuration of an <code>AnalysisScheme</code>. */
+	export interface AnalysisSchemeStatusFormProperties {
+	}
+	export function CreateAnalysisSchemeStatusFormGroup() {
+		return new FormGroup<AnalysisSchemeStatusFormProperties>({
+		});
+
 	}
 
 
@@ -137,7 +279,33 @@ export namespace MyNS {
 		AnalysisSchemeLanguage: AnalysisSchemeAnalysisSchemeLanguage;
 
 		/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
-		AnalysisOptions?: AnalysisOptions | null;
+		AnalysisOptions?: AnalysisOptions;
+	}
+
+	/** Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>. */
+	export interface AnalysisSchemeFormProperties {
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		AnalysisSchemeName: FormControl<string | null | undefined>,
+
+		/**
+		 * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
+		 * Required
+		 */
+		AnalysisSchemeLanguage: FormControl<AnalysisSchemeAnalysisSchemeLanguage | null | undefined>,
+	}
+	export function CreateAnalysisSchemeFormGroup() {
+		return new FormGroup<AnalysisSchemeFormProperties>({
+			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined),
+			AnalysisSchemeLanguage: new FormControl<AnalysisSchemeAnalysisSchemeLanguage | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AnalysisSchemeAnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, zh_Hans = 33, zh_Hant = 34 }
@@ -150,6 +318,25 @@ export namespace MyNS {
 		StemmingDictionary?: string | null;
 		JapaneseTokenizationDictionary?: string | null;
 		AlgorithmicStemming?: AnalysisOptionsAlgorithmicStemming | null;
+	}
+
+	/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
+	export interface AnalysisOptionsFormProperties {
+		Synonyms: FormControl<string | null | undefined>,
+		Stopwords: FormControl<string | null | undefined>,
+		StemmingDictionary: FormControl<string | null | undefined>,
+		JapaneseTokenizationDictionary: FormControl<string | null | undefined>,
+		AlgorithmicStemming: FormControl<AnalysisOptionsAlgorithmicStemming | null | undefined>,
+	}
+	export function CreateAnalysisOptionsFormGroup() {
+		return new FormGroup<AnalysisOptionsFormProperties>({
+			Synonyms: new FormControl<string | null | undefined>(undefined),
+			Stopwords: new FormControl<string | null | undefined>(undefined),
+			StemmingDictionary: new FormControl<string | null | undefined>(undefined),
+			JapaneseTokenizationDictionary: new FormControl<string | null | undefined>(undefined),
+			AlgorithmicStemming: new FormControl<AnalysisOptionsAlgorithmicStemming | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AnalysisOptionsAlgorithmicStemming { none = 0, minimal = 1, light = 2, full = 3 }
@@ -169,6 +356,30 @@ export namespace MyNS {
 		PendingDeletion?: boolean | null;
 	}
 
+	/** The status of domain configuration option. */
+	export interface OptionStatusFormProperties {
+		CreationDate: FormControl<Date | null | undefined>,
+		UpdateDate: FormControl<Date | null | undefined>,
+		UpdateVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
+		 * Required
+		 */
+		State: FormControl<OptionStatusState | null | undefined>,
+		PendingDeletion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOptionStatusFormGroup() {
+		return new FormGroup<OptionStatusFormProperties>({
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			UpdateDate: new FormControl<Date | null | undefined>(undefined),
+			UpdateVersion: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<OptionStatusState | null | undefined>(undefined),
+			PendingDeletion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OptionStatusState { RequiresIndexDocuments = 0, Processing = 1, Active = 2, FailedToValidate = 3 }
 
 
@@ -176,6 +387,13 @@ export namespace MyNS {
 	export enum AnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, zh_Hans = 33, zh_Hant = 34 }
 
 	export interface InvalidTypeException {
+	}
+	export interface InvalidTypeExceptionFormProperties {
+	}
+	export function CreateInvalidTypeExceptionFormGroup() {
+		return new FormGroup<InvalidTypeExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -187,6 +405,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Expression: ExpressionStatus;
+	}
+
+	/** The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression. */
+	export interface DefineExpressionResponseFormProperties {
+	}
+	export function CreateDefineExpressionResponseFormGroup() {
+		return new FormGroup<DefineExpressionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -204,6 +431,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/** The value of an <code>Expression</code> and its current status. */
+	export interface ExpressionStatusFormProperties {
+	}
+	export function CreateExpressionStatusFormGroup() {
+		return new FormGroup<ExpressionStatusFormProperties>({
+		});
+
 	}
 
 
@@ -228,6 +464,34 @@ export namespace MyNS {
 		ExpressionValue: string;
 	}
 
+	/** A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  */
+	export interface ExpressionFormProperties {
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		ExpressionName: FormControl<string | null | undefined>,
+
+		/**
+		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
+		 * Max length: 10240
+		 * Min length: 1
+		 */
+		ExpressionValue: FormControl<string | null | undefined>,
+	}
+	export function CreateExpressionFormGroup() {
+		return new FormGroup<ExpressionFormProperties>({
+			ExpressionName: new FormControl<string | null | undefined>(undefined),
+			ExpressionValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field. */
 	export interface DefineIndexFieldResponse {
@@ -237,6 +501,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		IndexField: IndexFieldStatus;
+	}
+
+	/** The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field. */
+	export interface DefineIndexFieldResponseFormProperties {
+	}
+	export function CreateDefineIndexFieldResponseFormGroup() {
+		return new FormGroup<DefineIndexFieldResponseFormProperties>({
+		});
+
 	}
 
 
@@ -256,6 +529,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The value of an <code>IndexField</code> and its current status. */
+	export interface IndexFieldStatusFormProperties {
+	}
+	export function CreateIndexFieldStatusFormGroup() {
+		return new FormGroup<IndexFieldStatusFormProperties>({
+		});
+
+	}
+
 
 	/** Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>. */
 	export interface IndexField {
@@ -268,37 +550,55 @@ export namespace MyNS {
 		IndexFieldType: IndexFieldIndexFieldType;
 
 		/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
-		IntOptions?: IntOptions | null;
+		IntOptions?: IntOptions;
 
 		/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
-		DoubleOptions?: DoubleOptions | null;
+		DoubleOptions?: DoubleOptions;
 
 		/** Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default. */
-		LiteralOptions?: LiteralOptions | null;
+		LiteralOptions?: LiteralOptions;
 
 		/** Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default. */
-		TextOptions?: TextOptions | null;
+		TextOptions?: TextOptions;
 
 		/** Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default. */
-		DateOptions?: DateOptions | null;
+		DateOptions?: DateOptions;
 
 		/** Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default. */
-		LatLonOptions?: LatLonOptions | null;
+		LatLonOptions?: LatLonOptions;
 
 		/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
-		IntArrayOptions?: IntArrayOptions | null;
+		IntArrayOptions?: IntArrayOptions;
 
 		/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
-		DoubleArrayOptions?: DoubleArrayOptions | null;
+		DoubleArrayOptions?: DoubleArrayOptions;
 
 		/** Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default. */
-		LiteralArrayOptions?: LiteralArrayOptions | null;
+		LiteralArrayOptions?: LiteralArrayOptions;
 
 		/** Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default. */
-		TextArrayOptions?: TextArrayOptions | null;
+		TextArrayOptions?: TextArrayOptions;
 
 		/** Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default. */
-		DateArrayOptions?: DateArrayOptions | null;
+		DateArrayOptions?: DateArrayOptions;
+	}
+
+	/** Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>. */
+	export interface IndexFieldFormProperties {
+		IndexFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
+		 */
+		IndexFieldType: FormControl<IndexFieldIndexFieldType | null | undefined>,
+	}
+	export function CreateIndexFieldFormGroup() {
+		return new FormGroup<IndexFieldFormProperties>({
+			IndexFieldName: new FormControl<string | null | undefined>(undefined),
+			IndexFieldType: new FormControl<IndexFieldIndexFieldType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IndexFieldIndexFieldType { _int = 0, _double = 1, literal = 2, text = 3, date = 4, latlon = 5, int_array = 6, double_array = 7, literal_array = 8, text_array = 9, date_array = 10 }
@@ -321,6 +621,34 @@ export namespace MyNS {
 		SortEnabled?: boolean | null;
 	}
 
+	/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
+	export interface IntOptionsFormProperties {
+		DefaultValue: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		SortEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateIntOptionsFormGroup() {
+		return new FormGroup<IntOptionsFormProperties>({
+			DefaultValue: new FormControl<number | null | undefined>(undefined),
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
 	export interface DoubleOptions {
@@ -337,6 +665,34 @@ export namespace MyNS {
 		SearchEnabled?: boolean | null;
 		ReturnEnabled?: boolean | null;
 		SortEnabled?: boolean | null;
+	}
+
+	/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
+	export interface DoubleOptionsFormProperties {
+		DefaultValue: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		SortEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDoubleOptionsFormGroup() {
+		return new FormGroup<DoubleOptionsFormProperties>({
+			DefaultValue: new FormControl<number | null | undefined>(undefined),
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -363,6 +719,40 @@ export namespace MyNS {
 		SortEnabled?: boolean | null;
 	}
 
+	/** Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default. */
+	export interface LiteralOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		SortEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLiteralOptionsFormGroup() {
+		return new FormGroup<LiteralOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default. */
 	export interface TextOptions {
@@ -385,6 +775,40 @@ export namespace MyNS {
 		SortEnabled?: boolean | null;
 		HighlightEnabled?: boolean | null;
 		AnalysisScheme?: string | null;
+	}
+
+	/** Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default. */
+	export interface TextOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		SortEnabled: FormControl<boolean | null | undefined>,
+		HighlightEnabled: FormControl<boolean | null | undefined>,
+		AnalysisScheme: FormControl<string | null | undefined>,
+	}
+	export function CreateTextOptionsFormGroup() {
+		return new FormGroup<TextOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
+			HighlightEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AnalysisScheme: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -411,6 +835,40 @@ export namespace MyNS {
 		SortEnabled?: boolean | null;
 	}
 
+	/** Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default. */
+	export interface DateOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		SortEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDateOptionsFormGroup() {
+		return new FormGroup<DateOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default. */
 	export interface LatLonOptions {
@@ -435,6 +893,40 @@ export namespace MyNS {
 		SortEnabled?: boolean | null;
 	}
 
+	/** Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default. */
+	export interface LatLonOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		SortEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLatLonOptionsFormGroup() {
+		return new FormGroup<LatLonOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
 	export interface IntArrayOptions {
@@ -445,6 +937,25 @@ export namespace MyNS {
 		ReturnEnabled?: boolean | null;
 	}
 
+	/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
+	export interface IntArrayOptionsFormProperties {
+		DefaultValue: FormControl<number | null | undefined>,
+		SourceFields: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateIntArrayOptionsFormGroup() {
+		return new FormGroup<IntArrayOptionsFormProperties>({
+			DefaultValue: new FormControl<number | null | undefined>(undefined),
+			SourceFields: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
 	export interface DoubleArrayOptions {
@@ -453,6 +964,25 @@ export namespace MyNS {
 		FacetEnabled?: boolean | null;
 		SearchEnabled?: boolean | null;
 		ReturnEnabled?: boolean | null;
+	}
+
+	/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
+	export interface DoubleArrayOptionsFormProperties {
+		DefaultValue: FormControl<number | null | undefined>,
+		SourceFields: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDoubleArrayOptionsFormGroup() {
+		return new FormGroup<DoubleArrayOptionsFormProperties>({
+			DefaultValue: new FormControl<number | null | undefined>(undefined),
+			SourceFields: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -471,6 +1001,31 @@ export namespace MyNS {
 		ReturnEnabled?: boolean | null;
 	}
 
+	/** Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default. */
+	export interface LiteralArrayOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+		SourceFields: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLiteralArrayOptionsFormGroup() {
+		return new FormGroup<LiteralArrayOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceFields: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default. */
 	export interface TextArrayOptions {
@@ -485,6 +1040,31 @@ export namespace MyNS {
 		ReturnEnabled?: boolean | null;
 		HighlightEnabled?: boolean | null;
 		AnalysisScheme?: string | null;
+	}
+
+	/** Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default. */
+	export interface TextArrayOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+		SourceFields: FormControl<string | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+		HighlightEnabled: FormControl<boolean | null | undefined>,
+		AnalysisScheme: FormControl<string | null | undefined>,
+	}
+	export function CreateTextArrayOptionsFormGroup() {
+		return new FormGroup<TextArrayOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceFields: new FormControl<string | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+			HighlightEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AnalysisScheme: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -503,6 +1083,31 @@ export namespace MyNS {
 		ReturnEnabled?: boolean | null;
 	}
 
+	/** Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default. */
+	export interface DateArrayOptionsFormProperties {
+
+		/**
+		 * The value of a field attribute.
+		 * Max length: 1024
+		 * Min length: 0
+		 */
+		DefaultValue: FormControl<string | null | undefined>,
+		SourceFields: FormControl<string | null | undefined>,
+		FacetEnabled: FormControl<boolean | null | undefined>,
+		SearchEnabled: FormControl<boolean | null | undefined>,
+		ReturnEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDateArrayOptionsFormGroup() {
+		return new FormGroup<DateArrayOptionsFormProperties>({
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			SourceFields: new FormControl<string | null | undefined>(undefined),
+			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
+			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. */
 	export enum IndexFieldType { _int = 0, _double = 1, literal = 2, text = 3, date = 4, latlon = 5, int_array = 6, double_array = 7, literal_array = 8, text_array = 9, date_array = 10 }
@@ -516,6 +1121,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Suggester: SuggesterStatus;
+	}
+
+	/** The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester. */
+	export interface DefineSuggesterResponseFormProperties {
+	}
+	export function CreateDefineSuggesterResponseFormGroup() {
+		return new FormGroup<DefineSuggesterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -533,6 +1147,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/** The value of a <code>Suggester</code> and its current status. */
+	export interface SuggesterStatusFormProperties {
+	}
+	export function CreateSuggesterStatusFormGroup() {
+		return new FormGroup<SuggesterStatusFormProperties>({
+		});
+
 	}
 
 
@@ -555,6 +1178,25 @@ export namespace MyNS {
 		DocumentSuggesterOptions: DocumentSuggesterOptions;
 	}
 
+	/** Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>.  */
+	export interface SuggesterFormProperties {
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SuggesterName: FormControl<string | null | undefined>,
+	}
+	export function CreateSuggesterFormGroup() {
+		return new FormGroup<SuggesterFormProperties>({
+			SuggesterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options for a search suggester. */
 	export interface DocumentSuggesterOptions {
@@ -571,6 +1213,29 @@ export namespace MyNS {
 		SortExpression?: string | null;
 	}
 
+	/** Options for a search suggester. */
+	export interface DocumentSuggesterOptionsFormProperties {
+
+		/**
+		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SourceField: FormControl<string | null | undefined>,
+		FuzzyMatching: FormControl<DocumentSuggesterOptionsFuzzyMatching | null | undefined>,
+		SortExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentSuggesterOptionsFormGroup() {
+		return new FormGroup<DocumentSuggesterOptionsFormProperties>({
+			SourceField: new FormControl<string | null | undefined>(undefined),
+			FuzzyMatching: new FormControl<DocumentSuggesterOptionsFuzzyMatching | null | undefined>(undefined),
+			SortExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DocumentSuggesterOptionsFuzzyMatching { none = 0, low = 1, high = 2 }
 
 
@@ -584,12 +1249,30 @@ export namespace MyNS {
 		AnalysisScheme: AnalysisSchemeStatus;
 	}
 
+	/** The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme. */
+	export interface DeleteAnalysisSchemeResponseFormProperties {
+	}
+	export function CreateDeleteAnalysisSchemeResponseFormGroup() {
+		return new FormGroup<DeleteAnalysisSchemeResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted. */
 	export interface DeleteDomainResponse {
 
 		/** The current status of the search domain. */
-		DomainStatus?: DomainStatus | null;
+		DomainStatus?: DomainStatus;
+	}
+
+	/** The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted. */
+	export interface DeleteDomainResponseFormProperties {
+	}
+	export function CreateDeleteDomainResponseFormGroup() {
+		return new FormGroup<DeleteDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -603,6 +1286,15 @@ export namespace MyNS {
 		Expression: ExpressionStatus;
 	}
 
+	/** The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted. */
+	export interface DeleteExpressionResponseFormProperties {
+	}
+	export function CreateDeleteExpressionResponseFormGroup() {
+		return new FormGroup<DeleteExpressionResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code><a>DeleteIndexField</a></code> request. */
 	export interface DeleteIndexFieldResponse {
@@ -612,6 +1304,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		IndexField: IndexFieldStatus;
+	}
+
+	/** The result of a <code><a>DeleteIndexField</a></code> request. */
+	export interface DeleteIndexFieldResponseFormProperties {
+	}
+	export function CreateDeleteIndexFieldResponseFormGroup() {
+		return new FormGroup<DeleteIndexFieldResponseFormProperties>({
+		});
+
 	}
 
 
@@ -625,6 +1326,15 @@ export namespace MyNS {
 		Suggester: SuggesterStatus;
 	}
 
+	/** The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester. */
+	export interface DeleteSuggesterResponseFormProperties {
+	}
+	export function CreateDeleteSuggesterResponseFormGroup() {
+		return new FormGroup<DeleteSuggesterResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request. */
 	export interface DescribeAnalysisSchemesResponse {
@@ -636,12 +1346,30 @@ export namespace MyNS {
 		AnalysisSchemes: Array<AnalysisSchemeStatus>;
 	}
 
+	/** The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request. */
+	export interface DescribeAnalysisSchemesResponseFormProperties {
+	}
+	export function CreateDescribeAnalysisSchemesResponseFormGroup() {
+		return new FormGroup<DescribeAnalysisSchemesResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request.  */
 	export interface DescribeAvailabilityOptionsResponse {
 
 		/** The status and configuration of the domain's availability options. */
-		AvailabilityOptions?: AvailabilityOptionsStatus | null;
+		AvailabilityOptions?: AvailabilityOptionsStatus;
+	}
+
+	/** The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request.  */
+	export interface DescribeAvailabilityOptionsResponseFormProperties {
+	}
+	export function CreateDescribeAvailabilityOptionsResponseFormGroup() {
+		return new FormGroup<DescribeAvailabilityOptionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -656,7 +1384,25 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The status and configuration of the domain's availability options. */
+	export interface AvailabilityOptionsStatusFormProperties {
+		Options: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAvailabilityOptionsStatusFormGroup() {
+		return new FormGroup<AvailabilityOptionsStatusFormProperties>({
+			Options: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisabledOperationException {
+	}
+	export interface DisabledOperationExceptionFormProperties {
+	}
+	export function CreateDisabledOperationExceptionFormGroup() {
+		return new FormGroup<DisabledOperationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -664,7 +1410,16 @@ export namespace MyNS {
 	export interface DescribeDomainEndpointOptionsResponse {
 
 		/** The configuration and status of the domain's endpoint options. */
-		DomainEndpointOptions?: DomainEndpointOptionsStatus | null;
+		DomainEndpointOptions?: DomainEndpointOptionsStatus;
+	}
+
+	/** The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options.  */
+	export interface DescribeDomainEndpointOptionsResponseFormProperties {
+	}
+	export function CreateDescribeDomainEndpointOptionsResponseFormGroup() {
+		return new FormGroup<DescribeDomainEndpointOptionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -684,6 +1439,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The configuration and status of the domain's endpoint options. */
+	export interface DomainEndpointOptionsStatusFormProperties {
+	}
+	export function CreateDomainEndpointOptionsStatusFormGroup() {
+		return new FormGroup<DomainEndpointOptionsStatusFormProperties>({
+		});
+
+	}
+
 
 	/** The domain's endpoint options. */
 	export interface DomainEndpointOptions {
@@ -691,6 +1455,21 @@ export namespace MyNS {
 
 		/** The minimum required TLS version. */
 		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy | null;
+	}
+
+	/** The domain's endpoint options. */
+	export interface DomainEndpointOptionsFormProperties {
+		EnforceHTTPS: FormControl<boolean | null | undefined>,
+
+		/** The minimum required TLS version. */
+		TLSSecurityPolicy: FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+	}
+	export function CreateDomainEndpointOptionsFormGroup() {
+		return new FormGroup<DomainEndpointOptionsFormProperties>({
+			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -706,6 +1485,15 @@ export namespace MyNS {
 		DomainStatusList: Array<DomainStatus>;
 	}
 
+	/** The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account. */
+	export interface DescribeDomainsResponseFormProperties {
+	}
+	export function CreateDescribeDomainsResponseFormGroup() {
+		return new FormGroup<DescribeDomainsResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request. */
 	export interface DescribeExpressionsResponse {
@@ -715,6 +1503,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Expressions: Array<ExpressionStatus>;
+	}
+
+	/** The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request. */
+	export interface DescribeExpressionsResponseFormProperties {
+	}
+	export function CreateDescribeExpressionsResponseFormGroup() {
+		return new FormGroup<DescribeExpressionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -728,6 +1525,15 @@ export namespace MyNS {
 		IndexFields: Array<IndexFieldStatus>;
 	}
 
+	/** The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request. */
+	export interface DescribeIndexFieldsResponseFormProperties {
+	}
+	export function CreateDescribeIndexFieldsResponseFormGroup() {
+		return new FormGroup<DescribeIndexFieldsResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request. */
 	export interface DescribeScalingParametersResponse {
@@ -737,6 +1543,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		ScalingParameters: ScalingParametersStatus;
+	}
+
+	/** The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request. */
+	export interface DescribeScalingParametersResponseFormProperties {
+	}
+	export function CreateDescribeScalingParametersResponseFormGroup() {
+		return new FormGroup<DescribeScalingParametersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -756,6 +1571,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The status and configuration of a search domain's scaling parameters.  */
+	export interface ScalingParametersStatusFormProperties {
+	}
+	export function CreateScalingParametersStatusFormGroup() {
+		return new FormGroup<ScalingParametersStatusFormProperties>({
+		});
+
+	}
+
 
 	/** The desired instance type and desired number of replicas of each index partition. */
 	export interface ScalingParameters {
@@ -764,6 +1588,23 @@ export namespace MyNS {
 		DesiredInstanceType?: ScalingParametersDesiredInstanceType | null;
 		DesiredReplicationCount?: number | null;
 		DesiredPartitionCount?: number | null;
+	}
+
+	/** The desired instance type and desired number of replicas of each index partition. */
+	export interface ScalingParametersFormProperties {
+
+		/** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted. */
+		DesiredInstanceType: FormControl<ScalingParametersDesiredInstanceType | null | undefined>,
+		DesiredReplicationCount: FormControl<number | null | undefined>,
+		DesiredPartitionCount: FormControl<number | null | undefined>,
+	}
+	export function CreateScalingParametersFormGroup() {
+		return new FormGroup<ScalingParametersFormProperties>({
+			DesiredInstanceType: new FormControl<ScalingParametersDesiredInstanceType | null | undefined>(undefined),
+			DesiredReplicationCount: new FormControl<number | null | undefined>(undefined),
+			DesiredPartitionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScalingParametersDesiredInstanceType { search_m1_small = 0, search_m1_large = 1, search_m2_xlarge = 2, search_m2_2xlarge = 3, search_m3_medium = 4, search_m3_large = 5, search_m3_xlarge = 6, search_m3_2xlarge = 7 }
@@ -777,6 +1618,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		AccessPolicies: AccessPoliciesStatus;
+	}
+
+	/** The result of a <code>DescribeServiceAccessPolicies</code> request. */
+	export interface DescribeServiceAccessPoliciesResponseFormProperties {
+	}
+	export function CreateDescribeServiceAccessPoliciesResponseFormGroup() {
+		return new FormGroup<DescribeServiceAccessPoliciesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -796,6 +1646,22 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
+	export interface AccessPoliciesStatusFormProperties {
+
+		/**
+		 * Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.
+		 * Required
+		 */
+		Options: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessPoliciesStatusFormGroup() {
+		return new FormGroup<AccessPoliciesStatusFormProperties>({
+			Options: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeSuggesters</code> request. */
 	export interface DescribeSuggestersResponse {
@@ -807,12 +1673,30 @@ export namespace MyNS {
 		Suggesters: Array<SuggesterStatus>;
 	}
 
+	/** The result of a <code>DescribeSuggesters</code> request. */
+	export interface DescribeSuggestersResponseFormProperties {
+	}
+	export function CreateDescribeSuggestersResponseFormGroup() {
+		return new FormGroup<DescribeSuggestersResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed. */
 	export interface IndexDocumentsResponse {
 
 		/** A list of field names. */
-		FieldNames?: Array<string> | null;
+		FieldNames?: Array<string>;
+	}
+
+	/** The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed. */
+	export interface IndexDocumentsResponseFormProperties {
+	}
+	export function CreateIndexDocumentsResponseFormGroup() {
+		return new FormGroup<IndexDocumentsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -820,7 +1704,16 @@ export namespace MyNS {
 	export interface ListDomainNamesResponse {
 
 		/** A collection of domain names. */
-		DomainNames?: DomainNameMap | null;
+		DomainNames?: DomainNameMap;
+	}
+
+	/** The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account. */
+	export interface ListDomainNamesResponseFormProperties {
+	}
+	export function CreateListDomainNamesResponseFormGroup() {
+		return new FormGroup<ListDomainNamesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -828,15 +1721,40 @@ export namespace MyNS {
 	export interface DomainNameMap {
 	}
 
+	/** A collection of domain names. */
+	export interface DomainNameMapFormProperties {
+	}
+	export function CreateDomainNameMapFormGroup() {
+		return new FormGroup<DomainNameMapFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options.  */
 	export interface UpdateAvailabilityOptionsResponse {
 
 		/** The status and configuration of the domain's availability options. */
-		AvailabilityOptions?: AvailabilityOptionsStatus | null;
+		AvailabilityOptions?: AvailabilityOptionsStatus;
+	}
+
+	/** The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options.  */
+	export interface UpdateAvailabilityOptionsResponseFormProperties {
+	}
+	export function CreateUpdateAvailabilityOptionsResponseFormGroup() {
+		return new FormGroup<UpdateAvailabilityOptionsResponseFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -844,7 +1762,16 @@ export namespace MyNS {
 	export interface UpdateDomainEndpointOptionsResponse {
 
 		/** The configuration and status of the domain's endpoint options. */
-		DomainEndpointOptions?: DomainEndpointOptionsStatus | null;
+		DomainEndpointOptions?: DomainEndpointOptionsStatus;
+	}
+
+	/** The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration and status of the domain's endpoint options.  */
+	export interface UpdateDomainEndpointOptionsResponseFormProperties {
+	}
+	export function CreateUpdateDomainEndpointOptionsResponseFormGroup() {
+		return new FormGroup<UpdateDomainEndpointOptionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -862,6 +1789,15 @@ export namespace MyNS {
 		ScalingParameters: ScalingParametersStatus;
 	}
 
+	/** The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters. */
+	export interface UpdateScalingParametersResponseFormProperties {
+	}
+	export function CreateUpdateScalingParametersResponseFormGroup() {
+		return new FormGroup<UpdateScalingParametersResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted. */
 	export enum PartitionInstanceType { search_m1_small = 0, search_m1_large = 1, search_m2_xlarge = 2, search_m2_2xlarge = 3, search_m3_medium = 4, search_m3_large = 5, search_m3_xlarge = 6, search_m3_2xlarge = 7 }
@@ -875,6 +1811,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		AccessPolicies: AccessPoliciesStatus;
+	}
+
+	/** The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies. */
+	export interface UpdateServiceAccessPoliciesResponseFormProperties {
+	}
+	export function CreateUpdateServiceAccessPoliciesResponseFormGroup() {
+		return new FormGroup<UpdateServiceAccessPoliciesResponseFormProperties>({
+		});
+
 	}
 
 	export enum AlgorithmicStemming { none = 0, minimal = 1, light = 2, full = 3 }
@@ -893,6 +1838,25 @@ export namespace MyNS {
 		DomainName: string;
 	}
 
+	/** Container for the parameters to the <code><a>BuildSuggester</a></code> operation. Specifies the name of the domain you want to update. */
+	export interface BuildSuggestersRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateBuildSuggestersRequestFormGroup() {
+		return new FormGroup<BuildSuggestersRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain. */
 	export interface CreateDomainRequest {
@@ -905,6 +1869,25 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+	}
+
+	/** Container for the parameters to the <code><a>CreateDomain</a></code> operation. Specifies a name for the new search domain. */
+	export interface CreateDomainRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDomainRequestFormGroup() {
+		return new FormGroup<CreateDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -927,6 +1910,25 @@ export namespace MyNS {
 		AnalysisScheme: AnalysisScheme;
 	}
 
+	/** Container for the parameters to the <code><a>DefineAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme configuration. */
+	export interface DefineAnalysisSchemeRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDefineAnalysisSchemeRequestFormGroup() {
+		return new FormGroup<DefineAnalysisSchemeRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure. */
 	export interface DefineExpressionRequest {
@@ -945,6 +1947,25 @@ export namespace MyNS {
 		 * Required
 		 */
 		Expression: Expression;
+	}
+
+	/** Container for the parameters to the <code><a>DefineExpression</a></code> operation. Specifies the name of the domain you want to update and the expression you want to configure. */
+	export interface DefineExpressionRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDefineExpressionRequestFormGroup() {
+		return new FormGroup<DefineExpressionRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -967,6 +1988,25 @@ export namespace MyNS {
 		IndexField: IndexField;
 	}
 
+	/** Container for the parameters to the <code><a>DefineIndexField</a></code> operation. Specifies the name of the domain you want to update and the index field configuration. */
+	export interface DefineIndexFieldRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDefineIndexFieldRequestFormGroup() {
+		return new FormGroup<DefineIndexFieldRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration. */
 	export interface DefineSuggesterRequest {
@@ -985,6 +2025,25 @@ export namespace MyNS {
 		 * Required
 		 */
 		Suggester: Suggester;
+	}
+
+	/** Container for the parameters to the <code><a>DefineSuggester</a></code> operation. Specifies the name of the domain you want to update and the suggester configuration. */
+	export interface DefineSuggesterRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDefineSuggesterRequestFormGroup() {
+		return new FormGroup<DefineSuggesterRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1010,6 +2069,35 @@ export namespace MyNS {
 		AnalysisSchemeName: string;
 	}
 
+	/** Container for the parameters to the <code><a>DeleteAnalysisScheme</a></code> operation. Specifies the name of the domain you want to update and the analysis scheme you want to delete.  */
+	export interface DeleteAnalysisSchemeRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		AnalysisSchemeName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAnalysisSchemeRequestFormGroup() {
+		return new FormGroup<DeleteAnalysisSchemeRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete. */
 	export interface DeleteDomainRequest {
@@ -1022,6 +2110,25 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+	}
+
+	/** Container for the parameters to the <code><a>DeleteDomain</a></code> operation. Specifies the name of the domain you want to delete. */
+	export interface DeleteDomainRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDomainRequestFormGroup() {
+		return new FormGroup<DeleteDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1047,6 +2154,35 @@ export namespace MyNS {
 		ExpressionName: string;
 	}
 
+	/** Container for the parameters to the <code><a>DeleteExpression</a></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete. */
+	export interface DeleteExpressionRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		ExpressionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteExpressionRequestFormGroup() {
+		return new FormGroup<DeleteExpressionRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ExpressionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete. */
 	export interface DeleteIndexFieldRequest {
@@ -1060,6 +2196,27 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 		IndexFieldName: string;
+	}
+
+	/** Container for the parameters to the <code><a>DeleteIndexField</a></code> operation. Specifies the name of the domain you want to update and the name of the index field you want to delete. */
+	export interface DeleteIndexFieldRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		IndexFieldName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteIndexFieldRequestFormGroup() {
+		return new FormGroup<DeleteIndexFieldRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			IndexFieldName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1085,6 +2242,35 @@ export namespace MyNS {
 		SuggesterName: string;
 	}
 
+	/** Container for the parameters to the <code><a>DeleteSuggester</a></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete. */
+	export interface DeleteSuggesterRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SuggesterName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSuggesterRequestFormGroup() {
+		return new FormGroup<DeleteSuggesterRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			SuggesterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.  */
 	export interface DescribeAnalysisSchemesRequest {
@@ -1097,8 +2283,29 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		AnalysisSchemeNames?: Array<string> | null;
+		AnalysisSchemeNames?: Array<string>;
 		Deployed?: boolean | null;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeAnalysisSchemes</a></code> operation. Specifies the name of the domain you want to describe. To limit the response to particular analysis schemes, specify the names of the analysis schemes you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.  */
+	export interface DescribeAnalysisSchemesRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeAnalysisSchemesRequestFormGroup() {
+		return new FormGroup<DescribeAnalysisSchemesRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1116,6 +2323,27 @@ export namespace MyNS {
 		Deployed?: boolean | null;
 	}
 
+	/** Container for the parameters to the <code><a>DescribeAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>. */
+	export interface DescribeAvailabilityOptionsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeAvailabilityOptionsRequestFormGroup() {
+		return new FormGroup<DescribeAvailabilityOptionsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>. */
 	export interface DescribeDomainEndpointOptionsRequest {
@@ -1131,12 +2359,42 @@ export namespace MyNS {
 		Deployed?: boolean | null;
 	}
 
+	/** Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>. */
+	export interface DescribeDomainEndpointOptionsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeDomainEndpointOptionsRequestFormGroup() {
+		return new FormGroup<DescribeDomainEndpointOptionsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe. */
 	export interface DescribeDomainsRequest {
 
 		/** A list of domain names. */
-		DomainNames?: Array<string> | null;
+		DomainNames?: Array<string>;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeDomains</a></code> operation. By default shows the status of all domains. To restrict the response to particular domains, specify the names of the domains you want to describe. */
+	export interface DescribeDomainsRequestFormProperties {
+	}
+	export function CreateDescribeDomainsRequestFormGroup() {
+		return new FormGroup<DescribeDomainsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1151,8 +2409,29 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		ExpressionNames?: Array<string> | null;
+		ExpressionNames?: Array<string>;
 		Deployed?: boolean | null;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeDomains</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. */
+	export interface DescribeExpressionsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeExpressionsRequestFormGroup() {
+		return new FormGroup<DescribeExpressionsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1167,8 +2446,29 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		FieldNames?: Array<string> | null;
+		FieldNames?: Array<string>;
 		Deployed?: boolean | null;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeIndexFields</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. */
+	export interface DescribeIndexFieldsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeIndexFieldsRequestFormGroup() {
+		return new FormGroup<DescribeIndexFieldsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1183,6 +2483,25 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeScalingParameters</a></code> operation. Specifies the name of the domain you want to describe.  */
+	export interface DescribeScalingParametersRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingParametersRequestFormGroup() {
+		return new FormGroup<DescribeScalingParametersRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1200,6 +2519,27 @@ export namespace MyNS {
 		Deployed?: boolean | null;
 	}
 
+	/** Container for the parameters to the <code><a>DescribeServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. */
+	export interface DescribeServiceAccessPoliciesRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeServiceAccessPoliciesRequestFormGroup() {
+		return new FormGroup<DescribeServiceAccessPoliciesRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. */
 	export interface DescribeSuggestersRequest {
@@ -1212,8 +2552,29 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		SuggesterNames?: Array<string> | null;
+		SuggesterNames?: Array<string>;
 		Deployed?: boolean | null;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeSuggester</a></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>. */
+	export interface DescribeSuggestersRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Deployed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeSuggestersRequestFormGroup() {
+		return new FormGroup<DescribeSuggestersRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Deployed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SuggesterFuzzyMatching { none = 0, low = 1, high = 2 }
@@ -1230,6 +2591,25 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+	}
+
+	/** Container for the parameters to the <code><a>IndexDocuments</a></code> operation. Specifies the name of the domain you want to re-index. */
+	export interface IndexDocumentsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateIndexDocumentsRequestFormGroup() {
+		return new FormGroup<IndexDocumentsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1249,6 +2629,27 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 		MultiAZ: boolean;
+	}
+
+	/** Container for the parameters to the <code><a>UpdateAvailabilityOptions</a></code> operation. Specifies the name of the domain you want to update and the Multi-AZ availability option. */
+	export interface UpdateAvailabilityOptionsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateAvailabilityOptionsRequestFormGroup() {
+		return new FormGroup<UpdateAvailabilityOptionsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1271,6 +2672,25 @@ export namespace MyNS {
 		DomainEndpointOptions: DomainEndpointOptions;
 	}
 
+	/** Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies the name of the domain you want to update and the domain endpoint options. */
+	export interface UpdateDomainEndpointOptionsRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainEndpointOptionsRequestFormGroup() {
+		return new FormGroup<UpdateDomainEndpointOptionsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure. */
 	export interface UpdateScalingParametersRequest {
@@ -1291,6 +2711,25 @@ export namespace MyNS {
 		ScalingParameters: ScalingParameters;
 	}
 
+	/** Container for the parameters to the <code><a>UpdateScalingParameters</a></code> operation. Specifies the name of the domain you want to update and the scaling parameters you want to configure. */
+	export interface UpdateScalingParametersRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateScalingParametersRequestFormGroup() {
+		return new FormGroup<UpdateScalingParametersRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure. */
 	export interface UpdateServiceAccessPoliciesRequest {
@@ -1309,6 +2748,32 @@ export namespace MyNS {
 		 * Required
 		 */
 		AccessPolicies: string;
+	}
+
+	/** Container for the parameters to the <code><a>UpdateServiceAccessPolicies</a></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure. */
+	export interface UpdateServiceAccessPoliciesRequestFormProperties {
+
+		/**
+		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.
+		 * Required
+		 */
+		AccessPolicies: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateServiceAccessPoliciesRequestFormGroup() {
+		return new FormGroup<UpdateServiceAccessPoliciesRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AccessPolicies: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1431,7 +2896,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeAnalysisSchemes(DomainName: string, AnalysisSchemeNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeAnalysisSchemesAction, Version: GET_DescribeAnalysisSchemesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeAnalysisSchemes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + AnalysisSchemeNames.map(z => `AnalysisSchemeNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeAnalysisSchemes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + AnalysisSchemeNames?.map(z => `AnalysisSchemeNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1463,7 +2928,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDomains(DomainNames: Array<string> | null | undefined, Action: GET_DescribeDomainsAction, Version: GET_DescribeDomainsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDomains?' + DomainNames.map(z => `DomainNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDomains?' + DomainNames?.map(z => `DomainNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1475,7 +2940,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeExpressions(DomainName: string, ExpressionNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeExpressionsAction, Version: GET_DescribeExpressionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeExpressions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + ExpressionNames.map(z => `ExpressionNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeExpressions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + ExpressionNames?.map(z => `ExpressionNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1487,7 +2952,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeIndexFields(DomainName: string, FieldNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeIndexFieldsAction, Version: GET_DescribeIndexFieldsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeIndexFields?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + FieldNames.map(z => `FieldNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeIndexFields?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + FieldNames?.map(z => `FieldNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1519,7 +2984,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeSuggesters(DomainName: string, SuggesterNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeSuggestersAction, Version: GET_DescribeSuggestersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeSuggesters?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + SuggesterNames.map(z => `SuggesterNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeSuggesters?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + SuggesterNames?.map(z => `SuggesterNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1620,7 +3085,31 @@ export namespace MyNS {
 		AnalysisSchemeLanguage: GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage;
 
 		/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
-		AnalysisOptions?: AnalysisOptions | null;
+		AnalysisOptions?: AnalysisOptions;
+	}
+	export interface GET_DefineAnalysisSchemeAnalysisSchemeFormProperties {
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		AnalysisSchemeName: FormControl<string | null | undefined>,
+
+		/**
+		 * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
+		 * Required
+		 */
+		AnalysisSchemeLanguage: FormControl<GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage | null | undefined>,
+	}
+	export function CreateGET_DefineAnalysisSchemeAnalysisSchemeFormGroup() {
+		return new FormGroup<GET_DefineAnalysisSchemeAnalysisSchemeFormProperties>({
+			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined),
+			AnalysisSchemeLanguage: new FormControl<GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, zh_Hans = 33, zh_Hant = 34 }
@@ -1650,6 +3139,32 @@ export namespace MyNS {
 		 */
 		ExpressionValue: string;
 	}
+	export interface GET_DefineExpressionExpressionFormProperties {
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		ExpressionName: FormControl<string | null | undefined>,
+
+		/**
+		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
+		 * Max length: 10240
+		 * Min length: 1
+		 */
+		ExpressionValue: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_DefineExpressionExpressionFormGroup() {
+		return new FormGroup<GET_DefineExpressionExpressionFormProperties>({
+			ExpressionName: new FormControl<string | null | undefined>(undefined),
+			ExpressionValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GET_DefineExpressionAction { DefineExpression = 0 }
 
@@ -1667,37 +3182,53 @@ export namespace MyNS {
 		IndexFieldType: GET_DefineIndexFieldIndexFieldIndexFieldType;
 
 		/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
-		IntOptions?: IntOptions | null;
+		IntOptions?: IntOptions;
 
 		/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
-		DoubleOptions?: DoubleOptions | null;
+		DoubleOptions?: DoubleOptions;
 
 		/** Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default. */
-		LiteralOptions?: LiteralOptions | null;
+		LiteralOptions?: LiteralOptions;
 
 		/** Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default. */
-		TextOptions?: TextOptions | null;
+		TextOptions?: TextOptions;
 
 		/** Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default. */
-		DateOptions?: DateOptions | null;
+		DateOptions?: DateOptions;
 
 		/** Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default. */
-		LatLonOptions?: LatLonOptions | null;
+		LatLonOptions?: LatLonOptions;
 
 		/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
-		IntArrayOptions?: IntArrayOptions | null;
+		IntArrayOptions?: IntArrayOptions;
 
 		/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
-		DoubleArrayOptions?: DoubleArrayOptions | null;
+		DoubleArrayOptions?: DoubleArrayOptions;
 
 		/** Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default. */
-		LiteralArrayOptions?: LiteralArrayOptions | null;
+		LiteralArrayOptions?: LiteralArrayOptions;
 
 		/** Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default. */
-		TextArrayOptions?: TextArrayOptions | null;
+		TextArrayOptions?: TextArrayOptions;
 
 		/** Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default. */
-		DateArrayOptions?: DateArrayOptions | null;
+		DateArrayOptions?: DateArrayOptions;
+	}
+	export interface GET_DefineIndexFieldIndexFieldFormProperties {
+		IndexFieldName: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+		 * Required
+		 */
+		IndexFieldType: FormControl<GET_DefineIndexFieldIndexFieldIndexFieldType | null | undefined>,
+	}
+	export function CreateGET_DefineIndexFieldIndexFieldFormGroup() {
+		return new FormGroup<GET_DefineIndexFieldIndexFieldFormProperties>({
+			IndexFieldName: new FormControl<string | null | undefined>(undefined),
+			IndexFieldType: new FormControl<GET_DefineIndexFieldIndexFieldIndexFieldType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_DefineIndexFieldIndexFieldIndexFieldType { _int = 0, _double = 1, literal = 2, text = 3, date = 4, latlon = 5, int_array = 6, double_array = 7, literal_array = 8, text_array = 9, date_array = 10 }
@@ -1724,6 +3255,23 @@ export namespace MyNS {
 		 * Required
 		 */
 		DocumentSuggesterOptions: DocumentSuggesterOptions;
+	}
+	export interface GET_DefineSuggesterSuggesterFormProperties {
+
+		/**
+		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z][a-z0-9_]*
+		 */
+		SuggesterName: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_DefineSuggesterSuggesterFormGroup() {
+		return new FormGroup<GET_DefineSuggesterSuggesterFormProperties>({
+			SuggesterName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_DefineSuggesterAction { DefineSuggester = 0 }
@@ -1840,6 +3388,19 @@ export namespace MyNS {
 		/** The minimum required TLS version. */
 		TLSSecurityPolicy?: GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy | null;
 	}
+	export interface GET_UpdateDomainEndpointOptionsDomainEndpointOptionsFormProperties {
+		EnforceHTTPS: FormControl<boolean | null | undefined>,
+
+		/** The minimum required TLS version. */
+		TLSSecurityPolicy: FormControl<GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+	}
+	export function CreateGET_UpdateDomainEndpointOptionsDomainEndpointOptionsFormGroup() {
+		return new FormGroup<GET_UpdateDomainEndpointOptionsDomainEndpointOptionsFormProperties>({
+			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
@@ -1855,6 +3416,21 @@ export namespace MyNS {
 		DesiredInstanceType?: GET_UpdateScalingParametersScalingParametersDesiredInstanceType | null;
 		DesiredReplicationCount?: number | null;
 		DesiredPartitionCount?: number | null;
+	}
+	export interface GET_UpdateScalingParametersScalingParametersFormProperties {
+
+		/** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted. */
+		DesiredInstanceType: FormControl<GET_UpdateScalingParametersScalingParametersDesiredInstanceType | null | undefined>,
+		DesiredReplicationCount: FormControl<number | null | undefined>,
+		DesiredPartitionCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGET_UpdateScalingParametersScalingParametersFormGroup() {
+		return new FormGroup<GET_UpdateScalingParametersScalingParametersFormProperties>({
+			DesiredInstanceType: new FormControl<GET_UpdateScalingParametersScalingParametersDesiredInstanceType | null | undefined>(undefined),
+			DesiredReplicationCount: new FormControl<number | null | undefined>(undefined),
+			DesiredPartitionCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_UpdateScalingParametersScalingParametersDesiredInstanceType { search_m1_small = 0, search_m1_large = 1, search_m2_xlarge = 2, search_m2_2xlarge = 3, search_m3_medium = 4, search_m3_large = 5, search_m3_xlarge = 6, search_m3_2xlarge = 7 }

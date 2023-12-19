@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
 	export class MyClient {
@@ -27,6 +28,21 @@ export namespace MyNS {
 		Converted?: string | null;
 		Credits?: string | null;
 		Currency?: string | null;
+	}
+	export interface ConvertcurrencyGetByLicenseAndFromAndToAndAmountReturnFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Converted: FormControl<string | null | undefined>,
+		Credits: FormControl<string | null | undefined>,
+		Currency: FormControl<string | null | undefined>,
+	}
+	export function CreateConvertcurrencyGetByLicenseAndFromAndToAndAmountReturnFormGroup() {
+		return new FormGroup<ConvertcurrencyGetByLicenseAndFromAndToAndAmountReturnFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Converted: new FormControl<string | null | undefined>(undefined),
+			Credits: new FormControl<string | null | undefined>(undefined),
+			Currency: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

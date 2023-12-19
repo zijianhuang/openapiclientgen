@@ -1,10 +1,22 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelDataRepositoryTaskResponse {
 		Lifecycle?: CancelDataRepositoryTaskResponseLifecycle | null;
 		TaskId?: string | null;
+	}
+	export interface CancelDataRepositoryTaskResponseFormProperties {
+		Lifecycle: FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>,
+		TaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelDataRepositoryTaskResponseFormGroup() {
+		return new FormGroup<CancelDataRepositoryTaskResponseFormProperties>({
+			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined),
+			TaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CancelDataRepositoryTaskResponseLifecycle { PENDING = 0, EXECUTING = 1, FAILED = 2, SUCCEEDED = 3, CANCELED = 4, CANCELING = 5 }
@@ -15,19 +27,65 @@ export namespace MyNS {
 		TaskId: string;
 	}
 
+	/** Cancels a data repository task. */
+	export interface CancelDataRepositoryTaskRequestFormProperties {
+		TaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelDataRepositoryTaskRequestFormGroup() {
+		return new FormGroup<CancelDataRepositoryTaskRequestFormProperties>({
+			TaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BadRequest {
+	}
+	export interface BadRequestFormProperties {
+	}
+	export function CreateBadRequestFormGroup() {
+		return new FormGroup<BadRequestFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedOperation {
 	}
+	export interface UnsupportedOperationFormProperties {
+	}
+	export function CreateUnsupportedOperationFormGroup() {
+		return new FormGroup<UnsupportedOperationFormProperties>({
+		});
+
+	}
 
 	export interface DataRepositoryTaskNotFound {
+	}
+	export interface DataRepositoryTaskNotFoundFormProperties {
+	}
+	export function CreateDataRepositoryTaskNotFoundFormGroup() {
+		return new FormGroup<DataRepositoryTaskNotFoundFormProperties>({
+		});
+
 	}
 
 	export interface DataRepositoryTaskEnded {
 	}
+	export interface DataRepositoryTaskEndedFormProperties {
+	}
+	export function CreateDataRepositoryTaskEndedFormGroup() {
+		return new FormGroup<DataRepositoryTaskEndedFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerError {
+	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
 	}
 
 
@@ -35,7 +93,16 @@ export namespace MyNS {
 	export interface CreateBackupResponse {
 
 		/** A backup of an Amazon FSx for Windows File Server file system. You can create a new file system from a backup to protect against data loss. */
-		Backup?: Backup | null;
+		Backup?: Backup;
+	}
+
+	/** The response object for the <code>CreateBackup</code> operation. */
+	export interface CreateBackupResponseFormProperties {
+	}
+	export function CreateCreateBackupResponseFormGroup() {
+		return new FormGroup<CreateBackupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -58,7 +125,7 @@ export namespace MyNS {
 		Lifecycle: BackupLifecycle;
 
 		/** If backup creation fails, this structure contains the details of that failure. */
-		FailureDetails?: BackupFailureDetails | null;
+		FailureDetails?: BackupFailureDetails;
 
 		/**
 		 * The type of the backup.
@@ -100,7 +167,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * A description of a specific Amazon FSx file system.
@@ -109,7 +176,73 @@ export namespace MyNS {
 		FileSystem: FileSystem;
 
 		/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
-		DirectoryInformation?: ActiveDirectoryBackupAttributes | null;
+		DirectoryInformation?: ActiveDirectoryBackupAttributes;
+	}
+
+	/** A backup of an Amazon FSx for Windows File Server file system. You can create a new file system from a backup to protect against data loss. */
+	export interface BackupFormProperties {
+
+		/**
+		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(backup-[0-9a-f]{8,})$
+		 */
+		BackupId: FormControl<string | null | undefined>,
+
+		/**
+		 * The lifecycle status of the backup.
+		 * Required
+		 */
+		Lifecycle: FormControl<BackupLifecycle | null | undefined>,
+
+		/**
+		 * The type of the backup.
+		 * Required
+		 */
+		Type: FormControl<BackupType | null | undefined>,
+
+		/**
+		 * The current percent of progress of an asynchronous task.
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
+		ProgressPercent: FormControl<number | null | undefined>,
+
+		/**
+		 * The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.
+		 * Required
+		 */
+		CreationTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key Management Service API Reference</i>.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^.{1,2048}$
+		 */
+		KmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Max length: 512
+		 * Min length: 8
+		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupFormGroup() {
+		return new FormGroup<BackupFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined),
+			Type: new FormControl<BackupType | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupLifecycle { AVAILABLE = 0, CREATING = 1, DELETED = 2, FAILED = 3 }
@@ -124,6 +257,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Message?: string | null;
+	}
+
+	/** If backup creation fails, this structure contains the details of that failure. */
+	export interface BackupFailureDetailsFormProperties {
+
+		/**
+		 * A detailed error message.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupFailureDetailsFormGroup() {
+		return new FormGroup<BackupFailureDetailsFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupType { AUTOMATIC = 0, USER_INITIATED = 1 }
@@ -147,6 +297,33 @@ export namespace MyNS {
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value?: string | null;
+	}
+
+	/** Specifies a key-value pair for a resource tag. */
+	export interface TagFormProperties {
+
+		/**
+		 * A string of 1 to 128 characters that specifies the key for a tag. Tag keys must be unique for the resource to which they are attached.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
+		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * A string of 0 to 256 characters that specifies the value for a tag. Tag values can be null and don't have to be unique in a tag set.
+		 * Max length: 256
+		 * Min length: 0
+		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+		 */
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -179,7 +356,7 @@ export namespace MyNS {
 		Lifecycle?: FileSystemLifecycle | null;
 
 		/** A structure providing details of any failures that occur when creating the file system has failed. */
-		FailureDetails?: FileSystemFailureDetails | null;
+		FailureDetails?: FileSystemFailureDetails;
 
 		/**
 		 * The storage capacity for your Amazon FSx file system, in gibibytes.
@@ -203,13 +380,13 @@ export namespace MyNS {
 		 * A list of subnet IDs. Currently, you can specify only one subnet ID in a call to the <code>CreateFileSystem</code> operation.
 		 * Maximum items: 50
 		 */
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 
 		/**
 		 * A list of network interface IDs.
 		 * Maximum items: 50
 		 */
-		NetworkInterfaceIds?: Array<string> | null;
+		NetworkInterfaceIds?: Array<string>;
 
 		/**
 		 * The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.
@@ -240,14 +417,101 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** The configuration for this Microsoft Windows file system. */
-		WindowsConfiguration?: WindowsFileSystemConfiguration | null;
+		WindowsConfiguration?: WindowsFileSystemConfiguration;
 
 		/** The configuration for the Amazon FSx for Lustre file system. */
-		LustreConfiguration?: LustreFileSystemConfiguration | null;
-		AdministrativeActions?: Array<AdministrativeAction> | null;
+		LustreConfiguration?: LustreFileSystemConfiguration;
+		AdministrativeActions?: Array<AdministrativeAction>;
+	}
+
+	/** A description of a specific Amazon FSx file system. */
+	export interface FileSystemFormProperties {
+
+		/**
+		 * An AWS account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.
+		 * Max length: 12
+		 * Min length: 12
+		 * Pattern: ^\d{12}$
+		 */
+		OwnerId: FormControl<string | null | undefined>,
+
+		/** The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time. */
+		CreationTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/** The type of file system. */
+		FileSystemType: FormControl<FileSystemFileSystemType | null | undefined>,
+
+		/** The lifecycle status of the file system. */
+		Lifecycle: FormControl<FileSystemLifecycle | null | undefined>,
+
+		/**
+		 * The storage capacity for your Amazon FSx file system, in gibibytes.
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
+		StorageCapacity: FormControl<number | null | undefined>,
+
+		/** The storage type for your Amazon FSx file system. */
+		StorageType: FormControl<FileSystemStorageType | null | undefined>,
+
+		/**
+		 * The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the <i>Amazon VPC User Guide</i>.
+		 * Max length: 21
+		 * Min length: 12
+		 * Pattern: ^(vpc-[0-9a-f]{8,})$
+		 */
+		VpcId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.
+		 * Max length: 275
+		 * Min length: 16
+		 * Pattern: ^(fsi?-[0-9a-f]{8,}\..{4,253})$
+		 */
+		DNSName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key Management Service API Reference</i>.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^.{1,2048}$
+		 */
+		KmsKeyId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Max length: 512
+		 * Min length: 8
+		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateFileSystemFormGroup() {
+		return new FormGroup<FileSystemFormProperties>({
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined),
+			Lifecycle: new FormControl<FileSystemLifecycle | null | undefined>(undefined),
+			StorageCapacity: new FormControl<number | null | undefined>(undefined),
+			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			DNSName: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FileSystemFileSystemType { WINDOWS = 0, LUSTRE = 1 }
@@ -266,6 +530,23 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** A structure providing details of any failures that occur when creating the file system has failed. */
+	export interface FileSystemFailureDetailsFormProperties {
+
+		/**
+		 * A detailed error message.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateFileSystemFailureDetailsFormGroup() {
+		return new FormGroup<FileSystemFailureDetailsFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FileSystemStorageType { SSD = 0, HDD = 1 }
 
 
@@ -274,7 +555,7 @@ export namespace MyNS {
 		ActiveDirectoryId?: string | null;
 
 		/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
-		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryAttributes | null;
+		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryAttributes;
 		DeploymentType?: WindowsFileSystemConfigurationDeploymentType | null;
 
 		/**
@@ -305,7 +586,7 @@ export namespace MyNS {
 		 * A list of maintenance operations.
 		 * Maximum items: 20
 		 */
-		MaintenanceOperationsInProgress?: Array<FileSystemMaintenanceOperation> | null;
+		MaintenanceOperationsInProgress?: Array<FileSystemMaintenanceOperation>;
 
 		/**
 		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
@@ -332,6 +613,75 @@ export namespace MyNS {
 		CopyTagsToBackups?: boolean | null;
 	}
 
+	/** The configuration for this Microsoft Windows file system. */
+	export interface WindowsFileSystemConfigurationFormProperties {
+		ActiveDirectoryId: FormControl<string | null | undefined>,
+		DeploymentType: FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>,
+
+		/**
+		 * The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.
+		 * Max length: 275
+		 * Min length: 16
+		 * Pattern: ^(fsi?-[0-9a-f]{8,}\..{4,253})$
+		 */
+		RemoteAdministrationEndpoint: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the <i>Amazon VPC User Guide.</i>
+		 * Max length: 24
+		 * Min length: 15
+		 * Pattern: ^(subnet-[0-9a-f]{8,})$
+		 */
+		PreferredSubnetId: FormControl<string | null | undefined>,
+		PreferredFileServerIp: FormControl<string | null | undefined>,
+
+		/**
+		 * Sustained throughput of an Amazon FSx file system in MBps.
+		 * Minimum: 8
+		 * Maximum: 2048
+		 */
+		ThroughputCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+		 * Max length: 7
+		 * Min length: 7
+		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
+		 * Max length: 5
+		 * Min length: 5
+		 * Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.
+		 * Minimum: 0
+		 * Maximum: 35
+		 */
+		AutomaticBackupRetentionDays: FormControl<number | null | undefined>,
+		CopyTagsToBackups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWindowsFileSystemConfigurationFormGroup() {
+		return new FormGroup<WindowsFileSystemConfigurationFormProperties>({
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>(undefined),
+			RemoteAdministrationEndpoint: new FormControl<string | null | undefined>(undefined),
+			PreferredSubnetId: new FormControl<string | null | undefined>(undefined),
+			PreferredFileServerIp: new FormControl<string | null | undefined>(undefined),
+			ThroughputCapacity: new FormControl<number | null | undefined>(undefined),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined),
+			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined),
+			CopyTagsToBackups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
 	export interface SelfManagedActiveDirectoryAttributes {
@@ -339,7 +689,24 @@ export namespace MyNS {
 		OrganizationalUnitDistinguishedName?: string | null;
 		FileSystemAdministratorsGroup?: string | null;
 		UserName?: string | null;
-		DnsIps?: Array<string> | null;
+		DnsIps?: Array<string>;
+	}
+
+	/** The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server instance is joined. */
+	export interface SelfManagedActiveDirectoryAttributesFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
+		FileSystemAdministratorsGroup: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateSelfManagedActiveDirectoryAttributesFormGroup() {
+		return new FormGroup<SelfManagedActiveDirectoryAttributesFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
+			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WindowsFileSystemConfigurationDeploymentType { MULTI_AZ_1 = 0, SINGLE_AZ_1 = 1, SINGLE_AZ_2 = 2 }
@@ -361,10 +728,34 @@ export namespace MyNS {
 		WeeklyMaintenanceStartTime?: string | null;
 
 		/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
-		DataRepositoryConfiguration?: DataRepositoryConfiguration | null;
+		DataRepositoryConfiguration?: DataRepositoryConfiguration;
 		DeploymentType?: LustreFileSystemConfigurationDeploymentType | null;
 		PerUnitStorageThroughput?: number | null;
 		MountName?: string | null;
+	}
+
+	/** The configuration for the Amazon FSx for Lustre file system. */
+	export interface LustreFileSystemConfigurationFormProperties {
+
+		/**
+		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+		 * Max length: 7
+		 * Min length: 7
+		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+		DeploymentType: FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>,
+		PerUnitStorageThroughput: FormControl<number | null | undefined>,
+		MountName: FormControl<string | null | undefined>,
+	}
+	export function CreateLustreFileSystemConfigurationFormGroup() {
+		return new FormGroup<LustreFileSystemConfigurationFormProperties>({
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>(undefined),
+			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined),
+			MountName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -373,6 +764,21 @@ export namespace MyNS {
 		ImportPath?: string | null;
 		ExportPath?: string | null;
 		ImportedFileChunkSize?: number | null;
+	}
+
+	/** The data repository configuration object for Lustre file systems returned in the response of the <code>CreateFileSystem</code> operation. */
+	export interface DataRepositoryConfigurationFormProperties {
+		ImportPath: FormControl<string | null | undefined>,
+		ExportPath: FormControl<string | null | undefined>,
+		ImportedFileChunkSize: FormControl<number | null | undefined>,
+	}
+	export function CreateDataRepositoryConfigurationFormGroup() {
+		return new FormGroup<DataRepositoryConfigurationFormProperties>({
+			ImportPath: new FormControl<string | null | undefined>(undefined),
+			ExportPath: new FormControl<string | null | undefined>(undefined),
+			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LustreFileSystemConfigurationDeploymentType { SCRATCH_1 = 0, SCRATCH_2 = 1, PERSISTENT_1 = 2 }
@@ -394,10 +800,35 @@ export namespace MyNS {
 		Status?: AdministrativeActionStatus | null;
 
 		/** A description of a specific Amazon FSx file system. */
-		TargetFileSystemValues?: FileSystem | null;
+		TargetFileSystemValues?: FileSystem;
 
 		/** Provides information about a failed administrative action. */
-		FailureDetails?: AdministrativeActionFailureDetails | null;
+		FailureDetails?: AdministrativeActionFailureDetails;
+	}
+
+	/** Describes a specific Amazon FSx Administrative Action for the current Windows file system. */
+	export interface AdministrativeActionFormProperties {
+
+		/** <p>Describes the type of administrative action, as follows:</p> <ul> <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system). A</p> </li> <li> <p> <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process of migrating the file system data to the new, larger disks. You can track the storage migration progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing Storage Capacity</a>. </p> </li> </ul> */
+		AdministrativeActionType: FormControl<AdministrativeActionAdministrativeActionType | null | undefined>,
+
+		/**
+		 * The current percent of progress of an asynchronous task.
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
+		ProgressPercent: FormControl<number | null | undefined>,
+		RequestTime: FormControl<Date | null | undefined>,
+		Status: FormControl<AdministrativeActionStatus | null | undefined>,
+	}
+	export function CreateAdministrativeActionFormGroup() {
+		return new FormGroup<AdministrativeActionFormProperties>({
+			AdministrativeActionType: new FormControl<AdministrativeActionAdministrativeActionType | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+			RequestTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<AdministrativeActionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdministrativeActionAdministrativeActionType { FILE_SYSTEM_UPDATE = 0, STORAGE_OPTIMIZATION = 1 }
@@ -416,11 +847,41 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Provides information about a failed administrative action. */
+	export interface AdministrativeActionFailureDetailsFormProperties {
+
+		/**
+		 * A detailed error message.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateAdministrativeActionFailureDetailsFormGroup() {
+		return new FormGroup<AdministrativeActionFailureDetailsFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
 	export interface ActiveDirectoryBackupAttributes {
 		DomainName?: string | null;
 		ActiveDirectoryId?: string | null;
+	}
+
+	/** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system. */
+	export interface ActiveDirectoryBackupAttributesFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		ActiveDirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateActiveDirectoryBackupAttributesFormGroup() {
+		return new FormGroup<ActiveDirectoryBackupAttributesFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -449,25 +910,88 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** The request object for the <code>CreateBackup</code> operation. */
+	export interface CreateBackupRequestFormProperties {
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupRequestFormGroup() {
+		return new FormGroup<CreateBackupRequestFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FileSystemNotFound {
 	}
+	export interface FileSystemNotFoundFormProperties {
+	}
+	export function CreateFileSystemNotFoundFormGroup() {
+		return new FormGroup<FileSystemNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface BackupInProgress {
+	}
+	export interface BackupInProgressFormProperties {
+	}
+	export function CreateBackupInProgressFormGroup() {
+		return new FormGroup<BackupInProgressFormProperties>({
+		});
+
 	}
 
 	export interface IncompatibleParameterError {
 	}
+	export interface IncompatibleParameterErrorFormProperties {
+	}
+	export function CreateIncompatibleParameterErrorFormGroup() {
+		return new FormGroup<IncompatibleParameterErrorFormProperties>({
+		});
+
+	}
 
 	export interface ServiceLimitExceeded {
+	}
+	export interface ServiceLimitExceededFormProperties {
+	}
+	export function CreateServiceLimitExceededFormGroup() {
+		return new FormGroup<ServiceLimitExceededFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataRepositoryTaskResponse {
 
 		/** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository. */
-		DataRepositoryTask?: DataRepositoryTask | null;
+		DataRepositoryTask?: DataRepositoryTask;
+	}
+	export interface CreateDataRepositoryTaskResponseFormProperties {
+	}
+	export function CreateCreateDataRepositoryTaskResponseFormGroup() {
+		return new FormGroup<CreateDataRepositoryTaskResponseFormProperties>({
+		});
+
 	}
 
 
@@ -498,7 +1022,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
@@ -508,16 +1032,61 @@ export namespace MyNS {
 		 * Pattern: ^(fs-[0-9a-f]{8,})$
 		 */
 		FileSystemId: string;
-		Paths?: Array<string> | null;
+		Paths?: Array<string>;
 
 		/** Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>. */
-		FailureDetails?: DataRepositoryTaskFailureDetails | null;
+		FailureDetails?: DataRepositoryTaskFailureDetails;
 
 		/** Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process. */
-		Status?: DataRepositoryTaskStatus | null;
+		Status?: DataRepositoryTaskStatus;
 
 		/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
-		Report?: CompletionReport | null;
+		Report?: CompletionReport;
+	}
+
+	/** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and its linked data repository. */
+	export interface DataRepositoryTaskFormProperties {
+		TaskId: FormControl<string | null | undefined>,
+		Lifecycle: FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>,
+		Type: FormControl<DataRepositoryTaskType | null | undefined>,
+
+		/**
+		 * The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.
+		 * Required
+		 */
+		CreationTime: FormControl<Date | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Max length: 512
+		 * Min length: 8
+		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+	}
+	export function CreateDataRepositoryTaskFormGroup() {
+		return new FormGroup<DataRepositoryTaskFormProperties>({
+			TaskId: new FormControl<string | null | undefined>(undefined),
+			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined),
+			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DataRepositoryTaskType { EXPORT_TO_REPOSITORY = 0 }
@@ -534,6 +1103,23 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>. */
+	export interface DataRepositoryTaskFailureDetailsFormProperties {
+
+		/**
+		 * A detailed error message.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateDataRepositoryTaskFailureDetailsFormGroup() {
+		return new FormGroup<DataRepositoryTaskFailureDetailsFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process. */
 	export interface DataRepositoryTaskStatus {
@@ -541,6 +1127,23 @@ export namespace MyNS {
 		SucceededCount?: number | null;
 		FailedCount?: number | null;
 		LastUpdatedTime?: Date | null;
+	}
+
+	/** Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process. */
+	export interface DataRepositoryTaskStatusFormProperties {
+		TotalCount: FormControl<number | null | undefined>,
+		SucceededCount: FormControl<number | null | undefined>,
+		FailedCount: FormControl<number | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDataRepositoryTaskStatusFormGroup() {
+		return new FormGroup<DataRepositoryTaskStatusFormProperties>({
+			TotalCount: new FormControl<number | null | undefined>(undefined),
+			SucceededCount: new FormControl<number | null | undefined>(undefined),
+			FailedCount: new FormControl<number | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -552,13 +1155,30 @@ export namespace MyNS {
 		Scope?: CompletionReportScope | null;
 	}
 
+	/** Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter. */
+	export interface CompletionReportFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+		Format: FormControl<CompletionReportFormat | null | undefined>,
+		Scope: FormControl<CompletionReportScope | null | undefined>,
+	}
+	export function CreateCompletionReportFormGroup() {
+		return new FormGroup<CompletionReportFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<CompletionReportFormat | null | undefined>(undefined),
+			Scope: new FormControl<CompletionReportScope | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CompletionReportFormat { REPORT_CSV_20191124 = 0 }
 
 	export enum CompletionReportScope { FAILED_FILES_ONLY = 0 }
 
 	export interface CreateDataRepositoryTaskRequest {
 		Type: DataRepositoryTaskType;
-		Paths?: Array<string> | null;
+		Paths?: Array<string>;
 
 		/**
 		 * The globally unique ID of the file system, assigned by Amazon FSx.
@@ -588,10 +1208,45 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDataRepositoryTaskRequestFormProperties {
+		Type: FormControl<DataRepositoryTaskType | null | undefined>,
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDataRepositoryTaskRequestFormGroup() {
+		return new FormGroup<CreateDataRepositoryTaskRequestFormProperties>({
+			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DataRepositoryTaskExecuting {
+	}
+	export interface DataRepositoryTaskExecutingFormProperties {
+	}
+	export function CreateDataRepositoryTaskExecutingFormGroup() {
+		return new FormGroup<DataRepositoryTaskExecutingFormProperties>({
+		});
+
 	}
 
 
@@ -599,7 +1254,16 @@ export namespace MyNS {
 	export interface CreateFileSystemResponse {
 
 		/** A description of a specific Amazon FSx file system. */
-		FileSystem?: FileSystem | null;
+		FileSystem?: FileSystem;
+	}
+
+	/** The response object returned after the file system is created. */
+	export interface CreateFileSystemResponseFormProperties {
+	}
+	export function CreateCreateFileSystemResponseFormGroup() {
+		return new FormGroup<CreateFileSystemResponseFormProperties>({
+		});
+
 	}
 
 
@@ -642,14 +1306,14 @@ export namespace MyNS {
 		 * A list of security group IDs.
 		 * Maximum items: 50
 		 */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key Management Service API Reference</i>.
@@ -660,10 +1324,57 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 
 		/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
-		WindowsConfiguration?: CreateFileSystemWindowsConfiguration | null;
+		WindowsConfiguration?: CreateFileSystemWindowsConfiguration;
 
 		/** The Lustre configuration for the file system being created. */
-		LustreConfiguration?: CreateFileSystemLustreConfiguration | null;
+		LustreConfiguration?: CreateFileSystemLustreConfiguration;
+	}
+
+	/** The request object used to create a new Amazon FSx file system. */
+	export interface CreateFileSystemRequestFormProperties {
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of file system.
+		 * Required
+		 */
+		FileSystemType: FormControl<FileSystemFileSystemType | null | undefined>,
+
+		/**
+		 * The storage capacity for your Amazon FSx file system, in gibibytes.
+		 * Required
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
+		StorageCapacity: FormControl<number | null | undefined>,
+
+		/** The storage type for your Amazon FSx file system. */
+		StorageType: FormControl<FileSystemStorageType | null | undefined>,
+
+		/**
+		 * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and Amazon FSx for Lustre <code>PERSISTENT_1</code> file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key Management Service API Reference</i>.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: ^.{1,2048}$
+		 */
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFileSystemRequestFormGroup() {
+		return new FormGroup<CreateFileSystemRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined),
+			StorageCapacity: new FormControl<number | null | undefined>(undefined),
+			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -672,7 +1383,7 @@ export namespace MyNS {
 		ActiveDirectoryId?: string | null;
 
 		/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
-		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration | null;
+		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfiguration;
 		DeploymentType?: WindowsFileSystemConfigurationDeploymentType | null;
 
 		/**
@@ -716,6 +1427,65 @@ export namespace MyNS {
 		CopyTagsToBackups?: boolean | null;
 	}
 
+	/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
+	export interface CreateFileSystemWindowsConfigurationFormProperties {
+		ActiveDirectoryId: FormControl<string | null | undefined>,
+		DeploymentType: FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>,
+
+		/**
+		 * The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the <i>Amazon VPC User Guide.</i>
+		 * Max length: 24
+		 * Min length: 15
+		 * Pattern: ^(subnet-[0-9a-f]{8,})$
+		 */
+		PreferredSubnetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Sustained throughput of an Amazon FSx file system in MBps.
+		 * Required
+		 * Minimum: 8
+		 * Maximum: 2048
+		 */
+		ThroughputCapacity: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+		 * Max length: 7
+		 * Min length: 7
+		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
+		 * Max length: 5
+		 * Min length: 5
+		 * Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.
+		 * Minimum: 0
+		 * Maximum: 35
+		 */
+		AutomaticBackupRetentionDays: FormControl<number | null | undefined>,
+		CopyTagsToBackups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateFileSystemWindowsConfigurationFormGroup() {
+		return new FormGroup<CreateFileSystemWindowsConfigurationFormProperties>({
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>(undefined),
+			PreferredSubnetId: new FormControl<string | null | undefined>(undefined),
+			ThroughputCapacity: new FormControl<number | null | undefined>(undefined),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined),
+			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined),
+			CopyTagsToBackups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
 	export interface SelfManagedActiveDirectoryConfiguration {
@@ -725,6 +1495,25 @@ export namespace MyNS {
 		UserName: string;
 		Password: string;
 		DnsIps: Array<string>;
+	}
+
+	/** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. */
+	export interface SelfManagedActiveDirectoryConfigurationFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
+		FileSystemAdministratorsGroup: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateSelfManagedActiveDirectoryConfigurationFormGroup() {
+		return new FormGroup<SelfManagedActiveDirectoryConfigurationFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
+			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -745,22 +1534,92 @@ export namespace MyNS {
 		PerUnitStorageThroughput?: number | null;
 	}
 
+	/** The Lustre configuration for the file system being created.  */
+	export interface CreateFileSystemLustreConfigurationFormProperties {
+
+		/**
+		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+		 * Max length: 7
+		 * Min length: 7
+		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+		ImportPath: FormControl<string | null | undefined>,
+		ExportPath: FormControl<string | null | undefined>,
+		ImportedFileChunkSize: FormControl<number | null | undefined>,
+		DeploymentType: FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>,
+		PerUnitStorageThroughput: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateFileSystemLustreConfigurationFormGroup() {
+		return new FormGroup<CreateFileSystemLustreConfigurationFormProperties>({
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			ImportPath: new FormControl<string | null | undefined>(undefined),
+			ExportPath: new FormControl<string | null | undefined>(undefined),
+			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined),
+			DeploymentType: new FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>(undefined),
+			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ActiveDirectoryError {
+	}
+	export interface ActiveDirectoryErrorFormProperties {
+	}
+	export function CreateActiveDirectoryErrorFormGroup() {
+		return new FormGroup<ActiveDirectoryErrorFormProperties>({
+		});
+
 	}
 
 	export interface InvalidImportPath {
 	}
+	export interface InvalidImportPathFormProperties {
+	}
+	export function CreateInvalidImportPathFormGroup() {
+		return new FormGroup<InvalidImportPathFormProperties>({
+		});
+
+	}
 
 	export interface InvalidExportPath {
+	}
+	export interface InvalidExportPathFormProperties {
+	}
+	export function CreateInvalidExportPathFormGroup() {
+		return new FormGroup<InvalidExportPathFormProperties>({
+		});
+
 	}
 
 	export interface InvalidNetworkSettings {
 	}
+	export interface InvalidNetworkSettingsFormProperties {
+	}
+	export function CreateInvalidNetworkSettingsFormGroup() {
+		return new FormGroup<InvalidNetworkSettingsFormProperties>({
+		});
+
+	}
 
 	export interface InvalidPerUnitStorageThroughput {
 	}
+	export interface InvalidPerUnitStorageThroughputFormProperties {
+	}
+	export function CreateInvalidPerUnitStorageThroughputFormGroup() {
+		return new FormGroup<InvalidPerUnitStorageThroughputFormProperties>({
+		});
+
+	}
 
 	export interface MissingFileSystemConfiguration {
+	}
+	export interface MissingFileSystemConfigurationFormProperties {
+	}
+	export function CreateMissingFileSystemConfigurationFormGroup() {
+		return new FormGroup<MissingFileSystemConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -768,7 +1627,16 @@ export namespace MyNS {
 	export interface CreateFileSystemFromBackupResponse {
 
 		/** A description of a specific Amazon FSx file system. */
-		FileSystem?: FileSystem | null;
+		FileSystem?: FileSystem;
+	}
+
+	/** The response object for the <code>CreateFileSystemFromBackup</code> operation. */
+	export interface CreateFileSystemFromBackupResponseFormProperties {
+	}
+	export function CreateCreateFileSystemFromBackupResponseFormGroup() {
+		return new FormGroup<CreateFileSystemFromBackupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -803,23 +1671,62 @@ export namespace MyNS {
 		 * A list of security group IDs.
 		 * Maximum items: 50
 		 */
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 
 		/**
 		 * A list of <code>Tag</code> values, with a maximum of 50 elements.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations. */
-		WindowsConfiguration?: CreateFileSystemWindowsConfiguration | null;
+		WindowsConfiguration?: CreateFileSystemWindowsConfiguration;
 
 		/** The storage type for your Amazon FSx file system. */
 		StorageType?: FileSystemStorageType | null;
 	}
 
+	/** The request object for the <code>CreateFileSystemFromBackup</code> operation. */
+	export interface CreateFileSystemFromBackupRequestFormProperties {
+
+		/**
+		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(backup-[0-9a-f]{8,})$
+		 */
+		BackupId: FormControl<string | null | undefined>,
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/** The storage type for your Amazon FSx file system. */
+		StorageType: FormControl<FileSystemStorageType | null | undefined>,
+	}
+	export function CreateCreateFileSystemFromBackupRequestFormGroup() {
+		return new FormGroup<CreateFileSystemFromBackupRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BackupNotFound {
+	}
+	export interface BackupNotFoundFormProperties {
+	}
+	export function CreateBackupNotFoundFormGroup() {
+		return new FormGroup<BackupNotFoundFormProperties>({
+		});
+
 	}
 
 
@@ -836,6 +1743,28 @@ export namespace MyNS {
 
 		/** The lifecycle status of the backup. */
 		Lifecycle?: BackupLifecycle | null;
+	}
+
+	/** The response object for <code>DeleteBackup</code> operation. */
+	export interface DeleteBackupResponseFormProperties {
+
+		/**
+		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(backup-[0-9a-f]{8,})$
+		 */
+		BackupId: FormControl<string | null | undefined>,
+
+		/** The lifecycle status of the backup. */
+		Lifecycle: FormControl<BackupLifecycle | null | undefined>,
+	}
+	export function CreateDeleteBackupResponseFormGroup() {
+		return new FormGroup<DeleteBackupResponseFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -860,7 +1789,42 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 	}
 
+	/** The request object for <code>DeleteBackup</code> operation. */
+	export interface DeleteBackupRequestFormProperties {
+
+		/**
+		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Required
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(backup-[0-9a-f]{8,})$
+		 */
+		BackupId: FormControl<string | null | undefined>,
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBackupRequestFormGroup() {
+		return new FormGroup<DeleteBackupRequestFormProperties>({
+			BackupId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BackupRestoring {
+	}
+	export interface BackupRestoringFormProperties {
+	}
+	export function CreateBackupRestoringFormGroup() {
+		return new FormGroup<BackupRestoringFormProperties>({
+		});
+
 	}
 
 
@@ -879,7 +1843,29 @@ export namespace MyNS {
 		Lifecycle?: FileSystemLifecycle | null;
 
 		/** The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
-		WindowsResponse?: DeleteFileSystemWindowsResponse | null;
+		WindowsResponse?: DeleteFileSystemWindowsResponse;
+	}
+
+	/** The response object for the <code>DeleteFileSystem</code> operation. */
+	export interface DeleteFileSystemResponseFormProperties {
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/** The lifecycle status of the file system. */
+		Lifecycle: FormControl<FileSystemLifecycle | null | undefined>,
+	}
+	export function CreateDeleteFileSystemResponseFormGroup() {
+		return new FormGroup<DeleteFileSystemResponseFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			Lifecycle: new FormControl<FileSystemLifecycle | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -899,7 +1885,25 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		FinalBackupTags?: Array<Tag> | null;
+		FinalBackupTags?: Array<Tag>;
+	}
+
+	/** The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
+	export interface DeleteFileSystemWindowsResponseFormProperties {
+
+		/**
+		 * The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.
+		 * Max length: 128
+		 * Min length: 12
+		 * Pattern: ^(backup-[0-9a-f]{8,})$
+		 */
+		FinalBackupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFileSystemWindowsResponseFormGroup() {
+		return new FormGroup<DeleteFileSystemWindowsResponseFormProperties>({
+			FinalBackupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -924,7 +1928,35 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
-		WindowsConfiguration?: DeleteFileSystemWindowsConfiguration | null;
+		WindowsConfiguration?: DeleteFileSystemWindowsConfiguration;
+	}
+
+	/** The request object for <code>DeleteFileSystem</code> operation. */
+	export interface DeleteFileSystemRequestFormProperties {
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFileSystemRequestFormGroup() {
+		return new FormGroup<DeleteFileSystemRequestFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -937,7 +1969,18 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		FinalBackupTags?: Array<Tag> | null;
+		FinalBackupTags?: Array<Tag>;
+	}
+
+	/** The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation. */
+	export interface DeleteFileSystemWindowsConfigurationFormProperties {
+		SkipFinalBackup: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteFileSystemWindowsConfigurationFormGroup() {
+		return new FormGroup<DeleteFileSystemWindowsConfigurationFormProperties>({
+			SkipFinalBackup: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -948,7 +1991,7 @@ export namespace MyNS {
 		 * A list of backups.
 		 * Maximum items: 50
 		 */
-		Backups?: Array<Backup> | null;
+		Backups?: Array<Backup>;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -959,6 +2002,24 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Response object for <code>DescribeBackups</code> operation. */
+	export interface DescribeBackupsResponseFormProperties {
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBackupsResponseFormGroup() {
+		return new FormGroup<DescribeBackupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request object for <code>DescribeBackups</code> operation. */
 	export interface DescribeBackupsRequest {
@@ -967,13 +2028,13 @@ export namespace MyNS {
 		 * A list of backup IDs.
 		 * Maximum items: 50
 		 */
-		BackupIds?: Array<string> | null;
+		BackupIds?: Array<string>;
 
 		/**
 		 * A list of <code>Filter</code> elements.
 		 * Maximum items: 10
 		 */
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 
 		/**
 		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
@@ -989,6 +2050,32 @@ export namespace MyNS {
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
 		NextToken?: string | null;
+	}
+
+	/** The request object for <code>DescribeBackups</code> operation. */
+	export interface DescribeBackupsRequestFormProperties {
+
+		/**
+		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
+		 * Minimum: 1
+		 * Maximum: 2147483647
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBackupsRequestFormGroup() {
+		return new FormGroup<DescribeBackupsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1002,13 +2089,26 @@ export namespace MyNS {
 		 * A list of filter values.
 		 * Maximum items: 20
 		 */
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements. */
+	export interface FilterFormProperties {
+
+		/** The name for a filter. */
+		Name: FormControl<FilterName | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Name: new FormControl<FilterName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterName { file_system_id = 0, backup_type = 1 }
 
 	export interface DescribeDataRepositoryTasksResponse {
-		DataRepositoryTasks?: Array<DataRepositoryTask> | null;
+		DataRepositoryTasks?: Array<DataRepositoryTask>;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1018,10 +2118,26 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 	}
+	export interface DescribeDataRepositoryTasksResponseFormProperties {
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDataRepositoryTasksResponseFormGroup() {
+		return new FormGroup<DescribeDataRepositoryTasksResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDataRepositoryTasksRequest {
-		TaskIds?: Array<string> | null;
-		Filters?: Array<DataRepositoryTaskFilter> | null;
+		TaskIds?: Array<string>;
+		Filters?: Array<DataRepositoryTaskFilter>;
 
 		/**
 		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
@@ -1038,12 +2154,47 @@ export namespace MyNS {
 		 */
 		NextToken?: string | null;
 	}
+	export interface DescribeDataRepositoryTasksRequestFormProperties {
+
+		/**
+		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
+		 * Minimum: 1
+		 * Maximum: 2147483647
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDataRepositoryTasksRequestFormGroup() {
+		return new FormGroup<DescribeDataRepositoryTasksRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter. */
 	export interface DataRepositoryTaskFilter {
 		Name?: DataRepositoryTaskFilterName | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** (Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter. */
+	export interface DataRepositoryTaskFilterFormProperties {
+		Name: FormControl<DataRepositoryTaskFilterName | null | undefined>,
+	}
+	export function CreateDataRepositoryTaskFilterFormGroup() {
+		return new FormGroup<DataRepositoryTaskFilterFormProperties>({
+			Name: new FormControl<DataRepositoryTaskFilterName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DataRepositoryTaskFilterName { file_system_id = 0, task_lifecycle = 1 }
@@ -1056,7 +2207,7 @@ export namespace MyNS {
 		 * A list of file systems.
 		 * Maximum items: 50
 		 */
-		FileSystems?: Array<FileSystem> | null;
+		FileSystems?: Array<FileSystem>;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1067,6 +2218,24 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The response object for <code>DescribeFileSystems</code> operation. */
+	export interface DescribeFileSystemsResponseFormProperties {
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFileSystemsResponseFormGroup() {
+		return new FormGroup<DescribeFileSystemsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request object for <code>DescribeFileSystems</code> operation. */
 	export interface DescribeFileSystemsRequest {
@@ -1075,7 +2244,7 @@ export namespace MyNS {
 		 * A list of <code>FileSystemId</code>s.
 		 * Maximum items: 50
 		 */
-		FileSystemIds?: Array<string> | null;
+		FileSystemIds?: Array<string>;
 
 		/**
 		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
@@ -1093,6 +2262,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The request object for <code>DescribeFileSystems</code> operation. */
+	export interface DescribeFileSystemsRequestFormProperties {
+
+		/**
+		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
+		 * Minimum: 1
+		 * Maximum: 2147483647
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFileSystemsRequestFormGroup() {
+		return new FormGroup<DescribeFileSystemsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response object for <code>ListTagsForResource</code> operation. */
 	export interface ListTagsForResourceResponse {
@@ -1102,7 +2297,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
@@ -1111,6 +2306,24 @@ export namespace MyNS {
 		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
 		 */
 		NextToken?: string | null;
+	}
+
+	/** The response object for <code>ListTagsForResource</code> operation. */
+	export interface ListTagsForResourceResponseFormProperties {
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1142,18 +2355,84 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** The request object for <code>ListTagsForResource</code> operation. */
+	export interface ListTagsForResourceRequestFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Required
+		 * Max length: 512
+		 * Min length: 8
+		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of resources to return in the response. This value must be an integer greater than zero.
+		 * Minimum: 1
+		 * Maximum: 2147483647
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * (Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFound {
+	}
+	export interface ResourceNotFoundFormProperties {
+	}
+	export function CreateResourceNotFoundFormGroup() {
+		return new FormGroup<ResourceNotFoundFormProperties>({
+		});
+
 	}
 
 	export interface NotServiceResourceError {
 	}
+	export interface NotServiceResourceErrorFormProperties {
+	}
+	export function CreateNotServiceResourceErrorFormGroup() {
+		return new FormGroup<NotServiceResourceErrorFormProperties>({
+		});
+
+	}
 
 	export interface ResourceDoesNotSupportTagging {
+	}
+	export interface ResourceDoesNotSupportTaggingFormProperties {
+	}
+	export function CreateResourceDoesNotSupportTaggingFormGroup() {
+		return new FormGroup<ResourceDoesNotSupportTaggingFormProperties>({
+		});
+
 	}
 
 
 	/** The response object for the <code>TagResource</code> operation. */
 	export interface TagResourceResponse {
+	}
+
+	/** The response object for the <code>TagResource</code> operation. */
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1178,9 +2457,37 @@ export namespace MyNS {
 		Tags: Array<Tag>;
 	}
 
+	/** The request object for the <code>TagResource</code> operation. */
+	export interface TagResourceRequestFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Required
+		 * Max length: 512
+		 * Min length: 8
+		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response object for <code>UntagResource</code> action. */
 	export interface UntagResourceResponse {
+	}
+
+	/** The response object for <code>UntagResource</code> action. */
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1205,12 +2512,40 @@ export namespace MyNS {
 		TagKeys: Array<string>;
 	}
 
+	/** The request object for <code>UntagResource</code> action. */
+	export interface UntagResourceRequestFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+		 * Required
+		 * Max length: 512
+		 * Min length: 8
+		 * Pattern: ^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$
+		 */
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response object for the <code>UpdateFileSystem</code> operation. */
 	export interface UpdateFileSystemResponse {
 
 		/** A description of a specific Amazon FSx file system. */
-		FileSystem?: FileSystem | null;
+		FileSystem?: FileSystem;
+	}
+
+	/** The response object for the <code>UpdateFileSystem</code> operation. */
+	export interface UpdateFileSystemResponseFormProperties {
+	}
+	export function CreateUpdateFileSystemResponseFormGroup() {
+		return new FormGroup<UpdateFileSystemResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1242,10 +2577,46 @@ export namespace MyNS {
 		StorageCapacity?: number | null;
 
 		/** Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request. */
-		WindowsConfiguration?: UpdateFileSystemWindowsConfiguration | null;
+		WindowsConfiguration?: UpdateFileSystemWindowsConfiguration;
 
 		/** The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation. */
-		LustreConfiguration?: UpdateFileSystemLustreConfiguration | null;
+		LustreConfiguration?: UpdateFileSystemLustreConfiguration;
+	}
+
+	/** The request object for the <code>UpdateFileSystem</code> operation. */
+	export interface UpdateFileSystemRequestFormProperties {
+
+		/**
+		 * The globally unique ID of the file system, assigned by Amazon FSx.
+		 * Required
+		 * Max length: 21
+		 * Min length: 11
+		 * Pattern: ^(fs-[0-9a-f]{8,})$
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/**
+		 * (Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [A-za-z0-9_.-]{0,63}$
+		 */
+		ClientRequestToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The storage capacity for your Amazon FSx file system, in gibibytes.
+		 * Minimum: 0
+		 * Maximum: 2147483647
+		 */
+		StorageCapacity: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFileSystemRequestFormGroup() {
+		return new FormGroup<UpdateFileSystemRequestFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			StorageCapacity: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1283,7 +2654,50 @@ export namespace MyNS {
 		ThroughputCapacity?: number | null;
 
 		/** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory. */
-		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfigurationUpdates | null;
+		SelfManagedActiveDirectoryConfiguration?: SelfManagedActiveDirectoryConfigurationUpdates;
+	}
+
+	/** Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request. */
+	export interface UpdateFileSystemWindowsConfigurationFormProperties {
+
+		/**
+		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+		 * Max length: 7
+		 * Min length: 7
+		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.
+		 * Max length: 5
+		 * Min length: 5
+		 * Pattern: ^([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		DailyAutomaticBackupStartTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain automatic backups for a maximum of 35 days.
+		 * Minimum: 0
+		 * Maximum: 35
+		 */
+		AutomaticBackupRetentionDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Sustained throughput of an Amazon FSx file system in MBps.
+		 * Minimum: 8
+		 * Maximum: 2048
+		 */
+		ThroughputCapacity: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFileSystemWindowsConfigurationFormGroup() {
+		return new FormGroup<UpdateFileSystemWindowsConfigurationFormProperties>({
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined),
+			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined),
+			ThroughputCapacity: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1291,7 +2705,20 @@ export namespace MyNS {
 	export interface SelfManagedActiveDirectoryConfigurationUpdates {
 		UserName?: string | null;
 		Password?: string | null;
-		DnsIps?: Array<string> | null;
+		DnsIps?: Array<string>;
+	}
+
+	/** The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory. */
+	export interface SelfManagedActiveDirectoryConfigurationUpdatesFormProperties {
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateSelfManagedActiveDirectoryConfigurationUpdatesFormGroup() {
+		return new FormGroup<SelfManagedActiveDirectoryConfigurationUpdatesFormProperties>({
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1305,6 +2732,24 @@ export namespace MyNS {
 		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
 		 */
 		WeeklyMaintenanceStartTime?: string | null;
+	}
+
+	/** The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation. */
+	export interface UpdateFileSystemLustreConfigurationFormProperties {
+
+		/**
+		 * <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p> <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p> <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p> <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+		 * Max length: 7
+		 * Min length: 7
+		 * Pattern: ^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+		 */
+		WeeklyMaintenanceStartTime: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFileSystemLustreConfigurationFormGroup() {
+		return new FormGroup<UpdateFileSystemLustreConfigurationFormProperties>({
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 

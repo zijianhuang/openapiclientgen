@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The AcceptDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface AcceptDomainTransferFromAnotherAwsAccountResponse {
 		OperationId?: string | null;
+	}
+
+	/** The AcceptDomainTransferFromAnotherAwsAccount response includes the following element. */
+	export interface AcceptDomainTransferFromAnotherAwsAccountResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptDomainTransferFromAnotherAwsAccountResponseFormGroup() {
+		return new FormGroup<AcceptDomainTransferFromAnotherAwsAccountResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -15,13 +27,47 @@ export namespace MyNS {
 		Password: string;
 	}
 
+	/** The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements. */
+	export interface AcceptDomainTransferFromAnotherAwsAccountRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptDomainTransferFromAnotherAwsAccountRequestFormGroup() {
+		return new FormGroup<AcceptDomainTransferFromAnotherAwsAccountRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidInput {
+	}
+	export interface InvalidInputFormProperties {
+	}
+	export function CreateInvalidInputFormGroup() {
+		return new FormGroup<InvalidInputFormProperties>({
+		});
+
 	}
 
 	export interface OperationLimitExceeded {
 	}
+	export interface OperationLimitExceededFormProperties {
+	}
+	export function CreateOperationLimitExceededFormGroup() {
+		return new FormGroup<OperationLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface DomainLimitExceeded {
+	}
+	export interface DomainLimitExceededFormProperties {
+	}
+	export function CreateDomainLimitExceededFormGroup() {
+		return new FormGroup<DomainLimitExceededFormProperties>({
+		});
+
 	}
 
 
@@ -30,16 +76,49 @@ export namespace MyNS {
 		OperationId?: string | null;
 	}
 
+	/** The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element. */
+	export interface CancelDomainTransferToAnotherAwsAccountResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelDomainTransferToAnotherAwsAccountResponseFormGroup() {
+		return new FormGroup<CancelDomainTransferToAnotherAwsAccountResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The CancelDomainTransferToAnotherAwsAccount request includes the following element. */
 	export interface CancelDomainTransferToAnotherAwsAccountRequest {
 		DomainName: string;
 	}
 
+	/** The CancelDomainTransferToAnotherAwsAccount request includes the following element. */
+	export interface CancelDomainTransferToAnotherAwsAccountRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelDomainTransferToAnotherAwsAccountRequestFormGroup() {
+		return new FormGroup<CancelDomainTransferToAnotherAwsAccountRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The CheckDomainAvailability response includes the following elements. */
 	export interface CheckDomainAvailabilityResponse {
 		Availability: CheckDomainAvailabilityResponseAvailability;
+	}
+
+	/** The CheckDomainAvailability response includes the following elements. */
+	export interface CheckDomainAvailabilityResponseFormProperties {
+		Availability: FormControl<CheckDomainAvailabilityResponseAvailability | null | undefined>,
+	}
+	export function CreateCheckDomainAvailabilityResponseFormGroup() {
+		return new FormGroup<CheckDomainAvailabilityResponseFormProperties>({
+			Availability: new FormControl<CheckDomainAvailabilityResponseAvailability | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CheckDomainAvailabilityResponseAvailability { AVAILABLE = 0, AVAILABLE_RESERVED = 1, AVAILABLE_PREORDER = 2, UNAVAILABLE = 3, UNAVAILABLE_PREMIUM = 4, UNAVAILABLE_RESTRICTED = 5, RESERVED = 6, DONT_KNOW = 7 }
@@ -51,7 +130,27 @@ export namespace MyNS {
 		IdnLangCode?: string | null;
 	}
 
+	/** The CheckDomainAvailability request contains the following elements. */
+	export interface CheckDomainAvailabilityRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		IdnLangCode: FormControl<string | null | undefined>,
+	}
+	export function CreateCheckDomainAvailabilityRequestFormGroup() {
+		return new FormGroup<CheckDomainAvailabilityRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			IdnLangCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UnsupportedTLD {
+	}
+	export interface UnsupportedTLDFormProperties {
+	}
+	export function CreateUnsupportedTLDFormGroup() {
+		return new FormGroup<UnsupportedTLDFormProperties>({
+		});
+
 	}
 
 
@@ -65,12 +164,34 @@ export namespace MyNS {
 		Transferability: DomainTransferability;
 	}
 
+	/** The CheckDomainTransferability response includes the following elements. */
+	export interface CheckDomainTransferabilityResponseFormProperties {
+	}
+	export function CreateCheckDomainTransferabilityResponseFormGroup() {
+		return new FormGroup<CheckDomainTransferabilityResponseFormProperties>({
+		});
+
+	}
+
 
 	/** A complex type that contains information about whether the specified domain can be transferred to Route 53. */
 	export interface DomainTransferability {
 
 		/** <p>Whether the domain name can be transferred to Route 53.</p> <note> <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p> </note> <p>Valid values:</p> <dl> <dt>TRANSFERABLE</dt> <dd> <p>The domain name can be transferred to Route 53.</p> </dd> <dt>UNTRANSFERRABLE</dt> <dd> <p>The domain name can't be transferred to Route 53.</p> </dd> <dt>DONT_KNOW</dt> <dd> <p>Reserved for future use.</p> </dd> </dl> */
 		Transferable?: DomainTransferabilityTransferable | null;
+	}
+
+	/** A complex type that contains information about whether the specified domain can be transferred to Route 53. */
+	export interface DomainTransferabilityFormProperties {
+
+		/** <p>Whether the domain name can be transferred to Route 53.</p> <note> <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p> </note> <p>Valid values:</p> <dl> <dt>TRANSFERABLE</dt> <dd> <p>The domain name can be transferred to Route 53.</p> </dd> <dt>UNTRANSFERRABLE</dt> <dd> <p>The domain name can't be transferred to Route 53.</p> </dd> <dt>DONT_KNOW</dt> <dd> <p>Reserved for future use.</p> </dd> </dl> */
+		Transferable: FormControl<DomainTransferabilityTransferable | null | undefined>,
+	}
+	export function CreateDomainTransferabilityFormGroup() {
+		return new FormGroup<DomainTransferabilityFormProperties>({
+			Transferable: new FormControl<DomainTransferabilityTransferable | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DomainTransferabilityTransferable { TRANSFERABLE = 0, UNTRANSFERABLE = 1, DONT_KNOW = 2 }
@@ -82,7 +203,27 @@ export namespace MyNS {
 		AuthCode?: string | null;
 	}
 
+	/** The CheckDomainTransferability request contains the following elements. */
+	export interface CheckDomainTransferabilityRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		AuthCode: FormControl<string | null | undefined>,
+	}
+	export function CreateCheckDomainTransferabilityRequestFormGroup() {
+		return new FormGroup<CheckDomainTransferabilityRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AuthCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteTagsForDomainResponse {
+	}
+	export interface DeleteTagsForDomainResponseFormProperties {
+	}
+	export function CreateDeleteTagsForDomainResponseFormGroup() {
+		return new FormGroup<DeleteTagsForDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -92,11 +233,38 @@ export namespace MyNS {
 		TagsToDelete: Array<string>;
 	}
 
+	/** The DeleteTagsForDomainRequest includes the following elements. */
+	export interface DeleteTagsForDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTagsForDomainRequestFormGroup() {
+		return new FormGroup<DeleteTagsForDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisableDomainAutoRenewResponse {
+	}
+	export interface DisableDomainAutoRenewResponseFormProperties {
+	}
+	export function CreateDisableDomainAutoRenewResponseFormGroup() {
+		return new FormGroup<DisableDomainAutoRenewResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisableDomainAutoRenewRequest {
 		DomainName: string;
+	}
+	export interface DisableDomainAutoRenewRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableDomainAutoRenewRequestFormGroup() {
+		return new FormGroup<DisableDomainAutoRenewRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -105,23 +273,75 @@ export namespace MyNS {
 		OperationId: string;
 	}
 
+	/** The DisableDomainTransferLock response includes the following element. */
+	export interface DisableDomainTransferLockResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableDomainTransferLockResponseFormGroup() {
+		return new FormGroup<DisableDomainTransferLockResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The DisableDomainTransferLock request includes the following element. */
 	export interface DisableDomainTransferLockRequest {
 		DomainName: string;
 	}
 
+	/** The DisableDomainTransferLock request includes the following element. */
+	export interface DisableDomainTransferLockRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableDomainTransferLockRequestFormGroup() {
+		return new FormGroup<DisableDomainTransferLockRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DuplicateRequest {
+	}
+	export interface DuplicateRequestFormProperties {
+	}
+	export function CreateDuplicateRequestFormGroup() {
+		return new FormGroup<DuplicateRequestFormProperties>({
+		});
+
 	}
 
 	export interface TLDRulesViolation {
 	}
+	export interface TLDRulesViolationFormProperties {
+	}
+	export function CreateTLDRulesViolationFormGroup() {
+		return new FormGroup<TLDRulesViolationFormProperties>({
+		});
+
+	}
 
 	export interface EnableDomainAutoRenewResponse {
+	}
+	export interface EnableDomainAutoRenewResponseFormProperties {
+	}
+	export function CreateEnableDomainAutoRenewResponseFormGroup() {
+		return new FormGroup<EnableDomainAutoRenewResponseFormProperties>({
+		});
+
 	}
 
 	export interface EnableDomainAutoRenewRequest {
 		DomainName: string;
+	}
+	export interface EnableDomainAutoRenewRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableDomainAutoRenewRequestFormGroup() {
+		return new FormGroup<EnableDomainAutoRenewRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -130,21 +350,63 @@ export namespace MyNS {
 		OperationId: string;
 	}
 
+	/** The EnableDomainTransferLock response includes the following elements. */
+	export interface EnableDomainTransferLockResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableDomainTransferLockResponseFormGroup() {
+		return new FormGroup<EnableDomainTransferLockResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request to set the transfer lock for the specified domain. */
 	export interface EnableDomainTransferLockRequest {
 		DomainName: string;
 	}
 
+	/** A request to set the transfer lock for the specified domain. */
+	export interface EnableDomainTransferLockRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableDomainTransferLockRequestFormGroup() {
+		return new FormGroup<EnableDomainTransferLockRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetContactReachabilityStatusResponse {
 		domainName?: string | null;
 		status?: GetContactReachabilityStatusResponseStatus | null;
+	}
+	export interface GetContactReachabilityStatusResponseFormProperties {
+		domainName: FormControl<string | null | undefined>,
+		status: FormControl<GetContactReachabilityStatusResponseStatus | null | undefined>,
+	}
+	export function CreateGetContactReachabilityStatusResponseFormGroup() {
+		return new FormGroup<GetContactReachabilityStatusResponseFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<GetContactReachabilityStatusResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetContactReachabilityStatusResponseStatus { PENDING = 0, DONE = 1, EXPIRED = 2 }
 
 	export interface GetContactReachabilityStatusRequest {
 		domainName?: string | null;
+	}
+	export interface GetContactReachabilityStatusRequestFormProperties {
+		domainName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetContactReachabilityStatusRequestFormGroup() {
+		return new FormGroup<GetContactReachabilityStatusRequestFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -185,14 +447,66 @@ export namespace MyNS {
 		ExpirationDate?: Date | null;
 		Reseller?: string | null;
 		DnsSec?: string | null;
-		StatusList?: Array<string> | null;
+		StatusList?: Array<string>;
+	}
+
+	/** The GetDomainDetail response includes the following elements. */
+	export interface GetDomainDetailResponseFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		AutoRenew: FormControl<boolean | null | undefined>,
+		AdminPrivacy: FormControl<boolean | null | undefined>,
+		RegistrantPrivacy: FormControl<boolean | null | undefined>,
+		TechPrivacy: FormControl<boolean | null | undefined>,
+		RegistrarName: FormControl<string | null | undefined>,
+		WhoIsServer: FormControl<string | null | undefined>,
+		RegistrarUrl: FormControl<string | null | undefined>,
+		AbuseContactEmail: FormControl<string | null | undefined>,
+		AbuseContactPhone: FormControl<string | null | undefined>,
+		RegistryDomainId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		UpdatedDate: FormControl<Date | null | undefined>,
+		ExpirationDate: FormControl<Date | null | undefined>,
+		Reseller: FormControl<string | null | undefined>,
+		DnsSec: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDomainDetailResponseFormGroup() {
+		return new FormGroup<GetDomainDetailResponseFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
+			AdminPrivacy: new FormControl<boolean | null | undefined>(undefined),
+			RegistrantPrivacy: new FormControl<boolean | null | undefined>(undefined),
+			TechPrivacy: new FormControl<boolean | null | undefined>(undefined),
+			RegistrarName: new FormControl<string | null | undefined>(undefined),
+			WhoIsServer: new FormControl<string | null | undefined>(undefined),
+			RegistrarUrl: new FormControl<string | null | undefined>(undefined),
+			AbuseContactEmail: new FormControl<string | null | undefined>(undefined),
+			AbuseContactPhone: new FormControl<string | null | undefined>(undefined),
+			RegistryDomainId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			UpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
+			Reseller: new FormControl<string | null | undefined>(undefined),
+			DnsSec: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Nameserver includes the following elements. */
 	export interface Nameserver {
 		Name: string;
-		GlueIps?: Array<string> | null;
+		GlueIps?: Array<string>;
+	}
+
+	/** Nameserver includes the following elements. */
+	export interface NameserverFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateNameserverFormGroup() {
+		return new FormGroup<NameserverFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -211,7 +525,42 @@ export namespace MyNS {
 		PhoneNumber?: string | null;
 		Email?: string | null;
 		Fax?: string | null;
-		ExtraParams?: Array<ExtraParam> | null;
+		ExtraParams?: Array<ExtraParam>;
+	}
+
+	/** ContactDetail includes the following elements. */
+	export interface ContactDetailFormProperties {
+		FirstName: FormControl<string | null | undefined>,
+		LastName: FormControl<string | null | undefined>,
+		ContactType: FormControl<ContactDetailContactType | null | undefined>,
+		OrganizationName: FormControl<string | null | undefined>,
+		AddressLine1: FormControl<string | null | undefined>,
+		AddressLine2: FormControl<string | null | undefined>,
+		City: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		CountryCode: FormControl<ContactDetailCountryCode | null | undefined>,
+		ZipCode: FormControl<string | null | undefined>,
+		PhoneNumber: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Fax: FormControl<string | null | undefined>,
+	}
+	export function CreateContactDetailFormGroup() {
+		return new FormGroup<ContactDetailFormProperties>({
+			FirstName: new FormControl<string | null | undefined>(undefined),
+			LastName: new FormControl<string | null | undefined>(undefined),
+			ContactType: new FormControl<ContactDetailContactType | null | undefined>(undefined),
+			OrganizationName: new FormControl<string | null | undefined>(undefined),
+			AddressLine1: new FormControl<string | null | undefined>(undefined),
+			AddressLine2: new FormControl<string | null | undefined>(undefined),
+			City: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			CountryCode: new FormControl<ContactDetailCountryCode | null | undefined>(undefined),
+			ZipCode: new FormControl<string | null | undefined>(undefined),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Fax: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContactDetailContactType { PERSON = 0, COMPANY = 1, ASSOCIATION = 2, PUBLIC_BODY = 3, RESELLER = 4 }
@@ -225,6 +574,19 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** ExtraParam includes the following elements. */
+	export interface ExtraParamFormProperties {
+		Name: FormControl<ExtraParamName | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateExtraParamFormGroup() {
+		return new FormGroup<ExtraParamFormProperties>({
+			Name: new FormControl<ExtraParamName | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ExtraParamName { DUNS_NUMBER = 0, BRAND_NUMBER = 1, BIRTH_DEPARTMENT = 2, BIRTH_DATE_IN_YYYY_MM_DD = 3, BIRTH_COUNTRY = 4, BIRTH_CITY = 5, DOCUMENT_NUMBER = 6, AU_ID_NUMBER = 7, AU_ID_TYPE = 8, CA_LEGAL_TYPE = 9, CA_BUSINESS_ENTITY_TYPE = 10, CA_LEGAL_REPRESENTATIVE = 11, CA_LEGAL_REPRESENTATIVE_CAPACITY = 12, ES_IDENTIFICATION = 13, ES_IDENTIFICATION_TYPE = 14, ES_LEGAL_FORM = 15, FI_BUSINESS_NUMBER = 16, FI_ID_NUMBER = 17, FI_NATIONALITY = 18, FI_ORGANIZATION_TYPE = 19, IT_NATIONALITY = 20, IT_PIN = 21, IT_REGISTRANT_ENTITY_TYPE = 22, RU_PASSPORT_DATA = 23, SE_ID_NUMBER = 24, SG_ID_NUMBER = 25, VAT_NUMBER = 26, UK_CONTACT_TYPE = 27, UK_COMPANY_NUMBER = 28 }
 
 
@@ -233,8 +595,26 @@ export namespace MyNS {
 		DomainName: string;
 	}
 
+	/** The GetDomainDetail request includes the following element. */
+	export interface GetDomainDetailRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDomainDetailRequestFormGroup() {
+		return new FormGroup<GetDomainDetailRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDomainSuggestionsResponse {
-		SuggestionsList?: Array<DomainSuggestion> | null;
+		SuggestionsList?: Array<DomainSuggestion>;
+	}
+	export interface GetDomainSuggestionsResponseFormProperties {
+	}
+	export function CreateGetDomainSuggestionsResponseFormGroup() {
+		return new FormGroup<GetDomainSuggestionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -244,10 +624,36 @@ export namespace MyNS {
 		Availability?: string | null;
 	}
 
+	/** Information about one suggested domain name. */
+	export interface DomainSuggestionFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		Availability: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainSuggestionFormGroup() {
+		return new FormGroup<DomainSuggestionFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Availability: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDomainSuggestionsRequest {
 		DomainName: string;
 		SuggestionCount: number;
 		OnlyAvailable: boolean;
+	}
+	export interface GetDomainSuggestionsRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		SuggestionCount: FormControl<number | null | undefined>,
+		OnlyAvailable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetDomainSuggestionsRequestFormGroup() {
+		return new FormGroup<GetDomainSuggestionsRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			SuggestionCount: new FormControl<number | null | undefined>(undefined),
+			OnlyAvailable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -261,6 +667,27 @@ export namespace MyNS {
 		SubmittedDate?: Date | null;
 	}
 
+	/** The GetOperationDetail response includes the following elements. */
+	export interface GetOperationDetailResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+		Status: FormControl<GetOperationDetailResponseStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		Type: FormControl<GetOperationDetailResponseType | null | undefined>,
+		SubmittedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetOperationDetailResponseFormGroup() {
+		return new FormGroup<GetOperationDetailResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetOperationDetailResponseStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined),
+			SubmittedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GetOperationDetailResponseStatus { SUBMITTED = 0, IN_PROGRESS = 1, ERROR = 2, SUCCESSFUL = 3, FAILED = 4 }
 
 	export enum GetOperationDetailResponseType { REGISTER_DOMAIN = 0, DELETE_DOMAIN = 1, TRANSFER_IN_DOMAIN = 2, UPDATE_DOMAIN_CONTACT = 3, UPDATE_NAMESERVER = 4, CHANGE_PRIVACY_PROTECTION = 5, DOMAIN_LOCK = 6, ENABLE_AUTORENEW = 7, DISABLE_AUTORENEW = 8, ADD_DNSSEC = 9, REMOVE_DNSSEC = 10, EXPIRE_DOMAIN = 11, TRANSFER_OUT_DOMAIN = 12, CHANGE_DOMAIN_OWNER = 13, RENEW_DOMAIN = 14, PUSH_DOMAIN = 15, INTERNAL_TRANSFER_OUT_DOMAIN = 16, INTERNAL_TRANSFER_IN_DOMAIN = 17 }
@@ -271,11 +698,33 @@ export namespace MyNS {
 		OperationId: string;
 	}
 
+	/** The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element. */
+	export interface GetOperationDetailRequestFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOperationDetailRequestFormGroup() {
+		return new FormGroup<GetOperationDetailRequestFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListDomains response includes the following elements. */
 	export interface ListDomainsResponse {
 		Domains: Array<DomainSummary>;
 		NextPageMarker?: string | null;
+	}
+
+	/** The ListDomains response includes the following elements. */
+	export interface ListDomainsResponseFormProperties {
+		NextPageMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListDomainsResponseFormGroup() {
+		return new FormGroup<ListDomainsResponseFormProperties>({
+			NextPageMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -287,6 +736,23 @@ export namespace MyNS {
 		Expiry?: Date | null;
 	}
 
+	/** Summary information about one domain. */
+	export interface DomainSummaryFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		AutoRenew: FormControl<boolean | null | undefined>,
+		TransferLock: FormControl<boolean | null | undefined>,
+		Expiry: FormControl<Date | null | undefined>,
+	}
+	export function CreateDomainSummaryFormGroup() {
+		return new FormGroup<DomainSummaryFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
+			TransferLock: new FormControl<boolean | null | undefined>(undefined),
+			Expiry: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListDomains request includes the following elements. */
 	export interface ListDomainsRequest {
@@ -294,11 +760,35 @@ export namespace MyNS {
 		MaxItems?: number | null;
 	}
 
+	/** The ListDomains request includes the following elements. */
+	export interface ListDomainsRequestFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListDomainsRequestFormGroup() {
+		return new FormGroup<ListDomainsRequestFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListOperations response includes the following elements. */
 	export interface ListOperationsResponse {
 		Operations: Array<OperationSummary>;
 		NextPageMarker?: string | null;
+	}
+
+	/** The ListOperations response includes the following elements. */
+	export interface ListOperationsResponseFormProperties {
+		NextPageMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			NextPageMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -310,6 +800,23 @@ export namespace MyNS {
 		SubmittedDate: Date;
 	}
 
+	/** OperationSummary includes the following elements. */
+	export interface OperationSummaryFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+		Status: FormControl<GetOperationDetailResponseStatus | null | undefined>,
+		Type: FormControl<GetOperationDetailResponseType | null | undefined>,
+		SubmittedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateOperationSummaryFormGroup() {
+		return new FormGroup<OperationSummaryFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetOperationDetailResponseStatus | null | undefined>(undefined),
+			Type: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined),
+			SubmittedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListOperations request includes the following elements. */
 	export interface ListOperationsRequest {
@@ -318,10 +825,34 @@ export namespace MyNS {
 		MaxItems?: number | null;
 	}
 
+	/** The ListOperations request includes the following elements. */
+	export interface ListOperationsRequestFormProperties {
+		SubmittedSince: FormControl<Date | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateListOperationsRequestFormGroup() {
+		return new FormGroup<ListOperationsRequestFormProperties>({
+			SubmittedSince: new FormControl<Date | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListTagsForDomain response includes the following elements. */
 	export interface ListTagsForDomainResponse {
 		TagList: Array<Tag>;
+	}
+
+	/** The ListTagsForDomain response includes the following elements. */
+	export interface ListTagsForDomainResponseFormProperties {
+	}
+	export function CreateListTagsForDomainResponseFormGroup() {
+		return new FormGroup<ListTagsForDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -331,16 +862,51 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Each tag includes the following elements. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListTagsForDomainRequest includes the following elements. */
 	export interface ListTagsForDomainRequest {
 		DomainName: string;
 	}
 
+	/** The ListTagsForDomainRequest includes the following elements. */
+	export interface ListTagsForDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForDomainRequestFormGroup() {
+		return new FormGroup<ListTagsForDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The RegisterDomain response includes the following element. */
 	export interface RegisterDomainResponse {
 		OperationId: string;
+	}
+
+	/** The RegisterDomain response includes the following element. */
+	export interface RegisterDomainResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterDomainResponseFormGroup() {
+		return new FormGroup<RegisterDomainResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -373,10 +939,44 @@ export namespace MyNS {
 		PrivacyProtectTechContact?: boolean | null;
 	}
 
+	/** The RegisterDomain request includes the following elements. */
+	export interface RegisterDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		IdnLangCode: FormControl<string | null | undefined>,
+		DurationInYears: FormControl<number | null | undefined>,
+		AutoRenew: FormControl<boolean | null | undefined>,
+		PrivacyProtectAdminContact: FormControl<boolean | null | undefined>,
+		PrivacyProtectRegistrantContact: FormControl<boolean | null | undefined>,
+		PrivacyProtectTechContact: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRegisterDomainRequestFormGroup() {
+		return new FormGroup<RegisterDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			IdnLangCode: new FormControl<string | null | undefined>(undefined),
+			DurationInYears: new FormControl<number | null | undefined>(undefined),
+			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
+			PrivacyProtectAdminContact: new FormControl<boolean | null | undefined>(undefined),
+			PrivacyProtectRegistrantContact: new FormControl<boolean | null | undefined>(undefined),
+			PrivacyProtectTechContact: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The RejectDomainTransferFromAnotherAwsAccount response includes the following element. */
 	export interface RejectDomainTransferFromAnotherAwsAccountResponse {
 		OperationId?: string | null;
+	}
+
+	/** The RejectDomainTransferFromAnotherAwsAccount response includes the following element. */
+	export interface RejectDomainTransferFromAnotherAwsAccountResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectDomainTransferFromAnotherAwsAccountResponseFormGroup() {
+		return new FormGroup<RejectDomainTransferFromAnotherAwsAccountResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -385,8 +985,28 @@ export namespace MyNS {
 		DomainName: string;
 	}
 
+	/** The RejectDomainTransferFromAnotherAwsAccount request includes the following element. */
+	export interface RejectDomainTransferFromAnotherAwsAccountRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectDomainTransferFromAnotherAwsAccountRequestFormGroup() {
+		return new FormGroup<RejectDomainTransferFromAnotherAwsAccountRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RenewDomainResponse {
 		OperationId: string;
+	}
+	export interface RenewDomainResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateRenewDomainResponseFormGroup() {
+		return new FormGroup<RenewDomainResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -397,14 +1017,51 @@ export namespace MyNS {
 		CurrentExpiryYear: number;
 	}
 
+	/** A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year. */
+	export interface RenewDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		DurationInYears: FormControl<number | null | undefined>,
+		CurrentExpiryYear: FormControl<number | null | undefined>,
+	}
+	export function CreateRenewDomainRequestFormGroup() {
+		return new FormGroup<RenewDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DurationInYears: new FormControl<number | null | undefined>(undefined),
+			CurrentExpiryYear: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResendContactReachabilityEmailResponse {
 		domainName?: string | null;
 		emailAddress?: string | null;
 		isAlreadyVerified?: boolean | null;
 	}
+	export interface ResendContactReachabilityEmailResponseFormProperties {
+		domainName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+		isAlreadyVerified: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResendContactReachabilityEmailResponseFormGroup() {
+		return new FormGroup<ResendContactReachabilityEmailResponseFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			isAlreadyVerified: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResendContactReachabilityEmailRequest {
 		domainName?: string | null;
+	}
+	export interface ResendContactReachabilityEmailRequestFormProperties {
+		domainName: FormControl<string | null | undefined>,
+	}
+	export function CreateResendContactReachabilityEmailRequestFormGroup() {
+		return new FormGroup<ResendContactReachabilityEmailRequestFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -413,10 +1070,32 @@ export namespace MyNS {
 		AuthCode: string;
 	}
 
+	/** The RetrieveDomainAuthCode response includes the following element. */
+	export interface RetrieveDomainAuthCodeResponseFormProperties {
+		AuthCode: FormControl<string | null | undefined>,
+	}
+	export function CreateRetrieveDomainAuthCodeResponseFormGroup() {
+		return new FormGroup<RetrieveDomainAuthCodeResponseFormProperties>({
+			AuthCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar. */
 	export interface RetrieveDomainAuthCodeRequest {
 		DomainName: string;
+	}
+
+	/** A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar. */
+	export interface RetrieveDomainAuthCodeRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateRetrieveDomainAuthCodeRequestFormGroup() {
+		return new FormGroup<RetrieveDomainAuthCodeRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -425,13 +1104,24 @@ export namespace MyNS {
 		OperationId: string;
 	}
 
+	/** The TransferDomain response includes the following element. */
+	export interface TransferDomainResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferDomainResponseFormGroup() {
+		return new FormGroup<TransferDomainResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The TransferDomain request includes the following elements. */
 	export interface TransferDomainRequest {
 		DomainName: string;
 		IdnLangCode?: string | null;
 		DurationInYears: number;
-		Nameservers?: Array<Nameserver> | null;
+		Nameservers?: Array<Nameserver>;
 		AuthCode?: string | null;
 		AutoRenew?: boolean | null;
 
@@ -457,11 +1147,49 @@ export namespace MyNS {
 		PrivacyProtectTechContact?: boolean | null;
 	}
 
+	/** The TransferDomain request includes the following elements. */
+	export interface TransferDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		IdnLangCode: FormControl<string | null | undefined>,
+		DurationInYears: FormControl<number | null | undefined>,
+		AuthCode: FormControl<string | null | undefined>,
+		AutoRenew: FormControl<boolean | null | undefined>,
+		PrivacyProtectAdminContact: FormControl<boolean | null | undefined>,
+		PrivacyProtectRegistrantContact: FormControl<boolean | null | undefined>,
+		PrivacyProtectTechContact: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTransferDomainRequestFormGroup() {
+		return new FormGroup<TransferDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			IdnLangCode: new FormControl<string | null | undefined>(undefined),
+			DurationInYears: new FormControl<number | null | undefined>(undefined),
+			AuthCode: new FormControl<string | null | undefined>(undefined),
+			AutoRenew: new FormControl<boolean | null | undefined>(undefined),
+			PrivacyProtectAdminContact: new FormControl<boolean | null | undefined>(undefined),
+			PrivacyProtectRegistrantContact: new FormControl<boolean | null | undefined>(undefined),
+			PrivacyProtectTechContact: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements. */
 	export interface TransferDomainToAnotherAwsAccountResponse {
 		OperationId?: string | null;
 		Password?: string | null;
+	}
+
+	/** The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements. */
+	export interface TransferDomainToAnotherAwsAccountResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferDomainToAnotherAwsAccountResponseFormGroup() {
+		return new FormGroup<TransferDomainToAnotherAwsAccountResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -471,10 +1199,34 @@ export namespace MyNS {
 		AccountId: string;
 	}
 
+	/** The TransferDomainToAnotherAwsAccount request includes the following elements. */
+	export interface TransferDomainToAnotherAwsAccountRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferDomainToAnotherAwsAccountRequestFormGroup() {
+		return new FormGroup<TransferDomainToAnotherAwsAccountRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The UpdateDomainContact response includes the following element. */
 	export interface UpdateDomainContactResponse {
 		OperationId: string;
+	}
+
+	/** The UpdateDomainContact response includes the following element. */
+	export interface UpdateDomainContactResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainContactResponseFormGroup() {
+		return new FormGroup<UpdateDomainContactResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -483,19 +1235,41 @@ export namespace MyNS {
 		DomainName: string;
 
 		/** ContactDetail includes the following elements. */
-		AdminContact?: ContactDetail | null;
+		AdminContact?: ContactDetail;
 
 		/** ContactDetail includes the following elements. */
-		RegistrantContact?: ContactDetail | null;
+		RegistrantContact?: ContactDetail;
 
 		/** ContactDetail includes the following elements. */
-		TechContact?: ContactDetail | null;
+		TechContact?: ContactDetail;
+	}
+
+	/** The UpdateDomainContact request includes the following elements. */
+	export interface UpdateDomainContactRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainContactRequestFormGroup() {
+		return new FormGroup<UpdateDomainContactRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The UpdateDomainContactPrivacy response includes the following element. */
 	export interface UpdateDomainContactPrivacyResponse {
 		OperationId: string;
+	}
+
+	/** The UpdateDomainContactPrivacy response includes the following element. */
+	export interface UpdateDomainContactPrivacyResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainContactPrivacyResponseFormGroup() {
+		return new FormGroup<UpdateDomainContactPrivacyResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -507,10 +1281,38 @@ export namespace MyNS {
 		TechPrivacy?: boolean | null;
 	}
 
+	/** The UpdateDomainContactPrivacy request includes the following elements. */
+	export interface UpdateDomainContactPrivacyRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		AdminPrivacy: FormControl<boolean | null | undefined>,
+		RegistrantPrivacy: FormControl<boolean | null | undefined>,
+		TechPrivacy: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDomainContactPrivacyRequestFormGroup() {
+		return new FormGroup<UpdateDomainContactPrivacyRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			AdminPrivacy: new FormControl<boolean | null | undefined>(undefined),
+			RegistrantPrivacy: new FormControl<boolean | null | undefined>(undefined),
+			TechPrivacy: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The UpdateDomainNameservers response includes the following element. */
 	export interface UpdateDomainNameserversResponse {
 		OperationId: string;
+	}
+
+	/** The UpdateDomainNameservers response includes the following element. */
+	export interface UpdateDomainNameserversResponseFormProperties {
+		OperationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainNameserversResponseFormGroup() {
+		return new FormGroup<UpdateDomainNameserversResponseFormProperties>({
+			OperationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -521,21 +1323,63 @@ export namespace MyNS {
 		Nameservers: Array<Nameserver>;
 	}
 
+	/** <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p> <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p> */
+	export interface UpdateDomainNameserversRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		FIAuthKey: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainNameserversRequestFormGroup() {
+		return new FormGroup<UpdateDomainNameserversRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			FIAuthKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateTagsForDomainResponse {
+	}
+	export interface UpdateTagsForDomainResponseFormProperties {
+	}
+	export function CreateUpdateTagsForDomainResponseFormGroup() {
+		return new FormGroup<UpdateTagsForDomainResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The UpdateTagsForDomainRequest includes the following elements. */
 	export interface UpdateTagsForDomainRequest {
 		DomainName: string;
-		TagsToUpdate?: Array<Tag> | null;
+		TagsToUpdate?: Array<Tag>;
+	}
+
+	/** The UpdateTagsForDomainRequest includes the following elements. */
+	export interface UpdateTagsForDomainRequestFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTagsForDomainRequestFormGroup() {
+		return new FormGroup<UpdateTagsForDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The ViewBilling response includes the following elements. */
 	export interface ViewBillingResponse {
 		NextPageMarker?: string | null;
-		BillingRecords?: Array<BillingRecord> | null;
+		BillingRecords?: Array<BillingRecord>;
+	}
+
+	/** The ViewBilling response includes the following elements. */
+	export interface ViewBillingResponseFormProperties {
+		NextPageMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateViewBillingResponseFormGroup() {
+		return new FormGroup<ViewBillingResponseFormProperties>({
+			NextPageMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -548,6 +1392,25 @@ export namespace MyNS {
 		Price?: number | null;
 	}
 
+	/** Information for one billing record. */
+	export interface BillingRecordFormProperties {
+		DomainName: FormControl<string | null | undefined>,
+		Operation: FormControl<GetOperationDetailResponseType | null | undefined>,
+		InvoiceId: FormControl<string | null | undefined>,
+		BillDate: FormControl<Date | null | undefined>,
+		Price: FormControl<number | null | undefined>,
+	}
+	export function CreateBillingRecordFormGroup() {
+		return new FormGroup<BillingRecordFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Operation: new FormControl<GetOperationDetailResponseType | null | undefined>(undefined),
+			InvoiceId: new FormControl<string | null | undefined>(undefined),
+			BillDate: new FormControl<Date | null | undefined>(undefined),
+			Price: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ViewBilling request includes the following elements. */
 	export interface ViewBillingRequest {
@@ -555,6 +1418,23 @@ export namespace MyNS {
 		End?: Date | null;
 		Marker?: string | null;
 		MaxItems?: number | null;
+	}
+
+	/** The ViewBilling request includes the following elements. */
+	export interface ViewBillingRequestFormProperties {
+		Start: FormControl<Date | null | undefined>,
+		End: FormControl<Date | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxItems: FormControl<number | null | undefined>,
+	}
+	export function CreateViewBillingRequestFormGroup() {
+		return new FormGroup<ViewBillingRequestFormProperties>({
+			Start: new FormControl<Date | null | undefined>(undefined),
+			End: new FormControl<Date | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxItems: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OperationType { REGISTER_DOMAIN = 0, DELETE_DOMAIN = 1, TRANSFER_IN_DOMAIN = 2, UPDATE_DOMAIN_CONTACT = 3, UPDATE_NAMESERVER = 4, CHANGE_PRIVACY_PROTECTION = 5, DOMAIN_LOCK = 6, ENABLE_AUTORENEW = 7, DISABLE_AUTORENEW = 8, ADD_DNSSEC = 9, REMOVE_DNSSEC = 10, EXPIRE_DOMAIN = 11, TRANSFER_OUT_DOMAIN = 12, CHANGE_DOMAIN_OWNER = 13, RENEW_DOMAIN = 14, PUSH_DOMAIN = 15, INTERNAL_TRANSFER_OUT_DOMAIN = 16, INTERNAL_TRANSFER_IN_DOMAIN = 17 }

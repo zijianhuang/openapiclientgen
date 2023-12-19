@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The response message for Operations.ListOperations. */
@@ -10,7 +11,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -35,7 +49,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -43,7 +57,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -62,7 +76,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -83,7 +147,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -91,6 +155,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -120,6 +212,41 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * Describes the progress of a long-running `LongRunningRecognize` call. It is
+	 * included in the `metadata` field of the `Operation` returned by the
+	 * `GetOperation` call of the `google::longrunning::Operations` service.
+	 */
+	export interface LongRunningRecognizeMetadataFormProperties {
+
+		/** Time of the most recent processing update. */
+		lastUpdateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Approximate percentage of audio processed thus far. Guaranteed to be 100
+		 * when the audio is fully processed and the results are available.
+		 */
+		progressPercent: FormControl<number | null | undefined>,
+
+		/** Time when the request was received. */
+		startTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The URI of the audio file being transcribed. Empty if the audio was sent
+		 * as byte content.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateLongRunningRecognizeMetadataFormGroup() {
+		return new FormGroup<LongRunningRecognizeMetadataFormProperties>({
+			lastUpdateTime: new FormControl<string | null | undefined>(undefined),
+			progressPercent: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The top-level message sent by the client for the `LongRunningRecognize`
@@ -133,13 +260,25 @@ export namespace MyNS {
 		 * returns google.rpc.Code.INVALID_ARGUMENT. See
 		 * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 		 */
-		audio?: RecognitionAudio | null;
+		audio?: RecognitionAudio;
 
 		/**
 		 * Provides information to the recognizer that specifies how to process the
 		 * request.
 		 */
-		config?: RecognitionConfig | null;
+		config?: RecognitionConfig;
+	}
+
+	/**
+	 * The top-level message sent by the client for the `LongRunningRecognize`
+	 * method.
+	 */
+	export interface LongRunningRecognizeRequestFormProperties {
+	}
+	export function CreateLongRunningRecognizeRequestFormGroup() {
+		return new FormGroup<LongRunningRecognizeRequestFormProperties>({
+		});
+
 	}
 
 
@@ -170,6 +309,40 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/**
+	 * Contains audio data in the encoding specified in the `RecognitionConfig`.
+	 * Either `content` or `uri` must be supplied. Supplying both or neither
+	 * returns google.rpc.Code.INVALID_ARGUMENT. See
+	 * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+	 */
+	export interface RecognitionAudioFormProperties {
+
+		/**
+		 * The audio data bytes encoded as specified in
+		 * `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
+		 * pure binary representation, whereas JSON representations use base64.
+		 */
+		content: FormControl<string | null | undefined>,
+
+		/**
+		 * URI that points to a file that contains audio data bytes as specified in
+		 * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+		 * Currently, only Google Cloud Storage URIs are
+		 * supported, which must be specified in the following format:
+		 * `gs://bucket_name/object_name` (other URI formats return
+		 * google.rpc.Code.INVALID_ARGUMENT). For more information, see
+		 * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateRecognitionAudioFormGroup() {
+		return new FormGroup<RecognitionAudioFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Provides information to the recognizer that specifies how to process the
@@ -191,7 +364,7 @@ export namespace MyNS {
 		audioChannelCount?: number | null;
 
 		/** Config to enable speaker diarization. */
-		diarizationConfig?: SpeakerDiarizationConfig | null;
+		diarizationConfig?: SpeakerDiarizationConfig;
 
 		/**
 		 * If 'true', adds punctuation to recognition result hypotheses.
@@ -247,7 +420,7 @@ export namespace MyNS {
 		maxAlternatives?: number | null;
 
 		/** Description of audio data to be recognized. */
-		metadata?: RecognitionMetadata | null;
+		metadata?: RecognitionMetadata;
 
 		/**
 		 * Which model to select for the given request. Select the model
@@ -311,7 +484,7 @@ export namespace MyNS {
 		 * [speech
 		 * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 		 */
-		speechContexts?: Array<SpeechContext> | null;
+		speechContexts?: Array<SpeechContext>;
 
 		/**
 		 * Set to true to use an enhanced model for speech recognition.
@@ -323,6 +496,161 @@ export namespace MyNS {
 		 * of the specified model.
 		 */
 		useEnhanced?: boolean | null;
+	}
+
+	/**
+	 * Provides information to the recognizer that specifies how to process the
+	 * request.
+	 */
+	export interface RecognitionConfigFormProperties {
+
+		/**
+		 * The number of channels in the input audio data.
+		 * ONLY set this for MULTI-CHANNEL recognition.
+		 * Valid values for LINEAR16 and FLAC are `1`-`8`.
+		 * Valid values for OGG_OPUS are '1'-'254'.
+		 * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+		 * If `0` or omitted, defaults to one channel (mono).
+		 * Note: We only recognize the first channel by default.
+		 * To perform independent recognition on each channel set
+		 * `enable_separate_recognition_per_channel` to 'true'.
+		 */
+		audioChannelCount: FormControl<number | null | undefined>,
+
+		/**
+		 * If 'true', adds punctuation to recognition result hypotheses.
+		 * This feature is only available in select languages. Setting this for
+		 * requests in other languages has no effect at all.
+		 * The default 'false' value does not add punctuation to result hypotheses.
+		 */
+		enableAutomaticPunctuation: FormControl<boolean | null | undefined>,
+
+		/**
+		 * This needs to be set to `true` explicitly and `audio_channel_count` > 1
+		 * to get each channel recognized separately. The recognition result will
+		 * contain a `channel_tag` field to state which channel that result belongs
+		 * to. If this is not true, we will only recognize the first channel. The
+		 * request is billed cumulatively for all channels recognized:
+		 * `audio_channel_count` multiplied by the length of the audio.
+		 */
+		enableSeparateRecognitionPerChannel: FormControl<boolean | null | undefined>,
+
+		/**
+		 * If `true`, the top result includes a list of words and
+		 * the start and end time offsets (timestamps) for those words. If
+		 * `false`, no word-level time offset information is returned. The default is
+		 * `false`.
+		 */
+		enableWordTimeOffsets: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Encoding of audio data sent in all `RecognitionAudio` messages.
+		 * This field is optional for `FLAC` and `WAV` audio files and required
+		 * for all other audio formats. For details, see AudioEncoding.
+		 */
+		encoding: FormControl<RecognitionConfigEncoding | null | undefined>,
+
+		/**
+		 * Required. The language of the supplied audio as a
+		 * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+		 * Example: "en-US".
+		 * See [Language
+		 * Support](https://cloud.google.com/speech-to-text/docs/languages) for a list
+		 * of the currently supported language codes.
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Maximum number of recognition hypotheses to be returned.
+		 * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
+		 * within each `SpeechRecognitionResult`.
+		 * The server may return fewer than `max_alternatives`.
+		 * Valid values are `0`-`30`. A value of `0` or `1` will return a maximum of
+		 * one. If omitted, will return a maximum of one.
+		 */
+		maxAlternatives: FormControl<number | null | undefined>,
+
+		/**
+		 * Which model to select for the given request. Select the model
+		 * best suited to your domain to get best results. If a model is not
+		 * explicitly specified, then we auto-select a model based on the parameters
+		 * in the RecognitionConfig.
+		 * <table>
+		 * <tr>
+		 * <td><b>Model</b></td>
+		 * <td><b>Description</b></td>
+		 * </tr>
+		 * <tr>
+		 * <td><code>command_and_search</code></td>
+		 * <td>Best for short queries such as voice commands or voice search.</td>
+		 * </tr>
+		 * <tr>
+		 * <td><code>phone_call</code></td>
+		 * <td>Best for audio that originated from a phone call (typically
+		 * recorded at an 8khz sampling rate).</td>
+		 * </tr>
+		 * <tr>
+		 * <td><code>video</code></td>
+		 * <td>Best for audio that originated from from video or includes multiple
+		 * speakers. Ideally the audio is recorded at a 16khz or greater
+		 * sampling rate. This is a premium model that costs more than the
+		 * standard rate.</td>
+		 * </tr>
+		 * <tr>
+		 * <td><code>default</code></td>
+		 * <td>Best for audio that is not one of the specific audio models.
+		 * For example, long-form audio. Ideally the audio is high-fidelity,
+		 * recorded at a 16khz or greater sampling rate.</td>
+		 * </tr>
+		 * </table>
+		 */
+		model: FormControl<string | null | undefined>,
+
+		/**
+		 * If set to `true`, the server will attempt to filter out
+		 * profanities, replacing all but the initial character in each filtered word
+		 * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
+		 * won't be filtered out.
+		 */
+		profanityFilter: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Sample rate in Hertz of the audio data sent in all
+		 * `RecognitionAudio` messages. Valid values are: 8000-48000.
+		 * 16000 is optimal. For best results, set the sampling rate of the audio
+		 * source to 16000 Hz. If that's not possible, use the native sample rate of
+		 * the audio source (instead of re-sampling).
+		 * This field is optional for FLAC and WAV audio files, but is
+		 * required for all other audio formats. For details, see AudioEncoding.
+		 */
+		sampleRateHertz: FormControl<number | null | undefined>,
+
+		/**
+		 * Set to true to use an enhanced model for speech recognition.
+		 * If `use_enhanced` is set to true and the `model` field is not set, then
+		 * an appropriate enhanced model is chosen if an enhanced model exists for
+		 * the audio.
+		 * If `use_enhanced` is true and an enhanced version of the specified model
+		 * does not exist, then the speech is recognized using the standard version
+		 * of the specified model.
+		 */
+		useEnhanced: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRecognitionConfigFormGroup() {
+		return new FormGroup<RecognitionConfigFormProperties>({
+			audioChannelCount: new FormControl<number | null | undefined>(undefined),
+			enableAutomaticPunctuation: new FormControl<boolean | null | undefined>(undefined),
+			enableSeparateRecognitionPerChannel: new FormControl<boolean | null | undefined>(undefined),
+			enableWordTimeOffsets: new FormControl<boolean | null | undefined>(undefined),
+			encoding: new FormControl<RecognitionConfigEncoding | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			maxAlternatives: new FormControl<number | null | undefined>(undefined),
+			model: new FormControl<string | null | undefined>(undefined),
+			profanityFilter: new FormControl<boolean | null | undefined>(undefined),
+			sampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			useEnhanced: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -352,6 +680,43 @@ export namespace MyNS {
 
 		/** Output only. Unused. */
 		speakerTag?: number | null;
+	}
+
+	/** Config to enable speaker diarization. */
+	export interface SpeakerDiarizationConfigFormProperties {
+
+		/**
+		 * If 'true', enables speaker detection for each recognized word in
+		 * the top alternative of the recognition result using a speaker_tag provided
+		 * in the WordInfo.
+		 */
+		enableSpeakerDiarization: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Maximum number of speakers in the conversation. This range gives you more
+		 * flexibility by allowing the system to automatically determine the correct
+		 * number of speakers. If not set, the default value is 6.
+		 */
+		maxSpeakerCount: FormControl<number | null | undefined>,
+
+		/**
+		 * Minimum number of speakers in the conversation. This range gives you more
+		 * flexibility by allowing the system to automatically determine the correct
+		 * number of speakers. If not set, the default value is 2.
+		 */
+		minSpeakerCount: FormControl<number | null | undefined>,
+
+		/** Output only. Unused. */
+		speakerTag: FormControl<number | null | undefined>,
+	}
+	export function CreateSpeakerDiarizationConfigFormGroup() {
+		return new FormGroup<SpeakerDiarizationConfigFormProperties>({
+			enableSpeakerDiarization: new FormControl<boolean | null | undefined>(undefined),
+			maxSpeakerCount: new FormControl<number | null | undefined>(undefined),
+			minSpeakerCount: new FormControl<number | null | undefined>(undefined),
+			speakerTag: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RecognitionConfigEncoding { ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, FLAC = 2, MULAW = 3, AMR = 4, AMR_WB = 5, OGG_OPUS = 6, SPEEX_WITH_HEADER_BYTE = 7 }
@@ -402,6 +767,64 @@ export namespace MyNS {
 		recordingDeviceType?: RecognitionMetadataRecordingDeviceType | null;
 	}
 
+	/** Description of audio data to be recognized. */
+	export interface RecognitionMetadataFormProperties {
+
+		/**
+		 * Description of the content. Eg. "Recordings of federal supreme court
+		 * hearings from 2012".
+		 */
+		audioTopic: FormControl<string | null | undefined>,
+
+		/**
+		 * The industry vertical to which this speech recognition request most
+		 * closely applies. This is most indicative of the topics contained
+		 * in the audio.  Use the 6-digit NAICS code to identify the industry
+		 * vertical - see https://www.naics.com/search/.
+		 */
+		industryNaicsCodeOfAudio: FormControl<string | null | undefined>,
+
+		/** The use case most closely describing the audio content to be recognized. */
+		interactionType: FormControl<RecognitionMetadataInteractionType | null | undefined>,
+
+		/** The audio type that most closely describes the audio being recognized. */
+		microphoneDistance: FormControl<RecognitionMetadataMicrophoneDistance | null | undefined>,
+
+		/** The original media the speech was recorded on. */
+		originalMediaType: FormControl<RecognitionMetadataOriginalMediaType | null | undefined>,
+
+		/**
+		 * Mime type of the original audio file.  For example `audio/m4a`,
+		 * `audio/x-alaw-basic`, `audio/mp3`, `audio/3gpp`.
+		 * A list of possible audio mime types is maintained at
+		 * http://www.iana.org/assignments/media-types/media-types.xhtml#audio
+		 */
+		originalMimeType: FormControl<string | null | undefined>,
+
+		/**
+		 * The device used to make the recording.  Examples 'Nexus 5X' or
+		 * 'Polycom SoundStation IP 6000' or 'POTS' or 'VoIP' or
+		 * 'Cardioid Microphone'.
+		 */
+		recordingDeviceName: FormControl<string | null | undefined>,
+
+		/** The type of device the speech was recorded with. */
+		recordingDeviceType: FormControl<RecognitionMetadataRecordingDeviceType | null | undefined>,
+	}
+	export function CreateRecognitionMetadataFormGroup() {
+		return new FormGroup<RecognitionMetadataFormProperties>({
+			audioTopic: new FormControl<string | null | undefined>(undefined),
+			industryNaicsCodeOfAudio: new FormControl<string | null | undefined>(undefined),
+			interactionType: new FormControl<RecognitionMetadataInteractionType | null | undefined>(undefined),
+			microphoneDistance: new FormControl<RecognitionMetadataMicrophoneDistance | null | undefined>(undefined),
+			originalMediaType: new FormControl<RecognitionMetadataOriginalMediaType | null | undefined>(undefined),
+			originalMimeType: new FormControl<string | null | undefined>(undefined),
+			recordingDeviceName: new FormControl<string | null | undefined>(undefined),
+			recordingDeviceType: new FormControl<RecognitionMetadataRecordingDeviceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RecognitionMetadataInteractionType { INTERACTION_TYPE_UNSPECIFIED = 0, DISCUSSION = 1, PRESENTATION = 2, PHONE_CALL = 3, VOICEMAIL = 4, PROFESSIONALLY_PRODUCED = 5, VOICE_SEARCH = 6, VOICE_COMMAND = 7, DICTATION = 8 }
 
 	export enum RecognitionMetadataMicrophoneDistance { MICROPHONE_DISTANCE_UNSPECIFIED = 0, NEARFIELD = 1, MIDFIELD = 2, FARFIELD = 3 }
@@ -430,7 +853,19 @@ export namespace MyNS {
 		 * improves the likelihood of correctly transcribing audio that includes
 		 * months.
 		 */
-		phrases?: Array<string> | null;
+		phrases?: Array<string>;
+	}
+
+	/**
+	 * Provides "hints" to the speech recognizer to favor specific words and phrases
+	 * in the results.
+	 */
+	export interface SpeechContextFormProperties {
+	}
+	export function CreateSpeechContextFormGroup() {
+		return new FormGroup<SpeechContextFormProperties>({
+		});
+
 	}
 
 
@@ -447,7 +882,22 @@ export namespace MyNS {
 		 * Sequential list of transcription results corresponding to
 		 * sequential portions of audio.
 		 */
-		results?: Array<SpeechRecognitionResult> | null;
+		results?: Array<SpeechRecognitionResult>;
+	}
+
+	/**
+	 * The only message returned to the client by the `LongRunningRecognize` method.
+	 * It contains the result as zero or more sequential `SpeechRecognitionResult`
+	 * messages. It is included in the `result.response` field of the `Operation`
+	 * returned by the `GetOperation` call of the `google::longrunning::Operations`
+	 * service.
+	 */
+	export interface LongRunningRecognizeResponseFormProperties {
+	}
+	export function CreateLongRunningRecognizeResponseFormGroup() {
+		return new FormGroup<LongRunningRecognizeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -460,7 +910,7 @@ export namespace MyNS {
 		 * These alternatives are ordered in terms of accuracy, with the top (first)
 		 * alternative being the most probable, as ranked by the recognizer.
 		 */
-		alternatives?: Array<SpeechRecognitionAlternative> | null;
+		alternatives?: Array<SpeechRecognitionAlternative>;
 
 		/**
 		 * For multi-channel audio, this is the channel number corresponding to the
@@ -468,6 +918,23 @@ export namespace MyNS {
 		 * For audio_channel_count = N, its output values can range from '1' to 'N'.
 		 */
 		channelTag?: number | null;
+	}
+
+	/** A speech recognition result corresponding to a portion of the audio. */
+	export interface SpeechRecognitionResultFormProperties {
+
+		/**
+		 * For multi-channel audio, this is the channel number corresponding to the
+		 * recognized result for the audio from that channel.
+		 * For audio_channel_count = N, its output values can range from '1' to 'N'.
+		 */
+		channelTag: FormControl<number | null | undefined>,
+	}
+	export function CreateSpeechRecognitionResultFormGroup() {
+		return new FormGroup<SpeechRecognitionResultFormProperties>({
+			channelTag: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -493,7 +960,32 @@ export namespace MyNS {
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<WordInfo> | null;
+		words?: Array<WordInfo>;
+	}
+
+	/** Alternative hypotheses (a.k.a. n-best list). */
+	export interface SpeechRecognitionAlternativeFormProperties {
+
+		/**
+		 * The confidence estimate between 0.0 and 1.0. A higher number
+		 * indicates an estimated greater likelihood that the recognized words are
+		 * correct. This field is set only for the top alternative of a non-streaming
+		 * result or, of a streaming result where `is_final=true`.
+		 * This field is not guaranteed to be accurate and users should not rely on it
+		 * to be always provided.
+		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 */
+		confidence: FormControl<number | null | undefined>,
+
+		/** Transcript text representing the words that the user spoke. */
+		transcript: FormControl<string | null | undefined>,
+	}
+	export function CreateSpeechRecognitionAlternativeFormGroup() {
+		return new FormGroup<SpeechRecognitionAlternativeFormProperties>({
+			confidence: new FormControl<number | null | undefined>(undefined),
+			transcript: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -533,6 +1025,51 @@ export namespace MyNS {
 		word?: string | null;
 	}
 
+	/** Word-specific information for recognized words. */
+	export interface WordInfoFormProperties {
+
+		/**
+		 * Time offset relative to the beginning of the audio,
+		 * and corresponding to the end of the spoken word.
+		 * This field is only set if `enable_word_time_offsets=true` and only
+		 * in the top hypothesis.
+		 * This is an experimental feature and the accuracy of the time offset can
+		 * vary.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within
+		 * the audio. This field specifies which one of those speakers was detected to
+		 * have spoken this word. Value ranges from '1' to diarization_speaker_count.
+		 * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+		 * top alternative.
+		 */
+		speakerTag: FormControl<number | null | undefined>,
+
+		/**
+		 * Time offset relative to the beginning of the audio,
+		 * and corresponding to the start of the spoken word.
+		 * This field is only set if `enable_word_time_offsets=true` and only
+		 * in the top hypothesis.
+		 * This is an experimental feature and the accuracy of the time offset can
+		 * vary.
+		 */
+		startTime: FormControl<string | null | undefined>,
+
+		/** The word corresponding to this set of information. */
+		word: FormControl<string | null | undefined>,
+	}
+	export function CreateWordInfoFormGroup() {
+		return new FormGroup<WordInfoFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			speakerTag: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			word: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The top-level message sent by the client for the `Recognize` method. */
 	export interface RecognizeRequest {
@@ -543,13 +1080,22 @@ export namespace MyNS {
 		 * returns google.rpc.Code.INVALID_ARGUMENT. See
 		 * [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 		 */
-		audio?: RecognitionAudio | null;
+		audio?: RecognitionAudio;
 
 		/**
 		 * Provides information to the recognizer that specifies how to process the
 		 * request.
 		 */
-		config?: RecognitionConfig | null;
+		config?: RecognitionConfig;
+	}
+
+	/** The top-level message sent by the client for the `Recognize` method. */
+	export interface RecognizeRequestFormProperties {
+	}
+	export function CreateRecognizeRequestFormGroup() {
+		return new FormGroup<RecognizeRequestFormProperties>({
+		});
+
 	}
 
 
@@ -564,7 +1110,20 @@ export namespace MyNS {
 		 * Sequential list of transcription results corresponding to
 		 * sequential portions of audio.
 		 */
-		results?: Array<SpeechRecognitionResult> | null;
+		results?: Array<SpeechRecognitionResult>;
+	}
+
+	/**
+	 * The only message returned to the client by the `Recognize` method. It
+	 * contains the result as zero or more sequential `SpeechRecognitionResult`
+	 * messages.
+	 */
+	export interface RecognizeResponseFormProperties {
+	}
+	export function CreateRecognizeResponseFormGroup() {
+		return new FormGroup<RecognizeResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

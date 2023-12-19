@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** AMP URL response for a requested URL. */
@@ -19,6 +20,30 @@ export namespace MyNS {
 		originalUrl?: string | null;
 	}
 
+	/** AMP URL response for a requested URL. */
+	export interface AmpUrlFormProperties {
+
+		/** The AMP URL pointing to the publisher's web server. */
+		ampUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * The [AMP Cache URL](/amp/cache/overview#amp-cache-url-format) pointing to
+		 * the cached document in the Google AMP Cache.
+		 */
+		cdnAmpUrl: FormControl<string | null | undefined>,
+
+		/** The original non-AMP URL. */
+		originalUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateAmpUrlFormGroup() {
+		return new FormGroup<AmpUrlFormProperties>({
+			ampUrl: new FormControl<string | null | undefined>(undefined),
+			cdnAmpUrl: new FormControl<string | null | undefined>(undefined),
+			originalUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** AMP URL Error resource for a requested URL that couldn't be found. */
 	export interface AmpUrlError {
@@ -31,6 +56,27 @@ export namespace MyNS {
 
 		/** The original non-AMP URL. */
 		originalUrl?: string | null;
+	}
+
+	/** AMP URL Error resource for a requested URL that couldn't be found. */
+	export interface AmpUrlErrorFormProperties {
+
+		/** The error code of an API call. */
+		errorCode: FormControl<AmpUrlErrorErrorCode | null | undefined>,
+
+		/** An optional descriptive error message. */
+		errorMessage: FormControl<string | null | undefined>,
+
+		/** The original non-AMP URL. */
+		originalUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateAmpUrlErrorFormGroup() {
+		return new FormGroup<AmpUrlErrorFormProperties>({
+			errorCode: new FormControl<AmpUrlErrorErrorCode | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			originalUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AmpUrlErrorErrorCode { ERROR_CODE_UNSPECIFIED = 0, INPUT_URL_NOT_FOUND = 1, NO_AMP_URL = 2, APPLICATION_ERROR = 3, URL_IS_VALID_AMP = 4, URL_IS_INVALID_AMP = 5 }
@@ -47,7 +93,20 @@ export namespace MyNS {
 		 * The URLs are case-sensitive. Up to 50 URLs per lookup
 		 * (see [Usage Limits](/amp/cache/reference/limits)).
 		 */
-		urls?: Array<string> | null;
+		urls?: Array<string>;
+	}
+
+	/** AMP URL request for a batch of URLs. */
+	export interface BatchGetAmpUrlsRequestFormProperties {
+
+		/** The lookup_strategy being requested. */
+		lookupStrategy: FormControl<BatchGetAmpUrlsRequestLookupStrategy | null | undefined>,
+	}
+	export function CreateBatchGetAmpUrlsRequestFormGroup() {
+		return new FormGroup<BatchGetAmpUrlsRequestFormProperties>({
+			lookupStrategy: new FormControl<BatchGetAmpUrlsRequestLookupStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BatchGetAmpUrlsRequestLookupStrategy { FETCH_LIVE_DOC = 0, IN_INDEX_DOC = 1 }
@@ -62,10 +121,19 @@ export namespace MyNS {
 		 * If BatchAmpUrlsRequest contains duplicate URLs, AmpUrl is generated
 		 * only once.
 		 */
-		ampUrls?: Array<AmpUrl> | null;
+		ampUrls?: Array<AmpUrl>;
 
 		/** The errors for requested URLs that have no AMP URL. */
-		urlErrors?: Array<AmpUrlError> | null;
+		urlErrors?: Array<AmpUrlError>;
+	}
+
+	/** Batch AMP URL response. */
+	export interface BatchGetAmpUrlsResponseFormProperties {
+	}
+	export function CreateBatchGetAmpUrlsResponseFormGroup() {
+		return new FormGroup<BatchGetAmpUrlsResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

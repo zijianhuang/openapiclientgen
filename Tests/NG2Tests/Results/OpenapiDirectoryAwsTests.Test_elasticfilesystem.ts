@@ -1,24 +1,48 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Provides a description of an EFS file system access point. */
 	export interface AccessPointDescription {
 		ClientToken?: string | null;
 		Name?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		AccessPointId?: string | null;
 		AccessPointArn?: string | null;
 		FileSystemId?: string | null;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
-		PosixUser?: PosixUser | null;
+		PosixUser?: PosixUser;
 
 		/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
-		RootDirectory?: RootDirectory | null;
+		RootDirectory?: RootDirectory;
 		OwnerId?: string | null;
 		LifeCycleState?: AccessPointDescriptionLifeCycleState | null;
+	}
+
+	/** Provides a description of an EFS file system access point. */
+	export interface AccessPointDescriptionFormProperties {
+		ClientToken: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		AccessPointId: FormControl<string | null | undefined>,
+		AccessPointArn: FormControl<string | null | undefined>,
+		FileSystemId: FormControl<string | null | undefined>,
+		OwnerId: FormControl<string | null | undefined>,
+		LifeCycleState: FormControl<AccessPointDescriptionLifeCycleState | null | undefined>,
+	}
+	export function CreateAccessPointDescriptionFormGroup() {
+		return new FormGroup<AccessPointDescriptionFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			AccessPointId: new FormControl<string | null | undefined>(undefined),
+			AccessPointArn: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			LifeCycleState: new FormControl<AccessPointDescriptionLifeCycleState | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -28,12 +52,38 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
 	export interface PosixUser {
 		Uid: number;
 		Gid: number;
-		SecondaryGids?: Array<number> | null;
+		SecondaryGids?: Array<number>;
+	}
+
+	/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
+	export interface PosixUserFormProperties {
+		Uid: FormControl<number | null | undefined>,
+		Gid: FormControl<number | null | undefined>,
+	}
+	export function CreatePosixUserFormGroup() {
+		return new FormGroup<PosixUserFormProperties>({
+			Uid: new FormControl<number | null | undefined>(undefined),
+			Gid: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -42,7 +92,18 @@ export namespace MyNS {
 		Path?: string | null;
 
 		/** <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> <important> <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p> </important> */
-		CreationInfo?: CreationInfo | null;
+		CreationInfo?: CreationInfo;
+	}
+
+	/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
+	export interface RootDirectoryFormProperties {
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateRootDirectoryFormGroup() {
+		return new FormGroup<RootDirectoryFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -53,21 +114,71 @@ export namespace MyNS {
 		Permissions: string;
 	}
 
+	/** <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> <important> <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p> </important> */
+	export interface CreationInfoFormProperties {
+		OwnerUid: FormControl<number | null | undefined>,
+		OwnerGid: FormControl<number | null | undefined>,
+		Permissions: FormControl<string | null | undefined>,
+	}
+	export function CreateCreationInfoFormGroup() {
+		return new FormGroup<CreationInfoFormProperties>({
+			OwnerUid: new FormControl<number | null | undefined>(undefined),
+			OwnerGid: new FormControl<number | null | undefined>(undefined),
+			Permissions: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccessPointDescriptionLifeCycleState { creating = 0, available = 1, updating = 2, deleting = 3, deleted = 4 }
 
 	export interface BadRequest {
 	}
+	export interface BadRequestFormProperties {
+	}
+	export function CreateBadRequestFormGroup() {
+		return new FormGroup<BadRequestFormProperties>({
+		});
+
+	}
 
 	export interface AccessPointAlreadyExists {
+	}
+	export interface AccessPointAlreadyExistsFormProperties {
+	}
+	export function CreateAccessPointAlreadyExistsFormGroup() {
+		return new FormGroup<AccessPointAlreadyExistsFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerError {
 	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
+	}
 
 	export interface FileSystemNotFound {
 	}
+	export interface FileSystemNotFoundFormProperties {
+	}
+	export function CreateFileSystemNotFoundFormGroup() {
+		return new FormGroup<FileSystemNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface AccessPointLimitExceeded {
+	}
+	export interface AccessPointLimitExceededFormProperties {
+	}
+	export function CreateAccessPointLimitExceededFormGroup() {
+		return new FormGroup<AccessPointLimitExceededFormProperties>({
+		});
+
 	}
 
 
@@ -94,6 +205,39 @@ export namespace MyNS {
 		Tags: Array<Tag>;
 	}
 
+	/** A description of the file system. */
+	export interface FileSystemDescriptionFormProperties {
+		OwnerId: FormControl<string | null | undefined>,
+		CreationToken: FormControl<string | null | undefined>,
+		FileSystemId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LifeCycleState: FormControl<AccessPointDescriptionLifeCycleState | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		NumberOfMountTargets: FormControl<number | null | undefined>,
+		PerformanceMode: FormControl<FileSystemDescriptionPerformanceMode | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		ThroughputMode: FormControl<FileSystemDescriptionThroughputMode | null | undefined>,
+		ProvisionedThroughputInMibps: FormControl<number | null | undefined>,
+	}
+	export function CreateFileSystemDescriptionFormGroup() {
+		return new FormGroup<FileSystemDescriptionFormProperties>({
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			CreationToken: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LifeCycleState: new FormControl<AccessPointDescriptionLifeCycleState | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			NumberOfMountTargets: new FormControl<number | null | undefined>(undefined),
+			PerformanceMode: new FormControl<FileSystemDescriptionPerformanceMode | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
+			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time. */
 	export interface FileSystemSize {
@@ -103,20 +247,65 @@ export namespace MyNS {
 		ValueInStandard?: number | null;
 	}
 
+	/** The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time. */
+	export interface FileSystemSizeFormProperties {
+		Value: FormControl<number | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+		ValueInIA: FormControl<number | null | undefined>,
+		ValueInStandard: FormControl<number | null | undefined>,
+	}
+	export function CreateFileSystemSizeFormGroup() {
+		return new FormGroup<FileSystemSizeFormProperties>({
+			Value: new FormControl<number | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			ValueInIA: new FormControl<number | null | undefined>(undefined),
+			ValueInStandard: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FileSystemDescriptionPerformanceMode { generalPurpose = 0, maxIO = 1 }
 
 	export enum FileSystemDescriptionThroughputMode { bursting = 0, provisioned = 1 }
 
 	export interface FileSystemAlreadyExists {
 	}
+	export interface FileSystemAlreadyExistsFormProperties {
+	}
+	export function CreateFileSystemAlreadyExistsFormGroup() {
+		return new FormGroup<FileSystemAlreadyExistsFormProperties>({
+		});
+
+	}
 
 	export interface FileSystemLimitExceeded {
+	}
+	export interface FileSystemLimitExceededFormProperties {
+	}
+	export function CreateFileSystemLimitExceededFormGroup() {
+		return new FormGroup<FileSystemLimitExceededFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientThroughputCapacity {
 	}
+	export interface InsufficientThroughputCapacityFormProperties {
+	}
+	export function CreateInsufficientThroughputCapacityFormGroup() {
+		return new FormGroup<InsufficientThroughputCapacityFormProperties>({
+		});
+
+	}
 
 	export interface ThroughputLimitExceeded {
+	}
+	export interface ThroughputLimitExceededFormProperties {
+	}
+	export function CreateThroughputLimitExceededFormGroup() {
+		return new FormGroup<ThroughputLimitExceededFormProperties>({
+		});
+
 	}
 
 
@@ -133,66 +322,229 @@ export namespace MyNS {
 		AvailabilityZoneName?: string | null;
 	}
 
+	/** Provides a description of a mount target. */
+	export interface MountTargetDescriptionFormProperties {
+		OwnerId: FormControl<string | null | undefined>,
+		MountTargetId: FormControl<string | null | undefined>,
+		FileSystemId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		LifeCycleState: FormControl<AccessPointDescriptionLifeCycleState | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		AvailabilityZoneId: FormControl<string | null | undefined>,
+		AvailabilityZoneName: FormControl<string | null | undefined>,
+	}
+	export function CreateMountTargetDescriptionFormGroup() {
+		return new FormGroup<MountTargetDescriptionFormProperties>({
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			MountTargetId: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			LifeCycleState: new FormControl<AccessPointDescriptionLifeCycleState | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZoneName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface IncorrectFileSystemLifeCycleState {
+	}
+	export interface IncorrectFileSystemLifeCycleStateFormProperties {
+	}
+	export function CreateIncorrectFileSystemLifeCycleStateFormGroup() {
+		return new FormGroup<IncorrectFileSystemLifeCycleStateFormProperties>({
+		});
+
 	}
 
 	export interface MountTargetConflict {
 	}
+	export interface MountTargetConflictFormProperties {
+	}
+	export function CreateMountTargetConflictFormGroup() {
+		return new FormGroup<MountTargetConflictFormProperties>({
+		});
+
+	}
 
 	export interface SubnetNotFound {
+	}
+	export interface SubnetNotFoundFormProperties {
+	}
+	export function CreateSubnetNotFoundFormGroup() {
+		return new FormGroup<SubnetNotFoundFormProperties>({
+		});
+
 	}
 
 	export interface NoFreeAddressesInSubnet {
 	}
+	export interface NoFreeAddressesInSubnetFormProperties {
+	}
+	export function CreateNoFreeAddressesInSubnetFormGroup() {
+		return new FormGroup<NoFreeAddressesInSubnetFormProperties>({
+		});
+
+	}
 
 	export interface IpAddressInUse {
+	}
+	export interface IpAddressInUseFormProperties {
+	}
+	export function CreateIpAddressInUseFormGroup() {
+		return new FormGroup<IpAddressInUseFormProperties>({
+		});
+
 	}
 
 	export interface NetworkInterfaceLimitExceeded {
 	}
+	export interface NetworkInterfaceLimitExceededFormProperties {
+	}
+	export function CreateNetworkInterfaceLimitExceededFormGroup() {
+		return new FormGroup<NetworkInterfaceLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface SecurityGroupLimitExceeded {
+	}
+	export interface SecurityGroupLimitExceededFormProperties {
+	}
+	export function CreateSecurityGroupLimitExceededFormGroup() {
+		return new FormGroup<SecurityGroupLimitExceededFormProperties>({
+		});
+
 	}
 
 	export interface SecurityGroupNotFound {
 	}
+	export interface SecurityGroupNotFoundFormProperties {
+	}
+	export function CreateSecurityGroupNotFoundFormGroup() {
+		return new FormGroup<SecurityGroupNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedAvailabilityZone {
+	}
+	export interface UnsupportedAvailabilityZoneFormProperties {
+	}
+	export function CreateUnsupportedAvailabilityZoneFormGroup() {
+		return new FormGroup<UnsupportedAvailabilityZoneFormProperties>({
+		});
+
 	}
 
 	export interface AccessPointNotFound {
 	}
+	export interface AccessPointNotFoundFormProperties {
+	}
+	export function CreateAccessPointNotFoundFormGroup() {
+		return new FormGroup<AccessPointNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface FileSystemInUse {
+	}
+	export interface FileSystemInUseFormProperties {
+	}
+	export function CreateFileSystemInUseFormGroup() {
+		return new FormGroup<FileSystemInUseFormProperties>({
+		});
+
 	}
 
 	export interface DependencyTimeout {
 	}
+	export interface DependencyTimeoutFormProperties {
+	}
+	export function CreateDependencyTimeoutFormGroup() {
+		return new FormGroup<DependencyTimeoutFormProperties>({
+		});
+
+	}
 
 	export interface MountTargetNotFound {
 	}
+	export interface MountTargetNotFoundFormProperties {
+	}
+	export function CreateMountTargetNotFoundFormGroup() {
+		return new FormGroup<MountTargetNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAccessPointsResponse {
-		AccessPoints?: Array<AccessPointDescription> | null;
+		AccessPoints?: Array<AccessPointDescription>;
 		NextToken?: string | null;
+	}
+	export interface DescribeAccessPointsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccessPointsResponseFormGroup() {
+		return new FormGroup<DescribeAccessPointsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FileSystemPolicyDescription {
 		FileSystemId?: string | null;
 		Policy?: string | null;
 	}
+	export interface FileSystemPolicyDescriptionFormProperties {
+		FileSystemId: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateFileSystemPolicyDescriptionFormGroup() {
+		return new FormGroup<FileSystemPolicyDescriptionFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PolicyNotFound {
+	}
+	export interface PolicyNotFoundFormProperties {
+	}
+	export function CreatePolicyNotFoundFormGroup() {
+		return new FormGroup<PolicyNotFoundFormProperties>({
+		});
+
 	}
 
 	export interface DescribeFileSystemsResponse {
 		Marker?: string | null;
-		FileSystems?: Array<FileSystemDescription> | null;
+		FileSystems?: Array<FileSystemDescription>;
 		NextMarker?: string | null;
+	}
+	export interface DescribeFileSystemsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeFileSystemsResponseFormGroup() {
+		return new FormGroup<DescribeFileSystemsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LifecycleConfigurationDescription {
-		LifecyclePolicies?: Array<LifecyclePolicy> | null;
+		LifecyclePolicies?: Array<LifecyclePolicy>;
+	}
+	export interface LifecycleConfigurationDescriptionFormProperties {
+	}
+	export function CreateLifecycleConfigurationDescriptionFormGroup() {
+		return new FormGroup<LifecycleConfigurationDescriptionFormProperties>({
+		});
+
 	}
 
 
@@ -201,21 +553,59 @@ export namespace MyNS {
 		TransitionToIA?: LifecyclePolicyTransitionToIA | null;
 	}
 
+	/** Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA) storage class. */
+	export interface LifecyclePolicyFormProperties {
+		TransitionToIA: FormControl<LifecyclePolicyTransitionToIA | null | undefined>,
+	}
+	export function CreateLifecyclePolicyFormGroup() {
+		return new FormGroup<LifecyclePolicyFormProperties>({
+			TransitionToIA: new FormControl<LifecyclePolicyTransitionToIA | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LifecyclePolicyTransitionToIA { AFTER_7_DAYS = 0, AFTER_14_DAYS = 1, AFTER_30_DAYS = 2, AFTER_60_DAYS = 3, AFTER_90_DAYS = 4 }
 
 	export interface DescribeMountTargetSecurityGroupsResponse {
 		SecurityGroups: Array<string>;
 	}
+	export interface DescribeMountTargetSecurityGroupsResponseFormProperties {
+	}
+	export function CreateDescribeMountTargetSecurityGroupsResponseFormGroup() {
+		return new FormGroup<DescribeMountTargetSecurityGroupsResponseFormProperties>({
+		});
+
+	}
 
 	export interface IncorrectMountTargetState {
+	}
+	export interface IncorrectMountTargetStateFormProperties {
+	}
+	export function CreateIncorrectMountTargetStateFormGroup() {
+		return new FormGroup<IncorrectMountTargetStateFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface DescribeMountTargetsResponse {
 		Marker?: string | null;
-		MountTargets?: Array<MountTargetDescription> | null;
+		MountTargets?: Array<MountTargetDescription>;
 		NextMarker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeMountTargetsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMountTargetsResponseFormGroup() {
+		return new FormGroup<DescribeMountTargetsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -226,29 +616,76 @@ export namespace MyNS {
 		NextMarker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeTagsResponseFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTagsResponseFormGroup() {
+		return new FormGroup<DescribeTagsResponseFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidPolicyException {
 	}
+	export interface InvalidPolicyExceptionFormProperties {
+	}
+	export function CreateInvalidPolicyExceptionFormGroup() {
+		return new FormGroup<InvalidPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequests {
+	}
+	export interface TooManyRequestsFormProperties {
+	}
+	export function CreateTooManyRequestsFormGroup() {
+		return new FormGroup<TooManyRequestsFormProperties>({
+		});
+
 	}
 
 	export enum LifeCycleState { creating = 0, available = 1, updating = 2, deleting = 3, deleted = 4 }
 
 	export interface CreateAccessPointRequest {
 		ClientToken: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		FileSystemId: string;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
-		PosixUser?: PosixUser | null;
+		PosixUser?: PosixUser;
 
 		/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
-		RootDirectory?: RootDirectory | null;
+		RootDirectory?: RootDirectory;
+	}
+	export interface CreateAccessPointRequestFormProperties {
+		ClientToken: FormControl<string | null | undefined>,
+		FileSystemId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPointRequestFormGroup() {
+		return new FormGroup<CreateAccessPointRequestFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PerformanceMode { generalPurpose = 0, maxIO = 1 }
@@ -262,7 +699,26 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
 		ProvisionedThroughputInMibps?: number | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateFileSystemRequestFormProperties {
+		CreationToken: FormControl<string | null | undefined>,
+		PerformanceMode: FormControl<FileSystemDescriptionPerformanceMode | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		ThroughputMode: FormControl<FileSystemDescriptionThroughputMode | null | undefined>,
+		ProvisionedThroughputInMibps: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateFileSystemRequestFormGroup() {
+		return new FormGroup<CreateFileSystemRequestFormProperties>({
+			CreationToken: new FormControl<string | null | undefined>(undefined),
+			PerformanceMode: new FormControl<FileSystemDescriptionPerformanceMode | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
+			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,7 +727,22 @@ export namespace MyNS {
 		FileSystemId: string;
 		SubnetId: string;
 		IpAddress?: string | null;
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface CreateMountTargetRequestFormProperties {
+		FileSystemId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMountTargetRequestFormGroup() {
+		return new FormGroup<CreateMountTargetRequestFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,10 +751,33 @@ export namespace MyNS {
 		Tags: Array<Tag>;
 	}
 
+	/** <p/> */
+	export interface CreateTagsRequestFormProperties {
+	}
+	export function CreateCreateTagsRequestFormGroup() {
+		return new FormGroup<CreateTagsRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteAccessPointRequest {
+	}
+	export interface DeleteAccessPointRequestFormProperties {
+	}
+	export function CreateDeleteAccessPointRequestFormGroup() {
+		return new FormGroup<DeleteAccessPointRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFileSystemPolicyRequest {
+	}
+	export interface DeleteFileSystemPolicyRequestFormProperties {
+	}
+	export function CreateDeleteFileSystemPolicyRequestFormGroup() {
+		return new FormGroup<DeleteFileSystemPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -291,9 +785,27 @@ export namespace MyNS {
 	export interface DeleteFileSystemRequest {
 	}
 
+	/** <p/> */
+	export interface DeleteFileSystemRequestFormProperties {
+	}
+	export function CreateDeleteFileSystemRequestFormGroup() {
+		return new FormGroup<DeleteFileSystemRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteMountTargetRequest {
+	}
+
+	/** <p/> */
+	export interface DeleteMountTargetRequestFormProperties {
+	}
+	export function CreateDeleteMountTargetRequestFormGroup() {
+		return new FormGroup<DeleteMountTargetRequestFormProperties>({
+		});
+
 	}
 
 
@@ -302,10 +814,33 @@ export namespace MyNS {
 		TagKeys: Array<string>;
 	}
 
+	/** <p/> */
+	export interface DeleteTagsRequestFormProperties {
+	}
+	export function CreateDeleteTagsRequestFormGroup() {
+		return new FormGroup<DeleteTagsRequestFormProperties>({
+		});
+
+	}
+
 	export interface DescribeAccessPointsRequest {
+	}
+	export interface DescribeAccessPointsRequestFormProperties {
+	}
+	export function CreateDescribeAccessPointsRequestFormGroup() {
+		return new FormGroup<DescribeAccessPointsRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeFileSystemPolicyRequest {
+	}
+	export interface DescribeFileSystemPolicyRequestFormProperties {
+	}
+	export function CreateDescribeFileSystemPolicyRequestFormGroup() {
+		return new FormGroup<DescribeFileSystemPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -313,7 +848,23 @@ export namespace MyNS {
 	export interface DescribeFileSystemsRequest {
 	}
 
+	/** <p/> */
+	export interface DescribeFileSystemsRequestFormProperties {
+	}
+	export function CreateDescribeFileSystemsRequestFormGroup() {
+		return new FormGroup<DescribeFileSystemsRequestFormProperties>({
+		});
+
+	}
+
 	export interface DescribeLifecycleConfigurationRequest {
+	}
+	export interface DescribeLifecycleConfigurationRequestFormProperties {
+	}
+	export function CreateDescribeLifecycleConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeLifecycleConfigurationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -321,9 +872,27 @@ export namespace MyNS {
 	export interface DescribeMountTargetSecurityGroupsRequest {
 	}
 
+	/** <p/> */
+	export interface DescribeMountTargetSecurityGroupsRequestFormProperties {
+	}
+	export function CreateDescribeMountTargetSecurityGroupsRequestFormGroup() {
+		return new FormGroup<DescribeMountTargetSecurityGroupsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeMountTargetsRequest {
+	}
+
+	/** <p/> */
+	export interface DescribeMountTargetsRequestFormProperties {
+	}
+	export function CreateDescribeMountTargetsRequestFormGroup() {
+		return new FormGroup<DescribeMountTargetsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -331,36 +900,104 @@ export namespace MyNS {
 	export interface DescribeTagsRequest {
 	}
 
+	/** <p/> */
+	export interface DescribeTagsRequestFormProperties {
+	}
+	export function CreateDescribeTagsRequestFormGroup() {
+		return new FormGroup<DescribeTagsRequestFormProperties>({
+		});
+
+	}
+
 	export enum TransitionToIARules { AFTER_7_DAYS = 0, AFTER_14_DAYS = 1, AFTER_30_DAYS = 2, AFTER_60_DAYS = 3, AFTER_90_DAYS = 4 }
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface ModifyMountTargetSecurityGroupsRequest {
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface ModifyMountTargetSecurityGroupsRequestFormProperties {
+	}
+	export function CreateModifyMountTargetSecurityGroupsRequestFormGroup() {
+		return new FormGroup<ModifyMountTargetSecurityGroupsRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutFileSystemPolicyRequest {
 		Policy: string;
 		BypassPolicyLockoutSafetyCheck?: boolean | null;
 	}
+	export interface PutFileSystemPolicyRequestFormProperties {
+		Policy: FormControl<string | null | undefined>,
+		BypassPolicyLockoutSafetyCheck: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutFileSystemPolicyRequestFormGroup() {
+		return new FormGroup<PutFileSystemPolicyRequestFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutLifecycleConfigurationRequest {
 		LifecyclePolicies: Array<LifecyclePolicy>;
+	}
+	export interface PutLifecycleConfigurationRequestFormProperties {
+	}
+	export function CreatePutLifecycleConfigurationRequestFormGroup() {
+		return new FormGroup<PutLifecycleConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFileSystemRequest {
 		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
 		ProvisionedThroughputInMibps?: number | null;
+	}
+	export interface UpdateFileSystemRequestFormProperties {
+		ThroughputMode: FormControl<FileSystemDescriptionThroughputMode | null | undefined>,
+		ProvisionedThroughputInMibps: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFileSystemRequestFormGroup() {
+		return new FormGroup<UpdateFileSystemRequestFormProperties>({
+			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
+			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -622,7 +1259,7 @@ export namespace MyNS {
 		ClientToken: string;
 
 		/** Creates tags associated with the access point. Each tag is a key-value pair. */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * The ID of the EFS file system that the access point provides access to.
@@ -631,23 +1268,66 @@ export namespace MyNS {
 		FileSystemId: string;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
-		PosixUser?: CreateAccessPointPostBodyPosixUser | null;
+		PosixUser?: CreateAccessPointPostBodyPosixUser;
 
 		/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
-		RootDirectory?: CreateAccessPointPostBodyRootDirectory | null;
+		RootDirectory?: CreateAccessPointPostBodyRootDirectory;
+	}
+	export interface CreateAccessPointPostBodyFormProperties {
+
+		/**
+		 * A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		ClientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the EFS file system that the access point provides access to.
+		 * Required
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPointPostBodyFormGroup() {
+		return new FormGroup<CreateAccessPointPostBodyFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAccessPointPostBodyPosixUser {
 		Uid?: number | null;
 		Gid?: number | null;
-		SecondaryGids?: Array<number> | null;
+		SecondaryGids?: Array<number>;
+	}
+	export interface CreateAccessPointPostBodyPosixUserFormProperties {
+		Uid: FormControl<number | null | undefined>,
+		Gid: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateAccessPointPostBodyPosixUserFormGroup() {
+		return new FormGroup<CreateAccessPointPostBodyPosixUserFormProperties>({
+			Uid: new FormControl<number | null | undefined>(undefined),
+			Gid: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAccessPointPostBodyRootDirectory {
 		Path?: string | null;
 
 		/** <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> <important> <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p> </important> */
-		CreationInfo?: CreationInfo | null;
+		CreationInfo?: CreationInfo;
+	}
+	export interface CreateAccessPointPostBodyRootDirectoryFormProperties {
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAccessPointPostBodyRootDirectoryFormGroup() {
+		return new FormGroup<CreateAccessPointPostBodyRootDirectoryFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFileSystemPostBody {
@@ -683,7 +1363,50 @@ export namespace MyNS {
 		ProvisionedThroughputInMibps?: number | null;
 
 		/** A value that specifies to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateFileSystemPostBodyFormProperties {
+
+		/**
+		 * A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		CreationToken: FormControl<string | null | undefined>,
+
+		/** The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created. */
+		PerformanceMode: FormControl<FileSystemDescriptionPerformanceMode | null | undefined>,
+
+		/** A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. */
+		Encrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required if you want to use a nondefault CMK. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li> </ul> <p>If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p> <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.</p> </important>
+		 * Max length: 2048
+		 * Min length: 1
+		 */
+		KmsKeyId: FormControl<string | null | undefined>,
+
+		/** The throughput mode for the file system to be created. There are two throughput modes to choose from for your file system: <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> */
+		ThroughputMode: FormControl<FileSystemDescriptionThroughputMode | null | undefined>,
+
+		/**
+		 * The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i>
+		 * Minimum: 1
+		 */
+		ProvisionedThroughputInMibps: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateFileSystemPostBodyFormGroup() {
+		return new FormGroup<CreateFileSystemPostBodyFormProperties>({
+			CreationToken: new FormControl<string | null | undefined>(undefined),
+			PerformanceMode: new FormControl<FileSystemDescriptionPerformanceMode | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
+			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMountTargetPostBody {
@@ -707,7 +1430,32 @@ export namespace MyNS {
 		 * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.
 		 * Maximum items: 5
 		 */
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
+	}
+	export interface CreateMountTargetPostBodyFormProperties {
+
+		/**
+		 * The ID of the file system for which to create the mount target.
+		 * Required
+		 */
+		FileSystemId: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the subnet to add the mount target in.
+		 * Required
+		 */
+		SubnetId: FormControl<string | null | undefined>,
+
+		/** Valid IPv4 address within the address range of the specified subnet. */
+		IpAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMountTargetPostBodyFormGroup() {
+		return new FormGroup<CreateMountTargetPostBodyFormProperties>({
+			FileSystemId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTagsPostBody {
@@ -717,6 +1465,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Tags: Array<Tag>;
+	}
+	export interface CreateTagsPostBodyFormProperties {
+	}
+	export function CreateCreateTagsPostBodyFormGroup() {
+		return new FormGroup<CreateTagsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFileSystemPutBody {
@@ -730,6 +1485,24 @@ export namespace MyNS {
 		 */
 		ProvisionedThroughputInMibps?: number | null;
 	}
+	export interface UpdateFileSystemPutBodyFormProperties {
+
+		/** (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. */
+		ThroughputMode: FormControl<FileSystemDescriptionThroughputMode | null | undefined>,
+
+		/**
+		 * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If you're not updating the amount of provisioned throughput for your file system, you don't need to provide this value in your request.
+		 * Minimum: 1
+		 */
+		ProvisionedThroughputInMibps: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFileSystemPutBodyFormGroup() {
+		return new FormGroup<UpdateFileSystemPutBodyFormProperties>({
+			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
+			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutFileSystemPolicyPutBody {
 
@@ -742,6 +1515,24 @@ export namespace MyNS {
 		/** (Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. */
 		BypassPolicyLockoutSafetyCheck?: boolean | null;
 	}
+	export interface PutFileSystemPolicyPutBodyFormProperties {
+
+		/**
+		 * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>.
+		 * Required
+		 */
+		Policy: FormControl<string | null | undefined>,
+
+		/** (Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. */
+		BypassPolicyLockoutSafetyCheck: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutFileSystemPolicyPutBodyFormGroup() {
+		return new FormGroup<PutFileSystemPolicyPutBodyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTagsPostBody {
 
@@ -753,6 +1544,13 @@ export namespace MyNS {
 		 */
 		TagKeys: Array<string>;
 	}
+	export interface DeleteTagsPostBodyFormProperties {
+	}
+	export function CreateDeleteTagsPostBodyFormGroup() {
+		return new FormGroup<DeleteTagsPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface PutLifecycleConfigurationPutBody {
 
@@ -762,6 +1560,13 @@ export namespace MyNS {
 		 */
 		LifecyclePolicies: Array<LifecyclePolicy>;
 	}
+	export interface PutLifecycleConfigurationPutBodyFormProperties {
+	}
+	export function CreatePutLifecycleConfigurationPutBodyFormGroup() {
+		return new FormGroup<PutLifecycleConfigurationPutBodyFormProperties>({
+		});
+
+	}
 
 	export interface ModifyMountTargetSecurityGroupsPutBody {
 
@@ -769,7 +1574,14 @@ export namespace MyNS {
 		 * An array of up to five VPC security group IDs.
 		 * Maximum items: 5
 		 */
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
+	}
+	export interface ModifyMountTargetSecurityGroupsPutBodyFormProperties {
+	}
+	export function CreateModifyMountTargetSecurityGroupsPutBodyFormGroup() {
+		return new FormGroup<ModifyMountTargetSecurityGroupsPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -779,6 +1591,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Tags: Array<Tag>;
+	}
+	export interface TagResourcePostBodyFormProperties {
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+		});
+
 	}
 
 }

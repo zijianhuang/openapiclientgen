@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateCanaryResponse {
 
 		/** This structure contains all information about one canary in your account. */
-		Canary?: Canary | null;
+		Canary?: Canary;
+	}
+	export interface CreateCanaryResponseFormProperties {
+	}
+	export function CreateCreateCanaryResponseFormGroup() {
+		return new FormGroup<CreateCanaryResponseFormProperties>({
+		});
+
 	}
 
 
@@ -15,29 +23,54 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
-		Code?: CanaryCodeOutput | null;
+		Code?: CanaryCodeOutput;
 		ExecutionRoleArn?: string | null;
 
 		/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
-		Schedule?: CanaryScheduleOutput | null;
+		Schedule?: CanaryScheduleOutput;
 
 		/** A structure that contains information for a canary run. */
-		RunConfig?: CanaryRunConfigOutput | null;
+		RunConfig?: CanaryRunConfigOutput;
 		SuccessRetentionPeriodInDays?: number | null;
 		FailureRetentionPeriodInDays?: number | null;
 
 		/** A structure that contains the current state of the canary. */
-		Status?: CanaryStatus | null;
+		Status?: CanaryStatus;
 
 		/** This structure contains information about when the canary was created and modified. */
-		Timeline?: CanaryTimeline | null;
+		Timeline?: CanaryTimeline;
 		ArtifactS3Location?: string | null;
 		EngineArn?: string | null;
 		RuntimeVersion?: string | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: VpcConfigOutput | null;
-		Tags?: TagMap | null;
+		VpcConfig?: VpcConfigOutput;
+		Tags?: TagMap;
+	}
+
+	/** This structure contains all information about one canary in your account. */
+	export interface CanaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+		ArtifactS3Location: FormControl<string | null | undefined>,
+		EngineArn: FormControl<string | null | undefined>,
+		RuntimeVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCanaryFormGroup() {
+		return new FormGroup<CanaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
+			EngineArn: new FormControl<string | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -47,11 +80,37 @@ export namespace MyNS {
 		Handler?: string | null;
 	}
 
+	/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
+	export interface CanaryCodeOutputFormProperties {
+		SourceLocationArn: FormControl<string | null | undefined>,
+		Handler: FormControl<string | null | undefined>,
+	}
+	export function CreateCanaryCodeOutputFormGroup() {
+		return new FormGroup<CanaryCodeOutputFormProperties>({
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
 	export interface CanaryScheduleOutput {
 		Expression?: string | null;
 		DurationInSeconds?: number | null;
+	}
+
+	/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
+	export interface CanaryScheduleOutputFormProperties {
+		Expression: FormControl<string | null | undefined>,
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCanaryScheduleOutputFormGroup() {
+		return new FormGroup<CanaryScheduleOutputFormProperties>({
+			Expression: new FormControl<string | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -61,12 +120,40 @@ export namespace MyNS {
 		MemoryInMB?: number | null;
 	}
 
+	/** A structure that contains information for a canary run. */
+	export interface CanaryRunConfigOutputFormProperties {
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+		MemoryInMB: FormControl<number | null | undefined>,
+	}
+	export function CreateCanaryRunConfigOutputFormGroup() {
+		return new FormGroup<CanaryRunConfigOutputFormProperties>({
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A structure that contains the current state of the canary. */
 	export interface CanaryStatus {
 		State?: CanaryStatusState | null;
 		StateReason?: string | null;
 		StateReasonCode?: CanaryStatusStateReasonCode | null;
+	}
+
+	/** A structure that contains the current state of the canary. */
+	export interface CanaryStatusFormProperties {
+		State: FormControl<CanaryStatusState | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		StateReasonCode: FormControl<CanaryStatusStateReasonCode | null | undefined>,
+	}
+	export function CreateCanaryStatusFormGroup() {
+		return new FormGroup<CanaryStatusFormProperties>({
+			State: new FormControl<CanaryStatusState | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReasonCode: new FormControl<CanaryStatusStateReasonCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CanaryStatusState { CREATING = 0, READY = 1, STARTING = 2, RUNNING = 3, UPDATING = 4, STOPPING = 5, STOPPED = 6, ERROR = 7, DELETING = 8 }
@@ -82,40 +169,128 @@ export namespace MyNS {
 		LastStopped?: Date | null;
 	}
 
+	/** This structure contains information about when the canary was created and modified. */
+	export interface CanaryTimelineFormProperties {
+		Created: FormControl<Date | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		LastStarted: FormControl<Date | null | undefined>,
+		LastStopped: FormControl<Date | null | undefined>,
+	}
+	export function CreateCanaryTimelineFormGroup() {
+		return new FormGroup<CanaryTimelineFormProperties>({
+			Created: new FormControl<Date | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			LastStarted: new FormControl<Date | null | undefined>(undefined),
+			LastStopped: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 	export interface VpcConfigOutput {
 		VpcId?: string | null;
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+
+	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
+	export interface VpcConfigOutputFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcConfigOutputFormGroup() {
+		return new FormGroup<VpcConfigOutputFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagMap {
 	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
 	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteCanaryResponse {
+	}
+	export interface DeleteCanaryResponseFormProperties {
+	}
+	export function CreateDeleteCanaryResponseFormGroup() {
+		return new FormGroup<DeleteCanaryResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeCanariesResponse {
-		Canaries?: Array<Canary> | null;
+		Canaries?: Array<Canary>;
 		NextToken?: string | null;
+	}
+	export interface DescribeCanariesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCanariesResponseFormGroup() {
+		return new FormGroup<DescribeCanariesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCanariesLastRunResponse {
-		CanariesLastRun?: Array<CanaryLastRun> | null;
+		CanariesLastRun?: Array<CanaryLastRun>;
 		NextToken?: string | null;
+	}
+	export interface DescribeCanariesLastRunResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCanariesLastRunResponseFormGroup() {
+		return new FormGroup<DescribeCanariesLastRunResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -124,7 +299,18 @@ export namespace MyNS {
 		CanaryName?: string | null;
 
 		/** This structure contains the details about one run of one canary. */
-		LastRun?: CanaryRun | null;
+		LastRun?: CanaryRun;
+	}
+
+	/** This structure contains information about the most recent run of a single canary. */
+	export interface CanaryLastRunFormProperties {
+		CanaryName: FormControl<string | null | undefined>,
+	}
+	export function CreateCanaryLastRunFormGroup() {
+		return new FormGroup<CanaryLastRunFormProperties>({
+			CanaryName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,11 +319,24 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** This structure contains the status information about a canary run. */
-		Status?: CanaryRunStatus | null;
+		Status?: CanaryRunStatus;
 
 		/** This structure contains the start and end times of a single canary run. */
-		Timeline?: CanaryRunTimeline | null;
+		Timeline?: CanaryRunTimeline;
 		ArtifactS3Location?: string | null;
+	}
+
+	/** This structure contains the details about one run of one canary. */
+	export interface CanaryRunFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ArtifactS3Location: FormControl<string | null | undefined>,
+	}
+	export function CreateCanaryRunFormGroup() {
+		return new FormGroup<CanaryRunFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -146,6 +345,21 @@ export namespace MyNS {
 		State?: CanaryRunStatusState | null;
 		StateReason?: string | null;
 		StateReasonCode?: CanaryRunStatusStateReasonCode | null;
+	}
+
+	/** This structure contains the status information about a canary run. */
+	export interface CanaryRunStatusFormProperties {
+		State: FormControl<CanaryRunStatusState | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		StateReasonCode: FormControl<CanaryRunStatusStateReasonCode | null | undefined>,
+	}
+	export function CreateCanaryRunStatusFormGroup() {
+		return new FormGroup<CanaryRunStatusFormProperties>({
+			State: new FormControl<CanaryRunStatusState | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReasonCode: new FormControl<CanaryRunStatusStateReasonCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CanaryRunStatusState { RUNNING = 0, PASSED = 1, FAILED = 2 }
@@ -159,9 +373,31 @@ export namespace MyNS {
 		Completed?: Date | null;
 	}
 
+	/** This structure contains the start and end times of a single canary run. */
+	export interface CanaryRunTimelineFormProperties {
+		Started: FormControl<Date | null | undefined>,
+		Completed: FormControl<Date | null | undefined>,
+	}
+	export function CreateCanaryRunTimelineFormGroup() {
+		return new FormGroup<CanaryRunTimelineFormProperties>({
+			Started: new FormControl<Date | null | undefined>(undefined),
+			Completed: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeRuntimeVersionsResponse {
-		RuntimeVersions?: Array<RuntimeVersion> | null;
+		RuntimeVersions?: Array<RuntimeVersion>;
 		NextToken?: string | null;
+	}
+	export interface DescribeRuntimeVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRuntimeVersionsResponseFormGroup() {
+		return new FormGroup<DescribeRuntimeVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -173,34 +409,109 @@ export namespace MyNS {
 		DeprecationDate?: Date | null;
 	}
 
+	/** This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>. */
+	export interface RuntimeVersionFormProperties {
+		VersionName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ReleaseDate: FormControl<Date | null | undefined>,
+		DeprecationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateRuntimeVersionFormGroup() {
+		return new FormGroup<RuntimeVersionFormProperties>({
+			VersionName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ReleaseDate: new FormControl<Date | null | undefined>(undefined),
+			DeprecationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetCanaryResponse {
 
 		/** This structure contains all information about one canary in your account. */
-		Canary?: Canary | null;
+		Canary?: Canary;
+	}
+	export interface GetCanaryResponseFormProperties {
+	}
+	export function CreateGetCanaryResponseFormGroup() {
+		return new FormGroup<GetCanaryResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetCanaryRunsResponse {
-		CanaryRuns?: Array<CanaryRun> | null;
+		CanaryRuns?: Array<CanaryRun>;
 		NextToken?: string | null;
+	}
+	export interface GetCanaryRunsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCanaryRunsResponseFormGroup() {
+		return new FormGroup<GetCanaryRunsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap | null;
+		Tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartCanaryResponse {
 	}
+	export interface StartCanaryResponseFormProperties {
+	}
+	export function CreateStartCanaryResponseFormGroup() {
+		return new FormGroup<StartCanaryResponseFormProperties>({
+		});
+
+	}
 
 	export interface StopCanaryResponse {
+	}
+	export interface StopCanaryResponseFormProperties {
+	}
+	export function CreateStopCanaryResponseFormGroup() {
+		return new FormGroup<StopCanaryResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
 	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateCanaryResponse {
+	}
+	export interface UpdateCanaryResponseFormProperties {
+	}
+	export function CreateUpdateCanaryResponseFormGroup() {
+		return new FormGroup<UpdateCanaryResponseFormProperties>({
+		});
+
 	}
 
 
@@ -213,11 +524,43 @@ export namespace MyNS {
 		Handler: string;
 	}
 
+	/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.  */
+	export interface CanaryCodeInputFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+		S3Version: FormControl<string | null | undefined>,
+		ZipFile: FormControl<string | null | undefined>,
+		Handler: FormControl<string | null | undefined>,
+	}
+	export function CreateCanaryCodeInputFormGroup() {
+		return new FormGroup<CanaryCodeInputFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+			S3Version: new FormControl<string | null | undefined>(undefined),
+			ZipFile: new FormControl<string | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A structure that contains input information for a canary run. */
 	export interface CanaryRunConfigInput {
 		TimeoutInSeconds: number;
 		MemoryInMB?: number | null;
+	}
+
+	/** A structure that contains input information for a canary run. */
+	export interface CanaryRunConfigInputFormProperties {
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+		MemoryInMB: FormControl<number | null | undefined>,
+	}
+	export function CreateCanaryRunConfigInputFormGroup() {
+		return new FormGroup<CanaryRunConfigInputFormProperties>({
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CanaryRunState { RUNNING = 0, PASSED = 1, FAILED = 2 }
@@ -231,6 +574,19 @@ export namespace MyNS {
 		DurationInSeconds?: number | null;
 	}
 
+	/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
+	export interface CanaryScheduleInputFormProperties {
+		Expression: FormControl<string | null | undefined>,
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCanaryScheduleInputFormGroup() {
+		return new FormGroup<CanaryScheduleInputFormProperties>({
+			Expression: new FormControl<string | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CanaryState { CREATING = 0, READY = 1, STARTING = 2, RUNNING = 3, UPDATING = 4, STOPPING = 5, STOPPED = 6, ERROR = 7, DELETING = 8 }
 
 	export enum CanaryStateReasonCode { INVALID_PERMISSIONS = 0 }
@@ -238,8 +594,17 @@ export namespace MyNS {
 
 	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
 	export interface VpcConfigInput {
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+
+	/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
+	export interface VpcConfigInputFormProperties {
+	}
+	export function CreateVpcConfigInputFormGroup() {
+		return new FormGroup<VpcConfigInputFormProperties>({
+		});
+
 	}
 
 	export interface CreateCanaryRequest {
@@ -260,75 +625,202 @@ export namespace MyNS {
 		Schedule: CanaryScheduleInput;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: CanaryRunConfigInput | null;
+		RunConfig?: CanaryRunConfigInput;
 		SuccessRetentionPeriodInDays?: number | null;
 		FailureRetentionPeriodInDays?: number | null;
 		RuntimeVersion: string;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: VpcConfigInput | null;
-		Tags?: TagMap | null;
+		VpcConfig?: VpcConfigInput;
+		Tags?: TagMap;
+	}
+	export interface CreateCanaryRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ArtifactS3Location: FormControl<string | null | undefined>,
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+		RuntimeVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCanaryRequestFormGroup() {
+		return new FormGroup<CreateCanaryRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteCanaryRequest {
+	}
+	export interface DeleteCanaryRequestFormProperties {
+	}
+	export function CreateDeleteCanaryRequestFormGroup() {
+		return new FormGroup<DeleteCanaryRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCanariesLastRunRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeCanariesLastRunRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeCanariesLastRunRequestFormGroup() {
+		return new FormGroup<DescribeCanariesLastRunRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCanariesRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeCanariesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeCanariesRequestFormGroup() {
+		return new FormGroup<DescribeCanariesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRuntimeVersionsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeRuntimeVersionsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeRuntimeVersionsRequestFormGroup() {
+		return new FormGroup<DescribeRuntimeVersionsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCanaryRequest {
+	}
+	export interface GetCanaryRequestFormProperties {
+	}
+	export function CreateGetCanaryRequestFormGroup() {
+		return new FormGroup<GetCanaryRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetCanaryRunsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetCanaryRunsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetCanaryRunsRequestFormGroup() {
+		return new FormGroup<GetCanaryRunsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartCanaryRequest {
 	}
+	export interface StartCanaryRequestFormProperties {
+	}
+	export function CreateStartCanaryRequestFormGroup() {
+		return new FormGroup<StartCanaryRequestFormProperties>({
+		});
+
+	}
 
 	export interface StopCanaryRequest {
+	}
+	export interface StopCanaryRequestFormProperties {
+	}
+	export function CreateStopCanaryRequestFormGroup() {
+		return new FormGroup<StopCanaryRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		Tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCanaryRequest {
 
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
-		Code?: CanaryCodeInput | null;
+		Code?: CanaryCodeInput;
 		ExecutionRoleArn?: string | null;
 		RuntimeVersion?: string | null;
 
 		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
-		Schedule?: CanaryScheduleInput | null;
+		Schedule?: CanaryScheduleInput;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: CanaryRunConfigInput | null;
+		RunConfig?: CanaryRunConfigInput;
 		SuccessRetentionPeriodInDays?: number | null;
 		FailureRetentionPeriodInDays?: number | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: VpcConfigInput | null;
+		VpcConfig?: VpcConfigInput;
+	}
+	export interface UpdateCanaryRequestFormProperties {
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		RuntimeVersion: FormControl<string | null | undefined>,
+		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateCanaryRequestFormGroup() {
+		return new FormGroup<UpdateCanaryRequestFormProperties>({
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -511,7 +1003,7 @@ export namespace MyNS {
 		Schedule: CreateCanaryPostBodySchedule;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: CreateCanaryPostBodyRunConfig | null;
+		RunConfig?: CreateCanaryPostBodyRunConfig;
 
 		/**
 		 * The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
@@ -536,10 +1028,73 @@ export namespace MyNS {
 		RuntimeVersion: string;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: CreateCanaryPostBodyVpcConfig | null;
+		VpcConfig?: CreateCanaryPostBodyVpcConfig;
 
 		/** <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> */
-		Tags?: {[id: string]: string } | null;
+		Tags?: {[id: string]: string };
+	}
+	export interface CreateCanaryPostBodyFormProperties {
+
+		/**
+		 * <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+		 * Required
+		 * Max length: 21
+		 * Min length: 1
+		 * Pattern: ^[0-9a-z_\-]+$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		ArtifactS3Location: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
+		 * Required
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
+		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
+		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		RuntimeVersion: FormControl<string | null | undefined>,
+
+		/** <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateCanaryPostBodyFormGroup() {
+		return new FormGroup<CreateCanaryPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCanaryPostBodyCode {
@@ -549,26 +1104,72 @@ export namespace MyNS {
 		ZipFile?: string | null;
 		Handler?: string | null;
 	}
+	export interface CreateCanaryPostBodyCodeFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+		S3Version: FormControl<string | null | undefined>,
+		ZipFile: FormControl<string | null | undefined>,
+		Handler: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCanaryPostBodyCodeFormGroup() {
+		return new FormGroup<CreateCanaryPostBodyCodeFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+			S3Version: new FormControl<string | null | undefined>(undefined),
+			ZipFile: new FormControl<string | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateCanaryPostBodySchedule {
 		Expression?: string | null;
 		DurationInSeconds?: number | null;
+	}
+	export interface CreateCanaryPostBodyScheduleFormProperties {
+		Expression: FormControl<string | null | undefined>,
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateCanaryPostBodyScheduleFormGroup() {
+		return new FormGroup<CreateCanaryPostBodyScheduleFormProperties>({
+			Expression: new FormControl<string | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCanaryPostBodyRunConfig {
 		TimeoutInSeconds?: number | null;
 		MemoryInMB?: number | null;
 	}
+	export interface CreateCanaryPostBodyRunConfigFormProperties {
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+		MemoryInMB: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateCanaryPostBodyRunConfigFormGroup() {
+		return new FormGroup<CreateCanaryPostBodyRunConfigFormProperties>({
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateCanaryPostBodyVpcConfig {
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+	export interface CreateCanaryPostBodyVpcConfigFormProperties {
+	}
+	export function CreateCreateCanaryPostBodyVpcConfigFormGroup() {
+		return new FormGroup<CreateCanaryPostBodyVpcConfigFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCanaryPatchBody {
 
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
-		Code?: UpdateCanaryPatchBodyCode | null;
+		Code?: UpdateCanaryPatchBodyCode;
 
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
@@ -584,10 +1185,10 @@ export namespace MyNS {
 		RuntimeVersion?: string | null;
 
 		/** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs. */
-		Schedule?: UpdateCanaryPatchBodySchedule | null;
+		Schedule?: UpdateCanaryPatchBodySchedule;
 
 		/** A structure that contains input information for a canary run. */
-		RunConfig?: UpdateCanaryPatchBodyRunConfig | null;
+		RunConfig?: UpdateCanaryPatchBodyRunConfig;
 
 		/**
 		 * The number of days to retain data about successful runs of this canary.
@@ -604,7 +1205,45 @@ export namespace MyNS {
 		FailureRetentionPeriodInDays?: number | null;
 
 		/** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>. */
-		VpcConfig?: UpdateCanaryPatchBodyVpcConfig | null;
+		VpcConfig?: UpdateCanaryPatchBodyVpcConfig;
+	}
+	export interface UpdateCanaryPatchBodyFormProperties {
+
+		/**
+		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
+		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
+		 */
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		RuntimeVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of days to retain data about successful runs of this canary.
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
+		SuccessRetentionPeriodInDays: FormControl<number | null | undefined>,
+
+		/**
+		 * The number of days to retain data about failed runs of this canary.
+		 * Minimum: 1
+		 * Maximum: 1024
+		 */
+		FailureRetentionPeriodInDays: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateCanaryPatchBodyFormGroup() {
+		return new FormGroup<UpdateCanaryPatchBodyFormProperties>({
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined),
+			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCanaryPatchBodyCode {
@@ -614,20 +1253,66 @@ export namespace MyNS {
 		ZipFile?: string | null;
 		Handler?: string | null;
 	}
+	export interface UpdateCanaryPatchBodyCodeFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+		S3Version: FormControl<string | null | undefined>,
+		ZipFile: FormControl<string | null | undefined>,
+		Handler: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCanaryPatchBodyCodeFormGroup() {
+		return new FormGroup<UpdateCanaryPatchBodyCodeFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+			S3Version: new FormControl<string | null | undefined>(undefined),
+			ZipFile: new FormControl<string | null | undefined>(undefined),
+			Handler: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCanaryPatchBodySchedule {
 		Expression?: string | null;
 		DurationInSeconds?: number | null;
+	}
+	export interface UpdateCanaryPatchBodyScheduleFormProperties {
+		Expression: FormControl<string | null | undefined>,
+		DurationInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateCanaryPatchBodyScheduleFormGroup() {
+		return new FormGroup<UpdateCanaryPatchBodyScheduleFormProperties>({
+			Expression: new FormControl<string | null | undefined>(undefined),
+			DurationInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCanaryPatchBodyRunConfig {
 		TimeoutInSeconds?: number | null;
 		MemoryInMB?: number | null;
 	}
+	export interface UpdateCanaryPatchBodyRunConfigFormProperties {
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+		MemoryInMB: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateCanaryPatchBodyRunConfigFormGroup() {
+		return new FormGroup<UpdateCanaryPatchBodyRunConfigFormProperties>({
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			MemoryInMB: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCanaryPatchBodyVpcConfig {
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+	export interface UpdateCanaryPatchBodyVpcConfigFormProperties {
+	}
+	export function CreateUpdateCanaryPatchBodyVpcConfigFormGroup() {
+		return new FormGroup<UpdateCanaryPatchBodyVpcConfigFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCanariesPostBody {
@@ -645,6 +1330,28 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface DescribeCanariesPostBodyFormProperties {
+
+		/**
+		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
+		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.
+		 * Minimum: 1
+		 * Maximum: 20
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeCanariesPostBodyFormGroup() {
+		return new FormGroup<DescribeCanariesPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCanariesLastRunPostBody {
 
@@ -660,6 +1367,28 @@ export namespace MyNS {
 		 * Maximum: 100
 		 */
 		MaxResults?: number | null;
+	}
+	export interface DescribeCanariesLastRunPostBodyFormProperties {
+
+		/**
+		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.
+		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeCanariesLastRunPostBodyFormGroup() {
+		return new FormGroup<DescribeCanariesLastRunPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRuntimeVersionsPostBody {
@@ -677,6 +1406,28 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface DescribeRuntimeVersionsPostBodyFormProperties {
+
+		/**
+		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
+		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeRuntimeVersionsPostBodyFormGroup() {
+		return new FormGroup<DescribeRuntimeVersionsPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCanaryRunsPostBody {
 
@@ -693,6 +1444,28 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 	}
+	export interface GetCanaryRunsPostBodyFormProperties {
+
+		/**
+		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
+		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetCanaryRunsPostBodyFormGroup() {
+		return new FormGroup<GetCanaryRunsPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -701,6 +1474,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The list of key-value pairs to associate with the canary.
+		 * Required
+		 */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

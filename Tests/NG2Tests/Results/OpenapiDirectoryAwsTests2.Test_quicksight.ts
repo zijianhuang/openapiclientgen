@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelIngestionResponse {
 		Arn?: string | null;
@@ -8,23 +9,80 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface CancelIngestionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		IngestionId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCancelIngestionResponseFormGroup() {
+		return new FormGroup<CancelIngestionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			IngestionId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterValueException {
 	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceExistsException {
 	}
+	export interface ResourceExistsExceptionFormProperties {
+	}
+	export function CreateResourceExistsExceptionFormGroup() {
+		return new FormGroup<ResourceExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalFailureException {
+	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDashboardResponse {
@@ -34,6 +92,25 @@ export namespace MyNS {
 		CreationStatus?: CreateDashboardResponseCreationStatus | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface CreateDashboardResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		VersionArn: FormControl<string | null | undefined>,
+		DashboardId: FormControl<string | null | undefined>,
+		CreationStatus: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDashboardResponseFormGroup() {
+		return new FormGroup<CreateDashboardResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			VersionArn: new FormControl<string | null | undefined>(undefined),
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			CreationStatus: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDashboardResponseCreationStatus { CREATION_IN_PROGRESS = 0, CREATION_SUCCESSFUL = 1, CREATION_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_SUCCESSFUL = 4, UPDATE_FAILED = 5 }
@@ -45,11 +122,33 @@ export namespace MyNS {
 		Values: Array<string>;
 	}
 
+	/** String parameter. */
+	export interface StringParameterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStringParameterFormGroup() {
+		return new FormGroup<StringParameterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Integer parameter. */
 	export interface IntegerParameter {
 		Name: string;
 		Values: Array<number>;
+	}
+
+	/** Integer parameter. */
+	export interface IntegerParameterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateIntegerParameterFormGroup() {
+		return new FormGroup<IntegerParameterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -59,11 +158,33 @@ export namespace MyNS {
 		Values: Array<number>;
 	}
 
+	/** Decimal parameter. */
+	export interface DecimalParameterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDecimalParameterFormGroup() {
+		return new FormGroup<DecimalParameterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Date time parameter. */
 	export interface DateTimeParameter {
 		Name: string;
 		Values: Array<string>;
+	}
+
+	/** Date time parameter. */
+	export interface DateTimeParameterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDateTimeParameterFormGroup() {
+		return new FormGroup<DateTimeParameterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -73,11 +194,33 @@ export namespace MyNS {
 		Actions: Array<string>;
 	}
 
+	/** Permission for the resource. */
+	export interface ResourcePermissionFormProperties {
+		Principal: FormControl<string | null | undefined>,
+	}
+	export function CreateResourcePermissionFormGroup() {
+		return new FormGroup<ResourcePermissionFormProperties>({
+			Principal: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Dashboard source template. */
 	export interface DashboardSourceTemplate {
 		DataSetReferences: Array<DataSetReference>;
 		Arn: string;
+	}
+
+	/** Dashboard source template. */
+	export interface DashboardSourceTemplateFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDashboardSourceTemplateFormGroup() {
+		return new FormGroup<DashboardSourceTemplateFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -87,6 +230,19 @@ export namespace MyNS {
 		DataSetArn: string;
 	}
 
+	/** Dataset reference. */
+	export interface DataSetReferenceFormProperties {
+		DataSetPlaceholder: FormControl<string | null | undefined>,
+		DataSetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDataSetReferenceFormGroup() {
+		return new FormGroup<DataSetReferenceFormProperties>({
+			DataSetPlaceholder: new FormControl<string | null | undefined>(undefined),
+			DataSetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The key or keys of the key-value pairs for the resource tag or tags assigned to the resource. */
 	export interface Tag {
@@ -94,10 +250,34 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** The key or keys of the key-value pairs for the resource tag or tags assigned to the resource. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Ad hoc (one-time) filtering option. */
 	export interface AdHocFilteringOption {
 		AvailabilityStatus?: AdHocFilteringOptionAvailabilityStatus | null;
+	}
+
+	/** Ad hoc (one-time) filtering option. */
+	export interface AdHocFilteringOptionFormProperties {
+		AvailabilityStatus: FormControl<AdHocFilteringOptionAvailabilityStatus | null | undefined>,
+	}
+	export function CreateAdHocFilteringOptionFormGroup() {
+		return new FormGroup<AdHocFilteringOptionFormProperties>({
+			AvailabilityStatus: new FormControl<AdHocFilteringOptionAvailabilityStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdHocFilteringOptionAvailabilityStatus { ENABLED = 0, DISABLED = 1 }
@@ -108,18 +288,54 @@ export namespace MyNS {
 		AvailabilityStatus?: AdHocFilteringOptionAvailabilityStatus | null;
 	}
 
+	/** Export to .csv option. */
+	export interface ExportToCSVOptionFormProperties {
+		AvailabilityStatus: FormControl<AdHocFilteringOptionAvailabilityStatus | null | undefined>,
+	}
+	export function CreateExportToCSVOptionFormGroup() {
+		return new FormGroup<ExportToCSVOptionFormProperties>({
+			AvailabilityStatus: new FormControl<AdHocFilteringOptionAvailabilityStatus | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Sheet controls option. */
 	export interface SheetControlsOption {
 		VisibilityState?: SheetControlsOptionVisibilityState | null;
 	}
 
+	/** Sheet controls option. */
+	export interface SheetControlsOptionFormProperties {
+		VisibilityState: FormControl<SheetControlsOptionVisibilityState | null | undefined>,
+	}
+	export function CreateSheetControlsOptionFormGroup() {
+		return new FormGroup<SheetControlsOptionFormProperties>({
+			VisibilityState: new FormControl<SheetControlsOptionVisibilityState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SheetControlsOptionVisibilityState { EXPANDED = 0, COLLAPSED = 1 }
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedUserEditionException {
+	}
+	export interface UnsupportedUserEditionExceptionFormProperties {
+	}
+	export function CreateUnsupportedUserEditionExceptionFormGroup() {
+		return new FormGroup<UnsupportedUserEditionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataSetResponse {
@@ -130,19 +346,47 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface CreateDataSetResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		IngestionArn: FormControl<string | null | undefined>,
+		IngestionId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDataSetResponseFormGroup() {
+		return new FormGroup<CreateDataSetResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			IngestionArn: new FormControl<string | null | undefined>(undefined),
+			IngestionId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
 	export interface PhysicalTable {
 
 		/** A physical table type for relational data sources. */
-		RelationalTable?: RelationalTable | null;
+		RelationalTable?: RelationalTable;
 
 		/** A physical table type built from the results of the custom SQL query. */
-		CustomSql?: CustomSql | null;
+		CustomSql?: CustomSql;
 
 		/** A physical table type for as S3 data source. */
-		S3Source?: S3Source | null;
+		S3Source?: S3Source;
+	}
+
+	/** A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+	export interface PhysicalTableFormProperties {
+	}
+	export function CreatePhysicalTableFormGroup() {
+		return new FormGroup<PhysicalTableFormProperties>({
+		});
+
 	}
 
 
@@ -154,11 +398,39 @@ export namespace MyNS {
 		InputColumns: Array<InputColumn>;
 	}
 
+	/** A physical table type for relational data sources. */
+	export interface RelationalTableFormProperties {
+		DataSourceArn: FormControl<string | null | undefined>,
+		Schema: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateRelationalTableFormGroup() {
+		return new FormGroup<RelationalTableFormProperties>({
+			DataSourceArn: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for a column that is used as the input of a transform operation. */
 	export interface InputColumn {
 		Name: string;
 		Type: InputColumnType;
+	}
+
+	/** Metadata for a column that is used as the input of a transform operation. */
+	export interface InputColumnFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<InputColumnType | null | undefined>,
+	}
+	export function CreateInputColumnFormGroup() {
+		return new FormGroup<InputColumnFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<InputColumnType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InputColumnType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3, BIT = 4, BOOLEAN = 5, JSON = 6 }
@@ -169,7 +441,22 @@ export namespace MyNS {
 		DataSourceArn: string;
 		Name: string;
 		SqlQuery: string;
-		Columns?: Array<InputColumn> | null;
+		Columns?: Array<InputColumn>;
+	}
+
+	/** A physical table type built from the results of the custom SQL query. */
+	export interface CustomSqlFormProperties {
+		DataSourceArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		SqlQuery: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomSqlFormGroup() {
+		return new FormGroup<CustomSqlFormProperties>({
+			DataSourceArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			SqlQuery: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -178,8 +465,19 @@ export namespace MyNS {
 		DataSourceArn: string;
 
 		/** Information about the format for a source file or files. */
-		UploadSettings?: UploadSettings | null;
+		UploadSettings?: UploadSettings;
 		InputColumns: Array<InputColumn>;
+	}
+
+	/** A physical table type for as S3 data source. */
+	export interface S3SourceFormProperties {
+		DataSourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3SourceFormGroup() {
+		return new FormGroup<S3SourceFormProperties>({
+			DataSourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -192,6 +490,25 @@ export namespace MyNS {
 		Delimiter?: string | null;
 	}
 
+	/** Information about the format for a source file or files. */
+	export interface UploadSettingsFormProperties {
+		Format: FormControl<UploadSettingsFormat | null | undefined>,
+		StartFromRow: FormControl<number | null | undefined>,
+		ContainsHeader: FormControl<boolean | null | undefined>,
+		TextQualifier: FormControl<UploadSettingsTextQualifier | null | undefined>,
+		Delimiter: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadSettingsFormGroup() {
+		return new FormGroup<UploadSettingsFormProperties>({
+			Format: new FormControl<UploadSettingsFormat | null | undefined>(undefined),
+			StartFromRow: new FormControl<number | null | undefined>(undefined),
+			ContainsHeader: new FormControl<boolean | null | undefined>(undefined),
+			TextQualifier: new FormControl<UploadSettingsTextQualifier | null | undefined>(undefined),
+			Delimiter: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UploadSettingsFormat { CSV = 0, TSV = 1, CLF = 2, ELF = 3, XLSX = 4, JSON = 5 }
 
 	export enum UploadSettingsTextQualifier { DOUBLE_QUOTE = 0, SINGLE_QUOTE = 1 }
@@ -200,7 +517,7 @@ export namespace MyNS {
 	/** A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations. */
 	export interface LogicalTable {
 		Alias: string;
-		DataTransforms?: Array<TransformOperation> | null;
+		DataTransforms?: Array<TransformOperation>;
 
 		/**
 		 * Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
@@ -209,27 +526,47 @@ export namespace MyNS {
 		Source: LogicalTableSource;
 	}
 
+	/** A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations. */
+	export interface LogicalTableFormProperties {
+		Alias: FormControl<string | null | undefined>,
+	}
+	export function CreateLogicalTableFormGroup() {
+		return new FormGroup<LogicalTableFormProperties>({
+			Alias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
 	export interface TransformOperation {
 
 		/** A transform operation that projects columns. Operations that come after a projection can only refer to projected columns. */
-		ProjectOperation?: ProjectOperation | null;
+		ProjectOperation?: ProjectOperation;
 
 		/** A transform operation that filters rows based on a condition. */
-		FilterOperation?: FilterOperation | null;
+		FilterOperation?: FilterOperation;
 
 		/** A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure. */
-		CreateColumnsOperation?: CreateColumnsOperation | null;
+		CreateColumnsOperation?: CreateColumnsOperation;
 
 		/** A transform operation that renames a column. */
-		RenameColumnOperation?: RenameColumnOperation | null;
+		RenameColumnOperation?: RenameColumnOperation;
 
 		/** A transform operation that casts a column to a different type. */
-		CastColumnTypeOperation?: CastColumnTypeOperation | null;
+		CastColumnTypeOperation?: CastColumnTypeOperation;
 
 		/** A transform operation that tags a column with additional information. */
-		TagColumnOperation?: TagColumnOperation | null;
+		TagColumnOperation?: TagColumnOperation;
+	}
+
+	/** A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+	export interface TransformOperationFormProperties {
+	}
+	export function CreateTransformOperationFormGroup() {
+		return new FormGroup<TransformOperationFormProperties>({
+		});
+
 	}
 
 
@@ -238,16 +575,45 @@ export namespace MyNS {
 		ProjectedColumns: Array<string>;
 	}
 
+	/** A transform operation that projects columns. Operations that come after a projection can only refer to projected columns. */
+	export interface ProjectOperationFormProperties {
+	}
+	export function CreateProjectOperationFormGroup() {
+		return new FormGroup<ProjectOperationFormProperties>({
+		});
+
+	}
+
 
 	/** A transform operation that filters rows based on a condition. */
 	export interface FilterOperation {
 		ConditionExpression: string;
 	}
 
+	/** A transform operation that filters rows based on a condition. */
+	export interface FilterOperationFormProperties {
+		ConditionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterOperationFormGroup() {
+		return new FormGroup<FilterOperationFormProperties>({
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure. */
 	export interface CreateColumnsOperation {
 		Columns: Array<CalculatedColumn>;
+	}
+
+	/** A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure. */
+	export interface CreateColumnsOperationFormProperties {
+	}
+	export function CreateCreateColumnsOperationFormGroup() {
+		return new FormGroup<CreateColumnsOperationFormProperties>({
+		});
+
 	}
 
 
@@ -258,11 +624,39 @@ export namespace MyNS {
 		Expression: string;
 	}
 
+	/** A calculated column for a dataset. */
+	export interface CalculatedColumnFormProperties {
+		ColumnName: FormControl<string | null | undefined>,
+		ColumnId: FormControl<string | null | undefined>,
+		Expression: FormControl<string | null | undefined>,
+	}
+	export function CreateCalculatedColumnFormGroup() {
+		return new FormGroup<CalculatedColumnFormProperties>({
+			ColumnName: new FormControl<string | null | undefined>(undefined),
+			ColumnId: new FormControl<string | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A transform operation that renames a column. */
 	export interface RenameColumnOperation {
 		ColumnName: string;
 		NewColumnName: string;
+	}
+
+	/** A transform operation that renames a column. */
+	export interface RenameColumnOperationFormProperties {
+		ColumnName: FormControl<string | null | undefined>,
+		NewColumnName: FormControl<string | null | undefined>,
+	}
+	export function CreateRenameColumnOperationFormGroup() {
+		return new FormGroup<RenameColumnOperationFormProperties>({
+			ColumnName: new FormControl<string | null | undefined>(undefined),
+			NewColumnName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,6 +665,21 @@ export namespace MyNS {
 		ColumnName: string;
 		NewColumnType: CastColumnTypeOperationNewColumnType;
 		Format?: string | null;
+	}
+
+	/** A transform operation that casts a column to a different type. */
+	export interface CastColumnTypeOperationFormProperties {
+		ColumnName: FormControl<string | null | undefined>,
+		NewColumnType: FormControl<CastColumnTypeOperationNewColumnType | null | undefined>,
+		Format: FormControl<string | null | undefined>,
+	}
+	export function CreateCastColumnTypeOperationFormGroup() {
+		return new FormGroup<CastColumnTypeOperationFormProperties>({
+			ColumnName: new FormControl<string | null | undefined>(undefined),
+			NewColumnType: new FormControl<CastColumnTypeOperationNewColumnType | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CastColumnTypeOperationNewColumnType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3 }
@@ -282,10 +691,32 @@ export namespace MyNS {
 		Tags: Array<ColumnTag>;
 	}
 
+	/** A transform operation that tags a column with additional information. */
+	export interface TagColumnOperationFormProperties {
+		ColumnName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagColumnOperationFormGroup() {
+		return new FormGroup<TagColumnOperationFormProperties>({
+			ColumnName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A tag for a column in a <code>TagColumnOperation</code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
 	export interface ColumnTag {
 		ColumnGeographicRole?: ColumnTagColumnGeographicRole | null;
+	}
+
+	/** A tag for a column in a <code>TagColumnOperation</code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+	export interface ColumnTagFormProperties {
+		ColumnGeographicRole: FormControl<ColumnTagColumnGeographicRole | null | undefined>,
+	}
+	export function CreateColumnTagFormGroup() {
+		return new FormGroup<ColumnTagFormProperties>({
+			ColumnGeographicRole: new FormControl<ColumnTagColumnGeographicRole | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ColumnTagColumnGeographicRole { COUNTRY = 0, STATE = 1, COUNTY = 2, CITY = 3, POSTCODE = 4, LONGITUDE = 5, LATITUDE = 6 }
@@ -295,8 +726,19 @@ export namespace MyNS {
 	export interface LogicalTableSource {
 
 		/** Join instruction. */
-		JoinInstruction?: JoinInstruction | null;
+		JoinInstruction?: JoinInstruction;
 		PhysicalTableId?: string | null;
+	}
+
+	/** Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+	export interface LogicalTableSourceFormProperties {
+		PhysicalTableId: FormControl<string | null | undefined>,
+	}
+	export function CreateLogicalTableSourceFormGroup() {
+		return new FormGroup<LogicalTableSourceFormProperties>({
+			PhysicalTableId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -308,6 +750,23 @@ export namespace MyNS {
 		OnClause: string;
 	}
 
+	/** Join instruction. */
+	export interface JoinInstructionFormProperties {
+		LeftOperand: FormControl<string | null | undefined>,
+		RightOperand: FormControl<string | null | undefined>,
+		Type: FormControl<JoinInstructionType | null | undefined>,
+		OnClause: FormControl<string | null | undefined>,
+	}
+	export function CreateJoinInstructionFormGroup() {
+		return new FormGroup<JoinInstructionFormProperties>({
+			LeftOperand: new FormControl<string | null | undefined>(undefined),
+			RightOperand: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<JoinInstructionType | null | undefined>(undefined),
+			OnClause: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum JoinInstructionType { INNER = 0, OUTER = 1, LEFT = 2, RIGHT = 3 }
 
 
@@ -315,7 +774,16 @@ export namespace MyNS {
 	export interface ColumnGroup {
 
 		/** Geospatial column group that denotes a hierarchy. */
-		GeoSpatialColumnGroup?: GeoSpatialColumnGroup | null;
+		GeoSpatialColumnGroup?: GeoSpatialColumnGroup;
+	}
+
+	/** Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+	export interface ColumnGroupFormProperties {
+	}
+	export function CreateColumnGroupFormGroup() {
+		return new FormGroup<ColumnGroupFormProperties>({
+		});
+
 	}
 
 
@@ -326,11 +794,31 @@ export namespace MyNS {
 		Columns: Array<string>;
 	}
 
+	/** Geospatial column group that denotes a hierarchy. */
+	export interface GeoSpatialColumnGroupFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CountryCode: FormControl<GeoSpatialColumnGroupCountryCode | null | undefined>,
+	}
+	export function CreateGeoSpatialColumnGroupFormGroup() {
+		return new FormGroup<GeoSpatialColumnGroupFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CountryCode: new FormControl<GeoSpatialColumnGroupCountryCode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GeoSpatialColumnGroupCountryCode { US = 0 }
 
 	export enum RowLevelPermissionPolicy { GRANT_ACCESS = 0, DENY_ACCESS = 1 }
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataSourceResponse {
@@ -340,6 +828,23 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface CreateDataSourceResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSourceId: FormControl<string | null | undefined>,
+		CreationStatus: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDataSourceResponseFormGroup() {
+		return new FormGroup<CreateDataSourceResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			CreationStatus: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Amazon Elasticsearch Service parameters. */
@@ -347,10 +852,32 @@ export namespace MyNS {
 		Domain: string;
 	}
 
+	/** Amazon Elasticsearch Service parameters. */
+	export interface AmazonElasticsearchParametersFormProperties {
+		Domain: FormControl<string | null | undefined>,
+	}
+	export function CreateAmazonElasticsearchParametersFormGroup() {
+		return new FormGroup<AmazonElasticsearchParametersFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Amazon Athena parameters. */
 	export interface AthenaParameters {
 		WorkGroup?: string | null;
+	}
+
+	/** Amazon Athena parameters. */
+	export interface AthenaParametersFormProperties {
+		WorkGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateAthenaParametersFormGroup() {
+		return new FormGroup<AthenaParametersFormProperties>({
+			WorkGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -361,6 +888,21 @@ export namespace MyNS {
 		Database: string;
 	}
 
+	/** Amazon Aurora parameters. */
+	export interface AuroraParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateAuroraParametersFormGroup() {
+		return new FormGroup<AuroraParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Amazon Aurora with PostgreSQL compatibility parameters. */
 	export interface AuroraPostgreSqlParameters {
@@ -369,16 +911,53 @@ export namespace MyNS {
 		Database: string;
 	}
 
+	/** Amazon Aurora with PostgreSQL compatibility parameters. */
+	export interface AuroraPostgreSqlParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateAuroraPostgreSqlParametersFormGroup() {
+		return new FormGroup<AuroraPostgreSqlParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** AWS IoT Analytics parameters. */
 	export interface AwsIotAnalyticsParameters {
 		DataSetName: string;
 	}
 
+	/** AWS IoT Analytics parameters. */
+	export interface AwsIotAnalyticsParametersFormProperties {
+		DataSetName: FormControl<string | null | undefined>,
+	}
+	export function CreateAwsIotAnalyticsParametersFormGroup() {
+		return new FormGroup<AwsIotAnalyticsParametersFormProperties>({
+			DataSetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Jira parameters. */
 	export interface JiraParameters {
 		SiteBaseUrl: string;
+	}
+
+	/** Jira parameters. */
+	export interface JiraParametersFormProperties {
+		SiteBaseUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateJiraParametersFormGroup() {
+		return new FormGroup<JiraParametersFormProperties>({
+			SiteBaseUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -389,12 +968,42 @@ export namespace MyNS {
 		Database: string;
 	}
 
+	/** MariaDB parameters. */
+	export interface MariaDbParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateMariaDbParametersFormGroup() {
+		return new FormGroup<MariaDbParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** MySQL parameters. */
 	export interface MySqlParameters {
 		Host: string;
 		Port: number;
 		Database: string;
+	}
+
+	/** MySQL parameters. */
+	export interface MySqlParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateMySqlParametersFormGroup() {
+		return new FormGroup<MySqlParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -405,12 +1014,42 @@ export namespace MyNS {
 		Database: string;
 	}
 
+	/** PostgreSQL parameters. */
+	export interface PostgreSqlParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreatePostgreSqlParametersFormGroup() {
+		return new FormGroup<PostgreSqlParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Presto parameters. */
 	export interface PrestoParameters {
 		Host: string;
 		Port: number;
 		Catalog: string;
+	}
+
+	/** Presto parameters. */
+	export interface PrestoParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Catalog: FormControl<string | null | undefined>,
+	}
+	export function CreatePrestoParametersFormGroup() {
+		return new FormGroup<PrestoParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Catalog: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -420,6 +1059,19 @@ export namespace MyNS {
 		Database: string;
 	}
 
+	/** Amazon RDS parameters. */
+	export interface RdsParametersFormProperties {
+		InstanceId: FormControl<string | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateRdsParametersFormGroup() {
+		return new FormGroup<RdsParametersFormProperties>({
+			InstanceId: new FormControl<string | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
 	export interface RedshiftParameters {
@@ -427,6 +1079,23 @@ export namespace MyNS {
 		Port?: number | null;
 		Database: string;
 		ClusterId?: string | null;
+	}
+
+	/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
+	export interface RedshiftParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+		ClusterId: FormControl<string | null | undefined>,
+	}
+	export function CreateRedshiftParametersFormGroup() {
+		return new FormGroup<RedshiftParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+			ClusterId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -440,6 +1109,15 @@ export namespace MyNS {
 		ManifestFileLocation: ManifestFileLocation;
 	}
 
+	/** S3 parameters. */
+	export interface S3ParametersFormProperties {
+	}
+	export function CreateS3ParametersFormGroup() {
+		return new FormGroup<S3ParametersFormProperties>({
+		});
+
+	}
+
 
 	/** Amazon S3 manifest file location. */
 	export interface ManifestFileLocation {
@@ -447,10 +1125,34 @@ export namespace MyNS {
 		Key: string;
 	}
 
+	/** Amazon S3 manifest file location. */
+	export interface ManifestFileLocationFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateManifestFileLocationFormGroup() {
+		return new FormGroup<ManifestFileLocationFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ServiceNow parameters. */
 	export interface ServiceNowParameters {
 		SiteBaseUrl: string;
+	}
+
+	/** ServiceNow parameters. */
+	export interface ServiceNowParametersFormProperties {
+		SiteBaseUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceNowParametersFormGroup() {
+		return new FormGroup<ServiceNowParametersFormProperties>({
+			SiteBaseUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -461,11 +1163,39 @@ export namespace MyNS {
 		Warehouse: string;
 	}
 
+	/** Snowflake parameters. */
+	export interface SnowflakeParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+		Warehouse: FormControl<string | null | undefined>,
+	}
+	export function CreateSnowflakeParametersFormGroup() {
+		return new FormGroup<SnowflakeParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+			Warehouse: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Spark parameters. */
 	export interface SparkParameters {
 		Host: string;
 		Port: number;
+	}
+
+	/** Spark parameters. */
+	export interface SparkParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateSparkParametersFormGroup() {
+		return new FormGroup<SparkParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -476,12 +1206,42 @@ export namespace MyNS {
 		Database: string;
 	}
 
+	/** SQL Server parameters. */
+	export interface SqlServerParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateSqlServerParametersFormGroup() {
+		return new FormGroup<SqlServerParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Teradata parameters. */
 	export interface TeradataParameters {
 		Host: string;
 		Port: number;
 		Database: string;
+	}
+
+	/** Teradata parameters. */
+	export interface TeradataParametersFormProperties {
+		Host: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		Database: FormControl<string | null | undefined>,
+	}
+	export function CreateTeradataParametersFormGroup() {
+		return new FormGroup<TeradataParametersFormProperties>({
+			Host: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			Database: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -491,6 +1251,19 @@ export namespace MyNS {
 		MaxRows: number;
 	}
 
+	/** Twitter parameters. */
+	export interface TwitterParametersFormProperties {
+		Query: FormControl<string | null | undefined>,
+		MaxRows: FormControl<number | null | undefined>,
+	}
+	export function CreateTwitterParametersFormGroup() {
+		return new FormGroup<TwitterParametersFormProperties>({
+			Query: new FormControl<string | null | undefined>(undefined),
+			MaxRows: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The combination of user name and password that are used as credentials. */
 	export interface CredentialPair {
@@ -498,14 +1271,40 @@ export namespace MyNS {
 		Password: string;
 	}
 
+	/** The combination of user name and password that are used as credentials. */
+	export interface CredentialPairFormProperties {
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateCredentialPairFormGroup() {
+		return new FormGroup<CredentialPairFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response object for this operation. */
 	export interface CreateGroupResponse {
 
 		/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
-		Group?: Group | null;
+		Group?: Group;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+
+	/** The response object for this operation. */
+	export interface CreateGroupResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateGroupResponseFormGroup() {
+		return new FormGroup<CreateGroupResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -517,18 +1316,60 @@ export namespace MyNS {
 		PrincipalId?: string | null;
 	}
 
+	/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
+	export interface GroupFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		PrincipalId: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupFormGroup() {
+		return new FormGroup<GroupFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			PrincipalId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PreconditionNotMetException {
+	}
+	export interface PreconditionNotMetExceptionFormProperties {
+	}
+	export function CreatePreconditionNotMetExceptionFormGroup() {
+		return new FormGroup<PreconditionNotMetExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceUnavailableException {
+	}
+	export interface ResourceUnavailableExceptionFormProperties {
+	}
+	export function CreateResourceUnavailableExceptionFormGroup() {
+		return new FormGroup<ResourceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateGroupMembershipResponse {
 
 		/** A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. . */
-		GroupMember?: GroupMember | null;
+		GroupMember?: GroupMember;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface CreateGroupMembershipResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateGroupMembershipResponseFormGroup() {
+		return new FormGroup<CreateGroupMembershipResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -538,22 +1379,68 @@ export namespace MyNS {
 		MemberName?: string | null;
 	}
 
+	/** A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. . */
+	export interface GroupMemberFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		MemberName: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupMemberFormGroup() {
+		return new FormGroup<GroupMemberFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			MemberName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateIAMPolicyAssignmentResponse {
 		AssignmentName?: string | null;
 		AssignmentId?: string | null;
 		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 		PolicyArn?: string | null;
-		Identities?: IdentityMap | null;
+		Identities?: IdentityMap;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface CreateIAMPolicyAssignmentResponseFormProperties {
+		AssignmentName: FormControl<string | null | undefined>,
+		AssignmentId: FormControl<string | null | undefined>,
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+		PolicyArn: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateIAMPolicyAssignmentResponseFormGroup() {
+		return new FormGroup<CreateIAMPolicyAssignmentResponseFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateIAMPolicyAssignmentResponseAssignmentStatus { ENABLED = 0, DRAFT = 1, DISABLED = 2 }
 
 	export interface IdentityMap {
 	}
+	export interface IdentityMapFormProperties {
+	}
+	export function CreateIdentityMapFormGroup() {
+		return new FormGroup<IdentityMapFormProperties>({
+		});
+
+	}
 
 	export interface ConcurrentUpdatingException {
+	}
+	export interface ConcurrentUpdatingExceptionFormProperties {
+	}
+	export function CreateConcurrentUpdatingExceptionFormGroup() {
+		return new FormGroup<ConcurrentUpdatingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateIngestionResponse {
@@ -562,6 +1449,23 @@ export namespace MyNS {
 		IngestionStatus?: CreateIngestionResponseIngestionStatus | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface CreateIngestionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		IngestionId: FormControl<string | null | undefined>,
+		IngestionStatus: FormControl<CreateIngestionResponseIngestionStatus | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateIngestionResponseFormGroup() {
+		return new FormGroup<CreateIngestionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			IngestionId: new FormControl<string | null | undefined>(undefined),
+			IngestionStatus: new FormControl<CreateIngestionResponseIngestionStatus | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateIngestionResponseIngestionStatus { INITIALIZED = 0, QUEUED = 1, RUNNING = 2, FAILED = 3, COMPLETED = 4, CANCELLED = 5 }
@@ -574,6 +1478,25 @@ export namespace MyNS {
 		Status?: number | null;
 		RequestId?: string | null;
 	}
+	export interface CreateTemplateResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		VersionArn: FormControl<string | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		CreationStatus: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTemplateResponseFormGroup() {
+		return new FormGroup<CreateTemplateResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			VersionArn: new FormControl<string | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			CreationStatus: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The source analysis of the template. */
@@ -582,18 +1505,51 @@ export namespace MyNS {
 		DataSetReferences: Array<DataSetReference>;
 	}
 
+	/** The source analysis of the template. */
+	export interface TemplateSourceAnalysisFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateSourceAnalysisFormGroup() {
+		return new FormGroup<TemplateSourceAnalysisFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The source template of the template. */
 	export interface TemplateSourceTemplate {
 		Arn: string;
 	}
 
+	/** The source template of the template. */
+	export interface TemplateSourceTemplateFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateSourceTemplateFormGroup() {
+		return new FormGroup<TemplateSourceTemplateFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateTemplateAliasResponse {
 
 		/** The template alias. */
-		TemplateAlias?: TemplateAlias | null;
+		TemplateAlias?: TemplateAlias;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface CreateTemplateAliasResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTemplateAliasResponseFormGroup() {
+		return new FormGroup<CreateTemplateAliasResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -604,11 +1560,41 @@ export namespace MyNS {
 		TemplateVersionNumber?: number | null;
 	}
 
+	/** The template alias. */
+	export interface TemplateAliasFormProperties {
+		AliasName: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		TemplateVersionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateTemplateAliasFormGroup() {
+		return new FormGroup<TemplateAliasFormProperties>({
+			AliasName: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			TemplateVersionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteDashboardResponse {
 		Status?: number | null;
 		Arn?: string | null;
 		DashboardId?: string | null;
 		RequestId?: string | null;
+	}
+	export interface DeleteDashboardResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		DashboardId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDashboardResponseFormGroup() {
+		return new FormGroup<DeleteDashboardResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDataSetResponse {
@@ -617,6 +1603,21 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface DeleteDataSetResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteDataSetResponseFormGroup() {
+		return new FormGroup<DeleteDataSetResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDataSourceResponse {
 		Arn?: string | null;
@@ -624,15 +1625,52 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface DeleteDataSourceResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSourceId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteDataSourceResponseFormGroup() {
+		return new FormGroup<DeleteDataSourceResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteGroupResponse {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface DeleteGroupResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteGroupResponseFormGroup() {
+		return new FormGroup<DeleteGroupResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteGroupMembershipResponse {
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DeleteGroupMembershipResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteGroupMembershipResponseFormGroup() {
+		return new FormGroup<DeleteGroupMembershipResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteIAMPolicyAssignmentResponse {
@@ -640,12 +1678,40 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface DeleteIAMPolicyAssignmentResponseFormProperties {
+		AssignmentName: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteIAMPolicyAssignmentResponseFormGroup() {
+		return new FormGroup<DeleteIAMPolicyAssignmentResponseFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTemplateResponse {
 		RequestId?: string | null;
 		Arn?: string | null;
 		TemplateId?: string | null;
 		Status?: number | null;
+	}
+	export interface DeleteTemplateResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteTemplateResponseFormGroup() {
+		return new FormGroup<DeleteTemplateResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteTemplateAliasResponse {
@@ -655,23 +1721,73 @@ export namespace MyNS {
 		Arn?: string | null;
 		RequestId?: string | null;
 	}
+	export interface DeleteTemplateAliasResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		AliasName: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTemplateAliasResponseFormGroup() {
+		return new FormGroup<DeleteTemplateAliasResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			AliasName: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserResponse {
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DeleteUserResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteUserResponseFormGroup() {
+		return new FormGroup<DeleteUserResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteUserByPrincipalIdResponse {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface DeleteUserByPrincipalIdResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteUserByPrincipalIdResponseFormGroup() {
+		return new FormGroup<DeleteUserByPrincipalIdResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDashboardResponse {
 
 		/** Dashboard. */
-		Dashboard?: Dashboard | null;
+		Dashboard?: Dashboard;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface DescribeDashboardResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDashboardResponseFormGroup() {
+		return new FormGroup<DescribeDashboardResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -682,23 +1798,65 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** Dashboard version. */
-		Version?: DashboardVersion | null;
+		Version?: DashboardVersion;
 		CreatedTime?: Date | null;
 		LastPublishedTime?: Date | null;
 		LastUpdatedTime?: Date | null;
+	}
+
+	/** Dashboard. */
+	export interface DashboardFormProperties {
+		DashboardId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastPublishedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDashboardFormGroup() {
+		return new FormGroup<DashboardFormProperties>({
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastPublishedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Dashboard version. */
 	export interface DashboardVersion {
 		CreatedTime?: Date | null;
-		Errors?: Array<DashboardError> | null;
+		Errors?: Array<DashboardError>;
 		VersionNumber?: number | null;
 		Status?: CreateDashboardResponseCreationStatus | null;
 		Arn?: string | null;
 		SourceEntityArn?: string | null;
-		DataSetArns?: Array<string> | null;
+		DataSetArns?: Array<string>;
 		Description?: string | null;
+	}
+
+	/** Dashboard version. */
+	export interface DashboardVersionFormProperties {
+		CreatedTime: FormControl<Date | null | undefined>,
+		VersionNumber: FormControl<number | null | undefined>,
+		Status: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		SourceEntityArn: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateDashboardVersionFormGroup() {
+		return new FormGroup<DashboardVersionFormProperties>({
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			VersionNumber: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			SourceEntityArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -708,22 +1866,61 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Dashboard error. */
+	export interface DashboardErrorFormProperties {
+		Type: FormControl<DashboardErrorType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateDashboardErrorFormGroup() {
+		return new FormGroup<DashboardErrorFormProperties>({
+			Type: new FormControl<DashboardErrorType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DashboardErrorType { ACCESS_DENIED = 0, SOURCE_NOT_FOUND = 1, DATA_SET_NOT_FOUND = 2, INTERNAL_FAILURE = 3, PARAMETER_VALUE_INCOMPATIBLE = 4, PARAMETER_TYPE_INVALID = 5, PARAMETER_NOT_FOUND = 6, COLUMN_TYPE_MISMATCH = 7, COLUMN_GEOGRAPHIC_ROLE_MISMATCH = 8, COLUMN_REPLACEMENT_MISSING = 9 }
 
 	export interface DescribeDashboardPermissionsResponse {
 		DashboardId?: string | null;
 		DashboardArn?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface DescribeDashboardPermissionsResponseFormProperties {
+		DashboardId: FormControl<string | null | undefined>,
+		DashboardArn: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDashboardPermissionsResponseFormGroup() {
+		return new FormGroup<DescribeDashboardPermissionsResponseFormProperties>({
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			DashboardArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDataSetResponse {
 
 		/** Dataset. */
-		DataSet?: DataSet | null;
+		DataSet?: DataSet;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeDataSetResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDataSetResponseFormGroup() {
+		return new FormGroup<DescribeDataSetResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -734,21 +1931,58 @@ export namespace MyNS {
 		Name?: string | null;
 		CreatedTime?: Date | null;
 		LastUpdatedTime?: Date | null;
-		PhysicalTableMap?: PhysicalTableMap | null;
-		LogicalTableMap?: LogicalTableMap | null;
-		OutputColumns?: Array<OutputColumn> | null;
+		PhysicalTableMap?: PhysicalTableMap;
+		LogicalTableMap?: LogicalTableMap;
+		OutputColumns?: Array<OutputColumn>;
 		ImportMode?: DataSetImportMode | null;
 		ConsumedSpiceCapacityInBytes?: number | null;
-		ColumnGroups?: Array<ColumnGroup> | null;
+		ColumnGroups?: Array<ColumnGroup>;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+	}
+
+	/** Dataset. */
+	export interface DataSetFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		ImportMode: FormControl<DataSetImportMode | null | undefined>,
+		ConsumedSpiceCapacityInBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateDataSetFormGroup() {
+		return new FormGroup<DataSetFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			ImportMode: new FormControl<DataSetImportMode | null | undefined>(undefined),
+			ConsumedSpiceCapacityInBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PhysicalTableMap {
 	}
+	export interface PhysicalTableMapFormProperties {
+	}
+	export function CreatePhysicalTableMapFormGroup() {
+		return new FormGroup<PhysicalTableMapFormProperties>({
+		});
+
+	}
 
 	export interface LogicalTableMap {
+	}
+	export interface LogicalTableMapFormProperties {
+	}
+	export function CreateLogicalTableMapFormGroup() {
+		return new FormGroup<LogicalTableMapFormProperties>({
+		});
+
 	}
 
 
@@ -756,6 +1990,19 @@ export namespace MyNS {
 	export interface OutputColumn {
 		Name?: string | null;
 		Type?: CastColumnTypeOperationNewColumnType | null;
+	}
+
+	/** Output column. */
+	export interface OutputColumnFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<CastColumnTypeOperationNewColumnType | null | undefined>,
+	}
+	export function CreateOutputColumnFormGroup() {
+		return new FormGroup<OutputColumnFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<CastColumnTypeOperationNewColumnType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DataSetImportMode { SPICE = 0, DIRECT_QUERY = 1 }
@@ -767,20 +2014,59 @@ export namespace MyNS {
 		PermissionPolicy: RowLevelPermissionPolicy;
 	}
 
+	/** The row-level security configuration for the dataset. */
+	export interface RowLevelPermissionDataSetFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		PermissionPolicy: FormControl<RowLevelPermissionPolicy | null | undefined>,
+	}
+	export function CreateRowLevelPermissionDataSetFormGroup() {
+		return new FormGroup<RowLevelPermissionDataSetFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			PermissionPolicy: new FormControl<RowLevelPermissionPolicy | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDataSetPermissionsResponse {
 		DataSetArn?: string | null;
 		DataSetId?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeDataSetPermissionsResponseFormProperties {
+		DataSetArn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDataSetPermissionsResponseFormGroup() {
+		return new FormGroup<DescribeDataSetPermissionsResponseFormProperties>({
+			DataSetArn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDataSourceResponse {
 
 		/** The structure of a data source. */
-		DataSource?: DataSource | null;
+		DataSource?: DataSource;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeDataSourceResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDataSourceResponseFormGroup() {
+		return new FormGroup<DescribeDataSourceResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -795,16 +2081,39 @@ export namespace MyNS {
 		LastUpdatedTime?: Date | null;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: DataSourceParameters | null;
+		DataSourceParameters?: DataSourceParameters;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: VpcConnectionProperties | null;
+		VpcConnectionProperties?: VpcConnectionProperties;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: SslProperties | null;
+		SslProperties?: SslProperties;
 
 		/** Error information for the data source creation or update. */
-		ErrorInfo?: DataSourceErrorInfo | null;
+		ErrorInfo?: DataSourceErrorInfo;
+	}
+
+	/** The structure of a data source. */
+	export interface DataSourceFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSourceId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<DataSourceType | null | undefined>,
+		Status: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDataSourceFormGroup() {
+		return new FormGroup<DataSourceFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DataSourceType | null | undefined>(undefined),
+			Status: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DataSourceType { ADOBE_ANALYTICS = 0, AMAZON_ELASTICSEARCH = 1, ATHENA = 2, AURORA = 3, AURORA_POSTGRESQL = 4, AWS_IOT_ANALYTICS = 5, GITHUB = 6, JIRA = 7, MARIADB = 8, MYSQL = 9, POSTGRESQL = 10, PRESTO = 11, REDSHIFT = 12, S3 = 13, SALESFORCE = 14, SERVICENOW = 15, SNOWFLAKE = 16, SPARK = 17, SQLSERVER = 18, TERADATA = 19, TWITTER = 20 }
@@ -814,61 +2123,70 @@ export namespace MyNS {
 	export interface DataSourceParameters {
 
 		/** Amazon Elasticsearch Service parameters. */
-		AmazonElasticsearchParameters?: AmazonElasticsearchParameters | null;
+		AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
 
 		/** Amazon Athena parameters. */
-		AthenaParameters?: AthenaParameters | null;
+		AthenaParameters?: AthenaParameters;
 
 		/** Amazon Aurora parameters. */
-		AuroraParameters?: AuroraParameters | null;
+		AuroraParameters?: AuroraParameters;
 
 		/** Amazon Aurora with PostgreSQL compatibility parameters. */
-		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters | null;
+		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
 
 		/** AWS IoT Analytics parameters. */
-		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters | null;
+		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
 
 		/** Jira parameters. */
-		JiraParameters?: JiraParameters | null;
+		JiraParameters?: JiraParameters;
 
 		/** MariaDB parameters. */
-		MariaDbParameters?: MariaDbParameters | null;
+		MariaDbParameters?: MariaDbParameters;
 
 		/** MySQL parameters. */
-		MySqlParameters?: MySqlParameters | null;
+		MySqlParameters?: MySqlParameters;
 
 		/** PostgreSQL parameters. */
-		PostgreSqlParameters?: PostgreSqlParameters | null;
+		PostgreSqlParameters?: PostgreSqlParameters;
 
 		/** Presto parameters. */
-		PrestoParameters?: PrestoParameters | null;
+		PrestoParameters?: PrestoParameters;
 
 		/** Amazon RDS parameters. */
-		RdsParameters?: RdsParameters | null;
+		RdsParameters?: RdsParameters;
 
 		/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
-		RedshiftParameters?: RedshiftParameters | null;
+		RedshiftParameters?: RedshiftParameters;
 
 		/** S3 parameters. */
-		S3Parameters?: S3Parameters | null;
+		S3Parameters?: S3Parameters;
 
 		/** ServiceNow parameters. */
-		ServiceNowParameters?: ServiceNowParameters | null;
+		ServiceNowParameters?: ServiceNowParameters;
 
 		/** Snowflake parameters. */
-		SnowflakeParameters?: SnowflakeParameters | null;
+		SnowflakeParameters?: SnowflakeParameters;
 
 		/** Spark parameters. */
-		SparkParameters?: SparkParameters | null;
+		SparkParameters?: SparkParameters;
 
 		/** SQL Server parameters. */
-		SqlServerParameters?: SqlServerParameters | null;
+		SqlServerParameters?: SqlServerParameters;
 
 		/** Teradata parameters. */
-		TeradataParameters?: TeradataParameters | null;
+		TeradataParameters?: TeradataParameters;
 
 		/** Twitter parameters. */
-		TwitterParameters?: TwitterParameters | null;
+		TwitterParameters?: TwitterParameters;
+	}
+
+	/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
+	export interface DataSourceParametersFormProperties {
+	}
+	export function CreateDataSourceParametersFormGroup() {
+		return new FormGroup<DataSourceParametersFormProperties>({
+		});
+
 	}
 
 
@@ -877,10 +2195,32 @@ export namespace MyNS {
 		VpcConnectionArn: string;
 	}
 
+	/** VPC connection properties. */
+	export interface VpcConnectionPropertiesFormProperties {
+		VpcConnectionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcConnectionPropertiesFormGroup() {
+		return new FormGroup<VpcConnectionPropertiesFormProperties>({
+			VpcConnectionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
 	export interface SslProperties {
 		DisableSsl?: boolean | null;
+	}
+
+	/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
+	export interface SslPropertiesFormProperties {
+		DisableSsl: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSslPropertiesFormGroup() {
+		return new FormGroup<SslPropertiesFormProperties>({
+			DisableSsl: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -890,30 +2230,80 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Error information for the data source creation or update. */
+	export interface DataSourceErrorInfoFormProperties {
+		Type: FormControl<DataSourceErrorInfoType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateDataSourceErrorInfoFormGroup() {
+		return new FormGroup<DataSourceErrorInfoFormProperties>({
+			Type: new FormControl<DataSourceErrorInfoType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DataSourceErrorInfoType { TIMEOUT = 0, ENGINE_VERSION_NOT_SUPPORTED = 1, UNKNOWN_HOST = 2, GENERIC_SQL_FAILURE = 3, CONFLICT = 4, UNKNOWN = 5 }
 
 	export interface DescribeDataSourcePermissionsResponse {
 		DataSourceArn?: string | null;
 		DataSourceId?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeDataSourcePermissionsResponseFormProperties {
+		DataSourceArn: FormControl<string | null | undefined>,
+		DataSourceId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDataSourcePermissionsResponseFormGroup() {
+		return new FormGroup<DescribeDataSourcePermissionsResponseFormProperties>({
+			DataSourceArn: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeGroupResponse {
 
 		/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
-		Group?: Group | null;
+		Group?: Group;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeGroupResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeGroupResponseFormGroup() {
+		return new FormGroup<DescribeGroupResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeIAMPolicyAssignmentResponse {
 
 		/** An IAM policy assignment. */
-		IAMPolicyAssignment?: IAMPolicyAssignment | null;
+		IAMPolicyAssignment?: IAMPolicyAssignment;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeIAMPolicyAssignmentResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeIAMPolicyAssignmentResponseFormGroup() {
+		return new FormGroup<DescribeIAMPolicyAssignmentResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -923,19 +2313,56 @@ export namespace MyNS {
 		AssignmentId?: string | null;
 		AssignmentName?: string | null;
 		PolicyArn?: string | null;
-		Identities?: IdentityMap | null;
+		Identities?: IdentityMap;
 		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 	}
 
+	/** An IAM policy assignment. */
+	export interface IAMPolicyAssignmentFormProperties {
+		AwsAccountId: FormControl<string | null | undefined>,
+		AssignmentId: FormControl<string | null | undefined>,
+		AssignmentName: FormControl<string | null | undefined>,
+		PolicyArn: FormControl<string | null | undefined>,
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+	}
+	export function CreateIAMPolicyAssignmentFormGroup() {
+		return new FormGroup<IAMPolicyAssignmentFormProperties>({
+			AwsAccountId: new FormControl<string | null | undefined>(undefined),
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeIngestionResponse {
 
 		/** Information about the SPICE ingestion for a dataset. */
-		Ingestion?: Ingestion | null;
+		Ingestion?: Ingestion;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeIngestionResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeIngestionResponseFormGroup() {
+		return new FormGroup<DescribeIngestionResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -946,13 +2373,13 @@ export namespace MyNS {
 		IngestionStatus: CreateIngestionResponseIngestionStatus;
 
 		/** Error information for the SPICE ingestion of a dataset. */
-		ErrorInfo?: ErrorInfo | null;
+		ErrorInfo?: ErrorInfo;
 
 		/** Information about rows for a data set SPICE ingestion. */
-		RowInfo?: RowInfo | null;
+		RowInfo?: RowInfo;
 
 		/** Information about a queued dataset SPICE ingestion. */
-		QueueInfo?: QueueInfo | null;
+		QueueInfo?: QueueInfo;
 		CreatedTime: Date;
 		IngestionTimeInSeconds?: number | null;
 		IngestionSizeInBytes?: number | null;
@@ -960,11 +2387,49 @@ export namespace MyNS {
 		RequestType?: IngestionRequestType | null;
 	}
 
+	/** Information about the SPICE ingestion for a dataset. */
+	export interface IngestionFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		IngestionId: FormControl<string | null | undefined>,
+		IngestionStatus: FormControl<CreateIngestionResponseIngestionStatus | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		IngestionTimeInSeconds: FormControl<number | null | undefined>,
+		IngestionSizeInBytes: FormControl<number | null | undefined>,
+		RequestSource: FormControl<IngestionRequestSource | null | undefined>,
+		RequestType: FormControl<IngestionRequestType | null | undefined>,
+	}
+	export function CreateIngestionFormGroup() {
+		return new FormGroup<IngestionFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			IngestionId: new FormControl<string | null | undefined>(undefined),
+			IngestionStatus: new FormControl<CreateIngestionResponseIngestionStatus | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			IngestionTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			IngestionSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			RequestSource: new FormControl<IngestionRequestSource | null | undefined>(undefined),
+			RequestType: new FormControl<IngestionRequestType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Error information for the SPICE ingestion of a dataset. */
 	export interface ErrorInfo {
 		Type?: ErrorInfoType | null;
 		Message?: string | null;
+	}
+
+	/** Error information for the SPICE ingestion of a dataset. */
+	export interface ErrorInfoFormProperties {
+		Type: FormControl<ErrorInfoType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorInfoFormGroup() {
+		return new FormGroup<ErrorInfoFormProperties>({
+			Type: new FormControl<ErrorInfoType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ErrorInfoType { FAILURE_TO_ASSUME_ROLE = 0, INGESTION_SUPERSEDED = 1, INGESTION_CANCELED = 2, DATA_SET_DELETED = 3, DATA_SET_NOT_SPICE = 4, S3_UPLOADED_FILE_DELETED = 5, S3_MANIFEST_ERROR = 6, DATA_TOLERANCE_EXCEPTION = 7, SPICE_TABLE_NOT_FOUND = 8, DATA_SET_SIZE_LIMIT_EXCEEDED = 9, ROW_SIZE_LIMIT_EXCEEDED = 10, ACCOUNT_CAPACITY_LIMIT_EXCEEDED = 11, CUSTOMER_ERROR = 12, DATA_SOURCE_NOT_FOUND = 13, IAM_ROLE_NOT_AVAILABLE = 14, CONNECTION_FAILURE = 15, SQL_TABLE_NOT_FOUND = 16, PERMISSION_DENIED = 17, SSL_CERTIFICATE_VALIDATION_FAILURE = 18, OAUTH_TOKEN_FAILURE = 19, SOURCE_API_LIMIT_EXCEEDED_FAILURE = 20, PASSWORD_AUTHENTICATION_FAILURE = 21, SQL_SCHEMA_MISMATCH_ERROR = 22, INVALID_DATE_FORMAT = 23, INVALID_DATAPREP_SYNTAX = 24, SOURCE_RESOURCE_LIMIT_EXCEEDED = 25, SQL_INVALID_PARAMETER_VALUE = 26, QUERY_TIMEOUT = 27, SQL_NUMERIC_OVERFLOW = 28, UNRESOLVABLE_HOST = 29, UNROUTABLE_HOST = 30, SQL_EXCEPTION = 31, S3_FILE_INACCESSIBLE = 32, IOT_FILE_NOT_FOUND = 33, IOT_DATA_SET_FILE_EMPTY = 34, INVALID_DATA_SOURCE_CONFIG = 35, DATA_SOURCE_AUTH_FAILED = 36, DATA_SOURCE_CONNECTION_FAILED = 37, FAILURE_TO_PROCESS_JSON_FILE = 38, INTERNAL_SERVICE_ERROR = 39 }
@@ -976,11 +2441,37 @@ export namespace MyNS {
 		RowsDropped?: number | null;
 	}
 
+	/** Information about rows for a data set SPICE ingestion. */
+	export interface RowInfoFormProperties {
+		RowsIngested: FormControl<number | null | undefined>,
+		RowsDropped: FormControl<number | null | undefined>,
+	}
+	export function CreateRowInfoFormGroup() {
+		return new FormGroup<RowInfoFormProperties>({
+			RowsIngested: new FormControl<number | null | undefined>(undefined),
+			RowsDropped: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a queued dataset SPICE ingestion. */
 	export interface QueueInfo {
 		WaitingOnIngestion: string;
 		QueuedIngestion: string;
+	}
+
+	/** Information about a queued dataset SPICE ingestion. */
+	export interface QueueInfoFormProperties {
+		WaitingOnIngestion: FormControl<string | null | undefined>,
+		QueuedIngestion: FormControl<string | null | undefined>,
+	}
+	export function CreateQueueInfoFormGroup() {
+		return new FormGroup<QueueInfoFormProperties>({
+			WaitingOnIngestion: new FormControl<string | null | undefined>(undefined),
+			QueuedIngestion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IngestionRequestSource { MANUAL = 0, SCHEDULED = 1 }
@@ -990,8 +2481,17 @@ export namespace MyNS {
 	export interface DescribeTemplateResponse {
 
 		/** <p>A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p> <p>You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.</p> */
-		Template?: Template | null;
+		Template?: Template;
 		Status?: number | null;
+	}
+	export interface DescribeTemplateResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTemplateResponseFormGroup() {
+		return new FormGroup<DescribeTemplateResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1001,22 +2501,60 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** A version of a template. */
-		Version?: TemplateVersion | null;
+		Version?: TemplateVersion;
 		TemplateId?: string | null;
 		LastUpdatedTime?: Date | null;
 		CreatedTime?: Date | null;
+	}
+
+	/** <p>A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.</p> <p>You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.</p> */
+	export interface TemplateFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTemplateFormGroup() {
+		return new FormGroup<TemplateFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A version of a template. */
 	export interface TemplateVersion {
 		CreatedTime?: Date | null;
-		Errors?: Array<TemplateError> | null;
+		Errors?: Array<TemplateError>;
 		VersionNumber?: number | null;
 		Status?: CreateDashboardResponseCreationStatus | null;
-		DataSetConfigurations?: Array<DataSetConfiguration> | null;
+		DataSetConfigurations?: Array<DataSetConfiguration>;
 		Description?: string | null;
 		SourceEntityArn?: string | null;
+	}
+
+	/** A version of a template. */
+	export interface TemplateVersionFormProperties {
+		CreatedTime: FormControl<Date | null | undefined>,
+		VersionNumber: FormControl<number | null | undefined>,
+		Status: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SourceEntityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateVersionFormGroup() {
+		return new FormGroup<TemplateVersionFormProperties>({
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			VersionNumber: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SourceEntityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1024,6 +2562,19 @@ export namespace MyNS {
 	export interface TemplateError {
 		Type?: TemplateErrorType | null;
 		Message?: string | null;
+	}
+
+	/** List of errors that occurred when the template version creation failed. */
+	export interface TemplateErrorFormProperties {
+		Type: FormControl<TemplateErrorType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateErrorFormGroup() {
+		return new FormGroup<TemplateErrorFormProperties>({
+			Type: new FormControl<TemplateErrorType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TemplateErrorType { SOURCE_NOT_FOUND = 0, DATA_SET_NOT_FOUND = 1, INTERNAL_FAILURE = 2 }
@@ -1034,14 +2585,34 @@ export namespace MyNS {
 		Placeholder?: string | null;
 
 		/** Dataset schema. */
-		DataSetSchema?: DataSetSchema | null;
-		ColumnGroupSchemaList?: Array<ColumnGroupSchema> | null;
+		DataSetSchema?: DataSetSchema;
+		ColumnGroupSchemaList?: Array<ColumnGroupSchema>;
+	}
+
+	/** Dataset configuration. */
+	export interface DataSetConfigurationFormProperties {
+		Placeholder: FormControl<string | null | undefined>,
+	}
+	export function CreateDataSetConfigurationFormGroup() {
+		return new FormGroup<DataSetConfigurationFormProperties>({
+			Placeholder: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Dataset schema. */
 	export interface DataSetSchema {
-		ColumnSchemaList?: Array<ColumnSchema> | null;
+		ColumnSchemaList?: Array<ColumnSchema>;
+	}
+
+	/** Dataset schema. */
+	export interface DataSetSchemaFormProperties {
+	}
+	export function CreateDataSetSchemaFormGroup() {
+		return new FormGroup<DataSetSchemaFormProperties>({
+		});
+
 	}
 
 
@@ -1052,11 +2623,37 @@ export namespace MyNS {
 		GeographicRole?: string | null;
 	}
 
+	/** The column schema. */
+	export interface ColumnSchemaFormProperties {
+		Name: FormControl<string | null | undefined>,
+		DataType: FormControl<string | null | undefined>,
+		GeographicRole: FormControl<string | null | undefined>,
+	}
+	export function CreateColumnSchemaFormGroup() {
+		return new FormGroup<ColumnSchemaFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined),
+			GeographicRole: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The column group schema. */
 	export interface ColumnGroupSchema {
 		Name?: string | null;
-		ColumnGroupColumnSchemaList?: Array<ColumnGroupColumnSchema> | null;
+		ColumnGroupColumnSchemaList?: Array<ColumnGroupColumnSchema>;
+	}
+
+	/** The column group schema. */
+	export interface ColumnGroupSchemaFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateColumnGroupSchemaFormGroup() {
+		return new FormGroup<ColumnGroupSchemaFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1065,28 +2662,76 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** A structure describing the name, data type, and geographic role of the columns. */
+	export interface ColumnGroupColumnSchemaFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateColumnGroupColumnSchemaFormGroup() {
+		return new FormGroup<ColumnGroupColumnSchemaFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTemplateAliasResponse {
 
 		/** The template alias. */
-		TemplateAlias?: TemplateAlias | null;
+		TemplateAlias?: TemplateAlias;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface DescribeTemplateAliasResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTemplateAliasResponseFormGroup() {
+		return new FormGroup<DescribeTemplateAliasResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTemplatePermissionsResponse {
 		TemplateId?: string | null;
 		TemplateArn?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeTemplatePermissionsResponseFormProperties {
+		TemplateId: FormControl<string | null | undefined>,
+		TemplateArn: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTemplatePermissionsResponseFormGroup() {
+		return new FormGroup<DescribeTemplatePermissionsResponseFormProperties>({
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			TemplateArn: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUserResponse {
 
 		/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
-		User?: User | null;
+		User?: User;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface DescribeUserResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeUserResponseFormGroup() {
+		return new FormGroup<DescribeUserResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1101,6 +2746,29 @@ export namespace MyNS {
 		PrincipalId?: string | null;
 	}
 
+	/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
+	export interface UserFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		Role: FormControl<UserRole | null | undefined>,
+		IdentityType: FormControl<UserIdentityType | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+		PrincipalId: FormControl<string | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<UserRole | null | undefined>(undefined),
+			IdentityType: new FormControl<UserIdentityType | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+			PrincipalId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UserRole { ADMIN = 0, AUTHOR = 1, READER = 2, RESTRICTED_AUTHOR = 3, RESTRICTED_READER = 4 }
 
 	export enum UserIdentityType { IAM = 0, QUICKSIGHT = 1 }
@@ -1110,24 +2778,78 @@ export namespace MyNS {
 		Status?: number | null;
 		RequestId?: string | null;
 	}
+	export interface GetDashboardEmbedUrlResponseFormProperties {
+		EmbedUrl: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDashboardEmbedUrlResponseFormGroup() {
+		return new FormGroup<GetDashboardEmbedUrlResponseFormProperties>({
+			EmbedUrl: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DomainNotWhitelistedException {
+	}
+	export interface DomainNotWhitelistedExceptionFormProperties {
+	}
+	export function CreateDomainNotWhitelistedExceptionFormGroup() {
+		return new FormGroup<DomainNotWhitelistedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface QuickSightUserNotFoundException {
 	}
+	export interface QuickSightUserNotFoundExceptionFormProperties {
+	}
+	export function CreateQuickSightUserNotFoundExceptionFormGroup() {
+		return new FormGroup<QuickSightUserNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IdentityTypeNotSupportedException {
+	}
+	export interface IdentityTypeNotSupportedExceptionFormProperties {
+	}
+	export function CreateIdentityTypeNotSupportedExceptionFormGroup() {
+		return new FormGroup<IdentityTypeNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface SessionLifetimeInMinutesInvalidException {
 	}
+	export interface SessionLifetimeInMinutesInvalidExceptionFormProperties {
+	}
+	export function CreateSessionLifetimeInMinutesInvalidExceptionFormGroup() {
+		return new FormGroup<SessionLifetimeInMinutesInvalidExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListDashboardVersionsResponse {
-		DashboardVersionSummaryList?: Array<DashboardVersionSummary> | null;
+		DashboardVersionSummaryList?: Array<DashboardVersionSummary>;
 		NextToken?: string | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface ListDashboardVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateListDashboardVersionsResponseFormGroup() {
+		return new FormGroup<ListDashboardVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1141,11 +2863,45 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Dashboard version summary. */
+	export interface DashboardVersionSummaryFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		VersionNumber: FormControl<number | null | undefined>,
+		Status: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		SourceEntityArn: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateDashboardVersionSummaryFormGroup() {
+		return new FormGroup<DashboardVersionSummaryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			VersionNumber: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			SourceEntityArn: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDashboardsResponse {
-		DashboardSummaryList?: Array<DashboardSummary> | null;
+		DashboardSummaryList?: Array<DashboardSummary>;
 		NextToken?: string | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface ListDashboardsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateListDashboardsResponseFormGroup() {
+		return new FormGroup<ListDashboardsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1160,11 +2916,47 @@ export namespace MyNS {
 		LastPublishedTime?: Date | null;
 	}
 
+	/** Dashboard summary. */
+	export interface DashboardSummaryFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DashboardId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		PublishedVersionNumber: FormControl<number | null | undefined>,
+		LastPublishedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDashboardSummaryFormGroup() {
+		return new FormGroup<DashboardSummaryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			PublishedVersionNumber: new FormControl<number | null | undefined>(undefined),
+			LastPublishedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDataSetsResponse {
-		DataSetSummaries?: Array<DataSetSummary> | null;
+		DataSetSummaries?: Array<DataSetSummary>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListDataSetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListDataSetsResponseFormGroup() {
+		return new FormGroup<ListDataSetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1178,35 +2970,108 @@ export namespace MyNS {
 		ImportMode?: DataSetImportMode | null;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+	}
+
+	/** Dataset summary. */
+	export interface DataSetSummaryFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		ImportMode: FormControl<DataSetImportMode | null | undefined>,
+	}
+	export function CreateDataSetSummaryFormGroup() {
+		return new FormGroup<DataSetSummaryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			ImportMode: new FormControl<DataSetImportMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDataSourcesResponse {
-		DataSources?: Array<DataSource> | null;
+		DataSources?: Array<DataSource>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListDataSourcesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListDataSourcesResponseFormGroup() {
+		return new FormGroup<ListDataSourcesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGroupMembershipsResponse {
-		GroupMemberList?: Array<GroupMember> | null;
+		GroupMemberList?: Array<GroupMember>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListGroupMembershipsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupMembershipsResponseFormGroup() {
+		return new FormGroup<ListGroupMembershipsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGroupsResponse {
-		GroupList?: Array<Group> | null;
+		GroupList?: Array<Group>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface ListGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListGroupsResponseFormGroup() {
+		return new FormGroup<ListGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListIAMPolicyAssignmentsResponse {
-		IAMPolicyAssignments?: Array<IAMPolicyAssignmentSummary> | null;
+		IAMPolicyAssignments?: Array<IAMPolicyAssignmentSummary>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListIAMPolicyAssignmentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListIAMPolicyAssignmentsResponseFormGroup() {
+		return new FormGroup<ListIAMPolicyAssignmentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1216,11 +3081,37 @@ export namespace MyNS {
 		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 	}
 
+	/** IAM policy assignment summary. */
+	export interface IAMPolicyAssignmentSummaryFormProperties {
+		AssignmentName: FormControl<string | null | undefined>,
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+	}
+	export function CreateIAMPolicyAssignmentSummaryFormGroup() {
+		return new FormGroup<IAMPolicyAssignmentSummaryFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListIAMPolicyAssignmentsForUserResponse {
-		ActiveAssignments?: Array<ActiveIAMPolicyAssignment> | null;
+		ActiveAssignments?: Array<ActiveIAMPolicyAssignment>;
 		RequestId?: string | null;
 		NextToken?: string | null;
 		Status?: number | null;
+	}
+	export interface ListIAMPolicyAssignmentsForUserResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListIAMPolicyAssignmentsForUserResponseFormGroup() {
+		return new FormGroup<ListIAMPolicyAssignmentsForUserResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1230,31 +3121,94 @@ export namespace MyNS {
 		PolicyArn?: string | null;
 	}
 
+	/** The active AWS Identity and Access Management (IAM) policy assignment. */
+	export interface ActiveIAMPolicyAssignmentFormProperties {
+		AssignmentName: FormControl<string | null | undefined>,
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateActiveIAMPolicyAssignmentFormGroup() {
+		return new FormGroup<ActiveIAMPolicyAssignmentFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListIngestionsResponse {
-		Ingestions?: Array<Ingestion> | null;
+		Ingestions?: Array<Ingestion>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListIngestionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListIngestionsResponseFormGroup() {
+		return new FormGroup<ListIngestionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTemplateAliasesResponse {
-		TemplateAliasList?: Array<TemplateAlias> | null;
+		TemplateAliasList?: Array<TemplateAlias>;
 		Status?: number | null;
 		RequestId?: string | null;
 		NextToken?: string | null;
 	}
+	export interface ListTemplateAliasesResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTemplateAliasesResponseFormGroup() {
+		return new FormGroup<ListTemplateAliasesResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTemplateVersionsResponse {
-		TemplateVersionSummaryList?: Array<TemplateVersionSummary> | null;
+		TemplateVersionSummaryList?: Array<TemplateVersionSummary>;
 		NextToken?: string | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface ListTemplateVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateListTemplateVersionsResponseFormGroup() {
+		return new FormGroup<ListTemplateVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1267,11 +3221,43 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** The template version. */
+	export interface TemplateVersionSummaryFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		VersionNumber: FormControl<number | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		Status: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateTemplateVersionSummaryFormGroup() {
+		return new FormGroup<TemplateVersionSummaryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			VersionNumber: new FormControl<number | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTemplatesResponse {
-		TemplateSummaryList?: Array<TemplateSummary> | null;
+		TemplateSummaryList?: Array<TemplateSummary>;
 		NextToken?: string | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface ListTemplatesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateListTemplatesResponseFormGroup() {
+		return new FormGroup<ListTemplatesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1285,34 +3271,107 @@ export namespace MyNS {
 		LastUpdatedTime?: Date | null;
 	}
 
+	/** The template summary. */
+	export interface TemplateSummaryFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		LatestVersionNumber: FormControl<number | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTemplateSummaryFormGroup() {
+		return new FormGroup<TemplateSummaryFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			LatestVersionNumber: new FormControl<number | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListUserGroupsResponse {
-		GroupList?: Array<Group> | null;
+		GroupList?: Array<Group>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface ListUserGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListUserGroupsResponseFormGroup() {
+		return new FormGroup<ListUserGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListUsersResponse {
-		UserList?: Array<User> | null;
+		UserList?: Array<User>;
 		NextToken?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface ListUsersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateListUsersResponseFormGroup() {
+		return new FormGroup<ListUsersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterUserResponse {
 
 		/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
-		User?: User | null;
+		User?: User;
 		UserInvitationUrl?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface RegisterUserResponseFormProperties {
+		UserInvitationUrl: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateRegisterUserResponseFormGroup() {
+		return new FormGroup<RegisterUserResponseFormProperties>({
+			UserInvitationUrl: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchDashboardsResponse {
-		DashboardSummaryList?: Array<DashboardSummary> | null;
+		DashboardSummaryList?: Array<DashboardSummary>;
 		NextToken?: string | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface SearchDashboardsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchDashboardsResponseFormGroup() {
+		return new FormGroup<SearchDashboardsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1323,6 +3382,21 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A filter that you apply when searching for dashboards.  */
+	export interface DashboardSearchFilterFormProperties {
+		Operator: FormControl<DashboardSearchFilterOperator | null | undefined>,
+		Name: FormControl<DashboardSearchFilterName | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateDashboardSearchFilterFormGroup() {
+		return new FormGroup<DashboardSearchFilterFormProperties>({
+			Operator: new FormControl<DashboardSearchFilterOperator | null | undefined>(undefined),
+			Name: new FormControl<DashboardSearchFilterName | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DashboardSearchFilterOperator { StringEquals = 0 }
 
 	export enum DashboardSearchFilterName { QUICKSIGHT_USER = 0 }
@@ -1331,10 +3405,32 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface TagResourceResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UntagResourceResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDashboardResponse {
@@ -1345,13 +3441,47 @@ export namespace MyNS {
 		Status?: number | null;
 		RequestId?: string | null;
 	}
+	export interface UpdateDashboardResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		VersionArn: FormControl<string | null | undefined>,
+		DashboardId: FormControl<string | null | undefined>,
+		CreationStatus: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDashboardResponseFormGroup() {
+		return new FormGroup<UpdateDashboardResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			VersionArn: new FormControl<string | null | undefined>(undefined),
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			CreationStatus: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDashboardPermissionsResponse {
 		DashboardArn?: string | null;
 		DashboardId?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UpdateDashboardPermissionsResponseFormProperties {
+		DashboardArn: FormControl<string | null | undefined>,
+		DashboardId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDashboardPermissionsResponseFormGroup() {
+		return new FormGroup<UpdateDashboardPermissionsResponseFormProperties>({
+			DashboardArn: new FormControl<string | null | undefined>(undefined),
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDashboardPublishedVersionResponse {
@@ -1359,6 +3489,21 @@ export namespace MyNS {
 		DashboardArn?: string | null;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface UpdateDashboardPublishedVersionResponseFormProperties {
+		DashboardId: FormControl<string | null | undefined>,
+		DashboardArn: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDashboardPublishedVersionResponseFormGroup() {
+		return new FormGroup<UpdateDashboardPublishedVersionResponseFormProperties>({
+			DashboardId: new FormControl<string | null | undefined>(undefined),
+			DashboardArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSetResponse {
@@ -1369,12 +3514,46 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface UpdateDataSetResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		IngestionArn: FormControl<string | null | undefined>,
+		IngestionId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDataSetResponseFormGroup() {
+		return new FormGroup<UpdateDataSetResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			IngestionArn: new FormControl<string | null | undefined>(undefined),
+			IngestionId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDataSetPermissionsResponse {
 		DataSetArn?: string | null;
 		DataSetId?: string | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UpdateDataSetPermissionsResponseFormProperties {
+		DataSetArn: FormControl<string | null | undefined>,
+		DataSetId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDataSetPermissionsResponseFormGroup() {
+		return new FormGroup<UpdateDataSetPermissionsResponseFormProperties>({
+			DataSetArn: new FormControl<string | null | undefined>(undefined),
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSourceResponse {
@@ -1384,6 +3563,23 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface UpdateDataSourceResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		DataSourceId: FormControl<string | null | undefined>,
+		UpdateStatus: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDataSourceResponseFormGroup() {
+		return new FormGroup<UpdateDataSourceResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			UpdateStatus: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDataSourcePermissionsResponse {
 		DataSourceArn?: string | null;
@@ -1391,23 +3587,68 @@ export namespace MyNS {
 		RequestId?: string | null;
 		Status?: number | null;
 	}
+	export interface UpdateDataSourcePermissionsResponseFormProperties {
+		DataSourceArn: FormControl<string | null | undefined>,
+		DataSourceId: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDataSourcePermissionsResponseFormGroup() {
+		return new FormGroup<UpdateDataSourcePermissionsResponseFormProperties>({
+			DataSourceArn: new FormControl<string | null | undefined>(undefined),
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateGroupResponse {
 
 		/** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups. */
-		Group?: Group | null;
+		Group?: Group;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UpdateGroupResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateGroupResponseFormGroup() {
+		return new FormGroup<UpdateGroupResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIAMPolicyAssignmentResponse {
 		AssignmentName?: string | null;
 		AssignmentId?: string | null;
 		PolicyArn?: string | null;
-		Identities?: IdentityMap | null;
+		Identities?: IdentityMap;
 		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UpdateIAMPolicyAssignmentResponseFormProperties {
+		AssignmentName: FormControl<string | null | undefined>,
+		AssignmentId: FormControl<string | null | undefined>,
+		PolicyArn: FormControl<string | null | undefined>,
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateIAMPolicyAssignmentResponseFormGroup() {
+		return new FormGroup<UpdateIAMPolicyAssignmentResponseFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			AssignmentId: new FormControl<string | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTemplateResponse {
@@ -1418,29 +3659,85 @@ export namespace MyNS {
 		Status?: number | null;
 		RequestId?: string | null;
 	}
+	export interface UpdateTemplateResponseFormProperties {
+		TemplateId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		VersionArn: FormControl<string | null | undefined>,
+		CreationStatus: FormControl<CreateDashboardResponseCreationStatus | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTemplateResponseFormGroup() {
+		return new FormGroup<UpdateTemplateResponseFormProperties>({
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			VersionArn: new FormControl<string | null | undefined>(undefined),
+			CreationStatus: new FormControl<CreateDashboardResponseCreationStatus | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTemplateAliasResponse {
 
 		/** The template alias. */
-		TemplateAlias?: TemplateAlias | null;
+		TemplateAlias?: TemplateAlias;
 		Status?: number | null;
 		RequestId?: string | null;
+	}
+	export interface UpdateTemplateAliasResponseFormProperties {
+		Status: FormControl<number | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTemplateAliasResponseFormGroup() {
+		return new FormGroup<UpdateTemplateAliasResponseFormProperties>({
+			Status: new FormControl<number | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTemplatePermissionsResponse {
 		TemplateId?: string | null;
 		TemplateArn?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UpdateTemplatePermissionsResponseFormProperties {
+		TemplateId: FormControl<string | null | undefined>,
+		TemplateArn: FormControl<string | null | undefined>,
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateTemplatePermissionsResponseFormGroup() {
+		return new FormGroup<UpdateTemplatePermissionsResponseFormProperties>({
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			TemplateArn: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateUserResponse {
 
 		/** A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20 million users. */
-		User?: User | null;
+		User?: User;
 		RequestId?: string | null;
 		Status?: number | null;
+	}
+	export interface UpdateUserResponseFormProperties {
+		RequestId: FormControl<string | null | undefined>,
+		Status: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateUserResponseFormGroup() {
+		return new FormGroup<UpdateUserResponseFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DashboardBehavior { ENABLED = 0, DISABLED = 1 }
@@ -1448,6 +3745,13 @@ export namespace MyNS {
 	export enum AssignmentStatus { ENABLED = 0, DRAFT = 1, DISABLED = 2 }
 
 	export interface CancelIngestionRequest {
+	}
+	export interface CancelIngestionRequestFormProperties {
+	}
+	export function CreateCancelIngestionRequestFormGroup() {
+		return new FormGroup<CancelIngestionRequestFormProperties>({
+		});
+
 	}
 
 	export enum ColumnDataType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3 }
@@ -1457,10 +3761,19 @@ export namespace MyNS {
 
 	/** Parameters. */
 	export interface Parameters {
-		StringParameters?: Array<StringParameter> | null;
-		IntegerParameters?: Array<IntegerParameter> | null;
-		DecimalParameters?: Array<DecimalParameter> | null;
-		DateTimeParameters?: Array<DateTimeParameter> | null;
+		StringParameters?: Array<StringParameter>;
+		IntegerParameters?: Array<IntegerParameter>;
+		DecimalParameters?: Array<DecimalParameter>;
+		DateTimeParameters?: Array<DateTimeParameter>;
+	}
+
+	/** Parameters. */
+	export interface ParametersFormProperties {
+	}
+	export function CreateParametersFormGroup() {
+		return new FormGroup<ParametersFormProperties>({
+		});
+
 	}
 
 
@@ -1468,7 +3781,16 @@ export namespace MyNS {
 	export interface DashboardSourceEntity {
 
 		/** Dashboard source template. */
-		SourceTemplate?: DashboardSourceTemplate | null;
+		SourceTemplate?: DashboardSourceTemplate;
+	}
+
+	/** Dashboard source entity. */
+	export interface DashboardSourceEntityFormProperties {
+	}
+	export function CreateDashboardSourceEntityFormGroup() {
+		return new FormGroup<DashboardSourceEntityFormProperties>({
+		});
+
 	}
 
 
@@ -1476,32 +3798,52 @@ export namespace MyNS {
 	export interface DashboardPublishOptions {
 
 		/** Ad hoc (one-time) filtering option. */
-		AdHocFilteringOption?: AdHocFilteringOption | null;
+		AdHocFilteringOption?: AdHocFilteringOption;
 
 		/** Export to .csv option. */
-		ExportToCSVOption?: ExportToCSVOption | null;
+		ExportToCSVOption?: ExportToCSVOption;
 
 		/** Sheet controls option. */
-		SheetControlsOption?: SheetControlsOption | null;
+		SheetControlsOption?: SheetControlsOption;
+	}
+
+	/** Dashboard publish options. */
+	export interface DashboardPublishOptionsFormProperties {
+	}
+	export function CreateDashboardPublishOptionsFormGroup() {
+		return new FormGroup<DashboardPublishOptionsFormProperties>({
+		});
+
 	}
 
 	export interface CreateDashboardRequest {
 		Name: string;
 
 		/** Parameters. */
-		Parameters?: Parameters | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Parameters?: Parameters;
+		Permissions?: Array<ResourcePermission>;
 
 		/**
 		 * Dashboard source entity.
 		 * Required
 		 */
 		SourceEntity: DashboardSourceEntity;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: DashboardPublishOptions | null;
+		DashboardPublishOptions?: DashboardPublishOptions;
+	}
+	export interface CreateDashboardRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		VersionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDashboardRequestFormGroup() {
+		return new FormGroup<CreateDashboardRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceStatus { CREATION_IN_PROGRESS = 0, CREATION_SUCCESSFUL = 1, CREATION_FAILED = 2, UPDATE_IN_PROGRESS = 3, UPDATE_SUCCESSFUL = 4, UPDATE_FAILED = 5 }
@@ -1510,14 +3852,27 @@ export namespace MyNS {
 		DataSetId: string;
 		Name: string;
 		PhysicalTableMap: PhysicalTableMap;
-		LogicalTableMap?: LogicalTableMap | null;
+		LogicalTableMap?: LogicalTableMap;
 		ImportMode: DataSetImportMode;
-		ColumnGroups?: Array<ColumnGroup> | null;
-		Permissions?: Array<ResourcePermission> | null;
+		ColumnGroups?: Array<ColumnGroup>;
+		Permissions?: Array<ResourcePermission>;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
-		Tags?: Array<Tag> | null;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDataSetRequestFormProperties {
+		DataSetId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ImportMode: FormControl<DataSetImportMode | null | undefined>,
+	}
+	export function CreateCreateDataSetRequestFormGroup() {
+		return new FormGroup<CreateDataSetRequestFormProperties>({
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ImportMode: new FormControl<DataSetImportMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1525,7 +3880,16 @@ export namespace MyNS {
 	export interface DataSourceCredentials {
 
 		/** The combination of user name and password that are used as credentials. */
-		CredentialPair?: CredentialPair | null;
+		CredentialPair?: CredentialPair;
+	}
+
+	/** Data source credentials. */
+	export interface DataSourceCredentialsFormProperties {
+	}
+	export function CreateDataSourceCredentialsFormGroup() {
+		return new FormGroup<DataSourceCredentialsFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataSourceRequest {
@@ -1534,21 +3898,41 @@ export namespace MyNS {
 		Type: DataSourceType;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: DataSourceParameters | null;
+		DataSourceParameters?: DataSourceParameters;
 
 		/** Data source credentials. */
-		Credentials?: DataSourceCredentials | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Credentials?: DataSourceCredentials;
+		Permissions?: Array<ResourcePermission>;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: VpcConnectionProperties | null;
+		VpcConnectionProperties?: VpcConnectionProperties;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: SslProperties | null;
-		Tags?: Array<Tag> | null;
+		SslProperties?: SslProperties;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDataSourceRequestFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<DataSourceType | null | undefined>,
+	}
+	export function CreateCreateDataSourceRequestFormGroup() {
+		return new FormGroup<CreateDataSourceRequestFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DataSourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupMembershipRequest {
+	}
+	export interface CreateGroupMembershipRequestFormProperties {
+	}
+	export function CreateCreateGroupMembershipRequestFormGroup() {
+		return new FormGroup<CreateGroupMembershipRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1558,14 +3942,47 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** The request object for this operation.  */
+	export interface CreateGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupRequestFormGroup() {
+		return new FormGroup<CreateGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateIAMPolicyAssignmentRequest {
 		AssignmentName: string;
 		AssignmentStatus: CreateIAMPolicyAssignmentResponseAssignmentStatus;
 		PolicyArn?: string | null;
-		Identities?: IdentityMap | null;
+		Identities?: IdentityMap;
+	}
+	export interface CreateIAMPolicyAssignmentRequestFormProperties {
+		AssignmentName: FormControl<string | null | undefined>,
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIAMPolicyAssignmentRequestFormGroup() {
+		return new FormGroup<CreateIAMPolicyAssignmentRequestFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIngestionRequest {
+	}
+	export interface CreateIngestionRequestFormProperties {
+	}
+	export function CreateCreateIngestionRequestFormGroup() {
+		return new FormGroup<CreateIngestionRequestFormProperties>({
+		});
+
 	}
 
 	export enum IngestionStatus { INITIALIZED = 0, QUEUED = 1, RUNNING = 2, FAILED = 3, COMPLETED = 4, CANCELLED = 5 }
@@ -1573,29 +3990,58 @@ export namespace MyNS {
 	export interface CreateTemplateAliasRequest {
 		TemplateVersionNumber: number;
 	}
+	export interface CreateTemplateAliasRequestFormProperties {
+		TemplateVersionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateTemplateAliasRequestFormGroup() {
+		return new FormGroup<CreateTemplateAliasRequestFormProperties>({
+			TemplateVersionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The source entity of the template. */
 	export interface TemplateSourceEntity {
 
 		/** The source analysis of the template. */
-		SourceAnalysis?: TemplateSourceAnalysis | null;
+		SourceAnalysis?: TemplateSourceAnalysis;
 
 		/** The source template of the template. */
-		SourceTemplate?: TemplateSourceTemplate | null;
+		SourceTemplate?: TemplateSourceTemplate;
+	}
+
+	/** The source entity of the template. */
+	export interface TemplateSourceEntityFormProperties {
+	}
+	export function CreateTemplateSourceEntityFormGroup() {
+		return new FormGroup<TemplateSourceEntityFormProperties>({
+		});
+
 	}
 
 	export interface CreateTemplateRequest {
 		Name?: string | null;
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 
 		/**
 		 * The source entity of the template.
 		 * Required
 		 */
 		SourceEntity: TemplateSourceEntity;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		VersionDescription?: string | null;
+	}
+	export interface CreateTemplateRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		VersionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTemplateRequestFormGroup() {
+		return new FormGroup<CreateTemplateRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DashboardFilterAttribute { QUICKSIGHT_USER = 0 }
@@ -1606,26 +4052,82 @@ export namespace MyNS {
 
 	export interface DeleteDashboardRequest {
 	}
+	export interface DeleteDashboardRequestFormProperties {
+	}
+	export function CreateDeleteDashboardRequestFormGroup() {
+		return new FormGroup<DeleteDashboardRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDataSetRequest {
+	}
+	export interface DeleteDataSetRequestFormProperties {
+	}
+	export function CreateDeleteDataSetRequestFormGroup() {
+		return new FormGroup<DeleteDataSetRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDataSourceRequest {
 	}
+	export interface DeleteDataSourceRequestFormProperties {
+	}
+	export function CreateDeleteDataSourceRequestFormGroup() {
+		return new FormGroup<DeleteDataSourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteGroupMembershipRequest {
+	}
+	export interface DeleteGroupMembershipRequestFormProperties {
+	}
+	export function CreateDeleteGroupMembershipRequestFormGroup() {
+		return new FormGroup<DeleteGroupMembershipRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteGroupRequest {
 	}
+	export interface DeleteGroupRequestFormProperties {
+	}
+	export function CreateDeleteGroupRequestFormGroup() {
+		return new FormGroup<DeleteGroupRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteIAMPolicyAssignmentRequest {
+	}
+	export interface DeleteIAMPolicyAssignmentRequestFormProperties {
+	}
+	export function CreateDeleteIAMPolicyAssignmentRequestFormGroup() {
+		return new FormGroup<DeleteIAMPolicyAssignmentRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTemplateAliasRequest {
 	}
+	export interface DeleteTemplateAliasRequestFormProperties {
+	}
+	export function CreateDeleteTemplateAliasRequestFormGroup() {
+		return new FormGroup<DeleteTemplateAliasRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteTemplateRequest {
+	}
+	export interface DeleteTemplateRequestFormProperties {
+	}
+	export function CreateDeleteTemplateRequestFormGroup() {
+		return new FormGroup<DeleteTemplateRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1633,46 +4135,153 @@ export namespace MyNS {
 	export interface DeleteUserByPrincipalIdRequest {
 	}
 
+	/** <p/> */
+	export interface DeleteUserByPrincipalIdRequestFormProperties {
+	}
+	export function CreateDeleteUserByPrincipalIdRequestFormGroup() {
+		return new FormGroup<DeleteUserByPrincipalIdRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteUserRequest {
+	}
+	export interface DeleteUserRequestFormProperties {
+	}
+	export function CreateDeleteUserRequestFormGroup() {
+		return new FormGroup<DeleteUserRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDashboardPermissionsRequest {
 	}
+	export interface DescribeDashboardPermissionsRequestFormProperties {
+	}
+	export function CreateDescribeDashboardPermissionsRequestFormGroup() {
+		return new FormGroup<DescribeDashboardPermissionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDashboardRequest {
+	}
+	export interface DescribeDashboardRequestFormProperties {
+	}
+	export function CreateDescribeDashboardRequestFormGroup() {
+		return new FormGroup<DescribeDashboardRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDataSetPermissionsRequest {
 	}
+	export interface DescribeDataSetPermissionsRequestFormProperties {
+	}
+	export function CreateDescribeDataSetPermissionsRequestFormGroup() {
+		return new FormGroup<DescribeDataSetPermissionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDataSetRequest {
+	}
+	export interface DescribeDataSetRequestFormProperties {
+	}
+	export function CreateDescribeDataSetRequestFormGroup() {
+		return new FormGroup<DescribeDataSetRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDataSourcePermissionsRequest {
 	}
+	export interface DescribeDataSourcePermissionsRequestFormProperties {
+	}
+	export function CreateDescribeDataSourcePermissionsRequestFormGroup() {
+		return new FormGroup<DescribeDataSourcePermissionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDataSourceRequest {
+	}
+	export interface DescribeDataSourceRequestFormProperties {
+	}
+	export function CreateDescribeDataSourceRequestFormGroup() {
+		return new FormGroup<DescribeDataSourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGroupRequest {
 	}
+	export interface DescribeGroupRequestFormProperties {
+	}
+	export function CreateDescribeGroupRequestFormGroup() {
+		return new FormGroup<DescribeGroupRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeIAMPolicyAssignmentRequest {
+	}
+	export interface DescribeIAMPolicyAssignmentRequestFormProperties {
+	}
+	export function CreateDescribeIAMPolicyAssignmentRequestFormGroup() {
+		return new FormGroup<DescribeIAMPolicyAssignmentRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeIngestionRequest {
 	}
+	export interface DescribeIngestionRequestFormProperties {
+	}
+	export function CreateDescribeIngestionRequestFormGroup() {
+		return new FormGroup<DescribeIngestionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeTemplateAliasRequest {
+	}
+	export interface DescribeTemplateAliasRequestFormProperties {
+	}
+	export function CreateDescribeTemplateAliasRequestFormGroup() {
+		return new FormGroup<DescribeTemplateAliasRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTemplatePermissionsRequest {
 	}
+	export interface DescribeTemplatePermissionsRequestFormProperties {
+	}
+	export function CreateDescribeTemplatePermissionsRequestFormGroup() {
+		return new FormGroup<DescribeTemplatePermissionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeTemplateRequest {
 	}
+	export interface DescribeTemplateRequestFormProperties {
+	}
+	export function CreateDescribeTemplateRequestFormGroup() {
+		return new FormGroup<DescribeTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeUserRequest {
+	}
+	export interface DescribeUserRequestFormProperties {
+	}
+	export function CreateDescribeUserRequestFormGroup() {
+		return new FormGroup<DescribeUserRequestFormProperties>({
+		});
+
 	}
 
 	export enum IngestionErrorType { FAILURE_TO_ASSUME_ROLE = 0, INGESTION_SUPERSEDED = 1, INGESTION_CANCELED = 2, DATA_SET_DELETED = 3, DATA_SET_NOT_SPICE = 4, S3_UPLOADED_FILE_DELETED = 5, S3_MANIFEST_ERROR = 6, DATA_TOLERANCE_EXCEPTION = 7, SPICE_TABLE_NOT_FOUND = 8, DATA_SET_SIZE_LIMIT_EXCEEDED = 9, ROW_SIZE_LIMIT_EXCEEDED = 10, ACCOUNT_CAPACITY_LIMIT_EXCEEDED = 11, CUSTOMER_ERROR = 12, DATA_SOURCE_NOT_FOUND = 13, IAM_ROLE_NOT_AVAILABLE = 14, CONNECTION_FAILURE = 15, SQL_TABLE_NOT_FOUND = 16, PERMISSION_DENIED = 17, SSL_CERTIFICATE_VALIDATION_FAILURE = 18, OAUTH_TOKEN_FAILURE = 19, SOURCE_API_LIMIT_EXCEEDED_FAILURE = 20, PASSWORD_AUTHENTICATION_FAILURE = 21, SQL_SCHEMA_MISMATCH_ERROR = 22, INVALID_DATE_FORMAT = 23, INVALID_DATAPREP_SYNTAX = 24, SOURCE_RESOURCE_LIMIT_EXCEEDED = 25, SQL_INVALID_PARAMETER_VALUE = 26, QUERY_TIMEOUT = 27, SQL_NUMERIC_OVERFLOW = 28, UNRESOLVABLE_HOST = 29, UNROUTABLE_HOST = 30, SQL_EXCEPTION = 31, S3_FILE_INACCESSIBLE = 32, IOT_FILE_NOT_FOUND = 33, IOT_DATA_SET_FILE_EMPTY = 34, INVALID_DATA_SOURCE_CONFIG = 35, DATA_SOURCE_AUTH_FAILED = 36, DATA_SOURCE_CONNECTION_FAILED = 37, FAILURE_TO_PROCESS_JSON_FILE = 38, INTERNAL_SERVICE_ERROR = 39 }
@@ -1685,6 +4294,13 @@ export namespace MyNS {
 
 	export interface GetDashboardEmbedUrlRequest {
 	}
+	export interface GetDashboardEmbedUrlRequestFormProperties {
+	}
+	export function CreateGetDashboardEmbedUrlRequestFormGroup() {
+		return new FormGroup<GetDashboardEmbedUrlRequestFormProperties>({
+		});
+
+	}
 
 	export enum InputColumnDataType { STRING = 0, INTEGER = 1, DECIMAL = 2, DATETIME = 3, BIT = 4, BOOLEAN = 5, JSON = 6 }
 
@@ -1692,48 +4308,155 @@ export namespace MyNS {
 
 	export interface ListDashboardVersionsRequest {
 	}
+	export interface ListDashboardVersionsRequestFormProperties {
+	}
+	export function CreateListDashboardVersionsRequestFormGroup() {
+		return new FormGroup<ListDashboardVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDashboardsRequest {
+	}
+	export interface ListDashboardsRequestFormProperties {
+	}
+	export function CreateListDashboardsRequestFormGroup() {
+		return new FormGroup<ListDashboardsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDataSetsRequest {
 	}
+	export interface ListDataSetsRequestFormProperties {
+	}
+	export function CreateListDataSetsRequestFormGroup() {
+		return new FormGroup<ListDataSetsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDataSourcesRequest {
+	}
+	export interface ListDataSourcesRequestFormProperties {
+	}
+	export function CreateListDataSourcesRequestFormGroup() {
+		return new FormGroup<ListDataSourcesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListGroupMembershipsRequest {
 	}
+	export interface ListGroupMembershipsRequestFormProperties {
+	}
+	export function CreateListGroupMembershipsRequestFormGroup() {
+		return new FormGroup<ListGroupMembershipsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListGroupsRequest {
 	}
+	export interface ListGroupsRequestFormProperties {
+	}
+	export function CreateListGroupsRequestFormGroup() {
+		return new FormGroup<ListGroupsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListIAMPolicyAssignmentsForUserRequest {
+	}
+	export interface ListIAMPolicyAssignmentsForUserRequestFormProperties {
+	}
+	export function CreateListIAMPolicyAssignmentsForUserRequestFormGroup() {
+		return new FormGroup<ListIAMPolicyAssignmentsForUserRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListIAMPolicyAssignmentsRequest {
 		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 	}
+	export interface ListIAMPolicyAssignmentsRequestFormProperties {
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+	}
+	export function CreateListIAMPolicyAssignmentsRequestFormGroup() {
+		return new FormGroup<ListIAMPolicyAssignmentsRequestFormProperties>({
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListIngestionsRequest {
+	}
+	export interface ListIngestionsRequestFormProperties {
+	}
+	export function CreateListIngestionsRequestFormGroup() {
+		return new FormGroup<ListIngestionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTemplateAliasesRequest {
+	}
+	export interface ListTemplateAliasesRequestFormProperties {
+	}
+	export function CreateListTemplateAliasesRequestFormGroup() {
+		return new FormGroup<ListTemplateAliasesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListTemplateVersionsRequest {
 	}
+	export interface ListTemplateVersionsRequestFormProperties {
+	}
+	export function CreateListTemplateVersionsRequestFormGroup() {
+		return new FormGroup<ListTemplateVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTemplatesRequest {
+	}
+	export interface ListTemplatesRequestFormProperties {
+	}
+	export function CreateListTemplatesRequestFormGroup() {
+		return new FormGroup<ListTemplatesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListUserGroupsRequest {
 	}
+	export interface ListUserGroupsRequestFormProperties {
+	}
+	export function CreateListUserGroupsRequestFormGroup() {
+		return new FormGroup<ListUserGroupsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListUsersRequest {
+	}
+	export interface ListUsersRequestFormProperties {
+	}
+	export function CreateListUsersRequestFormGroup() {
+		return new FormGroup<ListUsersRequestFormProperties>({
+		});
+
 	}
 
 	export interface RegisterUserRequest {
@@ -1744,28 +4467,86 @@ export namespace MyNS {
 		SessionName?: string | null;
 		UserName?: string | null;
 	}
+	export interface RegisterUserRequestFormProperties {
+		IdentityType: FormControl<UserIdentityType | null | undefined>,
+		Email: FormControl<string | null | undefined>,
+		UserRole: FormControl<UserRole | null | undefined>,
+		IamArn: FormControl<string | null | undefined>,
+		SessionName: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterUserRequestFormGroup() {
+		return new FormGroup<RegisterUserRequestFormProperties>({
+			IdentityType: new FormControl<UserIdentityType | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			UserRole: new FormControl<UserRole | null | undefined>(undefined),
+			IamArn: new FormControl<string | null | undefined>(undefined),
+			SessionName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchDashboardsRequest {
 		Filters: Array<DashboardSearchFilter>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface SearchDashboardsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchDashboardsRequestFormGroup() {
+		return new FormGroup<SearchDashboardsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		Tags: Array<Tag>;
+	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum TextQualifier { DOUBLE_QUOTE = 0, SINGLE_QUOTE = 1 }
 
 	export interface UntagResourceRequest {
 	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDashboardPermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission> | null;
-		RevokePermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateDashboardPermissionsRequestFormProperties {
+	}
+	export function CreateUpdateDashboardPermissionsRequestFormGroup() {
+		return new FormGroup<UpdateDashboardPermissionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDashboardPublishedVersionRequest {
+	}
+	export interface UpdateDashboardPublishedVersionRequestFormProperties {
+	}
+	export function CreateUpdateDashboardPublishedVersionRequestFormGroup() {
+		return new FormGroup<UpdateDashboardPublishedVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDashboardRequest {
@@ -1778,67 +4559,148 @@ export namespace MyNS {
 		SourceEntity: DashboardSourceEntity;
 
 		/** Parameters. */
-		Parameters?: Parameters | null;
+		Parameters?: Parameters;
 		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: DashboardPublishOptions | null;
+		DashboardPublishOptions?: DashboardPublishOptions;
+	}
+	export interface UpdateDashboardRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		VersionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDashboardRequestFormGroup() {
+		return new FormGroup<UpdateDashboardRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSetPermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission> | null;
-		RevokePermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateDataSetPermissionsRequestFormProperties {
+	}
+	export function CreateUpdateDataSetPermissionsRequestFormGroup() {
+		return new FormGroup<UpdateDataSetPermissionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataSetRequest {
 		Name: string;
 		PhysicalTableMap: PhysicalTableMap;
-		LogicalTableMap?: LogicalTableMap | null;
+		LogicalTableMap?: LogicalTableMap;
 		ImportMode: DataSetImportMode;
-		ColumnGroups?: Array<ColumnGroup> | null;
+		ColumnGroups?: Array<ColumnGroup>;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: RowLevelPermissionDataSet | null;
+		RowLevelPermissionDataSet?: RowLevelPermissionDataSet;
+	}
+	export interface UpdateDataSetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ImportMode: FormControl<DataSetImportMode | null | undefined>,
+	}
+	export function CreateUpdateDataSetRequestFormGroup() {
+		return new FormGroup<UpdateDataSetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ImportMode: new FormControl<DataSetImportMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSourcePermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission> | null;
-		RevokePermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateDataSourcePermissionsRequestFormProperties {
+	}
+	export function CreateUpdateDataSourcePermissionsRequestFormGroup() {
+		return new FormGroup<UpdateDataSourcePermissionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataSourceRequest {
 		Name: string;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: DataSourceParameters | null;
+		DataSourceParameters?: DataSourceParameters;
 
 		/** Data source credentials. */
-		Credentials?: DataSourceCredentials | null;
+		Credentials?: DataSourceCredentials;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: VpcConnectionProperties | null;
+		VpcConnectionProperties?: VpcConnectionProperties;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: SslProperties | null;
+		SslProperties?: SslProperties;
+	}
+	export interface UpdateDataSourceRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDataSourceRequestFormGroup() {
+		return new FormGroup<UpdateDataSourceRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGroupRequest {
 		Description?: string | null;
 	}
+	export interface UpdateGroupRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupRequestFormGroup() {
+		return new FormGroup<UpdateGroupRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateIAMPolicyAssignmentRequest {
 		AssignmentStatus?: CreateIAMPolicyAssignmentResponseAssignmentStatus | null;
 		PolicyArn?: string | null;
-		Identities?: IdentityMap | null;
+		Identities?: IdentityMap;
+	}
+	export interface UpdateIAMPolicyAssignmentRequestFormProperties {
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIAMPolicyAssignmentRequestFormGroup() {
+		return new FormGroup<UpdateIAMPolicyAssignmentRequestFormProperties>({
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTemplateAliasRequest {
 		TemplateVersionNumber: number;
 	}
+	export interface UpdateTemplateAliasRequestFormProperties {
+		TemplateVersionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateTemplateAliasRequestFormGroup() {
+		return new FormGroup<UpdateTemplateAliasRequestFormProperties>({
+			TemplateVersionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTemplatePermissionsRequest {
-		GrantPermissions?: Array<ResourcePermission> | null;
-		RevokePermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateTemplatePermissionsRequestFormProperties {
+	}
+	export function CreateUpdateTemplatePermissionsRequestFormGroup() {
+		return new FormGroup<UpdateTemplatePermissionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTemplateRequest {
@@ -1851,10 +4713,32 @@ export namespace MyNS {
 		VersionDescription?: string | null;
 		Name?: string | null;
 	}
+	export interface UpdateTemplateRequestFormProperties {
+		VersionDescription: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTemplateRequestFormGroup() {
+		return new FormGroup<UpdateTemplateRequestFormProperties>({
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateUserRequest {
 		Email: string;
 		Role: UserRole;
+	}
+	export interface UpdateUserRequestFormProperties {
+		Email: FormControl<string | null | undefined>,
+		Role: FormControl<UserRole | null | undefined>,
+	}
+	export function CreateUpdateUserRequestFormGroup() {
+		return new FormGroup<UpdateUserRequestFormProperties>({
+			Email: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<UserRole | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -2674,14 +5558,14 @@ export namespace MyNS {
 		Name: string;
 
 		/** Parameters. */
-		Parameters?: CreateDashboardPostBodyParameters | null;
+		Parameters?: CreateDashboardPostBodyParameters;
 
 		/**
 		 * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions with principal and action information.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 
 		/**
 		 * Dashboard source entity.
@@ -2694,7 +5578,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * A description for the first version of the dashboard being created.
@@ -2704,32 +5588,78 @@ export namespace MyNS {
 		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: CreateDashboardPostBodyDashboardPublishOptions | null;
+		DashboardPublishOptions?: CreateDashboardPostBodyDashboardPublishOptions;
+	}
+	export interface CreateDashboardPostBodyFormProperties {
+
+		/**
+		 * The display name of the dashboard.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the first version of the dashboard being created.
+		 * Max length: 512
+		 * Min length: 1
+		 */
+		VersionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDashboardPostBodyFormGroup() {
+		return new FormGroup<CreateDashboardPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDashboardPostBodyParameters {
-		StringParameters?: Array<StringParameter> | null;
-		IntegerParameters?: Array<IntegerParameter> | null;
-		DecimalParameters?: Array<DecimalParameter> | null;
-		DateTimeParameters?: Array<DateTimeParameter> | null;
+		StringParameters?: Array<StringParameter>;
+		IntegerParameters?: Array<IntegerParameter>;
+		DecimalParameters?: Array<DecimalParameter>;
+		DateTimeParameters?: Array<DateTimeParameter>;
+	}
+	export interface CreateDashboardPostBodyParametersFormProperties {
+	}
+	export function CreateCreateDashboardPostBodyParametersFormGroup() {
+		return new FormGroup<CreateDashboardPostBodyParametersFormProperties>({
+		});
+
 	}
 
 	export interface CreateDashboardPostBodySourceEntity {
 
 		/** Dashboard source template. */
-		SourceTemplate?: DashboardSourceTemplate | null;
+		SourceTemplate?: DashboardSourceTemplate;
+	}
+	export interface CreateDashboardPostBodySourceEntityFormProperties {
+	}
+	export function CreateCreateDashboardPostBodySourceEntityFormGroup() {
+		return new FormGroup<CreateDashboardPostBodySourceEntityFormProperties>({
+		});
+
 	}
 
 	export interface CreateDashboardPostBodyDashboardPublishOptions {
 
 		/** Ad hoc (one-time) filtering option. */
-		AdHocFilteringOption?: AdHocFilteringOption | null;
+		AdHocFilteringOption?: AdHocFilteringOption;
 
 		/** Export to .csv option. */
-		ExportToCSVOption?: ExportToCSVOption | null;
+		ExportToCSVOption?: ExportToCSVOption;
 
 		/** Sheet controls option. */
-		SheetControlsOption?: SheetControlsOption | null;
+		SheetControlsOption?: SheetControlsOption;
+	}
+	export interface CreateDashboardPostBodyDashboardPublishOptionsFormProperties {
+	}
+	export function CreateCreateDashboardPostBodyDashboardPublishOptionsFormGroup() {
+		return new FormGroup<CreateDashboardPostBodyDashboardPublishOptionsFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDashboardPutBody {
@@ -2750,7 +5680,7 @@ export namespace MyNS {
 		SourceEntity: UpdateDashboardPutBodySourceEntity;
 
 		/** Parameters. */
-		Parameters?: UpdateDashboardPutBodyParameters | null;
+		Parameters?: UpdateDashboardPutBodyParameters;
 
 		/**
 		 * A description for the first version of the dashboard being created.
@@ -2760,32 +5690,78 @@ export namespace MyNS {
 		VersionDescription?: string | null;
 
 		/** Dashboard publish options. */
-		DashboardPublishOptions?: UpdateDashboardPutBodyDashboardPublishOptions | null;
+		DashboardPublishOptions?: UpdateDashboardPutBodyDashboardPublishOptions;
+	}
+	export interface UpdateDashboardPutBodyFormProperties {
+
+		/**
+		 * The display name of the dashboard.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the first version of the dashboard being created.
+		 * Max length: 512
+		 * Min length: 1
+		 */
+		VersionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDashboardPutBodyFormGroup() {
+		return new FormGroup<UpdateDashboardPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDashboardPutBodySourceEntity {
 
 		/** Dashboard source template. */
-		SourceTemplate?: DashboardSourceTemplate | null;
+		SourceTemplate?: DashboardSourceTemplate;
+	}
+	export interface UpdateDashboardPutBodySourceEntityFormProperties {
+	}
+	export function CreateUpdateDashboardPutBodySourceEntityFormGroup() {
+		return new FormGroup<UpdateDashboardPutBodySourceEntityFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDashboardPutBodyParameters {
-		StringParameters?: Array<StringParameter> | null;
-		IntegerParameters?: Array<IntegerParameter> | null;
-		DecimalParameters?: Array<DecimalParameter> | null;
-		DateTimeParameters?: Array<DateTimeParameter> | null;
+		StringParameters?: Array<StringParameter>;
+		IntegerParameters?: Array<IntegerParameter>;
+		DecimalParameters?: Array<DecimalParameter>;
+		DateTimeParameters?: Array<DateTimeParameter>;
+	}
+	export interface UpdateDashboardPutBodyParametersFormProperties {
+	}
+	export function CreateUpdateDashboardPutBodyParametersFormGroup() {
+		return new FormGroup<UpdateDashboardPutBodyParametersFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDashboardPutBodyDashboardPublishOptions {
 
 		/** Ad hoc (one-time) filtering option. */
-		AdHocFilteringOption?: AdHocFilteringOption | null;
+		AdHocFilteringOption?: AdHocFilteringOption;
 
 		/** Export to .csv option. */
-		ExportToCSVOption?: ExportToCSVOption | null;
+		ExportToCSVOption?: ExportToCSVOption;
 
 		/** Sheet controls option. */
-		SheetControlsOption?: SheetControlsOption | null;
+		SheetControlsOption?: SheetControlsOption;
+	}
+	export interface UpdateDashboardPutBodyDashboardPublishOptionsFormProperties {
+	}
+	export function CreateUpdateDashboardPutBodyDashboardPublishOptionsFormGroup() {
+		return new FormGroup<UpdateDashboardPutBodyDashboardPublishOptionsFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataSetPostBody {
@@ -2811,7 +5787,7 @@ export namespace MyNS {
 		PhysicalTableMap: {[id: string]: PhysicalTable };
 
 		/** Configures the combination and transformation of the data from the physical tables. */
-		LogicalTableMap?: {[id: string]: LogicalTable } | null;
+		LogicalTableMap?: {[id: string]: LogicalTable };
 
 		/**
 		 * Indicates whether you want to import the data into SPICE.
@@ -2824,29 +5800,81 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 8
 		 */
-		ColumnGroups?: Array<ColumnGroup> | null;
+		ColumnGroups?: Array<ColumnGroup>;
 
 		/**
 		 * A list of resource permissions on the dataset.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: CreateDataSetPostBodyRowLevelPermissionDataSet | null;
+		RowLevelPermissionDataSet?: CreateDataSetPostBodyRowLevelPermissionDataSet;
 
 		/**
 		 * Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDataSetPostBodyFormProperties {
+
+		/**
+		 * An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
+		 * Required
+		 */
+		DataSetId: FormControl<string | null | undefined>,
+
+		/**
+		 * The display name for the dataset.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Declares the physical tables that are available in the underlying data sources.
+		 * Required
+		 */
+		PhysicalTableMap: FormControl<{[id: string]: PhysicalTable } | null | undefined>,
+
+		/** Configures the combination and transformation of the data from the physical tables. */
+		LogicalTableMap: FormControl<{[id: string]: LogicalTable } | null | undefined>,
+
+		/**
+		 * Indicates whether you want to import the data into SPICE.
+		 * Required
+		 */
+		ImportMode: FormControl<DataSetImportMode | null | undefined>,
+	}
+	export function CreateCreateDataSetPostBodyFormGroup() {
+		return new FormGroup<CreateDataSetPostBodyFormProperties>({
+			DataSetId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			PhysicalTableMap: new FormControl<{[id: string]: PhysicalTable } | null | undefined>(undefined),
+			LogicalTableMap: new FormControl<{[id: string]: LogicalTable } | null | undefined>(undefined),
+			ImportMode: new FormControl<DataSetImportMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDataSetPostBodyRowLevelPermissionDataSet {
 		Arn?: string | null;
 		PermissionPolicy?: RowLevelPermissionPolicy | null;
+	}
+	export interface CreateDataSetPostBodyRowLevelPermissionDataSetFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		PermissionPolicy: FormControl<RowLevelPermissionPolicy | null | undefined>,
+	}
+	export function CreateCreateDataSetPostBodyRowLevelPermissionDataSetFormGroup() {
+		return new FormGroup<CreateDataSetPostBodyRowLevelPermissionDataSetFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			PermissionPolicy: new FormControl<RowLevelPermissionPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDataSourcePostBody {
@@ -2872,104 +5900,166 @@ export namespace MyNS {
 		Type: DataSourceType;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: CreateDataSourcePostBodyDataSourceParameters | null;
+		DataSourceParameters?: CreateDataSourcePostBodyDataSourceParameters;
 
 		/** Data source credentials. */
-		Credentials?: CreateDataSourcePostBodyCredentials | null;
+		Credentials?: CreateDataSourcePostBodyCredentials;
 
 		/**
 		 * A list of resource permissions on the data source.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: CreateDataSourcePostBodyVpcConnectionProperties | null;
+		VpcConnectionProperties?: CreateDataSourcePostBodyVpcConnectionProperties;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: CreateDataSourcePostBodySslProperties | null;
+		SslProperties?: CreateDataSourcePostBodySslProperties;
 
 		/**
 		 * Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDataSourcePostBodyFormProperties {
+
+		/**
+		 * An ID for the data source. This ID is unique per AWS Region for each AWS account.
+		 * Required
+		 */
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A display name for the data source.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the data source. Currently, the supported types for this operation are: <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>. Use <code>ListDataSources</code> to return a list of all data sources.
+		 * Required
+		 */
+		Type: FormControl<DataSourceType | null | undefined>,
+	}
+	export function CreateCreateDataSourcePostBodyFormGroup() {
+		return new FormGroup<CreateDataSourcePostBodyFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DataSourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDataSourcePostBodyDataSourceParameters {
 
 		/** Amazon Elasticsearch Service parameters. */
-		AmazonElasticsearchParameters?: AmazonElasticsearchParameters | null;
+		AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
 
 		/** Amazon Athena parameters. */
-		AthenaParameters?: AthenaParameters | null;
+		AthenaParameters?: AthenaParameters;
 
 		/** Amazon Aurora parameters. */
-		AuroraParameters?: AuroraParameters | null;
+		AuroraParameters?: AuroraParameters;
 
 		/** Amazon Aurora with PostgreSQL compatibility parameters. */
-		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters | null;
+		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
 
 		/** AWS IoT Analytics parameters. */
-		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters | null;
+		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
 
 		/** Jira parameters. */
-		JiraParameters?: JiraParameters | null;
+		JiraParameters?: JiraParameters;
 
 		/** MariaDB parameters. */
-		MariaDbParameters?: MariaDbParameters | null;
+		MariaDbParameters?: MariaDbParameters;
 
 		/** MySQL parameters. */
-		MySqlParameters?: MySqlParameters | null;
+		MySqlParameters?: MySqlParameters;
 
 		/** PostgreSQL parameters. */
-		PostgreSqlParameters?: PostgreSqlParameters | null;
+		PostgreSqlParameters?: PostgreSqlParameters;
 
 		/** Presto parameters. */
-		PrestoParameters?: PrestoParameters | null;
+		PrestoParameters?: PrestoParameters;
 
 		/** Amazon RDS parameters. */
-		RdsParameters?: RdsParameters | null;
+		RdsParameters?: RdsParameters;
 
 		/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
-		RedshiftParameters?: RedshiftParameters | null;
+		RedshiftParameters?: RedshiftParameters;
 
 		/** S3 parameters. */
-		S3Parameters?: S3Parameters | null;
+		S3Parameters?: S3Parameters;
 
 		/** ServiceNow parameters. */
-		ServiceNowParameters?: ServiceNowParameters | null;
+		ServiceNowParameters?: ServiceNowParameters;
 
 		/** Snowflake parameters. */
-		SnowflakeParameters?: SnowflakeParameters | null;
+		SnowflakeParameters?: SnowflakeParameters;
 
 		/** Spark parameters. */
-		SparkParameters?: SparkParameters | null;
+		SparkParameters?: SparkParameters;
 
 		/** SQL Server parameters. */
-		SqlServerParameters?: SqlServerParameters | null;
+		SqlServerParameters?: SqlServerParameters;
 
 		/** Teradata parameters. */
-		TeradataParameters?: TeradataParameters | null;
+		TeradataParameters?: TeradataParameters;
 
 		/** Twitter parameters. */
-		TwitterParameters?: TwitterParameters | null;
+		TwitterParameters?: TwitterParameters;
+	}
+	export interface CreateDataSourcePostBodyDataSourceParametersFormProperties {
+	}
+	export function CreateCreateDataSourcePostBodyDataSourceParametersFormGroup() {
+		return new FormGroup<CreateDataSourcePostBodyDataSourceParametersFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataSourcePostBodyCredentials {
 
 		/** The combination of user name and password that are used as credentials. */
-		CredentialPair?: CredentialPair | null;
+		CredentialPair?: CredentialPair;
+	}
+	export interface CreateDataSourcePostBodyCredentialsFormProperties {
+	}
+	export function CreateCreateDataSourcePostBodyCredentialsFormGroup() {
+		return new FormGroup<CreateDataSourcePostBodyCredentialsFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataSourcePostBodyVpcConnectionProperties {
 		VpcConnectionArn?: string | null;
 	}
+	export interface CreateDataSourcePostBodyVpcConnectionPropertiesFormProperties {
+		VpcConnectionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDataSourcePostBodyVpcConnectionPropertiesFormGroup() {
+		return new FormGroup<CreateDataSourcePostBodyVpcConnectionPropertiesFormProperties>({
+			VpcConnectionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDataSourcePostBodySslProperties {
 		DisableSsl?: boolean | null;
+	}
+	export interface CreateDataSourcePostBodySslPropertiesFormProperties {
+		DisableSsl: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDataSourcePostBodySslPropertiesFormGroup() {
+		return new FormGroup<CreateDataSourcePostBodySslPropertiesFormProperties>({
+			DisableSsl: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupPostBody {
@@ -2988,6 +6078,30 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Description?: string | null;
+	}
+	export interface CreateGroupPostBodyFormProperties {
+
+		/**
+		 * A name for the group that you want to create.
+		 * Required
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		GroupName: FormControl<string | null | undefined>,
+
+		/**
+		 * A description for the group that you want to create.
+		 * Max length: 512
+		 * Min length: 1
+		 */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupPostBodyFormGroup() {
+		return new FormGroup<CreateGroupPostBodyFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIAMPolicyAssignmentPostBody {
@@ -3010,7 +6124,38 @@ export namespace MyNS {
 		PolicyArn?: string | null;
 
 		/** The QuickSight users, groups, or both that you want to assign the policy to. */
-		Identities?: {[id: string]: Array<string> } | null;
+		Identities?: {[id: string]: Array<string> };
+	}
+	export interface CreateIAMPolicyAssignmentPostBodyFormProperties {
+
+		/**
+		 * The name of the assignment. It must be unique within an AWS account.
+		 * Required
+		 * Min length: 1
+		 * Pattern: (?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$
+		 */
+		AssignmentName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> </ul>
+		 * Required
+		 */
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+
+		/** The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment. */
+		PolicyArn: FormControl<string | null | undefined>,
+
+		/** The QuickSight users, groups, or both that you want to assign the policy to. */
+		Identities: FormControl<{[id: string]: Array<string> } | null | undefined>,
+	}
+	export function CreateCreateIAMPolicyAssignmentPostBodyFormGroup() {
+		return new FormGroup<CreateIAMPolicyAssignmentPostBodyFormProperties>({
+			AssignmentName: new FormControl<string | null | undefined>(undefined),
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			Identities: new FormControl<{[id: string]: Array<string> } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTemplatePostBody {
@@ -3028,7 +6173,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		Permissions?: Array<ResourcePermission> | null;
+		Permissions?: Array<ResourcePermission>;
 
 		/**
 		 * The source entity of the template.
@@ -3041,7 +6186,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 200
 		 */
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
@@ -3050,14 +6195,45 @@ export namespace MyNS {
 		 */
 		VersionDescription?: string | null;
 	}
+	export interface CreateTemplatePostBodyFormProperties {
+
+		/**
+		 * A display name for the template.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
+		 * Max length: 512
+		 * Min length: 1
+		 */
+		VersionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTemplatePostBodyFormGroup() {
+		return new FormGroup<CreateTemplatePostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateTemplatePostBodySourceEntity {
 
 		/** The source analysis of the template. */
-		SourceAnalysis?: TemplateSourceAnalysis | null;
+		SourceAnalysis?: TemplateSourceAnalysis;
 
 		/** The source template of the template. */
-		SourceTemplate?: TemplateSourceTemplate | null;
+		SourceTemplate?: TemplateSourceTemplate;
+	}
+	export interface CreateTemplatePostBodySourceEntityFormProperties {
+	}
+	export function CreateCreateTemplatePostBodySourceEntityFormGroup() {
+		return new FormGroup<CreateTemplatePostBodySourceEntityFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTemplatePutBody {
@@ -3083,14 +6259,45 @@ export namespace MyNS {
 		 */
 		Name?: string | null;
 	}
+	export interface UpdateTemplatePutBodyFormProperties {
+
+		/**
+		 * A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
+		 * Max length: 512
+		 * Min length: 1
+		 */
+		VersionDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * The name for the template.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTemplatePutBodyFormGroup() {
+		return new FormGroup<UpdateTemplatePutBodyFormProperties>({
+			VersionDescription: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTemplatePutBodySourceEntity {
 
 		/** The source analysis of the template. */
-		SourceAnalysis?: TemplateSourceAnalysis | null;
+		SourceAnalysis?: TemplateSourceAnalysis;
 
 		/** The source template of the template. */
-		SourceTemplate?: TemplateSourceTemplate | null;
+		SourceTemplate?: TemplateSourceTemplate;
+	}
+	export interface UpdateTemplatePutBodySourceEntityFormProperties {
+	}
+	export function CreateUpdateTemplatePutBodySourceEntityFormGroup() {
+		return new FormGroup<UpdateTemplatePutBodySourceEntityFormProperties>({
+		});
+
 	}
 
 	export interface CreateTemplateAliasPostBody {
@@ -3102,6 +6309,21 @@ export namespace MyNS {
 		 */
 		TemplateVersionNumber: number;
 	}
+	export interface CreateTemplateAliasPostBodyFormProperties {
+
+		/**
+		 * The version number of the template.
+		 * Required
+		 * Minimum: 1
+		 */
+		TemplateVersionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateTemplateAliasPostBodyFormGroup() {
+		return new FormGroup<CreateTemplateAliasPostBodyFormProperties>({
+			TemplateVersionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTemplateAliasPutBody {
 
@@ -3111,6 +6333,21 @@ export namespace MyNS {
 		 * Minimum: 1
 		 */
 		TemplateVersionNumber: number;
+	}
+	export interface UpdateTemplateAliasPutBodyFormProperties {
+
+		/**
+		 * The version number of the template.
+		 * Required
+		 * Minimum: 1
+		 */
+		TemplateVersionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateTemplateAliasPutBodyFormGroup() {
+		return new FormGroup<UpdateTemplateAliasPutBodyFormProperties>({
+			TemplateVersionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSetPutBody {
@@ -3130,7 +6367,7 @@ export namespace MyNS {
 		PhysicalTableMap: {[id: string]: PhysicalTable };
 
 		/** Configures the combination and transformation of the data from the physical tables. */
-		LogicalTableMap?: {[id: string]: LogicalTable } | null;
+		LogicalTableMap?: {[id: string]: LogicalTable };
 
 		/**
 		 * Indicates whether you want to import the data into SPICE.
@@ -3143,15 +6380,60 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 8
 		 */
-		ColumnGroups?: Array<ColumnGroup> | null;
+		ColumnGroups?: Array<ColumnGroup>;
 
 		/** The row-level security configuration for the dataset. */
-		RowLevelPermissionDataSet?: UpdateDataSetPutBodyRowLevelPermissionDataSet | null;
+		RowLevelPermissionDataSet?: UpdateDataSetPutBodyRowLevelPermissionDataSet;
+	}
+	export interface UpdateDataSetPutBodyFormProperties {
+
+		/**
+		 * The display name for the dataset.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * Declares the physical tables that are available in the underlying data sources.
+		 * Required
+		 */
+		PhysicalTableMap: FormControl<{[id: string]: PhysicalTable } | null | undefined>,
+
+		/** Configures the combination and transformation of the data from the physical tables. */
+		LogicalTableMap: FormControl<{[id: string]: LogicalTable } | null | undefined>,
+
+		/**
+		 * Indicates whether you want to import the data into SPICE.
+		 * Required
+		 */
+		ImportMode: FormControl<DataSetImportMode | null | undefined>,
+	}
+	export function CreateUpdateDataSetPutBodyFormGroup() {
+		return new FormGroup<UpdateDataSetPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			PhysicalTableMap: new FormControl<{[id: string]: PhysicalTable } | null | undefined>(undefined),
+			LogicalTableMap: new FormControl<{[id: string]: LogicalTable } | null | undefined>(undefined),
+			ImportMode: new FormControl<DataSetImportMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSetPutBodyRowLevelPermissionDataSet {
 		Arn?: string | null;
 		PermissionPolicy?: RowLevelPermissionPolicy | null;
+	}
+	export interface UpdateDataSetPutBodyRowLevelPermissionDataSetFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		PermissionPolicy: FormControl<RowLevelPermissionPolicy | null | undefined>,
+	}
+	export function CreateUpdateDataSetPutBodyRowLevelPermissionDataSetFormGroup() {
+		return new FormGroup<UpdateDataSetPutBodyRowLevelPermissionDataSetFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			PermissionPolicy: new FormControl<RowLevelPermissionPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSourcePutBody {
@@ -3165,90 +6447,138 @@ export namespace MyNS {
 		Name: string;
 
 		/** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null. */
-		DataSourceParameters?: UpdateDataSourcePutBodyDataSourceParameters | null;
+		DataSourceParameters?: UpdateDataSourcePutBodyDataSourceParameters;
 
 		/** Data source credentials. */
-		Credentials?: UpdateDataSourcePutBodyCredentials | null;
+		Credentials?: UpdateDataSourcePutBodyCredentials;
 
 		/** VPC connection properties. */
-		VpcConnectionProperties?: UpdateDataSourcePutBodyVpcConnectionProperties | null;
+		VpcConnectionProperties?: UpdateDataSourcePutBodyVpcConnectionProperties;
 
 		/** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source. */
-		SslProperties?: UpdateDataSourcePutBodySslProperties | null;
+		SslProperties?: UpdateDataSourcePutBodySslProperties;
+	}
+	export interface UpdateDataSourcePutBodyFormProperties {
+
+		/**
+		 * A display name for the data source.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDataSourcePutBodyFormGroup() {
+		return new FormGroup<UpdateDataSourcePutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSourcePutBodyDataSourceParameters {
 
 		/** Amazon Elasticsearch Service parameters. */
-		AmazonElasticsearchParameters?: AmazonElasticsearchParameters | null;
+		AmazonElasticsearchParameters?: AmazonElasticsearchParameters;
 
 		/** Amazon Athena parameters. */
-		AthenaParameters?: AthenaParameters | null;
+		AthenaParameters?: AthenaParameters;
 
 		/** Amazon Aurora parameters. */
-		AuroraParameters?: AuroraParameters | null;
+		AuroraParameters?: AuroraParameters;
 
 		/** Amazon Aurora with PostgreSQL compatibility parameters. */
-		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters | null;
+		AuroraPostgreSqlParameters?: AuroraPostgreSqlParameters;
 
 		/** AWS IoT Analytics parameters. */
-		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters | null;
+		AwsIotAnalyticsParameters?: AwsIotAnalyticsParameters;
 
 		/** Jira parameters. */
-		JiraParameters?: JiraParameters | null;
+		JiraParameters?: JiraParameters;
 
 		/** MariaDB parameters. */
-		MariaDbParameters?: MariaDbParameters | null;
+		MariaDbParameters?: MariaDbParameters;
 
 		/** MySQL parameters. */
-		MySqlParameters?: MySqlParameters | null;
+		MySqlParameters?: MySqlParameters;
 
 		/** PostgreSQL parameters. */
-		PostgreSqlParameters?: PostgreSqlParameters | null;
+		PostgreSqlParameters?: PostgreSqlParameters;
 
 		/** Presto parameters. */
-		PrestoParameters?: PrestoParameters | null;
+		PrestoParameters?: PrestoParameters;
 
 		/** Amazon RDS parameters. */
-		RdsParameters?: RdsParameters | null;
+		RdsParameters?: RdsParameters;
 
 		/** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set. */
-		RedshiftParameters?: RedshiftParameters | null;
+		RedshiftParameters?: RedshiftParameters;
 
 		/** S3 parameters. */
-		S3Parameters?: S3Parameters | null;
+		S3Parameters?: S3Parameters;
 
 		/** ServiceNow parameters. */
-		ServiceNowParameters?: ServiceNowParameters | null;
+		ServiceNowParameters?: ServiceNowParameters;
 
 		/** Snowflake parameters. */
-		SnowflakeParameters?: SnowflakeParameters | null;
+		SnowflakeParameters?: SnowflakeParameters;
 
 		/** Spark parameters. */
-		SparkParameters?: SparkParameters | null;
+		SparkParameters?: SparkParameters;
 
 		/** SQL Server parameters. */
-		SqlServerParameters?: SqlServerParameters | null;
+		SqlServerParameters?: SqlServerParameters;
 
 		/** Teradata parameters. */
-		TeradataParameters?: TeradataParameters | null;
+		TeradataParameters?: TeradataParameters;
 
 		/** Twitter parameters. */
-		TwitterParameters?: TwitterParameters | null;
+		TwitterParameters?: TwitterParameters;
+	}
+	export interface UpdateDataSourcePutBodyDataSourceParametersFormProperties {
+	}
+	export function CreateUpdateDataSourcePutBodyDataSourceParametersFormGroup() {
+		return new FormGroup<UpdateDataSourcePutBodyDataSourceParametersFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataSourcePutBodyCredentials {
 
 		/** The combination of user name and password that are used as credentials. */
-		CredentialPair?: CredentialPair | null;
+		CredentialPair?: CredentialPair;
+	}
+	export interface UpdateDataSourcePutBodyCredentialsFormProperties {
+	}
+	export function CreateUpdateDataSourcePutBodyCredentialsFormGroup() {
+		return new FormGroup<UpdateDataSourcePutBodyCredentialsFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataSourcePutBodyVpcConnectionProperties {
 		VpcConnectionArn?: string | null;
 	}
+	export interface UpdateDataSourcePutBodyVpcConnectionPropertiesFormProperties {
+		VpcConnectionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDataSourcePutBodyVpcConnectionPropertiesFormGroup() {
+		return new FormGroup<UpdateDataSourcePutBodyVpcConnectionPropertiesFormProperties>({
+			VpcConnectionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDataSourcePutBodySslProperties {
 		DisableSsl?: boolean | null;
+	}
+	export interface UpdateDataSourcePutBodySslPropertiesFormProperties {
+		DisableSsl: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDataSourcePutBodySslPropertiesFormGroup() {
+		return new FormGroup<UpdateDataSourcePutBodySslPropertiesFormProperties>({
+			DisableSsl: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGroupPutBody {
@@ -3259,6 +6589,21 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Description?: string | null;
+	}
+	export interface UpdateGroupPutBodyFormProperties {
+
+		/**
+		 * The description for the group that you want to update.
+		 * Max length: 512
+		 * Min length: 1
+		 */
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupPutBodyFormGroup() {
+		return new FormGroup<UpdateGroupPutBodyFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateUserPutBody {
@@ -3275,6 +6620,27 @@ export namespace MyNS {
 		 */
 		Role: UserRole;
 	}
+	export interface UpdateUserPutBodyFormProperties {
+
+		/**
+		 * The email address of the user that you want to update.
+		 * Required
+		 */
+		Email: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon QuickSight role of the user. The user role can be one of the following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li> </ul>
+		 * Required
+		 */
+		Role: FormControl<UserRole | null | undefined>,
+	}
+	export function CreateUpdateUserPutBodyFormGroup() {
+		return new FormGroup<UpdateUserPutBodyFormProperties>({
+			Email: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<UserRole | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDashboardPermissionsPutBody {
 
@@ -3283,14 +6649,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		GrantPermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
 
 		/**
 		 * The permissions that you want to revoke from this resource.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		RevokePermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateDashboardPermissionsPutBodyFormProperties {
+	}
+	export function CreateUpdateDashboardPermissionsPutBodyFormGroup() {
+		return new FormGroup<UpdateDashboardPermissionsPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataSetPermissionsPostBody {
@@ -3300,14 +6673,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		GrantPermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
 
 		/**
 		 * The resource permissions that you want to revoke from the dataset.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		RevokePermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateDataSetPermissionsPostBodyFormProperties {
+	}
+	export function CreateUpdateDataSetPermissionsPostBodyFormGroup() {
+		return new FormGroup<UpdateDataSetPermissionsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDataSourcePermissionsPostBody {
@@ -3317,14 +6697,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		GrantPermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
 
 		/**
 		 * A list of resource permissions that you want to revoke on the data source.
 		 * Minimum items: 1
 		 * Maximum items: 64
 		 */
-		RevokePermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateDataSourcePermissionsPostBodyFormProperties {
+	}
+	export function CreateUpdateDataSourcePermissionsPostBodyFormGroup() {
+		return new FormGroup<UpdateDataSourcePermissionsPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateIAMPolicyAssignmentPutBody {
@@ -3336,7 +6723,26 @@ export namespace MyNS {
 		PolicyArn?: string | null;
 
 		/** The QuickSight users, groups, or both that you want to assign the policy to. */
-		Identities?: {[id: string]: Array<string> } | null;
+		Identities?: {[id: string]: Array<string> };
+	}
+	export interface UpdateIAMPolicyAssignmentPutBodyFormProperties {
+
+		/** <p>The status of the assignment. Possible values are as follows:</p> <ul> <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> </ul> */
+		AssignmentStatus: FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>,
+
+		/** The ARN for the IAM policy to apply to the QuickSight users and groups specified in this assignment. */
+		PolicyArn: FormControl<string | null | undefined>,
+
+		/** The QuickSight users, groups, or both that you want to assign the policy to. */
+		Identities: FormControl<{[id: string]: Array<string> } | null | undefined>,
+	}
+	export function CreateUpdateIAMPolicyAssignmentPutBodyFormGroup() {
+		return new FormGroup<UpdateIAMPolicyAssignmentPutBodyFormProperties>({
+			AssignmentStatus: new FormControl<CreateIAMPolicyAssignmentResponseAssignmentStatus | null | undefined>(undefined),
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			Identities: new FormControl<{[id: string]: Array<string> } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTemplatePermissionsPutBody {
@@ -3346,14 +6752,21 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		GrantPermissions?: Array<ResourcePermission> | null;
+		GrantPermissions?: Array<ResourcePermission>;
 
 		/**
 		 * A list of resource permissions to be revoked from the template.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		RevokePermissions?: Array<ResourcePermission> | null;
+		RevokePermissions?: Array<ResourcePermission>;
+	}
+	export interface UpdateTemplatePermissionsPutBodyFormProperties {
+	}
+	export function CreateUpdateTemplatePermissionsPutBodyFormGroup() {
+		return new FormGroup<UpdateTemplatePermissionsPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -3365,6 +6778,13 @@ export namespace MyNS {
 		 * Maximum items: 200
 		 */
 		Tags: Array<Tag>;
+	}
+	export interface TagResourcePostBodyFormProperties {
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+		});
+
 	}
 
 	export interface RegisterUserPostBody {
@@ -3405,6 +6825,55 @@ export namespace MyNS {
 		 */
 		UserName?: string | null;
 	}
+	export interface RegisterUserPostBodyFormProperties {
+
+		/**
+		 * <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li> <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li> </ul>
+		 * Required
+		 */
+		IdentityType: FormControl<UserIdentityType | null | undefined>,
+
+		/**
+		 * The email address of the user that you want to register.
+		 * Required
+		 */
+		Email: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li> </ul>
+		 * Required
+		 */
+		UserRole: FormControl<UserRole | null | undefined>,
+
+		/** The ARN of the IAM user or role that you are registering with Amazon QuickSight. */
+		IamArn: FormControl<string | null | undefined>,
+
+		/**
+		 * You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+		 * Max length: 64
+		 * Min length: 2
+		 * Pattern: [\w+=.@-]*
+		 */
+		SessionName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon QuickSight user name that you want to create for the user you are registering.
+		 * Min length: 1
+		 * Pattern: [\u0020-\u00FF]+
+		 */
+		UserName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterUserPostBodyFormGroup() {
+		return new FormGroup<RegisterUserPostBodyFormProperties>({
+			IdentityType: new FormControl<UserIdentityType | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined),
+			UserRole: new FormControl<UserRole | null | undefined>(undefined),
+			IamArn: new FormControl<string | null | undefined>(undefined),
+			SessionName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchDashboardsPostBody {
 
@@ -3424,6 +6893,25 @@ export namespace MyNS {
 		 * Maximum: 100
 		 */
 		MaxResults?: number | null;
+	}
+	export interface SearchDashboardsPostBodyFormProperties {
+
+		/** The token for the next set of results, or null if there are no more results. */
+		NextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to be returned per request.
+		 * Minimum: 1
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchDashboardsPostBodyFormGroup() {
+		return new FormGroup<SearchDashboardsPostBodyFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 }

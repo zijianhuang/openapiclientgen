@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A single book in the library. */
@@ -23,12 +24,41 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** A single book in the library. */
+	export interface GoogleExampleLibraryagentV1BookFormProperties {
+
+		/** The name of the book author. */
+		author: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the book.
+		 * Book names have the form `shelves/{shelf_id}/books/{book_id}`.
+		 * The name is ignored when creating a book.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Value indicating whether the book has been read. */
+		read: FormControl<boolean | null | undefined>,
+
+		/** The title of the book. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleExampleLibraryagentV1BookFormGroup() {
+		return new FormGroup<GoogleExampleLibraryagentV1BookFormProperties>({
+			author: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			read: new FormControl<boolean | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response message for LibraryAgent.ListBooks. */
 	export interface GoogleExampleLibraryagentV1ListBooksResponse {
 
 		/** The list of books. */
-		books?: Array<GoogleExampleLibraryagentV1Book> | null;
+		books?: Array<GoogleExampleLibraryagentV1Book>;
 
 		/**
 		 * A token to retrieve next page of results.
@@ -38,6 +68,25 @@ export namespace MyNS {
 		 * page of results.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response message for LibraryAgent.ListBooks. */
+	export interface GoogleExampleLibraryagentV1ListBooksResponseFormProperties {
+
+		/**
+		 * A token to retrieve next page of results.
+		 * Pass this value in the
+		 * ListBooksRequest.page_token
+		 * field in the subsequent call to `ListBooks` method to retrieve the next
+		 * page of results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleExampleLibraryagentV1ListBooksResponseFormGroup() {
+		return new FormGroup<GoogleExampleLibraryagentV1ListBooksResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -54,7 +103,26 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The list of shelves. */
-		shelves?: Array<GoogleExampleLibraryagentV1Shelf> | null;
+		shelves?: Array<GoogleExampleLibraryagentV1Shelf>;
+	}
+
+	/** Response message for LibraryAgent.ListShelves. */
+	export interface GoogleExampleLibraryagentV1ListShelvesResponseFormProperties {
+
+		/**
+		 * A token to retrieve next page of results.
+		 * Pass this value in the
+		 * ListShelvesRequest.page_token
+		 * field in the subsequent call to `ListShelves` method to retrieve the next
+		 * page of results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleExampleLibraryagentV1ListShelvesResponseFormGroup() {
+		return new FormGroup<GoogleExampleLibraryagentV1ListShelvesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -70,6 +138,27 @@ export namespace MyNS {
 
 		/** The theme of the shelf */
 		theme?: string | null;
+	}
+
+	/** A Shelf contains a collection of books with a theme. */
+	export interface GoogleExampleLibraryagentV1ShelfFormProperties {
+
+		/**
+		 * Output only. The resource name of the shelf.
+		 * Shelf names have the form `shelves/{shelf_id}`.
+		 * The name is ignored when creating a shelf.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The theme of the shelf */
+		theme: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleExampleLibraryagentV1ShelfFormGroup() {
+		return new FormGroup<GoogleExampleLibraryagentV1ShelfFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			theme: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

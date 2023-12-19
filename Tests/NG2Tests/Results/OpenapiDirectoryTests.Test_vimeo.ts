@@ -1,14 +1,15 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Activity_3_1 {
 
 		/** The category that this event occurred for. This will be preset for only "category" activity types. */
-		category?: Category | null;
+		category?: Category;
 
 		/** The channel that this event occurred for. This will be present for only "channel" activity types. */
-		channel?: Channel | null;
+		channel?: Channel;
 
 		/**
 		 * Video associated with ths activity.
@@ -17,7 +18,7 @@ export namespace MyNS {
 		clip: Video;
 
 		/** The group that this event occurred for. This will be present for only "group" activity types. */
-		group?: Group | null;
+		group?: Group;
 
 		/**
 		 * The activity's metadata.
@@ -26,7 +27,7 @@ export namespace MyNS {
 		metadata: Activity_3_1Metadata;
 
 		/** The tag that this event occurred for. This will be present for only "tag" activity types. */
-		tag?: Tag | null;
+		tag?: Tag;
 
 		/**
 		 * Time that the event occurred.
@@ -41,13 +42,34 @@ export namespace MyNS {
 		type: Activity_3_1Type;
 
 		/** The user that this event occurred for. This will be present for "like", "appearance", and "share" activity types. */
-		user?: User | null;
+		user?: User;
+	}
+	export interface Activity_3_1FormProperties {
+
+		/**
+		 * Time that the event occurred.
+		 * Required
+		 */
+		time: FormControl<string | null | undefined>,
+
+		/**
+		 * Activity type
+		 * Required
+		 */
+		type: FormControl<Activity_3_1Type | null | undefined>,
+	}
+	export function CreateActivity_3_1FormGroup() {
+		return new FormGroup<Activity_3_1FormProperties>({
+			time: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<Activity_3_1Type | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Category {
 
 		/** The active icon for the category. */
-		icon?: Picture | null;
+		icon?: Picture;
 
 		/**
 		 * The last time, in ISO 8601 format, that a video was featured.
@@ -92,7 +114,7 @@ export namespace MyNS {
 		resource_key: string;
 
 		/** All the subcategories that belong to this category, if the current category is a top-level parent. */
-		CategorySubcategories?: Array<CategorySubcategories> | null;
+		CategorySubcategories?: Array<CategorySubcategories>;
 
 		/**
 		 * Whether the category isn't a subcategory of another category.
@@ -105,6 +127,55 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface CategoryFormProperties {
+
+		/**
+		 * The last time, in ISO 8601 format, that a video was featured.
+		 * Required
+		 */
+		last_video_featured_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The URL to access the category in a browser.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The display name that identifies the category.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource key of the category.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the category isn't a subcategory of another category.
+		 * Required
+		 */
+		top_level: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The unique identifier to access the category resource.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryFormGroup() {
+		return new FormGroup<CategoryFormProperties>({
+			last_video_featured_time: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			top_level: new FormControl<boolean | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Picture {
@@ -146,6 +217,49 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface PictureFormProperties {
+
+		/**
+		 * Whether this picture is the active picture for its parent resource.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/** The upload URL for the picture. This field appears when you create the picture resource for the first time. */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The picture's resource key string.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the picture:
+		 * Option descriptions:
+		 * * `caution` - An image that is appropriate for all ages.
+		 * * `custom` - A custom image for the video.
+		 * * `default` - The default image for the video.
+		 * Required
+		 */
+		type: FormControl<PictureType | null | undefined>,
+
+		/**
+		 * The picture's URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreatePictureFormGroup() {
+		return new FormGroup<PictureFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<PictureType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PictureSizes {
 
@@ -170,6 +284,38 @@ export namespace MyNS {
 		 */
 		width: number;
 	}
+	export interface PictureSizesFormProperties {
+
+		/**
+		 * The height of the image.
+		 * Required
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * The direct link to the image.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/** The direct link to the image with a play button overlay. */
+		link_with_play_button: FormControl<string | null | undefined>,
+
+		/**
+		 * The width of the image.
+		 * Required
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreatePictureSizesFormGroup() {
+		return new FormGroup<PictureSizesFormProperties>({
+			height: new FormControl<number | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			link_with_play_button: new FormControl<string | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PictureType { caution = 0, custom = 1, _default = 2 }
 
@@ -186,6 +332,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		interactions: CategoryMetadataInteractions;
+	}
+	export interface CategoryMetadataFormProperties {
+	}
+	export function CreateCategoryMetadataFormGroup() {
+		return new FormGroup<CategoryMetadataFormProperties>({
+		});
+
 	}
 
 	export interface CategoryMetadataConnections {
@@ -214,6 +367,13 @@ export namespace MyNS {
 		 */
 		videos: CategoryMetadataConnectionsVideos;
 	}
+	export interface CategoryMetadataConnectionsFormProperties {
+	}
+	export function CreateCategoryMetadataConnectionsFormGroup() {
+		return new FormGroup<CategoryMetadataConnectionsFormProperties>({
+		});
+
+	}
 
 	export interface CategoryMetadataConnectionsChannels {
 
@@ -234,6 +394,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface CategoryMetadataConnectionsChannelsFormProperties {
+
+		/**
+		 * The total number of channels on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryMetadataConnectionsChannelsFormGroup() {
+		return new FormGroup<CategoryMetadataConnectionsChannelsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CategoryMetadataConnectionsGroups {
@@ -256,6 +437,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface CategoryMetadataConnectionsGroupsFormProperties {
+
+		/**
+		 * The total number of groups on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryMetadataConnectionsGroupsFormGroup() {
+		return new FormGroup<CategoryMetadataConnectionsGroupsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CategoryMetadataConnectionsUsers {
 
@@ -276,6 +478,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface CategoryMetadataConnectionsUsersFormProperties {
+
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryMetadataConnectionsUsersFormGroup() {
+		return new FormGroup<CategoryMetadataConnectionsUsersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CategoryMetadataConnectionsVideos {
@@ -298,6 +521,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface CategoryMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<CategoryMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CategoryMetadataInteractions {
 
@@ -306,6 +550,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		follow: CategoryMetadataInteractionsFollow;
+	}
+	export interface CategoryMetadataInteractionsFormProperties {
+	}
+	export function CreateCategoryMetadataInteractionsFormGroup() {
+		return new FormGroup<CategoryMetadataInteractionsFormProperties>({
+		});
+
 	}
 
 	export interface CategoryMetadataInteractionsFollow {
@@ -328,6 +579,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface CategoryMetadataInteractionsFollowFormProperties {
+
+		/**
+		 * Whether the authenticated user has followed this category.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format that the user followed this category, or the null value if the user hasn't followed this category.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI for following or unfollowing this category: PUT to this URI to follow the category, or DELETE to this URI to unfollow the category.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryMetadataInteractionsFollowFormGroup() {
+		return new FormGroup<CategoryMetadataInteractionsFollowFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CategoryParent {
 
@@ -349,6 +628,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface CategoryParentFormProperties {
+
+		/**
+		 * The URL to access the parent category in a browser.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The display name that identifies the parent category.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique identifier to access the parent of this category resource.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryParentFormGroup() {
+		return new FormGroup<CategoryParentFormProperties>({
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CategorySubcategories {
 
@@ -369,6 +676,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface CategorySubcategoriesFormProperties {
+
+		/**
+		 * The URL to access the subcategory in a browser.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The display name that identifies the subcategory.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique identifier to access the subcategory resource.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCategorySubcategoriesFormGroup() {
+		return new FormGroup<CategorySubcategoriesFormProperties>({
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Channel {
@@ -457,6 +792,62 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface ChannelFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when the channel was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * A brief explanation of the channel's content.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The URL to access the channel in a browser.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the album was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The display name that identifies the channel.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The channel resource key.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique identifier to access the channel resource.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelFormGroup() {
+		return new FormGroup<ChannelFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ChannelMetadata {
 
@@ -471,6 +862,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		interactions: ChannelMetadataInteractions;
+	}
+	export interface ChannelMetadataFormProperties {
+	}
+	export function CreateChannelMetadataFormGroup() {
+		return new FormGroup<ChannelMetadataFormProperties>({
+		});
+
 	}
 
 	export interface ChannelMetadataConnections {
@@ -493,6 +891,13 @@ export namespace MyNS {
 		 */
 		videos: ChannelMetadataConnectionsVideos;
 	}
+	export interface ChannelMetadataConnectionsFormProperties {
+	}
+	export function CreateChannelMetadataConnectionsFormGroup() {
+		return new FormGroup<ChannelMetadataConnectionsFormProperties>({
+		});
+
+	}
 
 	export interface ChannelMetadataConnectionsPrivacy_users {
 
@@ -513,6 +918,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface ChannelMetadataConnectionsPrivacy_usersFormProperties {
+
+		/**
+		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataConnectionsPrivacy_usersFormGroup() {
+		return new FormGroup<ChannelMetadataConnectionsPrivacy_usersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ChannelMetadataConnectionsUsers {
@@ -535,6 +961,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface ChannelMetadataConnectionsUsersFormProperties {
+
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataConnectionsUsersFormGroup() {
+		return new FormGroup<ChannelMetadataConnectionsUsersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ChannelMetadataConnectionsVideos {
 
@@ -555,6 +1002,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface ChannelMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<ChannelMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ChannelMetadataInteractions {
@@ -583,6 +1051,13 @@ export namespace MyNS {
 		 */
 		moderate_videos: ChannelMetadataInteractionsModerate_videos;
 	}
+	export interface ChannelMetadataInteractionsFormProperties {
+	}
+	export function CreateChannelMetadataInteractionsFormGroup() {
+		return new FormGroup<ChannelMetadataInteractionsFormProperties>({
+		});
+
+	}
 
 	export interface ChannelMetadataInteractionsAdd_moderators {
 
@@ -598,6 +1073,20 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface ChannelMetadataInteractionsAdd_moderatorsFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataInteractionsAdd_moderatorsFormGroup() {
+		return new FormGroup<ChannelMetadataInteractionsAdd_moderatorsFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ChannelMetadataInteractionsAdd_to {
 
@@ -612,6 +1101,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface ChannelMetadataInteractionsAdd_toFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataInteractionsAdd_toFormGroup() {
+		return new FormGroup<ChannelMetadataInteractionsAdd_toFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ChannelMetadataInteractionsFollow {
@@ -643,6 +1146,44 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface ChannelMetadataInteractionsFollowFormProperties {
+
+		/**
+		 * Whether the authenticated user has followed this channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format that the user followed this channel, or the null value if the user hasn't followed the channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the authenticated user is a moderator or subscriber. This data requires a bearer token with the `private` scope.
+		 * Option descriptions:
+		 * * `moderator` - The authenticated user is a moderator.
+		 * * `subscriber` - The authenticated user is a subscriber.
+		 * Required
+		 */
+		type: FormControl<ChannelMetadataInteractionsFollowType | null | undefined>,
+
+		/**
+		 * The URI for following or unfollowing this channel. PUT to this URI to follow the channel, or DELETE to this URI to unfollow the channel. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataInteractionsFollowFormGroup() {
+		return new FormGroup<ChannelMetadataInteractionsFollowFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ChannelMetadataInteractionsFollowType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ChannelMetadataInteractionsFollowType { moderator = 0, subscriber = 1 }
 
@@ -660,6 +1201,20 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface ChannelMetadataInteractionsModerate_videosFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelMetadataInteractionsModerate_videosFormGroup() {
+		return new FormGroup<ChannelMetadataInteractionsModerate_videosFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ChannelPrivacy {
 
@@ -672,6 +1227,24 @@ export namespace MyNS {
 		 * Required
 		 */
 		view: ChannelPrivacyView;
+	}
+	export interface ChannelPrivacyFormProperties {
+
+		/**
+		 * Who can view the channel:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can view the channel.
+		 * * `moderators` - Only moderators can view the channel.
+		 * * `users` - Only registered users can view the channel.
+		 * Required
+		 */
+		view: FormControl<ChannelPrivacyView | null | undefined>,
+	}
+	export function CreateChannelPrivacyFormGroup() {
+		return new FormGroup<ChannelPrivacyFormProperties>({
+			view: new FormControl<ChannelPrivacyView | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChannelPrivacyView { anybody = 0, moderators = 1, users = 2 }
@@ -708,6 +1281,41 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface TagFormProperties {
+
+		/**
+		 * The normalized canonical tag name.
+		 * Required
+		 */
+		canonical: FormControl<string | null | undefined>,
+
+		/**
+		 * The tag value.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The tag's resource key string.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The canonical relative URI of the tag.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			canonical: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagMetadata {
 
@@ -717,6 +1325,13 @@ export namespace MyNS {
 		 */
 		connections: TagMetadataConnections;
 	}
+	export interface TagMetadataFormProperties {
+	}
+	export function CreateTagMetadataFormGroup() {
+		return new FormGroup<TagMetadataFormProperties>({
+		});
+
+	}
 
 	export interface TagMetadataConnections {
 
@@ -725,6 +1340,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: TagMetadataConnectionsVideos;
+	}
+	export interface TagMetadataConnectionsFormProperties {
+	}
+	export function CreateTagMetadataConnectionsFormGroup() {
+		return new FormGroup<TagMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface TagMetadataConnectionsVideos {
@@ -746,6 +1368,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface TagMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateTagMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<TagMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface User {
@@ -782,7 +1425,7 @@ export namespace MyNS {
 		 * * `unrated` - No rating.
 		 * * `violence` - Violent or graphic content.
 		 */
-		content_filter?: Array<string> | null;
+		content_filter?: Array<string>;
 
 		/**
 		 * The time in ISO 8601 format when the user account was created.
@@ -822,7 +1465,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		pictures: Picture;
-		preferences?: UserPreferences | null;
+		preferences?: UserPreferences;
 
 		/**
 		 * The user's resource key string.
@@ -848,6 +1491,83 @@ export namespace MyNS {
 		 */
 		UserWebsites: Array<UserWebsites>;
 	}
+	export interface UserFormProperties {
+
+		/**
+		 * The user's account type:
+		 * Option descriptions:
+		 * * `basic` - The user has a Vimeo Basic subscription.
+		 * * `business` - The user has a Vimeo Business subscription.
+		 * * `live_business` - The user has a Vimeo Business Live subscription.
+		 * * `live_premium` - The user has a Vimeo Premium subscription.
+		 * * `live_pro` - The user has a Vimeo PRO Live subscription.
+		 * * `plus` - The user has a Vimeo Plus subscription.
+		 * * `pro` - The user has a Vimeo Pro subscription.
+		 * * `pro_unlimited` - The user has a Vimeo PRO Unlimited subscription.
+		 * * `producer` - The user has a Vimeo Producer subscription.
+		 * Required
+		 */
+		account: FormControl<UserAccount | null | undefined>,
+
+		/**
+		 * The user's bio.
+		 * Required
+		 */
+		bio: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user account was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/** The user's email address. This data requires a bearer token with the `email` scope. */
+		email: FormControl<string | null | undefined>,
+
+		/**
+		 * The absolute URL of this user's profile page.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's location.
+		 * Required
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's display name.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's resource key string.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's canonical relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserFormGroup() {
+		return new FormGroup<UserFormProperties>({
+			account: new FormControl<UserAccount | null | undefined>(undefined),
+			bio: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UserAccount { basic = 0, business = 1, live_business = 2, live_premium = 3, live_pro = 4, plus = 5, pro = 6, pro_unlimited = 7, producer = 8 }
 
@@ -859,6 +1579,13 @@ export namespace MyNS {
 		 */
 		connections: UserMetadataConnections;
 		interactions: UserMetadataInteractions;
+	}
+	export interface UserMetadataFormProperties {
+	}
+	export function CreateUserMetadataFormGroup() {
+		return new FormGroup<UserMetadataFormProperties>({
+		});
+
 	}
 
 	export interface UserMetadataConnections {
@@ -983,6 +1710,13 @@ export namespace MyNS {
 		 */
 		watchlater: UserMetadataConnectionsWatchlater;
 	}
+	export interface UserMetadataConnectionsFormProperties {
+	}
+	export function CreateUserMetadataConnectionsFormGroup() {
+		return new FormGroup<UserMetadataConnectionsFormProperties>({
+		});
+
+	}
 
 	export interface UserMetadataConnectionsAlbums {
 
@@ -1003,6 +1737,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsAlbumsFormProperties {
+
+		/**
+		 * The total number of albums on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsAlbumsFormGroup() {
+		return new FormGroup<UserMetadataConnectionsAlbumsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsAppearances {
@@ -1025,6 +1780,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsAppearancesFormProperties {
+
+		/**
+		 * The total number of appearances on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsAppearancesFormGroup() {
+		return new FormGroup<UserMetadataConnectionsAppearancesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsBlock {
 
@@ -1045,6 +1821,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsBlockFormProperties {
+
+		/**
+		 * The total number of blocked users on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsBlockFormGroup() {
+		return new FormGroup<UserMetadataConnectionsBlockFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsCategories {
@@ -1067,6 +1864,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsCategoriesFormProperties {
+
+		/**
+		 * The total number of categories on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsCategoriesFormGroup() {
+		return new FormGroup<UserMetadataConnectionsCategoriesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsChannels {
 
@@ -1088,6 +1906,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsChannelsFormProperties {
+
+		/**
+		 * The total number of channels on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsChannelsFormGroup() {
+		return new FormGroup<UserMetadataConnectionsChannelsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsFeed {
 
@@ -1102,6 +1941,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsFeedFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsFeedFormGroup() {
+		return new FormGroup<UserMetadataConnectionsFeedFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsFolders {
@@ -1124,6 +1977,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsFoldersFormProperties {
+
+		/**
+		 * The total number of folders on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsFoldersFormGroup() {
+		return new FormGroup<UserMetadataConnectionsFoldersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsFollowers {
 
@@ -1144,6 +2018,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsFollowersFormProperties {
+
+		/**
+		 * The total number of followers on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsFollowersFormGroup() {
+		return new FormGroup<UserMetadataConnectionsFollowersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsFollowing {
@@ -1166,6 +2061,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsFollowingFormProperties {
+
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsFollowingFormGroup() {
+		return new FormGroup<UserMetadataConnectionsFollowingFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsGroups {
 
@@ -1186,6 +2102,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsGroupsFormProperties {
+
+		/**
+		 * The total number of groups on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsGroupsFormGroup() {
+		return new FormGroup<UserMetadataConnectionsGroupsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsLikes {
@@ -1208,6 +2145,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsLikesFormProperties {
+
+		/**
+		 * The total number of likes on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsLikesFormGroup() {
+		return new FormGroup<UserMetadataConnectionsLikesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsModerated_channels {
 
@@ -1228,6 +2186,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsModerated_channelsFormProperties {
+
+		/**
+		 * The total number of channels on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsModerated_channelsFormGroup() {
+		return new FormGroup<UserMetadataConnectionsModerated_channelsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsPictures {
@@ -1250,6 +2229,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsPicturesFormProperties {
+
+		/**
+		 * The total number of pictures on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsPicturesFormGroup() {
+		return new FormGroup<UserMetadataConnectionsPicturesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsPortfolios {
 
@@ -1270,6 +2270,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsPortfoliosFormProperties {
+
+		/**
+		 * The total number of portfolios on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsPortfoliosFormGroup() {
+		return new FormGroup<UserMetadataConnectionsPortfoliosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsRecommended_channels {
@@ -1292,6 +2313,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsRecommended_channelsFormProperties {
+
+		/**
+		 * The total number of channels on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsRecommended_channelsFormGroup() {
+		return new FormGroup<UserMetadataConnectionsRecommended_channelsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsRecommended_users {
 
@@ -1312,6 +2354,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsRecommended_usersFormProperties {
+
+		/**
+		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsRecommended_usersFormGroup() {
+		return new FormGroup<UserMetadataConnectionsRecommended_usersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsShared {
@@ -1334,6 +2397,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsSharedFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsSharedFormGroup() {
+		return new FormGroup<UserMetadataConnectionsSharedFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsVideos {
 
@@ -1354,6 +2438,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<UserMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataConnectionsWatched_videos {
@@ -1376,6 +2481,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsWatched_videosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsWatched_videosFormGroup() {
+		return new FormGroup<UserMetadataConnectionsWatched_videosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataConnectionsWatchlater {
 
@@ -1397,9 +2523,30 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataConnectionsWatchlaterFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataConnectionsWatchlaterFormGroup() {
+		return new FormGroup<UserMetadataConnectionsWatchlaterFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataInteractions {
-		add_privacy_user?: UserMetadataInteractionsAdd_privacy_user | null;
+		add_privacy_user?: UserMetadataInteractionsAdd_privacy_user;
 
 		/**
 		 * Information related to the block status of this user.
@@ -1419,14 +2566,32 @@ export namespace MyNS {
 		 */
 		report: UserMetadataInteractionsReport;
 	}
+	export interface UserMetadataInteractionsFormProperties {
+	}
+	export function CreateUserMetadataInteractionsFormGroup() {
+		return new FormGroup<UserMetadataInteractionsFormProperties>({
+		});
+
+	}
 
 	export interface UserMetadataInteractionsAdd_privacy_user {
 
 		/** An array of the HTTP methods permitted on this URI. This data requires a bearer token with the `private` scope. */
-		options?: Array<string> | null;
+		options?: Array<string>;
 
 		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
 		uri?: string | null;
+	}
+	export interface UserMetadataInteractionsAdd_privacy_userFormProperties {
+
+		/** The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataInteractionsAdd_privacy_userFormGroup() {
+		return new FormGroup<UserMetadataInteractionsAdd_privacy_userFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataInteractionsBlock {
@@ -1455,6 +2620,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataInteractionsBlockFormProperties {
+
+		/**
+		 * Whether a user is blocking the current user.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the block occurred, or the null value if no block exists.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI to block or unblock the user.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataInteractionsBlockFormGroup() {
+		return new FormGroup<UserMetadataInteractionsBlockFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserMetadataInteractionsFollow {
 
@@ -1475,6 +2668,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface UserMetadataInteractionsFollowFormProperties {
+
+		/**
+		 * Whether a user is following the current user.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The URI to follow the user.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataInteractionsFollowFormGroup() {
+		return new FormGroup<UserMetadataInteractionsFollowFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserMetadataInteractionsReport {
@@ -1497,13 +2711,41 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface UserMetadataInteractionsReportFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUserMetadataInteractionsReportFormGroup() {
+		return new FormGroup<UserMetadataInteractionsReportFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserPreferences {
-		videos?: UserPreferencesVideos | null;
+		videos?: UserPreferencesVideos;
+	}
+	export interface UserPreferencesFormProperties {
+	}
+	export function CreateUserPreferencesFormGroup() {
+		return new FormGroup<UserPreferencesFormProperties>({
+		});
+
 	}
 
 	export interface UserPreferencesVideos {
-		privacy?: UserPreferencesVideosPrivacy | null;
+		privacy?: UserPreferencesVideosPrivacy;
+	}
+	export interface UserPreferencesVideosFormProperties {
+	}
+	export function CreateUserPreferencesVideosFormGroup() {
+		return new FormGroup<UserPreferencesVideosFormProperties>({
+		});
+
 	}
 
 	export interface UserPreferencesVideosPrivacy {
@@ -1545,6 +2787,55 @@ export namespace MyNS {
 		 */
 		view?: UserPreferencesVideosPrivacyView | null;
 	}
+	export interface UserPreferencesVideosPrivacyFormProperties {
+
+		/** Whether other users can add the user's videos. */
+		add: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The user's privacy preference for comments:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can comment on the user's videos.
+		 * * `contacts` - Only contacts can comment on the user's videos.
+		 * * `nobody` - No one can comment on the user's videos.
+		 */
+		comments: FormControl<UserPreferencesVideosPrivacyComments | null | undefined>,
+
+		/** Whether other users can download the user's videos. */
+		download: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The user's privacy preference for embeds:
+		 * Option descriptions:
+		 * * `private` - Only the user can embed their own videos.
+		 * * `public` - Anyone can embed the user's videos.
+		 * * `whitelist` - Only those on the whitelist can embed the user's videos.
+		 */
+		embed: FormControl<UserPreferencesVideosPrivacyEmbed | null | undefined>,
+
+		/**
+		 * The user's privacy preference for views:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can view the user's videos.
+		 * * `contacts` - Only contacts can view the user's videos.
+		 * * `disable` - Views are disabled for the user's videos.
+		 * * `nobody` - No one except the user can view the user's videos.
+		 * * `password` - Only those with the password can view the user's videos.
+		 * * `unlisted` - Anybody can view the user's videos if they have a link.
+		 * * `users` - Only other Vimeo members can view the user's videos.
+		 */
+		view: FormControl<UserPreferencesVideosPrivacyView | null | undefined>,
+	}
+	export function CreateUserPreferencesVideosPrivacyFormGroup() {
+		return new FormGroup<UserPreferencesVideosPrivacyFormProperties>({
+			add: new FormControl<boolean | null | undefined>(undefined),
+			comments: new FormControl<UserPreferencesVideosPrivacyComments | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+			embed: new FormControl<UserPreferencesVideosPrivacyEmbed | null | undefined>(undefined),
+			view: new FormControl<UserPreferencesVideosPrivacyView | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UserPreferencesVideosPrivacyComments { anybody = 0, contacts = 1, nobody = 2 }
 
@@ -1572,6 +2863,13 @@ export namespace MyNS {
 		 */
 		space: UserUpload_quotaSpace;
 	}
+	export interface UserUpload_quotaFormProperties {
+	}
+	export function CreateUserUpload_quotaFormGroup() {
+		return new FormGroup<UserUpload_quotaFormProperties>({
+		});
+
+	}
 
 	export interface UserUpload_quotaLifetime {
 
@@ -1592,6 +2890,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		used: number;
+	}
+	export interface UserUpload_quotaLifetimeFormProperties {
+
+		/**
+		 * The number of bytes remaining in your lifetime maximum.
+		 * Required
+		 */
+		free: FormControl<number | null | undefined>,
+
+		/**
+		 * The total number of bytes that you can upload across the lifetime of your account.
+		 * Required
+		 */
+		max: FormControl<number | null | undefined>,
+
+		/**
+		 * The number of bytes that you've already uploaded against your lifetime limit.
+		 * Required
+		 */
+		used: FormControl<number | null | undefined>,
+	}
+	export function CreateUserUpload_quotaLifetimeFormGroup() {
+		return new FormGroup<UserUpload_quotaLifetimeFormProperties>({
+			free: new FormControl<number | null | undefined>(undefined),
+			max: new FormControl<number | null | undefined>(undefined),
+			used: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserUpload_quotaPeriodic {
@@ -1620,6 +2946,41 @@ export namespace MyNS {
 		 */
 		used: number;
 	}
+	export interface UserUpload_quotaPeriodicFormProperties {
+
+		/**
+		 * The number of bytes remaining in your upload quota for the current period.
+		 * Required
+		 */
+		free: FormControl<number | null | undefined>,
+
+		/**
+		 * The total number of bytes that you can upload per period.
+		 * Required
+		 */
+		max: FormControl<number | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when your upload quota resets.
+		 * Required
+		 */
+		reset_date: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of bytes that you've already uploaded against your quota in the current period.
+		 * Required
+		 */
+		used: FormControl<number | null | undefined>,
+	}
+	export function CreateUserUpload_quotaPeriodicFormGroup() {
+		return new FormGroup<UserUpload_quotaPeriodicFormProperties>({
+			free: new FormControl<number | null | undefined>(undefined),
+			max: new FormControl<number | null | undefined>(undefined),
+			reset_date: new FormControl<string | null | undefined>(undefined),
+			used: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserUpload_quotaSpace {
 
@@ -1647,6 +3008,41 @@ export namespace MyNS {
 		 */
 		used: number;
 	}
+	export interface UserUpload_quotaSpaceFormProperties {
+
+		/**
+		 * The number of bytes remaining in your upload quota.
+		 * Required
+		 */
+		free: FormControl<number | null | undefined>,
+
+		/**
+		 * The maximum number of bytes allotted to your upload quota.
+		 * Required
+		 */
+		max: FormControl<number | null | undefined>,
+
+		/**
+		 * Whether the values of the upload_quota.space fields are for the lifetime quota or the periodic quota.
+		 * Required
+		 */
+		showing: FormControl<UserUpload_quotaSpaceShowing | null | undefined>,
+
+		/**
+		 * The number of bytes that you've already uploaded against your quota.
+		 * Required
+		 */
+		used: FormControl<number | null | undefined>,
+	}
+	export function CreateUserUpload_quotaSpaceFormGroup() {
+		return new FormGroup<UserUpload_quotaSpaceFormProperties>({
+			free: new FormControl<number | null | undefined>(undefined),
+			max: new FormControl<number | null | undefined>(undefined),
+			showing: new FormControl<UserUpload_quotaSpaceShowing | null | undefined>(undefined),
+			used: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UserUpload_quotaSpaceShowing { lifetime = 0, periodic = 1 }
 
@@ -1669,6 +3065,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
+	}
+	export interface UserWebsitesFormProperties {
+
+		/**
+		 * The website's description.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The URL of the website.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the website.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUserWebsitesFormGroup() {
+		return new FormGroup<UserWebsitesFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Video {
@@ -1769,7 +3193,7 @@ export namespace MyNS {
 		name: string;
 
 		/** Information about the folder that contains this video. */
-		parent_folder?: Project | null;
+		parent_folder?: Project;
 
 		/** The privacy-enabled password to watch this video. Only users can see their own video passwords. This data requires a bearer token with the `private` scope. */
 		password?: string | null;
@@ -1862,6 +3286,137 @@ export namespace MyNS {
 		 */
 		width: number;
 	}
+	export interface VideoFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when the video was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * A brief explanation of the video's content.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The video's duration in seconds.
+		 * Required
+		 */
+		duration: FormControl<number | null | undefined>,
+
+		/**
+		 * The video's height in pixels.
+		 * Required
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * The video's primary language.
+		 * Required
+		 */
+		language: FormControl<string | null | undefined>,
+
+		/** The time in ISO 8601 format when the user last modified the video. */
+		last_user_action_event_date: FormControl<string | null | undefined>,
+
+		/**
+		 * The [Creative Commons](http://creativecommons.org/licenses/) license used for the video:
+		 * Option descriptions:
+		 * * `by` - Attribution
+		 * * `by-nc` - Attribution Non-Commercial
+		 * * `by-nc-nd` - Attribution Non-Commercial No Derivatives
+		 * * `by-nc-sa` - Attribution Non-Commercial Share Alike
+		 * * `by-nd` - Attribution No Derivatives
+		 * * `by-sa` - Attribution Share Alike
+		 * * `cc0` - Public Domain Dedication
+		 * Required
+		 */
+		license: FormControl<VideoLicense | null | undefined>,
+
+		/**
+		 * The link to the video.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the video metadata was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The video's title.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The privacy-enabled password to watch this video. Only users can see their own video passwords. This data requires a bearer token with the `private` scope. */
+		password: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the video was released.
+		 * Required
+		 */
+		release_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource key string of the video.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The status code for the availability of the video. This field is deprecated in favor of `upload` and `transcode`.
+		 * Option descriptions:
+		 * * `available` - The video is available.
+		 * * `quota_exceeded` - The user's quota is exceeded with this video.
+		 * * `total_cap_exceeded` - The user has exceeded their total cap with this video.
+		 * * `transcode_starting` - Transcoding is beginning for the video.
+		 * * `transcoding` - Transcoding is underway for the video.
+		 * * `transcoding_error` - There was an error in transcoding the video.
+		 * * `unavailable` - The video is unavailable.
+		 * * `uploading` - The video is being uploaded.
+		 * * `uploading_error` - There was an error in uploading the video.
+		 * Required
+		 */
+		status: FormControl<VideoStatus | null | undefined>,
+
+		/**
+		 * The video's canonical relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+
+		/**
+		 * The video's width in pixels.
+		 * Required
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoFormGroup() {
+		return new FormGroup<VideoFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+			last_user_action_event_date: new FormControl<string | null | undefined>(undefined),
+			license: new FormControl<VideoLicense | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			password: new FormControl<string | null | undefined>(undefined),
+			release_time: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<VideoStatus | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoContext {
 
@@ -1887,6 +3442,39 @@ export namespace MyNS {
 		 * Required
 		 */
 		resource_type: string;
+	}
+	export interface VideoContextFormProperties {
+
+		/**
+		 * The contextual action:
+		 * Option descriptions:
+		 * * `Added to` - An Added To action.
+		 * * `Appearance by` - An Appearance By action.
+		 * * `Liked by` - A Liked By action.
+		 * * `Uploaded by` - An Unloaded By action.
+		 * Required
+		 */
+		action: FormControl<VideoContextAction | null | undefined>,
+
+		/**
+		 * The contextual resource: a user, group, or channel representation, or an object of a tag.
+		 * Required
+		 */
+		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * The contextual resource type.
+		 * Required
+		 */
+		resource_type: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoContextFormGroup() {
+		return new FormGroup<VideoContextFormProperties>({
+			action: new FormControl<VideoContextAction | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			resource_type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoContextAction { Added_to = 0, Appearance_by = 1, Liked_by = 2, Uploaded_by = 3 }
@@ -1938,6 +3526,45 @@ export namespace MyNS {
 		 */
 		volume: boolean;
 	}
+	export interface Embed_settingsFormProperties {
+
+		/**
+		 * The primary player color, which controls the color of the progress bar, buttons, and more.
+		 * Required
+		 */
+		color: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the playbar appears in the embeddable player for this video.
+		 * Required
+		 */
+		playbar: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the speed controls appear in the embeddable player for this video.
+		 * Required
+		 */
+		speed: FormControl<boolean | null | undefined>,
+
+		/** The URI of the embed preset. */
+		uri: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the volume controls appear in the embeddable player for this video.
+		 * Required
+		 */
+		volume: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEmbed_settingsFormGroup() {
+		return new FormGroup<Embed_settingsFormProperties>({
+			color: new FormControl<string | null | undefined>(undefined),
+			playbar: new FormControl<boolean | null | undefined>(undefined),
+			speed: new FormControl<boolean | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+			volume: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Embed_settingsButtons {
 
@@ -1983,6 +3610,62 @@ export namespace MyNS {
 		 */
 		watchlater: boolean;
 	}
+	export interface Embed_settingsButtonsFormProperties {
+
+		/**
+		 * Whether the Embed button appears in the embeddable player for this video.
+		 * Required
+		 */
+		embed: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the Fullscreen button appears in the embeddable player for this video.
+		 * Required
+		 */
+		fullscreen: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the HD button appears in the embeddable player for this video.
+		 * Required
+		 */
+		hd: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the Like button appears in the embeddable player for this video.
+		 * Required
+		 */
+		like: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the Scaling button appears in the embeddable player for this video.
+		 * Required
+		 */
+		scaling: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the Share button appears in the embeddable player for this video.
+		 * Required
+		 */
+		share: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the Watch Later button appears in the embeddable player for this video.
+		 * Required
+		 */
+		watchlater: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEmbed_settingsButtonsFormGroup() {
+		return new FormGroup<Embed_settingsButtonsFormProperties>({
+			embed: new FormControl<boolean | null | undefined>(undefined),
+			fullscreen: new FormControl<boolean | null | undefined>(undefined),
+			hd: new FormControl<boolean | null | undefined>(undefined),
+			like: new FormControl<boolean | null | undefined>(undefined),
+			scaling: new FormControl<boolean | null | undefined>(undefined),
+			share: new FormControl<boolean | null | undefined>(undefined),
+			watchlater: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Embed_settingsLogos {
 
@@ -1997,6 +3680,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		vimeo: boolean;
+	}
+	export interface Embed_settingsLogosFormProperties {
+
+		/**
+		 * Whether the Vimeo logo appears in the embeddable player for this video.
+		 * Required
+		 */
+		vimeo: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEmbed_settingsLogosFormGroup() {
+		return new FormGroup<Embed_settingsLogosFormProperties>({
+			vimeo: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Embed_settingsLogosCustom {
@@ -2018,6 +3715,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		sticky: boolean;
+	}
+	export interface Embed_settingsLogosCustomFormProperties {
+
+		/**
+		 * Whether the custom logo appears in the embeddable player.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The URL that loads upon clicking the custom logo.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the custom logo appears even when the player interface is hidden.
+		 * Required
+		 */
+		sticky: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEmbed_settingsLogosCustomFormGroup() {
+		return new FormGroup<Embed_settingsLogosCustomFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			sticky: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Embed_settingsTitle {
@@ -2049,6 +3774,43 @@ export namespace MyNS {
 		 */
 		portrait: Embed_settingsTitleName;
 	}
+	export interface Embed_settingsTitleFormProperties {
+
+		/**
+		 * How the embeddable player handles the video title:
+		 * Option descriptions:
+		 * * `hide` - The title is hidden.
+		 * * `show` - The title is shown.
+		 * Required
+		 */
+		name: FormControl<Embed_settingsTitleName | null | undefined>,
+
+		/**
+		 * How the embeddable player handles the video owner's information:
+		 * Option descriptions:
+		 * * `hide` - The owner's information is hidden.
+		 * * `show` - The owner's information is shown.
+		 * Required
+		 */
+		owner: FormControl<Embed_settingsTitleName | null | undefined>,
+
+		/**
+		 * How the embeddable player handles the video owner's portrait:
+		 * Option descriptions:
+		 * * `hide` - The owner's portrait is hidden
+		 * * `show` - The owner's portrait is shown.
+		 * Required
+		 */
+		portrait: FormControl<Embed_settingsTitleName | null | undefined>,
+	}
+	export function CreateEmbed_settingsTitleFormGroup() {
+		return new FormGroup<Embed_settingsTitleFormProperties>({
+			name: new FormControl<Embed_settingsTitleName | null | undefined>(undefined),
+			owner: new FormControl<Embed_settingsTitleName | null | undefined>(undefined),
+			portrait: new FormControl<Embed_settingsTitleName | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum Embed_settingsTitleName { hide = 0, show = 1, user = 2 }
 
@@ -2067,6 +3829,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		interactions: VideoMetadataInteractions;
+	}
+	export interface VideoMetadataFormProperties {
+	}
+	export function CreateVideoMetadataFormGroup() {
+		return new FormGroup<VideoMetadataFormProperties>({
+		});
+
 	}
 
 	export interface VideoMetadataConnections {
@@ -2149,6 +3918,13 @@ export namespace MyNS {
 		 */
 		versions: VideoMetadataConnectionsVersions;
 	}
+	export interface VideoMetadataConnectionsFormProperties {
+	}
+	export function CreateVideoMetadataConnectionsFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsFormProperties>({
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsComments {
 
@@ -2170,17 +3946,53 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataConnectionsCommentsFormProperties {
+
+		/**
+		 * The total number of comments on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsCommentsFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsCommentsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsCredits {
 
 		/** An array of HTTP methods permitted on this URI. */
-		options?: Array<string> | null;
+		options?: Array<string>;
 
 		/** The total number of users on this connection. */
 		total?: number | null;
 
 		/** The API URI that resolves to the connection data. */
 		uri?: string | null;
+	}
+	export interface VideoMetadataConnectionsCreditsFormProperties {
+
+		/** The total number of users on this connection. */
+		total: FormControl<number | null | undefined>,
+
+		/** The API URI that resolves to the connection data. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsCreditsFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsCreditsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataConnectionsLikes {
@@ -2203,6 +4015,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataConnectionsLikesFormProperties {
+
+		/**
+		 * The total number of likes on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsLikesFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsLikesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsOndemand {
 
@@ -2223,6 +4056,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataConnectionsOndemandFormProperties {
+
+		/**
+		 * The On Demand connection resource key.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsOndemandFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsOndemandFormProperties>({
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataConnectionsPictures {
@@ -2245,6 +4099,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataConnectionsPicturesFormProperties {
+
+		/**
+		 * Total number of thumbnails on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsPicturesFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsPicturesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsPlayback {
 
@@ -2260,23 +4135,59 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataConnectionsPlaybackFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsPlaybackFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsPlaybackFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsRecommendations {
 
 		/** An array of HTTP methods allowed on this URI. */
-		options?: Array<string> | null;
+		options?: Array<string>;
 
 		/** The API URI that resolves to the connection data. */
 		uri?: string | null;
+	}
+	export interface VideoMetadataConnectionsRecommendationsFormProperties {
+
+		/** The API URI that resolves to the connection data. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsRecommendationsFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsRecommendationsFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataConnectionsRelated {
 
 		/** An array of HTTP methods allowed on this URI. */
-		options?: Array<string> | null;
+		options?: Array<string>;
 
 		/** The API URI that resolves to the connection data. */
 		uri?: string | null;
+	}
+	export interface VideoMetadataConnectionsRelatedFormProperties {
+
+		/** The API URI that resolves to the connection data. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsRelatedFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsRelatedFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataConnectionsSeason {
@@ -2299,6 +4210,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataConnectionsSeasonFormProperties {
+
+		/**
+		 * The name of this season.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsSeasonFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsSeasonFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsTexttracks {
 
@@ -2319,6 +4251,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataConnectionsTexttracksFormProperties {
+
+		/**
+		 * The total number of text tracks on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsTexttracksFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsTexttracksFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataConnectionsTrailer {
@@ -2341,6 +4294,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataConnectionsTrailerFormProperties {
+
+		/**
+		 * The trailer connection resource key.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsTrailerFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsTrailerFormProperties>({
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataConnectionsUsers_with_access {
 
@@ -2361,6 +4335,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataConnectionsUsers_with_accessFormProperties {
+
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsUsers_with_accessFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsUsers_with_accessFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataConnectionsVersions {
@@ -2385,6 +4380,31 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataConnectionsVersionsFormProperties {
+
+		/** The URI of the current version of the video. */
+		current_uri: FormControl<string | null | undefined>,
+
+		/**
+		 * The total number of versions on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataConnectionsVersionsFormGroup() {
+		return new FormGroup<VideoMetadataConnectionsVersionsFormProperties>({
+			current_uri: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataInteractions {
@@ -2420,7 +4440,7 @@ export namespace MyNS {
 		report: VideoMetadataInteractionsReport;
 
 		/** Subscription information for an On Demand video. */
-		subscribe?: VideoMetadataInteractionsSubscribe | null;
+		subscribe?: VideoMetadataInteractionsSubscribe;
 
 		/**
 		 * Information about removing this video from the user's list of watched videos.
@@ -2433,6 +4453,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		watchlater: VideoMetadataInteractionsWatchlater;
+	}
+	export interface VideoMetadataInteractionsFormProperties {
+	}
+	export function CreateVideoMetadataInteractionsFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsFormProperties>({
+		});
+
 	}
 
 	export interface VideoMetadataInteractionsBuy {
@@ -2501,6 +4528,86 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataInteractionsBuyFormProperties {
+
+		/**
+		 * The currency code for the current user's region.
+		 * Required
+		 */
+		currency: FormControl<string | null | undefined>,
+
+		/**
+		 * Formatted price to display to buy an On Demand video.
+		 * Required
+		 */
+		display_price: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's download access to this On Demand video:
+		 * Option descriptions:
+		 * * `available` - The video is available for download.
+		 * * `purchased` - The user has purchased the video.
+		 * * `restricted` - The user isn't permitted to download the video.
+		 * * `unavailable` - The video isn't available for download.
+		 * Required
+		 */
+		download: FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>,
+
+		/**
+		 * Whether the video has DRM.
+		 * Required
+		 */
+		drm: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The URL to buy the On Demand video on Vimeo.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The numeric value of the price for buying the On Demand video.
+		 * Required
+		 */
+		price: FormControl<number | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the On Demand video was purchased.
+		 * Required
+		 */
+		purchase_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's streaming access to this On Demand video:
+		 * Option descriptions:
+		 * * `available` - The video is available for streaming.
+		 * * `purchased` - The user has purchased the video.
+		 * * `restricted` - The user isn't permitted to stream the video.
+		 * * `unavailable` - The video isn't available for streaming
+		 * Required
+		 */
+		stream: FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>,
+
+		/**
+		 * The product URI to purchase the On Demand video.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsBuyFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsBuyFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			display_price: new FormControl<string | null | undefined>(undefined),
+			download: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
+			drm: new FormControl<boolean | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			price: new FormControl<number | null | undefined>(undefined),
+			purchase_time: new FormControl<string | null | undefined>(undefined),
+			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum VideoMetadataInteractionsBuyDownload { available = 0, purchased = 1, restricted = 2, unavailable = 3 }
 
@@ -2517,6 +4624,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataInteractionsChannelFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsChannelFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsChannelFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataInteractionsLike {
@@ -2544,6 +4665,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataInteractionsLikeFormProperties {
+
+		/**
+		 * Whether the user has liked the video.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user liked the video.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsLikeFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsLikeFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataInteractionsRent {
@@ -2607,6 +4756,81 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataInteractionsRentFormProperties {
+
+		/**
+		 * The currency code for the current user's region.
+		 * Required
+		 */
+		currency: FormControl<string | null | undefined>,
+
+		/**
+		 * Formatted price to display to rent an On Demand video.
+		 * Required
+		 */
+		display_price: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the video has DRM.
+		 * Required
+		 */
+		drm: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the rental period for the video expires.
+		 * Required
+		 */
+		expires_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The URL to rent the On Demand video on Vimeo.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The numeric value of the price for buying the On Demand video.
+		 * Required
+		 */
+		price: FormControl<number | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the On Demand video was rented.
+		 * Required
+		 */
+		purchase_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's streaming access to this On Demand video:
+		 * Option descriptions:
+		 * * `available` - The video is available for streaming.
+		 * * `purchased` - The user has purchased the video.
+		 * * `restricted` - The user isn't permitted to stream the video.
+		 * * `unavailable` - The video isn't available for streaming.
+		 * Required
+		 */
+		stream: FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>,
+
+		/**
+		 * The product URI to rent the On Demand video.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsRentFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsRentFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			display_price: new FormControl<string | null | undefined>(undefined),
+			drm: new FormControl<boolean | null | undefined>(undefined),
+			expires_time: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			price: new FormControl<number | null | undefined>(undefined),
+			purchase_time: new FormControl<string | null | undefined>(undefined),
+			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataInteractionsReport {
 
@@ -2628,6 +4852,20 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataInteractionsReportFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsReportFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsReportFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataInteractionsSubscribe {
 
@@ -2642,6 +4880,29 @@ export namespace MyNS {
 
 		/** The stream type. */
 		stream?: string | null;
+	}
+	export interface VideoMetadataInteractionsSubscribeFormProperties {
+
+		/** Whether the video has DRM. */
+		drm: FormControl<boolean | null | undefined>,
+
+		/** The time in ISO 8601 format when the subscription expires. */
+		expires_time: FormControl<string | null | undefined>,
+
+		/** The tine in ISO 8601 format when the subscription was purchased. */
+		purchase_time: FormControl<string | null | undefined>,
+
+		/** The stream type. */
+		stream: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsSubscribeFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsSubscribeFormProperties>({
+			drm: new FormControl<boolean | null | undefined>(undefined),
+			expires_time: new FormControl<string | null | undefined>(undefined),
+			purchase_time: new FormControl<string | null | undefined>(undefined),
+			stream: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoMetadataInteractionsWatched {
@@ -2670,6 +4931,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface VideoMetadataInteractionsWatchedFormProperties {
+
+		/**
+		 * Whether the user has watched the video.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user watched the video.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsWatchedFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsWatchedFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoMetadataInteractionsWatchlater {
 
@@ -2696,6 +4985,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface VideoMetadataInteractionsWatchlaterFormProperties {
+
+		/**
+		 * Whether the user has added the video to their Watch later list.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user added the video to their Watch Later list.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoMetadataInteractionsWatchlaterFormGroup() {
+		return new FormGroup<VideoMetadataInteractionsWatchlaterFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Project {
@@ -2742,6 +5059,48 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface ProjectFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when the project was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the project was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the folder.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource key string of the project.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI of the project.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectFormGroup() {
+		return new FormGroup<ProjectFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ProjectMetadata {
 
@@ -2751,6 +5110,13 @@ export namespace MyNS {
 		 */
 		connections: ProjectMetadataConnections;
 	}
+	export interface ProjectMetadataFormProperties {
+	}
+	export function CreateProjectMetadataFormGroup() {
+		return new FormGroup<ProjectMetadataFormProperties>({
+		});
+
+	}
 
 	export interface ProjectMetadataConnections {
 
@@ -2759,6 +5125,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: ProjectMetadataConnectionsVideos;
+	}
+	export interface ProjectMetadataConnectionsFormProperties {
+	}
+	export function CreateProjectMetadataConnectionsFormGroup() {
+		return new FormGroup<ProjectMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface ProjectMetadataConnectionsVideos {
@@ -2780,6 +5153,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface ProjectMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<ProjectMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface VideoPrivacy {
@@ -2829,6 +5223,63 @@ export namespace MyNS {
 		 */
 		view: UserPreferencesVideosPrivacyView;
 	}
+	export interface VideoPrivacyFormProperties {
+
+		/**
+		 * Whether the video can be added to collections.
+		 * Required
+		 */
+		add: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Who can comment on the video:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can comment on the video.
+		 * * `contacts` - Only contacts can comment on the video.
+		 * * `nobody` - No one can comment on the video.
+		 * Required
+		 */
+		comments: FormControl<UserPreferencesVideosPrivacyComments | null | undefined>,
+
+		/**
+		 * The video's download permission setting.
+		 * Required
+		 */
+		download: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The video's embed permission setting:
+		 * Option descriptions:
+		 * * `private` - The video is private.
+		 * * `public` - Anyone can embed the video.
+		 * Required
+		 */
+		embed: FormControl<VideoPrivacyEmbed | null | undefined>,
+
+		/**
+		 * The general privacy setting for the video:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can view the video.
+		 * * `contacts` - Only contacts can view the video.
+		 * * `disable` - Hide from vimeo
+		 * * `nobody` - No one besides the owner can view the video.
+		 * * `password` - Anyone with the video's password can view the video.
+		 * * `unlisted` - Not searchable from vimeo.com
+		 * * `users` - Only people with a Vimeo account can view the video.
+		 * Required
+		 */
+		view: FormControl<UserPreferencesVideosPrivacyView | null | undefined>,
+	}
+	export function CreateVideoPrivacyFormGroup() {
+		return new FormGroup<VideoPrivacyFormProperties>({
+			add: new FormControl<boolean | null | undefined>(undefined),
+			comments: new FormControl<UserPreferencesVideosPrivacyComments | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+			embed: new FormControl<VideoPrivacyEmbed | null | undefined>(undefined),
+			view: new FormControl<UserPreferencesVideosPrivacyView | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum VideoPrivacyEmbed { _private = 0, _public = 1 }
 
@@ -2868,6 +5319,44 @@ export namespace MyNS {
 		 */
 		stereo_format: VideoSpatialStereo_format;
 	}
+	export interface VideoSpatialFormProperties {
+
+		/**
+		 * The 360 field of view, from 30 (minimum) to 90 (maximum). The default is 50.
+		 * Required
+		 */
+		field_of_view: FormControl<number | null | undefined>,
+
+		/**
+		 * The 360 spatial projection:
+		 * Option descriptions:
+		 * * `cubical` - The spatial projection is cubical.
+		 * * `cylindrical` - The spatial projection is cylindrical.
+		 * * `dome` - The spatial projection is dome-shaped.
+		 * * `equirectangular` - The spatial projection is equirectangular.
+		 * * `pyramid` - The spatial projection is pyramid-shaped.
+		 * Required
+		 */
+		projection: FormControl<VideoSpatialProjection | null | undefined>,
+
+		/**
+		 * The 360 stereo format:
+		 * Option descriptions:
+		 * * `left-right` - The stereo format is left-right.
+		 * * `mono` - The audio is monaural.
+		 * * `top-bottom` - The stereo format is top-bottom.
+		 * Required
+		 */
+		stereo_format: FormControl<VideoSpatialStereo_format | null | undefined>,
+	}
+	export function CreateVideoSpatialFormGroup() {
+		return new FormGroup<VideoSpatialFormProperties>({
+			field_of_view: new FormControl<number | null | undefined>(undefined),
+			projection: new FormControl<VideoSpatialProjection | null | undefined>(undefined),
+			stereo_format: new FormControl<VideoSpatialStereo_format | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface VideoSpatialDirector_timeline {
 
@@ -2883,6 +5372,29 @@ export namespace MyNS {
 		/** The director timeline yaw, from 0 (minimum) to 360 (maximum). */
 		yaw?: number | null;
 	}
+	export interface VideoSpatialDirector_timelineFormProperties {
+
+		/** The director timeline pitch, from -90 (minimum) to 90 (maximum). */
+		pitch: FormControl<number | null | undefined>,
+
+		/** The director timeline roll. */
+		roll: FormControl<number | null | undefined>,
+
+		/** The director timeline time code. */
+		time_code: FormControl<number | null | undefined>,
+
+		/** The director timeline yaw, from 0 (minimum) to 360 (maximum). */
+		yaw: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoSpatialDirector_timelineFormGroup() {
+		return new FormGroup<VideoSpatialDirector_timelineFormProperties>({
+			pitch: new FormControl<number | null | undefined>(undefined),
+			roll: new FormControl<number | null | undefined>(undefined),
+			time_code: new FormControl<number | null | undefined>(undefined),
+			yaw: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum VideoSpatialProjection { cubical = 0, cylindrical = 1, dome = 2, equirectangular = 3, pyramid = 4 }
 
@@ -2896,6 +5408,20 @@ export namespace MyNS {
 		 */
 		plays: number;
 	}
+	export interface VideoStatsFormProperties {
+
+		/**
+		 * The current total number of times that the video has been played.
+		 * Required
+		 */
+		plays: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoStatsFormGroup() {
+		return new FormGroup<VideoStatsFormProperties>({
+			plays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum VideoStatus { available = 0, quota_exceeded = 1, total_cap_exceeded = 2, transcode_starting = 3, transcoding = 4, transcoding_error = 5, unavailable = 6, uploading = 7, uploading_error = 8 }
 
@@ -2903,6 +5429,17 @@ export namespace MyNS {
 
 		/** Status code for this video's availability. */
 		status?: VideoTranscodeStatus | null;
+	}
+	export interface VideoTranscodeFormProperties {
+
+		/** Status code for this video's availability. */
+		status: FormControl<VideoTranscodeStatus | null | undefined>,
+	}
+	export function CreateVideoTranscodeFormGroup() {
+		return new FormGroup<VideoTranscodeFormProperties>({
+			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoTranscodeStatus { complete = 0, error = 1, in_progress = 2 }
@@ -2939,6 +5476,52 @@ export namespace MyNS {
 
 		/** The link for sending video file data. */
 		upload_link?: string | null;
+	}
+	export interface VideoUploadFormProperties {
+
+		/** The approach for uploading the video. */
+		approach: FormControl<VideoUploadApproach | null | undefined>,
+
+		/** The URI for completing the upload. */
+		complete_uri: FormControl<string | null | undefined>,
+
+		/** The HTML form for uploading a video through the post approach. */
+		form: FormControl<string | null | undefined>,
+
+		/** The link of the video to capture through the pull approach. */
+		link: FormControl<string | null | undefined>,
+
+		/** The redirect URL for the upload app. */
+		redirect_url: FormControl<string | null | undefined>,
+
+		/** The file size in bytes of the uploaded video. */
+		size: FormControl<number | null | undefined>,
+
+		/**
+		 * The status code for the availability of the uploaded video:
+		 * Option descriptions:
+		 * * `complete` - The upload is complete.
+		 * * `error` - The upload ended with an error.
+		 * * `in_progress` - The upload is underway.
+		 * Required
+		 */
+		status: FormControl<VideoTranscodeStatus | null | undefined>,
+
+		/** The link for sending video file data. */
+		upload_link: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoUploadFormGroup() {
+		return new FormGroup<VideoUploadFormProperties>({
+			approach: new FormControl<VideoUploadApproach | null | undefined>(undefined),
+			complete_uri: new FormControl<string | null | undefined>(undefined),
+			form: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			redirect_url: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined),
+			upload_link: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoUploadApproach { post = 0, pull = 1, streaming = 2, tus = 3 }
@@ -3006,7 +5589,63 @@ export namespace MyNS {
 		uri: string;
 
 		/** The owner of the group. */
-		user?: User | null;
+		user?: User;
+	}
+	export interface GroupFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when the group was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The group's description.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The link to the group.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the group was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The group's display name.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource key of the group.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The canonical relative URI of this group.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupFormGroup() {
+		return new FormGroup<GroupFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GroupMetadata {
@@ -3023,6 +5662,13 @@ export namespace MyNS {
 		 */
 		interactions: GroupMetadataInteractions;
 	}
+	export interface GroupMetadataFormProperties {
+	}
+	export function CreateGroupMetadataFormGroup() {
+		return new FormGroup<GroupMetadataFormProperties>({
+		});
+
+	}
 
 	export interface GroupMetadataConnections {
 
@@ -3037,6 +5683,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: GroupMetadataConnectionsVideos;
+	}
+	export interface GroupMetadataConnectionsFormProperties {
+	}
+	export function CreateGroupMetadataConnectionsFormGroup() {
+		return new FormGroup<GroupMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface GroupMetadataConnectionsUsers {
@@ -3059,6 +5712,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface GroupMetadataConnectionsUsersFormProperties {
+
+		/**
+		 * The total number of users on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupMetadataConnectionsUsersFormGroup() {
+		return new FormGroup<GroupMetadataConnectionsUsersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GroupMetadataConnectionsVideos {
 
@@ -3080,6 +5754,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface GroupMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<GroupMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GroupMetadataInteractions {
 
@@ -3088,6 +5783,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		join: GroupMetadataInteractionsJoin;
+	}
+	export interface GroupMetadataInteractionsFormProperties {
+	}
+	export function CreateGroupMetadataInteractionsFormGroup() {
+		return new FormGroup<GroupMetadataInteractionsFormProperties>({
+		});
+
 	}
 
 	export interface GroupMetadataInteractionsJoin {
@@ -3124,6 +5826,51 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface GroupMetadataInteractionsJoinFormProperties {
+
+		/**
+		 * Whether the authenticated user has followed this group. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user joined this group. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's title, or the null value if not applicable. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the authenticated user is a moderator or subscriber. This data requires a bearer token with the `private` scope.
+		 * Option descriptions:
+		 * * `member` - The authenticated user is a member.
+		 * * `moderator` - The authenticated user is a moderator.
+		 * Required
+		 */
+		type: FormControl<GroupMetadataInteractionsJoinType | null | undefined>,
+
+		/**
+		 * The URI for following. PUT to this URI to follow, or DELETE to this URI to unfollow. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupMetadataInteractionsJoinFormGroup() {
+		return new FormGroup<GroupMetadataInteractionsJoinFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<GroupMetadataInteractionsJoinType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GroupMetadataInteractionsJoinType { member = 0, moderator = 1 }
@@ -3175,6 +5922,63 @@ export namespace MyNS {
 		 */
 		view: GroupPrivacyJoin;
 	}
+	export interface GroupPrivacyFormProperties {
+
+		/**
+		 * Who can comment on the group:
+		 * Option descriptions:
+		 * * `all` - Anyone can comment on the group.
+		 * * `members` - Only members can comment on the group.
+		 * Required
+		 */
+		comment: FormControl<GroupPrivacyComment | null | undefined>,
+
+		/**
+		 * Who can invite new members to the group:
+		 * Option descriptions:
+		 * * `all` - Anyone can invite new members to join.
+		 * * `members` - Only group members can invite new members to join.
+		 * Required
+		 */
+		invite: FormControl<GroupPrivacyComment | null | undefined>,
+
+		/**
+		 * Who can join the group:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can join the group.
+		 * * `members` - Only people with a Vimeo account can join the group.
+		 * Required
+		 */
+		join: FormControl<GroupPrivacyJoin | null | undefined>,
+
+		/**
+		 * Who can add videos to the group:
+		 * Option descriptions:
+		 * * `all` - Anyone can add videos to the group.
+		 * * `members` - Only group members can add videos to the group.
+		 * Required
+		 */
+		videos: FormControl<GroupPrivacyComment | null | undefined>,
+
+		/**
+		 * Who can view the group:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can view the group.
+		 * * `members` - Only group members can view the group.
+		 * Required
+		 */
+		view: FormControl<GroupPrivacyJoin | null | undefined>,
+	}
+	export function CreateGroupPrivacyFormGroup() {
+		return new FormGroup<GroupPrivacyFormProperties>({
+			comment: new FormControl<GroupPrivacyComment | null | undefined>(undefined),
+			invite: new FormControl<GroupPrivacyComment | null | undefined>(undefined),
+			join: new FormControl<GroupPrivacyJoin | null | undefined>(undefined),
+			videos: new FormControl<GroupPrivacyComment | null | undefined>(undefined),
+			view: new FormControl<GroupPrivacyJoin | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GroupPrivacyComment { all = 0, members = 1 }
 
@@ -3188,6 +5992,13 @@ export namespace MyNS {
 		 */
 		connections: Activity_3_1MetadataConnections;
 	}
+	export interface Activity_3_1MetadataFormProperties {
+	}
+	export function CreateActivity_3_1MetadataFormGroup() {
+		return new FormGroup<Activity_3_1MetadataFormProperties>({
+		});
+
+	}
 
 	export interface Activity_3_1MetadataConnections {
 
@@ -3196,6 +6007,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		related: Activity_3_1MetadataConnectionsRelated;
+	}
+	export interface Activity_3_1MetadataConnectionsFormProperties {
+	}
+	export function CreateActivity_3_1MetadataConnectionsFormGroup() {
+		return new FormGroup<Activity_3_1MetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface Activity_3_1MetadataConnectionsRelated {
@@ -3211,6 +6029,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface Activity_3_1MetadataConnectionsRelatedFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateActivity_3_1MetadataConnectionsRelatedFormGroup() {
+		return new FormGroup<Activity_3_1MetadataConnectionsRelatedFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Activity_3_1Type { appearance = 0, category = 1, channel = 2, facebook_feed = 3, group = 4, like = 5, ondemand = 6, share = 7, tag = 8, twitter_timeline = 9, upload = 10 }
@@ -3403,6 +6235,188 @@ export namespace MyNS {
 		 */
 		web_custom_logo: boolean;
 	}
+	export interface AlbumFormProperties {
+
+		/**
+		 * Whether an album should allow continuous play.
+		 * Required
+		 */
+		allow_continuous_play: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether an album should allow downloads.
+		 * Required
+		 */
+		allow_downloads: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether an album should allow sharing.
+		 * Required
+		 */
+		allow_share: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Hexadecimal color code for the decorative color. For example, album videos use this color for player buttons.
+		 * Required
+		 */
+		brand_color: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format that the album was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * A brief description of the album's content.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The custom domain a user has selected for their album.
+		 * Required
+		 */
+		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * The total duration in seconds of all the videos in the album.
+		 * Required
+		 */
+		duration: FormControl<number | null | undefined>,
+
+		/**
+		 * Whether to show the album's custom brand color in the player of the album's embedded playlist.
+		 * Required
+		 */
+		embed_brand_color: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether to show the album's custom logo in the player of the album's embedded playlist.
+		 * Required
+		 */
+		embed_custom_logo: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether to hide the Vimeo navigation when viewing the album.
+		 * Required
+		 */
+		hide_nav: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether to hide the Vimeo logo in the player of the album's embedded playlist.
+		 * Required
+		 */
+		hide_vimeo_logo: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The album's layout preference
+		 * Required
+		 */
+		layout: FormControl<AlbumLayout | null | undefined>,
+
+		/**
+		 * The URL to access the album.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the album was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The album's display name.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The album resource key.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether album videos should use the review mode URL.
+		 * Required
+		 */
+		review_mode: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Sort type of the album.
+		 * Required
+		 */
+		sort: FormControl<AlbumSort | null | undefined>,
+
+		/**
+		 * The album's color theme preference
+		 * Required
+		 */
+		theme: FormControl<AlbumTheme | null | undefined>,
+
+		/**
+		 * The album's URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+
+		/**
+		 * The custom Vimeo URL a user has selected for their album.
+		 * Required
+		 */
+		url: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether the user has opted in to use a custom domain for their album.
+		 * Required
+		 */
+		use_custom_domain: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether an album should show the brand color in the web layout.
+		 * Required
+		 */
+		web_brand_color: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether an album's custom logo should be shown in the web layout.
+		 * Required
+		 */
+		web_custom_logo: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAlbumFormGroup() {
+		return new FormGroup<AlbumFormProperties>({
+			allow_continuous_play: new FormControl<boolean | null | undefined>(undefined),
+			allow_downloads: new FormControl<boolean | null | undefined>(undefined),
+			allow_share: new FormControl<boolean | null | undefined>(undefined),
+			brand_color: new FormControl<string | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			embed_brand_color: new FormControl<boolean | null | undefined>(undefined),
+			embed_custom_logo: new FormControl<boolean | null | undefined>(undefined),
+			hide_nav: new FormControl<boolean | null | undefined>(undefined),
+			hide_vimeo_logo: new FormControl<boolean | null | undefined>(undefined),
+			layout: new FormControl<AlbumLayout | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			review_mode: new FormControl<boolean | null | undefined>(undefined),
+			sort: new FormControl<AlbumSort | null | undefined>(undefined),
+			theme: new FormControl<AlbumTheme | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+			use_custom_domain: new FormControl<boolean | null | undefined>(undefined),
+			web_brand_color: new FormControl<boolean | null | undefined>(undefined),
+			web_custom_logo: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlbumEmbed {
 
@@ -3411,6 +6425,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		html: string;
+	}
+	export interface AlbumEmbedFormProperties {
+
+		/**
+		 * The responsive HTML code to embed the playlist on a website. This is present only when `privacy.view` isn't password and when the album has embeddable videos.
+		 * Required
+		 */
+		html: FormControl<string | null | undefined>,
+	}
+	export function CreateAlbumEmbedFormGroup() {
+		return new FormGroup<AlbumEmbedFormProperties>({
+			html: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AlbumLayout { grid = 0, player = 1 }
@@ -3429,6 +6457,13 @@ export namespace MyNS {
 		 */
 		interactions: AlbumMetadataInteractions;
 	}
+	export interface AlbumMetadataFormProperties {
+	}
+	export function CreateAlbumMetadataFormGroup() {
+		return new FormGroup<AlbumMetadataFormProperties>({
+		});
+
+	}
 
 	export interface AlbumMetadataConnections {
 
@@ -3437,6 +6472,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: AlbumMetadataConnectionsVideos;
+	}
+	export interface AlbumMetadataConnectionsFormProperties {
+	}
+	export function CreateAlbumMetadataConnectionsFormGroup() {
+		return new FormGroup<AlbumMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface AlbumMetadataConnectionsVideos {
@@ -3459,6 +6501,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface AlbumMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAlbumMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<AlbumMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlbumMetadataInteractions {
 
@@ -3480,6 +6543,13 @@ export namespace MyNS {
 		 */
 		add_videos: AlbumMetadataInteractionsAdd_videos;
 	}
+	export interface AlbumMetadataInteractionsFormProperties {
+	}
+	export function CreateAlbumMetadataInteractionsFormGroup() {
+		return new FormGroup<AlbumMetadataInteractionsFormProperties>({
+		});
+
+	}
 
 	export interface AlbumMetadataInteractionsAdd_custom_thumbnails {
 
@@ -3494,6 +6564,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface AlbumMetadataInteractionsAdd_custom_thumbnailsFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAlbumMetadataInteractionsAdd_custom_thumbnailsFormGroup() {
+		return new FormGroup<AlbumMetadataInteractionsAdd_custom_thumbnailsFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AlbumMetadataInteractionsAdd_logos {
@@ -3510,6 +6594,20 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface AlbumMetadataInteractionsAdd_logosFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAlbumMetadataInteractionsAdd_logosFormGroup() {
+		return new FormGroup<AlbumMetadataInteractionsAdd_logosFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlbumMetadataInteractionsAdd_videos {
 
@@ -3524,6 +6622,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface AlbumMetadataInteractionsAdd_videosFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data. This data requires a bearer token with the `private` scope.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAlbumMetadataInteractionsAdd_videosFormGroup() {
+		return new FormGroup<AlbumMetadataInteractionsAdd_videosFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AlbumPrivacy {
@@ -3540,6 +6652,28 @@ export namespace MyNS {
 		 * Required
 		 */
 		view: AlbumPrivacyView;
+	}
+	export interface AlbumPrivacyFormProperties {
+
+		/** The privacy-enabled password to see this album. Present only when `privacy.view` is `password`. */
+		password: FormControl<string | null | undefined>,
+
+		/**
+		 * Who can view the album:
+		 * Option descriptions:
+		 * * `anybody` - Anyone can view the album.
+		 * * `embed_only` - Only owner can see album, can be embedded off-site
+		 * * `password` - Only those with the password can view the album.
+		 * Required
+		 */
+		view: FormControl<AlbumPrivacyView | null | undefined>,
+	}
+	export function CreateAlbumPrivacyFormGroup() {
+		return new FormGroup<AlbumPrivacyFormProperties>({
+			password: new FormControl<string | null | undefined>(undefined),
+			view: new FormControl<AlbumPrivacyView | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AlbumPrivacyView { anybody = 0, embed_only = 1, password = 2 }
@@ -3561,6 +6695,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface Api_appFormProperties {
+
+		/**
+		 * The name of the API app.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The canonical URI of the API app.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateApi_appFormGroup() {
+		return new FormGroup<Api_appFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Auth {
@@ -3598,7 +6753,45 @@ export namespace MyNS {
 		token_type: AuthToken_type;
 
 		/** The user associated with the token. */
-		user?: User | null;
+		user?: User;
+	}
+	export interface AuthFormProperties {
+
+		/**
+		 * The access token string.
+		 * Required
+		 */
+		access_token: FormControl<string | null | undefined>,
+
+		/** The date and time that the token expires. */
+		expires_on: FormControl<string | null | undefined>,
+
+		/** The refresh token string. */
+		refresh_token: FormControl<string | null | undefined>,
+
+		/**
+		 * The scope or scopes that the token supports.
+		 * Required
+		 */
+		scope: FormControl<string | null | undefined>,
+
+		/**
+		 * The token type:
+		 * Option descriptions:
+		 * * `bearer` - The token is of the `bearer` type.
+		 * Required
+		 */
+		token_type: FormControl<AuthToken_type | null | undefined>,
+	}
+	export function CreateAuthFormGroup() {
+		return new FormGroup<AuthFormProperties>({
+			access_token: new FormControl<string | null | undefined>(undefined),
+			expires_on: new FormControl<string | null | undefined>(undefined),
+			refresh_token: new FormControl<string | null | undefined>(undefined),
+			scope: new FormControl<string | null | undefined>(undefined),
+			token_type: new FormControl<AuthToken_type | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuthToken_type { bearer = 0 }
@@ -3616,6 +6809,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		error_description: string;
+	}
+	export interface Auth_errorFormProperties {
+
+		/**
+		 * The name of the error.
+		 * Required
+		 */
+		error: FormControl<string | null | undefined>,
+
+		/**
+		 * The description of the error.
+		 * Required
+		 */
+		error_description: FormControl<string | null | undefined>,
+	}
+	export function CreateAuth_errorFormGroup() {
+		return new FormGroup<Auth_errorFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			error_description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Comment {
@@ -3659,9 +6873,60 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface CommentFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when the comment was posted.
+		 * Required
+		 */
+		created_on: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource key string for the comment.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The content of the comment.
+		 * Required
+		 */
+		text: FormControl<string | null | undefined>,
+
+		/**
+		 * The Vimeo content to which the comment relates:
+		 * Option descriptions:
+		 * * `video` - The comment is about a video.
+		 * Required
+		 */
+		type: FormControl<CommentType | null | undefined>,
+
+		/**
+		 * The unique identifier to access the comment resource.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCommentFormGroup() {
+		return new FormGroup<CommentFormProperties>({
+			created_on: new FormControl<string | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CommentType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CommentMetadata {
 		connections: CommentMetadataConnections;
+	}
+	export interface CommentMetadataFormProperties {
+	}
+	export function CreateCommentMetadataFormGroup() {
+		return new FormGroup<CommentMetadataFormProperties>({
+		});
+
 	}
 
 	export interface CommentMetadataConnections {
@@ -3671,6 +6936,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		replies: CommentMetadataConnectionsReplies;
+	}
+	export interface CommentMetadataConnectionsFormProperties {
+	}
+	export function CreateCommentMetadataConnectionsFormGroup() {
+		return new FormGroup<CommentMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface CommentMetadataConnectionsReplies {
@@ -3692,6 +6964,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface CommentMetadataConnectionsRepliesFormProperties {
+
+		/**
+		 * The total number of replies on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCommentMetadataConnectionsRepliesFormGroup() {
+		return new FormGroup<CommentMetadataConnectionsRepliesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CommentType { video = 0 }
@@ -3722,6 +7015,41 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface Content_ratingFormProperties {
+
+		/**
+		 * The code that uniquely identifies this content rating:
+		 * Option descriptions:
+		 * * `drugs` - Drug or alcohol use.
+		 * * `language` - Profanity or sexually suggestive content.
+		 * * `nudity` - Nudity.
+		 * * `safe` - Suitable for all audiences.
+		 * * `unrated` - No rating.
+		 * * `violence` - Violent or graphic content.
+		 * Required
+		 */
+		code: FormControl<Content_ratingCode | null | undefined>,
+
+		/**
+		 * The description of this content rating.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The canonical relative URI of the content rating.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateContent_ratingFormGroup() {
+		return new FormGroup<Content_ratingFormProperties>({
+			code: new FormControl<Content_ratingCode | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Content_ratingCode { drugs = 0, language = 1, nudity = 2, safe = 3, unrated = 4, violence = 5 }
@@ -3754,6 +7082,42 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface Creative_commonsFormProperties {
+
+		/**
+		 * The code that uniquely identifies this Creative Commons license:
+		 * Option descriptions:
+		 * * `by` - Attribution
+		 * * `by-nc` - Attribution Non-Commercial
+		 * * `by-nc-nd` - Attribution Non-Commercial No Derivatives
+		 * * `by-nc-sa` - Attribution Non-Commercial Share Alike
+		 * * `by-nd` - Attribution No Derivatives
+		 * * `by-sa` - Attribution Share Alike
+		 * * `cc0` - Public Domain Dedication
+		 * Required
+		 */
+		code: FormControl<Creative_commonsCode | null | undefined>,
+
+		/**
+		 * The description of this Creative Commons license.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The canonical relative URI of the Creative Commons license.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreative_commonsFormGroup() {
+		return new FormGroup<Creative_commonsFormProperties>({
+			code: new FormControl<Creative_commonsCode | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum Creative_commonsCode { by = 0, by_nc = 1, by_nc_nd = 2, by_nc_sa = 3, by_nd = 4, by_sa = 5, cc0 = 6 }
 
@@ -3778,10 +7142,38 @@ export namespace MyNS {
 		uri: string;
 
 		/** The Vimeo user associated with this credit. */
-		user?: User | null;
+		user?: User;
 
 		/** The video associated with this credit. */
-		video?: Video | null;
+		video?: Video;
+	}
+	export interface CreditFormProperties {
+
+		/**
+		 * The name of the person credited.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The character that this person portrayed, or the job that this person performed.
+		 * Required
+		 */
+		role: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique identifier to access the credits resource.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreditFormGroup() {
+		return new FormGroup<CreditFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			role: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Domain {
@@ -3804,6 +7196,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface DomainFormProperties {
+
+		/**
+		 * Whether to permit HD embeds on this domain.
+		 * Required
+		 */
+		allow_hd: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The domain name.
+		 * Required
+		 */
+		domain: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI of the domain.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainFormGroup() {
+		return new FormGroup<DomainFormProperties>({
+			allow_hd: new FormControl<boolean | null | undefined>(undefined),
+			domain: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Endpoint {
 
@@ -3818,6 +7238,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		path: string;
+	}
+	export interface EndpointFormProperties {
+
+		/**
+		 * The path section of the URL, which, when appended to the API host `https:///api.vimeo.com`, builds a full API endpoint.
+		 * Required
+		 */
+		path: FormControl<string | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Error {
@@ -3846,6 +7280,41 @@ export namespace MyNS {
 		 */
 		link: string;
 	}
+	export interface ErrorFormProperties {
+
+		/**
+		 * The error message that developers receive.
+		 * Required
+		 */
+		developer_message: FormControl<string | null | undefined>,
+
+		/**
+		 * The error message that non-developer users receive.
+		 * Required
+		 */
+		error: FormControl<string | null | undefined>,
+
+		/**
+		 * The error code.
+		 * Required
+		 */
+		error_code: FormControl<number | null | undefined>,
+
+		/**
+		 * A link to more information about the error.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorFormGroup() {
+		return new FormGroup<ErrorFormProperties>({
+			developer_message: new FormControl<string | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			error_code: new FormControl<number | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Language {
 
@@ -3861,6 +7330,27 @@ export namespace MyNS {
 		 */
 		name: string;
 	}
+	export interface LanguageFormProperties {
+
+		/**
+		 * The code that represents this language.
+		 * Required
+		 */
+		code: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the language.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLanguageFormGroup() {
+		return new FormGroup<LanguageFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Legacy_error {
 
@@ -3869,6 +7359,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		error: string;
+	}
+	export interface Legacy_errorFormProperties {
+
+		/**
+		 * User-friendly error message
+		 * Required
+		 */
+		error: FormControl<string | null | undefined>,
+	}
+	export function CreateLegacy_errorFormGroup() {
+		return new FormGroup<Legacy_errorFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_genre {
@@ -3899,6 +7403,41 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_genreFormProperties {
+
+		/**
+		 * The canonical name or URL slug of the genre.
+		 * Required
+		 */
+		canonical: FormControl<string | null | undefined>,
+
+		/**
+		 * The Vimeo URL for this genre.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The descriptive name of the genre.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The relative URI of the On Demand genre.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_genreFormGroup() {
+		return new FormGroup<On_demand_genreFormProperties>({
+			canonical: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_genreInteractions {
 
@@ -3907,6 +7446,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		page: On_demand_genreInteractionsPage;
+	}
+	export interface On_demand_genreInteractionsFormProperties {
+	}
+	export function CreateOn_demand_genreInteractionsFormGroup() {
+		return new FormGroup<On_demand_genreInteractionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_genreInteractionsPage {
@@ -3929,6 +7475,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_genreInteractionsPageFormProperties {
+
+		/**
+		 * Whether this On Demand genre was added.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The URI to access the On Demand page.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_genreInteractionsPageFormGroup() {
+		return new FormGroup<On_demand_genreInteractionsPageFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_genreMetadata {
 
@@ -3938,6 +7505,13 @@ export namespace MyNS {
 		 */
 		connections: On_demand_genreMetadataConnections;
 	}
+	export interface On_demand_genreMetadataFormProperties {
+	}
+	export function CreateOn_demand_genreMetadataFormGroup() {
+		return new FormGroup<On_demand_genreMetadataFormProperties>({
+		});
+
+	}
 
 	export interface On_demand_genreMetadataConnections {
 
@@ -3946,6 +7520,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		pages: On_demand_genreMetadataConnectionsPages;
+	}
+	export interface On_demand_genreMetadataConnectionsFormProperties {
+	}
+	export function CreateOn_demand_genreMetadataConnectionsFormGroup() {
+		return new FormGroup<On_demand_genreMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_genreMetadataConnectionsPages {
@@ -3961,6 +7542,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_genreMetadataConnectionsPagesFormProperties {
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_genreMetadataConnectionsPagesFormGroup() {
+		return new FormGroup<On_demand_genreMetadataConnectionsPagesFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_page {
@@ -4005,7 +7600,7 @@ export namespace MyNS {
 		episodes: On_demand_pageEpisodes;
 
 		/** This On Demand page's film, if it is a film. */
-		film?: Video | null;
+		film?: Video;
 
 		/**
 		 * All the genres assigned to this page.
@@ -4102,6 +7697,91 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface On_demand_pageFormProperties {
+
+		/** The time in ISO 8601 format when the page was created. */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The description of this On Demand page.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The link to this page on its own domain.
+		 * Required
+		 */
+		domain_link: FormControl<string | null | undefined>,
+
+		/**
+		 * The link to the page on Vimeo.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/** he time in ISO 8601 format when the page was last modified. */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * A descriptive title of this On Demand page.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The rating of this page.
+		 * Required
+		 */
+		rating: FormControl<number | null | undefined>,
+
+		/**
+		 * The VOD resource key.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/** The creator-designated SKU for this On Demand page. */
+		sku: FormControl<string | null | undefined>,
+
+		/**
+		 * The graphical theme for this On Demand page.
+		 * Required
+		 */
+		theme: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether this On Demand page is for a film or a series.
+		 * Option descriptions:
+		 * * `film` - The On Demand page is for a film.
+		 * * `series` - The On Demand page is for a series.
+		 * Required
+		 */
+		type: FormControl<On_demand_pageType | null | undefined>,
+
+		/**
+		 * The relative URI of the On Demand page.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageFormGroup() {
+		return new FormGroup<On_demand_pageFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			domain_link: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			rating: new FormControl<number | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			sku: new FormControl<string | null | undefined>(undefined),
+			theme: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<On_demand_pageType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_pageColors {
 
@@ -4117,10 +7797,38 @@ export namespace MyNS {
 		 */
 		secondary: string;
 	}
+	export interface On_demand_pageColorsFormProperties {
+
+		/**
+		 * The hexadecimal color code for the page's primary color.
+		 * Required
+		 */
+		primary: FormControl<string | null | undefined>,
+
+		/**
+		 * The hexadecimal color code for the page's secondary color.
+		 * Required
+		 */
+		secondary: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageColorsFormGroup() {
+		return new FormGroup<On_demand_pageColorsFormProperties>({
+			primary: new FormControl<string | null | undefined>(undefined),
+			secondary: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_pageEpisodes {
 		buy: On_demand_pageEpisodesBuy;
 		rent: On_demand_pageEpisodesRent;
+	}
+	export interface On_demand_pageEpisodesFormProperties {
+	}
+	export function CreateOn_demand_pageEpisodesFormGroup() {
+		return new FormGroup<On_demand_pageEpisodesFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_pageEpisodesBuy {
@@ -4136,6 +7844,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		price: number;
+	}
+	export interface On_demand_pageEpisodesBuyFormProperties {
+
+		/**
+		 * Whether all the videos on this On Demand page can be purchased as a whole.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The default price to buy an episode.
+		 * Required
+		 */
+		price: FormControl<number | null | undefined>,
+	}
+	export function CreateOn_demand_pageEpisodesBuyFormGroup() {
+		return new FormGroup<On_demand_pageEpisodesBuyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			price: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_pageEpisodesRent {
@@ -4173,6 +7902,49 @@ export namespace MyNS {
 		 */
 		price: number;
 	}
+	export interface On_demand_pageEpisodesRentFormProperties {
+
+		/**
+		 * Whether all the videos on this On Demand page can be rented as a whole.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The rental period for the video:
+		 * Option descriptions:
+		 * * `1 day` - The rental period is one day.
+		 * * `1 month` - The rental period is one month.
+		 * * `1 week` - The rental period is one week.
+		 * * `1 year` - The rental period is one year.
+		 * * `2 day` - The rental period is two days.
+		 * * `24 hour` - The rental period is 24 hours.
+		 * * `3 day` - The rental period is three days.
+		 * * `3 month` - The rental period is three months.
+		 * * `30 day` - The rental period is 30 days.
+		 * * `48 hour` - The rental period is 48 hours.
+		 * * `6 month` - The rental period is six months.
+		 * * `60 day` - The rental period is 60 days.
+		 * * `7 day` - The rental period is 7 days.
+		 * * `72 hour` - The rental period is 72 hours.
+		 * Required
+		 */
+		period: FormControl<On_demand_pageEpisodesRentPeriod | null | undefined>,
+
+		/**
+		 * The default price to rent an episode.
+		 * Required
+		 */
+		price: FormControl<number | null | undefined>,
+	}
+	export function CreateOn_demand_pageEpisodesRentFormGroup() {
+		return new FormGroup<On_demand_pageEpisodesRentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			period: new FormControl<On_demand_pageEpisodesRentPeriod | null | undefined>(undefined),
+			price: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum On_demand_pageEpisodesRentPeriod { _1_day = 0, _1_month = 1, _1_week = 2, _1_year = 3, _2_day = 4, _24_hour = 5, _3_day = 6, _3_month = 7, _30_day = 8, _48_hour = 9, _6_month = 10, _60_day = 11, _7_day = 12, _72_hour = 13 }
 
@@ -4190,13 +7962,34 @@ export namespace MyNS {
 		 */
 		interactions: Purchase_interaction;
 	}
+	export interface On_demand_pageMetadataFormProperties {
+	}
+	export function CreateOn_demand_pageMetadataFormGroup() {
+		return new FormGroup<On_demand_pageMetadataFormProperties>({
+		});
+
+	}
 
 	export interface On_demand_pageMetadataConnections {
 		metadata: On_demand_pageMetadataConnectionsMetadata;
 	}
+	export interface On_demand_pageMetadataConnectionsFormProperties {
+	}
+	export function CreateOn_demand_pageMetadataConnectionsFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsFormProperties>({
+		});
+
+	}
 
 	export interface On_demand_pageMetadataConnectionsMetadata {
 		connections: On_demand_pageMetadataConnectionsMetadataConnections;
+	}
+	export interface On_demand_pageMetadataConnectionsMetadataFormProperties {
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnections {
@@ -4237,6 +8030,13 @@ export namespace MyNS {
 		 */
 		videos: On_demand_pageMetadataConnectionsMetadataConnectionsVideos;
 	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsFormProperties {
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsFormProperties>({
+		});
+
+	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsComments {
 
@@ -4257,6 +8057,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsCommentsFormProperties {
+
+		/**
+		 * The total number of comments on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsCommentsFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsCommentsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsGenres {
@@ -4279,6 +8100,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsGenresFormProperties {
+
+		/**
+		 * The total number of genres on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsGenresFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsGenresFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsLikes {
 
@@ -4299,6 +8141,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsLikesFormProperties {
+
+		/**
+		 * The total number of likes on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsLikesFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsLikesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsPictures {
@@ -4321,6 +8184,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsPicturesFormProperties {
+
+		/**
+		 * The total number of pictures on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsPicturesFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsPicturesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsSeasons {
 
@@ -4341,6 +8225,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsSeasonsFormProperties {
+
+		/**
+		 * The total number of seasons on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsSeasonsFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsSeasonsFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_pageMetadataConnectionsMetadataConnectionsVideos {
@@ -4381,23 +8286,87 @@ export namespace MyNS {
 		 */
 		viewable_total: number;
 	}
+	export interface On_demand_pageMetadataConnectionsMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of extra videos.
+		 * Required
+		 */
+		extra_total: FormControl<number | null | undefined>,
+
+		/**
+		 * The total number of main videos.
+		 * Required
+		 */
+		main_total: FormControl<number | null | undefined>,
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+
+		/**
+		 * The total number of viewable videos.
+		 * Required
+		 */
+		viewable_total: FormControl<number | null | undefined>,
+	}
+	export function CreateOn_demand_pageMetadataConnectionsMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<On_demand_pageMetadataConnectionsMetadataConnectionsVideosFormProperties>({
+			extra_total: new FormControl<number | null | undefined>(undefined),
+			main_total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+			viewable_total: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Purchase_interaction {
 
 		/** Information on purchasing this video. */
-		buy?: Purchase_interactionBuy | null;
+		buy?: Purchase_interactionBuy;
 
 		/** Information on renting this video. */
 		rent?: string | null;
 
 		/** Information on subscribing to this video. */
-		subscribe?: Purchase_interactionSubscribe | null;
+		subscribe?: Purchase_interactionSubscribe;
+	}
+	export interface Purchase_interactionFormProperties {
+
+		/** Information on renting this video. */
+		rent: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchase_interactionFormGroup() {
+		return new FormGroup<Purchase_interactionFormProperties>({
+			rent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Purchase_interactionBuy {
 
 		/** Whether the On Demand video for purchase has DRM. */
 		drm?: boolean | null;
+	}
+	export interface Purchase_interactionBuyFormProperties {
+
+		/** Whether the On Demand video for purchase has DRM. */
+		drm: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePurchase_interactionBuyFormGroup() {
+		return new FormGroup<Purchase_interactionBuyFormProperties>({
+			drm: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Purchase_interactionSubscribe {
@@ -4427,6 +8396,44 @@ export namespace MyNS {
 		/** The On Demand subscription's product URI. */
 		uri?: string | null;
 	}
+	export interface Purchase_interactionSubscribeFormProperties {
+
+		/** Whether the On Demand subscription has DRM. */
+		drm: FormControl<boolean | null | undefined>,
+
+		/** The time in ISO 8601 format when the On Demand video will expire. */
+		expires_time: FormControl<string | null | undefined>,
+
+		/** The URL to purchase this On Demand subscription on Vimeo. */
+		link: FormControl<string | null | undefined>,
+
+		/** The time in ISO 8601 format when the On Demand was purchased. */
+		purchase_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's streaming access to this On Demand subscription:
+		 * Option descriptions:
+		 * * `available` - The On Demand subscription is available for streaming.
+		 * * `purchased` - The On Demand subscription has been purchased.
+		 * * `restricted` - Streaming for the On Demand subscription is restricted.
+		 * * `unavailable` - The On Demand subscription is unavailable.
+		 */
+		stream: FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>,
+
+		/** The On Demand subscription's product URI. */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchase_interactionSubscribeFormGroup() {
+		return new FormGroup<Purchase_interactionSubscribeFormProperties>({
+			drm: new FormControl<boolean | null | undefined>(undefined),
+			expires_time: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			purchase_time: new FormControl<string | null | undefined>(undefined),
+			stream: new FormControl<VideoMetadataInteractionsBuyDownload | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_pagePreorder {
 
@@ -4454,6 +8461,41 @@ export namespace MyNS {
 		 */
 		time: string;
 	}
+	export interface On_demand_pagePreorderFormProperties {
+
+		/**
+		 * Whether this page is available for preorder.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the preorder was cancelled.
+		 * Required
+		 */
+		cancel_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the preorder was released to the public.
+		 * Required
+		 */
+		publish_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the preorder started.
+		 * Required
+		 */
+		time: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pagePreorderFormGroup() {
+		return new FormGroup<On_demand_pagePreorderFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			cancel_time: new FormControl<string | null | undefined>(undefined),
+			publish_time: new FormControl<string | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_pagePublished {
 
@@ -4468,6 +8510,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		time: string;
+	}
+	export interface On_demand_pagePublishedFormProperties {
+
+		/**
+		 * Whether this On Demand page has been published.
+		 * Required
+		 */
+		enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in IS 8601 format when this page was published.
+		 * Required
+		 */
+		time: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pagePublishedFormGroup() {
+		return new FormGroup<On_demand_pagePublishedFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_pageSubscription {
@@ -4492,6 +8555,38 @@ export namespace MyNS {
 		 * Required
 		 */
 		price: string;
+	}
+	export interface On_demand_pageSubscriptionFormProperties {
+
+		/**
+		 * Whether this product is active.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The link to this product on Vimeo.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/** The product's rental period. */
+		period: FormControl<string | null | undefined>,
+
+		/**
+		 * The accepted currencies and respective pricing for this product.
+		 * Required
+		 */
+		price: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_pageSubscriptionFormGroup() {
+		return new FormGroup<On_demand_pageSubscriptionFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			period: new FormControl<string | null | undefined>(undefined),
+			price: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum On_demand_pageType { film = 0, series = 1 }
@@ -4591,6 +8686,110 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_promotionFormProperties {
+
+		/**
+		 * The type of access that this promotion grants:
+		 * Option descriptions:
+		 * * `default` - Grants discounts on existing product offerings.
+		 * * `vip` - Grants free access either to VOD content before it is released or to access types that aren't part of the existing product offerings.
+		 * Required
+		 */
+		access_type: FormControl<On_demand_promotionAccess_type | null | undefined>,
+
+		/**
+		 * The type of discount for which this promotion can be used.
+		 * Option descriptions:
+		 * * `dollars` - The discount is a certain fixed amount.
+		 * * `free` - The discount is the full purchase price. VIP access promotions always use this discount type.
+		 * * `percent` - The discount is a certain percentage of the full price.
+		 * Required
+		 */
+		discount_type: FormControl<On_demand_promotionDiscount_type | null | undefined>,
+
+		/**
+		 * Whether this promotion grants download access to On Demand content.
+		 * Required
+		 */
+		download: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The prefix string for batch codes, or the null value for single codes.
+		 * Required
+		 */
+		label: FormControl<string | null | undefined>,
+
+		/**
+		 * The percentage amount that is deducted from the product price.
+		 * Required
+		 */
+		percent_off: FormControl<number | null | undefined>,
+
+		/**
+		 * The type of product to which this promotion can be applied. Only `buy` and `rent` are available for the VIP access type:
+		 * Option descriptions:
+		 * * `any` - The promotion can be applied to any product.
+		 * * `buy` - The promotion can be applied to a buyable single video.
+		 * * `buy_episode` - The promotion can be applied to a buyable single episode.
+		 * * `rent` - The promotion can be applied to a rentable single video.
+		 * * `rent_episode` - The promotion can be applied to a rentable single episode.
+		 * * `subscribe` - The promotion can be applied to a subscription.
+		 * Required
+		 */
+		product_type: FormControl<On_demand_promotionProduct_type | null | undefined>,
+
+		/**
+		 * The amount of time that the user has access to the VOD content after redeeming a promo code.
+		 * Option descriptions:
+		 * * `1_week` - Access lasts for one week.
+		 * * `1_year` - Access lasts for one year.
+		 * * `24_hour` - Access lasts for 24 hours.
+		 * * `30_days` - Access lasts for 30 days.
+		 * * `3_month` - Access lasts for 3 months.
+		 * * `48_hour` - Access lasts for 48 hours.
+		 * * `6_month` - Access lasts for 6 months.
+		 * * `72_hour` - Access lasts for 72 hours.
+		 * Required
+		 */
+		stream_period: FormControl<On_demand_promotionStream_period | null | undefined>,
+
+		/**
+		 * The total amount of times that this promotion can be used.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The way in which this promotion can generate promo codes:
+		 * Option descriptions:
+		 * * `batch` - Provides many unique promo codes that can only be used once each.
+		 * * `batch_prefix` - Similar to `batch`, except that all codes have a similar prefix string. This mode is deprecated, yet it may still appear for some users.
+		 * * `single` - Provides a single promo code with many uses.
+		 * Required
+		 */
+		type: FormControl<On_demand_promotionType | null | undefined>,
+
+		/**
+		 * The promotion's canonical relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_promotionFormGroup() {
+		return new FormGroup<On_demand_promotionFormProperties>({
+			access_type: new FormControl<On_demand_promotionAccess_type | null | undefined>(undefined),
+			discount_type: new FormControl<On_demand_promotionDiscount_type | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+			label: new FormControl<string | null | undefined>(undefined),
+			percent_off: new FormControl<number | null | undefined>(undefined),
+			product_type: new FormControl<On_demand_promotionProduct_type | null | undefined>(undefined),
+			stream_period: new FormControl<On_demand_promotionStream_period | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<On_demand_promotionType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum On_demand_promotionAccess_type { _default = 0, vip = 1 }
 
@@ -4604,6 +8803,13 @@ export namespace MyNS {
 		 */
 		connections: On_demand_promotionMetadataConnections;
 	}
+	export interface On_demand_promotionMetadataFormProperties {
+	}
+	export function CreateOn_demand_promotionMetadataFormGroup() {
+		return new FormGroup<On_demand_promotionMetadataFormProperties>({
+		});
+
+	}
 
 	export interface On_demand_promotionMetadataConnections {
 
@@ -4612,6 +8818,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		codes: On_demand_promotionMetadataConnectionsCodes;
+	}
+	export interface On_demand_promotionMetadataConnectionsFormProperties {
+	}
+	export function CreateOn_demand_promotionMetadataConnectionsFormGroup() {
+		return new FormGroup<On_demand_promotionMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_promotionMetadataConnectionsCodes {
@@ -4633,6 +8846,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_promotionMetadataConnectionsCodesFormProperties {
+
+		/**
+		 * The total number of uses on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_promotionMetadataConnectionsCodesFormGroup() {
+		return new FormGroup<On_demand_promotionMetadataConnectionsCodesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum On_demand_promotionProduct_type { any = 0, buy = 1, buy_episode = 2, rent = 3, rent_episode = 4, subscribe = 5 }
@@ -4667,6 +8901,41 @@ export namespace MyNS {
 		 */
 		uses: number;
 	}
+	export interface On_demand_promotion_codeFormProperties {
+
+		/**
+		 * A promotion code that can be redeemed on Vimeo.
+		 * Required
+		 */
+		code: FormControl<string | null | undefined>,
+
+		/**
+		 * A link to redeem the promotion code instantly.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The total amount of times this code can be used.
+		 * Required
+		 */
+		max_uses: FormControl<number | null | undefined>,
+
+		/**
+		 * The number of times that this code has been used.
+		 * Required
+		 */
+		uses: FormControl<number | null | undefined>,
+	}
+	export function CreateOn_demand_promotion_codeFormGroup() {
+		return new FormGroup<On_demand_promotion_codeFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			max_uses: new FormControl<number | null | undefined>(undefined),
+			uses: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_region {
 
@@ -4687,6 +8956,34 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_regionFormProperties {
+
+		/**
+		 * The ISO 3166-1 alpha-2 code for this country.
+		 * Required
+		 */
+		country_code: FormControl<string | null | undefined>,
+
+		/**
+		 * The descriptive name of this country.
+		 * Required
+		 */
+		country_name: FormControl<string | null | undefined>,
+
+		/**
+		 * The region container's relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_regionFormGroup() {
+		return new FormGroup<On_demand_regionFormProperties>({
+			country_code: new FormControl<string | null | undefined>(undefined),
+			country_name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_season {
@@ -4734,9 +9031,65 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface On_demand_seasonFormProperties {
+
+		/**
+		 * The description for this season.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The descriptive name of the season.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The position of the season relative to other seasons in the series.
+		 * Required
+		 */
+		position: FormControl<number | null | undefined>,
+
+		/**
+		 * The unique identifier for this On Demand season.
+		 * Required
+		 */
+		resource_key: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of season.
+		 * Required
+		 */
+		type: FormControl<string | null | undefined>,
+
+		/**
+		 * The season container's relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_seasonFormGroup() {
+		return new FormGroup<On_demand_seasonFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			position: new FormControl<number | null | undefined>(undefined),
+			resource_key: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_seasonMetadata {
 		connections: On_demand_seasonMetadataConnections;
+	}
+	export interface On_demand_seasonMetadataFormProperties {
+	}
+	export function CreateOn_demand_seasonMetadataFormGroup() {
+		return new FormGroup<On_demand_seasonMetadataFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_seasonMetadataConnections {
@@ -4746,6 +9099,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: On_demand_seasonMetadataConnectionsVideos;
+	}
+	export interface On_demand_seasonMetadataConnectionsFormProperties {
+	}
+	export function CreateOn_demand_seasonMetadataConnectionsFormGroup() {
+		return new FormGroup<On_demand_seasonMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_seasonMetadataConnectionsVideos {
@@ -4767,6 +9127,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface On_demand_seasonMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection ∂data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_seasonMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<On_demand_seasonMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_video {
@@ -4808,10 +9189,10 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** An array of HTTP methods permitted on this URI. */
-		options?: Array<string> | null;
+		options?: Array<string>;
 
 		/** The active picture for this video. */
-		pictures?: Picture | null;
+		pictures?: Picture;
 
 		/**
 		 * The user's most recent play position in seconds for this video.
@@ -4854,7 +9235,77 @@ export namespace MyNS {
 		uri: string;
 
 		/** The owner of the video. */
-		user?: User | null;
+		user?: User;
+	}
+	export interface On_demand_videoFormProperties {
+
+		/** Description of the On Demand video. */
+		description: FormControl<string | null | undefined>,
+
+		/** The duration of the On Demand video. */
+		duration: FormControl<string | null | undefined>,
+
+		/** The episode number of the On Demand video. */
+		episode: FormControl<number | null | undefined>,
+
+		/**
+		 * The link to this video on Vimeo.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/** The title of the On Demand video. */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's most recent play position in seconds for this video.
+		 * Required
+		 */
+		play_progress: FormControl<number | null | undefined>,
+
+		/** Describes the manual position of this video relative to the other videos owned by this On Demand page. */
+		position: FormControl<number | null | undefined>,
+
+		/** The time in ISO 8601 format when the On Demand video was created or published. */
+		release_date: FormControl<string | null | undefined>,
+
+		/**
+		 * The year that this On Demand video was released.
+		 * Required
+		 */
+		release_year: FormControl<number | null | undefined>,
+
+		/**
+		 * The type of the On Demand video:
+		 * Option descriptions:
+		 * * `extra` - The On Demand video is an extra feature.
+		 * * `main` - The On Demand video is a main feature.
+		 * * `trailer` - The On Demand video is a trailer.
+		 * Required
+		 */
+		type: FormControl<On_demand_videoType | null | undefined>,
+
+		/**
+		 * The video container's relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_videoFormGroup() {
+		return new FormGroup<On_demand_videoFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
+			episode: new FormControl<number | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			play_progress: new FormControl<number | null | undefined>(undefined),
+			position: new FormControl<number | null | undefined>(undefined),
+			release_date: new FormControl<string | null | undefined>(undefined),
+			release_year: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<On_demand_videoType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface On_demand_videoBuy {
@@ -4874,6 +9325,31 @@ export namespace MyNS {
 		/** Whether this On Demand video has been purchased. */
 		purchased?: boolean | null;
 	}
+	export interface On_demand_videoBuyFormProperties {
+
+		/**
+		 * Whether this On Demand video can be purchased.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * A map of currency type to price.
+		 * Required
+		 */
+		price: FormControl<string | null | undefined>,
+
+		/** Whether this On Demand video has been purchased. */
+		purchased: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOn_demand_videoBuyFormGroup() {
+		return new FormGroup<On_demand_videoBuyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			price: new FormControl<string | null | undefined>(undefined),
+			purchased: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_videoInteractions {
 
@@ -4882,6 +9358,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		page: On_demand_videoInteractionsPage;
+	}
+	export interface On_demand_videoInteractionsFormProperties {
+	}
+	export function CreateOn_demand_videoInteractionsFormGroup() {
+		return new FormGroup<On_demand_videoInteractionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_videoInteractionsPage {
@@ -4904,10 +9387,38 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_videoInteractionsPageFormProperties {
+
+		/**
+		 * Whether this On Demand page was added.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The URI to access the On Demand page.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_videoInteractionsPageFormGroup() {
+		return new FormGroup<On_demand_videoInteractionsPageFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_videoMetadata {
 		connections: On_demand_videoMetadataConnections;
 		interactions: On_demand_videoMetadataInteractions;
+	}
+	export interface On_demand_videoMetadataFormProperties {
+	}
+	export function CreateOn_demand_videoMetadataFormGroup() {
+		return new FormGroup<On_demand_videoMetadataFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_videoMetadataConnections {
@@ -4917,6 +9428,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		season: On_demand_videoMetadataConnectionsSeason;
+	}
+	export interface On_demand_videoMetadataConnectionsFormProperties {
+	}
+	export function CreateOn_demand_videoMetadataConnectionsFormGroup() {
+		return new FormGroup<On_demand_videoMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_videoMetadataConnectionsSeason {
@@ -4939,6 +9457,27 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_videoMetadataConnectionsSeasonFormProperties {
+
+		/**
+		 * The name of the season on this connection.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_videoMetadataConnectionsSeasonFormGroup() {
+		return new FormGroup<On_demand_videoMetadataConnectionsSeasonFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_videoMetadataInteractions {
 
@@ -4953,6 +9492,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		watchlater: On_demand_videoMetadataInteractionsWatchlater;
+	}
+	export interface On_demand_videoMetadataInteractionsFormProperties {
+	}
+	export function CreateOn_demand_videoMetadataInteractionsFormGroup() {
+		return new FormGroup<On_demand_videoMetadataInteractionsFormProperties>({
+		});
+
 	}
 
 	export interface On_demand_videoMetadataInteractionsLikes {
@@ -4975,6 +9521,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_videoMetadataInteractionsLikesFormProperties {
+
+		/**
+		 * Whether the user has liked this video.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user liked this video.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI for the user to like this video.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_videoMetadataInteractionsLikesFormGroup() {
+		return new FormGroup<On_demand_videoMetadataInteractionsLikesFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_videoMetadataInteractionsWatchlater {
 
@@ -4996,6 +9570,34 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface On_demand_videoMetadataInteractionsWatchlaterFormProperties {
+
+		/**
+		 * Whether the user has added this video to their Watch Later queue.
+		 * Required
+		 */
+		added: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the user added this video to their Watch Later queue.
+		 * Required
+		 */
+		added_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI for the user to add this video to their Watch Later queue.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateOn_demand_videoMetadataInteractionsWatchlaterFormGroup() {
+		return new FormGroup<On_demand_videoMetadataInteractionsWatchlaterFormProperties>({
+			added: new FormControl<boolean | null | undefined>(undefined),
+			added_time: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface On_demand_videoRent {
 
@@ -5014,13 +9616,38 @@ export namespace MyNS {
 		/** Whether this On Demand video has been rented. */
 		purchased?: boolean | null;
 	}
+	export interface On_demand_videoRentFormProperties {
+
+		/**
+		 * Whether this On Demand video can be rented.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * A map of currency type to price.
+		 * Required
+		 */
+		price: FormControl<string | null | undefined>,
+
+		/** Whether this On Demand video has been rented. */
+		purchased: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOn_demand_videoRentFormGroup() {
+		return new FormGroup<On_demand_videoRentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			price: new FormControl<string | null | undefined>(undefined),
+			purchased: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum On_demand_videoType { extra = 0, main = 1, trailer = 2 }
 
 	export interface Play {
 
 		/** Progressive files. */
-		PlayProgressive?: Array<PlayProgressive> | null;
+		PlayProgressive?: Array<PlayProgressive>;
 
 		/**
 		 * The play status of the video:
@@ -5032,6 +9659,25 @@ export namespace MyNS {
 		 * Required
 		 */
 		status: PlayStatus;
+	}
+	export interface PlayFormProperties {
+
+		/**
+		 * The play status of the video:
+		 * Option descriptions:
+		 * * `playable` - The video is playable.
+		 * * `purchase_required` - The video must be purchased.
+		 * * `restricted` - Playback for the video is restricted.
+		 * * `unavailable` - The video is unavailable.
+		 * Required
+		 */
+		status: FormControl<PlayStatus | null | undefined>,
+	}
+	export function CreatePlayFormGroup() {
+		return new FormGroup<PlayFormProperties>({
+			status: new FormControl<PlayStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PlayProgressive {
@@ -5098,6 +9744,85 @@ export namespace MyNS {
 		 */
 		width: number;
 	}
+	export interface PlayProgressiveFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when this video file was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The FPS of the video file.
+		 * Required
+		 */
+		fps: FormControl<number | null | undefined>,
+
+		/**
+		 * The height in pixels of the video.
+		 * Required
+		 */
+		height: FormControl<number | null | undefined>,
+
+		/**
+		 * The direct link to this video file.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the link to this video file expires.
+		 * Required
+		 */
+		link_expiration_time: FormControl<string | null | undefined>,
+
+		/** The URLs for logging events. */
+		log: FormControl<string | null | undefined>,
+
+		/**
+		 * The MD5 hash of the video file.
+		 * Required
+		 */
+		md5: FormControl<string | null | undefined>,
+
+		/**
+		 * The file size in bytes of this video.
+		 * Required
+		 */
+		size: FormControl<number | null | undefined>,
+
+		/**
+		 * The type of the video file:
+		 * Option descriptions:
+		 * * `source` - The video is a source file.
+		 * * `video/mp4` - The video is in MP4 format.
+		 * * `video/webm` - The video is in WebM format.
+		 * * `vp6/x-video` - The video is in VP6 format.
+		 * Required
+		 */
+		type: FormControl<PlayProgressiveType | null | undefined>,
+
+		/**
+		 * The width in pixels of the video.
+		 * Required
+		 */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreatePlayProgressiveFormGroup() {
+		return new FormGroup<PlayProgressiveFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			fps: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			link_expiration_time: new FormControl<string | null | undefined>(undefined),
+			log: new FormControl<string | null | undefined>(undefined),
+			md5: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<PlayProgressiveType | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PlayProgressiveType { source = 0, video_mp4 = 1, video_webm = 2, vp6_x_video = 3 }
 
@@ -5158,6 +9883,67 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface PortfolioFormProperties {
+
+		/**
+		 * The time in ISO 8601 format when the portfolio was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The portfolio's description.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The link to the portfolio.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the portfolio's data was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The display name of the portfolio.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The default video sort order for the portfolio:
+		 * Option descriptions:
+		 * * `alphabetical` - The default sort order is alphabetical by name.
+		 * * `clips` - The default sort order is video creation date.
+		 * * `modified` - The default sort order is the order in which the videos were modified.
+		 * * `recent` - The default sort order is the order in which the videos were added.
+		 * Required
+		 */
+		sort: FormControl<PortfolioSort | null | undefined>,
+
+		/**
+		 * The canonical relative URI of the portfolio.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreatePortfolioFormGroup() {
+		return new FormGroup<PortfolioFormProperties>({
+			created_time: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			sort: new FormControl<PortfolioSort | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PortfolioMetadata {
 
@@ -5167,6 +9953,13 @@ export namespace MyNS {
 		 */
 		connections: PortfolioMetadataConnections;
 	}
+	export interface PortfolioMetadataFormProperties {
+	}
+	export function CreatePortfolioMetadataFormGroup() {
+		return new FormGroup<PortfolioMetadataFormProperties>({
+		});
+
+	}
 
 	export interface PortfolioMetadataConnections {
 
@@ -5175,6 +9968,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: PortfolioMetadataConnectionsVideos;
+	}
+	export interface PortfolioMetadataConnectionsFormProperties {
+	}
+	export function CreatePortfolioMetadataConnectionsFormGroup() {
+		return new FormGroup<PortfolioMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface PortfolioMetadataConnectionsVideos {
@@ -5196,6 +9996,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface PortfolioMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreatePortfolioMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<PortfolioMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PortfolioSort { alphabetical = 0, clips = 1, modified = 2, recent = 3 }
@@ -5232,6 +10053,27 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface PresetsFormProperties {
+
+		/**
+		 * The display name of the presets group.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The canonical relative URI of the presets object.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreatePresetsFormGroup() {
+		return new FormGroup<PresetsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PresetsMetadata {
 
@@ -5241,6 +10083,13 @@ export namespace MyNS {
 		 */
 		connections: PresetsMetadataConnections;
 	}
+	export interface PresetsMetadataFormProperties {
+	}
+	export function CreatePresetsMetadataFormGroup() {
+		return new FormGroup<PresetsMetadataFormProperties>({
+		});
+
+	}
 
 	export interface PresetsMetadataConnections {
 
@@ -5249,6 +10098,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		videos: PresetsMetadataConnectionsVideos;
+	}
+	export interface PresetsMetadataConnectionsFormProperties {
+	}
+	export function CreatePresetsMetadataConnectionsFormGroup() {
+		return new FormGroup<PresetsMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface PresetsMetadataConnectionsVideos {
@@ -5271,11 +10127,39 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface PresetsMetadataConnectionsVideosFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreatePresetsMetadataConnectionsVideosFormGroup() {
+		return new FormGroup<PresetsMetadataConnectionsVideosFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PresetsSettings {
 		buttons: PresetsSettingsButtons;
 		logos: PresetsSettingsLogos;
 		outro: PresetsSettingsOutro;
+	}
+	export interface PresetsSettingsFormProperties {
+	}
+	export function CreatePresetsSettingsFormGroup() {
+		return new FormGroup<PresetsSettingsFormProperties>({
+		});
+
 	}
 
 	export interface PresetsSettingsButtons {
@@ -5316,6 +10200,55 @@ export namespace MyNS {
 		 */
 		watchlater: boolean;
 	}
+	export interface PresetsSettingsButtonsFormProperties {
+
+		/**
+		 * Whether the preset includes Embed button settings.
+		 * Required
+		 */
+		embed: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the preset includes HD button settings.
+		 * Required
+		 */
+		hd: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the preset includes Like button settings.
+		 * Required
+		 */
+		like: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the present includes Share button settings.
+		 * Required
+		 */
+		share: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the preset includes Vote button settings.
+		 * Required
+		 */
+		vote: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the preset includes Watch Later button settings.
+		 * Required
+		 */
+		watchlater: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePresetsSettingsButtonsFormGroup() {
+		return new FormGroup<PresetsSettingsButtonsFormProperties>({
+			embed: new FormControl<boolean | null | undefined>(undefined),
+			hd: new FormControl<boolean | null | undefined>(undefined),
+			like: new FormControl<boolean | null | undefined>(undefined),
+			share: new FormControl<boolean | null | undefined>(undefined),
+			vote: new FormControl<boolean | null | undefined>(undefined),
+			watchlater: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PresetsSettingsLogos {
 
@@ -5337,6 +10270,34 @@ export namespace MyNS {
 		 */
 		vimeo: boolean;
 	}
+	export interface PresetsSettingsLogosFormProperties {
+
+		/**
+		 * Whether the preset includes custom logo settings.
+		 * Required
+		 */
+		custom: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the present includes sticky custom logo settings.
+		 * Required
+		 */
+		sticky_custom: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Whether the preset includes Vimeo logo settings.
+		 * Required
+		 */
+		vimeo: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePresetsSettingsLogosFormGroup() {
+		return new FormGroup<PresetsSettingsLogosFormProperties>({
+			custom: new FormControl<boolean | null | undefined>(undefined),
+			sticky_custom: new FormControl<boolean | null | undefined>(undefined),
+			vimeo: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PresetsSettingsOutro {
 
@@ -5344,7 +10305,7 @@ export namespace MyNS {
 		clips?: string | null;
 
 		/** The outro link settings. Present only if the type is `link`. */
-		link?: PresetsSettingsOutroLink | null;
+		link?: PresetsSettingsOutroLink;
 
 		/** The outro text. Present only if the type is `text`. */
 		text?: string | null;
@@ -5358,6 +10319,32 @@ export namespace MyNS {
 		/** A comma-separated list of video URIs. Present only if type is `no idea`. */
 		videos?: string | null;
 	}
+	export interface PresetsSettingsOutroFormProperties {
+
+		/** A comma-separated list of video URIs. Present only if the type is `uploaded_clips`. */
+		clips: FormControl<string | null | undefined>,
+
+		/** The outro text. Present only if the type is `text`. */
+		text: FormControl<string | null | undefined>,
+
+		/**
+		 * The preset outro type:
+		 * Required
+		 */
+		type: FormControl<PresetsSettingsOutroType | null | undefined>,
+
+		/** A comma-separated list of video URIs. Present only if type is `no idea`. */
+		videos: FormControl<string | null | undefined>,
+	}
+	export function CreatePresetsSettingsOutroFormGroup() {
+		return new FormGroup<PresetsSettingsOutroFormProperties>({
+			clips: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<PresetsSettingsOutroType | null | undefined>(undefined),
+			videos: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PresetsSettingsOutroLink {
 
@@ -5366,6 +10353,21 @@ export namespace MyNS {
 
 		/** The URL of the outro link. */
 		url?: string | null;
+	}
+	export interface PresetsSettingsOutroLinkFormProperties {
+
+		/** The name of the outro link. */
+		name: FormControl<string | null | undefined>,
+
+		/** The URL of the outro link. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreatePresetsSettingsOutroLinkFormGroup() {
+		return new FormGroup<PresetsSettingsOutroLinkFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PresetsSettingsOutroType { link = 0, no_idea = 1, text = 2, uploaded_clips = 3, uploaded_videos = 4 }
@@ -5430,13 +10432,87 @@ export namespace MyNS {
 		 */
 		uri: string;
 	}
+	export interface Text_trackFormProperties {
+
+		/**
+		 * Whether this text track is active.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The read-only URL of the text track file, intended for use with HLS playback.
+		 * Required
+		 */
+		hls_link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the read-only HLS playback text track file expires.
+		 * Required
+		 */
+		hls_link_expires_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The language code for this text track. To see a full list, request
+		 * `/languages?filter=texttrack`.
+		 * Required
+		 */
+		language: FormControl<string | null | undefined>,
+
+		/**
+		 * The read-only URL of the text track file. You can upload to this link when you create it for the first time.
+		 * Required
+		 */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the text track link expires.
+		 * Required
+		 */
+		link_expires_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The descriptive name of this text track.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of the text track:
+		 * Option descriptions:
+		 * * `captions` - The text track is for captions.
+		 * * `subtitles` - The text track is for subtitles.
+		 * Required
+		 */
+		type: FormControl<Text_trackType | null | undefined>,
+
+		/**
+		 * The relative URI of the text track.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateText_trackFormGroup() {
+		return new FormGroup<Text_trackFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			hls_link: new FormControl<string | null | undefined>(undefined),
+			hls_link_expires_time: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			link_expires_time: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<Text_trackType | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum Text_trackType { captions = 0, subtitles = 1 }
 
 	export interface Upload_attempt {
 
 		/** The video to upload. */
-		clip?: Video | null;
+		clip?: Video;
 
 		/** The completion URI of the upload. */
 		complete_uri?: string | null;
@@ -5467,6 +10543,42 @@ export namespace MyNS {
 		 * Required
 		 */
 		user: User;
+	}
+	export interface Upload_attemptFormProperties {
+
+		/** The completion URI of the upload. */
+		complete_uri: FormControl<string | null | undefined>,
+
+		/** The HTML upload form. */
+		form: FormControl<string | null | undefined>,
+
+		/**
+		 * The ticket identifier string for the upload.
+		 * Required
+		 */
+		ticket_id: FormControl<string | null | undefined>,
+
+		/**
+		 * The upload URL.
+		 * Required
+		 */
+		upload_link: FormControl<string | null | undefined>,
+
+		/**
+		 * The upload URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateUpload_attemptFormGroup() {
+		return new FormGroup<Upload_attemptFormProperties>({
+			complete_uri: new FormControl<string | null | undefined>(undefined),
+			form: new FormControl<string | null | undefined>(undefined),
+			ticket_id: new FormControl<string | null | undefined>(undefined),
+			upload_link: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Video_versions {
@@ -5549,9 +10661,79 @@ export namespace MyNS {
 		 */
 		user: User;
 	}
+	export interface Video_versionsFormProperties {
+
+		/**
+		 * Whether this video version is the currently active one.
+		 * Required
+		 */
+		active: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 for when the video version was created.
+		 * Required
+		 */
+		created_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The duration of the video version in seconds.
+		 * Required
+		 */
+		duration: FormControl<number | null | undefined>,
+
+		/**
+		 * The file name of the video version.
+		 * Required
+		 */
+		filename: FormControl<string | null | undefined>,
+
+		/**
+		 * The size in byes of the video version file.
+		 * Required
+		 */
+		filesize: FormControl<number | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the video version was last modified.
+		 * Required
+		 */
+		modified_time: FormControl<string | null | undefined>,
+
+		/**
+		 * The time in ISO 8601 format when the video version was uploaded.
+		 * Required
+		 */
+		upload_date: FormControl<string | null | undefined>,
+
+		/**
+		 * The version's canonical relative URI.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideo_versionsFormGroup() {
+		return new FormGroup<Video_versionsFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			created_time: new FormControl<string | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			filename: new FormControl<string | null | undefined>(undefined),
+			filesize: new FormControl<number | null | undefined>(undefined),
+			modified_time: new FormControl<string | null | undefined>(undefined),
+			upload_date: new FormControl<string | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Video_versionsMetadata {
 		connections: Video_versionsMetadataConnections;
+	}
+	export interface Video_versionsMetadataFormProperties {
+	}
+	export function CreateVideo_versionsMetadataFormGroup() {
+		return new FormGroup<Video_versionsMetadataFormProperties>({
+		});
+
 	}
 
 	export interface Video_versionsMetadataConnections {
@@ -5561,6 +10743,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		video: Video_versionsMetadataConnectionsVideo;
+	}
+	export interface Video_versionsMetadataConnectionsFormProperties {
+	}
+	export function CreateVideo_versionsMetadataConnectionsFormGroup() {
+		return new FormGroup<Video_versionsMetadataConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface Video_versionsMetadataConnectionsVideo {
@@ -5582,6 +10771,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		uri: string;
+	}
+	export interface Video_versionsMetadataConnectionsVideoFormProperties {
+
+		/**
+		 * The total number of videos on this connection.
+		 * Required
+		 */
+		total: FormControl<number | null | undefined>,
+
+		/**
+		 * The API URI that resolves to the connection data.
+		 * Required
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateVideo_versionsMetadataConnectionsVideoFormGroup() {
+		return new FormGroup<Video_versionsMetadataConnectionsVideoFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Video_versionsUpload {
@@ -5616,6 +10826,52 @@ export namespace MyNS {
 
 		/** The link for sending video file data. */
 		upload_link?: string | null;
+	}
+	export interface Video_versionsUploadFormProperties {
+
+		/** The approach for uploading the video. */
+		approach: FormControl<VideoUploadApproach | null | undefined>,
+
+		/** The URI for completing the upload. */
+		complete_uri: FormControl<string | null | undefined>,
+
+		/** The HTML form for uploading a video through the post approach. */
+		form: FormControl<string | null | undefined>,
+
+		/** The link of the video to capture through the pull approach. */
+		link: FormControl<string | null | undefined>,
+
+		/** The redirect URL for the upload app. */
+		redirect_url: FormControl<string | null | undefined>,
+
+		/** The file size in bytes of the uploaded video. */
+		size: FormControl<number | null | undefined>,
+
+		/**
+		 * The status code for the availability of the uploaded video:
+		 * Option descriptions:
+		 * * `complete` - The upload is complete.
+		 * * `error` - The upload ended with an error.
+		 * * `in_progress` - The upload is underway.
+		 * Required
+		 */
+		status: FormControl<VideoTranscodeStatus | null | undefined>,
+
+		/** The link for sending video file data. */
+		upload_link: FormControl<string | null | undefined>,
+	}
+	export function CreateVideo_versionsUploadFormGroup() {
+		return new FormGroup<Video_versionsUploadFormProperties>({
+			approach: new FormControl<VideoUploadApproach | null | undefined>(undefined),
+			complete_uri: new FormControl<string | null | undefined>(undefined),
+			form: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			redirect_url: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<VideoTranscodeStatus | null | undefined>(undefined),
+			upload_link: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -9016,6 +14272,13 @@ export namespace MyNS {
 		 */
 		channels: Array<string>;
 	}
+	export interface Add_channel_categoriesPutBodyFormProperties {
+	}
+	export function CreateAdd_channel_categoriesPutBodyFormGroup() {
+		return new FormGroup<Add_channel_categoriesPutBodyFormProperties>({
+		});
+
+	}
 
 	export enum Get_channel_moderatorsSort { alphabetical = 0, date = 1 }
 
@@ -9027,6 +14290,20 @@ export namespace MyNS {
 		 */
 		user_uri: string;
 	}
+	export interface Replace_channel_moderatorsPatchBodyFormProperties {
+
+		/**
+		 * The URI of the user to add as a moderator.
+		 * Required
+		 */
+		user_uri: FormControl<string | null | undefined>,
+	}
+	export function CreateReplace_channel_moderatorsPatchBodyFormGroup() {
+		return new FormGroup<Replace_channel_moderatorsPatchBodyFormProperties>({
+			user_uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Add_channel_moderatorsPutBody {
 
@@ -9035,6 +14312,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		user_uri: string;
+	}
+	export interface Add_channel_moderatorsPutBodyFormProperties {
+
+		/**
+		 * The URI of a user to add as a moderator.
+		 * Required
+		 */
+		user_uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAdd_channel_moderatorsPutBodyFormGroup() {
+		return new FormGroup<Add_channel_moderatorsPutBodyFormProperties>({
+			user_uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_channel_subscribersFilter { moderators = 0 }
@@ -9050,6 +14341,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		video_uri: string;
+	}
+	export interface Add_videos_to_channelPutBodyFormProperties {
+
+		/**
+		 * The URI of a video to add.
+		 * Required
+		 */
+		video_uri: FormControl<string | null | undefined>,
+	}
+	export function CreateAdd_videos_to_channelPutBodyFormGroup() {
+		return new FormGroup<Add_videos_to_channelPutBodyFormProperties>({
+			video_uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_group_videosSort { alphabetical = 0, comments = 1, date = 2, duration = 3, likes = 4, plays = 5 }
@@ -9068,11 +14373,36 @@ export namespace MyNS {
 		 */
 		videos: string;
 	}
+	export interface Replace_videos_in_album_alt1PutBodyFormProperties {
+
+		/**
+		 * A comma-separated list of video URIs.
+		 * Required
+		 */
+		videos: FormControl<string | null | undefined>,
+	}
+	export function CreateReplace_videos_in_album_alt1PutBodyFormGroup() {
+		return new FormGroup<Replace_videos_in_album_alt1PutBodyFormProperties>({
+			videos: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Set_video_as_album_thumbnail_alt1PostBody {
 
 		/** The video frame time in seconds to use as the album thumbnail. */
 		time_code?: number | null;
+	}
+	export interface Set_video_as_album_thumbnail_alt1PostBodyFormProperties {
+
+		/** The video frame time in seconds to use as the album thumbnail. */
+		time_code: FormControl<number | null | undefined>,
+	}
+	export function CreateSet_video_as_album_thumbnail_alt1PostBodyFormGroup() {
+		return new FormGroup<Set_video_as_album_thumbnail_alt1PostBodyFormProperties>({
+			time_code: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_category_subscriptions_alt1Sort { alphabetical = 0, date = 1, name = 2 }
@@ -9090,6 +14420,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		users: Array<string>;
+	}
+	export interface Follow_users_alt1PostBodyFormProperties {
+	}
+	export function CreateFollow_users_alt1PostBodyFormGroup() {
+		return new FormGroup<Follow_users_alt1PostBodyFormProperties>({
+		});
+
 	}
 
 	export enum Get_user_vods_alt1Sort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, publish_time = 5, rating = 6 }
@@ -9113,7 +14450,7 @@ export namespace MyNS {
 		 * * `USD` - US Dollar
 		 */
 		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies | null;
-		buy?: Create_vod_alt1PostBodyBuy | null;
+		buy?: Create_vod_alt1PostBodyBuy;
 
 		/**
 		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
@@ -9129,7 +14466,7 @@ export namespace MyNS {
 
 		/** The custom domain of the On Demand page. */
 		domain_link?: string | null;
-		episodes?: Create_vod_alt1PostBodyEpisodes | null;
+		episodes?: Create_vod_alt1PostBodyEpisodes;
 
 		/** The custom string to use in this On Demand page's Vimeo URL. */
 		link?: string | null;
@@ -9139,14 +14476,76 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
-		rent?: Create_vod_alt1PostBodyRent | null;
-		subscription?: Create_vod_alt1PostBodySubscription | null;
+		rent?: Create_vod_alt1PostBodyRent;
+		subscription?: Create_vod_alt1PostBodySubscription;
 
 		/**
 		 * The type of On Demand page.
 		 * Required
 		 */
 		type: On_demand_pageType;
+	}
+	export interface Create_vod_alt1PostBodyFormProperties {
+
+		/**
+		 * An array of accepted currencies.
+		 * Option descriptions:
+		 * * `AUD` - Australian Dollar
+		 * * `CAD` - Canadian Dollar
+		 * * `CHF` - Swiss Franc
+		 * * `DKK` - Danish Krone
+		 * * `EUR` - Euro
+		 * * `GBP` - British Pound
+		 * * `JPY` - Japanese Yen
+		 * * `KRW` - South Korean Won
+		 * * `NOK` - Norwegian Krone
+		 * * `PLN` - Polish Zloty
+		 * * `SEK` - Swedish Krona
+		 * * `USD` - US Dollar
+		 */
+		accepted_currencies: FormControl<Create_vod_alt1PostBodyAccepted_currencies | null | undefined>,
+
+		/**
+		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
+		 * Required
+		 */
+		content_rating: FormControl<Content_ratingCode | null | undefined>,
+
+		/**
+		 * The description of the On Demand page.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** The custom domain of the On Demand page. */
+		domain_link: FormControl<string | null | undefined>,
+
+		/** The custom string to use in this On Demand page's Vimeo URL. */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the On Demand page.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of On Demand page.
+		 * Required
+		 */
+		type: FormControl<On_demand_pageType | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyFormProperties>({
+			accepted_currencies: new FormControl<Create_vod_alt1PostBodyAccepted_currencies | null | undefined>(undefined),
+			content_rating: new FormControl<Content_ratingCode | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			domain_link: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<On_demand_pageType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Create_vod_alt1PostBodyAccepted_currencies { AUD = 0, CAD = 1, CHF = 2, DKK = 3, EUR = 4, GBP = 5, JPY = 6, KRW = 7, NOK = 8, PLN = 9, SEK = 10, USD = 11 }
@@ -9158,7 +14557,22 @@ export namespace MyNS {
 
 		/** Whether people who buy the video can download it. To use this field, `type` must be `film`. */
 		download?: boolean | null;
-		price?: Create_vod_alt1PostBodyBuyPrice | null;
+		price?: Create_vod_alt1PostBodyBuyPrice;
+	}
+	export interface Create_vod_alt1PostBodyBuyFormProperties {
+
+		/** Whether the Buy action is active. *Required if `rent.active` is false. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Whether people who buy the video can download it. To use this field, `type` must be `film`. */
+		download: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyBuyFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyBuyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vod_alt1PostBodyBuyPrice {
@@ -9199,10 +14613,72 @@ export namespace MyNS {
 		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
 		USD?: number | null;
 	}
+	export interface Create_vod_alt1PostBodyBuyPriceFormProperties {
+
+		/** The purchase price of this video in AUD. */
+		AUD: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in CAD. */
+		CAD: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in CHF. */
+		CHF: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in DKK. */
+		DKK: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in EUR. */
+		EUR: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in GBP. */
+		GBP: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in JPY. */
+		JPY: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in KRW. */
+		KRW: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in NOK. */
+		NOK: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in PLN. */
+		PLN: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in SEK. */
+		SEK: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyBuyPriceFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyBuyPriceFormProperties>({
+			AUD: new FormControl<number | null | undefined>(undefined),
+			CAD: new FormControl<number | null | undefined>(undefined),
+			CHF: new FormControl<number | null | undefined>(undefined),
+			DKK: new FormControl<number | null | undefined>(undefined),
+			EUR: new FormControl<number | null | undefined>(undefined),
+			GBP: new FormControl<number | null | undefined>(undefined),
+			JPY: new FormControl<number | null | undefined>(undefined),
+			KRW: new FormControl<number | null | undefined>(undefined),
+			NOK: new FormControl<number | null | undefined>(undefined),
+			PLN: new FormControl<number | null | undefined>(undefined),
+			SEK: new FormControl<number | null | undefined>(undefined),
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Create_vod_alt1PostBodyEpisodes {
-		buy?: Create_vod_alt1PostBodyEpisodesBuy | null;
-		rent?: Create_vod_alt1PostBodyEpisodesRent | null;
+		buy?: Create_vod_alt1PostBodyEpisodesBuy;
+		rent?: Create_vod_alt1PostBodyEpisodesRent;
+	}
+	export interface Create_vod_alt1PostBodyEpisodesFormProperties {
+	}
+	export function CreateCreate_vod_alt1PostBodyEpisodesFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyEpisodesFormProperties>({
+		});
+
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodesBuy {
@@ -9212,13 +14688,39 @@ export namespace MyNS {
 
 		/** Whether people who buy the episode can download it. To use this field, `type` must be `series`. */
 		download?: boolean | null;
-		price?: Create_vod_alt1PostBodyEpisodesBuyPrice | null;
+		price?: Create_vod_alt1PostBodyEpisodesBuyPrice;
+	}
+	export interface Create_vod_alt1PostBodyEpisodesBuyFormProperties {
+
+		/** Whether episodes can be bought. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Whether people who buy the episode can download it. To use this field, `type` must be `series`. */
+		download: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyEpisodesBuyFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyEpisodesBuyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodesBuyPrice {
 
 		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
 		USD?: number | null;
+	}
+	export interface Create_vod_alt1PostBodyEpisodesBuyPriceFormProperties {
+
+		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyEpisodesBuyPriceFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyEpisodesBuyPriceFormProperties>({
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vod_alt1PostBodyEpisodesRent {
@@ -9228,7 +14730,22 @@ export namespace MyNS {
 
 		/** The period in which this episode can be rented for. */
 		period?: Create_vod_alt1PostBodyEpisodesRentPeriod | null;
-		price?: Create_vod_alt1PostBodyEpisodesRentPrice | null;
+		price?: Create_vod_alt1PostBodyEpisodesRentPrice;
+	}
+	export interface Create_vod_alt1PostBodyEpisodesRentFormProperties {
+
+		/** Whether episodes can be rented */
+		active: FormControl<boolean | null | undefined>,
+
+		/** The period in which this episode can be rented for. */
+		period: FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyEpisodesRentFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyEpisodesRentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			period: new FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Create_vod_alt1PostBodyEpisodesRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9238,6 +14755,17 @@ export namespace MyNS {
 		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
 		USD?: number | null;
 	}
+	export interface Create_vod_alt1PostBodyEpisodesRentPriceFormProperties {
+
+		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyEpisodesRentPriceFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyEpisodesRentPriceFormProperties>({
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Create_vod_alt1PostBodyRent {
 
@@ -9246,7 +14774,22 @@ export namespace MyNS {
 
 		/** The period in which this can be rented for. */
 		period?: Create_vod_alt1PostBodyRentPeriod | null;
-		price?: Create_vod_alt1PostBodyRentPrice | null;
+		price?: Create_vod_alt1PostBodyRentPrice;
+	}
+	export interface Create_vod_alt1PostBodyRentFormProperties {
+
+		/** Whether the video can be rented. *Required if `buy.active` is false. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** The period in which this can be rented for. */
+		period: FormControl<Create_vod_alt1PostBodyRentPeriod | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyRentFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyRentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			period: new FormControl<Create_vod_alt1PostBodyRentPeriod | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Create_vod_alt1PostBodyRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9289,22 +14832,106 @@ export namespace MyNS {
 		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
 		USD?: number | null;
 	}
+	export interface Create_vod_alt1PostBodyRentPriceFormProperties {
+
+		/** The rental price of this video in AUD. */
+		AUD: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in CAD. */
+		CAD: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in CHF. */
+		CHF: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in DKK. */
+		DKK: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in EUR. */
+		EUR: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in GBP. */
+		GBP: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in JPY. */
+		JPY: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in KRW. */
+		KRW: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in NOK. */
+		NOK: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in PLN. */
+		PLN: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in SEK. */
+		SEK: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodyRentPriceFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodyRentPriceFormProperties>({
+			AUD: new FormControl<number | null | undefined>(undefined),
+			CAD: new FormControl<number | null | undefined>(undefined),
+			CHF: new FormControl<number | null | undefined>(undefined),
+			DKK: new FormControl<number | null | undefined>(undefined),
+			EUR: new FormControl<number | null | undefined>(undefined),
+			GBP: new FormControl<number | null | undefined>(undefined),
+			JPY: new FormControl<number | null | undefined>(undefined),
+			KRW: new FormControl<number | null | undefined>(undefined),
+			NOK: new FormControl<number | null | undefined>(undefined),
+			PLN: new FormControl<number | null | undefined>(undefined),
+			SEK: new FormControl<number | null | undefined>(undefined),
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Create_vod_alt1PostBodySubscription {
-		monthly?: Create_vod_alt1PostBodySubscriptionMonthly | null;
+		monthly?: Create_vod_alt1PostBodySubscriptionMonthly;
+	}
+	export interface Create_vod_alt1PostBodySubscriptionFormProperties {
+	}
+	export function CreateCreate_vod_alt1PostBodySubscriptionFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodySubscriptionFormProperties>({
+		});
+
 	}
 
 	export interface Create_vod_alt1PostBodySubscriptionMonthly {
 
 		/** Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false. */
 		active?: boolean | null;
-		price?: Create_vod_alt1PostBodySubscriptionMonthlyPrice | null;
+		price?: Create_vod_alt1PostBodySubscriptionMonthlyPrice;
+	}
+	export interface Create_vod_alt1PostBodySubscriptionMonthlyFormProperties {
+
+		/** Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false. */
+		active: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodySubscriptionMonthlyFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodySubscriptionMonthlyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vod_alt1PostBodySubscriptionMonthlyPrice {
 
 		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
 		USD?: number | null;
+	}
+	export interface Create_vod_alt1PostBodySubscriptionMonthlyPriceFormProperties {
+
+		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vod_alt1PostBodySubscriptionMonthlyPriceFormGroup() {
+		return new FormGroup<Create_vod_alt1PostBodySubscriptionMonthlyPriceFormProperties>({
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_vod_purchasesFilter { all = 0, expiring_soon = 1, film = 2, important = 3, purchased = 4, rented = 5, series = 6, subscription = 7, unwatched = 8, watched = 9 }
@@ -9323,6 +14950,20 @@ export namespace MyNS {
 		 */
 		name: string;
 	}
+	export interface Create_project_alt1PostBodyFormProperties {
+
+		/**
+		 * The name of the project.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreate_project_alt1PostBodyFormGroup() {
+		return new FormGroup<Create_project_alt1PostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Edit_project_alt1PatchBody {
 
@@ -9331,6 +14972,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
+	}
+	export interface Edit_project_alt1PatchBodyFormProperties {
+
+		/**
+		 * The name of the project.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateEdit_project_alt1PatchBodyFormGroup() {
+		return new FormGroup<Edit_project_alt1PatchBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_project_videos_alt1Sort { alphabetical = 0, date = 1, _default = 2, duration = 3, last_user_action_event_date = 4 }
@@ -9367,11 +15022,36 @@ export namespace MyNS {
 		 */
 		videos: string;
 	}
+	export interface Replace_videos_in_albumPutBodyFormProperties {
+
+		/**
+		 * A comma-separated list of video URIs.
+		 * Required
+		 */
+		videos: FormControl<string | null | undefined>,
+	}
+	export function CreateReplace_videos_in_albumPutBodyFormGroup() {
+		return new FormGroup<Replace_videos_in_albumPutBodyFormProperties>({
+			videos: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Set_video_as_album_thumbnailPostBody {
 
 		/** The video frame time in seconds to use as the album thumbnail. */
 		time_code?: number | null;
+	}
+	export interface Set_video_as_album_thumbnailPostBodyFormProperties {
+
+		/** The video frame time in seconds to use as the album thumbnail. */
+		time_code: FormControl<number | null | undefined>,
+	}
+	export function CreateSet_video_as_album_thumbnailPostBodyFormGroup() {
+		return new FormGroup<Set_video_as_album_thumbnailPostBodyFormProperties>({
+			time_code: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Follow_usersPostBody {
@@ -9381,6 +15061,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		users: Array<string>;
+	}
+	export interface Follow_usersPostBodyFormProperties {
+	}
+	export function CreateFollow_usersPostBodyFormGroup() {
+		return new FormGroup<Follow_usersPostBodyFormProperties>({
+		});
+
 	}
 
 	export enum Get_user_vodsSort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, publish_time = 5, rating = 6 }
@@ -9404,7 +15091,7 @@ export namespace MyNS {
 		 * * `USD` - US Dollar
 		 */
 		accepted_currencies?: Create_vod_alt1PostBodyAccepted_currencies | null;
-		buy?: Create_vodPostBodyBuy | null;
+		buy?: Create_vodPostBodyBuy;
 
 		/**
 		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
@@ -9420,7 +15107,7 @@ export namespace MyNS {
 
 		/** The custom domain of the On Demand page. */
 		domain_link?: string | null;
-		episodes?: Create_vodPostBodyEpisodes | null;
+		episodes?: Create_vodPostBodyEpisodes;
 
 		/** The custom string to use in this On Demand page's Vimeo URL. */
 		link?: string | null;
@@ -9430,14 +15117,76 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
-		rent?: Create_vodPostBodyRent | null;
-		subscription?: Create_vodPostBodySubscription | null;
+		rent?: Create_vodPostBodyRent;
+		subscription?: Create_vodPostBodySubscription;
 
 		/**
 		 * The type of On Demand page.
 		 * Required
 		 */
 		type: On_demand_pageType;
+	}
+	export interface Create_vodPostBodyFormProperties {
+
+		/**
+		 * An array of accepted currencies.
+		 * Option descriptions:
+		 * * `AUD` - Australian Dollar
+		 * * `CAD` - Canadian Dollar
+		 * * `CHF` - Swiss Franc
+		 * * `DKK` - Danish Krone
+		 * * `EUR` - Euro
+		 * * `GBP` - British Pound
+		 * * `JPY` - Japanese Yen
+		 * * `KRW` - South Korean Won
+		 * * `NOK` - Norwegian Krone
+		 * * `PLN` - Polish Zloty
+		 * * `SEK` - Swedish Krona
+		 * * `USD` - US Dollar
+		 */
+		accepted_currencies: FormControl<Create_vod_alt1PostBodyAccepted_currencies | null | undefined>,
+
+		/**
+		 * One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.
+		 * Required
+		 */
+		content_rating: FormControl<Content_ratingCode | null | undefined>,
+
+		/**
+		 * The description of the On Demand page.
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** The custom domain of the On Demand page. */
+		domain_link: FormControl<string | null | undefined>,
+
+		/** The custom string to use in this On Demand page's Vimeo URL. */
+		link: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the On Demand page.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of On Demand page.
+		 * Required
+		 */
+		type: FormControl<On_demand_pageType | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyFormGroup() {
+		return new FormGroup<Create_vodPostBodyFormProperties>({
+			accepted_currencies: new FormControl<Create_vod_alt1PostBodyAccepted_currencies | null | undefined>(undefined),
+			content_rating: new FormControl<Content_ratingCode | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			domain_link: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<On_demand_pageType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vodPostBodyBuy {
@@ -9447,7 +15196,22 @@ export namespace MyNS {
 
 		/** Whether people who buy the video can download it. To use this field, `type` must be `film`. */
 		download?: boolean | null;
-		price?: Create_vodPostBodyBuyPrice | null;
+		price?: Create_vodPostBodyBuyPrice;
+	}
+	export interface Create_vodPostBodyBuyFormProperties {
+
+		/** Whether the Buy action is active. *Required if `rent.active` is false. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Whether people who buy the video can download it. To use this field, `type` must be `film`. */
+		download: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyBuyFormGroup() {
+		return new FormGroup<Create_vodPostBodyBuyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vodPostBodyBuyPrice {
@@ -9488,10 +15252,72 @@ export namespace MyNS {
 		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
 		USD?: number | null;
 	}
+	export interface Create_vodPostBodyBuyPriceFormProperties {
+
+		/** The purchase price of this video in AUD. */
+		AUD: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in CAD. */
+		CAD: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in CHF. */
+		CHF: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in DKK. */
+		DKK: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in EUR. */
+		EUR: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in GBP. */
+		GBP: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in JPY. */
+		JPY: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in KRW. */
+		KRW: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in NOK. */
+		NOK: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in PLN. */
+		PLN: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in SEK. */
+		SEK: FormControl<number | null | undefined>,
+
+		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyBuyPriceFormGroup() {
+		return new FormGroup<Create_vodPostBodyBuyPriceFormProperties>({
+			AUD: new FormControl<number | null | undefined>(undefined),
+			CAD: new FormControl<number | null | undefined>(undefined),
+			CHF: new FormControl<number | null | undefined>(undefined),
+			DKK: new FormControl<number | null | undefined>(undefined),
+			EUR: new FormControl<number | null | undefined>(undefined),
+			GBP: new FormControl<number | null | undefined>(undefined),
+			JPY: new FormControl<number | null | undefined>(undefined),
+			KRW: new FormControl<number | null | undefined>(undefined),
+			NOK: new FormControl<number | null | undefined>(undefined),
+			PLN: new FormControl<number | null | undefined>(undefined),
+			SEK: new FormControl<number | null | undefined>(undefined),
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Create_vodPostBodyEpisodes {
-		buy?: Create_vodPostBodyEpisodesBuy | null;
-		rent?: Create_vodPostBodyEpisodesRent | null;
+		buy?: Create_vodPostBodyEpisodesBuy;
+		rent?: Create_vodPostBodyEpisodesRent;
+	}
+	export interface Create_vodPostBodyEpisodesFormProperties {
+	}
+	export function CreateCreate_vodPostBodyEpisodesFormGroup() {
+		return new FormGroup<Create_vodPostBodyEpisodesFormProperties>({
+		});
+
 	}
 
 	export interface Create_vodPostBodyEpisodesBuy {
@@ -9501,13 +15327,39 @@ export namespace MyNS {
 
 		/** Whether people who buy the episode can download it. To use this field, `type` must be `series`. */
 		download?: boolean | null;
-		price?: Create_vodPostBodyEpisodesBuyPrice | null;
+		price?: Create_vodPostBodyEpisodesBuyPrice;
+	}
+	export interface Create_vodPostBodyEpisodesBuyFormProperties {
+
+		/** Whether episodes can be bought. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Whether people who buy the episode can download it. To use this field, `type` must be `series`. */
+		download: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyEpisodesBuyFormGroup() {
+		return new FormGroup<Create_vodPostBodyEpisodesBuyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			download: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vodPostBodyEpisodesBuyPrice {
 
 		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
 		USD?: number | null;
+	}
+	export interface Create_vodPostBodyEpisodesBuyPriceFormProperties {
+
+		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyEpisodesBuyPriceFormGroup() {
+		return new FormGroup<Create_vodPostBodyEpisodesBuyPriceFormProperties>({
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vodPostBodyEpisodesRent {
@@ -9517,7 +15369,22 @@ export namespace MyNS {
 
 		/** The period in which this episode can be rented for. */
 		period?: Create_vodPostBodyEpisodesRentPeriod | null;
-		price?: Create_vodPostBodyEpisodesRentPrice | null;
+		price?: Create_vodPostBodyEpisodesRentPrice;
+	}
+	export interface Create_vodPostBodyEpisodesRentFormProperties {
+
+		/** Whether episodes can be rented */
+		active: FormControl<boolean | null | undefined>,
+
+		/** The period in which this episode can be rented for. */
+		period: FormControl<Create_vodPostBodyEpisodesRentPeriod | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyEpisodesRentFormGroup() {
+		return new FormGroup<Create_vodPostBodyEpisodesRentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			period: new FormControl<Create_vodPostBodyEpisodesRentPeriod | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Create_vodPostBodyEpisodesRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9527,6 +15394,17 @@ export namespace MyNS {
 		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
 		USD?: number | null;
 	}
+	export interface Create_vodPostBodyEpisodesRentPriceFormProperties {
+
+		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyEpisodesRentPriceFormGroup() {
+		return new FormGroup<Create_vodPostBodyEpisodesRentPriceFormProperties>({
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Create_vodPostBodyRent {
 
@@ -9535,7 +15413,22 @@ export namespace MyNS {
 
 		/** The period in which this can be rented for. */
 		period?: Create_vodPostBodyRentPeriod | null;
-		price?: Create_vodPostBodyRentPrice | null;
+		price?: Create_vodPostBodyRentPrice;
+	}
+	export interface Create_vodPostBodyRentFormProperties {
+
+		/** Whether the video can be rented. *Required if `buy.active` is false. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** The period in which this can be rented for. */
+		period: FormControl<Create_vodPostBodyRentPeriod | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyRentFormGroup() {
+		return new FormGroup<Create_vodPostBodyRentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			period: new FormControl<Create_vodPostBodyRentPeriod | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Create_vodPostBodyRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
@@ -9578,22 +15471,106 @@ export namespace MyNS {
 		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
 		USD?: number | null;
 	}
+	export interface Create_vodPostBodyRentPriceFormProperties {
+
+		/** The rental price of this video in AUD. */
+		AUD: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in CAD. */
+		CAD: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in CHF. */
+		CHF: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in DKK. */
+		DKK: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in EUR. */
+		EUR: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in GBP. */
+		GBP: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in JPY. */
+		JPY: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in KRW. */
+		KRW: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in NOK. */
+		NOK: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in PLN. */
+		PLN: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in SEK. */
+		SEK: FormControl<number | null | undefined>,
+
+		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodyRentPriceFormGroup() {
+		return new FormGroup<Create_vodPostBodyRentPriceFormProperties>({
+			AUD: new FormControl<number | null | undefined>(undefined),
+			CAD: new FormControl<number | null | undefined>(undefined),
+			CHF: new FormControl<number | null | undefined>(undefined),
+			DKK: new FormControl<number | null | undefined>(undefined),
+			EUR: new FormControl<number | null | undefined>(undefined),
+			GBP: new FormControl<number | null | undefined>(undefined),
+			JPY: new FormControl<number | null | undefined>(undefined),
+			KRW: new FormControl<number | null | undefined>(undefined),
+			NOK: new FormControl<number | null | undefined>(undefined),
+			PLN: new FormControl<number | null | undefined>(undefined),
+			SEK: new FormControl<number | null | undefined>(undefined),
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Create_vodPostBodySubscription {
-		monthly?: Create_vodPostBodySubscriptionMonthly | null;
+		monthly?: Create_vodPostBodySubscriptionMonthly;
+	}
+	export interface Create_vodPostBodySubscriptionFormProperties {
+	}
+	export function CreateCreate_vodPostBodySubscriptionFormGroup() {
+		return new FormGroup<Create_vodPostBodySubscriptionFormProperties>({
+		});
+
 	}
 
 	export interface Create_vodPostBodySubscriptionMonthly {
 
 		/** Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false. */
 		active?: boolean | null;
-		price?: Create_vodPostBodySubscriptionMonthlyPrice | null;
+		price?: Create_vodPostBodySubscriptionMonthlyPrice;
+	}
+	export interface Create_vodPostBodySubscriptionMonthlyFormProperties {
+
+		/** Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false. */
+		active: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodySubscriptionMonthlyFormGroup() {
+		return new FormGroup<Create_vodPostBodySubscriptionMonthlyFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Create_vodPostBodySubscriptionMonthlyPrice {
 
 		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
 		USD?: number | null;
+	}
+	export interface Create_vodPostBodySubscriptionMonthlyPriceFormProperties {
+
+		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
+		USD: FormControl<number | null | undefined>,
+	}
+	export function CreateCreate_vodPostBodySubscriptionMonthlyPriceFormGroup() {
+		return new FormGroup<Create_vodPostBodySubscriptionMonthlyPriceFormProperties>({
+			USD: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_portfolio_videosSort { alphabetical = 0, comments = 1, date = 2, _default = 3, likes = 4, manual = 5, plays = 6 }
@@ -9608,6 +15585,20 @@ export namespace MyNS {
 		 */
 		name: string;
 	}
+	export interface Create_projectPostBodyFormProperties {
+
+		/**
+		 * The name of the project.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreate_projectPostBodyFormGroup() {
+		return new FormGroup<Create_projectPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Edit_projectPatchBody {
 
@@ -9616,6 +15607,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		name: string;
+	}
+	export interface Edit_projectPatchBodyFormProperties {
+
+		/**
+		 * The name of the project.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateEdit_projectPatchBodyFormGroup() {
+		return new FormGroup<Edit_projectPatchBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Get_project_videosSort { alphabetical = 0, date = 1, _default = 2, duration = 3, last_user_action_event_date = 4 }
