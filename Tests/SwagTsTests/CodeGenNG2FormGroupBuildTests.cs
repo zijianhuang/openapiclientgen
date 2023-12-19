@@ -4,9 +4,9 @@ using Xunit;
 namespace SwagTests
 {
 	[Collection("PluginsInSequence")]
-	public class CodeGenNG2FormGroupTests
+	public class CodeGenNG2FormGroupBuildTests
 	{
-		public CodeGenNG2FormGroupTests(ITestOutputHelper output)
+		public CodeGenNG2FormGroupBuildTests(ITestOutputHelper output)
 		{
 			helper = new NG2TestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output);
 		}

@@ -8,6 +8,10 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// For Angular 2+. Generate codes, ng build and assert the build result.
+	/// The ng build is done in folder NG2TestBed.
+	/// </summary>
 	public class NG2TestHelper : TsTestHelper
 	{
 		readonly ITestOutputHelper output;

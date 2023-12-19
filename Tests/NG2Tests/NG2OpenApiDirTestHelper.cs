@@ -5,6 +5,10 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// For integrations for large amount of OpenAPI files. In such tests, whether the generated codes are the same which those generated in the past is no a concern.
+	/// As long as the codes generated could be ng built, things are OK.
+	/// </summary>
 	public class NG2OpenApiDirTestHelper: NG2TestHelper
 	{
 		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output): base(genType, output)
