@@ -73,6 +73,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
 			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
+
 			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
@@ -118,7 +119,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
 						{
 							var newTypeName = currentTypeName + "Element";
-							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
+							if (FindCodeTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
 								TypeAliasDic.Add(item.Key, $"{newTypeName}[]");
@@ -136,7 +137,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
 					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
-					var existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+					var existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
@@ -182,7 +183,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Trace.TraceInformation($"TS Candidate clientClass {currentTypeName} for {item.Key} is skipped");
 				}
 			}
-			else
+			else //for enum
 			{
 				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
 				CreateTypeDocComment(item, typeDeclaration);
@@ -355,7 +356,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, bool isRequired)
 		{
 			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName); // make Pascal case like OrderStatus
-			CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
+			CodeTypeDeclaration existingType = FindCodeTypeDeclarationInNamespaces(casualEnumName, ns);
 			if (existingType == null)
 			{
 				CodeTypeDeclaration casualEnumTypeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, casualEnumName);
