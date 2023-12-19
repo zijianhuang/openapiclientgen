@@ -4,6 +4,9 @@ using Xunit.Abstractions;
 
 namespace NG2Tests
 {
+	/// <summary>
+	/// Generated test cases for Google APIs
+	/// </summary>
 	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryGoogleTests
 	{

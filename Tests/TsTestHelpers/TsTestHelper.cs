@@ -9,14 +9,21 @@ using Xunit;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// For integration testing for TypeScript. Though injecting a code gen type, this can be used for various TypeScript codes generators for various TypeScript libs and frameworks.
+	/// </summary>
 	public class TsTestHelper
 	{
-		public TsTestHelper(Type genType)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="codeGenType">Code gen to be instantiated.</param>
+		public TsTestHelper(Type codeGenType)
 		{
-			this.genType = genType;
+			this.codeGenType = codeGenType;
 		}
 
-		readonly Type genType;
+		readonly Type codeGenType;
 
 		public static OpenApiDocument ReadDef(string filePath)
 		{
@@ -75,7 +82,7 @@ namespace SwagTests
 				ContentType = "application/json;charset=UTF-8",
 			};
 
-			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(genType, settings, jsOutput);
+			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(codeGenType, settings, jsOutput);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}

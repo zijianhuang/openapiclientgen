@@ -4,6 +4,9 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// Generated test cases for various APIs, some of which need special ActionNameStrategy.
+	/// </summary>
 	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryTests
 	{

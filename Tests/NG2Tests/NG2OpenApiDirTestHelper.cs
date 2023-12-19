@@ -11,6 +11,11 @@ namespace SwagTests
 		{
 		}
 
+		/// <summary>
+		/// Just generate and build, not assertion for comparing previous
+		/// </summary>
+		/// <param name="openapiDir"></param>
+		/// <param name="mySettings"></param>
 		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings = null)
 		{
 			var m = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod();

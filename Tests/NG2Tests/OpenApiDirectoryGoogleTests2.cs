@@ -3,6 +3,9 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// Generated test cases for AWS APIs, the 2nd group
+	/// </summary>
 	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryGoogleTests2
 	{
