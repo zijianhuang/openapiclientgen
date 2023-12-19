@@ -251,7 +251,7 @@ namespace SwagTests
 		[Fact]
 		public void TestGoogleBooks()
 		{
-			helper.GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "NG2Results\\googleBooksOpenApi.ts");
+			helper.GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "NG2Results\\googleBooksOpenApi.txt");
 		}
 
 

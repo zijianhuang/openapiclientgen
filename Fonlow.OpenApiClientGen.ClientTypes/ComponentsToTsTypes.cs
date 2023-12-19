@@ -15,7 +15,7 @@ using System.Reflection;
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	/// <summary>
-	/// POCO to TypeScript interfaces generator. Create CodeDOM and output TS codes, with TypeScript CodeDOM provider
+	/// POCO to TypeScript interfaces generator. Create TypeScriptCodeDom CodeDOM and output TS codes, with TypeScript CodeDOM provider
 	/// </summary>
 	public class ComponentsToTsTypes : ComponentsToTypesBase
 	{
@@ -32,7 +32,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public override void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
-				throw new ArgumentException("A valid fileName is not defined.", nameof(fileName));
+				throw new ArgumentException("A valid TypeScript filename is not defined.", nameof(fileName));
 
 			try
 			{
@@ -59,12 +59,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="writer"></param>
 		protected override void WriteCode(TextWriter writer)
 		{
-			var provider = new TypeScriptCodeProvider(new Fonlow.TypeScriptCodeDom.TsCodeGenerator(CreateCodeObjectHelper(jsOutput.AsModule)));
+			using var provider = new TypeScriptCodeProvider(new Fonlow.TypeScriptCodeDom.TsCodeGenerator(CreateCodeObjectHelper(jsOutput.AsModule)));
 			CodeGeneratorOptions options = new() { BracingStyle = "JS", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
 		}
 
-		protected virtual CodeObjectHelper CreateCodeObjectHelper(bool asModule)
+		CodeObjectHelper CreateCodeObjectHelper(bool asModule)
 		{
 			return new CodeObjectHelper(asModule);
 		}

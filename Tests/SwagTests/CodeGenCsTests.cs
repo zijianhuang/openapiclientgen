@@ -447,6 +447,12 @@ namespace SwagTests
 			helper.GenerateAndAssertAndBuild("SwagMock\\xero-payroll-uk.yaml", "Results\\xero-payroll-uk.txt");
 		}
 
+		[Fact]
+		public void TestGoogleBooks()
+		{
+			helper.GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "Results\\googleBooksOpenApi.txt");
+		}
+
 		/// <summary>
 		/// OpenApi v3.1
 		/// </summary>

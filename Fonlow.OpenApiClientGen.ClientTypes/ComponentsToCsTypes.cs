@@ -28,7 +28,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public override void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
-				throw new ArgumentException("A valid fileName is not defined.", nameof(fileName));
+				throw new ArgumentException("A valid filename is not defined.", nameof(fileName));
 
 			try
 			{
@@ -62,9 +62,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="writer"></param>
 		protected override void WriteCode(TextWriter writer)
 		{
-			//if (writer == null)
-			//	throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
-
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
 			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);

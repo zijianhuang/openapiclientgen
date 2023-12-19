@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -809,6 +809,9 @@
     </None>
     <None Update="NG2FormGroupResults\xero_bankfeeds.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="NG2Results\googleBooksOpenApi.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="NG2Results\mcp.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
