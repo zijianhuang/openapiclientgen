@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace TsTestHelpers
 {
-	public sealed class TestingSettings
+	public sealed class TestingSettings : ITestingSettings
 	{
 		private TestingSettings()
 		{
@@ -37,6 +37,25 @@ namespace TsTestHelpers
 
 		public bool Build { get; set; } = false;
 		public bool UpdateGenerated { get; set; } = false;
+
+	}
+
+	public interface ITestingSettings
+	{
+		bool Build { get;  }
+		bool UpdateGenerated { get; }
+	}
+
+	public class CasualTestingSettings : ITestingSettings
+	{
+		public CasualTestingSettings(bool build, bool updateGenerated)
+		{
+			Build = build;
+			UpdateGenerated = updateGenerated;
+		}
+
+		public bool Build { get; }
+		public bool UpdateGenerated { get; }
 
 	}
 }

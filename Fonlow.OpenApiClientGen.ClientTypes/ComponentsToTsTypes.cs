@@ -86,6 +86,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
 				{
+					if (FindCodeTypeDeclarationInNamespaces(currentTypeName, ns) != null)
+					{
+						return;
+					}
+
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					if (String.IsNullOrEmpty(type) && allOfBaseTypeSchemaList.Count > 0)
 					{
@@ -140,7 +145,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
-						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
+						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id))); // add type recursively
 						RemoveRegisteredSchemaRefId(itemsRef.Id);
 					}
 
@@ -164,6 +169,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
+					if (FindCodeTypeDeclarationInNamespaces(currentTypeName, ns) != null)
+					{
+						return;
+					}
+
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
 					CreateTypeDocComment(item, typeDeclaration);
 				}
@@ -259,6 +269,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
 					string casualTypeName = currentTypeName + NameFunc.RefinePropertyName(propertyName);
+					if (FindCodeTypeDeclarationInNamespaces(casualTypeName, ns) != null)
+					{
+						return;
+					}
+
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
 					AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
 					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);

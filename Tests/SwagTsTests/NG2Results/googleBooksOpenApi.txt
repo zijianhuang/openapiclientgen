@@ -319,29 +319,14 @@ export namespace MyNS {
 		DictlayerdataDictWordsDerivatives?: Array<DictlayerdataDictWordsDerivatives>;
 		DictlayerdataDictWordsExamples?: Array<DictlayerdataDictWordsExamples>;
 		DictlayerdataDictWordsSenses?: Array<DictlayerdataDictWordsSenses>;
-
-		/** The words with different meanings but not related words, e.g. "go" (game) and "go" (verb). */
-		source?: DictlayerdataDictSource;
 	}
 
 	export interface DictlayerdataDictWordsDerivatives {
-		source?: DictlayerdataDictSource;
 		text?: string | null;
-	}
-
-	export interface DictlayerdataDictSource {
-		attribution?: string | null;
-		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsExamples {
-		source?: DictlayerdataDictSource;
 		text?: string | null;
-	}
-
-	export interface DictlayerdataDictSource {
-		attribution?: string | null;
-		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsSenses {
@@ -350,7 +335,6 @@ export namespace MyNS {
 		partOfSpeech?: string | null;
 		pronunciation?: string | null;
 		pronunciationUrl?: string | null;
-		source?: DictlayerdataDictSource;
 		syllabification?: string | null;
 		DictlayerdataDictWordsSensesSynonyms?: Array<DictlayerdataDictWordsSensesSynonyms>;
 	}
@@ -366,33 +350,11 @@ export namespace MyNS {
 	}
 
 	export interface DictlayerdataDictWordsSensesDefinitionsExamples {
-		source?: DictlayerdataDictSource;
 		text?: string | null;
-	}
-
-	export interface DictlayerdataDictSource {
-		attribution?: string | null;
-		url?: string | null;
-	}
-
-	export interface DictlayerdataDictSource {
-		attribution?: string | null;
-		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsSensesSynonyms {
-		source?: DictlayerdataDictSource;
 		text?: string | null;
-	}
-
-	export interface DictlayerdataDictSource {
-		attribution?: string | null;
-		url?: string | null;
-	}
-
-	export interface DictlayerdataDictSource {
-		attribution?: string | null;
-		url?: string | null;
 	}
 
 	export interface Discoveryclusters {
@@ -604,9 +566,6 @@ export namespace MyNS {
 		/** The date on which this book is available for sale. */
 		onSaleDate?: Date | null;
 
-		/** The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.) */
-		retailPrice?: VolumeSaleInfoRetailPrice;
-
 		/** Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or FOR_PREORDER. */
 		saleability?: string | null;
 	}
@@ -628,19 +587,11 @@ export namespace MyNS {
 		/** Indicates whether the offer is giftable. */
 		giftable?: boolean | null;
 
-		/** Offer list (=undiscounted) price in Micros. */
-		listPrice?: VolumeSaleInfoListPrice;
-
 		/** The rental duration (for rental offers only). */
 		rentalDuration?: VolumeSaleInfoRentalDuration;
 
 		/** Offer retail (=discounted) price in Micros */
 		retailPrice?: VolumeSaleInfoRetailPrice;
-	}
-
-	export interface VolumeSaleInfoListPrice {
-		amountInMicros?: number | null;
-		currencyCode?: string | null;
 	}
 
 	export interface VolumeSaleInfoRentalDuration {
@@ -650,15 +601,6 @@ export namespace MyNS {
 
 	export interface VolumeSaleInfoRetailPrice {
 		amountInMicros?: number | null;
-		currencyCode?: string | null;
-	}
-
-	export interface VolumeSaleInfoRetailPrice {
-
-		/** Amount in the currency listed below. (In LITE projection.) */
-		amount?: number | null;
-
-		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
 		currencyCode?: string | null;
 	}
 
