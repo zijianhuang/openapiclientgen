@@ -6,10 +6,10 @@ namespace SwagTests
 {
 	public class OpenapiDirectoryTests
 	{
-		readonly CSharpTestHelper helper;
+		readonly CSharpTestHelperForOpenApiDir helper;
 		public OpenapiDirectoryTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output);
+			helper = new CSharpTestHelperForOpenApiDir(output, "openapi.yaml");
 		}
 
 		void GenerateFromOpenApiAndBuild(string filePath, Settings mySettings = null)

@@ -6,10 +6,10 @@ namespace SwagTests
 {
 	public class ODMiscTests
 	{
-		readonly CSharpTestHelper helper;
+		readonly CSharpTestHelperForOpenApiDir helper;
 		public ODMiscTests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output);
+			helper = new CSharpTestHelperForOpenApiDir(output, "swagger.yaml");
 		}
 
 		void GenerateFromOpenApiAndBuild(string filePath, Settings mySettings = null)

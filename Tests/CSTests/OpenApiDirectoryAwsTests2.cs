@@ -6,10 +6,10 @@ namespace SwagTests
 {
 	public class OpenapiDirectoryAwsTests2
 	{
-		readonly CSharpTestHelper helper;
+		readonly CSharpTestHelperForOpenApiDir helper;
 		public OpenapiDirectoryAwsTests2(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelper(output);
+			helper = new CSharpTestHelperForOpenApiDir(output, "openapi.yaml");
 		}
 
 		void GenerateFromOpenApiAndBuild(string filePath, Settings mySettings = null)

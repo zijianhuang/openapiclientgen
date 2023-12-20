@@ -11,7 +11,7 @@ namespace SwagTests
 {
 	public class CSharpTestHelper
 	{
-		readonly ITestOutputHelper output;
+		readonly protected ITestOutputHelper output;
 		public CSharpTestHelper(ITestOutputHelper output)
 		{
 			this.output = output;
@@ -23,7 +23,7 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public static string TranslateDefToCode(string filePath, Settings settings)
+		static protected string TranslateDefToCode(string filePath, Settings settings)
 		{
 			OpenApiDocument doc = ReadDef(filePath);
 			ControllersClientApiGen gen = new(settings);
@@ -36,7 +36,13 @@ namespace SwagTests
 			return File.ReadAllText(filePath);
 		}
 
-		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings = null)
+		/// <summary>
+		/// Generate, Assert, optionally update generated and optionally build.
+		/// </summary>
+		/// <param name="filePath"></param>
+		/// <param name="expectedFile"></param>
+		/// <param name="mySettings"></param>
+		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings)
 		{
 			string s = TranslateDefToCode(filePath, mySettings);
 			if (TestingSettings.Instance.UpdateGenerated)
